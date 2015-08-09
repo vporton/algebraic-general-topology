@@ -1,0 +1,1577 @@
+
+\chapter{\label{chap-common}Common knowledge, part 1}
+
+In this chapter we will consider some well known mathematical theories.
+If you already know them you may skip reading this chapter (or its
+parts).
+
+
+\section{Order theory}
+
+
+\subsection{Posets}
+\begin{defn}
+\index{identity relation}The \emph{identity relation} on a set $A$
+is $\id_{A}=\setcond{(a;a)}{a\in A}$.
+\end{defn}
+
+\begin{defn}
+\index{preorder}A \emph{preorder} on a set $A$ is a binary relation
+$\sqsubseteq$ which is:
+\begin{itemize}
+\item reflexive on $A$ ($\opinparens{\sqsubseteq}\supseteq\id_{A}$);
+\item transitive ($\opinparens{\sqsubseteq}\circ\opinparens{\sqsubseteq}\subseteq\opinparens{\sqsubseteq}$).
+\end{itemize}
+\end{defn}
+
+\begin{defn}
+\index{partial order}A \emph{partial order} on a set $A$ is a preorder
+on $A$ which is antisymmetric ($\opinparens{\sqsubseteq}\cap\opinparens{\sqsubseteq}\subseteq\eqinparens$).
+\end{defn}
+The reverse relation is denoted $\sqsupseteq$.
+\begin{defn}
+\index{subelement}$a$ is a subelement of $b$ (or what is the same
+$a$ is \emph{contained} in $b$ or $b$ \emph{contains} $a$) iff
+$a\sqsubseteq b$.\end{defn}
+\begin{obvious}
+The reverse of a partial order is also a partial order.\end{obvious}
+\begin{defn}
+\index{set!partially ordered}A poset is a set $A$ together with
+a partial order on it is called a \emph{partially ordered set} (\emph{poset}
+for short).
+\end{defn}
+
+\begin{defn}
+\index{partial order!strict}Strict partial order $\sqsubset$ corresponding
+to the partial order $\sqsubseteq$ on a set $A$ is defined by the
+formula $\opinparens{\sqsubset}=\opinparens{\sqsubseteq}\setminus\id_{A}$.
+\end{defn}
+
+\begin{defn}
+\index{partial order!restricted}A partial order on a set $A$ \emph{restricted}
+to a set $B\subseteq A$ is $\opinparens{\sqsubseteq}\cap(B\times B)$.\end{defn}
+\begin{obvious}
+A partial order on a set $A$ restricted to a set $B\subseteq A$
+is a partial order on $B$.\end{obvious}
+\begin{defn}
+~
+\begin{itemize}
+\item \index{least element}The \emph{least} element $\bot$ of a poset
+$\mathfrak{A}$ is defined by the formula $\forall a\in\mathfrak{A}:\bot\sqsubseteq a$.
+\item \index{greatest element}The \emph{greatest} element $\top$ of a
+poset $\mathfrak{A}$ is defined by the formula $\forall a\in\mathfrak{A}:\top\sqsupseteq a$.
+\end{itemize}
+\end{defn}
+\begin{prop}
+There exist no more than one least element and no more than one greatest
+element (for a given poset).\end{prop}
+\begin{proof}
+By antisymmetry.\end{proof}
+\begin{defn}
+\index{dual!order}The \emph{dual} order for $\sqsubseteq$ is $\sqsupseteq$.\end{defn}
+\begin{obvious}
+Dual of a partial order is a partial order.\end{obvious}
+\begin{defn}
+\index{dual!poset}The \emph{dual} poset for a poset $(A;\mathord{\sqsubseteq})$
+is the poset $(A;\mathord{\sqsupseteq})$.
+\end{defn}
+I will denote dual of a poset~$\mathfrak{A}$ as $(\dual\mathfrak{A})$
+and dual of an element~$a\in\mathfrak{A}$ (that is the same element
+in the dual poset) as $(\dual a)$.
+
+\index{duality!partial order}Below we will sometimes use \emph{duality}
+that is replacement of the partial order and all related operations
+and relations with their duals. In other words, it is enough to prove
+a theorem for an order $\sqsubseteq$ and the similar theorem for
+$\sqsupseteq$ follows by duality.
+
+
+\subsubsection{Intersecting and joining elements}
+
+Let $\mathfrak{A}$ be a poset.
+\begin{defn}
+\index{intersecting elements}Call elements $a$ and $b$ of $\mathfrak{A}$
+\emph{intersecting}, denoted $a\nasymp b$, when there exists a non-least
+element $c$ such that $c\sqsubseteq a\land c\sqsubseteq b$.
+\end{defn}
+
+\begin{defn}
+$a\asymp b\eqdef\lnot(a\nasymp b)$.\end{defn}
+\begin{obvious}
+$a_{0}\nasymp b_{0}\land a_{1}\sqsupseteq a_{0}\land b_{1}\sqsupseteq b_{0}\Rightarrow a_{1}\nasymp b_{1}$.\end{obvious}
+\begin{defn}
+\index{joining elements}I call elements $a$ and $b$ of $\mathfrak{A}$
+\emph{joining} and denote $a\equiv b$ when there is no a non-greatest
+element $c$ such that $c\sqsupseteq a\land c\sqsupseteq b$.
+\end{defn}
+
+\begin{defn}
+$a\nequiv b\eqdef\lnot(a\equiv b)$.\end{defn}
+\begin{obvious}
+Intersecting is the dual of non-joining.
+\end{obvious}
+
+\begin{obvious}
+$a_{0}\equiv b_{0}\land a_{1}\sqsupseteq a_{0}\land b_{1}\sqsupseteq b_{0}\Rightarrow a_{1}\equiv b_{1}$.
+\end{obvious}
+
+\subsection{Linear order}
+\begin{defn}
+\index{linearly ordered set}A poset $\mathfrak{A}$ is called \emph{linearly
+ordered set} (or what is the same, \emph{totally ordered set}) if
+$a\sqsupseteq b\lor b\sqsupseteq a$ for every $a,b\in\mathfrak{A}$.\end{defn}
+\begin{example}
+The set of real numbers with the customary order is a linearly ordered
+set.\end{example}
+\begin{defn}
+\index{chain}A set $X\in\subsets\mathfrak{A}$ where $\mathfrak{A}$
+is a poset is called \emph{chain} if $\mathfrak{A}$ restricted to
+$X$ is a total order.
+\end{defn}
+
+\subsection{Meets and joins}
+
+Let $\mathfrak{A}$ be a poset.
+\begin{defn}
+\index{least element}Given a set $X\in\subsets\mathfrak{A}$ the
+\emph{least element} (also called \emph{minimum} and denoted $\min X$)
+of $X$ us such $a\in X$ that $\forall x\in X:a\sqsubseteq x$.
+\end{defn}
+Least element does not necessarily exists. But if it exists:
+\begin{prop}
+For a given $X\in\subsets\mathfrak{A}$ there exist no more than one
+least element.\end{prop}
+\begin{proof}
+It follows from anti-symmetry.
+\end{proof}
+\emph{Greatest element} is the dual of least element:
+\begin{defn}
+\index{greatest element}Given a set $X\in\subsets\mathfrak{A}$ the
+\emph{greatest element} (also called \emph{maximum} and denoted $\max X$)
+of $X$ us such $a\in X$ that $\forall x\in X:a\sqsupseteq x$.\end{defn}
+\begin{rem}
+Least and greatest elements of a set $X$ is a trivial generalization
+of the above defined least and greatest element for the entire poset.\end{rem}
+\begin{defn}
+~
+\begin{itemize}
+\item \index{minimal element}A \emph{minimal} element of a set $X\in\subsets\mathfrak{A}$
+is such $a\in\mathfrak{A}$ that $\nexists x\in X:(a\sqsupseteq x\land x\neq a)$.
+\item \index{maximal element}A \emph{maximal} element of a set $X\in\subsets\mathfrak{A}$
+is such $a\in\mathfrak{A}$ that $\nexists x\in X:(a\sqsubseteq x\land x\neq a)$.
+\end{itemize}
+\end{defn}
+\begin{rem}
+Minimal element is not the same as minimum, and maximal element is
+not the same as maximum.\end{rem}
+\begin{obvious}
+~
+\begin{enumerate}
+\item The least element (if it exists) is a minimal element.
+\item The greatest element (if it exists) is a maximal element.
+\end{enumerate}
+\end{obvious}
+\begin{xca}
+Show that there may be more than one minimal and more than one maximal
+element for some poset.\end{xca}
+\begin{defn}
+\index{bounds!upper}\emph{Upper bounds} of a set $X$ is the set
+$\setcond{y\in\mathfrak{A}}{\forall x\in X:y\sqsupseteq x}$.
+\end{defn}
+The dual notion:
+\begin{defn}
+\index{bounds!lower}\emph{Lower bounds} of a set $X$ is the set
+$\setcond{y\in\mathfrak{A}}{\forall x\in X:y\sqsubseteq x}$.
+\end{defn}
+
+\begin{defn}
+\index{join}\index{supremum}\emph{Join} $\bigsqcup X$ (also called
+\emph{supremum} and denoted ``$\sup X$'') of a set $X$ is the
+least element of its upper bounds (if it exists).
+\end{defn}
+
+\begin{defn}
+\index{meet}\index{infimum}\emph{Meet} $\bigsqcap X$ (also called
+\emph{infimum} and denoted ``$\inf X$'') of a set $X$ is the greatest
+element of its lower bounds (if it exists).
+\end{defn}
+We will also denote $\bigsqcup_{i\in X}f(i)=\bigsqcup\setcond{f(i)}{x\in X}$
+and $\bigsqcap_{i\in X}f(i)=\bigsqcap\setcond{f(i)}{x\in X}$.
+
+We will write $b=\bigsqcup X$ when $b\in\mathfrak{A}$ is the join
+of $X$ or say that $\bigsqcup X$ does not exist if there are no
+such $b\in\mathfrak{A}$. (And dually for meets.)
+\begin{xca}
+Provide an example of $\bigsqcup X\notin X$ for some set $X$ on
+some poset.\end{xca}
+\begin{prop}
+~
+\begin{enumerate}
+\item If $b$ is the greatest element of $X$ then $\bigsqcup X=b$.
+\item If $b$ is the least element of $X$ then $\bigsqcap X=b$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+We will prove only the first as the second is dual.
+
+Let $b$ be the greatest element of $X$. Then upper bounds of $X$
+are $\setcond{y\in\mathfrak{A}}{y\sqsupseteq b}$. Obviously $b$
+is the least element of this set, that is the join.\end{proof}
+\begin{defn}
+\index{join!binary}\emph{Binary joins and meets} are defined by the
+formulas
+\[
+x\sqcup y=\bigsqcup\{x,y\}\quad\text{and}\quad x\sqcup y=\bigsqcap\{x,y\}.
+\]
+\end{defn}
+\begin{obvious}
+$\sqcup$ and $\sqcap$ are symmetric operations (whenever these are
+defined for given $x$ and $y$).\end{obvious}
+\begin{thm}
+~
+\begin{enumerate}
+\item If $\bigsqcup X$ exists then $y\sqsupseteq\bigsqcup X\Leftrightarrow\forall x\in X:y\sqsupseteq x$.
+\item If $\bigsqcap X$ exists then $y\sqsubseteq\bigsqcap X\Leftrightarrow\forall x\in X:y\sqsubseteq x$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+I will prove only the first as the second follows by duality.
+\end{proof}
+$y\sqsupseteq\bigsqcup X\Leftrightarrow y\text{ is an upper bound for }X\Leftrightarrow\forall x\in X:y\sqsupseteq x$.
+\begin{cor}
+~
+\begin{enumerate}
+\item If $a\sqcup b$ exists then $y\sqsupseteq a\sqcup b\Leftrightarrow y\sqsupseteq a\land y\sqsupseteq b$.
+\item If $a\sqcap b$ exists then $y\sqsubseteq a\sqcap b\Leftrightarrow y\sqsubseteq a\land y\sqsubseteq b$.
+\end{enumerate}
+\end{cor}
+I will denote meets and joins for a specific poset $\mathfrak{A}$
+as $\bigsqcap^{\mathfrak{A}}$, $\bigsqcup^{\mathfrak{A}}$, $\sqcap^{\mathfrak{A}}$,
+$\sqcup^{\mathfrak{A}}$.
+
+
+\subsection{Semilattices}
+\begin{defn}
+~
+\begin{enumerate}
+\item \index{semilattice!join-semilattice}A \emph{join-semilattice} is
+a poset $\mathfrak{A}$ such that $a\sqcup b$ is defined for every
+$a,b\in\mathfrak{A}$.
+\item \index{semilattice!meet-semilattice}A \emph{meet-semilattice} is
+a poset $\mathfrak{A}$ such that $a\sqcap b$ is defined for every
+$a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{defn}
+\begin{thm}
+~
+\begin{enumerate}
+\item The operation $\sqcup$ is associative for any join-semilattice.
+\item The operation $\sqcap$ is associative for any meet-semilattice.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+I will prove only the first as the second follows by duality.
+
+We need to prove $(a\sqcup b)\sqcup c=a\sqcup(b\sqcup c)$ for every
+$a,b,c\in\mathfrak{A}$.
+
+Taking into account the definition of join, it is enough to prove
+that
+\[
+x\sqsupseteq(a\sqcup b)\sqcup c\Leftrightarrow x\sqsupseteq a\sqcup(b\sqcup c)
+\]
+for every $x\in\mathfrak{A}$. Really, this follows from the chain
+of equivalences:
+\begin{align*}
+x\sqsupseteq(a\sqcup b)\sqcup c & \Leftrightarrow\\
+x\sqsupseteq a\sqcup b\land x\sqsupseteq c & \Leftrightarrow\\
+x\sqsupseteq a\land x\sqsupseteq b\land x\sqsupseteq c & \Leftrightarrow\\
+x\sqsupseteq a\land x\sqsupseteq b\sqcup c & \Leftrightarrow\\
+x\sqsupseteq a\sqcup(b\sqcup c).
+\end{align*}
+\end{proof}
+\begin{obvious}
+$a\nasymp b$ iff $a\sqcap b$ is non-least, for every elements $a$,
+$b$ of a meet-semilattice.
+\end{obvious}
+
+\begin{obvious}
+$a\equiv b$ iff $a\sqcup b$ is the greatest element, for every elements
+$a$, $b$ of a join-semilattice.
+\end{obvious}
+
+\subsection{Lattices and complete lattices}
+\begin{defn}
+\index{poset!bounded}A \emph{bounded} poset is a poset having both
+least and greatest elements.
+\end{defn}
+
+\begin{defn}
+\index{lattice}\emph{Lattice} is a poset which is both join-semilattice
+and meet-semilattice.
+\end{defn}
+
+\begin{defn}
+\index{lattice!complete}A \emph{complete lattice} is a poset $\mathfrak{A}$
+such that for every $X\in\subsets\mathfrak{A}$ both $\bigsqcup X$
+and $\bigsqcap X$ exist.\end{defn}
+\begin{obvious}
+Every complete lattice is a lattice.\end{obvious}
+\begin{prop}
+Every complete lattice is a bounded poset.\end{prop}
+\begin{proof}
+$\bigsqcup\emptyset$ is the least and $\bigsqcap\emptyset$ is the
+greatest element.\end{proof}
+\begin{thm}
+Let $\mathfrak{A}$ be a poset.
+\begin{enumerate}
+\item If $\bigsqcup X$ is defined for every $X\in\subsets\mathfrak{A}$,
+then $\mathfrak{A}$ is a complete lattice.
+\item If $\bigsqcap X$ is defined for every $X\in\subsets\mathfrak{A}$,
+then $\mathfrak{A}$ is a complete lattice.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+See \cite{pm:complete-lattice-criteria} or any lattice theory reference.\end{proof}
+\begin{obvious}
+If $X\subseteq Y$ for some $X,Y\in\subsets\mathfrak{A}$ where $\mathfrak{A}$
+is a complete lattice, then
+\begin{enumerate}
+\item $\bigsqcup X\sqsubseteq\bigsqcup Y$;
+\item $\bigsqcap X\sqsupseteq\bigsqcap Y$.
+\end{enumerate}
+\end{obvious}
+\begin{prop}
+If $S\in\subsets\subsets\mathfrak{A}$ then for every complete lattice
+$\mathfrak{A}$
+\begin{enumerate}
+\item $\bigsqcup\bigcup S=\bigsqcup_{X\in S}\bigsqcup X$;
+\item $\bigsqcap\bigcup S=\bigsqcap_{X\in S}\bigsqcap X$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+We will prove only the first as the second is dual.
+
+By definition of joins, it is enough to prove $y\sqsupseteq\bigsqcup\bigcup S\Leftrightarrow y\sqsupseteq\bigsqcup_{X\in S}\bigsqcup X$.
+
+Really,
+\begin{align*}
+y\sqsupseteq\bigsqcup\bigcup S & \Leftrightarrow\\
+\forall x\in\bigcup S:y\sqsupseteq x & \Leftrightarrow\\
+\forall X\in S\forall x\in X:y\sqsupseteq x & \Leftrightarrow\\
+\forall X\in S:y\sqsupseteq\bigsqcup X & \Leftrightarrow\\
+y\sqsupseteq\bigsqcup_{X\in S}\bigsqcup X.
+\end{align*}
+\end{proof}
+\begin{defn}
+A \emph{sublattice} of a lattice is it subset closed regarding~$\sqcup$
+and~$\sqcap$.\end{defn}
+\begin{obvious}
+Sublattice with induced order is also a lattice.
+\end{obvious}
+
+\subsection{Distributivity of lattices}
+\begin{defn}
+\index{lattice!distributive}A \emph{distributive} lattice is such
+lattice $\mathfrak{A}$ that for every $x,y,z\in\mathfrak{A}$
+\begin{enumerate}
+\item $x\sqcap(y\sqcup z)=(x\sqcap y)\sqcup(x\sqcap z)$;
+\item $x\sqcup(y\sqcap z)=(x\sqcup y)\sqcap(x\sqcup z)$.
+\end{enumerate}
+\end{defn}
+\begin{thm}
+For a lattice to be distributive it is enough just one of the conditions:
+\begin{enumerate}
+\item $x\sqcap(y\sqcup z)=(x\sqcap y)\sqcup(x\sqcap z)$;
+\item $x\sqcup(y\sqcap z)=(x\sqcup y)\sqcap(x\sqcup z)$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+
+\begin{align*}
+(x\sqcup y)\sqcap(x\sqcup z) & =\\
+((x\sqcup y)\sqcap x)\sqcup((x\sqcup y)\sqcap z) & =\\
+x\sqcup((x\sqcap z)\sqcup(y\sqcap z)) & =\\
+(x\sqcup(x\sqcap z))\sqcup(y\sqcap z) & =\\
+x\sqcup(y\sqcap z)
+\end{align*}
+
+
+(applied $x\sqcap(y\sqcup z)=(x\sqcap y)\sqcup(x\sqcap z)$ twice).
+\end{proof}
+
+\subsection{Difference and complement}
+\begin{defn}
+\index{difference}\index{substractive}Let $\mathfrak{A}$ be a distributive
+lattice with least element $\bot$. The \emph{difference} (denoted
+$a\setminus b$) of elements $a$ and $b$ is such $c\in\mathfrak{A}$
+that $b\sqcap c=\bot$ and $a\sqcup b=b\sqcup c$. I will call $b$
+\emph{substractive} from \textbf{$a$} when $a\setminus b$ exists.\end{defn}
+\begin{thm}
+If $\mathfrak{A}$ is a distributive lattice with least element $\bot$,
+there exists no more than one difference of elements $a$, $b$.\end{thm}
+\begin{proof}
+Let $c$ and $d$ be both differences $a\setminus b$. Then $b\sqcap c=b\sqcap d=\bot$
+and $a\sqcup b=b\sqcup c=b\sqcup d$. So
+\[
+c=c\sqcap(b\sqcup c)=c\sqcap(b\sqcup d)=(c\sqcap b)\sqcup(c\sqcap d)=\bot\sqcup(c\sqcap d)=c\sqcap d.
+\]
+
+
+Similarly $d=d\sqcap c$. Consequently $c=c\sqcap d=d\sqcap c=d$.\end{proof}
+\begin{defn}
+\index{complementive}I will call $b$ \emph{complementive} to $a$
+iff there exists $c\in\mathfrak{A}$ such that $b\sqcap c=\bot$ and
+$b\sqcup c=a$.\end{defn}
+\begin{prop}
+$b$ is complementive to $a$ iff $b$ is substractive from $a$ and
+$b\sqsubseteq a$.\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Leftarrow$}] Obvious.
+\item [{$\Rightarrow$}] We deduce $b\sqsubseteq a$ from $b\sqcup c=a$.
+Thus $a\sqcup b=a=b\sqcup c$.
+\end{description}
+\end{proof}
+\begin{prop}
+If $b$ is complementive to $a$ then $(a\setminus b)\sqcup b=a$.\end{prop}
+\begin{proof}
+Because $b\sqsubseteq a$ by the previous proposition.\end{proof}
+\begin{defn}
+\index{complement}Let $\mathfrak{A}$ be a bounded distributive lattice.
+The \emph{complement} (denoted $\bar{a}$) of an element $a\in\mathfrak{A}$
+is such $b\in\mathfrak{A}$ that $a\sqcap b=\bot$ and $a\sqcup b=\top$.\end{defn}
+\begin{prop}
+If $\mathfrak{A}$ is a bounded distributive lattice then $\bar{a}=\top\setminus a$.\end{prop}
+\begin{proof}
+$b=\bar{a}\Leftrightarrow b\sqcap a=\bot\land b\sqcup a=\top\Leftrightarrow b\sqcap a=\bot\land\top\sqcup a=a\sqcup b\Leftrightarrow b=\top\setminus a$.\end{proof}
+\begin{cor}
+If $\mathfrak{A}$ is a bounded distributive lattice then exists no
+more than one complement of an element $a\in\mathfrak{A}$.\end{cor}
+\begin{defn}
+\index{complemented!element}An element of bounded distributive lattice
+is called \emph{complemented} when its complement exists.
+\end{defn}
+
+\begin{defn}
+\index{complemented!lattice}A distributive lattice is a \emph{complemented
+lattice} iff every its element is complemented.\end{defn}
+\begin{prop}
+For a distributive lattice $(a\setminus b)\setminus c=a\setminus(b\sqcup c)$
+if $a\setminus b$ and $(a\setminus b)\setminus c$ are defined.\end{prop}
+\begin{proof}
+$((a\setminus b)\setminus c)\sqcap c=\bot$; $((a\setminus b)\setminus c)\sqcup c=(a\setminus b)\sqcup c$;
+$(a\setminus b)\sqcap b=\bot$; $(a\setminus b)\sqcup b=a\sqcup b$.
+
+We need to prove $((a\setminus b)\setminus c)\sqcap(b\sqcup c)=\bot$
+and $((a\setminus b)\setminus c)\sqcup(b\sqcup c)=a\sqcup(b\sqcup c)$.
+
+In fact,
+\begin{align*}
+((a\setminus b)\setminus c)\sqcap(b\sqcup c) & =\\
+(((a\setminus b)\setminus c)\sqcap b)\sqcup(((a\setminus b)\setminus c)\sqcap c) & =\\
+(((a\setminus b)\setminus c)\sqcap b)\sqcup\bot & =\\
+((a\setminus b)\setminus c)\sqcap b & \sqsubseteq\\
+(a\setminus b)\sqcap b & =\bot,
+\end{align*}
+
+
+so $((a\setminus b)\setminus c)\sqcap(b\sqcup c)=\bot$;
+\begin{align*}
+((a\setminus b)\setminus c)\sqcup(b\sqcup c) & =\\
+(((a\setminus b)\setminus c)\sqcup c)\sqcup b & =\\
+(a\setminus b)\sqcup c\sqcup b & =\\
+((a\setminus b)\sqcup b)\sqcup c & =\\
+a\sqcup b\sqcup c.
+\end{align*}
+
+\end{proof}
+
+\subsection{Boolean lattices}
+\begin{defn}
+\index{lattice!boolean}A \emph{boolean lattice} is a complemented
+distributive lattice.
+\end{defn}
+The most important example of a boolean lattice is $\subsets A$ where
+\textbf{$A$} is a set, ordered by set inclusion.
+\begin{thm}
+\index{Morgan's laws}(De Morgan's laws) For every elements $a$,
+$b$ of a boolean lattice
+\begin{enumerate}
+\item $\overline{a\sqcup b}=\bar{a}\sqcap\bar{b}$;
+\item $\overline{a\sqcap b}=\bar{a}\sqcup b$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only the first as the second is dual.
+
+It is enough to prove that $a\sqcup b$ is a complement of $\bar{a}\sqcap\bar{b}$.
+Really:
+\begin{gather*}
+(a\sqcup b)\sqcap(\bar{a}\sqcap\bar{b})\sqsubseteq a\sqcap(\bar{a}\sqcap\bar{b})=(a\sqcap\bar{a})\sqcap\bar{b}=\bot\sqcap\bar{b}=\bot;\\
+(a\sqcup b)\sqcup(\bar{a}\sqcap\bar{b})=((a\sqcup b)\sqcup\bar{a})\sqcap((a\sqcup b)\sqcup\bar{b})\sqsupseteq(a\sqcup\bar{a})\sqcap(b\sqcup\bar{b})=\top\sqcap\top=\top.
+\end{gather*}
+
+
+Thus $(a\sqcup b)\sqcap(\bar{a}\sqcap\bar{b})=\bot$ and $(a\sqcup b)\sqcup(\bar{a}\sqcap\bar{b})=\top$.\end{proof}
+\begin{defn}
+\index{join infinite distributive}A complete lattice $\mathfrak{A}$
+is \emph{join infinite distributive} when $x\sqcap\bigsqcup S=\bigsqcup\rsupfun{x\sqcap}S$;
+\index{meet infinite distributive}a complete lattice $\mathfrak{A}$
+is \emph{meet infinite distributive} when $x\sqcup\bigsqcap S=\bigsqcap\rsupfun{x\sqcup}S$
+for all $x\in\mathfrak{A}$ and $S\in\subsets\mathfrak{A}$.
+\end{defn}
+
+\begin{defn}
+\index{infinite distributive}\emph{Infinite distributive complete
+lattice} is a complete lattice which is both join infinite distributive
+and meet infinite distributive.\end{defn}
+\begin{thm}
+Every complete boolean lattice is both join infinite distributive
+and meet infinite distributive.\end{thm}
+\begin{proof}
+We will prove only join infinitely distributivity, as the other is
+dual.
+
+Let $S$ be a subset of a complete boolean lattice.
+
+$x\sqcap\bigsqcup S\sqsupseteq\bigsqcup\rsupfun{x\sqcap}S$ is obvious.
+Now let \textbf{$u$} be any upper bound of $\rsupfun{x\sqcap}S$,
+that is $x\sqcap y\sqsubseteq u$ for all $y\in S$. Then
+\[
+y=y\sqcap(x\sqcup\bar{x})=(y\sqcap x)\sqcup(y\sqcap\bar{x})\sqsubseteq u\sqcup\bar{x},
+\]
+
+
+and so $\bigsqcup S\sqsubseteq u\sqcup\bar{x}$. Thus
+\[
+x\sqcap\bigsqcup S\sqsubseteq x\sqcap(u\sqcup\bar{x})=(x\sqcap u)\sqcup(x\sqcap\bar{x})=(x\sqcap u)\sqcup\bot=x\sqcap u\sqsubseteq u,
+\]
+
+
+that is $x\sqcap\bigsqcup S$ is the least upper bound of $\rsupfun{x\sqcap}S$.\end{proof}
+\begin{thm}
+\index{De Morgan's laws!infinite}(infinite De Morgan's laws) For
+every subset $S$ of a complete boolean lattice
+\begin{enumerate}
+\item $\overline{\bigsqcup S}=\bigsqcap_{x\in S}\bar{x}$;
+\item $\overline{\bigsqcap S}=\bigsqcup{}_{x\in S}\bar{x}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+It's enough to prove that $\bigsqcup S$ is a complement of $\bigsqcap_{x\in S}\bar{x}$
+(the second follows from duality). Really, using the previous theorem:
+\begin{gather*}
+\bigsqcup S\sqcup\bigsqcap_{x\in S}\bar{x}=\bigsqcap_{x\in S}\rsupfun{\bigsqcup S\sqcup}\bar{x}=\bigsqcap\setcond{\bigsqcup S\sqcup\bar{x}}{x\in S}\sqsupseteq\bigsqcap\setcond{x\sqcup\bar{x}}{x\in S}=\top;\\
+\bigsqcup S\sqcap\bigsqcap_{x\in S}\bar{x}=\bigsqcup_{y\in S}\rsupfun{\bigsqcap_{x\in S}\bar{x}\sqcap}y=\bigsqcup\setcond{\bigsqcap_{x\in S}\bar{x}\sqcap y}{y\in S}\sqsubseteq\bigsqcup\setcond{\bar{y}\sqcap y}{y\in S}=\bot.
+\end{gather*}
+
+
+So $\bigsqcup S\sqcup\bigsqcap_{x\in S}\bar{x}=\top$ and $\bigsqcup S\sqcap\bigsqcap_{x\in S}\bar{x}=\bot$.
+\end{proof}
+
+\subsection{Center of a lattice}
+\begin{defn}
+\index{lattice!center}The \emph{center} $Z(\mathfrak{A})$ of a bounded
+distributive lattice $\mathfrak{A}$ is the set of its complemented
+elements.\end{defn}
+\begin{rem}
+For a definition of center of non-distributive lattices see \cite{neutralelements}.
+\end{rem}
+
+\begin{rem}
+In \cite{ADTCGSBVA} the word center and the notation $Z(\mathfrak{A})$
+are used in a different sense.\end{rem}
+\begin{defn}
+\index{sublattice!closed}A sublattice $K$ of a complete lattice
+$L$ is a \emph{closed sublattice} of $L$ if $K$ contains the meet
+and the join of any its nonempty subset.\end{defn}
+\begin{thm}
+Center of an infinitely distributive lattice is its closed sublattice.\end{thm}
+\begin{proof}
+See \cite{center-inf-distr}.\end{proof}
+\begin{rem}
+See \cite{center-complete} for a more strong result.\end{rem}
+\begin{thm}
+The center of a bounded distributive lattice constitutes its sublattice.\end{thm}
+\begin{proof}
+Let $\mathfrak{A}$ be a bounded distributive lattice and $Z(\mathfrak{A})$
+be its center. Let $a,b\in Z(\mathfrak{A})$. Consequently $\bar{a},\bar{b}\in Z(\mathfrak{A})$.
+Then $\bar{a}\sqcup\bar{b}$ is the complement of $a\sqcap b$ because
+\begin{align*}
+(a\sqcap b)\sqcap(\bar{a}\sqcup\bar{b})=(a\sqcap b\sqcap\bar{a})\sqcup(a\sqcap b\sqcap\bar{b})=\bot\sqcup\bot=\bot & \text{\quad and}\\
+(a\sqcap b)\sqcup(\bar{a}\sqcup\bar{b})=(a\sqcup\bar{a}\sqcup\bar{b})\sqcap(b\sqcup\bar{a\sqcup\bar{b}})=\top\sqcap\top=\top.
+\end{align*}
+
+
+So $a\sqcap b$ is complemented. Similarly $a\sqcup b$ is complemented.\end{proof}
+\begin{thm}
+\label{centr-bool}The center of a bounded distributive lattice constitutes
+a boolean lattice.\end{thm}
+\begin{proof}
+Because it is a distributive complemented lattice.
+\end{proof}
+
+\subsection{Atoms of posets}
+\begin{defn}
+\index{atom}An atom of a poset is an element which has no non-least
+subelements.\end{defn}
+\begin{rem}
+This definition is valid even for posets without least element.
+\end{rem}
+I will denote $\atoms^{\mathfrak{A}}a$ or just $(\atoms a)$ the
+set of atoms contained in an element $a$ of a poset $\mathfrak{A}$.
+I will denote $\atoms^{\mathfrak{A}}$ the set of all atoms of a poset
+$\mathfrak{A}$.
+\begin{defn}
+\index{atomic}A poset $\mathfrak{A}$ is called \emph{atomic} iff
+$\atoms a\neq\emptyset$ for every non-least element $a$ of the poset
+$\mathfrak{A}$.
+\end{defn}
+
+\begin{defn}
+\index{atomistic}\emph{Atomistic poset} is such a poset that $a=\bigsqcup\atoms a$
+for every non-least element $a$ of this poset.\end{defn}
+\begin{obvious}
+Every atomistic poset is atomic.\end{obvious}
+\begin{prop}
+Let $\mathfrak{A}$ be a poset. If $a$ is an atom of $\mathfrak{A}$
+and $B\in\mathfrak{A}$ then 
+\[
+a\in\atoms B\Leftrightarrow a\sqsubseteq B\Leftrightarrow a\nasymp B.
+\]
+\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$a\in\atoms B\Leftrightarrow a\sqsubseteq B$}] Obvious.
+\item [{$a\sqsubseteq B\Rightarrow a\nasymp B$}] $a\sqsubseteq B\Rightarrow a\sqsubseteq a\land a\sqsubseteq B$,
+thus $a\nasymp B$ because $a$ is not least.
+\item [{$a\sqsubseteq B\Leftarrow a\nasymp B$}] $a\nasymp B$ implies
+existence of non-least element $x$ such that $x\sqsubseteq B$ and
+$x\sqsubseteq a$. Because $a$ is an atom, we have $x=a$. So $a\sqsubseteq B$.
+\end{description}
+\end{proof}
+\begin{thm}
+$\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ whenever $\bigsqcap S$
+is defined for every $S\in\subsets\mathfrak{A}$ where $\mathfrak{A}$
+is a poset.\end{thm}
+\begin{proof}
+For any atom
+\begin{align*}
+c\in\atoms\bigsqcap S & \Leftrightarrow\\
+c\sqsubseteq\bigsqcap S & \Leftrightarrow\\
+\forall a\in S:c\sqsubseteq a & \Leftrightarrow\\
+\forall a\in S:c\in\atoms a & \Leftrightarrow\\
+c\in\bigcap\rsupfun{\atoms}S.
+\end{align*}
+\end{proof}
+\begin{cor}
+\label{atoms-meet}$\atoms(a\sqcap b)=\atoms a\cap\atoms b$ for an
+arbitrary meet-semilattice.\end{cor}
+\begin{thm}
+A complete boolean lattice is atomic iff it is atomistic.\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Leftarrow$}] Obvious.
+\item [{$\Rightarrow$}] Let $\mathfrak{A}$ be an atomic boolean lattice.
+Let $a\in\mathfrak{A}$. Suppose $b=\bigsqcup\atoms a\sqsubset a$.
+If $x\in\atoms(a\setminus b)$ then $x\sqsubseteq a\setminus b$ and
+so $x\sqsubseteq a$ and hence $x\sqsubseteq b$. But we have $x=x\sqcap b\sqsubseteq(a\setminus b)\sqcap b=\bot$
+what contradicts to our supposition.
+\end{description}
+\end{proof}
+
+\subsection{\index{Kuratowski's lemma}Kuratowski's lemma}
+\begin{thm}
+(Kuratowski's lemma) Any chain in a poset is contained in a maximal
+chain (if we order chains by inclusion).
+\end{thm}
+I will skip the proof of Kuratowski's lemma as this proof can be found
+in any set theory or order theory reference.
+
+
+\subsection{Homomorphisms of posets and lattices}
+\begin{defn}
+\index{monotone}\index{order homomorphism}A \emph{monotone} function
+(also called \emph{order homomorphism}) from a poset $\mathfrak{A}$
+to a poset $\mathfrak{B}$ is such a function $f$ that $x\sqsubseteq y\Rightarrow fx\sqsubseteq fy$
+for every $x,y\in\mathfrak{A}$.
+\end{defn}
+
+\begin{defn}
+\index{antitone}A \emph{antitone} function (also called \emph{antitone
+order homomorphism}) from a poset $\mathfrak{A}$ to a poset $\mathfrak{B}$
+is such a function $f$ that $x\sqsubseteq y\Rightarrow fx\sqsupseteq fy$
+for every $x,y\in\mathfrak{A}$.
+\end{defn}
+
+\begin{defn}
+\index{order embedding}\emph{Order embedding} is a monotone injective
+function whose inverse is also monotone.
+\end{defn}
+
+\begin{defn}
+\index{antitone order embedding}\emph{Antitone order embedding} is
+an antitone injective function whose inverse is also antitone.
+\end{defn}
+
+\begin{defn}
+\index{order isomorphism}\emph{Order isomorphism} is a surjective
+order embedding.
+\end{defn}
+Order isomorphism preserves properties of posets, such as order, joins
+and meets, etc.
+\begin{defn}
+\index{antitone order isomorphism}\emph{Antitone order isomorphism}
+is a surjective antitone order embedding.
+\end{defn}
+
+\begin{defn}
+~
+\begin{enumerate}
+\item \index{join semilattice!homomorphism}\emph{Join semilattice homomorphism}
+is a function $f$ from a join semilattice $\mathfrak{A}$ to a join
+semilattice $\mathfrak{B}$, such that $f(x\sqcup y)=fx\sqcup fy$
+for every $x,y\in\mathfrak{A}$.
+\item \index{meet semilattice!homomorphism}\emph{Meet semilattice homomorphism}
+is a function $f$ from a meet semilattice $\mathfrak{A}$ to a meet
+semilattice $\mathfrak{B}$, such that $f(x\sqcap y)=fx\sqcap fy$
+for every $x,y\in\mathfrak{A}$.
+\end{enumerate}
+\end{defn}
+\begin{obvious}
+~
+\begin{enumerate}
+\item Join semilattice homomorphisms are monotone.
+\item Meet semilattice homomorphisms are monotone.
+\end{enumerate}
+\end{obvious}
+\begin{defn}
+\index{lattice!homomorphism}A \emph{lattice homomorphism} is a function
+from a lattice to a lattice, which is both join semilattice homomorphism
+and meet semilattice homomorphism.
+\end{defn}
+
+\begin{defn}
+\index{complete lattice!homomorphism}\emph{Complete lattice homomorphism}
+from a complete lattice $\mathfrak{A}$ to a complete lattice $\mathfrak{B}$
+is a function f from $\mathfrak{A}$ to $\mathfrak{B}$ which preserves
+all meets and joins, that is $f\bigsqcup S=\bigsqcup\rsupfun fS$
+and $f\bigsqcap S=\bigsqcap\rsupfun fS$ for every $S\in\subsets\mathfrak{A}$.
+\end{defn}
+
+\subsection{Galois connections}
+
+See \cite{galois-and-fixed,primer-galois} for more detailed treatment
+of Galois connections.
+\begin{defn}
+\index{Galois!connection}Let $\mathfrak{A}$ and $\mathfrak{B}$
+be two posets. A \emph{Galois connection} between $\mathfrak{A}$
+and $\mathfrak{B}$ is a pair of functions $f=(f^{\ast};f_{\ast})$
+with $f^{\ast}:\mathfrak{A}\rightarrow\mathfrak{B}$ and $f_{\ast}:\mathfrak{B}\rightarrow\mathfrak{A}$
+such that:
+\[
+\forall x\in\mathfrak{A},y\in\mathfrak{B}:(f^{\ast}x\sqsubseteq y\Leftrightarrow x\sqsubseteq f_{\ast}y).
+\]
+
+
+\index{adjoint!lower}\index{adjoint!upper}$f_{\ast}$ is called
+\emph{the upper adjoint} of $f^{\ast}$ and $f^{\ast}$ is called
+\emph{the lower adjoint} of $f_{\ast}$.\end{defn}
+\begin{thm}
+\label{galois-second}A pair $(f^{\ast};f_{\ast})$ of functions $f^{\ast}:\mathfrak{A}\rightarrow\mathfrak{B}$
+and $f_{\ast}:\mathfrak{B}\rightarrow\mathfrak{A}$ is a Galois connection
+iff both of the following: 
+\begin{enumerate}
+\item \label{galois-second-mono}$f^{\ast}$ and $f_{\ast}$ are monotone.
+\item \label{galois-second-ineq}$x\sqsubseteq f_{\ast}f^{\ast}x$ and $f^{\ast}f_{\ast}y\sqsubseteq y$
+for every $x\in\mathfrak{A}$ and $y\in\mathfrak{B}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}]~
+
+\begin{disorder}
+\item [{\ref{galois-second-ineq}}] $x\sqsubseteq f_{\ast}f^{\ast}x$ since
+$f^{\ast}x\sqsubseteq f^{\ast}x$; $f^{\ast}f_{\ast}y\sqsubseteq y$
+since $f_{\ast}y\sqsubseteq f_{\ast}y$.
+\item [{\ref{galois-second-mono}}] Let $a,b\in\mathfrak{A}$ and $a\sqsubseteq b$.
+Then $a\sqsubseteq b\sqsubseteq f_{\ast}f^{\ast}b$. So by definition
+$f^{\ast}a\sqsubseteq f^{\ast}b$ that is $f^{\ast}$ is monotone.
+Analogously $f_{\ast}$ is monotone.
+\end{disorder}
+\item [{$\Leftarrow$}] $f^{\ast}x\sqsubseteq y\Rightarrow f_{\ast}f^{\ast}x\sqsubseteq f_{\ast}y\Rightarrow x\sqsubseteq f_{\ast}y$.
+The other direction is analogous.
+\end{description}
+\end{proof}
+\begin{thm}
+~
+\begin{enumerate}
+\item \label{galois-three-a}$f^{\ast}\circ f_{\ast}\circ f^{\ast}=f^{\ast}$.
+\item \label{galois-three-b}$f_{\ast}\circ f^{\ast}\circ f_{\ast}=f_{\ast}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{disorder}
+\item [{\ref{galois-three-a}}] Let $x\in\mathfrak{A}$. We have $x\sqsubseteq f_{\ast}f^{\ast}x$;
+consequently $f^{\ast}x\sqsubseteq f^{\ast}f_{\ast}f^{\ast}x$. On
+the other hand, $f^{\ast}f_{\ast}f^{\ast}x\sqsubseteq f^{\ast}x$.
+So $f^{\ast}f_{\ast}f^{\ast}x=f^{\ast}x$.
+\item [{\ref{galois-three-b}}] Similar.
+\end{disorder}
+\end{proof}
+\begin{defn}
+\index{idempotent}A function $f$ is called idempotent iff $f(f(X))=f(X)$
+for every argument $X$.\end{defn}
+\begin{prop}
+$f^{\ast}\circ f_{\ast}$ and $f_{\ast}\circ f^{\ast}$ are idempotent.\end{prop}
+\begin{proof}
+$f^{\ast}\circ f_{\ast}$ is idempotent because $f^{\ast}f_{\ast}f^{\ast}f_{\ast}y=f^{\ast}f_{\ast}y$.
+$f_{\ast}\circ f^{\ast}$ is similar.\end{proof}
+\begin{thm}
+\label{adj-by-other}Each of two adjoints is uniquely determined by
+the other.\end{thm}
+\begin{proof}
+Let $p$ and $q$ be both upper adjoints of $f$. We have for all
+$x\in\mathfrak{A}$ and $y\in\mathfrak{B}$:
+\[
+x\sqsubseteq p(y)\Leftrightarrow f(x)\sqsubseteq y\Leftrightarrow x\sqsubseteq q(y).
+\]
+
+
+For $x=p(y)$ we obtain $p(y)\sqsubseteq q(y)$ and for $x=q(y)$
+we obtain $q(y)\sqsubseteq p(y)$. So $q(y)=p(y)$.\end{proof}
+\begin{thm}
+Let $f$ be a function from a poset $\mathfrak{A}$ to a poset $\mathfrak{B}$.
+\begin{enumerate}
+\item Both:
+
+\begin{enumerate}
+\item \label{max-gal}If $f$ is monotone and $g(b)=\max\setcond{x\in\mathfrak{A}}{fx\sqsubseteq b}$
+is defined for every $b\in\mathfrak{B}$ then $g$ is the upper adjoint
+of $f$.
+\item \label{gal-max}If $g:\mathfrak{B}\rightarrow\mathfrak{A}$ is the
+upper adjoint of $f$ then $g(b)=\max\setcond{x\in\mathfrak{A}}{fx\sqsubseteq b}$
+for every $b\in\mathfrak{B}$.
+\end{enumerate}
+\item Both:
+
+\begin{enumerate}
+\item If $f$ is monotone and $g(b)=\min\setcond{x\in\mathfrak{A}}{fx\sqsupseteq b}$
+is defined for every $b\in\mathfrak{B}$ then $g$ is the lower adjoint
+of $f$.
+\item If $g:\mathfrak{B}\rightarrow\mathfrak{A}$ is the lower adjoint of
+$f$ then $g(b)=\min\setcond{x\in\mathfrak{A}}{fx\sqsupseteq b}$
+for every $b\in\mathfrak{B}$.
+\end{enumerate}
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only the first as the second is its dual.
+\begin{widedisorder}
+\item [{\ref{max-gal}}] Let $g(b)=\max\setcond{x\in\mathfrak{A}}{fx\sqsubseteq b}$
+for every $b\in\mathfrak{B}$. Then
+\[
+x\sqsubseteq gy\Leftrightarrow x\sqsubseteq\max\setcond{x\in\mathfrak{A}}{fx\sqsubseteq y}\Rightarrow fx\sqsubseteq y
+\]
+(because $f$ is monotone) and
+\[
+x\sqsubseteq gy\Leftrightarrow x\sqsubseteq\max\setcond{x\in\mathfrak{A}}{fx\sqsubseteq y}\Leftarrow fx\sqsubseteq y.
+\]
+
+
+
+So $fx\sqsubseteq y\Leftrightarrow x\sqsubseteq gy$ that is $f$
+is the lower adjoint of $g$.
+
+\item [{\ref{gal-max}}] We have
+\[
+g(b)=\max\setcond{x\in\mathfrak{A}}{fx\sqsubseteq b}\Leftrightarrow fgb\sqsubseteq b\land\forall x\in\mathfrak{A}:(fx\sqsubseteq b\Rightarrow x\sqsubseteq gb).
+\]
+what is true by properties of adjoints.
+\end{widedisorder}
+\end{proof}
+\begin{thm}
+Let $f$ be a function from a poset $\mathfrak{A}$ to a poset $\mathfrak{B}$.
+\begin{enumerate}
+\item \label{all-inf}If $f$ is an upper adjoint, $f$ preserves all existing
+infima in $\mathfrak{A}$.
+\item \label{inf-then-adj}If $\mathfrak{A}$ is a complete lattice and
+$f$ preserves all infima, then $f$ is an upper adjoint of a function
+$\mathfrak{B}\rightarrow\mathfrak{A}$.
+\item If $f$ is a lower adjoint, $f$ preserves all existing suprema in
+$\mathfrak{A}$.
+\item If $\mathfrak{A}$ is a complete lattice and $f$ preserves all suprema,
+then $f$ is an lower adjoint of a function $\mathfrak{B}\rightarrow\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only first two items because the rest items are similar.
+\begin{widedisorder}
+\item [{\ref{all-inf}}] Let $S\in\subsets\mathfrak{A}$ and $\bigsqcap S$
+exists. $f\bigsqcap S$ is a lower bound for $\rsupfun fS$ because
+$f$ is order-preserving. If $a$ is a lower bound for $\rsupfun fS$
+then $\forall x\in S:a\sqsubseteq fx$ that is $\forall x\in S:ga\sqsubseteq x$
+where $g$ is the lower adjoint of $f$. Thus $ga\sqsubseteq\bigsqcap S$
+and hence $f\bigsqcap S\sqsupseteq a$. So $f\bigsqcap S$ is the
+greatest lower bound for $\rsupfun fS$.
+\item [{\ref{inf-then-adj}}] Let $\mathfrak{A}$ be a complete lattice
+and $f$ preserves all infima. Let
+\[
+g(a)=\bigsqcap\setcond{x\in\mathfrak{A}}{fx\sqsupseteq a}.
+\]
+
+
+
+Since $f$ preserves infima, we have
+\[
+f(g(a))=\bigsqcap\setcond{f(x)}{x\in\mathfrak{A},fx\sqsupseteq a}\sqsupseteq a.
+\]
+$g(f(b))=\bigsqcap\setcond{x\in\mathfrak{A}}{fx\sqsupseteq fb}\sqsubseteq b$.
+
+
+Obviously $f$ is monotone and thus $g$ is also monotone.
+
+
+So $f$ is the upper adjoint of $g$.
+
+\end{widedisorder}
+\end{proof}
+\begin{cor}
+Let $f$ be a function from a complete lattice $\mathfrak{A}$ to
+a poset $\mathfrak{B}$. Then:
+\begin{enumerate}
+\item $f$ is an upper adjoint of a function $\mathfrak{B}\rightarrow\mathfrak{A}$
+iff $f$ preserves all infima in $\mathfrak{A}$.
+\item $f$ is a lower adjoint of a function $\mathfrak{B}\rightarrow\mathfrak{A}$
+iff $f$ preserves all suprema in $\mathfrak{A}$.
+\end{enumerate}
+\end{cor}
+
+\subsection{Co-Brouwerian lattices}
+\begin{defn}
+\index{pseudocomplement}Let $\mathfrak{A}$ be a poset. \emph{Pseudocomplement}
+of $a\in\mathfrak{A}$ is
+\[
+\max\setcond{c\in\mathfrak{A}}{c\asymp a}.
+\]
+
+
+If $z$ is the pseudocomplement of $a$ we will denote $z=a^{\ast}$.
+\end{defn}
+
+\begin{defn}
+\index{pseudocomplement!dual}Let $\mathfrak{A}$ be a poset. \emph{Dual
+pseudocomplement} of $a\in\mathfrak{A}$ is
+\[
+\min\setcond{c\in\mathfrak{A}}{c\equiv a}.
+\]
+
+
+If $z$ is the dual pseudocomplement of $a$ we will denote $z=a^{+}$.\end{defn}
+\begin{prop}
+If $a$ is a complemented element of a bounded distributive lattice,
+then $\bar{a}$ is both pseudocomplement and dual pseudocomplement
+of $a$.\end{prop}
+\begin{proof}
+Because of duality it is enough to prove that $\bar{a}$ is pseudocomplement
+of $a$.
+
+We need to prove $c\asymp a\Rightarrow c\sqsubseteq\bar{a}$ for every
+element c of our poset, and $\bar{a}\asymp a$. The second is obvious.
+Let's prove $c\asymp a\Rightarrow c\sqsubseteq\bar{a}$.
+
+Really, let $c\asymp a$. Then $c\sqcap a=\bot$; $\bar{a}\sqcup(c\sqcap a)=\bar{a}$;
+$(\bar{a}\sqcup c)\sqcap(\bar{a}\sqcup a)=\bar{a}$; $\bar{a}\sqcup c=\bar{a}$;
+$c\sqsubseteq\bar{a}$.\end{proof}
+\begin{defn}
+\index{pseudodifference}Let $\mathfrak{A}$ be a join-semilattice.
+Let $a,b\in\mathfrak{A}$. \emph{Pseudodifference} of $a$ and $b$
+is
+\[
+\min\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}.
+\]
+
+
+If $z$ is a pseudodifference of $a$ and $b$ we will denote $z=a\psetminus b$.\end{defn}
+\begin{rem}
+I do not require that $a^{\ast}$ is undefined if there are no pseudocomplement
+of $a$ and likewise for dual pseudocomplement and pseudodifference.
+In fact below I will define quasicomplement, dual quasicomplement,
+and quasidifference which generalize pseudo-{*} counterparts. I will
+denote $a^{\ast}$ the more general case of quasicomplement than of
+pseudocomplement, and likewise for other notation.\end{rem}
+\begin{obvious}
+Dual pseudocomplement is the dual of pseudocomplement.\end{obvious}
+\begin{defn}
+\index{lattice!co-brouwerian}\emph{Co-brouwerian lattice} is a lattice
+for which pseudodifference of any two its elements is defined.\end{defn}
+\begin{prop}
+Every non-empty co-brouwerian lattice $\mathfrak{A}$ has least element.\end{prop}
+\begin{proof}
+Let $a$ be an arbitrary lattice element. Then
+\[
+a\psetminus a=\min\setcond{z\in\mathfrak{A}}{a\sqsubseteq a\sqcup z}=\min\mathfrak{A}.
+\]
+
+
+So $\min\mathfrak{A}$ exists.\end{proof}
+\begin{defn}
+\index{lattice!co-Heyting}\emph{Co-Heyting lattice} is co-brouwerian
+lattice with greatest element.
+\end{defn}
+
+\begin{defn}
+A \emph{co-frame} is the same as a complete co-brouwerian lattice.\end{defn}
+\begin{thm}
+\label{cobrow-adj}For a co-brouwerian lattice $a\sqcup\mathord-$
+is an upper adjoint of $\mathord-\psetminus a$ for every $a\in\mathfrak{A}$.\end{thm}
+\begin{proof}
+$g(b)=\min\setcond{x\in\mathfrak{A}}{a\sqcup x\sqsupseteq b}=b\psetminus a$
+exists for every $b\in\mathfrak{A}$ and thus is the lower adjoint
+of $a\sqcup\mathord-$.\end{proof}
+\begin{cor}
+\label{adjoint-brow-full}$\forall a,x,y\in\mathfrak{A}:(x\psetminus a\sqsubseteq y\Leftrightarrow x\sqsubseteq a\sqcup y)$
+for a co-brouwerian lattice.\end{cor}
+\begin{defn}
+\index{quasidifference}Let $a,b\in\mathfrak{A}$ where $\mathfrak{A}$
+is a complete lattice. \emph{Quasidifference} $a\psetminus b$ is
+defined by the formula:
+\[
+a\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}.
+\]
+\end{defn}
+\begin{rem}
+A more detailed theory of quasidifference (as well as quasicomplement
+and dual quasicomplement) will be considered below.\end{rem}
+\begin{lem}
+$(a\psetminus b)\sqcup b=a\sqcup b$ for elements $a$, $b$ of a
+meet infinite distributive complete lattice.\end{lem}
+\begin{proof}
+~
+\begin{align*}
+(a\psetminus b)\sqcup b & =\\
+\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}\sqcup b & =\\
+\bigsqcap\setcond{z\sqcup b}{z\in\mathfrak{A},a\sqsubseteq b\sqcup z} & =\\
+\bigsqcap\setcond{t\in\mathfrak{A}}{t\sqsupseteq b,a\sqsubseteq t} & =\\
+a\sqcup b.
+\end{align*}
+\end{proof}
+\begin{thm}
+\label{brow-crit}The following are equivalent for a complete lattice~$\mathfrak{A}$:
+\begin{enumerate}
+\item \label{cobrow-cnd-dist}$\mathfrak{A}$ is meet infinite distributive.
+\item \label{cobrow-cnd-cobrow}$\mathfrak{A}$ is a co-brouwerian lattice.
+\item \label{cobrow-cnd-cohey}$\mathfrak{A}$ is a co-Heyting lattice.
+\item \label{cobrow-cnd-adj}$a\sqcup\mathord-$ has lower adjoint for every
+$a\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~\end{proof}
+\begin{description}
+\item [{\ref{cobrow-cnd-cobrow}$\Leftrightarrow$\ref{cobrow-cnd-cohey}}] Obvious
+(taking into account completeness of $\mathfrak{A}$).
+\item [{\ref{cobrow-cnd-adj}$\Rightarrow$\ref{cobrow-cnd-dist}}] Let
+$\mathord-\psetminus a$ be the lower adjoint of $a\sqcup\mathord-$.
+Let $S\in\subsets\mathfrak{A}$. For every $y\in S$ we have $y\sqsupseteq(a\sqcup y)\psetminus a$
+by properties of Galois connections; consequently $y\sqsupseteq\left(\bigsqcap\rsupfun{a\sqcup}S\right)\psetminus a$;
+$\bigsqcap S\sqsupseteq\left(\bigsqcap\rsupfun{a\sqcup}S\right)\psetminus a$.
+So
+\[
+a\sqcup\bigsqcap S\sqsupseteq\left(\left(\bigsqcap\rsupfun{a\sqcup}S\right)\psetminus a\right)\sqcup a\sqsupseteq\bigsqcap\rsupfun{a\sqcup}S.
+\]
+
+
+
+But $a\sqcup\bigsqcap S\sqsubseteq\bigsqcap\rsupfun{a\sqcup}S$ is
+obvious.
+
+\item [{\ref{cobrow-cnd-dist}$\Rightarrow$\ref{cobrow-cnd-cobrow}}] Let
+$a\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$.
+To prove that $\mathfrak{A}$ is a co-brouwerian lattice it is enough
+to prove $a\sqsubseteq b\sqcup(a\psetminus b)$. But it follows from
+the lemma.
+\item [{\ref{cobrow-cnd-cobrow}$\Rightarrow$\ref{cobrow-cnd-adj}}] $a\psetminus b=\min\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$.
+So $a\sqcup\mathord-$ is the upper adjoint of $\mathord-\psetminus a$.
+\item [{\ref{cobrow-cnd-dist}$\Rightarrow$\ref{cobrow-cnd-adj}}] Because
+$a\sqcup\mathord-$ preserves all meets.\end{description}
+\begin{cor}
+Co-brouwerian lattices are distributive.
+\end{cor}
+The following theorem is essentially borrowed from \cite{stone-spaces}:
+\begin{thm}
+A lattice $\mathfrak{A}$ with least element $\bot$ is co-brouwerian
+with pseudodifference $\psetminus$ iff $\psetminus$ is a binary
+operation on $\mathfrak{A}$ satisfying the following identities:
+\begin{enumerate}
+\item \label{cbpd-aa}$a\psetminus a=\bot$;
+\item \label{cbpd-aba}$a\sqcup(b\psetminus a)=a\sqcup b$;
+\item \label{cbpd-bba}$b\sqcup(b\psetminus a)=b$;
+\item \label{cbpd-bca}$(b\sqcup c)\psetminus a=(b\psetminus a)\sqcup(c\psetminus a)$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Leftarrow$}] We have
+\[
+c\sqsupseteq b\psetminus a\Rightarrow c\sqcup a\sqsupseteq a\sqcup(b\psetminus a)=a\sqcup b\sqsupseteq b;
+\]
+
+
+
+$c\sqcup a\sqsupseteq b\Rightarrow c=c\sqcup(c\psetminus a)\sqsupseteq(a\psetminus a)\sqcup(c\psetminus a)=(a\sqcup c)\psetminus a\sqsupseteq b\psetminus a$.
+
+
+So $c\sqsupseteq b\psetminus a\Leftrightarrow c\sqcup a\sqsupseteq b$
+that is $a\sqcup\mathord-$ is an upper adjoint of $\mathord-\psetminus a$.
+By a theorem above our lattice is co-brouwerian. By another theorem
+above $\psetminus$ is a pseudodifference.
+
+\item [{$\Rightarrow$}] ~
+
+\begin{disorder}
+\item [{\ref{cbpd-aa}}] Obvious.
+\item [{\ref{cbpd-aba}}] ~
+\begin{align*}
+a\sqcup(b\psetminus a) & =\\
+a\sqcup\bigsqcap\setcond{z\in\mathfrak{A}}{b\sqsubseteq a\sqcup z} & =\\
+\bigsqcap\setcond{a\sqcup z}{z\in\mathfrak{A},b\sqsubseteq a\sqcup z} & =\\
+a\sqcup b.
+\end{align*}
+
+\item [{\ref{cbpd-bba}}] $b\sqcup(b\psetminus a)=b\sqcup\bigsqcap\setcond{z\in\mathfrak{A}}{b\sqsubseteq a\sqcup z}=\bigsqcap\setcond{b\sqcup z}{z\in\mathfrak{A},b\sqsubseteq a\sqcup z}=b$.
+\item [{\ref{cbpd-bca}}] Obviously $(b\sqcup c)\psetminus a\sqsupseteq b\psetminus a$
+and $(b\sqcup c)\psetminus a\sqsupseteq c\psetminus a$. Thus $(b\sqcup c)\psetminus a\sqsupseteq(b\psetminus a)\sqcup(c\psetminus a)$.
+We have
+\begin{align*}
+(b\psetminus a)\sqcup(c\psetminus a)\sqcup a & =\\
+((b\psetminus a)\sqcup a)\sqcup((c\psetminus a)\sqcup a) & =\\
+(b\sqcup a)\sqcup(c\sqcup a) & =\\
+a\sqcup b\sqcup c & \sqsupseteq\\
+b\sqcup c.
+\end{align*}
+
+
+
+From this by definition of adjoints: $(b\psetminus a)\sqcup(c\psetminus a)\sqsupseteq(b\sqcup c)\psetminus a$.
+
+\end{disorder}
+\end{description}
+\end{proof}
+\begin{thm}
+\label{cup-pdiff}$\left(\bigsqcup S\right)\psetminus a=\bigsqcup_{x\in S}(x\psetminus a)$
+for all $a\in\mathfrak{A}$ and $S\in\subsets\mathfrak{A}$ where
+$\mathfrak{A}$ is a co-brouwerian lattice and $\bigsqcup S$ is defined.\end{thm}
+\begin{proof}
+Because lower adjoint preserves all suprema.\end{proof}
+\begin{thm}
+$(a\psetminus b)\psetminus c=a\psetminus(b\sqcup c)$ for elements
+$a$, $b$, $c$ of a co-frame.\end{thm}
+\begin{proof}
+$a\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$.
+
+$(a\psetminus b)\psetminus c=\bigsqcap\setcond{z\in\mathfrak{A}}{a\psetminus b\sqsubseteq c\sqcup z}$.
+
+$a\psetminus(b\sqcup c)=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup c\sqcup z}$.
+
+It is left to prove $a\psetminus b\sqsubseteq c\sqcup z\Leftrightarrow a\sqsubseteq b\sqcup c\sqcup z$.
+But this follows from corollary \ref{adjoint-brow-full}.\end{proof}
+\begin{cor}
+$(((a_{0}\psetminus a_{1})\psetminus\dots)\psetminus a_{n})=a_{0}\psetminus(a_{1}\sqcup\dots\sqcup a_{n})$.\end{cor}
+\begin{proof}
+By math induction.
+\end{proof}
+
+\subsection{Dual pseudocomplement on co-Heyting lattices}
+\begin{thm}
+For co-Heyting algebras $\top\psetminus b=b^{+}$.\end{thm}
+\begin{proof}
+~
+\[
+\top\psetminus b=\min\setcond{z\in\mathfrak{A}}{\top\sqsubseteq b\sqcup z}=\min\setcond{z\in\mathfrak{A}}{\top=b\sqcup z}=\min\setcond{z\in\mathfrak{A}}{b\equiv z}=b^{+}.
+\]
+\end{proof}
+\begin{thm}
+$(a\sqcap b)^{+}=a^{+}\sqcup b^{+}$ for every elements $a$, $b$
+of a co-Heyting algebra.\end{thm}
+\begin{proof}
+$a\sqcup(a\sqcap b)^{+}\sqsupseteq(a\sqcap b)\sqcup(a\sqcap b)^{+}\sqsupseteq\top$.
+So $a\sqcup(a\sqcap b)^{+}\sqsupseteq\top$; $(a\sqcap b)^{+}\sqsupseteq1\psetminus a=a^{+}$.
+
+We have $(a\sqcap b)^{+}\sqsupseteq a^{+}$. Similarly $(a\sqcap b)^{+}\sqsupseteq b^{+}$.
+Thus $(a\sqcap b)^{+}\sqsupseteq a^{+}\sqcup b^{+}$.
+
+On the other hand, $a^{+}\sqcup b^{+}\sqcup(a\sqcap b)=(a^{+}\sqcup b^{+}\sqcup a)\sqcap(a^{+}\sqcup b^{+}\sqcup b)$
+. Obviously $a^{+}\sqcup b^{+}\sqcup a=a^{+}\sqcup b^{+}\sqcup b=\top$.
+So $a^{+}\sqcup b^{+}\sqcup(a\sqcap b)\sqsupseteq\top$ and thus $a^{+}\sqcup b^{+}\sqsupseteq\top\psetminus(a\sqcap b)=(a\sqcap b)^{+}$.
+
+So $(a\sqcap b)^{+}=a^{+}\sqcup b^{+}$.
+\end{proof}
+
+\section{\index{category theory}Intro to category theory}
+
+This is a \emph{very} basic introduction to category theory.
+\begin{defn}
+\index{multigraph!directed}A \emph{directed multigraph} (also known
+as \emph{quiver}) is:
+\begin{enumerate}
+\item \index{vertex}a set $\mathcal{O}$ (\emph{vertices});
+\item \index{edge}a set $\mathcal{M}$ (\emph{edge}s);
+\item \index{source}\index{destination}functions $\Src$ and $\Dst$ (\emph{source}
+and \emph{destination}) from $\mathcal{M}$ to $\mathcal{O}$.
+\end{enumerate}
+\end{defn}
+\index{object}\index{morphism}Note that in category theory vertices
+are called \emph{objects} and edges are called \emph{morphisms}.
+\begin{defn}
+\index{precategory}A \emph{precategory} is a directed multigraph
+together with a partial binary operation $\circ$ on the set $\mathcal{M}$
+such that $g\circ f$ is defined iff $\Dst f=\Src g$ (for every morphisms
+$f$ and $g$) such that
+\begin{enumerate}
+\item $\Src(g\circ f)=\Src f$ and $\Dst(g\circ f)=\Dst g$ whenever the
+composition $g\circ f$ of morphisms $f$ and $g$ is defined.
+\item $(h\circ g)\circ f=h\circ(g\circ f)$ whenever compositions in this
+equation are defined.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+The set $\Mor(A;B)$ (also denoted as $\Mor_{C}(A;B)$ or just $C(A;B)$,
+where $C$ is our category) (morphisms from an object $A$ to an object
+$B$) is exactly morphisms which have $A$ as the source and $B$
+as the destination.
+\end{defn}
+
+\begin{defn}
+\index{morphism!identity}\emph{Identity morphism} is such a morphism
+$e$ that $e\circ f=f$ and $g\circ e=g$ whenever compositions in
+these formulas are defined.
+\end{defn}
+
+\begin{defn}
+\index{category}A \emph{category} is a precategory with additional
+requirement that for every object $X$ there exists identity morphism
+$1_{X}$.\end{defn}
+\begin{prop}
+For every object $X$ there exist no more than one identity morphism.\end{prop}
+\begin{proof}
+Let $p$ and $q$ be both identity morphisms for a object $X$. Then
+$p=p\circ q=q$.\end{proof}
+\begin{defn}
+\index{isomorphism}\index{inverse}An \emph{isomorphism} is such
+a morphism $f$ of a category that there exists a morphism $f^{-1}$
+(\emph{inverse} of $f$) such that $f\circ f^{-1}=1_{\Dst f}$ and
+$f^{-1}\circ f=1_{\Src f}$.\end{defn}
+\begin{prop}
+An isomorphism has exactly one inverse.\end{prop}
+\begin{proof}
+Let $g$ and $h$ be both inverses of $f$. Then $h=h\circ1_{\Dst f}=h\circ f\circ g=1_{\Src f}\circ g=g$.\end{proof}
+\begin{defn}
+\index{groupoid}A \emph{groupoid} is a category all of whose morphisms
+are isomorphisms.
+\end{defn}
+
+\begin{defn}
+\index{endomorphism}A morphism whose source is the same as destination
+is called \emph{endomorphism}.
+\end{defn}
+
+\begin{defn}
+\index{involution}\index{morphism!involutive}An \emph{involution}
+or \emph{involutive morphism} is an endomorphism~$f$ that $f\circ f=1_{\Ob f}$.
+In other words, an involution is such a self-inverse (that is conforming
+to the formula~$f=f^{-1}$) isomorphism.
+\end{defn}
+
+\begin{defn}
+\emph{Functor} from category~$C$ to category~$D$ is a mapping~$F$
+which associates every object~$X$ of~$C$ with an object~$F(X)$
+of~$D$ and every morphism~$f:X\rightarrow Y$ of~$C$ with morphism
+$F(f):F(X)\rightarrow F(Y)$ of~$D$, such that:
+\begin{enumerate}
+\item $F(g\circ f)=F(g)\circ F(f)$ for every composable morphisms $f$,~$g$
+of $C$;
+\item $F(1_{X}^{C})=1_{X}^{D}$ for every object~$X$ of~$C$.
+\end{enumerate}
+\end{defn}
+
+\subsection{Some important examples of categories}
+\begin{xca}
+Prove that the below examples of categories are really categories.\end{xca}
+\begin{defn}
+The category $\mathbf{Set}$ is:
+\begin{itemize}
+\item Objects are small sets.
+\item Morphisms from an object $A$ to an object $B$ are triples $(A;B;f)$
+where $f$ is a function from $A$ to $B$.
+\item Composition of morphisms is defined by the formula: $(B;C;g)\circ(A;B;f)=(A;C;g\circ f)$
+where $g\circ f$ is function composition.
+\end{itemize}
+\end{defn}
+
+\begin{defn}
+The category $\mathbf{Rel}$ is:
+\begin{itemize}
+\item Objects are small sets.
+\item Morphisms from an object $A$ to an object $B$ are triples $(A;B;f)$
+where $f$ is a binary relation between $A$ and $B$.
+\item Composition of morphisms is defined by the formula: $(B;C;g)\circ(A;B;f)=(A;C;g\circ f)$
+where $g\circ f$ is relation composition.
+\end{itemize}
+\end{defn}
+I will denote $\GR(A;B;f)=f$ for any morphism $(A;B;f)$ of either
+$\mathbf{Set}$ or $\mathbf{Rel}$.
+
+
+\begin{defn}
+A \emph{subcategory} of a category~$C$ is a category whose set of
+objects is a subset of the set of objects of~$C$ and whose set of
+morphisms is a subset of the set of morphisms of~$C$.
+\end{defn}
+
+\begin{defn}
+\index{subcategory!wide}\emph{Wide subcategory} of a category $(\mathcal{O};\mathcal{M})$
+is a category $(\mathcal{O};\mathcal{M}')$ where $\mathcal{M}\subseteq\mathcal{M}'$
+and the composition on $(\mathcal{O};\mathcal{M}')$ is a restriction
+of composition of $(\mathcal{O};\mathcal{M})$. (Similarly \emph{wide
+sub-precategory} can be defined.)
+\end{defn}
+
+\subsection{Commutative diagrams}
+\begin{defn}
+A \emph{finite path in directed multigraph} is a tuple $\llbracket e_{0},\ldots,e_{n}\rrbracket$
+of edges (where $i\in\mathbb{N}$) such that $\Dst e_{i}=\Src e_{i-1}$
+for every $i=0,\dots,n-1$.
+\end{defn}
+
+\begin{defn}
+The vertices of a finite path are $\Src e_{0}$, $\Dst e_{0}=\Src e_{1}$,
+$\Dst e_{1}=\Src e_{2}$, \ldots{}, $\Dst e_{n}$.
+\end{defn}
+
+\begin{defn}
+Composition of finite paths $\llbracket e_{0},\ldots,e_{n}\rrbracket$
+and $\llbracket e_{k},\ldots,e_{m}\rrbracket$ (where $\Dst e_{n}=\Src e_{k}$)
+is the path $\llbracket e_{0},\ldots,e_{n},e_{k},\dots e_{m}\rrbracket$.
+(It is a path because $\Dst e_{n}=\Src e_{k}$.)
+\end{defn}
+
+\begin{defn}
+A \emph{cycle} is a finite path whose first vertex is the same as
+the last vertex (in other words $\Dst e_{n}=\Src e_{0}$).
+\end{defn}
+
+\begin{defn}
+A \emph{diagram} in~$C$ is a directed multigraph, whose vertices
+are labeled with objects of~$C$ and whose edges are labeled with
+morphisms of~$C$.
+
+I will denote the morphism corresponding to a edge~$e$ as $D(e)$.
+\end{defn}
+
+\begin{defn}
+A diagram in~$C$ is \emph{commutative} when the composition of morphisms
+corresponding to a finite path is always the same for finite paths
+from a every vertex~$A$ to a vertex~~$B$ independently of the
+path choice.
+
+We will say ``\emph{commutative diagram}'' when commutativity of
+a diagram is implied by the context.\end{defn}
+\begin{rem}
+See \href{https://en.wikipedia.org/wiki/Commutative_diagram}{Wikipedia}
+for more on definition and examples of commutative diagrams.
+\end{rem}
+The following is an example of a commutative diagram in~$\mathbf{Set}$
+(because $x+5-3=x+4-2$):
+
+\[
+\begin{tikzcd}
+\mathbb{N} \arrow[r, "+5"] \arrow[d, "+4"] & \mathbb{N} \arrow[d, "-3"] \\
+\mathbb{N} \arrow[r, "-2"] & \mathbb{N}
+\end{tikzcd}
+\]
+
+We are essentially interested in the special case of commutative diagrams
+every morphism of which is an isomorphism. So, the below theorem.
+\begin{thm}
+\label{rehash-isos}If morphisms corresponding to every edge~$e_{i}$
+a path $\llbracket e_{0},\ldots,e_{n}\rrbracket$ are isomorphisms
+then the following are equivalent:
+\begin{itemize}
+\item The morphism induced by $\llbracket e_{0},\ldots,e_{n}\rrbracket$
+is identity.
+\item The morphism induced by $\llbracket e_{n},e_{0},\ldots,e_{n-1}\rrbracket$
+is identity.
+\item The morphism induced by $\llbracket e_{n-1},e_{n},e_{0},\ldots,e_{n-2}\rrbracket$
+is identity.
+\item \ldots{}
+\item The morphism induced by $\llbracket e_{1},e_{2},\ldots,e_{n},e_{0}\rrbracket$
+is identity.
+\end{itemize}
+In other words, the cycle being an identity does not depend on the
+choice of the start edge in the cycle.\end{thm}
+\begin{proof}
+Each step in the proof is like:
+\begin{multline*}
+D(n)\circ\dots\circ D(e_{0})=1_{\Src D(e_{0})}\Leftrightarrow\\
+D(n)^{-1}\circ D(n)\circ\dots\circ D(e_{0})\circ D(n)=D(n)^{-1}\circ1_{\Src D(e_{0})}\circ D(n)\Leftrightarrow\\
+D(n-1)\circ\dots\circ D(e_{0})\circ D(n)=1_{\Src D(e_{n})}.
+\end{multline*}
+\end{proof}
+\begin{lem}
+\label{three-loop-lem}Let $f$, $g$, $h$ be isomorphisms. Let $g\circ f=h^{-1}$.
+The diagram at the figure~\ref{three-loop} is commutative, every
+cycle in the diagram is an identity.
+
+\begin{figure}[h]
+\caption{\label{three-loop}}
+
+
+\begin{tikzcd}[row sep=2.5cm, column sep=1.5cm]
+& \bullet
+\arrow[rd, shift left, "f"]
+\arrow[ld, shift left, "h^{-1}"] \\
+\bullet
+\arrow[ru, shift left, "h"]
+\arrow[rr, shift left, "g^{-1}"]
+& & \bullet
+\arrow[lu, shift left, "f^{-1}"]
+\arrow[ll, shift left, "g"]
+\end{tikzcd}
+\end{figure}
+\end{lem}
+\begin{proof}
+We will prove by induction that every cycle of the length~$N$ in
+the diagram is an identity.
+
+For cycles of length~$2$ it holds by definition of isomorphism.
+
+For cycles of length~$3$ it holds by theorem~\ref{rehash-isos}.
+
+Consider a cycle of length above~$3$. It is easy to show that this
+cycles contains a sub-cycle of length~$3$ or below. (Consider three
+first edges $a\overset{e_{0}}{\rightarrow}b\overset{e_{1}}{\rightarrow}c\overset{e_{2}}{\rightarrow}d$
+of the path, by pigeonhole principle we have that there are equal
+elements among $a$, $b$, $c$,~$d$.) We can exclude the sub-cycle
+because it is identity. Thus we reduce to cycles of lesser length.
+Applying math induction, we get that every cycle in the diagram is
+an identity.
+
+That the diagram is commutative follows from it (because for paths~$\sigma$,~$\tau$
+we have the paths $\sigma\circ\tau^{-1}$ and $\tau\circ\sigma^{-1}$
+being identities).\end{proof}
+\begin{lem}
+\label{four-loop-lem}Let $f$, $g$, $h$, $t$ be isomorphisms.
+Let $t\circ h\circ g\circ f=1_{\Src f}$. The diagram at the figure~\ref{four-loop}
+is commutative, every cycle in the diagram is an identity.
+
+\begin{figure}[h]
+\caption{\label{four-loop}}
+
+
+\begin{tikzcd}[row sep=1.5cm, column sep=1.5cm]
+\circled{(0;0)} \arrow[r, shift left, "f"] \arrow[d, shift left, "t^{-1}"]
+  & \circled{(0;1)} \arrow[d, shift left, "g"] \arrow[l, shift left, "f^{-1}"] \\
+\circled{(1;0)} \arrow[u, shift left, "t"] \arrow[r, shift left, "h^{-1}"]
+  & \circled{(1;1)} \arrow[l, shift left, "h"] \arrow[u, shift left, "g^{-1}"]
+\end{tikzcd}
+\end{figure}
+\end{lem}
+\begin{proof}
+Assign to every vertex $(i;j)$ of the diagram morphism $W(i;j)$
+defined by the table~\ref{square-table}.
+
+\begin{table}[h]
+\caption{\label{square-table}}
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+$i$ & $j$ & $W(i;j)$\tabularnewline
+\hline 
+\hline 
+$0$ & $0$ & $1_{\Src f}$\tabularnewline
+\hline 
+$0$ & $1$ & $f$\tabularnewline
+\hline 
+$1$ & $0$ & $g\circ f$\tabularnewline
+\hline 
+$1$ & $1$ & $t^{-1}$\tabularnewline
+\hline 
+\end{tabular}
+\end{table}
+
+
+It is easy to verify by induction that the morphism corresponding
+every cycle in the diagram starting at the vertex $(0;0)$ and ending
+with a vertex $(x;y)$ is $W(x;y)$.
+
+Thus the morphism corresponding to every cycle starting at the vertex
+$(0;0)$ is identity.
+
+By symmetry, the morphism corresponding to every cycle is identity.
+
+That the diagram is commutative follows from it (because for paths~$\sigma$,~$\tau$
+we have the paths $\sigma\circ\tau^{-1}$ and $\tau\circ\sigma^{-1}$
+being identities).
+\end{proof}
+
+\section{\index{group theory}Intro to group theory}
+\begin{defn}
+\index{semigroup}A semigroup is a pair of a set $G$ and an associative
+binary operation on $G$.
+\end{defn}
+
+\begin{defn}
+\index{group}A group is a pair of a set $G$ and a binary operation
+$\cdot$ on $G$ such that:
+\begin{enumerate}
+\item $(h\cdot g)\cdot f=h\cdot(g\cdot f)$ for every $f,g,h\in G$.
+\item \index{identity}There exists an element $e$ (\emph{identity}) of
+$G$ such that $f\cdot e=e\cdot f=f$ for every $f\in G$.
+\item For every element $f$ there exists an element $f^{-1}$ such that
+$f\cdot f^{-1}=f^{-1}\cdot f=e$.
+\end{enumerate}
+\end{defn}
+\begin{obvious}
+Every group is a semigroup.\end{obvious}
+\begin{prop}
+In every group there exist exactly one identity element.\end{prop}
+\begin{proof}
+If $p$ and $q$ are both identities, then $p=p\cdot q=q$.\end{proof}
+\begin{prop}
+Every group element has exactly one inverse.\end{prop}
+\begin{proof}
+Let $p$ and $q$ be both inverses of $f\in G$. Then $f\cdot p=p\cdot f=e$
+and $f\cdot q=q\cdot f=e$. Then $p=p\cdot e=p\cdot f\cdot q=e\cdot q=q$.\end{proof}
+\begin{prop}
+$(g\cdot f)^{-1}=f^{-1}\cdot g^{-1}$ for every group elements $f$
+and $g$.\end{prop}
+\begin{proof}
+$(f^{-1}\cdot g^{-1})\cdot(g\cdot f)=f^{-1}\cdot g^{-1}\cdot g\cdot f=f^{-1}\cdot e\cdot f=f^{-1}\cdot f=e$.
+Similarly $(g\cdot f)\cdot(f^{-1}\cdot g^{-1})=e$. So $f^{-1}\cdot g^{-1}$
+is the inverse of $g\cdot f$.\end{proof}
+\begin{defn}
+\index{group!permutation}A \emph{permutation group} on a set $D$
+is a group whose elements are functions on $D$ and whose composition
+is function composition.\end{defn}
+\begin{obvious}
+Elements of a permutation group are bijections.\end{obvious}
+\begin{defn}
+\index{group!permutation!transitive}A \emph{transitive} permutation
+group on a set $D$ is such a permutation group $G$ on $D$ that
+for every $x,y\in D$ there exists $r\in G$ such that $y=r(x)$.
+\end{defn}
+A groupoid with single (arbitrarily chosen) object corresponds to
+every group. The morphisms of this category are elements of the group
+and the composition of morphisms is the group operation.

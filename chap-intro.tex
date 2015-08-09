@@ -1,0 +1,372 @@
+
+\chapter{Introduction}
+
+The main purpose of this book is to record the current state of my
+research. The book is however written in such a way that it can be
+used as a textbook for studying my research.
+
+For related materials, articles, research questions, and erratum consult
+the Web page of the author of the book:\\
+\url{http://www.mathematics21.org/algebraic-general-topology.html}
+
+
+\section{License}
+
+This work is licensed under the Creative Commons Attribution 4.0 International
+License. To view a copy of the license, visit\\
+\href{http://creativecommons.org/licenses/by/4.0/}{http://creativecommons.org/licenses/by/4.0/}.
+
+
+\section{Draft status}
+
+This is a draft.
+
+It is considered a finished representation of the research on this
+topic, but the research itself is a work in progress.
+
+The book was checked for errors partially. It is expected that there
+are errors in ``\nameref{pf-funcoids}'' and ``\nameref{multi}''
+chapters, in fine-tuning theorem weakest enough theorem conditions.
+The rest of the book is expected not to contain significant errors,
+but may contain some typos (especially in formulas).
+
+
+\section{Intended audience }
+
+This book is suitable for any math student as well as for researchers.
+
+To make this book be understandable even for first grade students,
+I made a chapter about basic concepts (posets, lattices, topological
+spaces, etc.), which an already knowledgeable person may skip reading.
+It is assumed that the reader knows basic set theory.
+
+But it is also valuable for mature researchers, as it contains much
+original research which you could not find in any other source except
+of my work.
+
+Knowledge of the basic set theory is expected from the reader.
+
+Despite that this book presents new research, it is well structured
+and is suitable to be used as a textbook for a college course.
+
+Your comments about this book are welcome to the email \href{mailto:porton@narod.ru}{porton@narod.ru}.
+
+
+\section{Reading Order }
+
+If you know basic order and lattice theory (including Galois connections
+and brouwerian lattices) and basics of category theory, you may skip
+reading the chapter ``\nameref{chap-common}''.
+
+You are recommended to read the rest of this book by the order.
+
+
+\section{Our topic and rationale}
+
+From \cite{mw-gen-top}: \emph{Point-set topology, also called set-theoretic
+topology or general topology, is the study of the general abstract
+nature of continuity or ``closeness'' on spaces. Basic point-set
+topological notions are ones like continuity, dimension, compactness,
+and connectedness.}
+
+In this work we study a new approach to point-set topology (and pointfree
+topology).
+
+Traditionally general topology is studied using topological spaces
+(defined below in the section ``\nameref{sec-top}''). I however
+argue that the theory of topological spaces is not the best method
+of studying general topology and introduce an alternative theory,
+the theory of \emph{funcoids}. Despite of popularity of the theory
+of topological spaces it has some drawbacks and is in my opinion not
+the most appropriate formalism to study most of general topology.
+Because topological spaces are tailored for study of special sets,
+so called open and closed sets, studying general topology with topological
+spaces is a little anti-natural and ugly. In my opinion the theory
+of funcoids is more elegant than the theory of topological spaces,
+and it is better to study funcoids than topological spaces. One of
+the main purposes of this work is to present an alternative General
+Topology based on funcoids instead of being based on topological spaces
+as it is customary. In order to study funcoids the prior knowledge
+of topological spaces is not necessary. Nevertheless in this work
+I will consider topological spaces and the topic of interrelation
+of funcoids with topological spaces.
+
+In fact funcoids are a generalization of topological spaces, so the
+well known theory of topological spaces is a special case of the below
+presented theory of funcoids.
+
+But probably the most important reason to study funcoids is that funcoids
+are a generalization of proximity spaces (see section ``\nameref{sec-prox}''
+for the definition of proximity spaces). Before this work it was written
+that the theory of proximity spaces was an example of a stalled research,
+almost nothing interesting was discovered about this theory. It was
+so because the proper way to research proximity spaces is to research
+their generalization, funcoids. And so it was stalled until discovery
+of funcoids. That generalized theory of proximity spaces will bring
+us yet many interesting results.
+
+In addition to \emph{funcoids} I research \emph{reloids}. Using below
+defined terminology it may be said that reloids are (basically) filters
+on Cartesian product of sets, and this is a special case of uniform
+spaces.
+
+Afterward we study some generalizations.
+
+Somebody might ask, why to study it? My approach relates to traditional
+general topology like complex numbers to real numbers theory. Be sure
+this will find applications.
+
+This book has a deficiency: It does not properly relate my theory
+with previous research in general topology and does not consider deeper
+category theory properties. It is however OK for now, as I am going
+to do this study in later volumes (continuation of this book).
+
+Many proofs in this book may seem too easy and thus this theory not
+sophisticated enough. But it is largely a result of a well structured
+digraph of proofs, where more difficult results are made easy by reducing
+them to easier lemmas and propositions.
+
+
+\section{Earlier works}
+
+Some mathematicians were researching generalizations of proximities
+and uniformities before me but they have failed to reach the right
+degree of generalization which is presented in this work allowing
+to represent properties of spaces with algebraic (or categorical)
+formulas.
+
+Proximity structures were introduced by Smirnov in \cite{geom-prox}.
+
+Some references to predecessors:
+\begin{itemize}
+\item In \cite{gen-prox-uni1,gen-prox-uni2,some-props-prox-genunif,prox-gen-unif,compl-unif-prox}
+generalized uniformities and proximities are studied.
+\item Proximities and uniformities are also studied in \cite{complete-prox,prox-not-compl,compl-prox-acad,compl-prox1,compl-prox2}.
+\item \cite{qunif,qunif2001} contains recent progress in quasi-uniform
+spaces. \cite{qunif2001} has a very long list of related literature.
+\end{itemize}
+Some works (\cite{on-proximity-spaces}) about proximity spaces consider
+relationships of proximities and compact topological spaces. In this
+work the attempt to define or research their generalization, compactness
+of funcoids or reloids is not done. It seems potentially productive
+to attempt to borrow the definitions and procedures from the above
+mentioned works. I hope to do this study in a separate volume.
+
+\cite{mapping-prox} studies mappings between proximity structures.
+(In this volume no attempt to research mappings between funcoids is
+done.) \cite{quasi-unif-top} researches relationships of quasi-uniform
+spaces and topological spaces. \cite{eq-prox-totbound-unif} studies
+how proximity structures can be treated as uniform structures and
+compactification regarding proximity and uniform spaces.
+
+This book is based partially on my articles \cite{filters,funcoidsreloids,pointfree}.
+
+
+\section{Kinds of continuity}
+
+A research result based on this book but not fully included in this
+book (and not yet published) is that the following kinds of continuity
+are described by the same algebraic (or rather categorical) formulas
+for different kinds of continuity and have common properties:
+\begin{itemize}
+\item discrete continuity (between digraphs);
+\item (pre)topological continuity;
+\item proximal continuity;
+\item uniform continuity;
+\item Cauchy continuity;
+\item (probably other kinds of continuity).
+\end{itemize}
+Thus my research justifies using the same word ``continuity'' for
+these diverse kinds of continuity.
+
+See \url{http://www.mathematics21.org/algebraic-general-topology.html}
+
+
+\section{Structure of this book}
+
+In the chapter ``\nameref{chap-common}'' some well known definitions
+and theories are considered. You may skip its reading if you already
+know it. That chapter contains info about:
+\begin{itemize}
+\item posets;
+\item lattices and complete lattices;
+\item Galois connections;
+\item co-brouwerian lattices;
+\item a very short intro into category theory;
+\item a very short introduction to group theory.
+\end{itemize}
+Afterward there are my little additions to poset/lattice and category
+theory.
+
+Afterward there is the theory of filters and filtrators.
+
+Then there is ``\nameref{common-top}'', which considers briefly:
+\begin{itemize}
+\item metric spaces;
+\item topological spaces;
+\item pretopological spaces;
+\item proximity spaces.
+\end{itemize}
+Despite of the name ``Common knowledge'' this second common knowledge
+chapter is recommended to be read completely even if you know topology
+well, because it contains some rare theorems not known to most mathematicians
+and hard to find in literature.
+
+Then the most interesting thing in this book, the theory of funcoids,
+starts.
+
+Afterwards there is the theory of reloids.
+
+Then I show relationships between funcoids and reloids.
+
+The last I research generalizations of funcoids, \emph{pointfree funcoids},
+\emph{staroids}, and \emph{multifuncoids} and some different kinds
+of products of morphisms.
+
+
+\section{Basic notation}
+
+I will denote a set definition like $\setcond{x\in A}{P(x)}$ instead
+of customary $\{x\in A\mid P(x)\}$. I do this because otherwise formulas
+don't fit horizontally in the available space.
+
+
+\subsection{\index{Grothendieck universe}Grothendieck universes}
+
+We will work in ZFC with an infinite and uncountable Grothendieck
+universe.
+
+A Grothendieck universe is just a set big enough to make all usual
+set theory inside it. For example if $\mho$ is a Grothendieck universe,
+and sets $X,Y\in\mho$, then also $X\cup Y\in\mho$, $X\cap Y\in\mho$,
+$X\times Y\in\mho$, etc.
+
+\index{small set}A set which is a member of a Grothendieck universe
+is called a \emph{small set} (regarding this Grothendieck universe).
+We can restrict our consideration to small sets in order to get rid
+troubles with proper classes.
+\begin{defn}
+Grothendieck universe is a set $\mho$ such that:
+\begin{enumerate}
+\item If $x\in\mho$ and $y\in x$ then $y\in\mho$.
+\item If $x,y\in\mho$ then $\{x,y\}\in\mho$.
+\item If $x\in\mho$ then $\subsets x\in\mho$.
+\item If $\setcond{x_{i}}{i\in I\in\mho}$ is a family of elements of $\mho$,
+then $\bigcup_{i\in I}x_{i}\in\mho$.
+\end{enumerate}
+\end{defn}
+One can deduce from this also:
+\begin{enumerate}
+\item If $x\in\mho$, then $\{x\}\in\mho$.
+\item If $x$ is a subset of $y\in\mho$, then $x\in\mho$.
+\item If $x,y\in\mho$ then the ordered pair $(x;y)=\{\{x,y\},x\}\in\mho$.
+\item If $x,y\in\mho$ then $x\cup y$ and $x\times y$ are in $\mho$.
+\item If $\setcond{x_{i}}{i\in I\in\mho}$ is a family of elements of $\mho$,
+then the product $\prod_{i\in I}x_{i}\in\mho$.
+\item If $x\in\mho$, then the cardinality of $x$ is strictly less than
+the cardinality of~$\mho$.
+\end{enumerate}
+
+\subsection{Misc}
+
+In this book quantifiers bind tightly. That is $\forall x\in A:P(x)\land Q$
+and $\forall x\in A:P(x)\Rightarrow Q$ should be read $\left(\forall x\in A:P(x)\right)\land Q$
+and $\left(\forall x\in A:P(x)\right)\Rightarrow Q$ not $\forall x\in A:\left(P(x)\land Q\right)$
+and $\forall x\in A:\left(P(x)\Rightarrow Q\right)$.
+
+The set of functions from a set $A$ to a set $B$ is denoted as $B^{A}$.
+
+I will often skip parentheses and write $fx$ instead of $f(x)$ to
+denote the result of a function $f$ acting on the argument $x$.
+
+I will denote $\rsupfun fX=\setcond{\beta\in\im f}{\exists\alpha\in X:\alpha\mathrel f\beta}$
+and $X\rsuprel fY\Leftrightarrow\exists x\in X,y\in Y:x\mathrel{f}y$
+for sets $X$, $Y$ and a binary relation $f$. (Note that functions
+are a special case of binary relations.)
+
+By just $\rsupfun f$ and $\rsuprel f$ I will denote the corresponding
+function and relation on small sets.
+\begin{obvious}
+$\{\alpha\}\rsuprel f\{\beta\}\Leftrightarrow\alpha\mathrel f\beta$
+for every $\alpha$ and $\beta$.
+\end{obvious}
+$\mylamdba xD{f(x)}=\setcond{(x;f(x))}{x\in D}$ for a set $D$ and
+and a form $f$ depending on the variable $x$.
+
+I will denote source and destination of a morphism $f$ of any category
+(See chapter~\ref{chap-common} chapter for a definition of a category.)
+as $\Src f$ and $\Dst f$ correspondingly. Note that below defined
+domain and image of a funcoid are not the same as it source and destination.
+
+I will denote $\GR(A;B;f)=f$ for any morphism $(A;B;f)$ of either
+$\mathbf{Set}$ or $\mathbf{Rel}$. (See definitions of $\mathbf{Set}$
+and $\mathbf{Rel}$ below.)
+
+
+\section{Unusual notation}
+
+In the chapter ``\nameref{chap-common}'' (which you may skip reading
+if you are already knowledgeable) some non-standard notation is defined.
+I summarize here this notation for the case if you choose to skip
+reading that chapter:
+
+Partial order is denoted as $\sqsubseteq$.
+
+Meets and joins are denoted as $\sqcap$, $\sqcup$, $\bigsqcap$,
+$\bigsqcup$.
+
+I call element b \emph{substractive} from an elements $a$ (of a distributive
+lattice $\mathfrak{A}$) when the difference $a\setminus b$ exists.
+I call $b$ \emph{complementive} to $a$ when there exists $c\in\mathfrak{A}$
+such that $b\sqcap c=\bot$ and $b\sqcup c=a$. We will prove that
+$b$ is complementive to $a$ iff $b$ is substractive from $a$ and
+$b\sqsubseteq a$.
+\begin{defn}
+Call $a$ and $b$ of a poset $\mathfrak{A}$ \emph{intersecting},
+denoted $a\nasymp b$, when there exists a non-least element $c$
+such that $c\sqsubseteq a\land c\sqsubseteq b$.
+\end{defn}
+
+\begin{defn}
+$a\asymp b\eqdef\lnot(a\nasymp b)$.
+\end{defn}
+
+\begin{defn}
+I call elements $a$ and $b$ of a poset $\mathfrak{A}$ \emph{joining}
+and denote $a\equiv b$ when there are no non-greatest element $c$
+such that $c\sqsupseteq a\land c\sqsupseteq b$.
+\end{defn}
+
+\begin{defn}
+$a\nequiv b\eqdef\lnot(a\equiv b)$.\end{defn}
+\begin{obvious}
+$a\nasymp b$ iff $a\sqcap b$ is non-least, for every elements $a$,
+$b$ of a meet-semilattice.
+\end{obvious}
+
+\begin{obvious}
+$a\equiv b$ iff $a\sqcup b$ is the greatest element, for every elements
+a, b of a join-semilattice.
+\end{obvious}
+I extend the definitions of pseudocomplement and dual pseudocomplement
+to arbitrary posets (not just lattices as it is customary):
+\begin{defn}
+Let $\mathfrak{A}$ be a poset. \emph{Pseudocomplement} of $a$ is
+\[
+\max\setcond{c\in\mathfrak{A}}{c\asymp a}.
+\]
+
+
+If $z$ is the pseudocomplement of $a$ we will denote $z=a^{\ast}$.
+\end{defn}
+
+\begin{defn}
+Let $\mathfrak{A}$ be a poset. \emph{Dual pseudocomplement} of $a$
+is
+\[
+\min\setcond{c\in\mathfrak{A}}{c\equiv a}.
+\]
+
+
+If $z$ is the dual pseudocomplement of $a$ we will denote $z=a^{+}$.\end{defn}
+

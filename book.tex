@@ -1,0 +1,479 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[a4paper,oneside,english,draft,reqno]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\synctex=-1
+\usepackage{color}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\makeindex
+\usepackage[all]{xy}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{pdftitle={Algebraic General Topology. Volume 1},
+ pdfauthor={Victor Porton},
+ pdfsubject={general topology},
+ pdfkeywords={algebraic general topology,quasi-uniform spaces,generalizations of proximity spaces,generalizations of nearness spaces,generalizations of uniform spaces}}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+\newcommand{\noun}[1]{\textsc{#1}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{section}{chapter}
+ \usepackage{fixme}
+ \theoremstyle{definition}
+ \newtheorem{thm}{\protect\theoremname}
+  \theoremstyle{definition}
+  \newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{definition}
+\newtheorem{obvious}[thm]{\protect\obviousname}
+ \theoremstyle{definition}
+ \newtheorem{prop}[thm]{\protect\propositionname}
+  \theoremstyle{definition}
+  \newtheorem{example}[thm]{\protect\examplename}
+  \theoremstyle{remark}
+  \newtheorem{rem}[thm]{\protect\remarkname}
+  \theoremstyle{definition}
+  \newtheorem{xca}[thm]{\protect\exercisename}
+ \theoremstyle{definition}
+ \newtheorem{cor}[thm]{\protect\corollaryname}
+ \theoremstyle{definition}
+ \newtheorem{lem}[thm]{\protect\lemmaname}
+ \theoremstyle{definition}
+ \newtheorem{conjecture}[thm]{\protect\conjecturename}
+\theoremstyle{definition}
+\newtheorem{note}[thm]{\protect\notename}
+ \theoremstyle{definition}
+ \newtheorem{question}[thm]{\protect\questionname}
+  \theoremstyle{definition}
+  \newtheorem{problem}[thm]{\protect\problemname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{lmodern}
+
+\usepackage{mathrsfs}
+\hypersetup{final}
+\fxsetup{draft,layout=inline}
+\fxusetheme{color}
+\sloppy
+
+\usepackage{mleftright}
+\mleftright
+
+%\makeatletter
+\def\paragraph{\@startsection{paragraph}{4}%
+  \normalparindent\z@{-\fontdimen2\font}%
+  {\normalfont\itshape}}
+%\makeatother
+
+%\renewcommand{\theenumi}{\arabic{enumi}$^\circ$}
+\renewcommand{\descriptionlabel}[1]{%
+  \hspace\labelsep \upshape #1.%
+}
+\usepackage{enumitem}
+\usepackage{letltxmacro}
+\setlist[enumerate,1]{label=\arabic*$^\circ$.,ref=\arabic*$^\circ$}
+%\setlist[description,1]{leftmargin=1.7em,labelindent=*}
+
+\LetLtxMacro{\OldItem}{\item}
+\newcommand*{\LabelText}{}%
+\newcommand*{\MyItem}[1][]{%
+    \renewcommand{\LabelText}{#1}\OldItem\leavevmode%
+}
+\newlist{disorder}{enumerate}{4}
+\setlist[disorder]%
+{label=\noexpand\LabelText.,%
+before={\let\item\MyItem},%
+after={\let\item\OldItem}}
+
+\newlist{widedisorder}{enumerate}{4}
+\setlist[widedisorder]%
+{label=\noexpand\LabelText.,%
+before={\let\item\MyItem},%
+after={\let\item\OldItem},wide}
+
+\usepackage{auxhook}
+\newcounter{labelknownref}
+\renewcommand*{\thelabelknownref}{\the\value{labelknownref}}
+
+\AddLineBeginAux{%
+  \string\providecommand\string\LabelKnown[2]{}%
+}
+\newcommand*{\LabelKnown}[2]{%
+  \expandafter\xdef\csname lkr@#2\endcsname{%
+    \@ifundefined{r@#1}{0}{1}%
+  }%
+}
+% \usepackage{nameref}% load it now, because it redefines \ref
+\AtBeginDocument{%
+  \LetLtxMacro\myorgref\ref
+  \DeclareRobustCommand*{\ref}[1]{%
+    \begingroup
+      \stepcounter{labelknownref}%
+      \if@filesw
+        \protected@write\@auxout{}{%
+          \string\LabelKnown{#1}{\thelabelknownref}%
+        }%
+      \fi 
+      \if\csname lkr@\thelabelknownref\endcsname 1%
+        \hypersetup{linkcolor=blue}%
+        \myorgref{#1}%
+      \else
+        \if\csname lkr@\thelabelknownref\endcsname 0%
+          \hypersetup{linkcolor=red}%
+          \myorgref{#1}\textsuperscript{\textcolor{red}{(forward reference!)}}%
+        \else
+          \hypersetup{linkcolor=orange}%
+          \myorgref{#1}\textsuperscript{\textcolor{orange}{(unknown)}}%
+        \fi
+      \fi  
+    \endgroup
+  }%
+}   
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{define shortcut/.code 2 args=\providecommand*#1{#2}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\makeatother
+
+  \providecommand{\conjecturename}{Conjecture}
+  \providecommand{\corollaryname}{Corollary}
+  \providecommand{\definitionname}{Definition}
+  \providecommand{\examplename}{Example}
+  \providecommand{\exercisename}{Exercise}
+  \providecommand{\lemmaname}{Lemma}
+  \providecommand{\problemname}{Problem}
+  \providecommand{\propositionname}{Proposition}
+  \providecommand{\remarkname}{Remark}
+ \providecommand{\questionname}{Question}
+\providecommand{\notename}{Note}
+\providecommand{\obviousname}{Obvious}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+
+\title{Algebraic General Topology. Volume 1}
+
+
+\author{Victor Porton}
+
+
+\email{\href{mailto:mailto:porton@narod.ru}{porton@narod.ru}}
+
+
+\urladdr{\href{http://www.mathematics21.org}{http://www.mathematics21.org}}
+
+
+\date{\today}
+
+
+\thanks{\noun{Todd Trimble}, \noun{Andreas Blass}, and \noun{Robert Martin
+Solovay} have proved same theorems which are in now in this book.}
+\begin{abstract}
+In this work I introduce and study in details the concepts of funcoids
+which generalize proximity spaces and reloids which generalize uniform
+spaces, and generalizations thereof. The concept of funcoid is generalized
+concept of proximity, the concept of reloid is cleared from superfluous
+details (generalized) concept of uniformity. 
+
+Also funcoids and reloids are generalizations of binary relations
+whose domains and ranges are filters (instead of sets). Also funcoids
+and reloids can be considered as a generalization of (oriented) graphs,
+this provides us with a common generalization of calculus and discrete
+mathematics.
+
+The concept of continuity is defined by an algebraic formula (instead
+of old messy epsilon-delta notation) for arbitrary morphisms (including
+funcoids and reloids) of a partially ordered category. In one formula
+continuity, proximity continuity, and uniform continuity are generalized.
+
+Also I define connectedness for funcoids and reloids.
+
+Then I consider generalizations of funcoids: pointfree funcoids and
+generalization of pointfree funcoids: staroids and multifuncoids.
+Also I define several kinds of products of funcoids and other morphisms.
+
+Before going to topology, this book studies properties of co-brouwerian
+lattices and filters.
+\end{abstract}
+
+
+\keywords{algebraic general topology, quasi-uniform spaces, generalizations
+of proximity spaces, generalizations of nearness spaces, generalizations
+of uniform spaces}
+
+
+\subjclass[2000]{54J05, 54A05, 54D99, 54E05, 54E15, 54E17, 54E99}
+
+\maketitle
+\global\long\def\subsets{\mathscr{P}}
+
+
+\global\long\def\eqdef{\overset{\mathrm{def}}{=}}
+
+
+\global\long\def\opinparens#1{\left(\mathord{#1}\right)}
+
+
+\global\long\def\eqinparens{\opinparens =}
+
+
+\global\long\def\nsqsubseteq{\not\sqsubseteq}
+
+
+\global\long\def\nsqsupseteq{\not\sqsupseteq}
+
+
+\global\long\def\nsqsubset{\not\sqsubset}
+
+
+\global\long\def\nsqsupset{\not\sqsupset}
+
+
+\global\long\def\setcond#1#2{\left\{  \frac{#1}{#2}\right\}  }
+
+
+\global\long\def\nasymp{\not\asymp}
+
+
+\global\long\def\nequiv{\not\equiv}
+
+
+\global\long\def\supfun#1{\left\langle #1\right\rangle }
+
+
+\global\long\def\suprel#1{\mathrel{\left[#1\right]}}
+
+
+\global\long\def\rsupfun#1{\left\langle #1\right\rangle ^{\ast}}
+
+
+\global\long\def\rsuprel#1{\mathrel{\left[#1\right]^{\ast}}}
+
+
+\global\long\def\mylamdba#1#2#3{\lambda#1\in#2:#3}
+
+
+\global\long\def\card{\operatorname{card}}
+
+
+\global\long\def\id{\operatorname{id}}
+
+
+\global\long\def\ID{\operatorname{ID}}
+
+
+\global\long\def\Src{\operatorname{Src}}
+
+
+\global\long\def\Dst{\operatorname{Dst}}
+
+
+\global\long\def\Ob{\operatorname{Ob}}
+
+
+\global\long\def\type{\operatorname{type}}
+
+
+\global\long\def\im{\operatorname{im}}
+
+
+\global\long\def\dom{\operatorname{dom}}
+
+
+\global\long\def\Mor{\operatorname{Mor}}
+
+
+\global\long\def\GR{\operatorname{GR}}
+
+
+\global\long\def\arity{\operatorname{arity}}
+
+
+\global\long\def\val{\operatorname{val}}
+
+
+\global\long\def\Anch{\operatorname{Anch}}
+
+
+\global\long\def\form{\operatorname{form}}
+
+
+\global\long\def\ord{\operatorname{ord}}
+
+
+\global\long\def\base{\operatorname{base}}
+
+
+\global\long\def\core{\operatorname{core}}
+
+
+\global\long\def\atoms{\operatorname{atoms}}
+
+
+\global\long\def\curry{\operatorname{curry}}
+
+
+\global\long\def\uncurry{\operatorname{uncurry}}
+
+
+\global\long\def\concat{\operatorname{concat}}
+
+
+\global\long\def\up{\operatorname{up}}
+
+
+\global\long\def\down{\operatorname{down}}
+
+
+\global\long\def\Cor{\operatorname{Cor}}
+
+
+\global\long\def\Compl{\operatorname{Compl}}
+
+
+\global\long\def\CoCompl{\operatorname{CoCompl}}
+
+
+\global\long\def\Edg{\operatorname{Edg}}
+
+
+\global\long\def\Base{\operatorname{Base}}
+
+
+\global\long\def\StarComp{\operatorname{StarComp}}
+
+
+\global\long\def\StarMor{\operatorname{StarMor}}
+
+
+\global\long\def\Obj{\operatorname{Obj}}
+
+
+\global\long\def\None{\operatorname{None}}
+
+
+\global\long\def\cl{\operatorname{cl}}
+
+
+\global\long\def\MEET{\operatorname{MEET}}
+
+
+\global\long\def\psetminus{\setminus^{\ast}}
+
+
+\global\long\def\corestar{\partial}
+
+
+\global\long\def\fullstar{\star}
+
+
+\global\long\def\tofcd{(\mathsf{FCD})}
+
+
+\global\long\def\torldin{(\mathsf{RLD})_{\mathrm{in}}}
+
+
+\global\long\def\torldout{(\mathsf{RLD})_{\mathrm{out}}}
+
+
+\global\long\def\continuous{\mathrm{C}}
+
+
+\global\long\def\thick{\operatorname{thick}}
+
+
+\global\long\def\totBound{\operatorname{totBound}}
+
+
+\global\long\def\CS{\operatorname{CS}}
+
+
+\global\long\def\dual{\operatorname{dual}}
+
+
+\global\long\def\xlim{\operatorname{xlim}}
+
+
+\global\long\def\Fix{\operatorname{Fix}}
+
+
+\global\long\def\Upper{\operatorname{Up}}
+
+
+\global\long\def\op{\operatorname{op}}
+
+
+\tableofcontents{}
+
+\include{chap-intro}
+
+\include{chap-common}
+
+\include{chap-order-more}
+
+\include{chap-rel}
+
+\include{chap-filt}
+
+\include{chap-common-top}
+
+\include{chap-funcoids}
+
+\include{chap-reloids}
+
+\include{chap-relationships}
+
+\include{chap-decomposition}
+
+\include{chap-continuity}
+
+\include{chap-connected}
+
+\include{chap-bound}
+
+\include{chap-filt-order}
+
+\include{chap-fcd-counter}
+
+\include{chap-funcoids-are-filters}
+
+\include{chap-pf-funcoids}
+
+\include{chap-convergence}
+
+\include{chap-multi}
+
+\include{chap-postface}
+
+\include{appendixes}
+
+\printindex{}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

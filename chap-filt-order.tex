@@ -1,0 +1,1239 @@
+
+\chapter{Orderings of filters in terms of reloids}
+
+Whilst the other chapters of this book use filters to research funcoids
+and reloids, here the opposite thing is discussed, the theory of reloids
+is used to describe properties of filters.
+
+In this chapter the word \emph{filter} is used to denote a filter
+on a set (not on an arbitrary poset) only.
+
+
+\section{Equivalent filters}
+\begin{defn}
+\index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
+(with possibly different base sets) are equivalent ($\mathcal{A}\sim\mathcal{B}$)
+iff there exists a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
+\emph{and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$.}\end{defn}
+\begin{prop}
+If two filters with the same base are equivalent they are equal.\end{prop}
+\begin{proof}
+Let $\mathcal{A}$ and $\mathcal{B}$ be two filters and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$
+for some set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$,
+and $\Base(\mathcal{A})=\Base(\mathcal{B})$. Then
+\begin{multline*}
+\mathcal{A}=(\subsets X\cap\mathcal{A})\cup\setcond{Y\in\subsets\Base(\mathcal{A})}{Y\supseteq X}=\\
+(\subsets X\cap\mathcal{B})\cup\setcond{Y\in\subsets\Base(\mathcal{B})}{Y\supseteq X}=\mathcal{B}.
+\end{multline*}
+\end{proof}
+\begin{prop}
+$\sim$ restricted to small filters is an equivalence relation.\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{Reflexivity}] Obvious.
+\item [{Symmetry}] Obvious.
+\item [{Transitivity}] Let $\mathcal{A}\sim\mathcal{B}$ and $\mathcal{B}\sim\mathcal{C}$
+for some small filters $\mathcal{A}$, $\mathcal{B}$, and $\mathcal{C}$.
+Then there exist a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
+and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$ and a set
+$Y$ such that $Y\in\mathcal{B}$ and $Y\in\mathcal{C}$ and $\subsets Y\cap\mathcal{B}=\subsets Y\cap\mathcal{C}$.
+So $X\cap Y\in\mathcal{A}$ because
+\[
+\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\subsets(X\cap Y)\cap\mathcal{B}\supseteq\{X\cap Y\}\cap\mathcal{B}\ni X\cap Y.
+\]
+Similarly we have $X\cap Y\in\mathcal{C}$. Finally
+\begin{multline*}
+\subsets(X\cap Y)\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\\
+\subsets X\cap\subsets Y\cap\mathcal{B}=\subsets X\cap\subsets Y\cap\mathcal{C=}\subsets(X\cap Y)\cap\mathcal{C}.
+\end{multline*}
+
+\end{description}
+\end{proof}
+\begin{defn}
+\index{filter!rebase}The \emph{rebase} $\mathcal{A}\div A$ for a
+filter $\mathcal{A}$ and a set $A$ (base) such that $\exists X\in\mathcal{A}:X\subseteq A$
+is defined by the formula
+\[
+\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}.
+\]
+\end{defn}
+\begin{prop}
+If $\exists X\in\mathcal{A}:X\subseteq A$ then:
+\begin{enumerate}
+\item \label{div-filt}$\mathcal{A}\div A$ is a filter on $A$;
+\item \label{div-eq}$\mathcal{A}\div A\sim\mathcal{A}$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{div-filt}}] We need to prove that $\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$
+is a filter on $A$. That it is an upper set is obvious. It is non-empty
+because $\exists Y\in\mathcal{A}:Y\subseteq A$ and thus $A\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
+Let $P,Q\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
+Then $P,Q\subseteq A$ and $\exists P'\in\mathcal{A}:P'\subseteq P$
+and $\exists Q'\in\mathcal{A}:Q'\subseteq Q$. So $P\cap Q\subseteq A$
+and $P'\cap Q'\subseteq P\cap Q$. Thus $P\cap Q\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
+\item [{\ref{div-eq}}] ~
+\begin{align*}
+(\mathcal{A}\div A)\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
+\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
+\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}\cap\subsets\Base(\mathcal{A}) & =\\
+\setcond{X\in\subsets(A\cap\Base(\mathcal{A}))}{\exists Y\in\mathcal{A}:Y\subseteq X} & =\\
+\mathcal{A}\cap\subsets(A\cap\Base(\mathcal{A})).
+\end{align*}
+Thus $\mathcal{A}\div A\sim\mathcal{A}$ because $A\cap\Base(\mathcal{A})\supseteq X\in\mathcal{A}$
+for some $X\in\mathcal{A}$ and 
+\[
+A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\mathcal{A}\div A.
+\]
+
+\end{widedisorder}
+\end{proof}
+\begin{prop}
+$A\in\mathcal{A}\Rightarrow\mathcal{A}\div A=\subsets A\cap\mathcal{A}$.\end{prop}
+\begin{proof}
+Let $A\in\mathcal{A}$. Then $\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\setcond{X\in\subsets A}{X\in\mathcal{A}}=\mathscr{P}A\cap\mathcal{A}$.\end{proof}
+\begin{lem}
+If $\mathcal{A}\sim\mathcal{B}$ then $\exists Y\in\mathcal{A}:Y\subseteq X\Leftrightarrow\exists Y\in\mathcal{B}:Y\subseteq X$
+for every filters $\mathcal{A}$, $\mathcal{B}$, and a set $X$.\end{lem}
+\begin{proof}
+We will prove $\exists Y\in\mathcal{A}:Y\subseteq X\Rightarrow\exists Y\in\mathcal{B}:Y\subseteq X$
+(the other direction is similar).
+
+We have $\subsets K\cap\mathcal{A}=\subsets K\cap\mathcal{B}$ for
+some set $K$ such that $K\in\mathcal{A}$, $K\in\mathcal{B}$.
+
+\[
+\exists Y\in\mathcal{A}:Y\subseteq X\Rightarrow\exists Y\in\subsets K\cap\mathcal{A}:Y\subseteq X\Rightarrow\exists Y\in\subsets K\cap\mathcal{B}:Y\subseteq X\Rightarrow\exists Y\in\mathcal{B}:Y\subseteq X.
+\]
+\end{proof}
+\begin{prop}
+If $\mathcal{A}\sim\mathcal{B}$ then $\mathcal{B}=\mathcal{A}\div\Base(\mathcal{B})$
+for every filters $\mathcal{A}$,~$\mathcal{B}$.\end{prop}
+\begin{proof}
+$\subsets Y\cap\mathcal{A}=\subsets Y\cap\mathcal{B}$ for some set
+$Y\in\mathcal{A}$, $Y\in\mathcal{B}$. There exists a set $X\in\mathcal{A}$
+such that $X\in\mathcal{B}$. Thus $\exists X\in\mathcal{A}:X\subseteq\Base(\mathcal{B})$
+and so $\mathcal{A}\div\Base(\mathcal{B})$ is a filter.
+
+\begin{multline*}
+X\in\mathcal{A}\div\Base(\mathcal{B})\Leftrightarrow X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{A}:Y\subseteq X\Leftrightarrow\\
+X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{B}:Y\subseteq X\Leftrightarrow X\in\mathcal{B}
+\end{multline*}
+(the lemma used).
+\end{proof}
+
+\section{Ordering of filters}
+
+Below I will define some categories having filters (with possibly
+different bases) as their objects and some relations having two filters
+(with possibly different bases) as arguments induced by these categories
+(defined as existence of a morphism between these two filters).
+\begin{thm}
+$\card a=\card U$ for every ultrafilter $a$ on $U$ if $U$ is infinite.\end{thm}
+\begin{proof}
+Let $f(X)=X$ if $X\in a$ and $f(X)=U\setminus X$ if $X\notin a$.
+Obviously $f$ is a surjection from $U$ to $a$.
+
+Every $X\in a$ appears as a value of $f$ exactly twice, as $f(X)$
+and $f(U\setminus X)$. So $\card a=(\card U)/2=\card U$.\end{proof}
+\begin{cor}
+Cardinality of every two ultrafilters on a set $U$ is the same.\end{cor}
+\begin{proof}
+For infinite $U$ it follows from the theorem. For finite case it
+is obvious.\end{proof}
+\begin{prop}
+$\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}=\setcond{C\in\subsets(\Dst f)}{\rsupfun{f^{-1}}C\in\mathcal{A}}$
+for every $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$.
+(Here a funcoid is considered as a pair of functions $\mathfrak{F}(\Base(\mathcal{A}))\rightarrow\mathfrak{F}(\Base(\mathcal{B}))$,
+$\mathfrak{F}(\Base(\mathcal{B}))\rightarrow\mathfrak{F}(\Base(\mathcal{A}))$
+rather than as a pair of functions $\mathscr{F}(\Base(\mathcal{A}))\rightarrow\mathscr{F}(\Base(\mathcal{B}))$,
+$\mathscr{F}(\Base(\mathcal{B}))\rightarrow\mathscr{F}(\Base(\mathcal{A}))$.)\end{prop}
+\begin{proof}
+For every set $C\in\subsets\Base(\mathcal{B})$ we have
+\begin{align*}
+\rsupfun{f^{-1}}C\in\mathcal{A} & \Rightarrow\\
+\exists K\in\mathcal{A}:\rsupfun{f^{-1}}C=K & \Rightarrow\\
+\exists K\in\mathcal{A}:\rsupfun f\rsupfun{f^{-1}}C=\rsupfun fK & \Rightarrow\\
+\exists K\in\mathcal{A}:C\supseteq\rsupfun fK & \Leftrightarrow\\
+\exists K\in\mathcal{A}:C\in\rsupfun{\uparrow^{\mathsf{FCD}}f}K & \Rightarrow\\
+C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}.
+\end{align*}
+So $C\in f\ast\mathcal{A}\Rightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+
+Let now $C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$. Then
+$\uparrow^{\Base(\mathcal{A})}\rsupfun{f^{-1}}C\sqsupseteq\supfun{\uparrow^{\mathsf{FCD}}f^{-1}}\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\sqsupseteq\mathcal{A}$
+and thus $\rsupfun{f^{-1}}C\in\mathcal{A}$.
+\end{proof}
+Below I'll define some directed multigraphs. By an abuse of notation,
+I will denote these multigraphs the same as (below defined) categories
+based on some of these directed multigraphs with added composition
+of morphisms (of directed multigraphs edges). As such I will call
+vertices of these multigraphs objects and edges morphisms.
+\begin{defn}
+I will denote $\mathbf{GreFunc}{}_{1}$ the multigraph whose objects
+are filters and whose morphisms between objects $\mathcal{A}$ and
+$\mathcal{B}$ are $\mathbf{Set}$-morphisms from $\Base(\mathcal{A})$
+to $\Base(\mathcal{B})$ such that $\mathcal{B}\supseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+\end{defn}
+
+\begin{defn}
+I will denote $\mathbf{GreFunc}{}_{2}$ the multigraph whose objects
+are filters and whose morphisms between objects $\mathcal{A}$ and
+$\mathcal{B}$ are $\mathbf{Set}$-morphisms from $\Base(\mathcal{A})$
+to $\Base(\mathcal{B})$ such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+\end{defn}
+
+\begin{defn}
+Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ is
+a filter on a set $Y$. $\mathcal{A}\ge_{1}\mathcal{B}$ iff $\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
+is not empty.
+\end{defn}
+
+\begin{defn}
+Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ is
+a filter on a set $Y$. $\mathcal{A}\ge_{2}\mathcal{B}$ iff $\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
+is not empty.\end{defn}
+\begin{prop}
+~
+\begin{enumerate}
+\item \label{gre-imp}$f\in\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
+iff $f$ is a $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$
+to $\Base(\mathcal{B})$ such that
+\[
+C\in\mathcal{B}\Leftarrow\rsupfun{f^{-1}}C\in\mathcal{A}
+\]
+for every $C\in\subsets\Base(\mathcal{B})$.
+\item \label{gre-eq}$f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
+iff $f$ is a $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$
+to $\Base(\mathcal{B})$ such that
+\[
+C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A}
+\]
+for every $C\in\subsets\Base(\mathcal{B})$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{gre-imp}}] ~
+\begin{multline*}
+f\in\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\supseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\\
+\forall C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}:C\in\mathcal{B}\Leftrightarrow\forall C\in\subsets\Base(\mathcal{B}):(\rsupfun{f^{-1}}C\in\mathcal{A}\Rightarrow C\in\mathcal{B}).
+\end{multline*}
+
+\item [{\ref{gre-eq}}] ~
+\begin{multline*}
+f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\forall C:(C\in\mathcal{B}\Leftrightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A})\Leftrightarrow\\
+\forall C\in\subsets\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A})\Leftrightarrow\\
+\forall C\in\subsets\Base(\mathcal{B}):(\rsupfun{f^{-1}}C\in\mathcal{A}\Leftrightarrow C\in\mathcal{B}).
+\end{multline*}
+
+\end{widedisorder}
+\end{proof}
+\begin{defn}
+The directed multigraph $\mathbf{FuncBij}$ is the directed multigraph
+got from $\mathbf{GreFunc}_{2}$ by restricting to only bijective
+morphisms.
+\end{defn}
+
+\begin{defn}
+\index{directly isomorphic}A filter $\mathcal{A}$ is \emph{directly
+isomorphic} to a filter $\mathcal{B}$ iff there is a morphism $f\in\Mor_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.\end{defn}
+\begin{cor}
+$f\in\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+for every $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$ to $\Base(\mathcal{B})$.
+\end{cor}
+
+\begin{cor}
+$f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+for every $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$ to $\Base(\mathcal{B})$.
+\end{cor}
+
+\begin{cor}
+$\mathcal{A}\ge_{1}\mathcal{B}$ iff it exists a $\mathbf{Set}$-morphism
+$f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$ such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+\end{cor}
+
+\begin{cor}
+$\mathcal{A}\ge_{2}\mathcal{B}$ iff it exists a $\mathbf{Set}$-morphism
+$f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$ such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.\end{cor}
+\begin{prop}
+For a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+the following are equivalent:
+\begin{enumerate}
+\item \label{fbij-star}$\mathcal{B}=f\ast\mathcal{A}$.
+\item \label{fbij-eback}$\forall C\in\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A})$.
+\item \label{fbij-eforw}$\forall C\in\Base(\mathcal{A}):(C\in\rsupfun f\mathcal{B}\Leftrightarrow C\in\mathcal{A})$.
+\item \label{fbij-rbij}$\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$
+is a bijection from $\mathcal{A}$ to~$\mathcal{B}$.
+\item \label{fbij-rsurj}$\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$
+is a function onto~$\mathcal{B}$.
+\item \label{fbij-feq}$\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+\item \label{fbij-gre}$f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
+\item \label{fbij-grp}$f\in\Mor_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{fbij-star}$\Leftrightarrow$\ref{fbij-eback}}] ~
+\begin{multline*}
+\mathcal{B}=f\ast\mathcal{A}\Leftrightarrow\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}\Leftrightarrow\\
+\forall C\in\subsets\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A}).
+\end{multline*}
+
+\item [{\ref{fbij-eback}$\Leftrightarrow$\ref{fbij-eforw}}] Because
+$f$ is a bijection.
+\item [{\ref{fbij-eback}$\Rightarrow$\ref{fbij-rsurj}}] For every $C\in\mathcal{B}$
+we have $\rsupfun{f^{-1}}C\in\mathcal{A}$ and thus $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}\supfun{\uparrow^{\mathsf{FCD}}f^{-1}}C=\rsupfun f\rsupfun{f^{-1}}C=C$.
+Thus $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is onto $\mathcal{B}$.
+\item [{\ref{fbij-rbij}$\Rightarrow$\ref{fbij-rsurj}}] Obvious.
+\item [{\ref{fbij-rsurj}$\Rightarrow$\ref{fbij-rbij}}] We need to prove
+only that $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is an
+injection. But this follows from the fact that $f$ is a bijection.
+\item [{\ref{fbij-rbij}$\Rightarrow$\ref{fbij-eforw}}] We have $\forall C\in\Base(\mathcal{A}):((\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}})C\Leftrightarrow C\in\mathcal{A})$
+and consequently $\forall C\in\Base(\mathcal{A}):(\rsupfun fC\in\mathcal{B}\Leftrightarrow C\in\mathcal{A})$.
+\item [{\ref{fbij-feq}$\Leftrightarrow$\ref{fbij-star}}] From the last
+corollary.
+\item [{\ref{fbij-star}$\Leftrightarrow$\ref{fbij-gre}}] Obvious.
+\item [{\ref{fbij-gre}$\Leftrightarrow$\ref{fbij-grp}}] Obvious.
+\end{description}
+\end{proof}
+\begin{cor}
+The following are equivalent for every filters $\mathcal{A}$ and
+$\mathcal{B}$:
+\begin{enumerate}
+\item $\mathcal{A}$ is directly isomorphic to $\mathcal{B}$.
+\item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that for every $C\in\mathscr{P}\Base(\mathcal{B})$
+\[
+C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A}.
+\]
+
+\item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that for every $C\in\mathscr{P}\Base(\mathcal{B})$
+\[
+\rsupfun fC\in\mathcal{B}\Leftrightarrow C\in\mathcal{A}.
+\]
+
+\item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is a
+bijection from $\mathcal{A}$ to $\mathcal{B}$.
+\item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is a
+function onto $\mathcal{B}$.
+\item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+\item There is a bijective morphism $f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
+\end{enumerate}
+\end{cor}
+\begin{prop}
+$\mathbf{GreFunc}_{1}$ and $\mathbf{GreFunc}_{2}$ with function
+composition are categories.\end{prop}
+\begin{proof}
+Let $f:\mathcal{A}\rightarrow\mathcal{B}$ and $g:\mathcal{B}\rightarrow\mathcal{C}$
+be morphisms of $\mathbf{GreFunc}_{1}$. Then $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+and $\mathcal{C}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}g}\mathcal{B}$.
+So 
+\[
+\supfun{\uparrow^{\mathsf{FCD}}(g\circ f)}\mathcal{A}=\supfun{\uparrow^{\mathsf{FCD}}g}\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\sqsupseteq\supfun{\uparrow^{\mathsf{FCD}}g}\mathcal{B}\sqsupseteq\mathcal{C}.
+\]
+Thus $g\circ f$ is a morphism of $\mathbf{GreFunc}_{1}$. Associativity
+law is evident. $\id_{\Base(\mathcal{A})}$ is the identity morphism
+of $\mathbf{GreFunc}_{1}$ for every filter~$\mathcal{A}$.
+
+Let $f:\mathcal{A}\rightarrow\mathcal{B}$ and $g:\mathcal{B}\rightarrow\mathcal{C}$
+be morphisms of $\mathbf{GreFunc}_{2}$. Then $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+and $\mathcal{C}=\supfun{\uparrow^{\mathsf{FCD}}g}\mathcal{B}$. So
+\[
+\supfun{\uparrow^{\mathsf{FCD}}(g\circ f)}\mathcal{A}=\supfun{\uparrow^{\mathsf{FCD}}g}\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}=\supfun{\uparrow^{\mathsf{FCD}}g}\mathcal{B}=\mathcal{C}.
+\]
+Thus $g\circ f$ is a morphism of $\mathbf{GreFunc}_{2}$. Associativity
+law is evident. $\id_{\Base(\mathcal{A})}$ is the identity morphism
+of $\mathbf{GreFunc}_{2}$ for every filter~$\mathcal{A}$.\end{proof}
+\begin{cor}
+$\le_{1}$ and $\le_{2}$ are preorders. \end{cor}
+\begin{thm}
+$\mathbf{FuncBij}$ is a groupoid.\end{thm}
+\begin{proof}
+First let's prove it is a category. Let $f:\mathcal{A}\rightarrow\mathcal{B}$
+and $g:\mathcal{B}\rightarrow\mathcal{C}$ be morphisms of $\mathbf{FuncBij}$.
+Then $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$ and $g:\Base(\mathcal{B})\rightarrow\Base(\mathcal{C})$
+are bijections and $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+and $\mathcal{C}=\supfun{\uparrow^{\mathsf{FCD}}g}\mathcal{B}$. Thus
+$g\circ f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{C})$ is a bijection
+and $\mathcal{C}=\supfun{\uparrow^{\mathsf{FCD}}(g\circ f)}\mathcal{A}$.
+Thus $g\circ f$ is a morphism of $\mathbf{FuncBij}$. $\id_{\Base(\mathcal{A})}$
+is the identity morphism of $\mathbf{FuncBij}$ for every filter $\mathcal{A}$.
+Thus it is a category.
+
+It remains to prove only that every morphism $f\in\Mor_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$
+has a reverse (for every filters $\mathcal{A}$, $\mathcal{B}$).
+We have $f$ is a bijection $\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that for every $C\in\subsets\Base(\mathcal{A})$
+\[
+\rsupfun fC\in\mathcal{B}\Leftrightarrow C\in\mathcal{A}.
+\]
+Then $f^{-1}:\Base(\mathcal{B})\rightarrow\Base(\mathcal{A})$ is
+a bijection such that for every $C\in\subsets\Base(\mathcal{B})$
+\[
+\rsupfun{f^{-1}}C\in\mathcal{A}\Leftrightarrow C\in\mathcal{B}.
+\]
+ Thus $f^{-1}\in\Mor_{\mathbf{FuncBij}}(\mathcal{B};\mathcal{A})$.\end{proof}
+\begin{cor}
+Being directly isomorphic is an equivalence relation.
+\end{cor}
+\index{order!Rudin-Keisler}Rudin-Keisler order of ultrafilters is
+considered in such a book as \cite{comfort-ultra}.
+\begin{obvious}
+For the case of ultrafilters being directly isomorphic is the same
+as being Rudin-Keisler equivalent.\end{obvious}
+\begin{defn}
+\index{isomorphic!filters}A filter $\mathcal{A}$ is \emph{isomorphic}
+to a filter $\mathcal{B}$ iff there exist sets $A\in\mathcal{A}$
+and $B\in\mathcal{B}$ such that $\mathcal{A}\div A$ is directly
+isomorphic to $\mathcal{B}\div B$.\end{defn}
+\begin{obvious}
+Equivalent filters are isomorphic.\end{obvious}
+\begin{thm}
+Being isomorphic (for small filters) is an equivalence relation.\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{Reflexivity}] Because every filter is directly isomorphic to itself.
+\item [{Symmetry}] If filter $\mathcal{A}$ is isomorphic to $\mathcal{B}$
+then there exist sets $A\in\mathcal{A}$ and $B\in\mathcal{B}$ such
+that $\mathcal{A}\div A$ is directly isomorphic to $\mathcal{B}\div B$
+and thus $\mathcal{B}\div B$ is directly isomorphic to $\mathcal{A}\div A$.
+So $\mathcal{B}$ is isomorphic to $\mathcal{A}$.
+\item [{Transitivity}] Let $\mathcal{A}$ be isomorphic to $\mathcal{B}$
+and $\mathcal{B}$ be isomorphic to $\mathcal{C}$. Then exist $A\in\mathcal{A}$,
+$B_{1}\in\mathcal{B}$, $B_{2}\in\mathcal{B}$, $C\in\mathcal{C}$
+such that there are bijections $f:A\rightarrow B_{1}$ and $g:B_{2}\rightarrow C$
+such that
+\[
+\forall X\in\subsets A:(X\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}X\in\mathcal{A})\quad\text{and}\quad\forall X\in\subsets B_{2}:(X\in\mathcal{A}\Leftrightarrow\rsupfun fX\in\mathcal{B}).
+\]
+Also $\forall X\in\subsets B_{2}:(X\in\mathcal{B}\Leftrightarrow\rsupfun gX\in\mathcal{C})$.
+
+
+So $g\circ f$ is a bijection from $\rsupfun{f^{-1}}(B_{1}\cap B_{2})\in\mathcal{A}$
+to $\rsupfun g(B_{1}\cap B_{2})\in\mathcal{C}$ such that
+\[
+X\in\mathcal{A}\Leftrightarrow\rsupfun fX\in\mathcal{B}\Leftrightarrow\rsupfun g\rsupfun fX\in\mathcal{C}\Leftrightarrow\rsupfun{g\circ f}X\in\mathcal{C}.
+\]
+Thus $g\circ f$ establishes a bijection which proves that $\mathcal{A}$
+is isomorphic to~$\mathcal{C}$.
+
+\end{description}
+\end{proof}
+\begin{lem}
+Let $\card X=\card Y$, $u$ be an ultrafilter on $X$ and $v$ be
+an ultrafilter on $Y$; let $A\in u$ and $B\in v$. Let $u\div A$
+and $v\div B$ be directly isomorphic. Then if $\card(X\setminus A)=\card(Y\setminus B)$
+we have $u$ and $v$ directly isomorphic.\end{lem}
+\begin{proof}
+Arbitrary extend the bijection witnessing being directly isomorphic
+to the sets $X\setminus A$ and $X\setminus B$.\end{proof}
+\begin{thm}
+If $\card X=\card Y$ then being isomorphic and being directly isomorphic
+are the same for ultrafilters $u$ on $X$ and $v$ on $Y$.\end{thm}
+\begin{proof}
+That if two filters are isomorphic then they are directly isomorphic
+is obvious.
+
+Let ultrafilters $u$ and $v$ be isomorphic that is there is a bijection
+$f:A\rightarrow B$ where $A\in u$, $B\in v$ witnessing isomorphism
+of $u$ and $v$.
+
+If one of the filters $u$ or $v$ is a trivial ultrafilter then the
+other is also a trivial ultrafilter and as it is easy to show they
+are directly isomorphic. So we can assume $u$ and $v$ are not trivial
+ultrafilters.
+
+If $\card(X\setminus A)=\card(Y\setminus B)$ our statement follows
+from the last lemma.
+
+Now assume without loss of generality $\card(X\setminus A)<\card(Y\setminus B)$.
+
+$\card B=\card Y$ because $\card(Y\setminus B)<\card Y$.
+
+It is easy to show that there exists $B'\supset B$ such that $\card(X\setminus A)=\card(Y\setminus B')$
+and $\card B'=\card B$.
+
+We will find a bijection $g$ from $B$ to $B'$ which witnesses direct
+isomorphism of $v$ to $v$ itself. Then the composition $g\circ f$
+witnesses a direct isomorphism of $u\div A$ and $v\div B'$ and by
+the lemma $u$ and $v$ are directly isomorphic.
+
+Let $D=B'\setminus B$. We have $D\notin v$.
+
+There exists a set $E\subseteq B$ such that $\card E\ge\card D$
+and $E\notin v$.
+
+We have $\card E=\card(D\cup E)$ and thus there exists a bijection
+$h:E\rightarrow D\cup E$.
+
+Let
+\[
+g(x)=\begin{cases}
+x & \text{if }x\in B\setminus E;\\
+h(x) & \text{if }x\in E.
+\end{cases}
+\]
+
+
+$g|_{B\setminus E}$ and $g|_{E}$ are bijections.
+
+$\im(g|_{B\setminus E})=B\setminus E$; $\im(g|_{E})=\im h=D\cup E$;
+\[
+(D\cup E)\cap(B\setminus E)=(D\cap(B\setminus E))\cup(E\cap(B\setminus E))=\emptyset\cup\emptyset=\emptyset.
+\]
+Thus $g$ is a bijection from $B$ to $(B\setminus E)\cup(D\cup E)=B\cup D=B'$.
+
+To finish the proof it's enough to show that $\rsupfun gv=v$. Indeed
+it follows from $B\setminus E\in v$.\end{proof}
+\begin{prop}
+~
+\begin{enumerate}
+\item \label{ge2-restr}For every $A\in\mathcal{A}$ and $B\in\mathcal{B}$
+we have $\mathcal{A}\ge_{2}\mathcal{B}$ iff $\mathcal{A}\div A\ge_{2}\mathcal{B}\div B$.
+\item \label{ge1-restr}For every $A\in\mathcal{A}$ and $B\in\mathcal{B}$
+we have $\mathcal{A}\ge_{1}\mathcal{B}$ iff $\mathcal{A}\div A\ge_{1}\mathcal{B}\div B$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{ge2-restr}}] $\mathcal{A}\ge_{2}\mathcal{B}$ iff there exist
+a bijective $\mathbf{Set}$-morphism $f$ such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+The equality is obviously preserved replacing $\mathcal{A}$ with
+$\mathcal{A}\div A$ and $\mathcal{B}$ with $\mathcal{B}\div B$.
+\item [{\ref{ge1-restr}}] $\mathcal{A}\ge_{1}\mathcal{B}$ iff there exist
+a bijective $\mathbf{Set}$-morphism $f$ such that $\mathcal{B}\subseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+The equality is obviously preserved replacing $\mathcal{A}$ with
+$\mathcal{A}\div A$ and $\mathcal{B}$ with $\mathcal{B}\div B$.
+\end{widedisorder}
+\end{proof}
+\begin{prop}
+For ultrafilters $\ge_{2}$ is the same as Rudin-Keisler ordering
+(as defined in \cite{comfort-ultra}).\end{prop}
+\begin{proof}
+$x\ge_{2}y$ iff there exist sets $A\in x$ and $B\in y$ a bijective
+$\mathbf{Set}$-morphism $f:X\rightarrow Y$ such that
+\[
+y\div B=\setcond{C\in\subsets Y}{\rsupfun{f^{-1}}C\in x\div A}
+\]
+ that is when $C\in y\div B\Leftrightarrow\rsupfun{f^{-1}}C\in x\div A$
+what is equivalent to~$C\in y\Leftrightarrow\rsupfun{f^{-1}}C\in x$
+what is the definition of Rudin-Keisler ordering.\end{proof}
+\begin{rem}
+\index{Rudin-Keisler equivalence}The relation of being isomorphic
+for ultrafilters is traditionally called \emph{Rudin-Keisler equivalence}.\end{rem}
+\begin{obvious}
+$(\ge_{1})\supseteq(\ge_{2})$.\end{obvious}
+\begin{defn}
+Let $Q$ and $R$ be binary relations on the set of filters. I will
+denote $\mathbf{MonRld}_{Q,R}$ the directed multigraph with objects
+being filters and morphisms such monovalued reloids $f$ that $(\dom f)\mathrel Q\mathcal{A}$
+and $(\im f)\mathrel R\mathcal{B}$.
+
+I will also denote $\mathbf{CoMonRld}_{Q,R}$ the directed multigraph
+with objects being filters and morphisms such injective reloids $f$
+that $(\im f)\mathrel Q\mathcal{A}$ and $(\dom f)\mathrel R\mathcal{B}$.
+These are essentially the duals.
+\end{defn}
+Some of these directed multigraphs are categories with reloid composition
+(see below). By abuse of notation I will denote these categories the
+same as these directed multigraphs.
+\begin{thm}
+For every filters $\mathcal{A}$ and $\mathcal{B}$ the following
+are equivalent:
+\begin{enumerate}
+\item \label{ge1-ineq}$\mathcal{A}\ge_{1}\mathcal{B}$.
+\item \label{ge1-eq-ge}$\Mor_{\mathbf{MonRld}_{=,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge1-le-ge}$\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge1-le-eq}$\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{g1-c-eq-ge}$\Mor_{\mathbf{CoMonRld}_{=,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{g1-c-le-ge}$\Mor_{\mathbf{CoMonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{g1-c-le-eq}$\Mor_{\mathbf{CoMonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{ge1-ineq}$\Rightarrow$\ref{ge1-eq-ge}}] There exists a
+$\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+We have
+\[
+\dom(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\mathcal{A}\sqcap\top^{\mathscr{F}(\Base(\mathcal{A}))}=\mathcal{A}
+\]
+and
+\[
+\im(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\im\tofcd(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\im(\uparrow^{\mathsf{FCD}}f)|_{\mathcal{A}}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\sqsupseteq\mathcal{B}.
+\]
+Thus $(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}$ is a monovalued
+reloid such that $\dom(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\mathcal{A}$
+and $\im(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}\sqsupseteq\mathcal{B}$.
+\item [{\ref{ge1-eq-ge}$\Rightarrow$\ref{ge1-le-ge},~\ref{ge1-le-eq}$\Rightarrow$\ref{ge1-le-ge},~\ref{g1-c-eq-ge}$\Rightarrow$\ref{g1-c-le-ge},~\ref{g1-c-le-eq}$\Rightarrow$\ref{g1-c-le-ge}}] Obvious.
+\item [{\ref{ge1-le-ge}$\Rightarrow$\ref{ge1-ineq}}] We have $\mathcal{B}\sqsubseteq\supfun{\tofcd f}\mathcal{A}$
+for a monovalued reloid $f\in\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{B}))$.
+Then there exists a $\mathbf{Set}$-morphism $F:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{A}$
+that is $\mathcal{A}\ge_{1}\mathcal{B}$.
+\item [{\ref{g1-c-le-ge}$\Rightarrow$\ref{g1-c-le-eq}}] $\dom f|_{\mathcal{B}}=\mathcal{B}$
+and $\im f|_{\mathcal{B}}\sqsupseteq\mathcal{A}$.
+\item [{\ref{ge1-eq-ge}$\Leftrightarrow$\ref{g1-c-eq-ge},~\ref{ge1-le-ge}$\Leftrightarrow$\ref{g1-c-le-ge},~\ref{ge1-le-eq}$\Leftrightarrow$\ref{g1-c-le-eq}}] By
+duality.
+\end{description}
+\end{proof}
+\begin{thm}
+For every filters $\mathcal{A}$ and $\mathcal{B}$ the following
+are equivalent:
+\begin{enumerate}
+\item \label{ge2-in}$\mathcal{A}\ge_{2}\mathcal{B}$.
+\item \label{ge2-mon}$\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge2-comon}$\Mor_{\mathbf{CoMonRld}_{=,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{ge2-in}$\Rightarrow$\ref{ge2-mon}}] Let $\mathcal{A}\ge_{2}\mathcal{B}$
+that is $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+for some $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$.
+Then $\dom(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\mathcal{A}$
+and 
+\[
+\im(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\im\tofcd(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\im(\uparrow^{\mathsf{FCD}}f)|_{\mathcal{A}}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}=\mathcal{B}.
+\]
+So $(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}$ is a sought for reloid.
+\item [{\ref{ge2-mon}$\Rightarrow$\ref{ge2-in}}] By corollary \ref{mv-is-restr}
+below, there exists a $\mathbf{Set}$-morphism $F:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $f=(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}$. Thus
+\[
+\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{A}=\im(\uparrow^{\mathsf{FCD}}F)|_{\mathcal{A}}=\im\tofcd(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}=\im\tofcd f=\im f=\mathcal{B}.
+\]
+Thus $\mathcal{A}\ge_{2}\mathcal{B}$ is testified by the morphism
+$F$.
+\item [{\ref{ge2-mon}$\Leftrightarrow$\ref{ge2-comon}}] By duality.
+\end{description}
+\end{proof}
+\begin{thm}
+The following are categories (with reloid composition):
+\begin{enumerate}
+\item \label{monrld-le-ge}$\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}$;
+\item \label{monrld-le-eq}$\mathbf{MonRld}_{\sqsubseteq,=}$;
+\item \label{monrld-eq-eq}$\mathbf{MonRld}_{=,=}$;
+\item $\mathbf{CoMonRld}_{\sqsubseteq,\sqsupseteq}$;
+\item $\mathbf{CoMonRld}_{\sqsubseteq,=}$;
+\item $\mathbf{CoMonRld}_{=,=}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only the first three. The rest follow from duality.
+We need to prove only that composition of morphisms is a morphism,
+because associativity and existence of identity morphism are evident.
+We have:
+\begin{widedisorder}
+\item [{\ref{monrld-le-ge}}] Let $f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})$,
+$g\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{B};\mathcal{C})$.
+Then $\dom f\sqsubseteq\mathcal{A}$, $\im f\sqsupseteq\mathcal{B}$,
+$\dom g\sqsubseteq\mathcal{B}$, $\im g\sqsupseteq\mathcal{C}$. So
+$\dom(g\circ f)\sqsubseteq\mathcal{A}$, $\im(g\circ f)\sqsupseteq\mathcal{C}$
+that is $g\circ f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{C})$.
+\item [{\ref{monrld-le-eq}}] Let $f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})$,
+$g\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{B};\mathcal{C})$.
+Then $\dom f\sqsubseteq\mathcal{A}$, $\im f=\mathcal{B}$, $\dom g\sqsubseteq\mathcal{B}$,
+$\im g=\mathcal{C}$. So $\dom(g\circ f)\sqsubseteq\mathcal{A}$,
+$\im(g\circ f)=\mathcal{C}$ that is $g\circ f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{C})$.
+\item [{\ref{monrld-eq-eq}}] Let $f\in\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{B})$,
+$g\in\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{B};\mathcal{C})$. Then
+$\dom f=\mathcal{A}$, $\im f=\mathcal{B}$, $\dom g=\mathcal{B}$,
+$\im g=\mathcal{C}$. So $\dom(g\circ f)=\mathcal{A}$, $\im(g\circ f)=\mathcal{C}$
+that is $g\circ f\in\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{C})$.
+\end{widedisorder}
+\end{proof}
+\begin{defn}
+Let $\mathbf{BijRld}$ be the groupoid of all bijections of the category
+of reloid triples. Its objects are filters and its morphisms from
+a filter $\mathcal{A}$ to filter $\mathcal{B}$ are monovalued injective
+reloids $f$ such that $\dom f=\mathcal{A}$ and $\im f=\mathcal{B}$.\end{defn}
+\begin{thm}
+Filters $\mathcal{A}$ and $\mathcal{B}$ are isomorphic iff $\Mor_{\mathbf{BijRld}}(\mathcal{A};\mathcal{B})\neq\emptyset$.\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] Let $\mathcal{A}$ and $\mathcal{B}$ be isomorphic.
+Then there are sets $A\in\mathcal{A}$, $B\in\mathcal{B}$ and a bijective
+$\mathbf{Set}$-morphism $F:A\rightarrow B$ such that $\rsupfun F:\subsets A\cap\mathcal{A}\rightarrow\subsets B\cap\mathcal{B}$
+is a bijection.
+
+
+Obviously $f=(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}$ is monovalued
+and injective.
+\begin{align*}
+\im f & =\\
+\bigsqcap\setcond{\uparrow^{B}\im G}{G\in(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}} & =\\
+\bigsqcap\setcond{\uparrow^{B}\im(H\cap F|_{X})}{H\in(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}},X\in\mathcal{A}} & =\\
+\bigsqcap\setcond{\uparrow^{B}\im F|_{P}}{P\in\mathcal{A}} & =\\
+\bigsqcap\setcond{\uparrow^{B}\rsupfun FP}{P\in\mathcal{A}} & =\\
+\bigsqcap\setcond{\uparrow^{B}\rsupfun FP}{P\in\subsets A\cap\mathcal{A}} & =\\
+\bigsqcap\rsupfun{\uparrow^{B}}(\subsets B\cap\mathcal{B}) & =\\
+\bigsqcap\rsupfun{\uparrow^{B}}\mathcal{B}=\mathcal{B}.
+\end{align*}
+Thus $\dom f=\mathcal{A}$ and $\im f=\mathcal{B}$.
+
+\item [{$\Leftarrow$}] Let $f$ be a monovalued injective reloid such
+that $\dom f=\mathcal{A}$ and $\im f=\mathcal{B}$. Then there exist
+a function $F'$ and an injective binary relation $F''$ such that
+$F',F''\in f$. Thus $F=F'\cap F''$ is an injection such that $F\in f$.
+The function $F$ is a bijection from $A=\dom F$ to $B=\im F$. The
+function $\rsupfun F$ is an injection on $\subsets A\cap\mathcal{A}$
+(and moreover on $\subsets A$). It's simple to show that $\forall X\in\subsets A\cap\mathcal{A}:\rsupfun FX\in\subsets B\cap\mathcal{B}$
+and similarly 
+\[
+\forall Y\in\subsets B\cap\mathcal{B}:(\rsupfun F)^{-1}Y=\rsupfun{F^{-1}}Y\in\subsets A\cap\mathcal{A}.
+\]
+Thus $\rsupfun F|_{\subsets A\cap\mathcal{A}}$ is a bijection $\subsets A\cap\mathcal{A}\rightarrow\subsets B\cap\mathcal{B}$.
+So filters $\mathcal{A}$ and $\mathcal{B}$ are isomorphic.
+\end{description}
+\end{proof}
+\begin{prop}
+$(\ge_{1})=(\sqsupseteq)\circ(\ge_{2})$ (when we limit to small filters).\end{prop}
+\begin{proof}
+$\mathcal{A}\ge_{1}\mathcal{B}$ iff exists a function $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+But $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+is equivalent to $\exists\mathcal{B}'\in\mathscr{F}:(\mathcal{B}'\sqsupseteq\mathcal{B}\land\mathcal{B}'=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A})$.
+So $\mathcal{A}\ge_{1}\mathcal{B}$ is equivalent to existence of
+$\mathcal{B}'\in\mathscr{F}$ such that $\mathcal{B}'\sqsupseteq\mathcal{B}$
+and existence of a function $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
+such that $\mathcal{B}'=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+This is equivalent to $\mathcal{A}\mathrel{((\sqsupseteq)\circ(\ge_{2}))}\mathcal{B}$.\end{proof}
+\begin{prop}
+If $a$ and $b$ are ultrafilters then $b\ge_{1}a\Leftrightarrow b\ge_{2}a$.\end{prop}
+\begin{proof}
+We need to prove only $b\ge_{1}a\Rightarrow b\ge_{2}a$. If $b\ge_{1}a$
+then there exists a monovalued reloid $f:\Base(b)\rightarrow\Base(a)$
+such that $\dom f=b$ and $\im f\sqsupseteq a$. Then $\im f=\im\tofcd f\in\{\bot^{\mathscr{F}(\Base(a))}\}\cup\atoms^{\mathscr{F}(\Base(a))}$
+because $\tofcd f$ is a monovalued funcoid. So $\im f=a$ (taken
+into account $a\ne\bot^{\mathscr{F}(\Base(a))}$) and thus $b\ge_{2}a$\@.\end{proof}
+\begin{cor}
+For atomic filters $\ge_{1}$ is the same as $\ge_{2}$.
+\end{cor}
+Thus I will write simply $\ge$ for atomic filters.
+
+
+\subsection{Existence of no more than one monovalued injective reloid for a given
+pair of ultrafilters}
+
+
+\subsubsection{The lemmas}
+
+The lemmas in this section were provided to me by Robert Martin Solovay
+in \cite{solovay-on-identity}. They are based on Wistar Comfort's
+work.
+
+In this section we will assume $\mu$ is an ultrafilter on a set $I$
+and function $f:I\rightarrow I$ has the property $X\in\mu\Leftrightarrow\rsupfun{f^{-1}}X\in\mu$.
+\begin{lem}
+\label{lem:one-reloid-first}If $X\in\mu$ then $X\cap\rsupfun fX\in\mu$.\end{lem}
+\begin{proof}
+If $\rsupfun fX\notin\mu$ then $X\subseteq\rsupfun{f^{-1}}\rsupfun fX\notin\mu$
+and so $X\notin\mu$. Thus $X\in\mu\land\rsupfun fX\in\mu$ and consequently
+$X\cap\rsupfun fX\in\mu$.
+\end{proof}
+We will say that $x$ is \emph{periodic} when $f^{n}(x)=x$ for some
+positive integer $x$. The least such $n$ is called \emph{the period}
+of $x$.
+
+Let's define $x\sim y$ iff there exist $i,j\in\mathbb{N}$ such that
+$f^{i}(x)=f^{j}(y)$. Trivially it is an equivalence relation. If
+$x$ and $y$ are periodic, then $x\sim y$ iff exists $n\in\mathbb{N}$
+such that $f^{n}(y)=x$.
+
+Let $A=\setcond{x\in I}{x\text{ is periodic with period}>1}$.
+
+We will show $A\notin\mu$. Let's assume $A\in\mu$.
+
+Let a set $D\subseteq A$ contains (by the axiom of choice) exactly
+one element from each equivalence class of $A$ defined by the relation
+$\sim$.
+
+Let $\alpha$ be a function $A\rightarrow\mathbb{N}$ defined as follows.
+Let $x\in A$. Let $y$ be the unique element of $D$ such that $x\sim y$.
+Let $\alpha(x)$ be the least $n\in\mathbb{N}$ such that $f^{n}(y)=x$.
+
+Let $B_{0}=\setcond{x\in A}{\alpha(x)\text{ is even}}$ and $B_{1}=\setcond{x\in A}{\alpha(x)\text{ is odd}}$.
+
+Let $B_{2}=\setcond{x\in A}{\alpha(x)=0}$.
+\begin{lem}
+$B_{0}\cap\rsupfun fB_{0}\subseteq B_{2}$.\end{lem}
+\begin{proof}
+If $x\in B_{0}\cap\rsupfun fB_{0}$ then for a minimal even $n$ and
+$x=f(x')$ where $f^{m}(y')=x'$ for a minimal even $m$. Thus $f^{n}(y)=f(x')$
+thus $y$ and $x'$ laying in the same equivalence class and thus
+$y=y'$. So we have $f^{n}(y)=f^{m+1}(y)$. Thus $n\le m+1$ by minimality.
+
+$x'$ lies on an orbit and thus $x'=f^{-1}(x)$ where by $f^{-1}$
+I mean step backward on our orbit; $f^{m}(y)=f^{-1}(x)$ and thus
+$x'=f^{n-1}(y)$ thus $n-1\ge m$ by minimality or $n=0$.
+
+Thus $n=m+1$ what is impossible for even $n$ and $m$. We have a
+contradiction what proves $B_{0}\cap\rsupfun fB_{0}\subseteq\emptyset$.
+
+Remained the case $n=0$, then $x=f^{0}(y)$ and thus $\alpha(x)=0$.\end{proof}
+\begin{lem}
+$B_{1}\cap\rsupfun fB_{1}=\emptyset$.\end{lem}
+\begin{proof}
+Let $x\in B_{1}\cap\rsupfun fB_{1}$. Then $f^{n}(y)=x$ for an odd
+$n$ and $x=f(x')$ where $f^{m}(y')=x'$ for an odd $m$. Thus $f^{n}(y)=f(x')$
+thus $y$ and $x'$ laying in the same equivalence class and thus
+$y=y'$. So we have $f^{n}(y)=f^{m+1}(y)$. Thus $n\le m+1$ by minimality.
+
+$x'$ lies on an orbit and thus $x'=f^{-1}(x)$ where by $f^{-1}$
+I mean step backward on our orbit;
+
+$f^{m}(y)=f^{-1}(x)$ and thus $x'=f^{n-1}(y)$ thus $n-1\ge m$ by
+minimality ($n=0$ is impossible because $n$ is odd).
+
+Thus $n=m+1$ what is impossible for odd $n$ and $m$. We have a
+contradiction what proves $B_{1}\cap\rsupfun fB_{1}=\emptyset$.\end{proof}
+\begin{lem}
+$B_{2}\cap\rsupfun fB_{2}=\emptyset$.\end{lem}
+\begin{proof}
+Let $x\in B_{2}\cap\rsupfun fB_{2}$. Then $x=y$ and $x'=y$ where
+$x=f(x')$. Thus $x=f(x)$ and so $x\notin A$ what is impossible.\end{proof}
+\begin{lem}
+$A\notin\mu$.\end{lem}
+\begin{proof}
+Suppose $A\in\mu$.
+
+Since $A\in\mu$ we have $B_{0}\in\mu$ or $B_{1}\in\mu$.
+
+So either $B_{0}\cap\rsupfun fB_{0}\subseteq B_{2}$ or $B_{1}\cap\rsupfun fB_{1}\subseteq B_{2}$.
+As such by the lemma \ref{lem:one-reloid-first} we have $B_{2}\in\mu$.
+This is incompatible with $B_{2}\cap\rsupfun fB_{2}=\emptyset$. So
+we got a contradiction.
+\end{proof}
+Let $C$ be the set of points $x$ which are not periodic but $f^{n}(x)$
+is periodic for some positive $n$.
+\begin{lem}
+$C\notin\mu$.\end{lem}
+\begin{proof}
+Let $\beta$ be a function $C\rightarrow\mathbb{N}$ such that $\beta(x)$
+is the least $n\in\mathbb{N}$ such that $f^{n}(x)$ is periodic.
+
+Let $C_{0}=\setcond{x\in C}{\beta(x)\text{ is even}}$ and $C_{0}=\setcond{x\in C}{\beta(x)\text{ is odd}}$.
+
+Obviously $C_{j}\cap\rsupfun fC_{j}=\emptyset$ for $j=0,1$. Hence
+by lemma \ref{lem:one-reloid-first} we have $C_{0},C_{1}\notin\mu$
+and thus $C=C_{0}\cup C_{1}\notin\mu$.
+\end{proof}
+Let $E$ be the set of $x\in I$ such that for no $n\in\mathbb{N}$
+we have $f^{n}(x)$ periodic.
+\begin{lem}
+Let $x,y\in E$ be such that $f^{i}(x)=f^{j}(y)$ and $f^{i'}(x)=f^{j'}(y)$
+for some $i,j,i',j'\in\mathbb{N}$. Then $i-j=i'-j'$.\end{lem}
+\begin{proof}
+$i\mapsto f^{i}(x)$ is a bijection.
+
+So $y=f^{i-j}(y)$ and $y=f^{i'-j'}(y)$. Thus $f^{i-j}(y)=f^{i'-j'}(y)$
+and so $i-j=i'-j'$.\end{proof}
+\begin{lem}
+$E\notin\mu$.\end{lem}
+\begin{proof}
+Let $D'\subseteq E$ be a subset of $E$ with exactly one element
+from each equivalence class of the relation $\sim$ on $E$.
+
+Define the function $\gamma:E\rightarrow\mathbb{Z}$ as follows. Let
+$x\in E$. Let $y$ be the unique element of $D'$ such that $x\sim y$.
+Choose $i,j\in\mathbb{N}$ such that $f^{i}(y)=f^{j}(x)$. Let $\gamma(x)=i-j$.
+By the last lemma, $\gamma$ is well-defined.
+
+It is clear that if $x\in E$ then $f(x)\in E$ and moreover $\gamma(f(x))=\gamma(x)+1$.
+
+Let $E_{0}=\setcond{x\in E}{\gamma(x)\text{ is even}}$ and $E_{1}=\setcond{x\in E}{\gamma(x)\text{ is odd}}$.
+
+We have $E_{0}\cap\rsupfun fE_{0}=\emptyset\notin\mu$ and hence $E_{0}\notin\mu$.
+
+Similarly $E_{1}\notin\mu$.
+
+Thus $E=E_{0}\cup E_{1}\notin\mu$.\end{proof}
+\begin{lem}
+$f$ is the identity function on a set in $\mu$.\end{lem}
+\begin{proof}
+We have shown $A,C,E\notin\mu$. But the points which lie in none
+of these sets are exactly points periodic with period $1$ that is
+fixed points of $f$. Thus the set of fixed points of $f$ belongs
+to the filter $\mu$.
+\end{proof}
+
+\subsubsection{The main theorem and its consequences}
+\begin{thm}
+For every ultrafilter $a$ the morphism $(a;a;\id_{a}^{\mathsf{FCD}})$
+is the only
+\begin{enumerate}
+\item \label{atom-oneiso}monovalued morphism of the category of reloid
+triples from $a$ to $a$;
+\item injective morphism of the category of reloid triples from $a$ to
+$a$;
+\item bijective morphism of the category of reloid triples from $a$ to
+$a$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only \ref{atom-oneiso} because the rest follow from
+it.
+
+Let $f$ be a monovalued morphism from $\Base(a)$ to $\Base(a)$.
+Then it exists a $\mathbf{Set}$-morphism $F$ such that $F\in f$.
+Trivially $\supfun{\uparrow^{\mathsf{FCD}}F}a\sqsupseteq a$ and thus
+$\rsupfun FA\in a$ for every $A\in a$. Thus by the lemma we have
+that $F$ is the identity function on a set in $a$ and so obviously
+$f$ is an identity.\end{proof}
+\begin{cor}
+For every two atomic filters (with possibly different bases) $\mathcal{A}$
+and $\mathcal{B}$ there exists at most one bijective reloid triple
+from $\mathcal{A}$ to $\mathcal{B}$.\end{cor}
+\begin{proof}
+Suppose that $f$ and $g$ are two different bijective reloids from
+$\mathcal{A}$ to $\mathcal{B}$. Then $g^{-1}\circ f$ is not the
+identity reloid (otherwise $g^{-1}\circ f=\id_{\dom f}^{\mathsf{RLD}}$
+and so $f=g$). But $g^{-1}\circ f$ is a bijective reloid (as a composition
+of bijective reloids) from $\mathcal{A}$ to $\mathcal{A}$ what is
+impossible.
+\end{proof}
+
+\section{Rudin-Keisler equivalence and Rudin-Keisler order}
+\begin{thm}
+Atomic filters $a$ and $b$ (with possibly different bases) are isomorphic
+iff $a\ge b\land b\ge a$.\end{thm}
+\begin{proof}
+Let $a\ge b\land b\ge a$. Then there are a monovalued reloids $f$
+and $g$ such that $\dom f=a$ and $\im f=b$ and $\dom g=b$ and
+$\im g=a$. Thus $g\circ f$ and $f\circ g$ are monovalued morphisms
+from $a$ to $a$ and from $b$ to $b$. By the above we have $g\circ f=\id_{a}^{\mathsf{RLD}}$
+and $f\circ g=\id_{b}^{\mathsf{RLD}}$ so $g=f^{-1}$ and $f^{-1}\circ f=\id_{a}^{\mathsf{RLD}}$
+and $f\circ f^{-1}=\id_{b}^{\mathsf{RLD}}$. Thus $f$ is an injective
+monovalued reloid from $a$ to $b$ and thus $a$ and $b$ are isomorphic.
+\end{proof}
+The last theorem cannot be generalized from atomic filters to arbitrary
+filters, as it's shown by the following example:
+\begin{example}
+$\mathcal{A}\ge_{1}\mathcal{B}\wedge\mathcal{B}\ge_{1}\mathcal{A}$
+but $\mathcal{A}$ is not isomorphic to $\mathcal{B}$ for some filters
+$\mathcal{A}$ and $\mathcal{B}$.\end{example}
+\begin{proof}
+Consider $\mathcal{A}=\uparrow^{\mathbb{R}}[0;1]$ and $\mathcal{B}=\bigsqcap\setcond{\uparrow^{\mathbb{R}}[0;1+\epsilon)}{\epsilon>0}$.
+Then the function $f=\mylamdba x{\mathbb{R}}{x/2}$ witnesses both
+inequalities $\mathcal{A}\ge_{1}\mathcal{B}$ and $\mathcal{B}\ge_{1}\mathcal{A}$.
+But these filters cannot be isomorphic because only one of them is
+principal.\end{proof}
+\begin{lem}
+Let $f_{0}$ and $f_{1}$ be $\mathbf{Set}$-morphisms. Let $f(x;y)=(f_{0}x;f_{1}y)$
+for a function $f$. Then
+\[
+\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\supfun{\uparrow^{\mathsf{FCD}}f_{0}}\mathcal{A}\times^{\mathsf{RLD}}\supfun{\uparrow^{\mathsf{FCD}}f_{1}}\mathcal{B}.
+\]
+\end{lem}
+\begin{proof}
+~
+\begin{align*}
+\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
+\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}}\bigsqcap\setcond{\uparrow^{\Src f_{0}\times\Src f_{1}}(A\times B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\Dst f_{0}\times\Dst f_{1}}\rsupfun f(A\times B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\Dst f_{0}\times\Dst f_{1}}(\rsupfun{f_{0}}A\times\rsupfun{f_{1}}B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\Dst f_{0}}\rsupfun{f_{0}}A\times\uparrow^{\Dst f_{1}}\rsupfun{f_{1}}B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\text{ (theorem \ref{meet-prod-fcd})}\\
+\bigsqcap\setcond{\uparrow^{\Dst f_{0}}\rsupfun{f_{0}}A}{A\in\mathcal{A}}\times^{\mathsf{RLD}}\bigsqcap\setcond{\uparrow^{\Dst f_{1}}\rsupfun{f_{1}}B}{B\in\mathcal{B}} & =\\
+\supfun{\uparrow^{\mathsf{FCD}}f_{0}}\mathcal{A}\times^{\mathsf{RLD}}\supfun{\uparrow^{\mathsf{FCD}}f_{1}}\mathcal{B}.
+\end{align*}
+\end{proof}
+\begin{thm}
+\label{inj-iso-dom}Let $f$ be a monovalued reloid. Then $\GR f$
+is isomorphic to the filter $\dom f$.\end{thm}
+\begin{proof}
+Let $f$ be a monovalued reloid. There exists a function $F\in\GR f$.
+Consider the bijective function $p=\mylamdba x{\dom F}{(x;Fx)}$.
+
+$\rsupfun p\dom F=F$ and consequently
+\begin{align*}
+\supfun p\dom f & =\\
+\bigsqcap_{K\in\up f}^{\mathsf{RLD}}\rsupfun p\dom K & =\\
+\bigsqcap_{K\in\up f}^{\mathsf{RLD}}\rsupfun p\dom(K\cap F) & =\\
+\bigsqcap_{K\in\up f}^{\mathsf{RLD}}(K\cap F) & =\\
+\bigsqcap_{K\in\up f}^{\mathsf{RLD}}K & =f.
+\end{align*}
+Thus $p$ witnesses that $f$ is isomorphic to the filter $\dom f$.\end{proof}
+\begin{cor}
+The graph of a monovalued reloid with atomic domain is atomic.
+\end{cor}
+
+\begin{cor}
+$\id_{\mathcal{A}}^{\mathsf{RLD}}$ is isomorphic to $\mathcal{A}$
+for every filter $\mathcal{A}$.\end{cor}
+\begin{thm}
+There are atomic filters incomparable by Rudin-Keisler order. (Elements~$a$
+and~$b$ are \emph{incomparable} when $a\nsqsubseteq b\land b\nsqsubseteq a$.)\end{thm}
+\begin{proof}
+See \cite{Gryzlov1997151}.\end{proof}
+\begin{thm}
+$\ge_{1}$ and $\ge_{2}$ are different relations.\end{thm}
+\begin{proof}
+Consider $a$ is an arbitrary non-empty filter. Then $a\ge_{1}\bot^{\mathscr{F}(\Base(a))}$
+but not $a\ge_{2}\bot^{\mathscr{F}(\Base(a))}$.\end{proof}
+\begin{prop}
+If $a\ge_{2}b$ where $a$ is an ultrafilter then $b$ is also an
+ultrafilter.\end{prop}
+\begin{proof}
+$b=\supfun{\uparrow^{\mathsf{FCD}}f}a$ for some $f:\Base(a)\rightarrow\Base(b)$.
+So $b$ is an ultrafilter since $f$ is monovalued.\end{proof}
+\begin{cor}
+If $a\ge_{1}b$ where $a$ is an ultrafilter then $b$ is also an
+ultrafilter or $\bot^{\mathscr{F}(\Base(a))}$.\end{cor}
+\begin{proof}
+$b\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}a$ for some $f:\Base(a)\rightarrow\Base(b)$.
+Therefore $b'=\supfun{\uparrow^{\mathsf{FCD}}f}a$ is an ultrafilter.
+From this our statement follows.\end{proof}
+\begin{prop}
+Principal filters, generated by sets of the same cardinality, are
+isomorphic.\end{prop}
+\begin{proof}
+Let $A$ and $B$ be sets of the same cardinality. Then there are
+a bijection $f$ from $A$ to $B$. We have $\rsupfun fA=B$ and thus
+$A$ and $B$ are isomorphic.\end{proof}
+\begin{prop}
+If a filter is isomorphic to a principal filter, then it is also a
+principal filter induced by a set with the same cardinality.\end{prop}
+\begin{proof}
+Let $A$ be a principal filter and $B$ is a filter isomorphic to
+$A$. Then there are sets $X\in A$ and $Y\in B$ such that there
+are a bijection $f:X\rightarrow Y$ such that $\rsupfun fA=B$.
+
+So $\min B$ exists and $\min B=\rsupfun f\min A$ and thus $B$ is
+a principal filter (of the same cardinality as $A$).\end{proof}
+\begin{prop}
+A filter isomorphic to a non-trivial ultrafilter is a non-trivial
+ultrafilter.\end{prop}
+\begin{proof}
+Let $a$ be a non-trivial ultrafilter and $a$ is isomorphic to $b$.
+Then $a\ge_{2}b$ and thus $b$ is an ultrafilter. The filter $b$
+cannot be trivial because otherwise $a$ would be also trivial.\end{proof}
+\begin{thm}
+For an infinite set $U$ there exist $2^{2^{\card U}}$ equivalence
+classes of isomorphic ultrafilters.\end{thm}
+\begin{proof}
+The number of bijections between any two given subsets of $U$ is
+no more than $(\card U)^{\card U}=2^{\card U}$. The number of bijections
+between all pairs of subsets of $U$ is no more than $2^{\card U}\cdot2^{\card U}=2^{\card U}$.
+Therefore each isomorphism class contains at most $2^{\card U}$ ultrafilters.
+But there are $2^{2^{\card U}}$ ultrafilters. So there are $2^{2^{\card U}}$
+classes.\end{proof}
+\begin{rem}
+One of the above mentioned equivalence classes contains trivial ultrafilters.\end{rem}
+\begin{cor}
+There exist non-isomorphic nontrivial ultrafilters on any infinite
+set.
+\end{cor}
+
+\section{Consequences}
+\begin{thm}
+\label{triv-atom-prod}The graph of reloid $\mathcal{F}\times^{\mathsf{RLD}}\uparrow^{A}\{a\}$
+is isomorphic to the filter $\mathcal{F}$ for every set $A$ and
+$a\in A$.\end{thm}
+\begin{proof}
+From \ref{inj-iso-dom}.\end{proof}
+\begin{thm}
+If $f$, $g$ are reloids, $f\sqsubseteq g$ and $g$ is monovalued
+then $g|_{\dom f}=f$.\end{thm}
+\begin{proof}
+It's simple to show that $f=\bigsqcup\setcond{f|_{a}}{a\in\atoms^{\mathscr{F}(\Src f)}}$
+(use the fact that $k\sqsubseteq f|_{a}$ for some $a\in\atoms^{\mathscr{F}(\Src f)}$
+for every $k\in\atoms f$ and the fact that $\mathsf{RLD}(\Src f;\Dst f)$
+is atomistic).
+
+Suppose that $g|_{\dom f}\neq f$. Then there exists $a\in\atoms\dom f$
+such that $g|_{a}\neq f|_{a}$.
+
+Obviously $g|_{a}\sqsupseteq f|_{a}$.
+
+If $g|_{a}\sqsupset f|_{a}$ then $g|_{a}$ is not atomic (because
+$f|_{a}\ne\bot^{\mathsf{RLD}(\Src f;\Dst f)}$) what contradicts to
+a theorem above. So $g|_{a}=f|_{a}$ what is a contradiction and thus
+$g|_{\dom f}=f$.\end{proof}
+\begin{cor}
+\label{mv-is-restr}Every monovalued reloid is a restricted principal
+monovalued reloid.\end{cor}
+\begin{proof}
+Let $f$ be a monovalued reloid. Then there exists a function $F\in\GR f$.
+So we have
+\[
+(\uparrow^{\mathsf{RLD}(\Src f;\Dst f)}F)|_{\dom f}=f.
+\]
+\end{proof}
+\begin{cor}
+Every monovalued injective reloid is a restricted injective monovalued
+principal reloid.\end{cor}
+\begin{proof}
+Let $f$ be a monovalued injective reloid. There exists a function
+$F$ such that $f=(\uparrow^{\mathsf{RLD}(\Src f;\Dst f)}F)|_{\dom f}$.
+Also there exists an injection $G\in\up f$.
+
+Thus
+\begin{multline*}
+f=f\sqcap(\uparrow^{\mathsf{RLD}(\Src f;\Dst f)}G)|_{\dom f}=\\
+(\uparrow^{\mathsf{RLD}(\Src f;\Dst f)}F)|_{\dom f}\sqcap(\uparrow^{\mathsf{RLD}(\Src f;\Dst f)}G)|_{\dom f}=\\
+(\uparrow^{\mathsf{RLD}(\Src f;\Dst f)}(F\cap G))|_{\dom f}.
+\end{multline*}
+Obviously $F\cap G$ is an injection.\end{proof}
+\begin{thm}
+If a reloid $f$ is monovalued and $\dom f$ is an principal filter
+then $f$ is principal.\end{thm}
+\begin{proof}
+$f$ is a restricted principal monovalued reloid. Thus $f=F|_{\dom f}$
+where $F$ is a principal monovalued reloid. Thus $f$ is principal.\end{proof}
+\begin{lem}
+If a filter $\mathcal{A}$ is isomorphic to a filter $\mathcal{B}$
+then if $X$ is a set then there exists a set $Y$ such that $\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$
+is a filter isomorphic to $\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.\end{lem}
+\begin{proof}
+Let $f$ be a monovalued injective reloid such that $\dom f=\mathcal{A}$,
+$\im f=\mathcal{B}$.
+
+By proposition \ref{factor-isomor} we have: $\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}=\mathcal{X}$
+where $\mathcal{X}$ is a filter complementive to $\mathcal{A}$.
+Let $\mathcal{Y}=\mathcal{A}\setminus\mathcal{X}$.
+
+$\supfun{\tofcd f}\mathcal{X}\sqcap\supfun{\tofcd f}\mathcal{Y}=\bot^{\mathscr{F}(\Base(\mathcal{B}))}$
+by injectivity of $f$.
+
+$\supfun{\tofcd f}\mathcal{X}\sqcup\supfun{\tofcd f}\mathcal{Y}=\supfun{\tofcd f}(\mathcal{X}\sqcup\mathcal{Y})=\supfun{\tofcd f}\mathcal{A}=\mathcal{B}$.
+So $\supfun{\tofcd f}\mathcal{X}$ is a filter complementive to $\mathcal{B}$.
+So by proposition \ref{factor-isomor} there exists a set $Y$ such
+that $\supfun{\tofcd f}\mathcal{X}=\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.
+
+$f|_{\mathcal{X}}$ is obviously a monovalued injective reloid with
+$\dom(f|_{\mathcal{X}})=\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$
+and $\im(f|_{\mathcal{X}})=\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.
+So $\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$ is isomorphic
+to $\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.\end{proof}
+\begin{example}
+$\mathcal{A}\ge_{2}\mathcal{B}\wedge\mathcal{B}\ge_{2}\mathcal{A}$
+but $\mathcal{A}$ is not isomorphic to $\mathcal{B}$ for some filters
+$\mathcal{A}$ and $\mathcal{B}$.\end{example}
+\begin{proof}
+(proof idea by \noun{Andreas Blass}, rewritten using reloids by me)
+
+Let $u_{n}$, $h_{n}$ with $n$ ranging over the set $\mathbb{Z}$
+be sequences of ultrafilters on $\mathbb{N}$ and functions $\mathbb{N}\rightarrow\mathbb{N}$
+such that $\supfun{\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}h_{n}}u_{n+1}=u_{n}$
+and $u_{n}$ are pairwise non-isomorphic. (See \cite{kleene-degrees}
+for a proof that such ultrafilters and functions exist.)
+
+$\mathcal{A}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1})$;
+$\mathcal{B}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n})$.
+
+Let the $\mathbf{Set}$-morphisms $f,g:\mathbb{Z}\times\mathbb{N}\rightarrow\mathbb{Z}\times\mathbb{N}$
+be defined by the formulas $f(n;x)=(n;h_{2n}x)$ and $g(n;x)=(n-1;h_{2n-1}x)$.
+
+Using the fact that every function induces a complete funcoid and
+a lemma above we get:
+\begin{align*}
+\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}} & =\\
+\mathcal{B}.\\
+\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{B} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n-1\}\times u_{2n-1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1}}{n\in\mathbb{Z}} & =\\
+\mathcal{A}.
+\end{align*}
+
+
+It remains to show that $\mathcal{A}$ and $\mathcal{B}$ are not
+isomorphic.
+
+Let $X\in\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}}u_{2n+1}$
+for some $n\in\mathbb{Z}$. Then if $\uparrow^{\mathbb{Z}\times\mathbb{N}}X\sqcap\mathcal{A}$
+is an ultrafilter we have $\uparrow^{\mathbb{Z}\times\mathbb{N}}X\sqcap\mathcal{A}=\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}}u_{2n+1}$
+and thus by the theorem \ref{triv-atom-prod} is isomorphic to $u_{2n+1}$.
+
+If $X\notin\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}}u_{2n+1}$
+for every $n\in\mathbb{Z}$ then $(\mathbb{Z}\times\mathbb{N})\setminus X\in\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}}u_{2n+1}$
+and thus $(\mathbb{Z}\times\mathbb{N})\setminus X\in\mathcal{A}$
+and thus $\uparrow^{\mathbb{Z}\times\mathbb{N}}X\sqcap\mathcal{A}=\bot^{\mathbb{Z}\times\mathbb{N}}$.
+
+We have also
+\begin{multline*}
+(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\mathcal{B}=(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}}=\\
+\bigsqcup\setcond{(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n})}{n\in\mathbb{Z}}=\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}u_{0}\text{ (an ultrafilter).}
+\end{multline*}
+
+
+Thus every ultrafilter generated as intersecting $\mathcal{A}$ with
+a principal filter $\uparrow^{\mathbb{Z}\times\mathbb{N}}X$ is isomorphic
+to some $u_{2n+1}$ and thus is not isomorphic to $u_{0}$. By the
+lemma it follows that $\mathcal{A}$ and $\mathcal{B}$ are non-isomorphic.
+\end{proof}
+
+\subsection{Metamonovalued reloids}
+\begin{prop}
+$\left(\bigcap G\right)\circ f=\bigcap_{g\in G}(g\circ f)$ for every
+function $f$ and a set $G$ of binary relations.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+(x;z)\in\left(\bigcap G\right)\circ f & \Leftrightarrow\\
+\exists y:(fx=y\land(y;z)\in\bigcap G) & \Leftrightarrow\\
+(fx;z)\in\bigcap G & \Leftrightarrow\\
+\forall g\in G:(fx;z)\in g & \Leftrightarrow\\
+\forall g\in G\exists y:(fx=y\land(y;z)\in g) & \Leftrightarrow\\
+\forall g\in G:(x;z)\in g\circ f & \Leftrightarrow\\
+(x;z)\in\bigcap_{g\in G}(g\circ f).
+\end{align*}
+\end{proof}
+\begin{lem}
+$\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$ if
+$f$ is a monovalued principal reloid and $G$ is a set of reloids
+(with matching sources and destinations).\end{lem}
+\begin{proof}
+Let $f=\uparrow^{\mathsf{RLD}}\varphi$ for some monovalued $\mathbf{Rel}$-morphism
+$\varphi$.
+
+$\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in\up\bigsqcap G}^{\mathsf{RLD}}(g\circ\varphi)$;
+\begin{align*}
+\up\bigsqcap_{g\in G}(g\circ f) & =\\
+\up\bigsqcap_{g\in G}\bigsqcap_{\Gamma\in\up g}^{\mathsf{RLD}}(\Gamma\circ\varphi) & =\\
+\up\bigsqcap\bigcup_{g\in G}\setcond{\uparrow^{\mathsf{RLD}}(\Gamma\circ\varphi)}{\Gamma\in\up g} & =\\
+\up\bigsqcap_{\Gamma\in\up\bigsqcap G}^{\mathsf{RLD}}(\Gamma\circ\varphi) & =\\
+\up\bigsqcap\setcond{(\Gamma_{0}\circ\varphi)\sqcap\dots\sqcap(\Gamma_{n}\circ\varphi)}{\Gamma_{i}\in\bigcup G\text{ where \ensuremath{i=0,\dots,n} for \ensuremath{n\in\mathbb{N}}}} & =\text{ (proposition above)}\\
+\up\bigsqcap\setcond{(\Gamma_{0}\sqcap\dots\sqcap\Gamma_{n})\circ\varphi}{\Gamma_{i}\in\bigcup G\text{ where \ensuremath{i=0,\dots,n} for \ensuremath{n\in\mathbb{N}}}} & =\\
+\up\bigsqcap\setcond{\Gamma\circ\varphi}{\Gamma\in\up\bigsqcap G}.
+\end{align*}
+Thus $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.\end{proof}
+\begin{thm}
+~
+\begin{enumerate}
+\item Monovalued reloids are metamonovalued.
+\item Injective reloids are metainjective.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only the first, as the second is dual.
+
+Let $G$ be a set of reloids and $f$ be a monovalued reloid.
+
+Let $f'$ be a principal monovalued continuation of $f$ (so that
+$f=f'|_{\dom f}$).
+
+By the lemma $\left(\bigsqcap G\right)\circ f'=\bigsqcap_{g\in G}(g\circ f')$.
+Restricting this equality to $\dom f$ we get: $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.\end{proof}
+\begin{conjecture}
+Every metamonovalued reloid is monovalued.\end{conjecture}
+

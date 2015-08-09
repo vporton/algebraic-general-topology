@@ -1,0 +1,70 @@
+
+\chapter{Postface}
+
+See this Web page for my research plans: \href{http://www.mathematics21.org/agt-plans.html}{http://www.mathematics21.org/agt-plans.html}
+
+I deem that now the most important research topics in Algebraic General
+Topology are:
+\begin{itemize}
+\item to solve the open problems mentioned in this work;
+\item research pointfree reloids (see below);
+\item define and research compactness of funcoids;
+\item research categories related with funcoids and reloids;
+\item research multifuncoids and staroids in more details;
+\item research generalized limit of compositions of functions;
+\item research more on complete pointfree funcoids.
+\end{itemize}
+All my research of funcoids and reloids is presented at
+
+\href{http://www.mathematics21.org/algebraic-general-topology.html}{http://www.mathematics21.org/algebraic-general-topology.html}
+
+Please write to \href{mailto:porton@narod.ru}{porton@narod.ru}, if
+you discover anything new related with my theory.
+
+
+\section{Pointfree reloids}
+
+Let us define something (let call it \emph{pointfree reloids}) corresponding
+to pointfree funcoids in the same way as reloids correspond to funcoids.
+
+First note that $\mathsf{RLD}(A;B)$ are isomorphic to $\mathfrak{F}\subsets(\subsets X\times\subsets B)$.
+Then note that $\subsets(\subsets A\times\subsets B)$ are isomorphic
+both to $\mathsf{pFCD}(\subsets A;\subsets B)$ and to $\atoms^{\subsets A}\times\atoms^{\subsets B}$.
+
+But $\mathsf{FCD}(A;B)$ is isomorphic to $\mathsf{pFCD}(\mathfrak{F}(A);\mathfrak{F}(B))$.
+
+Thus both $\mathfrak{F}\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+and $\mathfrak{F}(\atoms^{\mathfrak{A}}\times\atoms^{\mathfrak{B}})$
+correspond to $\mathsf{pFCD}(\mathfrak{F}(\mathfrak{A});\mathfrak{F}(\mathfrak{B}))$
+in the same way (replace $\subsets A\rightarrow\mathfrak{A}$, $\subsets B\rightarrow\mathfrak{B}$)
+as $\mathsf{RLD}(A;B)$ corresponds to $\mathsf{FCD}(A;B)$.
+
+So we can name either $\mathfrak{F}\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+and $\mathfrak{F}(\atoms^{\mathfrak{A}}\times\atoms^{\mathfrak{B}})$
+as \emph{pointfree reloids}.
+
+Note that there are two different definitions of pointfree reloids.
+They probably are not the same for arbitrary posets~$\mathfrak{A}$
+and~$\mathfrak{B}$.
+
+I have defined pointfree reloids, but have not yet started to research
+their properties.
+
+Research convergence for pointfree funcoids (should be easy).
+
+
+\section{Formalizing this theory}
+
+Despite of all measures taken, it is possible that there are errors
+in this book. While special cases, such as filters of powersets or
+funcoids, are most likely correct, general cases (such as filters
+on posets or pointfree funcoids) may possibly contain wrong theorem
+conditions.
+
+Thus it would be good to formalize the theory presented in this book
+in a proof assistant\footnote{A \emph{proof assistant} is a computer program which checks mathematical
+proofs written in a formal language understandable by computer.} such as Coq.
+
+If you want to work on formalizing this theory, please let me know.
+
+See also \href{https://coq.inria.fr/bugs/show_bug.cgi?id=2957}{https://coq.inria.fr/bugs/show\_{}bug.cgi?id=2957}

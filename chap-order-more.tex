@@ -1,0 +1,1750 @@
+
+\chapter{More on order theory}
+
+
+\section{Straight maps and separation subsets}
+
+
+\subsection{Straight maps}
+\begin{defn}
+\index{straight map}Let $f$ be a monotone map from a meet-semilattice
+$\mathfrak{A}$ to some poset $\mathfrak{B}$. I call $f$ a \emph{straight}
+map when
+\[
+\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow fa=f(a\sqcap b)).
+\]
+\end{defn}
+\begin{prop}
+The following statements are equivalent for a monotone map~$f$:
+\begin{enumerate}
+\item \label{str-def}$f$ is a straight map.
+\item \label{str-le-le}$\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow fa\sqsubseteq f(a\sqcap b))$.
+\item \label{str-le-ng}$\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow fa\nsqsupset f(a\sqcap b))$.
+\item \label{str-g-nle}$\forall a,b\in\mathfrak{A}:(fa\sqsupset f(a\sqcap b)\Rightarrow fa\nsqsubseteq fb)$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{str-def}$\Leftrightarrow$\ref{str-le-le}$\Leftrightarrow$\ref{str-le-ng}}] Due
+$fa\sqsupseteq f(a\sqcap b)$.
+\item [{\ref{str-le-ng}$\Leftrightarrow$\ref{str-g-nle}}] Obvious.
+\end{description}
+\end{proof}
+\begin{rem}
+The definition of straight map can be generalized for any poset $\mathfrak{A}$
+by the formula
+\[
+\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow\exists c\in\mathfrak{A}:(c\sqsubseteq a\land c\sqsubseteq b\land fa=fc)).
+\]
+
+
+This generalization is not yet researched however.\end{rem}
+\begin{prop}
+Let $f$ be a monotone map from a meet-semilattice $\mathfrak{A}$
+to a meet-semilattice $\mathfrak{B}$. If
+\[
+\forall a,b\in\mathfrak{A}:f(a\sqcap b)=fa\sqcap fb
+\]
+then $f$ is a straight map.\end{prop}
+\begin{proof}
+Let $fa\sqsubseteq fb$. Then $f(a\sqcap b)=fa\sqcap fb=fa$.\end{proof}
+\begin{prop}
+Let $f$ be a monotone map from a meet-semilattice $\mathfrak{A}$
+to some poset $\mathfrak{B}$. If
+\[
+\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow a\sqsubseteq b)
+\]
+then $f$ is a straight map.\end{prop}
+\begin{proof}
+$fa\sqsubseteq fb\Rightarrow a\sqsubseteq b\Rightarrow a=a\sqcap b\Rightarrow fa=f(a\sqcap b)$.\end{proof}
+\begin{thm}
+If $f$ is a straight monotone map from a meet-semilattice $\mathfrak{A}$
+then the following statements are equivalent:
+\begin{enumerate}
+\item \label{stra-inj}$f$ is an injection.
+\item \label{stra-sqe-sqe}$\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow a\sqsubseteq b)$.
+\item \label{stra-sq-sq}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\sqsubset fb)$.
+\item \label{stra-sq-ne}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\neq fb)$.
+\item \label{stra-sq-nsqe}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\nsqsupseteq fb)$.
+\item \label{stra-sqe-nsq}$\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow a\nsqsupset b)$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{stra-inj}$\Rightarrow$\ref{stra-sq-sq}}] Let $a,b\in\mathfrak{A}$.
+Let $fa=fb\Rightarrow a=b$. Let $a\sqsubset b$. $fa\neq fb$ because
+$a\neq b$. $fa\sqsubseteq fb$ because $a\sqsubseteq b$. So $fa\sqsubset fb$.
+\item [{\ref{stra-sqe-sqe}$\Rightarrow$\ref{stra-inj}}] Let $a,b\in\mathfrak{A}$.
+Let $fa\sqsubseteq fb\Rightarrow a\sqsubseteq b$. Let $fa=fb$. Then
+$a\sqsubseteq b$ and $b\sqsubseteq a$ and consequently $a=b$.
+\item [{\ref{stra-sq-sq}$\Rightarrow$\ref{stra-sqe-sqe}}] Let $\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\sqsubset fb)$.
+Let $a\nsqsubseteq b$. Then $a\sqsupset a\sqcap b$. So $fa\sqsupset f(a\sqcap b)$.
+If $fa\sqsubseteq fb$ then $fa\sqsubseteq f(a\sqcap b)$ what is
+a contradiction.
+\item [{\ref{stra-sq-sq}$\Rightarrow$\ref{stra-sq-nsqe}$\Rightarrow$\ref{stra-sq-ne}}] Obvious.
+\item [{\ref{stra-sq-ne}$\Rightarrow$\ref{stra-sq-sq}}] Because $a\sqsubset b\Rightarrow a\sqsubseteq b\Rightarrow fa\sqsubseteq fb$.
+\item [{\ref{stra-sq-nsqe}$\Leftrightarrow$\ref{stra-sqe-nsq}}] Obvious.
+\end{description}
+\end{proof}
+
+\subsection{\label{sep-and-full}Separation subsets and full stars}
+\begin{defn}
+$\corestar_{Y}a=\setcond{x\in Y}{x\nasymp a}$ for an element $a$
+of a poset $\mathfrak{A}$ and $Y\in\subsets\mathfrak{A}$.
+\end{defn}
+
+\begin{defn}
+\index{star!full}\emph{Full star} of $a\in\mathfrak{A}$ is $\fullstar a=\corestar_{\mathfrak{A}}a$.\end{defn}
+\begin{prop}
+If $\mathfrak{A}$ is a meet-semilattice, then $\fullstar$ is a straight
+monotone map.\end{prop}
+\begin{proof}
+Monotonicity is obvious. Let $\fullstar a\nsqsubseteq\fullstar(a\sqcap b)$.
+Then it exists $x\in\fullstar a$ such that $x\notin\fullstar(a\sqcap b)$.
+So $x\sqcap a\notin\fullstar b$ but $x\sqcap a\in\fullstar a$ and
+consequently $\fullstar a\nsqsubseteq\fullstar b$.\end{proof}
+\begin{defn}
+\index{separation subset}A \emph{separation subset} of a poset $\mathfrak{A}$
+is such its subset $Y$ that
+\[
+\forall a,b\in\mathfrak{A}:(\corestar_{Y}a=\corestar_{Y}b\Rightarrow a=b).
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{separable}\index{poset!separable}I call separable such poset
+that $\fullstar$ is an injection.\end{defn}
+\begin{obvious}
+A poset is separable iff it has a separation subset.\end{obvious}
+\begin{defn}
+\index{disjunction property of Wallman}A poset $\mathfrak{A}$ has
+\emph{disjunction property of Wallman} iff for any $a,b\in\mathfrak{A}$
+either $b\sqsubseteq a$ or there exists a non-least element $c\sqsubseteq b$
+such that $a\asymp c$.\end{defn}
+\begin{thm}
+\label{msl-sep-conds}For a meet-semilattice with least element the
+following statements are equivalent:
+\begin{enumerate}
+\item \label{la1}$\mathfrak{A}$ is separable.
+\item \label{la2}$\forall a,b\in\mathfrak{A}:(\fullstar a\sqsubseteq\fullstar b\Rightarrow a\sqsubseteq b)$.
+\item \label{la3}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\sqsubset\fullstar b)$.
+\item \label{la4}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\neq\fullstar b)$.
+\item \label{la5}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\nsqsupseteq\fullstar b)$.
+\item \label{la6}$\forall a,b\in\mathfrak{A}:(\fullstar a\sqsubseteq\fullstar b\Rightarrow a\nsqsupset b)$.
+\item \label{la7}$\mathfrak{A}$ conforms to Wallman's disjunction property.
+\item \label{la8}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\exists c\in\mathfrak{A}\setminus\{\bot\}:(c\asymp a\land c\sqsubseteq b))$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{la1}$\Leftrightarrow$\ref{la2}$\Leftrightarrow$\ref{la3}$\Leftrightarrow$\ref{la4}$\Leftrightarrow$\ref{la5}$\Leftrightarrow$\ref{la6}}] By
+the above theorem.
+\item [{\ref{la8}$\Rightarrow$\ref{la4}}] Let property~\ref{la8} hold.
+Let $a\sqsubset b$. Then it exists element $c\sqsubseteq b$ such
+that $c\neq\bot$ and $c\sqcap a=\bot$. But $c\sqcap b\neq\bot$.
+So $\fullstar a\neq\fullstar b$.
+\item [{\ref{la2}$\Rightarrow$\ref{la7}}] Let property~\ref{la2} hold.
+Let $a\nsqsubseteq b$. Then $\fullstar a\nsqsubseteq\fullstar b$
+that is it there exists $c\in\fullstar a$ such that $c\notin\fullstar b$,
+in other words $c\sqcap a\neq\bot$ and $c\sqcap b=\bot$. Let $d=c\sqcap a$.
+Then $d\sqsubseteq a$ and $d\neq\bot$ and $d\sqcap b=\bot$. So
+disjunction property of Wallman holds.
+\item [{\ref{la7}$\Rightarrow$\ref{la8}}] Obvious.
+\item [{\ref{la8}$\Rightarrow$\ref{la7}}] Let $b\nsqsubseteq a$. Then
+$a\sqcap b\sqsubset b$ that is $a'\sqsubset b$ where $a'=a\sqcap b$.
+Consequently $\exists c\in\mathfrak{A}\setminus\{\bot\}:(c\asymp a'\land c\sqsubseteq b)$.
+We have $c\sqcap a=c\sqcap b\sqcap a=c\sqcap a'$. So $c\sqsubseteq b$
+and $c\sqcap a=\bot$. Thus Wallman's disjunction property holds.
+\end{description}
+\end{proof}
+\begin{prop}
+Every boolean lattice is separable.\end{prop}
+\begin{proof}
+Let $a,b\in\mathfrak{A}$ where $\mathfrak{A}$ is a boolean lattice
+an $a\neq b$. Then $a\sqcap\bar{b}\neq\bot$ or $\bar{a}\sqcap b\neq\bot$
+because otherwise $a\sqcap\bar{b}=\bot$ and $a\sqcup\bar{b}=\top$
+and thus $a=b$. Without loss of generality assume $a\sqcap\bar{b}\neq\bot$.
+Then $a\sqcap c\neq\bot$ and $b\sqcap c=\bot$ for $c=a\sqcap\bar{b}\neq\bot$.
+\end{proof}
+
+\subsection{\label{atm-sep}Atomically Separable Lattices}
+\begin{prop}
+``$\atoms$'' is a straight monotone map (for any meet-semilattice).\end{prop}
+\begin{proof}
+Monotonicity is obvious. The rest follows from the formula
+\[
+\atoms(a\sqcap b)=\atoms a\cap\atoms b
+\]
+(corollary \ref{atoms-meet}).\end{proof}
+\begin{defn}
+\index{separable!atomically}I will call \emph{atomically separable}
+such a poset that ``$\atoms$'' is an injection.\end{defn}
+\begin{prop}
+$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\atoms a\subset\atoms b)$
+iff $\mathfrak{A}$ is atomically separable for a poset $\mathfrak{A}$.\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Leftarrow$}] Obvious.
+\item [{$\Rightarrow$}] Let $a\neq b$ for example $a\nsqsubseteq b$.
+Then $a\sqcap b\sqsubset a$; $\atoms a\supset\atoms(a\sqcap b)=\atoms a\cap\atoms b$
+and thus $\atoms a\neq\atoms b$.
+\end{description}
+\end{proof}
+\begin{prop}
+\label{atms-is-asep}Any atomistic poset is atomically separable.\end{prop}
+\begin{proof}
+We need to prove that $\atoms a=\atoms b\Rightarrow a=b$. But it
+is obvious because
+\[
+a=\bigsqcup\atoms a\quad\text{and}\quad b=\bigsqcup\atoms b.
+\]
+\end{proof}
+\begin{thm}
+\label{amstc-sep}A complete lattice is atomistic iff it is atomically
+separable.\end{thm}
+\begin{proof}
+Direct implication is the above proposition. Let's prove the reverse
+implication.
+
+Let ``$\atoms$'' be injective. Consider an element $a$ of our
+poset. Let $b=\bigsqcup\atoms a$. Obviously $b\sqsubseteq a$ and
+thus $\atoms b\subseteq\atoms a$. But if $x\in\atoms a$ then $x\sqsubseteq b$
+and thus $x\in\atoms b$. So $\atoms a=\atoms b$. By injectivity
+$a=b$ that is $a=\bigsqcup\atoms a$.\end{proof}
+\begin{thm}
+\label{atomistic-enough}If a lattice with least element is atomic
+and separable then it is atomistic.\end{thm}
+\begin{proof}
+Suppose the contrary that is $a\sqsupset\bigsqcup\atoms a$. Then,
+because our lattice is separable, there exists $c\in\mathfrak{A}$
+such that $c\sqcap a\neq\bot$ and $c\sqcap\bigsqcup\atoms a=\bot$.
+There exists atom $d\sqsubseteq c$ such that $d\sqsubseteq c\sqcap a$.
+$d\sqcap\bigsqcup\atoms a\sqsubseteq c\sqcap\bigsqcup\atoms a=\bot$.
+But $d\in\atoms a$. Contradiction.\end{proof}
+\begin{thm}
+\label{sep-conds}Let $\mathfrak{A}$ be an atomic meet-semilattice
+with least element. Then the following statements are equivalent:
+\begin{enumerate}
+\item \label{sc-sep}$\mathfrak{A}$ is separable.
+\item \label{sc-at-sep}$\mathfrak{A}$ is atomically separable.
+\item \label{sc-wall}$\mathfrak{A}$ conforms to Wallman's disjunction
+property.
+\item \label{sc-other}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\exists c\in\mathfrak{A}\setminus\{\bot\}:(c\asymp a\land c\sqsubseteq b))$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{sc-sep}$\Leftrightarrow$\ref{sc-wall}$\Leftrightarrow$\ref{sc-other}}] Proved
+above.
+\item [{\ref{sc-at-sep}$\Rightarrow$\ref{sc-other}}] Let our semilattice
+be atomically separable. Let $a\sqsubset b$. Then $\atoms a\subset\atoms b$
+and there exists $c\in\atoms b$ such that $c\notin\atoms a$. $c\neq\bot$
+and $c\sqsubseteq b$, from which (taking into account that $c$ is
+an atom) $c\sqsubseteq b$ and $c\sqcap a=\bot$. So our semilattice
+conforms to the formula~\ref{sc-other}.
+\item [{\ref{sc-other}$\Rightarrow$\ref{sc-at-sep}}] Let formula~\ref{sc-other}
+hold. Then for any elements $a\sqsubset b$ there exists $c\neq\bot$
+such that $c\sqsubseteq b$ and $c\sqcap a=\bot$. Because $\mathfrak{A}$
+is atomic there exists atom $d\sqsubseteq c$. $d\in\atoms b$ and
+$d\notin\atoms a$. So $\atoms a\neq\atoms b$ and $\atoms a\subseteq\atoms b$.
+Consequently $\atoms a\subset\atoms b$.
+\end{description}
+\end{proof}
+\begin{thm}
+\label{atom-is-sep}Any atomistic meet-semilattice with least element
+is separable.\end{thm}
+\begin{proof}
+From the above.
+\end{proof}
+
+\section{Quasidifference and Quasicomplement}
+
+I've got quasidifference and quasicomplement (and dual quasicomplement)
+replacing $\max$ and $\min$ in the definition of pseudodifference
+and pseudocomplement (and dual pseudocomplement) with $\bigsqcup$
+and $\bigsqcap$. Thus quasidifference and (dual) quasicomplement
+are generalizations of their pseudo- counterparts.
+\begin{rem}
+\emph{Pseudocomplements} and \emph{pseudodifferences} are standard
+terminology. \emph{Quasi-} counterparts are my neologisms.\end{rem}
+\begin{defn}
+\index{quasicomplement}Let $\mathfrak{A}$ be a poset, $a\in\mathfrak{A}$.
+\emph{Quasicomplement} of $a$ is
+\[
+a^{\ast}=\bigsqcup\setcond{c\in\mathfrak{A}}{c\asymp a}.
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{quasicomplement!dual}Let $\mathfrak{A}$ be a poset, $a\in\mathfrak{A}$.
+\emph{Dual quasicomplement} of $a$ is
+\[
+a^{+}=\bigsqcap\setcond{c\in\mathfrak{A}}{c\equiv a}.
+\]
+
+\end{defn}
+I will denote quasicomplement and dual quasicomplement for a specific
+poset~$\mathfrak{A}$ as $a^{\ast(\mathfrak{A)}}$ and $a^{+(\mathfrak{A)}}$.
+\begin{defn}
+\index{quasidifference}Let $a,b\in\mathfrak{A}$ where $\mathfrak{A}$
+is a distributive lattice. \emph{Quasidifference} of $a$ and $b$
+is
+\[
+a\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}.
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{quasidifference}Let $a,b\in\mathfrak{A}$ where $\mathfrak{A}$
+is a distributive lattice. \emph{Second quasidifference} of $a$ and
+$b$ is
+\[
+a\mathop\#b=\bigsqcup\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\asymp b}.
+\]
+\end{defn}
+\begin{thm}
+$a\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land a\sqsubseteq b\sqcup z}$
+where $\mathfrak{A}$ is a distributive lattice and $a,b\in\mathfrak{A}$.\end{thm}
+\begin{proof}
+Obviously $\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land a\sqsubseteq b\sqcup z}\subseteq\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$.
+Thus $\bigsqcap\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land a\sqsubseteq b\sqcup z}\sqsupseteq a\psetminus b$.
+
+Let $z\in\mathfrak{A}$ and $z'=z\sqcap a$.
+
+$a\sqsubseteq b\sqcup z\Rightarrow a\sqsubseteq(b\sqcup z)\sqcap a\Leftrightarrow a\sqsubseteq(b\sqcap a)\sqcup(z\sqcap a)\Leftrightarrow(b\sqcap a)\sqcup z'\Rightarrow a\sqsubseteq b\sqcap z'$
+and $a\sqsubseteq b\sqcup z\Leftarrow a\sqsubseteq b\sqcap z'$. Thus
+$a\sqsubseteq b\sqcup z\Leftrightarrow a\sqsubseteq b\sqcap z'$.
+
+If $z\in\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$ then
+$a\sqsubseteq b\sqcup z$ and thus
+\[
+z'\in\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land a\sqsubseteq b\sqcup z}.
+\]
+
+
+But $z'\sqsubseteq z$ thus having $\bigsqcap\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land a\sqsubseteq b\sqcup z}\sqsubseteq\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$.\end{proof}
+\begin{rem}
+If we drop the requirement that $\mathfrak{A}$ is distributive, two
+formulas for quasidifference (the definition and the last theorem)
+fork.\end{rem}
+\begin{obvious}
+Dual quasicomplement is the dual of quasicomplement.
+\end{obvious}
+
+\begin{obvious}
+~
+\begin{itemize}
+\item Every pseudocomplement is quasicomplement.
+\item Every dual pseudocomplement is dual quasicomplement.
+\item Every pseudodifference is quasidifference.
+\end{itemize}
+\end{obvious}
+Below we will stick to the more general quasies than pseudos. If needed,
+one can check that a quasicomplement $a^{\ast}$ is a pseudocomplement
+by the equation $a^{\ast}\asymp a$ (and analogously with other quasies).
+
+Next we will express quasidifference through quasicomplement.
+\begin{prop}
+~
+\begin{enumerate}
+\item \label{minus-meet}$a\psetminus b=a\psetminus(a\sqcap b)$ for any
+distributive lattice;
+\item \label{minus-meet2}$a\mathop\#b=a\mathop\#(a\sqcap b)$ for any distributive
+lattice with least element.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{minus-meet}}] $a\sqsubseteq(a\sqcap b)\sqcup z\Leftrightarrow a\sqsubseteq(a\sqcup z)\sqcap(b\sqcup z)\Leftrightarrow a\sqsubseteq a\sqcup z\land a\sqsubseteq b\sqcup z\Leftrightarrow a\sqsubseteq b\sqcup z$.
+Thus $a\psetminus(a\sqcap b)=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq(a\sqcap b)\sqcup z}=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}=a\psetminus b$.
+\item [{\ref{minus-meet2}}] ~
+\begin{align*}
+a\mathop\#(a\sqcap b) & =\\
+\bigsqcup\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap a\sqcap b=\bot} & =\\
+\bigsqcup\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land(z\sqcap a)\sqcap a\sqcap b=\bot} & =\\
+\bigsqcup\setcond{z\sqcap a}{z\in\mathfrak{A},z\sqcap a\sqcap b=\bot} & =\\
+\bigsqcup\setcond{z\in\mathfrak{A}}{z\sqsubseteq a,z\sqcap b=\bot} & =\\
+a\mathop\#b.
+\end{align*}
+
+\end{widedisorder}
+\end{proof}
+I will denote $Da$ the lattice $\setcond{x\in\mathfrak{A}}{x\sqsubseteq a}$.
+\begin{thm}
+For $a,b\in\mathfrak{A}$ where $\mathfrak{A}$ is a distributive
+lattice
+\begin{enumerate}
+\item \label{pdiff-comp}$a\psetminus b=(a\sqcap b)^{+(Da)}$;
+\item \label{sec-pdiff-comp}$a\mathop\#b=(a\sqcap b)^{\ast(Da)}$ if $\mathfrak{A}$
+has least element.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{disorder}
+\item [{\ref{pdiff-comp}}] ~
+\begin{align*}
+(a\sqcap b)^{+(Da)} & =\\
+\bigsqcap\setcond{c\in Da}{c\sqcup(a\sqcap b)=a} & =\\
+\bigsqcap\setcond{c\in Da}{c\sqcup(a\sqcap b)\sqsupseteq a} & =\\
+\bigsqcap\setcond{c\in Da}{(c\sqcup a)\sqcap(c\sqcup b)\sqsupseteq a} & =\\
+\bigsqcap\setcond{c\in\mathfrak{A}}{c\sqsubseteq a\land c\sqcup b\sqsupseteq a} & =\\
+a\psetminus b.
+\end{align*}
+
+\item [{\ref{sec-pdiff-comp}}] ~
+\begin{align*}
+(a\sqcap b)^{\ast(Da)} & =\\
+\bigsqcup\setcond{c\in Da}{c\sqcap a\sqcap b=\bot} & =\\
+\bigsqcup\setcond{c\in\mathfrak{A}}{c\sqsubseteq a\land c\sqcap a\sqcap b=\bot} & =\\
+\bigsqcup\setcond{c\in\mathfrak{A}}{c\sqsubseteq a\land c\sqcap b=\bot} & =\\
+a\mathop\#b.
+\end{align*}
+
+\end{disorder}
+\end{proof}
+\begin{prop}
+$(a\sqcup b)\psetminus b\sqsubseteq a$ for an arbitrary complete
+lattice.\end{prop}
+\begin{proof}
+$(a\sqcup b)\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqcup b\sqsubseteq b\sqcup z}$.
+
+But $a\sqsubseteq z\Rightarrow a\sqcup b\sqsubseteq b\sqcup z$. So
+$\setcond{z\in\mathfrak{A}}{a\sqcup b\sqsubseteq b\sqcup z}\supseteq\setcond{z\in\mathfrak{A}}{a\sqsubseteq z}$.
+
+Consequently, $(a\sqcup b)\psetminus b\sqsubseteq\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq z}=a$.
+\end{proof}
+
+\section{Several equal ways to express pseudodifference}
+\begin{thm}
+\label{pdiff-eq1}For an atomistic co-brouwerian lattice $\mathfrak{A}$
+and $a,b\in\mathfrak{A}$ the following expressions are always equal:
+\begin{enumerate}
+\item \label{pdiff-pdiff}$a\psetminus b=\bigsqcap\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$
+(quasidifference of $a$ and $b$);
+\item \label{pdiff-sec}$a\mathop\#b=\bigsqcup\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot}$
+(second quasidifference of $a$ and $b$);
+\item \label{pdiff-atm}$\bigsqcup(\atoms a\setminus\atoms b)$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{Proof~of~\ref{pdiff-pdiff}=\ref{pdiff-atm}}] 
+\begin{align*}
+a\psetminus b & =\\
+\left(\bigsqcup\atoms a\right)\psetminus b & =\text{ (theorem \ref{cup-pdiff})}\\
+\bigsqcup_{A\in\atoms a}(A\psetminus b) & =\\
+\bigsqcup_{A\in\atoms a}\left(\begin{cases}
+A & \text{if }A\notin\atoms b\\
+\bot & \text{if }A\in\atoms b
+\end{cases}\right) & =\\
+\bigsqcup\setcond A{A\in\atoms a,A\notin\atoms b} & =\\
+\bigsqcup(\atoms a\setminus\atoms b).
+\end{align*}
+
+\item [{Proof~of~\ref{pdiff-sec}=\ref{pdiff-atm}}] $a\psetminus b$
+is defined because our lattice is co-brouwerian. Taking the above
+into account, we have
+\begin{align*}
+a\psetminus b & =\\
+\bigsqcup(\atoms a\setminus\atoms b) & =\\
+\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot.}
+\end{align*}
+
+
+
+So $\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot.}$ is defined.
+
+
+If $z\sqsubseteq a\land z\sqcap b=\bot$ then $z'=\bigsqcup\setcond{x\in\atoms z}{x\sqcap b=\bot}$
+is defined. $z'$ is a lower bound for $\setcond{z\in\atoms a}{x\sqcap b=\bot}$ 
+
+
+Thus $z'\in\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot}$
+and so $\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot}$ is an upper
+bound of $\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot}$.
+
+
+If $y$ is above every $z'\in\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot}$
+then $y$ is above every $z\in\atoms a$ such that $z\sqcap b=\bot$
+and thus $y$ is above $\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot}$.
+
+
+Thus $\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot}$ is least upper
+bound of
+\[
+\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot},
+\]
+that is
+\begin{align*}
+\bigsqcup\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot} & =\\
+\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot} & =\\
+\bigsqcup(\atoms a\setminus\atoms b).
+\end{align*}
+
+
+\end{description}
+\end{proof}
+
+\section{Partially ordered categories}
+
+
+\subsection{Definition}
+\begin{defn}
+\index{category!partially ordered}\index{precategory!partially ordered}I
+will call a partially ordered (pre)category a (pre)category together
+with partial order $\sqsubseteq$ on each of its Mor-sets with the
+additional requirement that
+\[
+f_{1}\sqsubseteq f_{2}\land g_{1}\sqsubseteq g_{2}\Rightarrow g_{1}\circ f_{1}\sqsubseteq g_{2}\circ f_{2}
+\]
+for every morphisms $f_{1}$, $g_{1}$, $f_{2}$, $g_{2}$ such that
+$\Src f_{1}=\Src f_{2}$ and $\Dst f_{1}=\Dst f_{2}=\Src g_{1}=\Src g_{2}$
+and $\Dst g_{1}=\Dst g_{2}$.
+\end{defn}
+I will denote lattice operations on a $\Mor$-set $C(A;B)$ of a category
+(or any directed multigraph) like $\sqcup^{C}$ instead of writing
+$\sqcup^{C(A;B)}$ explicitly.
+
+
+\subsection{Dagger categories}
+\begin{defn}
+\index{precategory!dagger}I will call a \emph{dagger precategory}
+a precategory together with an involutive contravariant identity-on-objects
+prefunctor $x\mapsto x^{\dagger}$.
+
+In other words, a dagger precategory is a precategory equipped with
+a function $x\mapsto x^{\dagger}$ on its set of morphisms which reverses
+the source and the destination and is subject to the following identities
+for every morphisms $f$ and~$g$:
+\begin{enumerate}
+\item $f^{\dagger\dagger}=f$;
+\item $(g\circ f)^{\dagger}=f^{\dagger}\circ g^{\dagger}$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\index{category!dagger}I will call a \emph{dagger category} a category
+together with an involutive contravariant identity-on-objects functor
+$x\mapsto x^{\dagger}$.
+
+In other words, a dagger category is a category equipped with a function
+$x\mapsto x^{\dagger}$ on its set of morphisms which reverses the
+source and the destination and is subject to the following identities
+for every morphisms $f$ and $g$ and object~$A$:
+\begin{enumerate}
+\item $f^{\dagger\dagger}=f$;
+\item $(g\circ f)^{\dagger}=f^{\dagger}\circ g^{\dagger}$;
+\item $(1_{A})^{\dagger}=1_{A}$.
+\end{enumerate}
+\end{defn}
+\begin{thm}
+If a category is a dagger precategory then it is a dagger category.\end{thm}
+\begin{proof}
+We need to prove only that $(1_{A})^{\dagger}=1_{A}$. Really,
+\[
+(1_{A})^{\dagger}=(1_{A})^{\dagger}\circ1_{A}=(1_{A})^{\dagger}\circ(1_{A})^{\dagger\dagger}=((1_{A})^{\dagger}\circ1_{A})^{\dagger}=(1_{A})^{\dagger\dagger}=1_{A}.
+\]
+
+\end{proof}
+For a partially ordered dagger (pre)category I will additionally require
+(for every morphisms $f$ and $g$ with the same source and destination)
+\[
+f^{\dagger}\sqsubseteq g^{\dagger}\Leftrightarrow f\sqsubseteq g.
+\]
+
+
+An example of dagger category is the category $\mathbf{Rel}$ whose
+objects are sets and whose morphisms are binary relations between
+these sets with usual composition of binary relations and with $f^{\dagger}=f^{-1}$.
+\begin{defn}
+\index{morphism!unitary}A morphism $f$ of a dagger category is called
+\emph{unitary} when it is an isomorphism and $f^{\dagger}=f^{-1}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!symmetric}\emph{Symmetric} (endo)morphism of a dagger
+precategory is such a morphism f that $f=f^{\dagger}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!transitive}\emph{Transitive} (endo)morphism of a
+precategory is such a morphism $f$ that $f=f\circ f$.\end{defn}
+\begin{thm}
+\label{sym-trans}The following conditions are equivalent for a morphism
+$f$ of a dagger precategory:
+\begin{enumerate}
+\item \label{sym-trans-both}$f$ is symmetric and transitive.
+\item \label{f-df-f}$f=f^{\dagger}\circ f$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{sym-trans-both}$\Rightarrow$\ref{f-df-f}}] If $f$ is symmetric
+and transitive then $f^{\dagger}\circ f=f\circ f=f$.
+\item [{\ref{f-df-f}$\Rightarrow$\ref{sym-trans-both}}] $f^{\dagger}=(f^{\dagger}\circ f)^{\dagger}=f^{\dagger}\circ f^{\dagger\dagger}=f^{\dagger}\circ f=f$,
+so $f$ is symmetric. $f=f^{\dagger}\circ f=f\circ f$, so $f$ is
+transitive.
+\end{description}
+\end{proof}
+
+\subsubsection{Some special classes of morphisms}
+\begin{defn}
+\index{morphism!monovalued}For a partially ordered dagger category
+I will call \emph{monovalued} morphism such a morphism $f$ that $f\circ f^{\dagger}\sqsubseteq1_{\Dst f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!entirely defined}For a partially ordered dagger category
+I will call \emph{entirely defined} morphism such a morphism $f$
+that $f^{\dagger}\circ f\sqsupseteq1_{\Src f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!injective}For a partially ordered dagger category
+I will call \emph{injective} morphism such a morphism $f$ that $f^{\dagger}\circ f\sqsubseteq1_{\Src f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!surjective}For a partially ordered dagger category
+I will call \emph{surjective} morphism such a morphism f that $f\circ f^{\dagger}\sqsupseteq1_{\Dst f}$.\end{defn}
+\begin{rem}
+It is easy to show that this is a generalization of monovalued, entirely
+defined, injective, and surjective functions as morphisms of the category
+$\mathbf{Rel}$.\end{rem}
+\begin{obvious}
+``Injective morphism'' is a dual of ``monovalued morphism'' and
+``surjective morphism'' is a dual of ``entirely defined morphism''.\end{obvious}
+\begin{defn}
+For a given partially ordered dagger category $C$ the \emph{category
+of monovalued} (\emph{entirely defined}, \emph{injective}, \emph{surjective})
+morphisms of $C$ is the category with the same set of objects as
+of $C$ and the set of morphisms being the set of monovalued (entirely
+defined, injective, surjective) morphisms of $C$ with the composition
+of morphisms the same as in $C$.
+\end{defn}
+We need to prove that these are really categories, that is that composition
+of monovalued (entirely defined, injective, surjective) morphisms
+is monovalued (entirely defined, injective, surjective) and that identity
+morphisms are monovalued, entirely defined, injective, and surjective.
+\begin{proof}
+We will prove only for monovalued morphisms and entirely defined morphisms,
+as injective and surjective morphisms are their duals.
+\begin{description}
+\item [{Monovalued}] Let $f$ and $g$ be monovalued morphisms, $\Dst f=\Src g$.
+Then
+\begin{align*}
+(g\circ f)\circ(g\circ f)^{\dagger} & =\\
+g\circ f\circ f^{\dagger}\circ g^{\dagger} & \sqsubseteq\\
+g\circ1_{\Src g}\circ g^{\dagger} & =\\
+g\circ g^{\dagger} & \sqsubseteq\\
+1_{\Dst g}=1_{\Dst(g\circ f)}.
+\end{align*}
+
+
+
+So $g\circ f$ is monovalued.
+
+
+That identity morphisms are monovalued follows from the following:
+\[
+1_{A}\circ(1_{A})^{\dagger}=1_{A}\circ1_{A}=1_{A}=1_{\Dst1_{A}}\sqsubseteq1_{\Dst1_{A}}.
+\]
+
+
+\item [{Entirely~defined}] Let $f$ and $g$ be entirely defined morphisms,
+$\Dst f=\Src g$. Then
+\begin{align*}
+(g\circ f)^{\dagger}\circ(g\circ f) & =\\
+f^{\dagger}\circ g^{\dagger}\circ g\circ f & \sqsupseteq\\
+f^{\dagger}\circ1_{\Src g}\circ f & =\\
+f^{\dagger}\circ1_{\Dst f}\circ f & =\\
+f^{\dagger}\circ f & \sqsupseteq\\
+1_{\Src f}=1_{\Src(g\circ f)}.
+\end{align*}
+
+
+
+So $g\circ f$ is entirely defined.
+
+
+That identity morphisms are entirely defined follows from the following:
+\[
+(1_{A})^{\dagger}\circ1_{A}=1_{A}\circ1_{A}=1_{A}=1_{\Src1_{A}}\sqsupseteq1_{\Src1_{A}}.
+\]
+
+
+\end{description}
+\end{proof}
+\begin{defn}
+\index{morphism!bijective}I will call a \emph{bijective} morphism
+a morphism which is entirely defined, monovalued, injective, and surjective.\end{defn}
+\begin{prop}
+If a morphism is bijective then it is an isomorphism.\end{prop}
+\begin{proof}
+Let $f$ be bijective. Then $f\circ f^{\dagger}\sqsubseteq1_{\Dst f}$,
+$f^{\dagger}\circ f\sqsupseteq1_{\Src f}$, $f^{\dagger}\circ f\sqsubseteq1_{\Src f}$,
+$f\circ f^{\dagger}\sqsupseteq1_{\Dst f}$. Thus $f\circ f^{\dagger}=1_{\Dst f}$
+and $f^{\dagger}\circ f=1_{\Src f}$ that is $f^{\dagger}$ is an
+inverse of $f$.
+\end{proof}
+Let $\Mor$-sets be complete lattices.
+\begin{defn}
+\index{morphism!metamonovalued}A morphism $f$ of a partially ordered
+category is \emph{metamonovalued} when $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$
+whenever $G$ is a set of morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!metainjective}A morphism $f$ of a partially ordered
+category is \emph{metainjective} when $f\circ\left(\bigsqcap G\right)=\bigsqcap_{g\in G}(f\circ g)$
+whenever $G$ is a set of morphisms with a suitable domain and image.\end{defn}
+\begin{obvious}
+Metamonovaluedness and metainjectivity are dual to each other.\end{obvious}
+\begin{defn}
+\index{morphism!metacomplete}A morphism $f$ of a partially ordered
+category is \emph{metacomplete} when $f\circ\left(\bigsqcup G\right)=\bigsqcup_{g\in G}(f\circ g)$
+whenever $G$ is a set of morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!co-metacomplete}A morphism $f$ of a partially ordered
+category is \emph{co-metacomplete} when $\left(\bigsqcup G\right)\circ f=\bigsqcup_{g\in G}(g\circ f)$
+whenever $G$ is a set of morphisms with a suitable domain and image.
+\end{defn}
+Let now $\Mor$-sets be meet-semilattices.
+\begin{defn}
+\index{morphism!weakly metamonovalued}A morphism $f$ of a partially
+ordered category is \emph{weakly metamonovalued} when $(g\sqcap h)\circ f=(g\circ f)\sqcap(h\circ f)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!weakly metainjective}A morphism $f$ of a partially
+ordered category is \emph{weakly metainjective} when $f\circ(g\sqcap h)=(f\circ g)\sqcap(f\circ h)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.
+\end{defn}
+Let now $\Mor$-sets be join-semilattices.
+\begin{defn}
+\index{morphism!weakly metacomplete}A morphism $f$ of a partially
+ordered category is \emph{weakly metacomplete} when $f\circ(g\sqcup h)=(f\circ g)\sqcup(f\circ h)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!weakly co-metacomplete}A morphism $f$ of a partially
+ordered category is \emph{weakly co-metacomplete} when $(g\sqcup h)\circ f=(g\circ f)\sqcup(h\circ f)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.\end{defn}
+\begin{obvious}
+~
+\begin{enumerate}
+\item Metamonovalued morphisms are weakly metamonovalued.
+\item Metainjective morphisms are weakly metainjective.
+\item Metacomplete morphisms are weakly metacomplete.
+\item Co-metacomplete morphisms are weakly co-metacomplete.
+\end{enumerate}
+\end{obvious}
+
+\section{Partitioning}
+\begin{defn}
+\index{torning}Let $\mathfrak{A}$ be a complete lattice. \emph{Torning}
+of an element $a\in\mathfrak{A}$ is a set $S\in\subsets\mathfrak{A}\setminus\{\bot\}$
+such that
+\[
+\bigsqcup S=a\quad\text{and}\quad\forall x,y\in S:(x\neq y\Rightarrow x\asymp y).
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{partition!weak}Let $\mathfrak{A}$ be a complete lattice.
+\emph{Weak partition} of an element $a\in\mathfrak{A}$ is a set $S\in\subsets\mathfrak{A}\setminus\{\bot\}$
+such that
+\[
+\bigsqcup S=a\quad\text{and}\quad\forall x\in S:x\asymp\bigsqcup(S\setminus\{x\}).
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{partition!strong}Let $\mathfrak{A}$ be a complete lattice.
+\emph{Strong partition} of an element $a\in\mathfrak{A}$ is a set
+$S\in\subsets\mathfrak{A}\setminus\{\bot\}$ such that
+\[
+\bigsqcup S=a\quad\text{and}\quad\forall A,B\in\subsets S:(A\asymp B\Rightarrow\bigsqcup A\asymp\bigsqcup B).
+\]
+\end{defn}
+\begin{obvious}
+~
+\begin{enumerate}
+\item Every strong partition is a weak partition.
+\item Every weak partition is a torning.
+\end{enumerate}
+\end{obvious}
+
+\section{A proposition about binary relations}
+\begin{prop}
+\label{rel-cross}Let $f$, $g$, $h$ be binary relations. Then $g\circ f\nasymp h\Leftrightarrow g\nasymp h\circ f^{-1}$.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+g\circ f\nasymp h & \Leftrightarrow\\
+\exists a,c:a\mathrel{((g\circ f)\cap h)}c & \Leftrightarrow\\
+\exists a,c:(a\mathrel{(g\circ f)}c\land a\mathrel{h}c) & \Leftrightarrow\\
+\exists a,b,c:(a\mathrel{f}b\land b\mathrel{g}c\land a\mathrel{h}c) & \Leftrightarrow\\
+\exists b,c:(b\mathrel{g}c\land b\mathrel{h\circ f^{-1}}c) & \Leftrightarrow\\
+\exists b,c:b\mathrel{(g\cap(h\circ f^{-1}))}c & \Leftrightarrow\\
+g\nasymp h\circ f^{-1}.
+\end{align*}
+
+\end{proof}
+
+\section{Infinite associativity and ordinated product}
+
+
+\subsection{Introduction}
+
+We will consider some function $f$ which takes an arbitrary ordinal
+number of arguments. That is $f$ can be taken for arbitrary (small,
+if to be precise) ordinal number of arguments. More formally: Let
+$x=x_{i\in n}$ be a family indexed by an ordinal $n$. Then $f(x)$
+can be taken. The same function $f$ can take different number of
+arguments. (See below for the exact definition.)
+
+Some of such functions $f$ are associative in the sense defined below.
+If a function is associative in the below defined sense, then the
+binary operation induced by this function is associative in the usual
+meaning of the word ``associativity'' as defined in basic algebra.
+
+I also introduce and research an important example of infinitely associative
+function, which I call \emph{ordinated product}.
+
+Note that my searching about infinite associativity and ordinals in
+Internet has provided no useful results. As such there is a reason
+to assume that my research of generalized associativity in terms of
+ordinals is novel.
+
+
+\subsection{Used notation}
+
+\index{ordinal}We identify natural numbers with finite Von Neumann's
+ordinals (further just \emph{ordinals} or \emph{ordinal numbers}).
+
+For simplicity we will deal with small sets (members of a Grothendieck
+universe). We will denote the Grothendieck universe (aka \emph{universal
+set}) as $\mho$.
+
+I will denote a tuple of n elements like $\left\llbracket a_{0};\ldots;a_{n-1}\right\rrbracket $.
+By definition
+\[
+\left\llbracket a_{0};\ldots;a_{n-1}\right\rrbracket =\{(0;a_{0}),\ldots,(n-1;a_{n-1})\}.
+\]
+
+
+Note that an ordered pair $(a;b)$ is not the same as the tuple $\left\llbracket a;b\right\rrbracket $
+of two elements.
+\begin{defn}
+\index{relation!anchored}An \emph{anchored relation} is a tuple $\left\llbracket n;r\right\rrbracket $
+where $n$ is an index set and $r$ is an $n$-ary relation.
+\end{defn}
+\index{graph!of anchored relation}For an anchored relation $\arity\left\llbracket n;r\right\rrbracket =n$.
+The graph\footnote{It is unrelated with graph theory.} of $\left\llbracket n;r\right\rrbracket $
+is defined as follows: $\GR\left\llbracket n;r\right\rrbracket =r$.
+\begin{defn}
+$\Pr_{i}f$ is a function defined by the formula
+\[
+\Pr_{i}f=\setcond{x_{i}}{x\in f}
+\]
+for every small $n$-ary relation $f$ where $n$ is an ordinal number
+and $i\in n$. Particularly for every $n$-ary relation $f$ and $i\in n$
+where $n\in\mathbb{N}$
+\[
+\Pr_{i}f=\setcond{x_{i}}{\left\llbracket x_{0};\ldots;x_{n-1}\right\rrbracket \in f}.
+\]
+
+\end{defn}
+\index{product!cartesian}Recall that Cartesian product is defined
+as follows:
+\[
+\prod a=\setcond{z\in\left(\bigcup\im a\right)^{\dom a}}{\forall i\in\dom a:z(i)\in a_{i}}.
+\]
+
+\begin{obvious}
+If $a$ is a small function, then $\prod a=\setcond{z\in\mho^{\dom a}}{\forall i\in\dom a:z(i)\in a_{i}}.$
+\end{obvious}
+
+\subsubsection{Currying and uncurrying}
+
+
+\paragraph{The customary definition}
+
+Let $X$, $Y$, $Z$ be sets.
+
+We will consider variables $x\in X$ and $y\in Y$.
+
+\index{currying}Let a function $f\in Z^{X\times Y}$. Then $\curry(f)\in(Z^{Y})^{X}$
+is the function defined by the formula $(\curry(f)x)y=f(x;y)$.
+
+\index{uncurrying}Let now $f\in(Z^{Y})^{X}$. Then $\uncurry(f)\in Z^{X\times Y}$
+is the function defined by the formula $\uncurry(f)(x;y)=(fx)y$.
+\begin{obvious}
+~
+\begin{enumerate}
+\item $\uncurry(\curry(f))=f$ for every $f\in Z^{X\times Y}$.
+\item $\curry(\uncurry(f))=f$ for every $f\in(Z^{Y})^{X}$.
+\end{enumerate}
+\end{obvious}
+
+\paragraph{Currying and uncurrying with a dependent variable}
+
+Let $X$, $Z$ be sets and $Y$ be a function with the domain $X$.
+(Vaguely saying, $Y$ is a variable dependent on $X$.)
+
+The disjoint union $\coprod Y=\bigcup_{i\in\dom Y}(\{i\}\times Y_{i})=\setcond{(i;x)}{i\in\dom Y,x\in Y_{i}}$.
+
+We will consider variables $x\in X$ and $y\in Y_{x}$.
+
+\index{currying}Let a function $f\in Z^{\coprod_{i\in X}Y_{i}}$
+(or equivalently $f\in Z^{\coprod Y}$). Then $\curry(f)\in\prod_{i\in X}Z^{Y_{i}}$
+is the function defined by the formula $(\curry(f)x)y=f(x;y)$.
+
+\index{uncurrying}Let now $f\in\prod_{i\in X}Z^{Y_{i}}$. Then $\uncurry(f)\in Z^{\coprod_{i\in X}Y_{i}}$
+is the function defined by the formula $\uncurry(f)(x;y)=(fx)y$.
+\begin{obvious}
+~
+\begin{enumerate}
+\item $\uncurry(\curry(f))=f$ for every $f\in Z^{\coprod_{i\in X}Y_{i}}$.
+\item $\curry(\uncurry(f))=f$ for every $f\in\prod_{i\in X}Z^{Y_{i}}$.
+\end{enumerate}
+\end{obvious}
+
+\subsubsection{Functions with ordinal numbers of arguments}
+
+Let $\mathrm{Ord}$ be the set of small ordinal numbers.
+
+If $X$ and $Y$ are sets and $n$ is an ordinal number, the set of
+functions taking $n$ arguments on the set $X$ and returning a value
+in $Y$ is $Y^{X^{n}}$.
+
+The set of all small functions taking ordinal numbers of arguments
+is $Y^{\bigcup_{n\in\mathrm{Ord}}X^{n}}$.
+
+\index{ordinal variadic}I will denote $\mathrm{OrdVar}(X)=\mho^{\bigcup_{n\in\mathrm{Ord}}X^{n}}$
+and call it \emph{ordinal variadic}. (``Var'' in this notation is
+taken from the word \emph{variadic} in the collocation \emph{variadic
+function} used in computer science.)
+
+
+\subsection{On sums of ordinals}
+
+Let $a$ be an ordinal-indexed family of ordinals.
+\begin{prop}
+$\coprod a$ with lexicographic order is a well-ordered set.\end{prop}
+\begin{proof}
+Let $S$ be non-empty subset of $\coprod a$.
+
+Take $i_{0}=\min\Pr_{0}S$ and $x_{0}=\min\setcond{\Pr_{1}y}{y\in S,y(0)=i_{0}}$
+(these exist by properties of ordinals). Then $(i_{0};x_{0})$ is
+the least element of $S$.\end{proof}
+\begin{defn}
+$\sum a$ is the unique ordinal order-isomorphic to $\coprod a$.\end{defn}
+\begin{xca}
+Prove that for finite ordinals it is just a sum of natural numbers.
+\end{xca}
+This ordinal exists and is unique because our set is well-ordered.
+\begin{rem}
+An infinite sum of ordinals is not customary defined.
+\end{rem}
+\index{sum!structured}The \emph{structured sum} $\bigoplus a$ of
+$a$ is an order isomorphism from lexicographically ordered set $\coprod a$
+into $\sum a$.
+
+There exists (for a given $a$) exactly one structured sum, by properties
+of well-ordered sets.
+\begin{obvious}
+$\sum a=\im\bigoplus a$.\end{obvious}
+\begin{thm}
+$\left(\bigoplus a\right)(n;x)=\sum_{i\in n}a_{i}+x$.\end{thm}
+\begin{proof}
+We need to prove that it is an order isomorphism. Let's prove it is
+an injection that is $m>n\Rightarrow\sum_{i\in m}a_{i}+x>\sum_{i\in n}a_{i}+x$
+and $y>x\Rightarrow\sum_{i\in n}a_{i}+y>\sum_{i\in n}a_{i}+x$.
+
+Really, if $m>n$ then $\sum_{i\in m}a_{i}+x\geq\sum_{i\in n+1}a_{i}+x>\sum_{i\in n}a_{i}+x$.
+The second formula is true by properties of ordinals.
+
+Let's prove that it is a surjection. Let $r\in\sum a$. There exist
+$n\in\dom a$ and $x\in a_{n}$ such that $r=\left(\bigoplus a\right)(n;x)$.
+Thus $r=\left(\bigoplus a\right)(n;0)+x=\sum_{i\in n}a_{i}+x$ because
+$\left(\bigoplus a\right)(n;0)=\sum_{i\in n}a_{i}$ since $(n;0)$
+has $\sum_{i\in n}a_{i}$ predecessors.
+\end{proof}
+
+\subsection{\label{ordinated-prod}Ordinated product}
+
+
+\subsubsection{Introduction}
+
+\emph{Ordinated product} defined below is a variation of Cartesian
+product, but is associative unlike Cartesian product. However, ordinated
+product unlike Cartesian product is defined not for arbitrary sets,
+but only for relations having ordinal numbers of arguments.
+
+Let $F$ indexed by an ordinal number be a small family of anchored
+relations.
+
+
+\subsubsection{Concatenation}
+\begin{defn}
+\index{concatenation}Let $z$ be an indexed by an ordinal number
+family of functions each taking an ordinal number of arguments. The
+\emph{concatenation} of $z$ is
+\[
+\concat z=\uncurry(z)\circ\left(\bigoplus(\dom\circ z)\right)^{-1}.
+\]
+\end{defn}
+\begin{obvious}
+If $z$ is a finite family of finitary tuples, it is concatenation
+of $\dom z$ tuples in the usual sense (as it is commonly used in
+computer science).\end{obvious}
+\begin{prop}
+If $z\in\prod(\GR\circ F)$ then $\concat z=\uncurry(z)\circ\left(\bigoplus(\arity\circ F)\right)^{-1}.$\end{prop}
+\begin{proof}
+If $z\in\prod(\GR\circ F)$ then $\dom z(i)=\dom(\GR\circ F)_{i}=\dom F_{i}=\arity F_{i}$
+for every $i\in\dom F$. Thus $\dom\circ z=\arity\circ F$.\end{proof}
+\begin{prop}
+$\dom\concat z=\sum_{i\in\dom z}\dom z_{i}$.\end{prop}
+\begin{proof}
+Because $\dom\left(\bigoplus(\dom\circ z)\right)^{-1}=\sum_{i\in\dom f}(\dom\circ z)$,
+it is enough to prove that
+\[
+\dom\uncurry(z)=\dom\bigoplus(\dom\circ z).
+\]
+
+
+Really,
+\begin{align*}
+\sum_{i\in\dom f}(\dom\circ z) & =\\
+\setcond{(i;x)}{i\in\dom(\dom\circ z),x\in\dom z_{i}} & =\\
+\setcond{(i;x)}{i\in\dom z,x\in\dom z_{i}} & =\\
+\coprod z
+\end{align*}
+and $\dom\uncurry(z)=\coprod_{i\in X}z_{i}=\coprod z$.
+\end{proof}
+
+\subsubsection{Finite example}
+
+If $F$ is a finite family (indexed by a natural number $\dom F$)
+of anchored finitary relations, then by definition \[
+\GR\prod^\mathrm{(ord)} =
+\setcond{
+\llbracket a_{0, 0} ; \ldots ; a_{0, \arity F_0 - 1} ; \ldots ; a_{\dom F - 1, 0} ; \ldots ; a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket
+}{
+\llbracket a_{0, 0} ; \ldots ; a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
+}
+\]and 
+\[
+\arity\prod^{\mathrm{(ord)}}F=\arity F_{0}+\ldots+\arity F_{\dom F-1}.
+\]
+
+
+The above formula can be shortened to
+\[
+\GR\prod^{\mathrm{(ord)}}F=\setcond{\concat z}{z\in\prod(\GR\circ F)}.
+\]
+
+
+
+\subsubsection{The definition}
+\begin{defn}
+\index{product!ordinated}The anchored relation (which I call \emph{ordinated
+product}) $\prod^{\mathrm{(ord)}}F$ is defined by the formulas:
+\begin{gather*}
+\arity\prod^{\mathrm{(ord)}}F=\sum(\arity\circ f);\\
+\GR\prod^{\mathrm{(ord)}}F=\setcond{\concat z}{z\in\prod(\GR\circ F)}.
+\end{gather*}
+\end{defn}
+\begin{prop}
+$\prod^{\mathrm{(ord)}}F$ is a properly defined anchored relation.\end{prop}
+\begin{proof}
+$\dom\concat z=\sum_{i\in\dom F}\dom z_{i}=\sum_{i\in\dom F}\arity f_{i}=\sum(\arity\circ F)$.
+\end{proof}
+
+\subsubsection{Definition with composition for every multiplier}
+
+$q(F)_{i}\eqdef\left(\curry\left(\bigoplus(\arity\circ F)\right)\right)i$.
+\begin{prop}
+$\prod^{\mathrm{(ord)}}F=\setcond{L\in\mho^{\sum(\arity\circ F)}}{\forall i\in\dom F:L\circ q(F)_{i}\in\GR F_{i}}$.\end{prop}
+\begin{proof}
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{\concat z}{z\in\prod(\GR\circ F)}$;
+
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{\uncurry(z)\circ\left(\bigoplus(\arity\circ f)\right)^{-1}}{z\in\prod_{i\in\dom F}\mho^{\arity F_{i}},\forall i\in\dom F:z(i)\in\GR F_{i}}$.
+
+Let $L=\uncurry(z)$. Then $z=\curry(L)$.
+
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{L\circ\left(\bigoplus(\arity\circ f)\right)^{-1}}{\curry(L)\in\prod_{i\in\dom F}\mho^{\arity F_{i}},\forall i\in\dom F:\curry(L)i\in\GR F_{i}}$;
+
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{L\circ\left(\bigoplus(\arity\circ f)\right)^{-1}}{L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}},\forall i\in\dom F:\curry(L)i\in\GR F_{i}}$;
+
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{L\in\mho^{\sum(\arity\circ f)}}{\forall i\in\dom F:\curry\left(L\circ\bigoplus(\arity\circ F)\right)i\in\GR F_{i}}$;
+
+$\left(\curry\left(L\circ\bigoplus(\arity\circ F)\right)i\right)x=L\left(\left(\curry\left(\bigoplus(\arity\circ F)\right)i\right)x\right)=L(q(F)_{i}x)=(L\circ q(F)_{i})x$;
+
+$\curry\left(L\circ\bigoplus(\arity\circ F)\right)i=L\circ q(F)_{i}$;
+
+$\prod^{\mathrm{(ord)}}F=\setcond{L\in\mho^{\sum(\arity\circ F)}}{\forall i\in\dom F:L\circ q(F)_{i}\in\GR F_{i}}$.\end{proof}
+\begin{cor}
+$\prod^{\mathrm{(ord)}}F=\setcond{L\in\left(\bigcup\im(\GR\circ F)\right)^{\sum(\arity\circ F)}}{\forall i\in\dom F:L\circ q(F)_{i}\in\GR F_{i}}$.
+\end{cor}
+
+\begin{cor}
+$\prod^{\mathrm{(ord)}}F$ is small if $F$ is small.
+\end{cor}
+
+\subsubsection{Definition with shifting arguments}
+
+Let $F'_{i}=\setcond{L\circ\Pr_{1}|_{\{i\}\times\arity F_{i}}}{L\in\GR F_{i}}$.
+\begin{prop}
+$F'_{i}=\setcond{L\circ\Pr_{1}|_{\{i\}\times\mho}}{L\in\GR F_{i}}$.\end{prop}
+\begin{proof}
+If $L\in\GR F_{i}$ then $\dom L=\arity F_{i}$. Thus
+\[
+L\circ\Pr_{1}|_{\{i\}\times\arity F_{i}}=L\circ\Pr_{1}|_{\{i\}\times\dom L}=L\circ\Pr_{1}|_{\{i\}\times\mho}.
+\]
+\end{proof}
+\begin{prop}
+$F'_{i}$ is an $(\{i\}\times\arity F_{i})$-ary relation.\end{prop}
+\begin{proof}
+We need to prove that $\dom\left(L\circ\Pr_{1}|_{\{i\}\times\arity F_{i}}\right)=\{i\}\times\arity F_{i}$
+for $L\in\GR F_{i}$, but that's obvious.\end{proof}
+\begin{obvious}
+$\coprod(\arity\circ F)=\bigcup_{i\in\dom F}(\{i\}\times\arity F_{i})=\bigcup_{i\in\dom F}\dom F'_{i}$.\end{obvious}
+\begin{lem}
+$P\in\prod_{i\in\dom F}F'_{i}\Leftrightarrow\curry\left(\bigcup\im P\right)\in\prod(\GR\circ F)$
+for a $\dom F$ indexed family $P$ where $P_{i}\in\mho^{\{i\}\times\arity F_{i}}$
+for every $i\in\dom F$, that is for $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$.\end{lem}
+\begin{proof}
+For every $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$
+we have:
+\begin{align*}
+P\in\prod_{i\in=\dom F}F'_{i} & \Leftrightarrow\\
+P\in\setcond{z\in\mho^{\dom F}}{\forall i\in\dom F:z(i)\in F'_{i}} & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F:P(i)\in F'_{i} & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:P_{i}=L\circ(\Pr_{1}|_{\{i\}\times\mho}) & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\forall x\in\arity F_{i}:P_{i}(i;x)=Lx) & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\curry(P_{i})i=L) & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\curry(P_{i})i=L) & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\curry(P_{i})i\in\GR F_{i}) & \Leftrightarrow\\
+\forall i\in\dom F\exists Q_{i}\in(\mho^{\arity F_{i}})^{\{i\}}:(P_{i}=\uncurry(Q_{i})\land(Q_{i})i\in\mho^{\arity F_{i}}\land Q_{i}i\in\GR F_{i}) & \Leftrightarrow\\
+\forall i\in\dom F\exists Q_{i}\in(\mho^{\arity F_{i}})^{\{i\}}:\left(P_{i}=\uncurry(Q_{i})\land\left(\bigcup_{i\in\dom F}Q_{i}\right)i\in\GR F_{i}\right) & \Leftrightarrow\\
+\forall i\in\dom F\exists Q_{i}\in(\mho^{\arity F_{i}})^{\{i\}}:\left(P_{i}=\uncurry(Q_{i})\land\bigcup_{i\in\dom F}Q_{i}\in\prod(\GR\circ F)\right) & \Leftrightarrow\\
+\forall i\in\dom F:\bigcup_{i\in\dom F}\curry(P_{i})\in\prod(\GR\circ F) & \Leftrightarrow\\
+\curry\left(\bigcup_{i\in\dom F}P_{i}\in\prod(\GR\circ F)\right)\in\prod(\GR\circ F) & \Leftrightarrow\\
+\curry\left(\bigcup\im P\right)\in\prod(\GR\circ F).
+\end{align*}
+\end{proof}
+\begin{lem}
+$\setcond{\curry(f)\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\prod(\GR\circ F)$.\end{lem}
+\begin{proof}
+First $\GR\prod^{\mathrm{(ord)}}F=\setcond{\uncurry(z)\circ\left(\bigoplus(\dom\circ z)\right)^{-1}}{z\in\prod(\GR\circ F)}$,
+that is
+
+$\setcond f{f\in\GR\prod^{\mathrm{(ord)}}F}=\setcond{\uncurry(z)\circ\left(\bigoplus(\arity\circ F)\right)^{-1}}{z\in\prod(\GR\circ F)}$.
+
+Since $\bigoplus(\arity\circ F)$ is a bijection, we have
+
+$\setcond{f\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\setcond{\uncurry(z)}{z\in\prod(\GR\circ F)}$
+what is equivalent to
+
+$\setcond{\curry(f)\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\setcond z{z\in\prod(\GR\circ F)}$
+that is $\setcond{\curry(f)\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\prod(\GR\circ F)$.\end{proof}
+\begin{lem}
+$\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}=\setcond{L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}}{\curry(L)\in\prod(\GR\circ F)}$.\end{lem}
+\begin{proof}
+Let $L'\in\setcond{L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}}{\curry(L)\in\prod(\GR\circ F)}$.
+Then $L'\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}$ and $\curry(L')\in\prod(\GR\circ F)$.
+
+Let $P=\mylamdba i{\dom F}{L'|_{\{i\}\times\arity F_{i}}}$. Then
+$P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$ and $\bigcup\im P=L'$.
+So $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.
+
+Let now $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.
+Then there exists $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$
+such that $L'=\bigcup\im P$ and $\curry(L')\in\prod(\GR\circ F)$.
+Evidently $L'\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}$. So $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.\end{proof}
+\begin{lem}
+$\setcond{f\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\setcond{\bigcup\im P}{P\in\prod_{i\in\dom F}F'_{i}}$.\end{lem}
+\begin{proof}
+~
+\begin{align*}
+L\in\setcond{\bigcup\im P}{P\in\prod_{i\in\dom F}F'_{i}} & \Leftrightarrow\\
+L\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry\left(\bigcup\im P\right)\in\prod(\GR\circ F)} & \Leftrightarrow\\
+L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}\land\curry(L)\in\prod(\GR\circ F) & \Leftrightarrow\\
+L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}\land\curry(L)\in\setcond{\curry(f)\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F} & \Leftrightarrow\\
+\text{(because \ensuremath{\bigoplus(\arity\circ F)} is a bijection)}\\
+\curry(L)\circ\left(\bigoplus(\arity\circ F)\right)^{-1}\in\setcond{\curry(f)}{f\in\GR\prod^{\mathrm{(ord)}}F} & \Leftrightarrow\\
+L\circ\left(\bigoplus(\arity\circ F)\right)^{-1}\in\setcond f{f\in\GR\prod^{\mathrm{(ord)}}F} & \Leftrightarrow\\
+\text{(because \ensuremath{\bigoplus(\arity\circ F)} is a bijection)}\\
+L\in\setcond{f\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}.
+\end{align*}
+\end{proof}
+\begin{thm}
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{\left(\bigcup\im P\right)\circ\left(\bigoplus(\arity\circ F)\right)^{-1}}{P\in\prod_{i\in\dom F}F'_{i}}$.\end{thm}
+\begin{proof}
+From the lemma, because $\bigoplus(\arity\circ F)$ is a bijection.\end{proof}
+\begin{thm}
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{\bigcup_{i\in\dom F}\left(P_{i}\circ\left(\bigoplus(\arity\circ f)\right)^{-1}\right)}{P\in\prod_{i\in\dom F}F'_{i}}$.\end{thm}
+\begin{proof}
+From the previous theorem.\end{proof}
+\begin{thm}
+$\GR\prod^{\mathrm{(ord)}}F=\setcond{\bigcup\im P}{P\in\prod_{i\in\dom F}\setcond{f\circ\left(\bigoplus(\arity\circ f)\right)^{-1}}{f\in F'_{i}}}$.\end{thm}
+\begin{proof}
+From the previous.\end{proof}
+\begin{rem}
+Note that the above formulas contain both $\bigcup_{i\in\dom F}\dom F'_{i}$
+and $\bigcup_{i\in\dom F}F'_{i}$. These forms are similar but different.
+\end{rem}
+
+\subsubsection{Associativity of ordinated product}
+
+Let $f$ be an ordinal variadic function.
+
+Let $S$ be an ordinal indexed family of functions of ordinal indexed
+families of functions each taking an ordinal number of arguments in
+a set $X$.
+
+\index{associative!infinite}I call $f$ \emph{infinite associative}
+when
+\begin{enumerate}
+\item $f(f\circ S)=f(\concat S)$ for every $S$;
+\item $f(\llbracket x\rrbracket)=x$ for $x\in X$.
+\end{enumerate}
+
+\paragraph{Infinite associativity implies associativity}
+\begin{prop}
+Let $f$ be an infinitely associative function taking an ordinal number
+of arguments in a set $X$. Define $x\star y=f\llbracket x;y\rrbracket$
+for $x,y\in X$. Then the binary operation $\star$ is associative.\end{prop}
+\begin{proof}
+Let $x,y,z\in X$. Then $(x\star y)\star z=f\llbracket f\llbracket x;y\rrbracket;z\rrbracket=f(f\llbracket x;y\rrbracket;f\llbracket z\rrbracket)=f\llbracket x;y;z\rrbracket$.
+Similarly $x\star(y\star z)=f\llbracket x;y;z\rrbracket$. So $(x\star y)\star z=x\star(y\star z)$.
+\end{proof}
+
+\paragraph{Concatenation is associative}
+
+First we will prove some lemmas.
+
+Let $a$ and $b$ be functions on a poset. Let $a\sim b$ iff there
+exist an order isomorphism $f$ such that $a=b\circ f$. Evidently
+$\sim$ is an equivalence relation.
+\begin{obvious}
+$\concat a=\concat b\Leftrightarrow\uncurry(a)\sim\uncurry(b)$ for
+every ordinal indexed families $a$ and $b$ of functions taking an
+ordinal number of arguments.
+\end{obvious}
+Thank to the above, we can reduce properties of $\concat$ to properties
+of $\uncurry$.
+\begin{lem}
+$a\sim b\Rightarrow\uncurry a\sim\uncurry b$ for every ordinal indexed
+families $a$ and $b$ of functions taking an ordinal number of arguments.\end{lem}
+\begin{proof}
+There exist an order isomorphism $f$ such that $a=b\circ f$.
+
+$\uncurry(a)(x;y)=(ax)y=(bfx)y=\uncurry(b)(fx;y)=\uncurry(b)g(x;y)$
+where $g(x;y)=(fx;y)$.
+
+$g$ is an order isomorphism because $g(x_{0};y_{0})\ge g(x_{1};y_{1})\Leftrightarrow(x_{0};y_{0})\ge(x_{1};y_{1})$.
+(Injectivity and surjectivity are obvious.)\end{proof}
+\begin{lem}
+\label{by-member}Let $a_{i}\sim b_{i}$ for every $i$. Then $\uncurry a\sim\uncurry b$
+for every ordinal indexed families $a$ and $b$ of ordinal indexed
+families of functions taking an ordinal number of arguments.\end{lem}
+\begin{proof}
+Let $a_{i}=b_{i}\circ f_{i}$ where $f_{i}$ is an order isomorphism
+for every $i$.
+
+$\uncurry(a)(i;y)=a_{i}y=b_{i}f_{i}y=\uncurry(b)(i;f_{i}y)=\uncurry(b)g(i;y)=(\uncurry(b)\circ g)(i;y)$
+where $g(i;y)=(i;f_{i}y)$.
+
+$g$ is an order isomorphism because $g(i;y_{0})\ge g(i;y_{1})\Leftrightarrow f_{i}y_{0}\ge f_{i}y_{1}\Leftrightarrow y_{0}\ge y_{1}$
+and $i_{0}>i_{1}\Rightarrow g(i;y_{0})>g(i;y_{1})$. (Injectivity
+and surjectivity are obvious.)
+\end{proof}
+Let now $S$ be an ordinal indexed family of ordinal indexed families
+of functions taking an ordinal number of arguments.
+\begin{lem}
+$\uncurry(\uncurry\circ S)\sim\uncurry(\uncurry S)$.\end{lem}
+\begin{proof}
+$\uncurry\circ S=\mylamdba iS{\uncurry(S_{i})}$;
+
+$(\uncurry(\uncurry\circ S))((i;x);y)=(\uncurry S_{i})(x;y)=(S_{i}x)y$;
+
+$(\uncurry(\uncurry S))((i;x);y)=((\uncurry S)(i;x))y=(S_{i}x)y$
+.
+
+Thus $(\uncurry(\uncurry\circ S))((i;x);y)=(\uncurry(\uncurry S))((i;x);y)$
+and thus evidently $\uncurry(\uncurry\circ S)\sim\uncurry(\uncurry S)$.\end{proof}
+\begin{thm}
+$\concat$ is an infinitely associative function.\end{thm}
+\begin{proof}
+$\concat(\llbracket x\rrbracket)=x$ for a function $x$ taking an
+ordinal number of argument is obvious. It is remained to prove
+\[
+\concat(\concat\circ S)=\concat(\concat S);
+\]
+
+
+We have, using the lemmas,
+\begin{align*}
+\concat(\concat\circ S) & \sim\\
+\uncurry(\concat\circ S) & \sim\\
+\text{(by lemma \ref{by-member})}\\
+\uncurry(\uncurry\circ S) & \sim\\
+\uncurry(\uncurry S) & \sim\\
+\uncurry(\concat S) & \sim\\
+\concat(\concat S).
+\end{align*}
+
+
+Consequently $\concat(\concat\circ S)=\concat(\concat S)$.\end{proof}
+\begin{cor}
+Ordinated product is an infinitely associative function.
+\end{cor}
+
+\section{Some properties of frames}
+
+This section is based on a \noun{Todd Trimble}'s proof. A shorter
+but less elementary proof (also by \noun{Todd Trimble}) is available
+at\\
+\href{http://ncatlab.org/toddtrimble/published/topogeny}{http://ncatlab.org/toddtrimble/published/topogeny}
+
+I will abbreviate \emph{join-semilattice with least element} as JSWLE.
+\begin{obvious}
+JSWLEs are the same as finitely meet-closed posets (with nullary joins
+included).
+\end{obvious}
+
+\begin{defn}
+It is said that a function $f$ from a poset $\mathfrak{A}$ to a
+poset $\mathfrak{B}$ \emph{preserves finite joins}, when for every
+finite set $S\in\subsets\mathfrak{A}$ such that $\bigsqcup^{\mathfrak{A}}S$
+exists we have $\bigsqcup^{\mathfrak{B}}\supfun f^{\ast}S=f\bigsqcup^{\mathfrak{A}}S$.\end{defn}
+\begin{obvious}
+A function between JSWLEs preserves finite joins iff it preserves
+binary joins ($f(x\sqcup y)=fx\sqcup fy$) and nullary joins ($f(\bot^{\mathfrak{A}})=\bot^{\mathfrak{B}}$).\end{obvious}
+\begin{defn}
+A \emph{fixed point} of a function $F$ is such $x$ that $F(x)=x$.
+We will denote $\Fix(F)$ the set of all fixed points of a function
+$F$.
+\end{defn}
+
+\begin{defn}
+Let $\mathfrak{A}$ be a JSWLE. A \emph{co-nucleus} is a function
+$F:\mathfrak{A}\rightarrow\mathfrak{A}$ such that for every $p,q\in\mathfrak{A}$
+we have:
+\begin{enumerate}
+\item \label{co-nucleus-less}$F(p)\sqsubseteq p$;
+\item $F(F(p))=F(p)$;
+\item $F(p\sqcup q)=F(p)\sqcup F(q)$.
+\end{enumerate}
+\end{defn}
+\begin{prop}
+Every co-nucleus is a monotone function.\end{prop}
+\begin{proof}
+It follows from $F(p\sqcup q)=F(p)\sqcup F(q)$.\end{proof}
+\begin{lem}
+$\bigsqcup^{\Fix(F)}S=\bigsqcup S$ for every $S\in\subsets\Fix(F)$
+for every co-nucleus $F$.\end{lem}
+\begin{proof}
+Obviously $\bigsqcup S\sqsupseteq x$ for every $x\in S$.
+
+Suppose $z\sqsupseteq x$ for every $x\in S$ for a $z\in\Fix(F)$.
+Then $z\sqsupseteq\bigsqcup S$.
+
+$F\left(\bigsqcup S\right)\sqsupseteq F(x)$ for every $x\in S$.
+Thus $F\left(\bigsqcup S\right)\sqsupseteq\bigsqcup_{x\in S}F(x)=\bigsqcup S$.
+But $F\left(\bigsqcup S\right)\sqsubseteq\bigsqcup S$. Thus $F\left(\bigsqcup S\right)=\bigsqcup S$
+that is $\bigsqcup S\in\Fix(F)$.
+
+So $\bigsqcup^{\Fix(F)}S=\bigsqcup S$ by the definition of join.\end{proof}
+\begin{cor}
+$\bigsqcup^{\Fix(F)}S$ is defined for every $x,y\in\Fix(F)$.\end{cor}
+\begin{lem}
+$\bigsqcap^{\Fix(F)}S=F\left(\bigsqcap S\right)$ for every $S\in\subsets\Fix(F)$
+for every co-nucleus $F$.\end{lem}
+\begin{proof}
+Obviously $F\left(\bigsqcap S\right)\sqsubseteq x$ for every $x\in S$.
+
+Suppose $z\sqsubseteq x$ for every $x\in S$ for a $z\in\Fix(F)$.
+Then $z\sqsubseteq\bigsqcap S$ and thus $z\sqsubseteq F\left(\bigsqcap S\right)$.
+
+So $\bigsqcap^{\Fix(F)}S=F\left(\bigsqcap S\right)$ by the definition
+of meet.\end{proof}
+\begin{cor}
+$\bigsqcap^{\Fix(F)}S$ is defined for every $x,y\in\Fix(F)$.\end{cor}
+\begin{obvious}
+$\Fix(F)$ with induced order is a complete lattice.\end{obvious}
+\begin{lem}
+\label{fix-is-co-frame}If $F$ is a co-nucleus on a co-frame $\mathfrak{A}$,
+then the poset $\Fix(F)$ of fixed points of $F$, with order inherited
+from $\mathfrak{A}$, is also a co-frame.\end{lem}
+\begin{proof}
+Let $b\in\Fix(F)$, $S\in\subsets\Fix(F)$. Then 
+\begin{align*}
+b\sqcup^{\Fix(F)}\bigsqcap^{\Fix(F)}S & =\\
+b\sqcup^{\Fix(F)}F\left(\bigsqcap S\right) & =\\
+F(b)\sqcup F\left(\bigsqcap S\right) & =\\
+F\left(b\sqcup\bigsqcap S\right) & =\\
+F\left(\bigsqcap\langle b\sqcup\rangle^{\ast}S\right) & =\\
+\bigsqcap^{\Fix(F)}\langle b\sqcup\rangle^{\ast}S & =\\
+\bigsqcap^{\Fix(F)}\langle b\sqcup^{\Fix(F)}\rangle^{\ast}S.
+\end{align*}
+\end{proof}
+\begin{defn}
+Denote $\Upper(\mathfrak{A})$ the set of upper sets on $\mathfrak{A}$
+ordered \emph{reverse} to set theoretic inclusion.\end{defn}
+\begin{lem}
+The set $\Upper(\mathfrak{A})$ is closed under arbitrary meets and
+joins.\end{lem}
+\begin{proof}
+Let $S\in\subsets\Upper(\mathfrak{A})$.
+
+Let $X\in\bigcup S$ and $Y\sqsupseteq X$ for an $Y\in\mathfrak{A}$.
+Then there is $P\in S$ such that $X\in P$ and thus $Y\in P$ and
+so $Y\in\bigcup S$. So $\bigcup S\in\Upper(\mathfrak{A})$.
+
+Let now $X\in\bigcap S$ and $Y\sqsupseteq X$ for an $Y\in\mathfrak{A}$.
+Then $\forall T\in S:X\in T$ and so $\forall T\in S:Y\in T$, thus
+$Y\in\bigcap S$. So $\bigcap S\in\Upper(\mathfrak{A})$.\end{proof}
+\begin{thm}
+\label{compl-via-down}A poset $\mathfrak{A}$ is a complete lattice
+iff there is a antitone map $s:\Upper(\mathfrak{A})\rightarrow\mathfrak{A}$
+such that
+\begin{enumerate}
+\item $s(\uparrow p)=p$ for every $p\in\mathfrak{A}$;
+\item $D\subseteq\uparrow s(D)$ for every $D\in\Upper(\mathfrak{A})$.
+\end{enumerate}
+Moreover, in this case $s(D)=\bigsqcap D$ for every $D\in\Upper(\mathfrak{A})$.\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] Take $s(D)=\bigsqcap D$.
+\item [{$\Leftarrow$}] $\forall x\in D:x\sqsupseteq s(D)$ from the second
+formula.
+
+
+Let $\forall x\in D:y\sqsubseteq x$. Then $x\in\uparrow y$, $D\subseteq\uparrow y$;
+because $s$ is an antitone map, thus follows $s(D)\sqsupseteq s(\uparrow y)=y$.
+So $\forall x\in D:y\sqsubseteq s(D)$.
+
+
+That $s$ is the meet follows from the definition of meets.
+
+
+It remains to prove that $\mathfrak{A}$ is a complete lattice.
+
+
+Take any subset $S$ of $\mathfrak{A}$. Let $D$ be the smallest
+upper set containing $S$. (It exists because $\Upper(\mathfrak{A})$
+is closed under arbitrary joins.) This is 
+\[
+D=\setcond{x\in\mathfrak{A}}{\exists s\in S:x\sqsupseteq s}.
+\]
+Any lower bound of $D$ is clearly an upper bound of $S$ since $D\supseteq S$.
+Conversely any lower bound of $S$ is a lower bound of $D$.~ Thus
+$S$ and $D$ have the same set of lower bounds, hence have the same
+greatest lower bound.
+
+\end{description}
+\end{proof}
+\begin{prop}
+\label{down-is-homo}For any poset $\mathfrak{A}$ the following are
+mutually reverse order isomorphisms between upper sets $F$ (ordered
+reverse to set-theoretic inclusion) on $\mathfrak{A}$ and order homomorphisms
+$\varphi:\mathfrak{A}^{\op}\rightarrow2$ (here $2$ is the partially
+ordered set of two elements: $0$ and $1$ where $0\sqsubseteq1$),
+defined by the formulas 
+\begin{enumerate}
+\item \label{phi-01}$\varphi(a)=\left\{ \begin{array}{ll}
+1 & \text{if }a\in F\\
+0 & \text{if }a\notin F
+\end{array}\right.$ for every $a\in\mathfrak{A}$;
+\item \label{phi-inv}$F=\varphi^{-1}(1)$. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Let $X\in\varphi^{-1}(1)$ and $Y\sqsupseteq X$. Then $\varphi(X)=1$
+and thus $\varphi(Y)=1$. Thus $\varphi^{-1}(1)$ is a upper set.
+
+It is easy to show that $\varphi$ defined by the formula~\ref{phi-01}
+is an order homomorphism $\mathfrak{A}^{\op}\rightarrow2$ whenever
+$F$ is a upper set.
+
+Finally we need to prove that they are mutually inverse. Really: Let
+$\varphi$ be defined by the formula~\ref{phi-01}. Then take $F'=\varphi^{-1}(1)$
+and define $\varphi'(a)$ by the formula~\ref{phi-01}. We have 
+\[
+\varphi'(a)=\left\{ \begin{array}{ll}
+1 & \text{if }a\in\varphi^{-1}(1)\\
+0 & \text{if }a\notin\varphi^{-1}(1)
+\end{array}\right.=\left\{ \begin{array}{ll}
+1 & \text{if }\varphi(a)=1\\
+0 & \text{if }\varphi(a)\neq1
+\end{array}\right.=\varphi(a).
+\]
+Let now $F$ be defined by the formula~\ref{phi-inv}. Then take
+$\varphi'(a)=\left\{ \begin{array}{ll}
+1 & \text{if }a\in F\\
+0 & \text{if }a\notin F
+\end{array}\right.$ as defined by the formula~\ref{phi-01} and define $F'=\varphi'^{-1}(1)$.
+Then 
+\[
+F'=\varphi'^{-1}(1)=F.
+\]
+\end{proof}
+\begin{lem}
+For a complete lattice $\mathfrak{A}$, the map $\bigsqcap:\Upper(\mathfrak{A})\rightarrow\mathfrak{A}$
+preserves arbitrary meets.\end{lem}
+\begin{proof}
+Let $S\in\subsets\Upper(\mathfrak{A})$ . We have $\bigsqcap S\in\Upper(\mathfrak{A})$.
+
+$\bigsqcap\bigsqcap S=\bigsqcap\bigsqcap_{X\in S}X=\bigsqcap_{X\in S}\bigsqcap X$
+is what we needed to prove.\end{proof}
+\begin{lem}
+A complete lattice $\mathfrak{A}$ is a co-frame iff $\bigsqcap:\Upper(\mathfrak{A})\rightarrow\mathfrak{A}$
+preserves finite joins.\end{lem}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] Let $\mathfrak{A}$ be a co-frame. Let $D,D'\in\Upper(\mathfrak{A})$.
+Obviously $\bigsqcap(D\sqcup D')\sqsupseteq\bigsqcap D$ and $\bigsqcap(D\sqcup D')\sqsupseteq\bigsqcap D'$,
+so $\bigsqcap(D\sqcup D')\sqsupseteq\bigsqcap D\sqcup\bigsqcap D'$.
+
+
+Also 
+\begin{multline*}
+\bigsqcap D\sqcup\bigsqcap D'=\bigcup D\sqcup\bigcup D'=\text{(because \ensuremath{\mathfrak{A}} is a co-frame)}=\\
+\bigcup\setcond{d\sqcup d'}{d\in D,d'\in D'}.
+\end{multline*}
+Obviously $d\sqcup d'\in D\cap D'$, thus $\bigsqcap D\sqcup\bigsqcap D'\subseteq\bigcup(D\cap D')=\bigsqcap(D\cap D')$
+that is $\bigsqcap D\sqcup\bigsqcap D'\sqsupseteq\bigsqcap(D\cap D')$.
+So $\bigsqcap(D\sqcup D')=\bigsqcap D\sqcup\bigsqcap D'$ that is
+$\bigsqcap:\Upper(A)\rightarrow A$ preserves binary joins.
+
+
+It preserves nullary joins since $\bigsqcap^{\Upper(\mathfrak{A})}\bot^{\Upper(\mathfrak{A})}=\bigsqcap^{\Upper(\mathfrak{A})}\mathfrak{A}=\bot^{\mathfrak{A}}$.
+
+\item [{$\Leftarrow$}] Suppose $\bigsqcap:\Upper(\mathfrak{A})\rightarrow\mathfrak{A}$
+preserves finite joins. Let $b\in\mathfrak{A}$, $S\in\subsets\mathfrak{A}$.
+Let $D$ be the smallest upper set containing $S$ (so $D=\bigcup\rsupfun{\uparrow}S$).
+We have $\bigsqcap D=\bigcup S$. So 
+\begin{align*}
+b\sqcup\bigsqcap S & =\\
+\bigsqcap\uparrow b\sqcup\bigcup\bigsqcap\rsupfun{\uparrow}S & =\\
+\bigsqcap\uparrow b\sqcup\bigsqcap\bigcup\rsupfun{\uparrow}S & =\text{(since \ensuremath{\bigsqcap} preserves finite joins)}\\
+\bigsqcap\left(\uparrow b\sqcup\bigcup\rsupfun{\uparrow}S\right) & =\\
+\bigcup\left(\uparrow b\cap\bigcup\rsupfun{\uparrow}S\right) & =\\
+\bigsqcap\bigcup_{a\in S}(\uparrow b\cap\uparrow a) & =\\
+\bigsqcap\bigcup_{a\in S}\uparrow(b\sqcup a) & =\text{(since \ensuremath{\bigsqcap} preserves all meets)}\\
+\bigcup_{a\in S}\bigsqcap\uparrow(b\sqcup a) & =\\
+\bigcup_{a\in S}(b\sqcup a) & =\\
+\bigsqcap_{a\in S}(b\sqcup a).
+\end{align*}
+
+\end{description}
+\end{proof}
+\begin{cor}
+\label{down-meet-co-nucleus}If $\mathfrak{A}$ is a co-frame, then
+the composition $F=\uparrow\circ\bigsqcap:\Upper(\mathfrak{A})\rightarrow\Upper(\mathfrak{A})$
+is a co-nucleus. The embedding $\uparrow:\mathfrak{A}\rightarrow\Upper(\mathfrak{A})$
+is an isomorphism of $\mathfrak{A}$ onto the co-frame $\Fix(F)$.\end{cor}
+\begin{proof}
+$D\sqsupseteq F(D)$ follows from theorem~\ref{compl-via-down}.
+
+We have $F(F(D))=F(D)$ for all $D\in\Upper(\mathfrak{A})$ since
+$F(F(D))=\uparrow\bigsqcap\uparrow\bigsqcap D=\text{(because \ensuremath{\bigsqcap\uparrow s=s} for any \ensuremath{s})}=\uparrow\bigsqcap D=F(D)$.
+
+And since both $\bigsqcap:\Upper(\mathfrak{A})\rightarrow\mathfrak{A}$
+and $\uparrow$ preserve finite joins, $F$ preserves finite joins.
+Thus $F$ is a co-nucleus.
+
+Finally, we have $a\sqsupseteq a'$ if and only if $\uparrow a\subseteq\uparrow a'$,
+so that $\uparrow:\mathfrak{A}\rightarrow\Upper(\mathfrak{A})$ maps
+$\mathfrak{A}$ isomorphically onto its image $\rsupfun{\uparrow}\mathfrak{A}$.
+This image is $\Fix(F)$ because if $D$ is any fixed point (i.e.
+if $D=\uparrow\bigsqcap D$), then $D$ clearly belongs to $\rsupfun{\uparrow}\mathfrak{A}$;
+and conversely $\uparrow a$ is always a fixed point of $F=\uparrow\circ\bigsqcap$
+since $F(\uparrow a)=\uparrow\bigsqcap\uparrow a=\uparrow a$.\end{proof}
+\begin{defn}
+If $\mathfrak{A}$, $\mathfrak{B}$ are two JSWLEs, then $\operatorname{Join}(\mathfrak{A};\mathfrak{B})$
+is the (ordered pointwise) set of finite joins preserving maps $\mathfrak{A}\rightarrow\mathfrak{B}$.\end{defn}
+\begin{obvious}
+$\operatorname{Join}(\mathfrak{A};\mathfrak{B})$ is a JSWLE, where~$f\sqcup g$
+is given by the formula $(f\sqcup g)(p)=f(p)\sqcup g(p)$, $\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})}$
+is given by the formula $\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})}(p)=\bot^{\mathfrak{B}}$.\end{obvious}
+\begin{defn}
+Let $h:Q\rightarrow R$ be a finite joins preserving map. Then by
+definition $\operatorname{Join}(P,h):\operatorname{Join}(P;Q)\rightarrow\operatorname{Join}(P;R)$
+takes $f\in\operatorname{Join}(P;Q)$ into the composition $h\circ f\in\operatorname{Join}(P;R)$.\end{defn}
+\begin{lem}
+Above defined $\operatorname{Join}(P,h)$ is a finite joins preserving
+map.\end{lem}
+\begin{proof}
+~
+
+\begin{multline*}
+(h\circ(f\sqcup f'))x=h(f\sqcup f')x=h(fx\sqcup f'x)=\\
+hfx\sqcup hf'x=(h\circ f)x\sqcup(h\circ f')x=((h\circ f)\sqcup(h\circ f'))x.
+\end{multline*}
+Thus $h\circ(f\sqcup f')=(h\circ f)\sqcup(h\circ f')$.
+
+$(h\circ\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})})x=h\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})}x=h\bot^{\mathfrak{B}}=\bot^{\mathfrak{A}}$.\end{proof}
+\begin{prop}
+If $h,h':Q\rightarrow R$ are finite join preserving maps and $h\sqsupseteq h'$,
+then $\operatorname{Join}(P,h)\sqsupseteq\operatorname{Join}(P,h')$.\end{prop}
+\begin{proof}
+$\operatorname{Join}(P,h)(f)(x)=(h\circ f)(x)=hfx\sqsupseteq h'fx=(h'\circ f)(x)=\operatorname{Join}(P,h')(f)(x)$.\end{proof}
+\begin{lem}
+If $g:Q\rightarrow R$ and $h:R\rightarrow S$ are finite joins preserving,
+then the composition $\operatorname{Join}(P;h)\circ\operatorname{Join}(P;g)$
+is equal to $\operatorname{Join}(P;h\circ g)$. Also $\operatorname{Join}(P;\id_{Q})$
+for identity map $\id_{Q}$ on $Q$ is the identity map $\id_{\operatorname{Join}(P;Q)}$
+on $\operatorname{Join}(P;Q)$.\end{lem}
+\begin{proof}
+$\operatorname{Join}(P;h)\operatorname{Join}(P;g)f=\operatorname{Join}(P;h)(g\circ f)=h\circ g\circ f=\operatorname{Join}(P;h\circ g)f$.
+
+$\operatorname{Join}(P;\id_{Q})f=\id_{Q}\circ f=f$.\end{proof}
+\begin{cor}
+\label{join-map-co-nucleus}If $Q$ is a JSWLE and $F:Q\rightarrow Q$
+is a co-nucleus, then for any JSWLE $P$ we have that 
+\[
+\operatorname{Join}(P;F):\operatorname{Join}(P;Q)\rightarrow\operatorname{Join}(P;Q)
+\]
+ is also a co-nucleus.\end{cor}
+\begin{proof}
+From $\id_{Q}\sqsupseteq F$ (co-nucleus axiom \ref{co-nucleus-less})
+we have $\operatorname{Join}(P;\id_{Q})\sqsupseteq\operatorname{Join}(P;F)$
+and since by the last lemma the left side is the identity on $\operatorname{Join}(P;Q)$,
+we see that $\operatorname{Join}(P;F)$ also satisfies co-nucleus
+axiom \ref{co-nucleus-less}.
+
+$\operatorname{Join}(P;F)\circ\operatorname{Join}(P;F)=\operatorname{Join}(P;F\circ F)$
+by the same lemma and thus $\operatorname{Join}(P;F)\circ\operatorname{Join}(P;F)=\operatorname{Join}(P;F)$
+by the second co-nucleus axiom for $F$, showing that $\operatorname{Join}(P;F)$
+satisfies the second co-nucleus axiom.
+
+By an other lemma, we have that $\operatorname{Join}(P;F)$ preserves
+finite joins, given that $F$ preserves finite joins, which is the
+third co-nucleus axiom.\end{proof}
+\begin{lem}
+\label{join-fix-inter}$\Fix(\operatorname{Join}(P;F))=\operatorname{Join}(P;\Fix(F))$
+for every JSWLEs $P$, $Q$ and a join preserving function $F:Q\rightarrow Q$.\end{lem}
+\begin{proof}
+$a\in\Fix(\operatorname{Join}(P;F))\Leftrightarrow a\in F^{P}\wedge F\circ a=a\Leftrightarrow a\in F^{P}\wedge\forall x\in P:F(a(x))=a(x)$.
+
+$a\in\operatorname{Join}(P;\Fix(F))\Leftrightarrow a\in\Fix(F)^{P}\Leftrightarrow a\in F^{P}\wedge\forall x\in P:F(a(x))=a(x)$.
+
+Thus $\Fix(\operatorname{Join}(P;F))=\operatorname{Join}(P;\Fix(F))$.
+That the order of the left and right sides of the equality agrees
+is obvious.\end{proof}
+\begin{defn}
+$\mathbf{Pos}(\mathfrak{A};\mathfrak{B})$ is the pointwise ordered
+poset of monotone maps from a poset $\mathfrak{A}$ to a poset $\mathfrak{B}$.\end{defn}
+\begin{lem}
+\label{join-pos-interch}If $Q$, $R$ are JSWLEs and $P$ is a poset,
+then $\mathbf{Pos}(P;R)$ is a JSWLE and $\mathbf{Pos}(P;\operatorname{Join}(Q;R))$
+is isomorphic to $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$.
+If $R$ is a co-frame, then also $\mathbf{Pos}(P;R)$ is a co-frame.
+\end{lem}
+Let $f,g\in\mathbf{Pos}(P;R)$. Then $\lambda x\in P:(fx\sqcup gx)$
+is obviously monotone and then it is evident that $f\sqcup^{\mathbf{Pos}(P;R)}g=\lambda x\in P:(fx\sqcup gx)$.
+$\lambda x\in P:\bot^{R}$ is also obviously monotone and it is evident
+that $\bot^{\mathbf{Pos}(P;R)}=\lambda x\in P:\bot^{R}$.
+
+Obviously both $\mathbf{Pos}(P;\operatorname{Join}(Q;R))$ and $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$
+are sets of order preserving maps.
+
+Let $f$ be a monotone map.
+
+$f\in\mathbf{Pos}(P;\operatorname{Join}(Q;R))$ iff $f\in\operatorname{Join}(Q;R)^{P}$
+iff $f\in\left\{ g\in R^{Q}\hspace{1em}|\hspace{1em}g\text{ preserves finite joins}\right\} ^{P}$
+iff $f\in(R^{Q})^{P}$ and every $g=f(x)$ (for $x\in P$) preserving
+finite joins. This is bijectively equivalent ($f\mapsto f'$) to $f'\in(R^{P})^{Q}$
+preserving finite joins.
+
+$f'\in\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$ iff $f'$
+preserves finite joins and $f'\in\mathbf{Pos}(P;R)^{Q}$ iff $f'$
+preserves finite joins and $f'\in\setcond{g\in(R^{P})^{Q}}{g(x)\text{ is monotone}}$
+iff $f'$ preserves finite joins and $f'\in(R^{P})^{Q}$.
+
+So we have proved that $f\mapsto f'$ is a bijection between $\mathbf{Pos}(P;\operatorname{Join}(Q;R))$
+and $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$. That it
+preserves order is obvious.
+
+It remains to prove that if $R$ is a co-frame, then also $\mathbf{Pos}(P;R)$
+is a co-frame.
+
+First, we need to prove that $\mathbf{Pos}(P;R)$ is a complete lattice.
+But it is easy to prove that for every set $S\in\subsets\mathbf{Pos}(P;R)$
+we have $\lambda x\in P:\bigsqcup_{f\in S}f(x)$ and $\lambda x\in P:\bigsqcap_{f\in S}f(x)$
+are monotone and thus are the joins and meets on $\mathbf{Pos}(P;R)$.
+
+Next we need to prove that 
+\[
+b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S=\bigsqcap^{\mathbf{Pos}(P;R)}\left\langle b\sqcup^{\mathbf{Pos}(P;R)}\right\rangle ^{\ast}S.
+\]
+Really (for every $x\in P$),
+
+\begin{multline*}
+\left(b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S\right)x=b(x)\sqcup\left(\bigsqcap^{\mathbf{Pos}(P;R)}S\right)x=\\
+b(x)\sqcup\bigsqcap_{f\in S}f(x)=\bigsqcap_{f\in S}(b(x)\sqcup f(x))=\bigsqcap_{f\in S}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)x=\\
+\left(\bigsqcap_{f\in S}^{\mathbf{Pos}(P;R)}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)\right)x.
+\end{multline*}
+
+
+Thus $b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S=\bigsqcap_{f\in S}^{\mathbf{Pos}(P;R)}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)=\bigsqcap^{\mathbf{Pos}(P;R)}\left\langle b\sqcup^{\mathbf{Pos}(P;R)}\right\rangle ^{\ast}S$.
+\begin{defn}
+$P\cong Q$ means that posets $P$ and $Q$ are isomorphic.\end{defn}
+\begin{thm}
+\label{frame-main}If $\mathfrak{A}$ is a co-frame and $L$ is a
+distributive lattice with greatest element, then $\operatorname{Join}(L;\mathfrak{A})$
+is also a co-frame.
+\end{thm}
+Let $F=\uparrow\circ\bigsqcap:\Upper(\mathfrak{A})\rightarrow\Upper(\mathfrak{A})$;
+$F$ is a co-nucleus by above.
+
+Since $\Upper(\mathfrak{A})\cong\mathbf{Pos}(\mathfrak{A};2)$ by
+proposition \ref{down-is-homo}, we may regard $F$ as a co-nucleus
+on $\mathbf{Pos}(\mathfrak{A};2)$.
+
+$\operatorname{Join}(L;\mathfrak{A})\cong\operatorname{Join}(L;\Fix(F))$
+by corollary \ref{down-meet-co-nucleus}.
+
+$\operatorname{Join}(L;\Fix(F))\cong\Fix(\operatorname{Join}(L;F))$
+by lemma \ref{join-fix-inter}.
+
+By corollary \ref{join-map-co-nucleus} the function $\operatorname{Join}(L;F)$
+is a co-nucleus on $\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right)$.
+\begin{eqnarray*}
+\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right) & \cong & \text{(by lemma \ref{join-pos-interch})}\\
+\mathbf{Pos}(\mathfrak{A};\operatorname{Join}(L;2)) & \cong\\
+\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X)).
+\end{eqnarray*}
+But $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$ is a co-frame by
+lemma \ref{join-pos-interch}.
+
+Thus $\operatorname{Join}(L;\mathfrak{A})$ is isomorphic to a poset
+of fixed points of a co-nucleus on the co-frame $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$.
+By lemma \ref{fix-is-co-frame} $\operatorname{Join}(L;\mathfrak{A})$
+is also a co-frame.

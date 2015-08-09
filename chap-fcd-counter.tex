@@ -1,0 +1,405 @@
+
+\chapter{Counter-examples about funcoids and reloids}
+
+For further examples we will use the filter defined by the formula
+\[
+\Delta=\bigsqcap^{\mathscr{F}(\mathbb{R})}\setcond{(-\epsilon;\epsilon)}{\epsilon\in\mathbb{R},\epsilon>0}.
+\]
+I will denote $\Omega(A)$ the Fréchet filter on a set $A$.
+\begin{example}
+There exist a funcoid $f$ and a set $S$ of funcoids such that $f\sqcap\bigsqcup S\neq\bigsqcup\rsupfun{f\sqcap}S$.\end{example}
+\begin{proof}
+Let $f=\Delta\times^{\mathsf{FCD}}\uparrow^{\mathscr{F}(\mathbb{R})}\{0\}$
+and $S=\setcond{\uparrow^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}((\epsilon;+\infty)\times\{0\})}{\epsilon\in\mathbb{R},\epsilon>0}$.
+Then
+\begin{multline*}
+f\sqcap\bigsqcup S=(\Delta\times^{\mathsf{FCD}}\uparrow^{\mathscr{F}(\mathbb{R})}\{0\})\sqcap\uparrow^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}((0;+\infty)\times\{0\})=\\
+(\Delta\sqcap\uparrow^{\mathscr{F}(\mathbb{R})}(0;+\infty))\times^{\mathsf{FCD}}\uparrow^{\mathscr{F}(\mathbb{R})}\{0\}\ne\bot^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}
+\end{multline*}
+while $\bigsqcup\rsupfun{f\sqcap}S=\bigsqcup\{\bot^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}\}=\bot^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}$.\end{proof}
+\begin{example}
+There exist a set $R$ of funcoids and a funcoid $f$ such that $f\circ\bigsqcup R\neq\bigsqcup\rsupfun{f\circ}R$.\end{example}
+\begin{proof}
+Let $f=\Delta\times^{\mathsf{FCD}}\uparrow^{\mathscr{F}(\mathbb{R})}\{0\}$,
+$R=\setcond{\uparrow^{\mathbb{R}}\{0\}\times^{\mathsf{FCD}}\uparrow^{\mathbb{R}}(\epsilon;+\infty)}{\epsilon\in\mathbb{R},\epsilon>0}$.
+
+We have $\bigsqcup R=\uparrow^{\mathbb{R}}\{0\}\times^{\mathsf{FCD}}\uparrow^{\mathbb{R}}(0;+\infty)$;
+$f\circ\bigsqcup R=\uparrow^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}(\{0\}\times\{0\})\ne\bot^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}$
+and $\bigsqcup\rsupfun{f\circ}R=\bigsqcup\{\bot^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}\}=\bot^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}$.\end{proof}
+\begin{example}
+There exist a set $R$ of reloids and a reloid $f$ such that $f\circ\bigsqcup R\neq\bigsqcup\rsupfun{f\circ}R$.\end{example}
+\begin{proof}
+Let $f=\Delta\times^{\mathsf{RLD}}\uparrow^{\mathscr{F}(\mathbb{R})}\{0\}$,
+$R=\setcond{\uparrow^{\mathbb{R}}\{0\}\times^{\mathsf{RLD}}\uparrow^{\mathbb{R}}(\epsilon;+\infty)}{\epsilon\in\mathbb{R},\epsilon>0}$.
+
+We have $\bigsqcup R=\uparrow^{\mathbb{R}}\{0\}\times^{\mathsf{RLD}}\uparrow^{\mathbb{R}}(0;+\infty)$;
+$f\circ\bigsqcup R=\uparrow^{\mathsf{RLD}(\mathbb{R};\mathbb{R})}(\{0\}\times\{0\})\ne\bot^{\mathsf{RLD}(\mathbb{R};\mathbb{R})}$
+and $\bigsqcup\rsupfun{f\circ}R=\bigsqcup\{\bot^{\mathsf{RLD}(\mathbb{R};\mathbb{R})}\}=\bot^{\mathsf{RLD}(\mathbb{R};\mathbb{R})}$.\end{proof}
+\begin{example}
+There exist a set $R$ of funcoids and filters $\mathcal{X}$ and
+$\mathcal{Y}$ such that
+\begin{enumerate}
+\item \label{count-join-rel}$\mathcal{X}\suprel{\bigsqcup R}\mathcal{Y}\land\nexists f\in R:\mathcal{X}\suprel f\mathcal{Y}$;
+\item \label{count-join-fun}$\supfun{\bigsqcup R}\mathcal{X}\sqsupset\bigsqcup\setcond{\supfun f\mathcal{X}}{f\in R}$.
+\end{enumerate}
+\end{example}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{count-join-rel}}] Take $\mathcal{X}=\Delta$ and $\mathcal{Y}=\top^{\mathscr{F}(\mathbb{R})}$,
+$R=\setcond{\uparrow^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}((\epsilon;+\infty)\times\mathbb{R})}{\epsilon\in\mathbb{R},\epsilon>0}$.
+Then $\bigsqcup R=\uparrow^{\mathsf{FCD}(\mathbb{R};\mathbb{R})}((0;+\infty)\times\mathbb{R})$.
+So $\mathcal{X}\suprel{\bigsqcup R}\mathcal{Y}$ and $\forall f\in R:\lnot(\mathcal{X}\suprel f\mathcal{Y})$.
+\item [{\ref{count-join-fun}}] With the same $\mathcal{X}$ and $R$ we
+have $\supfun{\bigsqcup R}\mathcal{X}=\top^{\mathscr{F}(\mathbb{R})}$
+and $\supfun f\mathcal{X}=\bot^{\mathscr{F}(\mathbb{R})}$ for every
+$f\in R$, thus $\bigsqcup\setcond{\supfun f\mathcal{X}}{f\in R}=\bot^{\mathscr{F}(\mathbb{R})}$.
+\end{widedisorder}
+\end{proof}
+\begin{example}
+$\bigsqcup_{\mathcal{B}\in T}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})\ne\mathcal{A}\times^{\mathsf{RLD}}\bigsqcup T$
+for some filter $\mathcal{A}$ and set of filters $T$ (with a common
+base).\end{example}
+\begin{proof}
+Take $\mathbb{R}_{+}=\setcond{x\in\mathbb{R}}{x>0}$, $\mathcal{A}=\Delta$,
+$T=\setcond{\uparrow\{x\}}{x\in\mathbb{R}_{+}}$ where $\mathord\uparrow=\mathord{\uparrow^{\mathbb{R}}}$.
+
+$\bigsqcup T=\uparrow\mathbb{R}_{+}$; $\mathcal{A}\times^{\mathsf{RLD}}\bigsqcup T=\Delta\times^{\mathsf{RLD}}\uparrow\mathbb{R}_{+}$.
+
+$\bigsqcup_{\mathcal{B}\in T}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\bigsqcup_{x\in\mathbb{R}_{+}}(\Delta\times^{\mathsf{RLD}}\uparrow\{x\})$.
+
+We'll prove that $\bigsqcup_{x\in\mathbb{R}_{+}}(\Delta\times^{\mathsf{RLD}}\uparrow\{x\})\ne\Delta\times^{\mathsf{RLD}}\uparrow\mathbb{R}_{+}$.
+
+Consider $K=\bigcup_{x\in\mathbb{R}_{+}}(\{x\}\times(-1/x;1/x))$.
+
+$K\in\up(\Delta\times^{\mathsf{RLD}}\uparrow\{x\})$ and thus $K\in\up\bigsqcup_{x\in\mathbb{R}_{+}}(\Delta\times^{\mathsf{RLD}}\uparrow\{x\})$
+. But $K\notin\up(\Delta\times^{\mathsf{RLD}}\uparrow\mathbb{R}_{+})$.\end{proof}
+\begin{thm}
+For a filter $a$ we have $a\times^{\mathsf{RLD}}a\sqsubseteq1_{\Base(a)}^{\mathsf{RLD}}$
+only in the case if $a=\bot^{\mathscr{F}(\Base(a))}$ or $a$ is a
+trivial ultrafilter.\end{thm}
+\begin{proof}
+If $a\times^{\mathsf{RLD}}a\sqsubseteq1_{\Base(a)}^{\mathsf{RLD}}$
+then there exists $m\in\up(a\times^{\mathsf{RLD}}a)$ such that $m\sqsubseteq1_{\Base(a)}^{\mathbf{Rel}}$.
+Consequently there exist $A,B\in\up a$ such that $A\times B\sqsubseteq1_{\Base(a)}^{\mathbf{Rel}}$
+what is possible only in the case when $\uparrow A=\uparrow B=a$
+is trivial a ultrafilter or the least filter.\end{proof}
+\begin{cor}
+Reloidal product of a non-trivial atomic filter with itself is non-atomic.\end{cor}
+\begin{proof}
+Obviously $(a\times^{\mathsf{RLD}}a)\sqcap1_{\Base(a)}^{\mathsf{RLD}}\ne\bot^{\mathscr{F}(\Base(a))}$
+and $(a\times^{\mathsf{RLD}}a)\sqcap1_{\Base(a)}^{\mathsf{RLD}}\sqsubset a\times^{\mathsf{RLD}}a$.\end{proof}
+\begin{example}
+There exist two atomic reloids whose composition is non-atomic and
+non-empty.\end{example}
+\begin{proof}
+Let $a$ be a non-trivial ultrafilter on $\mathbb{N}$ and $x\in\mathbb{N}$.
+Then
+\begin{multline*}
+(a\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{x\})\circ(\uparrow^{\mathbb{N}}\{x\}\times^{\mathsf{RLD}}a)=\bigsqcap_{A\in a}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}((A\times\{x\})\circ(\{x\}\times A)=\\
+\bigsqcap_{A\in a}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(A\times A)=a\times^{\mathsf{RLD}}a
+\end{multline*}
+is non-atomic despite of $a\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{x\}$
+and $\uparrow^{\mathbb{N}}\{x\}\times^{\mathsf{RLD}}a$ are atomic.\end{proof}
+\begin{example}
+There exists non-monovalued atomic reloid.\end{example}
+\begin{proof}
+From the previous example it follows that the atomic reloid $\uparrow^{\mathbb{N}}\{x\}\times^{\mathsf{RLD}}a$
+is not monovalued.\end{proof}
+\begin{example}
+Non-convex reloids exist.\end{example}
+\begin{proof}
+Let $a$ be a non-trivial ultrafilter. Then $\id_{a}^{\mathsf{RLD}}$
+is non-convex. This follows from the fact that only reloidal products
+which are below $1_{\Base(a)}^{\mathsf{RLD}}$ are reloidal products
+of ultrafilters and $\id_{a}^{\mathsf{RLD}}$ is not their join.\end{proof}
+\begin{example}
+$\torldin f\ne\torldout f$ for a funcoid $f$.\end{example}
+\begin{proof}
+Let $f=1_{\mathbb{N}}^{\mathsf{FCD}}$. Then $\torldin f=\bigsqcup_{a\in\atoms^{\mathscr{F}(\mathbb{N})}}(a\times^{\mathsf{RLD}}a)$
+and $\torldout f=1_{\mathbb{N}}^{\mathsf{RLD}}$. But we have shown
+above $a\times^{\mathsf{RLD}}a\nsqsubseteq1_{\mathbb{N}}^{\mathsf{RLD}}$
+for non-trivial ultrafilter $a$, and so $\torldin f\nsqsubseteq\torldout f$.\end{proof}
+\begin{prop}
+\label{fcd-meet-frechet}$1_{\mathfrak{U}}^{\mathsf{FCD}}\sqcap\uparrow^{\mathsf{FCD}(\mathfrak{U};\mathfrak{U})}((\mathfrak{U}\times\mathfrak{U})\setminus\id_{\mathfrak{U}})=\id_{\Omega(\mathfrak{U})}^{\mathsf{FCD}}\ne\bot^{\mathsf{FCD}(\mathfrak{U};\mathfrak{U})}$
+for every infinite set $\mathfrak{U}$.\end{prop}
+\begin{proof}
+Note that $\supfun{\id_{\Omega(\mathfrak{U})}^{\mathsf{FCD}}}\mathcal{X}=\mathcal{X}\sqcap\Omega(\mathfrak{U})$
+for every filter $\mathcal{X}$ on $\mathfrak{U}$.
+
+Let $f=1_{\mathfrak{U}}^{\mathsf{FCD}}$, $g=\uparrow^{\mathsf{FCD}(\mathfrak{U};\mathfrak{U})}((\mathfrak{U}\times\mathfrak{U})\setminus\id_{\mathfrak{U}})$.
+
+Let $x$ be a non-trivial ultrafilter on $\mathfrak{U}$. If $X\in\up x$
+then $\card X\ge2$ (In fact, $X$ is infinite but we don't need this.)
+and consequently $\rsupfun gX=\top^{\mathscr{F}(\mathfrak{U})}$.
+Thus $\supfun gx=\top^{\mathscr{F}(\mathfrak{U})}$. Consequently
+\[
+\supfun{f\sqcap g}x=\supfun fx\sqcap\supfun gx=x\sqcap\top^{\mathscr{F}(\mathfrak{U})}=x.
+\]
+Also $\supfun{\id_{\Omega(\mathfrak{U})}^{\mathsf{FCD}}}x=x\sqcap\Omega(\mathfrak{U})=x$.
+
+Let now $x$ be a trivial ultrafilter. Then $\supfun fx=x$ and $\supfun gx=\top^{\mathscr{F}(\mathfrak{U})}\setminus x$.
+So
+\[
+\supfun{f\sqcap g}x=\supfun fx\sqcap\supfun gx=x\sqcap(\top^{\mathscr{F}(\mathfrak{U})}\setminus x)=\bot^{\mathscr{F}(\mathfrak{U})}.
+\]
+Also $\supfun{\id_{\Omega(\mathfrak{U})}^{\mathsf{FCD}}}x=x\sqcap\Omega(\mathfrak{U})=\bot^{\mathscr{F}(\mathfrak{U})}$.
+
+So $\supfun{f\sqcap g}x=\supfun{\id_{\Omega(\mathfrak{U})}^{\mathsf{FCD}}}x$
+for every ultrafilter $x$ on $\mathfrak{U}$. Thus $f\sqcap g=\id_{\Omega(\mathfrak{U})}^{\mathsf{FCD}}$.\end{proof}
+\begin{example}
+There exist binary relations $f$ and $g$ such that $\uparrow^{\mathsf{FCD}(A;B)}f\sqcap\uparrow^{\mathsf{FCD}(A;B)}g\ne\uparrow^{\mathsf{FCD}(A;B)}(f\cap g)$
+for some sets $A$, $B$ such that $f,g\subseteq A\times B$.\end{example}
+\begin{proof}
+From the proposition above.\end{proof}
+\begin{example}
+There exists a principal funcoid which is not a complemented element
+of the lattice of funcoids.\end{example}
+\begin{proof}
+I will prove that quasi-complement of the funcoid $1_{\mathbb{N}}^{\mathsf{FCD}}$
+is not its complement. We have:
+\begin{align*}
+(1_{\mathbb{N}}^{\mathsf{FCD}})^{\ast} & =\\
+\bigsqcup\setcond{c\in\mathsf{FCD}(\mathbb{N};\mathbb{N})}{c\asymp1_{\mathbb{N}}^{\mathsf{FCD}}} & \sqsupseteq\\
+\bigsqcup\setcond{\uparrow^{\mathbb{N}}\{\alpha\}\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\beta\}}{\alpha,\beta\in\mathbb{N},\uparrow^{\mathbb{N}}\{\alpha\}\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\beta\}\asymp1_{\mathbb{N}}^{\mathsf{FCD}}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{N}}\{\alpha\}\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\beta\}}{\alpha,\beta\in\mathbb{N},\alpha\ne\beta} & =\\
+\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}\bigcup\setcond{\{\alpha\}\times\{\beta\}}{\alpha,\beta\in\mathbb{N},\alpha\ne\beta} & =\\
+\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}(\mathbb{N}\times\mathbb{N}\setminus\id_{\mathbb{N}})
+\end{align*}
+(used corollary \ref{fcd-compl-join}). But by proved above $(1_{\mathbb{N}}^{\mathsf{FCD}})^{\ast}\sqcap1_{\mathbb{N}}^{\mathsf{FCD}}\ne\bot^{\mathscr{F}(\mathbb{N})}$.\end{proof}
+\begin{example}
+There exists a funcoid $h$ such that $\up h$ is not a filter.\end{example}
+\begin{proof}
+Consider the funcoid $h=\id_{\Omega(\mathbb{N})}^{\mathsf{FCD}}$.
+We have (from the proof of proposition \ref{fcd-meet-frechet}) that
+$f\in\up h$ and $g\in\up h$, but $f\sqcap g\notin\up h$.\end{proof}
+\begin{example}
+There exists a funcoid $h\ne\bot^{\mathsf{FCD}(A;B)}$ such that $\torldout h=\bot^{\mathsf{RLD}(A;B)}$.\end{example}
+\begin{proof}
+Consider $h=\id_{\Omega(\mathbb{N})}^{\mathsf{FCD}}$. By proved above
+$h=f\sqcap g$ where $f=1_{\mathbb{N}}^{\mathsf{FCD}}=\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}\id_{\mathbb{N}}$,
+$g=\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}(\mathbb{N}\times\mathbb{N}\setminus\id_{\mathbb{N}})$.
+
+We have $\id_{\mathbb{N}},\mathbb{N}\times\mathbb{N}\setminus\id_{\mathbb{N}}\in\GR h$.
+
+So
+\[
+\torldout h=\bigsqcap^{\mathsf{RLD}}\up h=\bigsqcap^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}\GR h\sqsubseteq\uparrow^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(\id_{\mathbb{N}}\cap(\mathbb{N}\times\mathbb{N}\setminus\id_{\mathbb{N}}))=\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})};
+\]
+and thus $\torldout h=\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}$.\end{proof}
+\begin{example}
+There exists a funcoid $h$ such that $\tofcd\torldout h\ne h$.\end{example}
+\begin{proof}
+It follows from the previous example.\end{proof}
+\begin{example}
+$\torldin\tofcd f\ne f$ for some convex reloid $f$.\end{example}
+\begin{proof}
+Let $f=1_{\mathbb{N}}^{\mathsf{RLD}}$. Then $\tofcd f=1_{\mathbb{N}}^{\mathsf{FCD}}$.
+Let $a$ be some non-trivial ultrafilter on $\mathbb{N}$. Then $\torldin\tofcd f\sqsupseteq a\times^{\mathsf{RLD}}a\nsqsubseteq1_{\mathbb{N}}^{\mathsf{RLD}}$
+and thus $\torldin\tofcd f\nsqsubseteq f$.\end{proof}
+\begin{example}
+There exist composable funcoids $f$ and $g$ such that
+\[
+\torldout(g\circ f)\ne\torldout g\circ\torldout f.
+\]
+\end{example}
+\begin{proof}
+$f=\id_{\Omega(\mathbb{N})}^{\mathsf{FCD}}$ and $g=\top^{\mathscr{F}(\mathbb{N})}\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}$
+for some $\alpha\in\mathbb{N}$. Then $\torldout f=\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}$
+and thus $\torldout g\circ\torldout f=\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}$.
+
+We have $g\circ f=\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
+
+Let's prove $\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\})=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
+
+Really:
+\begin{align*}
+\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}) & =\\
+\bigsqcap^{\mathsf{RLD}}\up(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}) & =\\
+\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(K\times\uparrow^{\mathbb{N}}\{\alpha\});\\
+F\in\up\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(K\times\uparrow^{\mathbb{N}}\{\alpha\}) & \Leftrightarrow\up\left(\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathscr{F}}K\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}\right)
+\end{align*}
+for every $F\in\subsets(\mathbb{N}\times\mathbb{N})$. Thus 
+\[
+\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}}(K\times\uparrow^{\mathbb{N}}\{\alpha\})=\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathscr{F}}K\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}.
+\]
+
+
+So $\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\})=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
+
+Thus $\torldout(g\circ f)=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}\ne\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}$.\end{proof}
+\begin{example}
+$\tofcd$ does not preserve binary meets.\end{example}
+\begin{proof}
+$\tofcd(1_{\mathbb{N}}^{\mathsf{RLD}}\sqcap(\top^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}\setminus1_{\mathbb{N}}^{\mathsf{RLD}}))=\tofcd\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}=\bot^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}$.
+
+On the other hand,
+\begin{multline*}
+\tofcd1_{\mathbb{N}}^{\mathsf{RLD}}\sqcap\tofcd(\top^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}\setminus1_{\mathbb{N}}^{\mathsf{RLD}})=\\
+1_{\mathbb{N}}^{\mathsf{FCD}}\sqcap\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}(\mathbb{N}\times\mathbb{N}\setminus\id_{\mathbb{N}})=\id_{\Omega(\mathbb{N})}^{\mathsf{FCD}}\ne\bot^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}
+\end{multline*}
+(used proposition \ref{fcd-discr}).\end{proof}
+\begin{cor}
+$\tofcd$ is not an upper adjoint (in general).
+\end{cor}
+Considering restricting polynomials (considered as reloids) to ultrafilters,
+it is simple to prove that each that restriction is injective if not
+restricting a constant polynomial. Does this hold in general? No,
+see the following example:
+\begin{example}
+There exists a monovalued reloid with atomic domain which is neither
+injective nor constant (that is not a restriction of a constant function).\end{example}
+\begin{proof}
+(based on \cite{MO44055}) Consider the function $F\in\mathbb{N}^{\mathbb{N}\times\mathbb{N}}$
+defined by the formula $(x;y)\mapsto x$.
+
+Let $\omega_{x}$ be a non-trivial ultrafilter on the vertical line
+$\{x\}\times\mathbb{N}$ for every $x\in\mathbb{N}$.
+
+Let $T$ be the collection of such sets $Y$ that $Y\cap(\{x\}\times\mathbb{N})\in\omega_{x}$
+for all but finitely many vertical lines. Obviously $T$ is a filter.
+
+Let $\omega\in\atoms T$.
+
+For every $x\in\mathbb{N}$ we have some $Y\in T$ for which $(\{x\}\times\mathbb{N})\cap Y=\emptyset$
+and thus $\uparrow^{\mathbb{N}\times\mathbb{N}}(\{x\}\times\mathbb{N})\sqcap\omega=\bot^{\mathscr{F}(\mathbb{N}\times\mathbb{N})}$.
+
+Let $g=(\uparrow^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}F)|_{\omega}$.
+If $g$ is constant, then there exist a constant function $G\in\up g$
+and $F\cap G$ is also constant. Obviously $\dom\uparrow^{\mathsf{RLD}(\mathbb{N}\times\mathbb{N};\mathbb{N})}(F\cap G)\sqsupseteq\omega$.
+The function $F\cap G$ cannot be constant because otherwise $\omega\sqsubseteq\dom\uparrow^{\mathsf{RLD}(\mathbb{N}\times\mathbb{N};\mathbb{N})}(F\cap G)\sqsubseteq\uparrow^{\mathbb{N}\times\mathbb{N}}(\{x\}\times\mathbb{N})$
+for some $x\in\mathbb{N}$ what is impossible by proved above. So
+$g$ is not constant.
+
+Suppose that $g$ is injective. Then there exists an injection $G\in\up g$.
+So $\dom G$ intersects each vertical line by atmost one element that
+is $\overline{\dom G}$ intersects every vertical line by the whole
+line or the line without one element. Thus $\overline{\dom G}\in T\sqsupseteq\omega$
+and consequently $\dom G\notin\omega$ what is impossible.
+
+Thus $g$ is neither injective nor constant.
+\end{proof}
+
+\section{Second product. Oblique product}
+\begin{defn}
+\index{product!second}$\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}=\torldout(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$
+for every filters $\mathcal{A}$ and $\mathcal{B}$. I will call it
+\emph{second direct product} of filters $A$ and $\mathcal{B}$.\end{defn}
+\begin{rem}
+The letter $F$ is the above definition is from the word ``funcoid''.
+It signifies that it seems to be impossible to define $\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
+directly without referring to funcoidal product.\end{rem}
+\begin{defn}
+\index{product!oblique}\emph{Oblique products} of filters $\mathcal{A}$
+and $\mathcal{B}$ are defined as
+\begin{align*}
+\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B};\\
+\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow^{\Base(\mathcal{B})}A\times^{\mathsf{FCD}}\mathcal{B}}.
+\end{align*}
+\end{defn}
+\begin{prop}
+$\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}\sqsubseteq\mathcal{A}\ltimes\mathcal{B}\sqsubseteq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
+for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+\mathcal{A}\ltimes\mathcal{B} & \sqsubseteq\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow^{\Base(\mathcal{B})}A\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B} & \sqsubseteq\\
+\bigsqcap\setcond{\uparrow^{\Base(\mathcal{B})}A\times^{\mathsf{RLD}}\uparrow^{\Base(\mathcal{B})}B}{A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}.\\
+\mathcal{A}\ltimes\mathcal{B} & \sqsupseteq\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\up(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})} & =\\
+\torldout(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}) & =\\
+\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}.
+\end{align*}
+\end{proof}
+\begin{conjecture}
+$\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}\sqsubset\mathcal{A}\ltimes\mathcal{B}$
+for some filters $\mathcal{A}$, $\mathcal{B}$.
+\end{conjecture}
+A stronger conjecture:
+\begin{conjecture}
+$\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}\sqsubset\mathcal{A}\ltimes\mathcal{B}\sqsubset\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
+for some filters $\mathcal{A}$, $\mathcal{B}$. Particularly, is
+this formula true for $\mathcal{A}=\mathcal{B}=\Delta\sqcap\uparrow^{\mathbb{R}}(0;+\infty)$?
+\end{conjecture}
+The above conjecture is similar to Fermat Last Theorem as having no
+value by itself but being somehow challenging to prove it (not expected
+to be as hard as FLT however).
+\begin{example}
+$\mathcal{A}\ltimes\mathcal{B}\sqsubset\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
+for some filters $\mathcal{A}$, $\mathcal{B}$.\end{example}
+\begin{proof}
+It's enough to prove $\mathcal{A}\ltimes\mathcal{B}\neq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$.
+
+Let $\Delta_{+}=\Delta\sqcap\uparrow^{\mathbb{R}}(0;+\infty)$. Let
+$\mathcal{A}=\mathcal{B}=\Delta_{+}$.
+
+Let $K=(\le)|_{\mathbb{R}\times\mathbb{R}}$.
+
+Obviously $K\notin\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.
+
+$\mathcal{A}\ltimes\mathcal{B}\sqsubseteq\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K$
+and thus $K\in\up(\mathcal{A}\ltimes\mathcal{B})$ because 
+\[
+\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K\sqsupseteq\Delta_{+}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B=\mathcal{A}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B
+\]
+for $B=(0;+\infty)$.
+
+Thus $\mathcal{A}\ltimes\mathcal{B}\neq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$.\end{proof}
+\begin{example}
+\label{secprod-neq}$\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}\sqsubset\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
+for some filters $\mathcal{A}$, $\mathcal{B}$.\end{example}
+\begin{proof}
+This follows from the above example.\end{proof}
+\begin{prop}
+$(\mathcal{A}\ltimes\mathcal{B})\sqcap(\mathcal{A}\rtimes\mathcal{B})=\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
+for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+(\mathcal{A}\ltimes\mathcal{B})\sqcap(\mathcal{A}\rtimes\mathcal{B}) & \sqsubseteq\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\in\up(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})} & =\\
+\torldout(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}) & =\\
+\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}.
+\end{align*}
+
+
+To finish the proof we need to show $\mathcal{A}\ltimes\mathcal{B}\sqsupseteq\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
+and $\mathcal{A}\rtimes\mathcal{B}\sqsupseteq\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$.
+By symmetry it's enough to show $\mathcal{A}\ltimes\mathcal{B}\sqsupseteq\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
+what is proved above.\end{proof}
+\begin{example}
+$(\mathcal{A}\ltimes\mathcal{B})\sqcup(\mathcal{A}\rtimes\mathcal{B})\sqsubset\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
+for some filters $\mathcal{A}$, $\mathcal{B}$.\end{example}
+\begin{proof}
+(based on \cite{MO72638}) Let $\mathcal{A}=\mathcal{B}=\Omega(\mathbb{N})$.
+It's enough to prove $(\mathcal{A}\ltimes\mathcal{B})\sqcup(\mathcal{A}\rtimes\mathcal{B})\neq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$.
+
+Let $X\in\up\mathcal{A}$, $Y\in\up\mathcal{B}$ that is $X\in\Omega(\mathbb{N})$,
+$Y\in\Omega(\mathbb{N})$.
+
+Removing one element $x$ from $X$ produces a set $P$. Removing
+one element $y$ from $Y$ produces a set $Q$. Obviously $P\in\Omega(\mathbb{N})$,
+$Q\in\Omega(\mathbb{N})$.
+
+Obviously $(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\in\up((\mathcal{A}\ltimes\mathcal{B})\sqcup(\mathcal{A}\rtimes\mathcal{B}))$.
+
+$(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\nsupseteq X\times Y$
+because $(x;y)\in X\times Y$ but $(x;y)\notin(P\times\mathbb{N})\cup(\mathbb{N}\times Q)$.
+
+Thus $(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\notin\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$
+by properties of filter bases.\end{proof}
+\begin{example}
+$\torldout\tofcd f\ne f$ for some convex reloid $f$.\end{example}
+\begin{proof}
+Let $f=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$ where $\mathcal{A}$
+and $B$ are from example \ref{secprod-neq}.
+
+$\tofcd(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
+by proposition \ref{fcd-of-rprod}.
+
+So $\torldout\tofcd(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\torldout(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}\ne\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$.\end{proof}
+

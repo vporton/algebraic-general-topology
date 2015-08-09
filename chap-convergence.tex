@@ -1,0 +1,285 @@
+
+\chapter{Convergence of funcoids}
+
+
+\section{Convergence}
+
+The following generalizes the well-known notion of a filter convergent
+to a point or to a set:
+\begin{defn}
+\index{converges!regarding funcoid}A filter $\mathcal{F}\in\mathscr{F}(\Dst\mu)$
+\emph{converges} to a filter $\mathcal{A}\in\mathscr{F}(\Src\mu)$
+regarding a funcoid $\mu$ ($\mathcal{F}\overset{\mu}{\rightarrow}\mathcal{A}$)
+iff $\mathcal{F}\sqsubseteq\supfun{\mu}\mathcal{A}$.
+\end{defn}
+
+\begin{defn}
+\index{converges!regarding funcoid}A funcoid $f$ \emph{converges}
+to a filter $\mathcal{A}\in\mathscr{F}(\Src\mu)$ regarding a funcoid
+$\mu$ where $\Dst f=\Dst\mu$ (denoted $f\overset{\mu}{\rightarrow}\mathcal{A}$)
+iff $\im f\sqsubseteq\supfun{\mu}\mathcal{A}$ that is iff $\im f\overset{\mu}{\rightarrow}\mathcal{A}$.
+\end{defn}
+
+\begin{defn}
+\index{converges!regarding funcoid}A funcoid $f$ \emph{converges}
+to a filter $\mathcal{A}\in\mathscr{F}(\Src\mu)$ on a filter $\mathcal{B}\in\mathscr{F}(\Src f)$
+regarding a funcoid $\mu$ where $\Dst f=\Dst\mu$ iff $f|_{\mathcal{B}}\overset{\mu}{\rightarrow}\mathcal{A}$.\end{defn}
+\begin{rem}
+We can define also convergence for a reloid $f$: $f\overset{\mu}{\rightarrow}\mathcal{A}\Leftrightarrow\im f\sqsubseteq\supfun{\mu}\mathcal{A}$
+or what is the same $f\overset{\mu}{\rightarrow}\mathcal{A}\Leftrightarrow\tofcd f\overset{\mu}{\rightarrow}\mathcal{A}$.\end{rem}
+\begin{thm}
+Let $f$, $g$ be funcoids, $\mu$, $\nu$ be endofuncoids, $\Dst f=\Src g=\Ob\mu$,
+$\Dst g=\Ob\nu$, $\mathcal{A}\in\mathscr{F}(\Ob\mu)$. If $f\overset{\mu}{\rightarrow}\mathcal{A}$,
+\[
+g|_{\supfun{\mu}\mathcal{A}}\in\continuous(\mu\sqcap(\supfun{\mu}\mathcal{A}\times^{\mathsf{FCD}}\supfun{\mu}\mathcal{A});\nu),
+\]
+and $\supfun{\mu}\mathcal{A}\sqsupseteq\mathcal{A}$, then $g\circ f\overset{\nu}{\rightarrow}\supfun g\mathcal{A}$.\end{thm}
+\begin{proof}
+~
+\begin{gather*}
+\im f\sqsubseteq\supfun{\mu}\mathcal{A};\\
+\supfun g\im f\sqsubseteq\supfun g\supfun{\mu}\mathcal{A};\\
+\im(g\circ f)\sqsubseteq\supfun{g|_{\supfun{\mu}\mathcal{A}}}\supfun{\mu}\mathcal{A};\\
+\im(g\circ f)\sqsubseteq\supfun{g|_{\supfun{\mu}\mathcal{A}}}\supfun{\mu\sqcap(\supfun{\mu}\mathcal{A}\times^{\mathsf{FCD}}\supfun{\mu}\mathcal{A})}\mathcal{A};\\
+\im(g\circ f)\sqsubseteq\supfun{g|_{\supfun{\mu}\mathcal{A}}\circ(\mu\sqcap(\supfun{\mu}\mathcal{A}\times^{\mathsf{FCD}}\supfun{\mu}\mathcal{A}))}\mathcal{A};\\
+\im(g\circ f)\sqsubseteq\supfun{\nu\circ g|_{\supfun{\mu}\mathcal{A}}}\mathcal{A};\\
+\im(g\circ f)\sqsubseteq\supfun{\nu\circ g}\mathcal{A};\\
+g\circ f\overset{\nu}{\rightarrow}\supfun g\mathcal{A}.
+\end{gather*}
+\end{proof}
+\begin{cor}
+Let $f$, $g$ be funcoids, $\mu$, $\nu$ be endofuncoids, $\Dst f=\Src g=\Ob\mu$,
+$\Dst g=\Ob\nu$, $\mathcal{A}\in\mathscr{F}(\Ob\mu)$. If $f\overset{\mu}{\rightarrow}\mathcal{A}$,
+$g\in\continuous(\mu;\nu)$, and $\supfun{\mu}\mathcal{A}\sqsupseteq\mathcal{A}$
+then $g\circ f\overset{\nu}{\rightarrow}\supfun g\mathcal{A}$.\end{cor}
+\begin{proof}
+From the last theorem and theorem \ref{rect-cont}.
+\end{proof}
+
+\section{Relationships between convergence and continuity}
+\begin{lem}
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+$\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
+If $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ then
+\[
+f|_{\supfun{\mu}\mathcal{A}}\overset{\mu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}.
+\]
+\end{lem}
+\begin{proof}
+~
+\begin{multline*}
+f|_{\supfun{\mu}\mathcal{A}}\overset{\mu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\im f|_{\supfun{\mu}\mathcal{A}}\sqsubseteq\supfun{\nu}\supfun f\mathcal{A}\Leftrightarrow\\
+\supfun f\supfun{\mu}\mathcal{A}\sqsubseteq\supfun{\nu}\supfun f\mathcal{A}\Leftrightarrow\supfun{f\circ\mu}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}.
+\end{multline*}
+\end{proof}
+\begin{thm}
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+$\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
+If $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ then $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{thm}
+\begin{proof}
+~
+\begin{multline*}
+f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\text{(by the lemma)}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}\Leftarrow\\
+f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f\Leftrightarrow f\in\continuous(\mu|_{\mathcal{A}};\nu).
+\end{multline*}
+\end{proof}
+\begin{cor}
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+$\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
+If $f\in\continuous(\mu;\nu)$ then $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{cor}
+\begin{thm}
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+$\mathcal{A}\in\mathscr{F}(\Ob\mu)$ be an ultrafilter, $\Src f=\Ob\mu$,
+$\Dst f=\Ob\nu$. $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ iff $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{thm}
+\begin{proof}
+~
+\begin{multline*}
+f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\text{(by the lemma)}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}\Leftrightarrow\\
+\text{(used the fact that \ensuremath{\mathcal{A}} is an ultrafilter)}\\
+f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f|_{\mathcal{A}}\Leftrightarrow f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f\Leftrightarrow f\in\continuous(\mu|_{\mathcal{A}};\nu).
+\end{multline*}
+
+\end{proof}
+
+\section{Limit}
+\begin{defn}
+\index{limit}$\lim^{\mu}f=a$ iff $f\overset{\mu}{\rightarrow}\uparrow^{\Src\mu}\{a\}$
+for a $T_{2}$-separable funcoid $\mu$ and a non-empty funcoid $f$
+such that $\Dst f=\Dst\mu$.
+\end{defn}
+It is defined correctly, that is $f$ has no more than one limit.
+\begin{proof}
+Let $\lim^{\mu}f=a$ and $\lim^{\mu}f=b$. Then $\im f\sqsubseteq\rsupfun{\mu}\uparrow^{\Src\mu}\{a\}$
+and $\im f\sqsubseteq\rsupfun{\mu}\uparrow^{\Src\mu}\{b\}$.
+
+Because $f\ne\bot^{\mathsf{FCD}(\Src f;\Dst f)}$ we have $\im f\ne\bot^{\mathscr{F}(\Dst f)}$;
+$\rsupfun{\mu}\uparrow^{\Src\mu}\{a\}\sqcap\rsupfun{\mu}\uparrow^{\Src\mu}\{b\}\ne\bot^{\mathscr{F}(\Dst f)}$;
+$\uparrow^{\Src\mu}\{b\}\sqcap\supfun{\mu^{-1}}\rsupfun{\mu}\uparrow^{\Src\mu}\{a\}\ne\bot^{\mathscr{F}(\Src\mu)}$;
+$\uparrow^{\Src\mu}\{b\}\sqcap\supfun{\mu^{-1}\circ\mu}\uparrow^{\Src\mu}\{a\}\ne\bot^{\mathscr{F}(\Src\mu)}$;
+$\uparrow^{\Src\mu}\{a\}\suprel{\mu^{-1}\circ\mu}\uparrow^{\Src\mu}\{b\}$.
+Because $\mu$ is $T_{2}$-separable we have $a=b$.\end{proof}
+\begin{defn}
+$\lim_{\mathcal{B}}^{\mu}f=\lim^{\mu}(f|_{\mathcal{B}})$.\end{defn}
+\begin{rem}
+We can also in an obvious way define limit of a reloid.
+\end{rem}
+
+\section{Generalized limit}
+
+For further consideration on using the below defined generalized limit
+see this wiki:
+
+\href{http://portonmath.tiddlyspace.com}{http://portonmath.tiddlyspace.com}
+
+
+\subsection{\index{limit!generalized}Definition}
+
+Let $\mu$ and $\nu$ be endofuncoids. Let $G$ be a transitive permutation
+group on $\Ob\mu$.
+
+For an element $r\in G$ we will denote $\uparrow r=\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\mu)}r$.
+
+\[
+\mu\circ\uparrow r=\uparrow r\circ\mu.
+\]
+
+
+We require for every $y\in\Ob\nu$ 
+\begin{equation}
+\nu\sqsupseteq\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Src\mu}\{y\}.\label{lim-squares}
+\end{equation}
+
+\begin{prop}
+Formula (\ref{lim-squares}) follows from $\nu\sqsupseteq\nu\circ\nu^{-1}$.\end{prop}
+\begin{proof}
+Let $\nu\sqsupseteq\nu\circ\nu^{-1}$. Then
+\begin{align*}
+\rsupfun{\nu}\uparrow^{\Src\mu}\{y\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Src\mu}\{y\} & =\\
+\supfun{\nu}\uparrow^{\Ob\nu}\{y\}\times^{\mathsf{FCD}}\supfun{\nu}\uparrow^{\Ob\nu}\{y\} & =\\
+\nu\circ(\uparrow^{\Ob\nu}\{y\}\times^{\mathsf{FCD}}\uparrow^{\Ob\nu}\{y\})\circ\nu^{-1} & =\\
+\nu\circ\uparrow^{\mathsf{FCD}(\Ob\nu;\Ob\nu)}(\{y\}\times\{y\})\circ\nu^{-1} & \sqsubseteq\\
+\nu\circ1_{\Ob\nu}^{\mathsf{FCD}}\circ\nu^{-1} & =\\
+\nu\circ\nu^{-1} & \sqsubseteq\nu.
+\end{align*}
+\end{proof}
+\begin{rem}
+The formula (\ref{lim-squares}) usually works if $\nu$ is a proximity.
+It does not work if $\mu$ is a pretopology or preclosure.
+\end{rem}
+We are going to consider (generalized) limits of arbitrary functions
+acting from $\Ob\mu$ to $\Ob\nu$. (The functions in consideration
+are not required to be continuous.)
+\begin{rem}
+Most typically $G$ is the group of translations of some topological
+vector space.
+\end{rem}
+\emph{Generalized limit} is defined by the following formula:
+\begin{defn}
+\index{limit!generalized}$\xlim f\eqdef\setcond{\nu\circ f\circ\uparrow r}{r\in G}$
+for any funcoid $f$.\end{defn}
+\begin{rem}
+Generalized limit technically is a set of funcoids.
+\end{rem}
+We will assume that $\dom f\sqsupseteq\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}$.
+\begin{defn}
+$\xlim_{x}f=\xlim f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}$.\end{defn}
+\begin{obvious}
+$\xlim_{x}f=\setcond{\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\circ\uparrow r}{r\in G}$.\end{obvious}
+\begin{rem}
+$\xlim_{x}f$ is the same for funcoids $\mu$ and $\Compl\mu$.
+\end{rem}
+The function $\tau$ will define an injection from the set of points
+of the space $\nu$ (``numbers'', ``points'', or ``vectors'')
+to the set of all (generalized) limits (i.e. values which $\xlim_{x}f$
+may take).
+\begin{defn}
+$\tau(y)\eqdef\setcond{\rsupfun{\mu}\uparrow^{\Ob\nu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}}{x\in D}$.\end{defn}
+\begin{prop}
+$\tau(y)=\setcond{(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\})\circ\uparrow r}{r\in G}$
+for every (fixed) $x\in D$.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\})\circ\uparrow r & =\\
+\supfun{\uparrow r^{-1}}\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & =\\
+\supfun{\mu}\rsupfun{\uparrow r^{-1}}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & =\\
+\rsupfun{\mu}\{r^{-1}x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & \in\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}.
+\end{align*}
+
+
+Reversely $\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}=(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\})\circ\uparrow e$
+where $e$ is the identify element of $G$.\end{proof}
+\begin{prop}
+$\tau(y)=\xlim(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\uparrow^{\Base(\Ob\nu)}\{y\})$
+(for every $x$). Informally: Every $\tau(y)$ is a generalized limit
+of a constant funcoid.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+\xlim(\uparrow^{\Ob\mu}\rsupfun{\mu}\{x\}\times^{\mathsf{FCD}}\uparrow^{\Base(\Ob\nu)}\{y\}) & =\\
+\setcond{\nu\circ(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\uparrow^{\Base(\Ob\nu)}\{y\})\circ\uparrow r}{r\in G} & =\\
+\setcond{(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\})\circ\uparrow r}{r\in G} & =\tau(y).
+\end{align*}
+\end{proof}
+\begin{thm}
+If $f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\in\continuous(\mu;\nu)$
+and $\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\sqsupseteq\uparrow^{\Ob\mu}\{x\}$
+then $\xlim_{x}f=\tau(fx)$.\end{thm}
+\begin{proof}
+$f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\circ\mu\sqsubseteq\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\sqsubseteq\nu\circ f$;
+thus $\langle f\rangle\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\sqsubseteq\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}$;
+consequently we have
+\begin{gather*}
+\nu\sqsupseteq\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}\sqsupseteq\supfun f\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}.\\
+\begin{aligned}\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}} & \sqsupseteq\\
+(\supfun f\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\})\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}} & =\\
+(f|_{\rsupfun{\mu}\{x\}})^{-1}\supfun f\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\} & \sqsupseteq\\
+\supfun{\id_{\dom f|_{\rsupfun{\mu}\{x\}}}^{\mathsf{FCD}}}\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\} & \sqsupseteq\\
+\dom f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\} & =\\
+\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}.
+\end{aligned}
+\end{gather*}
+
+
+$\im(\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}})=\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}$;
+\begin{align*}
+\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}} & \sqsubseteq\\
+\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\im(\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}) & =\\
+\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}.
+\end{align*}
+So $\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}=\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\}$.
+
+Thus $\xlim_{x}f=\setcond{(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun f\uparrow^{\Ob\mu}\{x\})\circ\uparrow r}{r\in G}=\tau(fx)$.\end{proof}
+\begin{rem}
+Without the requirement of $\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\sqsupseteq\uparrow^{\Ob\mu}\{x\}$
+the last theorem would not work in the case of removable singularity.\end{rem}
+\begin{thm}
+Let $\nu\sqsubseteq\nu\circ\nu$. If $f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\overset{\nu}{\rightarrow}\uparrow^{\Ob\mu}\{y\}$
+then $\xlim_{x}f=\tau(y)$.\end{thm}
+\begin{proof}
+$\im f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\sqsubseteq\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}$;
+$\supfun f\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\sqsubseteq\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}$;
+\begin{align*}
+\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}} & \sqsupseteq\\
+(\rsupfun{\nu}\uparrow^{\Ob\nu}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\})\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}} & =\\
+\supfun{(f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}})^{-1}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & =\\
+\supfun{\id_{\rsupfun{\mu}\{x\}}^{\mathsf{FCD}}\circ f^{-1}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & \sqsupseteq\\
+\supfun{\id_{\rsupfun{\mu}\{x\}}^{\mathsf{FCD}}\circ f^{-1}}\supfun f\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & =\\
+\supfun{\id_{\rsupfun{\mu}\{x\}}^{\mathsf{FCD}}}\supfun{f^{-1}\circ f}\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & \sqsupseteq\\
+\supfun{\id_{\rsupfun{\mu}\{x\}}^{\mathsf{FCD}}}\supfun{\id_{\rsupfun{\mu}\{x\}}^{\mathsf{FCD}}}\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\} & =\\
+\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}.
+\end{align*}
+
+
+On the other hand, $f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\sqsubseteq\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}$;
+
+$\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\sqsubseteq\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\supfun{\nu}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}\sqsubseteq\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}$.
+
+So $\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}=\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\}$.
+
+$\xlim_{x}f=\setcond{\nu\circ f|_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}\circ\uparrow r}{r\in G}=\setcond{(\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}\uparrow^{\Ob\nu}\{y\})\circ\uparrow r}{r\in G}=\tau(y)$.\end{proof}
+\begin{cor}
+If $\lim_{\rsupfun{\mu}\uparrow^{\Ob\mu}\{x\}}^{\nu}f=y$ then $\xlim_{x}f=\tau(y)$.
+\end{cor}
+We have injective $\tau$ if $\rsupfun{\nu}\uparrow^{\Ob\nu}\{y_{1}\}\sqcap\rsupfun{\nu}\uparrow^{\Ob\nu}\{y_{2}\}=\bot^{\mathscr{F}(\Ob\mu)}$
+for every distinct $y_{1},y_{2}\in\Ob\nu$ that is if $\nu$ is $T_{2}$-separable.

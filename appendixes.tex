@@ -1,0 +1,112 @@
+\appendix
+
+\chapter{\label{app:prim-exists}Using logic of generalizations}
+
+
+\section{Logic of generalization}
+
+In mathematics it is often encountered that a smaller set $S$ naturally
+bijectively corresponds to a subset $R$ of a larger set $B$. (In
+other words, there is specified an injection from $S$ to $B$.) It
+is a widespread practice to equate $S$ with $R$.
+\begin{rem}
+I denote the first set $S$ from the first letter of the word ``small''
+and the second set $B$ from the first letter of the word ``big'',
+because $S$ is intuitively considered as smaller than $B$. (However
+we do not require $\card S<\card B$.)
+\end{rem}
+The set $B$ is considered as a generalization of the set $S$, for
+example: whole numbers generalizing natural numbers, rational numbers
+generalizing whole numbers, real numbers generalizing rational numbers,
+complex numbers generalizing real numbers, etc.
+
+But strictly speaking this equating may contradict to the axioms of
+ZF/ZFC because we are not insured against $S\cap B\neq\emptyset$
+incidents. Not wonderful, as it is often labeled as ``without proof''.
+
+To work around of this (and formulate things exactly what could benefit
+computer proof assistants) we will replace the set $B$ with a new
+set $B'$ having a bijection $M:B\rightarrow B'$ such that $S\subseteq B'$.
+(I call this bijection $M$ from the first letter of the word ``move''
+which signifies the move from the old set $B$ to a new set $B'$).
+
+The following is a formal but rather silly formalization of this situation
+in ZF. (A more natural formalization may be done in a smarter formalistic,
+such as dependent type theory.)
+
+
+\subsection{The formalistic}
+
+Let $S$ and $B$ be sets. Let $E$ be an injection from $S$ to $B$.
+Let $R=\im E$.
+
+Let $t=\subsets\bigcup\bigcup S$.
+
+Let $M(x)=\left\{ \begin{array}{ll}
+E^{-1}x & \text{if }x\in R;\\
+(t;x) & \text{if }x\notin R.
+\end{array}\right.$
+
+Recall that in standard ZF $(t;x)=\{t,\{t,x\}\}$ by definition.
+\begin{thm}
+$(t;x)\notin S$.\end{thm}
+\begin{proof}
+Suppose $(t;x)\in S$. Then $\{t,\{t,x\}\}\in S$. Consequently $\{t\}\in\bigcup S$;
+$\{t\}\subseteq\bigcup\bigcup S$; $\{t\}\in\subsets\bigcup\bigcup S$;
+$\{t\}\in t$ what contradicts to the axiom of foundation (aka axiom
+of regularity).\end{proof}
+\begin{defn}
+Let $B'=\im M$.\end{defn}
+\begin{thm}
+$S\subseteq B'$.\end{thm}
+\begin{proof}
+Let $x\in S$. Then $Ex\in R$; $M(Ex)=E^{-1}Ex=x$; $x\in\im M=B'$.\end{proof}
+\begin{obvious}
+$E$ is a bijection from $S$ to $R$.\end{obvious}
+\begin{thm}
+$M$ is a bijection from $B$ to $B'$.\end{thm}
+\begin{proof}
+Surjectivity of $M$ is obvious. Let's prove injectivity. Let $a,b\in B$
+and $M(a)=M(b)$. Consider all cases: \end{proof}
+\begin{description}
+\item [{$a,b\in R$}] $M(a)=E^{-1}a$; $M(b)=E^{-1}b$; $E^{-1}a=E^{-1}b$;
+thus $a=b$ because $E^{-1}$ is a bijection.
+\item [{$a\in R$,~$b\notin R$}] $M(a)=E^{-1}a$; $M(b)=(t;b)$; $M(a)\in S$;
+$M(b)\notin S$. Thus $M(a)\neq M(b)$.
+\item [{$a\notin R$,~$b\in R$}] Analogous.
+\item [{$a,b\notin R$}] $M(a)=(t;a)$; $M(b)=(t;b)$. Thus $M(a)=M(b)$
+implies $a=b$. \end{description}
+\begin{thm}
+$M\circ E=\id_{S}$.\end{thm}
+\begin{proof}
+Let $x\in S$. Then $Ex\in R$; $M(Ex)=E^{-1}Ex=x$.\end{proof}
+\begin{obvious}
+$E=M^{-1}|_{S}$.
+\end{obvious}
+
+\subsection{Existence of primary filtrator}
+\begin{thm}
+For every poset~$\mathfrak{Z}$ there exists a poset $\mathfrak{A}\supseteq\mathfrak{Z}$
+such that $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator.\end{thm}
+\begin{proof}
+Take $S=\mathfrak{Z}$, $B=\mathfrak{F}$, $E=\uparrow$. By the above
+there exists an injection $M$ defined on~$\mathfrak{F}$ such that
+$M\circ\uparrow=\id_{\mathfrak{Z}}$.
+
+Take $\mathfrak{A}=\im M$. Order ($\sqsubseteq'$) elements of~$\mathfrak{A}$
+in such a way that $M:\mathfrak{F}(\mathfrak{Z})\rightarrow\mathfrak{A}$
+become order isomorphism. If $x\in\mathfrak{Z}$ then $x=\id_{\mathfrak{Z}}x=M\uparrow x\in\im M=\mathfrak{A}$.
+Thus $\mathfrak{A}\supseteq\mathfrak{Z}$.
+
+If $x\sqsubseteq y$ for elements $x$, $y$ of $\mathfrak{Z}$, then
+$\uparrow x\sqsubseteq\uparrow y$ and thus $M\uparrow x\sqsubseteq'M\uparrow y$
+that is $x\sqsubseteq'y$, so $\mathfrak{Z}$ is a subposet of~$\mathfrak{A}$,
+that is $(\mathfrak{A};\mathfrak{Z})$ is a filtrator.
+
+It remains to prove that $M$ is an isomorphism between filtrators
+$(\mathfrak{F}(\mathfrak{Z});\mathfrak{P})$ and $(\mathfrak{A};\mathfrak{Z})$.
+That $M$ is an order isomorphism from $\mathfrak{F}(\mathfrak{Z})$
+to $\mathfrak{A}$ is already known. It remains to prove that $M$
+maps $\mathfrak{P}$ to~$\mathfrak{Z}$. We will instead prove that
+$M^{-1}$ maps $\mathfrak{Z}$ to~$\mathfrak{P}$. Really, $\uparrow=M^{-1}$.\end{proof}
+

@@ -1,0 +1,808 @@
+
+\chapter{Relationships between funcoids and reloids}
+
+
+\section{Funcoid induced by a reloid}
+
+\index{funcoid!induced by reloid}Every reloid $f$ induces a funcoid
+$\tofcd f\in\mathsf{FCD}(\Src f;\Dst f)$ by the following formulas
+(for every $\mathcal{X}\in\mathfrak{F(}\Src f)$, $\mathcal{Y}\in\mathfrak{F(}\Dst f)$):
+\begin{gather*}
+\mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y};\\
+\supfun{\tofcd f}\mathcal{X}=\bigsqcap_{F\in\up f}^{\mathsf{FCD}}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}.
+\end{gather*}
+
+
+We should prove that $\tofcd f$ is really a funcoid.
+\begin{proof}
+We need to prove that
+\[
+\mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\mathcal{Y}\sqcap\supfun{\tofcd f}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}\Leftrightarrow\mathcal{X}\sqcap\supfun{\tofcd f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)}.
+\]
+
+
+The above formula is equivalent to:
+\begin{align*}
+\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y} & \Leftrightarrow\\
+\mathcal{Y}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
+\mathcal{X}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)}.
+\end{align*}
+
+
+We have $\mathcal{Y}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}=\bigsqcap_{F\in\up f}(\mathcal{Y}\sqcap\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X})$.
+
+Let's denote $W=\setcond{\mathcal{Y}\sqcap\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}}{F\in\up f}$.
+
+\begin{multline*}
+\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}\Leftrightarrow\\
+\forall F\in\up f:\mathcal{Y}\sqcap\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}\Leftrightarrow\bot^{\mathscr{F}(\Dst f)}\notin W.
+\end{multline*}
+
+
+We need to prove only that $\bot^{\mathscr{F}(\Dst f)}\notin W\Leftrightarrow\bigsqcap W\ne\bot^{\mathscr{F}(\Dst f)}$.
+(The rest follows from symmetry.)
+
+Let's prove that $W$ is a generalized filter base. For this it's
+enough to prove that $V=\setcond{\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}}{F\in\up f}$
+is a generalized filter base. Let $\mathcal{A},\mathcal{B}\in V$
+that is $\mathcal{A}=\supfun{\uparrow^{\mathsf{FCD}}P}\mathcal{X}$,
+$\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}Q}\mathcal{X}$ where
+$P,Q\in\up f$. Then for $\mathcal{C}=\supfun{\uparrow^{\mathsf{FCD}}(P\sqcap Q)}\mathcal{X}$
+is true both $\mathcal{C}\in V$ and $\mathcal{C}\sqsubseteq\mathcal{A},\mathcal{B}$.
+So $V$ is a generalized filter base and thus $W$ is a generalized
+filter base.\end{proof}
+\begin{prop}
+\label{fcd-discr}$\tofcd\uparrow^{\mathsf{RLD}}f=\uparrow^{\mathsf{FCD}}f$
+for every $\mathbf{Rel}$-morphism $f$.\end{prop}
+\begin{proof}
+$\mathcal{X}\suprel{\tofcd\uparrow^{\mathsf{RLD}}f}\mathcal{Y}\Leftrightarrow\forall F\in\up\uparrow^{\mathsf{RLD}}f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}\Leftrightarrow\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}f}\mathcal{Y}$
+(for every $\mathcal{X}\in\mathfrak{F(}\Src f)$, $\mathcal{Y}\in\mathfrak{F(}\Dst f)$).\end{proof}
+\begin{thm}
+$\mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp f$
+for every reloid~$f$ and $\mathcal{X}\in\mathfrak{F(}\Src f)$,
+$\mathcal{Y}\in\mathfrak{F(}\Dst f)$.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp f & \Leftrightarrow\\
+\forall F\in\up f,P\in\up\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}:P\nasymp F & \Leftrightarrow\\
+\forall F\in\up f,X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\times Y\nasymp F & \Leftrightarrow\\
+\forall F\in\up f,X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\suprel{\uparrow^{\mathsf{FCD}}F}Y & \Leftrightarrow\\
+\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y} & \Leftrightarrow\\
+\mathcal{X}\suprel{\tofcd f}\mathcal{Y}.
+\end{align*}
+\end{proof}
+\begin{thm}
+\label{fcd-as-meet}$\tofcd f=\bigsqcap^{\mathsf{FCD}}\up f$ for
+every reloid~$f$.\end{thm}
+\begin{proof}
+Let $a$ be an ultrafilter on $\Src f$.
+
+$\supfun{\tofcd f}a=\bigsqcap\setcond{\supfun{\uparrow^{\mathsf{FCD}}F}a}{F\in\up f}$
+by the definition of $\tofcd$.
+
+$\supfun{\bigsqcap^{\mathsf{FCD}}\up f}a=\bigsqcap\setcond{\supfun{\uparrow^{\mathsf{FCD}}F}a}{F\in\up f}$
+by theorem \ref{fcd-intrs-atom}.
+
+So $\supfun{\tofcd f}a=\supfun{\bigsqcap^{\mathsf{FCD}}\up f}a$ for
+every ultrafilter $a$.\end{proof}
+\begin{lem}
+\label{base-intrs-lem}For every two filter bases $S$ and $T$ of
+morphisms $\mathbf{Rel}(U;V)$ and every typed set $A\in\mathscr{T}U$
+\[
+\bigsqcap^{\mathsf{RLD}}S=\bigsqcap^{\mathsf{RLD}}T\Rightarrow\bigsqcap_{F\in S}^{\mathscr{F}}\rsupfun FA=\bigsqcap_{G\in T}^{\mathscr{F}}\rsupfun GA.
+\]
+\end{lem}
+\begin{proof}
+Let $\bigsqcap^{\mathsf{RLD}}S=\bigsqcap^{\mathsf{RLD}}T$.
+
+First let prove that $\setcond{\rsupfun FA}{F\in S}$ is a filter
+base. Let $X,Y\in\setcond{\rsupfun FA}{F\in S}$. Then $X=\rsupfun{F_{X}}A$
+and $Y=\rsupfun{F_{Y}}A$ for some $F_{X},F_{Y}\in S$. Because $S$
+is a filter base, we have $S\ni F_{Z}\sqsubseteq F_{X}\sqcap F_{Y}$.
+So $\rsupfun{F_{Z}}A\sqsubseteq X\sqcap Y$ and $\rsupfun{F_{Z}}A\in\setcond{\rsupfun FA}{F\in S}$.
+So $\setcond{\rsupfun FA}{F\in S}$ is a filter base.
+
+Suppose $X\in\bigsqcap_{F\in S}^{\mathscr{F}}\rsupfun FA$. Then there
+exists $X'\in\setcond{\rsupfun FA}{F\in S}$ where $X\sqsupseteq X'$
+because $\setcond{\rsupfun FA}{F\in S}$ is a filter base. That is
+$X'=\rsupfun FA$ for some $F\in S$. There exists $G\in T$ such
+that $G\sqsubseteq F$ because $T$ is a filter base. Let $Y'=\rsupfun GA$.
+We have $Y'\sqsubseteq X'\sqsubseteq X$; $Y'\in\setcond{\rsupfun GA}{G\in T}$;
+$Y'\in\bigsqcap_{G\in T}^{\mathscr{F}}\rsupfun GA$; $X\in\bigsqcap_{G\in T}^{\mathscr{F}}\rsupfun GA.$
+The reverse is symmetric.\end{proof}
+\begin{lem}
+$\setcond{G\circ F}{F\in\up f,G\in\up g}$ is a filter base for every
+reloids~$f$ and~$g$.\end{lem}
+\begin{proof}
+Let denote $D=\setcond{G\circ F}{F\in\up f,G\in\up g}$. Let $A\in D\land B\in D$.
+Then $A=G_{A}\circ F_{A}\land B=G_{B}\circ F_{B}$ for some $F_{A},F_{B}\in\up f$,
+$G_{A},G_{B}\in\up g$. So $A\sqcap B\sqsupseteq(G_{A}\circ G_{B})\circ(F_{A}\circ F_{B})\in D$
+because $F_{A}\sqcap F_{B}\in\up f$ and $G_{A}\sqcap G_{B}\in\up g$.\end{proof}
+\begin{thm}
+$\tofcd(g\circ f)=(\tofcd g)\circ(\tofcd f)$ for every composable
+reloids $f$ and $g$.\end{thm}
+\begin{proof}
+~
+\[
+\rsupfun{\tofcd(g\circ f)}X=\bigsqcap_{H\in\up(g\circ f)}^{\mathscr{F}}\rsupfun HX=\bigsqcap_{H\in\up\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}}^{\mathscr{F}}\rsupfun HX.
+\]
+Obviously
+\[
+\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}=\bigsqcap^{\mathsf{RLD}}\up\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g};
+\]
+from this by lemma \ref{base-intrs-lem} (taking into account that
+\[
+\setcond{G\circ F}{F\in\up f,G\in\up g}
+\]
+and
+\[
+\up\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}
+\]
+are filter bases)
+\[
+\bigsqcap_{H\in\up\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}}^{\mathsf{RLD}}\rsupfun HX=\bigsqcap^{\mathscr{F}}\setcond{\rsupfun{G\circ F}X}{F\in\up f,G\in\up g}.
+\]
+
+
+On the other side
+\begin{multline*}
+\rsupfun{(\tofcd g)\circ(\tofcd f)}X=\supfun{\tofcd g}\rsupfun{\tofcd f}X=\\
+\supfun{\tofcd g}\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun FX=\bigsqcap_{G\in\up g}\supfun{\uparrow^{\mathsf{FCD}}G}\bigsqcap_{F\in\up f}^{\mathsf{RLD}}\rsupfun FX.
+\end{multline*}
+
+
+Let's prove that $\setcond{\rsupfun FX}{F\in\up f}$ is a filter base.
+If $A,B\in\setcond{\rsupfun FX}{F\in\up f}$ then $A=\rsupfun{F_{1}}X$,
+$B=\rsupfun{F_{2}}X$ where $F_{1},F_{2}\in\up f$. $A\sqcap B\sqsupseteq\rsupfun{F_{1}\sqcap F_{2}}X\in\setcond{\rsupfun FX}{F\in\up f}$.
+So $\setcond{\rsupfun FX}{F\in\up f}$ is really a filter base.
+
+By theorem \ref{supfun-genbase} we have
+\[
+\supfun{\uparrow^{\mathsf{FCD}}G}\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun FX=\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun G\rsupfun FX.
+\]
+So continuing the above equalities,
+\begin{align*}
+\rsupfun{(\tofcd g)\circ(\tofcd f)}X & =\\
+\bigsqcap_{G\in\up g}^{\mathscr{F}}\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun G\rsupfun FX & =\\
+\bigsqcap^{\mathscr{F}}\setcond{\rsupfun G\rsupfun FX}{F\in\up f,G\in\up g} & =\\
+\bigsqcap^{\mathscr{F}}\setcond{\rsupfun{G\circ F}X}{F\in\up f,G\in\up g}.
+\end{align*}
+Combining these equalities we get $\rsupfun{\tofcd(g\circ f)}X=\rsupfun{(\tofcd g)\circ(\tofcd f)}X$
+for every set $X\in\mathscr{T}(\Src f)$.\end{proof}
+\begin{prop}
+$\tofcd\id_{\mathcal{A}}^{\mathsf{RLD}}=\id_{\mathcal{A}}^{\mathsf{FCD}}$
+for every filter $\mathcal{A}$.\end{prop}
+\begin{proof}
+Recall that $\id_{\mathcal{A}}^{\mathsf{RLD}}=\bigsqcap\setcond{\uparrow^{\Base(\mathcal{A})}\id_{A}}{A\in\up\mathcal{A}}$.
+For every $\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Base(\mathcal{A}))$we
+have
+\begin{align*}
+\mathcal{X}\suprel{\tofcd\id_{\mathcal{A}}^{\mathsf{RLD}}}\mathcal{Y} & \Leftrightarrow\\
+\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\id_{\mathcal{A}}^{\mathsf{RLD}} & \Leftrightarrow\\
+\forall A\in\up\mathcal{A}:\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{A} & \Leftrightarrow\\
+\forall A\in\up\mathcal{A}:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{A}}\mathcal{Y} & \Leftrightarrow\\
+\forall A\in\up\mathcal{A}:\mathcal{X}\sqcap\mathcal{Y}\nasymp A & \Leftrightarrow\\
+\mathcal{X}\sqcap\mathcal{Y}\nasymp\mathcal{A} & \Leftrightarrow\\
+\mathcal{X}\suprel{\id_{\mathcal{A}}^{\mathsf{FCD}}}\mathcal{Y}
+\end{align*}
+(used properties of generalized filter bases).\end{proof}
+\begin{cor}
+$\tofcd1_{A}^{\mathsf{RLD}}=1_{A}^{\mathsf{FCD}}$ for every set~$A$.\end{cor}
+\begin{prop}
+$\tofcd$ is a functor from~$\mathsf{RLD}$ to~$\mathsf{FCD}$.\end{prop}
+\begin{proof}
+Preservation of composition and of identity is proved above.
+\end{proof}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\tofcd f$ is a monovalued funcoid if $f$ is a monovalued reloid.
+\item $\tofcd f$ is an injective funcoid if $f$ is an injective reloid.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+We will prove only the first as the second is dual. Let $f$ be a
+monovalued reloid. Then $f\circ f^{-1}\sqsubseteq1_{\Dst f}^{\mathsf{RLD}}$;
+$\tofcd(f\circ f^{-1})\sqsubseteq1_{\Dst f}^{\mathsf{FCD}}$; $\tofcd f\circ(\tofcd f)^{-1}\sqsubseteq1_{\Dst f}^{\mathsf{FCD}}$
+that is $\tofcd f$ is a monovalued funcoid.\end{proof}
+\begin{prop}
+\label{fcd-of-rprod}$\tofcd(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
+for every filters $\mathcal{A}$,~$\mathcal{B}$.\end{prop}
+\begin{proof}
+$\mathcal{X}\suprel{\tofcd(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})}\mathcal{Y}\Leftrightarrow\forall F\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}):\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}$
+(for every $\mathcal{X}\in\mathscr{F}(\Base(\mathcal{A}))$, $\mathcal{Y}\in\mathscr{F}(\Base(\mathcal{B}))$.
+
+Evidently
+\[
+\forall F\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}):\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}\Rightarrow\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\mathcal{X}\suprel{A\times B}\mathcal{Y}.
+\]
+
+
+Let $\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\mathcal{X}\suprel{A\times B}\mathcal{Y}$.
+Then if $F\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$, there
+are $A\in\up\mathcal{A}$, $B\in\up\mathcal{B}$ such that $F\sqsupseteq A\times B$.
+So $\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}$. We
+have proved
+\[
+\forall F\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}):\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}\Leftrightarrow\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\mathcal{X}\suprel{A\times B}\mathcal{Y}.
+\]
+
+
+Further
+\begin{multline*}
+\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\mathcal{X}\suprel{A\times B}\mathcal{Y}\Leftrightarrow\\
+\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:(\mathcal{X}\nasymp A\land\mathcal{Y}\nasymp B)\Leftrightarrow\\
+\mathcal{X}\nasymp\mathcal{A}\land\mathcal{Y}\nasymp\mathcal{B}\Leftrightarrow\mathcal{X}\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}\mathcal{Y}.
+\end{multline*}
+Thus $\mathcal{X}\suprel{\tofcd(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})}\mathcal{Y}\Leftrightarrow\mathcal{X}\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}\mathcal{Y}$.\end{proof}
+\begin{prop}
+$\dom\tofcd f=\dom f$ and $\im\tofcd f=\im f$ for every reloid~$f$.\end{prop}
+\begin{proof}
+~
+\begin{multline*}
+\im\tofcd f=\supfun{\tofcd f}\top^{\mathscr{F}(\Src f)}=\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun F\top^{\mathscr{F}(\Src f)}=\\
+\bigsqcap_{F\in\up f}^{\mathscr{F}}\im F=\bigsqcap^{\mathscr{F}}\rsupfun{\im}\up f=\im f.
+\end{multline*}
+
+
+$\dom\tofcd f=\dom f$ is similar.\end{proof}
+\begin{prop}
+$\tofcd(f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}))=\tofcd f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$
+for every reloid~$f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$ and
+$\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+\tofcd(f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})) & =\\
+\tofcd(\id_{\mathcal{B}}^{\mathsf{RLD}}\circ f\circ\id_{\mathcal{A}}^{\mathsf{RLD}}) & =\\
+\tofcd\id_{\mathcal{B}}^{\mathsf{RLD}}\circ\tofcd f\circ\tofcd\id_{\mathcal{A}}^{\mathsf{RLD}} & =\\
+\id_{\mathcal{B}}^{\mathsf{FCD}}\circ\tofcd f\circ\id_{\mathcal{A}}^{\mathsf{FCD}} & =\\
+\tofcd f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}).
+\end{align*}
+\end{proof}
+\begin{cor}
+$\tofcd(f|_{\mathcal{A}})=(\tofcd f)|_{\mathcal{A}}$ for every reloid~$f$
+and a filter $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{cor}
+\begin{prop}
+$\supfun{\tofcd f}\mathcal{X}=\im(f|_{\mathcal{X}})$ for every reloid
+$f$ and a filter $\mathcal{X}\in\mathscr{F}(\Src f)$.\end{prop}
+\begin{proof}
+$\im(f|_{\mathcal{X}})=\im\tofcd(f|_{\mathcal{X}})=\im((\tofcd f)|_{\mathcal{X}})=\supfun{\tofcd f}\mathcal{X}$.\end{proof}
+\begin{prop}
+$\tofcd f=\bigsqcup\setcond{x\times^{\mathsf{FCD}}y}{x\in\atoms^{\mathscr{F}(\Src f)},y\in\atoms^{\mathscr{F}(\Dst f)},x\times^{\mathsf{RLD}}y\nasymp f}$
+for every reloid $f$.\end{prop}
+\begin{proof}
+$\tofcd f=\bigsqcup\setcond{x\times^{\mathsf{FCD}}y}{x\in\atoms^{\mathscr{F}(\Src f)},y\in\atoms^{\mathscr{F}(\Dst f)},x\times^{\mathsf{FCD}}y\nasymp\tofcd f}$,
+but $x\times^{\mathsf{FCD}}y\nasymp\tofcd f\Leftrightarrow x\suprel{\tofcd f}y\Leftrightarrow x\times^{\mathsf{RLD}}y\nasymp f$,
+thus follows the theorem.
+\end{proof}
+
+\section{Reloids induced by a funcoid}
+
+\index{reloid!inward}\index{reloid!outward}Every funcoid $f\in\mathsf{FCD}(A;B)$
+induces a reloid from $A$ to $B$ in two ways, intersection of \emph{outward}
+relations and union of \emph{inward} reloidal products of filters:
+\begin{gather*}
+\torldout f=\bigsqcap^{\mathsf{RLD}}\up f;\\
+\torldin f=\bigsqcup\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}.
+\end{gather*}
+
+\begin{thm}
+$\torldin f=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f}$.\end{thm}
+\begin{proof}
+It follows from theorem \ref{rld-prod-t-atoms}.\end{proof}
+\begin{prop}
+$\up\uparrow^{\mathsf{RLD}}f=\up\uparrow^{\mathsf{FCD}}f$ for every
+$\mathbf{Rel}$-morphism $f$.\end{prop}
+\begin{proof}
+$X\in\up\uparrow^{\mathsf{RLD}}f\Leftrightarrow X\sqsupseteq f\Leftrightarrow X\in\up\uparrow^{\mathsf{FCD}}f$.\end{proof}
+\begin{prop}
+$\torldout\uparrow^{\mathsf{FCD}}f=\uparrow^{\mathsf{RLD}}f$ for
+every $\mathbf{Rel}$-morphism $f$.\end{prop}
+\begin{proof}
+$\torldout\uparrow^{\mathsf{FCD}}f=\bigsqcap^{\mathsf{RLD}}\up f=\uparrow^{\mathsf{RLD}}\min\up f=\uparrow^{\mathsf{RLD}}f$
+taking into account the previous proposition.
+\end{proof}
+Surprisingly, a funcoid is greater inward than outward:
+\begin{thm}
+$\torldout f\sqsubseteq\torldin f$ for every funcoid $f$.\end{thm}
+\begin{proof}
+We need to prove
+\[
+\torldout f\sqsubseteq\bigsqcup\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}.
+\]
+Let 
+\[
+K\in\up\bigsqcup\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}.
+\]
+Then
+\begin{align*}
+K & \in\up\uparrow^{\mathsf{RLD}}\bigsqcup\setcond{X_{\mathcal{A}}\times Y_{\mathcal{B}}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}\\
+ & =\torldout\uparrow^{\mathsf{FCD}}\bigsqcup\setcond{X_{\mathcal{A}}\times Y_{\mathcal{B}}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}\\
+ & =\torldout\bigsqcup^{\mathsf{FCD}}\setcond{\uparrow^{\mathsf{FCD}}(X_{\mathcal{A}}\times Y_{\mathcal{B}})}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}\\
+ & \sqsupseteq\torldout\bigsqcup\atoms f\\
+ & =\torldout f
+\end{align*}
+where $X_{\mathcal{A}}\in\up\mathcal{A}$, $X_{\mathcal{B}}\in\up\mathcal{B}$.
+$K\in\up\torldout f$.\end{proof}
+\begin{thm}
+$\tofcd\torldin f=f$ for every funcoid $f$.\end{thm}
+\begin{proof}
+For every sets $X\in\mathscr{T}(\Src f)$, $Y\in\mathscr{T}(\Dst f)$
+\begin{align*}
+X\rsuprel{\tofcd\torldin f}Y & \Leftrightarrow\\
+X\times^{\mathsf{RLD}}Y\nasymp\torldin f & \Leftrightarrow\\
+\uparrow^{\mathsf{RLD}}(X\times Y)\nasymp\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f} & \Leftrightarrow\text{(*)}\\
+\exists a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)}:(a\times^{\mathsf{FCD}}b\sqsubseteq f\land a\sqsubseteq X\land b\sqsubseteq Y) & \Leftrightarrow\\
+X\rsuprel fY.
+\end{align*}
+{*} proposition~\ref{crit1}.
+
+Thus $\tofcd\torldin f=f$.\end{proof}
+\begin{rem}
+The above theorem allows to represent funcoids as reloids. Refer to
+the section ``\nameref{fcd-rld}'' below for more details.\end{rem}
+\begin{obvious}
+$\torldin(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
+for every filters $\mathcal{A}$,~$\mathcal{B}$.\end{obvious}
+\begin{conjecture}
+$\torldout\id_{\mathcal{A}}^{\mathsf{FCD}}=\id_{\mathcal{A}}^{\mathsf{RLD}}$
+for every filter $\mathcal{A}$.\end{conjecture}
+\begin{xca}
+Prove that generally $\torldin\id_{\mathcal{A}}^{\mathsf{FCD}}\ne\id_{\mathcal{A}}^{\mathsf{RLD}}$.\end{xca}
+\begin{prop}
+$\dom\torldin f=\dom f$ and $\im\torldin f=\im f$ for every funcoid~$f$.\end{prop}
+\begin{proof}
+We will prove only $\dom\torldin f=\dom f$ as the other formula follows
+from symmetry. Really:
+\end{proof}
+$\dom\torldin f=\dom\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)},a\times^{\mathsf{FCD}}b\sqsubseteq f}$.
+
+By corollary~\ref{rld-dom-join} we have
+
+\begin{align*}
+\dom\torldin f & =\\
+\bigsqcup\setcond{\dom(a\times^{\mathsf{RLD}}b)}{a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)},a\times^{\mathsf{FCD}}b\sqsubseteq f} & =\\
+\bigsqcup\setcond{\dom(a\times^{\mathsf{FCD}}b)}{a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)},a\times^{\mathsf{FCD}}b\sqsubseteq f}.
+\end{align*}
+
+
+By corollary~\ref{fcd-dom-join} we have
+
+\begin{align*}
+\dom\torldin f & =\\
+\dom\bigsqcup\setcond{a\times^{\mathsf{FCD}}b}{a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)},a\times^{\mathsf{FCD}}b\sqsubseteq f} & =\\
+\dom f.
+\end{align*}
+
+\begin{prop}
+$\dom(f|_{\mathcal{A}})=\mathcal{A}\sqcap\dom f$ for every reloid
+$f$ and filter $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{prop}
+\begin{proof}
+$\dom(f|_{\mathcal{A}})=\dom\tofcd(f|_{\mathcal{A}})=\dom(\tofcd f)|_{\mathcal{A}}=\mathcal{A}\sqcap\dom\tofcd f=\mathcal{A}\sqcap\dom f$.\end{proof}
+\begin{thm}
+For every composable reloids $f$, $g$:
+\begin{enumerate}
+\item \label{rld-im-ge-dom}If $\im f\sqsupseteq\dom g$ then $\im(g\circ f)=\im g$;
+\item \label{rld-im-le-dom}If $\im f\sqsubseteq\dom g$ then $\dom(g\circ f)=\dom g$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{rld-im-ge-dom}}] $\im(g\circ f)=\im\tofcd(g\circ f)=\im(\tofcd g\circ\tofcd f)=\im\tofcd g=\im g$.
+\item [{\ref{rld-im-le-dom}}] Similar.
+\end{widedisorder}
+\end{proof}
+\begin{lem}
+If $a$, $b$, $c$ are filters on powersets and $b\neq\bot$, then
+\[
+\bigsqcup^{\mathsf{RLD}}\setcond{G\circ F}{F\in\atoms(a\times^{\mathsf{RLD}}b),G\in\atoms(b\times^{\mathsf{RLD}}c)}=a\times^{\mathsf{RLD}}c.
+\]
+\end{lem}
+\begin{proof}
+~
+\begin{multline*}
+a\times^{\mathsf{RLD}}c=(b\times^{\mathsf{RLD}}c)\circ(a\times^{\mathsf{RLD}}b)=\text{(corollary \ref{rld-comp-at})}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G\circ F}{F\in\atoms(a\times^{\mathsf{RLD}}b),G\in\atoms(b\times^{\mathsf{RLD}}c)}.
+\end{multline*}
+\end{proof}
+\begin{thm}
+$a\times^{\mathsf{RLD}}b\sqsubseteq\torldin f\Leftrightarrow a\times^{\mathsf{FCD}}b\sqsubseteq f$
+for every funcoid $f$ and $a\in\atoms^{\mathscr{F}(\Src f)}$, $b\in\atoms^{\mathscr{F}(\Dst f)}$.\end{thm}
+\begin{proof}
+$a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\times^{\mathsf{RLD}}b\sqsubseteq\torldin f$
+is obvious.
+
+\begin{multline*}
+a\times^{\mathsf{RLD}}b\sqsubseteq\torldin f\Rightarrow a\times^{\mathsf{RLD}}b\nasymp\torldin f\Rightarrow\\
+a\suprel{\tofcd\torldin f}b\Rightarrow a\suprel fb\Rightarrow a\times^{\mathsf{FCD}}b\sqsubseteq f.
+\end{multline*}
+\end{proof}
+\begin{conjecture}
+If $\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}\sqsubseteq\torldin f$
+then $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f$ for
+every funcoid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$, $\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{conjecture}
+\begin{thm}
+$\up\tofcd g\supseteq\up g$ for every reloid $g$.\end{thm}
+\begin{proof}
+Let $K\in\up g$. Then for every sets $X\in\mathscr{T}\Src g$, $Y\in\mathscr{T}\Dst g$
+\[
+X\rsuprel KY\Leftrightarrow X\rsuprel{\uparrow^{\mathsf{FCD}}K}Y\Leftrightarrow X\rsuprel{\tofcd\uparrow^{\mathsf{RLD}}K}Y\Leftarrow X\rsuprel{\tofcd g}Y.
+\]
+Thus $\uparrow^{\mathsf{FCD}}K\sqsupseteq\tofcd g$ that is $K\in\up\tofcd g$.\end{proof}
+\begin{thm}
+$g\circ(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})\circ f=\supfun{\tofcd f^{-1}}\mathcal{A}\times^{\mathsf{RLD}}\supfun{\tofcd g}\mathcal{B}$
+for every reloids $f$, $g$ and filters $\mathcal{A}\in\mathscr{F}(\Dst f)$,
+$\mathcal{B}\in\mathscr{F}(\Src g)$.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+g\circ(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})\circ f & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{G\circ(A\times B)\circ F}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{\rsupfun{F^{-1}}A\times\rsupfun GB}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{\rsupfun{F^{-1}}A\times^{\mathsf{RLD}}\rsupfun GB)}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\text{(theorem \ref{meet-rld-prod})}\\
+\bigsqcap^{\mathscr{F}}\setcond{\rsupfun{F^{-1}}A}{F\in\up f,A\in\up\mathcal{A}}\times^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}}\setcond{\rsupfun GB}{G\in\up g,B\in\up\mathcal{B}} & =\\
+\bigsqcap^{\mathscr{F}}\setcond{\rsupfun{\uparrow^{\mathsf{FCD}(\Dst f;\Src f)}F^{-1}}A}{F\in\up f,A\in\up\mathcal{A}}\times^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}}\setcond{\rsupfun{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}G}B}{G\in\up g,B\in\up\mathcal{B}} & =\\
+\bigsqcap^{\mathscr{F}}\setcond{\supfun{\uparrow^{\mathsf{FCD}(\Dst f;\Src f)}F^{-1}}\mathcal{A}}{F\in\up f}\times^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}}\setcond{\supfun{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}G}\mathcal{B}}{G\in\up g} & =\\
+\text{(by definition of \ensuremath{\tofcd})} & \text{}\\
+\supfun{\tofcd f^{-1}}\mathcal{A}\times^{\mathsf{RLD}}\supfun{\tofcd g}\mathcal{B}.
+\end{align*}
+\end{proof}
+\begin{cor}
+~
+\begin{enumerate}
+\item $(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})\circ f=\supfun{\tofcd f^{-1}}\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$;
+\item $g\circ(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\mathcal{A}\times^{\mathsf{RLD}}\supfun{\tofcd g}\mathcal{B}$.
+\end{enumerate}
+\end{cor}
+
+\section{\index{Galois connection!between funcoids and reloids}Galois connections
+between funcoids and reloids}
+\begin{thm}
+$\tofcd:\mathsf{RLD}(A;B)\rightarrow\mathsf{FCD}(A;B)$ is the lower
+adjoint of $\torldin:\mathsf{FCD}(A;B)\rightarrow\mathsf{RLD}(A;B)$
+for every sets $A$, $B$.\end{thm}
+\begin{proof}
+Because $\tofcd$ and $\torldin$ are trivially monotone, it's enough
+to prove (for every $f\in\mathsf{RLD}(A;B)$, $g\in\mathsf{FCD}(A;B)$)
+\[
+f\sqsubseteq\torldin\tofcd f\quad\text{and}\quad\tofcd\torldin g\sqsubseteq g.
+\]
+
+
+The second formula follows from the fact that $\tofcd\torldin g=g$.
+\begin{align*}
+\torldin\tofcd f & =\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq\tofcd f} & =\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\suprel{\tofcd f}b} & =\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{RLD}}b\nasymp f} & \sqsupseteq\\
+\bigsqcup\setcond{p\in\atoms(a\times^{\mathsf{RLD}}b)}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},p\nasymp f} & =\\
+\bigsqcup\setcond{p\in\atoms^{\mathsf{RLD}(A;B)}}{p\nasymp f} & =\\
+\bigsqcup\setcond p{p\in\atoms f}=f.
+\end{align*}
+\end{proof}
+\begin{cor}
+~
+\begin{enumerate}
+\item $\tofcd\bigsqcup S=\bigsqcup\rsupfun{\tofcd}S$ if $S\in\subsets\mathsf{RLD}(A;B)$.
+\item $\torldin\bigsqcap S=\bigsqcap\rsupfun{\torldin}S$ if $S\in\subsets\mathsf{FCD}(A;B)$.
+\end{enumerate}
+\end{cor}
+\begin{thm}
+$\torldin(f\sqcup g)=\torldin f\sqcup\torldin g$ for every funcoids
+$f,g\in\mathsf{FCD}(A;B)$.\end{thm}
+\begin{proof}
+~
+\begin{multline*}
+\torldin(f\sqcup g)=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathfrak{F}(A)},b\in\atoms^{\mathfrak{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f\sqcup g}=\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathfrak{F}(A)},b\in\atoms^{\mathfrak{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f\vee a\times^{\mathsf{FCD}}b\sqsubseteq g}=\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathfrak{F}(A)},b\in\atoms^{\mathfrak{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f}\sqcup\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathfrak{F}(A)},b\in\atoms^{\mathfrak{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq g}=\\
+\torldin f\sqcup\torldin g.
+\end{multline*}
+\end{proof}
+\begin{prop}
+$\torldin(f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}))=(\torldin f)\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$
+for every funcoid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$, $\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{prop}
+\begin{proof}
+~
+\[
+\torldin(f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}))=(\torldin f)\sqcap\torldin(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=(\torldin f)\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}).
+\]
+\end{proof}
+\begin{cor}
+$\torldin(f|_{\mathcal{A}})=(\torldin f)|_{\mathcal{A}}$.\end{cor}
+\begin{conjecture}
+$\torldin$ is not a lower adjoint (in general).
+\end{conjecture}
+
+\begin{conjecture}
+$\torldout$ is neither a lower adjoint nor an upper adjoint (in general).\end{conjecture}
+\begin{xca}
+Prove that $\card\mathsf{FCD}(A;B)=2^{2^{\max\{A,B\}}}$ if $A$ or
+$B$ is an infinite set (provided that $A$ and $B$ are nonempty).\end{xca}
+\begin{lem}
+$\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq\tofcd g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g$
+for every reloid~$g$.\end{lem}
+\begin{proof}
+~
+\begin{multline*}
+\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq\tofcd g\Leftrightarrow\\
+\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\nasymp\tofcd g\Leftrightarrow\uparrow^{\Src g}\{x\}\rsuprel{\tofcd g}\uparrow^{\Dst g}\{y\}\Leftrightarrow\\
+\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\nasymp g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g.
+\end{multline*}
+\end{proof}
+\begin{thm}
+$\Cor\tofcd g=\tofcd\Cor g$ for every reloid $g$.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+\Cor\tofcd g & =\\
+\bigsqcup\setcond{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{FCD}}\{(x;y)\}\sqsubseteq\tofcd g} & =\\
+\bigsqcup\setcond{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g} & =\\
+\bigsqcup\setcond{\tofcd\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g} & =\\
+\tofcd\bigsqcup\setcond{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g} & =\\
+\tofcd\Cor g.
+\end{align*}
+\end{proof}
+\begin{conjecture}
+~
+\begin{enumerate}
+\item $\Cor\torldin g=\torldin\Cor g$;
+\item $\Cor\torldout g=\torldout\Cor g$.
+\end{enumerate}
+\end{conjecture}
+
+\section{\label{fcd-rld}Funcoidal reloids}
+\begin{defn}
+\index{funcoidal reloid}I call \emph{funcoidal} such a reloid $\nu$
+that
+\begin{multline*}
+\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\Rightarrow\\
+\exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu)
+\end{multline*}
+for every $\mathcal{X}\in\mathscr{F}(\Src\nu)$, $\mathcal{Y}\in\mathscr{F}(\Dst\nu)$.\end{defn}
+\begin{prop}
+A reloid $\nu$ is funcoidal iff $x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\nu$
+for every atomic filter objects $x$ and $y$ on respective sets.\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] $x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow\exists\mathcal{X}'\in\atoms x,\mathcal{Y}'\in\atoms y:\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\nu$.
+\item [{$\Leftarrow$}] ~
+\begin{multline*}
+\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\Rightarrow\\
+\exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow\\
+\exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\times^{\mathsf{RLD}}y\sqsubseteq\nu\Rightarrow\\
+\exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu).
+\end{multline*}
+
+\end{description}
+\end{proof}
+\begin{prop}
+$\torldin\tofcd f=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src\nu)},b\in\atoms^{\mathscr{F}(\Dst\nu)},a\times^{\mathsf{RLD}}b\nasymp f}$.\end{prop}
+\begin{proof}
+~
+\begin{align*}
+\torldin\tofcd f & =\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src\nu)},b\in\atoms^{\mathscr{F}(\Dst\nu)},a\times^{\mathsf{FCD}}b\sqsubseteq\tofcd f} & =\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src\nu)},b\in\atoms^{\mathscr{F}(\Dst\nu)},a\suprel{\tofcd f}b} & =\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src\nu)},b\in\atoms^{\mathscr{F}(\Dst\nu)},a\times^{\mathsf{RLD}}b\nasymp f}.
+\end{align*}
+\end{proof}
+\begin{defn}
+I call $\torldin\tofcd f$ \emph{funcoidization} of a reloid $f$.\end{defn}
+\begin{lem}
+$\torldin\tofcd f$ is funcoidal for every reloid $f$.\end{lem}
+\begin{proof}
+$x\times^{\mathsf{RLD}}y\nasymp\torldin\tofcd f\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\torldin\tofcd f$.\end{proof}
+\begin{thm}
+$\torldin$ is a bijection from $\mathsf{FCD}(A;B)$ to the set of
+funcoidal reloids from $A$ to $B$.\end{thm}
+\begin{proof}
+Let $f\in\mathsf{FCD}(A;B)$. Prove that $\torldin f$ is funcoidal.
+
+Really $\torldin f=\torldin\tofcd\torldin f$ and thus we can use
+the lemma stating that it is funcoidal.
+
+It remains to prove $\torldin\tofcd f=f$ for a funcoidal reloid $f$.
+($\tofcd\torldin g=g$ for every funcoid $g$ is already proved above.)
+\begin{align*}
+\torldin\tofcd f & =\\
+\bigsqcup\setcond{x\times^{\mathsf{RLD}}y}{x\in\atoms^{\mathscr{F}(\Src\nu)},y\in\atoms^{\mathscr{F}(\Dst\nu)},x\times^{\mathsf{RLD}}y\nasymp f} & =\\
+\bigsqcup\setcond{p\in\atoms(x\times^{\mathsf{RLD}}y)}{x\in\atoms^{\mathscr{F}(\Src\nu)},y\in\atoms^{\mathscr{F}(\Dst\nu)},x\times^{\mathsf{RLD}}y\nasymp f} & =\\
+\bigsqcup\setcond{p\in\atoms(x\times^{\mathsf{RLD}}y)}{x\in\atoms^{\mathscr{F}(\Src\nu)},y\in\atoms^{\mathscr{F}(\Dst\nu)},x\times^{\mathsf{RLD}}y\sqsubseteq f} & =\\
+\bigsqcup\atoms f=f.
+\end{align*}
+\end{proof}
+\begin{cor}
+Funcoidal reloids are convex.\end{cor}
+\begin{proof}
+Every $\torldin f$ is obviously convex.\end{proof}
+\begin{thm}
+$\torldin(g\circ f)=\torldin g\circ\torldin f$ for every composable
+funcoids $f$ and $g$.\end{thm}
+\begin{proof}
+~
+\begin{multline*}
+\torldin g\circ\torldin f=\text{(corollary \ref{rld-comp-at})}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G\circ F}{F\in\atoms\torldin f,G\in\atoms\torldin g}
+\end{multline*}
+
+
+Let $F$ be an atom of the poset $\mathsf{RLD}(\Src f;\Dst f)$.
+
+\begin{multline*}
+F\in\atoms\torldin f\Rightarrow\dom F\times^{\mathsf{RLD}}\im F\nasymp\atoms\torldin f\Rightarrow\\
+\text{(because \ensuremath{\torldin f} is a funcoidal reloid)}\Rightarrow\\
+\dom F\times^{\mathsf{RLD}}\im F\sqsubseteq\atoms\torldin f
+\end{multline*}
+ but $\dom F\times^{\mathsf{RLD}}\im F\sqsubseteq\atoms\torldin f\Rightarrow F\in\atoms\torldin f$
+is obvious.
+
+So 
+\begin{multline*}
+F\in\atoms\torldin f\Leftrightarrow\dom F\times^{\mathsf{RLD}}\im F\sqsubseteq\torldin f\Rightarrow\\
+\tofcd(\dom F\times^{\mathsf{RLD}}\im F)\sqsubseteq\tofcd\torldin f\Leftrightarrow\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f.
+\end{multline*}
+
+
+But 
+\begin{multline*}
+\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f\Rightarrow\torldin(\dom F\times^{\mathsf{FCD}}\im F)\sqsubseteq\torldin f\Leftrightarrow\\
+\dom F\times^{\mathsf{RLD}}\im F\sqsubseteq\torldin f.
+\end{multline*}
+
+
+So $F\in\atoms\torldin f\Leftrightarrow\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$.
+
+\begin{multline*}
+\dom F\times^{\mathsf{RLD}}\im G=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\im F\times^{\mathsf{RLD}}\im G)}\sqsubseteq\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms^{\mathsf{RLD}(\Src F;\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G;\Dst G)},F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms\torldin f,G'\in\atoms\torldin g}=\torldin g\circ\torldin f.
+\end{multline*}
+
+
+Thus $\torldin g\circ\torldin f\sqsupseteq\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g}$.
+
+But $\torldin g\circ\torldin f\sqsubseteq\bigsqcup^{\mathsf{RLD}}\setcond{(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)}{F\in\atoms\torldin f,G\in\atoms\torldin g}$.
+
+Thus 
+\begin{multline*}
+\torldin g\circ\torldin f=\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms^{\mathsf{RLD}(\Src f;\Dst f)},G\in\atoms^{\mathsf{RLD}(\Dst f;\Dst g)},\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f,\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g}.
+\end{multline*}
+
+
+But 
+\begin{multline*}
+\torldin(g\circ f)=\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f),c\in\mathscr{F}(\Dst g),a\times^{\mathsf{FCD}}b\in\atoms f,b\times^{\mathsf{FCD}}c\in\atoms g}.
+\end{multline*}
+Now it becomes obvious that $\torldin g\circ\torldin f=\torldin(g\circ f)$.
+\end{proof}
+
+\section{Complete funcoids and reloids}
+
+For the proof below assume 
+\[
+\theta=\left(\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\{x\})\mapsto\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\supfun f\{x\})\right)
+\]
+ (where $f$ ranges the set of complete funcoids).
+\begin{lem}
+$\theta$ is a bijection from complete reloids into complete funcoids.\end{lem}
+\begin{proof}
+Theorems~\ref{complfcd-rep} and~\ref{complrld-rep}.\end{proof}
+\begin{lem}
+$\tofcd g=\theta g$ for every complete reloid~$g$.\end{lem}
+\begin{proof}
+Really, $g=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$
+for a complete funcoid~$f$ and thus 
+\[
+\tofcd g=\bigsqcup_{x\in\Src f}\tofcd(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\{x\})=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\supfun f\{x\})=\theta g.
+\]
+\end{proof}
+\begin{lem}
+$\torldout f=\theta^{-1}f$ for every complete funcoid~$f$.\end{lem}
+\begin{proof}
+We have $f=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\supfun f\uparrow^{\Src f}\{x\})$.
+We need to prove $\torldout f=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$.
+
+Really, $\torldout f\sqsupseteq\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$.
+
+It remains to prove that $\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})\sqsupseteq\torldout f$.
+
+Let $L\in\up\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$.
+We will prove $L\in\up\torldout f$.
+
+We have 
+\[
+L\in\bigcap\setcond{\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})}{x\in\Src f}=\bigcap\setcond{\setcond{\uparrow^{\Src f}\{x\}\times Y}{Y\in\up\supfun f\uparrow^{\Src f}\{x\}}}{x\in\Src f}.
+\]
+It's enough to prove that $L\in\up f$. Really, $\forall x\in\Src f:\rsupfun L\uparrow^{\Src f}\{x\}\in\up\supfun f\uparrow^{\Src f}\{x\}$
+because
+
+$\rsupfun L\uparrow^{\Src f}\{x\}\sqsupseteq\rsupfun T\uparrow^{\Src f}\{x\}$
+for 
+\[
+T=\bigcap\setcond{\setcond{\uparrow^{\Src f}\{x\}\times Y}{Y\in\up G(x)}}{x\in\Src f}.
+\]
+and thus 
+\begin{eqnarray*}
+\rsupfun L\uparrow^{\Src f}\{x\} & \sqsupseteq\\
+\bigcap\setcond{\setcond{\langle\uparrow^{\Src f}\{x\}\times Y\rangle^{\ast}\{x'\}}{x'=x,Y\in\up G(x)}}{x\in\Src f} & =\\
+\setcond Y{Y\in\up G(x')} & =\\
+\up G(x').
+\end{eqnarray*}
+So $\rsupfun L\{x\}\in\up\supfun f\{x\}$ and thus $L\in\up f$.\end{proof}
+\begin{prop}
+$\tofcd$ and $\torldout$ form mutually inverse bijections between
+complete reloids and complete funcoids.\end{prop}
+\begin{proof}
+From two last lemmas.\end{proof}
+\begin{thm}
+The diagram at the figure~\ref{cmpl-dia} (with the ``unnamed''
+arrow \emph{defined} as the inverse isomorphism of its opposite arrow)
+is a commutative diagram (in category $\mathbf{Set}$), every arrow
+in this diagram is an isomorphism. Every cycle in this diagram is
+an identity (therefore ``parallel'' arrows are mutually inverse).
+The arrows preserve order.
+
+\begin{figure}[h]
+\caption{\label{cmpl-dia}}
+
+
+\begin{tikzcd}[row sep=6cm, column sep=2.1cm]
+& \mathscr{F}(B)^A
+\arrow[rd, shift left, "G\mapsto\bigsqcup\setcond{\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}"]
+\arrow[ld, shift left, "G\mapsto\bigsqcup\setcond{\{\alpha\}\times^{\mathsf{FCD}}G(\alpha)}{\alpha\in A}"] \\
+\Compl\mathsf{FCD}(A;B)
+\arrow[ru, shift left, "f\mapsto(\alpha\mapsto\rsupfun{f}\{\alpha\})"]
+\arrow[rr, shift left, "\torldout"]
+& & \Compl\mathsf{RLD}(A;B)
+\arrow[lu, shift left]
+\arrow[ll, shift left, "\tofcd"]
+\end{tikzcd}
+\end{figure}
+\end{thm}
+\begin{proof}
+It's proved above, that all morphisms (except the ``unnamed'' arrow
+which is the inverse morphism by definition) depicted on the diagram
+are bijections and the depicted ``opposite'' morphisms are mutually
+inverse.
+
+That arrows preserve order is obvious.
+
+It remains to apply lemma~\ref{three-loop-lem} (taking into account
+that $\theta$ can be decomposed into $\left(G\mapsto\bigsqcup\setcond{\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}\right)^{-1}$
+and $G\mapsto\bigsqcup\setcond{\{\alpha\}\times^{\mathsf{FCD}}G(\alpha)}{\alpha\in A}$).\end{proof}
+\begin{thm}
+Composition of complete reloids is complete.\end{thm}
+\begin{proof}
+Let $f$, $g$ be complete reloids. Then $\tofcd(g\circ f)=\tofcd g\circ\tofcd f$.
+Thus (because $\tofcd(g\circ f)$ is a complete funcoid) we have $g\circ f=\torldout(\tofcd g\circ\tofcd f)$,
+but $\tofcd g\circ\tofcd f$ is a complete funcoid, thus $g\circ f$
+is a complete reloid.\end{proof}
+\begin{thm}
+~
+\begin{enumerate}
+\item $\torldout g\circ\torldout f=\torldout(g\circ f)$ for composable
+complete funcoids $f$ and $g$.
+\item $\torldout g\circ\torldout f=\torldout(g\circ f)$ for composable
+co-complete funcoids $f$ and $g$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Let $f$, $g$ are composable complete funcoids.
+
+$\tofcd(\torldout g\circ\torldout f)=\tofcd\torldout g\circ\tofcd\torldout f=g\circ f$.
+
+Thus (taking into account that $\torldout g\circ\torldout f$ is complete)
+we have $\torldout g\circ\torldout f=\torldout(g\circ f)$.
+
+For co-complete funcoids it's dual.\end{proof}
+

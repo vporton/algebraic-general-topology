@@ -1,0 +1,537 @@
+
+\chapter{\label{common-top}Common knowledge, part 2 (topology)}
+
+In this chapter I describe basics of the theory known as \emph{general
+topology}. Starting with the next chapter after this one I will describe
+generalizations of customary objects of general topology described
+in this chapter.
+
+The reason why I've written this chapter is to show to the reader
+kinds of objects which I generalize below in this book. For example,
+funcoids and a generalization of proximity spaces, and funcoids are
+a generalization of pretopologies. To understand the intuitive meaning
+of funcoids one needs first know what are proximities and what are
+pretopologies.
+
+Having said that, customary topology is \emph{not} used in my definitions
+and proofs below. It is just to feed your intuition.
+
+
+\section{Metric spaces}
+
+The theory of topological spaces started immediately with the definition
+would be completely non-intuitive for the reader. It is the reason
+why I first describe metric spaces and show that metric spaces give
+rise for a topology (see below). Topological spaces are understandable
+as a generalization of topologies induced by metric spaces.
+
+\emph{Metric spaces} is a formal way to express the notion of \emph{distance}.
+For example, there are distance $|x-y|$ between real numbers $x$
+and $y$, distance between points of a plane, etc.
+\begin{defn}
+\index{space!metric}\index{distance}A \emph{metric space} is a set
+$U$ together with a function $d:U\times U\rightarrow\mathbb{R}$
+(\emph{distance}) such that for every $x,y,z\in U$:
+\begin{enumerate}
+\item $d(x,y)\ge0$;
+\item $d(x,y)=0\Leftrightarrow x=y$;
+\item $d(x,y)=d(y,x)$ (\emph{symmetry});
+\item \index{inequality!triangle}$d(x,z)\le d(x,y)+d(y,z)$ (\emph{triangle
+inequality}).
+\end{enumerate}
+\end{defn}
+\begin{xca}
+Show that the Euclid space $\mathbb{R}^{n}$ (with the standard distance)
+is a metric space for every $n\in\mathbb{N}$.\end{xca}
+\begin{defn}
+\index{ball!open}\emph{Open ball} of \emph{radius} $r>0$ centered
+at point $a\in U$ is the set
+\[
+B_{r}(a)=\setcond{x\in U}{d(a,x)<r}.
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{ball!closed}\emph{Closed ball} of \emph{radius} $r>0$ centered
+at point $a\in U$ is the set
+\[
+B_{r}[a]=\setcond{x\in U}{d(a,x)\le r}.
+\]
+
+\end{defn}
+
+\subsection{Open and closed sets}
+\begin{defn}
+\index{set!open!in metric space}A set $A$ in a metric space is called
+\emph{open} when $\forall a\in A\exists r>0:B_{r}(a)\subseteq A$.
+\end{defn}
+
+\begin{defn}
+\index{set!closed!in metric space}A set $A$ in a metric space is
+closed when its complement $U\setminus A$ is open.
+\end{defn}
+
+\begin{defn}
+\index{closure!in metric space}Closure $\cl(A)$ of a set $A$ in
+a metric space is the set of points $y$ such that
+\[
+\forall\epsilon>0\exists a\in A:d(y,a)<\epsilon.
+\]
+\end{defn}
+\begin{prop}
+$\cl(A)\supseteq A$.\end{prop}
+\begin{proof}
+It follows from $d(a,a)=0<\epsilon$.\end{proof}
+\begin{xca}
+Prove $\cl(A\cup B)=\cl(A)\cup\cl(B)$ for every subsets $A$ and
+$B$ of a metric space.
+\end{xca}
+
+\section{Pretopological spaces}
+
+\emph{Pretopological space} can be defined in two equivalent ways:
+a \emph{neighborhood system} or a \emph{preclosure operator}. To be
+more clear I will call \emph{pretopological space} only the first
+(neighborhood system) and the second call a \emph{preclosure space}.
+\begin{defn}
+\index{space!pre-topological}\index{pretopology}\emph{Pretopological
+space} is a set $U$ together with a filter $\Delta(x)$ on \emph{$U$}
+for every $x\in U$, such that $\uparrow^{U}\{x\}\sqsubseteq\Delta(x)$.
+$\Delta$~is called a \emph{pretopology} on $U$.
+\end{defn}
+
+\begin{defn}
+\index{preclosure}\emph{Preclosure} on a set $U$ is an unary operation
+$\cl$ on $\subsets U$ such that for every $A,B\in\subsets U$:
+\begin{enumerate}
+\item $\cl(\emptyset)=\emptyset$;
+\item $\cl(A)\supseteq A$;
+\item $\cl(A\cup B)=\cl(A)\cup\cl(B)$.
+\end{enumerate}
+
+\index{space!preclosure}I call a preclosure together with a set $U$
+as \emph{preclosure space}.
+
+\end{defn}
+\begin{thm}
+\label{pretop-bij}Small pretopological spaces and small preclosure
+spaces bijectively correspond to each other by the formulas:
+\begin{gather}
+\cl(A)=\setcond{x\in U}{A\in\corestar\Delta(x)};\label{pt-cl}\\
+\up\Delta(x)=\setcond{A\in\subsets U}{x\notin\cl(U\setminus A)}.\label{pt-neigh}
+\end{gather}
+\end{thm}
+\begin{proof}
+First let's prove that $\cl$ defined by formula (\ref{pt-cl}) is
+really a preclosure.
+
+$\cl(\emptyset)=\emptyset$ is obvious. If $x\in A$ then $A\in\corestar\Delta(x)$
+and so $\cl(A)\supseteq A$. $\cl(A\cup B)=\setcond{x\in U}{A\cup B\in\corestar\Delta(x)}=\setcond{x\in U}{A\in\corestar\Delta(x)\lor B\in\corestar\Delta(x)}=\cl(A)\cup\cl(B)$.
+So, it is really a preclosure.
+
+Next let's prove that $\Delta$ defined by formula (\ref{pt-neigh})
+is a pretopology. That $\up\Delta(x)$ is an upper set is obvious.
+Let $A,B\in\up\Delta(x)$. Then $x\notin\cl(U\setminus A)\land x\notin\cl(U\setminus B)$;
+$x\notin\cl(U\setminus A)\cup\cl(U\setminus B)=\cl((U\setminus A)\cup(U\setminus B))=\cl(U\setminus(A\cap B))$;
+$A\cap B\in\up\Delta(x)$. We have proved that $\Delta(x)$ is a filter
+object.
+
+Let's prove $\uparrow^{U}\{x\}\sqsubseteq\Delta(x)$. If $A\in\up\Delta(x)$
+then $x\notin\cl(U\setminus A)$ and consequently $x\notin U\setminus A$;
+$x\in A$; $A\in\uparrow^{U}\{x\}$. So $\uparrow^{U}\{x\}\sqsubseteq\Delta(x)$
+and thus $\Delta$ is a pretopology.
+
+It is left to prove that the functions defined by the above formulas
+are mutually inverse.
+
+Let $\cl_{0}$ be a preclosure, let $\Delta$ is the pretopology induced
+by $\cl_{0}$ by the formula (\ref{pt-neigh}), let $\cl_{1}$ is
+the preclosure induced by $\Delta$ by the formula (\ref{pt-cl}).
+Let's prove $\cl_{1}=\cl_{0}$. Really,
+\begin{align*}
+x\in\cl_{1}(A) & \Leftrightarrow\\
+\Delta(x)\nasymp\uparrow^{U}A & \Leftrightarrow\\
+\forall X\in\up\Delta(x):X\cap A\ne\emptyset & \Leftrightarrow\\
+\forall X\in\subsets U:(x\notin\cl_{0}(U\setminus X)\Rightarrow X\cap A\ne\emptyset) & \Leftrightarrow\\
+\forall X'\in\subsets U:(x\notin\cl_{0}(X')\Rightarrow A\setminus X'\ne\emptyset) & \Leftrightarrow\\
+\forall X'\in\subsets U:(A\setminus X'=\emptyset\Rightarrow x\in\cl_{0}(X')) & \Leftrightarrow\\
+\forall X'\in\subsets U:(A\subseteq X'\Rightarrow x\in\cl_{0}(X')) & \Leftrightarrow\\
+x\in\cl_{0}(A).
+\end{align*}
+
+
+So $\cl_{1}(A)=\cl_{0}(A)$.
+
+Let now $\Delta_{0}$ be a pretopology, let $\cl$ is the closure
+induced by $\Delta_{0}$ by the formula (\ref{pt-cl}), let $\Delta_{1}$
+is the pretopology induced by $\cl$ by the formula (\ref{pt-neigh}).
+Really
+\begin{align*}
+A\in\up\Delta_{1}(x) & \Leftrightarrow\\
+x\notin\cl(U\setminus A) & \Leftrightarrow\\
+\Delta_{0}(x)\asymp\uparrow^{U}(U\setminus A) & \Leftrightarrow\text{(proposition \ref{bool-compl})}\\
+\uparrow^{U}A\sqsupseteq\Delta_{0}(x) & \Leftrightarrow\\
+A\in\up\Delta_{0}(x).
+\end{align*}
+
+
+So $\Delta_{1}(x)=\Delta_{0}(x)$.
+
+That these functions are mutually inverse, is now proved.
+\end{proof}
+
+\subsection{Pretopology induced by a metric}
+
+\index{pre-topology!induced by metric}Every metric space induces
+a pretopology by the formula:
+\[
+\Delta(x)=\bigsqcap^{\mathscr{F}U}\setcond{B_{r}(x)}{r\in\mathbb{R},r>0}.
+\]
+
+\begin{xca}
+Show that it is a pretopology.\end{xca}
+\begin{prop}
+The preclosure corresponding to this pretopology is the same as the
+preclosure of the metric space.\end{prop}
+\begin{proof}
+I denote the preclosure of the metric space as $\cl_{M}$ and the
+preclosure corresponding to our pretopology as $\cl_{P}$. We need
+to show $\cl_{P}=\cl_{M}$. Really:
+\begin{align*}
+\cl_{P}(A) & =\\
+\setcond{x\in U}{A\in\corestar\Delta(x)} & =\\
+\setcond{x\in U}{\forall\epsilon>0:B_{\epsilon}(x)\nasymp A} & =\\
+\setcond{y\in U}{\forall\epsilon>0\exists a\in A:d(y,a)<\epsilon} & =\\
+\cl_{M}(A)
+\end{align*}
+for every set $A\in\subsets U$.
+\end{proof}
+
+\section{\label{sec-top}Topological spaces}
+\begin{prop}
+For the set of open sets of a metric space $(U;d)$ it holds:
+\begin{enumerate}
+\item Union of any (possibly infinite) number of open sets is an open set.
+\item Intersection of a finite number of open sets is an open set.
+\item $U$ is an open set.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Let $S$ be a set of open sets. Let $a\in\bigcup S$. Then there exists
+$A\in S$ such that $a\in A$. Because $A$ is open we have $B_{r}(a)\subseteq A$
+for some $r>0$. Consequently $B_{r}(a)\subseteq\bigcup S$ that is
+$\bigcup S$ is open.
+
+Let $A_{0},\dots,A_{n}$ be open sets. Let $a\in A_{0}\cap\dots\cap A_{n}$
+for some $n\in\mathbb{N}$. Then there exist $r_{i}$ such that $B_{r_{i}}(a)\subseteq A_{i}$.
+So $B_{r}(a)\subseteq A_{0}\cap\dots\cap A_{n}$ for $r=\min\{r_{0},\dots,r_{n}\}$
+that is $A_{0}\cap\dots\cap A_{n}$ is open.
+
+That $U$ is an open set is obvious.
+\end{proof}
+The above proposition suggests the following definition:
+\begin{defn}
+\index{topology}A \emph{topology} on a set $U$ is a collection~$\mathcal{O}$
+(called the set of \emph{open sets}) of subsets of~$U$ such that:\index{set!open}
+\begin{enumerate}
+\item Union of any (possibly infinite) number of open sets is an open set.
+\item Intersection of a finite number of open sets is an open set.
+\item $U$ is an open set.
+\end{enumerate}
+\index{space!topological}The pair $(U;\mathcal{O})$ is called a
+\emph{topological space}.\end{defn}
+\begin{rem}
+From the above it is clear that every metric induces a topology.\end{rem}
+\begin{prop}
+Empty set is always open.\end{prop}
+\begin{proof}
+Empty set is union of an empty set.\end{proof}
+\begin{defn}
+\index{set!closed}A \emph{closed set} is a complement of an open
+set.
+\end{defn}
+Topology can be equivalently expresses in terms of closed sets:
+
+A \emph{topology} on a set $U$ is a collection (called the set of
+\emph{closed sets}) of subsets of $U$ such that:
+\begin{enumerate}
+\item Intersection of any (possibly infinite) number of closed sets is a
+closed set.
+\item Union of a finite number of closed sets is a closed set.
+\item $\emptyset$ is a closed set.\end{enumerate}
+\begin{xca}
+Show that the definitions using open and closed sets are equivalent.
+\end{xca}
+
+\subsection{Relationships between pretopologies and topologies}
+
+
+\subsubsection{Topological space induced by preclosure space}
+
+\index{space!topological!induced by preclosure}Having a preclosure
+space $(U;\cl)$ we define a topological space whose closed sets are
+such sets $A\in\subsets U$ that $\cl(A)=A$.
+\begin{prop}
+This really defines a topology.\end{prop}
+\begin{proof}
+Let $S$ be a set of closed sets. First, we need to prove that $\bigcap S$
+is a closed set. We have $\cl\left(\bigcap S\right)\subseteq A$ for
+every $A\in S$. Thus $\cl\left(\bigcap S\right)\subseteq\bigcap S$
+and consequently $\cl\left(\bigcap S\right)=\bigcap S$. So $\bigcap S$
+is a closed set.
+
+Let now $A_{0},\dots,A_{n}$ be closed sets, then
+\[
+\cl(A_{0}\cup\dots\cup A_{n})=\cl(A_{0})\cup\dots\cup cl(A_{n})=A_{0}\cup\dots\cup A_{n}
+\]
+
+
+that is $A_{0}\cup\dots\cup A_{n}$ is a closed set.
+
+That $\emptyset$ is a closed set is obvious.
+\end{proof}
+Having a pretopological space $(U;\Delta)$ we define a topological
+space whose open sets are
+\[
+\setcond{X\in\subsets U}{\forall x\in X:X\in\up\Delta(x)}.
+\]
+
+\begin{prop}
+This really defines a topology.\end{prop}
+\begin{proof}
+Let set $S\subseteq\setcond{X\in\subsets U}{\forall x\in X:X\in\up\Delta(x)}$.
+Then $\forall X\in S\forall x\in X:X\in\up\Delta(x)$. Thus
+\[
+\forall x\in\bigcup S\exists X\in S:X\in\up\Delta(x)
+\]
+
+
+and so $\forall x\in\bigcup S:\bigcup S\in\up\Delta(x)$. So $\bigcup S$
+is an open set.
+
+Let now $A_{0},\dots,A_{n}\in\setcond{X\in\subsets U}{\forall x\in X:X\in\up\Delta(x)}$
+for $n\in\mathbb{N}$. Then $\forall x\in A_{i}:A_{i}\in\up\Delta(x)$
+and so
+\[
+\forall x\in A_{0}\cap\dots\cap A_{n}:A_{i}\in\up\Delta(x);
+\]
+
+
+thus $\forall x\in A_{0}\cap\dots\cap A_{n}:A_{0}\cap\dots\cap A_{n}\in\up\Delta(x)$.
+So $A_{0}\cap\dots\cap A_{n}\in\setcond{X\in\subsets U}{\forall x\in X:X\in\up\Delta(x)}$.
+
+That $U$ is an open set is obvious.\end{proof}
+\begin{prop}
+Topology $\tau$ defined by a pretopology and topology $\rho$ defined
+by the corresponding preclosure, are the same.\end{prop}
+\begin{proof}
+Let $A\in\subsets U$.
+
+$A\text{ is \ensuremath{\rho}-closed}\Leftrightarrow\cl(A)=A\Leftrightarrow\cl(A)\subseteq A\Leftrightarrow\forall x\in U:(A\in\corestar\Delta(x)\Rightarrow x\in A)$;
+\begin{align*}
+A\text{ is \ensuremath{\tau}-open} & \Leftrightarrow\\
+\forall x\in A:A\in\up\Delta(x) & \Leftrightarrow\\
+\forall x\in U:(x\in A\Rightarrow A\in\up\Delta(x)) & \Leftrightarrow\\
+\forall x\in U:(x\notin U\setminus A\Rightarrow U\setminus A\notin\corestar\Delta(x)).
+\end{align*}
+
+
+So $\rho$-closed and $\tau$-open are negations of each other. It
+follows $\rho=\tau$.
+\end{proof}
+
+\subsubsection{Preclosure space induced by topological space}
+
+\index{space!preclosure!induced by topology}We define a preclosure
+and a pretopology induced by a topology and then show these two are
+equivalent.
+
+Having a topological space we define a preclosure space by the formula
+
+\[
+\cl(A)=\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A}.
+\]
+
+\begin{prop}
+It is really a preclosure.\end{prop}
+\begin{proof}
+$\cl(\emptyset)=\emptyset$ because $\emptyset$ is a closed set.
+$\cl(A)\supseteq A$ is obvious.
+\begin{align*}
+\cl(A\cup B) & =\\
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A\cup B} & =\\
+\bigcap\setcond{X_{1}\cup X_{2}}{X_{1},X_{2}\in\subsets U\text{ are closed sets},X_{1}\supseteq A,X_{2}\supseteq B} & =\\
+\bigcap\setcond{X_{1}\in\subsets U}{X_{1}\text{ is a closed set},X_{1}\supseteq A}\cup\bigcap\setcond{X_{2}\in\subsets U}{X_{2}\text{ is a closed set},X_{2}\supseteq B} & =\\
+\cl(A)\cup\cl(B).
+\end{align*}
+
+
+Thus $\cl$ is a preclosure.
+\end{proof}
+Or: $\Delta(x)=\bigsqcap\setcond{\uparrow^{U}X}{X\in\mathcal{O},x\in X}$.
+
+It is trivially a pretopology (used the fact that $U\in\mathcal{O}$).
+\begin{prop}
+The preclosure and the pretopology defined in this section above correspond
+to each other (by the formulas from theorem \ref{pretop-bij}).\end{prop}
+\begin{proof}
+We need to prove $\cl(A)=\setcond{x\in U}{\Delta(x)\nasymp\uparrow^{U}A}$,
+that is
+\[
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A}=\setcond{x\in U}{\bigsqcap^{\mathscr{F}U}\setcond X{X\in\mathcal{O},x\in X}\nasymp\uparrow^{U}A}.
+\]
+
+
+Equivalently transforming it, we get:
+\begin{align*}
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & =\setcond{x\in U}{\forall X\in\mathcal{O}:(x\in X\Rightarrow\uparrow^{U}X\nasymp\uparrow^{U}A)}\\
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & =\setcond{x\in U}{\forall X\in\mathcal{O}:(x\in X\Rightarrow X\nasymp A)}.
+\end{align*}
+
+
+Thus
+\begin{align*}
+x\in\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & \Leftrightarrow\\
+\forall X\in\subsets U:(X\text{ is a closed set}\land X\supseteq A\Rightarrow x\in X) & \Leftrightarrow\\
+\forall X'\in\mathcal{O}:(U\setminus X'\supseteq A\Rightarrow x\in U\setminus X') & \Leftrightarrow\\
+\forall X'\in\mathcal{O}:(X'\asymp A\Rightarrow x\notin X') & \Leftrightarrow\\
+\forall X\in\mathcal{O}:(x\in X\Rightarrow X\nasymp A).
+\end{align*}
+
+
+So our equivalence holds.\end{proof}
+\begin{prop}
+If $\tau$ is the topology induced by pretopology $\pi$, in turn
+induced by topology $\rho$, then $\tau=\rho$.\end{prop}
+\begin{proof}
+The set of closed sets of $\tau$ is
+\begin{align*}
+\setcond{A\in\subsets U}{\cl_{\pi}(A)=A} & =\\
+\setcond{A\in\subsets U}{\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set in }\rho,X\supseteq A}=A} & =\\
+\setcond{A\in\subsets U}{A\text{ is a closed set in }\rho}
+\end{align*}
+(taken into account that intersecting closed sets is a closed set).\end{proof}
+\begin{defn}
+\index{closure!Kuratowski}Idempotent closures are called \emph{Kuratowski
+closures}.\end{defn}
+\begin{thm}
+The above defined correspondences between topologies and pretopologies,
+restricted to Kuratowski closures, is a bijection.\end{thm}
+\begin{proof}
+Taking into account the above proposition, it's enough to prove that:
+
+If $\tau$ is the pretopology induced by topology $\pi$, in turn
+induced by a Kuratowski closure $\rho$, then $\tau=\rho$.
+\begin{align*}
+\cl_{\tau}(A) & =\\
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set in }\pi,X\supseteq A} & =\\
+\bigcap\setcond{X\in\subsets U}{\cl_{\rho}(X)=X,X\supseteq A} & =\\
+\bigcap\setcond{\cl_{\rho}(X)}{X\in\subsets U,\cl_{\rho}(X)=X,X\supseteq\cl_{\rho}(A)} & =\\
+\bigcap\setcond{\cl_{\rho}(\cl_{\rho}(X))}{X=A} & =\\
+\cl_{\rho}(\cl_{\rho}(A)) & =\\
+\cl_{\rho}(A).
+\end{align*}
+
+\end{proof}
+
+\subsubsection{Topology induced by a metric}
+\begin{defn}
+Every metric space induces a topology in this way: A set $X$ is open
+iff
+\[
+\forall x\in X\exists\epsilon>0:B_{r}(x)\subseteq X.
+\]
+\end{defn}
+\begin{xca}
+Prove it is really a topology and this topology is the same as the
+topology, induced by the pretopology, in turn induced by our metric
+space.
+\end{xca}
+
+\section{\label{sec-prox}Proximity spaces}
+
+Let $(U;d)$ be metric space. We will define \emph{distance} between
+sets $A,B\in\subsets U$ by the formula
+\[
+d(A,B)=\inf\setcond{d(a,b)}{a\in A,b\in B}.
+\]
+
+
+(Here ``$\inf$'' denotes infimum on the real line.)
+\begin{defn}
+Sets $A,B\in\subsets U$ are \emph{near} (denoted $A\mathrel\delta B$)
+iff $d(A,B)=0$.
+\end{defn}
+$\delta$ defined in this way (for a metric space) is an example of
+proximity as defined below.
+\begin{defn}
+\label{prox}\index{proximity}\index{space!proximity}A \emph{proximity
+space} is a set $(U;\delta)$ conforming to the following axioms (for
+every $A,B,C\in\subsets U$):
+\begin{enumerate}
+\item $A\cap B\ne\emptyset\Rightarrow A\mathrel\delta B$;
+\item if $A\mathrel\delta B$ then $A\ne\emptyset$ and $B\ne\emptyset$;
+\item $A\mathrel\delta B\Rightarrow B\mathrel\delta A$ (\emph{symmetry});
+\item $(A\cup B)\mathrel\delta C\Leftrightarrow A\mathrel\delta C\lor B\mathrel\delta C$;
+\item $C\mathrel\delta(A\cup B)\Leftrightarrow C\mathrel\delta A\lor C\mathrel\delta B$;
+\item \label{prox-last}$A\mathrel{\bar{\delta}}B$ implies existence of
+$P,Q\in\subsets U$ with $A\mathrel{\bar{\delta}}P$, $B\mathrel{\bar{\delta}}Q$
+and $P\cup Q=U$.
+\end{enumerate}
+\end{defn}
+\begin{xca}
+Show that proximity generated by a metric space is really a proximity
+(conforms to the above axioms).\end{xca}
+\begin{defn}
+\index{quasi-proximity}\emph{Quasi-proximity} is defined as the above
+but without the symmetry axiom.
+\end{defn}
+
+\begin{defn}
+Closure is generated by a proximity by the following formula:
+\[
+\cl(A)=\setcond{a\in U}{\{a\}\mathrel\delta A}.
+\]
+\end{defn}
+\begin{prop}
+Every closure generated by a proximity is a Kuratowski closure.\end{prop}
+\begin{proof}
+First prove it is a preclosure. $\cl(\emptyset)=\emptyset$ is obvious.
+$\cl(A)\supseteq A$ is obvious.
+\begin{align*}
+\cl(A\cup B) & =\\
+\setcond{a\in U}{\{a\}\mathrel\delta A\cup B} & =\\
+\setcond{a\in U}{\{a\}\mathrel\delta A\lor\{a\}\mathrel\delta B} & =\\
+\setcond{a\in U}{\{a\}\mathrel\delta A}\cup\setcond{a\in U}{\{a\}\mathrel\delta B} & =\\
+\cl(A)\cup\cl(B).
+\end{align*}
+
+
+It is remained to prove that $\cl$ is idempotent, that is $\cl(\cl(A))=\cl(A)$.
+It is enough to show $\cl(\cl(A))\subseteq\cl(A)$ that is if $x\notin\cl(A)$
+then $x\notin\cl(\cl(A))$.
+
+If $x\notin\cl(A)$ then $\{x\}\mathrel{\bar{\delta}}A$. So there
+are $P,Q\in\subsets U$ such that $\{x\}\mathrel{\bar{\delta}}P$,
+$A\mathrel{\bar{\delta}}Q$, $P\cup Q=U$. Then $U\setminus Q\subseteq P$,
+so $\{x\}\mathrel{\bar{\delta}}U\setminus Q$ and hence $x\in Q$.
+Hence $U\setminus\cl(A)\subseteq Q$, and so $\cl(A)\subseteq U\setminus Q\subseteq P$.
+Consequently $\{x\}\mathrel{\bar{\delta}}\cl(A)$ and hence $x\notin\cl(\cl(A))$.
+\end{proof}
+
+\section{Definition of uniform spaces}
+
+Here I will present the traditional definition of uniform spaces.
+Below in the chapter about reloids I will present a shortened and
+more algebraic (however a little less elementary) definition of uniform
+spaces.
+\begin{defn}
+\emph{Uniform space} is a pair $(U;D)$ of a set~$U$ and filter~$D\in\mathfrak{F}(U\times U)$
+(called \emph{uniformity} or the set of \emph{entourages}) such that:
+\begin{enumerate}
+\item If $F\in D$ then $\id_{U}\subseteq D$.
+\item If $F\in D$ then there exists $G\in D$ such that $G\circ G\subseteq F$.
+\item If $F\in D$ then $F^{-1}\in D$.\end{enumerate}
+\end{defn}
+

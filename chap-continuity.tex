@@ -1,0 +1,265 @@
+
+\chapter{Continuous morphisms}
+
+This chapter uses the apparatus from the section ``Partially ordered
+dagger categories''.
+
+
+\section{Traditional definitions of continuity}
+
+In this section we will show that having a funcoid or reloid $\uparrow f$
+corresponding to a function $f$ we can express continuity of it by
+the formula $\uparrow f\circ\mu\sqsubseteq\nu\circ\uparrow f$ (or
+similar formulas) where $\mu$ and $\nu$ are some spaces.
+
+
+\subsection{\index{continuity!pre-topology}Pretopology}
+
+Let $(A;\cl_{A})$ and $(B;\cl_{B})$ be preclosure spaces. Then by
+definition a function $f:A\rightarrow B$ is continuous iff $f\cl_{A}(X)\subseteq\cl_{B}(fX)$
+for every $X\in\subsets A$. Let now $\mu$ and $\nu$ be endofuncoids
+corresponding correspondingly to $\cl_{A}$ and $\cl_{B}$. Then the
+condition for continuity can be rewritten as
+\[
+\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\nu)}f\circ\mu\sqsubseteq\nu\circ\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\nu)}f.
+\]
+
+
+
+\subsection{\index{continuity!proximity}Proximity spaces}
+
+Let $\mu$ and $\nu$ be proximity spaces (which I consider a special
+case of endofuncoids). By definition a $\mathbf{Set}$-morphism~$f$
+is a proximity-continuous map (also called equicontinuous) from $\mu$
+to $\nu$ iff
+\[
+\forall X,Y\in\mathscr{T}(\Ob\mu):(X\rsuprel{\mu}Y\Rightarrow\rsupfun fX\rsuprel{\nu}\rsupfun fY).
+\]
+
+
+Equivalently transforming this formula we get
+\begin{gather*}
+\forall X,Y\in\mathscr{T}(\Ob\mu):(X\rsuprel{\mu}Y\Rightarrow\supfun f\uparrow^{\Ob\nu}X\suprel{\nu}\supfun f\uparrow^{\Ob\nu}Y);\\
+\forall X,Y\in\mathscr{T}(\Ob\mu):(X\rsuprel{\mu}Y\Rightarrow\uparrow^{\Ob\nu}X\suprel{f^{-1}\circ\nu\circ f}\uparrow^{\Ob\nu}Y);\\
+\forall X,Y\in\mathscr{T}(\Ob\mu):(X\rsuprel{\mu}Y\Rightarrow X\rsuprel{f^{-1}\circ\nu\circ f}Y);\\
+\mu\sqsubseteq f^{-1}\circ\nu\circ f.
+\end{gather*}
+
+
+So a function $f$ is proximity continuous iff $\mu\sqsubseteq f^{-1}\circ\nu\circ f$.
+
+
+\subsection{\index{continuity!uniformity}Uniform spaces}
+
+Uniform spaces are a special case of endoreloids.
+
+Let $\mu$ and $\nu$ be uniform spaces. By definition a $\mathbf{Set}$-morphism~$f$
+is a uniformly continuous map from $\mu$ to $\nu$ iff 
+\[
+\forall\varepsilon\in\up\nu\exists\delta\in\up\nu\forall(x;y)\in\delta:(fx;fy)\in\varepsilon.
+\]
+
+
+Equivalently transforming this formula we get:
+\begin{gather*}
+\forall\epsilon\in\up\nu\exists\delta\in\up\mu\forall(x;y)\in\delta:\{(fx;fy)\}\subseteq\epsilon;\\
+\forall\epsilon\in\up\nu\exists\delta\in\up\mu\forall(x;y)\in\delta:f\circ\{(x;y)\}\circ f^{-1}\subseteq\epsilon;\\
+\forall\epsilon\in\up\nu\exists\delta\in\up\mu:f\circ\delta\circ f^{-1}\subseteq\epsilon;\\
+\forall\epsilon\in\up\nu:\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f\circ\mu\circ(\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f)^{-1}\sqsubseteq\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}\epsilon;\\
+\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f\circ\mu\circ(\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f)^{-1}\sqsubseteq\nu.
+\end{gather*}
+So a function $f$ is uniformly continuous iff $f\circ\mu\circ f^{-1}\sqsubseteq\nu$.
+
+
+\section{\index{continuity!generalized}Our three definitions of continuity}
+
+I have expressed different kinds of continuity with simple algebraic
+formulas hiding the complexity of traditional epsilon-delta notation
+behind a smart algebra. Let's summarize these three algebraic formulas:
+
+Let $\mu$ and $\nu$ be endomorphisms of some partially ordered precategory.
+Continuous functions can be defined as these morphisms $f$ of this
+precategory which conform to the following formula:
+\[
+f\in\continuous(\mu;\nu)\Leftrightarrow f\in\Mor(\Ob\mu;\Ob\nu)\land f\circ\mu\sqsubseteq\nu\circ f.
+\]
+If the precategory is a partially ordered dagger precategory then
+continuity also can be defined in two other ways:
+\begin{gather*}
+f\in\continuous'(\mu;\nu)\Leftrightarrow f\in\Mor(\Ob\mu;\Ob\nu)\land\mu\sqsubseteq f^{\dagger}\circ\nu\circ f;\\
+f\in\continuous(\mu;\nu)\Leftrightarrow f\in\Mor(\Ob\mu;\Ob\nu)\land f\circ\mu\circ f^{\dagger}\sqsubseteq\nu.
+\end{gather*}
+
+\begin{rem}
+In the examples (above) about funcoids and reloids the ``dagger functor''
+is the reverse of a funcoid or reloid, that is $f^{\dagger}=f^{-1}$.\end{rem}
+\begin{prop}
+Every of these three definitions of continuity forms a wide sub-precategory
+(wide subcategory if the original precategory is a category).\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$\continuous$}] Let $f\in\continuous(\mu;\nu)$, $g\in\continuous(\nu;\pi)$.
+Then $f\circ\mu\sqsubseteq\nu\circ f$, $g\circ\nu\sqsubseteq\pi\circ g$,
+$g\circ f\circ\mu\sqsubseteq g\circ\nu\circ f\sqsubseteq\pi\circ g\circ f$.
+So $g\circ f\in\continuous(\mu;\pi)$. $1_{\Ob\mu}\in\continuous(\mu;\mu)$
+is obvious.
+\item [{$\continuous'$}] Let $f\in\continuous'(\mu;\nu)$, $g\in\continuous'(\nu;\pi)$.
+Then $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$, $\nu\sqsubseteq g^{\dagger}\circ\pi\circ g$;
+\[
+\mu\sqsubseteq f^{\dagger}\circ g^{\dagger}\circ\pi\circ g\circ f;\quad\mu\sqsubseteq(g\circ f)^{\dagger}\circ\pi\circ(g\circ f).
+\]
+So $g\circ f\in\continuous'(\mu;\pi)$. $1_{\Ob\mu}\in\continuous'(\mu;\mu)$
+is obvious.
+\item [{$\continuous''$}] Let $f\in\continuous''(\mu;\nu)$, $g\in\continuous''(\nu;\pi)$.
+Then $f\circ\mu\circ f^{\dagger}\sqsubseteq\nu$, $g\circ\nu\circ g^{\dagger}\sqsubseteq\pi$;
+\[
+g\circ f\circ\mu\circ f^{\dagger}\circ g^{\dagger}\sqsubseteq\pi;\quad(g\circ f)\circ\mu\circ(g\circ f)^{\dagger}\sqsubseteq\pi.
+\]
+So $g\circ f\in\continuous''(\mu;\pi)$. $1_{\Ob\mu}\in\continuous''(\mu;\mu)$
+is obvious.
+\end{description}
+\end{proof}
+\begin{prop}
+For a monovalued morphism $f$ of a partially ordered dagger category
+and its endomorphisms $\mu$ and $\nu$ 
+\[
+f\in\mathrm{C}'(\mu;\nu)\Rightarrow f\in\mathrm{C}(\mu;\nu)\Rightarrow f\in\mathrm{C}''(\mu;\nu).
+\]
+\end{prop}
+\begin{proof}
+Let $f\in\mathrm{C}'(\mu;\nu)$. Then $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
+\[
+f\circ\mu\sqsubseteq f\circ f^{\dagger}\circ\nu\circ f\sqsubseteq1_{\Dst f}\circ\nu\circ f=\nu\circ f;\quad f\in\mathrm{C}(\mu;\nu).
+\]
+
+
+Let $f\in\mathrm{C}(\mu;\nu)$. Then $f\circ\mu\sqsubseteq\nu\circ f$;
+\[
+f\circ\mu\circ f^{\dagger}\sqsubseteq\nu\circ f\circ f^{\dagger}\sqsubseteq\nu\circ1_{\Dst f}=\nu\quad f\in\mathrm{C}''(\mu;\nu).
+\]
+\end{proof}
+\begin{prop}
+For an entirely defined morphism $f$ of a partially ordered dagger
+category and its endomorphisms $\mu$ and $\nu$
+\[
+f\in\mathrm{C'}'(\mu;\nu)\Rightarrow f\in\mathrm{C}(\mu;\nu)\Rightarrow f\in\mathrm{C}'(\mu;\nu).
+\]
+\end{prop}
+\begin{proof}
+Let $f\in\mathrm{C}''(\mu;\nu)$. Then $f\circ\mu\circ f^{\dagger}\sqsubseteq\nu$;
+$f\circ\mu\circ f^{\dagger}\circ f\sqsubseteq\nu\circ f$; $f\circ\mu\circ1_{\Src f}\sqsubseteq\nu\circ f$;
+$f\circ\mu\sqsubseteq\nu\circ f$; $f\in\mathrm{C}(\mu;\nu)$.
+
+Let $f\in\mathrm{C}(\mu;\nu)$. Then $f\circ\mu\sqsubseteq\nu\circ f$;
+$f^{\dagger}\circ f\circ\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
+$1_{\Src\mu}\circ\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$; $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
+$f\in\mathrm{C}'(\mu;\nu)$.
+\end{proof}
+For entirely defined monovalued morphisms our three definitions of
+continuity coincide:
+\begin{thm}
+If $f$ is a monovalued and entirely defined morphism of a partially
+ordered dagger precategory then
+\[
+f\in\mathrm{C}'(\mu;\nu)\Leftrightarrow f\in\mathrm{C}(\mu;\nu)\Leftrightarrow f\in\mathrm{C}''(\mu;\nu).
+\]
+\end{thm}
+\begin{proof}
+From two previous propositions.
+\end{proof}
+The classical general topology theorem that uniformly continuous function
+from a uniform space to an other uniform space is proximity-continuous
+regarding the proximities generated by the uniformities, generalized
+for reloids and funcoids takes the following form:
+\begin{thm}
+If an entirely defined morphism of the category of reloids $f\in\mathrm{C}''(\mu;\nu)$
+for some endomorphisms $\mu$ and $\nu$ of the category of reloids,
+then $\mathsf{\tofcd}f\in\mathrm{C}'(\tofcd\mu;\tofcd\nu)$.\end{thm}
+\begin{xca}
+I leave a simple exercise for the reader to prove the last theorem.
+\end{xca}
+
+\section{\index{continuity!of restricted morphism}Continuity of a restricted
+morphism}
+
+Consider some partially ordered semigroup. (For example it can be
+the semigroup of funcoids or semigroup of reloids on some set regarding
+the composition.) Consider also some lattice (\emph{lattice of objects}).
+(For example take the lattice of set theoretic filters.)
+
+We will map every object $A$ to so called \emph{restricted identity}
+element $I_{A}$ of the semigroup (for example restricted identity
+funcoid or restricted identity reloid). For identity elements we will
+require
+\begin{enumerate}
+\item $I_{A}\circ I_{B}=I_{A\sqcap B}$;
+\item $f\circ I_{A}\sqsubseteq f$; $I_{A}\circ f\sqsubseteq f$.
+\end{enumerate}
+In the case when our semigroup is ``dagger'' (that is is a dagger
+precategory) we will require also $(I_{A})^{\dagger}=I_{A}$.
+
+We can define restricting an element $f$ of our semigroup to an object
+$A$ by the formula $f|_{A}=f\circ I_{A}$.
+
+\index{restricting!rectangular}We can define \emph{rectangular restricting}
+an element $f$ of our semigroup to objects $A$ and $B$ as $I_{B}\circ f\circ I_{A}$.
+Optionally we can define direct product $A\times B$ of two objects
+by the formula (true for funcoids and for reloids):
+\[
+f\sqcap(A\times B)=I_{B}\circ f\circ I_{A}.
+\]
+
+
+\index{restricting!square}\emph{Square restricting} of an element
+$f$ to an object $A$ is a special case of rectangular restricting
+and is defined by the formula $I_{A}\circ f\circ I_{A}$ (or by the
+formula $f\sqcap(A\times A)$).
+\begin{thm}
+\label{rect-cont}For every elements $f$, $\mu$, $\nu$ our semigroup
+and an object $A$
+\begin{enumerate}
+\item \label{contrestr-C}$f\in\continuous(\mu;\nu)\Rightarrow f|_{A}\in\continuous(I_{A}\circ\mu\circ I_{A};\nu)$;
+\item \label{contrestr-Ci}$f\in\continuous'(\mu;\nu)\Rightarrow f|_{A}\in\continuous'(I_{A}\circ\mu\circ I_{A};\nu)$;
+\item \label{contrestr-Cii}$f\in\continuous''(\mu;\nu)\Rightarrow f|_{A}\in\continuous''(I_{A}\circ\mu\circ I_{A};\nu)$. 
+\end{enumerate}
+
+(Two last items are true for the case when our semigroup is dagger.)
+
+\end{thm}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{contrestr-C}}] ~
+\begin{align*}
+f|_{A}\in\continuous(I_{A}\circ\mu\circ I_{A};\nu) & \Leftrightarrow\\
+f|_{A}\circ I_{A}\circ\mu\circ I_{A}\sqsubseteq\nu\circ f|_{A} & \Leftrightarrow\\
+f\circ I_{A}\circ I_{A}\circ\mu\circ I_{A}\sqsubseteq\nu\circ f|_{A} & \Leftrightarrow\\
+f\circ I_{A}\circ\mu\circ I_{A}\sqsubseteq\nu\circ f\circ I_{A} & \Leftarrow\\
+f\circ I_{A}\circ\mu\sqsubseteq\nu\circ f & \Leftarrow\\
+f\circ\mu\sqsubseteq\nu\circ f & \Leftrightarrow\\
+f\in\continuous(\mu;\nu).
+\end{align*}
+
+\item [{\ref{contrestr-Ci}}] ~
+\begin{align*}
+f|_{A}\in\continuous'(I_{A}\circ\mu\circ I_{A};\nu) & \Leftrightarrow\\
+I_{A}\circ\mu\circ I_{A}\sqsubseteq(f|_{A})^{\dagger}\circ\nu\circ f|_{A} & \Leftarrow\\
+I_{A}\circ\mu\circ I_{A}\sqsubseteq(f\circ I_{A})^{\dagger}\circ\nu\circ f\circ I_{A} & \Leftrightarrow\\
+I_{A}\circ\mu\circ I_{A}\sqsubseteq I_{A}\circ f^{\dagger}\circ\nu\circ f\circ I_{A} & \Leftarrow\\
+\mu\sqsubseteq f^{\dagger}\circ\nu\circ f & \Leftrightarrow\\
+f\in\continuous'(\mu;\nu).
+\end{align*}
+
+\item [{\ref{contrestr-Cii}}] ~
+\begin{align*}
+f|_{A}\in\continuous''(I_{A}\circ\mu\circ I_{A};\nu) & \Leftrightarrow\\
+f|_{A}\circ I_{A}\circ\mu\circ I_{A}\circ(f|_{A})^{\dagger}\sqsubseteq\nu & \Leftrightarrow\\
+f\circ I_{A}\circ I_{A}\circ\mu\circ I_{A}\circ I_{A}\circ f^{\dagger}\sqsubseteq\nu & \Leftrightarrow\\
+f\circ I_{A}\circ\mu\circ I_{A}\circ f^{\dagger}\sqsubseteq\nu & \Leftarrow\\
+f\circ\mu\circ f^{\dagger}\sqsubseteq\nu & \Leftrightarrow\\
+f\in\continuous''(\mu;\nu).
+\end{align*}
+\end{widedisorder}
+\end{proof}
+

@@ -1,0 +1,233 @@
+
+\chapter{On distributivity of composition with a principal reloid}
+
+
+\section{\index{decomposition of composition}Decomposition of composition
+of binary relations}
+\begin{rem}
+Sorry for an unfortunate choice of terminology: ``composition''
+and ``decomposition'' are unrelated.
+\end{rem}
+The idea of the proof below is that composition of binary relations
+can be decomposed into two operations: $\otimes$ and $\dom$:
+\[
+g\otimes f=\setcond{((x;z);y)}{x\mathrel fy\land y\mathrel gz}.
+\]
+Composition of binary relations can be decomposed: $g\circ f=\dom(g\otimes f)$.
+
+It can be decomposed even further: $g\otimes f=\Theta_{0}f\cap\Theta_{1}g$
+where
+\[
+\Theta_{0}f=\setcond{((x;z);y)}{x\mathrel fy,z\in\mho}\quad\text{and}\quad\Theta_{1}f=\setcond{((x;z);y)}{y\mathrel fz,x\in\mho}.
+\]
+(Here $\mho$ is the Grothendieck universe.)
+
+Now we will do a similar trick with reloids.
+
+
+\section{\index{decomposition of composition!of reloids}Decomposition of
+composition of reloids}
+
+A similar thing for reloids:
+
+In this chapter we will equate reloids with filters on cartesian products
+of sets. 
+\begin{align*}
+g\circ f & =\\
+\bigsqcap^{\mathsf{RLD}(\Src f;\Dst g)}\setcond{G\circ F}{F\in\GR f,G\in\GR g} & =\\
+\bigsqcap^{\mathsf{RLD}(\Src f;\Dst g)}\setcond{\dom(G\otimes F)}{F\in\GR f,G\in\GR g}.
+\end{align*}
+
+\begin{lem}
+$\setcond{G\otimes F}{F\in\GR f,G\in\GR g}$ is a filter base.\end{lem}
+\begin{proof}
+Let $P,Q\in\setcond{G\otimes F}{F\in\GR f,G\in\GR g}$. Then $P=G_{0}\otimes F_{0}$,
+$Q=G_{1}\otimes F_{1}$ for some $F_{0},F_{1}\in f$, $G_{0},G_{1}\in g$.
+Then $F_{0}\cap F_{1}\in\up f$, $G_{0}\cap G_{1}\in\up g$ and thus
+\[
+P\cap Q\supseteq(F_{0}\cap F_{1})\otimes(G_{0}\cap G_{1})\in\setcond{G\otimes F}{F\in\GR f,G\in\GR g}.
+\]
+\end{proof}
+\begin{cor}
+$\setcond{\uparrow^{\mathscr{F}(\Src f\times\Dst g)}(G\otimes F)}{F\in\GR f,G\in\GR g}$
+is a generalized filter base.\end{cor}
+\begin{prop}
+$g\circ f=\dom\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\setcond{G\otimes F}{F\in\GR f,G\in\GR g}$.\end{prop}
+\begin{proof}
+$\uparrow^{\mathscr{F}(\Src f;\Dst g)}\dom(G\otimes F)\sqsupseteq\dom\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\setcond{G\otimes F}{F\in\GR f,G\in\GR g}$.
+Thus
+\[
+g\circ f\sqsupseteq\dom\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\setcond{G\otimes F}{F\in\GR f,G\in\GR g}.
+\]
+
+
+Let $X\in\dom\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\setcond{G\otimes F}{F\in\up f,G\in\up g}$.
+Then there exist $Y$ such that
+\[
+X\times Y\in\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\setcond{G\otimes F}{F\in\up f,G\in\up g}.
+\]
+So because it is a generalized filter base $X\times Y\supseteq G\otimes F$
+for some $F\in\up f$, $G\in\up g$. Thus $X\in\up\dom(G\otimes F)$.
+$X\in\up(g\circ f)$.
+\end{proof}
+We can define $g\otimes f$ for reloids $f$, $g$:
+\[
+g\otimes f=\setcond{G\otimes F}{F\in\GR f,G\in\GR g}.
+\]
+Then
+\[
+g\circ f=\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\rsupfun{\dom}(g\otimes f)=\dom\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times\Dst g;\mho)}}(g\otimes f)
+\]
+
+
+
+\section{Lemmas for the main result}
+\begin{lem}
+$(g\otimes f)\cap(h\otimes f)=(g\cap h)\otimes f$ for binary relations
+$f$, $g$, $h$.\end{lem}
+\begin{proof}
+~
+\begin{multline*}
+(g\cap h)\otimes f=\Theta_{0}f\cap\Theta_{1}(g\cap h)=\Theta_{0}f\cap(\Theta_{1}g\cap\Theta_{1}h)=\\
+(\Theta_{0}f\cap\Theta_{1}g)\cap(\Theta_{0}f\cap\Theta_{1}h)=(g\otimes f)\cap(h\otimes f).
+\end{multline*}
+\end{proof}
+\begin{lem}
+Let $F=\uparrow^{\mathsf{RLD}}f$ be a principal reloid (for a $\mathbf{Rel}$-morphism~$f$),
+$T$ be~a set of reloids from $\Dst F$ to a set $V$.
+\[
+\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}G\otimes f=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F).
+\]
+\end{lem}
+\begin{proof}
+$\bigsqcap_{G\in\up\bigsqcup T}\uparrow^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)\sqsupseteq\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$
+is obvious.
+
+Let $K\in\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$.
+Then for each $G\in T$
+\[
+K\in\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F);
+\]
+$K\in\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times V;\mho)}}\setcond{\Gamma\otimes f}{\Gamma\in G}$.
+Then $K\in\setcond{\Gamma\otimes f}{\Gamma\in G}$ by properties of
+generalized filter bases.
+
+$K\in\setcond{(\Gamma_{0}\cap\dots\cap\Gamma_{n})\otimes f}{n\in\mathbb{N},\Gamma_{i}\in G}=\setcond{(\Gamma_{0}\otimes f)\cap\dots\cap(\Gamma_{n}\otimes f)}{n\in\mathbb{N},\Gamma_{i}\in G}$.
+
+$\forall G\in T:K\supseteq(\Gamma_{G,0}\otimes f)\cap\dots\cap(\Gamma_{G,n}\otimes f)$
+for some $n\in\mathbb{N}$, $\Gamma_{G,i}\in G$.
+
+$K\supseteq\setcond{(\Gamma_{0}\otimes f)\cap\dots\cap(\Gamma_{n}\otimes f)}{n\in\mathbb{N},\Gamma_{i}\in G}$
+where $\Gamma_{i}=\bigcup_{g\in G}\Gamma_{g,i}\in\up\bigsqcup T$.
+
+$K\in\setcond{(\Gamma_{0}\otimes f)\cap\dots\cap(\Gamma_{n}\otimes f)}{n\in\mathbb{N}}$.
+So
+\begin{multline*}
+K\in\setcond{(\Gamma'_{0}\otimes f)\cap\dots\cap(\Gamma'_{n}\otimes f)}{n\in\mathbb{N},\Gamma'_{i}\in\up\bigsqcup T}=\\
+\setcond{(\Gamma'_{0}\cap\dots\cap\Gamma'_{n})\otimes f}{n\in\mathbb{N},\Gamma'_{i}\in\up\bigsqcup T}=\\
+\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\setcond{G\otimes f}{G\in\up\bigsqcup T}.
+\end{multline*}
+
+\end{proof}
+
+\section{Proof of the main result}
+\begin{thm}
+$\left(\bigsqcup T\right)\circ F=\bigsqcup\setcond{G\circ F}{G\in T}$
+for every principal reloid $F=\uparrow^{\mathsf{RLD}}f$ (for a $\mathbf{Rel}$-morphism~$f$)
+and a set $T$ of reloids from $\Dst F$ to some set $V$. (In other
+words principal reloids are co-metacomplete and thus also metacomplete
+by duality.)\end{thm}
+\begin{proof}
+~
+\begin{align*}
+\left(\bigsqcup T\right)\circ F & =\\
+\bigsqcap^{\mathsf{RLD}(\Src f;V)}\rsupfun{\dom}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
+\dom\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
+\dom\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}G\otimes f;\\
+\bigsqcup_{G\in T}G\circ F & =\\
+\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f;V)}\rsupfun{\dom}(G\otimes F) & =\\
+\bigsqcup_{G\in T}\dom\bigsqcap^{\mathsf{RLD}(\Src f;V)}(G\otimes F) & =\\
+\dom\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f;V)}(G\otimes F).
+\end{align*}
+
+
+It's enough to prove
+\[
+\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)
+\]
+but this is the statement of the lemma.
+\end{proof}
+
+\section{\index{embedding!reloids into funcoids}Embedding reloids into funcoids}
+\begin{defn}
+Let $f$ be a reloid. The funcoid
+\[
+\rho f=\mathsf{FCD}(\subsets(\Src f\times\Src f);\subsets(\Dst f\times\Dst f))
+\]
+is defined by the formulas:
+\[
+\supfun{\rho f}x=f\circ x\quad\text{and}\quad\supfun{\rho f^{-1}}y=f^{-1}\circ y
+\]
+where $x$ are endoreloids on $\Src f$ and $y$ are endoreloids on
+$\Dst f$.\end{defn}
+\begin{prop}
+It is really a funcoid (if we equate reloids $x$ and $y$ with corresponding
+filters on Cartesian products of sets).\end{prop}
+\begin{proof}
+$y\nasymp\supfun{\rho f}x\Leftrightarrow y\nasymp f\circ x\Leftrightarrow f^{-1}\circ y\nasymp x\Leftrightarrow\supfun{\rho f^{-1}}y\nasymp x$.\end{proof}
+\begin{cor}
+$(\rho f)^{-1}=\rho f^{-1}$.\end{cor}
+\begin{defn}
+It can be continued to arbitrary funcoids $x$ having destination
+$\Src f$ by the formula $\supfun{\rho^{\ast}f}x=\supfun{\rho f}\id_{\Src f}\circ x=f\circ x$.\end{defn}
+\begin{prop}
+$\rho$ is an injection.\end{prop}
+\begin{proof}
+Consider $x=\id_{\Src f}$.\end{proof}
+\begin{prop}
+$\rho(g\circ f)=(\rho g)\circ(\rho f)$.\end{prop}
+\begin{proof}
+$\supfun{\rho(g\circ f)}x=g\circ f\circ x=\supfun{\rho g}\supfun{\rho f}x=(\supfun{\rho g}\circ\supfun{\rho f})x$.
+Thus $\supfun{\rho(g\circ f)}=\supfun{\rho g}\circ\supfun{\rho f}=\supfun{(\rho g)\circ(\rho f)}$
+and so $\rho(g\circ f)=(\rho g)\circ(\rho f)$.\end{proof}
+\begin{thm}
+$\rho\bigsqcup F=\bigsqcup\rsupfun{\rho}F$ for a set $F$ of reloids.\end{thm}
+\begin{proof}
+It's enough to prove $\rsupfun{\rho\bigsqcup F}X=\rsupfun{\bigsqcup\rsupfun{\rho}F}X$
+for a set $X$.
+
+Really,
+\begin{align*}
+\rsupfun{\rho\bigsqcup F}X & =\\
+\supfun{\rho\bigsqcup F}\uparrow X & =\\
+\bigsqcup F\circ\uparrow X & =\\
+\bigsqcup\setcond{f\circ\uparrow X}{f\in F} & =\\
+\bigsqcup\setcond{\supfun{\rho f}\uparrow X}{f\in F} & =\\
+\supfun{\bigsqcup\setcond{\rho f}{f\in F}}X & =\\
+\rsupfun{\bigsqcup\rsupfun{\rho}F}X.
+\end{align*}
+\end{proof}
+\begin{conjecture}
+$\rho\bigsqcap F=\bigsqcap\rsupfun{\rho}F$ for a set $F$ of reloids.\end{conjecture}
+\begin{prop}
+$\rho1_{A}^{\mathsf{RLD}}=1_{\subsets(A\times A)}^{\mathsf{FCD}}$.\end{prop}
+\begin{proof}
+$\supfun{\rho1_{A}^{\mathsf{RLD}}}x=1_{\subsets(A\times A)}^{\mathsf{FCD}}\circ x=x$.
+\end{proof}
+We can try to develop further theory by applying embedding of reloids
+into funcoids for researching of properties of reloids.
+\begin{thm}
+Reloid $f$ is monovalued iff funcoid $\rho f$ is monovalued.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+\rho f\text{ is monovalued} & \Leftrightarrow\\
+(\rho f)\circ(\rho f)^{-1}\sqsubseteq1_{\Dst\rho f} & \Leftrightarrow\\
+\rho(f\circ f^{-1})\sqsubseteq1_{\Dst\rho f} & \Leftrightarrow\\
+\rho(f\circ f^{-1})\sqsubseteq1_{\subsets(\Dst f\times\Dst f)}^{\mathsf{FCD}} & \Leftrightarrow\\
+\rho(f\circ f^{-1})\sqsubseteq\rho1_{\Dst f}^{\mathsf{RLD}} & \Leftrightarrow\\
+f\circ f^{-1}\sqsubseteq1_{\Dst f}^{\mathsf{RLD}} & \Leftrightarrow\\
+f\text{ is monovalued}.
+\end{align*}
+\end{proof}
+

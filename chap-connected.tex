@@ -1,0 +1,395 @@
+
+\chapter{Connectedness regarding funcoids and reloids}
+
+
+\section{Some lemmas}
+\begin{lem}
+Let $U$ be a set, $A,B\in\mathscr{T}U$ be typed sets, $f$ be an
+endo-funcoid on $U$. If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$
+then $f$ is closed on $A$.\end{lem}
+\begin{proof}
+Let $A\sqcup B\in\dom f\sqcup\im f$.
+\begin{align*}
+\lnot(A\rsuprel fB) & \Leftrightarrow\\
+B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
+(\dom f\sqcup\im f)\sqcap B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
+((\dom f\sqcup\im f)\setminus A)\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Leftrightarrow\\
+\rsupfun fA\sqsubseteq A.
+\end{align*}
+\end{proof}
+\begin{cor}
+If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$ then
+$f$ is closed on $A\setminus B$ for a funcoid $f\in\mathsf{FCD}(U;U)$
+for every sets $U$ and typed sets $A,B\in\mathscr{T}U$.\end{cor}
+\begin{proof}
+Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$. Then
+\[
+\lnot((A\setminus B)\rsuprel fB)\land(A\setminus B)\sqcup B\in\dom f\sqcup\im f.
+\]
+\end{proof}
+\begin{lem}
+If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$ then
+$\lnot(A\rsuprel{f^{n}}B)$ for every whole positive $n$.\end{lem}
+\begin{proof}
+Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$. From
+the above lemma $\rsupfun fA\sqsubseteq A$. $B\sqcap\supfun fA=\bot^{\mathscr{F}(U)}$,
+consequently $\rsupfun fA\sqsubseteq A\setminus B$. Because (by the
+above corollary) $f$ is closed on $A\setminus B$, then $\supfun f\supfun fA\sqsubseteq A\setminus B$,
+$\supfun f\supfun f\supfun fA\sqsubseteq A\setminus B$, etc. So $\supfun{f^{n}}A\sqsubseteq A\setminus B$,
+$B\asymp\supfun{f^{n}}A$, $\lnot(A\rsuprel{f^{n}}B)$.
+\end{proof}
+
+\section{Endomorphism series}
+\begin{defn}
+$S_{1}(\mu)=\mu\sqcup\mu^{2}\sqcup\mu^{3}\sqcup\ldots$ for an endomorphism
+$\mu$ of a precategory with countable join of morphisms (that is
+join defined for every countable set of morphisms).
+\end{defn}
+
+\begin{defn}
+\index{endomorphism series}$S(\mu)=\mu^{0}\sqcup S_{1}(\mu)=\mu^{0}\sqcup\mu\sqcup\mu^{2}\sqcup\mu^{3}\sqcup\ldots$where
+$\mu^{0}=1_{\Ob\mu}$ (identity morphism for the object $\Ob\mu$)
+where $\Ob\mu$ is the object of endomorphism $\mu$ for an endomorphism
+$\mu$ of a category with countable join of morphisms.
+\end{defn}
+I call $S_{1}$ and $S$ \emph{endomorphism series}.
+\begin{prop}
+The relation $S(\mu)$ is transitive for the category~$\mathbf{Rel}$.\end{prop}
+\begin{proof}
+~
+\begin{multline*}
+S(\mu)\circ S(\mu)=\mu^{0}\sqcup S(\mu)\sqcup\mu\circ S(\mu)\sqcup\mu^{2}\circ S(\mu)\sqcup\dots=\\
+(\mu^{0}\sqcup\mu^{1}\sqcup\mu^{2}\sqcup\dots)\sqcup(\mu^{1}\sqcup\mu^{2}\sqcup\mu^{3}\sqcup\dots)\sqcup(\mu^{2}\sqcup\mu^{3}\sqcup\mu^{4}\sqcup\dots)=\\
+\mu^{0}\sqcup\mu^{1}\sqcup\mu^{2}\sqcup\dots=S(\mu).
+\end{multline*}
+
+\end{proof}
+
+\section{Connectedness regarding binary relations}
+
+Before going to research connectedness for funcoids and reloids we
+will excurse into the basic special case of connectedness regarding
+binary relations on a set~$\mho$.
+
+This is commonly studied in ``graph theory'' courses. \emph{Digraph}
+as commonly defined is essentially the same as an endomorphism of
+the category~$\mathbf{Rel}$.
+\begin{defn}
+\index{connectedness!regarding binary relation}A set~$A$ is called
+\emph{(strongly) connected} regarding a binary relation~$\mu$ on~$U$
+when
+\[
+\forall X,Y\in\subsets U\setminus\{\emptyset\}:(X\cup Y=A\Rightarrow X\rsuprel{\mu}Y).
+\]
+
+\end{defn}
+
+\begin{defn}
+\index{connectedness!regarding mathbf{Rel}
+-endomorphism@regarding $\mathbf{Rel}$-endomorphism}A typed set~$A$ of type~$U$ is called \emph{(strongly) connected}
+regarding a $\mathbf{Rel}$-endomorphism~$\mu$ on~$U$ when
+\[
+\forall X\in\mathscr{T}(\Ob\mu)\setminus\{\bot^{\mathscr{T}(\Ob\mu)}\},Y\in\mathscr{T}(\Ob\mu)\setminus\{\bot^{\mathscr{T}(\Ob\mu)}\}:(X\sqcup Y=A\Rightarrow X\rsuprel{\mu}Y).
+\]
+\end{defn}
+\begin{obvious}
+A typed set~$A$ is connected regarding $\mathbf{Rel}$-endomorphism~$\mu$
+on its type iff $\GR A$ is connected regarding $\GR\mu$.
+\end{obvious}
+Let $\mho$ be a set.
+\begin{defn}
+\index{path}\emph{Path} between two elements $a,b\in\mho$ in a set
+$A\subseteq\mho$ through binary relation $\mu$ is the finite sequence
+$x_{0}\ldots x_{n}$ where $x_{0}=a$, $x_{n}=b$ for $n\in\mathbb{N}$
+and $x_{i}\mathrel{(\mu\cap A\times A)}x_{i+1}$ for every $i=0,\ldots,n-1$.
+$n$ is called path \emph{length}.\end{defn}
+\begin{prop}
+There exists path between every element $a\in\mho$ and that element
+itself.\end{prop}
+\begin{proof}
+It is the path consisting of one vertex (of length $0$).\end{proof}
+\begin{prop}
+There is a path from element $a$ to element $b$ in a set $A$ through
+a binary relation $\mu$ iff $a\mathrel{(S(\mu\cap A\times A))}b$
+(that is $(a,b)\in S(\mu\cap A\times A)$).\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] If a path from $a$ to $b$ exists, then $\{b\}\subseteq\rsupfun{(\mu\cap A\times A)^{n}}\{a\}$
+where $n$ is the path length. Consequently $\{b\}\subseteq\rsupfun{S(\mu\cap A\times A)}\{a\}$;
+$a\mathrel{(S(\mu\cap A\times A))}b$.
+\item [{$\Leftarrow$}] If $a\mathrel{(S(\mu\cap A\times A))}b$ then there
+exists $n\in\mathbb{N}$ such that $a\mathrel{(\mu\cap A\times A)^{n}}b$.
+By definition of composition of binary relations this means that there
+exist finite sequence $x_{0}\ldots x_{n}$ where $x_{0}=a$, $x_{n}=b$
+for $n\in\mathbb{}{N}$ and $x_{i}\mathrel{(\mu\cap A\times A)}x_{i+1}$
+for every $i=0,\ldots,n-1$. That is there is a path from $a$ to
+$b$.
+\end{description}
+\end{proof}
+\begin{thm}
+The following statements are equivalent for a binary relation $\mu$
+and a set $A$:
+\begin{enumerate}
+\item \label{rconn-path}For every $a,b\in A$ there is a path between $a$
+and $b$ in $A$ through $\mu$.
+\item \label{rconn-ge}$S(\mu\cap(A\times A))\supseteq A\times A$.
+\item \label{rconn-eq}$S(\mu\cap(A\times A))=A\times A$.
+\item \label{rconn-conn}$A$ is connected regarding $\mu$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{rconn-path}$\Rightarrow$\ref{rconn-ge}}] Let for every
+$a,b\in A$ there is a path between $a$ and $b$ in $A$ through
+$\mu$. Then $a\mathrel{(S(\mu\cap A\times A))}b$ for every $a,b\in A$.
+It is possible only when $S(\mu\cap(A\times A))\supseteq A\times A$.
+\item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-path}}] For every two
+vertices $a$ and $b$ we have $a\mathrel{(S(\mu\cap A\times A))}b$.
+So (by the previous theorem) for every two vertices $a$ and $b$
+there exists a path from $a$ to $b$.
+\item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-conn}}] Suppose $\lnot(X\rsuprel{\mu\cap(A\times A)}Y)$
+for some $X,Y\in\mathscr{P}\mho\setminus\{\emptyset\}$ such that
+$X\cup Y=A$. Then by a lemma $\lnot(X\rsuprel{(\mu\cap(A\times A))^{n}}Y)$
+for every $m\in\mathbb{N}$. Consequently $\lnot(X\rsuprel{S(\mu\cap(A\times A))}Y)$.
+So $S(\mu\cap(A\times A))\ne A\times A$.
+\item [{\ref{rconn-conn}$\Rightarrow$\ref{rconn-eq}}] If $\rsupfun{S(\mu\cap(A\times A))}\{v\}=A$
+for every vertex $v$ then $S(\mu\cap(A\times A))=A\times A$. Consider
+the remaining case when $V\eqdef\rsupfun{S(\mu\cap(A\times A))}\{v\}\subset A$
+for some vertex $v$. Let $W=A\setminus V$. If $\card A=1$ then
+$S(\mu\cap(A\times A))\supseteq\id_{A}=A\times A$; otherwise $W\neq\emptyset$.
+Then $V\cup W=A$ and so $V\rsuprel{\mu}W$ what is equivalent to
+$V\rsuprel{\mu\cap(A\times A)}W$ that is $\rsupfun{\mu\cap(A\times A)}V\cap W\ne\emptyset$.
+This is impossible because 
+\begin{multline*}
+\rsupfun{\mu\cap(A\times A)}V=\rsupfun{\mu\cap(A\times A)}\rsupfun{S(\mu\cap(A\times A))}V=\\
+\rsupfun{S_{1}(\mu\cap(A\times A))}V\subseteq\rsupfun{S(\mu\cap(A\times A))}V=V.
+\end{multline*}
+
+\item [{\ref{rconn-ge}$\Rightarrow$\ref{rconn-eq}}] Because $S(\mu\cap(A\times A))\subseteq A\times A$.
+\end{description}
+\end{proof}
+\begin{cor}
+A set $A$ is connected regarding a binary relation $\mu$ iff it
+is connected regarding $\mu\cap(A\times A)$.\end{cor}
+\begin{defn}
+\index{connected component}A \emph{connected component} of a set
+$A$ regarding a binary relation $F$ is a maximal connected subset
+of $A$.\end{defn}
+\begin{thm}
+The set $A$ is partitioned into connected components (regarding every
+binary relation $F$).\end{thm}
+\begin{proof}
+Consider the binary relation $a\sim b\Leftrightarrow a\mathrel{(S(F))}b\wedge b\mathrel{(S(F))}a$.
+$\sim$ is a symmetric, reflexive, and transitive relation. So all
+points of $A$ are partitioned into a collection of sets $Q$. Obviously
+each component is (strongly) connected. If a set $R\subseteq A$ is
+greater than one of that connected components $A$ then it contains
+a point $b\in B$ where $B$ is some other connected component. Consequently
+$R$ is disconnected.\end{proof}
+\begin{prop}
+A set is connected (regarding a binary relation) iff it has one connected
+component.\end{prop}
+\begin{proof}
+Direct implication is obvious. Reverse is proved by contradiction.
+\end{proof}
+
+\section{Connectedness regarding funcoids and reloids}
+\begin{defn}
+$S_{1}^{\ast}(\mu)=\bigsqcap_{M\in\up\mu}^{\mathsf{RLD}}S_{1}(M)$
+for an endoreloid~$\mu$.
+\end{defn}
+
+\begin{defn}
+\index{connectivity reloid}\emph{Connectivity reloid} $S^{\ast}(\mu)$
+for an endoreloid $\mu$ is defined as follows: 
+\[
+S^{\ast}(\mu)=\bigsqcap_{M\in\up\mu}^{\mathsf{RLD}}S(M).
+\]
+
+\end{defn}
+Do not mess the word \emph{connectivity} with the word \emph{connectedness}
+which means being connected.\footnote{In some math literature these two words are used interchangeably.}
+\begin{prop}
+$S^{\ast}(\mu)=1_{\Ob\mu}^{\mathsf{RLD}}\sqcup S_{1}^{\ast}(\mu)$
+for every endoreloid $\mu$.\end{prop}
+\begin{proof}
+By the proposition \ref{b-f-back-distr}.\end{proof}
+\begin{prop}
+$S^{\ast}(\mu)=S(\mu)$ if $\mu$ is a principal reloid.\end{prop}
+\begin{proof}
+$S^{\ast}(\mu)=\bigsqcap\{S(\mu)\}=S(\mu)$.\end{proof}
+\begin{defn}
+\index{connected!regarding endoreloid}A filter $\mathcal{A}\in\mathscr{F}(\Ob\mu)$
+is called \emph{connected} regarding an endoreloid $\mu$ when $S^{\ast}(\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}))\sqsupseteq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.\end{defn}
+\begin{obvious}
+A filter $\mathcal{A}\in\mathscr{F}(\Ob\mu)$ is connected regarding
+an endoreloid $\mu$ iff $S^{\ast}(\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}))=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.\end{obvious}
+\begin{defn}
+\index{connected!regarding endofuncoid}A filter $\mathcal{A}\in\mathscr{F}(\Ob\mu)$
+is called \emph{connected} regarding an endofuncoid $\mu$ when
+\[
+\forall\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Ob\mu)\setminus\{\bot^{\mathscr{F}(\Ob\mu)}\}:(\mathcal{X}\sqcup\mathcal{Y}=\mathcal{A}\Rightarrow\mathcal{X}\suprel{\mu}\mathcal{Y}).
+\]
+\end{defn}
+\begin{prop}
+Let $A$ be a typed set of type~$U$. The filter $\uparrow A$ is
+connected regarding an endofuncoid $\mu$ on~$U$ iff
+\[
+\forall X,Y\in\mathscr{T}(\Ob\mu)\setminus\{\bot^{\mathscr{T}(\Ob\mu)}\}:(X\sqcup Y=A\Rightarrow X\rsuprel{\mu}Y).
+\]
+\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] Obvious.
+\item [{$\Leftarrow$}] It follows from co-separability of filters.
+\end{description}
+\end{proof}
+\begin{thm}
+The following are equivalent for every typed set $A$ of type~$U$
+and $\mathbf{Rel}$-endomorphism~$\mu$ on a set $U$:
+\begin{enumerate}
+\item \label{princ-conn-rel}$A$ is connected regarding~$\mu$.
+\item \label{princ-conn-rld}$\uparrow^{U}A$ is connected regarding $\uparrow^{\mathsf{RLD}}\mu$.
+\item \label{princ-conn-fcd}$\uparrow^{U}A$ is connected regarding $\uparrow^{\mathsf{FCD}}\mu$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-rld}}] ~
+\begin{align*}
+S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A)) & =\\
+S^{\ast}(\uparrow^{\mathsf{RLD}}(\mu\sqcap(A\times A))) & =\\
+\uparrow^{\mathsf{RLD}}S(\mu\sqcap(A\times A)).
+\end{align*}
+So
+\begin{align*}
+S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A))\sqsupseteq\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A & \Leftrightarrow\\
+\uparrow^{\mathsf{RLD}(U;U)}S(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A.
+\end{align*}
+
+\item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-fcd}}] It
+follows from the previous proposition.
+\end{description}
+\end{proof}
+Next is conjectured a statement more strong than the above theorem:
+\begin{conjecture}
+Let $\mathcal{A}$ be a filter on a set $U$ and $F$ is a $\mathbf{Rel}$-endomorphism
+on $U$.
+
+$\mathcal{A}$ is connected regarding $\uparrow^{\mathsf{FCD}}F$
+iff $\mathcal{A}$ is connected regarding $\uparrow^{\mathsf{RLD}}F$.\end{conjecture}
+\begin{obvious}
+A filter $\mathcal{A}$ is connected regarding a reloid $\mu$ iff
+it is connected regarding the reloid $\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})$.
+\end{obvious}
+
+\begin{obvious}
+A filter $\mathcal{A}$ is connected regarding a funcoid $\mu$ iff
+it is connected regarding the funcoid $\mu\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{A})$.\end{obvious}
+\begin{thm}
+A filter $\mathcal{A}$ is connected regarding a reloid $f$ iff $\mathcal{A}$
+is connected regarding every $F\in\rsupfun{\uparrow^{\mathsf{RLD}}}\up f$.\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{$\Rightarrow$}] Obvious.
+\item [{$\Leftarrow$}] $\mathcal{A}$ is connected regarding $\uparrow^{\mathsf{RLD}}F$
+iff $S(F)=F^{0}\sqcup F^{1}\sqcup F^{2}\sqcup\dots\in\up\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
+
+
+$S^{\ast}(f)=\bigsqcap_{F\in\up f}^{\mathsf{RLD}}S(F)\sqsupseteq\bigsqcap_{F\in\up f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
+
+\end{description}
+\end{proof}
+\begin{conjecture}
+A filter $\mathcal{A}$ is connected regarding a funcoid $f$ iff
+$\mathcal{A}$ is connected regarding every $F\in\rsupfun{\uparrow^{\mathsf{FCD}}}\up f$.
+\end{conjecture}
+The above conjecture is open even for the case when $\mathcal{A}$
+is a principal filter.
+\begin{conjecture}
+A filter $\mathcal{A}$ is connected regarding a reloid $f$ iff it
+is connected regarding the funcoid $\tofcd f$.
+\end{conjecture}
+The above conjecture is true in the special case of principal filters:
+\begin{prop}
+A filter $\uparrow^{\Ob\mu}A$ (for a set $A$) is connected regarding
+an endoreloid $f$ iff it is connected regarding the endofuncoid $\tofcd f$.\end{prop}
+\begin{proof}
+$\uparrow^{\Ob\mu}A$ is connected regarding a reloid $f$ iff $A$
+is connected regarding every $F\in\up f$ that is when (taken into
+account that connectedness for $\uparrow^{\mathsf{RLD}}F$ is the
+same as connectedness of $\uparrow^{\mathsf{FCD}}F$)
+\begin{align*}
+\forall F\in\up f\forall\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Ob f)\setminus\{\bot^{\mathscr{F}(\Ob f)}\}:(\mathcal{X}\sqcup\mathcal{Y}=\uparrow^{\Ob f}A\Rightarrow\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}) & \Leftrightarrow\\
+\forall\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Ob f)\setminus\{\bot^{\mathscr{F}(\Ob f)}\}\forall F\in\up f:(\mathcal{X}\sqcup\mathcal{Y}=\uparrow^{\Ob f}A\Rightarrow\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}) & \Leftrightarrow\\
+\forall\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Ob f)\setminus\{\bot^{\mathscr{F}(\Ob f)}\}(\mathcal{X}\sqcup\mathcal{Y}=\uparrow^{\Ob f}A\Rightarrow\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}) & \Leftrightarrow\\
+\forall\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Ob f)\setminus\{\bot^{\mathscr{F}(\Ob f)}\}(\mathcal{X}\sqcup\mathcal{Y}=\uparrow^{\Ob f}A\Rightarrow\mathcal{X}\suprel{\tofcd f}\mathcal{Y})
+\end{align*}
+that is when the set $\uparrow^{\Ob\mu}A$ is connected regarding
+the funcoid $\tofcd f$.\end{proof}
+\begin{conjecture}
+A set $A$ is connected regarding an endofuncoid $\mu$ iff for every
+$a,b\in A$ there exists a totally ordered set $P\subseteq A$ such
+that $\min P=a$, $\max P=b$ and
+\[
+\forall q\in P\setminus\{b\}:\setcond{x\in P}{x\le q}\rsuprel{\mu}\setcond{x\in P}{x>q}.
+\]
+
+
+Weaker condition:
+\[
+\forall q\in P\setminus\{b\}:\setcond{x\in P}{x\le q}\rsuprel{\mu}\setcond{x\in P}{x>q}\lor\forall q\in P\setminus\{a\}:\setcond{x\in P}{x<q}\rsuprel{\mu}\setcond{x\in P}{x\ge q}.
+\]
+
+\end{conjecture}
+
+\section{Algebraic properties of $S$ and $S^{\ast}$}
+\begin{thm}
+$S^{\ast}(S^{\ast}(f))=S^{\ast}(f)$ for every endoreloid $f$.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+S^{\ast}(S^{\ast}(f)) & =\\
+\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(R) & \sqsubseteq\\
+\bigsqcap_{R\in\setcond{S(F)}{F\in\up f}}^{\mathsf{RLD}}S(R) & =\\
+\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(S(R)) & =\\
+\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(R) & =\\
+S^{\ast}(f).
+\end{align*}
+
+
+So $S^{\ast}(S^{\ast}(f))\sqsubseteq S^{\ast}(f)$. That $S^{\ast}(S^{\ast}(f))\sqsupseteq S^{\ast}(f)$
+is obvious.\end{proof}
+\begin{cor}
+$S^{\ast}(S(f))=S(S^{\ast}(f))=S^{\ast}(f)$ for every endoreloid
+$f$.\end{cor}
+\begin{proof}
+Obviously $S^{\ast}(S(f))\sqsupseteq S^{\ast}(f)$ and $S(S^{\ast}(f))\sqsupseteq S^{\ast}(f)$.
+
+But $S^{\ast}(S(f))\sqsubseteq S^{\ast}(S^{\ast}(f))=S^{\ast}(f)$
+and $S(S^{\ast}(f))\sqsubseteq S^{\ast}(S^{\ast}(f))=S^{\ast}(f)$.\end{proof}
+\begin{conjecture}
+$S(S(f))=S(f)$ for
+\begin{enumerate}
+\item every endoreloid $f$;
+\item every endofuncoid $f$.
+\end{enumerate}
+\end{conjecture}
+
+\begin{conjecture}
+For every endoreloid $f$
+\begin{enumerate}
+\item $S(f)\circ S(f)=S(f)$;
+\item $S^{\ast}(f)\circ S^{\ast}(f)=S^{\ast}(f)$;
+\item $S(f)\circ S^{\ast}(f)=S^{\ast}(f)\circ S(f)=S^{\ast}(f)$.
+\end{enumerate}
+\end{conjecture}
+
+\begin{conjecture}
+$S(f)\circ S(f)=S(f)$ for every endofuncoid $f$.\end{conjecture}
+
