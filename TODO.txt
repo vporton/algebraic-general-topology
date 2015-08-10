@@ -1,0 +1,1 @@
+* 'intersecting' is defined twice (definition 3 and 25)'
