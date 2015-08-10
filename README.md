@@ -5,3 +5,13 @@ The book can be used by researchers or for teaching college students.
 You can [read](http://www.mathematics21.org/binaries/volume-1.pdf) this book, or send your modifications because the book is licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). Just press "fork" in the sidebar and do your changes in the LaTeX source: error correction, adding more theorems and definitions, generalizing existing theorems, and other changes.
 
 See also [the homepage of the book](http://www.mathematics21.org/algebraic-general-topology.html).
+
+## Compiling ##
+
+The following PDF files are created by the command `make` by default:
+
+* `book.pdf` - the book (known as "volume 1"), ready to read.
+
+The following PDF files are also created by the command `make all`:
+
+* `addons.pdf` - future addons for the book volume 1, which are yet not enough ripe to be included into the book.
