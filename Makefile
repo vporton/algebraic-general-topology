@@ -11,3 +11,6 @@ all: FORCE
 	pdflatex book.tex
 	makeindex book
 	pdflatex book.tex
+
+clean: FORCE
+	rm -f *.pdf *.aux *.bbl *.blg *.dvi *.idx *.log *.out *.toc *.ilg *.ind *.synctex
