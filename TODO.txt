@@ -1,1 +1,0 @@
-"Set is its subcategory where only monovalued morphisms (functions) are considered." - also they must be entirely defined
