@@ -12,7 +12,7 @@ category} a partially ordered dagger category such that it holds
 \begin{equation}
 g\circ f\nasymp h\Leftrightarrow g\nasymp h\circ f^{\dagger}\label{invertible}
 \end{equation}
-for every morphisms $f\in\Mor(A;B)$, $g\in\Mor(B;C)$, $h\in\Mor(A;C)$,
+for every morphisms $f\in\Hom(A;B)$, $g\in\Hom(B;C)$, $h\in\Hom(A;C)$,
 where $A$, $B$, $C$ are objects of this category.
 \end{defn}
 Inverting this formula, we get $f^{\dagger}\circ g^{\dagger}\nasymp h^{\dagger}\Leftrightarrow g^{\dagger}\nasymp f\circ h^{\dagger}$.
@@ -30,8 +30,8 @@ lattices is quasi-invertible (theorem \ref{qi-bool}).
 \begin{defn}
 \index{product!cross-composition}The \emph{cross-composition product}
 of morphisms $f$ and $g$ of a quasi-invertible category is the pointfree
-funcoid $\Mor(\Src f;\Src g)\rightarrow\Mor(\Dst f;\Dst g)$ defined
-by the formulas (for every $a\in\Mor(\Src f;\Src g)$ and $b\in\Mor(\Dst f;\Dst g)$):
+funcoid $\Hom(\Src f;\Src g)\rightarrow\Hom(\Dst f;\Dst g)$ defined
+by the formulas (for every $a\in\Hom(\Src f;\Src g)$ and $b\in\Hom(\Dst f;\Dst g)$):
 \[
 \supfun{f\times^{(C)}g}a=g\circ a\circ f^{\dagger}\hspace{1em}\text{and}\hspace{1em}\supfun{(f\times^{(C)}g)^{-1}}b=g^{\dagger}\circ b\circ f.
 \]
@@ -55,7 +55,7 @@ $f\suprel{a\times^{(C)}b}g\Leftrightarrow f\circ a^{\dagger}\nasymp b^{\dagger}\
 \begin{thm}
 $(f\times^{(C)}g)^{-1}=f^{\dagger}\times^{(C)}g^{\dagger}$.\end{thm}
 \begin{proof}
-For every funcoids $a\in\Mor(\Src f;\Src g)$ and $b\in\Mor(\Dst f;\Dst g)$
+For every funcoids $a\in\Hom(\Src f;\Src g)$ and $b\in\Hom(\Dst f;\Dst g)$
 we have:
 
 $\supfun{(f\times^{(C)}g)^{-1}}b=g^{\dagger}\circ b\circ f=\supfun{f^{\dagger}\times^{(C)}g^{\dagger}}b$.
@@ -1335,8 +1335,8 @@ We need to prove it is really a pointfree funcoid.
 \begin{proof}
 $b\nasymp\supfun{\chi f}a\Leftrightarrow b\nasymp f\circ a\Leftrightarrow a\nasymp f^{\dagger}\circ b\Leftrightarrow a\nasymp\supfun{(\chi f)^{-1}}b$.\end{proof}
 \begin{rem}
-$\supfun{\chi f}=(f\circ-)$ is the $\Mor$-functor\footnote{Also called Hom-functor.}
-$\Mor(f,-)$ and we can apply Yoneda lemma to it. (See any category
+$\supfun{\chi f}=(f\circ-)$ is the $\Hom$-functor
+$\Hom(f,-)$ and we can apply Yoneda lemma to it. (See any category
 theory book for definitions of these terms.)\end{rem}
 \begin{obvious}
 $\supfun{\chi(g\circ f)}a=g\circ f\circ a$ for composable morphisms
@@ -2687,7 +2687,7 @@ Can the above theorem be generalized for the infinitary case?
 \begin{thm}
 Let $\mu$ and $\nu$ be indexed (by some index set $n$) families
 of endomorphisms for a quasi-invertible dagger category with star-morphisms,
-and $f_{i}\in\Mor(\Ob\mu_{i};\Ob\nu_{i})$ for every $i\in n$. Then:
+and $f_{i}\in\Hom(\Ob\mu_{i};\Ob\nu_{i})$ for every $i\in n$. Then:
 \begin{enumerate}
 \item $\forall i\in n:f_{i}\in\continuous(\mu_{i};\nu_{i})\Rightarrow\prod^{(C)}f\in\continuous\left(\prod^{(C)}\mu;\prod^{(C)}\nu\right)$;
 \item $\forall i\in n:f_{i}\in\continuous'(\mu_{i};\nu_{i})\Rightarrow\prod^{(C)}f\in\continuous'\left(\prod^{(C)}\mu;\prod^{(C)}\nu\right)$;

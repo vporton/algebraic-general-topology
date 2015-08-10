@@ -188,25 +188,25 @@ to $\Base(\mathcal{B})$ such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}
 
 \begin{defn}
 Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ is
-a filter on a set $Y$. $\mathcal{A}\ge_{1}\mathcal{B}$ iff $\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
+a filter on a set $Y$. $\mathcal{A}\ge_{1}\mathcal{B}$ iff $\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
 is not empty.
 \end{defn}
 
 \begin{defn}
 Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ is
-a filter on a set $Y$. $\mathcal{A}\ge_{2}\mathcal{B}$ iff $\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
+a filter on a set $Y$. $\mathcal{A}\ge_{2}\mathcal{B}$ iff $\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
 is not empty.\end{defn}
 \begin{prop}
 ~
 \begin{enumerate}
-\item \label{gre-imp}$f\in\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
+\item \label{gre-imp}$f\in\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
 iff $f$ is a $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$
 to $\Base(\mathcal{B})$ such that
 \[
 C\in\mathcal{B}\Leftarrow\rsupfun{f^{-1}}C\in\mathcal{A}
 \]
 for every $C\in\subsets\Base(\mathcal{B})$.
-\item \label{gre-eq}$f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
+\item \label{gre-eq}$f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
 iff $f$ is a $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$
 to $\Base(\mathcal{B})$ such that
 \[
@@ -220,13 +220,13 @@ for every $C\in\subsets\Base(\mathcal{B})$.
 \begin{widedisorder}
 \item [{\ref{gre-imp}}] ~
 \begin{multline*}
-f\in\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\supseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\\
+f\in\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\supseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\\
 \forall C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}:C\in\mathcal{B}\Leftrightarrow\forall C\in\subsets\Base(\mathcal{B}):(\rsupfun{f^{-1}}C\in\mathcal{A}\Rightarrow C\in\mathcal{B}).
 \end{multline*}
 
 \item [{\ref{gre-eq}}] ~
 \begin{multline*}
-f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\forall C:(C\in\mathcal{B}\Leftrightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A})\Leftrightarrow\\
+f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\forall C:(C\in\mathcal{B}\Leftrightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A})\Leftrightarrow\\
 \forall C\in\subsets\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A})\Leftrightarrow\\
 \forall C\in\subsets\Base(\mathcal{B}):(\rsupfun{f^{-1}}C\in\mathcal{A}\Leftrightarrow C\in\mathcal{B}).
 \end{multline*}
@@ -241,14 +241,14 @@ morphisms.
 
 \begin{defn}
 \index{directly isomorphic}A filter $\mathcal{A}$ is \emph{directly
-isomorphic} to a filter $\mathcal{B}$ iff there is a morphism $f\in\Mor_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.\end{defn}
+isomorphic} to a filter $\mathcal{B}$ iff there is a morphism $f\in\Hom_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.\end{defn}
 \begin{cor}
-$f\in\Mor_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+$f\in\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
 for every $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$ to $\Base(\mathcal{B})$.
 \end{cor}
 
 \begin{cor}
-$f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
+$f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
 for every $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$ to $\Base(\mathcal{B})$.
 \end{cor}
 
@@ -272,8 +272,8 @@ is a bijection from $\mathcal{A}$ to~$\mathcal{B}$.
 \item \label{fbij-rsurj}$\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$
 is a function onto~$\mathcal{B}$.
 \item \label{fbij-feq}$\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
-\item \label{fbij-gre}$f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
-\item \label{fbij-grp}$f\in\Mor_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.
+\item \label{fbij-gre}$f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
+\item \label{fbij-grp}$f\in\Hom_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -327,7 +327,7 @@ such that $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is a
 function onto $\mathcal{B}$.
 \item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
-\item There is a bijective morphism $f\in\Mor_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
+\item There is a bijective morphism $f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
 \end{enumerate}
 \end{cor}
 \begin{prop}
@@ -370,7 +370,7 @@ Thus $g\circ f$ is a morphism of $\mathbf{FuncBij}$. $\id_{\Base(\mathcal{A})}$
 is the identity morphism of $\mathbf{FuncBij}$ for every filter $\mathcal{A}$.
 Thus it is a category.
 
-It remains to prove only that every morphism $f\in\Mor_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$
+It remains to prove only that every morphism $f\in\Hom_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$
 has a reverse (for every filters $\mathcal{A}$, $\mathcal{B}$).
 We have $f$ is a bijection $\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 such that for every $C\in\subsets\Base(\mathcal{A})$
@@ -382,7 +382,7 @@ a bijection such that for every $C\in\subsets\Base(\mathcal{B})$
 \[
 \rsupfun{f^{-1}}C\in\mathcal{A}\Leftrightarrow C\in\mathcal{B}.
 \]
- Thus $f^{-1}\in\Mor_{\mathbf{FuncBij}}(\mathcal{B};\mathcal{A})$.\end{proof}
+ Thus $f^{-1}\in\Hom_{\mathbf{FuncBij}}(\mathcal{B};\mathcal{A})$.\end{proof}
 \begin{cor}
 Being directly isomorphic is an equivalence relation.
 \end{cor}
@@ -554,12 +554,12 @@ For every filters $\mathcal{A}$ and $\mathcal{B}$ the following
 are equivalent:
 \begin{enumerate}
 \item \label{ge1-ineq}$\mathcal{A}\ge_{1}\mathcal{B}$.
-\item \label{ge1-eq-ge}$\Mor_{\mathbf{MonRld}_{=,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
-\item \label{ge1-le-ge}$\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
-\item \label{ge1-le-eq}$\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
-\item \label{g1-c-eq-ge}$\Mor_{\mathbf{CoMonRld}_{=,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
-\item \label{g1-c-le-ge}$\Mor_{\mathbf{CoMonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
-\item \label{g1-c-le-eq}$\Mor_{\mathbf{CoMonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge1-eq-ge}$\Hom_{\mathbf{MonRld}_{=,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge1-le-ge}$\Hom_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge1-le-eq}$\Hom_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{g1-c-eq-ge}$\Hom_{\mathbf{CoMonRld}_{=,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{g1-c-le-ge}$\Hom_{\mathbf{CoMonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{g1-c-le-eq}$\Hom_{\mathbf{CoMonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -596,8 +596,8 @@ For every filters $\mathcal{A}$ and $\mathcal{B}$ the following
 are equivalent:
 \begin{enumerate}
 \item \label{ge2-in}$\mathcal{A}\ge_{2}\mathcal{B}$.
-\item \label{ge2-mon}$\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
-\item \label{ge2-comon}$\Mor_{\mathbf{CoMonRld}_{=,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge2-mon}$\Hom_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
+\item \label{ge2-comon}$\Hom_{\mathbf{CoMonRld}_{=,=}}(\mathcal{A};\mathcal{B})\ne\emptyset$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -640,22 +640,22 @@ We need to prove only that composition of morphisms is a morphism,
 because associativity and existence of identity morphism are evident.
 We have:
 \begin{widedisorder}
-\item [{\ref{monrld-le-ge}}] Let $f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})$,
-$g\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{B};\mathcal{C})$.
+\item [{\ref{monrld-le-ge}}] Let $f\in\Hom_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{B})$,
+$g\in\Hom_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{B};\mathcal{C})$.
 Then $\dom f\sqsubseteq\mathcal{A}$, $\im f\sqsupseteq\mathcal{B}$,
 $\dom g\sqsubseteq\mathcal{B}$, $\im g\sqsupseteq\mathcal{C}$. So
 $\dom(g\circ f)\sqsubseteq\mathcal{A}$, $\im(g\circ f)\sqsupseteq\mathcal{C}$
-that is $g\circ f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{C})$.
-\item [{\ref{monrld-le-eq}}] Let $f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})$,
-$g\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{B};\mathcal{C})$.
+that is $g\circ f\in\Hom_{\mathbf{MonRld}_{\sqsubseteq,\sqsupseteq}}(\mathcal{A};\mathcal{C})$.
+\item [{\ref{monrld-le-eq}}] Let $f\in\Hom_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})$,
+$g\in\Hom_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{B};\mathcal{C})$.
 Then $\dom f\sqsubseteq\mathcal{A}$, $\im f=\mathcal{B}$, $\dom g\sqsubseteq\mathcal{B}$,
 $\im g=\mathcal{C}$. So $\dom(g\circ f)\sqsubseteq\mathcal{A}$,
-$\im(g\circ f)=\mathcal{C}$ that is $g\circ f\in\Mor_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{C})$.
-\item [{\ref{monrld-eq-eq}}] Let $f\in\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{B})$,
-$g\in\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{B};\mathcal{C})$. Then
+$\im(g\circ f)=\mathcal{C}$ that is $g\circ f\in\Hom_{\mathbf{MonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{C})$.
+\item [{\ref{monrld-eq-eq}}] Let $f\in\Hom_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{B})$,
+$g\in\Hom_{\mathbf{MonRld}_{=,=}}(\mathcal{B};\mathcal{C})$. Then
 $\dom f=\mathcal{A}$, $\im f=\mathcal{B}$, $\dom g=\mathcal{B}$,
 $\im g=\mathcal{C}$. So $\dom(g\circ f)=\mathcal{A}$, $\im(g\circ f)=\mathcal{C}$
-that is $g\circ f\in\Mor_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{C})$.
+that is $g\circ f\in\Hom_{\mathbf{MonRld}_{=,=}}(\mathcal{A};\mathcal{C})$.
 \end{widedisorder}
 \end{proof}
 \begin{defn}
@@ -664,7 +664,7 @@ of reloid triples. Its objects are filters and its morphisms from
 a filter $\mathcal{A}$ to filter $\mathcal{B}$ are monovalued injective
 reloids $f$ such that $\dom f=\mathcal{A}$ and $\im f=\mathcal{B}$.\end{defn}
 \begin{thm}
-Filters $\mathcal{A}$ and $\mathcal{B}$ are isomorphic iff $\Mor_{\mathbf{BijRld}}(\mathcal{A};\mathcal{B})\neq\emptyset$.\end{thm}
+Filters $\mathcal{A}$ and $\mathcal{B}$ are isomorphic iff $\Hom_{\mathbf{BijRld}}(\mathcal{A};\mathcal{B})\neq\emptyset$.\end{thm}
 \begin{proof}
 ~
 \begin{description}
