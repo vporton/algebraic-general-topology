@@ -1,0 +1,45 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{forwardref}[2015/08/10 Detect forward references]
+
+\makeatletter
+
+\usepackage{auxhook}
+\newcounter{labelknownref}
+\renewcommand*{\thelabelknownref}{\the\value{labelknownref}}
+
+\AddLineBeginAux{%
+  \string\providecommand\string\LabelKnown[2]{}%
+}
+\newcommand*{\LabelKnown}[2]{%
+  \expandafter\xdef\csname lkr@#2\endcsname{%
+    \@ifundefined{r@#1}{0}{1}%
+  }%
+}
+% \usepackage{nameref}% load it now, because it redefines \ref
+\AtBeginDocument{%
+  \LetLtxMacro\myorgref\ref
+  \DeclareRobustCommand*{\ref}[1]{%
+    \begingroup
+      \stepcounter{labelknownref}%
+      \if@filesw
+        \protected@write\@auxout{}{%
+          \string\LabelKnown{#1}{\thelabelknownref}%
+        }%
+      \fi 
+      \if\csname lkr@\thelabelknownref\endcsname 1%
+        \hypersetup{linkcolor=blue}%
+        \myorgref{#1}%
+      \else
+        \if\csname lkr@\thelabelknownref\endcsname 0%
+          \hypersetup{linkcolor=red}%
+          \myorgref{#1}\textsuperscript{\textcolor{red}{(forward reference!)}}%
+        \else
+          \hypersetup{linkcolor=orange}%
+          \myorgref{#1}\textsuperscript{\textcolor{orange}{(unknown)}}%
+        \fi
+      \fi  
+    \endgroup
+  }%
+}   
+
+\makeatother

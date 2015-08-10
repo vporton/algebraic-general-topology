@@ -1,0 +1,110 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{agt}[2015/08/10 Common Algebraic General Topology definitions]
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+\newcommand{\noun}[1]{\textsc{#1}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{section}{chapter}
+ \usepackage{fixme}
+ \theoremstyle{definition}
+ \newtheorem{thm}{\protect\theoremname}
+  \theoremstyle{definition}
+  \newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{definition}
+\newtheorem{obvious}[thm]{\protect\obviousname}
+ \theoremstyle{definition}
+ \newtheorem{prop}[thm]{\protect\propositionname}
+  \theoremstyle{definition}
+  \newtheorem{example}[thm]{\protect\examplename}
+  \theoremstyle{remark}
+  \newtheorem{rem}[thm]{\protect\remarkname}
+  \theoremstyle{definition}
+  \newtheorem{xca}[thm]{\protect\exercisename}
+ \theoremstyle{definition}
+ \newtheorem{cor}[thm]{\protect\corollaryname}
+ \theoremstyle{definition}
+ \newtheorem{lem}[thm]{\protect\lemmaname}
+ \theoremstyle{definition}
+ \newtheorem{conjecture}[thm]{\protect\conjecturename}
+\theoremstyle{definition}
+\newtheorem{note}[thm]{\protect\notename}
+ \theoremstyle{definition}
+ \newtheorem{question}[thm]{\protect\questionname}
+  \theoremstyle{definition}
+  \newtheorem{problem}[thm]{\protect\problemname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{lmodern}
+
+\usepackage{mathrsfs}
+\hypersetup{final}
+\fxsetup{draft,layout=inline}
+\fxusetheme{color}
+\sloppy
+
+\usepackage{mleftright}
+\mleftright
+
+\def\paragraph{\@startsection{paragraph}{4}%
+  \normalparindent\z@{-\fontdimen2\font}%
+  {\normalfont\itshape}}
+
+%\renewcommand{\theenumi}{\arabic{enumi}$^\circ$}
+\renewcommand{\descriptionlabel}[1]{%
+  \hspace\labelsep \upshape #1.%
+}
+\usepackage{enumitem}
+\usepackage{letltxmacro}
+\setlist[enumerate,1]{label=\arabic*$^\circ$.,ref=\arabic*$^\circ$}
+%\setlist[description,1]{leftmargin=1.7em,labelindent=*}
+
+\LetLtxMacro{\OldItem}{\item}
+\newcommand*{\LabelText}{}%
+\newcommand*{\MyItem}[1][]{%
+    \renewcommand{\LabelText}{#1}\OldItem\leavevmode%
+}
+\newlist{disorder}{enumerate}{4}
+\setlist[disorder]%
+{label=\noexpand\LabelText.,%
+before={\let\item\MyItem},%
+after={\let\item\OldItem}}
+
+\newlist{widedisorder}{enumerate}{4}
+\setlist[widedisorder]%
+{label=\noexpand\LabelText.,%
+before={\let\item\MyItem},%
+after={\let\item\OldItem},wide}
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{define shortcut/.code 2 args=\providecommand*#1{#2}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+  \providecommand{\conjecturename}{Conjecture}
+  \providecommand{\corollaryname}{Corollary}
+  \providecommand{\definitionname}{Definition}
+  \providecommand{\examplename}{Example}
+  \providecommand{\exercisename}{Exercise}
+  \providecommand{\lemmaname}{Lemma}
+  \providecommand{\problemname}{Problem}
+  \providecommand{\propositionname}{Proposition}
+  \providecommand{\remarkname}{Remark}
+ \providecommand{\questionname}{Question}
+\providecommand{\notename}{Note}
+\providecommand{\obviousname}{Obvious}
+\providecommand{\theoremname}{Theorem}
+
+\makeatother
