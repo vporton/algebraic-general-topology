@@ -1,0 +1,556 @@
+\chapter{Cauchy Filters on Reloids}
+
+In this chapter I consider \emph{low filters} on reloids, generalizing
+Cauchy filters on uniform spaces. Using low filters, I define Cauchy-complete
+reloids, generalizing complete uniform spaces.
+
+\section{Preface}
+
+Replace {\tt \textbackslash langle \dots \textbackslash rangle} with {\tt \textbackslash supfun\{\dots\}} in \LaTeX{}.
+
+This is a preliminary partial draft.
+
+To understand this article you need first look into my book \cite{volume-1}.
+
+\url{http://math.stackexchange.com/questions/401989/what-are-interesting-properties-of-totally-bounded-uniform-spaces}
+
+\url{http://ncatlab.org/nlab/show/proximity+space\#uniform\_spaces} for a proof
+sketch that proximities correspond to totally bounded uniformities.
+
+\section{Low filters space}
+
+\begin{defn}
+A \emph{lower set}\footnote{Remember that our orders on filters is the
+reverse to set theoretic inclusion. It could be called an \emph{upper} set
+in other sources.} of proper filters on $U$ (a set) is a set $\mathscr{C}$
+of proper filters on $U$, such that if $\bot \neq \mathcal{G} \sqsubseteq
+\mathcal{F}$ and $\mathcal{F} \in \mathscr{C}$ then $\mathcal{G} \in
+\mathscr{C}$. \fxwarning{Probably should include the improper filter.}
+\end{defn}
+
+\begin{defn}
+  I call \emph{low filters space} a set together with a lower set of proper
+  filters on this set.
+\end{defn}
+
+\begin{defn}
+  $\PR \left( U ; \mathscr{C} \right) = \mathscr{C}$; $\Ob \left(
+  U ; \mathscr{C} \right) = U$.\footnote{$\PR$ is from English word
+  \emph{profile}.}
+\end{defn}
+
+\begin{defn}
+  Introduce an order on low filters spaces: $\left( U ; \mathscr{C} \right)
+  \sqsubseteq \left( U ; \mathscr{D} \right) \Leftrightarrow \mathscr{C}
+  \sqsubseteq \mathscr{D}$.
+\end{defn}
+
+\section{Cauchy spaces}
+
+\begin{defn}
+  A \emph{Cauchy space} on a set $X$ is a low filters space $\left( U ;
+  \mathscr{C} \right)$ (element of $\mathscr{C}$ are called \emph{Cauchy
+  filters}) such that:
+  \begin{enumerate}
+    \item $\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$;
+    
+    \item If $\mathcal{F}$, $\mathcal{G}$ are Cauchy filters and $\mathcal{F}
+    \nasymp \mathcal{G}$ then $\mathcal{F} \sqcup \mathcal{G}$ is a Cauchy
+    filter.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  A \emph{completely Cauchy space} on a set $X$ is a low filters space
+  $\left( U ; \mathscr{C} \right)$ (element of $\mathscr{C}$ are called
+  \emph{Cauchy filters}) such that:
+  \begin{enumerate}
+    \item $\forall x \in X : \uparrow^X \{ x \} \in \mathscr{C}$;
+    
+    \item If $S$ is a nonempty set of Cauchy filters and $\bigsqcap S \neq
+    \bot^{\mathscr{F} (X)}$ then $\bigsqcup S$ is a Cauchy filter.
+  \end{enumerate}
+\end{defn}
+
+\begin{obvious}
+Every completely Cauchy space is a Cauchy space.
+\end{obvious}
+
+\begin{prop}
+  $\bigsqcup^{
+    \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}
+  } S = \bigsqcup S$ for nonempty
+  $S \in \subsets \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$,
+  provided that $\mathcal{F}$ is a fixed Cauchy filter on a completely Cauchy space.
+\end{prop}
+
+\begin{proof}
+  $\mathcal{F}$ is proper. So for every nonempty $S \in \subsets
+  \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$
+  we have $\bigsqcap S \sqsupseteq \mathcal{F} \neq \bot^{\mathscr{F} (X)}$. Thus $\bigsqcup S$ is a Cauchy
+  filter and so $\bigsqcup S \in \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$.
+\end{proof}
+
+\section{Relationships with symmetric reloids}
+
+\begin{defn}
+  Denote $(\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right) =
+  \bigsqcup \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X}}
+  {\mathcal{X} \in \mathscr{C} }$.
+\end{defn}
+
+\begin{defn}
+  $(\Low) \nu$ (\emph{low filters} for reloid $\nu$) is a low filters
+  space on $U$ such that
+  \[ \PR (\Low) \nu = \setcond{\mathcal{X} \in \mathscr{F}^U
+     \setminus \{ \bot^{\mathscr{F}} \}} {\mathcal{X}
+     \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq \nu } . \]
+\end{defn}
+
+\begin{thm}
+  If $\left( U ; \mathscr{C} \right)$ is a low filters space, then $\left( U ;
+  \mathscr{C} \right) = (\Low) (\mathsf{RLD})_{\Low} \left(
+  U ; \mathscr{C} \right)$.
+\end{thm}
+
+\begin{proof}
+  If $\mathcal{X} \in \mathscr{C}$ then $\mathcal{X}
+  \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq
+  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$ and thus
+  $\mathcal{X} \in \PR (\Low) (\mathsf{RLD})_{\Low}
+  \left( U ; \mathscr{C} \right)$. Thus $\left( U ; \mathscr{C} \right)
+  \sqsubseteq (\Low) (\mathsf{RLD})_{\Low} \left( U ;
+  \mathscr{C} \right)$.
+  
+  Let's prove $\left( U ; \mathscr{C} \right) \sqsupseteq (\Low)
+  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$.
+  
+  Let $\mathcal{A} \in \PR (\Low)
+  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$. We need
+  to prove $\mathcal{A} \in \mathscr{C}$.
+  
+  Really $\mathcal{A} \times^{\mathsf{RLD}} \mathcal{A} \sqsubseteq
+  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$. It is
+  enough to prove that $\exists \mathcal{X} \in \mathscr{C} : \mathcal{A}
+  \sqsubseteq \mathcal{X}$.
+  
+  Suppose $\nexists \mathcal{X} \in \mathscr{C} : \mathcal{A} \sqsubseteq
+  \mathcal{X}$.
+  
+  For every $\mathcal{X} \in \mathscr{C}$ obtain $X_{\mathcal{X}} \in
+  \mathcal{X}$ such that $X_{\mathcal{X}} \notin \mathcal{A}$ (if forall $X \in
+  \mathcal{X}$ we have $X_{\mathcal{X}} \in \mathcal{A}$, then $\mathcal{X}
+  \sqsupseteq \mathcal{A}$ what is contrary to our supposition).
+  
+  It is now enough to prove $\mathcal{A} \times^{\mathsf{RLD}}
+  \mathcal{A} \mathrel{\not{\sqsubseteq}} \bigsqcup \setcond{ \uparrow^U
+  X_{\mathcal{X}} \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}}
+  }{\mathcal{X} \in \mathscr{C} }$.
+  
+  Really, $\bigsqcup \setcond{ \uparrow^U X_{\mathcal{X}}
+  \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
+  \mathcal{X} \in \mathscr{C} } =
+  \uparrow^{\mathsf{RLD} (U ; U)} \bigcup \setcond{ \uparrow^U X_{\mathcal{X}}
+  \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
+  \mathcal{X} \in \mathscr{C} }$. So our claim takes the form $\bigcup \setcond{ \uparrow^U X_{\mathcal{X}}
+  \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
+  \mathcal{X} \in \mathscr{C} } \notin \GR (\mathcal{A}
+  \times^{\mathsf{RLD}} \mathcal{A})$ that is $\forall A \in
+  \mathcal{A} : \bigcup \setcond{ \uparrow^U X_{\mathcal{X}}
+  \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
+  \mathcal{X} \in \mathscr{C} } \nsupseteq
+  A \times A$ what is true because $X_{\mathcal{X}} \nsupseteq A$ for every $A
+  \in \mathcal{A}$.
+\end{proof}
+
+\begin{rem}
+  The last theorem does not hold with $\mathcal{X}
+  \times^{\mathsf{FCD}} \mathcal{X}$ instead of $\mathcal{X}
+  \times^{\mathsf{RLD}} \mathcal{X}$ (take $\mathscr{C} = \setcond{ \{ x
+  \} }{x \in U}$ for an infinite set $U$ as a counter-example).
+\end{rem}
+
+\begin{rem}
+  Not every symmetric reloid is in the form
+  $(\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$ for some
+  Cauchy space $\left( U ; \mathscr{C} \right)$. The same Cauchy space can be
+  induced by different uniform spaces. See
+  \url{http://math.stackexchange.com/questions/702182/different-uniform-spaces-having-the-same-set-of-cauchy-filters}
+\end{rem}
+
+\fxnote{Is composition of two images of low filter spaces also a low filters space?}
+
+\section{More on Cauchy filters}
+
+\begin{obvious}
+Low filter on an endoreloid $\nu$ is a filter $\mathcal{F}$ such that
+\[ \forall U \in \GR f \exists A \in \mathcal{F} : A \times A \subseteq
+   U. \]
+\end{obvious}
+
+\begin{rem}
+  The above formula is the standard definition of Cauchy filters on uniform
+  spaces.
+\end{rem}
+
+\begin{prop}
+  If $\nu \sqsupseteq \nu \circ \nu^{- 1}$ then every neighborhood filter is a
+  Cauchy filter, that it
+  \[ \nu \sqsupseteq \rsupfun{\tofcd \nu} \{ x \}
+     \times^{\mathsf{RLD}} \rsupfun{\tofcd \nu} \{ x \} \]
+  for every point $x$.
+\end{prop}
+
+\begin{proof}
+  $\rsupfun{\tofcd \nu} \{ x \}
+  \times^{\mathsf{RLD}} \rsupfun{\tofcd \nu} \{ x \} = \supfun{\tofcd \nu}
+  \uparrow^{\Ob \nu} \left\{ x \right\} \times^{\mathsf{RLD}}
+  \supfun{\tofcd \nu} \uparrow^{\Ob \nu} \{ x \} =
+  \nu \circ (\uparrow^{\Ob \nu} \{ x \} \times^{\mathsf{RLD}}
+  \uparrow^{\Ob \nu} \{ x \}) \circ \nu^{- 1} = \nu \circ
+  (\uparrow^{\mathsf{RLD} (\Ob \nu ; \Ob \nu)} \{ (x ; x)
+  \}) \circ \nu^{- 1} \sqsubseteq \nu \circ \id^{\mathsf{RLD}
+  (\Ob \nu ; \Ob \nu)} \circ \nu^{- 1} = \nu \circ \nu^{- 1}
+  \sqsubseteq \nu$.
+\end{proof}
+
+\begin{prop}
+  If a filter converges to a point, it is a low filter, provided that every
+  neighborhood filter is a low filter.
+\end{prop}
+
+\begin{proof}
+  Let $\mathcal{F} \sqsubseteq \rsupfun{\tofcd \nu} \{ x \}$. Then $\mathcal{F} \times^{\mathsf{RLD}}
+  \mathcal{F} \sqsubseteq \rsupfun{\tofcd \nu} \{
+  x \} \times^{\mathsf{RLD}} \rsupfun{\tofcd \nu} \{ x \} \sqsubseteq \nu$.
+\end{proof}
+
+\begin{cor}
+  If a filter converges to a point, it is a low filter, provided that $\nu
+  \sqsupseteq \nu \circ \nu^{- 1}$.
+\end{cor}
+
+\section{Maximal Cauchy filters}
+
+\begin{lem}
+  Let $S$ be a set of sets with $\bigsqcap \langle \uparrow^{\mathfrak{F}}
+  \rangle S \neq 0^{\mathfrak{F}}$ (in other words, $S$ has finite
+  intersection property). Let $T = \setcond{ X \times X}
+  {X \in S }$. Then
+  \[ \bigcup T \circ \bigcup T = \bigcup S \times \bigcup S. \]
+\end{lem}
+
+\begin{proof}
+  Let $x \in \bigcup S$. Then $x \in X$ for some $X \in S$. $\left\langle
+  \bigcup T \right\rangle \{ x \} \sqsupseteq \uparrow X \supseteq \bigcap S
+  \neq \emptyset$. Thus
+  
+  $\left\langle \bigcup T \circ \bigcup T \right\rangle \{ x \} = \left\langle
+  \bigcup T \right\rangle \left\langle \bigcup T \right\rangle \{ x \} \in
+  \left\langle \uparrow^{\mathsf{FCD}} \bigcup T \right\rangle
+  \bigsqcap \langle \uparrow^{\mathfrak{F}} \rangle S \sqsupseteq \bigsqcup
+  \setcond{ \langle \uparrow^{\mathsf{FCD}} (X \times X) \rangle
+  \bigsqcap \langle \uparrow^{\mathfrak{F}} \rangle S }{
+  X \in S } = \bigsqcup \setcond{ \uparrow^{\mathfrak{F}} X}{X \in S } =
+  \bigsqcup \langle
+  \uparrow^{\mathfrak{F}} \rangle S$ that is $\left\langle \bigcup T \circ
+  \bigcup T \right\rangle \{ x \} \supseteq \bigcup S$.
+\end{proof}
+
+\begin{cor}
+  Let $S$ be a set of filters (on some fixed set) with nonempty meet. Let
+  \[ T = \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} }
+     {\mathcal{X} \in S} \]
+  Then
+  \[ \bigsqcup T \circ \bigsqcup T = \bigsqcup S \times^{\mathsf{RLD}}
+     \bigsqcup S. \]
+\end{cor}
+
+\begin{proof}
+  $\bigsqcup T \circ \bigsqcup T = \bigsqcap \setcond{ \uparrow^{\mathfrak{F}}
+  (X \circ X) }{ X \in \bigsqcup T }$.
+  
+  If $X \in \bigsqcup T$ then $X = \bigcup_{Q \in T} (P_Q \times P_Q)$ where
+  $P_Q \in Q$. Therefore by the lemma we have
+  \[ \bigcup \setcond{ P_Q \times P_Q}{Q \in T} \circ \bigcup
+  \setcond{ P_Q \times P_Q}{ Q \in T } = \bigcup_{Q \in T} P_Q \times \bigcup_{Q \in T} P_Q .
+  \]
+  Thus $X \circ X = \bigcup_{Q \in T} P_Q \times \bigcup_{Q \in T} P_Q$.
+  
+  Consequently $\bigsqcup T \circ \bigsqcup T = \bigsqcap \setcond{
+  \uparrow^{\mathfrak{F}} \left( \bigcup_{Q \in T} P_Q \times \bigcup_{Q \in
+  T} P_Q \right)}{X \in \bigsqcup T }
+  \sqsupseteq \bigsqcup S \times^{\mathsf{RLD}} \bigsqcup S$.
+  
+  $\bigsqcup T \circ \bigsqcup T \sqsubseteq \bigsqcup S
+  \times^{\mathsf{RLD}} \bigsqcup S$ is obvious.
+\end{proof}
+
+\begin{defn}
+  I call an endoreloid $\nu$ \emph{symmetrically transitive} iff for every
+  symmetric endofuncoid $f \in \mathsf{FCD} (\Ob \nu ; \Ob
+  \nu)$ we have $f \sqsubseteq \nu \Rightarrow f \circ f \sqsubseteq \nu$.
+\end{defn}
+
+\begin{obvious}
+  It is symmetrically transitive if at least one of the following holds:
+  \begin{enumerate}
+    \item $\nu \circ \nu \sqsubseteq \nu$;
+    
+    \item $\nu \circ \nu^{- 1} \sqsubseteq \nu$;
+    
+    \item $\nu^{- 1} \circ \nu \sqsubseteq \nu$.
+    
+    \item $\nu^{- 1} \circ \nu^{- 1} \sqsubseteq \nu$.
+  \end{enumerate}
+\end{obvious}
+
+\begin{cor}
+  Every uniform space is symmetrically transitive.
+\end{cor}
+
+\begin{prop}
+  $(\Low) \nu$ is a completely Cauchy space for every symmetrically
+  transitive endoreloid $\nu$.
+\end{prop}
+
+\begin{proof}
+  Suppose $S \in \subsets \setcond{ \mathcal{X} \in \mathfrak{F} \setminus \{
+  0^{\mathfrak{F}} \}}{ \mathcal{X}
+  \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq \nu }$ and $S
+  \neq \emptyset$.
+  
+  $\bigsqcup \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X}}
+  {\mathcal{X} \in S } \sqsubseteq \nu$;
+  $\bigsqcup \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X}}
+  {\mathcal{X} \in S } \circ \bigsqcup
+  \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} }
+  {\mathcal{X} \in S} \sqsubseteq \nu$; $\bigsqcup S
+  \times^{\mathsf{RLD}} \bigsqcup S \sqsubseteq \nu$ (taken into
+  account that $S$ has nonempty meet). Thus $\bigsqcup S$ is Cauchy.
+\end{proof}
+
+\begin{prop}
+  The neighbourhood filter $\langle \tofcd \nu \rangle^{\ast} \{
+  x \}$ of a point $x \in \Ob \nu$ is a maximal Cauchy filter, if it is a
+  Cauchy filter and $\nu$ is a reflexive reloid.
+  \fxnote{Does it holds for all low filters?}
+\end{prop}
+
+\begin{proof}
+  Let $\mathscr{N} = \langle \tofcd \nu \rangle^{\ast} \{ x
+  \}$. Let $\mathscr{C \sqsupseteq N}$ be a Cauchy filter. We need to show
+  $\mathscr{N \sqsupseteq C}$.
+  
+  Since $\mathscr{C}$ is Cauchy filter, $\mathscr{C}
+  \times^{\mathsf{RLD}} \mathscr{C} \sqsubseteq \nu$. Since $\mathscr{C
+  \sqsupseteq N}$ we have $\mathscr{C}$ is a neighborhood of $x$ and thus
+  $\uparrow^{\Ob \nu} \{ x \} \sqsubseteq \mathscr{C}$ (reflexivity of
+  $\nu$). Thus $\uparrow^{\Ob \nu} \{ x \} \times^{\mathsf{RLD}}
+  \mathscr{C} \sqsubseteq \mathscr{C} \times^{\mathsf{RLD}}
+  \mathscr{C}$ and hence $\uparrow^{\Ob \nu} \{ x \}
+  \times^{\mathsf{RLD}} \mathscr{C} \sqsubseteq \nu$;
+  \[ \mathscr{C} \sqsubseteq \im (\nu |_{\uparrow^{\Ob \nu} \{ x
+     \}}) = \langle \tofcd \nu \rangle^{\ast} \{ x \} =
+     \mathscr{N} . \]
+\end{proof}
+
+\section{Cauchy continuous functions}
+
+\begin{defn}
+  A function $f : U \rightarrow V$ is \emph{Cauchy continuous} from a low
+  filters space $\left( U ; \mathscr{C} \right)$ to a low filters space
+  $\left( V ; \mathscr{D} \right)$ when $\forall \mathcal{X} \in \mathscr{C} :
+  \langle \uparrow^{\mathsf{FCD}} f \rangle \mathcal{X} \in
+  \mathscr{D}$.
+\end{defn}
+
+\begin{prop}
+  Let $f$ is a principal reloid. Then $f \in \mathrm{C} \left( 
+  (\mathsf{RLD})_{\Low} \mathscr{C} ;
+  (\mathsf{RLD})_{\Low} \mathscr{D} \right)$ iff $f$ is Cauchy
+  continuous.
+  \begin{eqnarray*}
+    f \circ (\mathsf{RLD})_{\Low} \mathscr{C} \circ f^{- 1}
+    \sqsubseteq (\mathsf{RLD})_{\Low} \mathscr{D} &
+    \Leftrightarrow & \\
+    \bigsqcup_{\mathcal{X} \in
+    \mathscr{C}} (f \circ (\mathcal{X} \times^{\mathsf{RLD}}
+    \mathcal{X} ) \circ f^{- 1} ) \sqsubseteq (\mathsf{RLD})_{\Low}
+    \mathscr{D} & \Leftrightarrow & \\
+    \bigsqcup_{\mathcal{X} \in \mathscr{C}} ( \langle \uparrow^{\mathsf{FCD}} f \rangle
+    \mathcal{X} \times^{\mathsf{RLD}} \langle
+    \uparrow^{\mathsf{FCD}} f \rangle \mathcal{X}) \sqsubseteq
+    (\mathsf{RLD})_{\Low} \mathscr{D} & \Leftrightarrow & \\
+    \forall \mathcal{X} \in \mathscr{C} : \langle
+    \uparrow^{\mathsf{FCD}} f \rangle \mathcal{X}
+    \times^{\mathsf{RLD}} \langle \uparrow^{\mathsf{FCD}} f
+    \rangle \mathcal{X} \sqsubseteq (\mathsf{RLD})_{\Low}
+    \mathscr{D} & \Leftrightarrow & \\
+    \forall \mathcal{X} \in \mathscr{C} : \langle
+    \uparrow^{\mathsf{FCD}} f \rangle \mathcal{X} \in \mathscr{D} . & 
+    & 
+  \end{eqnarray*}
+\end{prop}
+
+Thus we have expressed Cauchy properties through the algebra of reloids.
+
+\section{Cauchy-complete reloids}
+
+\begin{defn}
+  An endoreloid $\nu$ is \emph{Cauchy-complete} iff every low filter for
+  this reloid converges to a point.
+\end{defn}
+
+\begin{rem}
+  In my book \cite{volume-1} \emph{complete reloid} means something
+  different. I will always prepend the word ``Cauchy'' to the word
+  ``complete'' when meaning is by the last definition.
+\end{rem}
+
+\url{https://en.wikipedia.org/wiki/Complete\_uniform\_space\#Completeness}
+
+\section{Totally bounded}
+
+\url{http://ncatlab.org/nlab/show/Cauchy+space}
+
+\begin{defn}
+  Cauchy space is called \emph{totally bounded} when every proper filter
+  contains a Cauchy filter.
+\end{defn}
+
+\begin{obvious}
+A reloid $\nu$ is totally bounded iff
+\[ \forall X \in \subsets \Ob \nu \exists \mathcal{X} \in
+   \mathfrak{F}^{\Ob \nu} : (\bot \neq \mathcal{X} \sqsubseteq
+   \uparrow^{\Ob \nu} X \wedge \mathcal{X} \times^{\mathsf{RLD}}
+   \mathcal{X} \sqsubseteq \nu) . \]
+\end{obvious}
+
+\begin{thm}
+  A symmetric transitive reloid is totally bounded iff its Cauchy space is
+  totally bounded.
+\end{thm}
+
+\begin{proof}~
+  
+  \begin{description}
+    \item[$\Rightarrow$] Let $\mathcal{F}$ be a proper filter on $\Ob
+    \nu$ and let $a \in \atoms \mathcal{F}$. It's enough to prove that
+    $a$ is Cauchy.
+    
+    Let $D \in \GR \nu$. Let also $E \in \GR \nu$ is symmetric
+    and $E \circ E \subseteq D$. There existsa finite subset $F \subseteq
+    \Ob \nu$ such that $\langle E \rangle F = \Ob \nu$. Then
+    obviously exists $x \in F$ such that $a \sqsubseteq \uparrow^{\Ob
+    \nu} \langle E \rangle \{ x \}$, but $\langle E \rangle \{ x \} \times
+    \langle E \rangle \{ x \} = E^{- 1} \circ (\{ x \} \times \{ x \}) \circ E
+    \subseteq D$, thus $a \times^{\mathsf{RLD}} a \sqsubseteq
+    \uparrow^{\mathsf{RLD} (\Ob \nu ; \Ob \nu)} D$.
+    
+    Because $D$ was taken arbitrary, we have $a \times^{\mathsf{RLD}} a
+    \sqsubseteq \nu$ that is $a$ is Cauchy.
+    
+    \item[$\Leftarrow$] Suppose that Cauchy space associated with a reloid
+    $\nu$ is totally bounded but the reloid $\nu$ isn't totally bounded. So
+    there exists a $D \in \GR \nu$ such that $(\Ob \nu) \setminus
+    \langle D \rangle F \neq \emptyset$ for every finite set $F$.
+    
+    Consider the filter base
+    \[ S = \setcond{ (\Ob \nu) \setminus \langle D \rangle F}
+       {F \in \subsets \Ob \nu, F \text{ is finite}
+       } \]
+    and the filter $\mathcal{F} = \bigsqcap \langle \uparrow^{\Ob \nu}
+    \rangle S$ generated by this base. The filter $\mathcal{F}$ is proper
+    because intersection $P \cap Q \in S$ for every $P, Q \in S$ and
+    $\emptyset \notin S$. Thus there exists a Cauchy (for our Cauchy space)
+    filter $\mathcal{X} \sqsubseteq \mathcal{F}$ that is $\mathcal{X}
+    \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq \nu$.
+    
+    Thus there exists $M \in \mathcal{X}$ such that $M \times M \subseteq D$.
+    Let $F$ be a finite subset of $\Ob \nu$. Then $(\Ob \nu)
+    \setminus \langle D \rangle F \in \mathcal{F} \sqsupseteq \mathcal{X}$.
+    Thus $M \nasymp (\Ob \nu) \setminus \langle D \rangle F$ and so
+    there exists a point $x \in M \cap ((\Ob \nu) \setminus \langle D
+    \rangle F)$.
+    
+    $\langle M \times M \rangle \{ p \} \subseteq \langle D \rangle \{ x \}$
+    for every $p \in M$; thus $M \subseteq \langle D \rangle \{ x \}$.
+    
+    So $M \subseteq \langle D \rangle (F \cup \{ x \})$. But this means that
+    $M \in \mathcal{X}$ does not intersect $(\Ob \nu) \setminus \langle
+    D \rangle (F \cup \{ x \}) \in \mathcal{F} \sqsupseteq \mathcal{X}$, what
+    is a contradiction (taken into account that $\mathcal{X}$ is proper).
+  \end{description}
+\end{proof}
+
+\url{http://math.stackexchange.com/questions/104696/pre-compactness-total-boundedness-and-cauchy-sequential-compactness}
+
+\section{Totally bounded funcoids}
+
+\begin{defn}
+  A funcoid $\nu$ is totally bounded iff
+  \[ \forall X \in \Ob \nu \exists \mathcal{X} \in
+     \mathfrak{F}^{\Ob \nu} : (0 \neq \mathcal{X} \sqsubseteq
+     \uparrow^{\Ob \nu} X \wedge \mathcal{X}
+     \times^{\mathsf{FCD}} \mathcal{X} \sqsubseteq \nu) . \]
+\end{defn}
+
+This can be rewritten in elementary terms (without using funcoidal product:
+
+$\mathcal{X} \times^{\mathsf{FCD}} \mathcal{X} \sqsubseteq \nu
+\Leftrightarrow \forall P \in \corestar \mathcal{X} : \mathcal{X} \sqsubseteq
+\supfun{\nu} P \Leftrightarrow \forall P \in \corestar \mathcal{X}, Q
+\in \corestar \mathcal{X} : P \mathrel{[\nu]^{\ast}} Q \Leftrightarrow \forall
+P, Q \in \Ob \nu : \left( \forall E \in \mathcal{X} : (E \cap P \neq
+\emptyset \wedge E \cap Q \neq \emptyset) \Rightarrow P \mathrel{[\nu]^{\ast}}
+Q \right)$.
+
+Note that probably I am the first person which has written the above formula
+(for proximity spaces for instance) explicitly.
+
+\section{On principal low filter spaces}
+
+\begin{defn}
+  A low filter space $\left( U ; \mathscr{C} \right)$ is \emph{principal}
+  when all filters in $\mathscr{C}$ are principal.
+\end{defn}
+
+\begin{defn}
+  A low filter space $\left( U ; \mathscr{C} \right)$ is \emph{reflexive}
+  when $\forall x \in U : \uparrow^U \{ x \} \in \mathscr{C}$.
+\end{defn}
+
+\begin{prop}
+  Having fixed a set $U$, principal reflexive low filter spaces on $U$
+  bijectively correspond to principal reflexive symmertic endoreloids on $U$.
+\end{prop}
+
+\begin{proof}
+  ??
+  
+  http://math.stackexchange.com/questions/701684/union-of-cartesian-squares
+\end{proof}
+
+\section{Rest}
+
+\url{https://en.wikipedia.org/wiki/Cauchy\_filter\#Cauchy\_filters}
+
+\url{https://en.wikipedia.org/wiki/Uniform\_space} ``Hausdorff completion of a
+uniform space'' here)
+
+\url{http://at.yorku.ca/z/a/a/b/13.htm} : the category $\mathbf{Prox}$ of proximity
+spaces and proximally continuous maps (i.e. maps preserving nearness between
+two sets) is isomorphic to the category of totally bounded uniform spaces (and
+uniformly continuous maps).
+
+\url{https://en.wikipedia.org/wiki/Cauchy\_space}
+\url{http://ncatlab.org/nlab/show/Cauchy+space}
+
+\url{http://arxiv.org/abs/1309.1748}
+
+\url{http://projecteuclid.org/download/pdf\_1/euclid.pja/1195521991}
+
+\url{http://www.emis.de/journals/HOA/IJMMS/Volume5\_3/404620.pdf}
+
+\url{\~/math/books/Cauchy\_spaces.pdf}
