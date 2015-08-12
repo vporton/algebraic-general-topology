@@ -1,0 +1,725 @@
+\chapter{Products in dagger categories with complete ordered Hom-sets}
+
+\fxwarning{This is a rough draft. It is not yet checked for errors.}
+
+\begin{note}
+  What I previously denoted $\prod F$ is now denoted $\prod^{(L)} F$ (and
+  likewise for $\mathord{\coprod}$). The other draft chapters referring to
+  this chapter may be not yet updated.
+\end{note}
+
+\begin{prop}
+  ~
+  \fxwarning{Should we move this to volume 1?}
+  \begin{enumerate}
+    \item Every entirely defined monovalued morphism is metamonovalued and metacomplete.
+    \item Every surjective injective morphism is metainjective and co-metacomplete.
+  \end{enumerate}
+
+\end{prop}
+
+\begin{proof}
+Let's prove the first (the second follows from duality):
+  
+Let $f$ be an entirely defined monovalued morphism.
+
+$\left( \bigsqcap G \right) \circ f \sqsubseteq \bigsqcap_{g \in G} (g \circ
+f)$ by monotonicity of composition.
+
+Using the fact that $f$ is monovalued and entirely defined:
+
+$\left( \bigsqcap_{g \in G} (g \circ f) \right) \circ f^{\dagger} \sqsubseteq
+\bigsqcap_{g \in G} (g \circ f \circ f^{\dagger}) \sqsubseteq \bigsqcap G$;
+
+$\bigsqcap_{g \in G} (g \circ f) \sqsubseteq \left( \bigsqcap_{g \in G} (g
+\circ f) \right) \circ f^{\dagger} \circ f \sqsubseteq \left( \bigsqcap G
+\right) \circ f$.
+
+So $\left( \bigsqcap G \right) \circ f = \bigsqcap_{g \in G} (g \circ f)$.
+
+Let $f$ be a entirely defined monovalued morphism.
+
+$f \circ \left( \bigsqcup G \right) \sqsupseteq \bigsqcup_{g \in G} (f \circ
+g)$ by monotonicity of composition.
+
+Using the fact that $f$ is entirely defined and monovalued:
+
+$f^{\dagger} \circ \left( \bigsqcup_{g \in G} (f \circ g) \right) \sqsupseteq
+\bigsqcup_{g \in G} (f^{\dagger} \circ f \circ g) \sqsupseteq \bigsqcap G$;
+
+$\bigsqcup_{g \in G} (f \circ g) \sqsupseteq f \circ f^{\dagger} \circ
+\bigsqcup_{g \in G} (f \circ g) \sqsupseteq f \circ \left( \bigsqcup G
+\right)$.
+
+So $f \circ \left( \bigsqcup G \right) = \bigsqcup_{g \in G} (f \circ g)$.
+\end{proof}
+
+\section{General product in partially ordered dagger category}
+
+To understand the below better, you can restrict your imagination to the case
+when $\mathcal{C}$ is the category $\mathbf{Rel}$.
+
+\subsection{Infimum product}
+
+Let $\mathcal{C}$ be a dagger category, each Hom-set of which is a complete
+lattice (having order agreed with the dagger).
+
+We will designate some morphisms as \emph{principal} and require that
+principal morphisms are both metacomplete and co-metacomplete. (For a
+particular example of the category $\mathbf{Rel}$, all morphisms are
+considered principal.)
+
+Let $\prod^{(Q)} X$ be an object for each indexed family $X$ of objects.
+
+Let $\pi$ be a partial function mapping elements $X \in \dom \pi$ (which
+consists of small indexed families of objects of $\mathcal{C}$) to indexed
+families $\prod^{(Q)} X \rightarrow X_i$ of principal morphisms (called
+\emph{projections}) for every $i \in \dom X$.
+
+We will denote particular morphisms as $\pi^X_i$.
+
+\begin{rem}
+  In some important examples the function $\pi$ is entire, that is $\dom
+  \pi$ is the set of all small indexed families of objects of $\mathcal{C}$.
+  However there are also some important examples where it is partial.
+\end{rem}
+
+\begin{defn}
+  \emph{Infimum product} $\prod F$ (such that $\pi$ is defined at $\lambda
+  j \in n : \Src F_j$ and $\lambda j \in n : \Dst F_j$) is defined
+  by the formula
+  \[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi^{\lambda j \in n :
+     \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n :
+     \Src F_j}_i) . \]
+\end{defn}
+
+This formula can be (over)simplified to:
+\[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi^{\Dst \circ
+   F_{}}_i)^{\dagger} \circ F_i \circ \pi^{\Src \circ F}_i) . \]
+
+\begin{rem}
+  $(\pi^{\lambda j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ
+  \pi^{\lambda j \in n : \Src F_j}_i \in \Hom \left(
+  \prod^{(Q)}_{j \in n} \Src F_j ; \prod^{(Q)}_{j \in n} \Dst F_j
+  \right)$ are properly defined and have the same sources and destination
+  (whenever $i \in \dom F$ is), thus the meet in the formulas is
+  properly defined.
+\end{rem}
+
+\begin{rem}
+  Thus
+  \[ F_0 \times^{(L)} F_1 = ((\pi^{(\Dst F_0 ; \Dst
+     F_1)}_0)^{\dagger} \circ F_0 \circ \pi^{(\Src F_0 ; \Src
+     F_1)}_0) \sqcap ((\pi^{(\Dst F_0 ; \Dst F_1)}_1)^{\dagger}
+     \circ F_1 \circ \pi^{(\Src F_0 ; \Src F_1)}_1) \]
+  that is product is defined by a pure algebraic formula.
+\end{rem}
+
+\begin{prop}
+  $\prod^{(L)} F = \max \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j \in
+  n} \Src F_j ; \prod^{(Q)}_{j \in n} \Dst F_j \right)
+  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
+  j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
+  : \Src F_j}_i }$.
+\end{prop}
+
+\begin{proof}
+  By definition of meet on a complete lattice.
+\end{proof}
+
+\begin{cor}
+  $\prod^{(L)} F = \bigsqcup \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j
+  \in n} \Src F_j ; \prod^{(Q)}_{j \in n} \Dst F_j \right)
+  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
+  j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
+  : \Src F_j}_i }$.
+\end{cor}
+
+\begin{thm}
+  Let $\pi^X_i$ be metamonovalued morphisms. If $S \in \subsets (\Hom
+  (A_0 ; B_0) \times \Hom (A_1 ; B_1))$ for some sets $A_0$, $B_0$,
+  $A_1$, $B_1$ then
+  \[ \bigsqcap \setcond{ a \times^{(L)} b }{(a ; b)\in S } =
+     \bigsqcap \dom S \times^{(L)} \bigsqcap \im S. \]
+\end{thm}
+
+\begin{proof}
+  ~
+  \begin{align*}
+  \bigsqcap \setcond{ a \times b }{ (a ; b) \in S } & = \\
+  \bigsqcap \setcond{ ((\pi^{(\Dst a ; \Dst
+  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a ; \Src b)}_0) \sqcap
+  ((\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ b \circ
+  \pi^{(\Src a ; \Src b)}_1) }{ (a ; b) \in S } & = \\
+  \bigsqcap \setcond{ (\pi^{(\Dst a ; \Dst
+  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a ; \Src b)}_0
+  }{ a \in \dom S } \sqcap
+  \bigsqcap
+  \setcond{ (\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ b \circ
+  \pi^{(\Src a ; \Src b)}_1 }{ b \in \im S } & = \\
+  \left( (\pi^{(\Dst a ; \Dst
+  b)}_0)^{\dagger} \circ \bigsqcap \setcond{ a }{ a \in
+  \dom S } \circ \pi^{(\Src a ; \Src b)}_0 \right)
+  \sqcap \left( (\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ
+  \bigsqcap \setcond{ b }{ b \in \im S }
+  \circ \pi^{(\Src a ; \Src b)}_1 \right) & = \\
+  \left(
+  (\pi^{(\Dst a ; \Dst b)}_0)^{\dagger} \circ \left( \bigsqcap
+  \dom S \right) \circ \pi^{(\Src a ; \Src b)}_0 \right)
+  \sqcap \left( (\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ \left(
+  \bigsqcap \im S \right) \circ \pi^{(\Src a ; \Src b)}_1
+  \right) & = \\
+  \bigsqcap \dom S \times \bigsqcap \im S.
+  \end{align*}
+\end{proof}
+
+\begin{cor}
+  $(a_0 \times^{(L)} b_0) \sqcap (a_1 \times^{(L)} b_1) = (a_0 \sqcap a_1)
+  \times^{(L)} (b_0 \sqcap b_1)$.
+\end{cor}
+
+\begin{cor}
+  $a_0 \times^{(L)} b_0 \nasymp a_1 \times^{(L)} b_1 \Leftrightarrow a_0
+  \nasymp a_1 \wedge b_0 \nasymp b_1$.
+\end{cor}
+
+\subsection{Infimum product for endomorphisms}
+
+Let $F$ is an indexed family of endomorphisms of $\mathcal{C}$.
+
+I will denote $\Ob f$ the object (source and destination) of an
+endomorphism $f$.
+
+Let also $\pi^X_i$ be a monovalued entirely defined morphism (for each $i \in
+\dom F$).
+
+Then $\prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi^{\lambda j \in n :
+\Ob F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n : \Ob
+F_j}_i)$ (if $\pi$ is defined at $\lambda j \in n : \Ob F_j$).
+
+Abbreviate $\pi_i = \pi^{\lambda j \in n : \Ob F_j}_i$.
+
+So $\prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi_i)^{\dagger} \circ
+F_i \circ \pi_i)$.
+
+$\prod^{(L)} F = \max \setcond{ \Phi \in \End \left( \prod^{(Q)}_{j \in n}
+\Ob F_j \right) }{ \forall i \in n : \Phi
+\sqsubseteq (\pi_i)^{\dagger} \circ F_i \circ \pi_i }$.
+
+Taking into account that $\pi_i$ is a monovalued entirely defined morphism, we
+get:
+
+\begin{obvious}
+$\prod^{(L)} F = \max \setcond{ \Phi \in \End \left( \prod^{(Q)}_{j \in
+n} \Ob F_j \right) }{ \forall i \in n : \pi_i
+\in \mathrm{C} (\Phi ; F_i) }$.
+\end{obvious}
+
+\begin{rem}
+  The above formula may allow to define the product for non-dagger categories
+  (but only for endomorphisms). In this writing I don't introduce a notation
+  for this, however.
+\end{rem}
+
+\begin{cor}
+  $\pi_i \in \mathrm{C} \left( \prod^{(L)} F ; F_i \right)$ for every $i \in
+  \dom F$.
+\end{cor}
+
+\subsection{Category of continuous morphisms}
+
+Let $\pi_i = \pi_i^X$ (for $i \in \dom F$) be entirely defined
+monovalued morphisms (we suppose it is defined at $X$).
+
+Let $\bigotimes$ of an indexed family of morphisms is a morphism; $\pi_i \circ
+\bigotimes f = f_i$; $\bigotimes_{i \in n} (\pi_i \circ f) = f$.
+
+\begin{defn}
+  The category $\cont (\mathcal{C})$ is defined as follows:
+  \begin{itemize}
+    \item Objects are endomorphisms of the category $\mathcal{C}$.
+    
+    \item Morphisms are triples $(f ; a ; b)$ where $a$ and $b$ are objects
+    and $f : \Ob a \rightarrow \Ob b$ is an entirely defined
+    monovalue principal morphism of the category $\mathcal{C}$ such that $f
+    \in \mathrm{C} (a ; b)$ (in other words, $f \circ a \sqsubseteq b \circ
+    f$).
+    
+    \item Composition of morphisms is defined by the formula $(g ; b ; c)
+    \circ (f ; a ; b) = (g \circ f ; a ; c)$.
+    
+    \item Identity morphisms are $(a ; a ; 1^{\mathcal{C}}_a)$.
+  \end{itemize}
+\end{defn}
+
+It is really a category:
+
+\begin{proof}
+  We need to prove that: composition of morphisms is a morphism, composition
+  is associative, and identity morphisms can be canceled on the left and on
+  the right.
+  
+  That composition of morphisms is a morphism by properties of generalized
+  continuity.
+  
+  That composition is associative is obvious.
+  
+  That identity morphisms can be canceled on the left and on the right is
+  obvious.
+\end{proof}
+
+\begin{rem}
+  The ``physical'' meaning of this category is:
+  \begin{itemize}
+    \item Objects (endomorphisms of $\mathcal{C}$) are spaces.
+    
+    \item Morphisms are continuous functions between spaces.
+    
+    \item $f \circ a \sqsubseteq b \circ f$ intuitively means that $f$
+    combined with an infinitely small is less than infinitely small combined
+    with $f$ (that is $f$ is continuous).
+  \end{itemize}
+\end{rem}
+
+\begin{defn}
+  $\pi^{\cont} (\mathcal{C})_i = \left( \prod^{(L)} F ; F_i ;
+  \pi_i \right)$.
+\end{defn}
+
+\begin{prop}
+  $\pi_i$ are continuous, that is $\pi^{\cont}
+  (\mathcal{C})_i$ are morphisms.
+\end{prop}
+
+\begin{proof}
+  We need to prove $\pi_i \in \mathrm{C} \left( \prod^{(L)} F ; F_i \right)$
+  but that was proved above.
+\end{proof}
+
+\begin{lem}
+  $f \in \Hom_{\cont (\mathcal{C})} \left( Y ;
+  \prod^{(L)} F \right)$ is continuous iff all $\pi_i \circ f$ are continuous.
+\end{lem}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[$\Rightarrow$] Let $f \in \Hom_{\cont
+    (\mathcal{C})} \left( Y ; \prod^{(L)} F \right)$. Then $f \circ Y
+    \sqsubseteq \left( \prod^{(L)} F \right) \circ f$; $\pi_i \circ f \circ Y
+    \sqsubseteq \pi_i \circ \left( \prod^{(L)} F \right) \circ f$; $\pi_i
+    \circ f \circ Y \sqsubseteq \left( \prod^{(L)} F \right) \circ \pi_i \circ
+    f$. Thus $\pi_i \circ f$ is continuous.
+    
+    \item[$\Leftarrow$] Let all $\pi_i \circ f$ be continuous. Then
+    $\pi^{\cont (\mathcal{C})}_i \circ f \in
+    \Hom_{\cont (\mathcal{C})} (Y ; F_i)$;
+    $\pi^{\cont (\mathcal{C})}_i \circ f \circ Y \sqsubseteq
+    F_i \circ \pi^{\cont (\mathcal{C})}_i \circ f$. We need
+    to prove $Y \sqsubseteq f^{\dagger} \circ \left( \prod^{(L)} F \right)
+    \circ f$ that is
+    \[ Y \sqsubseteq f^{\dagger} \circ \bigsqcap_{i \in n} ((\pi_i)^{\dagger}
+       \circ F_i \circ \pi_i) \circ f \]
+    for what is enough (because $f$ is metamonovalued)
+    \[ Y \sqsubseteq \bigsqcap_{i \in n} (f^{\dagger} \circ (\pi_i)^{\dagger}
+       \circ F_i \circ \pi_i \circ f) \]
+    what follows from $Y \sqsubseteq \bigsqcap_{i \in n} (f^{\dagger} \circ
+    (\pi_i)^{\dagger} \circ \pi_i \circ f \circ Y)$ what is obvious.
+  \end{description}
+\end{proof}
+
+\begin{thm}
+  $\prod^{(L)}$ together with $\bigotimes$ is a (partial) product in the
+  category $\cont (\mathcal{C})$.
+\end{thm}
+
+\begin{proof}
+  Obvious.
+  
+  Check
+  \url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}
+\end{proof}
+
+\section{On duality}
+
+We will consider duality where both the category $\mathcal{C}$ and orders on
+Mor-sets are replaced with their dual. I will denote $A
+\xleftrightarrow{\dual} B$ when two formulas $A$ and $B$ are dual with
+this duality.
+
+\begin{prop}
+  $f \in \mathrm{C} (\mu; \nu) \xleftrightarrow{\dual} f^{\dagger}
+  \in \mathrm{C} (\nu^{\dagger} ; \mu^{\dagger})$.
+\end{prop}
+
+\begin{proof}
+  $f \in \mathrm{C} (\mu; \nu) \Leftrightarrow f \circ \mu
+  \sqsubseteq \nu \circ f \xleftrightarrow{\dual} \mu^{\dagger}
+  \circ f^{\dagger} \sqsupseteq f^{\dagger} \circ^{\dagger} \nu^{- 1}
+  \Leftrightarrow f^{\dagger} \in \mathrm{C} (\nu^{\dagger} ;
+  \mu^{\dagger})$.
+\end{proof}
+
+$f \text{ is entirely defined} \Leftrightarrow f^{\dagger} \circ f \sqsupseteq
+1_{\Src f} \xleftrightarrow{\dual} f^{\dagger} \circ f \sqsubseteq
+1_{\Src f} \Leftrightarrow f \text{ is injective} \Leftrightarrow
+f^{\dagger} \text{ is monovalued}$.
+
+$f \text{ is monovalued} \Leftrightarrow f \circ f^{\dagger} \sqsubseteq
+1_{\Dst f} \xleftrightarrow{\dual} f \circ f^{\dagger} \sqsupseteq
+1_{\Dst f} \Leftrightarrow f \text{ is surjective} \Leftrightarrow
+f^{\dagger} \text{ is entirely defined}$.
+
+\section{General coproduct in partially ordered dagger category}
+
+The below is the dual of the above, proofs are omitted as they are dual.
+
+Let $\iota_i$ \fxnote{What is $\iota$?} are entirely defined monovalued morphisms to an object $Z$.
+
+Let $\iota_i \xleftrightarrow{\dual} \pi_i$ that is $\iota_i =
+(\pi_i)^{\dagger}$. We have the above equivalent to $\pi_i$ being monovalued
+and entirely defined.
+
+\subsection{Supremum coproduct}
+
+Let $\mathcal{C}$ be a dagger category, each Hom-set of which is a complete
+lattice (having order agreed with the dagger).
+
+We will designate some morphisms as \emph{principal} and require that
+principal morphisms are both metacomplete and co-metacomplete. (For a
+particular example of the category $\mathbf{Rel}$, all morphisms are
+considered principal.)
+
+Let $\coprod^{(Q)} X$ be an object for each indexed family $X$ of objects.
+
+Let $\iota$ be a partial function mapping elements $X \in \dom \iota$
+(which consists of small indexed families of objects of $\mathcal{C}$) to
+indexed families $X_i \rightarrow \coprod^{(Q)} X$ of principal morphisms
+(called \emph{injections}) for every $i \in \dom X$.
+
+\begin{defn}
+  \emph{Supremum coproduct} $\coprod^{(L)} F$ (such that $\iota$ is defined
+  at $\lambda j \in n : \Dst F_j$ and $\lambda j \in n : \Src
+  F_j$) is defined by the formula
+  \[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n
+     : \Src F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n :
+     \Dst F_j}_i)^{\dagger}) . \]
+\end{defn}
+
+This formula can be (over)simplified to:
+\[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\Src \circ
+   F}_i \circ F_i^{\dagger} \circ (\iota^{\Dst \circ F}_i)^{\dagger}) .
+\]
+
+\begin{rem}
+  $\iota^{\lambda j \in n : \Src F_j}_i \circ F_i \circ (\iota^{\lambda
+  j \in n : \Dst F_j}_i)^{\dagger} \in \Hom \left(
+  \coprod^{(Q)}_{j \in n} \Src F_j ; \coprod^{(Q)}_{j \in n} \Dst
+  F_j \right)$ are properly defined and have the same sources and destination
+  (whenever $i \in \dom F$ is), thus the meet in the formulas is
+  properly defined.
+\end{rem}
+
+\begin{rem}
+  Thus
+  \[ F_0 \amalg^{(L)} F_1 = (\iota^{(\Src F_0 ; \Src F_1)}_0 \circ
+     F_0^{\dagger} \circ (\iota^{(\Dst F_0 ; \Dst
+     F_1)}_0)^{\dagger}) \sqcup (\iota^{(\Src F_0 ; \Src F_1)}_1
+     \circ F_1^{\dagger} \circ (\iota^{(\Dst F_0 ; \Dst
+     F_1)}_1)^{\dagger}) \]
+  that is coproduct is defined by a pure algebraic formula.
+\end{rem}
+
+\begin{prop}
+  $\coprod^{(L)} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j
+  \in n} \Ob F_j \right) }{ \forall i \in n :
+  \Phi \sqsupseteq \iota^{\lambda j \in n : \Src F_j}_i \circ
+  F_i^{\dagger} \circ (\iota^{\lambda j \in n : \Dst F_j}_i)^{\dagger} }$.
+\end{prop}
+
+\begin{proof}
+  By definition of meet on a complete lattice.
+\end{proof}
+
+\begin{cor}
+  $\coprod^{(L)} F = \bigsqcap \setcond{ \Phi \in \End \left(
+  \coprod^{(Q)}_{j \in n} \Ob F_j \right) }{
+  \forall i \in n : \Phi \sqsupseteq \iota^{\lambda j \in n : \Src
+  F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n : \Dst
+  F_j}_i)^{\dagger} }$.
+\end{cor}
+
+\begin{thm}
+  Let $\pi^X_i$ be metainjective morphisms. If $S \in \subsets (\Hom
+  (A_0 ; B_0) \times \Hom (A_1 ; B_1))$ for some sets $A_0$, $B_0$,
+  $A_1$, $B_1$ then
+  \[ \bigsqcup \setcond{ a \times^{(L)} b }{ (a ; b)
+     \in S } = \bigsqcup \dom S \times^{(L)} \bigsqcup \im
+     S. \]
+\end{thm}
+
+\begin{cor}
+  $(a_0 \amalg^{(L)} b_0) \sqcup (a_1 \amalg^{(L)} b_1) = (a_0 \sqcap a_1)
+  \amalg^{(L)} (b_0 \sqcap b_1)$.
+\end{cor}
+
+\begin{cor}
+  $a_0 \amalg^{(L)} b_0 \equiv a_1 \amalg^{(L)} b_1 \Leftrightarrow a_0 \equiv
+  a_1 \wedge b_0 \equiv b_1$.
+\end{cor}
+
+\subsection{Supremum coproduct for endomorphisms}
+
+Let $F$ be an indexed family of endomorphisms of $\mathcal{C}$.
+
+I will denote $\Ob f$ the object (source and destination) of an
+endomorphism $f$.
+
+Let also $\iota_i$ be a monovalued entirely defined morphism (for each $i \in
+\dom F$).
+
+\begin{defn}
+  $\coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n :
+  \Ob F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n :
+  \Ob F_j}_i)^{\dagger})$ (if $\iota$ is defined at $\lambda j \in n :
+  \Ob F_j$). (I call it \emph{supremum coproduct}).
+\end{defn}
+
+Abbreviate $\iota_i = \iota^{\lambda j \in n : \Ob F_j}_i$.
+
+So $\coprod F = \bigsqcup_{i \in \dom F} (\iota_i \circ F_i^{\dagger}
+\circ (\iota_i)^{\dagger})$.
+
+$\coprod F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j \in n}
+\Ob F_j \right) }{ \forall i \in n : \Phi
+\sqsupseteq \iota_i \circ F_i^{\dagger} \circ (\iota_i)^{\dagger} }$.
+
+Taking into account that $\iota_i$ is a monovalued entirely defined morphism,
+we get:
+
+\begin{obvious}
+$\coprod^{(L)} = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j \in
+n} \Ob F_j \right) }{ \forall i \in n : \iota_i
+\in \mathrm{C} (F_i^{\dagger} ; \Phi) }$.{\hspace*{\fill}}{\medskip}
+\end{obvious}
+
+\begin{cor}
+  $\iota_i \in \mathrm{C} \left( F_i ; \coprod^{(L)} F \right)$ for every $i
+  \in \dom F$.
+\end{cor}
+
+\subsection{Category of continuous morphisms}
+
+Let $\iota_i$ (for $i \in \dom F$) be entirely defined monovalued and
+metacomplete morphisms.
+
+Let $\bigoplus$of an indexed family of morphisms is a morphism; $\left(
+\bigoplus f \right) \circ \iota_i = f_i$; $\bigoplus_{i \in n} (f \circ
+\iota_i) = f$ (a dual of the above).
+
+Let $F_i \in \End \left( \coprod^{(Q)}_{j \in n} \Ob F_j \right)$
+for all $i \in n$ (where $n$ is some index set) (a self-dual of the above).
+
+\begin{defn}
+  $\iota^{\cont (\mathcal{C})}_i = \left( \coprod^{(L)} F ;
+  F_i^{\dagger} ; \iota_i \right)$.
+\end{defn}
+
+\begin{prop}
+  $\iota_i$ are continuous, that is $\iota^{\cont
+  (\mathcal{C})}_i$ are morphisms.
+\end{prop}
+
+\begin{lem}
+  $f \in \Hom_{\cont (\mathcal{C})} \left(
+  \coprod^{(L)} F ; Y \right)$ \fxwarning{What is $Y$?} is continuous iff all $f \circ
+  \iota^{\cont (\mathcal{C})}$ are continuous.
+\end{lem}
+
+\begin{thm}
+  $\coprod^{(L)}$ together with $\bigoplus$ is a (partial) coproduct in the
+  category $\cont (\mathcal{C})$.
+\end{thm}
+
+\section{Applying this to the theory of funcoids and reloids}
+
+\subsection{Funcoids}
+
+\begin{defn}
+  $\mathbf{Fcd} \eqdef \cont \mathsf{FCD}$.
+\end{defn}
+
+Let $F$ be a family of endofuncoids.
+
+The cartesian product $\prod^{(Q)} X \eqdef \prod X$.
+
+I define $\pi_i = \pi^X_i \in \mathsf{FCD} \left( \prod X ; X_i
+\right)$ as the principal funcoid corresponding to the $i$-th projection.
+(Here $\pi$ is entirely defined.)
+
+The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
+
+I define $\iota_i = \iota^X_i \in \mathsf{FCD} \left( X_i ; \coprod X
+\right)$ as the principal funcoid corresponding to the $i$-th canonical
+injection. (Here $\iota$ is entirely defined.)
+
+Let $\bigotimes$ and $\bigoplus$ be defined in the same way as in category
+$\mathbf{Set}$.
+
+\begin{obvious}
+$\pi_i \circ \bigotimes f = f_i$; $\bigotimes_{i \in n} (\pi_i \circ f) =
+f$.
+\end{obvious}
+
+\begin{obvious}
+$\left( \bigoplus f \right) \circ \iota_i = f_i$; $\bigoplus_{i \in n} (f
+\circ \iota_i) = f$.{\hspace*{\fill}}{\medskip}
+\end{obvious}
+
+It is easy to show that $\pi_i$ is entirely defined monovalued, and $\iota_i$
+is metacomplete and co-metacomplete.
+
+Thus we are under conditions for both canonical products and canonical
+coproducts and thus both $\prod^{(L)} F$ and $\coprod^{(L)} F$ are defined.
+
+\subsection{Reloids}
+
+\begin{defn}
+  $\mathbf{Rld} \eqdef \cont \mathsf{RLD}$.
+\end{defn}
+
+Let $F$ be a family of endoreloids.
+
+The cartesian product $\prod^{(Q)} X \eqdef \prod X$.
+
+I define $\pi_i = \pi^X_i \in \mathsf{RLD} \left( \prod X ; X_i
+\right)$ as the principal reloid corresponding to the $i$-th projection. (Here
+$\pi$ is entirely defined.)
+
+The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
+
+I define $\iota_i = \iota^X \in
+\mathsf{RLD} \left( X_i ; \coprod X \right)$ as the principal reloid
+corresponding to the $i$-th canonical injection. (Here $\iota$ is entirely
+defined.)
+
+Let $\bigotimes$ and $\bigoplus$ are defined in the same way as in category
+$\mathbf{Set}$.
+
+\begin{obvious}
+$\pi_i \circ \bigotimes f = f_i$; $\bigotimes_{i \in n} (\pi_i \circ f) =
+f$.
+\end{obvious}
+
+\begin{obvious}
+$\left( \bigoplus f \right) \circ \iota_i = f_i$; $\bigoplus_{i \in n} (f
+\circ \iota_i) = f$.
+\end{obvious}
+
+It is easy to show that $\pi_i$ is entirely defined monovalued, and $\iota_i$
+is metacomplete and co-metacomplete.
+
+Thus we are under conditions for both canonical products and canonical
+coproducts and thus both $\prod^{(L)} F$ and $\coprod^{(L)} F$ are defined.
+
+It is trivial that for uniform spaces infimum product of reloids coincides
+with product uniformilty.
+
+\section{Initial and terminal objects}
+
+Initial object of $\mathbf{Fcd}$ is the endofuncoid
+$\uparrow^{\mathsf{FCD} (\emptyset ; \emptyset)} \emptyset$. It is
+initial because it has precisely one morphism $o$ (the empty set considered as
+a function) to any object $Y$. $o$ is a morphism because $o \circ
+\uparrow^{\mathsf{FCD} (\emptyset ; \emptyset)} \emptyset \sqsubseteq Y
+\circ o$.
+
+\begin{prop}
+  Terminal objects of $\mathbf{Fcd}$ are exactly
+  $\uparrow^{\mathscr{F}} \{ \ast \} \times^{\mathsf{FCD}}
+  \uparrow^{\mathscr{F}} \{ \ast \} = \uparrow^{\mathsf{FCD}} \{ (\ast
+  ; \ast) \}$ where $\ast$ is an arbitrary point.
+\end{prop}
+
+\begin{proof}
+  In order for a function $f : X \rightarrow \uparrow^{\mathsf{FCD}} \{
+  (\ast ; \ast) \}$ be a morphism, it is required exactly $f \circ X
+  \sqsubseteq \uparrow^{\mathsf{FCD}} \{ (\ast ; \ast) \} \circ f$
+  
+  $f \circ X \sqsubseteq (f^{- 1} \circ \uparrow^{\mathsf{FCD}} \{
+  (\ast ; \ast) \})^{- 1}$; $f \circ X \sqsubseteq (\{ \ast \}
+  \times^{\mathsf{FCD}} \langle f^{- 1} \rangle \{ \ast \})^{- 1}$; $f
+  \circ X \sqsubseteq \langle f^{- 1} \rangle \{ \ast \}
+  \times^{\mathsf{FCD}} \{ \ast \}$ what true exactly when $f$ is a
+  constant function with the value $\ast$.
+\end{proof}
+
+If $n = \emptyset$ then $Z = \{ \emptyset \}$; $\prod^{(L)} \emptyset = \max
+\mathsf{FCD} (Z ; Z) = \uparrow^{\mathscr{F}} \{ \emptyset \}
+\times^{\mathsf{FCD}} \uparrow^{\mathscr{F}} \{ \emptyset \} =
+\uparrow^{\mathsf{FCD}} \{ (\emptyset ; \emptyset) \}$.
+
+\fxnote{Initial and terminal objects of $\mathbf{Rld}$.}
+
+\section{Canonical product and subatomic product}
+
+\fxwarning{Confusion between filters on products and multireloids.}
+
+\begin{prop}
+  $\Pr^{\mathsf{RLD}}_i |_{\mathfrak{F} (Z)} = \langle \pi_i \rangle$
+  for every index $i$ of a cartesian product $Z$.
+\end{prop}
+
+\begin{proof}
+  If $\mathcal{X} \in \mathfrak{F} (Z)$ then $(\Pr^{\mathsf{RLD}}_i
+  |_{\mathfrak{F} (Z)}) \mathcal{X} = \Pr^{\mathsf{RLD}}_i  \mathcal{X}
+  = \bigsqcap^{\mathscr{F}} \rsupfun{\Pr_i} \mathcal{X} =
+  \bigsqcap \langle \pi_i \rangle \up \mathcal{X} = \langle \pi_i
+  \rangle \mathcal{X}$.
+\end{proof}
+
+\begin{prop}
+  $\prod^{(A)} F = \bigsqcap_{i \in n} \left( \left( \pi^{\mathsf{FCD}
+  \left( \prod_{i \in n} \Dst F \right)}_i \right)^{- 1} \circ F_i \circ
+  \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Src F \right)}_i
+  \right)$.
+\end{prop}
+
+\begin{proof}
+  $a \mathrel{\left[ \prod^{(A)} F \right]} b \Leftrightarrow \forall i \in
+  \dom F : \Pr^{\mathsf{RLD}}_i a \mathrel{[F_i]}
+  \Pr^{\mathsf{RLD}}_i b \Leftrightarrow \forall i \in \dom F :
+  \left\langle \left( \pi^{\mathsf{FCD} \left( \prod_{i \in n}
+  \Dst F \right)}_i \right)^{- 1} \right\rangle \mathrel{[F_i]}
+  \left\langle \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Src F
+  \right)}_i \right\rangle \Leftrightarrow \forall i \in \dom F : a
+  \mathrel{\left[ \left( \pi^{\mathsf{FCD} \left( \prod_{i \in n}
+  \Dst F \right)}_i \right)^{- 1} \circ F_i \circ
+  \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Src F \right)}_i
+  \right]} b \Leftrightarrow a \mathrel{\left[ \bigsqcap_{i \in n} \left(
+  \left( \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Dst F
+  \right)}_i \right)^{- 1} \circ F_i \circ \pi^{\mathsf{FCD} \left(
+  \prod_{i \in n} \Src F \right)}_i \right) \right]} b$ for ultrafilters
+  $a$ and $b$.
+\end{proof}
+
+\begin{cor}
+  $\prod^{(L)} F = \prod^{(A)} F$ is $F$ is a small indexed family of
+  funcoids.
+\end{cor}
+
+\section{Further plans}
+
+Does the formula $\prod^{(L)}_{i \in n} (g_i \circ f_i) = \prod^{(L)} g \circ
+\prod^{(L)} f$ hold?
+
+\begin{conjecture}
+  The categories $\mathbf{Fcd}$ and $\mathbf{Rld}$ are
+  cartesian closed (actually two conjectures).
+\end{conjecture}
+
+\url{http://mathoverflow.net/questions/141615/how-to-prove-that-there-are-no-exponential-object-in-a-category}
+suggests to investigate colimits to prove that there are no exponential
+object.
+
+Coordinate-wise continuity.
