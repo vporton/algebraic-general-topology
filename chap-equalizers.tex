@@ -1,0 +1,650 @@
+\chapter{Equalizers and co-Equalizers in Certain Categories}
+
+It is a rough draft. Errors are possible.
+
+\fxwarning{Change notation $\prod$ $\rightarrow$ $\prod^{(L)}$.}
+
+\section{Categories with embeddings}
+
+\begin{note}
+  This section in not used below, it is just to feed your intuition.
+\end{note}
+
+The following generalizes the well known concept of embedding function $A
+\hookrightarrow B$ for from a set $A$ to a set $B$ where $A \subseteq B$.
+
+I will set that the unique morphism from an object $A$ to an object $B$ of a
+thin category is equal to the pair $(A ; B)$.
+
+\begin{defn}
+  A \emph{category with embeddings of objects} is a dagger category with a
+  preorder of the set of objects together with a functor $\hookrightarrow$ (we
+  will denote applying this functor to the object $(A ; B)$ as $A
+  \hookrightarrow B$.) such that:
+  \begin{itemize}
+    \item $\hookrightarrow$ is an identity on objects.
+    
+    \item Every $A \hookrightarrow B$ is a monomorphism.
+    
+    \item $(A \hookrightarrow B)^{\dagger} \circ (A \hookrightarrow B) = 1_A$.
+  \end{itemize}
+\end{defn}
+
+\begin{obvious}
+$A\hookrightarrow B$ is defined when $(A ; B)$ is a morphism of the preorder
+that is when $A \sqsubseteq B$.
+\end{obvious}
+
+\begin{obvious}
+$A \hookrightarrow B : A \rightarrow B$ when $A \sqsubseteq B$.
+\end{obvious}
+
+\begin{prop}
+  $A \hookrightarrow A = 1_A$.
+\end{prop}
+
+\begin{proof}
+  Because $(A ; A)$ is an identity morphism and $\hookrightarrow$ preserves
+  identities.
+\end{proof}
+
+\begin{prop}
+  $(B \hookrightarrow C) \circ (A \hookrightarrow B) = A \hookrightarrow C$
+  whenever $A \sqsubseteq B \sqsubseteq C$.
+\end{prop}
+
+\begin{proof}
+  $(B \hookrightarrow C) \circ (A \hookrightarrow B) = \hookrightarrow (B ; C)
+  \circ \hookrightarrow (A ; B) = \hookrightarrow ((B ; C) \circ (A ; B)) =
+  \hookrightarrow (A ; C) = A \hookrightarrow C$.
+\end{proof}
+
+\section{\texorpdfstring{Categories under $\mathbf{Rel}$}{Categories under Rel}}
+
+\begin{defn}
+  The $\mathbf{Rel}$-morphism $A \rightleftarrows B$
+  (\emph{restriction-embedding}) is defined by the formula: $A
+  \rightleftarrows B = (A ; B ; \id_{A \cap B})$.
+\end{defn}
+
+\begin{obvious}
+If $A \subseteq B$ then $A \rightleftarrows B$ is an embedding $A \hookrightarrow B
+= (A ; B ; \id_A)$.
+\end{obvious}
+
+\begin{obvious}
+If $A \supseteq B$ then $A \rightleftarrows B = (A ; B ;
+\id_B)$.
+\end{obvious}
+
+\begin{obvious}
+$A \rightleftarrows A = 1^{\mathbf{Rel}}_A$.
+\end{obvious}
+
+\begin{obvious}
+$(A \rightleftarrows B)^{- 1} = B \rightleftarrows A$.
+\end{obvious}
+
+\begin{defn}
+\emph{Dagger functor} between two dagger categories is a functor between
+these categories, which commutes with the daggers.
+\fxwarning{Clearer wording.}
+\end{defn}
+
+\begin{defn}
+\emph{Category under $\mathbf{Rel}$} is a pair $(C ; \uparrow)$
+where $C$ is a category whose objects are small sets and $\uparrow$ is an
+identity-on-objects functor $\mathbf{Rel} \rightarrow C$. I call
+$\uparrow$ \emph{up-arrow functor}.
+\end{defn}
+
+\begin{defn}
+  \emph{Dagger category under $\mathbf{Rel}$} is a pair $(C ;
+  \uparrow)$ where $C$ is a dagger category whose objects are small sets and
+  $\uparrow$ is a dagger identity-on-objects functor $\mathbf{Rel}
+  \rightarrow C$.
+\end{defn}
+
+\begin{defn}
+  $A \rightleftarrows^{\mathcal{C}} B = \uparrow (A \rightleftarrows B)$. In
+  other words, $\rightleftarrows^{\mathcal{C}} = \uparrow \circ
+  \rightleftarrows$.
+\end{defn}
+
+\begin{prop}
+  $A \rightleftarrows^{\mathcal{C}} A = 1_{\mathcal{C}}^A$.
+\end{prop}
+
+\begin{proof}
+  $A \rightleftarrows^{\mathcal{C}} A = \uparrow (A \rightleftarrows A) =
+  \uparrow 1_{\mathbf{Rel}} = 1_{\mathcal{C}}^A$.
+\end{proof}
+
+\begin{prop}
+  If $f : X \rightarrow Y$ is a $\mathbf{Rel}$-morphism and
+  $\im f = A \subseteq Y$ then
+  \[ (A \rightleftarrows Y) \circ (Y \rightleftarrows A) \circ f = f. \]
+\end{prop}
+
+\begin{proof}
+  $(A \rightleftarrows Y) \circ (Y \rightleftarrows A) \circ f = \id_A
+  \circ f = f$.
+\end{proof}
+
+\begin{cor}
+  If $f : X \rightarrow Y$ is a morphism of a category under
+  $\mathbf{Rel}$ and $\im f = A \subseteq Y$, then
+  \[ (A \rightleftarrows^{\mathcal{C}} Y) \circ (Y
+     \rightleftarrows^{\mathcal{C}} A) \circ \uparrow f = \uparrow f. \]
+\end{cor}
+
+\begin{prop}
+  ~  
+  \begin{enumerate}
+    \item If $A \subseteq B$ then $A \rightleftarrows^{\mathcal{C}} B$ is a
+    monomorphism.
+    
+    \item If $A \supseteq B$ then $A \rightleftarrows^{\mathcal{C}} B$ is a
+    epimorphism.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  We'll prove only the first as the second is dual.
+  
+  Let $(A \rightleftarrows^{\mathcal{C}} B) \circ f = (A
+  \rightleftarrows^{\mathcal{C}} B) \circ g$. Then $(B
+  \rightleftarrows^{\mathcal{C}} A) \circ (A \rightleftarrows^{\mathcal{C}} B)
+  \circ f = (B \rightleftarrows^{\mathcal{C}} A) \circ (A
+  \rightleftarrows^{\mathcal{C}} B) \circ g$; $1^A \circ f = 1^A \circ g$; $f
+  = g$.
+\end{proof}
+
+\begin{prop}
+  $(B \rightleftarrows C) \circ (A \rightleftarrows B) = A \rightleftarrows C$
+  iff $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
+\end{prop}
+
+\begin{proof}
+  $(B \rightleftarrows C) \circ (A \rightleftarrows B) = A \rightleftarrows C$
+  is equivalent to:
+  
+  $(B ; C ; \id_{B \cap C}) \circ (A ; B ; \id_{A \cap B}) = (A ;
+  C ; \id_{A \cap C})$;
+  
+  $(A ; C ; \id_{A \cap B \cap C}) = (A ; C ; \id_{A \cap C})$;
+  
+  $A \cap B \cap C = A \cap C$;
+  
+  $B \supseteq A \cap C$.
+\end{proof}
+
+\begin{cor}
+  $(B \rightleftarrows^{\mathcal{C}} C) \circ (A
+  \rightleftarrows^{\mathcal{C}} B) = (A \rightleftarrows^{\mathcal{C}} C)$ if
+  $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
+\end{cor}
+
+\begin{defn}
+  \emph{Partially ordered dagger category under $\mathbf{Rel}$} is
+  a category which is both a partially ordered dagger category and a category
+  under $\mathbf{Rel}$ such that $\uparrow \circ f^{- 1} = (\uparrow
+  \circ f)^{\dagger}$ and $A \sqsubseteq B \Rightarrow \uparrow A \sqsubseteq
+  \uparrow B$.
+\end{defn}
+
+\begin{prop}
+  $(A \rightleftarrows^{\mathcal{C}} B)^{\dagger} = B
+  \rightleftarrows^{\mathcal{C}} A$ for a dagger category under
+  $\mathbf{Rel}$.
+\end{prop}
+
+\begin{proof}
+  $(A \rightleftarrows^{\mathcal{C}} B)^{\dagger} = (\uparrow (A
+  \rightleftarrows B))^{\dagger} = \uparrow (A \rightleftarrows B)^{- 1} =
+  \uparrow (B \rightleftarrows A) = B \rightleftarrows^{\mathcal{C}} A$.
+\end{proof}
+
+\begin{prop}
+  For a partially ordered dagger category $\mathcal{C}$ under
+  $\mathbf{Rel}$ we have $A \rightleftarrows^{\mathcal{C}} B$ is:
+  \begin{enumerate}
+    \item monovalued;
+    
+    \item injective;
+    
+    \item entirely defined if $A \subseteq B$;
+    
+    \item surjective if $B \subseteq A$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{enumerate}
+    \item $(A \rightleftarrows B) \circ (B \rightleftarrows A) \sqsubseteq
+    1^{\mathbf{Rel}}_B$; $(A \rightleftarrows B) \circ (A
+    \rightleftarrows B)^{- 1} \sqsubseteq 1^{\mathbf{Rel}}_B$; $(A
+    \rightleftarrows^{\mathcal{C}} B) \circ (A \rightleftarrows^{\mathcal{C}}
+    B)^{\dagger} \sqsubseteq 1^{\mathcal{C}}_B$.
+    
+    \item $(B \rightleftarrows A) \circ (A \rightleftarrows B) \sqsubseteq
+    1^{\mathbf{Rel}}_A$; $(A \rightleftarrows B)^{- 1} \circ (A
+    \rightleftarrows B) \sqsubseteq 1^{\mathbf{Rel}}_A$; $(A
+    \rightleftarrows^{\mathcal{C}} B)^{\dagger} \circ (A
+    \rightleftarrows^{\mathcal{C}} B) \sqsubseteq 1^{\mathcal{C}}_A$.
+    
+    \item $(B \rightleftarrows A) \circ (A \rightleftarrows B) \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $(A \rightleftarrows B)^{- 1} \circ (A
+    \rightleftarrows B) \sqsupseteq 1^{\mathbf{Rel}}_A$; $(A
+    \rightleftarrows^{\mathcal{C}} B)^{\dagger} \circ (A
+    \rightleftarrows^{\mathcal{C}} B) \sqsupseteq 1^{\mathcal{C}}_A$.
+    
+    \item $(A \rightleftarrows B) \circ (B \rightleftarrows A) \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $(A \rightleftarrows B) \circ (A
+    \rightleftarrows B)^{- 1} \sqsupseteq 1^{\mathbf{Rel}}_A$; $(A
+    \rightleftarrows^{\mathcal{C}} B) \circ (A \rightleftarrows^{\mathcal{C}}
+    B)^{\dagger} \sqsupseteq 1^{\mathcal{C}}_A$.
+  \end{enumerate}
+\end{proof}
+
+\section{Rectangular embedding-restriction}
+
+\begin{defn}
+  $\iota_{B_0, B_1} f = (A_1 \rightleftarrows^{\mathcal{C}} B_1) \circ f \circ
+  (B_0 \rightleftarrows^{\mathcal{C}} A_0)$ for $f \in
+  \Hom_{\mathcal{C}} (A_0 ; A_1)$.
+\end{defn}
+
+For brevity $\iota_B f = \iota_{B, B} f$.
+
+\begin{prop}
+  $\iota_{\Src f, \Dst f} f = f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{\Src f, \Dst f} f = (\Dst f
+  \rightleftarrows^{\mathcal{C}} \Dst f) \circ f \circ (\Src f
+  \rightleftarrows^{\mathcal{C}} \Src f) = 1_{\mathcal{C}}^{\Dst
+  f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f$.
+\end{proof}
+
+\begin{prop}
+  The function $\iota_{B_0, B_1} |_{f \in \Hom_{\mathcal{C}} (A_0 ;
+  A_1)}$ is injective, if $A_0 \subseteq B_0 \wedge A_1 \subseteq B_1$.
+\end{prop}
+
+\begin{proof}
+  Because $A_1 \rightleftarrows^{\mathcal{C}} B_1$ is a monomorphism and $A_0
+  \rightleftarrows^{\mathcal{C}} B_0$ is an epimorphism.
+\end{proof}
+
+\begin{prop}
+  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \iota_{C_0, C_1} f$ for $B_0
+  \supseteq A_0 \cap C_0$, $B_1 \supseteq A_1 \cap C_1$ and $f : A_0
+  \rightarrow A_1$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = (B_1 \rightleftarrows^{\mathcal{C}}
+  C_1) \circ (A_1 \rightleftarrows^{\mathcal{C}} B_1) \circ f \circ (B_0
+  \rightleftarrows^{\mathcal{C}} A_0) \circ (C_0
+  \rightleftarrows^{\mathcal{C}} B_0) = (A_1 \rightleftarrows^{\mathcal{C}}
+  C_1) \circ f \circ (C_0 \rightleftarrows^{\mathcal{C}} A_0) = \iota_{C_0,
+  C_1} f$.
+\end{proof}
+
+\begin{prop}
+  Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
+  \subseteq B_1$. Then $\iota_{B_0, B_2} (g \circ f) = \iota_{B_1, B_1} g
+  \circ \iota_{B_0, B_1} f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{B_0, B_2} (g \circ f) = (A_2 \rightleftarrows^{\mathcal{C}} B_2)
+  \circ (g \circ f) \circ (B_0 \rightleftarrows^{\mathcal{C}} A_0) = (A_2
+  \rightleftarrows^{\mathcal{C}} B_2) \circ g \circ \id_{A_1} \circ f
+  \circ (B_0 \rightleftarrows^{\mathcal{C}} A_0) = (A_2
+  \rightleftarrows^{\mathcal{C}} B_2) \circ g \circ (B_1 \rightleftarrows A_1)
+  \circ (A_1 \rightleftarrows B_1) \circ f \circ (B_0
+  \rightleftarrows^{\mathcal{C}} A_0) = \iota_{B_1, B_1} g \circ \iota_{B_0,
+  B_1} f$.
+\end{proof}
+
+\section{\texorpdfstring{Examples of partially ordered dagger categories under
+$\mathbf{Rel}$}{Examples of partially ordered dagger categories under Rel}}
+
+\subsection{Generalized rebase of filters}
+
+In \cite{volume-1} I defined \emph{rebase} $\mathcal{A} \div A$ for a
+set-theoretic filter $\mathcal{A}$ and a set $X$ such that $\exists X \in
+\mathcal{A} : X \subseteq A$.
+
+Now define a generalized rebase for every set-theoretic filter $\mathcal{A}$
+and every set $A$:
+
+\begin{defn}
+  $\mathcal{A} \div A = \bigsqcap \setcond{ \uparrow^A  (X \cap A) }
+  { X \in \mathcal{A} }$.
+\end{defn}
+
+\begin{prop}
+  In the case of $\exists X \in \mathcal{A} : X \subseteq A$ these two
+  definitions coincide.
+\end{prop}
+
+\begin{proof}
+  Let $\exists X \in \mathcal{A} : X \subseteq A$. Then as it is proved in
+{\cite{volume-1}} $\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y \subseteq X }$ is a filter.
+
+If $P \in \setcond{ X \in \subsets A }{ \exists Y
+\in \mathcal{A} : Y \subseteq X }$ then $P \in \subsets A$ and $Y
+\subseteq P$ for some $Y \in \mathcal{A}$. Thus $P \supseteq Y \cap A \in
+\bigsqcap \setcond{ \uparrow^B  (Y \cap A) }{ Y \in \mathcal{A} }$.
+
+If $P \in \bigsqcap \setcond{ \uparrow^B  (X \cap A) }{
+X \in \mathcal{A} }$ then by properties of generalized filter bases,
+there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
+\subsets A$. Thus $P \supseteq X$. Thus $P \in \setcond{ X \in \subsets A
+}{ \exists Y \in \mathcal{A} : Y \subseteq X }$.
+
+\fxwarning{Clear this proof: wording, consistent use of letters.}
+\end{proof}
+
+\begin{prop}
+  $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \subseteq A$.
+\end{prop}
+
+\begin{proof}
+  $(\mathcal{X} \div A) \div B = \bigsqcap \setcond{ \uparrow^B  (Y \cap B)
+  }{ Y \in \bigsqcap \setcond{ \uparrow^A  (X \cap A)}
+  {X \in \mathcal{X} } \mathcal{} } =
+  \bigsqcap \setcond{ \uparrow^B  (X \cap A) }{ X \in
+  \mathcal{X} } \sqcap \uparrow^B B = \bigsqcap \setcond{ \uparrow^B  (X
+  \cap A \cap B) }{ X \in \mathcal{X} } =
+  \mathcal{X} \div (A \cap B) = \mathcal{X} \div B$.
+\end{proof}
+
+\subsection{\texorpdfstring{Category $\mathbf{Rel}$}{Category Rel}}
+
+Category $\mathbf{Rel}$ with the identity up-arrow functor to itself
+and ``reverse relation'' as the dagger is an obvious example of a partially
+ordered dagger category under $\mathbf{Rel}$.
+
+\begin{defn}
+  $f \div (A \times B) = (A ; B ; (\GR f) \div (A \times B))$ for every
+  $\mathbf{Rel}$-morphism $f$.
+\end{defn}
+
+\begin{prop}
+  $\iota_{A, B} f = (A ; B ; \GR f \cap (A \times B))$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{A, B} f = (\Dst f \rightleftarrows B) \circ f \circ (A
+  \rightleftarrows \Src f) = (A ; B ; \GR f \cap (A \times B))$.
+\end{proof}
+
+\subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
+
+Category $\mathsf{FCD}$ with the up-arrow functor
+$\uparrow^{\mathsf{FCD}}$ and ``reverse funcoid'' as the dagger is a
+partially ordered dagger category under $\mathbf{Rel}$.
+
+\begin{prop}
+  $A \rightleftarrows^{\mathsf{FCD}} B = (A ; B ; \lambda \mathcal{X}
+  \in \mathfrak{F} (A) : \mathcal{X} \div B ; \lambda \mathcal{Y} \in
+  \mathfrak{F} (B) : \mathcal{Y} \div A)$ for objects $A \subseteq B$ of
+  $\mathsf{FCD}$.
+\end{prop}
+
+\begin{proof}
+  $\langle A \rightleftarrows^{\mathsf{FCD}} B \rangle \mathcal{X} =
+  \bigsqcap \left\{ \langle A \rightleftarrows^{\mathsf{FCD}} B
+  \rangle^{\ast} X \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} =
+  \bigsqcap \left\{ \uparrow^B  \langle A \rightleftarrows B \rangle X
+  \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} = \bigsqcap \left\{
+  \uparrow^B  (X \cap A \cap B) \hspace{1em} | \hspace{1em} X \in \mathcal{X}
+  \right\} = \bigsqcap \left\{ \uparrow^B  (X \cap B) \hspace{1em} |
+  \hspace{1em} X \in \mathcal{X} \right\} = \mathcal{X} \div B$.
+  
+  Rest follows from symmetry.
+\end{proof}
+
+\begin{prop}
+  ~
+  \begin{enumerate}
+    \item $\langle A \rightleftarrows^{\mathsf{FCD}} B \rangle^{\ast} X
+    = \uparrow^B X$ for every $X \in \subsets A$ if $A \subseteq B$.
+    
+    \item $\langle (B \rightleftarrows^{\mathsf{FCD}} A) \rangle^{\ast}
+    Y = \uparrow^A (Y \cap A)$ for every $Y \in \subsets B$ if $A \subseteq
+    B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  By definition of principal funcoid.
+\end{proof}
+
+\subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
+
+Category $\mathsf{RLD}$ with the up-arrow functor
+$\uparrow^{\mathsf{RLD}}$ and ``reverse reloid'' as the dagger is a
+partially ordered dagger category under $\mathbf{Rel}$.
+
+\begin{obvious}
+$A \rightleftarrows^{\mathsf{RLD}} B = \uparrow^{\mathsf{RLD} (A ;
+B)} \id_{A \cap B}$.
+\end{obvious}
+
+\begin{defn}
+  $f \div (A \times B) = (A ; B ; (\GR f) \div (A \times B))$ for every
+  reloid $f$.
+\end{defn}
+
+\begin{prop}
+  $\iota_{A, B} f = f \div (A \times B)$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{A, B} f = (\Dst f \rightleftarrows^{\mathsf{RLD}} B)
+\circ f \circ (A \rightleftarrows^{\mathsf{RLD}} \Src f) =
+\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} ((\Dst f
+\rightleftarrows B) \circ F \circ (A \rightleftarrows \Src f))
+}{ F \in \GR f } = \bigsqcap \setcond{
+\uparrow^{\mathsf{RLD}} (F \cap (A \times B))}
+{F \in \GR f } = f \div (A \times B)$.
+
+\fxwarning{Filters on cartesian products vs reloids.}
+\end{proof}
+
+\section{Equalizers}
+
+Categories $\cont (\mathcal{C})$ are defined above.
+
+I will denote $W$ the forgetful functor from $\cont
+(\mathcal{C})$ to $\mathcal{C}$.
+
+In the definition of the category $\cont (\mathcal{C})$ take
+values of $\uparrow$ as principal morphisms. \fxwarning{Wording.}
+
+\begin{lem}
+  Let $f : X \rightarrow Y$ be a morphism of the category
+  $\cont (\mathcal{C})$ where $\mathcal{C}$ is a concrete
+  category (so $W f = \uparrow \varphi$ for a $\mathbf{Rel}$-morphism
+  $\varphi$ because $f$ is principal) and $\im \varphi = A \subseteq
+  \Ob Y$. Factor it $\varphi = (A \rightleftarrows \Ob Y) \circ u$
+  where $u : \Ob X \rightarrow A$ using properties of
+  $\mathbf{Set}$. Then $u$ is a morphism of $\cont
+  (\mathcal{C})$ (that is a continuous function $X \rightarrow \iota_A Y$).
+\end{lem}
+
+\begin{proof}
+  $(A \rightleftarrows \Ob Y)^{- 1} \circ \varphi = (A \rightleftarrows
+  \Ob Y)^{- 1} \circ (A \rightleftarrows \Ob Y) \circ u$;
+  
+  $(A \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
+  = (A \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ \uparrow u$;
+  
+  $(A \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
+  = \uparrow u$;
+  
+  $X \sqsubseteq (\uparrow u)^{- 1} \circ \pi_A Y \circ \uparrow u
+  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ \pi_A Y \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
+  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ Y \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ (A
+  \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
+  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ Y \circ
+  \uparrow \varphi \Leftrightarrow X \sqsubseteq (W f)^{- 1} \circ Y \circ W
+  f$ what is true by definition of continuity.
+\end{proof}
+
+Equational definition of equalizers:
+
+\url{http://nforum.mathforge.org/comments.php?DiscussionID=5328/}
+
+\begin{thm}
+  The following is an equalizer of parallel morphisms $f, g : A \rightarrow B$
+  of category $\cont (\mathcal{C})$:
+  \begin{itemize}
+    \item the object $X = \iota_{\left\{ x \in \Ob A \hspace{1em} |
+    \hspace{1em} f x = g x \right\}} A$;
+    
+    \item the morphism $\Ob X \rightleftarrows \Ob A$ considered
+    as a morphism $X \rightarrow A$.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  Denote $e = \Ob X \rightleftarrows \Ob A$.
+  
+  Let $f \circ z = g \circ z$ for some morphism $z$.
+  
+  Let's prove $e \circ u = z$ for some $u : \Src z \rightarrow X$.
+  Really, as a morphism of $\mathbf{Set}$ it exists and is unique.
+  
+  Consider $z$ as as a generalized element.
+  
+  $f (z) = g (z)$. So $z \in X$ (that is $\Dst z \in X$). Thus $z = e
+  \circ u$ for some $u$ (by properties of $\mathbf{Set}$). The
+  generalized element $u$ is a $\cont (\mathcal{C})$-morphism
+  because of the lemma above. It is unique by properties of
+  $\mathbf{Set}$.
+\end{proof}
+
+We can (over)simplify the above theorem by the obvious below:
+
+\begin{obvious}
+$\setcond{ x \in \Ob A }{ f x = g x } = \dom (f \cap g)$.
+\end{obvious}
+
+\section{Co-equalizers}
+
+\url{http://math.stackexchange.com/questions/539717/how-to-construct-co-equalizers-in-mathbftop}	
+
+Let $\sim$ be an equivalence relation. Let's denote $\pi$ its canonical
+projection.
+
+\begin{defn}
+  $f / \sim = \uparrow \pi \circ f \circ \uparrow \pi^{- 1}$ for every
+  morphism $f$.
+\end{defn}
+
+\begin{obvious}
+$\Ob (f / \sim) = (\Ob f) / r$.
+\end{obvious}
+
+\begin{obvious}
+$f / \sim = \langle \uparrow^{\mathsf{FCD}} \pi \times^{(C)}
+\uparrow^{\mathsf{FCD}} \pi \rangle f$ for every morphism
+$f$.
+\end{obvious}
+
+To define co-equalizers of morphisms $f$ and $g$ let $\sim$ be is the smallest
+equivalence relation such that $f x = g x$.
+
+\begin{lem}
+  Let $f : X \rightarrow Y$ be a morphism of the category
+  $\cont (\mathcal{C})$ where $\mathcal{C}$ is a concrete
+  category (so $W f = \uparrow \varphi$ for a $\mathbf{Rel}$-morphism
+  $\varphi$ because $f$ is principal) such that $\varphi$ respects $\sim$.
+  Factor it $\varphi = u \circ \pi$ where $u : \Ob (X / \sim)
+  \rightarrow \Ob Y$ using properties of $\mathbf{Set}$. Then
+  $u$ is a morphism of $\cont (\mathcal{C})$ (that is a
+  continuous function $X / \sim \rightarrow Y$).
+\end{lem}
+
+\begin{proof}
+  $f \circ X \circ f^{- 1} \sqsubseteq Y$; $\uparrow u \circ \uparrow \pi
+  \circ X \circ \uparrow \pi^{- 1} \circ \uparrow u^{- 1} \sqsubseteq Y$;
+  $\uparrow u \in \mathrm{C} (\uparrow \pi \circ X \circ \uparrow \pi^{- 1} ;
+  Y) = \mathrm{C} (X / \sim ; Y)$.
+\end{proof}
+
+\begin{thm}
+  The following is a co-equalizer of parallel morphisms $f, g : A \rightarrow
+  B$ of category $\cont (\mathcal{C})$:
+  \begin{itemize}
+    \item the object $Y = f / \sim$;
+    
+    \item the morphism $\pi$ considered as a morphism $B \rightarrow Y$.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  Let $z \circ f = z \circ g$ for some morphism $z$.
+  
+  Let's prove $u \circ \pi = z$ for some $u : Y \rightarrow \Dst z$.
+  Really, as a morphism of $\mathbf{Set}$ it exists and is unique.
+  
+  $\Src z \in Y$. Thus $z = u \circ \pi$ for some $u$ (by properties of
+  $\mathbf{Set}$). The function $u$ is a $\cont
+  (\mathcal{C})$-morphism because of the lemma above. It is unique by
+  properties of $\mathbf{Set}$ ($\pi$ obviously respects equivalence
+  classes).
+\end{proof}
+
+\section{Rest}
+
+\begin{thm}
+  The categories $\cont (\mathcal{C})$ (for example in
+  $\mathbf{Fcd}$ and $\mathbf{Rld}$) are complete.
+\end{thm}
+
+\begin{proof}
+  They have products and equalizers.
+\end{proof}
+
+\begin{thm}
+  The categories $\cont (\mathcal{C})$ (for example in
+  $\mathbf{Fcd}$ and $\mathbf{Rld}$) are co-complete.
+\end{thm}
+
+\begin{proof}
+  They have co-products and co-equalizers.
+\end{proof}
+
+\begin{defn}
+  I call morphisms $f$ and $g$ of a category with embeddings
+  \emph{equivalent} ($f \sim g$) when there exist a morphism $p$ such that
+  $\Src p \sqsubseteq \Src f$, $\Src p \sqsubseteq
+  \Src g$, $\Dst p \sqsubseteq \Dst f$, $\Dst p
+  \sqsubseteq \Dst g$ and $\iota_{\Src f, \Dst f} p = f$ and
+  $\iota_{\Src g, \Dst g} p = g$.
+\end{defn}
+
+\begin{problem}
+  Find under which conditions:
+  \begin{enumerate}
+    \item Equivalence of morphisms is an equivalence relation.
+    
+    \item Equivalence of morphisms is a congruence for our category.
+  \end{enumerate}
+\end{problem}
