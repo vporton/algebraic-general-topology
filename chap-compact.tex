@@ -1,0 +1,373 @@
+\chapter{Compact funcoids}
+
+Compact funcoids are defined. Under certain conditions it's proved that the
+reloid corresponding to a compact funcoid is the neighborhood of the diagonal
+of the product funcoid.
+
+This is a rough partial draft. The proofs are with errors.
+
+\section{The rest}
+
+\begin{defn}
+  A funcoid $f$ is \emph{directly compact} iff
+  \[ \text{$\forall \mathcal{F} \in \mathfrak{F}: (\supfun{f}
+     \mathcal{F} \neq 0 \Rightarrow \Cor \supfun{f} \mathcal{F}
+     \neq 0)$.} \]
+\end{defn}
+
+\begin{obvious}
+A funcoid $f$ is directly compact iff $\forall a \in \atoms \dom f :
+\Cor \supfun{f} a \neq 0$.
+\end{obvious}
+
+\begin{defn}
+  A funcoid $f$ is \emph{reversely compact} iff $f^{- 1}$ is directly
+  compact.
+\end{defn}
+
+\begin{defn}
+  A funcoid is \emph{compact} iff it is both directly compact and reversely
+  compact.
+\end{defn}
+
+\begin{prop}
+  $\prod^{\mathsf{RLD}} a = \uparrow^{\mathsf{RLD}} \prod_{i \in
+  \dom a} (\uparrow^{\mathsf{RLD}})^{- 1} a_i$ for every indexed
+  family $a$ of principal filters.
+\end{prop}
+
+\begin{proof}
+Because $\prod_{i \in \dom a} (\uparrow^{\mathsf{RLD}})^{- 1} a_i
+\in \GR \prod^{\mathsf{RLD}} a$.
+\fxwarning{More detailed proof.}
+\end{proof}
+
+\begin{lem}
+$\prod^{\mathsf{RLD}}_{i \in \dom a} \Cor a_i = \Cor
+\prod^{\mathsf{RLD}} a$.
+\end{lem}
+
+\begin{proof}
+$\Cor \prod^{\mathsf{RLD}} a = \bigsqcap \left\{
+\uparrow^{\mathsf{RLD}} \prod A \hspace{1em} | \hspace{1em} A \in
+\up a \right\} = \uparrow^{\mathsf{RLD}} \bigcap \left\{ \prod A
+\hspace{1em} | \hspace{1em} A \in \up a \right\} =
+\uparrow^{\mathsf{RLD}} \bigcap \left\{ \prod A \hspace{1em} |
+\hspace{1em} A \in \subsets \prod \mathfrak{U}, \forall i \in \dom a
+: A_i \in \up a_i \right\} = \uparrow^{\mathsf{RLD}} \bigcap
+\left\{ \prod \bigcap K_i \hspace{1em} | \hspace{1em} K \in \subsets
+\subsets \prod \mathfrak{U}, \forall i \in \dom a : K_i \in
+\subsets \up a_i \right\} = \uparrow^{\mathsf{RLD}} \bigcap
+\left\{ \prod (\uparrow^{\mathsf{RLD}})^{- 1} \Cor a_i
+\hspace{1em} | \hspace{1em} i \in \dom a \right\} =
+\uparrow^{\mathsf{RLD}} \prod_{i \in \dom
+a}^{\mathsf{RLD}} \Cor a_i$.
+
+\fxwarning{Check for little errors.}
+\end{proof}
+
+\begin{cor}
+  $\prod^{\mathsf{RLD}}_{i \in n} \langle \CoCompl f_i \rangle
+  \mathcal{X}_i = \left\langle \CoCompl \prod^{(A)} f \right\rangle
+  \prod^{\mathsf{RLD}} \mathcal{X}$ for every $n$-indexed families $f$
+  of funcoids and $\mathcal{X}$ of filters on the same set (with $\Src
+  f_i = \Base (\mathcal{X}_i)$ for every $i \in n$).
+\end{cor}
+
+\begin{proof}
+  ~
+  \begin{eqnarray*}
+    \prod^{\mathsf{RLD}}_{i \in n} \langle \CoCompl f_i \rangle
+    \mathcal{X}_i & = & \\
+    \prod^{\mathsf{RLD}}_{i \in n} \Cor \langle f_i \rangle
+    \mathcal{X}_i & = & \\
+    \Cor \prod^{\mathsf{RLD}}_{i \in n} \langle f_i \rangle 
+    \mathcal{X}_i & = & \text{(*)}\\
+    \Cor \prod^{\mathsf{RLD}}_{i \in n} \langle f_i \rangle
+    \Pr^{\mathsf{RLD}}_i \left( \prod^{\mathsf{RLD}} \mathcal{X}
+    \right) & = & \\
+    \Cor \left\langle \prod^{(A)} f \right\rangle
+    \prod^{\mathsf{RLD}} \mathcal{X} & = & \\
+    \left\langle \CoCompl \prod^{(A)} f \right\rangle
+    \prod^{\mathsf{RLD}} \mathcal{X} . &  & 
+  \end{eqnarray*}
+  (*) You should verify the special case when $\mathcal{X}_i =
+  0^{\mathfrak{F}}$ for some $i$.
+\end{proof}
+
+\begin{thm}
+Let $f$ be an indexed family of funcoids. \fxnote{Reverse theorem (for non-least funcoids).}
+
+\begin{enumerate}
+  \item $\prod f$ is directly compact if every $f_i$ is directly compact.
+  
+  \item $\prod f$ is reversely compact if every $f_i$ is reversely compact.
+  
+  \item $\prod f$ is compact if every $f_i$ is compact.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+  It is enough to prove only the first statement.
+  
+  Let each $f_i$ is directly compact.
+  
+  Let $\left\langle \prod f \right\rangle a \neq 0$. Then $\left\langle \prod
+  f \right\rangle a = \left\langle \prod^{(A)} f \right\rangle a =
+  \prod^{\mathsf{RLD}}_{i \in \dom f} \langle f_i \rangle
+  \Pr^{\mathsf{RLD}}_i a$. Thus every $\langle f_i \rangle
+  \Pr^{\mathsf{RLD}}_i a \neq 0$. Consequently by compactness
+  $\Cor \langle f_i \rangle \Pr^{\mathsf{RLD}}_i a \neq 0$;
+  $\prod_{i \in \dom f} \Cor \langle f_i \rangle
+  \Pr^{\mathsf{RLD}}_i a \neq 0$; $\Cor \prod_{i \in \dom
+  f} \langle f_i \rangle \Pr^{\mathsf{RLD}}_i a \neq 0$; $\Cor
+  \left\langle \prod f \right\rangle a \neq 0$.
+  
+  So $\prod f$ is directly compact.
+\end{proof}
+
+I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead.}
+
+\begin{prop}
+  The following expressions are pairwise equal:
+  \begin{enumerate}
+    \item $\langle f \times f \rangle^{\ast} \Delta$;
+    
+    \item $\bigsqcup \setcond{ \langle f \times f \rangle p }
+    {p \in \atoms \Delta }$;
+    
+    \item $\bigsqcup \setcond{ \supfun{f} x \times^{\mathsf{RLD}}
+    \supfun{f} x }{ x \in \mathfrak{F} }$;
+    
+    \item $\torldin  \bigsqcup \setcond{ \langle f
+    \rangle x \times^{\mathsf{FCD}} \supfun{f} x }
+    {x \in \mathfrak{F} }$;
+    
+    \item $\torldin  \bigsqcup \setcond{ f \circ (x
+    \times^{\mathsf{FCD}} x) \circ f^{- 1} }{
+    x \in \mathfrak{F} }$;
+    
+    \item $\bigsqcup \setcond{ (\torldin f) \circ (x
+    \times^{\mathsf{RLD}} x) \circ (\torldin
+    f)^{- 1} }{ x \in \mathfrak{F} }$.
+    
+    \item $\torldin (f^{- 1} \circ f)$
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ??
+\end{proof}
+
+\begin{prop}
+  Let $g$ be a reloid and $f = \tofcd g$. Then $\langle f
+  \times f \rangle^{\ast} \Delta \sqsupseteq g$.
+\end{prop}
+
+\begin{proof}
+  $\langle f \times f \rangle^{\ast} \Delta \nasymp
+  \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
+  \uparrow^{\mathsf{RLD}} \Delta \mathrel{[f \times f]}
+  \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
+  \uparrow^{\mathsf{FCD}} \Delta \mathrel{[f \times^{(C)} f]}
+  \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \circ
+  \uparrow^{\mathsf{FCD}} \Delta \circ f^{- 1} \nasymp
+  \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \circ f^{- 1} \nasymp
+  \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \nasymp
+  \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \sqcap
+  \uparrow^{\mathsf{FCD}} Y \neq 0 \Leftarrow
+  \torldin (f \sqcap \uparrow^{\mathsf{FCD}}
+  Y) \neq 0 \Leftrightarrow \torldin f \sqcap
+  \torldin \uparrow^{\mathsf{FCD}} Y \neq 0
+  \Leftarrow \torldin f \sqcap
+  \torldout \uparrow^{\mathsf{FCD}} Y \neq 0
+  \Leftrightarrow \torldin f \sqcap
+  \uparrow^{\mathsf{RLD}} Y \neq 0 \Leftrightarrow
+  \torldin  \tofcd g \sqcap
+  \uparrow^{\mathsf{RLD}} Y \neq 0 \Leftarrow g \sqcap
+  \uparrow^{\mathsf{RLD}} Y \neq 0 \Leftrightarrow g \nasymp
+  \uparrow^{\mathsf{RLD}} Y$.
+\end{proof}
+
+\begin{prop}
+  Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \GR \langle f
+  \times f \rangle^{\ast} M$ for every $V \in \GR f$.
+\end{prop}
+
+\begin{proof}
+  $V \circ M \circ V^{- 1} \in \GR (f \circ \uparrow M \circ f^{- 1}) =
+  \GR \langle f \times^{(C)} f \rangle \uparrow M \supseteq \GR
+  \langle f \times f \rangle \uparrow M = \GR \langle f \times f
+  \rangle^{\ast} M$.
+  
+  Because
+  
+  $\uparrow^{\mathsf{FCD}} X \nasymp \langle f \times^{(C)} f \rangle
+  \uparrow^{\mathsf{FCD}} M \Leftrightarrow
+  \uparrow^{\mathsf{RLD}} X \nasymp \langle f \times f \rangle
+  \uparrow^{\mathsf{RLD}} M \Leftrightarrow \tofcd
+  (\uparrow^{\mathsf{RLD}} X \sqcap \langle f \times f \rangle
+  \uparrow^{\mathsf{RLD}} M) \neq 0 \Rightarrow \tofcd
+  \uparrow^{\mathsf{RLD}} X \sqcap \tofcd \langle f
+  \times f \rangle \uparrow^{\mathsf{RLD}} M \neq 0 \Leftrightarrow
+  \tofcd \uparrow^{\mathsf{RLD}} X \nasymp
+  \tofcd \langle f \times f \rangle
+  \uparrow^{\mathsf{RLD}} M \Leftrightarrow
+  \uparrow^{\mathsf{FCD}} X \nasymp \tofcd \langle f
+  \times f \rangle \uparrow^{\mathsf{RLD}} M$;
+  
+  $\langle f \times^{(C)} f \rangle \uparrow^{\mathsf{FCD}} M
+  \sqsubseteq \tofcd \langle f \times f \rangle
+  \uparrow^{\mathsf{RLD}} M$
+  
+  $\GR \langle f \times^{(C)} f \rangle \uparrow^{\mathsf{FCD}} M
+  \supseteq \GR \tofcd \langle f \times f \rangle
+  \uparrow^{\mathsf{RLD}} M \supseteq \GR \langle f \times f
+  \rangle \uparrow^{\mathsf{RLD}} M$
+\end{proof}
+
+\begin{prop}
+  $\langle f \times f \rangle^{\ast} M \sqsubseteq g \circ
+  \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ whenever
+  $\tofcd g = f$ for a reloid $g$.
+\end{prop}
+
+\begin{proof}
+  For every $V \in \GR g$ we have $V \circ M \circ V^{- 1} \in \GR
+  \langle f \times f \rangle^{\ast} M$. Thus $g \circ
+  \uparrow^{\mathsf{RLD}} M \circ g^{- 1} = \bigsqcap \left\{ V \circ M
+  \circ V^{- 1} \hspace{1em} | \hspace{1em} V \in \GR g \right\}
+  \sqsupseteq \bigsqcap \GR \langle f \times f \rangle^{\ast} M =
+  \GR \langle f \times f \rangle^{\ast} M$.
+\end{proof}
+
+\begin{cor}
+  $\langle f \times f \rangle^{\ast} M \sqsubseteq \langle f \times^{(C)} f
+  \rangle^{\ast} M$.
+\end{cor}
+
+\begin{cor}
+  $V \circ V^{- 1} \in \GR \langle f \times f \rangle^{\ast} \Delta$; $f
+  \circ f^{- 1} \sqsupseteq \langle f \times f \rangle^{\ast} \Delta$.
+\end{cor}
+
+\begin{proof}
+  ??
+\end{proof}
+
+\begin{lem}
+  $\Cor \langle f \times f \rangle^{\ast} g \sqsubseteq \Delta$ if
+  $\tofcd g = f$ where $\tofcd g = f$ for a
+  $T_1$-separable reloid $g$.
+\end{lem}
+
+\begin{proof}
+  ??
+\end{proof}
+
+\begin{rem}
+  I attempted to generalize the below theorem more than the standard general
+  topology theorem about correspondence of compact and uniform spaces, but
+  haven't really succeeded much, as it appears to be needed that the reloid in
+  question is reflexive, symmetric, and transitive, that is just a uniform
+  space as in the standard general topology.
+\end{rem}
+
+\begin{thm}
+  Let $f$ be a $T_1$-separable compact reflexive symmetric funcoid and $g$ be
+  a reloid such that
+  \begin{enumerate}
+    \item $\tofcd g = f$;
+    
+    \item $g \circ g^{- 1} \sqsubseteq g$.
+  \end{enumerate}
+  Then $g = \langle f \times f \rangle^{\ast} \Delta$.
+\end{thm}
+
+\begin{proof}
+From the above $\langle f \times f \rangle^{\ast} \Delta \sqsubseteq g \circ
+g^{- 1} \sqsubseteq g$. \fxerror{Funcoids and reloids are confused.}
+
+It's remained to prove $g \sqsubseteq \langle f \times f \rangle^{\ast}
+\Delta$.
+
+\fxwarning{Possible errors.}
+
+Suppose there is $U \in \GR \langle f \times f \rangle^{\ast} \Delta$
+such that $U \notin \GR g$.
+
+Then $\left\{ V \setminus U \hspace{1em} | \hspace{1em} V \in \GR g
+\right\} = g \setminus U$ would be a proper filter.
+
+Thus by reflexivity $\langle f \times f \rangle^{\ast} (g \setminus U) \neq
+0$.
+
+By compactness of $f \times f$, $\Cor \langle f \times f \rangle^{\ast}
+(g \setminus U) \neq 0$.
+
+Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times f \rangle^{\ast}
+(g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times f^{- 1}
+\rangle \{ (x ; x) \}$; $U \sqsubset \langle f^{- 1} \times f^{- 1} \rangle \{
+(x ; x) \} \sqsubseteq \langle f^{- 1} \times f^{- 1} \rangle \Delta$ what is
+impossible.
+
+Thus there exist $x \neq y$ such that $\{ (x ; y) \} \sqsubseteq \Cor
+\langle f \times f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x ; y) \}
+\sqsubseteq \langle f \times f \rangle^{\ast} g$.
+
+Thus by the lemma $\{ (x ; y) \} \sqsubseteq \Delta$ what is impossible. So $U
+\in \GR g$.
+
+We have $\GR \langle f \times f \rangle^{\ast} \Delta \subseteq
+\GR g$; $\langle f \times f \rangle^{\ast} \Delta \sqsupseteq g$.
+\end{proof}
+
+\begin{cor}
+  Let $f$ is a $T_1$-separable (the same as $T_2$ for symmetric transitive)
+  compact funcoid and $g$ is a uniform space (reflexive, symmetric, and
+  transitive endoreloid) such that $\tofcd g = f$. Then $g =
+  \langle f \times f \rangle^{\ast} \Delta$.
+\end{cor}
+
+An (incomplete) attempt to prove one more theorem follows:
+
+\begin{thm}
+  Let $\mu$ and $\nu$ be uniform spaces, $\tofcd
+  \mu$ be a compact funcoid. Then a map $f$ is a continuous map from
+  $\tofcd \mu$ to $\tofcd \nu$ iff $f$ is
+  a (uniformly) continuous map from $\mu$ to $\nu$.
+\end{thm}
+
+\begin{proof}
+\fxerror{errors in this proof.}
+
+http://math.stackexchange.com/questions/665202/bourbaki-on-the-fact-that-continuous-function-on-a-compact-is-uniformly-continuo/670956?iemail=1\&noredirect=1\#670956
+
+We have $\mu= \langle \tofcd \mu \times
+\tofcd \mu \rangle \uparrow^{\mathsf{RLD}} \Delta$
+
+$f \in \mathrm{C}_? (\tofcd \mu; \tofcd
+\nu)$. Then
+\[ f \times f \in \mathrm{C}_? (\tofcd (\mu \times
+   \mu) ; \tofcd (\nu \times \nu)) \]
+$(f \times f) \circ \tofcd (\mu \times \mu)
+\sqsubseteq \tofcd (\nu \times \nu) \circ (f \times f)$
+
+For every $V \in \GR (\nu \times \nu)$ we have $\langle g^{- 1} \rangle
+V \in \langle \tofcd (\mu \times \mu) \rangle
+\{ y \}$ for some $y$.
+
+$\langle g^{- 1} \rangle V \in \langle \tofcd \mu \times
+\tofcd \mu \rangle \uparrow^{\mathsf{RLD}} \Delta
+= \GR \mu$
+
+$\supfun{g} \langle g^{- 1} \rangle V \sqsubseteq V$
+
+We need to prove $f \in \mathrm{C} (\mu; \nu)$ that is $\forall p \in
+\GR \nu \exists q \in \GR \mu: \supfun{f} q
+\sqsubseteq p$. But this follows from the above.
+\end{proof}
+
+\fxnote{A space is compact if and only if it is both, complete and totally bounded.}
+
+\url{http://math.stackexchange.com/questions/1101995/non-symmetric-version-of-compact-totally-bounded-complete}
