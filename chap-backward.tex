@@ -1,0 +1,63 @@
+\chapter{Backward Funcoids}
+
+This is a preliminary partial draft.
+
+Fix a family $\mathfrak{A}$ of posets.
+
+\begin{defn}
+  Let $f$ be a staroid of filters $\mathfrak{F} (\mathfrak{A}_i)$ on boolean
+  lattices $\mathfrak{A}_i$. \emph{Backward funcoid} for the argument $k
+  \in \dom \mathfrak{A}$ of $f$ is the funcoid $\Back (f ; k)$
+  defined by the formula (for every $X \in \mathfrak{A}_k$)
+  \[ \langle \Back (f ; k) \rangle X = \setcond{ L \in \prod_{i \in
+     \dom \mathfrak{A}} \mathfrak{F} (\mathfrak{A}_i) }{
+     X \in \supfun{f}_k L } . \]
+\end{defn}
+
+\begin{prop}
+  Backward funcoid is properly defined.
+\end{prop}
+
+\begin{proof}
+  $\langle \Back (f ; k) \rangle^{\ast} (X \sqcup Y) = \setcond{ L \in
+  \prod \mathfrak{A} }{ X \sqcup Y \in \langle f
+  \rangle_k L } = \setcond{ L \in \prod \mathfrak{A} }{
+  X \in \supfun{f}_k L \vee Y \in \supfun{f}_k L
+  } = \setcond{ L \in \prod \mathfrak{A} }{ X
+  \in \supfun{f}_k L } \cup \setcond{ L \in \prod \mathfrak{A}
+  }{ Y \in \supfun{f}_k L } = \langle
+  \Back (f ; k) \rangle^{\ast} X \cup \langle \Back (f ; k)
+  \rangle^{\ast} Y$.
+\end{proof}
+
+\begin{obvious}
+Backward funcoid is co-complete.
+\end{obvious}
+
+\begin{prop}
+  If $f$ is a principal staroid then $\Back (f ; k)$ is a complete
+  funcoid.
+\end{prop}
+
+\begin{proof}
+  ??
+\end{proof}
+
+\begin{prop}
+  $f$ can be restored from $\Back (f ; k)$ (for every fixed $k$).
+\end{prop}
+
+\begin{proof}
+  ??
+\end{proof}
+
+\begin{prop}
+  $f \mapsto \Back (f ; k)$ is an order isomorphism
+  $\mathsf{Strd}^{\mathfrak{A}} \rightarrow \mathsf{FCD} \left(
+  \mathfrak{A}_k ; \mathsf{Strd}^{(\dom \mathfrak{A}) \setminus \{ k \}}
+  \right)$.
+\end{prop}
+
+\begin{proof}
+  ??
+\end{proof}
