@@ -1,0 +1,305 @@
+\chapter{Categories related with funcoids}
+
+I consider some categories related with pointfree funcoids.
+
+\section{Draft status}
+
+This is a rough partial draft.
+
+\section{Topic of this article}
+
+In this article are considered some categories related to \emph{pointfree
+funcoids}.
+
+\section{Category of continuous morphisms}
+
+I will denote $\Ob f$ the object (source and destination) of an
+endomorphism $f$.
+
+\begin{defn}
+  Let $C$ is a partially ordered category. The category
+  $\cont (C)$ (which I call \emph{the category of
+  continuous morphism} over $C$) is:
+  \begin{itemize}
+    \item Objects are endomorphisms of category $C$.
+    
+    \item Morphisms are triples $(f ; a ; b)$ where $a$ and $b$ are objects
+    and $f : \Ob a \rightarrow \Ob b$ is a morphism of the
+    category $C$ such that $f \circ a \sqsubseteq b \circ f$.
+    
+    \item Composition of morphisms is defined by the formula $(g ; b ; c)
+    \circ (f ; a ; b) = (g \circ f ; a ; c)$.
+    
+    \item Identity morphisms are $(a ; a ; 1^C_a)$.
+  \end{itemize}
+\end{defn}
+
+It is really a category:
+
+\begin{proof}
+  We need to prove that: composition of morphisms is a morphism, composition
+  is associative, and identity morphisms can be canceled on the left and on
+  the right.
+  
+  That composition of morphisms is a morphism follows from these implications:
+  \[ f \circ a \sqsubseteq b \circ f \wedge g \circ b \sqsubseteq c \circ g
+     \Rightarrow g \circ f \circ a \sqsubseteq g \circ b \circ f \sqsubseteq c
+     \circ g \circ f. \]
+  That composition is associative is obvious.
+  
+  That identity morphisms can be canceled on the left and on the right is
+  obvious.
+\end{proof}
+
+\begin{rem}
+  The ``physical'' meaning of this category is:
+  \begin{itemize}
+    \item Objects (endomorphisms of $C$) are spaces.
+    
+    \item Morphisms are continuous functions between spaces.
+    
+    \item $f \circ a \sqsubseteq b \circ f$ intuitively means that $f$
+    combined with an infinitely small is less than infinitely small combined
+    with $f$ (that is $f$ is continuous).
+  \end{itemize}
+\end{rem}
+
+\begin{rem}
+  Every $\Hom (\mathfrak{A}; \mathfrak{B})$ of $\mathbf{Pos}$
+  is partially ordered by the formula $a \leqslant b \Leftrightarrow \forall x
+  \in \mathfrak{A}: a (x) \leqslant b (x)$. So $\cont
+  (\mathbf{Pos})$ is defined.
+\end{rem}
+
+\begin{defn}
+  I call a $\mathbf{Pos}$-morphism \emph{monovalued} when it maps
+  atoms to atoms or least element.
+\end{defn}
+
+\begin{defn}
+  I call a $\mathbf{Pos}$-morphism \emph{entirely defined} when
+  its value is non-least on every non-least element.
+\end{defn}
+
+\begin{obvious}
+A morphism is both monovalued and entirely defined iff it maps atoms into
+atoms.
+\end{obvious}
+
+\fxnote{Show how it relates with dagger categories.}
+
+\begin{defn}
+  $\mathbf{mePos}$ is the subcategory of $\mathbf{Pos}$ with
+  only monovalued and entirely defined morphisms.
+\end{defn}
+
+\begin{obvious}
+This is a well defined category.{\hspace*{\fill}}{\medskip}
+\end{obvious}
+
+\begin{defn}
+  $\mathbf{mefp} \mathsf{FCD}$ is the subcategory of
+  $\mathbf{fp} \mathsf{FCD}$ with only monovalued and entirely
+  defined morphisms.
+\end{defn}
+
+\begin{rem}
+  In the two above definitions different definitions of monovaluedness and
+  entire definedness from different articles.
+\end{rem}
+
+\section{Definition of the categories}
+
+\begin{defn}
+  A \emph{(pointfree) endo-funcoid} is a (pointfree) funcoid with the same
+  source and destination (an endomorphism of the category of (pointfree)
+  funcoids). I will denote $\Ob f$ the object of an endomorphism $f$.
+\end{defn}
+
+\begin{obvious}
+The \emph{category of continuous pointfree funcoids} $\cont
+(\mathbf{fp} \mathsf{FCD})$ is:
+\begin{itemize}
+  \item Objects are small pointfree endo-funcoids.
+  
+  \item Morphisms from an object $a$ to an object $b$ are triples $(f ; a ;
+  b)$ where $f$ is a pointfree funcoid from $\Ob a$ to $\Ob b$
+  such that $f$ is a continuous morphism from $a$ to $b$ (that is $f \circ a
+  \sqsubseteq b \circ f$, or equivalently $a \sqsubseteq f^{- 1} \circ b \circ
+  f$, or equivalently $f \circ a \circ f^{- 1} \sqsubseteq f$).
+  
+  \item Composition is the composition of pointfree funcoids.
+  
+  \item Identity for an object $a$ is $(I^{\mathsf{FCD}}_{\Ob a}
+  ; a ; a)$.
+\end{itemize}
+\end{obvious}
+
+\section{Isomorphisms}
+
+\begin{thm}
+  If $f$ is an isomorphism $a \rightarrow b$ of the category
+  $\cont (\mathbf{fp}
+  \mathsf{FCD})$, then:
+  \begin{enumerate}
+    \item $f \circ a = b \circ f$;
+    
+    \item $a = f^{- 1} \circ b \circ f$;
+    
+    \item $f \circ a \circ f^{- 1} = b$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Note that $f$ is monovalued and entirely defined.
+  
+  1. We have $f \circ a \sqsubseteq b \circ f$ and $f^{- 1} \circ b
+  \sqsubseteq a \circ f^{- 1}$. Consequently $f^{- 1} \circ f \circ a
+  \sqsubseteq f^{- 1} \circ b \circ f$; $a \sqsubseteq f^{- 1} \circ b \circ
+  f$; $a \circ f^{- 1} \sqsubseteq f^{- 1} \circ b \circ f \circ f^{- 1}$; $a
+  \circ f^{- 1} \sqsubseteq f^{- 1} \circ b$. Similarly $b \circ f \sqsubseteq
+  f \circ a$. So $f \circ a = b \circ f$.
+  
+  2 and 3. Follow from the definition of isomorphism.
+\end{proof}
+
+Isomorphisms are meant to preserve structure of objects. I will show that
+(under certain conditions) isomorphisms of $\cont
+(\mathbf{fp} \mathsf{FCD})$ really preserve
+structure of objects.
+
+First we will consider an isomorphism between objects $a$ and $b$ which are
+funcoids (not the general case of pointfree funcoids). In this case a map
+which preserves structure of objects is a \emph{bijection}. It is really a
+bijection as the following theorem says:
+
+\begin{thm}
+If $f$ is an isomorphism of the category of funcoids then $f$ is a discrete
+funcoid (so, it is essentially a bijection).
+\fxnote{Split it into two propositions: about completeness and co-completeness.}
+\end{thm}
+
+\begin{proof}
+  $\supfun{f}^{\ast} A \sqcap \supfun{f}^{\ast} ((\Src f)
+  \setminus A) = 0^{\Dst f}$ because $f$ is monovalued.
+  
+  $\supfun{f}^{\ast} A \sqcup \supfun{f}^{\ast} ((\Src f)
+  \setminus A) = 1^{\Dst f}$.
+  
+  Therefore $\supfun{f}^{\ast} A$ is a principal filter (theorem 49 in
+  {\cite{filters}}). So $f$ is co-complete.
+  
+  That $f$ is complete follows from symmetry.
+\end{proof}
+
+For wider class of pointfree funcoids the concept of bijection does not make
+sense. Instead we would want a structure preserving map to be \emph{order
+isomorphism}.
+
+Actually, for mapping between $\subsets A$ and $\subsets B$ where $A$
+and $B$ are some sets (including the above considered case of funcoids from
+$A$ to $B$) bijection and order isomorphism are essentially the same:
+
+\begin{prop}
+  Bijections $F$ between sets $A$ and $B$ bijectively correspond to order
+  isomorphisms $f$ between $\subsets A$ and $\subsets B$ by the formula
+  $f = \supfun{F}$.
+\end{prop}
+
+\begin{proof}
+  Let $F$ is a bijection. Then $X \subseteq Y \Rightarrow \supfun{F} X
+  \subseteq \supfun{F} Y$ and $\langle F^{- 1} \rangle \langle F
+  \rangle X = X$ for every sets $X, Y \in \subsets A$. Thus $f = \langle F
+  \rangle$ is an order isomorphism.
+  
+  Let now $f$ is an order isomorphism between $\subsets A$ and $\subsets
+  B$. Then $f (\{ x \})$ is a singleton for every $x \in A$. Take $F (x)$ to
+  the unique $y$ such that $f (\{ x \}) = \{ y \}$. Obviously $f$ is a
+  bijection and $f = \supfun{F}$.
+\end{proof}
+
+For arbitrary pointfree funcoids isomorphisms do not necessarily preserve
+structure. It holds only for \emph{increasing pointfree funcoids}:
+
+\begin{defn}
+  I call a pointfree funcoid $f$ \emph{increasing} iff $\supfun{f}$
+  and $\langle f^{- 1} \rangle$ are monotone functions.
+\end{defn}
+
+\begin{prop}
+  If $f$ is an increasing isomorphism of the category of pointfree funcoids
+  then $\supfun{f}$ is an order isomorphism.
+\end{prop}
+
+\begin{proof}
+  We have: $\supfun{f} \circ \langle f^{- 1} \rangle = \langle f \circ
+  f^{- 1} \rangle = \langle \id^{\mathsf{FCD}}_{\mathfrak{B}}
+  \rangle = \id_{\mathfrak{B}}$ and $\langle f^{- 1} \rangle \circ
+  \supfun{f} = \langle f^{- 1} \circ f \rangle = \langle
+  \id^{\mathsf{FCD}}_{\mathfrak{A}} \rangle =
+  \id_{\mathfrak{A}}$. Thus $\supfun{f}$ is a bijection.
+  
+  $\supfun{f}$ is increasing and bijective.
+\end{proof}
+
+\begin{rem}
+  Non-increasing isomorphisms of the category of pointfree funcoids are
+  against sound mind, they don't preserve the structure of the source, that is
+  for them $\supfun{f}$ or $\langle f^{- 1} \rangle$ are not order
+  isomorphisms.
+\end{rem}
+
+\begin{obvious}
+Isomorphisms of $\cont (\mathbf{Pos})$ and
+$\cont (\mathbf{mePos})$ are order
+isomorphisms.
+\end{obvious}
+
+\section{Direct products}
+
+\fxerror{Now this section is a complete mess. Clean it up.}
+
+Consider the category $\mathbf{contFcd}$ which is the full
+subcategory $\cont (\mathbf{mePos})$ restricted to
+objects which are essentially increasing pointfree funcoids.
+
+Let $f_1 : Y \rightarrow X_1$ and $f_2 : Y \rightarrow X_2$ are morphisms of
+$\mathbf{contFcd}$.
+
+The product object is $X_1 \times^{(C)} X_2$ (cross composition product of
+funcoids used). It is easy to see that $X_1 \times^{(C)} X_2$ is an object of
+$\mathbf{contFcd}$ that is an endo-funcoid.
+
+The morphism $f_1 \times^{(D)} f_2 : Y \rightarrow X_1 \times^{(C)} X_2$ is
+defined by the formula $(f_1 \times^{(D)} f_2) y = f_1 y
+\times^{\mathsf{FCD}} f_2 y$.
+
+$f_1 \times^{(D)} f_2$ is monovalued and entirely defined because so are $f_1$
+and $f_2$.
+\[ (f_1 \times^{(D 2)} f_2) y = \bigcup \left\{ f_1 Y
+   \times^{\mathsf{FCD}} f_2 Y \hspace{1em} | \hspace{1em} Y \in
+   \atoms^{\mathfrak{A}} y \right\} . \]
+
+\fxnote{Is $(f_1 \times^{(D 2)} f_2)$ a pointfree funcoid?}
+
+To prove that it is really a morphism we need to show
+\[ (f_1 \times^{(D)} f_2) \circ Y \sqsubseteq (X_1 \times^{(C)} X_2) \circ
+   (f_1 \times^{(D)} f_2) \]
+that is (for every $y$)
+\[ (f_1 \times^{(D)} f_2) Y y \sqsubseteq (X_1 \times^{(C)} X_2) (f_1
+   \times^{(D)} f_2) y. \]
+Really, $(f_1 \times^{(D)} f_2) Y y = f_1 Y y \times^{\mathsf{FCD}} f_2
+Y y$;
+
+$(X_1 \times^{(C)} X_2) (f_1 \times^{(D)} f_2) y = (X_1 \times^{(C)} X_2) (f_1
+y \times^{\mathsf{FCD}} f_2 y) = X_1 f_1 y \times^{\mathsf{FCD}}
+X_2 f_2 y$;
+
+but it is easy to show $f_1 Y y \times^{\mathsf{FCD}} f_2 Y y
+\sqsubseteq X_1 f_1 y \times^{\mathsf{FCD}} X_2 f_2 y$.
+
+??
+
+I define ??
+
+\fxnote{Prove that it is a direct product in $\mathbf{contFcd}$.}

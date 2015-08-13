@@ -1,0 +1,112 @@
+\chapter{Pointfree funcoids as a generalization of frames}
+
+I define an injection from the set of frames to the set of pointfree endo-funcoids.
+
+This article is a rough partial draft of a future longer writing.
+
+\section{Definitions}
+
+\subsection{Pointfree funcoid induced by a co-frame}
+
+Let $\mathfrak{L}$ is a co-frame.
+
+We will define pointfree funcoid $\Uparrow \mathfrak{L}$.
+
+Let $\mathcal{B} (\mathfrak{L})$ is a boolean lattice whose co-subframe
+$\mathfrak{L}$ is. (That this mapping exists follows from
+{\cite{stone-spaces}}, page 53.) There may be probably more than one such
+mapping, but we just choose one $\mathcal{B}$ arbitrarily.
+
+Define $\cl (A) = \bigsqcap \left\{ X \in \mathfrak{L} \hspace{1em} |
+\hspace{1em} X \sqsupseteq A \right\}$.
+
+Here $\bigsqcap$ can be taken on either $\mathfrak{L}$ or $\mathcal{B}
+(\mathfrak{L})$ as they are the same.
+
+\begin{obvious}
+  $\cl \in \mathfrak{L}^{\mathcal{B} (\mathfrak{L})}$.
+\end{obvious}
+
+$\cl (A \sqcup B) = \bigsqcap \left\{ X \in \mathfrak{L} \hspace{1em} |
+\hspace{1em} X \sqsupseteq A \sqcup B \right\} = \bigsqcap \left\{ X \in
+\mathfrak{L} \hspace{1em} | \hspace{1em} X \sqsupseteq A, X \sqsupseteq B
+\right\} = \bigsqcap \left\{ X_1 \sqcup X_2 \hspace{1em} | \hspace{1em} X_1
+\sqsupseteq A, X_2 \sqsupseteq B \right\} = \bigsqcap \left\{ X_1 \hspace{1em}
+| \hspace{1em} X_1 \sqsupseteq A \right\} \sqcup \bigsqcap \left\{ X_2
+\hspace{1em} | \hspace{1em} X_2 \sqsupseteq B \right\} = \cl A \sqcup
+\cl B$.
+
+$\cl 0 = 0$ is obvious.
+
+Hence we are under conditions of the theorem 14.26 in my book.
+
+So there exists a unique pointfree endo-funcoid $\Uparrow \mathfrak{L} \in
+\mathsf{FCD} (\mathfrak{F} (\mathcal{B} (\mathfrak{L})) ; \mathfrak{F}
+(\mathcal{B} (\mathfrak{L})))$ such that
+\[ \langle \Uparrow \mathfrak{L} \rangle \mathcal{X} = \bigsqcap^{\mathfrak{F}
+   (\mathcal{B} (\mathfrak{L}))} \langle \cl \rangle
+   \up^{\text{$(\mathfrak{F} (\mathcal{B} (\mathfrak{L})) ; \mathfrak{P}
+   (\mathcal{B} (\mathfrak{L})))$}}  \mathcal{X} \]
+for every filter $\mathcal{X} \in \mathfrak{F} (\mathcal{B} (\mathfrak{L}))$.
+
+\subsection{Co-frame induced by a pointfree funcoid}
+
+The co-frame $\Downarrow f$ for some pointfree endo-funcoids $f$ will be
+defined to be the reverse of $\Uparrow$. See below for exact meaning of being
+reverse.
+
+Let restore the co-frame $\mathfrak{L}$ from the pointfree funcoid $\Uparrow
+\mathfrak{L}$.
+
+Let poset $\Downarrow f$ for every pointfree funcoid $f$ is defined by the
+formula:
+\[ \Downarrow f = \left\{ X \in Z (\Ob f) \hspace{1em} | \hspace{1em}
+   \supfun{f} X = X \right\} . \]
+\begin{rem}
+  It seems that $\Downarrow$ is \emph{not} a monovalued function from
+  $\mathsf{pFCD}$ to $\Ob (\mathbf{Frm})$.
+\end{rem}
+
+\subsection{Isomorphism of co-frames through pointfree funcoids}
+
+\begin{rem}
+  $\mathfrak{P} (\mathcal{B} (\mathfrak{L})) = Z (\mathfrak{F} (\mathcal{B}
+  (\mathfrak{L})))$ (theorem 4.137 in {\cite{volume-1}}).
+\end{rem}
+
+\begin{thm}
+  $\mathfrak{L} \mapsto \Downarrow \Uparrow \mathfrak{L}$ (where
+  $\mathfrak{L}$ ranges all small frames) is an order isomorphism.
+\end{thm}
+
+\begin{proof}
+  Let $A' \in \Downarrow \Uparrow \mathfrak{L}$. Then there exists $A \in
+  \mathcal{B} (\mathfrak{L})$ such that $A' = \uparrow^{\mathcal{B}
+  (\mathfrak{L})} A$.
+  
+  $\supfun{f} A' = \uparrow^{\mathcal{B} (\mathfrak{L})} \cl A$.
+  
+  $\supfun{f} A' = A'$ that is $\uparrow^{\mathcal{B} (\mathfrak{L})}
+  \cl A = A' = \uparrow^{\mathcal{B} (\mathfrak{L})} A$. So $\cl A
+  = A$ and thus $A \in \mathfrak{L}$.
+  
+  Let now $A \in \mathfrak{L}$. Then take $A' = \uparrow^{\mathcal{B}
+  (\mathfrak{L})} A$. We have $\supfun{f} A' = \cl A =
+  \uparrow^{\mathcal{B} (\mathfrak{L})} A = A'$. So $A' \in \Downarrow
+  \Uparrow \mathfrak{L}$.
+  
+  We have proved that it is a bijection.
+  
+  Because $A$ and $A'$ are related by the equation $A' = \uparrow^{\mathcal{B}
+  (\mathfrak{L})} A$ it is obvious that this is an order embedding.
+\end{proof}
+
+\section{Postface}
+
+Pointfree funcoids are a \textbf{massive} generalization of locales and
+frames: They don't only require the lattice of filters to be boolean but these
+can be even not lattices of filters at all but just arbitrary posets. I think
+a new era in pointfree topology starts.
+
+Much work is yet needed to relate different properties of frames and locales
+with corresponding properties of pointfree funcoids.
