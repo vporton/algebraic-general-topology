@@ -1,0 +1,93 @@
+\chapter{Introduction}
+
+I remind some definitions from volume~1~\cite{volume-1}.
+
+I denote partial order as~$\sqsubseteq$. I denote lattice operations as
+$\bigsqcap$, $\bigsqcup$, $\sqcap$,~$\sqcup$.
+
+The following generalizes monovalued morphisms in category~$\mathbf{Rel}$.
+
+Let $\Hom$-sets be complete lattices.
+\begin{defn}
+\index{morphism!metamonovalued}A morphism $f$ of a partially ordered
+category is \emph{metamonovalued} when $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$
+whenever $G$ is a set of morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!metainjective}A morphism $f$ of a partially ordered
+category is \emph{metainjective} when $f\circ\left(\bigsqcap G\right)=\bigsqcap_{g\in G}(f\circ g)$
+whenever $G$ is a set of morphisms with a suitable domain and image.\end{defn}
+\begin{obvious}
+Metamonovaluedness and metainjectivity are dual to each other.\end{obvious}
+\begin{defn}
+\index{morphism!metacomplete}A morphism $f$ of a partially ordered
+category is \emph{metacomplete} when $f\circ\left(\bigsqcup G\right)=\bigsqcup_{g\in G}(f\circ g)$
+whenever $G$ is a set of morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!co-metacomplete}A morphism $f$ of a partially ordered
+category is \emph{co-metacomplete} when $\left(\bigsqcup G\right)\circ f=\bigsqcup_{g\in G}(g\circ f)$
+whenever $G$ is a set of morphisms with a suitable domain and image.
+\end{defn}
+Let now $\Hom$-sets be meet-semilattices.
+\begin{defn}
+\index{morphism!weakly metamonovalued}A morphism $f$ of a partially
+ordered category is \emph{weakly metamonovalued} when $(g\sqcap h)\circ f=(g\circ f)\sqcap(h\circ f)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!weakly metainjective}A morphism $f$ of a partially
+ordered category is \emph{weakly metainjective} when $f\circ(g\sqcap h)=(f\circ g)\sqcap(f\circ h)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.
+\end{defn}
+Let now $\Hom$-sets be join-semilattices.
+\begin{defn}
+\index{morphism!weakly metacomplete}A morphism $f$ of a partially
+ordered category is \emph{weakly metacomplete} when $f\circ(g\sqcup h)=(f\circ g)\sqcup(f\circ h)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.
+\end{defn}
+
+\begin{defn}
+\index{morphism!weakly co-metacomplete}A morphism $f$ of a partially
+ordered category is \emph{weakly co-metacomplete} when $(g\sqcup h)\circ f=(g\circ f)\sqcup(h\circ f)$
+whenever $g$ and $h$ are morphisms with a suitable domain and image.\end{defn}
+\begin{obvious}
+~
+\begin{enumerate}
+\item Metamonovalued morphisms are weakly metamonovalued.
+\item Metainjective morphisms are weakly metainjective.
+\item Metacomplete morphisms are weakly metacomplete.
+\item Co-metacomplete morphisms are weakly co-metacomplete.
+\end{enumerate}
+\end{obvious}
+
+\begin{defn}
+\index{morphism!monovalued}For a partially ordered dagger category
+I will call \emph{monovalued} morphism such a morphism $f$ that $f\circ f^{\dagger}\sqsubseteq1_{\Dst f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!entirely defined}For a partially ordered dagger category
+I will call \emph{entirely defined} morphism such a morphism $f$
+that $f^{\dagger}\circ f\sqsupseteq1_{\Src f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!injective}For a partially ordered dagger category
+I will call \emph{injective} morphism such a morphism $f$ that $f^{\dagger}\circ f\sqsubseteq1_{\Src f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!surjective}For a partially ordered dagger category
+I will call \emph{surjective} morphism such a morphism f that $f\circ f^{\dagger}\sqsupseteq1_{\Dst f}$.\end{defn}
+\begin{rem}
+It is easy to show that this is a generalization of monovalued, entirely
+defined, injective, and surjective functions as morphisms of the category
+$\mathbf{Rel}$.\end{rem}
+\begin{obvious}
+``Injective morphism'' is a dual of ``monovalued morphism'' and
+``surjective morphism'' is a dual of ``entirely defined morphism''.\end{obvious}
+
