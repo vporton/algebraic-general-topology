@@ -514,8 +514,8 @@ Equational definition of equalizers:
   The following is an equalizer of parallel morphisms $f, g : A \rightarrow B$
   of category $\cont (\mathcal{C})$:
   \begin{itemize}
-    \item the object $X = \iota_{\left\{ x \in \Ob A \hspace{1em} |
-    \hspace{1em} f x = g x \right\}} A$;
+    \item the object $X = \iota_{\setcond{ x \in \Ob A }{
+    f x = g x }} A$;
     
     \item the morphism $\Ob X \rightleftarrows \Ob A$ considered
     as a morphism $X \rightarrow A$.
