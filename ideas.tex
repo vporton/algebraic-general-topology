@@ -1,0 +1,89 @@
+\documentclass{amsart}
+
+\usepackage{hyperref}
+\usepackage{amsfonts}
+
+\global\long\def\tofcd{(\mathsf{FCD})}
+\global\long\def\torldin{(\mathsf{RLD})_{\mathrm{in}}}
+\global\long\def\torldout{(\mathsf{RLD})_{\mathrm{out}}}
+\global\long\def\corestar{\partial}
+\global\long\def\setcond#1#2{\left\{  \frac{#1}{#2}\right\}  }
+\global\long\def\atoms{\operatorname{atoms}}
+  
+\begin{document}
+
+This document contains a list of short ideas of future research in Algebraic
+General Topology.
+
+This research plan is not formal and may contain vague statements.
+
+\section{Category theory}
+
+Misc properties of continuous functions between endofuncoids and endoreloids.
+
+$(A;B)\mapsto\mathsf{pFCD}(A;B)$ for posets $A$, $B$ is a tensor product
+(in category theory sense). It is specifically likely that it is a tensor
+product in the category of join-semilattices or a similar category.
+See \url{http://mathoverflow.net/a/191444/4086} for a proof.
+
+\section{Compact funcoids}
+
+Generalize the theorem that compact topology corresponds to only one uniformity.
+
+For compact funcoids the Cantor's theorem that a function continuous on a compact is uniformly continuous.
+
+Every closed subset of a compact space is compact. A compact subset of a Hausdorff space is closed. 17.5 theorem in Willard.
+
+17.6 theorem in Willard.
+
+17.7 theorem in Willard: The continuous image of a compact space is compact.
+
+17.10 Theorem in Willard: A compact Hausdorff space $X$ is a $T_4$-space. Also 17.11 Corollary, 17.13, 17.14 theorem.
+
+"Locally compact" for funcoids. See also 18 "Locally compact spaces: in Willard.
+
+Compactification.
+
+\section{Misc}
+
+Show that cross-composition product is a special case of infimum product.
+
+Analog of order topology for funcoids/reloids.
+
+If a morphism converges to a value on two sets, it converges to the value also on their union.
+
+A set is connected if every function from it to a discrete space is constant. Can this be generalized for generalized connectedness and generalized continuity? I have no idea how to relate these two concepts in general.
+
+Develop theory of \emph{funcoidal groups} by analogy with topological groups.
+Attempt to use this theory to solve this open problem:\\
+\url{http://garden.irmacs.sfu.ca/?q=op/is_every_regular_paratopological_group_tychonoff}
+Is it useful as topological group determines not only a topology but even a uniformity?
+
+A space $\mu$ is $T_2$- iff the diagonal $\Delta$ is closed in $\mu\times\mu$.
+
+The $\beta$-th projection map is not only continuous but also open (Willard, theorem 8.6).
+
+$T_x$-separation axioms for products of spaces.
+
+Willard 13.13 and its important corollary 13.14.
+
+Willard 15.10.
+
+About real-valued functions on endofuncoids: Urysohn's Lemma (and consequences: Tietze's extension theorem) for funcoids.
+
+About product of reloids:\\
+\url{http://portonmath.wordpress.com/2012/05/23/unfirunded-questions/}
+
+Generalized Fr\'echet filter on a poset $\mathfrak{A}$ is a filter $\Omega$ such that
+\[ \corestar\Omega = \setcond{x\in\mathfrak{A}}{\atoms x\text{ is infinite}}. \]
+Research their properties (first, whether they exists for every poset).
+
+Manifolds.
+
+"Micronization" of partial orders:\\
+\url{https://portonmath.wordpress.com/2015/05/08/order-top/}
+
+\url{http://www.sciencedirect.com/science/article/pii/0304397585900623}\\
+(free download, also Google for "pre-adjunction", also "semi" instead of "pre") Are $\tofcd$ and $\torldin$ adjunct?
+
+\end{document}

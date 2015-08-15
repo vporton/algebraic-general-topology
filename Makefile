@@ -2,7 +2,7 @@
 
 default: book.pdf
 
-all: book.pdf addons.pdf volume-2.pdf
+all: book.pdf addons.pdf volume-2.pdf ideas.pdf
 
 FORCE::
 
@@ -25,6 +25,12 @@ volume-2.pdf: FORCE
 	bibtex volume-2.aux
 	pdflatex volume-2.tex
 	pdflatex volume-2.tex
+
+ideas.pdf: FORCE
+	pdflatex ideas.tex
+# 	bibtex addons.aux
+	pdflatex ideas.tex
+	pdflatex ideas.tex
 
 clean: FORCE
 	rm -f *.pdf *.aux *.bbl *.blg *.dvi *.idx *.log *.out *.toc *.ilg *.ind *.synctex
