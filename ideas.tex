@@ -9,6 +9,8 @@
 \global\long\def\corestar{\partial}
 \global\long\def\setcond#1#2{\left\{  \frac{#1}{#2}\right\}  }
 \global\long\def\atoms{\operatorname{atoms}}
+\global\long\def\Src{\operatorname{Src}}
+\global\long\def\Dst{\operatorname{Dst}}
   
 \begin{document}
 
@@ -24,7 +26,9 @@ Misc properties of continuous functions between endofuncoids and endoreloids.
 $(A;B)\mapsto\mathsf{pFCD}(A;B)$ for posets $A$, $B$ is a tensor product
 (in category theory sense). It is specifically likely that it is a tensor
 product in the category of join-semilattices or a similar category.
-See \url{http://mathoverflow.net/a/191444/4086} for a proof.
+See \url{http://mathoverflow.net/a/191444/4086} for a proof. It follows
+$\mathsf{pFCD}(\mathsf{FCD}(\Src\circ f); \mathsf{FCD}(\Dst\circ f))$ in the book,
+chapter ``Staroids and Multifuncoids'' can be reduced to a single tensor product.
 
 \section{Compact funcoids}
 
