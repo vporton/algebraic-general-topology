@@ -1700,7 +1700,7 @@ X\in\up a\Rightarrow a\sqsubseteq X\land a\sqsubseteq a\Rightarrow X\nasymp^{\ma
 \end{proof}
 \begin{thm}
 \label{part-is-free}Let $(\mathfrak{A};\mathfrak{Z})$ be a distributive
-lattice filtrator with least element and finitely join-closed core
+lattice filtrator with least element and binarily join-closed core
 which is a join semilattice. Then $\corestar a$ is a free star for
 each $a\in\mathfrak{A}$.\end{thm}
 \begin{proof}
@@ -1743,7 +1743,7 @@ and $a$ is an atom of $\mathfrak{A}$.
 \begin{description}
 \item [{\ref{atom-both-p}$\Rightarrow$\ref{atom-both-f}}] Obvious.
 \item [{\ref{atom-both-f}$\Rightarrow$\ref{atom-both-mlat}}] It is filtered
-by the theorem~\ref{semifilt-joinclosed}, finitely meet-closed by
+by the theorem~\ref{semifilt-joinclosed}, binarily meet-closed by
 proposition~\ref{f-meet-closed}.
 \item [{\ref{atom-both-mlat}$\Rightarrow$\ref{atom-both-conc}}] ~
 
@@ -1965,7 +1965,7 @@ $a\in\mathfrak{A}$.
 \item [{\ref{da-is-free-star-p}$\Rightarrow$\ref{da-is-free-star-fltr}}] Obvious.
 \item [{\ref{da-is-free-star-fltr}$\Rightarrow$\ref{da-is-free-star-conc}}] $\mathfrak{A}$
 is a distributive lattice by the corollary \ref{filt-also-distr}.
-The filtrator $(\mathfrak{A};\mathfrak{Z})$ is finitely join-closed
+The filtrator $(\mathfrak{A};\mathfrak{Z})$ is binarily join-closed
 by corollary \ref{semifilt-joinclosed}. So we can apply the theorem
 \ref{part-is-free}.
 \end{description}
@@ -2108,7 +2108,7 @@ S'=\setcond{\mathcal{F}_{0}\sqcap^{\mathfrak{A}}\dots\sqcap^{\mathfrak{A}}\mathc
 \]
 
 
-Obviously $S'$ is nonempty and finitely meet-closed. So $S'$ is
+Obviously $S'$ is nonempty and binarily meet-closed. So $S'$ is
 a generalized filter base. Obviously $\bot^{\mathfrak{A}}\notin S$.
 So by properties of generalized filter bases $\bigsqcap^{\mathfrak{A}}S'\ne\bot^{\mathfrak{A}}$.
 But obviously $\bigsqcap^{\mathfrak{A}}S=\bigsqcap^{\mathfrak{A}}S'$.
@@ -2130,7 +2130,7 @@ for every $A_{0},\dots,A_{n}\in S$. Then $\bigsqcap^{\mathfrak{A}}S\ne\bot^{\mat
 \begin{description}
 \item [{\ref{princ-fbase-p}$\Rightarrow$\ref{princ-fbase-fltr}}] Obvious.
 \item [{\ref{princ-fbase-fltr}$\Rightarrow$\ref{princ-fbase-conc}}] Because
-$(\mathfrak{A};\mathfrak{Z})$ is finitely meet-closed (by the theorem
+$(\mathfrak{A};\mathfrak{Z})$ is binarily meet-closed (by the theorem
 \ref{up-filt-crit}).
 \end{description}
 \end{proof}
@@ -2253,7 +2253,7 @@ By theorem \ref{atms-is-asep}.
 \item \label{crit1-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator
 over a complete boolean lattice.
 \item \label{crit1-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a down-aligned,
-with join-closed, finitely meet-closed and separable core which is
+with join-closed, binarily meet-closed and separable core which is
 a complete boolean lattice.
 \item \label{crit1-conc}The following conditions are equivalent for any
 $\mathcal{F}\in\mathfrak{A}$:
@@ -2271,7 +2271,7 @@ $\mathcal{F}\in\mathfrak{A}$:
 \item [{\ref{crit1-p}$\Rightarrow$\ref{crit1-f}}] Obvious.
 \item [{\ref{crit1-f}$\Rightarrow$\ref{crit1-fltr}}] The filtrator $(\mathfrak{A};\mathfrak{Z})$
 is with with join-closed core by theorem \ref{semifilt-joinclosed},
-finitely meet-closed core by proposition \ref{f-meet-closed}, with
+binarily meet-closed core by proposition \ref{f-meet-closed}, with
 separable core by theorem \ref{when-sep-core}.
 \item [{\ref{crit1-fltr}$\Rightarrow$\ref{crit1-conc}}] ~
 
@@ -2906,7 +2906,7 @@ filtrator.
 \item \label{bool-minus-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator
 over a boolean lattice.
 \item \label{bool-minus-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a down-aligned
-and up-aligned finitely meet-closed and finitely join-closed distributive
+and up-aligned binarily meet-closed and binarily join-closed distributive
 lattice filtrator and $\mathfrak{Z}$ be a boolean lattice.
 \item \label{bool-minus-conc}$a\setminus{}^{\mathfrak{A}}B=a\sqcap^{\mathfrak{A}}\overline{B}$
 for every $a\in\mathfrak{A}$, $B\in\mathfrak{Z}$.
@@ -2918,7 +2918,7 @@ for every $a\in\mathfrak{A}$, $B\in\mathfrak{Z}$.
 \item [{\ref{bool-minus-p}$\Rightarrow$\ref{bool-minus-f}}] Obvious.
 \item [{\ref{bool-minus-f}$\Rightarrow$\ref{bool-minus-fltr}}] $\mathfrak{A}$
 is a distributive lattice by corollary \ref{filt-also-distr}. Our
-filtrator is finitely meet-closed by the theorem \ref{up-filt-crit}
+filtrator is binarily meet-closed by the theorem \ref{up-filt-crit}
 and with join-closed core by the theorem \ref{semifilt-joinclosed}.
 It is also up and down aligned.
 \item [{\ref{bool-minus-fltr}$\Rightarrow$\ref{bool-minus-conc}}] ~
@@ -2938,7 +2938,7 @@ and $B$.
 \item \label{bool-adj-f}$\mathfrak{A}$ is the poset of filters over a
 boolean lattice $\mathfrak{Z}$.
 \item \label{bool-adj-fltr}$(\mathfrak{A};\mathfrak{Z})$ is an up-aligned
-finitely join-closed and finitely meet-closed distributive lattice
+binarily join-closed and binarily meet-closed distributive lattice
 filtrator over a boolean lattice.
 \item \label{bool-adj-conc}$A\sqcap^{\mathfrak{A}}$ is a lower adjoint
 of $\overline{A}\sqcup^{\mathfrak{A}}$ for every $A\in\mathfrak{Z}$.
@@ -2986,7 +2986,7 @@ a set.
 \item \label{f-back-distr-f}$\mathfrak{A}$ is the poset of filters over
 a boolean lattice $\mathfrak{Z}$.
 \item \label{f-back-distr-fltr}$(\mathfrak{A};\mathfrak{Z})$ is an up-aligned
-finitely join-closed and finitely meet-closed distributive lattice
+binarily join-closed and binarily meet-closed distributive lattice
 filtrator over a boolean lattice.
 \item \label{f-back-distr-conc}$A\sqcap^{\mathfrak{A}}\bigsqcup^{\mathfrak{A}}S=\bigsqcup^{\mathfrak{A}}\rsupfun{A\sqcap^{\mathfrak{A}}}S$
 for every $A\in\mathfrak{Z}$ and every set $S\in\subsets\mathfrak{A}$.
@@ -3613,15 +3613,15 @@ Let $(\mathfrak{A}_{i\in n};\mathfrak{Z}_{i\in n})$ be a family of
 filtrators.
 \begin{enumerate}
 \item The filtrator $\left(\prod\mathfrak{A};\prod\mathfrak{Z}\right)$
-is (finitely) join-closed if every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
-is (finitely) join-closed.
+is (binarily) join-closed if every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
+is (binarily) join-closed.
 \item The filtrator $\left(\prod\mathfrak{A};\prod\mathfrak{Z}\right)$
-is (finitely) meet-closed if every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
-is (finitely) meet-closed.
+is (binarily) meet-closed if every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
+is (binarily) meet-closed.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Let every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ be finitely join-closed.
+Let every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ be binarily join-closed.
 Let $A,B\in\prod\mathfrak{Z}$ and $A\sqcup^{\prod\mathfrak{Z}}B$
 exist. Then (by corollary \ref{prod-join2}) 
 \[
@@ -4122,8 +4122,8 @@ that is $[Y]$ is below $[X]$.
 \subsection{Weak and Strong Partition}
 \begin{defn}
 \index{independent family}A family $S$ of subsets of a countable
-set is \emph{independent} iff the intersection of any finitely many
-members of $S$ and the complements of any other finitely many members
+set is \emph{independent} iff the intersection of any binarily many
+members of $S$ and the complements of any other binarily many members
 of $S$ is infinite.\end{defn}
 \begin{lem}
 The ``infinite'' at the end of the definition could be equivalently

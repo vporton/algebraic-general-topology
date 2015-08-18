@@ -240,7 +240,7 @@ x\suprel fy\Leftrightarrow\forall X\in\up^{\mathfrak{Z}_{0}}x,Y\in\up^{\mathfrak
 Apply the proposition twice.\end{proof}
 \begin{thm}
 \label{pf-supfun-up}Let $f$ be a pointfree funcoid. Let $(\Src f;\mathfrak{Z}_{0})$
-be a finitely meet-closed filtrator with separable core which is a
+be a binarily meet-closed filtrator with separable core which is a
 meet-semilattice and $\forall x\in\Src f:\up^{\mathfrak{Z}_{0}}x\neq\emptyset$
 and $(\Dst f;\mathfrak{Z}_{1})$ is a primary filtrator over a boolean
 lattice.
@@ -263,7 +263,7 @@ is a generalized filter base.
 Let $\mathcal{P},\mathcal{Q}\in V$. Then $\mathcal{P}=\rsupfun fA$,
 $\mathcal{Q}=\rsupfun fB$ where $A,B\in\up^{\mathfrak{Z}_{0}}x$;
 $A\sqcap^{\mathfrak{Z}_{0}}B\in\up^{(\Src f;\mathfrak{Z}_{0})}x$
-(used the fact that it is a finitely meet-closed and theorem \ref{up-filt-crit})
+(used the fact that it is a binarily meet-closed and theorem \ref{up-filt-crit})
 and $\mathcal{R}\sqsubseteq\mathcal{P}\sqcap^{\Dst f}\mathcal{Q}$
 for $\mathcal{R}=\langle f\rangle(A\sqcap^{\mathfrak{Z}_{0}}B)\in V$
 because $\Dst f$ is separable by obvious \ref{filt-is-sep}. So $V$
@@ -438,7 +438,7 @@ for every pointfree funcoid $f$.\end{prop}
 First the meets $\bigsqcap^{\Src f}S$ and $\bigsqcap^{\Dst f}\rsupfun{\supfun f}S$
 exist by corollary \ref{filt-is-complete}.
 
-$(\Src f;\mathfrak{Z}_{0})$ is a finitely meet-closed filtrator by
+$(\Src f;\mathfrak{Z}_{0})$ is a binarily meet-closed filtrator by
 proposition \ref{f-meet-closed} and with separable core by theorem
 \ref{when-sep-core}; thus we can apply theorem \ref{pf-supfun-up}
 ($\up x\neq\emptyset$ is obvious).
@@ -1522,7 +1522,7 @@ joins, where the bijection is $f\mapsto\supfun f|_{\mathfrak{Z}_{0}}$.\end{prop}
 It follows from the theorem \ref{pf-cont}.\end{proof}
 \begin{thm}
 \label{pf-compl-conds}Let $(\mathfrak{A};\mathfrak{Z})$ be a down-aligned,
-with join-closed, finitely meet-closed and separable core which is
+with join-closed, binarily meet-closed and separable core which is
 a complete boolean lattice.
 
 Let $(\mathfrak{B};\mathfrak{Z}_{1})$ be a star-separable filtrator.
@@ -1812,7 +1812,7 @@ $\mathfrak{A}$ and $\mathfrak{B}$ are complete lattices (corollary
 $(\mathfrak{B};\mathfrak{Z}_{1})$ is a filtrator with separable core
 by the theorem \ref{when-sep-core}.
 
-$(\mathfrak{B};\mathfrak{Z}_{1})$ is finitely meet-closed by the
+$(\mathfrak{B};\mathfrak{Z}_{1})$ is binarily meet-closed by the
 theorem \ref{f-meet-closed}.
 
 $\mathfrak{A}$ and $\mathfrak{B}$ are starrish by corollary \ref{filt-also-distr}.
@@ -1822,7 +1822,7 @@ $\mathfrak{A}$ is separable by obvious \ref{filt-is-sep}.
 We are under conditions of the theorem \ref{pf-supfun-up}.
 \begin{description}
 \item [{$\Rightarrow$}] Obvious (taking into account that $(\mathfrak{B};\mathfrak{Z}_{1})$
-is finitely meet-closed).
+is binarily meet-closed).
 \item [{$\Leftarrow$}] ~
 \begin{align*}
 \supfun{f^{-1}}(\mathcal{I}\sqcap\mathcal{J}) & =\\
