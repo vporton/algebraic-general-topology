@@ -3464,7 +3464,7 @@ a\nasymp b & \Leftrightarrow\\
 \exists c\in\prod\mathfrak{A}\setminus\{\bot^{\prod\mathfrak{A}}\}:(c\sqsubseteq a\land c\sqsubseteq b) & \Leftrightarrow\\
 \exists c\in\prod\mathfrak{A}\setminus\{\bot^{\prod\mathfrak{A}}\}\forall i\in\dom\mathfrak{A}:(c_{i}\sqsubseteq a_{i}\land c_{i}\sqsubseteq b_{i}) & \Leftrightarrow\\
 \text{(for the reverse implication take \ensuremath{c_{j}=\bot^{\mathfrak{A}_{j}}} for \ensuremath{i\ne j})}\\
-\exists i\in\dom\mathfrak{A},c\in\mathfrak{A}_{i}\setminus\{\bot^{\mathfrak{A}_{i}}\}:(c_{i}\sqsubseteq a_{i}\land c_{i}\sqsubseteq b_{i}) & \Leftrightarrow\\
+\forall i\in\dom\mathfrak{A}\exists c\in\mathfrak{A}_{i}\setminus\{\bot^{\mathfrak{A}_{i}}\}:(c_{i}\sqsubseteq a_{i}\land c_{i}\sqsubseteq b_{i}) & \Leftrightarrow\\
 \exists i\in\dom\mathfrak{A}:a_{i}\nasymp b_{i}.
 \end{align*}
 \end{proof}
