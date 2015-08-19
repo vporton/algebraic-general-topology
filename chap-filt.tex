@@ -3177,7 +3177,7 @@ and $\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y}=\mathcal{A}$. Then
 such that $X\sqcap^{\mathfrak{A}}\mathcal{Y}=\bot^{\mathfrak{A}}$.
 We have
 \[
-\mathcal{X}=\mathcal{X}\sqcup(X\sqcap^{\mathfrak{A}}\mathcal{Y})=\mathcal{X}=X\sqcap^{\mathfrak{A}}(\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}\mathcal{A}.
+\mathcal{X}=\mathcal{X}\sqcup(X\sqcap^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}(\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}\mathcal{A}.
 \]
 
 \end{description}
@@ -3214,7 +3214,7 @@ boolean lattice. Thus by the theorem \ref{cocompl-cor}
 \[
 (a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{Z}}b^{+}=a^{\ast}\sqcup^{\mathfrak{Z}}b^{\ast}
 \]
-(used propositions \ref{compl-eq-dual}, \ref{dual-cor-meet}).
+(used propositions \ref{compl-eq-dual}, \ref{dual-cor-meet}, theorem~\ref{cor-eq}).
 \end{description}
 \end{proof}
 
@@ -3260,7 +3260,7 @@ X\sim Y\Leftrightarrow\exists A\in\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\
 \item [{\ref{eqrel-princ-p}$\Rightarrow$\ref{eqrel-princ-fltr}}] Obvious.
 \item [{\ref{eqrel-princ-fltr}$\Rightarrow$\ref{eqrel-princ-conc}}] ~
 \begin{align*}
-\exists A\in\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\mathfrak{Z}}A & \Leftrightarrow\\
+\exists A\in\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\mathfrak{Z}}A & \Leftrightarrow \text{ (theorem~\ref{up-filt-crit})}\\
 \exists A\in\mathcal{A}:\uparrow X\sqcap^{\mathfrak{A}}\uparrow A=\uparrow Y\sqcap^{\mathfrak{A}}\uparrow A & \Rightarrow\\
 \exists A\in\mathcal{A}:\uparrow X\sqcap^{\mathfrak{A}}\uparrow A\sqcap^{\mathfrak{A}}\mathcal{A}=\uparrow Y\sqcap^{\mathfrak{A}}\uparrow A\sqcap^{\mathfrak{A}}\mathcal{A} & \Leftrightarrow\\
 \exists A\in\mathcal{A}:\uparrow X\sqcap^{\mathfrak{A}}\mathcal{A}=\uparrow Y\sqcap^{\mathfrak{A}}\mathcal{A} & \Leftrightarrow\\
