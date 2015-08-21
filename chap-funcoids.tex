@@ -2605,9 +2605,11 @@ A funcoid $f$ is $T_{2}$-separable iff $\alpha\ne\beta\Rightarrow\rsupfun f\upar
 for every $\alpha,\beta\in\Src f$.\end{obvious}
 \begin{defn}
 \emph{Regular funcoid} is an endofuncoid $f$ such that $\supfun f\supfun{f^{-1}}C\asymp\rsupfun f\{p\}\Leftarrow p\notin C$
-for every $p\in\Ob f$ and $C\in\subsets\Ob f$.\end{defn}
+for every $p\in\Ob f$ and $C\in\subsets\Ob f$. \fxerror{This definition is wrong (not the same as in the customary general topology).
+Instead it should be $\supfun f\supfun{f^{-1}}C\asymp\rsupfun f\{p\}\Leftarrow\uparrow^{\Ob f}\{p\}\asymp\supfun{f^{-1}}C$.}
+\end{defn}
 \begin{prop}
-Endofuncoid $f$ is regular iff:
+Endofuncoid $f$ is regular iff: \fxerror{Every below item must be quantified with $\forall C\forall p$}
 \begin{enumerate}
 \item $\rsupfun{f\circ f^{-1}}C\asymp\rsupfun f\uparrow^{\Ob f}\{p\}\Leftarrow p\notin C$;
 \item $\rsupfun{f^{-1}\circ f\circ f^{-1}}C\asymp\uparrow^{\Ob f}\{p\}\Leftarrow p\notin C$;
