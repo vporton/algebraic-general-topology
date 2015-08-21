@@ -1,6 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{agt}[2015/08/10 Common Algebraic General Topology definitions]
 
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
@@ -17,7 +22,6 @@
   \arrowfill@\leftarrow\relbar\rightarrow}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-\numberwithin{section}{chapter}
  \usepackage[draft]{fixme}
  \theoremstyle{definition}
  \newtheorem{thm}{\protect\theoremname}
@@ -88,9 +92,6 @@ after={\let\item\OldItem}}
 {label=\noexpand\LabelText.,%
 before={\let\item\MyItem},%
 after={\let\item\OldItem},wide}
-
-\usepackage{chngcntr}
-\counterwithout{figure}{chapter}
 
 \usepackage{tikz}
 \usepackage{tikz-cd}

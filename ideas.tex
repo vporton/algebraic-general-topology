@@ -1,16 +1,20 @@
 \documentclass{amsart}
 
-\usepackage{hyperref}
-\usepackage{amsfonts}
-
-\global\long\def\tofcd{(\mathsf{FCD})}
-\global\long\def\torldin{(\mathsf{RLD})_{\mathrm{in}}}
-\global\long\def\torldout{(\mathsf{RLD})_{\mathrm{out}}}
-\global\long\def\corestar{\partial}
-\global\long\def\setcond#1#2{\left\{  \frac{#1}{#2}\right\}  }
-\global\long\def\atoms{\operatorname{atoms}}
-\global\long\def\Src{\operatorname{Src}}
-\global\long\def\Dst{\operatorname{Dst}}
+\usepackage{agt}
+% 
+% \usepackage{hyperref}
+% \usepackage{amsfonts}
+% \usepackage{mathrsfs}
+% 
+% \global\long\def\tofcd{(\mathsf{FCD})}
+% \global\long\def\torldin{(\mathsf{RLD})_{\mathrm{in}}}
+% \global\long\def\torldout{(\mathsf{RLD})_{\mathrm{out}}}
+% \global\long\def\corestar{\partial}
+% \global\long\def\setcond#1#2{\left\{  \frac{#1}{#2}\right\}  }
+% \global\long\def\atoms{\operatorname{atoms}}
+% \global\long\def\dual{\operatorname{dual}}
+% \global\long\def\Src{\operatorname{Src}}
+% \global\long\def\Dst{\operatorname{Dst}}
   
 \begin{document}
 
@@ -107,5 +111,9 @@ semilattices. A join-semilattice is distributive if and only if the lattice of i
 
 The article \url{http://arxiv.org/abs/1410.1504} has solved ``Every paratopological group is Tychonoff'' conjecture positively.
 Rewrite this article in terms of funcoids and reloids (especially with the algebraic formulas characterizing regular funcoids).
+
+Generalize interior in topological spaces as the \emph{interior funcoid} of a complete funcoid~$f$, defined as a pointfree funcoid
+$f^\circ: \dual\mathscr{F}\Src f \rightarrow \dual\mathscr{F}\Dst f$ conforming to the formula:
+$\rsupfun{f^{\circ}} (I \sqcap J) = \overline{\rsupfun{f} \overline{I \sqcap J}} = \overline{\rsupfun{f} ( \overline{I} \sqcup \overline{J} )}$.
 
 \end{document}
