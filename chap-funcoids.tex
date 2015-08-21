@@ -2605,16 +2605,19 @@ A funcoid $f$ is $T_{2}$-separable iff $\alpha\ne\beta\Rightarrow\rsupfun f\upar
 for every $\alpha,\beta\in\Src f$.\end{obvious}
 \begin{defn}
 \emph{Regular funcoid} is an endofuncoid $f$ such that $\supfun f\supfun{f^{-1}}C\asymp\rsupfun f\{p\}\Leftarrow p\notin C$
-for every $p\in\Ob f$ and $C\in\mathscr{T}\Ob f$.\end{defn}
-\begin{obvious}
+for every $p\in\Ob f$ and $C\in\subsets\Ob f$.\end{defn}
+\begin{prop}
 Endofuncoid $f$ is regular iff:
 \begin{enumerate}
 \item $\rsupfun{f\circ f^{-1}}C\asymp\rsupfun f\uparrow^{\Ob f}\{p\}\Leftarrow p\notin C$;
 \item $\rsupfun{f^{-1}\circ f\circ f^{-1}}C\asymp\uparrow^{\Ob f}\{p\}\Leftarrow p\notin C$;
+\item $\uparrow^{\Ob f}\{p\}\sqsubseteq\rsupfun{f^{-1}\circ f\circ f^{-1}}C \Rightarrow p\in C$;
 \item $\rsupfun{f^{-1}\circ f\circ f^{-1}}C\sqsubseteq\uparrow^{\Ob f}C$;
+  \fxerror{Counter-example: $f=\Delta\times^{\mathsf{FCD}}\Delta$ and $C=\{0\}$ ($\Delta$ is defined in the section ``Counterexamples''.)}
 \item $f^{-1}\circ f\circ f^{-1}\sqsubseteq1_{\Ob f}^{\mathsf{FCD}}$.
 \end{enumerate}
-\end{obvious}
+\end{prop}
+
 \begin{defn}
 An endofuncoid is $T_{3}$- iff it is both $T_{2}$- and regular.
 \end{defn}
