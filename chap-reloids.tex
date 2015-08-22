@@ -150,26 +150,26 @@ We'll prove only the first as the second is dual.
 By the infinite distributivity law for filters we have
 \begin{align*}
 f\circ g\sqcup f\circ h & =\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(F\circ G)}{F\in\up f,G\in\up g}\sqcup\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(F\circ H)}{F\in\up f,H\in\up h} & =\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(F_{1}\circ G)\sqcup\uparrow^{\mathsf{RLD}}(F_{2}\circ H)}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h} & =\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}((F_{1}\circ G)\sqcup(F_{2}\circ H))}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h}.
+\bigsqcap^{\mathsf{RLD}}\setcond{F\circ G}{F\in\up f,G\in\up g}\sqcup\bigsqcap^{\mathsf{RLD}}\setcond{F\circ H}{F\in\up f,H\in\up h} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(F_{1}\circ G)\sqcup^{\mathsf{RLD}}(F_{2}\circ H)}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(F_{1}\circ G)\sqcup(F_{2}\circ H)}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h}.
 \end{align*}
 
 
 Obviously
 \begin{align*}
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}((F_{1}\circ G)\sqcup(F_{2}\circ H))}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h} & \sqsupseteq\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(((F_{1}\sqcap F_{2})\circ G)\sqcup((F_{1}\sqcap F_{2})\circ H))}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h} & =\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}((F\circ G)\sqcup(F\circ H))}{F\in\up f,G\in\up g,H\in\up h} & =\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(F\circ(G\sqcup H))}{F\in\up f,G\in\up g,H\in\up h}.
+\bigsqcap^{\mathsf{RLD}}\setcond{(F_{1}\circ G)\sqcup(F_{2}\circ H)}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h} & \sqsupseteq\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(((F_{1}\sqcap F_{2})\circ G)\sqcup((F_{1}\sqcap F_{2})\circ H))}{F_{1},F_{2}\in\up f,G\in\up g,H\in\up h} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(F\circ G)\sqcup(F\circ H)}{F\in\up f,G\in\up g,H\in\up h} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{F\circ(G\sqcup H)}{F\in\up f,G\in\up g,H\in\up h}.
 \end{align*}
 
 
 Because $G\in\up g\land H\in\up h\Rightarrow G\sqcup H\in\up(g\sqcup h)$
 we have
 \begin{align*}
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(F\circ(G\sqcup H))}{F\in\up f,G\in\up g,H\in\up h} & \sqsupseteq\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}(F\circ K)}{F\in\up f,K\in\up(g\sqcup h)} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{F\circ(G\sqcup H)}{F\in\up f,G\in\up g,H\in\up h} & \sqsupseteq\\
+\bigsqcap^{\mathsf{RLD}}\setcond{F\circ K}{F\in\up f,K\in\up(g\sqcup h)} & =\\
 f\circ(g\sqcup h).
 \end{align*}
 
