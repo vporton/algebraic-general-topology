@@ -252,8 +252,8 @@ The following are equivalent for every typed set $A$ of type~$U$
 and $\mathbf{Rel}$-endomorphism~$\mu$ on a set $U$:
 \begin{enumerate}
 \item \label{princ-conn-rel}$A$ is connected regarding~$\mu$.
-\item \label{princ-conn-rld}$\uparrow^{U}A$ is connected regarding $\uparrow^{\mathsf{RLD}}\mu$.
-\item \label{princ-conn-fcd}$\uparrow^{U}A$ is connected regarding $\uparrow^{\mathsf{FCD}}\mu$.
+\item \label{princ-conn-rld}$\uparrow A$ is connected regarding $\uparrow^{\mathsf{RLD}}\mu$.
+\item \label{princ-conn-fcd}$\uparrow A$ is connected regarding $\uparrow^{\mathsf{FCD}}\mu$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -261,14 +261,14 @@ and $\mathbf{Rel}$-endomorphism~$\mu$ on a set $U$:
 \begin{description}
 \item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-rld}}] ~
 \begin{align*}
-S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A)) & =\\
+S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A)) & =\\
 S^{\ast}(\uparrow^{\mathsf{RLD}}(\mu\sqcap(A\times A))) & =\\
 \uparrow^{\mathsf{RLD}}S(\mu\sqcap(A\times A)).
 \end{align*}
 So
 \begin{align*}
-S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A))\sqsupseteq\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A & \Leftrightarrow\\
-\uparrow^{\mathsf{RLD}(U;U)}S(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{U}A.
+S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A))\sqsupseteq A\times^{\mathsf{RLD}}A & \Leftrightarrow\\
+\uparrow^{\mathsf{RLD}(U;U)}S(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=A\times^{\mathsf{RLD}}A.
 \end{align*}
 
 \item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-fcd}}] It
