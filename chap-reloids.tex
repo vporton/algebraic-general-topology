@@ -376,7 +376,7 @@ Then
 \id_{\mathcal{A}}^{\mathsf{RLD}} & \sqsubseteq\\
 \uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)}) & \sqsubseteq\\
 \uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(A\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)}) & =\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap\uparrow^{\mathsf{RLD}}(A\times\top^{\mathscr{F}(\Base(\mathcal{A}))}) & =\\
+\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap\uparrow^{\mathsf{RLD}}(A\times\top^{\mathscr{T}(\Base(\mathcal{A}))}) & =\\
 \uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top^{\mathscr{T}(\Base(\mathcal{A}))})) & =\\
 \uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{A} & \sqsubseteq K.
 \end{align*}
@@ -398,7 +398,7 @@ reloid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{thm}
 \begin{proof}
 We need to prove that 
 \[
-f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})=f\circ\bigsqcap\setcond{\uparrow^{\mathsf{RLD}(\Src f;\Src f)}\id_{A}}{A\in\up\mathcal{A}}.
+f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})=f\circ\bigsqcap^{\mathsf{RLD}(\Src f;\Src f)}\setcond{\id_{A}}{A\in\up\mathcal{A}}.
 \]
 
 
