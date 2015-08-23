@@ -429,7 +429,7 @@ every funcoid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$, $\mathcal{B}\in\maths
 \begin{thm}
 $\up\tofcd g\supseteq\up g$ for every reloid $g$.\end{thm}
 \begin{proof}
-Let $K\in\up g$. Then for every sets $X\in\mathscr{T}\Src g$, $Y\in\mathscr{T}\Dst g$
+Let $K\in\up g$. Then for every typed sets $X\in\mathscr{T}\Src g$, $Y\in\mathscr{T}\Dst g$
 \[
 X\rsuprel KY\Leftrightarrow X\rsuprel{\uparrow^{\mathsf{FCD}}K}Y\Leftrightarrow X\rsuprel{\tofcd\uparrow^{\mathsf{RLD}}K}Y\Leftarrow X\rsuprel{\tofcd g}Y.
 \]
@@ -444,7 +444,7 @@ $\mathcal{B}\in\mathscr{F}(\Src g)$.\end{thm}
 g\circ(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})\circ f & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{G\circ(A\times B)\circ F}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{\rsupfun{F^{-1}}A\times\rsupfun GB}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{\rsupfun{F^{-1}}A\times^{\mathsf{RLD}}\rsupfun GB)}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{\rsupfun{F^{-1}}A\times^{\mathsf{RLD}}\rsupfun GB}{F\in\up f,G\in\up g,A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
 \text{(theorem \ref{meet-rld-prod})}\\
 \bigsqcap^{\mathscr{F}}\setcond{\rsupfun{F^{-1}}A}{F\in\up f,A\in\up\mathcal{A}}\times^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}}\setcond{\rsupfun GB}{G\in\up g,B\in\up\mathcal{B}} & =\\
 \bigsqcap^{\mathscr{F}}\setcond{\rsupfun{\uparrow^{\mathsf{FCD}(\Dst f;\Src f)}F^{-1}}A}{F\in\up f,A\in\up\mathcal{A}}\times^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}}\setcond{\rsupfun{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}G}B}{G\in\up g,B\in\up\mathcal{B}} & =\\
