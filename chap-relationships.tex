@@ -722,24 +722,14 @@ We will prove $L\in\up\torldout f$.
 
 We have 
 \[
-L\in\bigcap\setcond{\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})}{x\in\Src f}=\bigcap\setcond{\setcond{\uparrow^{\Src f}\{x\}\times Y}{Y\in\up\supfun f\uparrow^{\Src f}\{x\}}}{x\in\Src f}.
+L\in\bigcap_{x\in\Src f}\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\}).
 \]
-It's enough to prove that $L\in\up f$. Really, $\forall x\in\Src f:\rsupfun L\uparrow^{\Src f}\{x\}\in\up\supfun f\uparrow^{\Src f}\{x\}$
-because
 
-$\rsupfun L\uparrow^{\Src f}\{x\}\sqsupseteq\rsupfun T\uparrow^{\Src f}\{x\}$
-for 
-\[
-T=\bigcap\setcond{\setcond{\uparrow^{\Src f}\{x\}\times Y}{Y\in\up G(x)}}{x\in\Src f}.
-\]
-and thus 
-\begin{eqnarray*}
-\rsupfun L\uparrow^{\Src f}\{x\} & \sqsupseteq\\
-\bigcap\setcond{\setcond{\langle\uparrow^{\Src f}\{x\}\times Y\rangle^{\ast}\{x'\}}{x'=x,Y\in\up G(x)}}{x\in\Src f} & =\\
-\setcond Y{Y\in\up G(x')} & =\\
-\up G(x').
-\end{eqnarray*}
-So $\rsupfun L\{x\}\in\up\supfun f\{x\}$ and thus $L\in\up f$.\end{proof}
+$\rsupfun{L}\{x\} = G(x)$ for some $G(x)\in\up\supfun f\uparrow^{\Src f}\{x\}$.
+
+Thus $L=G\in\up f$ (because $f$ is complete). Thus $L\in\up f$ and so $L\in\up\torldout f$.
+
+\end{proof}
 \begin{prop}
 $\tofcd$ and $\torldout$ form mutually inverse bijections between
 complete reloids and complete funcoids.\end{prop}
