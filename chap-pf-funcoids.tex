@@ -417,15 +417,15 @@ Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
 be primary filtrators over boolean lattices. If $\alpha\in\mathfrak{B}^{\mathfrak{Z}_{0}}$,
 $\beta\in\mathfrak{A}^{\mathfrak{Z}_{1}}$ are functions such that
 $Y\nasymp\alpha X\Leftrightarrow X\nasymp\beta Y$ for every $X\in\mathfrak{Z}_{0}$,
-$Y\in\mathfrak{Z}_{1}$, then there exists exactly one funcoid $f$
-such that $\langle f\rangle^{\ast}=\alpha$, $\langle f^{-1}\rangle^{\ast}=\beta$.\end{thm}
+$Y\in\mathfrak{Z}_{1}$, then there exists exactly one pointfree funcoid $f:\mathfrak{A}\rightarrow\mathfrak{B}$
+such that $\supfun{f}|_{\mathfrak{Z}_0}=\alpha$, $\supfun{f^{-1}}|_{\mathfrak{Z}_1}=\beta$.\end{thm}
 \begin{proof}
 Prove $\alpha(I\sqcup J)=\alpha I\sqcup\alpha J$. Really, $Y\nasymp\alpha(I\sqcup J)\Leftrightarrow I\sqcup J\nasymp\beta Y\Leftrightarrow I\nasymp\beta Y\vee J\nasymp\beta Y\Leftrightarrow Y\nasymp\alpha I\vee Y\nasymp\alpha J\Leftrightarrow Y\nasymp\alpha I\sqcup\alpha J$.
 So $\alpha(I\sqcup J)=\alpha I\sqcup\alpha J$ by star-separability.
 Similarly $\beta(I\sqcup J)=\beta I\sqcup\beta J$.
 
 Thus by the theorem there exists a pointfree funcoid $f$ such that
-$\langle f\rangle^{\ast}=\alpha$, $\langle f^{-1}\rangle^{\ast}=\beta$.
+$\supfun{f}|_{\mathfrak{Z}_0}=\alpha$, $\supfun{f^{-1}}|_{\mathfrak{Z}_1}=\beta$.
 
 That this pointfree funcoid is unique, follows from the above.\end{proof}
 \begin{prop}
