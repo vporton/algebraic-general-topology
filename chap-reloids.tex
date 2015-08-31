@@ -434,29 +434,29 @@ f|_{\mathcal{A}}\sqcap(\top^{\mathscr{F}(\Src f)}\times^{\mathsf{RLD}}\mathcal{B
 \end{align*}
 \end{proof}
 \begin{thm}
-$f|_{\uparrow^{\Src f}\{\alpha\}}=\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\im(f|_{\uparrow^{\Src f}\{\alpha\}})$
+$f|_{\uparrow\{\alpha\}}=\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\im(f|_{\uparrow\{\alpha\}})$
 for every reloid $f$ and $\alpha\in\Src f$.\end{thm}
 \begin{proof}
 First,
 \begin{align*}
-\im(f|_{\uparrow^{\Src f}\{\alpha\}}) & =\\
-\bigsqcap^{\mathsf{RLD}}\rsupfun{\im}\up(f|_{\uparrow^{\Src f}\{\alpha\}}) & =\\
+\im(f|_{\uparrow \{\alpha\}}) & =\\
+\bigsqcap^{\mathsf{RLD}}\rsupfun{\im}\up(f|_{\uparrow \{\alpha\}}) & =\\
 \bigsqcap^{\mathsf{RLD}}\rsupfun{\im}\up(f\sqcap(\uparrow^{\Src f}\{\alpha\}\times\top^{\mathscr{F}(\Dst f)})) & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{\im(F\cap(\{\alpha\}\times\top^{\mathscr{T}(\Dst f)}))}{F\in\up f} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{\im(F|_{\uparrow^{\Src f}\{\alpha\}})}{F\in\up f}.
+\bigsqcap^{\mathsf{RLD}}\setcond{\im(F|_{\uparrow \{\alpha\}})}{F\in\up f}.
 \end{align*}
 
 
 Taking this into account we have:
 \begin{align*}
-\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\im(f|_{\uparrow^{\Src f}\{\alpha\}}) & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{\uparrow^{\Src f}\{\alpha\}\times K}{K\in\im(f|_{\uparrow^{\Src f}\{\alpha\}})} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{\uparrow^{\Src f}\{\alpha\}\times\im(F|_{\uparrow^{\Src f}\{\alpha\}})}{F\in\up f} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{F|_{\uparrow^{\Src f}\{\alpha\}}}{F\in\up f} & =\\
+\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\im(f|_{\uparrow \{\alpha\}}) & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{\uparrow^{\Src f}\{\alpha\}\times K}{K\in\im(f|_{\uparrow \{\alpha\}})} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{\uparrow^{\Src f}\{\alpha\}\times\im(F|_{\uparrow \{\alpha\}})}{F\in\up f} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{F|_{\uparrow \{\alpha\}}}{F\in\up f} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{F\sqcap(\uparrow^{\Src f}\{\alpha\}\times\top^{\mathscr{T}(\Dst f)})}{F\in\up f} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond F{F\in\up f}\sqcap\uparrow^{\mathsf{RLD}}(\uparrow^{\Src f}\{\alpha\}\times\top^{\mathscr{T}(\Dst f)}) & =\\
 f\sqcap\uparrow^{\mathsf{RLD}}(\uparrow^{\Src f}\{\alpha\}\times\top^{\mathscr{T}(\Dst f)}) & =\\
-f|_{\uparrow^{\Src f}\{\alpha\}}.
+f|_{\uparrow \{\alpha\}}.
 \end{align*}
 \end{proof}
 \begin{lem}
@@ -596,7 +596,7 @@ Complete and co-complete are dual.\end{obvious}
 is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
 to the set $\Compl\mathsf{RLD}(A;B)$.
 
-The inverse isomorphism is described by the formula $G(\alpha)=\im(f|_{\uparrow^{A}\{\alpha\}})$
+The inverse isomorphism is described by the formula $G(\alpha)=\im(f|_{\uparrow \{\alpha\}})$
 where $f$ is a complete reloid.\end{thm}
 \begin{proof}
 $\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$
@@ -638,7 +638,7 @@ is trivial.
 Denote $f=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$.
 Then
 \begin{multline*}
-\im(f|_{\uparrow^{A}\{\alpha'\}})=\im(f\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}))=\text{(because \ensuremath{\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}} is principal)}=\\
+\im(f|_{\uparrow \{\alpha'\}})=\im(f\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}))=\text{(because \ensuremath{\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}} is principal)}=\\
 \im\bigsqcup\setcond{(\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha))\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)})}{\alpha\in\Src f}=\im(\uparrow^{A}\{\alpha'\}\times^{\mathsf{RLD}}G(\alpha'))=G(\alpha').
 \end{multline*}
 \end{proof}
@@ -647,12 +647,12 @@ $G\mapsto\bigsqcup\setcond{G(\alpha)\times^{\mathsf{RLD}}\uparrow^{A}\{\alpha\}}
 is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
 to the set $\CoCompl\mathsf{RLD}(A;B)$.
 
-The inverse isomorphism is described by the formula $G(\alpha)=\im(f^{-1}|_{\uparrow^{A}\{\alpha\}})$
+The inverse isomorphism is described by the formula $G(\alpha)=\im(f^{-1}|_{\uparrow\{\alpha\}})$
 where $f$ is a co-complete reloid.
 \end{cor}
 
 \begin{cor}
-The inverse isomorphism is described by the formula $G(\alpha)=\im(f|_{\uparrow^{A}\{\alpha\}})$
+The inverse isomorphism is described by the formula $G(\alpha)=\im(f|_{\uparrow \{\alpha\}})$
 where $f$ is a complete reloid.
 
 $\Compl\mathsf{RLD}(A;B)$ and $\Compl\mathsf{FCD}(A;B)$ are a co-frames.\end{cor}
@@ -679,7 +679,7 @@ for some functions $G:\Src f\rightarrow\mathscr{F}(\Dst f)$ and $H:\Dst f\righta
 For every $\alpha\in\Src f$ we have
 \begin{align*}
 G(\alpha) & =\\
-\im f|_{\uparrow^{\Src f}\{\alpha\}} & =\\
+\im f|_{\uparrow \{\alpha\}} & =\\
 \im(f\sqcap(\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})) & =\text{ (*)}\\
 \im\bigsqcup\setcond{(H(\beta)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\})\sqcap(\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})}{\beta\in\Dst f} & =\\
 \im\bigsqcup\setcond{(H(\beta)\sqcap\uparrow^{\Src f}\{\alpha\})\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\}}{\beta\in\Dst f} & =\\
@@ -726,14 +726,14 @@ an atom then $f=\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}b$.\end{proof}
 \begin{obvious}
 $\mathsf{ComplRLD}(A;B)$ is an atomistic lattice.\end{obvious}
 \begin{prop}
-$\Compl f=\bigsqcup\setcond{f|_{\uparrow^{\Src f}\{\alpha\}}}{\alpha\in\Src f}$
+$\Compl f=\bigsqcup\setcond{f|_{\uparrow \{\alpha\}}}{\alpha\in\Src f}$
 for every reloid~$f$.\end{prop}
 \begin{proof}
 Let's denote $R$ the right part of the equality to be proven.
 
 That $R$ is a complete reloid follows from the equality
 \[
-f|_{\uparrow^{\Src f}\{\alpha\}}=\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\im(f|_{\uparrow^{\Src f}\{\alpha\}}).
+f|_{\uparrow \{\alpha\}}=\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\im(f|_{\uparrow \{\alpha\}}).
 \]
 
 
@@ -747,7 +747,7 @@ g=\bigsqcup\setcond{\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\
 \]
 for some function $G:\Src f\rightarrow\mathscr{F}(\Dst f)$.
 
-We have $\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)=g|_{\uparrow^{\Src f}\{\alpha\}}\sqsubseteq f|_{\uparrow^{\Src f}\{\alpha\}}$.
+We have $\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)=g|_{\uparrow^{\Src f}\{\alpha\}}\sqsubseteq f|_{\uparrow \{\alpha\}}$.
 Thus $g\sqsubseteq R$.\end{proof}
 \begin{conjecture}
 $\Compl f\sqcap\Compl g=\Compl(f\sqcap g)$ for every $f,g\in\mathsf{RLD}(A;B)$.\end{conjecture}
@@ -759,7 +759,7 @@ for every sets $A$, $B$.\end{thm}
 \begin{align*}
 \Compl\bigsqcup R & =\\
 \bigsqcup\setcond{\left(\bigsqcup R\right)|_{\uparrow^{A}\{\alpha\}}}{\alpha\in A} & =\text{ (proposition\,\ref{b-f-back-distr})}\\
-\bigsqcup\setcond{\bigsqcup\setcond{f|_{\uparrow^{A}\{\alpha\}}}{\alpha\in A}}{f\in R} & =\\
+\bigsqcup\setcond{\bigsqcup\setcond{f|_{\uparrow \{\alpha\}}}{\alpha\in A}}{f\in R} & =\\
 \bigsqcup\rsupfun{\Compl}R.
 \end{align*}
 \end{proof}
@@ -776,10 +776,10 @@ f=\bigsqcup\setcond{F(\alpha)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\}}{\
 So
 \begin{align*}
 \Compl f & =\\
-\bigsqcup\setcond{\left(\bigsqcup\setcond{F(\alpha)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\}}{\alpha\in\Dst f}\right)|_{\uparrow^{\Src f}\{\beta\}}}{\beta\in\Src f} & =\\
+\bigsqcup\setcond{\left(\bigsqcup\setcond{F(\alpha)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\}}{\alpha\in\Dst f}\right)|_{\uparrow\{\beta\}}}{\beta\in\Src f} & =\\
 \bigsqcup\setcond{\left(\bigsqcup\setcond{F(\alpha)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\}}{\alpha\in\Dst f}\right)\sqcap(\uparrow^{\Src f}\{\beta\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})}{\beta\in\Src f} & =\text{ (*)}\\
 \bigsqcup\setcond{\bigsqcup\setcond{(F(\alpha)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\})\sqcap(\uparrow^{\Src f}\{\beta\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})}{\alpha\in\Dst f}}{\beta\in\Src f} & =\\
-\bigsqcup\setcond{\bigsqcup\setcond{\uparrow^{\Src f}\{\beta\}\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\}}{\alpha\in\Dst f}}{\beta\in\Src f,\uparrow^{\Src f}\{\beta]\sqsubseteq F(\alpha)}
+\bigsqcup\setcond{\bigsqcup\setcond{\uparrow^{\Src f}\{\beta\}\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\alpha\}}{\alpha\in\Dst f}}{\beta\in\Src f,\uparrow^{\Src f}\{\beta\}\sqsubseteq F(\alpha)}
 \end{align*}
 {*} proposition \ref{b-f-back-distr}.
 
