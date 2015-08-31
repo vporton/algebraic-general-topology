@@ -2497,7 +2497,7 @@ and an ultrafilter $b$ on $B$.
 
 Suppose $f\in\mathsf{FCD}(A;B)$ is a non-empty complete funcoid.
 Then there exists $\alpha\in A$ such that $\rsupfun 
-f\uparrow^{A}\{\alpha\}\ne\bot^{\mathscr{F}(B)}$.
+f@\{\alpha\}\ne\bot^{\mathscr{F}(B)}$.
 Thus $\uparrow^{A}\{\alpha\}\text{\texttimes}^{\mathsf{FCD}}b\sqsubseteq f$
 for some ultrafilter $b$ on $B$. If $f$ is an atom then 
 $f=\uparrow^{A}\{\alpha\}\text{\texttimes}^{\mathsf{FCD}}b$.\end{proof}
@@ -2508,7 +2508,7 @@ is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
 to the set $\Compl\mathsf{FCD}(A;B)$.
 
 The inverse isomorphism is described by the formula $G(\alpha)=\rsupfun 
-f\uparrow^{A}\{\alpha\}$
+f@\{\alpha\}$
 where $f$ is a complete funcoid.\end{thm}
 \begin{proof}
 $\bigsqcup_{\alpha\in A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$
@@ -2544,11 +2544,11 @@ A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))
 for some $F,G\in\mathscr{F}(\Dst f)^{\Src f}$. We need to prove $F=G$.
 Let $\beta\in\Src f$.
 \[
-\rsupfun f\uparrow^{A}\{\beta\}=\bigsqcup_{\alpha\in 
-A}\rsupfun{\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}F(\alpha)}\uparrow^{A}\{
+\rsupfun f@\{\beta\}=\bigsqcup_{\alpha\in 
+A}\rsupfun{\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}F(\alpha)}@\{
 \beta\}=F(\beta).
 \]
-Similarly $\rsupfun f\uparrow^{A}\{\beta\}=G(\beta)$. So $F(\beta)=G(\beta)$.
+Similarly $\rsupfun f@\{\beta\}=G(\beta)$. So $F(\beta)=G(\beta)$.
 
 We have proved that it is a bijection. To show that it is monotone
 is trivial.
@@ -2557,12 +2557,12 @@ Denote $f=\bigsqcup_{\alpha\in
 A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$.
 Then
 \begin{multline*}
-\rsupfun f\uparrow^{A}\{\alpha'\}=\text{(because 
+\rsupfun f@\{\alpha'\}=\text{(because 
 \ensuremath{\uparrow^{A}\{\alpha'\}} is principal)}=\\
 \bigsqcup_{\alpha\in 
-A}\supfun{\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha)}\uparrow^{A}\{
+A}\supfun{\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha)}@\{
 \alpha'\}=\supfun{\uparrow^{A}\{\alpha'\}\times^{\mathsf{FCD}}G(\alpha')}
-\uparrow^{A}\{\alpha'\}=G(\alpha').
+@\{\alpha'\}=G(\alpha').
 \end{multline*}
 \end{proof}
 \begin{cor}
@@ -2572,7 +2572,7 @@ is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
 to the set $\CoCompl\mathsf{FCD}(A;B)$.
 
 The inverse isomorphism is described by the formula 
-$G(\alpha)=\rsupfun{f^{-1}}\uparrow^{A}\{\alpha\}$
+$G(\alpha)=\rsupfun{f^{-1}}@\{\alpha\}$
 where $f$ is a co-complete funcoid.
 \end{cor}
 
@@ -2589,7 +2589,7 @@ Both induce a funcoid, I will show that these two funcoids are reverse
 of each other:
 \begin{thm}
 Let $f$ be a complete funcoid defined by the formula $\rsupfun 
-f\uparrow^{U}\{x\}=\Delta(x)$
+f@\{x\}=\Delta(x)$
 for every $x\in U$, let $g$ be a co-complete funcoid defined by
 the formula $\rsupfun gX=\uparrow^{U}\cl(\GR X)$ for every $X\in\mathscr{T}U$.
 Then $g=f^{-1}$.\end{thm}
@@ -2621,8 +2621,8 @@ By theorem~\ref{cor-eq} and corollary~\ref{fcd-filtered}.\end{proof}
 \index{completion!of funcoid}\emph{Completion} of a funcoid 
 $f\in\mathsf{FCD}(A;B)$
 is the complete funcoid $\Compl f\in\mathsf{FCD}(A;B)$ defined by
-the formula $\rsupfun{\Compl f}\uparrow^{\Src f}\{\alpha\}=\rsupfun 
-f\uparrow^{\Src f}\{\alpha\}$
+the formula $\rsupfun{\Compl f}@\{\alpha\}=\rsupfun 
+f@\{\alpha\}$
 for $\alpha\in\Src f$.
 \end{defn}
 
@@ -2731,14 +2731,14 @@ $\Compl$ is a lower adjoint.\end{cor}
 \begin{conjecture}
 $\Compl$ is not an upper adjoint (in general).\end{conjecture}
 \begin{prop}
-$\Compl f=\bigsqcup_{\alpha\in\Src f}(f|_{\uparrow^{\Src f}\{\alpha\}})$
+$\Compl f=\bigsqcup_{\alpha\in\Src f}(f|_{@\{\alpha\}})$
 for every funcoid $f$.\end{prop}
 \begin{proof}
 Let denote $R$ the right part of the equality to prove.
 
-$\rsupfun R\uparrow^{\Src f}\{\beta\}=\bigsqcup_{\alpha\in\Src 
-f}\rsupfun{f|_{\uparrow^{\Src f}\{\alpha\}}}\uparrow^{\Src f}\{\beta\}=\rsupfun 
-f\uparrow^{\Src f}\{\beta\}$
+$\rsupfun R@\{\beta\}=\bigsqcup_{\alpha\in\Src 
+f}\rsupfun{f|_{\uparrow\{\alpha\}}}@\{\beta\}=\rsupfun 
+f@\{\beta\}$
 for every $\beta\in\Src f$ and $R$ is complete as a join of complete
 funcoids.
 
@@ -2847,10 +2847,9 @@ For every composable funcoids $f$ and $g$
 \begin{widedisorder}
 \item [{\ref{compl2-eq}}] ~
 \begin{multline*}
-\rsupfun{g\circ(\Compl f)}\uparrow^{\Src f}\{x\}=\supfun g\rsupfun{\Compl 
-f}\uparrow^{\Src f}\{x\}=\\
-\supfun g\rsupfun f\uparrow^{\Src f}\{x\}=\rsupfun{g\circ f}\uparrow^{\Src 
-f}\{x\}.
+\rsupfun{g\circ(\Compl f)}@\{x\}=\supfun g\rsupfun{\Compl 
+f}@\{x\}=\\
+\supfun g\rsupfun f@\{x\}=\rsupfun{g\circ f}@\{x\}.
 \end{multline*}
 
 
@@ -2903,14 +2902,14 @@ a function (or rather a principal, entirely defined, monovalued funcoid)
 from $\Ob\mu$ to $\Ob\nu$ such that
 \[
 \forall x\in\Ob\mu,V\in\rsupfun{\mu}\{x\}:\rsupfun 
-fV\sqsupseteq\supfun{\nu}\rsupfun f\uparrow^{\Src f}\{x\}.
+fV\sqsupseteq\supfun{\nu}\rsupfun f@\{x\}.
 \]
 
 
 This formula is equivalent (exercise!) to
 \[
 \forall x\in\Ob\mu:\supfun f\rsupfun{\mu}\{x\}\sqsupseteq\supfun{\nu}\rsupfun 
-f\uparrow^{\Src f}\{x\}.
+f@\{x\}.
 \]
 
 
@@ -3112,8 +3111,7 @@ separability.
 Let call \emph{$T_{1}$-separable} such endofuncoid $f$ that for
 every $\alpha,\beta\in\Ob f$ is true
 \[
-\alpha\ne\beta\Rightarrow\lnot(\uparrow^{\Ob f}\{\alpha\}\rsuprel f\uparrow^{\Ob 
-f}\{\beta\}).
+\alpha\ne\beta\Rightarrow\lnot(@\{\alpha\}\rsuprel f@\{\beta\}).
 \]
 \end{defn}
 \begin{prop}
@@ -3122,10 +3120,8 @@ f}^{\mathsf{FCD}}$.\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
-\forall x,y\in\Ob f:(\uparrow^{\Ob f}\{x\}\rsuprel f\uparrow^{\Ob 
-f}\{y\}\Rightarrow x=y)\Leftrightarrow\\
-\forall x,y\in\Ob f:(\{x\}\uparrow^{\Ob f}\rsuprel{\Cor f}\uparrow^{\Ob 
-f}\{y\}\Rightarrow x=y)\Leftrightarrow\Cor f\sqsubseteq1_{\Ob f}^{\mathsf{FCD}}.
+\forall x,y\in\Ob f:(@\{x\}\rsuprel{f}@\{y\}\Rightarrow x=y)\Leftrightarrow\\
+\forall x,y\in\Ob f:(@\{x\}\rsuprel{\Cor f}@\{y\}\Rightarrow x=y)\Leftrightarrow\Cor f\sqsubseteq1_{\Ob f}^{\mathsf{FCD}}.
 \end{multline*}
 \end{proof}
 \begin{defn}
@@ -3141,13 +3137,13 @@ For symmetric transitive funcoids $T_{1}$- and $T_{2}$-separability
 are the same (see theorem \ref{sym-trans}).
 \begin{obvious}
 A funcoid $f$ is $T_{2}$-separable iff $\alpha\ne\beta\Rightarrow\rsupfun 
-f\uparrow^{\Src f}\{\alpha\}\nasymp\rsupfun f\uparrow^{\Src f}\{\beta\}$
+f@\{\alpha\}\nasymp\rsupfun f@\{\beta\}$
 for every $\alpha,\beta\in\Src f$.\end{obvious}
 \begin{defn}
 Funcoid $f$ is \emph{regular} iff for every $C\in\mathscr{T}\Dst f$ and 
 $p\in\Src f$
 \[\supfun{f} \langle f^{- 1} \rangle C \asymp \supfun{f}
-\uparrow^{\Src f} \{ p \} \Leftarrow \uparrow^{\Src f} \{ p \}
+@\{ p \} \Leftarrow \uparrow^{\Src f} \{ p \}
 \asymp \langle f^{- 1} \rangle C.\]
 \end{defn}
 
@@ -3164,25 +3160,23 @@ The following are pairwise equivalent:
 Equivalently transform the defining formula for regular funcoids:
 
 $\supfun{f} \langle f^{- 1} \rangle C \asymp \supfun{f}
-\uparrow^{\Src f} \{ p \} \Leftarrow \uparrow^{\Src f} \{ p \}
+@\{ p \} \Leftarrow \uparrow^{\Src f} \{ p \}
 \asymp \langle f^{- 1} \rangle C$;
 
 $\supfun{f} \langle f^{- 1} \rangle C \nasymp \supfun{f}
-\uparrow^{\Src f} \{ p \} \Rightarrow \uparrow^{\Src f} \{ p \}
-\nasymp \langle f^{- 1} \rangle C$;
+@\{ p \} \Rightarrow \uparrow^{\Src f} \{ p \} \nasymp \supfun{f}^{-1}C$;
 
 (by definition of funcoids)
 
 $C \nasymp \supfun{f} \langle f^{- 1} \rangle \supfun{f}
-\uparrow^{\Src f} \{ p \} \Rightarrow C \nasymp \supfun{f}
-\uparrow^{\Src f} \{ p \}$;
+@\{ p \} \Rightarrow C \nasymp \supfun{f}
+@\{ p \}$;
 
 $\supfun{f} \langle f^{- 1} \rangle \supfun{f}
-\uparrow^{\Src f} \{ p \} \sqsubseteq \supfun{f}
-\uparrow^{\Src f} \{ p \}$;
+@\{ p \} \sqsubseteq \supfun{f}@\{ p \}$;
 
-$\langle f \circ f^{- 1} \circ f \rangle \uparrow^{\Src f} \{ p \}
-\sqsubseteq \supfun{f} \uparrow^{\Src f} \{ p \}$;
+$\supfun{f \circ f^{- 1} \circ f} @\{ p \}
+\sqsubseteq \supfun{f} @\{ p \}$;
 
 $\Compl (f \circ f^{- 1} \circ f) \sqsubseteq \Compl f$;
 
