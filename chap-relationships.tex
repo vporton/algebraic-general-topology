@@ -532,7 +532,7 @@ for every reloid~$g$.\end{lem}
 ~
 \begin{multline*}
 \uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq\tofcd g\Leftrightarrow\\
-\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\nasymp\tofcd g\Leftrightarrow\uparrow^{\Src g}\{x\}\rsuprel{\tofcd g}\uparrow^{\Dst g}\{y\}\Leftrightarrow\\
+\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\nasymp\tofcd g\Leftrightarrow @\{x\}\rsuprel{\tofcd g}@\{y\}\Leftrightarrow\\
 \uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\nasymp g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g.
 \end{multline*}
 \end{proof}
@@ -701,32 +701,32 @@ Theorems~\ref{complfcd-rep} and~\ref{complrld-rep}.\end{proof}
 \begin{lem}
 $\tofcd g=\theta g$ for every complete reloid~$g$.\end{lem}
 \begin{proof}
-Really, $g=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$
+Really, $g=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})$
 for a complete funcoid~$f$ and thus 
 \[
-\tofcd g=\bigsqcup_{x\in\Src f}\tofcd(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\{x\})=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\supfun f\{x\})=\theta g.
+\tofcd g=\bigsqcup_{x\in\Src f}\tofcd(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\rsupfun f@\{x\})=\theta g.
 \]
 \end{proof}
 \begin{lem}
 $\torldout f=\theta^{-1}f$ for every complete funcoid~$f$.\end{lem}
 \begin{proof}
-We have $f=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\supfun f\uparrow^{\Src f}\{x\})$.
-We need to prove $\torldout f=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$.
+We have $f=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\rsupfun f@\{x\})$.
+We need to prove $\torldout f=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})$.
 
-Really, $\torldout f\sqsupseteq\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$.
+Really, $\torldout f\sqsupseteq\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})$.
 
-It remains to prove that $\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})\sqsupseteq\torldout f$.
+It remains to prove that $\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})\sqsupseteq\torldout f$.
 
-Let $L\in\up\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\})$.
+Let $L\in\up\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})$.
 We will prove $L\in\up\torldout f$.
 
 We have 
 \[
-L\in\bigcap_{x\in\Src f}\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\}).
+L\in\bigcap_{x\in\Src f}\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\}).
 \]
 
-$\rsupfun{L}\{x\} = G(x)$ for some $G(x)\in\up\supfun f\uparrow^{\Src f}\{x\}$ (because
-$L\in\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\supfun f\uparrow^{\Src f}\{x\}$).
+$\rsupfun{L}\{x\} = G(x)$ for some $G(x)\in\up\rsupfun f@\{x\}$ (because
+$L\in\up(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\}$).
 
 Thus $L=G\in\up f$ (because $f$ is complete). Thus $L\in\up f$ and so $L\in\up\torldout f$.
 
