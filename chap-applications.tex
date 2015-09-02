@@ -32,7 +32,7 @@ condition that it smooth, I have not yet defined it quite formally).
 
 Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^2$):
 
-$R(p;d;\phi) = \setcond{(p_0+x;p_1+y)}{\lvert\arctan\frac{y}{x}-\arctan{d}\rvert<\phi}$ \fxerror{Wrong sign of $\arctan$ argument} for a plane point~$p$, direction (unit vector)~$d$ and an angle~$\phi$.
+$R(p;d;\phi) = \setcond{(p_0+x;p_1+y)}{\lvert\arctan\frac{y}{x}-\arctan{d}\rvert<\phi, x\ne 0\lor y\ne 0}$ \fxerror{Wrong sign of $\arctan$ argument} for a plane point~$p$, direction (unit vector)~$d$ and an angle~$\phi$.
 
 $W(p;d) = \bigsqcap^{\mathscr{F}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0}$.
 
@@ -44,3 +44,7 @@ Here $D(p)$ is the given set of directions for a point~$p$.
 One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
 
 \fxwarning{Add proof, rewrite in a more understandable way, $\mathbb{R}^n$ in general.}
+
+\begin{conjecture}
+If the curve goes only through points with exactly one direction, then the curve is smooth (if it is continuous regarding the above funcoid).
+\end{conjecture}
