@@ -48,3 +48,23 @@ One advantage to use funcoids in this case, that when describing the curves we d
 \begin{conjecture}
 If the curve goes only through points with exactly one direction, then the curve is smooth (if it is continuous regarding the above funcoid).
 \end{conjecture}
+
+\section{A way to construct directed topological spaces}
+
+\fxnote{Should include definition of directed topological space.}
+
+Directed topological spaces are defined at\\
+\url{http://ncatlab.org/nlab/show/directed+topological+space}
+
+I propose a new way to construct a directed topological space. My way is more geometric/topological as it does not involve dealing with particular paths.
+
+\begin{conjecture}
+Every directed topological space can be constructed in the below described way.
+\end{conjecture}
+
+Consider topological space $T$ and its subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
+Note that in our consideration $F$ is an endofuncoid (its source and destination are the same).
+
+Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from $[0;1]$ to $F$ such that $f(0)=A$ and $f(1)=B$.
+
+Because $F$ is less that $T$, we have that every directed path is a path.
