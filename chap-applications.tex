@@ -1,0 +1,40 @@
+\chapter{Applications of algebraic general topology}
+
+\section{``Hybrid'' objects}
+
+Algebraic general topology allows to construct ``hybrid'' objects of ``continuous'' (as topological spaces)
+and discrete (as graphs).
+
+Consider for example $D\sqcup T$ where $D$ is a digraph and $T$ is a topological space.
+I am unsure whether there are important applications of such hybrid objects.
+
+\section{Field of directions}
+
+\fxwarning{Define \emph{curves} for beginning students.}
+
+Consider the following class of problems:
+
+Consider a plane (or $\mathbb{R}^n$ in general).
+
+Let to any point of the plane corresponds set of directions (set of unit vectors, I mean). Remark: Sometimes these sets are of exactly one element.
+
+Does there exists a smooth curve from point $A$ to point $B$ such that in every point of the curve its direction lies in the set of directions for this point?
+
+It seems that this problem can be reformulated in the language of funcoids: From the sets of directions we easily construct certain funcoid.
+Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
+condition that it smooth, I have not yet defined it quite formally).
+
+Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^2$):
+
+$R(p;d;\phi) = \setcond{(p_0+x;p_1+y)}{\arctan\frac{y}{x}<\phi+\arctan{d}}$ \fxerror{Wrong sign of $\arctan$ argument} for a plane point~$p$, direction (unit vector)~$d$ and an angle~$\phi$.
+
+$W(p;d) = \bigsqcap\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0}$.
+
+Finally our funcoid $Q=\bigsqcup_{p\in\mathbb{R}, d\in D(p)} (W(p;d) \sqcap ((\Delta+p_0) \times^{\mathsf{FCD}} (\Delta+p_1))$. ($\Delta$ is taken from the ``counter-examples'' section.)
+\fxwarning{Rewrite this formula to add $p$ once.}
+
+Here $D(p)$ is the given set of directions for a point~$p$.
+
+One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
+
+\fxwarning{Add proof, rewrite in a more understandable way, $\mathbb{R}^n$ in general.}
