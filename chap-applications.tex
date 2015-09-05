@@ -22,7 +22,9 @@ Consider the following class of problems:
 
 Consider a plane (or $\mathbb{R}^n$ in general).
 
-Let to any point of the plane corresponds set of directions (set of unit vectors, I mean). Remark: Sometimes these sets are of exactly one element.
+Let to any point of the plane corresponds set of directions (set of unit vectors, I mean).
+Remark: Sometimes these sets are of exactly one element. Further we
+don't use the assumption that the vectors are unit and so it applies to any vector field.
 
 Does there exists a smooth curve from point $A$ to point $B$ such that in every point of the curve its direction lies in the set of directions for this point?
 
@@ -32,16 +34,17 @@ condition that it smooth, I have not yet defined it quite formally).
 
 Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^2$):
 
-$R(p;d;\phi) = \setcond{(p_0+x;p_1+y)}{\lvert\arctan\frac{y}{x}-\arctan{d}\rvert<\phi, x\ne 0\lor y\ne 0}$ \fxerror{Wrong sign of $\arctan$ argument} for a plane point~$p$, direction (unit vector)~$d$ and an angle~$\phi$.
+$R(d;\phi) = \setcond{(x;y)}{\widehat{(x;y)(d_0;d_1)}<\phi, x\ne 0\lor y\ne 0}$,
+where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
+for a plane point~$p$, direction~$d$ and an angle~$\phi$.
+\fxwarning{This is undefined if $d=0$.}
 
-$W(p;d) = \bigsqcap^{\mathscr{F}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0}$.
+$W(d) = \bigsqcap^{\mathscr{F}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap (\Delta\times^{\mathsf{FCD}}\Delta)$.
 
 Finally our funcoid is the complete funcoid~$Q$ described by the formula
-\[\rsupfun{Q}@\{p\} = \bigsqcup_{d\in D(p)} (W(p;d) \sqcap ((\Delta+p_0) \times^{\mathsf{FCD}} (\Delta+p_1)).
-\] ($\Delta$ is taken from the ``counter-examples'' section.)
-\fxwarning{Rewrite this formula to add $p$ once.}
-
-Here $D(p)$ is the given set of directions for a point~$p$.
+\[ \rsupfun{Q}@\{p\} = \bigsqcup_{d\in D(p)} \supfun{p+} W(d). \]
+Here $\Delta$ is taken from the ``counter-examples'' section;
+$D(p)$ is the given set of directions for a point~$p$.
 
 One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
 
