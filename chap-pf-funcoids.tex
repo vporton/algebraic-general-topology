@@ -733,12 +733,14 @@ $\Dst f$ has greatest element.\end{prop}
 \end{multline*}
 \end{proof}
 \begin{prop}
-For every composable pointfree funcoids $f$ and $g$ where the posets
-$\Src f$ and $\Dst f=\Src g$ have greatest elements and $\Dst f$
-and $\Dst g$ are separable: \fxerror{which posets have greatest element for both cases?}
+For every composable pointfree funcoids $f$ and $g$
 \begin{enumerate}
-\item \label{pf-im-ge-dom}If $\im f\sqsupseteq\dom g$ then $\im(g\circ f)=\im g$.
-\item \label{pf-im-le-dom}If $\im f\sqsubseteq\dom g$ then $\dom(g\circ f)=\dom g$.
+\item \label{pf-im-ge-dom}If $\im f\sqsupseteq\dom g$ then $\im(g\circ f)=\im g$, provided that
+the posets $\Src f$ and $\Dst f=\Src g$ have greatest elements and $\Dst f$
+and $\Dst g$ are separable.
+\item \label{pf-im-le-dom}If $\im f\sqsubseteq\dom g$ then $\dom(g\circ f)=\dom g$, provided that
+the posets $\Dst g$ and $\Dst f=\Src g$ have greatest elements and $\Src g$
+and $\Src f$ are separable.
 \end{enumerate}
 \end{prop}
 \begin{proof}
