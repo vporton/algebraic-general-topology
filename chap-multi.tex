@@ -1531,7 +1531,8 @@ is a completary staroid.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-We have $\supfun{f_{i}^{-1}}(X\sqcup Y)=\supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y$.
+We have $\supfun{f_{i}^{-1}}(X\sqcup Y)=\supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y$
+by theorem~\ref{pf-dist-func}.
 \begin{widedisorder}
 \item [{\ref{fcomp-pre}}] Let $L\in\prod_{i\in(\arity f)\setminus\{k\}}(\form f_{i})$
 for some $k\in n$ and $X,Y\in\form f_{k}$. Then 
@@ -1570,7 +1571,7 @@ L_{i} & \text{if }i\neq k
 X\in\supfun{\StarComp(a;f)}_{k}L\vee Y\in\supfun{\StarComp(a;f)}_{k}L.
 \end{eqnarray*}
 Thus $\StarComp(a;f)$ is a pre-staroid.
-\item [{\ref{fcomp-str}}] $\supfun{f_{i}}$ are monotone functions by
+\item [{\ref{fcomp-str}}] $\supfun{f_{i}^{-1}}$ are monotone functions by
 the proposition \ref{pfcd-mono}. Thus $\supfun{f_{i}^{-1}}X_{i}\sqsubseteq\supfun{f_{i}^{-1}}Y_{i}$
 if $X,Y\in\prod_{i\in(\arity f)\setminus\{k\}}(\form f_{i})$ and
 $X\sqsubseteq Y$. So if $a$ is a staroid and $X\in\GR\StarComp(a;f)$
