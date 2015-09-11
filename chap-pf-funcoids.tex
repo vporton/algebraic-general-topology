@@ -1700,13 +1700,14 @@ Let $\mathfrak{A}$ and $\mathfrak{B}$ be posets. Let $f\in\mathsf{pFCD}(\mathfra
 The pointfree funcoid $f$ is:
 \begin{itemize}
 \item monovalued iff $f\circ f^{-1}\sqsubseteq\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}$,
-if $\im f$ is defined and $\mathfrak{B}$ is a meet-semilattice;
+if $\mathfrak{A}$ has greatest element is defined and $\mathfrak{B}$ is a meet-semilattice;
 \item injective iff $f^{-1}\circ f\sqsubseteq\id_{\dom f}^{\mathsf{pFCD}(\mathfrak{A})}$,
-if $\dom f$ is defined and $\mathfrak{A}$ is a meet-semilattice. 
+if $\mathfrak{B}$ has greatest element is defined and $\mathfrak{A}$ is a meet-semilattice. 
 \end{itemize}
 \end{prop}
 \begin{proof}
 It's enough to prove $f\circ f^{-1}\sqsubseteq1_{\mathfrak{B}}^{\mathsf{pFCD}}\Leftrightarrow f\circ f^{-1}\sqsubseteq\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}$.
+$\im f$ is defined because $\mathfrak{A}$ has greatest element. $\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}$ is defined because $\mathfrak{B}$ is a meet-semilattice.
 \begin{description}
 \item [{$\Leftarrow$}] Obvious.
 \item [{$\Rightarrow$}] Let $f\circ f^{-1}\sqsubseteq1_{\mathfrak{B}}^{\mathsf{pFCD}}$.
