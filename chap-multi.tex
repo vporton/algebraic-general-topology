@@ -1732,11 +1732,11 @@ are atomic posets.\end{lem}
 
 \begin{align*}
 b\nasymp^{\Anch(\mathfrak{A})}\StarComp^{(a)}(a;f) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{0\}:(x\sqsubseteq b\wedge x\sqsubseteq\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{0\}:(x\sqsubseteq b\wedge\forall B\in\GR x:B\in\GR\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{0\}:\\
+\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:(x\sqsubseteq b\wedge x\sqsubseteq\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:(x\sqsubseteq b\wedge\forall B\in\GR x:B\in\GR\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:\\
 \left(x\sqsubseteq b\wedge\forall B\in\GR x\exists A\in\prod_{i\in\dom\mathfrak{A}}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n:A_{i}\suprel{f_{i}}B_{i}\wedge A\in\GR a\right)\right) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{0\}:\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
 \exists x\in\Anch(\mathfrak{A}):\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
 \forall B\in\GR b,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}.
 \end{align*}
