@@ -1129,10 +1129,10 @@ and destination.
 \index{form!of star-morphism}I will call $\Obj_{m}$ the \emph{form}
 of the star-morphism $m$.
 \end{defn}
-(Having fixed a precategory with star-morphisms) I will denote $\StarMor(P)$
+(Having fixed a precategory with star-morphisms) I will denote $\StarHom(P)$
 the set of star-morphisms of the form $P$.
 \begin{prop}
-The sets $\StarMor(P)$ are disjoint (for different $P$).\end{prop}
+The sets $\StarHom(P)$ are disjoint (for different $P$).\end{prop}
 \begin{proof}
 If two star-morphisms have different forms, they are clearly not equal.\end{proof}
 \begin{defn}
@@ -1150,7 +1150,7 @@ holds for every star-morphism $m$:
 \index{precategory!partially ordered!with star-morphisms}A \emph{partially
 ordered precategory with star-morphisms} is a category with star-morphisms,
 whose base precategory is a partially ordered precategory and every
-set $\StarMor(X)$ is partially ordered for every $X$, such that:
+set $\StarHom(X)$ is partially ordered for every $X$, such that:
 \[
 m_{0}\sqsubseteq m_{1}\wedge f_{0}\sqsubseteq f_{1}\Rightarrow\StarComp(m_{0};f_{0})\sqsubseteq\StarComp(m_{1};f_{1})
 \]
@@ -1348,8 +1348,8 @@ $f$ and $g$ or a quasi-invertible category.
 \index{product!cross-composition}Let fix a quasi-invertible category
 with with star-morphisms. If $f$ is an indexed family of morphisms
 from its base category, then the pointfree funcoid $\prod^{(C)}f$
-(\emph{cross-composition product} of $f$) from $\StarMor(\mylamdba i{\dom f}{\Src f_{i}})$
-to $\StarMor(\mylamdba i{\dom f}{\Dst f_{i}})$ is defined by the
+(\emph{cross-composition product} of $f$) from $\StarHom(\mylamdba i{\dom f}{\Src f_{i}})$
+to $\StarHom(\mylamdba i{\dom f}{\Dst f_{i}})$ is defined by the
 formulas (for all star-morphisms $a$ and $b$ of these forms): 
 \[
 \supfun{\prod^{(C)}f}a=\StarComp(a;f)\quad\text{and}\quad\supfun{\left(\prod^{(C)}f\right)^{-1}}b=\StarComp(b;f^{\dagger}).
@@ -2516,7 +2516,7 @@ non-zero reloids.\end{conjecture}
 for every indexed family of pointfree funcoids, where downgrading
 is defined for the filtrator 
 \[
-\left(\mathsf{FCD}(\StarMor(\Src\circ f);\StarMor(\Dst\circ f));\rsupfun{\uparrow^{\mathsf{FCD}}}\mathscr{P}\left(\prod(\Src\circ f)\times\prod(\Dst\circ f)\right)\right).
+\left(\mathsf{FCD}(\StarHom(\Src\circ f);\StarHom(\Dst\circ f));\rsupfun{\uparrow^{\mathsf{FCD}}}\mathscr{P}\left(\prod(\Src\circ f)\times\prod(\Dst\circ f)\right)\right).
 \]
 \end{defn}
 \begin{rem}
