@@ -1,0 +1,30 @@
+\chapter{Filtrators of pointfree funcoids}
+
+Let $(\mathfrak{A};\mathfrak{Z}_0)$ and $(\mathfrak{B};\mathfrak{Z}_1)$ be primary filtrators over meet-semilattices.
+
+Let $f$ be a pointfree funcoid $\mathfrak{Z}_0\rightarrow\mathfrak{Z}_1$. Define pointfree funcoid~$\uparrow f$
+by the formulas
+\[
+\supfun{\uparrow f} \mathcal{X} = \bigsqcap^{\mathfrak{B}}_{X\in\up\mathcal{X}} \supfun{f}X \quad\text{and}\quad
+\supfun{\uparrow f^{-1}} \mathcal{Y} = \bigsqcap^{\mathfrak{A}}_{Y\in\up\mathcal{Y}} \supfun{f^{-1}}X.
+\]
+
+\begin{prop}
+$\supfun{f}$ is a pointfree funcoid.
+\end{prop}
+
+\begin{proof}
+We can apply corollary~\bookref{genbase-corr}.
+\begin{multline*}
+\mathcal{Y} \nasymp \supfun{\uparrow f} \mathcal{X} \Leftrightarrow
+\mathcal{Y} \nasymp \bigsqcap^{\mathfrak{B}}_{X\in\up\mathcal{X}} \supfun{f}X \Leftrightarrow
+\bigsqcap^{\mathfrak{B}}_{X\in\up\mathcal{X}} (\mathcal{Y} \sqcap^{\mathfrak{B}} \supfun{f}X) \ne \bot \Leftrightarrow \\
+\forall X\in\up\mathcal{X}: \mathcal{Y} \sqcap^{\mathfrak{B}} \supfun{f}X \ne \bot \Leftrightarrow
+\forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: Y \sqcap^{\mathfrak{B}} \supfun{f}X \ne \bot \Leftrightarrow \\
+\forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: Y \sqcap^{\mathfrak{Z}_1} \supfun{f}X \ne \bot \Leftrightarrow
+\forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: X\suprel{f}Y.
+\end{multline*}
+Similarly $\mathcal{X} \nasymp \supfun{\uparrow f^{-1}} \mathcal{Y} \Leftrightarrow
+\forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: X\suprel{f}Y$.
+Thus $\mathcal{Y} \nasymp \supfun{\uparrow f} \mathcal{X} \Leftrightarrow \mathcal{X} \nasymp \supfun{\uparrow f^{-1}} \mathcal{Y}$.
+\end{proof}
