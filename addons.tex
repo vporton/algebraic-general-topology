@@ -23,9 +23,13 @@
  pdfsubject={general topology},
  pdfkeywords={algebraic general topology,quasi-uniform spaces,generalizations of proximity spaces,generalizations of nearness spaces,generalizations of uniform spaces}}
 
-\usepackage{xr}
+\usepackage{xr,refcount}
 \externaldocument[book-]{book}
 \newcommand{\bookref}[1]{\ref*{book-#1} in the book}
+
+% Continue numbering of book.pdf
+\setcounter{thm}{\getrefnumber{book-finalthm}}
+\addtocounter{thm}{-1}
 
 \global\long\def\PR{\operatorname{PR}}
 \global\long\def\Low{\operatorname{Low}}
@@ -63,6 +67,17 @@ of uniform spaces}
 \maketitle
 
 \tableofcontents{}
+
+\chapter{About this document}
+
+This file contains future addons for the free e-book ``Algebraic General 
+Topology. Volume 1'', which are yet not enough ripe to be included into the 
+book.
+
+Theorem (including propositions, conjectures, etc.) numbers in this document start from the last theorem number
+in the book plus one. Theorems references inside this document are hyperlinked, but references
+to theorems in the book are not hyperlinked (because PDF viewer Okular 0.20.2 does not support
+Backward button after clicking a cross-document reference, and thus I want to avoid clicking such links).
 
 \include{chap-applications}
 \include{chap-pf-funcoid-filt}
