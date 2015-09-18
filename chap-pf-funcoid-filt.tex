@@ -1,6 +1,6 @@
 \chapter{Filtrators of pointfree funcoids}
 
-Let $(\mathfrak{A};\mathfrak{Z}_0)$ and $(\mathfrak{B};\mathfrak{Z}_1)$ be primary filtrators over bounded meet-semilattices.
+Let $(\mathfrak{A};\mathfrak{Z}_0)$ and $(\mathfrak{B};\mathfrak{Z}_1)$ be primary filtrators over boolean lattices.
 By corollary~\bookref{filt-is-complete} we have that $\mathfrak{A}$ and~$\mathfrak{B}$ are complete lattices.
 
 Let $f$ be a pointfree funcoid $\mathfrak{Z}_0\rightarrow\mathfrak{Z}_1$. Define pointfree funcoid~$\uparrow f$
@@ -19,13 +19,28 @@ $\uparrow f$ is a pointfree funcoid.
 \begin{multline*}
 \mathcal{Y} \nasymp \supfun{\uparrow f} \mathcal{X} \Leftrightarrow
 \mathcal{Y} \nasymp \bigsqcap^{\mathfrak{B}}_{X\in\up\mathcal{X}} \supfun{f}X \Leftrightarrow \\
-\bigsqcap^{\mathfrak{B}}_{X\in\up\mathcal{X}} (\mathcal{Y} \sqcap^{\mathfrak{B}} \supfun{f}X) \ne \bot \Leftrightarrow \text{ (corollary~\bookref{genbase-corr})} \\
+\bigsqcap^{\mathfrak{B}}_{X\in\up\mathcal{X}} (\mathcal{Y} \sqcap^{\mathfrak{B}} \supfun{f}X) \ne \bot \Leftrightarrow \text{ (corollary~\bookref{genbase-corr}*)} \\
 \forall X\in\up\mathcal{X}: \mathcal{Y} \sqcap^{\mathfrak{B}} \supfun{f}X \ne \bot \Leftrightarrow \text{ (theorem \bookref{when-sep-core})} \\
 \forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: Y \sqcap^{\mathfrak{B}} \supfun{f}X \ne \bot \Leftrightarrow \text{ (corollary \bookref{f-meet-closed})} \\
 \forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: Y \sqcap^{\mathfrak{Z}_1} \supfun{f}X \ne \bot \Leftrightarrow \\
 \forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: X\suprel{f}Y.
 \end{multline*}
+
+* To apply corollary~\bookref{genbase-corr} we need to show that
+$\setcond{\mathcal{Y} \sqcap^{\mathfrak{B}} \supfun{f}X}{X\in\up\mathcal{X}}$ is a generalized filter base.
+To show it is enough to show that $\setcond{\supfun{f}X}{X\in\up\mathcal{X}}$ is a generalized filter base.
+But this easily follows from proposition~\bookref{pfcd-mono} and~\bookref{filt-is-sep}.
+
 Similarly $\mathcal{X} \nasymp \supfun{\uparrow f^{-1}} \mathcal{Y} \Leftrightarrow
 \forall X\in\up\mathcal{X}, Y\in\up\mathcal{Y}: X\suprel{f}Y$.
 Thus $\mathcal{Y} \nasymp \supfun{\uparrow f} \mathcal{X} \Leftrightarrow \mathcal{X} \nasymp \supfun{\uparrow f^{-1}} \mathcal{Y}$.
+\end{proof}
+
+\begin{prop}
+The above defined~$\uparrow$ is an injection.
+\end{prop}
+
+\begin{proof}
+$\supfun{\uparrow f} X = \bigsqcap^{\mathfrak{B}}_{X'\in\up X} \supfun{f}X' = \min_{X'\in\up X} \supfun{f}X' = \supfun{f}X$.
+So $\supfun{f}$ is determined by $\supfun{\uparrow f}$. Likewise $\supfun{f^{-1}}$ is determined by $\supfun{\uparrow f^{-1}}$.
 \end{proof}
