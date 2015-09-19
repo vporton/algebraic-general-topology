@@ -24,6 +24,12 @@
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
 
+% Eliminate hyperref warnings: http://tex.findincity.net/view/635399273629833626247444/hyperref-token-not-allowed-warning-possible-bug
+\pdfstringdefDisableCommands{%
+  \let\enspace\empty  % this causes the warning for \kern
+  \let\noindent\empty % this causes the warning for \indent
+}
+
 \AtEndDocument{\refstepcounter{thm}\label{finalthm}} % used in addons.tex
 
 \begin{document}
@@ -85,44 +91,34 @@ of uniform spaces}
 
 \tableofcontents{}
 
+\part{Introductory chapters}
 \include{chap-intro}
-
 \include{chap-common}
-
 \include{chap-order-more}
-
 \include{chap-rel}
-
 \include{chap-filt}
-
 \include{chap-common-top}
 
+\part{Funcoids and reloids}
 \include{chap-funcoids}
-
 \include{chap-reloids}
-
 \include{chap-relationships}
-
 \include{chap-decomposition}
-
 \include{chap-continuity}
-
 \include{chap-connected}
-
 \include{chap-bound}
-
 \include{chap-filt-order}
-
 \include{chap-fcd-counter}
-
 \include{chap-funcoids-are-filters}
-
-\include{chap-pf-funcoids}
-
 \include{chap-convergence}
 
+\part{Pointfree funcoids and reloids}
+\include{chap-pf-funcoids}
+
+\part{Staroids and multifuncoids}
 \include{chap-multi}
 
+\part{Postface}
 \include{chap-postface}
 
 \include{appendixes}
