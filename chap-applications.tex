@@ -22,41 +22,53 @@ Consider the following class of problems:
 
 Consider a plane (or $\mathbb{R}^n$ in general).
 
+We probably should not yet consider infinite dimensional spaces,
+because infinite staroidal product is not yet well studied.
+
 Let to any point of the plane corresponds set of directions (set of unit vectors, I mean).
 Remark: Sometimes these sets are of exactly one element. Further we
 don't use the assumption that the vectors are unit and so it applies to any vector field.
 
-Does there exists a smooth curve from point $A$ to point $B$ such that in every point of the curve its direction lies in the set of directions for this point?
+\section{\texorpdfstring{$C^1$ curves}{C1 curves}}
+
+Does there exists a smooth ($C^1$ I mean) curve from point $A$ to point $B$ such that in every point of the curve its direction lies in the set of directions for this point?
 
 It seems that this problem can be reformulated in the language of funcoids: From the sets of directions we easily construct certain funcoid.
 Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
 condition that it smooth, I have not yet defined it quite formally).
 
-Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^2$):
+Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $D(p)$ per point~$p$):
 
-$R(d;\phi) = \setcond{(x;y)}{\widehat{(x;y)(d_0;d_1)}<\phi, x\ne 0\lor y\ne 0}$,
+$R(d;\phi) = \setcond{v\in\mathbb{R}^n}{\widehat{vd}<\phi, v\ne 0}$,
 where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
 for a direction~$d$ and an angle~$\phi$.
 \fxwarning{This is undefined if $d=0$.}
 
-$W(d) = \bigsqcap^{\mathsf{FCD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap (\Delta\times^{\mathsf{FCD}}\Delta)$.
-\fxnote{Consider also $\mathsf{RLD}$ instead of $\mathsf{FCD}$.}
+$W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \Delta^{(\mathsf{RLD})n}$
+where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
+\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use pointfree funcoids.}
 
 Finally our funcoid is the complete funcoid~$Q$ described by the formula
-\[ \rsupfun{Q}@\{p\} = \bigsqcup_{d\in D(p)} \supfun{p+} W(d). \]
+\[ \rsupfun{Q}@\{p\} = \supfun{p+} W(D(p)). \]
 Here $\Delta$ is taken from the ``counter-examples'' section;
 $D(p)$ is the given set of directions for a point~$p$.
 
-One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
-
-\fxwarning{Add proof, rewrite in a more understandable way, $\mathbb{R}^n$ in general.} We probably should not yet consider infinite dimensional spaces,
-because infinite staroidal product is not yet well studied.
+\begin{thm}
+A $C^1$-curve (having a start and end points) in $\mathbb{R}^n$ is exactly the same as a path in $\continuous([0;1]; Q)$.
+\fxwarning{Specify whether the interval $[0;1]$ is treated as a proximity, pretopology, or preclosure.}
+\end{thm}
 
 \begin{conjecture}
 If the curve goes only through points with exactly one direction, then the curve is smooth (if it is continuous regarding the above funcoid).
 \end{conjecture}
 
 \fxnote{This probably can be generalized for $C^n$ and $C^\infty$ curves. Consider also fractional~$n$. What about curves limited by an exponent?}
+
+\section{Multiple allowed directions per point}
+
+\[ \rsupfun{Q}@\{p\} = \bigsqcup_{d\in D(p)} \supfun{p+} W(d). \]
+
+One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
 
 \section{A way to construct directed topological spaces}
 
