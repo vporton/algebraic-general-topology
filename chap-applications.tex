@@ -56,8 +56,10 @@ $D(p)$ is the given set of directions for a point~$p$.
 \fxnote{Describe the co-complete funcoid reverse to this complete funcoid.}
 
 \begin{thm}
-A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as a path in $\continuous([0;1]; Q)$.
-\fxwarning{Specify whether the interval $[0;1]$ is treated as a proximity, pretopology, or preclosure.}
+A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as a path in $\continuous(I;Q)$.
+Here \[ I = ([0;1]\times[0;1]) \sqcap \bigsqcap^{\mathsf{RLD}}_{\epsilon>0} \setcond{(x;y)}{y>x, y<x+\epsilon}. \]
+or??
+\[ I = ([0;1]\times[0;1]) \sqcap \bigsqcup^{\mathsf{RLD}}_{x\in\mathbb{R}} (\Delta_+\times^{\mathsf{RLD}}\Delta_+). \]
 \end{thm}
 
 \begin{proof}
