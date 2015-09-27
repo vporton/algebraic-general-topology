@@ -69,8 +69,11 @@ or??
 Take $I_+$ and $Q_+$ as described above in forward direction and $I_-$ and $Q_-$ in backward direction. Then
 \[ f\in\continuous(I_+;Q_+)\land f\in\continuous(I_-;Q_-) \Leftrightarrow f\times f\in\continuous(I_+\times^{(A)}I_-;Q_+\times^{(A)}Q_-)? \]
 
-Alternatively consider $G = \Delta_+\times^{\mathsf{RLD}}Q_+ \sqcup \Delta_-\times^{\mathsf{RLD}}Q_-$.
-\[(\mylamdba{t}{\mathbb{R}}{f(x+t)-f(x)})|_{\Delta}} \sqsubseteq G. \]
+To describe the above we can introduce new term \emph{plural funcoids}. This is simply a map
+from an index set to funcoids. Composition is defined component-wise. Order is defined as product order.
+
+Alternatively consider $G(p) = \Delta_+\times^{\mathsf{RLD}}Q_+(p) \sqcup \Delta_-\times^{\mathsf{RLD}}Q_-(p)$.
+\[(\mylamdba{t}{\mathbb{R}}{f(x+t)-f(x)})|_{\Delta} \sqsubseteq G(x). \]
 
 \begin{conjecture}
 If the curve goes only through points with exactly one direction, then the curve is smooth (if it is continuous regarding the above funcoid).
