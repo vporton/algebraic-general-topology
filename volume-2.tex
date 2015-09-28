@@ -24,6 +24,14 @@
  pdfsubject={general topology},
  pdfkeywords={algebraic general topology,quasi-uniform spaces,generalizations of proximity spaces,generalizations of nearness spaces,generalizations of uniform spaces}}
 
+\usepackage{xr,refcount}
+\externaldocument[book-]{book}
+\newcommand{\bookref}[1]{\ref*{book-#1}}
+
+% Continue numbering of book.pdf
+\setcounter{thm}{\getrefnumber{book-finalthm}}
+\addtocounter{thm}{-1}
+
 \newcommand{\End}{\operatorname{End}}
 \newcommand{\cont}{\operatorname{cont}}
 
@@ -66,7 +74,7 @@ It is a continuation of \cite{volume-1}.
 \include{chap-v2intro}
 \include{chap-product}
 \include{chap-equalizers}
-\include{tensor}
+\include{chap-tensor}
 \include{chap-pf-cat}
 \include{chap-compact}
 \include{chap-frames}
