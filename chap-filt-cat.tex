@@ -60,3 +60,68 @@ It is the same category as $\mathscr{F}$ in \cite{filt-cat}, as follows from an 
 
 We will prove that starred reloidal product is a categorical product in this category.
 First we will prove the special case that binary reloidal product is a categorical product in this category.
+
+\begin{thm}
+  $\times^{\mathsf{RLD}}$ (together with projections $\Pr_0$ and
+  $\Pr_1$) is a categorical product in $\mathbf{Filt}$.
+\end{thm}
+
+\begin{proof}
+  Let our objects be $\mathcal{A}$, $\mathcal{B}$.
+  
+  Denote $p$ the left projection from $\Base (\mathcal{A}) \times
+  \Base (\mathcal{B})$ to $\Base (\mathcal{A})$.
+  
+  We need to check that $p$ is a $\mathbf{Filt}$-morphism that is $p
+  (\mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}) \sqsubseteq
+  \mathcal{A}$ what is obvious.
+  
+  Similarly for the right projection $q$.
+  
+  It remains to check the universal property: Let $\mathcal{C}$ be a filter
+  and $f : \mathcal{C} \rightarrow \mathcal{A}$, $g : \mathcal{C} \rightarrow
+  \mathcal{B}$. We need to prove that there are a unique $u : \mathcal{C}
+  \rightarrow \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}$ such that
+  $f = p \circ u$ and $g = q \circ u$. Denote $h (z) = (f (z) ; g (z))$.
+  
+  $h$ is the unique function $\Base (\mathcal{C}) \rightarrow
+  \Base (\mathcal{A}) \times \Base (\mathcal{B})$ such that $f = p
+  \circ h$ and $g = q \circ h$, so it remains to check that $h$ is a morphism
+  of $\mathbf{Filt}$ that is $\langle h \rangle \mathcal{C}
+  \sqsubseteq \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}$, what
+  obviously follows from $\supfun{f} \mathcal{C} \sqsubseteq
+  \mathcal{A}$ and $\supfun{g} \mathcal{C} \sqsubseteq \mathcal{B}$.
+\end{proof}
+
+\begin{thm}
+  $\prod^{\mathsf{RLD} \ast}$ together with projections $\Pr_k$ is a
+  categorical product in $\mathbf{Filt}$.
+\end{thm}
+
+\begin{proof}
+  Consider an indexed family $\mathcal{A}$ of objects.
+  
+  Denote $p_k$ the $k$-th projection from $\prod_{i \in \dom
+  \mathcal{A}} \Base (\mathcal{A}_i)$.
+  
+  We need to check that $p_k$ s a $\mathbf{Filt}$-morphism that is
+  $p_k \left( \prod^{\mathsf{RLD} \ast} \mathcal{A} \right) \sqsubseteq
+  \mathcal{A}_k$ what is obvious.
+  
+  It remains to check the universal property: Let $\mathcal{C}$ be a filter
+  and $f_k : \mathcal{C} \rightarrow \mathcal{A}_k$. We need to prove that
+  there are a unique $u : \mathcal{C} \rightarrow \prod^{\mathsf{RLD}
+  \ast} \mathcal{A}$ such that $f_k = p_k \circ u$. Denote $h (z) = \lambda i
+  \in \dom \mathcal{A} : f_i z$.
+  
+  $h$ is the unique function $\Base (\mathcal{C}) \rightarrow \prod_{i
+  \in \dom \mathcal{A}} \Base (\mathcal{A}_i)$ such that $f_k =
+  p_k \circ h$, so it remains to check that $h$ is a morphism of
+  $\mathbf{Filt}$ that is $\langle h \rangle \mathcal{C} \sqsubseteq
+  \prod^{\mathsf{RLD} \ast} \mathcal{A}$. It follows from
+  \[ \Pr^{\mathsf{RLD}}_i \langle h \rangle \mathcal{C} = \bigsqcap
+     \rsupfun{Pr_i} \langle h \rangle^{\ast} \up
+     \mathcal{C} = \bigsqcap \langle \Pr_i \circ h \rangle^{\ast} \up
+     \mathcal{C} = \bigsqcap \langle f_i \rangle^{\ast} \up \mathcal{C}
+     = \langle f_i \rangle \mathcal{C} \sqsubseteq \mathcal{A}_i . \]
+\end{proof}

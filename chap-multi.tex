@@ -2091,11 +2091,6 @@ $a$, $b$ and an indexed family $f$ of reloids with $\Src f_{i}=(\form a)_{i}=(\f
 \GR\StarComp(a\sqcup b;f).
 \end{align*}
 \end{proof}
-\begin{conjecture}
-$f\sqsubseteq\prod^{\mathsf{RLD}}a\Leftrightarrow\forall i\in\arity f:\Pr_{i}^{\mathsf{RLD}}f\sqsubseteq a_{i}$
-for every multireloid $f$ and $a_{i}\in\mathscr{F}((\form f)_{i})$
-for every $i\in\arity f$.
-\end{conjecture}
 
 \subsection{Starred reloidal product}
 
@@ -2155,6 +2150,29 @@ $\Pr_{k}^{\mathsf{RLD}}\prod^{\mathsf{RLD}\ast}x=x_{k}$ for every
 indexed family $x$ of proper filters.\end{prop}
 \begin{proof}
 $\Pr_{k}^{\mathsf{RLD}}\prod^{\mathsf{RLD}\ast}x=\rsupfun{\Pr_{k}}\GR\prod^{\mathsf{RLD}\ast}x=x_{k}$.
+\end{proof}
+
+\begin{thm}
+  $\Pr^{\mathsf{RLD}}_i f \sqsubseteq \mathcal{A}_i$ for all $i \in n$
+  iff $f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A}$ (for every
+  reloid $f$ of arity $n$ and $n$-indexed family $\mathcal{A}$ of filters on
+  sets).
+\end{thm}
+
+\begin{proof}
+$f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A} \Rightarrow
+\Pr^{\mathsf{RLD}}_i f \sqsubseteq \Pr^{\mathsf{RLD}}_i
+\prod^{\mathsf{RLD} \ast} \mathcal{A} \sqsubseteq \mathcal{A}_i$.
+
+Let now $\Pr^{\mathsf{RLD}}_i f \sqsubseteq \mathcal{A}_i$.
+
+$f \sqsubseteq \prod \left( \begin{cases}
+  \Pr^{\mathsf{RLD}}_i f & \text{if } i \in m\\
+  \Base (\form f)_i & \text{if } i \notin m
+\end{cases} \right)$ for finite $m \subseteq n$, as it can be easily be
+proved by induction.
+
+It follows $f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A}$.
 \end{proof}
 
 \section{Subatomic product of funcoids}
