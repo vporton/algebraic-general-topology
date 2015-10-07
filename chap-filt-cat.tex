@@ -1,6 +1,62 @@
 \chapter{Categories of filters}
 
-In~\cite{filt-cat} two categories, whose objects are filters on sets, are defined.
+In~\cite{filt-cat} two categories, whose objects are related with filters on sets, are defined and researched.
 
-Accordingly~\cite{filt-cat} infinite product is defined just in the first of these two categories.
+Accordingly~\cite{filt-cat} infinite product is defined just in the first (denoted $\mathscr{F}$ there) of these two categories.
 So we will for now consider the first category. (Usefulness of the second category for our research is questionable.)
+
+Let $f:A\rightarrow B$ be a function, $\mathcal{A}$ be a filter on~$A$.
+
+\begin{prop}
+$\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$ is a filter.
+\end{prop}
+
+\begin{proof}
+That it is an upper set is obvious.
+
+Let $Y_0,Y_1\in\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$. Then
+$\rsupfun{f^{-1}}Y_0\in\mathcal{A}$ and $\rsupfun{f^{-1}}Y_1\in\mathcal{A}$.
+We have
+\[ \rsupfun{f^{-1}}(Y_0\cap Y_1) = \rsupfun{f^{-1}}Y_0 \cap \rsupfun{f^{-1}}Y_1 \in \mathcal{A} \]
+since $f$ is monovalued.
+Thus $Y_0 \cap Y_1\in\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$.
+\end{proof}
+
+\begin{thm}
+\fxwarning{Should be moved above in the book.}
+$\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$ is equal to the filter generated
+by the filter base $\rsupfun{\rsupfun{f}}\mathcal{A}$, for every filter~$\mathcal{A}$.
+\end{thm}
+
+\begin{proof}
+Denote $\mathcal{B} = \setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$,
+$\mathcal{C} = \rsupfun{\rsupfun{f}}\mathcal{A}$.
+
+Let $Y\in\mathcal{C}$. Then $Y=\rsupfun{f}A$ where $A\in\mathcal{A}$.
+Then $\rsupfun{f^{-1}}\rsupfun{f}A\supseteq A$ and so $\rsupfun{f^{-1}}\rsupfun{f}A\in\mathcal{A}$.
+This proves $\rsupfun{f}A\in\mathcal{B}$, that is $Y\in\mathcal{B}$.
+
+Let now $Y\in\mathcal{B}$. Then $\rsupfun{f}\rsupfun{f^{-1}}Y\subseteq Y$. Since $\rsupfun{f^{-1}}Y\in\mathcal{A}$,
+we have that $Y$ is a supset of some set of the form $\rsupfun{f}A$, so $Y\in\mathcal{C}$.
+\end{proof}
+
+\begin{cor}
+$\up\supfun{f}\mathcal{A} = \setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\up\mathcal{A}}$.
+\end{cor}
+
+\begin{defn}
+The \emph{category of filtered sets} is the category defined as follows:
+\begin{enumerate}
+\item Objects are pairs $(A;\mathcal{A})$ where $A$ is a (small) set and $\mathcal{A}$ is a filter on~$A$.
+\item Morphisms from $(A;\mathcal{A})$ to $(B;\mathcal{B})$ are functions $f:A\rightarrow B$ such that
+$\supfun{f}\mathcal{A} \sqsubseteq \mathcal{B}$.
+\item Identities are identity functions.
+\end{enumerate}
+\end{defn}
+
+To verify that it is a category is straightforward.
+
+It is the same category as $\mathscr{F}$ in \cite{filt-cat}, as follows from an above proposition.
+
+We will prove that starred reloidal product is a categorical product in this category.
+First we will prove the special case that binary reloidal product is a categorical product in this category.
