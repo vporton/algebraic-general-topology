@@ -29,15 +29,18 @@ Let to any point of the plane corresponds set of directions (set of unit vectors
 Remark: Sometimes these sets are of exactly one element. Further we
 don't use the assumption that the vectors are unit and so it applies to any vector field.
 
-\section{\texorpdfstring{$C^1$ curves}{C1 curves}}
+\section{Integral curves}
 
-Does there exists a smooth ($C^1$ I mean) curve from point $A$ to point $B$ such that in every point of the curve its direction lies in the set of directions for this point?
+Let $d$ be a vector field in~$\mathbb{R}^n$ (for a finite~$n$).
 
-It seems that this problem can be reformulated in the language of funcoids: From the sets of directions we easily construct certain funcoid.
-Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
-condition that it smooth, I have not yet defined it quite formally).
+\begin{defn}
+\emph{Integral curve} is a function $f:[0;1]\rightarrow\mathbb{R}^n$ such that $f'(t)=d(f(t))$ for every $t\in[0;1]$.
+\end{defn}
 
-Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $D(p)$ per point~$p$):
+\begin{defn}
+The definition of \emph{right side integral curve} is the above definition with right derivative of~$f$ instead of derivative~$f'$.
+\emph{Left side integral curve} is defined similarly.
+\end{defn}
 
 $R(d;\phi) = \setcond{v\in\mathbb{R}^n}{\widehat{vd}<\phi, v\ne 0}$,
 where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
@@ -57,40 +60,26 @@ In other words, $Q = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\sup
 
 \fxnote{Describe the co-complete funcoid reverse to this complete funcoid.}
 
-Consider three below theorems (well, conjectures):
-
 \begin{thm}
-A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as a path in $\continuous(I;Q)$.
-Here \[ I = ([0;1]\times[0;1]) \sqcap \bigsqcap^{\mathsf{FCD}}_{\epsilon>0} \setcond{(x;y)}{y>x, y<x+\epsilon} =
-\bigsqcap^{\mathsf{FCD}}_{\epsilon>0} \setcond{(x;y)\in[0;1]\times[0;1]}{y>x, y<x+\epsilon}
-. \]
+$f$ is an integral curve iff
 \end{thm}
 
-\begin{proof}
-Equivalently transform $f\in\continuous(I;Q)$; $f\circ I\sqsubseteq Q\circ f$; (theorem~\bookref{rld-meta}, provided that $f$ is injective)
-$\bigsqcap^{\mathsf{FCD}}_{\epsilon>0} \setcond{(x;fy)\in[0;1]\times[0;1]}{y>x, y<x+\epsilon} \sqsubseteq
-\bigsqcup_{p\in\mathbb{R}} ((@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(D(p))}) \circ f) =
-\bigsqcup_{p\in\mathbb{R}} (@\{f^{-1}p\}\times^{\mathsf{FCD}}\supfun{p+}{W(D(p))})$
-??
-\end{proof}
+\fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
 
-\begin{thm}
-A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as a path in $\continuous(I;Q)$.
-Here
+\fxnote{Possible alternative definitions of~$Q$}
+\[ I = ([0;1]\times[0;1]) \sqcap \bigsqcap^{\mathsf{FCD}}_{\epsilon>0} \setcond{(x;y)}{y>x, y<x+\epsilon} =
+\bigsqcap^{\mathsf{FCD}}_{\epsilon>0} \setcond{(x;y)\in[0;1]\times[0;1]}{y>x, y<x+\epsilon}
+. \]
 \begin{align*}
 I &= ([0;1]\times[0;1]) \sqcap \bigsqcup^{\mathsf{FCD}}_{x\in\mathbb{R}} ((\Delta_{+}+x)\times^{\mathsf{FCD}}(\Delta_{+}+x)) \\
   &= \bigsqcup^{\mathsf{FCD}}_{x\in\mathbb{R}} (([0;1]\times[0;1])\sqcap((\Delta_{+}+x)\times^{\mathsf{FCD}}(\Delta_{+}+x))) .
 \end{align*}
-\end{thm}
 
-\begin{proof}
-Equivalently transform $f\in\continuous(I;Q)$; $f\circ I\sqsubseteq Q\circ f$; (theorem \bookref{metcomp-thm})
-??
-$\bigsqcup^{\mathsf{FCD}}_{x\in\mathbb{R}} (f\circ (([0;1]\times[0;1])\sqcap((\Delta_{+}+x)\times^{\mathsf{FCD}}(\Delta_{+}+x))) ) \sqsubseteq
-\bigsqcup_{p\in\mathbb{R}} ((@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(D(p))}) \circ f) =
-\bigsqcup_{p\in\mathbb{R}} (@\{f^{-1}p\}\times^{\mathsf{FCD}}\supfun{p+}{W(D(p))})
-$
-\end{proof}
+It seems that this problem can be reformulated in the language of funcoids: From the sets of directions we easily construct certain funcoid.
+Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
+condition that it smooth, I have not yet defined it quite formally).
+
+Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $D(p)$ per point~$p$):
 
 \begin{thm}
 A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as
