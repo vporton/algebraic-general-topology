@@ -16,6 +16,40 @@ I am unsure whether there are important applications of such hybrid objects.
 
 \subsection{Directed line and directed intervals}
 
+\begin{defn}~
+\begin{enumerate}
+\item $\Delta_{+} + a = \bigsqcap^{\mathscr{F}} \setcond{[a;a+\epsilon[}{\epsilon\in\mathbb{R}, \epsilon>0} = \Delta\sqcap[a;+\infty]$;
+\item $\Delta_{-} + a = \bigsqcap^{\mathscr{F}} \setcond{]a-\epsilon;a]}{\epsilon\in\mathbb{R}, \epsilon>0} = \Delta\sqcap[-\infty;a]$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}~
+\begin{enumerate}
+\item \emph{Right directed (real) line} is the complete funcoid $\overleftarrow{\mathbb{R}}$ defined by the formula
+$\rsupfun{\overrightarrow{\mathbb{R}}}@\{a\} = \Delta_{+} + a$ for every $a\in\mathbb{R}$;
+\item \emph{Left directed (real) line} is the complete funcoid $\overleftarrow{\mathbb{R}}$ defined by the formula
+$\rsupfun{\overrightarrow{\mathbb{R}}}@\{a\} = \Delta_{-} + a$ for every $a\in\mathbb{R}$;
+\end{enumerate}
+\end{defn}
+
+\begin{xca}~
+\begin{enumerate}
+\item $\rsupfun{\overrightarrow{\mathbb{R}}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap]a-\epsilon;a]\ne\emptyset}$;
+\item $\rsupfun{\overleftarrow{\mathbb{R}}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap[a;a+\epsilon[\ne\emptyset}$.
+\end{enumerate}
+\end{xca}
+
+\begin{defn}
+For every set $A\in\subsets\mathbb{R}$
+\begin{enumerate}
+\item $\overrightarrow{A} = \overrightarrow{\mathbb{R}} \sqcap(A\times A)$;
+\item $\overleftarrow{A} = \overleftarrow{\mathbb{R}} \sqcap(A\times A)$.
+\end{enumerate}
+If $A$ is an interval, then $\overrightarrow{A}$ is called \emph{right interval} and $\overleftarrow{A}$ is called \emph{left interval}.
+\end{defn}
+
+\subsection{Directed topological spaces}
+
 Directed topological spaces are defined at\\
 \url{http://ncatlab.org/nlab/show/directed+topological+space}
 
