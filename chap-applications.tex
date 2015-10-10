@@ -14,10 +14,24 @@ I am unsure whether there are important applications of such hybrid objects.
 
 \section{A way to construct directed topological spaces}
 
-\fxnote{Should include definition of directed topological space.}
+\subsection{Directed line and directed intervals}
 
 Directed topological spaces are defined at\\
 \url{http://ncatlab.org/nlab/show/directed+topological+space}
+
+\begin{defn}
+A \emph{directed topological space} (or \emph{d-space} for short) is a pair $(X;d)$ of a topological space~$X$ and
+a set $d\subseteq\continuous([0;1];X)$ (called \emph{directed paths} or \emph{d-paths}) of paths in~$X$ such that
+\begin{enumerate}
+\item (constant paths) every constant map $[0;1]\to X$ is directed;
+\item (reparameterization) $d$ is closed under composition with increasing continuous maps $[0;1]\to [0;1]$;
+\item (concatenation) $d$ is closed under path-concatenation: if the d-paths $a$, $b$ are consecutive in $X$ ($a(1)=b(0)$), then their ordinary concatenation $a+b$ is also a d-path
+\begin{gather*}
+(a+b)(t) = a(2t),\,\text{if}\, 0\le t\le \frac{1}{2}, \\
+(a+b)(t) = b(2t-1),\,\text{if}\, \frac{1}{2}\le t\le 1.
+\end{gather*}
+\end{enumerate}
+\end{defn}
 
 I propose a new way to construct a directed topological space. My way is more geometric/topological as it does not involve dealing with particular paths.
 
@@ -25,7 +39,7 @@ I propose a new way to construct a directed topological space. My way is more ge
 Every directed topological space can be constructed in the below described way.
 \end{conjecture}
 
-Consider topological space $T$ and its subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
+Consider topological space $T$ and its reflexive subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
 Note that in our consideration $F$ is an endofuncoid (its source and destination are the same).
 
 Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from $[0;1]$ to $F$ such that $f(0)=A$ and $f(1)=B$.
