@@ -77,6 +77,19 @@ $f\in\continuous(\overrightarrow{A}\circ\overleftarrow{A}^{-1};\overrightarrow{B
 \begin{proof}
 \url{http://math.stackexchange.com/questions/1473668/locally-monotone-function-is-monotone}
 
+The hard part is to prove that it is monotone. It's enough to prove that it is locally monotone.
+
+Without lost of generality, prove just that it is locally monotone at~$0$. Suppose for the contrary
+that there is an $\epsilon>0$ such that $f(x) > f(0)$ for $x\in]-\epsilon;0[$ (for $x>0$ it follows from ??).
+
+$\rsupfun{f\circ\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}} ]-\epsilon;0[ =
+\rsupfun{f\circ\overrightarrow{[0;1]}} ]-\epsilon;0] \ni f(x), f(0)$
+
+$\rsupfun{B\circ f} ]-\epsilon;0[ \not\ni ?? \not\ni f(0)$;
+
+Consider for counter-examples $f(t) = t\sin(1/t)$ or
+\[ f(t) = \begin{cases}t\sin(1/t)&\text{ if }x<0\\0&\text{ if }x\ge 0\end{cases}. \]
+
 Old counter-example: $f(t) = \begin{cases}-1/x&\text{ if }x<0\\0&\text{ if }x\ge 0\end{cases}$.
 ??
 \end{proof}
