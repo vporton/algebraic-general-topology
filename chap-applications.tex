@@ -48,10 +48,31 @@ For every set $A\in\subsets\mathbb{R}$
 If $A$ is an interval, then $\overrightarrow{A}$ is called \emph{right directed interval} and $\overleftarrow{A}$ is called \emph{left directed interval}.
 \end{defn}
 
-\begin{prop}
+First prove a special case of the below theorem: \fxwarning{Should we remove this?}
+
+\begin{example}
+Let $A = \overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}$.
+Consider function $f (t) = \begin{cases}
+  - 1 / x & \text{ if } t < 0\\
+  0 & \text{ if } t \geqslant 0
+\end{cases}$. Let us deduce $f \notin \mathrm{C} (A ; B)$ from the
+fact that $f$ is not monotone.
+\end{example}
+
+\begin{proof}
+$\rsupfun{f\circ\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}} ]-\epsilon;0[ =
+\rsupfun{f\circ\overrightarrow{[0;1]}} ]-\epsilon;0] = [0;1/\epsilon]$;
+
+$\rsupfun{B\circ f} ]-\epsilon;0[ = \rsupfun{B} ]0;1/\epsilon[$;
+
+Then $@\{0\}\nasymp\rsupfun{f\circ\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}} ]-\epsilon;0[$;
+but $@\{0\}\asymp\rsupfun{B} ]-\epsilon;0[$;
+\end{proof}
+
+\begin{thm}
 A function~$f:A\rightarrow B$ where $A,B\in\subsets\mathbb{R}$ is continuous (regarding the usual topologies on~$A$ and~$B$) and monotone iff
 $f\in\continuous(\overrightarrow{A}\circ\overleftarrow{A}^{-1};\overrightarrow{B})$, provided that $A$ is a connected set (=interval).
-\end{prop}
+\end{thm}
 
 \begin{proof}
 \url{http://math.stackexchange.com/questions/1473668/locally-monotone-function-is-monotone}
