@@ -122,10 +122,8 @@ Every directed topological space can be constructed in the below described way.
 Consider topological space $T$ and its reflexive subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
 Note that in our consideration $F$ is an endofuncoid (its source and destination are the same).
 
-Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from $[0;1]$ to $F$ such that $f(0)=A$ and $f(1)=B$.
-We can consider $[0;1]$ either as the funcoid corresponding to the closure operator on $[0;1]$ topology or the pretopology on $[0;1]$.
-These two funcoids are reverse of each other (TODO: theorem reference). If we flip it reverse, then also flip $F$ to its reverse $F^{-1}$ and
-this way the set $\continuous([0;1];F)$ remains the same (when both funcoids are reversed simultaneously). \fxwarning{Add proof.}
+Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from
+$\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}$ to $F$ such that $f(0)=A$ and $f(1)=B$.
 
 Because $F$ is less that $T$, we have that every directed path is a path.
 
