@@ -707,14 +707,30 @@ for every $x,y\in\mathfrak{A}$.
 \end{defn}
 
 \begin{defn}
-\index{order embedding}\emph{Order embedding} is a monotone injective
-function whose inverse is also monotone.
+\index{order embedding}\emph{Order embedding} is a function~$f$ from poset~$\mathfrak{A}$ to a poset~$\mathfrak{B}$
+such that $x\sqsubseteq y\Leftrightarrow fx\sqsubseteq fy$ for every $x,y\in\mathfrak{A}$.
 \end{defn}
 
+\begin{prop}
+Every order embedding is injective.
+\end{prop}
+
+\begin{proof}
+$fx=fy$ implies $x\sqsubseteq y$ and $y\sqsubseteq x$.
+\end{proof}
+
+\begin{obvious}
+Every order embedding is an order homomorphism.
+\end{obvious}
+
 \begin{defn}
-\index{antitone order embedding}\emph{Antitone order embedding} is
-an antitone injective function whose inverse is also antitone.
+\index{antitone order embedding}\emph{Antitone order embedding} is a function~$f$ from poset~$\mathfrak{A}$ to a poset~$\mathfrak{B}$
+such that $x\sqsubseteq y\Leftrightarrow fx\sqsupseteq fy$ for every $x,y\in\mathfrak{A}$.
 \end{defn}
+
+\begin{obvious}
+Antitone order embedding is an order embedding between a poset and a dual of (another) poset.
+\end{obvious}
 
 \begin{defn}
 \index{order isomorphism}\emph{Order isomorphism} is a surjective

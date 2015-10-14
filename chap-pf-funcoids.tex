@@ -623,18 +623,6 @@ y\nasymp\supfun fx\lor y\nasymp\supfun gx & \Leftrightarrow\\
 x\suprel fy\lor x\suprel gy
 \end{align*}
 for every $x\in\mathfrak{A}$, $y\in\mathfrak{B}$.\end{widedisorder}
-\begin{thm}
-Let $f$ be a pointfree funcoid from a separable poset $\mathfrak{A}$
-to a separable poset $\mathfrak{B}$. If $\supfun f$ is an injection,
-then $\supfun f$ is an order embedding $\mathfrak{A}\rightarrow\mathfrak{B}$.\end{thm}
-\begin{proof}
-Suppose $x\sqsupseteq y$ but $\supfun fx\nsqsupseteq\supfun fy$.
-
-Then by separability of $\mathfrak{B}$ there exist $z\nasymp\supfun fy$
-such that $z\asymp\supfun fx$.
-
-Thus $\supfun{f^{-1}}z\asymp x$ and $\supfun{f^{-1}}z\nasymp y$
-what is impossible for $x\sqsupseteq y$.\end{proof}
 \begin{cor}
 Let $f$ be a pointfree funcoid from a separable poset $\mathfrak{A}$
 to a separable poset $\mathfrak{B}$. If $\supfun f$ is a bijection
@@ -1276,8 +1264,10 @@ by theorem \ref{pf-supfun-up}.
 Thus $\bigsqcap\rsupfun{\mathcal{A}\times^{\mathsf{FCD}}}S=\mathcal{A}\times^{\mathsf{FCD}}\bigsqcap S$
 by theorem \ref{spfn-atoms}.
 
-If $\mathcal{A}\neq\bot^{\mathfrak{A}}$ then obviously the function
-$\mathcal{A}\times^{\mathsf{FCD}}$ is injective.\end{proof}
+If $\mathcal{A}\neq\bot^{\mathfrak{A}}$ then obviously
+$\mathcal{A}\times^{\mathsf{FCD}}\mathcal{X}\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{Y} \Leftrightarrow
+\mathcal{X}\sqsubseteq\mathcal{Y}$, because $\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{X})=\mathcal{X}$ and
+$\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{Y})=\mathcal{Y}$.\end{proof}
 \begin{prop}
 Let $\mathfrak{A}$ be a meet-semilattice with least element and $\mathfrak{B}$
 be a poset with least element. If $a$ is an atom of $\mathfrak{A}$,
