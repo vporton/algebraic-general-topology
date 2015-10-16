@@ -1182,7 +1182,9 @@ So $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity 
 Let now $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.
 Then there exists $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$
 such that $L'=\bigcup\im P$ and $\curry(L')\in\prod(\GR\circ F)$.
-Evidently $L'\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}$. So $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.\end{proof}
+Evidently $L'\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}$. So
+$L'\in\setcond{L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}}{\curry(L)\in\prod(\GR\circ F)}$.
+\end{proof}
 \begin{lem}
 $\setcond{f\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\setcond{\bigcup\im P}{P\in\prod_{i\in\dom F}F'_{i}}$.\end{lem}
 \begin{proof}
