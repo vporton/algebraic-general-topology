@@ -1450,6 +1450,42 @@ lattice with greatest element.
 \end{enumerate}
 \end{cor}
 
+The below theorem uses the notation and results from section~\ref{some-frames}.
+\begin{thm}
+\label{frame-main}If $\mathfrak{A}$ is a co-frame and $L$ is a
+distributive lattice with greatest element, then $\operatorname{Join}(L;\mathfrak{A})$
+is also a co-frame.
+\end{thm}
+\begin{proof}
+Let $F=\uparrow\circ\bigsqcap:\Upper(\mathfrak{A})\rightarrow\Upper(\mathfrak{A})$;
+$F$ is a co-nucleus by above.
+
+Since $\Upper(\mathfrak{A})\cong\mathbf{Pos}(\mathfrak{A};2)$ by
+proposition \ref{down-is-homo}, we may regard $F$ as a co-nucleus
+on $\mathbf{Pos}(\mathfrak{A};2)$.
+
+$\operatorname{Join}(L;\mathfrak{A})\cong\operatorname{Join}(L;\Fix(F))$
+by corollary \ref{down-meet-co-nucleus}.
+
+$\operatorname{Join}(L;\Fix(F))\cong\Fix(\operatorname{Join}(L;F))$
+by lemma \ref{join-fix-inter}.
+
+By corollary \ref{join-map-co-nucleus} the function $\operatorname{Join}(L;F)$
+is a co-nucleus on $\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right)$.
+\begin{eqnarray*}
+\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right) & \cong & \text{(by lemma \ref{join-pos-interch})}\\
+\mathbf{Pos}(\mathfrak{A};\operatorname{Join}(L;2)) & \cong\\
+\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X)).
+\end{eqnarray*}
+But $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$ is a co-frame by
+lemma~\ref{join-pos-interch} and corollaries \ref{filt-is-complete} and~\ref{filt-also-distr}.
+
+Thus $\operatorname{Join}(L;\mathfrak{A})$ is isomorphic to a poset
+of fixed points of a co-nucleus on the co-frame $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$.
+By lemma \ref{fix-is-co-frame} $\operatorname{Join}(L;\mathfrak{A})$
+is also a co-frame.
+\end{proof}
+
 \section{Misc filtrator properties}
 \begin{thm}
 \label{semifilt-joinclosed}The following is an implications tuple:
