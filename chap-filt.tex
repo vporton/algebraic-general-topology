@@ -1123,17 +1123,22 @@ If $\mathfrak{B}$ is a complete lattice and $\mathfrak{A}$ is its
 subset and $S\in\subsets\mathfrak{A}$ and $\bigsqcup^{\mathfrak{B}}S\in\mathfrak{A}$,
 then $\bigsqcup^{\mathfrak{A}}S$
 exists and $\bigsqcup^{\mathfrak{A}}S=\bigsqcup^{\mathfrak{B}}S$.\end{cor}
+
+\begin{xca}
+The below theorem does not work for $S=\emptyset$. Formulate the general case.
+\end{xca}
+
 \begin{thm}
 ~
 \begin{enumerate}
 \item \label{inf-lat-filt}If $\mathfrak{Z}$ is a meet-semilattice with
 greatest element, then $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S$
 exists and $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}=\bigcap S$ for
-every $S\in\subsets\mathfrak{F}(\mathfrak{Z})$.
+every $S\in\subsets\mathfrak{F}(\mathfrak{Z})\setminus\{\emptyset\}$.
 \item \label{inf-lat-ideal}If $\mathfrak{Z}$ is a join-semilattice with
 least element, then $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}S$ exists
 and $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}=\bigcap S$ for every
-$S\in\subsets\mathfrak{I}(\mathfrak{Z})$.
+$S\in\subsets\mathfrak{I}(\mathfrak{Z})\setminus\{\emptyset\}$.
 \item \label{inf-lat-fs}If $\mathfrak{Z}$ is a join-semilattice with least
 element, then $\bigsqcup^{\mathfrak{S}(\mathfrak{Z})}S$ exists and
 $\bigsqcup^{\mathfrak{S}(\mathfrak{Z})}=\bigcup S$ for every $S\in\subsets\mathfrak{S}(\mathfrak{Z})$.
