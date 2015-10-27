@@ -2881,55 +2881,6 @@ is with co-separable core.\end{proof}
 The filtrator of complete funcoids is also with co-separable core.
 \end{cor}
 
-\subsubsection{Open maps}
-\begin{defn}
-\index{open map}An \emph{open map} from a topological space to a
-topological space is a function which maps open sets into open sets.
-\end{defn}
-An obvious generalization of this is \emph{open map} $f$ from an
-endofuncoid $\mu$ to an endofuncoid $\nu$, which is by definition
-a function (or rather a principal, entirely defined, monovalued funcoid)
-from $\Ob\mu$ to $\Ob\nu$ such that
-\[
-\forall x\in\Ob\mu,V\in\rsupfun{\mu}\{x\}:\rsupfun 
-fV\sqsupseteq\supfun{\nu}\rsupfun f@\{x\}.
-\]
-
-
-This formula is equivalent (exercise!) to
-\[
-\forall x\in\Ob\mu:\supfun f\rsupfun{\mu}@\{x\}\sqsupseteq\supfun{\nu}\rsupfun 
-f@\{x\}.
-\]
-
-
-It can be abstracted/simplified further (now for an \emph{arbitrary}
-funcoid $f$ from $\Ob\mu$ to $\Ob\nu$):
-\[
-\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f).
-\]
-
-\begin{defn}
-\index{funcoid!open}An \emph{open funcoid} from an endofuncoid $\mu$
-to an endofuncoid $\nu$ is a funcoid $f$ from $\Ob\mu$ to $\Ob\nu$
-such that $\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f)$.\end{defn}
-\begin{obvious}
-A funcoid $f$ is open iff $f\circ\mu\sqsupseteq\Compl(\nu\circ f)$.\end{obvious}
-\begin{thm}
-Let $\mu$, $\nu$, $\pi$ be endofuncoids. Let $f$ be an
-monovalued open funcoid from $\Ob\mu$ to $\Ob\nu$ and $g$ is a open funcoid
-from $\Ob\nu$ to $\Ob\pi$. Then $g\circ f$ is an open funcoid from
-$\Ob\mu$ to $\Ob\pi$.\end{thm}
-\begin{proof}
-\begin{align*}
-\supfun{g\circ f}\rsupfun{\mu}@\{x\} = & \\
-\supfun{g}\supfun{f}\rsupfun{\mu}@\{x\} \sqsupseteq & \\
-\supfun{g}\supfun{\nu}\rsupfun{f}@\{x\} \sqsupseteq & \text{ (using that $f$ is monovalued)}\\
-\supfun{\pi}\supfun{g}\rsupfun{f}@\{x\} = & \\
-\supfun{\pi}\supfun{g\circ f}@\{x\}.
-\end{align*}
-\end{proof}
-
 \section{Monovalued and injective funcoids}
 
 \index{funcoid!monovalued}\index{monovalued!funcoid}Following the
@@ -3076,6 +3027,55 @@ f}\sqsubset f$.
 Then there exists an atom $a\in\atoms\dom f$ such that $\langle g|_{\dom 
 f}\rangle a\neq\langle f\rangle a$
 that is $\supfun ga\sqsubset\supfun fa$ what is impossible.
+\end{proof}
+
+\section{Open maps}
+\begin{defn}
+\index{open map}An \emph{open map} from a topological space to a
+topological space is a function which maps open sets into open sets.
+\end{defn}
+An obvious generalization of this is \emph{open map} $f$ from an
+endofuncoid $\mu$ to an endofuncoid $\nu$, which is by definition
+a function (or rather a principal, entirely defined, monovalued funcoid)
+from $\Ob\mu$ to $\Ob\nu$ such that
+\[
+\forall x\in\Ob\mu,V\in\rsupfun{\mu}\{x\}:\rsupfun 
+fV\sqsupseteq\supfun{\nu}\rsupfun f@\{x\}.
+\]
+
+
+This formula is equivalent (exercise!) to
+\[
+\forall x\in\Ob\mu:\supfun f\rsupfun{\mu}@\{x\}\sqsupseteq\supfun{\nu}\rsupfun 
+f@\{x\}.
+\]
+
+
+It can be abstracted/simplified further (now for an \emph{arbitrary}
+funcoid $f$ from $\Ob\mu$ to $\Ob\nu$):
+\[
+\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f).
+\]
+
+\begin{defn}
+\index{funcoid!open}An \emph{open funcoid} from an endofuncoid $\mu$
+to an endofuncoid $\nu$ is a funcoid $f$ from $\Ob\mu$ to $\Ob\nu$
+such that $\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f)$.\end{defn}
+\begin{obvious}
+A funcoid $f$ is open iff $f\circ\mu\sqsupseteq\Compl(\nu\circ f)$.\end{obvious}
+\begin{thm}
+Let $\mu$, $\nu$, $\pi$ be endofuncoids. Let $f$ be an
+monovalued open funcoid from $\Ob\mu$ to $\Ob\nu$ and $g$ is a open funcoid
+from $\Ob\nu$ to $\Ob\pi$. Then $g\circ f$ is an open funcoid from
+$\Ob\mu$ to $\Ob\pi$.\end{thm}
+\begin{proof}
+\begin{align*}
+\supfun{g\circ f}\rsupfun{\mu}@\{x\} = & \\
+\supfun{g}\supfun{f}\rsupfun{\mu}@\{x\} \sqsupseteq & \\
+\supfun{g}\supfun{\nu}\rsupfun{f}@\{x\} \sqsupseteq & \text{ (using that $f$ is monovalued)}\\
+\supfun{\pi}\supfun{g}\rsupfun{f}@\{x\} = & \\
+\supfun{\pi}\supfun{g\circ f}@\{x\}.
+\end{align*}
 \end{proof}
 
 \section{\texorpdfstring{$T_{0}$-, $T_{1}$-, $T_{2}$-, and $T_{3}$-separable 
