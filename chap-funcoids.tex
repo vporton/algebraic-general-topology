@@ -2819,20 +2819,12 @@ After variable replacement we get $\Compl(f\circ g)=f\circ\Compl g$
 \end{proof}
 \begin{cor}
 ~
-\[
-\CoCompl((\Compl g)\circ f)=\Compl(g\circ(\CoCompl f))=(\Compl g)\circ(\CoCompl 
-f).
-\]
+For every composable funcoids $f$ and $g$
+\begin{enumerate}
+\item \label{cocompl-eq}$\CoCompl(g\circ\CoCompl f)=\CoCompl g\circ\CoCompl f$.
+\item \label{compl-eq}$\Compl(\Compl f\circ g)=\Compl f\circ\Compl g$.
+\end{enumerate}
 \end{cor}
-\begin{proof}
-By the theorem:
-
-$\Compl(g\circ(\CoCompl f))=(\Compl g)\circ(\CoCompl f)$;
-
-$\CoCompl((\Compl f)\circ g)=(\Compl f)\circ(\CoCompl g).$
-
-After variable replacement $\CoCompl((\Compl g)\circ f)=(\Compl g)\circ(\CoCompl 
-f)$.\end{proof}
 \begin{prop}
 For every composable funcoids $f$ and $g$
 \begin{enumerate}
