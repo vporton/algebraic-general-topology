@@ -212,11 +212,13 @@ For every composable reloids $f$ and $g$
 \begin{proof}
 We will prove only the first as the second is dual.
 \end{proof}
+Obviously $\bigsqcup\setcond{g\circ F}{F\in\atoms f}\sqsubseteq g\circ f$. We need to prove $\bigsqcup\setcond{g\circ F}{F\in\atoms f}\sqsupseteq g\circ f$.
+Really,
 \begin{align*}
-\bigsqcup\setcond{g\circ F}{F\in\atoms f}=g\circ f & \Leftrightarrow\\
-\forall x\in\mathsf{RLD}(\Src f;\Dst g):\left(x\nasymp g\circ f\Leftrightarrow x\nasymp\bigsqcup\setcond{g\circ F}{F\in\atoms f}\right) & \Leftarrow\\
-\forall x\in\mathsf{RLD}(\Src f;\Dst g):\left(x\nasymp g\circ f\Leftrightarrow\exists F\in\atoms f:x\nasymp g\circ F\right) & \Leftrightarrow\\
-\forall x\in\mathsf{RLD}(\Src f;\Dst g):(g^{-1}\circ x\nasymp f\Leftrightarrow\exists F\in\atoms f:g^{-1}\circ x\nasymp F)
+\bigsqcup\setcond{g\circ F}{F\in\atoms f}\sqsupseteq g\circ f & \Leftrightarrow\\
+\forall x\in\mathsf{RLD}(\Src f;\Dst g):\left(x\nasymp g\circ f\Rightarrow x\nasymp\bigsqcup\setcond{g\circ F}{F\in\atoms f}\right) & \Leftarrow\\
+\forall x\in\mathsf{RLD}(\Src f;\Dst g):\left(x\nasymp g\circ f\Rightarrow \exists F\in\atoms f:x\nasymp g\circ F\right) & \Leftrightarrow\\
+\forall x\in\mathsf{RLD}(\Src f;\Dst g):(g^{-1}\circ x\nasymp f\Rightarrow \exists F\in\atoms f:g^{-1}\circ x\nasymp F)
 \end{align*}
 what is obviously true.
 \begin{cor}
