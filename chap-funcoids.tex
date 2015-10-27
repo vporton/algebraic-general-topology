@@ -3065,18 +3065,24 @@ such that $\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f)$.\end{defn}
 A funcoid $f$ is open iff $f\circ\mu\sqsupseteq\Compl(\nu\circ f)$.\end{obvious}
 \begin{thm}
 Let $\mu$, $\nu$, $\pi$ be endofuncoids. Let $f$ be an
-monovalued open funcoid from $\Ob\mu$ to $\Ob\nu$ and $g$ is a open funcoid
+principal monovalued open funcoid from $\Ob\mu$ to $\Ob\nu$ and $g$ is a open funcoid
 from $\Ob\nu$ to $\Ob\pi$. Then $g\circ f$ is an open funcoid from
 $\Ob\mu$ to $\Ob\pi$.\end{thm}
 \begin{proof}
 \begin{align*}
 \supfun{g\circ f}\rsupfun{\mu}@\{x\} & = \\
 \supfun{g}\supfun{f}\rsupfun{\mu}@\{x\} & \sqsupseteq \\
-\supfun{g}\supfun{\nu}\rsupfun{f}@\{x\} & \sqsupseteq \text{ (using that $f$ is monovalued)}\\
+\supfun{g}\supfun{\nu}\rsupfun{f}@\{x\} & \sqsupseteq \text{ (using that $f$ is monovalued and principal)}\\
 \supfun{\pi}\supfun{g}\rsupfun{f}@\{x\} & = \\
 \supfun{\pi}\supfun{g\circ f}@\{x\}.
 \end{align*}
 \end{proof}
+
+\begin{problem}
+Devise a pointfree (not using a particular point~$x$) proof of the above theorem.
+It should refer to a lemma which may use a particular point, but the proof of the
+theorem itself should be without a particular point.
+\end{problem}
 
 \section{\texorpdfstring{$T_{0}$-, $T_{1}$-, $T_{2}$-, and $T_{3}$-separable 
 funcoids}%
