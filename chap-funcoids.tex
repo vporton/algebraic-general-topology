@@ -2395,13 +2395,11 @@ From two last theorems.\end{proof}
 \begin{lem}
 \label{fcd-rep}Every funcoid is representable as meet (on the lattice
 of funcoids) of binary relations of the form 
-$X\times^{\mathsf{FCD}}Y\sqcup\overline{X}\times^{\mathsf{FCD}}\top^{\mathscr{F}
-(B)}$ (where $X$, $Y$ are typed sets).\end{lem}
+$X\times Y\sqcup\overline{X}\times\top^{\mathscr{T}(B)}$ (where $X$, $Y$ are typed sets).\end{lem}
 \begin{proof}
 Let $f\in\mathsf{FCD}(A;B)$, $X\in\mathscr{T}A$, $Y\in\up\supfun fX$,
-$g(X;Y)\eqdef 
-X\times^{\mathsf{FCD}}Y\sqcup\overline{X}\times^{\mathsf{FCD}}\top^{\mathscr{F}
-(B)}$.
+$g(X;Y)\eqdef X\times Y\sqcup\overline{X}\times\top^{\mathscr{T}(B)}$.
+Then $g(X;Y)=X\times^{\mathsf{FCD}}Y\sqcup\overline{X}\times^{\mathsf{FCD}}\top^{\mathscr{F}(B)}$.
 For every $K\in\mathscr{T}A$
 \begin{multline*}
 \rsupfun{g(X;Y)}K=\rsupfun{X\times^{\mathsf{FCD}}Y}K\sqcup\rsupfun{\overline{X}
