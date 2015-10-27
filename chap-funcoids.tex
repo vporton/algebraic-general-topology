@@ -2821,15 +2821,15 @@ After variable replacement we get $\Compl(f\circ g)=f\circ\Compl g$
 ~
 For every composable funcoids $f$ and $g$
 \begin{enumerate}
-\item \label{cocompl-eq}$\CoCompl(g\circ\CoCompl f)=\CoCompl g\circ\CoCompl f$.
-\item \label{compl-eq}$\Compl(\Compl f\circ g)=\Compl f\circ\Compl g$.
+\item $\Compl f\circ\Compl g=\Compl(\Compl f\circ g)$.
+\item $\CoCompl g\circ\CoCompl f=\CoCompl(g\circ\CoCompl f)$.
 \end{enumerate}
 \end{cor}
 \begin{prop}
 For every composable funcoids $f$ and $g$
 \begin{enumerate}
-\item \label{compl2-eq}$\Compl(g\circ(\Compl f))=\Compl(g\circ f)$;
-\item \label{cocompl2-eq}$\CoCompl((\CoCompl g)\circ f)=\CoCompl(g\circ f)$.
+\item \label{compl2-eq}$\Compl(g\circ f)=\Compl(g\circ(\Compl f))$;
+\item \label{cocompl2-eq}$\CoCompl(g\circ f)=\CoCompl((\CoCompl g)\circ f)$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -2898,7 +2898,7 @@ fV\sqsupseteq\supfun{\nu}\rsupfun f@\{x\}.
 
 This formula is equivalent (exercise!) to
 \[
-\forall x\in\Ob\mu:\supfun f\rsupfun{\mu}\{x\}\sqsupseteq\supfun{\nu}\rsupfun 
+\forall x\in\Ob\mu:\supfun f\rsupfun{\mu}@\{x\}\sqsupseteq\supfun{\nu}\rsupfun 
 f@\{x\}.
 \]
 
@@ -2913,33 +2913,22 @@ funcoid $f$ from $\Ob\mu$ to $\Ob\nu$):
 \index{funcoid!open}An \emph{open funcoid} from an endofuncoid $\mu$
 to an endofuncoid $\nu$ is a funcoid $f$ from $\Ob\mu$ to $\Ob\nu$
 such that $\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f)$.\end{defn}
+\begin{obvious}
+A funcoid $f$ is open iff $f\circ\mu\sqsupseteq\Compl(\nu\circ f)$.\end{obvious}
 \begin{thm}
-Let $\mu$, $\nu$, $\pi$ be endofuncoids. Let $f$ be a co-complete
-open funcoid from $\Ob\mu$ to $\Ob\nu$ and $g$ is an open funcoid
+Let $\mu$, $\nu$, $\pi$ be endofuncoids. Let $f$ be an
+monovalued open funcoid from $\Ob\mu$ to $\Ob\nu$ and $g$ is a open funcoid
 from $\Ob\nu$ to $\Ob\pi$. Then $g\circ f$ is an open funcoid from
 $\Ob\mu$ to $\Ob\pi$.\end{thm}
 \begin{proof}
-Let $\Compl(f\circ\mu)\sqsupseteq\Compl(\nu\circ f)$ and 
-$\Compl(g\circ\nu)\sqsupseteq\Compl(\pi\circ g)$.
 \begin{align*}
-\Compl(g\circ f\circ\mu) & \sqsupseteq\\
-\Compl(g\circ\Compl(f\circ\mu)) & \sqsupseteq\\
-\Compl(g\circ\Compl(\nu\circ f)) & =\\
-\Compl(g\circ\Compl(\nu)\circ f) & =\\
-\Compl(g\circ\Compl(\nu))\circ f & =\\
-\Compl(g\circ\nu)\circ f & \sqsupseteq\\
-\Compl(\pi\circ g)\circ f & =\\
-\Compl(\pi\circ g\circ f).
+\supfun{g\circ f}\rsupfun{\mu}@\{x\} = & \\
+\supfun{g}\supfun{f}\rsupfun{\mu}@\{x\} \sqsupseteq & \\
+\supfun{g}\supfun{\nu}\rsupfun{f}@\{x\} \sqsupseteq & \text{ (using that $f$ is monovalued)}\\
+\supfun{\pi}\supfun{g}\rsupfun{f}@\{x\} = & \\
+\supfun{\pi}\supfun{g\circ f}@\{x\}.
 \end{align*}
 \end{proof}
-\begin{obvious}
-A funcoid $f$ is open iff $f\circ\mu\sqsupseteq\Compl(\nu\circ f)$.\end{obvious}
-\begin{cor}
-A co-complete funcoid $f$ is open iff $f\circ\mu\sqsupseteq(\Compl\nu)\circ f$.
-Thus $f$ is open iff it is a continuous morphism from $\mu$ to $\Compl\nu$
-\emph{with the reverse order of funcoids}. (See a definition of a
-continuous morphism below.)
-\end{cor}
 
 \section{Monovalued and injective funcoids}
 
