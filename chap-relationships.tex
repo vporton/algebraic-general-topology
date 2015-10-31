@@ -562,7 +562,7 @@ $\Cor\tofcd g=\tofcd\Cor g$ for every reloid $g$.\end{thm}
 \index{funcoidal reloid}I call \emph{funcoidal} such a reloid $\nu$
 that
 \begin{multline*}
-\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\Rightarrow\\
+\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\nu\Rightarrow\\
 \exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu)
 \end{multline*}
 for every $\mathcal{X}\in\mathscr{F}(\Src\nu)$, $\mathcal{Y}\in\mathscr{F}(\Dst\nu)$.\end{defn}
@@ -575,7 +575,7 @@ for every atomic filter objects $x$ and $y$ on respective sets.\end{prop}
 \item [{$\Rightarrow$}] $x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow\exists\mathcal{X}'\in\atoms x,\mathcal{Y}'\in\atoms y:\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\nu$.
 \item [{$\Leftarrow$}] ~
 \begin{multline*}
-\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\Rightarrow\\
+\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\nu\Rightarrow\\
 \exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow\\
 \exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\times^{\mathsf{RLD}}y\sqsubseteq\nu\Rightarrow\\
 \exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu).
