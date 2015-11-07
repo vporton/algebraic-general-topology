@@ -5,10 +5,10 @@
 \section{Some lemmas}
 \begin{lem}
 Let $U$ be a set, $A,B\in\mathscr{T}U$ be typed sets, $f$ be an
-endo-funcoid on $U$. If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$
+endo-funcoid on $U$. If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$
 then $f$ is closed on $A$.\end{lem}
 \begin{proof}
-Let $A\sqcup B\in\dom f\sqcup\im f$.
+Let $A\sqcup B\in\up(\dom f\sqcup\im f)$.
 \begin{align*}
 \lnot(A\rsuprel fB) & \Leftrightarrow\\
 B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
@@ -18,20 +18,20 @@ B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
 \end{align*}
 \end{proof}
 \begin{cor}
-If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$ then
+If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$ then
 $f$ is closed on $A\setminus B$ for a funcoid $f\in\mathsf{FCD}(U;U)$
 for every sets $U$ and typed sets $A,B\in\mathscr{T}U$.\end{cor}
 \begin{proof}
-Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$. Then
+Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$. Then
 \[
 \lnot((A\setminus B)\rsuprel fB)\land(A\setminus B)\sqcup B\in\dom f\sqcup\im f.
 \]
 \end{proof}
 \begin{lem}
-If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$ then
+If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$ then
 $\lnot(A\rsuprel{f^{n}}B)$ for every whole positive $n$.\end{lem}
 \begin{proof}
-Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$. From
+Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$. From
 the above lemma $\rsupfun fA\sqsubseteq A$. $B\sqcap\supfun fA=\bot^{\mathscr{F}(U)}$,
 consequently $\rsupfun fA\sqsubseteq A\setminus B$. Because (by the
 above corollary) $f$ is closed on $A\setminus B$, then $\supfun f\supfun fA\sqsubseteq A\setminus B$,
