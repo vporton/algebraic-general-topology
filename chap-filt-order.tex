@@ -264,7 +264,7 @@ $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$ such that $\mathcal{B}=\supf
 For a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 the following are equivalent:
 \begin{enumerate}
-\item \label{fbij-star}$\mathcal{B}=f\ast\mathcal{A}$.
+\item \label{fbij-star}$\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}$.
 \item \label{fbij-eback}$\forall C\in\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A})$.
 \item \label{fbij-eforw}$\forall C\in\Base(\mathcal{A}):(C\in\rsupfun f\mathcal{B}\Leftrightarrow C\in\mathcal{A})$.
 \item \label{fbij-rbij}$\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$
@@ -280,10 +280,10 @@ is a function onto~$\mathcal{B}$.
 ~
 \begin{description}
 \item [{\ref{fbij-star}$\Leftrightarrow$\ref{fbij-eback}}] ~
-\begin{multline*}
-\mathcal{B}=f\ast\mathcal{A}\Leftrightarrow\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}\Leftrightarrow\\
+\[
+\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}\Leftrightarrow\\
 \forall C\in\subsets\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A}).
-\end{multline*}
+\]
 
 \item [{\ref{fbij-eback}$\Leftrightarrow$\ref{fbij-eforw}}] Because
 $f$ is a bijection.
