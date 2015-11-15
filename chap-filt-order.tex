@@ -1135,8 +1135,8 @@ such that $\supfun{\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}h_{n}}u_{n+1}=u
 and $u_{n}$ are pairwise non-isomorphic. (See \cite{kleene-degrees}
 for a proof that such ultrafilters and functions exist.)
 
-$\mathcal{A}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1})$;
-$\mathcal{B}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n})$.
+$\mathcal{A}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n+1})$;
+$\mathcal{B}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n})$.
 
 Let the $\mathbf{Set}$-morphisms $f,g:\mathbb{Z}\times\mathbb{N}\rightarrow\mathbb{Z}\times\mathbb{N}$
 be defined by the formulas $f(n;x)=(n;h_{2n}x)$ and $g(n;x)=(n-1;h_{2n-1}x)$.
@@ -1145,13 +1145,13 @@ Using the fact that every function induces a complete funcoid and
 a lemma above we get:
 \begin{align*}
 \supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A} & =\\
-\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1}}{n\in\mathbb{Z}} & =\\
-\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n+1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n}}{n\in\mathbb{Z}} & =\\
 \mathcal{B}.\\
 \supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{B} & =\\
-\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}} & =\\
-\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n-1\}\times u_{2n-1}}{n\in\mathbb{Z}} & =\\
-\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n-1\}\times^{\mathsf{RLD}} u_{2n-1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n+1}}{n\in\mathbb{Z}} & =\\
 \mathcal{A}.
 \end{align*}
 
@@ -1171,8 +1171,8 @@ and thus $\uparrow^{\mathbb{Z}\times\mathbb{N}}X\sqcap\mathcal{A}=\bot^{\mathbb{
 
 We have also
 \begin{multline*}
-(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\mathcal{B}=(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}}=\\
-\bigsqcup\setcond{(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n})}{n\in\mathbb{Z}}=\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}u_{0}\text{ (an ultrafilter).}
+(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\mathcal{B}=(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n}}{n\in\mathbb{Z}}=\\
+\bigsqcup\setcond{(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap(\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n})}{n\in\mathbb{Z}}=\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}u_{0}\text{ (an ultrafilter).}
 \end{multline*}
 
 
