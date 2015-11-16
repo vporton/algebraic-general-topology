@@ -1501,6 +1501,8 @@ $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$:
 \item \label{pf-ax:fcd-full-fa-set}$\forall S\in\mathscr{P}\mathfrak{Z}_{0},J\in\mathfrak{Z}_{1}:(\bigsqcup^{\mathfrak{Z}_{0}}S\suprel fJ\Rightarrow\exists I\in S:I\suprel fJ)$;
 \item \label{pf-ax:fcd-full-eq-filt}$f$ is complete;
 \item \label{pf-ax:fcd-full-eq-set}$\forall S\in\mathscr{P}\mathfrak{Z}_{0}:\supfun f\bigsqcup^{\mathfrak{Z}_{0}}S=\bigsqcup^{\mathfrak{B}}\rsupfun{\supfun f}S$.
+\item \label{pf-ax:sing}$\forall A\in\mathfrak{Z}_0:\rsupfun 
+fA=\bigsqcup_{a\in\atoms A}\rsupfun fa$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1541,8 +1543,19 @@ Then
 \]
 what by theorem \ref{crit1} is equivalent to $\exists I\in S:J\sqcap^{\mathfrak{B}}\supfun fI\neq\bot^{\mathfrak{B}}$
 that is $\exists I\in S:I\suprel fJ$.
-\item [{\ref{pf-ax:fcd-full-fa-filt}$\Rightarrow$\ref{pf-ax:fcd-full-fa-set},~\ref{pf-ax:fcd-full-eq-filt}$\Rightarrow$\ref{pf-ax:fcd-full-eq-set}}] By
+\item [{\ref{pf-ax:fcd-full-fa-filt}$\Rightarrow$\ref{pf-ax:fcd-full-fa-set},~\ref{pf-ax:fcd-full-eq-filt}$\Rightarrow$\ref{pf-ax:fcd-full-eq-set}},~{\ref{pf-ax:fcd-full-eq-set}$\Rightarrow$\ref{pf-ax:sing}}] By
 join-closedness of the core of $(\mathfrak{A};\mathfrak{Z}_{0})$.
+\item [{\ref{pf-ax:sing}$\Rightarrow$\ref{pf-ax:fcd-full-eq-set}}] Using 
+theorem~\ref{crit1},
+\begin{align*}
+J\nasymp\supfun f\bigsqcup S & \Leftrightarrow\\
+\bigsqcup S\suprel fJ & \Leftrightarrow\\
+\exists\mathcal{I}\in S:\mathcal{I}\suprel fJ & \Leftrightarrow\\
+\exists\mathcal{I}\in S:J\nasymp\supfun f\mathcal{I} & \Leftrightarrow\\
+J\nasymp\bigsqcup\rsupfun{\supfun f}S.
+\end{align*}
+
+
 \end{description}
 \end{proof}
 \begin{thm}
