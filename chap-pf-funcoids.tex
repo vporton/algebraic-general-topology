@@ -1473,27 +1473,6 @@ are defined we have
 \supfun f\bigsqcup S=\bigsqcup\rsupfun{\supfun f}S.
 \]
 \end{defn}
-\begin{prop}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices. A pointfree funcoid $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
-is complete iff $\supfun fa=\bigsqcup\rsupfun{\supfun f}\atoms a$
-for every $a\in\mathfrak{A}$.\end{prop}
-\begin{proof}
-Direct implication is obvious. The reverse implication:
-
-Let $S$ be a set of filters.
-\begin{align*}
-\supfun f\bigsqcup S & =\\
-\bigsqcup\rsupfun{\supfun f}\atoms\bigsqcup S & =\\
-\bigsqcup\rsupfun{\supfun f}\bigcup\rsupfun{\atoms}S & =\\
-\bigsqcup\bigcup\rsupfun{\rsupfun{\supfun f}}\rsupfun{\atoms}S & =\\
-\bigsqcup\rsupfun{\bigsqcup}\rsupfun{\rsupfun{\supfun f}}\rsupfun{\atoms}S & =\\
-\bigsqcup\rsupfun{\bigsqcup\circ\rsupfun{\supfun f}\circ\atoms}S & =\\
-\bigsqcup\setcond{\bigsqcup\rsupfun{\supfun f}\atoms a}{a\in S} & =\\
-\bigsqcup\setcond{\supfun fa}{a\in S} & =\\
-\bigsqcup\rsupfun{\supfun f}S.
-\end{align*}
-\end{proof}
 \begin{defn}
 \index{funcoid!pointfree!co-complete}Let $(\mathfrak{A};\mathfrak{Z}_{0})$
 and $(\mathfrak{B};\mathfrak{Z}_{1})$ be filtrators. I will call a \emph{co-complete pointfree funcoid}
