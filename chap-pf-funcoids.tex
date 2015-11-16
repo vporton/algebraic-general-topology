@@ -667,12 +667,14 @@ by proposition~\ref{pfcd-mono}.\end{proof}
 \index{funcoid!pointfree!domain}\emph{Domain} of a pointfree funcoid
 $f$ is defined by the formula $\dom f=\im f^{-1}$.\end{defn}
 \begin{prop}
-$\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and $\Src f$
-has greatest element $\top$ and $\Dst f$ is a separable poset.\end{prop}
+$\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and both $\Src f$
+and $\Dst f$ have greatest element and both $\Src f$
+and $\Dst f$ are separable posets.\end{prop}
 \begin{proof}
 For every $y\in\Dst f$
 \begin{multline*}
-y\nasymp\supfun f\dom f\Leftrightarrow\dom f\nasymp\supfun{f^{-1}}y\Leftrightarrow\supfun{f^{-1}}\top\nasymp\supfun{f^{-1}}y\Leftrightarrow\\
+y\nasymp\supfun f\dom f\Leftrightarrow\dom f\nasymp\supfun{f^{-1}}y\Leftrightarrow\supfun{f^{-1}}\top\nasymp\supfun{f^{-1}}y\Leftrightarrow
+\text{(by separability of $\Src f$)}\\
 \supfun{f^{-1}}y\ne\bot\Leftrightarrow\top\nasymp\supfun{f^{-1}}y\Leftrightarrow y\nasymp\supfun f\top\Leftrightarrow y\nasymp\im f.
 \end{multline*}
 So $\supfun f\dom f=\im f$ by separability of $\Dst f$.\end{proof}
