@@ -1543,19 +1543,17 @@ Then
 \]
 what by theorem \ref{crit1} is equivalent to $\exists I\in S:J\sqcap^{\mathfrak{B}}\supfun fI\neq\bot^{\mathfrak{B}}$
 that is $\exists I\in S:I\suprel fJ$.
+\item [{\ref{pf-ax:sing}$\Rightarrow$\ref{pf-ax:fcd-full-eq-set}}] ~
+\begin{align*}
+\rsupfun f\bigsqcup S & =\\
+\bigsqcup_{a\in\atoms\bigsqcup S}\rsupfun fa & =\\
+\bigsqcup\bigcup_{A\in S}\setcond{\rsupfun fa}{a\in\atoms A} & =\\
+\bigsqcup_{A\in S}\bigsqcup_{a\in\atoms A}\rsupfun fa & =\\
+\bigsqcup_{A\in S}\rsupfun fA & =\\
+\bigsqcup\rsupfun{\rsupfun f}S.
+\end{align*}
 \item [{\ref{pf-ax:fcd-full-fa-filt}$\Rightarrow$\ref{pf-ax:fcd-full-fa-set},~\ref{pf-ax:fcd-full-eq-filt}$\Rightarrow$\ref{pf-ax:fcd-full-eq-set}},~{\ref{pf-ax:fcd-full-eq-set}$\Rightarrow$\ref{pf-ax:sing}}] By
 join-closedness of the core of $(\mathfrak{A};\mathfrak{Z}_{0})$.
-\item [{\ref{pf-ax:sing}$\Rightarrow$\ref{pf-ax:fcd-full-eq-set}}] Using 
-theorem~\ref{crit1},
-\begin{align*}
-J\nasymp\supfun f\bigsqcup S & \Leftrightarrow\\
-\bigsqcup S\suprel fJ & \Leftrightarrow\\
-\exists\mathcal{I}\in S:\mathcal{I}\suprel fJ & \Leftrightarrow\\
-\exists\mathcal{I}\in S:J\nasymp\supfun f\mathcal{I} & \Leftrightarrow\\
-J\nasymp\bigsqcup\rsupfun{\supfun f}S.
-\end{align*}
-
-
 \end{description}
 \end{proof}
 \begin{thm}
