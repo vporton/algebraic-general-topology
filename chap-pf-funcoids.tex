@@ -681,7 +681,7 @@ So $\supfun f\dom f=\im f$ by separability of $\Dst f$.\end{proof}
 \begin{prop}
 $\supfun fx=\supfun f(x\sqcap\dom f)$
 for every $x\in\Src f$ for a pointfree funcoid $f$ whose source
-is a separable meet-semilattice with least element and destination is a bounded separable poset.\end{prop}
+is a bounded separable meet-semilattice and destination is a bounded separable poset.\end{prop}
 \begin{proof}
 For every $y\in\Dst f$ we have
 \begin{multline*}
@@ -697,13 +697,14 @@ element $\top$ and $\Src f$ is a separable poset.\end{prop}
 $x\nasymp\dom f\Leftrightarrow x\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fx\Leftrightarrow(\supfun fx\text{ is not least})$.\end{proof}
 \begin{prop}
 $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$
-for every pointfree funcoid $f$ whose destination is a bounded poset
+for every pointfree funcoid $f$ whose destination is a bounded separable meet-semilattice
 and source is an atomistic poset.\end{prop}
 \begin{proof}
 For every $a\in\atoms^{\Src f}$ we have 
-\[
-a\nasymp\dom f\Leftrightarrow a\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fa\Leftrightarrow\supfun fa\ne\bot^{\Dst f}.
-\]
+\begin{multline*}
+a\nasymp\dom f\Leftrightarrow a\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fa\Leftrightarrow\\
+\text{(because $\Dst f$ is a separable meet-semilattice)}\Leftrightarrow\supfun fa\ne\bot^{\Dst f}.
+\end{multline*}
 So $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{a\nasymp\dom f}=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$.\end{proof}
 \begin{prop}
 $\dom(f|_{a})=a\sqcap\dom f$ for every pointfree funcoid $f$ and
