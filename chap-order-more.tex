@@ -125,10 +125,15 @@ is such its subset $Y$ that
 \end{defn}
 
 \begin{defn}
-\index{separable}\index{poset!separable}I call separable such poset
+\index{separable}\index{poset!separable}I call \emph{separable} such poset
 that $\fullstar$ is an injection.\end{defn}
+\begin{defn}
+\index{separable}\index{poset!strongly separable}I call \emph{strongly separable} such poset
+that $\fullstar$ is order reflecting.\end{defn}
 \begin{obvious}
 A poset is separable iff it has a separation subset.\end{obvious}
+\begin{obvious}
+A poset is strongly separable iff $\star$ is order embedding.\end{obvious}
 \begin{defn}
 \index{disjunction property of Wallman}A poset $\mathfrak{A}$ has
 \emph{disjunction property of Wallman} iff for any $a,b\in\mathfrak{A}$
@@ -139,7 +144,7 @@ such that $a\asymp c$.\end{defn}
 following statements are equivalent:
 \begin{enumerate}
 \item \label{la1}$\mathfrak{A}$ is separable.
-\item \label{la2}$\forall a,b\in\mathfrak{A}:(\fullstar a\sqsubseteq\fullstar b\Rightarrow a\sqsubseteq b)$.
+\item \label{la2}$\mathfrak{A}$ is strongly separable.
 \item \label{la3}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\sqsubset\fullstar b)$.
 \item \label{la4}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\neq\fullstar b)$.
 \item \label{la5}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\nsqsupseteq\fullstar b)$.
