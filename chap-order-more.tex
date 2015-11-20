@@ -7,6 +7,16 @@
 
 \subsection{Straight maps}
 \begin{defn}
+\index{order reflecting}An \emph{order reflecting} map from a poset~$\mathfrak{A}$ to a poset~$\mathfrak{B}$
+is such a function~$f$ that (for every $x,y\in\mathfrak{A}$)
+\[ fx\sqsubseteq fy \Rightarrow x\sqsubseteq y. \]
+\end{defn}
+
+\begin{obvious}
+Order embeddings are exactly the same as monotone and order reflecting maps.
+\end{obvious}
+
+\begin{defn}
 \index{straight map}Let $f$ be a monotone map from a meet-semilattice
 $\mathfrak{A}$ to some poset $\mathfrak{B}$. I call $f$ a \emph{straight}
 map when
@@ -63,7 +73,7 @@ If $f$ is a straight monotone map from a meet-semilattice $\mathfrak{A}$
 then the following statements are equivalent:
 \begin{enumerate}
 \item \label{stra-inj}$f$ is an injection.
-\item \label{stra-sqe-sqe}$\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow a\sqsubseteq b)$.
+\item \label{stra-sqe-sqe}$f$ is order reflecting.
 \item \label{stra-sq-sq}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\sqsubset fb)$.
 \item \label{stra-sq-ne}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\neq fb)$.
 \item \label{stra-sq-nsqe}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\nsqsupseteq fb)$.
