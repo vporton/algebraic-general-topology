@@ -667,15 +667,14 @@ by proposition~\ref{pfcd-mono}.\end{proof}
 \index{funcoid!pointfree!domain}\emph{Domain} of a pointfree funcoid
 $f$ is defined by the formula $\dom f=\im f^{-1}$.\end{defn}
 \begin{prop}
-$\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and both $\Src f$
-and $\Dst f$ have greatest element and both $\Src f$
-and $\Dst f$ are separable posets.\end{prop}
+$\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and
+$\Src f$ is a strongly separable poset with greatest element
+and $\Dst f$ is a separable poset with greatest element.\end{prop}
 \begin{proof}
 For every $y\in\Dst f$
 \begin{multline*}
-y\nasymp\supfun f\dom f\Leftrightarrow\dom f\nasymp\supfun{f^{-1}}y\Leftrightarrow\supfun{f^{-1}}\top\nasymp\supfun{f^{-1}}y\Leftrightarrow
-\text{(by separability of $\Src f$)}\\
-\supfun{f^{-1}}y\ne\bot\Leftrightarrow\top\nasymp\supfun{f^{-1}}y\Leftrightarrow y\nasymp\supfun f\top\Leftrightarrow y\nasymp\im f.
+y\nasymp\supfun f\dom f\Leftrightarrow\dom f\nasymp\supfun{f^{-1}}y\Leftrightarrow\supfun{f^{-1}}\top\nasymp\supfun{f^{-1}}y\Leftrightarrow\\
+\supfun{f^{-1}}y\text{ is not least}\Leftrightarrow\top\nasymp\supfun{f^{-1}}y\Leftrightarrow y\nasymp\supfun f\top\Leftrightarrow y\nasymp\im f.
 \end{multline*}
 So $\supfun f\dom f=\im f$ by separability of $\Dst f$.\end{proof}
 \begin{prop}
@@ -697,14 +696,13 @@ element $\top$ and $\Src f$ is a separable poset.\end{prop}
 $x\nasymp\dom f\Leftrightarrow x\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fx\Leftrightarrow(\supfun fx\text{ is not least})$.\end{proof}
 \begin{prop}
 $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$
-for every pointfree funcoid $f$ whose destination is a bounded separable meet-semilattice
+for every pointfree funcoid $f$ whose destination is a bounded strongly separable poset
 and source is an atomistic poset.\end{prop}
 \begin{proof}
 For every $a\in\atoms^{\Src f}$ we have 
-\begin{multline*}
-a\nasymp\dom f\Leftrightarrow a\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fa\Leftrightarrow\\
-\text{(because $\Dst f$ is a separable meet-semilattice)}\Leftrightarrow\supfun fa\ne\bot^{\Dst f}.
-\end{multline*}
+\[
+a\nasymp\dom f\Leftrightarrow a\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fa\Leftrightarrow\supfun fa\ne\bot^{\Dst f}.
+\]
 So $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{a\nasymp\dom f}=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$.\end{proof}
 \begin{prop}
 $\dom(f|_{a})=a\sqcap\dom f$ for every pointfree funcoid $f$ and
@@ -1666,9 +1664,9 @@ Let $\mathfrak{A}$ and $\mathfrak{B}$ be posets. Let $f\in\mathsf{pFCD}(\mathfra
 The pointfree funcoid $f$ is:
 \begin{itemize}
 \item monovalued iff $f\circ f^{-1}\sqsubseteq\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}$,
-if $\mathfrak{A}$ has greatest element is defined and $\mathfrak{B}$ is a separable meet-semilattice;
+if $\mathfrak{A}$ has greatest element is defined and $\mathfrak{B}$ is a strongly separable meet-semilattice;
 \item injective iff $f^{-1}\circ f\sqsubseteq\id_{\dom f}^{\mathsf{pFCD}(\mathfrak{A})}$,
-if $\mathfrak{B}$ has greatest element is defined and $\mathfrak{A}$ is a separable meet-semilattice. 
+if $\mathfrak{B}$ has greatest element is defined and $\mathfrak{A}$ is a strongly separable meet-semilattice. 
 \end{itemize}
 \end{prop}
 \begin{proof}
