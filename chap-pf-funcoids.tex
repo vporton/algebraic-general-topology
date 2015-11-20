@@ -114,7 +114,7 @@ $y\nasymp\supfun f\bot^{\Src f}\Leftrightarrow\bot^{\Src f}\nasymp\supfun{f^{-1}
 for every $y\in\Dst f$. Thus $\supfun f\bot^{\Src f}\asymp\supfun f\bot^{\Src f}$.
 So $\supfun f\bot^{\Src f}=\bot^{\Dst f}$.\end{proof}
 \begin{prop}
-\label{pfcd-mono}If $\Dst f$ is a separable meet-semilattice then
+\label{pfcd-mono}If $\Dst f$ is strongly separable then
 $\supfun f$ is a monotone function (for a pointfree funcoid $f$).\end{prop}
 \begin{proof}
 ~
@@ -123,9 +123,9 @@ a\sqsubseteq b & \Rightarrow\\
 \forall x\in\Dst f:(a\nasymp\supfun{f^{-1}}x\Rightarrow b\nasymp\supfun{f^{-1}}x) & \Rightarrow\\
 \forall x\in\Dst f:(x\nasymp\supfun fa\Rightarrow x\nasymp\supfun fb) & \Leftrightarrow\\
 \fullstar\supfun fa\subseteq\fullstar\supfun fb & \Rightarrow\\
-\supfun fa\sqsubseteq\supfun fb
+\supfun fa\sqsubseteq\supfun fb.
 \end{align*}
-(used theorem \ref{msl-sep-conds} and that it is a separable meet-semilattice).\end{proof}
+\end{proof}
 \begin{thm}
 \label{pf-dist-func}Let $f$ be a pointfree funcoid from a starrish
 join-semilattice $\Src f$ to a separable starrish join-semilattice
