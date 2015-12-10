@@ -666,7 +666,7 @@ by proposition~\ref{pfcd-mono}.\end{proof}
 \begin{defn}
 \index{funcoid!pointfree!domain}\emph{Domain} of a pointfree funcoid
 $f$ is defined by the formula $\dom f=\im f^{-1}$.\end{defn}
-\begin{prop}
+\begin{prop}\label{f-dom-f}
 $\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and
 $\Src f$ is a strongly separable poset with greatest element
 and $\Dst f$ is a separable poset with greatest element.\end{prop}
@@ -723,17 +723,19 @@ $\Dst f$ has greatest element.\end{prop}
 For every composable pointfree funcoids $f$ and $g$
 \begin{enumerate}
 \item \label{pf-im-ge-dom}If $\im f\sqsupseteq\dom g$ then $\im(g\circ f)=\im g$, provided that
-the posets $\Src f$ and $\Dst f=\Src g$ have greatest elements and $\Dst f$
-and $\Dst g$ are separable.
+the posets $\Src f$ and $\Dst f=\Src g$ have greatest elements and $\Src g$ and $\Dst g$ are strongly separable.
+% and $\Dst g$ are strongly separable.
 \item \label{pf-im-le-dom}If $\im f\sqsubseteq\dom g$ then $\dom(g\circ f)=\dom g$, provided that
-the posets $\Dst g$ and $\Dst f=\Src g$ have greatest elements and $\Src g$
-and $\Src f$ are separable.
+the posets $\Dst g$ and $\Dst f=\Src g$ have greatest elements and $\Dst f$ and $\Src f$ are strongly separable.
+% and $\Src f$ is separable.
 \end{enumerate}
 \end{prop}
 \begin{proof}
 ~
 \begin{widedisorder}
-\item [{\ref{pf-im-ge-dom}}] $\im(g\circ f)=\supfun{g\circ f}\top^{\Src f}=\supfun g\supfun f\top^{\Src f}=\supfun g\im f=\supfun g\dom g=\supfun g\top^{\Src g}=\im g$.
+\item [{\ref{pf-im-ge-dom}}] $\im(g\circ f)=\supfun{g\circ f}\top^{\Src f}=\supfun g\supfun f\top^{\Src f}=\supfun g\im f\sqsupseteq
+\text{(by strong separability of $\Dst g$)}\sqsupseteq\supfun g\dom g=\text{(theorem \ref{f-dom-f})}=\im g$.
+By strong separability of~$\Dst g$ we have $\supfun g\im f\sqsubseteq\im g$.
 \item [{\ref{pf-im-le-dom}}] $\dom(g\circ f)=\im(f^{-1}\circ g^{-1})$
 what by the proved is equal to $\im f^{-1}$ that is $\dom f$.
 \end{widedisorder}
