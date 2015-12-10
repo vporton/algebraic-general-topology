@@ -683,10 +683,13 @@ $\supfun fx=\supfun f(x\sqcap\dom f)$
 for every $x\in\Src f$ for a pointfree funcoid $f$ whose source
 is a bounded separable meet-semilattice and destination is a bounded separable poset.\end{prop}
 \begin{proof}
+$\Src f$ is strongly separable by theorem~\ref{msl-sep-conds}.
 For every $y\in\Dst f$ we have
 \begin{multline*}
 y\nasymp\supfun f(x\sqcap\dom f)\Leftrightarrow x\sqcap\dom f\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow\\
-x\sqcap\im f^{-1}\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow x\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow y\nasymp\supfun fx.
+x\sqcap\im f^{-1}\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow\\
+\text{(by strong separability of $\Src f$)}\\
+x\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow y\nasymp\supfun fx.
 \end{multline*}
 Thus $\supfun fx=\supfun f(x\sqcap\dom f)$ by separability of $\Dst f$.\end{proof}
 \begin{prop}
