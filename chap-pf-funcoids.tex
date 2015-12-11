@@ -741,35 +741,6 @@ what by the proved is equal to $\im f^{-1}$ that is $\dom f$.
 \end{widedisorder}
 \end{proof}
 
-\section{Category of pointfree funcoids}
-
-\index{category!of pointfree funcoids}I will define the category
-$\mathsf{pFCD}$ of pointfree funcoids:
-\begin{itemize}
-\item The class of objects are small posets.
-\item The set of morphisms from $\mathfrak{A}$ to $\mathfrak{B}$ is $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
-\item The composition is the composition of pointfree funcoids.
-\item Identity morphism for an object $\mathfrak{A}$ is $(\mathfrak{A};\mathfrak{A};\id_{\mathfrak{A}};\id_{\mathfrak{A}})$.
-\end{itemize}
-To prove that it is really a category is trivial.
-
-\index{category!of pointfree funcoid triples}The \emph{category of
-pointfree funcoid quintuples} is defined as follows:
-\begin{itemize}
-\item Objects are pairs $(\mathfrak{A};\mathcal{A})$ where $\mathfrak{A}$
-is a small meet-semilattice with least element and $\mathcal{A}\in\mathfrak{A}$.
-\item The morphisms from an object $(\mathfrak{A};\mathcal{A})$ to an object
-$(\mathfrak{B};\mathcal{B})$ are tuples $(\mathfrak{A};\mathfrak{B};\mathcal{A};\mathcal{B};f)$
-where $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
-(Note: least elements are required for $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-to be properly defined.)
-\item The composition is defined by the formula $(\mathcal{B};\mathcal{C};g)\circ(\mathcal{A};\mathcal{B};f)=(\mathcal{A};\mathcal{C};g\circ f)$.
-\item Identity morphism for an object $(\mathfrak{A};\mathcal{A})$ is $\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}$.
-(Note: this is defined only for meet-semilattices.)
-\end{itemize}
-To prove that it is really a category is trivial.
-
-
 \section{Specifying funcoids by functions or relations on atomic filters}
 \begin{thm}
 \label{spfn-atoms}Let $\mathfrak{A}$ be an atomic poset and $(\mathfrak{B};\mathfrak{Z}_{1})$
@@ -1304,6 +1275,34 @@ Let $\mathcal{X}\in\mathfrak{A}$, $\mathcal{Y}\in\mathfrak{B}$.
 \end{gather*}
 
 \end{proof}
+
+\section{Category of pointfree funcoids}
+
+\index{category!of pointfree funcoids}I will define the category
+$\mathsf{pFCD}$ of pointfree funcoids:
+\begin{itemize}
+\item The class of objects are small posets.
+\item The set of morphisms from $\mathfrak{A}$ to $\mathfrak{B}$ is $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
+\item The composition is the composition of pointfree funcoids.
+\item Identity morphism for an object $\mathfrak{A}$ is $(\mathfrak{A};\mathfrak{A};\id_{\mathfrak{A}};\id_{\mathfrak{A}})$.
+\end{itemize}
+To prove that it is really a category is trivial.
+
+\index{category!of pointfree funcoid triples}The \emph{category of
+pointfree funcoid quintuples} is defined as follows:
+\begin{itemize}
+\item Objects are pairs $(\mathfrak{A};\mathcal{A})$ where $\mathfrak{A}$
+is a small meet-semilattice with least element and $\mathcal{A}\in\mathfrak{A}$.
+\item The morphisms from an object $(\mathfrak{A};\mathcal{A})$ to an object
+$(\mathfrak{B};\mathcal{B})$ are tuples $(\mathfrak{A};\mathfrak{B};\mathcal{A};\mathcal{B};f)$
+where $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
+(Note: least elements are required for $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
+to be properly defined.)
+\item The composition is defined by the formula $(\mathcal{B};\mathcal{C};g)\circ(\mathcal{A};\mathcal{B};f)=(\mathcal{A};\mathcal{C};g\circ f)$.
+\item Identity morphism for an object $(\mathfrak{A};\mathcal{A})$ is $\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}$.
+(Note: this is defined only for meet-semilattices.)
+\end{itemize}
+To prove that it is really a category is trivial.
 
 \section{Atomic pointfree funcoids}
 \begin{thm}
