@@ -1071,7 +1071,7 @@ f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Rightarrow\dom f\sqsubse
 If $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$ then
 $\dom f\sqsubseteq\dom(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{A}$,
 $\im f\sqsubseteq\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{B}$.\end{proof}
-\begin{thm}
+\begin{thm}\label{pf-im-dom}
 Let $\mathfrak{A}$ and $\mathfrak{B}$ be separable bounded posets,
 $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$, $\mathcal{A}\in\mathfrak{A}$,
 $\mathcal{B}\in\mathfrak{B}$. Then
@@ -1292,17 +1292,30 @@ To prove that it is really a category is trivial.
 pointfree funcoid quintuples} is defined as follows:
 \begin{itemize}
 \item Objects are pairs $(\mathfrak{A};\mathcal{A})$ where $\mathfrak{A}$
-is a small meet-semilattice with least element and $\mathcal{A}\in\mathfrak{A}$.
+is a small meet-semilattice and $\mathcal{A}\in\mathfrak{A}$.
 \item The morphisms from an object $(\mathfrak{A};\mathcal{A})$ to an object
 $(\mathfrak{B};\mathcal{B})$ are tuples $(\mathfrak{A};\mathfrak{B};\mathcal{A};\mathcal{B};f)$
-where $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
-(Note: least elements are required for $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-to be properly defined.)
+where $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and
+\begin{equation}\label{pffcd-cat-cr}
+\forall x\in\mathfrak{A}:\supfun{f}x\sqsubseteq\mathcal{A},\quad \forall y\in\mathfrak{B}:\supfun{f^{-1}}y\sqsubseteq\mathcal{B}.
+\end{equation}
 \item The composition is defined by the formula $(\mathcal{B};\mathcal{C};g)\circ(\mathcal{A};\mathcal{B};f)=(\mathcal{A};\mathcal{C};g\circ f)$.
 \item Identity morphism for an object $(\mathfrak{A};\mathcal{A})$ is $\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}$.
 (Note: this is defined only for meet-semilattices.)
 \end{itemize}
 To prove that it is really a category is trivial.
+
+\begin{prop}
+For strongly separated and bounded~$\mathfrak{A}$ and~$\mathfrak{B}$ formula~\eqref{pffcd-cat-cr} is equivalent to each of the following:
+\begin{enumerate}
+\item $\dom f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$;
+\item $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Because $\supfun{f}x\sqsubseteq\im f$, $\supfun{f^{-1}}y\sqsubseteq\dom f$, and theorem~\ref{pf-im-dom}.
+\end{proof}
 
 \section{Atomic pointfree funcoids}
 \begin{thm}
