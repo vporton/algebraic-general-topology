@@ -422,7 +422,7 @@ Because $\GR\uparrow^{\mathsf{Strd}}F$ is an upper set.\end{proof}
 is not a completary staroid. This also proves existence of non completary
 staroids (but not for powersets).\end{example}
 \begin{proof}
-(based on an \noun{Andreas Blass}'s proof) Take $\GR f$ the set of functions
+(based on an \noun{Andreas Blass}'s proof) Take $f$ the set of functions
 $x:\mathbb{N}\rightarrow\mathbb{N}$ where $x_{0}$ an arbitrary natural
 number and $x_{i}=\left\{ \begin{array}{ll}
 0 & \text{if }n\leqslant x_{0}\\
@@ -438,7 +438,9 @@ $X_{0}$ contains all but finitely many elements of $\mathbb{N}$.
 
 For $i>0$ we have $\{0,1\}\subseteq X$.
 
-Evidently, $\prod X$ contains an element of $f$.
+Evidently, $\prod X$ contains an element of $f$,
+that is $\up(\mathcal{L}_0\sqcup\mathcal{L}_1)\in f$ what means
+$\mathcal{L}_0\sqcup\mathcal{L}_1\in\upuparrows f$.
 
 Now consider any fixed $c\in\{0,1\}^{\mathbb{N}}$. There is at most
 one $k\in\mathbb{N}$ such that the sequence $x=\llbracket k;c(1);c(2);\ldots\rrbracket$
@@ -450,9 +452,10 @@ Q & \text{if }i=0\\
 \{c(i)\} & \text{if }i>0
 \end{array}\right.$ for $i=1,2,3,\ldots$. We have $Y\in\up(\lambda i\in\mathbb{N}:\mathcal{L}_{c(i)}(i))$ for every $c\in\{0,1\}^n$.
 
-But evidently $\prod Y$ does not contain an element of $\GR f$.
-Thus, $\prod Y\asymp\GR f$ that is
-$Y\notin\GR f$; $\up Y\nsubseteq\GR f$; $Y\notin\GR\upuparrows f$.\end{proof}
+But evidently $\prod Y$ does not contain an element of $f$.
+Thus, $\prod Y\asymp f$ that is
+$Y\notin f$; $\up Y\nsubseteq f$; $Y\notin\upuparrows f$ what is impossible if $f$ is completary.
+\end{proof}
 \begin{example}
 There exists such an (infinite) set $N$ and $N$-ary relation $f$
 that $\mathcal{P}\in\upuparrows f$ but there are no indexed family
