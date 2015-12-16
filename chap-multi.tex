@@ -852,22 +852,22 @@ multifuncoid $\prod^{\mathsf{FCD}(\mathfrak{A})}A$ defined by the
 formula (for every $L\in\prod\mathfrak{Z}$):
 
 \[
-\supfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L=\left\{ \begin{array}{ll}
+\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L=\left\{ \begin{array}{ll}
 A_{k} & \text{if }\forall i\in(\dom\mathfrak{A})\setminus\{k\}:A_{i}\nasymp L_{i}\\
 \bot & \text{otherwise}.
 \end{array}\right.
 \]
 \end{defn}
 \begin{prop}
-$\prod^{\mathsf{Strd}(\mathfrak{A})}A=\mathord{\suprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}$.\end{prop}
+$\prod^{\mathsf{Strd}(\mathfrak{A})}A=\mathord{\rsuprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}$.\end{prop}
 \begin{proof}
 ~
 \begin{align*}
 L\in\GR\prod^{\mathsf{Strd}(\mathfrak{A})}A & \Leftrightarrow\\
 \forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i} & \Leftrightarrow\\
 \forall i\in(\dom\mathfrak{A})\setminus\{k\}:A_{i}\nasymp L_{i}\land L_{k}\nasymp A_{k} & \Leftrightarrow\\
-L_{k}\nasymp\supfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L|_{(\dom\mathfrak{A})\setminus\{k\}} & \Leftrightarrow\\
-L\in\GR\mathord{\suprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}.
+L_{k}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L|_{(\dom\mathfrak{A})\setminus\{k\}} & \Leftrightarrow\\
+L\in\GR\mathord{\rsuprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}.
 \end{align*}
 \end{proof}
 \begin{cor}
@@ -875,7 +875,7 @@ Funcoidal product is a completary multifuncoid.\end{cor}
 \begin{proof}
 It is enough to prove that funcoidal product is a multifuncoid. Really,
 \[
-L_{i}\nasymp\left\langle \prod^{\mathsf{FCD}(\mathfrak{A})}A\right\rangle _{i}L|_{(\dom\mathfrak{A})\setminus\{i\}}\Leftrightarrow\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}\Leftrightarrow L_{j}\nasymp\left\langle \prod^{\mathsf{FCD}(\mathfrak{A})}A\right\rangle _{j}L|_{(\dom\mathfrak{A})\setminus\{j\}}.
+L_{i}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{i}L|_{(\dom\mathfrak{A})\setminus\{i\}}\Leftrightarrow\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}\Leftrightarrow L_{j}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{j}L|_{(\dom\mathfrak{A})\setminus\{j\}}.
 \]
 \end{proof}
 \begin{thm}
