@@ -456,7 +456,7 @@ But evidently $\prod Y$ does not contain an element of $f$.
 Thus, $\prod Y\asymp f$ that is
 $Y\notin f$; $\up Y\nsubseteq f$; $Y\notin\upuparrows f$ what is impossible if $f$ is completary.
 \end{proof}
-\begin{example}
+\begin{example}\label{no-intrs}
 There exists such an (infinite) set $N$ and $N$-ary relation $f$
 that $\mathcal{P}\in\upuparrows f$ but there are no indexed family
 $a\in\prod_{i\in N}\atoms\mathcal{P}_{i}$ of atomic filters such
@@ -468,29 +468,6 @@ If $a\in\prod_{i\in N}\atoms\mathcal{P}_{i}$ then there exists $c\in\{0,1\}^{N}$
 such that $a_{i}\sqsubseteq\mathcal{L}_{c(i)}(i)$ (because $\mathcal{L}_{c(i)}(i)\neq0$).
 Then from that example it follows that $(\lambda i\in N:\mathcal{L}_{c(i)}(i))\notin\GR\upuparrows f$
 and thus $a\notin\GR\upuparrows f$.\end{proof}
-\begin{example}
-There is such an anchored relation $F$ that for some $k\in\dom F$
-\[
-\rsupfun{\upuparrows\uparrow F}{}_{k}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}_{k}a.
-\]
-\end{example}
-\begin{proof}
-Take $\mathcal{P}\in\GR F$ from the previous counter-example. We
-have 
-\[
-\forall a\in\prod_{i\in\dom F}\atoms\mathcal{P}_{i}:a\notin\GR\mathcal{P}.
-\]
-Take $k=1$.
-
-Let $\mathcal{L}=\mathcal{P}|_{(\dom F)\setminus\{k\}}$. Then $a\notin\GR\upuparrows\uparrow F$
-and thus $a_{k}\asymp\rsupfun{\upuparrows\uparrow F}{}_{k}a|_{(\dom F)\setminus\{k\}}$.
-
-Consequently $\mathcal{P}_{k}\asymp\rsupfun{\upuparrows\uparrow F}{}_{k}a|_{(\dom F)\setminus\{k\}}$
-and thus $\mathcal{P}_{k}\asymp\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}{}_{k}a$
-because $\mathcal{P}_{k}$ is principal.
-
-But $\mathcal{P}_{k}\nasymp\rsupfun{\upuparrows\uparrow F}{}_{k}\mathcal{L}$.
-Thus follows $\langle\upuparrows\uparrow F\rangle_{k}^{\ast}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}{}_{k}a$.\end{proof}
 \begin{conjecture}
 Filtrators of staroids on powersets are join-closed.
 \end{conjecture}
@@ -668,6 +645,29 @@ Then if $f$ is a completary staroid of the form $\mathfrak{Z}^{n}$,
 then $\upuparrows f$ is a completary staroid of the form $\mathfrak{A}^{n}$.
 \end{conjecture}
 
+\begin{example}
+There is such an anchored relation $F$ that for some $k\in\dom F$
+\[
+\rsupfun{\upuparrows\uparrow F}{}_{k}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}_{k}a.
+\]
+\end{example}
+\begin{proof}
+Take $\mathcal{P}\in\GR F$ from the counter-example~\ref{no-intrs}. We
+have 
+\[
+\forall a\in\prod_{i\in\dom F}\atoms\mathcal{P}_{i}:a\notin\GR\mathcal{P}.
+\]
+Take $k=1$.
+
+Let $\mathcal{L}=\mathcal{P}|_{(\dom F)\setminus\{k\}}$. Then $a\notin\GR\upuparrows\uparrow F$
+and thus $a_{k}\asymp\rsupfun{\upuparrows\uparrow F}{}_{k}a|_{(\dom F)\setminus\{k\}}$.
+
+Consequently $\mathcal{P}_{k}\asymp\rsupfun{\upuparrows\uparrow F}{}_{k}a|_{(\dom F)\setminus\{k\}}$
+and thus $\mathcal{P}_{k}\asymp\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}{}_{k}a$
+because $\mathcal{P}_{k}$ is principal.
+
+But $\mathcal{P}_{k}\nasymp\rsupfun{\upuparrows\uparrow F}{}_{k}\mathcal{L}$.
+Thus follows $\langle\upuparrows\uparrow F\rangle_{k}^{\ast}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}{}_{k}a$.\end{proof}
 \section{Join of multifuncoids}
 
 \index{order!of mults}Mults are ordered by the formula $f\sqsubseteq g\Leftrightarrow\rsupfun f\sqsubseteq\rsupfun g$
