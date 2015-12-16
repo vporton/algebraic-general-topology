@@ -518,7 +518,8 @@ $i,j\in n$ and $L\in\prod\core f$
 \begin{equation}
 L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}\Leftrightarrow L_{j}\nasymp\rsupfun f_{j}L|_{(\dom L)\setminus\{j\}}.\label{alpha-cond}
 \end{equation}
-I denote the set of multifuncoids for a family~$\mathfrak{A}$ of filtrators as $\mathsf{pFCD}(\mathfrak{A})$.
+I denote the set of multifuncoids for a family~$(\mathfrak{A};\mathfrak{Z})$ of filtrators as
+$\mathsf{pFCD}(\mathfrak{A};\mathfrak{Z})$ or just $\mathsf{pFCD}(\mathfrak{A})$ when $\mathfrak{Z}$ is clear from context.
 \end{defn}
 
 \begin{defn}
@@ -752,25 +753,25 @@ L_{j}\nasymp\alpha_{j}L|_{(\dom L)\setminus\{j\}}.
 If $f$, $g$ are multifuncoids for a primary filtrator $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
 where $\mathfrak{Z}_{i}$ are separable starrish posets, then $f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g\in\mathsf{pFCD}(\mathfrak{A})$.\end{thm}
 \begin{proof}
-Let $A\in\mathord{\suprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$
+Let $A\in\mathord{\rsuprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$
 and $B\sqsupseteq A$. Then for every $k\in\dom\mathfrak{A}$
 
 $A_{k}\nasymp(f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g)A|_{(\dom\mathfrak{A})\setminus\{k\}}$;
 $A_{k}\nasymp(f\sqcup g)A|_{(\dom\mathfrak{A})\setminus\{k\}}$; $A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})\sqcup g(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
 
 Thus $A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})\lor A_{k}\nasymp g(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$A\in\mathord{\suprel f}\lor A\in\mathord{\suprel g}$; $B\in\mathord{\suprel f}\lor B\in\mathord{\suprel g}$;
+$A\in\mathord{\rsuprel f}\lor A\in\mathord{\rsuprel g}$; $B\in\mathord{\rsuprel f}\lor B\in\mathord{\rsuprel g}$;
 $B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})\lor B_{k}\nasymp g(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
 
 $B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})\sqcup g(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
 $B_{k}\nasymp(f\sqcup g)B|_{(\dom\mathfrak{A})\setminus\{k\}}=(f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g)B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
 
-Thus $B\in\mathord{\suprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$.\end{proof}
+Thus $B\in\mathord{\rsuprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$.\end{proof}
 \begin{thm}
 If $F$ is a set of multifuncoids for the same indexed family of join
 infinite distributive complete lattices filtrators, then $\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\in\mathsf{pFCD}(\mathfrak{A})$.\end{thm}
 \begin{proof}
-Let $A\in\mathord{\suprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$
+Let $A\in\mathord{\rsuprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$
 and $B\sqsupseteq A$. Then for every $k\in\dom\mathfrak{A}$
 
 $A_{k}\nasymp\left(\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\right)A|_{(\dom\mathfrak{A})\setminus\{k\}}=\left(\bigsqcup F\right)A|_{(\dom\mathfrak{A})\setminus\{k\}}=\bigsqcup_{f\in F}f(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
@@ -779,7 +780,7 @@ Thus $\exists f\in F:A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
 $\exists f\in F:A\in\mathord{[f]}$; $B\in\mathord{[f]}$ for some
 $f\in F$; $\exists f\in F:B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
 $B_{k}\nasymp\bigsqcup_{f\in F}f(B|_{(\dom\mathfrak{A})\setminus\{k\}})=\left(\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\right)B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
-Thus $B\in\mathord{\suprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$.
+Thus $B\in\mathord{\rsuprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$.
 \end{proof}
 
 \section{Infinite product of poset elements}
