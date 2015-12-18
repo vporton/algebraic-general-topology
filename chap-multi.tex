@@ -1732,20 +1732,20 @@ So $\StarComp^{(a)}(a;f)$ is a completary staroid.
 \end{widedisorder}
 \end{proof}
 \begin{lem}
-$b\nasymp^{\Anch(\mathfrak{A})}\StarComp^{(a)}(a;f)\Leftrightarrow\forall A\in\GR a,B\in\GR b,i\in n:A_{i}\suprel{f_{i}}B_{i}$
+$b\nasymp^{\Anch(\mathfrak{B})}\StarComp^{(a)}(a;f)\Leftrightarrow\forall A\in\GR a,B\in\GR b,i\in n:A_{i}\suprel{f_{i}}B_{i}$
 for anchored relations $a$ and $b$, provided that $\Src f_{i}$
 are atomic posets.\end{lem}
 \begin{proof}
 ~
 
 \begin{align*}
-b\nasymp^{\Anch(\mathfrak{A})}\StarComp^{(a)}(a;f) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:(x\sqsubseteq b\wedge x\sqsubseteq\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:(x\sqsubseteq b\wedge\forall B\in\GR x:B\in\GR\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:\\
-\left(x\sqsubseteq b\wedge\forall B\in\GR x\exists A\in\prod_{i\in\dom\mathfrak{A}}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n:A_{i}\suprel{f_{i}}B_{i}\wedge A\in\GR a\right)\right) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A}):\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
+b\nasymp^{\Anch(\mathfrak{B})}\StarComp^{(a)}(a;f) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:(x\sqsubseteq b\wedge x\sqsubseteq\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:(x\sqsubseteq b\wedge\forall B\in\GR x:B\in\GR\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:\\
+\left(x\sqsubseteq b\wedge\forall B\in\GR x\exists A\in\prod_{i\in\dom\mathfrak{B}}\atoms^{\mathfrak{B}_{i}}:\left(\forall i\in n:A_{i}\suprel{f_{i}}B_{i}\wedge A\in\GR a\right)\right) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B}):\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
 \forall B\in\GR b,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}.
 \end{align*}
 \end{proof}
@@ -1759,7 +1759,7 @@ and $\Dst f_{i}$ are atomic posets.\end{thm}
 \begin{proof}
 From the lemma.\end{proof}
 \begin{conjecture}
-$b\nasymp^{\mathsf{Strd}(\mathfrak{A})}\StarComp(a;f)\Leftrightarrow b\nasymp^{\mathsf{Strd}(\mathfrak{B})}\StarComp(a;f)$
+$b\nasymp^{\mathsf{Strd}(\mathfrak{B})}\StarComp(a;f)\Leftrightarrow a\nasymp^{\mathsf{Strd}(\mathfrak{A})}\StarComp(b;f^{\dagger})$
 for staroids $a$ and $b$ on indexed families~$\mathfrak{A}$ and~$\mathfrak{B}$
 of filters on powersets.\end{conjecture}
 \begin{thm}
