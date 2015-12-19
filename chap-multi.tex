@@ -2803,7 +2803,7 @@ every $\mathcal{X}\in\prod\base f$.\end{defn}
 \begin{lem}
 $\mathcal{L}_{i}\nasymp\rsupfun{\upuparrows f}\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}\Leftrightarrow\forall L\in\up\mathcal{L}:L_{i}\nasymp\rsupfun fL|_{(\dom\mathcal{L})\setminus\{i\}}$,
 if every $((\base f)_{i};(\core f)_{i})$ is a primary filtrator over
-a distributive lattice.\end{lem}
+a meet-semilattice with least element.\end{lem}
 \begin{proof}
 ~
 \begin{align*}
@@ -2814,14 +2814,16 @@ a distributive lattice.\end{lem}
 \bigsqcap_{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}\rsupfun{\mathcal{L}_{i}\sqcap}\rsupfun fX\ne\bot & \Leftrightarrow\\
 \bigsqcap\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}\ne\bot & \Leftrightarrow\text{ (*)}\\
 \bot\notin\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}} & \Leftrightarrow\\
-\forall X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}} : \mathcal{L}_{i}\sqcap\rsupfun fX \ne \bot & \Leftrightarrow\\
+\forall X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}} : \mathcal{L}_{i}\sqcap\rsupfun fX \ne \bot & \Leftrightarrow\text{ (**)}\\
 \forall L\in\up\mathcal{L}:\rsupfun fL|_{\dom\mathcal{L}}\sqcap L_{i}\ne\bot & \Leftrightarrow\\
 \forall L\in\up\mathcal{L}:L_{i}\nasymp\rsupfun fL|_{\dom\mathcal{L}}.
 \end{align*}
 
-
 ({*}) because $\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}$
-is a filter base (by lemma \ref{mf-f-base}) of the filter $\bigsqcap\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}$.\end{proof}
+is a filter base (by lemma \ref{mf-f-base}) of the filter $\bigsqcap\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}$.
+
+({**}) by theorem~\ref{when-sep-core}.
+\end{proof}
 \begin{prop}
 $\upuparrows f$ is a square multifuncoid, if every $((\base f)_{i};(\core f)_{i})$
 is a primary filtrator over a distributive lattice with greatest element.\end{prop}
