@@ -2400,7 +2400,7 @@ Values $x_{i}$ (for every $i\in\dom x$) can be restored from the
 value of $\prod^{(A)}x$ provided that $x$ is an indexed family of
 non-zero funcoids.\end{prop}
 \begin{proof}
-Fix $k\in\dom f$. Let for some filters $x$ and $y$ 
+Fix $k\in\dom f$. Let for some filters $\mathcal{X}$ and $\mathcal{Y}$ 
 \[
 a=\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(\Base(x))} & \text{if }i\neq k;\\
@@ -2410,7 +2410,7 @@ x & \text{if }i=k
 y & \text{if }i=k.
 \end{array}\right.
 \]
-Then $x\suprel{x_{k}}y\Leftrightarrow a_{k}\suprel{x_{k}}b_{k}\Leftrightarrow\forall i\in\dom f:a_{i}\suprel{x_{i}}b_{i}\Leftrightarrow\prod^{\mathsf{RLD}}a\suprel{\prod^{(A)}x}\prod^{\mathsf{RLD}}b$.
+Then $\mathcal{X}\suprel{x_{k}}\mathcal{Y}\Leftrightarrow a_{k}\suprel{x_{k}}b_{k}\Leftrightarrow\forall i\in\dom f:a_{i}\suprel{x_{i}}b_{i}\Leftrightarrow\prod^{\mathsf{RLD}}a\suprel{\prod^{(A)}x}\prod^{\mathsf{RLD}}b$.
 So we have restored $x_{k}$ from $\prod^{(A)}x$.\end{proof}
 \begin{defn}
 For every funcoid $f:\prod A\rightarrow\prod B$ (where $A$ and $B$
