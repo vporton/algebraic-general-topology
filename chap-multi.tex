@@ -3347,7 +3347,7 @@ But
 
 \subsection{Identities are staroids}
 \begin{prop}
-Let $\mathfrak{A}$ be a complete distributive lattice and $\mathcal{A}\in\mathfrak{A}$.
+Let $\mathfrak{A}$ be a complete meet infinite distributive lattice and $\mathcal{A}\in\mathfrak{A}$.
 Then $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$ is a staroid.\end{prop}
 \begin{proof}
 That $L\notin\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$ if $L_{k}=\bot$
@@ -3361,7 +3361,9 @@ It is equivalent to
 \]
 Really, 
 \begin{multline*}
-\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap(X\sqcup Y)\nasymp\mathcal{A}\Leftrightarrow\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap X\right)\sqcup\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap Y\right)\nasymp\mathcal{A}\Leftrightarrow\\
+\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap(X\sqcup Y)\nasymp\mathcal{A}\Leftrightarrow
+\bigsqcap_{i\in n\setminus\{k\}}((L_{i}\sqcap X)\sqcup(L_{i}\sqcap Y))\nasymp\mathcal{A}\Leftrightarrow \\
+\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap X\right)\sqcup\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap Y\right)\nasymp\mathcal{A}\Leftrightarrow\\
 \bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap X\nasymp\mathcal{A}\vee\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap Y\nasymp\mathcal{A}.
 \end{multline*}
 \end{proof}
