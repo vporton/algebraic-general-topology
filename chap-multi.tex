@@ -3204,23 +3204,23 @@ of the form $(\mathfrak{A};\mathfrak{Z})$ and $k\in\arity f$. The following are
 equivalent:
 \begin{enumerate}
 \item Multifuncoid $f$ is complete in argument $k$.
-\item Pre-staroid $\downdownarrows\mathord{\suprel f}$ is complete in argument
+\item Pre-staroid $\downdownarrows\mathord{\rsuprel f}$ is complete in argument
 $k$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Let $L\in\prod\mathfrak{Z}$. We have $L\in\GR\suprel f\Leftrightarrow L_{i}\nasymp\supfun f_{i}L|_{(\dom L)\setminus\{i\}}$;
+Let $L\in\prod\mathfrak{Z}$. We have $L\in\GR\rsuprel f\Leftrightarrow L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}$;
 
-$\left(\val\suprel f\right)_{k}L=\corestar\supfun f_{k}L$ by the
+$\left(\val\rsuprel f\right)_{k}L=\corestar\rsupfun f_{k}L$ by the
 definition.
 
-So $\left(\val\suprel f\right)_{k}L$ is a principal free star iff
-$\supfun f_{k}L\in\mathfrak{Z}_{k}$ (proposition \ref{compl-eq-princ})
+So $\left(\val\rsuprel f\right)_{k}L$ is a principal free star iff
+$\rsupfun f_{k}L\in\mathfrak{Z}_{k}$ (proposition \ref{compl-eq-princ})
 for every $L\in\prod_{i\in(\arity f)\setminus\{k\}}\mathfrak{Z}_{i}$.\end{proof}
 \begin{example}
 Consider funcoid $f=1_{U}^{\mathsf{FCD}}$. It is obviously complete
-in each its two arguments. Then $\suprel f$ is not complete in each
-of its two arguments because $(\mathcal{X};\mathcal{Y})\in\suprel f\Leftrightarrow\mathcal{X}\nasymp\mathcal{Y}$
+in each its two arguments. Then $\rsuprel f$ is not complete in each
+of its two arguments because $(\mathcal{X};\mathcal{Y})\in\rsuprel f\Leftrightarrow\mathcal{X}\nasymp\mathcal{Y}$
 what does not generate a principal free star if one of the arguments
 (say $\mathcal{X}$) is a fixed nonprincipal filter.\end{example}
 \begin{thm}
@@ -3232,9 +3232,9 @@ Let $f$ be a multifuncoid of the aforementioned form. Let $k,l\in\arity f$
 and $k\neq l$. The following are equivalent: 
 \begin{enumerate}
 \item \label{pf-compl-arg}$f$ is complete in the argument $k$.
-\item \label{pf-compl-princ}$\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})$
+\item \label{pf-compl-princ}$\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})$
 for every $X\in\subsets\mathfrak{Z}_{k}$, $L\in\prod_{i\in(\arity f)\setminus\{k,l\}}\mathfrak{Z}_{i}$.
-\item \label{pf-compl-all}$\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})$
+\item \label{pf-compl-all}$\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})$
 for every $X\in\subsets\mathfrak{A}_{k}$, $L\in\prod_{i\in(\arity f)\setminus\{k,l\}}\mathfrak{Z}_{i}$.
 \end{enumerate}
 \end{thm}
@@ -3244,23 +3244,23 @@ for every $X\in\subsets\mathfrak{A}_{k}$, $L\in\prod_{i\in(\arity f)\setminus\{k
 \item [{\ref{pf-compl-all}$\Rightarrow$\ref{pf-compl-princ}}] Obvious.
 \item [{\ref{pf-compl-princ}$\Rightarrow$\ref{pf-compl-arg}}] Let $Y\in\mathfrak{Z}$.
 \begin{multline*}
-\bigsqcup X\nasymp\supfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow Y\nasymp\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\\
-Y\nasymp\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\text{(proposition \ref{crit1})}\Leftrightarrow\\
-\exists x\in X:Y\nasymp\supfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\exists x\in X:x\nasymp\supfun f_{k}(L\cup(l;Y)).
+\bigsqcup X\nasymp\rsupfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow Y\nasymp\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\\
+Y\nasymp\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\text{(proposition \ref{crit1})}\Leftrightarrow\\
+\exists x\in X:Y\nasymp\rsupfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\exists x\in X:x\nasymp\rsupfun f_{k}(L\cup(l;Y)).
 \end{multline*}
 
 
 
 It is equivalent (proposition \ref{compl-eq-princ} and the fact that
-$\suprel f$ is an upper set) to $\supfun f_{k}(L\cup\{(l;Y)\})$
-being a principal filter and thus $\left(\val\suprel f\right)_{k}L$
+$\rsuprel f$ is an upper set) to $\rsupfun f_{k}(L\cup\{(l;Y)\})$
+being a principal filter and thus $\left(\val\rsuprel f\right)_{k}L$
 being a principal free star.
 
 \item [{\ref{pf-compl-arg}$\Rightarrow$\ref{pf-compl-all}}] 
 \begin{multline*}
-Y\nasymp\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\bigsqcup X\nasymp\langle f\rangle_{k}(L\cup\{(l;Y)\})\Leftrightarrow\\
-\exists x\in X:x\nasymp\supfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow\exists x\in X:Y\nasymp\supfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\\
-Y\nasymp\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})
+Y\nasymp\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\bigsqcup X\nasymp\langle f\rangle_{k}(L\cup\{(l;Y)\})\Leftrightarrow\\
+\exists x\in X:x\nasymp\rsupfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow\exists x\in X:Y\nasymp\rsupfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\\
+Y\nasymp\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})
 \end{multline*}
 for every principal $Y$.
 \end{description}
