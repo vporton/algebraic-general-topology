@@ -2990,12 +2990,27 @@ sets).
 \begin{obvious}
 The following is an implications tuple:
 \begin{enumerate}
-\item $(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
-\item $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator.
-\item $\corestar\mathcal{F}=\downdownarrows\fullstar\mathcal{F}$ for every
-$\mathcal{F}\in\mathfrak{A}$.
+\item\label{down-fs-pow} $(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item\label{down-fs-pri} $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator.
+\item\label{down-fs-any} $(\mathfrak{A};\mathfrak{Z})$ is an down-aligned filtrator.
+\item\label{down-fs-res} $\corestar\mathcal{F}=\downdownarrows\fullstar\mathcal{F}$ for every
+  $\mathcal{F}\in\mathfrak{A}$.
 \end{enumerate}
 \end{obvious}
+
+\begin{proof}
+~
+\begin{description}
+\item [\ref{down-fs-pow}$\Rightarrow$\ref{down-fs-pri}] Obvious.
+\item [\ref{down-fs-pri}$\Rightarrow$\ref{down-fs-any}] Obvious.
+\item [\ref{down-fs-any}$\Rightarrow$\ref{down-fs-res}]
+$X\in\corestar\mathcal{F} \Leftrightarrow
+X\sqcap^{\mathfrak{A}}\mathcal{F}\ne\bot \Leftrightarrow
+X\in\fullstar\mathcal{F}\Leftrightarrow
+X\in\downdownarrows\fullstar\mathcal{F}$ for every $X\in\mathfrak{Z}$.
+\end{description}
+\end{proof}
+
 \begin{prop}
 The following is an implications tuple:
 \begin{enumerate}
