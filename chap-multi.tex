@@ -3454,6 +3454,16 @@ $\uparrow^{\mathfrak{Z}^{n}}X\in\GR\id_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\for
 \begin{defn}
 $a_{\mathsf{Strd}}^{n}=\prod_{i\in n}^{\mathsf{Strd}}a$ for every
 element $a$ of a poset and an index set $n$.\end{defn}
+
+\begin{lem}
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}$ iff $\bigcup_{i\in n}\up\mathcal{L}_{i}\cup a$
+has finite intersection property (for primary filtrators over meet semilattices with greatest element).\end{lem}
+\begin{proof}
+The lattice~$\mathfrak{A}$ is complete by~\ref{filt-is-complete}.
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\forall X\in\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a:X\neq\bot$
+what is equivalent of $\bigcup_{i\in n}\mathcal{L}_{i}\cup a$ having
+finite intersection property.\end{proof}
+
 \begin{prop}
 $\upuparrows\id_{a[n]}^{\mathsf{Strd}}\sqsubseteq\ID_{a[n]}^{\mathsf{Strd}}\sqsubseteq a_{\mathsf{Strd}}^{n}$
 for every filter $a$ (on any distributive lattice with least element) and an index set
@@ -3500,14 +3510,6 @@ $\id_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\upuparrows\id_{a[n]
 Moreover $\id_{a[n]}^{\mathsf{Strd}}=\downdownarrows\upuparrows\id_{a[n]}^{\mathsf{Strd}}$.\end{prop}
 \begin{proof}
 Use general properties of upgrading and downgrading (proposition~\ref{up-and-back}).\end{proof}
-\begin{lem}
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}$ iff $\bigcup_{i\in n}\up\mathcal{L}_{i}\cup a$
-has finite intersection property (for primary filtrators over meet semilattices with greatest element).\end{lem}
-\begin{proof}
-The lattice~$\mathfrak{A}$ is complete by~\ref{filt-is-complete}.
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\forall X\in\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a:X\neq\bot$
-what is equivalent of $\bigcup_{i\in n}\mathcal{L}_{i}\cup a$ having
-finite intersection property.\end{proof}
 \begin{prop}
 $\ID_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}$,
 moreover $\ID_{a[n]}^{\mathsf{Strd}}=\upuparrows\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}$
