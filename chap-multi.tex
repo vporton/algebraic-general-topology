@@ -3495,15 +3495,16 @@ $a_{\mathsf{Strd}}^{a}$ isn't an atom when $a$ is a nontrivial ultrafilter.
 Staroidal product of an infinite indexed family of ultrafilters may
 be non-atomic.\end{cor}
 \begin{prop}
-$\id_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\upuparrows\id_{a[n]}^{\mathsf{Strd}}$.
+$\id_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\upuparrows\id_{a[n]}^{\mathsf{Strd}}$
+(for every element~$a$ of a filtrator $(\mathfrak{A};\mathfrak{Z})$ over a complete lattice~$\mathfrak{Z}$).
 Moreover $\id_{a[n]}^{\mathsf{Strd}}=\downdownarrows\upuparrows\id_{a[n]}^{\mathsf{Strd}}$.\end{prop}
 \begin{proof}
 Use general properties of upgrading and downgrading (proposition~\ref{up-and-back}).\end{proof}
 \begin{lem}
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}$ iff $\bigcup_{i\in n}\mathcal{L}_{i}\cup a$
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}$ iff $\bigcup_{i\in n}\up\mathcal{L}_{i}\cup a$
 has finite intersection property (for primary filtrators).\end{lem}
 \begin{proof}
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}\mathcal{L}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\forall X\in\bigsqcap_{i\in n}\mathcal{L}\sqcap a:X\neq\emptyset$
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\forall X\in\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a:X\neq\emptyset$
 what is equivalent of $\bigcup_{i\in n}\mathcal{L}_{i}\cup a$ having
 finite intersection property.\end{proof}
 \begin{prop}
@@ -3515,7 +3516,7 @@ moreover $\ID_{a[n]}^{\mathsf{Strd}}=\upuparrows\downdownarrows\ID_{a[n]}^{\math
 \begin{multline*}
 \mathcal{L}\in\upuparrows\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\up\mathcal{L}\subseteq\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\up\mathcal{L}\subseteq\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\\
 \forall L\in\up\mathcal{L}:L\in\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\forall L\in\up\mathcal{L}:\bigsqcap_{i\in n}L_{i}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\\
-\bigcup_{i\in n}\mathcal{L}_{i}\cup a\text{ has finite intersection property}\Leftrightarrow\text{(lemma)}\Leftrightarrow\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}.
+\bigcup_{i\in n}\up\mathcal{L}_{i}\cup a\text{ has finite intersection property}\Leftrightarrow\text{(lemma)}\Leftrightarrow\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}.
 \end{multline*}
 \end{proof}
 \begin{prop}
