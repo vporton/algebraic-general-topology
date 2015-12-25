@@ -3656,9 +3656,13 @@ That $\id_{a[n]}^{\mathsf{Strd}}\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$
 for every $A\in a$ is obvious.
 
 Let $f\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$ for every $A\in a$.
-\[
-L\in\GR f\Rightarrow L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Rightarrow\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp A\Rightarrow\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp a\Rightarrow L\in\GR\id_{a[n]}^{\mathsf{Strd}}.
-\]
+\begin{multline*}
+L\in\GR f\Rightarrow \forall A\in a:L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow \\
+\forall A\in a:\prod L\nasymp\id_{A[n]}\Leftrightarrow
+\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\nasymp A\Rightarrow \\
+\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp A\Rightarrow
+\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp a\Rightarrow L\in\GR\id_{a[n]}^{\mathsf{Strd}}.
+\end{multline*}
 Thus $f\sqsubseteq\id_{a[n]}^{\mathsf{Strd}}$.\end{proof}
 \begin{prop}
 $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}\ID_{a[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}a_{\mathsf{Strd}}^{n}$
