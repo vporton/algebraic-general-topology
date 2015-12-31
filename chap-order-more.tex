@@ -178,13 +178,16 @@ and $c\sqcap a=\bot$. Thus Wallman's disjunction property holds.
 \end{description}
 \end{proof}
 \begin{prop}
-Every boolean lattice is separable.\end{prop}
+Every boolean lattice is strongly separable.\end{prop}
 \begin{proof}
 Let $a,b\in\mathfrak{A}$ where $\mathfrak{A}$ is a boolean lattice
 an $a\neq b$. Then $a\sqcap\bar{b}\neq\bot$ or $\bar{a}\sqcap b\neq\bot$
 because otherwise $a\sqcap\bar{b}=\bot$ and $a\sqcup\bar{b}=\top$
 and thus $a=b$. Without loss of generality assume $a\sqcap\bar{b}\neq\bot$.
-Then $a\sqcap c\neq\bot$ and $b\sqcap c=\bot$ for $c=a\sqcap\bar{b}\neq\bot$.
+Then $a\sqcap c\neq\bot$ and $b\sqcap c=\bot$ for $c=a\sqcap\bar{b}\neq\bot$,
+that is our lattice is separable.
+
+It is strongly separable by theorem~\ref{msl-sep-conds}.
 \end{proof}
 
 \subsection{\label{atm-sep}Atomically Separable Lattices}
