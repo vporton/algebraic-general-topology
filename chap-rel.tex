@@ -332,6 +332,8 @@ Every $\mathbf{Rel}$-morphism is metacomplete and co-metacomplete.\end{cor}
 \label{rel-mono}The following are equivalent for a $\mathbf{Rel}$-morphism~$f$:
 \begin{enumerate}
 \item \label{rel-mono-mono}$f$ is monovalued.
+\item \label{rel-mmv}$f$ is metamonovalued.
+\item \label{rel-wmmv}$f$ is weakly metamonovalued.
 \item \label{rel-mono-atom}$\rsupfun fa$ is either atomic or least whenever
 $a\in\atoms^{\mathscr{T}\Src f}$.
 \item \label{rel-mono-bin}$\rsupfun{f^{-1}}(I\sqcap J)=\rsupfun{f^{-1}}I\sqcap\rsupfun{f^{-1}}J$
@@ -343,6 +345,19 @@ for every $S\in\subsets\mathscr{T}\Src f$.
 \begin{proof}
 ~
 \begin{description}
+\item [{\ref{rel-mmv}$\Rightarrow$\ref{rel-wmmv}}] Obvious.
+\item [{\ref{rel-mv}$\Rightarrow$\ref{rel-mmv}}] Take $x\in\atoms^{\mathscr{T}\Src f}$;
+then $fx\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$ and thus 
+\begin{multline*}
+\rsupfun{\left(\bigsqcap G\right)\circ f}x=\rsupfun{\bigsqcap G}\rsupfun fx=\bigsqcap_{g\in G}\rsupfun g\rsupfun fx=\\
+\bigsqcap_{g\in G}\rsupfun{g\circ f}x=\rsupfun{\bigsqcap_{g\in G}(g\circ f)}x;
+\end{multline*}
+so $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.
+\item [{\ref{rel-wmmv}$\Rightarrow$\ref{rel-mv}}] Take $g=\{(a;y)\}$
+and $h=\{(b;y)\}$ for arbitrary $a\ne b$ and arbitrary~$y$. We
+have $g\cap h=\emptyset$; thus $(g\circ f)\cap(h\circ f)=(g\cap h)\circ f=\emptyset$
+and thus impossible $x\mathrel fa\land x\mathrel fb$ as otherwise
+$(x;y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
 \item [{\ref{rel-mono-atom}$\Rightarrow$\ref{rel-mono-meet}}] Let $a\in\atoms^{\mathscr{T}\Src f}$,
 $\rsupfun fa=b$. Then because $b\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$
 \begin{gather*}
@@ -370,40 +385,6 @@ points $p$, $q$ such that $p,q\in\rsupfun fa$. Thus $p\mathrel{(f\circ f^{-1})}q
 and so $f\circ f^{-1}\nsqsubseteq1_{\Dst f}^{\mathbf{Rel}}$.
 \end{description}
 \end{proof}
-\begin{prop}
-The following are equivalent for every $\mathbf{Rel}$-morphism:
-\begin{enumerate}
-\item \label{rel-mv}It is monovalued.
-\item \label{rel-mmv}It is metamonovalued.
-\item \label{rel-wmmv}It is weakly metamonovalued.
-\end{enumerate}
-\end{prop}
-\begin{proof}
-~
-\begin{description}
-\item [{\ref{rel-mmv}$\Rightarrow$\ref{rel-wmmv}}] Obvious.
-\item [{\ref{rel-mv}$\Rightarrow$\ref{rel-mmv}}] Take $x\in\atoms^{\mathscr{T}\Src f}$;
-then $fx\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$ and thus 
-\begin{multline*}
-\rsupfun{\left(\bigsqcap G\right)\circ f}x=\rsupfun{\bigsqcap G}\rsupfun fx=\bigsqcap_{g\in G}\rsupfun g\rsupfun fx=\\
-\bigsqcap_{g\in G}\rsupfun{g\circ f}x=\rsupfun{\bigsqcap_{g\in G}(g\circ f)}x;
-\end{multline*}
-so $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.
-\item [{\ref{rel-wmmv}$\Rightarrow$\ref{rel-mv}}] Take $g=\{(a;y)\}$
-and $h=\{(b;y)\}$ for arbitrary $a\ne b$ and arbitrary~$y$. We
-have $g\cap h=\emptyset$; thus $(g\circ f)\cap(h\circ f)=(g\cap h)\circ f=\emptyset$
-and thus impossible $x\mathrel fa\land x\mathrel fb$ as otherwise
-$(x;y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
-\end{description}
-\end{proof}
-\begin{cor}
-The following are equivalent for every $\mathbf{Rel}$-morphism:
-\begin{enumerate}
-\item It is injective.
-\item It is metainjective.
-\item It is weakly metainjective.
-\end{enumerate}
-\end{cor}
 
 \section{Product of typed sets}
 \begin{defn}
