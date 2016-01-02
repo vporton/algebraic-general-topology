@@ -96,7 +96,7 @@ $\mathscr{T}U$ is a complete atomistic boolean lattice. Particularly:
 \item $(\subsets U;A)\sqcup(\subsets U;B)=(\subsets U;A\cup B)$;
 \item $(\subsets U;A)\sqcap(\subsets U;B)=(\subsets U;A\cap B)$;
 \item $\bigsqcup_{A\in S}(\subsets U;A)=(\subsets U;\bigcup_{A\in S}A)$;
-\item $\bigsqcap_{A\in S}(\subsets U;A)=(\subsets U;\bigcap_{A\in S}A)$;
+\item $\bigsqcap_{A\in S}(\subsets U;A)=\left(\subsets U;\begin{cases}\bigcap_{A\in S}A&\text{ if }A\ne\emptyset\\U&\text{ if }A=\emptyset\end{cases}\right)$;
 \item $\overline{(\subsets U;A)}=(\subsets U;U\setminus A)$;
 \item atomic elements are $(\subsets U;\{x\})$ where $x\in U$.
 \end{enumerate}
