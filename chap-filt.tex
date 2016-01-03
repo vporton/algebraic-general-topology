@@ -689,7 +689,7 @@ By duality and and an above theorem about filters, we have:
 \item Free stars are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\sqcup B\in F\Leftrightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Mixers are sets $F$ not equal to $\subsets\mathfrak{A}$ with $A\sqcap B\in F\Leftrightarrow A\in F\lor B\in F$
+\item Mixers are sets $F$ not equal to $\subsets\mathfrak{Z}$ with $A\sqcap B\in F\Leftrightarrow A\in F\lor B\in F$
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a meet-semilattice.
 \end{itemize}
 \end{prop}
@@ -701,10 +701,10 @@ By duality and and an above theorem about filters, we have:
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a meet-semilattice.
 \item Ideals are nonempty lower sets $F$ with $A\sqcup B\in F\Leftarrow A\in F\land B\in F$
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{A}$
+\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A\sqcup B\in F\Rightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\sqcap B\in F\Rightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a meet-semilattice.
 \end{itemize}
@@ -855,19 +855,19 @@ The direct implication follows from that $F$ is an upper set.
 \end{description}
 \end{proof}
 \begin{lem}
-If $S\in\subsets\mathfrak{Z}$ is not the complement of empty set and for every $T\in\subsets\mathfrak{A}$
+If $S\in\subsets\mathfrak{Z}$ is not the complement of empty set and for every $T\in\subsets\mathfrak{Z}$
 \[
-\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset,
+\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset,
 \]
 then $S$ is a free star.\end{lem}
 \begin{proof}
-Take $T=\{A,B\}$. Then $\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in S)\Leftrightarrow A\in S\vee B\in S$.
+Take $T=\{A,B\}$. Then $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in S)\Leftrightarrow A\in S\vee B\in S$.
 So $S$ is a free star.\end{proof}
 \begin{prop}
 A set $S\in\subsets\mathfrak{Z}$ is a principal free star iff $S$
-is not the complement of empty set and for every $T\in\subsets\mathfrak{A}$
+is not the complement of empty set and for every $T\in\subsets\mathfrak{Z}$
 \[
-\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset.
+\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset.
 \]
 \end{prop}
 \begin{proof}
@@ -875,19 +875,19 @@ Let $S=\overline{\langle\dual\rangle^{\ast}F}$. We need to prove
 that $F$ is a principal filter. Really, we have the following chain
 of equivalencies:
 
-$\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset$;
+$\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset$;
 
-$\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\notin\langle\dual\rangle^{\ast}F)\Leftrightarrow T\cap\overline{\langle\dual\rangle^{\ast}F}\neq\emptyset$;
+$\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\notin\langle\dual\rangle^{\ast}F)\Leftrightarrow T\cap\overline{\langle\dual\rangle^{\ast}F}\neq\emptyset$;
 
-$\forall Z\in\dual\mathfrak{A}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\cap\overline{F}\neq\emptyset$;
+$\forall Z\in\dual\mathfrak{Z}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\cap\overline{F}\neq\emptyset$;
 
-$\forall Z\in\dual\mathfrak{A}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\nsubseteq F$;
+$\forall Z\in\dual\mathfrak{Z}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\nsubseteq F$;
 
-$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{A}:(Z\in F\Rightarrow\neg\forall X\in T:Z\sqsubseteq X)$;
+$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{Z}:(Z\in F\Rightarrow\neg\forall X\in T:Z\sqsubseteq X)$;
 
-$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{A}:(Z\notin F\vee\neg\forall X\in T:Z\sqsubseteq X)$;
+$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{Z}:(Z\notin F\vee\neg\forall X\in T:Z\sqsubseteq X)$;
 
-$T\subseteq F\Leftrightarrow\exists Z\in\dual\mathfrak{A}:(Z\in F\wedge\forall X\in T:Z\sqsubseteq X)$;
+$T\subseteq F\Leftrightarrow\exists Z\in\dual\mathfrak{Z}:(Z\in F\wedge\forall X\in T:Z\sqsubseteq X)$;
 
 $T\subseteq F\Leftrightarrow\exists Z\in F\forall X\in T:Z\sqsubseteq X$;
 
@@ -895,13 +895,13 @@ $\exists Z\in F\forall X\in F:Z\sqsubseteq X$ that is $F$ is a principal
 filter ($S$ is an upper set because by the lemma it is a free star;
 thus $F$ is also an upper set).\end{proof}
 \begin{prop}
-$S\in\subsets\mathfrak{A}$ where $\mathfrak{A}$ is a poset is a
+$S\in\subsets\mathfrak{Z}$ where $\mathfrak{Z}$ is a poset is a
 principal free star iff all the following:
 \begin{enumerate}
 \item \label{princ-fs-least}The least element (if it exists) is not in
 $S$.
-\item \label{princ-fs-form}$\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$
-for every $T\in\subsets\mathfrak{A}$.
+\item \label{princ-fs-form}$\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$
+for every $T\in\subsets\mathfrak{Z}$.
 \item $S$ is an upper set.
 \end{enumerate}
 \end{prop}
@@ -912,18 +912,18 @@ for every $T\in\subsets\mathfrak{A}$.
 are obvious. $S$ is an upper set because $S$ is a free star.
 \item [{$\Leftarrow$}] We need to prove that 
 \[
-\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftarrow T\cap S\neq\emptyset.
+\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftarrow T\cap S\neq\emptyset.
 \]
 Let $X'\in T\cap S$. Then $\forall X\in T:Z\sqsupseteq X\Rightarrow Z\sqsupseteq X'\Rightarrow Z\in S$
 because $S$ is an upper set.
 \end{description}
 \end{proof}
 \begin{prop}
-Let $S$ be a complete lattice. $S\in\subsets\mathfrak{A}$ is a principal
+Let $S$ be a complete lattice. $S\in\subsets\mathfrak{Z}$ is a principal
 free star iff all the following:
 \begin{enumerate}
 \item The least element (if it exists) is not in $S$.
-\item $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$ for every $T\in\subsets\mathfrak{A}$.
+\item $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$ for every $T\in\subsets\mathfrak{Z}$.
 \item $S$ is an upper set.
 \end{enumerate}
 \end{prop}
@@ -933,18 +933,18 @@ free star iff all the following:
 \item [{$\Rightarrow$}] We need to prove only $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$.
 Let $\bigsqcup T\in S$. Because $S$ is an upper set, we have $\forall X\in T:Z\sqsupseteq X\Rightarrow Z\sqsupseteq\bigsqcup T\Rightarrow Z\in S$
 from which we conclude $T\cap S\neq\emptyset$.
-\item [{$\Leftarrow$}] We need to prove only $\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$.
+\item [{$\Leftarrow$}] We need to prove only $\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$.
 
 
-Really, if $\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)$
+Really, if $\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)$
 then $\bigsqcup T\in S$ and thus $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$.
 
 \end{description}
 \end{proof}
 \begin{prop}
-Let $\mathfrak{A}$ be a complete lattice. $S\in\subsets\mathfrak{A}$
+Let $\mathfrak{Z}$ be a complete lattice. $S\in\subsets\mathfrak{Z}$
 is a principal free star iff the least element (if it exists) is not
-in $S$ and for every $T\in\subsets\mathfrak{A}$ 
+in $S$ and for every $T\in\subsets\mathfrak{Z}$ 
 \[
 \bigsqcup T\in S\Leftrightarrow T\cap S\neq\emptyset.
 \]
