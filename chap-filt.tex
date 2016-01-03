@@ -580,13 +580,13 @@ Recall that \emph{filters} are nonempty sets $F$ with $A,B\in F\Leftrightarrow\e
 \end{defn}
 
 \begin{defn}
-\emph{Free stars} are sets $F$ not equal to $\subsets\mathfrak{A}$
+\emph{Free stars} are sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A,B\in\overline{F}\Leftrightarrow\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{defn}
 
 \begin{defn}
-\emph{Mixers} are sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\emph{Mixers} are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A,B\in\overline{F}\Leftrightarrow\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{defn}
@@ -598,10 +598,10 @@ By duality and and an above theorem about filters, we have:
 (for every $A,B\in\mathfrak{Z}$).
 \item Ideals are nonempty lower sets $F$ with $A,B\in F\Rightarrow\exists Z\in F:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{A}$
+\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A,B\in\overline{F}\Rightarrow\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A,B\in\overline{F}\Rightarrow\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{itemize}
@@ -611,10 +611,10 @@ $A,B\in\overline{F}\Rightarrow\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\s
 The following are equivalent:
 \begin{enumerate}
 \item \label{free-alt-star}$F$ is a free star.
-\item \label{free-alt-eq}$\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F\neq\subsets\mathfrak{A}$.
-\item \label{free-alt-impl}$\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F$ is an upper set and $F\neq\subsets\mathfrak{A}$.
+\item \label{free-alt-eq}$\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F\neq\subsets\mathfrak{Z}$.
+\item \label{free-alt-impl}$\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F$ is an upper set and $F\neq\subsets\mathfrak{Z}$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -625,15 +625,15 @@ is a chain of equivalencies:
 \begin{gather*}
 \exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)\Leftrightarrow A\notin F\wedge B\notin F;\\
 \forall Z\in\overline{F}:\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B)\Leftrightarrow A\in F\vee B\in F;\\
-\forall Z\in\mathfrak{A}:(Z\notin F\Rightarrow\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B))\Leftrightarrow A\in F\vee B\in F;\\
-\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F.
+\forall Z\in\mathfrak{Z}:(Z\notin F\Rightarrow\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B))\Leftrightarrow A\in F\vee B\in F;\\
+\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F.
 \end{gather*}
 
 \item [{\ref{free-alt-eq}$\Rightarrow$\ref{free-alt-impl}}] Obvious.
 \item [{\ref{free-alt-impl}$\Rightarrow$\ref{free-alt-eq}}] We need
-to prove that $F$ is an upper set. let $A\in F$ and $A\sqsubseteq B\in\mathfrak{A}$.
-Then $A\in F\lor B\in F$ and thus $\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
-that is $\forall Z\in\mathfrak{A}:(Z\sqsupseteq B\Rightarrow Z\in F)$
+to prove that $F$ is an upper set. let $A\in F$ and $A\sqsubseteq B\in\mathfrak{Z}$.
+Then $A\in F\lor B\in F$ and thus $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
+that is $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq B\Rightarrow Z\in F)$
 and so $B\in F$.
 \end{description}
 \end{proof}
@@ -641,10 +641,10 @@ and so $B\in F$.
 The following are equivalent:
 \begin{enumerate}
 \item $F$ is a mixer.
-\item $\forall Z\in\mathfrak{A}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F\neq\subsets\mathfrak{A}$.
-\item $\forall Z\in\mathfrak{A}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F$ is an lower set and $F\neq\subsets\mathfrak{A}$.
+\item $\forall Z\in\mathfrak{Z}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F\neq\subsets\mathfrak{Z}$.
+\item $\forall Z\in\mathfrak{Z}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F$ is an lower set and $F\neq\subsets\mathfrak{Z}$.
 \end{enumerate}
 \end{cor}
 \begin{obvious}
@@ -659,15 +659,15 @@ for every $A,B\in\mathfrak{A}$ and $F$ is an lower set and $F\neq\subsets\mathfr
 \begin{prop}
 ~
 \begin{itemize}
-\item Free stars are sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Free stars are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\in F\lor B\in F\Leftrightarrow\lnot\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{A}$
+\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A\in F\lor B\in F\Leftarrow\lnot\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Mixers are sets $F$ not equal to $\subsets\mathfrak{A}$ with $A\in F\lor B\in F\Leftrightarrow\lnot\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
+\item Mixers are sets $F$ not equal to $\subsets\mathfrak{Z}$ with $A\in F\lor B\in F\Leftrightarrow\lnot\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\in F\lor B\in F\Leftarrow\lnot\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{itemize}
@@ -683,7 +683,7 @@ By duality and and an above theorem about filters, we have:
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a meet-semilattice.
 \item Ideals are nonempty sets $F$ with $A\sqcup B\in F\Leftrightarrow A\in F\land B\in F$
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Free stars are sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Free stars are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\sqcup B\in F\Leftrightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a join-semilattice.
 \item Mixers are sets $F$ not equal to $\subsets\mathfrak{A}$ with $A\sqcap B\in F\Leftrightarrow A\in F\lor B\in F$
