@@ -629,7 +629,10 @@ is a chain of equivalencies:
 \forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F.
 \end{gather*}
 
-\item [{\ref{free-alt-eq}$\Rightarrow$\ref{free-alt-impl}}] Obvious.
+\item [{\ref{free-alt-eq}$\Rightarrow$\ref{free-alt-impl}}]
+Let $A=B\in F$. Then $A\in F\lor B\in F$. So $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
+that is $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\Rightarrow Z\in F)$ that is $F$ is an upper set.
+
 \item [{\ref{free-alt-impl}$\Rightarrow$\ref{free-alt-eq}}] We need
 to prove that $F$ is an upper set. let $A\in F$ and $A\sqsubseteq B\in\mathfrak{Z}$.
 Then $A\in F\lor B\in F$ and thus $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
