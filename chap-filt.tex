@@ -2573,13 +2573,36 @@ a^{\ast} & =\\
 (used theorem \ref{bool-compl}).
 
 $\Cor a=\Cor'a$ by theorem \ref{cor-eq}.\end{proof}
-\begin{cor}
-If $(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
+\begin{thm}
+\label{compl-eq-dual}The following is an implications tuple:
+\begin{enumerate}
+\item \label{compl-eq-dual-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
+filtrator.
+\item \label{compl-eq-dual-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
+filtrator over a complete boolean lattice.
+\item \label{compl-eq-dual-det}$(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
 complete lattice filtrator with binarily meet-closed, separable and
-co-separable core which is a complete boolean lattice, then \[a^{\ast}=a^{+}=\overline{\Cor a}=\overline{\Cor'a}\in\mathfrak{Z}\]
-for every $a\in\mathfrak{A}$.\end{cor}
+co-separable core which is a complete boolean lattice.
+\item \label{compl-eq-dual-conc}$a^{\ast}=a^{+}=\overline{\Cor a}=\overline{\Cor' a}\in\mathfrak{Z}$ for
+every $a\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
 \begin{proof}
-Comparing two last theorems.\end{proof}
+~
+\begin{description}
+\item [{\ref{compl-eq-dual-p}$\Rightarrow$\ref{compl-eq-dual-fltr}}] Obvious.
+\item [{\ref{compl-eq-dual-fltr}$\Rightarrow$\ref{compl-eq-dual-det}}] The
+filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
+$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
+$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
+\ref{cosep-crit}.
+$(\mathfrak{A};\mathfrak{Z})$ is
+binarily meet-closed by proposition \ref{f-meet-closed}, with separable
+core by theorem~\ref{when-sep-core}.
+
+\item [{\ref{compl-eq-dual-det}$\Rightarrow$\ref{compl-eq-dual-conc}}] Comparing two last theorems.
+\end{description}
+\end{proof}
 \begin{thm}
 \label{compl-in-core}The following is an implications tuple:
 \begin{enumerate}
@@ -2645,36 +2668,6 @@ It's enough to prove that $a^{+}\sqcup^{\mathfrak{A}}a=\top^{\mathfrak{A}}$.
 But $a^{+}\sqcup^{\mathfrak{A}}a=\overline{\Cor a}\sqcup^{\mathfrak{A}}a\sqsupseteq\overline{\Cor a}\sqcup^{\mathfrak{A}}\Cor a=\overline{\Cor a}\sqcup^{\mathfrak{Z}}\Cor a=\top^{\mathfrak{A}}$
 (used the theorem \ref{cor-less} and the fact that our filtrator
 is filtered).
-\end{description}
-\end{proof}
-\begin{prop}
-\label{compl-eq-dual}The following is an implications tuple:
-\begin{enumerate}
-\item \label{compl-eq-dual-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
-filtrator.
-\item \label{compl-eq-dual-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
-filtrator over a complete boolean lattice.
-\item \label{compl-eq-dual-conc}$a^{\ast}=a^{+}=\overline{\Cor a}=\overline{\Cor' a}\in\mathfrak{Z}$ for
-every $a\in\mathfrak{A}$.
-\end{enumerate}
-\end{prop}
-\begin{proof}
-~
-\begin{description}
-\item [{\ref{compl-eq-dual-p}$\Rightarrow$\ref{compl-eq-dual-fltr}}] Obvious.
-\item [{\ref{compl-eq-dual-fltr}$\Rightarrow$\ref{compl-eq-dual-conc}}] The
-filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
-$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
-$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
-\ref{cosep-crit}. Thus we can apply the theorem \ref{cocompl-cor}.
-
-
-$(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed},
-binarily meet-closed by proposition \ref{f-meet-closed}, with separable
-core by theorem \ref{when-sep-core}. $\mathfrak{A}$ is a complete
-lattice by corollary \ref{filt-is-complete}. So we can apply the
-theorem \ref{compl-and-cor}.
-
 \end{description}
 \end{proof}
 \begin{defn}
