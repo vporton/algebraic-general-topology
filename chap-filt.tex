@@ -3224,6 +3224,45 @@ Core part and dual core part are defined because the core is a complete
 lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
 
 \begin{thm}
+\label{f-compl-meet}The following is an implications tuple:
+\begin{enumerate}
+\item \label{compl-meet-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
+filtrator.
+\item \label{compl-meet-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
+filtrator over a complete boolean lattice.
+\item \label{compl-meet-dual-det}$(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
+complete lattice filtrator with binarily meet-closed, separable and
+co-separable core which is a complete boolean lattice.
+\item \label{compl-meet-conc}$(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}=a^{+}\sqcup^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{compl-meet-p}$\Rightarrow$\ref{compl-meet-fltr}}] Obvious.
+
+\item [{\ref{compl-meet-fltr}$\Rightarrow$\ref{compl-meet-dual-det}}] The
+filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
+$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
+$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
+\ref{cosep-crit}.
+$(\mathfrak{A};\mathfrak{Z})$ is
+binarily meet-closed by proposition \ref{f-meet-closed}, with separable
+core by theorem~\ref{when-sep-core}.
+
+
+\item [{\ref{compl-meet-dual-det}$\Rightarrow$\ref{compl-meet-conc}}]
+Theorem~\ref{compl-eq-dual} apply.
+Also theorem~\ref{dual-cor-meet} apply because every filtered filtrator is join-closed.
+So
+\[
+(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{A}}b^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}.
+\]
+\end{description}
+\end{proof}
+
+\begin{thm}
 ~
 \begin{enumerate}
 \item \label{meet-pseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
@@ -3336,45 +3375,6 @@ $(a\sqcup^{\mathfrak{A}}b)^{+}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)} =
 \overline{\Cor'a}\sqcap^{\mathfrak{A}}\overline{\Cor'b}=
 a^{+}\sqcap^{\mathfrak{A}}b^{+}$
 using theorems~\ref{dual-core-join}, \ref{cocompl-cor}.
-\end{description}
-\end{proof}
-
-\begin{thm}
-\label{f-compl-meet}The following is an implications tuple:
-\begin{enumerate}
-\item \label{compl-meet-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
-filtrator.
-\item \label{compl-meet-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
-filtrator over a complete boolean lattice.
-\item \label{compl-meet-dual-det}$(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
-complete lattice filtrator with binarily meet-closed, separable and
-co-separable core which is a complete boolean lattice.
-\item \label{compl-meet-conc}$(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}=a^{+}\sqcup^{\mathfrak{A}}b^{+}$
-for every $a,b\in\mathfrak{A}$.
-\end{enumerate}
-\end{thm}
-\begin{proof}
-~
-\begin{description}
-\item [{\ref{compl-meet-p}$\Rightarrow$\ref{compl-meet-fltr}}] Obvious.
-
-\item [{\ref{compl-meet-fltr}$\Rightarrow$\ref{compl-meet-dual-det}}] The
-filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
-$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
-$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
-\ref{cosep-crit}.
-$(\mathfrak{A};\mathfrak{Z})$ is
-binarily meet-closed by proposition \ref{f-meet-closed}, with separable
-core by theorem~\ref{when-sep-core}.
-
-
-\item [{\ref{compl-meet-dual-det}$\Rightarrow$\ref{compl-meet-conc}}]
-Theorem~\ref{compl-eq-dual} apply.
-Also theorem~\ref{dual-cor-meet} apply because every filtered filtrator is join-closed.
-So
-\[
-(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{A}}b^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}.
-\]
 \end{description}
 \end{proof}
 
