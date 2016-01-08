@@ -3263,6 +3263,30 @@ So
 \end{proof}
 
 \begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{uni-join-f}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{uni-join-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
+starrish down-aligned and up-aligned complete lattice filtrator with binarily meet-closed,
+separable and co-separable core which is a complete atomistic boolean lattice.
+\item \label{uni-join-conc}$(a\sqcup^{\mathfrak{A}}b)^{\ast}=(a\sqcup^{\mathfrak{A}}b)^{+}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}=a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{uni-join-f}$\Rightarrow$\ref{uni-join-fltr}}] $(\mathfrak{A};\mathfrak{Z})$
+is a filtered (theorem~\ref{semifilt-joinclosed}), distributive
+(corollary \ref{filt-also-distr}) complete lattice filtrator (corollary
+\ref{filt-is-complete}), with binarily meet-closed core (proposition~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core}), with co-separable core (theorem~\ref{cosep-crit}).
+\item [{\ref{uni-join-fltr}$\Rightarrow$\ref{uni-join-conc}}] $(a\sqcup^{\mathfrak{A}}b)^{\ast}=(a\sqcup^{\mathfrak{A}}b)^{+}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)}=\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b}=\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}=(a\sqcup^{\mathfrak{A}}b)^{+}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}$
+(used theorems~\ref{compl-and-cor}, \ref{dual-core-join}, \ref{compl-eq-dual}).
+\end{description}
+\end{proof}
+
+\begin{thm}
 ~
 \begin{enumerate}
 \item \label{meet-pseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
