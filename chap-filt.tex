@@ -3278,6 +3278,40 @@ with separable core (theorem~\ref{when-sep-core}).
 (used theorems~\ref{compl-and-cor}, \ref{dual-core-join}).
 \end{description}
 \end{proof}
+
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{meet-dpseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{meet-dpseudo-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
+\item \label{meet-dpseudo-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a a filtered up-aligned complete lattice filtrator with
+co-separable core which is a complete boolean lattice
+\item \label{meet-dpseudo-res}$(a\sqcap^{\mathfrak{A}}b)^{+}=a^{+}\sqcup^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\begin{description}
+\item [\ref{meet-dpseudo-p}$\Rightarrow$\ref{meet-dpseudo-f}] Obvious.
+\item [\ref{meet-dpseudo-f}$\Rightarrow$\ref{meet-dpseudo-fltr}]
+It is filtered by theorem~\ref{semifilt-joinclosed},
+is a complete lattice by corollary \ref{filt-is-complete},
+is with co-separable core by theorem~\ref{cosep-crit}.
+\item [\ref{meet-dpseudo-fltr}$\Rightarrow$\ref{meet-dpseudo-res}] $(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} =
+\overline{\Cor(a\sqcap^{\mathfrak{A}}b)} =
+\overline{\Cor a\sqcup^{\mathfrak{Z}}\Cor b} =
+\overline{\Cor a}\sqcup^{\mathfrak{Z}}\overline{\Cor b} =
+\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b} =
+\overline{\Cor'a}\sqcup^{\mathfrak{A}}\overline{\Cor'b}=
+a^{+}\sqcup^{\mathfrak{A}}b^{+}$
+using theorems~\ref{cocompl-cor}, \ref{cor-eq} and the fact that filtered filtrator is join-closed.
+\end{description}
+\end{proof}
+
+
+
 \begin{thm}
 \label{f-compl-meet}The following is an implications tuple:
 \begin{enumerate}
