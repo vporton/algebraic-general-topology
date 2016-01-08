@@ -2549,12 +2549,25 @@ a^{+} & =\\
 If $(\mathfrak{A};\mathfrak{Z})$ is a filtered up-aligned complete
 lattice filtrator with co-separable core which is a complete boolean
 lattice, then $a^{+}\in\mathfrak{Z}$ for every $a\in\mathfrak{A}$.\end{cor}
-\begin{thm}
-\label{compl-and-cor}If $(\mathfrak{A};\mathfrak{Z})$ is a filtered
+\begin{thm}\label{compl-and-cor}
+~
+\begin{enumerate}
+\item \label{compl-and-cor-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{compl-and-cor-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
+\item \label{compl-and-cor-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
 complete lattice filtrator with down-aligned, binarily meet-closed,
-separable core which is a complete boolean lattice, then $a^{\ast}=\overline{\Cor a}=\overline{\Cor'a}$
-for every $a\in\mathfrak{A}$.\end{thm}
+separable core which is a complete boolean lattice.
+\item \label{compl-and-cor-res} $a^{\ast}=\overline{\Cor a}=\overline{\Cor'a}$
+for every $a\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
 \begin{proof}
+\item [\ref{compl-and-cor-p}$\Rightarrow$\ref{compl-and-cor-f}] Obvious.
+\item [\ref{compl-and-cor-f}$\Rightarrow$\ref{compl-and-cor-fltr}]
+It is filtered by theorem~\ref{semifilt-joinclosed}. It is complete lattice filtrator by~\ref{filt-is-complete}.
+It is with binarily meet-closed core (proposition~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core}).
+\item [\ref{compl-and-cor-fltr}$\Rightarrow$\ref{compl-and-cor-res}]
 Our filtrator is with join-closed core (theorem \ref{semifilt-joinclosed}).
 $a^{\ast}=\bigsqcup^{\mathfrak{A}}\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}$.
 But $c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}\Rightarrow\exists C\in\up c:C\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}$.
@@ -3209,6 +3222,35 @@ part and dual edge part are always defined.\end{prop}
 \begin{proof}
 Core part and dual core part are defined because the core is a complete
 lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
+
+\begin{thm}
+~
+\begin{enumerate}
+\item \label{meet-pseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{meet-pseudo-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
+\item \label{meet-pseudo-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
+complete lattice filtrator with down-aligned, binarily meet-closed,
+separable core which is a complete boolean lattice.
+\item \label{meet-pseudo-res}$(a\sqcap^{\mathfrak{A}}b)^{\ast}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [\ref{meet-pseudo-p}$\Rightarrow$\ref{meet-pseudo-f}] Obvious.
+\item [\ref{meet-pseudo-f}$\Rightarrow$\ref{meet-pseudo-fltr}]
+It is filtered by theorem~\ref{semifilt-joinclosed}. It is complete lattice filtrator by~\ref{filt-is-complete}.
+It is with binarily meet-closed core (proposition~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core})
+\item [\ref{meet-pseudo-fltr}$\Rightarrow$\ref{meet-pseudo-res}]
+It is join closed because it is filtered.
+$(a\sqcap^{\mathfrak{A}}b)^{\ast} = \overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} = \overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b} =
+\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b} = a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}$
+(theorems~\ref{dual-cor-meet}, \ref{compl-and-cor}).
+\end{description}
+\end{proof}
+
 \begin{thm}
 \label{compl-join}The following is an implications tuple:
 \begin{enumerate}
