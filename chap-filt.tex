@@ -3284,7 +3284,7 @@ The following is an implications tuple:
 \begin{enumerate}
 \item \label{meet-dpseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
 \item \label{meet-dpseudo-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
-\item \label{meet-dpseudo-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a a filtered up-aligned complete lattice filtrator with
+\item \label{meet-dpseudo-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered up-aligned complete lattice filtrator with
 co-separable core which is a complete boolean lattice
 \item \label{meet-dpseudo-res}$(a\sqcap^{\mathfrak{A}}b)^{+}=a^{+}\sqcup^{\mathfrak{A}}b^{+}$
 for every $a,b\in\mathfrak{A}$.
@@ -3310,7 +3310,34 @@ using theorems~\ref{cocompl-cor}, \ref{cor-eq} and the fact that filtered filtra
 \end{description}
 \end{proof}
 
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{join-dpseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{join-dpseudo-fltr} $(\mathfrak{A};\mathfrak{Z})$ is a filtered
+down-aligned filtrator with binarily meet-closed core, with co-separable core $\mathfrak{Z}$
+which is a complete atomistic boolean lattice and $\mathfrak{A}$ is a complete
+starrish lattice.
+\item \label{join-dpseudo-res}$(a\sqcup^{\mathfrak{A}}b)^{+}=a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
 
+\begin{proof}
+~
+\begin{description}
+\item [\ref{join-dpseudo-p}$\Rightarrow$\ref{join-dpseudo-fltr}] Obvious.
+\item [\ref{join-dpseudo-fltr}$\Rightarrow$\ref{join-dpseudo-res}]
+$(a\sqcup^{\mathfrak{A}}b)^{+}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)} =
+\overline{\Cor(a\sqcup^{\mathfrak{A}}b)} =
+\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b} =
+\overline{\Cor a}\sqcap^{\mathfrak{Z}}\overline{\Cor b} =
+\overline{\Cor a}\sqcap^{\mathfrak{A}}\overline{\Cor b} =
+\overline{\Cor'a}\sqcap^{\mathfrak{A}}\overline{\Cor'b}=
+a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+using theorems~\ref{dual-core-join}, \ref{cocompl-cor}.
+\end{description}
+\end{proof}
 
 \begin{thm}
 \label{f-compl-meet}The following is an implications tuple:
