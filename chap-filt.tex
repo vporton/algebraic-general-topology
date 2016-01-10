@@ -3770,13 +3770,22 @@ If every $\mathfrak{A}_{i}$ is an atomistic poset with least element, then $\pro
 \begin{proof}
 $x_{i}=\bigsqcup\atoms x_{i}$ for every $x_{i}\in\mathfrak{A}_{i}$.
 Thus
-\[
-x=\mylamdba i{\dom x}{x_{i}}=\mylamdba i{\dom x}{\bigsqcup\atoms x_{i}=\bigsqcup_{i\in\dom x}\mylamdba j{\dom x}{\begin{cases}
+\begin{multline*}
+x=\mylamdba i{\dom x}{x_{i}}=\mylamdba i{\dom x}{\bigsqcup\atoms x_{i}=\\
+\mylamdba i{\dom x}{\bigsqcup\mylamdba{j}{\dom x}{\begin{cases}
+\atoms x_{i} & \text{if }j=i\\
+\bot^{\mathfrak{A}_i} & \text{if }j\ne i
+\end{cases}}}}=\\
+\mylamdba i{\dom x}{\bigsqcup\atoms \begin{cases}
 x_{i} & \text{if }j=i\\
-\bot^{\mathfrak{A}_i} & \text{if }j\ne i.
-\end{cases}}}
-\]
-So $x$ is a join of atomic elements.\end{proof}
+\bot^{\mathfrak{A}_i} & \text{if }j\ne i
+\end{cases}}=\\
+\bigsqcup\mylamdba i{\dom x}{\atoms \begin{cases}
+x_{i} & \text{if }j=i\\
+\bot^{\mathfrak{A}_i} & \text{if }j\ne i
+\end{cases}}=
+\bigsqcup\atoms x.
+\end{multline*}\end{proof}
 \begin{cor}
 If $\mathfrak{A}_{i}$ are atomistic posets with least elements, then
 $\prod\mathfrak{A}$ is atomically separable.\end{cor}
