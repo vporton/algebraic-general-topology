@@ -652,6 +652,22 @@ $x\sqsubseteq a$. Because $a$ is an atom, we have $x=a$. So $a\sqsubseteq B$.
 \end{description}
 \end{proof}
 \begin{thm}
+A poset is atomistic iff every its element can be represented as join of atoms.
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item[$\Rightarrow$] Obvious.
+\item[$\Leftarrow$] Let $a = \bigsqcup S$ where $S$ is a set of atoms. We will prove that $a$ is
+the least upper bound of $\atoms a$.
+
+That $a$ is an upper bound of $\atoms a$ is obvious. Let $x$ is an upper
+bound of $\atoms a$. Then $x \sqsupseteq \bigsqcup S$ because $S\subseteq \atoms a$. Thus $x \sqsupseteq a$.
+\end{description}
+
+\end{proof}
+
+\begin{thm}
 $\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ whenever $\bigsqcap S$
 is defined for every $S\in\subsets\mathfrak{A}$ where $\mathfrak{A}$
 is a poset.\end{thm}
