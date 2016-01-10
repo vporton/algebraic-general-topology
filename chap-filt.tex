@@ -3775,15 +3775,15 @@ x=\mylamdba i{\dom x}{x_{i}}=
 \mylamdba i{\dom x}{\bigsqcup\atoms x_{i}}=\\
 \bigsqcup_{i\in\dom x}\mylamdba j{\dom x}{\begin{cases}
 x_{i} & \text{if }j=i\\
-\bot^{\mathfrak{A}_i} & \text{if }j\ne i
+\bot^{\mathfrak{A}_j} & \text{if }j\ne i
 \end{cases}} = \\
 \bigsqcup_{i\in\dom x}\mylamdba j{\dom x}{\begin{cases}
 \bigsqcup\atoms x_{i} & \text{if }j=i\\
-\bot^{\mathfrak{A}_i} & \text{if }j\ne i
+\bot^{\mathfrak{A}_j} & \text{if }j\ne i
 \end{cases}} =\\
 \bigsqcup_{i\in\dom x}\bigsqcup_{q\in\atoms x_i}\mylamdba j{\dom x}{\begin{cases}
 q & \text{if }j=i\\
-\bot^{\mathfrak{A}_i} & \text{if }j\ne i
+\bot^{\mathfrak{A}_j} & \text{if }j\ne i
 \end{cases}}.
 \end{multline*}
 Thus $x$ is a join of atoms of $\prod\mathfrak{A}$.\end{proof}
