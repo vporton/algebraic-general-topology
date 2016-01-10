@@ -3773,12 +3773,12 @@ Thus
 \begin{multline*}
 x=\mylamdba i{\dom x}{x_{i}}=
 \mylamdba i{\dom x}{\bigsqcup\atoms x_{i}}=
-\bigsqcup\mylamdba i{\dom x}{\atoms x_{i}}=\\
-\bigsqcup\mylamdba i{\dom x}{\Pr_i\atoms x}=
-\bigsqcup\mylamdba i{\dom x}{\setcond{a_i}}{a\in\atoms x}\sqsubseteq
+\bigsqcup\mylamdba{i}{\dom x}{\atoms x_{i}}=\\
+\bigsqcup\prod_{i\in\dom x}\atoms x_i=
 \bigsqcup\atoms x
 \end{multline*}
-because $\mylamdba i{\dom x}{\setcond{a_i}}{a\in\atoms x}$ is join of a subset of $\atoms x$.
+because every element of $\prod_{i\in\dom x}\atoms x_i$
+is join of a subset of $\atoms x$.
 Thus $x=\bigsqcup\atoms x$.
 \end{proof}
 \begin{cor}
