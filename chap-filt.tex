@@ -3759,10 +3759,10 @@ So $\exists x\in\mathfrak{A}_{i}:(x\nasymp a_{i}\wedge x\asymp b_{i})$
 Take $y=\mylamdba{j}{\dom\mathfrak{A}}{\begin{cases}\bot^{\mathfrak{A}_j}&\text{ if }j\ne i;\\x&\text{ if }j=i.\end{cases}}$
 Then $y\nasymp a$ and $y\asymp b$.\end{proof}
 \begin{obvious}
-If every $\mathfrak{A}_{i}$ is a poset with least element $\bot_{i}$,
+If every $\mathfrak{A}_{i}$ is a poset with least element,
 then the set of atoms of $\prod\mathfrak{A}$ is
 \[
-\setcond{\{(k;a)\}\cup(\mylamdba i{(\dom\mathfrak{A})\setminus\{k\}}{\bot_{i}})}{k\in\dom\mathfrak{A}, a\in\atoms^{\mathfrak{A}_{k}}}.
+\setcond{\mylamdba{i}{\dom\mathfrak{A}}{\left(\begin{cases}\bot^{\mathfrak{A}_i}&\text{ if }i\ne k;\\a&\text{ if }i=k\end{cases}\right)}}{k\in\dom\mathfrak{A}, a\in\atoms^{\mathfrak{A}_{k}}}.
 \]
 \end{obvious}
 \begin{prop}
