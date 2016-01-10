@@ -3844,7 +3844,11 @@ core.\end{prop}
 Let $a\neq b$. Then $\exists i\in n:a_{i}\neq b_{i}$. So $\exists x\in\mathfrak{Z}_{i}:(x\nasymp a_{i}\wedge x\asymp b_{i})$
 (or vice versa).
 
-Take $y=((n\setminus\{i\})\times\{\bot\})\cup\{(i;x)\}$. Then we have
+Take $y=
+\mylamdba{j}{n}{\begin{cases}
+x &\text{if }j=i\\
+\bot^{\mathfrak{A}_j} &\text{if }j\ne i
+\end{cases}}$. Then we have
 $y\nasymp a$ and $y\asymp b$ and $y\in\mathfrak{Z}$.\end{proof}
 \begin{prop}
 Let every $\mathfrak{A}_{i}$ be a bounded lattice. Every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
