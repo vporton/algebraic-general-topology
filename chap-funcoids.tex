@@ -1378,37 +1378,6 @@ For every composable funcoids $f$, $g$:
 by proved above is equal to $\im f^{-1}$ that is $\dom f$.
 \end{widedisorder}
 \end{proof}
-\begin{lem}
-$\mylamdba{\mathcal{B}}{\mathscr{F}(B)}{\top^{\mathscr{F}}\times^{\mathsf{FCD}}
-\mathcal{B}}$
-is an upper adjoint of $\mylamdba f{\mathsf{FCD}(A;B)}{\im f}$ (for
-every sets $A$, $B$).\end{lem}
-\begin{proof}
-We need to prove $\im f\sqsubseteq\mathcal{B}\Leftrightarrow 
-f\sqsubseteq\top^{\mathscr{F}}\times^{\mathsf{FCD}}\mathcal{B}$
-what is obvious.\end{proof}
-\begin{cor}
-\label{fcd-dom-join}Image and domain of funcoids preserve joins.\end{cor}
-\begin{proof}
-By properties of Galois connections and duality.\end{proof}
-\begin{prop}
-$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\dom 
-f\sqsubseteq\mathcal{A}\wedge\im f\sqsubseteq\mathcal{B}$
-for every funcoid $f$ and filters $\mathcal{A}\in\mathfrak{F}(\Src f)$,
-$\mathcal{B}\in\mathfrak{F}(\Dst f)$.\end{prop}
-\begin{proof}
-$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Rightarrow\dom 
-f\sqsubseteq\mathcal{A}$
-because 
-$\dom(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{A}$.
-
-Let now $\dom f\sqsubseteq\mathcal{A}\wedge\im f\sqsubseteq\mathcal{B}$.
-Then $\supfun f\mathcal{X}\neq\bot\Rightarrow\mathcal{X}\nasymp\mathcal{A}$
-that is $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\top$. Similarly
-$f\sqsubseteq\top\times^{\mathsf{FCD}}\mathcal{B}$. Thus 
-$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
-\end{proof}
-
 \section{Categories of funcoids}
 
 I will define two categories, the \emph{category of funcoids} and
@@ -2028,6 +1997,37 @@ fa,\quad\mathcal{X}\asymp
 a\Rightarrow\supfun{f|_{a}}\mathcal{X}=\bot^{\mathscr{F}(\Dst f)}.
 \]
 
+\end{proof}
+
+\begin{lem}
+$\mylamdba{\mathcal{B}}{\mathscr{F}(B)}{\top^{\mathscr{F}}\times^{\mathsf{FCD}}
+\mathcal{B}}$
+is an upper adjoint of $\mylamdba f{\mathsf{FCD}(A;B)}{\im f}$ (for
+every sets $A$, $B$).\end{lem}
+\begin{proof}
+We need to prove $\im f\sqsubseteq\mathcal{B}\Leftrightarrow 
+f\sqsubseteq\top^{\mathscr{F}}\times^{\mathsf{FCD}}\mathcal{B}$
+what is obvious.\end{proof}
+\begin{cor}
+\label{fcd-dom-join}Image and domain of funcoids preserve joins.\end{cor}
+\begin{proof}
+By properties of Galois connections and duality.\end{proof}
+\begin{prop}
+$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\dom 
+f\sqsubseteq\mathcal{A}\wedge\im f\sqsubseteq\mathcal{B}$
+for every funcoid $f$ and filters $\mathcal{A}\in\mathfrak{F}(\Src f)$,
+$\mathcal{B}\in\mathfrak{F}(\Dst f)$.\end{prop}
+\begin{proof}
+$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Rightarrow\dom 
+f\sqsubseteq\mathcal{A}$
+because 
+$\dom(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{A}$.
+
+Let now $\dom f\sqsubseteq\mathcal{A}\wedge\im f\sqsubseteq\mathcal{B}$.
+Then $\supfun f\mathcal{X}\neq\bot\Rightarrow\mathcal{X}\nasymp\mathcal{A}$
+that is $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\top$. Similarly
+$f\sqsubseteq\top\times^{\mathsf{FCD}}\mathcal{B}$. Thus 
+$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
 \end{proof}
 
 \section{Atomic funcoids}
