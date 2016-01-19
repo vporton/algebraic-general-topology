@@ -3256,7 +3256,8 @@ it is transitive and symmetric.\end{prop}
 \begin{proof}
 Let $\neg\left(A\rsuprel fB\right)$ implies $\exists M:M\asymp\rsupfun 
 fA\wedge\overline{M}\asymp\rsupfun fB$.
-Then $\neg\left(A\rsuprel fB\right)$ implies $\neg\left(A\rsuprel{f^{-1}\circ 
+Then $\neg\left(A\rsuprel fB\right)$ implies $M\asymp\rsupfun{f}A\land\rsupfun{f}B\sqsubseteq M$,
+thus $\rsupfun{f}A\asymp\rsupfun{f}B$; $\neg\left(A\rsuprel{f^{-1}\circ 
 f}B\right)$
 that is $f\sqsupseteq f^{-1}\circ f$ and thus $f=f^{-1}\circ f$.
 By theorem \ref{sym-trans} $f$ is transitive and symmetric.\end{proof}
