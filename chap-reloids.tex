@@ -552,14 +552,16 @@ iff there exists an injection (a monovalued and injective $\mathbf{Rel}$-morphis
 \begin{proof}
 The reverse implications are obvious. Let's prove the direct implications:
 \begin{widedisorder}
-\item [{\ref{rld-mon-gr}}] Let $f$ be a monovalued reloid. Then $f\circ f^{-1}\sqsubseteq1_{\Dst f}^{\mathsf{RLD}}$.
-So there exists
-\[
-h\in\up(f\circ f^{-1})=\up\bigsqcap^{\mathsf{RLD}}\setcond{F\circ F^{-1}}{F\in\up f}
-\]
-such that $h\sqsubseteq1_{\Dst f}^{\mathsf{RLD}}$.
+\item [{\ref{rld-mon-gr}}] Let $f$ be a monovalued reloid. Then $f\circ f^{-1}\sqsubseteq 1_{\Dst f}^{\mathsf{RLD}}$,
+that is
+\[\bigsqcap^{\mathsf{RLD}}\setcond{F\circ F^{-1}}{F\in\up f}\sqsubseteq 1_{\Dst f}^{\mathsf{RLD}}.\]
+% So there exists
+% \[
+% h\in\up(f\circ f^{-1})=\up\bigsqcap^{\mathsf{RLD}}\setcond{F\circ F^{-1}}{F\in\up f}
+% \]
+% such that $h\sqsubseteq1_{\Dst f}^{\mathsf{RLD}}$.
 It's simple to show that $\setcond{F\circ F^{-1}}{F\in\up f}$ is
-a filter base. Consequently there exists $F\in\up f$ such that $\GR(F\circ F^{-1})\subseteq\id_{\Dst f}$
+a filter base. Consequently there exists $F\in\up f$ such that $F\circ F^{-1}\sqsubseteq 1_{\Dst f}^{\mathsf{RLD}}$
 that is $F$ is monovalued.
 \item [{\ref{rld-mon-inj}}] Similar.
 \item [{\ref{rld-mon-both}}] Let $f$ be a both monovalued and injective
