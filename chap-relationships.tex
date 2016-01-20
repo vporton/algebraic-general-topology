@@ -675,21 +675,23 @@ Let $F\in\atoms\torldin f$, $G\in\atoms\torldin g$. Then $\dom F\times^{\mathsf{
 (*) $F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F)$ and $\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$ implies $\dom F'\times^{\mathsf{FCD}}\im F'\sqsubseteq f$;
 thus $\dom F'\times^{\mathsf{RLD}}\im F'\sqsubseteq \torldin f$ and thus $F'\sqsubseteq \torldin f$. Likewise for~$G$ and $G'$.
 
-Thus $\torldin g\circ\torldin f\sqsupseteq\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g}$.
+Thus $\torldin g\circ\torldin f\sqsupseteq\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}$.
 
-But $\torldin g\circ\torldin f\sqsubseteq\bigsqcup^{\mathsf{RLD}}\setcond{(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)}{F\in\atoms\torldin f,G\in\atoms\torldin g}
-\sqsubseteq \bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g}$.
+But $\torldin g\circ\torldin f\sqsubseteq\bigsqcup^{\mathsf{RLD}}\setcond{(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}
+\sqsubseteq \bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}$.
 
 Thus 
 \begin{multline*}
-\torldin g\circ\torldin f=\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g}=\\
-\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms^{\mathsf{RLD}(\Src f;\Dst f)},G\in\atoms^{\mathsf{RLD}(\Dst f;\Dst g)},\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f,\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g}.
+\torldin g\circ\torldin f=\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{
+\begin{aligned}&F\in\atoms^{\mathsf{RLD}(\Src f;\Dst f)},G\in\atoms^{\mathsf{RLD}(\Dst f;\Dst g)},\\&\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f,\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g,\im F\nasymp\dom G\end{aligned}}.
 \end{multline*}
 
 
 But 
 \begin{multline*}
-\torldin(g\circ f)=\\
+\torldin(g\circ f)=
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\times^{\mathsf{FCD}}c\in\atoms(g\circ f)}=\text{(proposition~\ref{fcd-at-comp})}=\\
 \bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f),c\in\mathscr{F}(\Dst g),a\times^{\mathsf{FCD}}b\in\atoms f,b\times^{\mathsf{FCD}}c\in\atoms g}.
 \end{multline*}
 Now it becomes obvious that $\torldin g\circ\torldin f=\torldin(g\circ f)$.
