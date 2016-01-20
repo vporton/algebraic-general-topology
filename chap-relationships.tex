@@ -666,9 +666,10 @@ But
 So $F\in\atoms\torldin f\Leftrightarrow\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$.
 
 Let $F\in\atoms\torldin f$, $G\in\atoms\torldin g$. Then $\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$ and $\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g$.
+Provided that $\im F\nasymp\dom G$, we have:
 \begin{multline*}
-\dom F\times^{\mathsf{RLD}}\im G=\\
-\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\im F\times^{\mathsf{RLD}}\im G)}\sqsubseteq\text{ (*)}\\
+\dom F\times^{\mathsf{RLD}}\im G=(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\dom G\times^{\mathsf{RLD}}\im G)}\sqsubseteq\text{ (*)}\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms^{\mathsf{RLD}(\Src F;\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G;\Dst G)},F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g}=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms\torldin f,G'\in\atoms\torldin g}=\torldin g\circ\torldin f.
 \end{multline*}
