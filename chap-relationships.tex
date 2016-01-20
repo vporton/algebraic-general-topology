@@ -568,6 +568,9 @@ that
 \exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu)
 \end{multline*}
 for every $\mathcal{X}\in\mathscr{F}(\Src\nu)$, $\mathcal{Y}\in\mathscr{F}(\Dst\nu)$.\end{defn}
+\begin{rem}
+See theorem~\ref{fcdal-bij} below for how they are bijectively related with funcoids (and thus named funcoidal).
+\end{rem}
 \begin{prop}
 A reloid $\nu$ is funcoidal iff $x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\nu$
 for every atomic filter objects $x$ and $y$ on respective sets.\end{prop}
@@ -602,7 +605,7 @@ I call $\torldin\tofcd f$ \emph{funcoidization} of a reloid $f$.\end{defn}
 $\torldin\tofcd f$ is funcoidal for every reloid $f$.\end{lem}
 \begin{proof}
 $x\times^{\mathsf{RLD}}y\nasymp\torldin\tofcd f\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\torldin\tofcd f$.\end{proof}
-\begin{thm}
+\begin{thm}\label{fcdal-bij}
 $\torldin$ is a bijection from $\mathsf{FCD}(A;B)$ to the set of
 funcoidal reloids from $A$ to $B$.\end{thm}
 \begin{proof}
