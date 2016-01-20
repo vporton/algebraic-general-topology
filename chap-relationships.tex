@@ -693,7 +693,8 @@ But
 \begin{multline*}
 \torldin(g\circ f)=
 \bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\times^{\mathsf{FCD}}c\in\atoms(g\circ f)}=\text{(proposition~\ref{fcd-at-comp})}=\\
-\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f),c\in\mathscr{F}(\Dst g),a\times^{\mathsf{FCD}}b\in\atoms f,b\times^{\mathsf{FCD}}c\in\atoms g}.
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),c\in\mathscr{F}(\Dst g),\exists b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\in\atoms f\land b\times^{\mathsf{FCD}}c\in\atoms g)}=\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),c\in\mathscr{F}(\Dst g),\exists b_0,b_1\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\in\atoms f\land b\times^{\mathsf{FCD}}c\in\atoms g\land b_0\nasymp b_1)}.
 \end{multline*}
 Now it becomes obvious that $\torldin g\circ\torldin f=\torldin(g\circ f)$.
 \end{proof}
