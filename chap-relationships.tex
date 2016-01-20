@@ -665,14 +665,15 @@ But
 
 So $F\in\atoms\torldin f\Leftrightarrow\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$.
 
-Let $F\in\atoms\torldin f$, $G\in\atoms\torldin g$.
+Let $F\in\atoms\torldin f$, $G\in\atoms\torldin g$. Then $\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$ and $\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g$.
 \begin{multline*}
 \dom F\times^{\mathsf{RLD}}\im G=\\
-\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\im F\times^{\mathsf{RLD}}\im G)}\sqsubseteq\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\im F\times^{\mathsf{RLD}}\im G)}\sqsubseteq\text{ (*)}\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms^{\mathsf{RLD}(\Src F;\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G;\Dst G)},F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g}=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms\torldin f,G'\in\atoms\torldin g}=\torldin g\circ\torldin f.
 \end{multline*}
-
+(*) $F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F)$ and $\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$ implies $\dom F'\times^{\mathsf{FCD}}\im F'\sqsubseteq f$;
+thus $\dom F'\times^{\mathsf{RLD}}\im F'\sqsubseteq \torldin f$ and thus $F'\sqsubseteq \torldin f$. Likewise for~$G$ and $G'$.
 
 Thus $\torldin g\circ\torldin f\sqsupseteq\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g}$.
 
