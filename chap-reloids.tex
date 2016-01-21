@@ -118,6 +118,11 @@ Analogously $\up(h\circ(g\circ f))\sim(\up h)\circ(\up g)\circ(\up f)$.
 
 So $\up(h\circ(g\circ f))\sim\up((h\circ g)\circ f)$ what is possible
 only if $\up(h\circ(g\circ f))=\up((h\circ g)\circ f)$. Thus $(h\circ g)\circ f=h\circ(g\circ f)$.\end{proof}
+\begin{xca}
+Prove $f_n\circ\dots\circ f_0 = \bigsqcap^{\mathsf{RLD}}\setcond{F_n\circ\dots\circ F_0}{F_i\in\up f_i}$
+for every composable reloids~$f_0,\dots,f_n$ where $n$ is an integer, independently of the inserted parentheses.
+(Hint: Use generalized filter bases.)
+\end{xca}
 \begin{thm}
 \label{rld-prod-ff}For every reloid $f$:
 \begin{enumerate}
@@ -137,6 +142,9 @@ To prove it take $H=F\sqcap G$.
 To prove it take $H=F\sqcap G$. Then $H^{-1}\circ H=(F\sqcap G)^{-1}\circ(F\sqcap G)\sqsubseteq G^{-1}\circ F$.
 \end{widedisorder}
 \end{proof}
+\begin{xca}
+Prove $f^n = \bigsqcap^{\mathsf{RLD}}\setcond{F^n}{F\in\up f}$ for every endofuncoid~$f$ and positive integer~$n$.
+\end{xca}
 \begin{thm}
 For every sets $A$, $B$, $C$ if $g,h\in\mathsf{RLD}(A;B)$ then
 \begin{enumerate}
