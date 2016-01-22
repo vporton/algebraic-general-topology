@@ -549,6 +549,17 @@ These are essentially the duals.
 Some of these directed multigraphs are categories with reloid composition
 (see below). By abuse of notation I will denote these categories the
 same as these directed multigraphs.
+
+\begin{lem}
+$\mathbf{CoMonRld}_{Q,R}\ne\emptyset \Leftrightarrow\mathbf{MonRld}_{Q,R}\ne\emptyset$.
+\end{lem}
+\begin{proof}
+$f\in\mathbf{CoMonRld}_{Q,R} \Leftrightarrow
+(\im f)\mathrel Q\mathcal{A} \land (\dom f)\mathrel R\mathcal{B} \Leftrightarrow
+(\dom f^{-1})\mathrel Q\mathcal{A} \land (\im f^{-1})\mathrel R\mathcal{B} \Leftrightarrow
+f^{-1}\in\mathbf{MonRld}_{Q,R}$ for every monovalued reloid~$f$ (or what is the same, injective reloid~$f^{-1}$).
+\end{proof}
+
 \begin{thm}
 For every filters $\mathcal{A}$ and $\mathcal{B}$ the following
 are equivalent:
@@ -588,7 +599,7 @@ that is $\mathcal{A}\ge_{1}\mathcal{B}$.
 \item [{\ref{g1-c-le-ge}$\Rightarrow$\ref{g1-c-le-eq}}] $\dom f|_{\mathcal{B}}=\mathcal{B}$
 and $\im f|_{\mathcal{B}}\sqsupseteq\mathcal{A}$.
 \item [{\ref{ge1-eq-ge}$\Leftrightarrow$\ref{g1-c-eq-ge},~\ref{ge1-le-ge}$\Leftrightarrow$\ref{g1-c-le-ge},~\ref{ge1-le-eq}$\Leftrightarrow$\ref{g1-c-le-eq}}] By
-duality.
+the lemma.
 \end{description}
 \end{proof}
 \begin{thm}
@@ -620,7 +631,7 @@ such that $f=(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}$. Thus
 \]
 Thus $\mathcal{A}\ge_{2}\mathcal{B}$ is testified by the morphism
 $F$.
-\item [{\ref{ge2-mon}$\Leftrightarrow$\ref{ge2-comon}}] By duality.
+\item [{\ref{ge2-mon}$\Leftrightarrow$\ref{ge2-comon}}] By the lemma.
 \end{description}
 \end{proof}
 \begin{thm}
