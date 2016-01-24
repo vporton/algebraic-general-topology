@@ -61,9 +61,10 @@ If $\emptyset\neq X\in Q$ then there exists $Y\in\mathfrak{R}(Q)$
 such that $Y\subseteq X\wedge X\cap Y\neq\emptyset$.\end{prop}
 \begin{proof}
 Let $a\in X$. Then 
-\[
-[a]=\setcond{b\in\bigcup Q}{\forall X'\in Q:(a\in X'\Leftrightarrow b\in X')}\subseteq\setcond{b\in\bigcup Q}{b\in X}=X.
-\]
+\begin{multline*}
+[a]=\setcond{b\in\bigcup Q}{\forall X'\in Q:(a\in X'\Leftrightarrow b\in X')}\subseteq\\
+\setcond{b\in\bigcup Q}{a\in X\Leftrightarrow b\in X} = \setcond{b\in\bigcup Q}{b\in X}=X.
+\end{multline*}
 But $[a]\in\mathfrak{R}(Q)$.
 
 $X\cap Y\neq\emptyset$ follows from $Y\subseteq X$ by the previous
