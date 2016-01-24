@@ -295,8 +295,8 @@ directly without referring to funcoidal product.\end{rem}
 \index{product!oblique}\emph{Oblique products} of filters $\mathcal{A}$
 and $\mathcal{B}$ are defined as
 \begin{align*}
-\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B};\\
-\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow^{\Base(\mathcal{A})}A\times^{\mathsf{FCD}}\mathcal{B}}.
+\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow B};\\
+\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\mathcal{B}}.
 \end{align*}
 \end{defn}
 \begin{prop}
@@ -306,8 +306,8 @@ for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
 ~
 \begin{align*}
 \mathcal{A}\ltimes\mathcal{B} & \sqsubseteq\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow^{\Base(\mathcal{A})}A\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B} & \sqsubseteq\\
-\bigsqcap\setcond{\uparrow^{\Base(\mathcal{A})}A\times^{\mathsf{RLD}}\uparrow^{\Base(\mathcal{B})}B}{A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\uparrow B} & \sqsubseteq\\
+\bigsqcap\setcond{\uparrow A\times^{\mathsf{RLD}}\uparrow B}{A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
 \mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}.\\
 \mathcal{A}\ltimes\mathcal{B} & \sqsupseteq\\
 \bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}} & =\\
@@ -345,7 +345,7 @@ Obviously $K\notin\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.
 $\mathcal{A}\ltimes\mathcal{B}\sqsubseteq\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K$
 and thus $K\in\up(\mathcal{A}\ltimes\mathcal{B})$ because 
 \[
-\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K\sqsupseteq\Delta_{+}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B=\mathcal{A}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B
+\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K\sqsupseteq\Delta_{+}\times^{\mathsf{FCD}}\uparrow B=\mathcal{A}\times^{\mathsf{FCD}}\uparrow B
 \]
 for $B=(0;+\infty)$.
 
