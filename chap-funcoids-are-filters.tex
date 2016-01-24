@@ -37,7 +37,7 @@ $\emptyset\notin\mathfrak{R}(Q)$.\end{obvious}
 $\card\mathfrak{R}(Q)\leq2^{\card Q}$.\end{lem}
 \begin{proof}
 Having an equivalence class $C$, we can find the set $f\in\subsets Q$
-of all $X\in Q$ such that $a\in X$ for all $a\in C$. 
+of all $X\in Q$ such that $a\in X$, for every $a\in C$. 
 \[
 b\equiv a\Leftrightarrow\forall X\in Q:(a\in X\Leftrightarrow b\in X)\Leftrightarrow\forall X\in Q:(X\in f\Leftrightarrow b\in X).
 \]
@@ -61,10 +61,9 @@ If $\emptyset\neq X\in Q$ then there exists $Y\in\mathfrak{R}(Q)$
 such that $Y\subseteq X\wedge X\cap Y\neq\emptyset$.\end{prop}
 \begin{proof}
 Let $a\in X$. Then 
-\begin{multline*}
-[a]=\setcond{b\in\bigcup Q}{\forall X'\in Q:(a\in X'\Leftrightarrow b\in X')}=\\
-\setcond{b\in\bigcup Q}{\forall X'\in Q:b\in X'}\subseteq\setcond{b\in\bigcup Q}{b\in X}=X.
-\end{multline*}
+\[
+[a]=\setcond{b\in\bigcup Q}{\forall X'\in Q:(a\in X'\Leftrightarrow b\in X')}\subseteq\setcond{b\in\bigcup Q}{b\in X}=X.
+\]
 But $[a]\in\mathfrak{R}(Q)$.
 
 $X\cap Y\neq\emptyset$ follows from $Y\subseteq X$ by the previous
