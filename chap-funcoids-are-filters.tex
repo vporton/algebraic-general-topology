@@ -119,16 +119,16 @@ $S=\{X_{0},\ldots,X_{n-1}\}$. We have $Q=\bigcup_{X'\in S}\left(X'\times\bigcup_
 where $S$ is a finite collection on $A$ and $Y_{X}\in\subsets B$
 for every $X\in S$. Let 
 \[
-P=\bigcup_{X'\in\mathfrak{R}(S)}\left(X'\times\bigcup\setcond{Y_{X}}{X\in S\wedge X'\subseteq X}\right)
+P=\bigcup_{X'\in\mathfrak{R}(S)}\left(X'\times\bigcup_{X\in S}\setcond{Y_{X}}{\exists X\in S:X'\subseteq X}\right).
 \]
 To finish the proof let's show $P=Q$.
 
 
-$\langle P\rangle^{\ast}\{x\}=\bigcup\setcond{Y_{X}}{X\in S\wedge X'\subseteq X}$
+$\langle P\rangle^{\ast}\{x\}=\bigcup_{X\in S}\setcond{Y_{X}}{\exists X\in S:X'\subseteq X}$
 where $x\in X'$.
 
 
-Thus $\langle P\rangle^{\ast}\{x\}=\bigcup\setcond{Y_{X}}{X\in S\wedge x\in X}=\langle Q\rangle^{\ast}\{x\}$.
+Thus $\langle P\rangle^{\ast}\{x\}=\bigcup\setcond{Y_{X}}{\exists X\in S:x\in X}=\langle Q\rangle^{\ast}\{x\}$.
 So $P=Q$.
 
 \item [{\ref{gamma-sigma}$\subseteq$\ref{gamma-YXpart}}] $\bigcup_{(X;Y)\in\sigma}(X\times Y)=\bigcup_{X\in\dom\sigma}\left(X\times\bigcup\setcond{Y\in\subsets B}{(X;Y)\in\sigma}\right)\in\text{\text{\ref{gamma-YXpart}}}$.
