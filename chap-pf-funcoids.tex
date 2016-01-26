@@ -1426,15 +1426,14 @@ is a co-brouwerian lattice.\end{cor}
 \begin{prop}
 Let $\mathfrak{A}$, $\mathfrak{B}$, $\mathfrak{C}$ be sets of filters
 over some boolean lattices and $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$,
-$g\in\mathsf{pFCD}(\mathfrak{B};\mathfrak{C})$. Let $\mathfrak{B}$
-be an atomic poset. Then
+$g\in\mathsf{pFCD}(\mathfrak{B};\mathfrak{C})$. Then
 \begin{multline*}
 \atoms(g\circ f)=\\
 \setcond{x\times^{\mathsf{FCD}}z}{x\in\atoms^{\mathfrak{A}},z\in\atoms^{\mathfrak{C}},\exists y\in\atoms^{\mathfrak{B}}:(x\times^{\mathsf{FCD}}y\in\atoms f\land y\times^{\mathsf{FCD}}z\in\atoms g)}.
 \end{multline*}
 \end{prop}
 \begin{proof}
-~
+$\mathfrak{B}$~is atomic by theorem~\ref{filt-atomic}.
 \begin{align*}
 (x\times^{\mathsf{FCD}}z)\sqcap(g\circ f)\ne\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{C})} & \Leftrightarrow\\
 x\suprel{g\circ f}z & \Leftrightarrow\\
