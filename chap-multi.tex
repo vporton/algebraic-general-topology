@@ -700,7 +700,7 @@ $f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g=f\sqcup g$ for every multifuncoids
 $f$ and $g$ for the same indexed family of starrish join-semilattices
 filtrators.\end{thm}
 \begin{proof}
-$\alpha_{i}x\eqdef f_{i}x\sqcup g_{i}x$. It is enough to prove that
+$\alpha_{i}x\eqdef \rsupfun{f_{i}}x\sqcup \rsupfun{g_{i}}x$. It is enough to prove that
 $\alpha$ is a multifuncoid.
 
 We need to prove: 
@@ -710,10 +710,10 @@ L_{i}\nasymp\alpha_{i}L|_{(\dom L)\setminus\{i\}}\Leftrightarrow L_{j}\nasymp\al
 Really,
 \begin{align*}
 L_{i}\nasymp\alpha_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{i}\nasymp f_{i}L|_{(\dom L)\setminus\{i\}}\sqcup g_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{i}\nasymp f_{i}L|_{(\dom L)\setminus\{i\}}\lor L_{i}\nasymp g_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{j}\nasymp f_{j}L|_{(\dom L)\setminus\{j\}}\lor L_{j}\nasymp g_{j}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
-L_{j}\nasymp f_{j}L|_{(\dom L)\setminus\{j\}}\sqcup g_{j}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
+L_{i}\nasymp \rsupfun{f_{i}}L|_{(\dom L)\setminus\{i\}}\sqcup \rsupfun{g_{i}}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
+L_{i}\nasymp \rsupfun{f_{i}}L|_{(\dom L)\setminus\{i\}}\lor L_{i}\nasymp \rsupfun{g_{i}}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
+L_{j}\nasymp \rsupfun{f_{j}}L|_{(\dom L)\setminus\{j\}}\lor L_{j}\nasymp \rsupfun{g_{j}}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
+L_{j}\nasymp \rsupfun{f_{j}}L|_{(\dom L)\setminus\{j\}}\sqcup \rsupfun{g_{j}}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
 L_{j}\nasymp\alpha_{j}L|_{(\dom L)\setminus\{j\}}.
 \end{align*}
 \end{proof}
@@ -722,7 +722,7 @@ $\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F=\bigsqcup F$ for every
 set $F$ of multifuncoids for the same indexed family of join infinite
 distributive complete lattices filtrators.\end{thm}
 \begin{proof}
-$\alpha_{i}x\eqdef\bigsqcup_{f\in F}f_{i}x$. It is enough to prove
+$\alpha_{i}x\eqdef\bigsqcup_{f\in F}\rsupfun{f}_{i}x$. It is enough to prove
 that $\alpha$ is a multifuncoid.
 
 We need to prove: 
