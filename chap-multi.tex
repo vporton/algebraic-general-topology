@@ -1554,7 +1554,7 @@ by theorem~\ref{pf-dist-func}.
 \item [{\ref{fcomp-pre}}] Let $L\in\prod_{i\in(\arity f)\setminus\{k\}}(\form f_{i})$
 for some $k\in n$ and $X,Y\in\form f_{k}$. Then 
 \begin{eqnarray*}
-X\sqcup Y\in\supfun{\StarComp(a;f)}_{k}L & \Leftrightarrow\\
+X\sqcup Y\in\rsupfun{\StarComp(a;f)}_{k}L & \Leftrightarrow\\
 \left(\lambda i\in\dom f:\supfun{f_{i}^{-1}}\left(\left\{ \begin{array}{ll}
 X\sqcup Y & \text{if }i=k\\
 L_{i} & \text{if }i\neq k
@@ -1563,8 +1563,8 @@ L_{i} & \text{if }i\neq k
 \supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y & \text{if }i=k\\
 \supfun{f_{i}^{-1}}L_{i} & \text{if }i\neq k
 \end{array}\right.\right)_{i}\right)\in\GR a & \Leftrightarrow\\
-\supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y\in\langle a\rangle_{k}(\lambda i\in(\dom f)\setminus\{k\}:\langle f_{i}^{-1}\rangle L_{i}) & \Leftrightarrow\\
-\supfun{f_{i}^{-1}}X\in\langle a\rangle_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i})\vee\langle f_{i}^{-1}\rangle Y\in\langle a\rangle_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i}) & \Leftrightarrow\\
+\supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y\in\rsupfun{a}_{k}(\lambda i\in(\dom f)\setminus\{k\}:\langle f_{i}^{-1}\rangle L_{i}) & \Leftrightarrow\\
+\supfun{f_{i}^{-1}}X\in\rsupfun{a}_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i})\vee\langle f_{i}^{-1}\rangle Y\in\rsupfun{a}_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i}) & \Leftrightarrow\\
 \begin{aligned}\left(\lambda i\in\dom f:\left(\left\{ \begin{array}{ll}
 \supfun{f_{i}^{-1}}X & \text{if }i=k\\
 \supfun{f_{i}^{-1}}L_{i} & \text{if }i\neq k
@@ -1585,7 +1585,7 @@ L_{i} & \text{if }i\neq k
 \end{array}\right.\right)_{i}\right)\in\GR a
 \end{aligned}
  & \Leftrightarrow\\
-X\in\supfun{\StarComp(a;f)}_{k}L\vee Y\in\supfun{\StarComp(a;f)}_{k}L.
+X\in\rsupfun{\StarComp(a;f)}_{k}L\vee Y\in\rsupfun{\StarComp(a;f)}_{k}L.
 \end{eqnarray*}
 Thus $\StarComp(a;f)$ is a pre-staroid.
 \item [{\ref{fcomp-str}}] $\supfun{f_{i}^{-1}}$ are monotone functions by
