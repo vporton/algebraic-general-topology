@@ -778,12 +778,12 @@ infinite distributive complete lattices filtrators, then $\bigsqcup^{\mathsf{pFC
 Let $A\in\mathord{\rsuprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$
 and $B\sqsupseteq A$. Then for every $k\in\dom\mathfrak{A}$
 
-$A_{k}\nasymp\left(\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\right)A|_{(\dom\mathfrak{A})\setminus\{k\}}=\left(\bigsqcup F\right)A|_{(\dom\mathfrak{A})\setminus\{k\}}=\bigsqcup_{f\in F}f(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
+$A_{k}\nasymp\rsupfun{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}A|_{(\dom\mathfrak{A})\setminus\{k\}}=\rsupfun{\bigsqcup F}A|_{(\dom\mathfrak{A})\setminus\{k\}}=\bigsqcup_{f\in F}\rsupfun{f}(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
 
-Thus $\exists f\in F:A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$\exists f\in F:A\in\mathord{[f]}$; $B\in\mathord{[f]}$ for some
-$f\in F$; $\exists f\in F:B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$B_{k}\nasymp\bigsqcup_{f\in F}f(B|_{(\dom\mathfrak{A})\setminus\{k\}})=\left(\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\right)B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
+Thus $\exists f\in F:A_{k}\nasymp\rsupfun{f}(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+$\exists f\in F:A\in\rsuprel{f}$; $B\in\rsuprel{f}$ for some
+$f\in F$; $\exists f\in F:B_{k}\nasymp\rsupfun{f}(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+$B_{k}\nasymp\bigsqcup_{f\in F}\rsupfun{f}(B|_{(\dom\mathfrak{A})\setminus\{k\}})=\rsupfun{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
 Thus $B\in\mathord{\rsuprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$.
 \end{proof}
 
