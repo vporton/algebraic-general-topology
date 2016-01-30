@@ -2633,13 +2633,13 @@ have:
 \end{lem}
 \begin{proof}
 Let $x\in\setcond{(\dom a;\im a)}{a\in\atoms\uparrow^{\mathsf{RLD}}A}$.
-Then $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{RLD}}A$.
+Take $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{RLD}}A$.
 
 Then $x_{0}=\dom\tofcd a$ and $x_{1}=\im\tofcd a$ and obviously
 $\tofcd a\in\atoms\uparrow^{\mathsf{FCD}}A$. So $x\in\setcond{(\dom a;\im a)}{a\in\atoms\uparrow^{\mathsf{FCD}}A}$.
 
 Let now $x\in\setcond{(\dom a;\im a)}{a\in\atoms\uparrow^{\mathsf{FCD}}A}$.
-Then $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{FCD}}A$.
+Take $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{FCD}}A$.
 
 $x_{0}\suprel{\uparrow^{\mathsf{FCD}}A}x_{1}\Leftrightarrow x_{0}\suprel{\tofcd\uparrow^{\mathsf{RLD}}A}x_{1}\Leftrightarrow x_{0}\times^{\mathsf{RLD}}x_{1}\nasymp\uparrow^{\mathsf{RLD}}A$.
 Thus there exists atomic reloid $x'$ such that $x'\in\atoms\uparrow^{\mathsf{RLD}}A$
@@ -2726,7 +2726,7 @@ I mean $\uparrow^{\mathsf{FCD}(\Base a;\Base b)}(A_{0}\times B_{0})\rsuprel{f\ti
 Thus it is equivalent to $a_{0}\suprel fa_{1}\wedge b_{0}\suprel gb_{1}$
 that is $a_{0}\times^{\mathsf{FCD}}b_{0}\rsuprel{f\times^{(C)}g}a_{1}\times^{\mathsf{FCD}}b_{1}$.
 
-(It was used the theorem \ref{cc-over-fcd}.)
+(It was used the corollary~\ref{cc-over-fcd}.)
 \end{proof}
 Can the above theorem be generalized for the infinitary case?
 
