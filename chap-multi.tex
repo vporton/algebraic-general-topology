@@ -2047,37 +2047,37 @@ same form $\mathfrak{A}$. Then
 \end{align*}
 \end{proof}
 \begin{thm}
-If $S\in\subsets\prod_{i\in\dom\mathfrak{A}}\mathscr{F}(\mathfrak{A}_{i})$
-where $\mathfrak{A}$ is an indexed family of sets, then 
+If $S\in\subsets\prod_{i\in\dom\mathfrak{Z}}\mathscr{F}(\mathfrak{Z}_{i})$
+where $\mathfrak{Z}$ is an indexed family of sets, then 
 \[
-\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S.
+\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S.
 \]
 \end{thm}
 \begin{proof}
-If $S=\emptyset$ then $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\bigsqcap\emptyset=\top^{\mathsf{RLD}(\mathfrak{A})}$
+If $S=\emptyset$ then $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\bigsqcap\emptyset=\top^{\mathsf{RLD}(\mathfrak{Z})}$
 and 
 \[
-\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S=
-\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\emptyset=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\top^{\mathscr{F}(\mathfrak{A}_{i})}=\top^{\mathsf{RLD}(\mathfrak{A})},
+\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S=
+\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\emptyset=\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\top^{\mathscr{F}(\mathfrak{Z}_{i})}=\top^{\mathsf{RLD}(\mathfrak{Z})},
 \]
-thus $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$.
+thus $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$.
 
 Let $S\ne\emptyset$.
 
-$\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S\sqsubseteq\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\{a_{i}\}=a_{i}$
-for every $a\in S$ because $a_{i}\in\Pr_{i}S$. Thus $\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S\sqsubseteq\prod^{\mathsf{RLD}}a$;
+$\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S\sqsubseteq\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\{a_{i}\}=a_{i}$
+for every $a\in S$ because $a_{i}\in\Pr_{i}S$. Thus $\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S\sqsubseteq\prod^{\mathsf{RLD}}a$;
 \[
-\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a\sqsupseteq\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S.
+\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a\sqsupseteq\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S.
 \]
 
 
-Now suppose $F\in\GR\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$.
-Then there exists $X\in\up\prod_{i\in\dom\mathfrak{A}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$
+Now suppose $F\in\GR\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$.
+Then there exists $X\in\up\prod_{i\in\dom\mathfrak{Z}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$
 such that $F\supseteq\prod X$. It is enough to prove that there exist
 $a\in S$ such that $F\in\GR\prod^{\mathsf{RLD}}a$. For this it is
 enough $\prod X\in\GR\prod^{\mathsf{RLD}}a$.
 
-Really, $X_{i}\in\up\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$
+Really, $X_{i}\in\up\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$
 thus $X_{i}\in\up a_{i}$ for every $A\in S$ because $\Pr_{i}S\supseteq\{a_{i}\}$.
 
 Thus $\prod X\in\GR\prod^{\mathsf{RLD}}a$.\end{proof}
