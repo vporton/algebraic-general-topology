@@ -3417,15 +3417,13 @@ Really,
 \end{multline*}
 \end{proof}
 \begin{prop}
-\label{ID-completary}Let $(\mathfrak{A};\mathfrak{Z})$ be a distributive
-lattice filtrator with least element and binarily join-closed core
-which is a join-semilattice. $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$
-is a completary staroid for every $\mathcal{A}\in\mathfrak{A}$.\end{prop}
+\label{ID-completary}Let $(\mathfrak{A};\mathfrak{Z})$ be a primary
+filtrator over a boolean lattice.\end{prop}
 \begin{proof}
-$\corestar\mathcal{A}$ is a free star by theorem \ref{part-is-free}.
+$\fullstar\mathcal{A}$ is a free star by theorem~\ref{closed-free-star}.
 \begin{multline*}
-L_{0}\sqcup L_{1}\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\forall i\in n:(L_{0}\sqcup L_{1})i\in\corestar\mathcal{A}\Leftrightarrow\forall i\in n:L_{0}i\sqcup L_{1}i\in\corestar\mathcal{A}\Leftrightarrow\\
-\forall i\in n:(L_{0}i\in\corestar\mathcal{A}\vee L_{1}i\in\corestar\mathcal{A})\Leftrightarrow\exists c\in\{0,1\}^{n}\forall i\in n:L_{c(i)}i\in\corestar\mathcal{A}\Leftrightarrow\\
+L_{0}\sqcup L_{1}\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\forall i\in n:(L_{0}\sqcup L_{1})i\in\fullstar\mathcal{A}\Leftrightarrow\forall i\in n:L_{0}i\sqcup L_{1}i\in\fullstar\mathcal{A}\Leftrightarrow\\
+\forall i\in n:(L_{0}i\in\fullstar\mathcal{A}\vee L_{1}i\in\fullstar\mathcal{A})\Leftrightarrow\exists c\in\{0,1\}^{n}\forall i\in n:L_{c(i)}i\in\fullstar\mathcal{A}\Leftrightarrow\\
 \exists c\in\{0,1\}^{n}:(\lambda i\in n:L_{c(i)}i)\in\GR\ID_{\mathcal{A}[n].}^{\mathsf{Strd}}
 \end{multline*}
 \end{proof}
