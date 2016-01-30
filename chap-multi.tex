@@ -2220,8 +2220,8 @@ Let
 Then
 \begin{multline*}
 \forall X\in\GR a,Y\in\GR b\\
-\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y:\\
-\Pr_{i}^{\mathsf{RLD}}x\suprel{f_i}\Pr_{i}^{\mathsf{RLD}}y.
+\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y\\
+\forall i\in\dom f:\Pr_{i}^{\mathsf{RLD}}x\suprel{f_i}\Pr_{i}^{\mathsf{RLD}}y.
 \end{multline*}
 
 
@@ -2264,21 +2264,37 @@ a\suprel{\prod_{i\in n}^{(A)}(g_{i}\circ f_{i})}b & \Leftrightarrow\\
 a\suprel{\prod^{(A)}g\circ\prod^{(A)}f}b.
 \end{align*}
 
-
-Let 
+But 
 \[
-\forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+\forall i\in\dom f\exists C\in\atoms^{\mathscr{F}(\Dst f_{i})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}C\land C\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)
 \]
-Then there exists $c'\in(\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)})^{n}$
-such that
+implies 
 \[
-\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c'_{i}\land\rsupfun{\Pr_{i}}c'_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+\exists C\in\prod_{i\in n}\atoms^{\mathscr{F}(\Dst f_{i})} \forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}C_i\land C_i\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
 \]
-Then take $c''=\prod^{\mathsf{RLD}}c'$. Then $\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c''_{i}\wedge\rsupfun{\Pr_{i}}c''_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)$.
-Thus 
+Take $c\in\atoms\prod^{\mathsf{RLD}} C$. Then
 \[
-\exists c\in\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)}\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\wedge\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\Pr_i c\land\Pr_i c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)
 \]
+that is
+\[
+\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_i} c\land\rsupfun{\Pr_i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)
+\]
+% Let 
+% \[
+% \forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \]
+% Then there exists $c'\in(\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)})^{n}$
+% such that
+% \[
+% \forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c'_{i}\land\rsupfun{\Pr_{i}}c'_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \]
+% Then take $c''=\prod^{\mathsf{RLD}}c'$. Then
+% \[\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c''_{i}\wedge\rsupfun{\Pr_{i}}c''_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).\]
+% Thus 
+% \[
+% \exists c\in\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)}\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\wedge\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \]
 
 
 We have $a\suprel{\prod_{i\in n}^{(A)}(g_{i}\circ f_{i})}b\Leftrightarrow a\suprel{\prod^{(A)}g\circ\prod^{(A)}f}b$.\end{proof}
