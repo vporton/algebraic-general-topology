@@ -2022,10 +2022,10 @@ Obviously $\prod^{\mathsf{RLD}}A\sqsupseteq\bigsqcup\setcond{\prod^{\mathsf{RLD}
 Reversely, let $K\in\GR\bigsqcup\setcond{\prod^{\mathsf{RLD}}a}{a\in\prod_{i\in\dom A}\atoms A_{i}}$.
 
 Consequently $K\in\GR\prod^{\mathsf{RLD}}a$ for every $a\in\prod_{i\in\dom A}\atoms A_{i}$;
-$K\supseteq\prod X$ and thus $K\supseteq\bigcup_{X\in\prod_{i\in\dom a}\atoms a}\prod X$
-for some $X\in\prod_{i\in\dom a}\atoms a$.
+$K\supseteq\prod X$ and thus $K\supseteq\bigcup_{a\in\prod_{i\in\dom a}\atoms A_i}\prod X_a$
+for some $X_a\in\prod_{i\in\dom a}\atoms A_i$.
 
-But $\bigcup_{X\in\prod_{i\in\dom a}\atoms a}\prod X=\prod_{i\in\dom A}\bigcup\rsupfun{\Pr_{i}}X\supseteq\prod_{j\in\dom A}Z_{j}$
+But $\bigcup_{a\in\prod_{i\in\dom a}\atoms A_i}\prod X_a=\prod_{i\in\dom A}\bigcup_{a\in\atoms A_i}\rsupfun{\Pr_{i}}X_a\supseteq\prod_{j\in\dom A}Z_{j}$
 for some $Z_{j}\in\up A_{j}$ because $\rsupfun{\Pr_{i}}X\in\up a_{i}$
 and our lattice is atomistic. So $K\in\GR\prod^{\mathsf{RLD}}A$.\end{proof}
 \begin{thm}
