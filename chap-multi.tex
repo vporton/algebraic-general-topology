@@ -3674,18 +3674,18 @@ for some $A$ and $n$.
 
 \subsection{Identity staroids represented as meets and joins}
 \begin{prop}
-$\id_{a[n]}^{\mathsf{Strd}}=\bigsqcap_{A\in a}^{\Anch}\id_{A[n]}=\bigsqcap_{A\in a}^{\mathsf{Strd}}\id_{A[n]}$
+$\id_{a[n]}^{\mathsf{Strd}}=\bigsqcap_{A\in\up a}^{\Anch}\id_{A[n]}=\bigsqcap_{A\in\up a}^{\mathsf{Strd}}\id_{A[n]}$
 for every filter $a$ on a powerset.\end{prop}
 \begin{proof}
 That $\id_{a[n]}^{\mathsf{Strd}}\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$
-for every $A\in a$ is obvious.
+for every $A\in\up a$ is obvious.
 
-Let $f\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$ for every $A\in a$.
+Let $f\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$ for every $A\in\up a$.
 \begin{multline*}
-L\in\GR f\Rightarrow \forall A\in a:L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow \\
-\forall A\in a:\prod L\nasymp\id_{A[n]}\Leftrightarrow
-\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\nasymp A\Rightarrow \\
-\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp A\Rightarrow
+L\in\GR f\Rightarrow \forall A\in\up a:L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow \\
+\forall A\in\up a:\prod L\nasymp\id_{A[n]}\Leftrightarrow
+\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\nasymp A\Rightarrow \\
+\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp A\Rightarrow
 \bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp a\Rightarrow L\in\GR\id_{a[n]}^{\mathsf{Strd}}.
 \end{multline*}
 Thus $f\sqsubseteq\id_{a[n]}^{\mathsf{Strd}}$.\end{proof}
