@@ -3694,11 +3694,15 @@ L\in\GR f\Rightarrow \forall A\in\up a:L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}
 \end{multline*}
 Thus $f\sqsubseteq\id_{a[n]}^{\mathsf{Strd}}$.\end{proof}
 \begin{prop}
-$\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}\ID_{a[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}a_{\mathsf{Strd}}^{n}$
+$\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}=\bigsqcup_{a\in\atoms\mathcal{A}}\ID^{\mathsf{Strd}}_{a[n]}=\bigsqcup_{a\in\atoms\mathcal{A}}a_{\mathsf{Strd}}^{n}$
 where the join may be taken on every of the following posets: anchored
 relations, staroids, completary staroids, provided that $\mathcal{A}$
 is a filter on a set.\end{prop}
 \begin{proof}
+$\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}$ is a completary staroid (proposition~\ref{ID-completary}).
+Thus, it's enough to prove that $\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}$ is the lowest upper bound of $\setcond{\ID^{\mathsf{Strd}}_{a[n]}}{a\in\atoms\mathcal{A}}$
+(also use the fact that $\ID^{\mathsf{Strd}}_{a[n]}=a_{\mathsf{Strd}}^{n}$).
+
 $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\sqsupseteq\ID_{a[n]}^{\mathsf{Strd}}$
 for every $a\in\atoms\mathcal{A}$ is obvious.
 
@@ -3715,9 +3719,7 @@ But
 
 
 So $L\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Rightarrow L\in\GR f$.
-Thus $f\sqsupseteq\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$.
-
-Then use the fact that $\ID_{a[n]}^{\mathsf{Strd}}=a_{\mathsf{Strd}}^{n}$.\end{proof}
+Thus $f\sqsupseteq\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$.\end{proof}
 \begin{prop}
 $\id_{\mathcal{A}[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}\id_{a[n]}^{\mathsf{Strd}}$
 where the meet may be taken on every of the following posets: anchored
