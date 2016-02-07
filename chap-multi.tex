@@ -428,8 +428,8 @@ staroids on powersets.\end{example}
 (based on an \noun{Andreas Blass}'s proof) Take $f$ the set of functions
 $x:\mathbb{N}\rightarrow\subsets\mathbb{N}$ where $x_{0}$ is an arbitrary natural
 number and $x_{i}=\left\{ \begin{array}{ll}
-\{0\} & \text{if }n\leqslant x_{0}\\
-\{1\} & \text{if }n>x_{0}
+0 & \text{if }n\leqslant x_{0}\\
+1 & \text{if }n>x_{0}
 \end{array}\right.$ for $i=1,2,3,\ldots$.
 
 Let $\mathcal{L}_{0}(0)=\mathcal{L}_{1}(0)=\Omega(\mathbb{N})$, $\mathcal{L}_{0}(i)=\uparrow\{0\}$
@@ -446,13 +446,24 @@ that is $\up(\mathcal{L}_0\sqcup\mathcal{L}_1)\in f$ what means
 $\mathcal{L}_0\sqcup\mathcal{L}_1\in\upuparrows f$.
 
 Now consider any fixed $c\in\{0,1\}^{\mathbb{N}}$. There is at most
-one $k\in\mathbb{N}$ such that the sequence $x=\llbracket \{k\};\{c(1)\};\{c(2)\};\ldots\rrbracket$
+one $k\in\mathbb{N}$ such that the sequence $x=\llbracket k;c(1);c(2);\ldots\rrbracket$
 (i.e. $c$ with $c(0)$ replaced by $k$) is in $f$. Let $Q=\mathbb{N}\setminus\{k\}$
 if there is such a $k$ and $Q=\mathbb{N}$ otherwise.
 
+% ??
+% 
+% Let take such a $\mathcal{L}_0\sqcup\mathcal{L}_1\in\up f$ that
+% $(\lambda i\in\mathbb{N}:\mathcal{L}_{c(i)}(i))\notin f$.
+% Each $\mathcal{L}_{c(i)}(i)$ is a filter.
+% 
+% To prove it, take $Y\in\up(\lambda i\in\mathbb{N}:\mathcal{L}_{c(i)}(i))$. Then each $Y_i$ is a subset of $\mathbb{N}$.
+% We need to prove $Y\notin f$.
+% 
+% ??
+
 Take $Y_{i}=\left\{ \begin{array}{ll}
 Q & \text{if }i=0\\
-\{\{c(i)\}\} & \text{if }i>0
+\{c(i)\} & \text{if }i>0
 \end{array}\right.$ for $i=0,1,2,\ldots$. We have $Y\in\up(\lambda i\in\mathbb{N}:\mathcal{L}_{c(i)}(i))$ for every $c\in\{0,1\}^n$.
 
 But evidently $\prod Y$ does not contain an element of $f$.
