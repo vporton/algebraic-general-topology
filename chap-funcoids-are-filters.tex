@@ -404,15 +404,15 @@ but $1_{\mathbf{Rel}(A;A)}\notin\GR(\mathsf{RLD})_{\Gamma}f.$\end{proof}
 \begin{lem}
 $\tofcd(\mathsf{RLD})_{\Gamma}f=f$ for every funcoid $f$.\end{lem}
 \begin{proof}
-For every filter $\mathcal{X}\in\mathscr{F}(\Src f)$ we have $\langle\tofcd(\mathsf{RLD})_{\Gamma}f\rangle\mathcal{X}=\bigsqcap_{F\in\up(\mathsf{RLD})_{\Gamma}f}^{\mathfrak{F}}\supfun F\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}$.
+For every filter $\mathcal{X}\in\mathscr{F}(\Src f)$ we have $\langle\tofcd(\mathsf{RLD})_{\Gamma}f\rangle\mathcal{X}=\bigsqcap_{F\in\up(\mathsf{RLD})_{\Gamma}f}^{\mathscr{F}}\supfun F\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}$.
 
-Obviously $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}\sqsupseteq\supfun f\mathcal{X}$.
+Obviously $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsupseteq\supfun f\mathcal{X}$.
 So $\tofcd(\mathsf{RLD})_{\Gamma}f\sqsupseteq f$.
 
 Let $Y\in\up\supfun f\mathcal{X}$. Then (proposition above) there
 exists $A\in\up\mathcal{X}$ such that $Y\in\up\langle f\rangle A$.
 
-Thus $A\times Y\sqcup\overline{A}\times\top\in\up f$. So $\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}\sqsubseteq\supfun{A\times Y\sqcup\overline{A}\times\top}\mathcal{X}=Y$.
+Thus $A\times Y\sqcup\overline{A}\times\top\in\up f$. So $\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsubseteq\supfun{A\times Y\sqcup\overline{A}\times\top}\mathcal{X}=Y$.
 So $Y\in\up\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}$ that
 is $\supfun f\mathcal{X}\sqsupseteq\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}$
 that is $f\sqsupseteq\tofcd(\mathsf{RLD})_{\Gamma}f$.\end{proof}
