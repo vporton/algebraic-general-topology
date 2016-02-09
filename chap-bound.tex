@@ -4,9 +4,8 @@
 
 \section{Thick binary relations}
 \begin{defn}
-\index{alpha
--thick@$\alpha$-thick}I will call \emph{$\alpha$-thick} and denote $\thick_{\alpha}(E)$
-a $\mathbf{Rel}$-morphism $E$ when there exists a finite cover $S$
+\index{alpha-thick@$\alpha$-thick}I will call \emph{$\alpha$-thick} and denote $\thick_{\alpha}(E)$
+a $\mathbf{Rel}$-endomorphism $E$ when there exists a finite cover $S$
 of $\Ob E$ such that $\forall A\in S:A\times A\subseteq\GR E$.
 \end{defn}
 
@@ -86,13 +85,13 @@ for uniform spaces the below definitions are equivalent).
 \begin{defn}
 \index{alpha
 -totally bounded@$\alpha$-totally bounded}An endoreloid $f$ is \emph{$\alpha$-totally bounded} ($\totBound_{\alpha}(f)$)
-if every $E\in\up f$ is $\alpha$-thick.
+if every~$E\in\up f$ is $\alpha$-thick.
 \end{defn}
 
 \begin{defn}
 \index{beta
 -totally bounded@$\beta$-totally bounded}An endoreloid $f$ is \emph{$\beta$-totally bounded} ($\totBound_{\beta}(f)$)
-if every $E\in\up f$ is $\beta$-thick.\end{defn}
+if every~$E\in\up f$ is $\beta$-thick.\end{defn}
 \begin{rem}
 We could rewrite the above definitions in a more algebraic way like
 $\up f\subseteq\thick_{\alpha}$ (with $\thick_{\alpha}$ would be
@@ -132,7 +131,7 @@ It follows from the example above and properties of principal endoreloids.
 Remember that \emph{uniform space} is essentially the same as symmetric,
 reflexive and transitive endoreloid.
 \begin{thm}
-Let $f$ be such a endoreloid that $f\circ f^{-1}\sqsubseteq f$.
+Let $f$ be such an endoreloid that $f\circ f^{-1}\sqsubseteq f$.
 Then $f$ is $\alpha$-totally bounded iff it is $\beta$-totally
 bounded.\end{thm}
 \begin{proof}
@@ -166,11 +165,11 @@ specifying whether it is $\alpha$ or $\beta$).
 \section{Relationships with other properties}
 \begin{thm}
 Let $\mu$ and $\nu$ be endoreloids. Let $f$ be a principal $\continuous'(\mu;\nu)$
-continuous, monovalued, surjective reloid. Then if $\mu$ is $\mu$-totally
+continuous, monovalued, surjective reloid. Then if $\mu$ is $\beta$-totally
 bounded then $\nu$ is also $\beta$-totally bounded.\end{thm}
 \begin{proof}
 Let $\varphi$ be the monovalued, surjective function, which induces
-the reloid $f$.
+the reloid~$f$.
 
 We have $\mu\sqsubseteq f^{-1}\circ\nu\circ f$.
 
@@ -226,10 +225,12 @@ We may consider also the following predicates expressing different
 kinds of what is intuitively is understood as boundness. Their usefulness
 is unclear, but I present them for completeness.
 \begin{itemize}
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\alpha}(E^{n})$
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\beta}(E^{n})$
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\alpha}(E^{0}\cup\ldots\cup E^{n})$
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\beta}(E^{0}\cup\ldots\cup E^{n})$
+\item $\totBound_{\alpha}(f)$
+\item $\totBound_{\beta}(f)$
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\alpha}(E^{n})$
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\beta}(E^{n})$
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\alpha}(E^{0}\sqcup\ldots\sqcup E^{n})$
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\beta}(E^{0}\sqcup\ldots\sqcup E^{n})$
 \item $\exists n\in\mathbb{N}:\totBound_{\alpha}(f^{n})$
 \item $\exists n\in\mathbb{N}:\totBound_{\beta}(f^{n})$
 \item $\exists n\in\mathbb{N}:\totBound_{\alpha}(f^{0}\sqcup\ldots\sqcup f^{n})$
@@ -241,28 +242,38 @@ Some of the above defined predicates are equivalent:
 \begin{prop}
 ~
 \begin{itemize}
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\alpha}(E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\alpha}(f^{n})$.
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\beta}(E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\beta}(f^{n})$.
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\alpha}(E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\alpha}(f^{n})$.
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\beta}(E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\beta}(f^{n})$.
 \end{itemize}
 \end{prop}
 \begin{proof}
-Because every $F\in\up f^{n}$ is a superset of $E^{n}$ for some
-$E\in\up f$.\end{proof}
+Because for every $E\in\up f$ some $F\in\up f^{n}$ is a subset of $E^{n}$, we have
+\[\forall E\in\up f:\thick_{\alpha}(E^{n})\Leftrightarrow\forall F\in\up f^n:\thick_{\alpha}(F)\]
+and likewise for $\thick_{\beta}$.\end{proof}
 \begin{prop}
 ~
 \begin{itemize}
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\alpha}(E^{0}\sqcup\ldots\sqcup E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\alpha}(f^{0}\sqcup\ldots\sqcup f^{n})$
-\item $\forall E\in\up f\exists n\in\mathbb{N}:\thick_{\beta}(E^{0}\sqcup\ldots\sqcup E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\beta}(f^{0}\sqcup\ldots\sqcup f^{n})$
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\alpha}(E^{0}\sqcup\ldots\sqcup E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\alpha}(f^{0}\sqcup\ldots\sqcup f^{n})$
+\item $\exists n\in\mathbb{N}\forall E\in\up f:\thick_{\beta}(E^{0}\sqcup\ldots\sqcup E^{n})\Leftrightarrow\exists n\in\mathbb{N}:\totBound_{\beta}(f^{0}\sqcup\ldots\sqcup f^{n})$
 \end{itemize}
 \end{prop}
 \begin{proof}
-$\up(f^{0}\sqcup\ldots\sqcup f^{n})=\up f^{0}\cap\ldots\cap\up f^{n}$.
-Thus for every $F\in\up(f^{0}\cap\ldots\cap f^{n})$ we have $F\in\up f^{k}$,
-thus $F\supseteq E_{k}^{k}$ for all $k$ for some $E_{k}\in\up f$
-and so $F\supseteq E^{0}\sqcup\ldots\sqcup E^{n}$ where $E=E_{0}\sqcap\dots\sqcap E_{k}\in\up f$.\end{proof}
+It's enough to prove
+\begin{align}
+\label{thk-1}&\forall E\in\up f\exists F\in\up(f^0\sqcup\dots\sqcup f^n):F\sqsubseteq E^{0}\sqcup\ldots\sqcup E^{n} \text{ and}\\
+\label{thk-2}&\forall F\in\up(f^0\sqcup\dots\sqcup f^n)\exists E\in\up f:E^{0}\sqcup\ldots\sqcup E^{n}\sqsubseteq F.
+\end{align}
+
+For the formula~\eqref{thk-1} take $F=E^0\sqcup\dots\sqcup E^n$.
+
+Let's prove~\eqref{thk-2}. Let $F\in\up(f^0\sqcup\dots\sqcup f^n)$. Using the fact that $F\in\up f^i$ take
+$E_i\in\up f$ for $i=0,\dots,n$ such that $E_i^i\sqsubseteq F$ (exercise~\ref{rld-fn} and properties of generalized filter bases) and then $E=E_{0}\sqcap\dots\sqcap E_{n}\in\up f$. We have
+$E^{0}\sqcup\ldots\sqcup E^{n}\sqsubseteq F$.
+\end{proof}
 \begin{prop}
 All predicates in the above list are pairwise equivalent in the case
 if $f$ is a uniform space.\end{prop}
 \begin{proof}
-Because $f\circ f=f$.\end{proof}
+Because $f\circ f=f$
+and thus $f^n=f^0\sqcup\dots\sqcup f^n=S(f)=f$.\end{proof}
 

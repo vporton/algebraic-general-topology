@@ -370,7 +370,7 @@ for an element $a$ of a filtrator.\end{defn}
 \end{obvious}
 Our main purpose here is knowing properties of the core of a filtrator
 to infer properties of the base of the filtrator, specifically properties
-of $\up a$ for every element $a$.
+of $\up a$ for every element~$a$.
 \begin{defn}
 \index{filtrator!with join-closed core}I call a filtrator \emph{with
 join-closed core} such a filtrator $(\mathfrak{A};\mathfrak{Z})$
@@ -387,15 +387,15 @@ $\bigsqcap^{\mathfrak{Z}}S$ exists for $S\in\subsets\mathfrak{Z}$.
 
 \begin{defn}
 \index{filtrator!with binarily join-closed core}I call a filtrator
-with binarily\emph{ join-closed core} such a filtrator $(\mathfrak{A};\mathfrak{Z})$
+with \emph{binarily join-closed core} such a filtrator $(\mathfrak{A};\mathfrak{Z})$
 that $a\sqcup^{\mathfrak{Z}}b=a\sqcup^{\mathfrak{A}}b$ whenever $a\sqcup^{\mathfrak{Z}}b$
 exists for $a,b\in\mathfrak{Z}$.
 \end{defn}
 
 \begin{defn}
 \index{filtrator!with binarily meet-closed core}I call a filtrator
-with binarily\emph{ meet-closed core} such a filtrator $(\mathfrak{A};\mathfrak{Z})$
-that $a\sqcap{}^{\mathfrak{Z}}b=a\sqcap^{\mathfrak{A}}b$ whenever
+with \emph{binarily meet-closed core} such a filtrator $(\mathfrak{A};\mathfrak{Z})$
+that $a\sqcap^{\mathfrak{Z}}b=a\sqcap^{\mathfrak{A}}b$ whenever
 $a\sqcap^{\mathfrak{Z}}b$ exists for $a,b\in\mathfrak{Z}$.
 \end{defn}
 
@@ -572,7 +572,7 @@ ideals, free stars, and mixers are defined.
 \emph{Filters} and \emph{ideals} are well known concepts. The terms
 \emph{free stars} and \emph{mixers} are my new terminology.
 
-Recall that \emph{filters} are nonempty sets $F$ without with $A,B\in F\Leftrightarrow\exists Z\in F:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
+Recall that \emph{filters} are nonempty sets $F$ with $A,B\in F\Leftrightarrow\exists Z\in F:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \begin{defn}
 \emph{Ideals} are nonempty sets $F$ with $A,B\in F\Leftrightarrow\exists Z\in F:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
@@ -580,13 +580,13 @@ Recall that \emph{filters} are nonempty sets $F$ without with $A,B\in F\Leftrigh
 \end{defn}
 
 \begin{defn}
-\emph{Free stars} are sets $F$ not equal to $\subsets\mathfrak{A}$
+\emph{Free stars} are sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A,B\in\overline{F}\Leftrightarrow\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{defn}
 
 \begin{defn}
-\emph{Mixers} are sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\emph{Mixers} are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A,B\in\overline{F}\Leftrightarrow\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{defn}
@@ -598,10 +598,10 @@ By duality and and an above theorem about filters, we have:
 (for every $A,B\in\mathfrak{Z}$).
 \item Ideals are nonempty lower sets $F$ with $A,B\in F\Rightarrow\exists Z\in F:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{A}$
+\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A,B\in\overline{F}\Rightarrow\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A,B\in\overline{F}\Rightarrow\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{itemize}
@@ -611,29 +611,32 @@ $A,B\in\overline{F}\Rightarrow\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\s
 The following are equivalent:
 \begin{enumerate}
 \item \label{free-alt-star}$F$ is a free star.
-\item \label{free-alt-eq}$\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F\neq\subsets\mathfrak{A}$.
-\item \label{free-alt-impl}$\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F$ is an upper set and $F\neq\subsets\mathfrak{A}$.
+\item \label{free-alt-eq}$\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F\neq\subsets\mathfrak{Z}$.
+\item \label{free-alt-impl}$\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F$ is an upper set and $F\neq\subsets\mathfrak{Z}$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
 ~
 \begin{description}
-\item [{\ref{free-alt-star}$\Rightarrow$\ref{free-alt-eq}}] The following
+\item [{\ref{free-alt-star}$\Leftrightarrow$\ref{free-alt-eq}}] The following
 is a chain of equivalencies: 
 \begin{gather*}
 \exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)\Leftrightarrow A\notin F\wedge B\notin F;\\
 \forall Z\in\overline{F}:\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B)\Leftrightarrow A\in F\vee B\in F;\\
-\forall Z\in\mathfrak{A}:(Z\notin F\Rightarrow\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B))\Leftrightarrow A\in F\vee B\in F;\\
-\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F.
+\forall Z\in\mathfrak{Z}:(Z\notin F\Rightarrow\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B))\Leftrightarrow A\in F\vee B\in F;\\
+\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F.
 \end{gather*}
 
-\item [{\ref{free-alt-eq}$\Rightarrow$\ref{free-alt-impl}}] Obvious.
+\item [{\ref{free-alt-eq}$\Rightarrow$\ref{free-alt-impl}}]
+Let $A=B\in F$. Then $A\in F\lor B\in F$. So $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
+that is $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\Rightarrow Z\in F)$ that is $F$ is an upper set.
+
 \item [{\ref{free-alt-impl}$\Rightarrow$\ref{free-alt-eq}}] We need
-to prove that $F$ is an upper set. let $A\in F$ and $A\sqsubseteq B\in\mathfrak{A}$.
-Then $A\in F\lor B\in F$ and thus $\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
-that is $\forall Z\in\mathfrak{A}:(Z\sqsupseteq B\Rightarrow Z\in F)$
+to prove that $F$ is an upper set. let $A\in F$ and $A\sqsubseteq B\in\mathfrak{Z}$.
+Then $A\in F\lor B\in F$ and thus $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in F)$
+that is $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq B\Rightarrow Z\in F)$
 and so $B\in F$.
 \end{description}
 \end{proof}
@@ -641,10 +644,10 @@ and so $B\in F$.
 The following are equivalent:
 \begin{enumerate}
 \item $F$ is a mixer.
-\item $\forall Z\in\mathfrak{A}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F\neq\subsets\mathfrak{A}$.
-\item $\forall Z\in\mathfrak{A}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
-for every $A,B\in\mathfrak{A}$ and $F$ is an lower set and $F\neq\subsets\mathfrak{A}$.
+\item $\forall Z\in\mathfrak{Z}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Leftrightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F\neq\subsets\mathfrak{Z}$.
+\item $\forall Z\in\mathfrak{Z}:(Z\sqsubseteq A\wedge Z\sqsubseteq B\Rightarrow Z\in F)\Rightarrow A\in F\vee B\in F$
+for every $A,B\in\mathfrak{Z}$ and $F$ is an lower set and $F\neq\subsets\mathfrak{Z}$.
 \end{enumerate}
 \end{cor}
 \begin{obvious}
@@ -659,15 +662,15 @@ for every $A,B\in\mathfrak{A}$ and $F$ is an lower set and $F\neq\subsets\mathfr
 \begin{prop}
 ~
 \begin{itemize}
-\item Free stars are sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Free stars are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\in F\lor B\in F\Leftrightarrow\lnot\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{A}$
+\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A\in F\lor B\in F\Leftarrow\lnot\exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Mixers are sets $F$ not equal to $\subsets\mathfrak{A}$ with $A\in F\lor B\in F\Leftrightarrow\lnot\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
+\item Mixers are sets $F$ not equal to $\subsets\mathfrak{Z}$ with $A\in F\lor B\in F\Leftrightarrow\lnot\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
-\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\in F\lor B\in F\Leftarrow\lnot\exists Z\in\overline{F}:(Z\sqsubseteq A\wedge Z\sqsubseteq B)$
 (for every $A,B\in\mathfrak{Z}$).
 \end{itemize}
@@ -683,10 +686,10 @@ By duality and and an above theorem about filters, we have:
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a meet-semilattice.
 \item Ideals are nonempty sets $F$ with $A\sqcup B\in F\Leftrightarrow A\in F\land B\in F$
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Free stars are sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Free stars are sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\sqcup B\in F\Leftrightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Mixers are sets $F$ not equal to $\subsets\mathfrak{A}$ with $A\sqcap B\in F\Leftrightarrow A\in F\lor B\in F$
+\item Mixers are sets $F$ not equal to $\subsets\mathfrak{Z}$ with $A\sqcap B\in F\Leftrightarrow A\in F\lor B\in F$
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a meet-semilattice.
 \end{itemize}
 \end{prop}
@@ -698,10 +701,10 @@ By duality and and an above theorem about filters, we have:
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a meet-semilattice.
 \item Ideals are nonempty lower sets $F$ with $A\sqcup B\in F\Leftarrow A\in F\land B\in F$
 (for every $A,B\in\mathfrak{Z}$), whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{A}$
+\item Free stars are upper sets $F$ not equal to $\subsets\mathfrak{Z}$
 with $A\sqcup B\in F\Rightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a join-semilattice.
-\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{A}$ with
+\item Mixers are lower sets $F$ not equal to $\subsets\mathfrak{Z}$ with
 $A\sqcap B\in F\Rightarrow A\in F\lor B\in F$ (for every $A,B\in\mathfrak{Z}$),
 whenever $\mathfrak{Z}$ is a meet-semilattice.
 \end{itemize}
@@ -852,39 +855,39 @@ The direct implication follows from that $F$ is an upper set.
 \end{description}
 \end{proof}
 \begin{lem}
-If $S\in\subsets\mathfrak{Z}$ is not the complement of empty set and for every $T\in\subsets\mathfrak{A}$
+If $S\in\subsets\mathfrak{Z}$ is not the complement of empty set and for every $T\in\subsets\mathfrak{Z}$
 \[
-\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset,
+\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset,
 \]
 then $S$ is a free star.\end{lem}
 \begin{proof}
-Take $T=\{A,B\}$. Then $\forall Z\in\mathfrak{A}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in S)\Leftrightarrow A\in S\vee B\in S$.
+Take $T=\{A,B\}$. Then $\forall Z\in\mathfrak{Z}:(Z\sqsupseteq A\wedge Z\sqsupseteq B\Rightarrow Z\in S)\Leftrightarrow A\in S\vee B\in S$.
 So $S$ is a free star.\end{proof}
 \begin{prop}
 A set $S\in\subsets\mathfrak{Z}$ is a principal free star iff $S$
-is not the complement of empty set and for every $T\in\subsets\mathfrak{A}$
+is not the complement of empty set and for every $T\in\subsets\mathfrak{Z}$
 \[
-\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset.
+\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset.
 \]
 \end{prop}
 \begin{proof}
 Let $S=\overline{\langle\dual\rangle^{\ast}F}$. We need to prove
-that $F$ is a principal filter. Really, we have the following chain
+that $F$ is a principal filter iff the above formula holds. Really, we have the following chain
 of equivalencies:
 
-$\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset$;
+$\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftrightarrow T\cap S\neq\emptyset$;
 
-$\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\notin\langle\dual\rangle^{\ast}F)\Leftrightarrow T\cap\overline{\langle\dual\rangle^{\ast}F}\neq\emptyset$;
+$\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\notin\langle\dual\rangle^{\ast}F)\Leftrightarrow T\cap\overline{\langle\dual\rangle^{\ast}F}\neq\emptyset$;
 
-$\forall Z\in\dual\mathfrak{A}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\cap\overline{F}\neq\emptyset$;
+$\forall Z\in\dual\mathfrak{Z}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\cap\overline{F}\neq\emptyset$;
 
-$\forall Z\in\dual\mathfrak{A}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\nsubseteq F$;
+$\forall Z\in\dual\mathfrak{Z}:(\forall X\in T:Z\sqsubseteq X\Rightarrow Z\notin F)\Leftrightarrow T\nsubseteq F$;
 
-$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{A}:(Z\in F\Rightarrow\neg\forall X\in T:Z\sqsubseteq X)$;
+$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{Z}:(Z\in F\Rightarrow\neg\forall X\in T:Z\sqsubseteq X)$;
 
-$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{A}:(Z\notin F\vee\neg\forall X\in T:Z\sqsubseteq X)$;
+$T\subseteq F\Leftrightarrow\neg\forall Z\in\dual\mathfrak{Z}:(Z\notin F\vee\neg\forall X\in T:Z\sqsubseteq X)$;
 
-$T\subseteq F\Leftrightarrow\exists Z\in\dual\mathfrak{A}:(Z\in F\wedge\forall X\in T:Z\sqsubseteq X)$;
+$T\subseteq F\Leftrightarrow\exists Z\in\dual\mathfrak{Z}:(Z\in F\wedge\forall X\in T:Z\sqsubseteq X)$;
 
 $T\subseteq F\Leftrightarrow\exists Z\in F\forall X\in T:Z\sqsubseteq X$;
 
@@ -892,12 +895,13 @@ $\exists Z\in F\forall X\in F:Z\sqsubseteq X$ that is $F$ is a principal
 filter ($S$ is an upper set because by the lemma it is a free star;
 thus $F$ is also an upper set).\end{proof}
 \begin{prop}
-$S\in\subsets\mathfrak{A}$ where $\mathfrak{A}$ is a poset is a
+$S\in\subsets\mathfrak{Z}$ where $\mathfrak{Z}$ is a poset is a
 principal free star iff all the following:
 \begin{enumerate}
 \item \label{princ-fs-least}The least element (if it exists) is not in
 $S$.
-\item \label{princ-fs-form}$\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$.
+\item \label{princ-fs-form}$\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$
+for every $T\in\subsets\mathfrak{Z}$.
 \item $S$ is an upper set.
 \end{enumerate}
 \end{prop}
@@ -908,18 +912,18 @@ $S$.
 are obvious. $S$ is an upper set because $S$ is a free star.
 \item [{$\Leftarrow$}] We need to prove that 
 \[
-\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftarrow T\cap S\neq\emptyset.
+\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftarrow T\cap S\neq\emptyset.
 \]
 Let $X'\in T\cap S$. Then $\forall X\in T:Z\sqsupseteq X\Rightarrow Z\sqsupseteq X'\Rightarrow Z\in S$
 because $S$ is an upper set.
 \end{description}
 \end{proof}
 \begin{prop}
-Let $S$ be a complete lattice. $S\in\subsets\mathfrak{A}$ is a principal
+Let $\mathfrak{Z}$ be a complete lattice. $S\in\subsets\mathfrak{Z}$ is a principal
 free star iff all the following:
 \begin{enumerate}
-\item The least element (if it exists) is not in $S$.
-\item $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$ for every $T\in\subsets S$.
+\item The least element is not in $S$.
+\item $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$ for every $T\in\subsets\mathfrak{Z}$.
 \item $S$ is an upper set.
 \end{enumerate}
 \end{prop}
@@ -928,19 +932,20 @@ free star iff all the following:
 \begin{description}
 \item [{$\Rightarrow$}] We need to prove only $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$.
 Let $\bigsqcup T\in S$. Because $S$ is an upper set, we have $\forall X\in T:Z\sqsupseteq X\Rightarrow Z\sqsupseteq\bigsqcup T\Rightarrow Z\in S$
+for every $Z\in\mathfrak{Z}$;
 from which we conclude $T\cap S\neq\emptyset$.
-\item [{$\Leftarrow$}] We need to prove only $\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$.
+\item [{$\Leftarrow$}] We need to prove only $\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Rightarrow T\cap S\neq\emptyset$.
 
 
-Really, if $\forall Z\in\mathfrak{A}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)$
+Really, if $\forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)$
 then $\bigsqcup T\in S$ and thus $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptyset$.
 
 \end{description}
 \end{proof}
 \begin{prop}
-Let $\mathfrak{A}$ be a complete lattice. $S\in\subsets\mathfrak{A}$
-is a principal free star iff the least element (if it exists) is not
-in $S$ and for every $T\in\subsets\mathfrak{A}$ 
+Let $\mathfrak{Z}$ be a complete lattice. $S\in\subsets\mathfrak{Z}$
+is a principal free star iff the least element is not
+in $S$ and for every $T\in\subsets\mathfrak{Z}$ 
 \[
 \bigsqcup T\in S\Leftrightarrow T\cap S\neq\emptyset.
 \]
@@ -1000,7 +1005,7 @@ $a$ of this poset.\end{defn}
 \begin{obvious}
 Every completely starrish poset is starrish.\end{obvious}
 \begin{prop}
-Every complete join infinite distributive lattice is starrish.\end{prop}
+Every complete join infinite distributive lattice is completely starrish.\end{prop}
 \begin{proof}
 Let $\mathfrak{A}$ be a join infinite distributive lattice, $a\in\mathfrak{A}$.
 Obviously $\bot\notin\fullstar a$ (if $\bot$ exists); obviously
@@ -1122,23 +1127,28 @@ If $\mathfrak{B}$ is a complete lattice and $\mathfrak{A}$ is its
 subset and $S\in\subsets\mathfrak{A}$ and $\bigsqcup^{\mathfrak{B}}S\in\mathfrak{A}$,
 then $\bigsqcup^{\mathfrak{A}}S$
 exists and $\bigsqcup^{\mathfrak{A}}S=\bigsqcup^{\mathfrak{B}}S$.\end{cor}
+
+\begin{xca}
+The below theorem does not work for $S=\emptyset$. Formulate the general case.
+\end{xca}
+
 \begin{thm}
 ~
 \begin{enumerate}
 \item \label{inf-lat-filt}If $\mathfrak{Z}$ is a meet-semilattice with
 greatest element, then $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S$
-exists and $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}=\bigcap S$ for
-every $S\in\subsets\mathfrak{F}(\mathfrak{Z})$.
+exists and $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S=\bigcap S$ for
+every $S\in\subsets\mathfrak{F}(\mathfrak{Z})\setminus\{\emptyset\}$.
 \item \label{inf-lat-ideal}If $\mathfrak{Z}$ is a join-semilattice with
 least element, then $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}S$ exists
-and $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}=\bigcap S$ for every
-$S\in\subsets\mathfrak{I}(\mathfrak{Z})$.
+and $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}S=\bigcap S$ for every
+$S\in\subsets\mathfrak{I}(\mathfrak{Z})\setminus\{\emptyset\}$.
 \item \label{inf-lat-fs}If $\mathfrak{Z}$ is a join-semilattice with least
 element, then $\bigsqcup^{\mathfrak{S}(\mathfrak{Z})}S$ exists and
-$\bigsqcup^{\mathfrak{S}(\mathfrak{Z})}=\bigcup S$ for every $S\in\subsets\mathfrak{S}(\mathfrak{Z})$.
+$\bigsqcup^{\mathfrak{S}(\mathfrak{Z})}S=\bigcup S$ for every $S\in\subsets\mathfrak{S}(\mathfrak{Z})$.
 \item \label{inf-lat-mix}If $\mathfrak{Z}$ is a meet-semilattice with
 greatest element, then $\bigsqcap^{\mathfrak{M}(\mathfrak{Z})}S$
-exists and $\bigsqcap^{\mathfrak{M}(\mathfrak{Z})}=\bigcup S$ for
+exists and $\bigsqcap^{\mathfrak{M}(\mathfrak{Z})}S=\bigcup S$ for
 every $S\in\subsets\mathfrak{M}(\mathfrak{Z})$.
 \end{enumerate}
 \end{thm}
@@ -1173,7 +1183,7 @@ filtrator.
 \item \label{f-join-form-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
 filtrator over a meet-semilattice with greatest element~$\top$.
 \item \label{f-join-form-conc}$\bigsqcup^{\mathfrak{A}}S$ exists and $\up\bigsqcup^{\mathfrak{A}}S=\bigcap\rsupfun{\up}S$
-for every $S\in\subsets\mathfrak{A}$.
+for every $S\in\subsets\mathfrak{A}\setminus\{\emptyset\}$.
 \end{enumerate}
 \end{cor}
 \begin{proof}
@@ -1207,7 +1217,7 @@ for every $\mathcal{A},\mathcal{B}\in\mathfrak{A}$.
 We will denote meets and joins on the lattice of filters just as~$\sqcap$
 and~$\sqcup$.
 \begin{cor}
-If $\mathfrak{Z}$ is a join-semilattice with greatest element then $\mathfrak{A}$ is a
+If $\mathfrak{Z}$ is a join-semilattice with least element then $\mathfrak{A}$ is a
 join-semilattice and for any $\mathcal{A},\mathcal{B}\in\mathfrak{A}$
 \[
 \up(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B})=\up\mathcal{A}\cap\up\mathcal{B}.
@@ -1238,7 +1248,7 @@ A\sqcap^{\mathfrak{Z}}B=X_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}X_{k
 
 
 
-Let filter $C\sqsupseteq A\in R$. Consequently (distributivity used)
+Let element $C\sqsupseteq A\in R$. Consequently (distributivity used)
 \[
 C=C\sqcup^{\mathfrak{Z}}A=(C\sqcup^{\mathfrak{Z}}X_{0})\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}(C\sqcup^{\mathfrak{Z}}X_{k}).
 \]
@@ -1365,6 +1375,8 @@ if $\mathfrak{Z}$ is a meet-semilattice;
 for $S\in\subsets\mathfrak{I}(\mathfrak{Z})\setminus\{\emptyset\}$
 if $\mathfrak{Z}$ is a join-semilattice.
 \end{enumerate}
+\end{thm}
+\begin{proof}
 We will prove only the first as the second is dual.
 
 It follows from the fact that 
@@ -1372,7 +1384,7 @@ It follows from the fact that
 \bigsqcap^{\mathfrak{F}(\mathfrak{Z})}S=\bigsqcap^{\mathfrak{F}(\mathfrak{Z})}\setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}}{K_{i}\in\bigcup S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}}
 \]
 and that $\setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}}{K_{i}\in\bigcup S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}}$
-is a filter base.\end{thm}
+is a filter base.\end{proof}
 \begin{cor}
 \label{meet-filtx}The following is an implications tuple:
 \begin{enumerate}
@@ -1388,7 +1400,7 @@ for every $S\in\subsets\mathfrak{A}\setminus\{\emptyset\}$.
 \item $\mathcal{F}_{0}\sqcap^{\mathfrak{F}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{F}(\mathfrak{Z})}\mathcal{F}_{m}=\bigcup\setcond{\uparrow(K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{m})}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$
 for $S\in\subsets\mathfrak{F}(\mathfrak{Z})\setminus\{\emptyset\}$
 if $\mathfrak{Z}$ is a meet-semilattice;
-\item $\mathcal{F}_{0}\sqcap^{\mathfrak{I}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{I}(\mathfrak{Z})}\mathcal{F}_{m}=\bigcup\setcond{\uparrow(K_{0}\sqcup^{\mathfrak{Z}}\dots\sqcup^{\mathfrak{Z}}K_{m})}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$
+\item $\mathcal{F}_{0}\sqcup^{\mathfrak{I}(\mathfrak{Z})}\dots\sqcup^{\mathfrak{I}(\mathfrak{Z})}\mathcal{F}_{m}=\bigcup\setcond{\uparrow(K_{0}\sqcup^{\mathfrak{Z}}\dots\sqcup^{\mathfrak{Z}}K_{m})}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$
 for $S\in\subsets\mathfrak{I}(\mathfrak{Z})\setminus\{\emptyset\}$
 if $\mathfrak{Z}$ is a join-semilattice.
 \end{enumerate}
@@ -1404,7 +1416,8 @@ It follows from the fact that
 and that $\setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{m}}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$
 is a filter base.\end{proof}
 \begin{cor}
-$\up(\mathcal{F}_{0}\sqcap^{\mathfrak{F}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{F}(\mathfrak{Z})}\mathcal{F}_{m})=\bigcup\setcond{\up(K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{m})}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$.
+$\up(\mathcal{F}_{0}\sqcap^{\mathfrak{F}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{F}(\mathfrak{Z})}\mathcal{F}_{m})=\bigcup\setcond{\up(K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{m})}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$
+if $\mathfrak{Z}$ is a meet-semilattice.
 \end{cor}
 
 \subsection{Distributivity of the Lattice of Filters}
@@ -1415,7 +1428,7 @@ $\up(\mathcal{F}_{0}\sqcap^{\mathfrak{F}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{F}
 \item \label{inf-assc-prim}$(\mathfrak{A};\mathfrak{Z})$ is a primary
 filtrator over a distributive lattice with greatest element.
 \item \label{inf-assc-conc}$\mathcal{A}\sqcup^{\mathfrak{A}}\bigsqcap^{\mathfrak{A}}S=\bigsqcap^{\mathfrak{A}}\rsupfun{\mathcal{A}\sqcup^{\mathfrak{A}}}S$
-for $S\in\subsets\mathfrak{A}$ and $\mathcal{A}\in\mathfrak{A}$
+for $S\in\subsets\mathfrak{A}$ and $\mathcal{A}\in\mathfrak{A}$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1426,7 +1439,7 @@ for $S\in\subsets\mathfrak{A}$ and $\mathcal{A}\in\mathfrak{A}$
 into account the previous section, we have:
 \begin{align*}
 \up\left(\mathcal{A}\sqcup^{\mathfrak{A}}\bigsqcap^{\mathfrak{A}}S\right) & =\\
-\mathcal{A}\cap\bigsqcap^{\mathfrak{A}}S & =\\
+\up\mathcal{A}\cap\up\bigsqcap^{\mathfrak{A}}S & =\\
 \up\mathcal{A}\cap\setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}}{K_{i}\in\bigcup\rsupfun{\up}S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}} & =\\
 \setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}}{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}\in\up\mathcal{A},K_{i}\in\bigcup\rsupfun{\up}S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}} & =\\
 \setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}}{K_{i}\in\up\mathcal{A},K_{i}\in\bigcup\rsupfun{\up}S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}} & =\\
@@ -1450,6 +1463,52 @@ lattice with greatest element.
 \end{enumerate}
 \end{cor}
 
+\begin{cor}\label{filt-co-frame}
+The following is an implications tuple:
+\begin{enumerate}
+\item $(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a distributive
+lattice with greatest element.
+\item $\mathfrak{A}$ is a co-frame.
+\end{enumerate}
+\end{cor}
+
+The below theorem uses the notation and results from section~\ref{some-frames}.
+\begin{thm}
+\label{frame-main}If $\mathfrak{A}$ is a co-frame and $L$ is a
+distributive lattice with greatest element, then $\operatorname{Join}(L;\mathfrak{A})$
+is also a co-frame.
+\end{thm}
+\begin{proof}
+Let $F=\uparrow\circ\bigsqcap:\Upper(\mathfrak{A})\rightarrow\Upper(\mathfrak{A})$;
+$F$ is a co-nucleus by above.
+
+Since $\Upper(\mathfrak{A})\cong\mathbf{Pos}(\mathfrak{A};2)$ by
+proposition \ref{down-is-homo}, we may regard $F$ as a co-nucleus
+on $\mathbf{Pos}(\mathfrak{A};2)$.
+
+$\operatorname{Join}(L;\mathfrak{A})\cong\operatorname{Join}(L;\Fix(F))$
+by corollary \ref{down-meet-co-nucleus}.
+
+$\operatorname{Join}(L;\Fix(F))\cong\Fix(\operatorname{Join}(L;F))$
+by lemma \ref{join-fix-inter}.
+
+By corollary \ref{join-map-co-nucleus} the function $\operatorname{Join}(L;F)$
+is a co-nucleus on $\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right)$.
+\begin{eqnarray*}
+\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right) & \cong & \text{(by lemma \ref{join-pos-interch})}\\
+\mathbf{Pos}(\mathfrak{A};\operatorname{Join}(L;2)) & \cong\\
+\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X)).
+\end{eqnarray*}
+$\mathfrak{F}(X)$ is a co-frame by corollary~\ref{filt-co-frame}. Thus
+$\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$ is a co-frame by lemma~\ref{join-pos-interch}.
+
+Thus $\operatorname{Join}(L;\mathfrak{A})$ is isomorphic to a poset
+of fixed points of a co-nucleus on the co-frame $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$.
+By lemma \ref{fix-is-co-frame} $\operatorname{Join}(L;\mathfrak{A})$
+is also a co-frame.
+\end{proof}
+
 \section{Misc filtrator properties}
 \begin{thm}
 \label{semifilt-joinclosed}The following is an implications tuple:
@@ -1468,15 +1527,8 @@ a filtrator with join-closed core.
 ~
 \begin{description}
 \item [{\ref{semifilt-joinclosed-p}$\Rightarrow$\ref{semifilt-joinclosed-f}}] Obvious.
-\item [{\ref{semifilt-joinclosed-f}$\Rightarrow$\ref{semifilt-joinclosed-sfit}}] $\mathcal{A}$
-is obviously a lower bound for $\up\mathcal{A}$. Let $\mathcal{B}$
-be a lower bound for $\up\mathcal{A}$ that is
-\[
-\forall K\in\mathcal{A}:\mathcal{B}\sqsubseteq\uparrow K
-\]
-that is $\forall K\in\up\mathcal{A}:K\in\up\mathcal{B}$ that is $\up\mathcal{A}\subseteq\up\mathcal{B}$
-that is $\mathcal{B}\sqsubseteq\mathcal{A}$. So $\mathcal{A}$ is
-the greatest lower bound for $\up\mathcal{A}$.
+\item [{\ref{semifilt-joinclosed-f}$\Rightarrow$\ref{semifilt-joinclosed-sfit}}] The formula
+$\forall a,b\in\mathfrak{A}:(\up a\supseteq\up b\Rightarrow a\sqsubseteq b)$ is obvious for primary filtrators.
 \item [{\ref{semifilt-joinclosed-sfit}$\Rightarrow$\ref{semifilt-joinclosed-conc}}] Let
 $(\mathfrak{A};\mathfrak{Z})$ be a filtered filtrator. Let $S\in\subsets\mathfrak{Z}$
 and $\bigsqcup^{\mathfrak{Z}}S$ be defined. We need to prove $\bigsqcup^{\mathfrak{A}}S=\bigsqcup^{\mathfrak{Z}}S$.
@@ -1570,6 +1622,7 @@ So
 \end{proof}
 
 \section{Core Part}
+Let $(\mathfrak{A};\mathfrak{Z})$ be a filtrator.
 \begin{defn}
 \index{core part}The \emph{core part} of an element $a\in\mathfrak{A}$
 is $\Cor a=\bigsqcap^{\mathfrak{Z}}\up a$.
@@ -1701,7 +1754,7 @@ X\in\up a\Rightarrow a\sqsubseteq X\land a\sqsubseteq a\Rightarrow X\nasymp^{\ma
 \begin{thm}
 \label{part-is-free}Let $(\mathfrak{A};\mathfrak{Z})$ be a distributive
 lattice filtrator with least element and binarily join-closed core
-which is a join semilattice. Then $\corestar a$ is a free star for
+which is a join-semilattice. Then $\corestar a$ is a free star for
 each $a\in\mathfrak{A}$.\end{thm}
 \begin{proof}
 For every $A,B\in\mathfrak{Z}$
@@ -1744,7 +1797,7 @@ and $a$ is an atom of $\mathfrak{A}$.
 \item [{\ref{atom-both-p}$\Rightarrow$\ref{atom-both-f}}] Obvious.
 \item [{\ref{atom-both-f}$\Rightarrow$\ref{atom-both-mlat}}] It is filtered
 by the theorem~\ref{semifilt-joinclosed}, binarily meet-closed by
-proposition~\ref{f-meet-closed}.
+corollary~\ref{f-meet-closed}.
 \item [{\ref{atom-both-mlat}$\Rightarrow$\ref{atom-both-conc}}] ~
 
 \begin{description}
@@ -1767,7 +1820,7 @@ So $a$ is not an atom of $\mathfrak{Z}$.
 \item \label{up-eq-corestar-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
 filtrator.
 \item \label{up-eq-corestar-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary
-filtrator over a meet-semilattice with least element.
+filtrator over a bounded meet-semilattice.
 \item \label{up-eq-corestar-mlat}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
 down-aligned filtrator and $\mathfrak{A}$ is a meet-semilattice.
 \item \label{up-eq-corestar-conc}$a\in\mathfrak{A}$ is an atom of $\mathfrak{A}$
@@ -1784,9 +1837,7 @@ is a meet-semilattice by the corollary~\ref{filt-is-complete}.
 \item [{\ref{up-eq-corestar-mlat}$\Rightarrow$\ref{up-eq-corestar-conc}}] ~
 
 \begin{description}
-\item [{$\Rightarrow$}] Let $a$ be an atom of $\mathfrak{A}$. $\up a\supseteq\corestar a$
-because $a\ne\bot$. $\up a\subseteq\corestar a$ because for any
-$K\in\mathfrak{A}$
+\item [{$\Rightarrow$}] For any $K\in\mathfrak{A}$
 \[
 K\in\up a\Leftrightarrow K\sqsupseteq a\Leftrightarrow K\sqcap^{\mathfrak{A}}a\ne\bot\Leftrightarrow K\in\corestar a.
 \]
@@ -1843,14 +1894,14 @@ an atom of $\mathfrak{A}$.
 \end{description}
 \end{proof}
 \begin{cor}
-Atoms of the set of filters on a set~$U$ are exactly sets $U\setminus\{x\}$
+Coatoms of the set of filters on a set~$U$ are exactly sets $U\setminus\{x\}$
 where $x\in U$.\end{cor}
 \begin{prop}
 \label{coat-ic}The following is an implications tuple:
 \begin{enumerate}
 \item \label{coat-ic-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
 \item \label{coat-ic-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator
-over an atomic poset.
+over a coatomic poset.
 \item \label{coat-ic-conc}$\mathfrak{A}$ is coatomic.
 \end{enumerate}
 \end{prop}
@@ -1937,9 +1988,10 @@ Then $A\sqcup^{\mathfrak{Z}}\overline{A}=\top^{\mathfrak{A}}\in\up a$.
 Therefore $A\in\up a\lor\overline{A}\in\up a$. But since $A\sqcap^{\mathfrak{Z}}\overline{A}=\bot^{\mathfrak{Z}}$
 it is impossible $A\in\up a\land\overline{A}\in\up a$.
 \item [{\ref{a-not-a}$\Rightarrow$\ref{prim-atom}}] Obviously $a\ne\bot^{\mathfrak{A}}$.
-Let a filter $b\sqsubset a$. So $\up b\supset\up a$. Let $X\in\up(b\setminus a)$.
-Then $X\notin\up a$ and thus $\overline{X}\in\up a$ and consequently
-$\overline{X}\in\up b$. So $\bot^{\mathfrak{Z}}=X\sqcap^{\mathfrak{Z}}\overline{X}\in\up b$
+
+Let a filter $b\sqsubset a$. Take $X\in\up b$ such that $X\notin\up a$. Then $\overline{X}\in\up a$ because $a$ is prime and thus
+$\overline{X}\in\up b$. So 
+$\bot^{\mathfrak{Z}}=X\sqcap^{\mathfrak{Z}}\overline{X}\in\up b$
 and thus $b=\bot^{\mathfrak{A}}$. So $a$ is atomic.
 \item [{\ref{prim-atom}$\Rightarrow$\ref{prim-prim}}] By the previous
 proposition.
@@ -1994,8 +2046,8 @@ and $\up\mathcal{A}=\lnot\rsupfun{\lnot}\corestar\mathcal{A}=\rsupfun{\lnot}\lno
 of properties of diagram~(\ref{two-diags}), it is enough to prove
 just $\corestar\mathcal{A}=\lnot\rsupfun{\lnot}\up\mathcal{A}$. Really,
 $X\in\up\mathcal{A}\Leftrightarrow X\sqsupseteq\mathcal{A}\Leftrightarrow\overline{X}\asymp^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{X}\notin\corestar\mathcal{A}$
-for any $X\in\mathfrak{Z}$ (taking into account theorems \ref{up-filt-crit},
-\ref{when-sep-core}, \ref{bool-compl}).
+for any $X\in\mathfrak{Z}$ (taking into account theorems~\ref{up-filt-crit},
+\ref{when-sep-core}, and lemma~\ref{bool-compl}).
 \end{description}
 \end{proof}
 \begin{cor}
@@ -2185,10 +2237,10 @@ over a bounded meet-semilattice.
 is complete by corollary~\ref{filt-is-complete}.
 
 
-If $\bot\in\bigsqcap^{\mathfrak{A}}S$ then there are $K_{i}\in\up\bigcup S$
+If $\bot\in\up\bigsqcap^{\mathfrak{A}}S$ then there are $K_{i}\in\up\bigcup S$
 such that $\bot\in\up(K_{0}\sqcap^{\mathfrak{Z}}\ldots\sqcap^{\mathfrak{Z}}K_{n})$
 that is $K_{0}\sqcap^{\mathfrak{Z}}\ldots\sqcap^{\mathfrak{Z}}K_{n}=\bot$
-from which easily follows $\mathcal{F}_{0}\sqcap^{\mathfrak{A}}\ldots\sqcap^{\mathfrak{F}}\mathcal{F}_{n}=\bot$
+from which easily follows $\mathcal{F}_{0}\sqcap^{\mathfrak{A}}\ldots\sqcap^{\mathfrak{A}}\mathcal{F}_{n}=\bot$
 for some $\mathcal{F}_{i}\in S$.
 
 \end{description}
@@ -2202,7 +2254,7 @@ for some $\mathcal{F}_{i}\in S$.
 filtrator.
 \item \label{filt-is-sep-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
 filtrator over a boolean lattice.
-\item \label{filt-is-sep-conc}$\mathfrak{A}$ is separable.
+\item \label{filt-is-sep-conc}$\mathfrak{A}$ is strongly separable.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -2228,7 +2280,7 @@ filtrator over a boolean lattice.
 \begin{description}
 \item [{\ref{filt-atomistic-p}$\Rightarrow$\ref{filt-atomistic-fltr}}] Obvious.
 \item [{\ref{filt-atomistic-fltr}$\Rightarrow$\ref{filt-atomistic-conc}}] Because
-(used the theorem \ref{atomistic-enough}) $\mathfrak{A}$ is atomic
+(used theorem \ref{atomistic-enough}) $\mathfrak{A}$ is atomic
 (theorem \ref{filt-atomic}) and separable.
 \end{description}
 \end{proof}
@@ -2271,13 +2323,13 @@ $\mathcal{F}\in\mathfrak{A}$:
 \item [{\ref{crit1-p}$\Rightarrow$\ref{crit1-f}}] Obvious.
 \item [{\ref{crit1-f}$\Rightarrow$\ref{crit1-fltr}}] The filtrator $(\mathfrak{A};\mathfrak{Z})$
 is with with join-closed core by theorem \ref{semifilt-joinclosed},
-binarily meet-closed core by proposition \ref{f-meet-closed}, with
+binarily meet-closed core by corollary~\ref{f-meet-closed}, with
 separable core by theorem \ref{when-sep-core}.
 \item [{\ref{crit1-fltr}$\Rightarrow$\ref{crit1-conc}}] ~
 
 \begin{description}
 \item [{\ref{crit1-core}$\Rightarrow$\ref{crit1-flt}}] Let $\mathcal{F}\in\mathfrak{Z}$.
-Then (taking into account the proposition \ref{bool-compl})
+Then (taking into account the lemma~\ref{bool-compl})
 \[
 \mathcal{F}\sqcap^{\mathfrak{A}}\bigsqcup^{\mathfrak{A}}S\ne\bot\Leftrightarrow\overline{\mathcal{F}}\nsqsupseteq\bigsqcup^{\mathfrak{A}}S\Rightarrow\exists\mathcal{K}\in S:\overline{\mathcal{F}}\nsqsupseteq\mathcal{K}\Leftrightarrow\exists\mathcal{K}\in S:\mathcal{F}\sqcap^{\mathfrak{A}}\mathcal{K}\ne\bot.
 \]
@@ -2353,7 +2405,7 @@ filter closed, for any cardinal~$n$.
 
 
 Instead we will prove it not only for cardinals but for wider class
-of ordinals: If $\card S=n$ then $S$ is filter closed, for any ordinal
+of ordinals: If $\card S=n$ then $S$ is filter-closed, for any ordinal
 $n$.
 
 
@@ -2382,9 +2434,6 @@ Obviously $b_{\beta}=\bigsqcap[P_{\beta}]_{\sqcap}$. We have
 \[
 \card[P_{\beta}]_{\sqcap}=\card P_{\beta}=\card\beta<\card T
 \]
-
-
-
 (used the lemma and von Neumann cardinal assignment). By the assumption
 of induction $b_{\beta}\in S$.
 
@@ -2405,7 +2454,7 @@ Obviously $b\sqsupseteq\bigsqcap T$.
 
 
 $b\sqsubseteq b_{\beta}$ and so $\forall\beta\in\card T,\alpha\in\beta:b\sqsubseteq a_{\alpha}$.
-Let $\alpha\in\card T$. Then (because $\card T$ is limit ordinal,
+Let $\alpha\in\card T$. Then (because $\card T$ is a limit ordinal,
 see \cite{wiki:limit-ordinal}) there exists $\beta\in\card T$ such
 that $\alpha\in\beta\in\card T$. So $b\sqsubseteq a_{\alpha}$ for
 every $\alpha\in\card T$. Thus $b\sqsubseteq\bigsqcap T$.
@@ -2444,7 +2493,7 @@ Let $a,b\in\mathfrak{A}$. $\Cor a$ and $\Cor b$ exist since $\mathfrak{Z}$
 is a complete lattice.
 
 
-$\Cor a\in\down a$ and $\Cor b\in\down b$ by the corollary \ref{cor-less}
+$\Cor a\in\down a$ and $\Cor b\in\down b$ by the theorem~\ref{cor-less}
 since our filtrator is filtered. So we have
 \begin{align*}
 \exists x\in\down a,y\in\down b:x\sqcup^{\mathfrak{A}}y=\top & \Leftarrow\\
@@ -2477,7 +2526,7 @@ of the core exists $K\in\down a$ such that $c\equiv^{\mathfrak{A}}K$.
 To finish the proof we will show that $K\sqsubseteq\Cor a$. To show
 this is enough to show that $\forall X\in\up a:K\sqsubseteq X$ what
 is obvious.
-\item [{$\Leftarrow$}] $\Cor a\sqsubseteq a$ (by the theorem \ref{cor-less}
+\item [{$\Leftarrow$}] $\Cor a\sqsubseteq a$ (by theorem~\ref{cor-less}
 using that our filtrator is filtered).
 \end{description}
 \end{proof}
@@ -2500,12 +2549,25 @@ a^{+} & =\\
 If $(\mathfrak{A};\mathfrak{Z})$ is a filtered up-aligned complete
 lattice filtrator with co-separable core which is a complete boolean
 lattice, then $a^{+}\in\mathfrak{Z}$ for every $a\in\mathfrak{A}$.\end{cor}
-\begin{thm}
-\label{compl-and-cor}If $(\mathfrak{A};\mathfrak{Z})$ is a filtered
+\begin{thm}\label{compl-and-cor}
+~
+\begin{enumerate}
+\item \label{compl-and-cor-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{compl-and-cor-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
+\item \label{compl-and-cor-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
 complete lattice filtrator with down-aligned, binarily meet-closed,
-separable core which is a complete boolean lattice, then $a^{\ast}=\overline{\Cor a}=\overline{\Cor'a}$
-for every $a\in\mathfrak{A}$.\end{thm}
+separable core which is a complete boolean lattice.
+\item \label{compl-and-cor-res} $a^{\ast}=\overline{\Cor a}=\overline{\Cor'a}$
+for every $a\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
 \begin{proof}
+\item [\ref{compl-and-cor-p}$\Rightarrow$\ref{compl-and-cor-f}] Obvious.
+\item [\ref{compl-and-cor-f}$\Rightarrow$\ref{compl-and-cor-fltr}]
+It is filtered by theorem~\ref{semifilt-joinclosed}. It is complete lattice filtrator by~\ref{filt-is-complete}.
+It is with binarily meet-closed core (proposition~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core}).
+\item [\ref{compl-and-cor-fltr}$\Rightarrow$\ref{compl-and-cor-res}]
 Our filtrator is with join-closed core (theorem \ref{semifilt-joinclosed}).
 $a^{\ast}=\bigsqcup^{\mathfrak{A}}\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}$.
 But $c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}\Rightarrow\exists C\in\up c:C\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}$.
@@ -2524,13 +2586,36 @@ a^{\ast} & =\\
 (used theorem \ref{bool-compl}).
 
 $\Cor a=\Cor'a$ by theorem \ref{cor-eq}.\end{proof}
-\begin{cor}
-If $(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
+\begin{thm}
+\label{compl-eq-dual}The following is an implications tuple:
+\begin{enumerate}
+\item \label{compl-eq-dual-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
+filtrator.
+\item \label{compl-eq-dual-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
+filtrator over a complete boolean lattice.
+\item \label{compl-eq-dual-det}$(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
 complete lattice filtrator with binarily meet-closed, separable and
-co-separable core which is a complete boolean lattice, then $a^{\ast}=a^{+}\in\mathfrak{Z}$
-for every $a\in\mathfrak{A}$.\end{cor}
+co-separable core which is a complete boolean lattice.
+\item \label{compl-eq-dual-conc}$a^{\ast}=a^{+}=\overline{\Cor a}=\overline{\Cor' a}\in\mathfrak{Z}$ for
+every $a\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
 \begin{proof}
-Comparing two last theorems.\end{proof}
+~
+\begin{description}
+\item [{\ref{compl-eq-dual-p}$\Rightarrow$\ref{compl-eq-dual-fltr}}] Obvious.
+\item [{\ref{compl-eq-dual-fltr}$\Rightarrow$\ref{compl-eq-dual-det}}] The
+filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
+$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
+$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
+\ref{cosep-crit}.
+$(\mathfrak{A};\mathfrak{Z})$ is
+binarily meet-closed by proposition \ref{f-meet-closed}, with separable
+core by theorem~\ref{when-sep-core}.
+
+\item [{\ref{compl-eq-dual-det}$\Rightarrow$\ref{compl-eq-dual-conc}}] Comparing two last theorems.
+\end{description}
+\end{proof}
 \begin{thm}
 \label{compl-in-core}The following is an implications tuple:
 \begin{enumerate}
@@ -2546,10 +2631,10 @@ lattice.
 ~
 \begin{description}
 \item [{\ref{compl-in-core-f}$\Rightarrow$\ref{compl-in-core-fltr}}] $\mathfrak{A}$
-is a complete lattice by \ref{filt-is-complete}. $(\mathfrak{A};\mathfrak{Z})$
-is a filtrator with join-closed core by corollary \ref{semifilt-joinclosed}.
+is a complete lattice by corollary~\ref{filt-is-complete}. $(\mathfrak{A};\mathfrak{Z})$
+is a filtrator with join-closed core by theorem~\ref{semifilt-joinclosed}.
 $(\mathfrak{A};\mathfrak{Z})$ is a filtrator with separable core
-by theorem \ref{when-sep-core}.
+by theorem~\ref{when-sep-core}.
 \item [{\ref{compl-in-core-fltr}$\Rightarrow$\ref{compl-in-core-conc}}] $\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}\supseteq\setcond{A\in\mathfrak{Z}}{A\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}$;
 consequently $a^{\ast}\sqsupseteq\bigsqcup^{\mathfrak{A}}\setcond{A\in\mathfrak{Z}}{A\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}$.
 
@@ -2588,7 +2673,7 @@ for every $a\in\mathfrak{A}$.
 \item [{\ref{dual-compl-pseudo-p}$\Rightarrow$\ref{dual-compl-pseudo-f}}] Obvious.
 \item [{\ref{dual-compl-pseudo-f}$\Rightarrow$\ref{dual-compl-pseudo-fltr}}] $(\mathfrak{A};\mathfrak{Z})$
 is filtered by the theorem~\ref{semifilt-joinclosed}. It is with
-co-separable core by theorem \ref{cosep-crit}. $\mathfrak{A}$ is
+co-separable core by theorem~\ref{cosep-crit}. $\mathfrak{A}$ is
 a complete lattice by corollary \ref{filt-is-complete}.
 \item [{\ref{dual-compl-pseudo-fltr}$\Rightarrow$\ref{dual-compl-pseudo-conc}}] Our
 filtrator is with join-closed core (theorem \ref{semifilt-joinclosed}).
@@ -2598,38 +2683,6 @@ But $a^{+}\sqcup^{\mathfrak{A}}a=\overline{\Cor a}\sqcup^{\mathfrak{A}}a\sqsupse
 is filtered).
 \end{description}
 \end{proof}
-\begin{prop}
-\label{compl-eq-dual}The following is an implications tuple:
-\begin{enumerate}
-\item \label{compl-eq-dual-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
-filtrator.
-\item \label{compl-eq-dual-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
-filtrator over a complete boolean lattice.
-\item \label{compl-eq-dual-conc}$a^{\ast}=a^{+}=\overline{\Cor a}$ for
-every $a\in\mathfrak{A}$.
-\end{enumerate}
-\end{prop}
-\begin{proof}
-~
-\begin{description}
-\item [{\ref{compl-eq-dual-p}$\Rightarrow$\ref{compl-eq-dual-fltr}}] Obvious.
-\item [{\ref{compl-eq-dual-fltr}$\Rightarrow$\ref{compl-eq-dual-conc}}] The
-filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
-$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
-$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
-\ref{cosep-crit}. Thus we can apply the theorem \ref{cocompl-cor}.
-
-
-$(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed},
-binarily meet-closed by proposition \ref{f-meet-closed}, with separable
-core by theorem \ref{when-sep-core}. $\mathfrak{A}$ is a complete
-lattice by corollary \ref{filt-is-complete}. So we can apply the
-theorem \ref{compl-and-cor}.
-
-\end{description}
-\end{proof}
-\begin{cor}
-For powerset filtrators $a^{\ast}=a^{+}=\overline{\Cor a}=\overline{\Cor'a}\in\mathfrak{Z}$.\end{cor}
 \begin{defn}
 \index{edge part}The \emph{edge part} of an element $a\in\mathfrak{A}$
 is $\Edg a=a\setminus\Cor a$, the \emph{dual edge part} is $\Edg'a=a\setminus\Cor'a$.
@@ -2639,8 +2692,6 @@ of an element of a filtrator, the filter can be restored by the formulas:
 \[
 a=\Cor a\sqcup^{\mathfrak{A}}\Edg a\quad\text{and}\quad a=\Cor'a\sqcup^{\mathfrak{A}}\Edg'a.
 \]
-
-
 
 \section{Core Part and Atomic Elements}
 \begin{prop}
@@ -2691,7 +2742,7 @@ filtrator.
 filtrator over a complete lattice.
 \item \label{dual-cor-meet-mlat}$(\mathfrak{A};\mathfrak{Z})$ is a join-closed
 filtrator and $\mathfrak{A}$ is a meet-semilattice and $\mathfrak{Z}$
-is a complete lattice
+is a complete lattice.
 \item \label{dual-cor-meet-conc}$\Cor'(a\sqcap^{\mathfrak{A}}b)=\Cor'a\sqcap^{\mathfrak{Z}}\Cor'b$
 for every $a,b\in\mathfrak{A}$.
 \end{enumerate}
@@ -2741,7 +2792,7 @@ for every $T\in\subsets\mathfrak{Z}$.
 \begin{description}
 \item [{\ref{cor-inf-meet-p}$\Rightarrow$\ref{cor-inf-meet-f}}] Obvious.
 \item [{\ref{cor-inf-meet-f}$\Rightarrow$\ref{cor-inf-meet-fltr}}] It
-is with join-closed core by corollary \ref{semifilt-joinclosed}.
+is with join-closed core by theorem~\ref{semifilt-joinclosed}.
 $\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
 \item [{\ref{cor-inf-meet-fltr}$\Rightarrow$\ref{cor-inf-meet-conc}}] From
 theorem conditions it follows that $\Cor'\bigsqcap^{\mathfrak{A}}S$
@@ -2788,9 +2839,9 @@ for every $a,b\in\mathfrak{A}$.
 \item [{\ref{dual-core-join-p}$\Rightarrow$\ref{dual-core-join-f}}] Obvious.
 \item [{\ref{dual-core-join-f}$\Rightarrow$\ref{dual-core-join-fltr}}] $(\mathfrak{A};\mathfrak{Z})$
 is filtered by theorem~\ref{semifilt-joinclosed}. It is with binarily
-meet-close core by \ref{f-meet-closed}. $\mathfrak{A}$ is starrish
+meet-close core by corollary~\ref{f-meet-closed}. $\mathfrak{A}$ is starrish
 by corollary \ref{filt-also-distr}. $\mathfrak{A}$ is complete by
-corollary \ref{filt-is-complete}.
+corollary~\ref{filt-is-complete}.
 \item [{\ref{dual-core-join-fltr}$\Rightarrow$\ref{dual-core-join-conc}}] From
 theorem conditions it follows that $\Cor'(a\sqcup^{\mathfrak{A}}b)$
 exists.
@@ -2819,33 +2870,8 @@ we get
 
 \end{description}
 \end{proof}
-\begin{thm}
-\label{compl-join}The following is an implications tuple:
-\begin{enumerate}
-\item \label{compl-join-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
-filtrator.
-\item \label{compl-join-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator
-over a complete atomistic boolean lattice.
-\item \label{compl-join-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
-starrish down-aligned complete lattice filtrator with binarily meet-closed,
-separable core which is a complete atomistic boolean lattice.
-\item \label{compl-join-conc}$(a\sqcup^{\mathfrak{A}}b)^{\ast}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}$
-for every $a,b\in\mathfrak{A}$.
-\end{enumerate}
-\end{thm}
-\begin{proof}
-~
-\begin{description}
-\item [{\ref{compl-join-p}$\Rightarrow$\ref{compl-join-f}}] Obvious.
-\item [{\ref{compl-join-f}$\Rightarrow$\ref{compl-join-fltr}}] $(\mathfrak{A};\mathfrak{Z})$
-is a filtered (theorem~\ref{semifilt-joinclosed}), distributive
-(corollary \ref{filt-also-distr}) complete lattice filtrator (corollary
-\ref{filt-is-complete}), with binarily meet-closed core (proposition
-\ref{f-meet-closed}), with separable core (theorem \ref{when-sep-core}).
-\item [{\ref{compl-join-fltr}$\Rightarrow$\ref{compl-join-conc}}] $(a\sqcup^{\mathfrak{A}}b)^{\ast}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)}=\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b}=\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}$
-(used theorem \ref{compl-and-cor}).
-\end{description}
-\end{proof}
+
+See also theorem~\ref{dpdfiff-meet} above.
 
 \section{Separability criteria}
 \begin{thm}
@@ -2866,7 +2892,7 @@ for every $B\in\mathfrak{Z}$, $\mathcal{A}\in\mathfrak{A}$.
 \begin{description}
 \item [{\ref{intrs-compl-p}$\Rightarrow$\ref{intrs-compl-prim}}] Obvious.
 \item [{\ref{intrs-compl-prim}$\Rightarrow$\ref{intrs-compl-filt}}] Using
-obvious \ref{filt-aligned}, proposition \ref{f-meet-closed}, theorem
+obvious \ref{filt-aligned}, corollary~\ref{f-meet-closed}, theorem
 \ref{when-sep-core}.
 \item [{\ref{intrs-compl-filt}$\Rightarrow$\ref{intrs-compl-conc}}] By
 the lemma~\ref{int-join-lem}.
@@ -2890,7 +2916,7 @@ for every $B\in\mathfrak{Z}$, $\mathcal{A}\in\mathfrak{A}$.
 \begin{description}
 \item [{\ref{join-compl-p}$\Rightarrow$\ref{join-compl-prim}}] Obvious.
 \item [{\ref{join-compl-prim}$\Rightarrow$\ref{join-compl-filt}}] Using
-obvious \ref{filt-aligned}, corollary \ref{semifilt-joinclosed},
+obvious \ref{filt-aligned}, theorem~\ref{semifilt-joinclosed},
 theorem \ref{cosep-crit}.
 \item [{\ref{join-compl-filt}$\Rightarrow$\ref{join-compl-conc}}] By
 the lemma~\ref{int-join-lem}.
@@ -2918,7 +2944,7 @@ for every $a\in\mathfrak{A}$, $B\in\mathfrak{Z}$.
 \item [{\ref{bool-minus-p}$\Rightarrow$\ref{bool-minus-f}}] Obvious.
 \item [{\ref{bool-minus-f}$\Rightarrow$\ref{bool-minus-fltr}}] $\mathfrak{A}$
 is a distributive lattice by corollary \ref{filt-also-distr}. Our
-filtrator is binarily meet-closed by the theorem \ref{up-filt-crit}
+filtrator is binarily meet-closed by the corollary~\ref{f-meet-closed}
 and with join-closed core by the theorem \ref{semifilt-joinclosed}.
 It is also up and down aligned.
 \item [{\ref{bool-minus-fltr}$\Rightarrow$\ref{bool-minus-conc}}] ~
@@ -2930,6 +2956,13 @@ So $a\sqcap^{\mathfrak{A}}\overline{B}$ is the difference of $a$
 and $B$.
 \end{description}
 \end{proof}
+
+\begin{prop}
+For a primary filtrator over a complete boolean lattice both edge
+part and dual edge part are always defined.\end{prop}
+\begin{proof}
+Core part and dual core part are defined because the core is a complete
+lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
 
 \section{Distributivity for an Element of Boolean Core}
 \begin{lem}
@@ -2950,7 +2983,7 @@ of $\overline{A}\sqcup^{\mathfrak{A}}$ for every $A\in\mathfrak{Z}$.
 \begin{description}
 \item [{\ref{bool-adj-p}$\Rightarrow$\ref{bool-adj-f}}] Obvious.
 \item [{\ref{bool-adj-f}$\Rightarrow$\ref{bool-adj-fltr}}] It is binarily join closed by theorem~\ref{semifilt-joinclosed}.
-It is binarily meet-closed by theorem~\ref{up-filt-crit}. It is distributive by
+It is binarily meet-closed by corollary~\ref{f-meet-closed}. It is distributive by
 corollary~\ref{filt-also-distr}.
 \item [{\ref{bool-adj-fltr}$\Rightarrow$\ref{bool-adj-conc}}] We will
 use the theorem \ref{galois-second}.
@@ -2999,8 +3032,8 @@ for every $A\in\mathfrak{Z}$ and every set $S\in\subsets\mathfrak{A}$.
 ~
 \begin{description}
 \item [{\ref{f-back-distr-p}$\Rightarrow$\ref{f-back-distr-f}}] Obvious.
-\item [{\ref{f-back-distr-f}$\Rightarrow$\ref{f-back-distr-fltr}}] It is binarily join closed by theorem~\ref{semifilt-joinclosed}.
-It is binarily meet-closed by theorem~\ref{up-filt-crit}. It is distributive by
+\item [{\ref{f-back-distr-f}$\Rightarrow$\ref{f-back-distr-fltr}}] It is binarily join-closed by theorem~\ref{semifilt-joinclosed}.
+It is binarily meet-closed by corollary~\ref{f-meet-closed}. It is distributive by
 corollary~\ref{filt-also-distr}.
 \item [{\ref{f-back-distr-fltr}$\Rightarrow$\ref{f-back-distr-conc}}] Direct
 consequence of the lemma.
@@ -3034,7 +3067,7 @@ is central.
 can conclude that $\mathfrak{A}$ is atomically separable (the corollary
 \ref{f-atom-sep}), with separable core (the theorem \ref{when-sep-core}),
 and with join-closed core (theorem~\ref{semifilt-joinclosed}),
-binarily meet-closed by theorem~\ref{up-filt-crit}.
+binarily meet-closed by corollary~\ref{f-meet-closed}.
 
 
 We need to prove $Z(\mathfrak{A})=\mathfrak{Z}$.
@@ -3054,7 +3087,7 @@ what is a contradiction. We have $\mathcal{X}=X\in\mathfrak{Z}$.
 
 
 Let now $X\in\mathfrak{Z}$. Let $Y=\overline{X}$. We have $X\sqcap^{\mathfrak{Z}}Y=\bot^{\mathfrak{A}}$
-and $X\sqcup^{\mathfrak{Z}}Y=\top^{\mathfrak{A}}$. Thus $X\sqcap^{\mathfrak{A}}Y=\bigsqcap^{\mathfrak{Z}}\{X\sqcap^{\mathfrak{Z}}Y\}=\bot^{\mathfrak{A}}$;
+and $X\sqcup^{\mathfrak{Z}}Y=\top^{\mathfrak{A}}$. Thus $X\sqcap^{\mathfrak{A}}Y=\bigsqcap^{\mathfrak{A}}\{X\sqcap^{\mathfrak{Z}}Y\}=\bot^{\mathfrak{A}}$;
 $X\sqcap^{\mathfrak{A}}Y=X\sqcap^{\mathfrak{Z}}Y=\top^{\mathfrak{A}}$.
 We have shown that $X\in Z(\mathfrak{A})$.
 
@@ -3075,7 +3108,7 @@ is equivalent to conjunction of the following items:
 
 \begin{enumerate}
 \item \label{fs-star}$S$ is a free star on $\mathfrak{A}$;
-\item \label{fs-fclos}$S$ is filter closed.
+\item \label{fs-fclos}$S$ is filter-closed.
 \end{enumerate}
 \end{enumerate}
 \end{thm}
@@ -3100,7 +3133,7 @@ a\in\fullstar\mathcal{F}\lor\in\fullstar\mathcal{F}
 \end{align*}
 (taken into account corollary \ref{filt-also-distr}). So $\fullstar\mathcal{F}$
 is a free star on $\mathfrak{A}$.
-\item [{\ref{fs-fclos}}] We have $T\subseteq S$ and need to prove that
+\item [{\ref{fs-fclos}}] We have a filter base $T\subseteq S$ and need to prove that
 $\bigsqcap^{\mathfrak{A}}T\sqcap\mathcal{F}\ne\bot^{\mathfrak{A}}$.
 Because $\rsupfun{\mathcal{F}\sqcap^{\mathfrak{A}}}T$ is a generalized
 filter base, $\bot^{\mathfrak{A}}\in\rsupfun{\mathcal{F}\sqcap^{\mathfrak{A}}}T\Leftrightarrow\bigsqcap^{\mathfrak{A}}\rsupfun{\mathcal{F}\sqcap^{\mathfrak{A}}}T=\bot^{\mathfrak{A}}\Leftrightarrow\bigsqcap^{\mathfrak{A}}T\sqcap^{\mathfrak{A}}\mathcal{F}\ne\bot^{\mathfrak{A}}$.
@@ -3122,7 +3155,7 @@ is a free star on $\mathfrak{Z}$.
 
 Thus there exists $\mathcal{F}\in\mathfrak{A}$ such that $\corestar\mathcal{F}=S\cap\mathfrak{Z}$.
 We have $\up\mathcal{X}\subseteq S\Leftrightarrow\mathcal{X}\in S$
-(because $S$ is filter closed) for every $\mathcal{X}\in\mathfrak{A}$;
+(because $S$ is filter-closed) for every $\mathcal{X}\in\mathfrak{A}$;
 then (taking into account properties of generalized filter bases)
 \begin{align*}
 \mathcal{X}\in S & \Leftrightarrow\\
@@ -3142,6 +3175,9 @@ then (taking into account properties of generalized filter bases)
 \end{proof}
 
 \section{Filters and a Special Sublattice}
+
+Remind that $Z(X)$ is the center of lattice~$X$ and $Da$~is the lattice $\setcond{x\in\mathfrak{A}}{x\sqsubseteq a}$.
+
 \begin{thm}
 \label{core-if-intr}The following is an implications tuple:
 \begin{enumerate}
@@ -3167,8 +3203,8 @@ for each $\mathcal{X}\in\mathfrak{A}$
 \item [{$\Leftarrow$}] Let $\mathcal{X}=X\sqcap^{\mathfrak{A}}\mathcal{A}$
 where $X\in\mathfrak{Z}$. Let also $\mathcal{Y}=\overline{X}\sqcap^{\mathfrak{A}}\mathcal{A}$.
 Then $\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y}=X\sqcap^{\mathfrak{A}}\overline{X}\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcap^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\bot^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\bot^{\mathfrak{A}}$
-(used theorem \ref{up-filt-crit}) and $\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y}=(X\sqcup^{\mathfrak{A}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcup^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\top^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\mathcal{A}$
-(used the theorems \ref{semifilt-joinclosed} and corollary \ref{filt-also-distr}).
+(used corollary~\ref{f-meet-closed}) and $\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y}=(X\sqcup^{\mathfrak{A}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcup^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\top^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\mathcal{A}$
+(used theorem~\ref{semifilt-joinclosed} and corollary \ref{filt-also-distr}).
 So $\mathcal{X}\in Z(D\mathcal{A})$.
 \item [{$\Rightarrow$}] Let $\mathcal{X}\in Z(D\mathcal{A})$. Then there
 exists $\mathcal{Y}\in Z(D\mathcal{A})$ such that $\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y}=\bot^{\mathfrak{A}}$
@@ -3177,20 +3213,14 @@ and $\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y}=\mathcal{A}$. Then
 such that $X\sqcap^{\mathfrak{A}}\mathcal{Y}=\bot^{\mathfrak{A}}$.
 We have
 \[
-\mathcal{X}=\mathcal{X}\sqcup(X\sqcap^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}(\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}\mathcal{A}.
+\mathcal{X}=\mathcal{X}\sqcup(X\sqcap^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}(\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y})=X\sqcap^{\mathfrak{A}}\mathcal{A}.
 \]
 
 \end{description}
 \end{description}
 \end{proof}
 
-\section{Complements and Core Parts}
-\begin{prop}
-For a primary filtrator over a complete boolean lattice both edge
-part and dual edge part are always defined.\end{prop}
-\begin{proof}
-Core part and dual core part are defined because the core is a complete
-lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
+\section{Distributivity of quasicomplements}
 \begin{thm}
 \label{f-compl-meet}The following is an implications tuple:
 \begin{enumerate}
@@ -3198,7 +3228,10 @@ lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
 filtrator.
 \item \label{compl-meet-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
 filtrator over a complete boolean lattice.
-\item \label{compl-meet-conc}$(a\sqcap^{\mathfrak{A}}b)^{\ast}=a^{\ast}\sqcup^{\mathfrak{Z}}b^{\ast}$
+\item \label{compl-meet-dual-det}$(\mathfrak{A};\mathfrak{Z})$ is a filtered down-aligned and up-aligned
+complete lattice filtrator with binarily meet-closed, separable and
+co-separable core which is a complete boolean lattice.
+\item \label{compl-meet-conc}$(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}=a^{+}\sqcup^{\mathfrak{A}}b^{+}$
 for every $a,b\in\mathfrak{A}$.
 \end{enumerate}
 \end{thm}
@@ -3206,15 +3239,164 @@ for every $a,b\in\mathfrak{A}$.
 ~
 \begin{description}
 \item [{\ref{compl-meet-p}$\Rightarrow$\ref{compl-meet-fltr}}] Obvious.
-\item [{\ref{compl-meet-fltr}$\Rightarrow$\ref{compl-meet-conc}}] $(\mathfrak{A};\mathfrak{Z})$
-is a filtered (theorem~\ref{semifilt-joinclosed}) up-aligned complete
-lattice filtrator with binarily join-closed (theorem \ref{semifilt-joinclosed})
-co-separable core (theorem \ref{cosep-crit}) which is a complete
-boolean lattice. Thus by the theorem \ref{cocompl-cor}
+
+\item [{\ref{compl-meet-fltr}$\Rightarrow$\ref{compl-meet-dual-det}}] The
+filtrator $(\mathfrak{A};\mathfrak{Z})$ is filtered by the theorem~\ref{semifilt-joinclosed}.
+$\mathfrak{A}$ is a complete lattice by corollary \ref{filt-is-complete}.
+$(\mathfrak{A};\mathfrak{Z})$ is with co-separable core by theorem
+\ref{cosep-crit}.
+$(\mathfrak{A};\mathfrak{Z})$ is
+binarily meet-closed by proposition \ref{f-meet-closed}, with separable
+core by theorem~\ref{when-sep-core}.
+
+
+\item [{\ref{compl-meet-dual-det}$\Rightarrow$\ref{compl-meet-conc}}]
+Theorem~\ref{compl-eq-dual} apply.
+Also theorem~\ref{dual-cor-meet} apply because every filtered filtrator is join-closed.
+So
 \[
-(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{Z}}b^{+}=a^{\ast}\sqcup^{\mathfrak{Z}}b^{\ast}
+(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{A}}b^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}.
 \]
-(used propositions \ref{compl-eq-dual}, \ref{dual-cor-meet}, theorem~\ref{cor-eq}).
+\end{description}
+\end{proof}
+
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{uni-join-f}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{uni-join-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
+starrish down-aligned and up-aligned complete lattice filtrator with binarily meet-closed,
+separable and co-separable core which is a complete atomistic boolean lattice.
+\item \label{uni-join-conc}$(a\sqcup^{\mathfrak{A}}b)^{\ast}=(a\sqcup^{\mathfrak{A}}b)^{+}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}=a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{uni-join-f}$\Rightarrow$\ref{uni-join-fltr}}] $(\mathfrak{A};\mathfrak{Z})$
+is a filtered (theorem~\ref{semifilt-joinclosed}), distributive
+(corollary \ref{filt-also-distr}) complete lattice filtrator (corollary
+\ref{filt-is-complete}), with binarily meet-closed core (corollary~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core}), with co-separable core (theorem~\ref{cosep-crit}).
+\item [{\ref{uni-join-fltr}$\Rightarrow$\ref{uni-join-conc}}] $(a\sqcup^{\mathfrak{A}}b)^{+}=(a\sqcup^{\mathfrak{A}}b)^{\ast}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)}=\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b}=\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}=a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+(used theorems~\ref{compl-and-cor}, \ref{dual-core-join}, \ref{compl-eq-dual}).
+\end{description}
+\end{proof}
+
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{meet-pseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{meet-pseudo-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
+\item \label{meet-pseudo-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
+complete lattice filtrator with down-aligned, binarily meet-closed,
+separable core which is a complete boolean lattice.
+\item \label{meet-pseudo-res}$(a\sqcap^{\mathfrak{A}}b)^{\ast}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [\ref{meet-pseudo-p}$\Rightarrow$\ref{meet-pseudo-f}] Obvious.
+\item [\ref{meet-pseudo-f}$\Rightarrow$\ref{meet-pseudo-fltr}]
+It is filtered by theorem~\ref{semifilt-joinclosed}. It is complete lattice filtrator by~\ref{filt-is-complete}.
+It is with binarily meet-closed core (corollary~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core}).
+\item [\ref{meet-pseudo-fltr}$\Rightarrow$\ref{meet-pseudo-res}]
+It is join closed because it is filtered.
+$(a\sqcap^{\mathfrak{A}}b)^{\ast} = \overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} =
+\overline{\Cor'a\sqcap^{\mathfrak{Z}}\Cor'b} =
+\overline{\Cor'a}\sqcup^{\mathfrak{Z}}\overline{\Cor'b} =
+a^{\ast}\sqcup^{\mathfrak{Z}}b^{\ast} = a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}$
+(theorems~\ref{dual-cor-meet}, \ref{compl-and-cor}).
+\end{description}
+\end{proof}
+
+\begin{thm}
+\label{compl-join}The following is an implications tuple:
+\begin{enumerate}
+\item \label{compl-join-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset
+filtrator.
+\item \label{compl-join-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered
+starrish down-aligned complete lattice filtrator with binarily meet-closed,
+separable core which is a complete atomistic boolean lattice.
+\item \label{compl-join-conc}$(a\sqcup^{\mathfrak{A}}b)^{\ast}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item [{\ref{compl-join-p}$\Rightarrow$\ref{compl-join-fltr}}] $(\mathfrak{A};\mathfrak{Z})$
+is a filtered (theorem~\ref{semifilt-joinclosed}), distributive
+(corollary \ref{filt-also-distr}) complete lattice filtrator (corollary
+\ref{filt-is-complete}), with binarily meet-closed core (corollary~\ref{f-meet-closed}),
+with separable core (theorem~\ref{when-sep-core}).
+\item [{\ref{compl-join-fltr}$\Rightarrow$\ref{compl-join-conc}}] $(a\sqcup^{\mathfrak{A}}b)^{\ast}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)}=\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b}=\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}$
+(used theorems~\ref{compl-and-cor}, \ref{dual-core-join}).
+\end{description}
+\end{proof}
+
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{meet-dpseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{meet-dpseudo-f}$(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator over a complete boolean lattice.
+\item \label{meet-dpseudo-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a filtered up-aligned complete lattice filtrator with
+co-separable core which is a complete boolean lattice.
+\item \label{meet-dpseudo-res}$(a\sqcap^{\mathfrak{A}}b)^{+}=a^{+}\sqcup^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\begin{description}
+\item [\ref{meet-dpseudo-p}$\Rightarrow$\ref{meet-dpseudo-f}] Obvious.
+\item [\ref{meet-dpseudo-f}$\Rightarrow$\ref{meet-dpseudo-fltr}]
+It is filtered by theorem~\ref{semifilt-joinclosed},
+is a complete lattice by corollary \ref{filt-is-complete},
+is with co-separable core by theorem~\ref{cosep-crit}.
+\item [\ref{meet-dpseudo-fltr}$\Rightarrow$\ref{meet-dpseudo-res}]
+$(a\sqcap^{\mathfrak{A}}b)^{+}=
+\overline{\Cor(a\sqcap^{\mathfrak{A}}b)} =
+\overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} =
+\overline{\Cor' a\sqcap^{\mathfrak{Z}}\Cor' b} =
+\overline{\Cor'a}\sqcup^{\mathfrak{Z}}\overline{\Cor'b}=
+\overline{\Cor'a}\sqcup^{\mathfrak{A}}\overline{\Cor'b}=
+a^{+}\sqcup^{\mathfrak{A}}b^{+}$
+using theorems~\ref{cocompl-cor}, \ref{cor-eq}, \ref{dual-cor-meet} and the fact that filtered filtrator is join-closed.
+\end{description}
+\end{proof}
+
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item \label{join-dpseudo-p}$(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item \label{join-dpseudo-fltr} $(\mathfrak{A};\mathfrak{Z})$ is a filtered
+down-aligned and up-aligned filtrator with binarily meet-closed core, with co-separable core $\mathfrak{Z}$
+which is a complete atomistic boolean lattice and $\mathfrak{A}$ is a complete
+starrish lattice.
+\item \label{join-dpseudo-res}$(a\sqcup^{\mathfrak{A}}b)^{+}=a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+for every $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\begin{description}
+\item [\ref{join-dpseudo-p}$\Rightarrow$\ref{join-dpseudo-fltr}] Obvious.
+\item [\ref{join-dpseudo-fltr}$\Rightarrow$\ref{join-dpseudo-res}]
+$(a\sqcup^{\mathfrak{A}}b)^{+}=
+\overline{\Cor(a\sqcup^{\mathfrak{A}}b)} =
+\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)} =
+\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b} =
+\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b} =
+\overline{\Cor a}\sqcap^{\mathfrak{A}}\overline{\Cor b} =
+a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+using theorems~\ref{cocompl-cor}, \ref{cor-eq}, \ref{dual-core-join}.
 \end{description}
 \end{proof}
 
@@ -3249,7 +3431,7 @@ filtrator over a distributive lattice.
 \item \label{eqrel-princ-conc}For every $\mathcal{A}\in\mathfrak{A}$ and
 $X,Y\in\mathfrak{Z}$ we have
 \[
-X\sim Y\Leftrightarrow\exists A\in\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\mathfrak{Z}}A.
+X\sim Y\Leftrightarrow\exists A\in\up\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\mathfrak{Z}}A.
 \]
 
 \end{enumerate}
@@ -3260,7 +3442,7 @@ X\sim Y\Leftrightarrow\exists A\in\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\
 \item [{\ref{eqrel-princ-p}$\Rightarrow$\ref{eqrel-princ-fltr}}] Obvious.
 \item [{\ref{eqrel-princ-fltr}$\Rightarrow$\ref{eqrel-princ-conc}}] ~
 \begin{align*}
-\exists A\in\up\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\mathfrak{Z}}A & \Leftrightarrow \text{ (theorem~\ref{up-filt-crit})}\\
+\exists A\in\up\mathcal{A}:X\sqcap^{\mathfrak{Z}}A=Y\sqcap^{\mathfrak{Z}}A & \Leftrightarrow \text{ (corollary~\ref{f-meet-closed})}\\
 \exists A\in\up\mathcal{A}:\uparrow X\sqcap^{\mathfrak{A}}\uparrow A=\uparrow Y\sqcap^{\mathfrak{A}}\uparrow A & \Rightarrow\\
 \exists A\in\up\mathcal{A}:\uparrow X\sqcap^{\mathfrak{A}}\uparrow A\sqcap^{\mathfrak{A}}\mathcal{A}=\uparrow Y\sqcap^{\mathfrak{A}}\uparrow A\sqcap^{\mathfrak{A}}\mathcal{A} & \Leftrightarrow\\
 \exists A\in\up\mathcal{A}:\uparrow X\sqcap^{\mathfrak{A}}\mathcal{A}=\uparrow Y\sqcap^{\mathfrak{A}}\mathcal{A} & \Leftrightarrow\\
@@ -3317,7 +3499,7 @@ is a congruence on $A$.\end{defn}
 filtrator.
 \item \label{factor-isomor-fltr}$(\mathfrak{A};\mathfrak{Z})$ is a primary
 filtrator over a boolean lattice.
-\item \label{factor-isomor-conc}Let $A\in\mathfrak{A}$. Consider the function
+\item \label{factor-isomor-conc}Let $\mathcal{A}\in\mathfrak{A}$. Consider the function
 $\gamma:Z(D\mathcal{A})\rightarrow\mathfrak{Z}/\mathord\sim$ defined
 by the formula (for every $p\in Z(D\mathcal{A})$)
 \[
@@ -3415,7 +3597,7 @@ expressions are always equal:
 \begin{description}
 \item [{\ref{filt-pseudo-p}$\Rightarrow$\ref{filt-pseudo-f}}] Obvious.
 \item [{\ref{filt-pseudo-f}$\Rightarrow$\ref{filt-pseudo-atcbr}}] By
-corollary \ref{filt-also-distr} theorem \ref{filt-atomistic}.
+corollary \ref{filt-also-distr} and theorem \ref{filt-atomistic}.
 \item [{\ref{filt-pseudo-atcbr}$\Rightarrow$\ref{filt-pseudo-conc}}] Theorem
 \ref{pdiff-eq1}.\end{description}
 \begin{conjecture}
@@ -3427,7 +3609,7 @@ is not provable in ZF (without axiom of choice).
 \section{Function spaces of posets}
 \begin{defn}
 Let $\mathfrak{A}_{i}$ be a family of posets indexed by some set
-$\dom\mathfrak{A}$. We will define order of families of elements of posets by
+$\dom\mathfrak{A}$. We will define order of indexed families of elements of posets by
 the formula 
 \[
 a\sqsubseteq b\Leftrightarrow\forall i\in\dom\mathfrak{A}:a_{i}\sqsubseteq b_{i}.
@@ -3516,7 +3698,7 @@ whenever every $\bigsqcap_{x\in S}x_{i}$ exists.
 \begin{proof}
 It's enough to prove the first formula.
 
-$\left(\mylamdba i{\dom\mathfrak{A}}{\bigsqcap_{x\in S}x_{i}}\right)_{i}=\bigsqcup_{x\in S}x_{i}\sqsupseteq x_{i}$
+$\left(\mylamdba i{\dom\mathfrak{A}}{\bigsqcup_{x\in S}x_{i}}\right)_{i}=\bigsqcup_{x\in S}x_{i}\sqsupseteq x_{i}$
 for every $x\in S$ and $i\in\dom\mathfrak{A}$.
 
 Let $y\sqsupseteq x$ for every $x\in S$. Then $y_{i}\sqsupseteq x_{i}$
@@ -3542,9 +3724,9 @@ exists whenever $\bigsqcup S$ exists.
 Fix $i\in\dom\mathfrak{A}$.
 
 Take $y_{i}=\left(\bigsqcup S\right)_{i}$ and let prove that $y_{i}$
-is the least upper bound of $\bigsqcup_{x\in S}x_{i}$.
+is the least upper bound of $\setcond{x_{i}}{x\in S}$.
 
-$y_{i}$ is an upper bound of $\bigsqcup_{x\in S}x_{i}$ because $\bigsqcup S\sqsupseteq x$
+$y_{i}$ is it's upper bound because $\bigsqcup S\sqsupseteq x$
 and thus $\left(\bigsqcup S\right)_{i}\sqsupseteq x_{i}$ for every
 $x\in S$.
 
@@ -3552,7 +3734,7 @@ Let $x\in S$ and for some $t\in\mathfrak{A}_{i}$
 \[
 T(t)=\mylamdba j{\dom\mathfrak{A}}{\begin{cases}
 t & \text{if }i=j\\
-x_{i} & \text{if }i\ne j.
+x_{j} & \text{if }i\ne j.
 \end{cases}}
 \]
 Let $t\sqsupseteq x_{i}$. Then $T(t)\sqsupseteq x$ for every $x\in S$.
@@ -3574,28 +3756,37 @@ Let $a\neq b$. Then $\exists i\in\dom\mathfrak{A}:a_{i}\neq b_{i}$.
 So $\exists x\in\mathfrak{A}_{i}:(x\nasymp a_{i}\wedge x\asymp b_{i})$
 (or vice versa).
 
-Take $y=(((\dom\mathfrak{A})\setminus\{i\})\times\{\bot\})\cup\{(i;x)\}$.
+Take $y=\mylamdba{j}{\dom\mathfrak{A}}{\begin{cases}x&\text{ if }j=i;\\\bot^{\mathfrak{A}_j}&\text{ if }j\ne i.\end{cases}}$
 Then $y\nasymp a$ and $y\asymp b$.\end{proof}
 \begin{obvious}
-If every $\mathfrak{A}_{i}$ is a poset with least element $\bot_{i}$,
+If every $\mathfrak{A}_{i}$ is a poset with least element,
 then the set of atoms of $\prod\mathfrak{A}$ is
 \[
-\setcond{(\{k\}\times\atoms^{\mathfrak{A}_{k}})\cup(\mylamdba i{(\dom\mathfrak{A})\setminus\{k\}}{\bot_{i}})}{k\in\dom\mathfrak{A}}.
+\setcond{\mylamdba{i}{\dom\mathfrak{A}}{\left(\begin{cases}a&\text{ if }i=k;\\\bot^{\mathfrak{A}_i}&\text{ if }i\ne k\end{cases}\right)}}{k\in\dom\mathfrak{A}, a\in\atoms^{\mathfrak{A}_{k}}}.
 \]
 \end{obvious}
 \begin{prop}
-If every $\mathfrak{A}_{i}$ is an atomistic poset with least element
-$\bot_{i}$, then $\prod\mathfrak{A}$ is an atomistic poset.\end{prop}
+If every $\mathfrak{A}_{i}$ is an atomistic poset with least element, then $\prod\mathfrak{A}$ is an atomistic poset.\end{prop}
 \begin{proof}
 $x_{i}=\bigsqcup\atoms x_{i}$ for every $x_{i}\in\mathfrak{A}_{i}$.
 Thus
-\[
-x=\mylamdba i{\dom x}{x_{i}}=\mylamdba i{\dom x}{\bigsqcup\atoms x_{i}=\bigsqcup_{i\in\dom x}\mylamdba j{\dom x}{\begin{cases}
+\begin{multline*}
+x=\mylamdba i{\dom x}{x_{i}}=
+\mylamdba i{\dom x}{\bigsqcup\atoms x_{i}}=\\
+\bigsqcup_{i\in\dom x}\mylamdba j{\dom x}{\begin{cases}
 x_{i} & \text{if }j=i\\
-\bot_{i} & \text{if }j\ne i.
-\end{cases}}}
-\]
- Take join two times.\end{proof}
+\bot^{\mathfrak{A}_j} & \text{if }j\ne i
+\end{cases}} = \\
+\bigsqcup_{i\in\dom x}\mylamdba j{\dom x}{\begin{cases}
+\bigsqcup\atoms x_{i} & \text{if }j=i\\
+\bot^{\mathfrak{A}_j} & \text{if }j\ne i
+\end{cases}} =\\
+\bigsqcup_{i\in\dom x}\bigsqcup_{q\in\atoms x_i}\mylamdba j{\dom x}{\begin{cases}
+q & \text{if }j=i\\
+\bot^{\mathfrak{A}_j} & \text{if }j\ne i
+\end{cases}}.
+\end{multline*}
+Thus $x$ is a join of atoms of $\prod\mathfrak{A}$.\end{proof}
 \begin{cor}
 If $\mathfrak{A}_{i}$ are atomistic posets with least elements, then
 $\prod\mathfrak{A}$ is atomically separable.\end{cor}
@@ -3653,7 +3844,11 @@ core.\end{prop}
 Let $a\neq b$. Then $\exists i\in n:a_{i}\neq b_{i}$. So $\exists x\in\mathfrak{Z}_{i}:(x\nasymp a_{i}\wedge x\asymp b_{i})$
 (or vice versa).
 
-Take $y=((n\setminus\{i\})\times\{\bot\})\cup\{(i;x)\}$. Then we have
+Take $y=
+\mylamdba{j}{n}{\begin{cases}
+x &\text{if }j=i\\
+\bot^{\mathfrak{A}_j} &\text{if }j\ne i
+\end{cases}}$. Then we have
 $y\nasymp a$ and $y\asymp b$ and $y\in\mathfrak{Z}$.\end{proof}
 \begin{prop}
 Let every $\mathfrak{A}_{i}$ be a bounded lattice. Every $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
@@ -3692,14 +3887,12 @@ We will prove only the first as the second is dual.
 \end{proof}
 \begin{prop}
 If every $(\mathfrak{A}_{i\in n};\mathfrak{Z}_{i\in n})$ is a prefiltered
-filtrator with $\up x\neq\emptyset$ for every $x\in\mathfrak{A}_{i}$
-(for every $i\in n$), then $\left(\prod\mathfrak{A};\prod\mathfrak{Z}\right)$
-is a prefiltered lattice filtrator.\end{prop}
+filtrator, then $\left(\prod\mathfrak{A};\prod\mathfrak{Z}\right)$
+is a prefiltered filtrator.\end{prop}
 \begin{proof}
 Let $a,b\in\prod\mathfrak{A}$ and $a\neq b$. Then there exists $i\in n$
 such that $a_{i}\neq b_{i}$ and so $\up a_{i}\neq\up b_{i}$. Consequently
-$\prod_{i\in\dom a}\up a_{i}\neq\prod_{i\in\dom a}\up b_{i}$ (taken
-into account that $\up x\neq\emptyset$ for every $x\in\mathfrak{A}_{i}$)
+$\prod_{i\in\dom a}\up a_{i}\neq\prod_{i\in\dom a}\up b_{i}$
 that is $\up a\neq\up b$.\end{proof}
 \begin{prop}
 Let every $(\mathfrak{A}_{i\in n};\mathfrak{Z}_{i\in n})$ be a filtered
@@ -3782,8 +3975,9 @@ We need to prove that $\mylamdba i{\dom\mathfrak{A}}{a_{i}\setminus^{\ast}b_{i}}
 
 To prove it is enough to show $a_{i}\setminus^{\ast}b_{i}=\bigsqcap\setcond{z_{i}}{z\in\prod\mathfrak{A},a\sqsubseteq b\sqcup z}$
 that is $a_{i}\setminus^{\ast}b_{i}=\bigsqcap\setcond{z\in\mathfrak{A}_{i}}{a_{i}\sqsubseteq b_{i}\sqcup z}$
-(for the reverse implication take $z_{j}=a_{i}$ for $j\neq i$) what
-is true by definition.\end{proof}
+because $z'\in\setcond{z_{i}}{z\in\prod\mathfrak{A},a\sqsubseteq b\sqcup z} \Leftrightarrow z'\in\setcond{z\in\mathfrak{A}_{i}}{a_{i}\sqsubseteq b_{i}\sqcup z}$
+(for the reverse implication take $z_{j}=a_{i}$ for $j\neq i$),
+but $a_{i}\setminus^{\ast}b_{i}=\bigsqcap\setcond{z\in\mathfrak{A}_{i}}{a_{i}\sqsubseteq b_{i}\sqcup z}$ is true by definition.\end{proof}
 \begin{prop}
 If every $\mathfrak{A}_{i}$ is a distributive lattice with least
 element, then $a\mathbin\#b=\lambda i\in\dom\mathfrak{A}:a_{i}\mathbin\#b_{i}$
@@ -3793,18 +3987,18 @@ is defined.\end{prop}
 We need to prove that $\lambda i\in\dom\mathfrak{A}:a_{i}\mathbin\#b_{i}=\bigsqcup\setcond{z\in\prod\mathfrak{A}}{z\sqsubseteq a\land z\asymp b}$.
 
 To prove it is enough to show $a_{i}\mathbin\#b_{i}=\bigsqcup\setcond{z_{i}}{z\in\prod\mathfrak{A},z\sqsubseteq a\land z\asymp b}$
-that is $a_{i}\mathbin\#b_{i}=\bigsqcup\setcond{z\in\mathfrak{A}_{i}}{z\sqsubseteq a_{i}\land\forall j\in\dom\mathfrak{A}:z_{j}\asymp b_{j}}$
+that is $a_{i}\mathbin\#b_{i}=\bigsqcup\setcond{z_i}{z\in\prod\mathfrak{A},z_i\sqsubseteq a_{i}\land\forall j\in\dom\mathfrak{A}:z_{j}\asymp b_{j}}$
 that is $a_{i}\mathbin\#b_{i}=\bigsqcup\setcond{z\in\mathfrak{A}_{i}}{z\sqsubseteq a_{i}\land z\asymp b_{i}}$
-(take $z_{j}=\bot$ for $j\ne i$) what is true by definition.\end{proof}
+(take $z_{j}=\bot^{\mathfrak{A}_j}$ for $j\ne i$) what is true by definition.\end{proof}
 \begin{prop}
 Let every $\mathfrak{A}_{i}$ be a poset with least element and $a_{i}^{\ast}$
 is defined. Then $a^{\ast}=\mylamdba i{\dom\mathfrak{A}}{a_{i}^{\ast}}$.\end{prop}
 \begin{proof}
-We need to prove that $\mylamdba i{\dom\mathfrak{A}}{a_{i}^{\ast}}=\bigsqcup\setcond{c\in\mathfrak{A}}{c\asymp a}$.
+We need to prove that $\mylamdba i{\dom\mathfrak{A}}{a_{i}^{\ast}}=\bigsqcup\setcond{c\in\prod\mathfrak{A}}{c\asymp a}$.
 To prove this it is enough to show that $a_{i}^{\ast}=\bigsqcup\setcond{c_{i}}{c\in\prod\mathfrak{A},c\asymp a}$
 that is $a_{i}^{\ast}=\bigsqcup\setcond{c_{i}}{c\in\prod\mathfrak{A},\forall j\in\dom\mathfrak{A}:c_{j}\asymp a_{j}}$
 that is $a_{i}^{\ast}=\bigsqcup\setcond{c_{i}}{c\in\prod\mathfrak{A},c_{i}\asymp a_{i}}$
-(take $c_{j}=\bot$ for $j\neq i$) that is $a_{i}^{\ast}=\bigsqcup\setcond{c\in\mathfrak{A}_{i}}{c\asymp a_{i}}$
+(take $c_{j}=\bot^{\mathfrak{A}_j}$ for $j\neq i$) that is $a_{i}^{\ast}=\bigsqcup\setcond{c\in\mathfrak{A}_{i}}{c\asymp a_{i}}$
 what is true by definition.\end{proof}
 \begin{cor}
 Let every $\mathfrak{A}_{i}$ be a poset with greatest element and
@@ -3856,16 +4050,16 @@ lattice, and the previous theorem.\end{proof}
 $\Cor$ is the lower adjoint of $\Omega\sqcup^{\mathfrak{A}}\mathord-$.\end{thm}
 \begin{proof}
 Because both $\Cor$ and $\Omega\sqcup^{\mathfrak{A}}\mathord-$ are
-monotone, it is enough (theorem \ref{galois-second}) to prove (for
+monotone, it is enough (theorem~\ref{galois-second}) to prove (for
 every filters $\mathcal{X}$ and $\mathcal{Y}$)
 \[
 \mathcal{X}\sqsubseteq\Omega\sqcup^{\mathfrak{A}}\Cor\mathcal{X}\quad\text{and}\quad\Cor(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y})\sqsubseteq\mathcal{Y}.
 \]
 
-
 $\Cor(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y})=\Cor\Omega\sqcup^{\mathfrak{Z}}\Cor\mathcal{Y}=\bot^{\mathfrak{Z}}\sqcup^{\mathfrak{Z}}\Cor\mathcal{Y}=\Cor\mathcal{Y}\sqsubseteq\mathcal{Y}$.
-\end{proof}
+
 $\Omega\sqcup^{\mathfrak{A}}\Cor\mathcal{X}\sqsupseteq\Edg\mathcal{X}\sqcup^{\mathfrak{A}}\Cor\mathcal{X}=\mathcal{X}$.
+\end{proof}
 \begin{cor}
 $\Cor\mathcal{X}=\mathcal{X}\psetminus\Omega$ for every filter on
 a set.\end{cor}
@@ -3877,7 +4071,7 @@ for any set $S$ of filters on a powerset.
 \end{cor}
 This corollary can be rewritten in elementary terms and proved elementarily:
 \begin{prop}
-$\bigcap\bigcap S=\bigcup_{F\in S}\bigcap S$ for a set~$S$ of filters
+$\bigcap\bigcap S=\bigcup_{F\in S}\bigcap F$ for a set~$S$ of filters
 on some set.\end{prop}
 \begin{proof}
 (by \noun{Andreas Blass}) The $\supseteq$ direction is rather formal.
@@ -3944,8 +4138,6 @@ such that
 \[
 \forall Y\in Y_{+}:(P;Q)\in\setcond{(P;Q)\in X'}{Y\cap P\in Q}\quad\text{and}\quad\forall Y\in Y_{-}:(P;Q)\notin\setcond{(P;Q)\in X'}{Y\cap P\in Q}
 \]
-
-
 what is equivalent to existence $(P;Q)\in X'$ such that
 \[
 \forall Y\in Y_{+}:Y\cap P\in Q\quad\text{and}\quad\forall Y\in Y_{-}:Y\cap P\notin Q.
@@ -4020,9 +4212,7 @@ center.\end{proof}
 In this section $\mathfrak{A}$ denotes the set of filters on a set.
 \begin{example}
 There is a separable poset (that is a set with $\fullstar$ being
-an injection) such that $\fullstar x\subseteq\fullstar y$ does not
-imply $x\sqsubseteq y$ (where $\sqsubseteq$ denotes our order) for
-elements $x$, $y$ of this poset.\end{example}
+an injection) which is not strongly separable (that is $\fullstar$ isn't order reflective).\end{example}
 \begin{proof}
 (with help of sci.math partakers) Consider a poset with the Hasse
 diagram~\ref{sep-counter}.
@@ -4057,8 +4247,6 @@ formula
 \[
 \Delta=\bigsqcap^{\mathfrak{A}}\setcond{(-\epsilon;\epsilon)}{\epsilon\in\mathbb{R},\epsilon>0}
 \]
-
-
 and more general
 \[
 \Delta+a=\bigsqcap^{\mathfrak{A}}\setcond{(a-\epsilon;a+\epsilon)}{\epsilon\in\mathbb{R},\epsilon>0}.
@@ -4067,7 +4255,7 @@ and more general
 \begin{example}
 There exists $A\in\subsets U$ such that $\bigsqcap^{\mathfrak{A}}A\ne\bigsqcap A$.\end{example}
 \begin{proof}
-$\bigsqcap^{\mathfrak{A}}\setcond{(-\epsilon;\epsilon)}{\epsilon\in\mathbb{R},\epsilon>0}=\uparrow\{0\}\ne\Delta$.\end{proof}
+$\bigsqcap^{\mathfrak{Z}}\setcond{(-\epsilon;\epsilon)}{\epsilon\in\mathbb{R},\epsilon>0}=\uparrow\{0\}\ne\Delta$.\end{proof}
 \begin{example}
 There exists a set $U$ and a filter $a$ and a set $S$ of filters
 on the set $U$ such that $a\sqcap^{\mathfrak{A}}\bigsqcup^{\mathfrak{A}}S\ne\bigsqcup^{\mathfrak{A}}\rsupfun{a\sqcap^{\mathfrak{A}}}S$.\end{example}
@@ -4082,7 +4270,7 @@ $\setcond{\Delta+a}{a\in\mathbb{R}}$ is a torning but not weak partition
 of the real line.\end{proof}
 \begin{lem}
 Let $\mathfrak{A}$ be the set of filters on a set $U$. Then $X\sqcap^{\mathfrak{A}}\Omega\sqsubseteq Y\sqcap^{\mathfrak{A}}\Omega$
-iff $X\setminus Y$ is a finite set, for every sets $X,Y\in\subsets U$.\end{lem}
+iff $X\setminus Y$ is a finite set, having fixed sets $X,Y\in\subsets U$.\end{lem}
 \begin{proof}
 Let $M$ be the set of finite subsets of $U$.
 \begin{align*}
@@ -4128,8 +4316,8 @@ that is $[Y]$ is below $[X]$.
 \subsection{Weak and Strong Partition}
 \begin{defn}
 \index{independent family}A family $S$ of subsets of a countable
-set is \emph{independent} iff the intersection of any binarily many
-members of $S$ and the complements of any other binarily many members
+set is \emph{independent} iff the intersection of any finitely many
+members of $S$ and the complements of any other finitely many members
 of $S$ is infinite.\end{defn}
 \begin{lem}
 The ``infinite'' at the end of the definition could be equivalently
@@ -4170,7 +4358,7 @@ split the real line.\end{proof}
 There exists a weak partition of a filter on a set which is not a
 strong partition.\end{example}
 \begin{proof}
-(suggested by \noun{Andreas Blass}) Let $\setcond{X_{r}}{r\in\mathbb{R}}$
+(suggested by \noun{Andreas Blass}) Let $\setcond{X_{r}}{r\in\mathbb{R}}$ be
 an independent family of subsets of $\mathbb{N}$. We can assume $a\ne b\Rightarrow X_{a}\ne X_{b}$
 due the above lemma.
 
@@ -4196,8 +4384,6 @@ that
 \[
 M(Z)\in\bigsqcup^{\mathfrak{A}}\setcond{\mathcal{F}_{b}}{b\in Z}\quad\text{and}\quad\mathbb{N}\setminus M(Z)\in\bigsqcup^{\mathfrak{A}}\setcond{\mathcal{F}_{b}}{b\in\mathbb{R}\setminus Z}
 \]
-
-
 that is
 \[
 \forall b\in Z:M(Z)\in\mathcal{F}_{b}\quad\text{and}\quad\forall b\in\mathbb{R}\setminus Z:\mathbb{N}\setminus M(Z)\in\mathcal{F}_{b}.
@@ -4214,8 +4400,8 @@ So $M$ is an injective function from $\subsets\mathbb{R}$ to $\subsets\mathbb{N}
 what is impossible due cardinality issues.\end{proof}
 \begin{lem}
 (by \noun{Niels Diepeveen}, with help of \noun{Karl Kronenfeld}) Let
-$K$ be a collection of free ultrafilters. We have $\bigsqcup K=\Omega$
-iff $\exists\mathcal{G}\in\up K:A\in\up\mathcal{G}$ for every infinite
+$K$ be a collection of nontrivial ultrafilters. We have $\bigsqcup K=\Omega$
+iff $\exists\mathcal{G}\in K:A\in\up\mathcal{G}$ for every infinite
 set $A$.\end{lem}
 \begin{proof}
 ~
@@ -4296,14 +4482,14 @@ Consider the complete lattice $[S]$ generated by the set $S$ where
 $S$ is a strong partition of some element $a$.
 \begin{conjecture}
 $[S]=\setcond{\bigsqcup^{\mathfrak{A}}X}{X\in\subsets S}$, where
-$[S]$ is the complete lattice generated by a weak partition $S$
-of filter on a set.
-\end{conjecture}
+$[S]$ is the complete lattice generated by a strong partition $S$
+of filter on a set.\end{conjecture}
 
 \begin{conjecture}
 $[S]=\setcond{\bigsqcup^{\mathfrak{A}}X}{X\in\subsets S}$, where
-$[S]$ is the complete lattice generated by a strong partition $S$
-of filter on a set.\end{conjecture}
+$[S]$ is the complete lattice generated by a weak partition $S$
+of filter on a set.
+\end{conjecture}
 \begin{prop}
 Provided that the last conjecture is true, we have that $[S]$ is
 a complete atomic boolean lattice with the set of its atoms being

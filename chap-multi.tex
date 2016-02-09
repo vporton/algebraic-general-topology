@@ -23,7 +23,7 @@ we define the dagger as the inverse morphism.
 \end{xca}
 As it follows from above, the categories $\mathbf{Rel}$ of binary
 relations (proposition~\ref{rel-cross}), $\mathsf{FCD}$ of funcoids
-(proposition~\ref{fcd-cross}) and $\mathsf{RLD}$ of reloids (theorem~\ref{rld-cross})
+(theorem~\ref{fcd-cross}) and $\mathsf{RLD}$ of reloids (theorem~\ref{rld-cross})
 are quasi-invertible (taking $f^{\dagger}=f^{-1}$). Moreover the
 category of pointfree funcoids between lattices of filters on boolean
 lattices is quasi-invertible (theorem \ref{qi-bool}).
@@ -42,7 +42,7 @@ We need to prove that it is really a pointfree funcoid that is that
 b\nasymp\supfun{f\times^{(C)}g}a\Leftrightarrow a\nasymp\supfun{(f\times^{(C)}g)^{-1}}b.
 \]
 This formula means $b\nasymp g\circ a\circ f^{\dagger}\Leftrightarrow a\nasymp g^{\dagger}\circ b\circ f$
-and can be easily proved applying the formula (\ref{invertible})
+and can be easily proved applying formula (\ref{invertible})
 twice.
 \begin{prop}
 $a\suprel{f\times^{(C)}g}b\Leftrightarrow a\circ f^{\dagger}\nasymp g^{\dagger}\circ b$.\end{prop}
@@ -55,12 +55,13 @@ $f\suprel{a\times^{(C)}b}g\Leftrightarrow f\circ a^{\dagger}\nasymp b^{\dagger}\
 \begin{thm}
 $(f\times^{(C)}g)^{-1}=f^{\dagger}\times^{(C)}g^{\dagger}$.\end{thm}
 \begin{proof}
-For every funcoids $a\in\Hom(\Src f;\Src g)$ and $b\in\Hom(\Dst f;\Dst g)$
+For every morphisms $a\in\Hom(\Src f;\Src g)$ and $b\in\Hom(\Dst f;\Dst g)$
 we have:
 
 $\supfun{(f\times^{(C)}g)^{-1}}b=g^{\dagger}\circ b\circ f=\supfun{f^{\dagger}\times^{(C)}g^{\dagger}}b$.
-\end{proof}
+
 $\supfun{((f\times^{(C)}g)^{-1})^{-1}}a=\supfun{f\times^{(C)}g}a=g\circ a\circ f^{\dagger}=\supfun{(f^{\dagger}\times^{(C)}g^{\dagger})^{-1}}a$.
+\end{proof}
 \begin{thm}
 Let $f$, $g$ be pointfree funcoids between filters on boolean lattices.
 Then for every filters $\mathcal{A}_{0}\in\mathscr{F}(\Src f)$, $\mathcal{B}_{0}\in\mathscr{F}(\Src g)$
@@ -70,7 +71,7 @@ Then for every filters $\mathcal{A}_{0}\in\mathscr{F}(\Src f)$, $\mathcal{B}_{0}
 \end{thm}
 \begin{proof}
 For every atom $a_{1}\times^{\mathsf{FCD}}b_{1}$ ($a_{1}\in\atoms^{\Dst f}$,
-$b_{1}\in\atoms^{Dstg}$) (see theorem \ref{pf-atom}) of the lattice
+$b_{1}\in\atoms^{\Dst g}$) (see theorem \ref{pf-atom}) of the lattice
 of funcoids we have:
 \begin{align*}
 a_{1}\times^{\mathsf{FCD}}b_{1}\nasymp\supfun{f\times^{(C)}g}(\mathcal{A}_{0}\times^{\mathsf{FCD}}\mathcal{B}_{0}) & \Leftrightarrow\\
@@ -84,7 +85,7 @@ a_{1}\times^{\mathsf{FCD}}b_{1}\nasymp\supfun{f\times^{(C)}g}(\mathcal{A}_{0}\ti
 Thus $\supfun{f\times^{(C)}g}(\mathcal{A}_{0}\times^{\mathsf{FCD}}\mathcal{B}_{0})=\supfun f\mathcal{A}_{0}\times^{\mathsf{FCD}}\supfun g\mathcal{B}_{0}$
 because the lattice $\mathsf{pFCD}(\mathscr{F}(\Dst f);\mathscr{F}(\Dst g))$
 is atomically separable (corollary \ref{pf-fcd-is-sep}).\end{proof}
-\begin{cor}
+\begin{cor}\label{cc-over-fcd}
 $\mathcal{A}_{0}\times^{\mathsf{FCD}}\mathcal{B}_{0}\suprel{f\times^{(C)}g}\mathcal{A}_{1}\times^{\mathsf{FCD}}\mathcal{B}_{1}\Leftrightarrow\mathcal{A}_{0}\suprel f\mathcal{A}_{1}\wedge\mathcal{B}_{0}\suprel g\mathcal{B}_{1}$
 for every $\mathcal{A}_{0}\in\mathscr{F}(\Src f)$, $\mathcal{A}_{1}\in\mathscr{F}(\Dst f)$,
 $\mathcal{B}_{0}\in\mathscr{F}(\Src g)$, $\mathcal{B}_{1}\in\mathscr{F}(\Dst g)$
@@ -95,7 +96,7 @@ where $\Src f$, $\Dst f$, $\Src g$, $\Dst g$ are boolean lattices.\end{cor}
 \mathcal{A}_{0}\times^{\mathsf{FCD}}\mathcal{B}_{0}\suprel{f\times^{(C)}g}\mathcal{A}_{1}\times^{\mathsf{FCD}}\mathcal{B}_{1} & \Leftrightarrow\\
 \mathcal{A}_{1}\times^{\mathsf{FCD}}\mathcal{B}_{1}\nasymp\supfun{f\times^{(C)}g}\mathcal{A}_{0}\times^{\mathsf{FCD}}\mathcal{B}_{0} & \Leftrightarrow\\
 \mathcal{A}_{1}\times^{\mathsf{FCD}}\mathcal{B}_{1}\nasymp\supfun f\mathcal{A}_{0}\times^{\mathsf{FCD}}\supfun g\mathcal{B}_{0} & \Leftrightarrow\\
-\mathcal{A}_{1}\nasymp\supfun f\mathcal{A}_{0}\land\mathcal{B}_{1}\nasymp\supfun f\mathcal{B}_{0} & \Leftrightarrow\\
+\mathcal{A}_{1}\nasymp\supfun f\mathcal{A}_{0}\land\mathcal{B}_{1}\nasymp\supfun g\mathcal{B}_{0} & \Leftrightarrow\\
 \mathcal{A}_{0}\suprel f\mathcal{A}_{1}\wedge\mathcal{B}_{0}\suprel g\mathcal{B}_{1}.
 \end{align*}
 
@@ -122,7 +123,7 @@ by the set $n$.
 \begin{defn}
 \index{relation!anchored}\index{graph!of anchored relation}I will
 call an \emph{anchored relation} a pair $f=(\form f;\GR f)$ of a
-family $\form(f)$ of relational structures indexed by the some index
+family $\form(f)$ of relational structures indexed by some index
 set and a relation $\GR(f)\in\mathscr{P}\prod\form(f)$. I call $\GR(f)$
 the \emph{graph} of the anchored relation $f$. I denote $\Anch(\mathfrak{A})$
 the set of anchored relations of the form~$\mathfrak{A}$.
@@ -142,7 +143,7 @@ is a powerset.
 \end{defn}
 I will denote $\arity f=\dom\form f$.
 \begin{defn}
-$\rsuprel f$ is a relation between typed elements $\mathfrak{T}(\form f)_{i}$
+$\rsuprel f$ is the relation between typed elements $\mathfrak{T}(\form f)_{i}$
 (for $i\in\arity f$) defined by the formula $L\in\rsuprel f\Leftrightarrow\mathfrak{T}\circ L\in\GR f$.
 
 Every set of anchored relations of the same form constitutes a poset
@@ -177,12 +178,15 @@ $i\in\arity f$, $L\in\prod(\form f)|_{(\arity f)\setminus\{i\}}$.
 \begin{defn}
 \index{staroid}A \emph{staroid} is a prestaroid whose graph is an
 upper set (on the poset $\prod\form(f)$).\end{defn}
+\begin{defn}
+A \emph{(pre)staroid on power sets} is such a (pre)staroid $f$ that every $(\form f)_{i}$
+is a lattice of all subsets of some set.\end{defn}
 \begin{prop}
 If $L\in\prod\form f$ and $L_{i}=\bot^{(\form f)_{i}}$ for some
-$i\in\arity f$ then $L\notin f$ if $f$ is a prestaroid.\end{prop}
+$i\in\arity f$ then $L\notin\GR f$ if $f$ is a prestaroid.\end{prop}
 \begin{proof}
 Let $K=L|_{(\arity f)\setminus\{i\}}$. We have $\bot\notin(\val f)_{i}K$;
-$K\cup\{(i;0)\}\notin f$; $L\notin f$.
+$K\cup\{(i;\bot)\}\notin\GR f$; $L\notin\GR f$.
 \end{proof}
 Next we will define \emph{completary staroids}. First goes the general
 case, next simpler case for the special case of join-semilattices
@@ -206,7 +210,7 @@ some $L_{0},L_{1}\in\prod\form f$ and $L_{0}\in\GR f$. Then taking
 $c=n\times\{0\}$ we get $\mylamdba in{L_{c(i)}i}=\mylamdba in{L_{0}i}=L_{0}\in\GR f$
 and thus $L_{1}\in\GR f$ because $L_{1}\sqsupseteq L_{0}\wedge L_{1}\sqsupseteq L_{1}$.\end{proof}
 \begin{prop}
-\index{staroid!completary}A relation between posets whose form is
+\index{staroid!completary}An anchored relation~$f$ between posets whose form is
 a family of join-semilattices is a completary staroid iff both:
 \begin{enumerate}
 \item \label{cary-main}$L_{0}\sqcup L_{1}\in\GR f\Leftrightarrow\exists c\in\{0,1\}^{n}:(\mylamdba in{L_{c(i)}i})\in\GR f$
@@ -219,13 +223,13 @@ for some $i\in\arity f$ then $L\notin\GR f$.
 Let the formulas \ref{cary-main} and \ref{cary-zero} hold. Then
 $f$ is an upper set: Let $L_{0}\sqsubseteq L_{1}$ for some $L_{0},L_{1}\in\prod\form f$
 and $L_{0}\in f$. Then taking $c=n\times\{0\}$ we get $\mylamdba in{L_{c(i)}i}=\mylamdba in{L_{0}i}=L_{0}\in\GR f$
-and thus $L_{1}=L_{0}\sqcup L_{1}\in f$.
+and thus $L_{1}=L_{0}\sqcup L_{1}\in\GR f$.
 
 Thus to finish the proof it is enough to show that 
 \[
 L_{0}\sqcup L_{1}\in\GR f\Leftrightarrow\forall K\in\prod\form f:(K\sqsupseteq L_{0}\wedge K\sqsupseteq L_{1}\Rightarrow K\in\GR f)
 \]
-under condition that $\GR f$ is an upper set. But this is obvious.\end{proof}
+under condition that $\GR f$ is an upper set. But this equivalence is obvious in both directions.\end{proof}
 \begin{prop}
 Every completary staroid is a staroid.\end{prop}
 \begin{proof}
@@ -305,7 +309,7 @@ staroid.
 
 $f$ is a finitary staroid $\Rightarrow$ $f$ is a finitary prestaroid.\end{proof}
 \begin{defn}
-We will denote the set of staroids of a form $\mathfrak{A}$ correspondingly
+We will denote the set of staroids of a form $\mathfrak{A}$
 as $\mathsf{Strd}(\mathfrak{A})$.
 \end{defn}
 
@@ -365,7 +369,7 @@ It follows from the last proposition and the fact that it is binarily
 join-closed.\end{proof}
 \begin{prop}
 Let each $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ for $i\in n$ (where
-$n$ is an index set) is a binarily join-closed filtrator, such that
+$n$ is an index set) be a binarily join-closed filtrator, such that
 each $\mathfrak{A}_{i}$ and each $\mathfrak{Z}_{i}$ are join-semilattices.
 If $f$ is a completary staroid of the form $\mathfrak{A}$ then $\downdownarrows f$
 \ is a completary staroid of the form $\mathfrak{Z}$.\end{prop}
@@ -394,7 +398,7 @@ generated by some anchored relation.\end{defn}
 \begin{prop}
 Every principal staroid is a completary staroid.\end{prop}
 \begin{proof}
-That $L\notin f$ if $L_{i}=\bot^{(\form f)_{i}}$ for some $i\in\arity f$
+That $L\notin\GR f$ if $L_{i}=\bot^{(\form f)_{i}}$ for some $i\in\arity f$
 is obvious. It remains to prove 
 \[
 \prod(L_{0}\sqcup L_{1})\nasymp F\Leftrightarrow\exists c\in\{0,1\}^{\arity f}:\prod_{i\in n}L_{c(i)}i\nasymp F.
@@ -418,26 +422,28 @@ $\uparrow^{\mathsf{Strd}}F=\downdownarrows\upuparrows\uparrow^{\mathsf{Strd}}F$.
 Because $\GR\uparrow^{\mathsf{Strd}}F$ is an upper set.\end{proof}
 \begin{example}
 \label{non-completary}There is such anchored relation $f$ that $\upuparrows\uparrow f$
-is not a completary staroid. This also proves existence of non completary
-staroids (but not for powersets).\end{example}
+is not a completary staroid. This also proves existence of non-completary staroids (but not on powersets).\end{example}
 \begin{proof}
 (based on an \noun{Andreas Blass}'s proof) Take $f$ the set of functions
-$x:\mathbb{N}\rightarrow\mathbb{N}$ where $x_{0}$ an arbitrary natural
+$x:\mathbb{N}\rightarrow\mathbb{N}$ where $x_{0}$ is an arbitrary natural
 number and $x_{i}=\left\{ \begin{array}{ll}
 0 & \text{if }n\leqslant x_{0}\\
 1 & \text{if }n>x_{0}
 \end{array}\right.$ for $i=1,2,3,\ldots$.
+Thus $f$ is the graph of a staroid of the form $\mylamdba{i}{\mathbb{N}}{\subsets\mathbb{N}}$ (on powersets).
 
 Let $\mathcal{L}_{0}(0)=\mathcal{L}_{1}(0)=\Omega(\mathbb{N})$, $\mathcal{L}_{0}(i)=\uparrow\{0\}$
 and $\mathcal{L}_{1}(i)=\uparrow\{1\}$ for $i>0$.
 
 Let $X\in\up(\mathcal{L}_{0}\sqcup\mathcal{L}_{1})$ that is $X\in\up\mathcal{L}_{0}\cap\up\mathcal{L}_{1}$.
 
-$X_{0}$ contains all but binarily many elements of $\mathbb{N}$.
+$X_{0}$ contains all but finitely many elements of $\mathbb{N}$.
 
-For $i>0$ we have $\{0,1\}\subseteq X$.
+For $i>0$ we have $\{0,1\}\subseteq X_i$.
 
-Evidently, $\prod X$ contains an element of $f$.
+Evidently, $\prod X$ contains an element of $f$,
+that is $\up(\mathcal{L}_0\sqcup\mathcal{L}_1)\in f$ what means
+$\mathcal{L}_0\sqcup\mathcal{L}_1\in\upuparrows\uparrow f$.
 
 Now consider any fixed $c\in\{0,1\}^{\mathbb{N}}$. There is at most
 one $k\in\mathbb{N}$ such that the sequence $x=\llbracket k;c(1);c(2);\ldots\rrbracket$
@@ -447,44 +453,24 @@ if there is such a $k$ and $Q=\mathbb{N}$ otherwise.
 Take $Y_{i}=\left\{ \begin{array}{ll}
 Q & \text{if }i=0\\
 \{c(i)\} & \text{if }i>0
-\end{array}\right.$ for $i=1,2,3,\ldots$. We have $Y\in\up(\lambda i\in\mathbb{N}:\mathcal{L}_{c(i)}(i))$.
+\end{array}\right.$ for $i=0,1,2,\ldots$. We have $Y\in\up(\lambda i\in\mathbb{N}:\mathcal{L}_{c(i)}(i))$ for every $c\in\{0,1\}^n$.
 
-But evidently $\prod Y$ does not contain an element of $f$.\end{proof}
-\begin{example}
+But evidently $\prod Y$ does not contain an element of $f$.
+Thus, $\prod Y\asymp f$ that is
+$Y\notin f$; $\up Y\nsubseteq f$; $Y\notin\GR\upuparrows\uparrow f$ what is impossible if $\upuparrows\uparrow f$ is completary.
+\end{proof}
+\begin{example}\label{no-intrs}
 There exists such an (infinite) set $N$ and $N$-ary relation $f$
-that $\mathcal{P}\in\upuparrows f$ but there are no indexed family
+that $\mathcal{P}\in\GR\upuparrows\uparrow f$ but there is no indexed family
 $a\in\prod_{i\in N}\atoms\mathcal{P}_{i}$ of atomic filters such
-that $a\in\GR\upuparrows f$ that is $\forall A\in\up a:f\nasymp\prod A$.\end{example}
+that $a\in\GR\upuparrows\uparrow f$ that is $\forall A\in\up a:f\nasymp\prod A$.\end{example}
 \begin{proof}
 Take $\mathcal{L}_{0}$, $\mathcal{L}_{1}$ and $f$ from the proof
 of example \ref{non-completary}. Take $\mathcal{P}=\mathcal{L}_{0}\sqcup\mathcal{L}_{1}$.
 If $a\in\prod_{i\in N}\atoms\mathcal{P}_{i}$ then there exists $c\in\{0,1\}^{N}$
-such that $a_{i}\sqsubseteq\mathcal{L}_{c(i)}(i)$ (because $\mathcal{L}_{c(i)}(i)\neq0$).
-Then from that example it follows that $(\lambda i\in N:\mathcal{L}_{c(i)}(i))\notin\GR\upuparrows f$
-and thus $a\notin\GR\upuparrows f$.\end{proof}
-\begin{example}
-There is such an anchored relation $F$ that for some $k\in\dom F$
-\[
-\rsupfun{\upuparrows\uparrow F}{}_{k}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{F}}\rsupfun{\upuparrows\uparrow F}_{k}a.
-\]
-\end{example}
-\begin{proof}
-Take $\mathcal{P}\in\GR F$ from the previous counter-example. We
-have 
-\[
-\forall a\in\prod_{i\in\dom F}\atoms\mathcal{P}_{i}:a\notin\GR\mathcal{P}.
-\]
-Take $k=1$.
-
-Let $\mathcal{L}=\mathcal{P}|_{(\dom F)\setminus\{k\}}$. Then $a\notin\GR\upuparrows\uparrow F$
-and thus $a_{k}\asymp\rsupfun{\upuparrows\uparrow F}{}_{k}a|_{(\dom F)\setminus\{k\}}$.
-
-Consequently $\mathcal{P}_{k}\asymp\rsupfun{\upuparrows\uparrow F}{}_{k}a|_{(\dom F)\setminus\{k\}}$
-and thus $\mathcal{P}_{k}\asymp\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathfrak{F}}\rsupfun{\upuparrows\uparrow F}{}_{k}a$
-because $\mathcal{P}_{k}$ is principal.
-
-But $\mathcal{P}_{k}\nasymp\rsupfun{\upuparrows\uparrow F}{}_{k}\mathcal{L}$.
-Thus follows $\langle\upuparrows\uparrow F\rangle_{k}^{\ast}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom F)\setminus\{k\}}\atoms\mathcal{L}_{i}}^{\mathfrak{F}}\rsupfun{\upuparrows\uparrow F}{}_{k}a$.\end{proof}
+such that $a_{i}\sqsubseteq\mathcal{L}_{c(i)}(i)$ (because $\mathcal{L}_{c(i)}(i)\neq\bot$).
+Then from that example it follows that $(\lambda i\in N:\mathcal{L}_{c(i)}(i))\notin\GR\upuparrows\uparrow f$
+and thus $a\notin\GR\upuparrows\uparrow f$.\end{proof}
 \begin{conjecture}
 Filtrators of staroids on powersets are join-closed.
 \end{conjecture}
@@ -523,23 +509,24 @@ I denote $\arity f=n$.
 
 \begin{defn}
 \emph{Prestaroidal mult} is a relational mult of the form $(\mathfrak{A};\mylamdba i{\dom\mathfrak{A}}{\mathfrak{S}(\mathfrak{A}_{i})})$
-(where $\mathfrak{A}$ is a poset) such that $\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}$
-is a free star for every $i\in n$ and $L\in\prod\core f$.
+(where $\mathfrak{A}$ is a poset), that is such that $\rsupfun f_{i}L$
+is a free star for every $i\in n$ and $L\in\prod_{i\in(\dom L)\setminus\{i\}}\core f_i$.
 \end{defn}
 
 \begin{defn}
-\index{multifuncoid}I will call a multifuncoid a mult~$f$ such
-that where $(\core f)_{i}\subseteq(\base f)_{i}$ (thus having a filtrator
+\index{multifuncoid}I will call a \emph{multifuncoid} a mult~$f$ such
+that $(\core f)_{i}\subseteq(\base f)_{i}$ (thus having a filtrator
 $((\base f)_{i};(\core f)_{i})$) for each $i\in n$ and for every
 $i,j\in n$ and $L\in\prod\core f$ 
 \begin{equation}
 L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}\Leftrightarrow L_{j}\nasymp\rsupfun f_{j}L|_{(\dom L)\setminus\{j\}}.\label{alpha-cond}
 \end{equation}
-
+I denote the set of multifuncoids for a family~$(\mathfrak{A};\mathfrak{Z})$ of filtrators as
+$\mathsf{pFCD}(\mathfrak{A};\mathfrak{Z})$ or just $\mathsf{pFCD}(\mathfrak{A})$ when $\mathfrak{Z}$ is clear from context.
 \end{defn}
 
 \begin{defn}
-To every multifuncoid~$f$ corresponds a prestaroid~$g$ by the
+To every multifuncoid~$f$ corresponds an anchored relation~$g$ by the
 formula (with arbitrary $i\in\arity f$) 
 \[
 L\in\GR g\Leftrightarrow L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}.
@@ -549,7 +536,7 @@ L\in\GR g\Leftrightarrow L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}.
 Prestaroidal mults~$\Lambda g=f$ of the form $(\mathfrak{Z};\mylamdba i{\dom\mathfrak{Z}}{\mathfrak{S}(\mathfrak{Z}_{i})})$
 bijectively correspond to pre-staroids~$g$ of the form~$\mathfrak{Z}$
 by the formulas (for every $K\in\prod\mathfrak{Z}$, $i\in\dom\mathfrak{Z}$,
-$L\in\prod_{i\in(\dom\mathfrak{A})\setminus\{i\}}\mathfrak{Z}_{i}$,
+$L\in\prod_{j\in(\dom\mathfrak{A})\setminus\{i\}}\mathfrak{Z}_{j}$,
 $X\in\mathfrak{Z}_{i}$)
 \begin{gather}
 K\in\GR g\Leftrightarrow K_{i}\in\rsupfun f_{i}K|_{(\dom L)\setminus\{i\}};\label{mf-to-star}\\
@@ -584,9 +571,13 @@ $g_{0}=g_{1}$. Really,
 K\in\GR g_{1}\Leftrightarrow K_{i}\in\rsupfun f_{i}K|_{(\dom L)\setminus\{i\}}\Leftrightarrow K|_{(\dom L)\setminus\{i\}}\cup\{(i;K_{i})\}\in\GR g_{0}\Leftrightarrow K\in\GR g_{0}.
 \]
 \end{proof}
+\begin{defn}
+I will denote $\rsuprel{f}=\GR g$ for the prestaroidal mult~$f$ corresponding to anchored relation~$g$.
+\end{defn}
+
 \begin{prop}
-For a form $(\mathfrak{A};\mylamdba i{\dom\mathfrak{A}}{\mathfrak{S}(\mathfrak{A}_{i})})$
-where each $\mathfrak{A}_{i}$ is a boolean lattice, relational mults
+For a form $(\mathfrak{Z};\mylamdba i{\dom\mathfrak{Z}}{\mathfrak{S}(\mathfrak{Z}_{i})})$
+where each $\mathfrak{Z}_{i}$ is a boolean lattice, relational mults
 are the same as multifuncoids (if we equate poset elements with principal
 free stars).\end{prop}
 \begin{proof}
@@ -598,12 +589,15 @@ free stars).\end{prop}
 \end{multline*}
 \end{proof}
 \begin{thm}
-Fix some indexed family $\mathfrak{Z}$ of join semi-lattices. $(\val f)_{j}(L\cup\{(i;X\sqcup Y)\})=(\val f)_{j}(L\cup\{(i;X)\})\sqcup(\val f)_{j}(L\cup\{(i;Y)\})$
+Fix some indexed family $\mathfrak{Z}$ of semi-lattices.
+\[
+(\val f)_{j}(L\cup\{(i;X\sqcup Y)\})=(\val f)_{j}(L\cup\{(i;X)\})\sqcup(\val f)_{j}(L\cup\{(i;Y)\})
+\]
 for every prestaroid $f$ of the form~$\mathfrak{Z}$ and $i,j\in\arity f$,
 $i\neq j$, $L\in\prod_{k\in L\setminus\{i,j\}}\mathfrak{Z}_{k}$,
-$X,Y\in\mathfrak{A}_{i}$.\end{thm}
+$X,Y\in\mathfrak{Z}_{i}$.\end{thm}
 \begin{proof}
-Let $i\in\arity f$ and $L\in\prod_{k\in L\setminus\{i,j\}}\mathfrak{Z}_{k}$.
+Let $i,j\in\arity f$, $i\ne j$ and $L\in\prod_{k\in L\setminus\{i,j\}}\mathfrak{Z}_{k}$.
 Let $Z\in\mathfrak{Z}_{i}$.
 \begin{align*}
 Z\in(\val f)_{j}(L\cup\{(i;X\sqcup Y)\}) & \Leftrightarrow\\
@@ -619,9 +613,9 @@ Thus $(\val f)_{j}(L\cup\{(i;X\sqcup Y)\})=(\val f)_{j}(L\cup\{(i;X)\})\sqcup(\v
 \end{proof}
 Let us consider the filtrator $\left(\prod_{i\in\arity f}\mathfrak{S}((\form f)_{i});\prod_{i\in\arity f}(\form f)_{i}\right)$.
 \begin{conjecture}
-An finitary anchored relation between join-semilattices is a staroid
+A finitary anchored relation between join-semilattices is a staroid
 iff $(\val f)_{j}(L\cup\{(i;X\sqcup Y)\})=(\val f)_{j}(L\cup\{(i;X)\})\sqcup(\val f)_{j}(L\cup\{(i;Y)\})$
-for every $i,\in\arity f$ ($i\ne j$) and $X,Y\in(\form f)_{i}$.\end{conjecture}
+for every $i,j\in\arity f$ ($i\ne j$) and $X,Y\in(\form f)_{i}$.\end{conjecture}
 \begin{thm}
 \label{upg-is-strd}Let $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ be
 a family of join-closed down-aligned filtrators whose both base and
@@ -639,8 +633,9 @@ where $i\in\arity f$
 \]
 The reverse implication is obvious. Let $\mathcal{L}\cup\{(i;\mathcal{X}\sqcup\mathcal{Y})\}\in\GR\upuparrows f$.
 Then for every $L\in\up\mathcal{L}$ and $X\in\up\mathcal{X}$, $Y\in\up\mathcal{Y}$
-we have and $X\sqcup^{\mathfrak{Z}_{i}}Y\sqsupseteq\mathcal{X}\sqcup^{\mathfrak{A}_{i}}\mathcal{Y}$
-thus $L\cup\{(i;X\sqcup^{\mathfrak{Z}_{i}}Y)\}\in\GR f$ and thus
+we have
+% and $X\sqcup^{\mathfrak{Z}_{i}}Y\sqsupseteq\mathcal{X}\sqcup^{\mathfrak{A}_{i}}\mathcal{Y}$ thus
+$L\cup\{(i;X\sqcup^{\mathfrak{Z}_{i}}Y)\}\in\GR f$ and thus
 \[
 L\cup\{(i;X)\}\in\GR f\vee L\cup\{(i;Y)\}\in\GR f
 \]
@@ -651,7 +646,7 @@ is obvious.
 \end{proof}
 There is a conjecture similar to the above theorems:
 \begin{conjecture}
-\label{strd-rel-atoms}$L\in\upuparrows\mathord{\suprel f}\Rightarrow\upuparrows\mathord{\suprel f}\cap\prod_{i\in\dom\mathfrak{A}}\atoms L_{i}\neq\emptyset$
+\label{strd-rel-atoms}$L\in\upuparrows\mathord{\rsuprel f}\Rightarrow\upuparrows\mathord{\rsuprel f}\cap\prod_{i\in\dom\mathfrak{A}}\atoms L_{i}\neq\emptyset$
 for every multifuncoid $f$ for the filtrator $(\mathscr{F}^{n};\mathfrak{Z}^{n})$.
 \end{conjecture}
 
@@ -662,6 +657,29 @@ Then if $f$ is a completary staroid of the form $\mathfrak{Z}^{n}$,
 then $\upuparrows f$ is a completary staroid of the form $\mathfrak{A}^{n}$.
 \end{conjecture}
 
+\begin{example}
+There is such an anchored relation $f$ that for some $k\in\dom f$
+\[
+\rsupfun{\upuparrows\uparrow f}{}_{k}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom f)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{f}}\rsupfun{\upuparrows\uparrow f}_{k}a.
+\]
+\end{example}
+\begin{proof}
+Take $\mathcal{P}\in\GR f$ from the counter-example~\ref{no-intrs}. We
+have 
+\[
+\forall a\in\prod_{i\in\dom f}\atoms\mathcal{P}_{i}:a\notin\GR\mathcal{P}.
+\]
+Take $k=1$.
+
+Let $\mathcal{L}=\mathcal{P}|_{(\dom f)\setminus\{k\}}$. Then $a\notin\GR\upuparrows\uparrow f$
+and thus $a_{k}\asymp\rsupfun{\upuparrows\uparrow f}{}_{k}a|_{(\dom f)\setminus\{k\}}$.
+
+Consequently $\mathcal{P}_{k}\asymp\rsupfun{\upuparrows\uparrow f}{}_{k}a|_{(\dom f)\setminus\{k\}}$
+and thus $\mathcal{P}_{k}\asymp\bigsqcup_{a\in\prod_{i\in(\dom f)\setminus\{k\}}\atoms\mathcal{L_{}}_{i}}^{\mathscr{f}}\rsupfun{\upuparrows\uparrow f}{}_{k}a$
+because $\mathcal{P}_{k}$ is principal.
+
+But $\mathcal{P}_{k}\nasymp\rsupfun{\upuparrows\uparrow f}{}_{k}\mathcal{L}$.
+Thus follows $\langle\upuparrows\uparrow f\rangle_{k}^{\ast}\mathcal{L}\neq\bigsqcup_{a\in\prod_{i\in(\dom f)\setminus\{k\}}\atoms\mathcal{L}_{i}}^{\mathscr{f}}\rsupfun{\upuparrows\uparrow f}{}_{k}a$.\end{proof}
 \section{Join of multifuncoids}
 
 \index{order!of mults}Mults are ordered by the formula $f\sqsubseteq g\Leftrightarrow\rsupfun f\sqsubseteq\rsupfun g$
@@ -670,22 +688,22 @@ order. I will denote $\sqcap$, $\sqcup$, $\bigsqcap$, $\bigsqcup$
 (without an index) the order poset operations on the poset of mults.
 \begin{rem}
 To describe this, the definition of product order is used twice. Let
-$f$ and $g$ be mults of the same form $\mathfrak{A}$
+$f$ and $g$ be mults of the same form $(\mathfrak{A};\mathfrak{Z})$
 \begin{gather*}
-\rsupfun f\sqsubseteq\rsupfun g\Leftrightarrow\forall i\in\dom\mathfrak{A}:\rsupfun f_{i}\sqsubseteq\rsupfun g_{i};\\
-\rsupfun f_{i}\sqsubseteq\rsupfun g_{i}\Leftrightarrow\forall L\in\prod\mathfrak{Z}|_{(\dom\mathfrak{A})\setminus\{i\}}:\rsupfun f_{i}L\sqsubseteq\rsupfun g_{i}L.
+\rsupfun f\sqsubseteq\rsupfun g\Leftrightarrow\forall i\in\dom\mathfrak{Z}:\rsupfun f_{i}\sqsubseteq\rsupfun g_{i};\\
+\rsupfun f_{i}\sqsubseteq\rsupfun g_{i}\Leftrightarrow\forall L\in\prod\mathfrak{Z}|_{(\dom\mathfrak{Z})\setminus\{i\}}:\rsupfun f_{i}L\sqsubseteq\rsupfun g_{i}L.
 \end{gather*}
 \end{rem}
 \begin{obvious}
 $\left(\bigsqcup F\right)K=\bigsqcup_{f\in F}fK$ for every set $F$
-of mults of the same form $\mathfrak{A}$ and $K\in\prod\mathfrak{A}$
+of mults of the same form $\mathfrak{Z}$ and $K\in\prod\mathfrak{Z}$
 whenever every $\bigsqcup_{f\in F}fK$ is defined.\end{obvious}
 \begin{thm}
 $f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g=f\sqcup g$ for every multifuncoids
 $f$ and $g$ for the same indexed family of starrish join-semilattices
 filtrators.\end{thm}
 \begin{proof}
-$\alpha_{i}x\eqdef f_{i}x\sqcup g_{i}x$. It is enough to prove that
+$\alpha_{i}x\eqdef \rsupfun{f_{i}}x\sqcup \rsupfun{g_{i}}x$. It is enough to prove that
 $\alpha$ is a multifuncoid.
 
 We need to prove: 
@@ -695,10 +713,10 @@ L_{i}\nasymp\alpha_{i}L|_{(\dom L)\setminus\{i\}}\Leftrightarrow L_{j}\nasymp\al
 Really,
 \begin{align*}
 L_{i}\nasymp\alpha_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{i}\nasymp f_{i}L|_{(\dom L)\setminus\{i\}}\sqcup g_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{i}\nasymp f_{i}L|_{(\dom L)\setminus\{i\}}\lor L_{i}\nasymp g_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{j}\nasymp f_{j}L|_{(\dom L)\setminus\{j\}}\lor L_{j}\nasymp g_{j}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
-L_{j}\nasymp f_{j}L|_{(\dom L)\setminus\{j\}}\sqcup g_{j}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
+L_{i}\nasymp \rsupfun{f_{i}}L|_{(\dom L)\setminus\{i\}}\sqcup \rsupfun{g_{i}}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
+L_{i}\nasymp \rsupfun{f_{i}}L|_{(\dom L)\setminus\{i\}}\lor L_{i}\nasymp \rsupfun{g_{i}}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
+L_{j}\nasymp \rsupfun{f_{j}}L|_{(\dom L)\setminus\{j\}}\lor L_{j}\nasymp \rsupfun{g_{j}}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
+L_{j}\nasymp \rsupfun{f_{j}}L|_{(\dom L)\setminus\{j\}}\sqcup \rsupfun{g_{j}}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
 L_{j}\nasymp\alpha_{j}L|_{(\dom L)\setminus\{j\}}.
 \end{align*}
 \end{proof}
@@ -707,7 +725,7 @@ $\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F=\bigsqcup F$ for every
 set $F$ of multifuncoids for the same indexed family of join infinite
 distributive complete lattices filtrators.\end{thm}
 \begin{proof}
-$\alpha_{i}x\eqdef\bigsqcup_{f\in F}f_{i}x$. It is enough to prove
+$\alpha_{i}x\eqdef\bigsqcup_{f\in F}\rsupfun{f}_{i}x$. It is enough to prove
 that $\alpha$ is a multifuncoid.
 
 We need to prove: 
@@ -717,66 +735,66 @@ L_{i}\nasymp\alpha_{i}L|_{(\dom L)\setminus\{i\}}\Leftrightarrow L_{j}\nasymp\al
 Really,
 \begin{align*}
 L_{i}\nasymp\alpha_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-L_{i}\nasymp\bigsqcup_{f\in F}f_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-\exists f\in F:L_{i}\nasymp f_{i}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
-\exists f\in F:L_{j}\nasymp f_{j}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
-L_{j}\nasymp\bigsqcup_{f\in F}f_{j}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
+L_{i}\nasymp\bigsqcup_{f\in F}\rsupfun{f_{i}}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
+\exists f\in F:L_{i}\nasymp \rsupfun{f_{i}}L|_{(\dom L)\setminus\{i\}} & \Leftrightarrow\\
+\exists f\in F:L_{j}\nasymp \rsupfun{f_{j}}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
+L_{j}\nasymp\bigsqcup_{f\in F}\rsupfun{f_{j}}L|_{(\dom L)\setminus\{j\}} & \Leftrightarrow\\
 L_{j}\nasymp\alpha_{j}L|_{(\dom L)\setminus\{j\}}.
 \end{align*}
 \end{proof}
-\begin{prop}
-The mapping $f\mapsto\Lambda f$ is an order embedding, for multifuncoids
-for indexed families $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ of down-aligned
-starrish filtrators with separable binarily meet-closed core.\end{prop}
-\begin{proof}
-The mapping $f\mapsto\Lambda f$ is defined because $\mathfrak{A}_{i}$
-are starrish posets (and $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ is
-with binarily meet-closed core and down-aligned). The mapping is injective
-because the filtrators are with separable cores ($\setcond{X\in\mathfrak{Z}_{i}}{X\nasymp\supfun fA}=\setcond{X\in\mathfrak{Z}_{i}}{X\nasymp\supfun fB}$
-implies $\supfun{\Lambda f}A=\supfun{\Lambda f}B$). That $f\mapsto\Lambda f$
-is a monotone function is obvious.\end{proof}
-\begin{rem}
-This order embedding is useful to describe properties of posets of
-prestaroids.\end{rem}
+% \begin{prop}
+% The mapping $f\mapsto\Lambda f$ is an order embedding, for multifuncoids
+% for indexed families $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ of down-aligned
+% starrish filtrators with separable binarily meet-closed core.\end{prop}
+% \begin{proof}
+% The mapping $f\mapsto\Lambda f$ is defined because $\mathfrak{A}_{i}$
+% are starrish posets (and $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$ is
+% with binarily meet-closed core and down-aligned). The mapping is injective
+% because the filtrators are with separable cores ($\setcond{X\in\mathfrak{Z}_{i}}{X\nasymp\supfun fA}=\setcond{X\in\mathfrak{Z}_{i}}{X\nasymp\supfun fB}$
+% implies $\supfun{\Lambda f}A=\supfun{\Lambda f}B$). That $f\mapsto\Lambda f$
+% is a monotone function is obvious.\end{proof}
+% \begin{rem}
+% This order embedding is useful to describe properties of posets of
+% prestaroids.\end{rem}
 \begin{thm}
 If $f$, $g$ are multifuncoids for a primary filtrator $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
 where $\mathfrak{Z}_{i}$ are separable starrish posets, then $f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g\in\mathsf{pFCD}(\mathfrak{A})$.\end{thm}
 \begin{proof}
-Let $A\in\mathord{\suprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$
+Let $A\in\mathord{\rsuprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$
 and $B\sqsupseteq A$. Then for every $k\in\dom\mathfrak{A}$
 
-$A_{k}\nasymp(f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g)A|_{(\dom\mathfrak{A})\setminus\{k\}}$;
-$A_{k}\nasymp(f\sqcup g)A|_{(\dom\mathfrak{A})\setminus\{k\}}$; $A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})\sqcup g(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
+$A_{k}\nasymp\rsupfun{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}A|_{(\dom\mathfrak{A})\setminus\{k\}}$;
+$A_{k}\nasymp\rsupfun{f\sqcup g}A|_{(\dom\mathfrak{A})\setminus\{k\}}$; $A_{k}\nasymp \rsupfun{f}(A|_{(\dom\mathfrak{A})\setminus\{k\}})\sqcup\rsupfun{g}(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
 
-Thus $A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})\lor A_{k}\nasymp g(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$A\in\mathord{\suprel f}\lor A\in\mathord{\suprel g}$; $B\in\mathord{\suprel f}\lor B\in\mathord{\suprel g}$;
-$B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})\lor B_{k}\nasymp g(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+Thus $A_{k}\nasymp\rsupfun{f}(A|_{(\dom\mathfrak{A})\setminus\{k\}})\lor A_{k}\nasymp\rsupfun{g}(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+$A\in\mathord{\rsuprel f}\lor A\in\mathord{\rsuprel g}$; $B\in\mathord{\rsuprel f}\lor B\in\mathord{\rsuprel g}$;
+$B_{k}\nasymp\rsupfun{f}(B|_{(\dom\mathfrak{A})\setminus\{k\}})\lor B_{k}\nasymp\rsupfun{g}(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
 
-$B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})\sqcup g(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$B_{k}\nasymp(f\sqcup g)B|_{(\dom\mathfrak{A})\setminus\{k\}}=(f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g)B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
+$B_{k}\nasymp\rsupfun{f}(B|_{(\dom\mathfrak{A})\setminus\{k\}})\sqcup\rsupfun{g}(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+$B_{k}\nasymp\rsupfun{f\sqcup g}B|_{(\dom\mathfrak{A})\setminus\{k\}}=\rsupfun{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
 
-Thus $B\in\mathord{\suprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$.\end{proof}
+Thus $B\in\mathord{\rsuprel{f\sqcup^{\mathsf{pFCD}(\mathfrak{A})}g}}$.\end{proof}
 \begin{thm}
 If $F$ is a set of multifuncoids for the same indexed family of join
 infinite distributive complete lattices filtrators, then $\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\in\mathsf{pFCD}(\mathfrak{A})$.\end{thm}
 \begin{proof}
-Let $A\in\mathord{\suprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$
+Let $A\in\mathord{\rsuprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$
 and $B\sqsupseteq A$. Then for every $k\in\dom\mathfrak{A}$
 
-$A_{k}\nasymp\left(\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\right)A|_{(\dom\mathfrak{A})\setminus\{k\}}=\left(\bigsqcup F\right)A|_{(\dom\mathfrak{A})\setminus\{k\}}=\bigsqcup_{f\in F}f(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
+$A_{k}\nasymp\rsupfun{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}A|_{(\dom\mathfrak{A})\setminus\{k\}}=\rsupfun{\bigsqcup F}A|_{(\dom\mathfrak{A})\setminus\{k\}}=\bigsqcup_{f\in F}\rsupfun{f}(A|_{(\dom\mathfrak{A})\setminus\{k\}})$.
 
-Thus $\exists f\in F:A_{k}\nasymp f(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$\exists f\in F:A\in\mathord{[f]}$; $B\in\mathord{[f]}$ for some
-$f\in F$; $\exists f\in F:B_{k}\nasymp f(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
-$B_{k}\nasymp\bigsqcup_{f\in F}f(B|_{(\dom\mathfrak{A})\setminus\{k\}})=\left(\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F\right)B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
-Thus $B\in\mathord{\suprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$.
+Thus $\exists f\in F:A_{k}\nasymp\rsupfun{f}(A|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+$\exists f\in F:A\in\rsuprel{f}$; $B\in\rsuprel{f}$ for some
+$f\in F$; $\exists f\in F:B_{k}\nasymp\rsupfun{f}(B|_{(\dom\mathfrak{A})\setminus\{k\}})$;
+$B_{k}\nasymp\bigsqcup_{f\in F}\rsupfun{f}(B|_{(\dom\mathfrak{A})\setminus\{k\}})=\rsupfun{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}B|_{(\dom\mathfrak{A})\setminus\{k\}}$.
+Thus $B\in\mathord{\rsuprel{\bigsqcup^{\mathsf{pFCD}(\mathfrak{A})}F}}$.
 \end{proof}
 
 \section{Infinite product of poset elements}
 
 \index{product!staroidal}Let $A_{i}$ be a family of elements of
 a family $\mathfrak{A}_{i}$ of posets. The \emph{staroidal product}
-$\prod^{\mathsf{Strd}(\mathfrak{A})}A_{i}$ is defined by the formula
+$\prod^{\mathsf{Strd}(\mathfrak{A})}A$ is defined by the formula
 (for every $L\in\prod\mathfrak{A}$)
 \[
 \form\prod^{\mathsf{Strd}(\mathfrak{A})}A=\mathfrak{A}\hspace{1em}\text{and}\hspace{1em}L\in\GR\prod^{\mathsf{Strd}(\mathfrak{A})}A\Leftrightarrow\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}.
@@ -811,8 +829,8 @@ is a filtrator with separable core.\end{prop}
 \GR\upuparrows\downdownarrows\prod^{\mathsf{Strd}}a & =\\
 \setcond{L\in\prod\mathfrak{A}}{\up L\subseteq\mathfrak{Z}\cap\GR\prod^{\mathsf{Strd}}a} & =\\
 \setcond{L\in\prod\mathfrak{A}}{\up L\subseteq\GR\prod^{\mathsf{Strd}}a} & =\\
-\setcond{L\in\prod\mathfrak{A}}{\forall K\in\up L:K\in\GR\prod^{\mathsf{Strd}}a} & \Leftrightarrow\\
-\setcond{L\in\prod\mathfrak{A}}{\forall K\in\up L,i\in n:K_{i}\nasymp a_{i}} & \Leftrightarrow\\
+\setcond{L\in\prod\mathfrak{A}}{\forall K\in\up L:K\in\GR\prod^{\mathsf{Strd}}a} & =\\
+\setcond{L\in\prod\mathfrak{A}}{\forall K\in\up L,i\in n:K_{i}\nasymp a_{i}} & =\\
 \setcond{L\in\prod\mathfrak{A}}{\forall i\in n,K\in\up L:K_{i}\nasymp a_{i}} & =\\
 \setcond{L\in\prod\mathfrak{A}}{\forall i\in n:L_{i}\nasymp a_{i}} & =\\
 \GR\prod^{\mathsf{Strd}}a
@@ -841,22 +859,22 @@ multifuncoid $\prod^{\mathsf{FCD}(\mathfrak{A})}A$ defined by the
 formula (for every $L\in\prod\mathfrak{Z}$):
 
 \[
-\supfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L=\left\{ \begin{array}{ll}
+\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L=\left\{ \begin{array}{ll}
 A_{k} & \text{if }\forall i\in(\dom\mathfrak{A})\setminus\{k\}:A_{i}\nasymp L_{i}\\
 \bot & \text{otherwise}.
 \end{array}\right.
 \]
 \end{defn}
 \begin{prop}
-$\prod^{\mathsf{Strd}(\mathfrak{A})}A=\mathord{\suprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}$.\end{prop}
+$\GR\prod^{\mathsf{Strd}(\mathfrak{A})}A=\mathord{\rsuprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}$.\end{prop}
 \begin{proof}
 ~
 \begin{align*}
 L\in\GR\prod^{\mathsf{Strd}(\mathfrak{A})}A & \Leftrightarrow\\
 \forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i} & \Leftrightarrow\\
 \forall i\in(\dom\mathfrak{A})\setminus\{k\}:A_{i}\nasymp L_{i}\land L_{k}\nasymp A_{k} & \Leftrightarrow\\
-L_{k}\in\supfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L|_{(\dom\mathfrak{A})\setminus\{k\}} & \Leftrightarrow\\
-L\in\GR\mathord{\suprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}.
+L_{k}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L|_{(\dom\mathfrak{A})\setminus\{k\}} & \Leftrightarrow\\
+L\in\mathord{\rsuprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}.
 \end{align*}
 \end{proof}
 \begin{cor}
@@ -864,11 +882,11 @@ Funcoidal product is a completary multifuncoid.\end{cor}
 \begin{proof}
 It is enough to prove that funcoidal product is a multifuncoid. Really,
 \[
-L_{i}\nasymp\left\langle \prod^{\mathsf{FCD}(\mathfrak{A})}A\right\rangle _{i}L|_{(\dom\mathfrak{A})\setminus\{i\}}\Leftrightarrow\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}\Leftrightarrow L_{j}\nasymp\left\langle \prod^{\mathsf{FCD}(\mathfrak{A})}A\right\rangle _{j}L|_{(\dom\mathfrak{A})\setminus\{j\}}.
+L_{i}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{i}L|_{(\dom\mathfrak{A})\setminus\{i\}}\Leftrightarrow\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}\Leftrightarrow L_{j}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{j}L|_{(\dom\mathfrak{A})\setminus\{j\}}.
 \]
 \end{proof}
 \begin{thm}
-If our filtrator $\left(\prod\mathfrak{A};\prod\mathfrak{Z}\right)$
+If our each filtrator $(\mathfrak{A}_i;\mathfrak{Z}_i)$
 is with separable core and $A\in\prod\mathfrak{Z}$, then $\upuparrows\prod^{\mathsf{Strd}(\mathfrak{Z})}A=\prod^{\mathsf{Strd}(\mathfrak{A})}A$.\end{thm}
 \begin{proof}
 ~
@@ -907,7 +925,7 @@ on meet-semilattices with least elements. Let $a\in\prod\mathscr{F}$,
 $S\in\subsets\prod\mathscr{F}$, and every $\Pr_{i}S$ be a generalized
 filter base, $\bigsqcap S=a$. Then 
 \[
-\prod^{\mathsf{Strd}(\mathscr{F})}a=\bigsqcap\setcond{\prod^{\mathsf{Strd}(\mathscr{F})}A}{A\in S}.
+\prod^{\mathsf{Strd}(\mathscr{F})}a=\bigsqcap_{A\in S}\prod^\mathsf{Strd(\mathscr{F})}A.
 \]
 \end{thm}
 \begin{proof}
@@ -919,15 +937,14 @@ Thus $\forall A\in S:\GR f\subseteq\GR\prod^{\mathsf{Strd}(\mathscr{F})}A$.
 Thus for every $A\in S$ we have $L\in\GR f$ implies $\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}$.
 Then, by properties of generalized filter bases, $\forall i\in\dom\mathfrak{A}:a_{i}\nasymp L_{i}$
 that is $L\in\GR\prod^{\mathsf{Strd}(\mathscr{F})}a$.
-
-So $f\sqsubseteq\prod^{\mathsf{Strd}(\mathscr{F})}a$.\end{proof}
+So $f\sqsubseteq\prod^{\mathsf{Strd}(\mathscr{F})}a$ and thus $\prod^{\mathsf{Strd}(\mathscr{F})}a$ is the greatest lower bound of $\setcond{\prod^{\mathsf{Strd}(\mathscr{F})}A}{A\in S}$.\end{proof}
 \begin{conjecture}
 Let $\mathscr{F}$ be a family of sets of filters on meet-semilattices
 with least elements. Let $a\in\prod\mathscr{F}$, $S\in\subsets\prod\mathscr{F}$
 be a generalized filter base, $\bigsqcap S=a$, $f$ is a staroid
 of the form $\prod\mathscr{F}$. Then 
 \[
-\prod^{\mathsf{Strd}(\mathscr{F})}a\nasymp f\Leftrightarrow\forall A\in S:\prod^{\mathsf{Strd}(\mathfrak{A})}A\nasymp f.
+\prod^{\mathsf{Strd}(\mathscr{F})}a\nasymp f\Leftrightarrow\forall A\in S:\prod^{\mathsf{Strd}(\mathfrak{Z})}A\nasymp f.
 \]
 
 \end{conjecture}
@@ -1000,7 +1017,7 @@ L\in\prod\left(\left(\form\prod^{(D)}F\right)|_{\left(\arity\prod^{(D)}F\right)\
 \]
 that is $L_{(i';j')}\in\left(\form\prod^{(D)}F\right)_{(i';j')}$
 for every $(i';j')\in\left(\arity\prod^{(D)}F\right)\setminus\{q\}$,
-that is $L_{(i';j')}\in(\form F_{i})_{j}$. We have $X\in\left(\form\prod^{(D)}F\right)_{(i;j)}\Leftrightarrow X\in(\form F_{i})_{j}$.
+that is $L_{(i';j')}\in(\form F_{i'})_{j'}$. We have $X\in\left(\form\prod^{(D)}F\right)_{(i;j)}\Leftrightarrow X\in(\form F_{i})_{j}$.
 So
 \begin{gather*}
 \left(\val\prod^{(D)}F\right)_{(i;j)}L=\setcond{X\in(\form F_{i})_{j}}{L\cup\{((i;j);X)\}\in\GR\prod^{(D)}F}=\\
@@ -1055,7 +1072,9 @@ Really $L_{0}\sqcup L_{1}\in\GR\prod^{(D)}F\Leftrightarrow L_{0}\sqcup L_{1}\in\
 \exists c\in\{0,1\}^{\arity\prod^{(D)}F}\forall i\in\dom F:(\mylamdba j{\dom F_{i}}{L_{c(i;j)}(i;j)})\in\GR F_{i} & \Leftrightarrow\\
 \forall i\in\dom F\exists c\in\{0,1\}^{\dom F_{i}}:(\mylamdba j{\dom F_{i}}{L_{c(j)}(i;j)})\in\GR F_{i} & \Leftrightarrow\\
 \forall i\in\dom F\exists c\in\{0,1\}^{\dom F_{i}}:(\mylamdba j{\dom F_{i}}{(\curry(L_{c(j)})i)j})\in\GR F_{i} & \Leftrightarrow\\
-\forall i\in\dom F:\curry(L_{0})\sqcup\curry(L_{1})i\in\GR F_{i} & \Leftrightarrow\\
+\forall i\in\dom F:\curry(L_{0})i\sqcup\curry(L_{1})i\in\GR F_{i} & \Leftrightarrow\\
+\forall i\in\dom F:(\curry(L_{0})\sqcup\curry(L_{1}))i\in\GR F_{i} & \Leftrightarrow\\
+\forall i\in\dom F:\curry(L_{0}\sqcup L_{1})i\in\GR F_{i} & \Leftrightarrow\\
 L_{0}\sqcup L_{1}\in\setcond{\uncurry z}{z\in\prod(\GR\circ F)} & \Leftrightarrow\\
 L_{0}\sqcup L_{1}\in\GR\prod^{(D)}F.
 \end{align*}
@@ -1108,12 +1127,14 @@ $m\in M$;
 \item \index{star composition}a function (\emph{star composition}) $(m;f)\mapsto\StarComp(m;f)$
 defined for $m\in M$ and $f$ being an $(\arity m)$-indexed family
 of morphisms of $C$ such that $\forall i\in\arity m:\Src f_{i}=\Obj_{m}i$
-($\Src f_{i}$ is the source object of the morphism $f_{i}$) such
-that $\arity\StarComp(m;f)=\arity m$
+($\Src f_{i}$ is the source object of the morphism~$f_{i}$) such
+that
 \end{enumerate}
 such that it holds:
 \begin{enumerate}
 \item $\StarComp(m;f)\in M$;
+\item $\arity\StarComp(m;f)=\arity m$;
+\item $\Obj_{\StarComp(m;f)}i=\Dst f_i$;
 \item (\emph{associativity law}) 
 \[
 \StarComp(\StarComp(m;f);g)=\StarComp(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}}).
@@ -1282,7 +1303,7 @@ q\circ g\circ m\circ f^{\dagger}\circ p^{\dagger}=q\circ g\circ m\circ(p\circ f)
 \end{proof}
 \begin{defn}
 \index{category!with star-morphisms!induced by dagger category}Category
-with star morphisms \emph{induced} by a dagger category $C$ is the
+with star morphisms \emph{induced} by a dagger category~$C$ is the
 above defined precategory with star-morphisms.
 \end{defn}
 That it is a category (the law of composition with identity) is trivial.
@@ -1325,7 +1346,7 @@ infinite) indexed family of funcoids.
 \subsection{Mapping a morphism into a pointfree funcoid}
 \begin{defn}
 Let's define the pointfree funcoid $\chi f$ for every morphism $f$
-or a quasi-invertible category: 
+of a quasi-invertible category: 
 \[
 \supfun{\chi f}a=f\circ a\quad\text{and}\quad\supfun{(\chi f)^{-1}}b=f^{\dagger}\circ b.
 \]
@@ -1401,7 +1422,7 @@ b\nasymp\StarComp(a;f)\Leftrightarrow\exists y:(y\in b\land y\in\StarComp(a;f))\
 \end{proof}
 \begin{thm}
 The group of small binary relations considered as a category together
-with the set of of all $n$-ary relations (for every small $n$) and
+with the set of of all small $n$-ary relations (for every small $n$) and
 the above defined star-composition form a quasi-invertible category
 with star-morphisms.\end{thm}
 \begin{proof}
@@ -1423,8 +1444,6 @@ Obviously
 R(\mylamdba in{g_{i}\circ f_{i}})=R(g)\circ R(f).
 \]
 $L\in\StarComp(a;f)\Leftrightarrow\exists y\in a:y\mathrel{R(f)}L$.
-
-
 \begin{multline*}
 L\in\StarComp(\StarComp(a;f);g)\Leftrightarrow\exists p\in\StarComp(a;f):p\mathrel{R(g)}L\Leftrightarrow\\
 \exists p,y\in a:(y\mathrel{R(f)}p\wedge p\mathrel{R(g)}L)\Leftrightarrow\exists y\in a:y\mathrel{(R(g)\circ R(f))}L\Leftrightarrow\\
@@ -1469,9 +1488,10 @@ $n$-ary anchored relation complying with the formulas:
 \arity\StarComp(a;f)=\arity a;\\
 L\in\GR\StarComp(a;f)\Leftrightarrow L\in\StarComp(\GR a;\GR\circ f).
 \end{gather*}
-(Here I denote $GR(A;B;f)=f$ for every $\mathbf{Rel}$-morphism $f$.)
+(Here I denote $\GR(A;B;f)=f$ for every $\mathbf{Rel}$-morphism $f$.)
 \begin{prop}
-$b\nasymp\StarComp(a;f)\Leftrightarrow\exists x\in a,y\in b\forall j\in n:x_{j}\mathrel{f_{j}}y_{j}$.\end{prop}
+~
+\[b\nasymp\StarComp(a;f)\Leftrightarrow\exists x\in a,y\in b\forall j\in n:x_{j}\mathrel{\GR(f_{j})}y_{j}.\]\end{prop}
 \begin{proof}
 From the previous section.\end{proof}
 \begin{thm}
@@ -1518,13 +1538,13 @@ L\in\GR\StarComp(a;f)\Leftrightarrow(\lambda i\in n:\langle f_{i}^{-1}\rangle L_
 \]
 
 \begin{thm}
-Let $\Src f_{i}$ be separable join-semilattice and $\Dst f_{i}$
+Let $\Src f_{i}$ be separable starrish join-semilattice and $\Dst f_{i}$
 be a starrish join-semilattice for every $i\in n$ for a set $n$.
-Let $\form a=\prod_{i\in n}(\Src f_{i})$
+Let $\form a=\prod_{i\in n}(\Src f_{i})$.
 \begin{enumerate}
 \item \label{fcomp-pre}If $a$ is a prestaroid then $\StarComp(a;f)$ is
 a prestaroid.
-\item \label{fcomp-str}If $a$ is a staroid then $\StarComp(a;f)$ is a
+\item \label{fcomp-str}If $a$ is a staroid and $\Src f_i$ are strongly separable then $\StarComp(a;f)$ is a
 staroid.
 \item \label{fcomp-compl}If $a$ is a completary staroid and then $\StarComp(a;f)$
 is a completary staroid.
@@ -1537,7 +1557,7 @@ by theorem~\ref{pf-dist-func}.
 \item [{\ref{fcomp-pre}}] Let $L\in\prod_{i\in(\arity f)\setminus\{k\}}(\form f_{i})$
 for some $k\in n$ and $X,Y\in\form f_{k}$. Then 
 \begin{eqnarray*}
-X\sqcup Y\in\supfun{\StarComp(a;f)}_{k}L & \Leftrightarrow\\
+X\sqcup Y\in\rsupfun{\StarComp(a;f)}_{k}L & \Leftrightarrow\\
 \left(\lambda i\in\dom f:\supfun{f_{i}^{-1}}\left(\left\{ \begin{array}{ll}
 X\sqcup Y & \text{if }i=k\\
 L_{i} & \text{if }i\neq k
@@ -1546,8 +1566,8 @@ L_{i} & \text{if }i\neq k
 \supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y & \text{if }i=k\\
 \supfun{f_{i}^{-1}}L_{i} & \text{if }i\neq k
 \end{array}\right.\right)_{i}\right)\in\GR a & \Leftrightarrow\\
-\supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y\in\langle a\rangle_{k}(\lambda i\in(\dom f)\setminus\{k\}:\langle f_{i}^{-1}\rangle L_{i}) & \Leftrightarrow\\
-\supfun{f_{i}^{-1}}X\in\langle a\rangle_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i})\vee\langle f_{i}^{-1}\rangle Y\in\langle a\rangle_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i}) & \Leftrightarrow\\
+\supfun{f_{i}^{-1}}X\sqcup\supfun{f_{i}^{-1}}Y\in\rsupfun{a}_{k}(\lambda i\in(\dom f)\setminus\{k\}:\langle f_{i}^{-1}\rangle L_{i}) & \Leftrightarrow\\
+\supfun{f_{i}^{-1}}X\in\rsupfun{a}_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i})\vee\langle f_{i}^{-1}\rangle Y\in\rsupfun{a}_{k}(\lambda i\in n\setminus\{k\}:\supfun{f_{i}^{-1}}L_{i}) & \Leftrightarrow\\
 \begin{aligned}\left(\lambda i\in\dom f:\left(\left\{ \begin{array}{ll}
 \supfun{f_{i}^{-1}}X & \text{if }i=k\\
 \supfun{f_{i}^{-1}}L_{i} & \text{if }i\neq k
@@ -1568,7 +1588,7 @@ L_{i} & \text{if }i\neq k
 \end{array}\right.\right)_{i}\right)\in\GR a
 \end{aligned}
  & \Leftrightarrow\\
-X\in\supfun{\StarComp(a;f)}_{k}L\vee Y\in\supfun{\StarComp(a;f)}_{k}L.
+X\in\rsupfun{\StarComp(a;f)}_{k}L\vee Y\in\rsupfun{\StarComp(a;f)}_{k}L.
 \end{eqnarray*}
 Thus $\StarComp(a;f)$ is a pre-staroid.
 \item [{\ref{fcomp-str}}] $\supfun{f_{i}^{-1}}$ are monotone functions by
@@ -1612,24 +1632,23 @@ We need to prove:
 \item $\StarComp(m;\lambda i\in\arity m:1_{\Obj_{m}i})=m$.
 \end{enumerate}
 (the rest is obvious).
-\end{proof}
 Really, 
 \begin{multline*}
 L\in\GR\StarComp(\StarComp(m;f);g)\Leftrightarrow\\
 (\lambda i\in\arity m:\supfun{g_{i}^{-1}}L_{i})\in\GR\StarComp(m;f)\Leftrightarrow\\
-(\lambda i\in n:\supfun{f_{i}^{-1}}(\lambda i\in n:\supfun{g_{i}^{-1}}L_{i})_{i})\in\GR m\Leftrightarrow\\
+(\lambda i\in n:\supfun{f_{i}^{-1}}(\lambda j\in n:\supfun{g_{j}^{-1}}L_{j})_{i})\in\GR m\Leftrightarrow\\
 (\lambda i\in\arity m:\langle f_{i}^{-1}\rangle\supfun{g_{i}^{-1}}L_{i})\in\GR m\Leftrightarrow\\
 (\lambda i\in\arity m:\langle(g_{i}\circ f_{i})^{-1}\rangle L_{i})\in\GR m\Leftrightarrow\\
 L\in\GR\StarComp(m;\lambda i\in\arity m:g_{i}\circ f_{i});
 \end{multline*}
 and
-
 \begin{multline*}
 L\in\GR\StarComp(m;\lambda i\in\arity m:1_{\Obj_{m}i})\Leftrightarrow\\
 (\lambda i\in n:\supfun{1_{\Obj_{m}i}}L_{i})\in\GR m\Leftrightarrow\\
 (\lambda i\in\arity m:\supfun{1_{\Obj_{m}i}}L_{i})\in\GR m\Leftrightarrow\\
 (\lambda i\in\arity m:L_{i})\in\GR m\Leftrightarrow L\in\GR m.
 \end{multline*}
+\end{proof}
 
 \begin{conjecture}
 $\StarComp(a\sqcup b;f)=\StarComp(a;f)\sqcup\StarComp(b;f)$ for anchored
@@ -1646,7 +1665,7 @@ $\dom\mathfrak{A}=n$.
 Let every $f_{i}$ (for all $i\in n$) be a pointfree funcoid with
 $\Src f_{i}=\mathfrak{A}_{i}$.
 
-The star-composition of $a$ with $f$ is an anchored relation of
+The \emph{atomary star-composition} of $a$ with $f$ is an anchored relation of
 the form $\mylamdba i{\dom\mathfrak{A}}{\Dst f_{i}}$ defined by the
 formula 
 \[
@@ -1666,8 +1685,8 @@ is a completary staroid.
 \begin{proof}
 ~
 \begin{widedisorder}
-\item [{\ref{starcomp-pre}}] First prove that $\StarComp(a;f)$ is a prestaroid.
-We need to prove that $(\val\StarComp(a;f))_{j}L$ (for every $j\in n$)
+\item [{\ref{starcomp-pre}}] First prove that $\StarComp^{(a)}(a;f)$ is a prestaroid.
+We need to prove that $(\val\StarComp^{(a)}(a;f))_{j}L$ (for every $j\in n$)
 is a free star, that is
 \[
 \setcond{X\in(\form f)_{j}}{L\cup\{(j;X)\}\in\GR\StarComp^{(a)}(a;f)}
@@ -1676,7 +1695,7 @@ is a free star, that is the following is a free star
 \[
 \setcond{X\in(\form f)_{j}}{R(X)}
 \]
-where $R(X)\Leftrightarrow\exists y\in\prod_{i\in n}\atoms\mathfrak{A}_{i}:\left(\forall i\in n\setminus\{j\}:y_{i}\suprel{f_{i}}L_{i}\wedge y_{j}\suprel{f_{j}}X\wedge y\in\GR a\right)$.
+where $R(X)\Leftrightarrow\exists y\in\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n\setminus\{j\}:y_{i}\suprel{f_{i}}L_{i}\wedge y_{j}\suprel{f_{j}}X\wedge y\in\GR a\right)$.
 \begin{align*}
 R(X) & \Leftrightarrow\\
 \exists y\in\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:(\forall i\in n\setminus\{j\}:y_{i}\suprel{f_{i}}L_{i}\land y_{j}\suprel{f_{j}}X\land y_{j}\in(\val a)_{j}(y|_{n\setminus\{j\}})) & \Leftrightarrow\\
@@ -1697,7 +1716,7 @@ is false our statement is obvious. We can assume it is true.
 
 So it is enough to prove that
 \[
-\setcond{X\in(\form f)_{j}}{\exists y\in\prod_{i\in n\setminus\{j\}}\atoms^{\mathfrak{A}_{i}},y'\in\atoms^{\mathfrak{A}_{j}}:y'\suprel{f_{j}}X\land y'\in(\val a)_{j}(y|_{n\setminus\{j\}}))}
+\setcond{X\in(\form f)_{j}}{\exists y\in\prod_{i\in n\setminus\{j\}}\atoms^{\mathfrak{A}_{i}},y'\in\atoms^{\mathfrak{A}_{j}}:(y'\suprel{f_{j}}X\land y'\in(\val a)_{j}(y|_{n\setminus\{j\}}))}
 \]
 is a free star. That is
 \[
@@ -1709,35 +1728,35 @@ for every $X_{0},X_{1}\in(\form f)_{j}$. Let $X_{0}\sqcup X_{1}\in Q$.
 Then there exist $y\in\prod_{i\in n\setminus\{j\}}\atoms^{\mathfrak{A}_{i}}$,
 $y'\in(\atoms^{\mathfrak{A}_{j}})\cap(\val a)_{j}(y|_{n\setminus\{j\}})$
 such that $y'\suprel{f_{j}}X_{0}\sqcup X_{1}$. Consequently (proposition
-\ref{pf-join-arg}) $y'\suprel{f_{j}}X_{0}\vee y'\suprel{f_{j}}$.
+\ref{pf-join-arg}) $y'\suprel{f_{j}}X_{0}\vee y'\suprel{f_{j}}X_1$.
 But then $X_{0}\in Q\vee X_{1}\in Q$.
 
 
-To finish the proof we need to show that $\GR\StarComp(a;f)$ is an
+To finish the proof we need to show that $\GR\StarComp^(a)(a;f)$ is an
 upper set, but this is obvious.
 
 \item [{\ref{starcomp-compl}}] Let $a$ be a completary staroid. Let $L_{0}\sqcup L_{1}\in\GR\StarComp^{(a)}(a;f)$
-that is $\exists y\in\prod_{i\in n}\atoms\mathfrak{A}_{i}:\left(\forall i\in n:y_{i}\suprel{f_{i}}L_{0}i\sqcup L_{1}i\wedge y\in a\right)$
-that is $\exists c\in\{0,1\}^{n},y\in\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n:y_{i}\suprel{f_{i}}L_{c(i)}i\wedge y\in a\right)$
+that is $\exists y\in\prod_{i\in n}\atoms\mathfrak{A}_{i}:\left(\forall i\in n:y_{i}\suprel{f_{i}}L_{0}i\sqcup L_{1}i\wedge y\in\GR a\right)$
+that is $\exists c\in\{0,1\}^{n},y\in\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n:y_{i}\suprel{f_{i}}L_{c(i)}i\wedge y\in\GR a\right)$
 (taken into account that $\Dst f_{i}$ is starrish) that is $\exists c\in\{0,1\}^{n}:(\mylamdba in{L_{c(i_{})}i})\in\GR\StarComp^{(a)}(a;f)$.
 So $\StarComp^{(a)}(a;f)$ is a completary staroid.
 \end{widedisorder}
 \end{proof}
 \begin{lem}
-$b\nasymp^{\Anch(\mathfrak{A})}\StarComp^{(a)}(a;f)\Leftrightarrow\forall A\in\GR a,B\in\GR b,i\in n:A_{i}\suprel{f_{i}}B_{i}$
+$b\nasymp^{\Anch(\mathfrak{B})}\StarComp^{(a)}(a;f)\Leftrightarrow\forall A\in\GR a,B\in\GR b,i\in n:A_{i}\suprel{f_{i}}B_{i}$
 for anchored relations $a$ and $b$, provided that $\Src f_{i}$
 are atomic posets.\end{lem}
 \begin{proof}
 ~
 
 \begin{align*}
-b\nasymp^{\Anch(\mathfrak{A})}\StarComp^{(a)}(a;f) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:(x\sqsubseteq b\wedge x\sqsubseteq\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:(x\sqsubseteq b\wedge\forall B\in\GR x:B\in\GR\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:\\
-\left(x\sqsubseteq b\wedge\forall B\in\GR x\exists A\in\prod_{i\in\dom\mathfrak{A}}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n:A_{i}\suprel{f_{i}}B_{i}\wedge A\in\GR a\right)\right) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A})\setminus\{\bot\}:\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
-\exists x\in\Anch(\mathfrak{A}):\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
+b\nasymp^{\Anch(\mathfrak{B})}\StarComp^{(a)}(a;f) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:(x\sqsubseteq b\wedge x\sqsubseteq\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:(x\sqsubseteq b\wedge\forall B\in\GR x:B\in\GR\StarComp^{(a)}(a;f)) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:\\
+\left(x\sqsubseteq b\wedge\forall B\in\GR x\exists A\in\prod_{i\in\dom\mathfrak{B}}\atoms^{\mathfrak{B}_{i}}:\left(\forall i\in n:A_{i}\suprel{f_{i}}B_{i}\wedge A\in\GR a\right)\right) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B})\setminus\{\bot\}:\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
+\exists x\in\Anch(\mathfrak{B}):\left(x\sqsubseteq b\wedge\forall B\in\GR x,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}\right) & \Leftrightarrow\\
 \forall B\in\GR b,A\in\GR a,i\in n:A_{i}\suprel{f_{i}}B_{i}.
 \end{align*}
 \end{proof}
@@ -1745,28 +1764,29 @@ b\nasymp^{\Anch(\mathfrak{A})}\StarComp^{(a)}(a;f) & \Leftrightarrow\\
 I will denote the cross-composition product for the star-composition
 $\StarComp^{(a)}$ as $\prod^{(a)}$.\end{defn}
 \begin{thm}
-\label{a-b-cross-prod}$a\suprel{\prod^{(a)}f}b\Leftrightarrow\forall A\in a,B\in b,i\in n:A_{i}\suprel{f_{i}}B_{i}$
+\label{a-b-cross-prod}$a\suprel{\prod^{(a)}f}b\Leftrightarrow\forall A\in\GR a,B\in\GR b,i\in n:A_{i}\suprel{f_{i}}B_{i}$
 for anchored relations $a$ and $b$, provided that $\Src f_{i}$
 and $\Dst f_{i}$ are atomic posets.\end{thm}
 \begin{proof}
 From the lemma.\end{proof}
 \begin{conjecture}
-$b\nasymp^{\mathsf{Strd}(\mathfrak{A})}\StarComp(a;f)\Leftrightarrow b\nasymp^{\mathsf{Strd}(\mathfrak{B})}\StarComp(a;f)$
+$b\nasymp^{\mathsf{Strd}(\mathfrak{B})}\StarComp(a;f)\Leftrightarrow a\nasymp^{\mathsf{Strd}(\mathfrak{A})}\StarComp(b;f^{\dagger})$
 for staroids $a$ and $b$ on indexed families~$\mathfrak{A}$ and~$\mathfrak{B}$
 of filters on powersets.\end{conjecture}
 \begin{thm}
 Anchored relations with objects being atomic posets and above defined
 compositions form a quasi-invertible precategory with star-morphisms.\end{thm}
+\begin{rem}
+It seems that this precategory with star-morphisms isn't a category with star-morphisms.\end{rem}
 \begin{proof}
 We need to prove:
 \begin{enumerate}
 \item \label{arel-comp}$\StarComp^{(a)}(\StarComp^{(a)}(m;f);g)=\StarComp^{(a)}(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}});$
-\item \label{arel-id}$\StarComp^{(a)}(m;\mylamdba i{\arity m}{1_{\Obj_{m}i}})=m;$
 \item \label{arel-cross}$b\nasymp\StarComp^{(a)}(a;f)\Leftrightarrow a\nasymp\StarComp^{(a)}(b;f^{\dagger})$
 \end{enumerate}
 (the rest is obvious).
 
-Really,
+Really, let $a$ be a star morphism and $\mathfrak{A}_i=(\Obj_a)i$ for every $i\in\arity a$;
 \begin{widedisorder}
 \item [{\ref{arel-comp}}] $L\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}\forall i\in n:y_{i}\suprel{f_{i}}L_{i}$.
 
@@ -1776,33 +1796,29 @@ Obviously
 \[
 R(\mylamdba in{g_{i}\circ f_{i}})=R(g)\circ R(f).
 \]
-
-
-
 $L\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:y\mathrel{R(f)}L$.
 \begin{align*}
 L\in\GR\StarComp^{(a)}(\StarComp(a;f);g) & \Leftrightarrow\\
-\exists p\in\GR\StarComp^{(a)}(a;f)\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:p\mathrel{R(g)}L & \Leftrightarrow\\
-\exists p,y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:(y\mathrel{R(f)}p\land p\mathrel{R(g)}L) & \Leftrightarrow\\
-\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}y:\mathrel{(R(g)\circ R(f))}L & \Leftrightarrow\\
-\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}y:\mathrel{R(\mylamdba in{g_{i}\circ f_{i}})}L & \Leftrightarrow\\
-\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}y\forall i\in n:y_{i}\suprel{g_{i}\circ f_{i}}L_{i} & \Leftrightarrow\\
+\exists p\in\GR\StarComp^{(a)}(a;f)\cap\prod_{i\in n}\atoms^{(\Dst f)_{i}}:p\mathrel{R(g)}L & \Leftrightarrow\\
+\exists p\in\prod_{i\in n}\atoms^{(\Dst f)_{i}},y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:(y\mathrel{R(f)}p\land p\mathrel{R(g)}L) & \Leftrightarrow\\
+\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:y\mathrel{(R(g)\circ R(f))}L & \Leftrightarrow\\
+\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:y\mathrel{R(\mylamdba in{g_{i}\circ f_{i}})}L & \Leftrightarrow\\
+\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}y\forall i\in n:y_{i}\suprel{g_{i}\circ f_{i}}L_{i} & \Leftrightarrow\\
 L\in\GR\StarComp^{(a)}(a;\mylamdba in{g_{i}\circ f_{i}})
 \end{align*}
-because $p\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}y:y\mathrel{R(f)}p$.
+because $p\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}y:y\mathrel{R(f)}p$.
 
-\item [{\ref{arel-id}}] Obvious.
 \item [{\ref{arel-cross}}] It follows from the lemma above.
 \end{widedisorder}
 \end{proof}
 \begin{thm}
 \label{prod-prod}$\supfun{\prod^{(a)}f}\prod^{\mathsf{Strd}}a=\prod_{i\in n}^{\mathsf{Strd}}\supfun{f_{i}}a_{i}$
-for every families $f=f_{i\in n}$ of pointfree funcoids between atomic
+for every family~$f=f_{i\in n}$ of pointfree funcoids between atomic
 posets and $a=a_{i\in n}$ where $a_{i}\in\Src f_{i}$.\end{thm}
 \begin{proof}
 ~
 \begin{align*}
-L\in\GR\supfun{\prod^{(a)}}\prod^{\mathsf{Strd}}a & \Leftrightarrow\\
+L\in\GR\supfun{\prod^{(a)}f}\prod^{\mathsf{Strd}}a & \Leftrightarrow\\
 L\in\GR\StarComp^{(a)}\left(\prod^{\mathsf{Strd}}a;f\right) & \Leftrightarrow\\
 \exists y\in\prod_{i\in\dom\mathfrak{A}}\atoms^{\mathfrak{A}_{i}}\forall i\in n:(y_{i}\suprel{f_{i}}L_{i}\land y_{i}\nasymp a_{i}) & \Leftrightarrow\\
 \forall i\in n\exists y\in\atoms^{\mathfrak{A}_{i}}:(y\suprel{f_{i}}L_{i}\land y\nasymp a_{i}) & \Leftrightarrow\\
@@ -1945,7 +1961,7 @@ Really,
 \bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(B;G)}{B\in\GR\StarComp(a;f),G\in\prod_{i\in n}\GR g_{i}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(\StarComp(A;F);G)}{A\in\GR a,F\in\prod_{i\in n}\GR f_{i},G\in\prod_{i\in n}\GR g_{i}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(A;G\circ F)}{A\in\GR a,F\in\prod_{i\in n}\GR f_{i},G\in\prod_{i\in n}\GR g_{i}} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(A;H)}{A\in\GR a,H\in\prod_{i\in n}\mylamdba in{g_{i}\circ f_{i}}} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(A;H)}{A\in\GR a,H\in\prod_{i\in n}\GR(g_{i}\circ f_{i})} & =\\
 \StarComp(a;\mylamdba i{\arity n}{g_{i}\circ f_{i}}).
 \end{align*}
 
@@ -1966,7 +1982,7 @@ b\nasymp\StarComp(a;f) & \Leftrightarrow\\
 \forall A\in\GR a,B\in\GR b,F\in\prod_{i\in n}\GR f_{i}:B\nasymp\supfun{\prod^{(C)}F}A & \Leftrightarrow\\
 \forall A\in\GR a,B\in\GR b,F\in\prod_{i\in n}\GR f_{i}:A\nasymp\supfun{\left(\prod^{(C)}F\right)^{-1}}B & \Leftrightarrow\\
 \forall A\in\GR a,B\in\GR b,F\in\prod_{i\in n}\GR f_{i}:A\nasymp\StarComp(B;F^{\dagger}) & \Leftrightarrow\\
-A\nasymp\StarComp(b;f^{\dagger}).
+a\nasymp\StarComp(b;f^{\dagger}).
 \end{align*}
 
 \end{widedisorder}
@@ -1978,8 +1994,8 @@ Let $f$ be a multireloid of the form $A$. Then for $i\in\dom A$
 \]
 \end{defn}
 \begin{prop}
-$\up\Pr_{i}^{\mathsf{RLD}}f=\rsupfun{\Pr_{i}}\GR a$ for every multireloid
-$a$ and $i\in\arity a$.\end{prop}
+$\up\Pr_{i}^{\mathsf{RLD}}f=\rsupfun{\Pr_{i}}\GR f$ for every multireloid
+$f$ and $i\in\arity f$.\end{prop}
 \begin{proof}
 It's enough to show that $\rsupfun{\Pr_{i}}\GR f$ is a filter.
 
@@ -1989,7 +2005,7 @@ Let $X,Y\in\rsupfun{\Pr_{i}}\GR f$. Then there exist $F,G\in\GR f$
 such that $X=\Pr_{i}F$, $Y=\Pr_{i}G$. Then $X\cap Y\supseteq\Pr_{i}(F\cap G)\in\rsupfun{\Pr_{i}}\GR f$.
 Thus $X\cap Y\in\rsupfun{\Pr_{i}}\GR f$.\end{proof}
 \begin{defn}
-$\prod^{\mathsf{RLD}}\mathcal{X}=\bigsqcap_{X\in\prod\mathcal{X}}^{\mathsf{RLD}(\mylamdba i{\dom\mathcal{X}}{\Base(\mathcal{X}_{i})})}\prod X$
+$\prod^{\mathsf{RLD}}\mathcal{X}=\bigsqcap_{X\in\up\prod\mathcal{X}}^{\mathsf{RLD}(\mylamdba i{\dom\mathcal{X}}{\Base(\mathcal{X}_{i})})}\prod X$
 for every indexed family $\mathcal{X}$ of filters on powersets.\end{defn}
 \begin{prop}
 \label{Pr-prod-reloids}$\Pr_{k}^{\mathsf{RLD}}\prod^{\mathsf{RLD}}x=x_{k}$
@@ -2009,11 +2025,11 @@ Obviously $\prod^{\mathsf{RLD}}A\sqsupseteq\bigsqcup\setcond{\prod^{\mathsf{RLD}
 Reversely, let $K\in\GR\bigsqcup\setcond{\prod^{\mathsf{RLD}}a}{a\in\prod_{i\in\dom A}\atoms A_{i}}$.
 
 Consequently $K\in\GR\prod^{\mathsf{RLD}}a$ for every $a\in\prod_{i\in\dom A}\atoms A_{i}$;
-$K\supseteq\prod X$ and thus $K\supseteq\bigcup_{X\in\prod a}\prod X$
-for every $X\in\prod a$.
+$K\supseteq\prod X$ and thus $K\supseteq\bigcup_{a\in\prod_{i\in\dom a}\atoms A_i}\prod X_a$
+for some $X_a\in\prod_{i\in\dom a}\atoms A_i$.
 
-But $\bigcup_{X\in\prod a}\prod X=\prod_{i\in\dom A}\bigcup\rsupfun{\Pr_{i}}X\supseteq\prod_{j\in\dom A}Z_{j}$
-for some $Z_{j}\in A_{j}$ because $\rsupfun{\Pr_{i}}X\in a_{i}$
+But $\bigcup_{a\in\prod_{i\in\dom a}\atoms A_i}\prod X_a=\prod_{i\in\dom A}\bigcup_{a\in\atoms A_i}\rsupfun{\Pr_{i}}X_a\supseteq\prod_{j\in\dom A}Z_{j}$
+for some $Z_{j}\in\up A_{j}$ because $\rsupfun{\Pr_{i}}X\in\up a_{i}$
 and our lattice is atomistic. So $K\in\GR\prod^{\mathsf{RLD}}A$.\end{proof}
 \begin{thm}
 Let $a$, $b$ be indexed families of filters on powersets of the
@@ -2027,45 +2043,45 @@ same form $\mathfrak{A}$. Then
 \begin{align*}
 \up\left(\prod^{\mathsf{RLD}}a\sqcap\prod^{\mathsf{RLD}}b\right) & =\\
 \bigsqcap^{\mathsf{RLD}(\mathfrak{A})}\setcond{P\cap Q}{P\in\GR\prod^{\mathsf{RLD}}a,Q\in\prod^{\mathsf{RLD}}b} & =\\
-\bigsqcap^{\mathsf{RLD}(\mathfrak{A})}\setcond{\prod p\cap\prod q}{p\in\prod a,q\in\prod b} & =\\
-\bigsqcap^{\mathsf{RLD}(\mathfrak{A})}\setcond{\prod(p_{i}\cap q_{i})}{p\in\prod a,q\in\prod b} & =\\
+\bigsqcap^{\mathsf{RLD}(\mathfrak{A})}\setcond{\prod p\cap\prod q}{p\in\up\prod a,q\in\up\prod b} & =\\
+\bigsqcap^{\mathsf{RLD}(\mathfrak{A})}\setcond{\prod_{i\in\dom\mathfrak{A}}(p_{i}\cap q_{i})}{p\in\prod\up a,q\in\prod\up b} & =\\
 \bigsqcap^{\mathsf{RLD}(\mathfrak{A})}\setcond{\prod r}{r\in\up\prod_{i\in\dom\mathfrak{A}}(a_{i}\sqcap b_{i})} & =\\
 \up\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}(a_{i}\sqcap b_{i}).
 \end{align*}
 \end{proof}
 \begin{thm}
-If $S\in\subsets\prod_{i\in\dom\mathfrak{A}}\mathscr{F}(\mathfrak{A}_{i})$
-where $\mathfrak{A}$ is an indexed family of sets, then 
+If $S\in\subsets\prod_{i\in\dom\mathfrak{Z}}\mathscr{F}(\mathfrak{Z}_{i})$
+where $\mathfrak{Z}$ is an indexed family of sets, then 
 \[
-\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S.
+\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S.
 \]
 \end{thm}
 \begin{proof}
-If $S=\emptyset$ then $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\bigsqcap\emptyset=\top^{\mathsf{RLD}(\mathfrak{A})}$
+If $S=\emptyset$ then $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\bigsqcap\emptyset=\top^{\mathsf{RLD}(\mathfrak{Z})}$
 and 
-\begin{multline*}
-\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\emptyset=\\
-\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\emptyset=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\top^{\mathscr{F}(\mathfrak{A}_{i})}=\top^{\mathsf{RLD}(\mathfrak{A})},
-\end{multline*}
-thus $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$.
+\[
+\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S=
+\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\emptyset=\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\top^{\mathscr{F}(\mathfrak{Z}_{i})}=\top^{\mathsf{RLD}(\mathfrak{Z})},
+\]
+thus $\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a=\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$.
 
 Let $S\ne\emptyset$.
 
-$\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S\sqsubseteq\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\{a_{i}\}=a_{i}$
-for every $a\in S$ because $a_{i}\in\Pr_{i}S$. Thus $\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S\sqsubseteq\prod^{\mathsf{RLD}}a$;
+$\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S\sqsubseteq\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\{a_{i}\}=a_{i}$
+for every $a\in S$ because $a_{i}\in\Pr_{i}S$. Thus $\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S\sqsubseteq\prod^{\mathsf{RLD}}a$;
 \[
-\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a\sqsupseteq\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S.
+\bigsqcap_{a\in S}\prod^{\mathsf{RLD}}a\sqsupseteq\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S.
 \]
 
 
-Now suppose $F\in\GR\prod_{i\in\dom\mathfrak{A}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$.
-Then there exists $X\in\prod_{i\in\dom\mathfrak{A}}\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$
+Now suppose $F\in\GR\prod_{i\in\dom\mathfrak{Z}}^{\mathsf{RLD}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$.
+Then there exists $X\in\up\prod_{i\in\dom\mathfrak{Z}}\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$
 such that $F\supseteq\prod X$. It is enough to prove that there exist
 $a\in S$ such that $F\in\GR\prod^{\mathsf{RLD}}a$. For this it is
 enough $\prod X\in\GR\prod^{\mathsf{RLD}}a$.
 
-Really, $X_{i}\in\bigsqcap^{\mathscr{F}(\mathfrak{A}_{i})}\Pr_{i}S$
-thus $X_{i}\in a_{i}$ for every $A\in S$ because $\Pr_{i}S\supseteq\{a_{i}\}$.
+Really, $X_{i}\in\up\bigsqcap^{\mathscr{F}(\mathfrak{Z}_{i})}\Pr_{i}S$
+thus $X_{i}\in\up a_{i}$ for every $A\in S$ because $\Pr_{i}S\supseteq\{a_{i}\}$.
 
 Thus $\prod X\in\GR\prod^{\mathsf{RLD}}a$.\end{proof}
 \begin{defn}
@@ -2091,11 +2107,6 @@ $a$, $b$ and an indexed family $f$ of reloids with $\Src f_{i}=(\form a)_{i}=(\f
 \GR\StarComp(a\sqcup b;f).
 \end{align*}
 \end{proof}
-\begin{conjecture}
-$f\sqsubseteq\prod^{\mathsf{RLD}}a\Leftrightarrow\forall i\in\arity f:\Pr_{i}^{\mathsf{RLD}}f\sqsubseteq a_{i}$
-for every multireloid $f$ and $a_{i}\in\mathscr{F}((\form f)_{i})$
-for every $i\in\arity f$.
-\end{conjecture}
 
 \subsection{Starred reloidal product}
 
@@ -2127,24 +2138,24 @@ Take $m=n$ to show that $\prod^{\mathsf{RLD}\ast}a\sqsubseteq\prod^{\mathsf{RLD}
 $\prod^{\mathsf{RLD}\ast}a=\bot^{\mathsf{RLD}(\mylamdba in{\Base(a_{i})})}$
 if $a_{i}$ is the non-proper filter for some $i\in n$.\end{prop}
 \begin{proof}
-Take $A_{i}=\emptyset$ and $m=\{i\}$. Then $\prod_{i\in n}\left(\begin{cases}
+Take $A_{i}=\bot$ and $m=\{i\}$. Then $\prod_{i\in n}\left(\begin{cases}
 A_{i} & \text{if }i\in m\\
 \Base(a_{i}) & \text{if }i\in n\setminus m
-\end{cases}\right)=\emptyset$.\end{proof}
+\end{cases}\right)=\bot$.\end{proof}
 \begin{example}
 There exists an indexed family $a$ of principal filters such that
 $\prod^{\mathsf{RLD}\ast}a$ is non-principal.\end{example}
 \begin{proof}
-Let $n=\mathbb{N}$. Let $\Base(a_{i})=\mathbb{R}$ and each $a_{i}$
-be a principal filter corresponding to a two-element set.
+Let $n$ be infinite and~$\Base(a_{i})$ is a set of at least two elements. Let each $a_{i}$
+be a trivial ultrafilter.
 
 Every $\prod_{i\in n}\left(\begin{cases}
 A_{i} & \text{if }i\in m\\
 \Base(a_{i}) & \text{if }i\in n\setminus m
-\end{cases}\right)$ has at least $\mathfrak{c}^{n}\geqslant\mathfrak{c}$ elements.
+\end{cases}\right)$ has at least $2^{n}$ elements.
 
-There are elements $\prod^{\mathsf{RLD}}a$ with cardinality $2^{n}=n$.
-They can't be elements of $\prod^{\mathsf{RLD}\ast}a$ because $n=\omega<\mathfrak{c}$.\end{proof}
+There are elements $\up\prod^{\mathsf{RLD}}a$ with cardinality $1$.
+They can't be elements of $\up\prod^{\mathsf{RLD}\ast}a$ because of cardinality issues.\end{proof}
 \begin{cor}
 There exists an indexed family $a$ of principal filters such that
 $\prod^{\mathsf{RLD}\ast}a\neq\prod^{\mathsf{RLD}}a$.\end{cor}
@@ -2155,6 +2166,29 @@ $\Pr_{k}^{\mathsf{RLD}}\prod^{\mathsf{RLD}\ast}x=x_{k}$ for every
 indexed family $x$ of proper filters.\end{prop}
 \begin{proof}
 $\Pr_{k}^{\mathsf{RLD}}\prod^{\mathsf{RLD}\ast}x=\rsupfun{\Pr_{k}}\GR\prod^{\mathsf{RLD}\ast}x=x_{k}$.
+\end{proof}
+
+\begin{thm}
+  $\Pr^{\mathsf{RLD}}_i f \sqsubseteq \mathcal{A}_i$ for all $i \in n$
+  iff $f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A}$ (for every
+  reloid $f$ of arity $n$ and $n$-indexed family $\mathcal{A}$ of filters on
+  sets).
+\end{thm}
+
+\begin{proof}
+$f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A} \Rightarrow
+\Pr^{\mathsf{RLD}}_i f \sqsubseteq \Pr^{\mathsf{RLD}}_i
+\prod^{\mathsf{RLD} \ast} \mathcal{A} \sqsubseteq \mathcal{A}_i$.
+
+Let now $\Pr^{\mathsf{RLD}}_i f \sqsubseteq \mathcal{A}_i$.
+
+$f \sqsubseteq \prod \left( \begin{cases}
+  \Pr^{\mathsf{RLD}}_i f & \text{if } i \in m\\
+  \Base (\form f)_i & \text{if } i \notin m
+\end{cases} \right)$ for finite $m \subseteq n$, as it can be easily be
+proved by induction.
+
+It follows $f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A}$.
 \end{proof}
 
 \section{Subatomic product of funcoids}
@@ -2174,7 +2208,7 @@ To prove that $\prod^{(A)}f$ exists we need to prove (for every $a\in\atoms^{\ma
 $b\in\atoms^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}$)
 \begin{multline*}
 \forall X\in\GR a,Y\in\GR b\\
-\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})},y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y:a\suprel{\prod^{(A)}f}b\Rightarrow\\
+\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y:a\suprel{\prod^{(A)}f}b\Rightarrow\\
 a\suprel{\prod^{(A)}f}b.
 \end{multline*}
 
@@ -2189,8 +2223,8 @@ Let
 Then
 \begin{multline*}
 \forall X\in\GR a,Y\in\GR b\\
-\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y:\\
-\Pr_{i}^{\mathsf{RLD}}x\suprel{\prod^{(A)}f}\Pr_{i}^{\mathsf{RLD}}y.
+\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y\\
+\forall i\in\dom f:\Pr_{i}^{\mathsf{RLD}}x\suprel{f_i}\Pr_{i}^{\mathsf{RLD}}y.
 \end{multline*}
 
 
@@ -2233,21 +2267,37 @@ a\suprel{\prod_{i\in n}^{(A)}(g_{i}\circ f_{i})}b & \Leftrightarrow\\
 a\suprel{\prod^{(A)}g\circ\prod^{(A)}f}b.
 \end{align*}
 
-
-Let 
+But 
 \[
-\forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+\forall i\in\dom f\exists C\in\atoms^{\mathscr{F}(\Dst f_{i})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}C\land C\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)
 \]
-Then there exists $c'\in(\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)})^{n}$
-such that
+implies 
 \[
-\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c'_{i}\land\rsupfun{\Pr_{i}}c'_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+\exists C\in\prod_{i\in n}\atoms^{\mathscr{F}(\Dst f_{i})} \forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}C_i\land C_i\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
 \]
-Then take $c''=\prod^{\mathsf{RLD}}c'$. Then $\forall i\in\dom f:\left(\rsupfun{Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c''_{i}\wedge\rsupfun{Pr_{i}}c''_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)$.
-Thus 
+Take $c\in\atoms\prod^{\mathsf{RLD}} C$. Then
 \[
-\exists c\in\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)}\forall i\in\dom f:\left(\rsupfun{Pr_{i}}a\suprel{f_{i}}\rsupfun{Pr_{i}}c\wedge\rsupfun{Pr_{i}}c\suprel{g_{i}}\rsupfun{Pr_{i}}b\right).
+\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\Pr_i c\land\Pr_i c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)
 \]
+that is
+\[
+\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_i} c\land\rsupfun{\Pr_i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right)
+\]
+% Let 
+% \[
+% \forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \]
+% Then there exists $c'\in(\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)})^{n}$
+% such that
+% \[
+% \forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c'_{i}\land\rsupfun{\Pr_{i}}c'_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \]
+% Then take $c''=\prod^{\mathsf{RLD}}c'$. Then
+% \[\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c''_{i}\wedge\rsupfun{\Pr_{i}}c''_{i}\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).\]
+% Thus 
+% \[
+% \exists c\in\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)}\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\wedge\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \]
 
 
 We have $a\suprel{\prod_{i\in n}^{(A)}(g_{i}\circ f_{i})}b\Leftrightarrow a\suprel{\prod^{(A)}g\circ\prod^{(A)}f}b$.\end{proof}
@@ -2290,7 +2340,7 @@ y\nasymp\supfun{\prod^{(A)}f}x.
 \end{align*}
 Thus $\supfun{\prod^{(A)}f}x=\prod_{i\in\dom f}^{\mathsf{RLD}}\supfun{f_{i}}\Pr_{i}^{\mathsf{RLD}}x$.\end{proof}
 \begin{cor}
-$\langle f\times^{(A)}g\rangle x=\langle f\rangle(\dom x)\times^{\mathsf{RLD}}\langle g\rangle(\im x)$.
+$\langle f\times^{(A)}g\rangle x=\langle f\rangle(\dom x)\times^{\mathsf{RLD}}\langle g\rangle(\im x)$ for atomic~$x$.
 \end{cor}
 
 \section{On products and projections}
@@ -2317,9 +2367,9 @@ family of proper filters, and $k\in\dom x$.\end{prop}
 ~
 \begin{align*}
 \Pr_{k}\GR\prod^{\mathsf{Strd}}x & =\\
-\Pr_{k}\setcond{L\in\coprod_{i\in\dom x}\form x_{i}}{\forall i\in\dom x:x_{i}\nasymp L_{i}} & =\\
+\Pr_{k}\setcond{L\in\form x}{\forall i\in\dom x:x_{i}\nasymp L_{i}} & =\\
 \text{(used the fact that \ensuremath{x_{i}} are proper filters)}\\
-\setcond{l\in\form x_{k}}{x_{k}\nasymp l} & =\fullstar x_{k}.
+\setcond{l\in(\form x)_{k}}{x_{k}\nasymp l} & =\fullstar x_{k}.
 \end{align*}
 \end{proof}
 \begin{prop}
@@ -2355,7 +2405,7 @@ A pointfree funcoid is zero iff its reverse is zero.\end{cor}
 \begin{prop}
 Values $x_{i}$ (for every $i\in\dom x$) can be restored from the
 value of $\prod^{(C)}x$ provided that $x$ is an indexed family of
-non-zero pointfree funcoids if $\Src f_{i}$ (for every $i\in n$)
+non-zero pointfree funcoids, $\Src f_{i}$ (for every $i\in n$)
 is an atomic lattice and every $\Dst f_{i}$ is an atomic poset with
 greatest element.\end{prop}
 \begin{proof}
@@ -2363,7 +2413,7 @@ $\left\langle \prod^{(C)}x\right\rangle \prod^{\mathsf{Strd}}p=\prod_{i\in n}^{\
 by theorem \ref{prod-prod}.
 
 Since $x_{i}$ is non-zero there exist $p$ such that $\supfun{x_{i}}p_{i}$
-is non-zero. Take $k\in n$, $p'_{i}=p_{i}$ for $i\neq k$ and $p'_{k}=q$
+is non-least. Take $k\in n$, $p'_{i}=p_{i}$ for $i\neq k$ and $p'_{k}=q$
 for an arbitrary value $q$; then (using the staroidal projections
 from the previous subsection) 
 \[
@@ -2379,28 +2429,28 @@ Values $x_{i}$ (for every $i\in\dom x$) can be restored from the
 value of $\prod^{(A)}x$ provided that $x$ is an indexed family of
 non-zero funcoids.\end{prop}
 \begin{proof}
-Fix $k\in\dom f$. Let for some filters $x$ and $y$ 
+Fix $k\in\dom f$. Let for some filters $\mathcal{X}$ and $\mathcal{Y}$ 
 \[
 a=\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(\Base(x))} & \text{if }i\neq k;\\
-x & \text{if }i=k
+\mathcal{X} & \text{if }i=k
 \end{array}\right.\quad\text{and}\quad b=\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(\Base(y))} & \text{if }i\neq k;\\
-y & \text{if }i=k.
+\mathcal{Y} & \text{if }i=k.
 \end{array}\right.
 \]
-Then $x\suprel{x_{k}}y\Leftrightarrow a_{k}\suprel{x_{k}}b_{k}\Leftrightarrow\forall i\in\dom f:a_{i}\suprel{x_{i}}b_{i}\Leftrightarrow\prod^{\mathsf{RLD}}a\suprel{\prod^{(A)}x}\prod^{\mathsf{RLD}}b$.
+Then $\mathcal{X}\suprel{x_{k}}\mathcal{Y}\Leftrightarrow a_{k}\suprel{x_{k}}b_{k}\Leftrightarrow\forall i\in\dom f:a_{i}\suprel{x_{i}}b_{i}\Leftrightarrow\prod^{\mathsf{RLD}}a\suprel{\prod^{(A)}x}\prod^{\mathsf{RLD}}b$.
 So we have restored $x_{k}$ from $\prod^{(A)}x$.\end{proof}
 \begin{defn}
 For every funcoid $f:\prod A\rightarrow\prod B$ (where $A$ and $B$
-are indexed families of sets) consider the funcoid $\Pr_{k}^{(A)}f$
+are indexed families of typed sets) consider the funcoid $\Pr_{k}^{(A)}f$
 defined by the formula 
 \[
 X\rsuprel{\Pr_{k}^{(A)}f}Y\Leftrightarrow\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
-1^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
+\top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
 \uparrow^{A_{i}}X & \text{if }i=k
 \end{array}\right.\right)\suprel f\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
-1^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
+\top^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
 \uparrow^{B_{i}}Y & \text{if }i=k
 \end{array}\right.\right).
 \]
@@ -2408,12 +2458,12 @@ X\rsuprel{\Pr_{k}^{(A)}f}Y\Leftrightarrow\prod_{i\in\dom A}^{\mathsf{RLD}}\left(
 \begin{prop}
 $\Pr_{k}^{(A)}f$ is really a funcoid.\end{prop}
 \begin{proof}
-$\neg\left(\emptyset\rsuprel{\Pr_{k}^{(A)}f}Y\right)$ is obvious.
+$\neg\left(\bot\rsuprel{\Pr_{k}^{(A)}f}Y\right)$ is obvious.
 \begin{align*}
-I\cup J\rsuprel{\Pr_{k}^{(A)}f}Y & \Leftrightarrow\\
+I\sqcup J\rsuprel{\Pr_{k}^{(A)}f}Y & \Leftrightarrow\\
 \prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
-\uparrow^{A_{i}}(I\cup J) & \text{if }i=k
+\uparrow^{A_{i}}(I\sqcup J) & \text{if }i=k
 \end{array}\right.\right)\suprel f\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
 \uparrow^{B_{i}}Y & \text{if }i=k
@@ -2459,8 +2509,8 @@ I\rsuprel{\Pr_{k}^{(A)}f}Y\lor J\rsuprel{\Pr_{k}^{(A)}f}Y.
 The rest follows from symmetry.\end{proof}
 \begin{prop}
 For every funcoid $f:\prod A\rightarrow\prod B$ (where $A$ and $B$
-are indexed families of sets) there exists a funcoid $\Pr_{k}^{(A)}f$
-defined by the formula 
+are indexed families of typed sets) the funcoid $\Pr_{k}^{(A)}f$
+conforms to the formula 
 \[
 \mathcal{X}\suprel{\Pr_{k}^{(A)}f}\mathcal{Y}\Leftrightarrow\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
@@ -2483,10 +2533,10 @@ defined by the formula
 \top^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
 \uparrow^{B_{i}}Y & \text{if }i=k
 \end{array}\right.\right) & \Leftrightarrow\\
-\forall X\in\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
+\forall X\in\up\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
 \mathcal{X} & \text{if }i=k
-\end{array}\right.\right),Y\in\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
+\end{array}\right.\right),Y\in\up\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
 \mathcal{Y} & \text{if }i=k
 \end{array}\right.\right):X\rsuprel fY & \Leftrightarrow\\
@@ -2517,7 +2567,7 @@ non-zero reloids.\end{conjecture}
 for every indexed family of pointfree funcoids, where downgrading
 is defined for the filtrator 
 \[
-\left(\mathsf{FCD}(\StarHom(\Src\circ f);\StarHom(\Dst\circ f));\rsupfun{\uparrow^{\mathsf{FCD}}}\mathscr{P}\left(\prod(\Src\circ f)\times\prod(\Dst\circ f)\right)\right).
+\left(\mathsf{FCD}(\StarHom(\Src\circ f);\StarHom(\Dst\circ f));\mathbf{Rel}\left(\prod(\Src\circ f);\prod(\Dst\circ f)\right)\right).
 \]
 \end{defn}
 \begin{rem}
@@ -2543,7 +2593,7 @@ $\GR\Pr_{k}^{(D)}\prod^{(D)}F=\GR F_{k}$ and $\form\Pr_{k}^{(D)}\prod^{(D)}F=\fo
 for every indexed family $F$ of non-empty anchored relations.
 \end{cor}
 
-\section{Relationships between cross-composition and subatomic products}
+\section[Cross-composition and subatomic products]{Relationships between cross-composition and subatomic products}
 \begin{prop}
 $a\suprel{f\times^{(C)}g}b\Leftrightarrow\dom a\suprel f\dom b\wedge\im a\suprel g\im b$
 for funcoids $f$ and $g$ and atomic funcoids $a\in\mathsf{FCD}(\Src f;\Src g)$
@@ -2586,13 +2636,13 @@ have:
 \end{lem}
 \begin{proof}
 Let $x\in\setcond{(\dom a;\im a)}{a\in\atoms\uparrow^{\mathsf{RLD}}A}$.
-Then $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{RLD}}A$.
+Take $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{RLD}}A$.
 
 Then $x_{0}=\dom\tofcd a$ and $x_{1}=\im\tofcd a$ and obviously
 $\tofcd a\in\atoms\uparrow^{\mathsf{FCD}}A$. So $x\in\setcond{(\dom a;\im a)}{a\in\atoms\uparrow^{\mathsf{FCD}}A}$.
 
 Let now $x\in\setcond{(\dom a;\im a)}{a\in\atoms\uparrow^{\mathsf{FCD}}A}$.
-Then $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{FCD}}A$.
+Take $x_{0}=\dom a$ and $x_{1}=\im a$ where $a\in\atoms\uparrow^{\mathsf{FCD}}A$.
 
 $x_{0}\suprel{\uparrow^{\mathsf{FCD}}A}x_{1}\Leftrightarrow x_{0}\suprel{\tofcd\uparrow^{\mathsf{RLD}}A}x_{1}\Leftrightarrow x_{0}\times^{\mathsf{RLD}}x_{1}\nasymp\uparrow^{\mathsf{RLD}}A$.
 Thus there exists atomic reloid $x'$ such that $x'\in\atoms\uparrow^{\mathsf{RLD}}A$
@@ -2679,7 +2729,7 @@ I mean $\uparrow^{\mathsf{FCD}(\Base a;\Base b)}(A_{0}\times B_{0})\rsuprel{f\ti
 Thus it is equivalent to $a_{0}\suprel fa_{1}\wedge b_{0}\suprel gb_{1}$
 that is $a_{0}\times^{\mathsf{FCD}}b_{0}\rsuprel{f\times^{(C)}g}a_{1}\times^{\mathsf{FCD}}b_{1}$.
 
-(It was used the theorem \ref{a-b-cross-prod}.)
+(It was used the corollary~\ref{cc-over-fcd}.)
 \end{proof}
 Can the above theorem be generalized for the infinitary case?
 
@@ -2749,17 +2799,17 @@ Similar to the previous theorem.
 
 \section{Upgrading and downgrading multifuncoids}
 \begin{lem}
-\label{mf-f-base}$\setcond{\supfun f_{k}X}{X\in\up^{\left(\prod_{i\in n\setminus\{k\}}\mathfrak{A}_{i};\prod_{i\in n\setminus\{k\}}\mathfrak{Z}_{i}\right)}\mathcal{X}}$
+\label{mf-f-base}$\setcond{\rsupfun f_{k}X}{X\in\up^{\prod_{i\in n\setminus\{k\}}\mathfrak{Z}_{i}}\mathcal{X}}$
 is a filter base on $\mathfrak{A}_{k}$ for every family $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
 of primary filtrators where $i\in n$ for some index set $n$ (provided that
 $f$ is a multifuncoid of the form $\mathfrak{Z}$ and $k\in n$ and
 $\mathcal{X}\in\prod_{i\in n\setminus\{k\}}\mathfrak{A}_{i}$).\end{lem}
 \begin{proof}
-Let $\mathcal{K},\mathcal{L}\in\setcond{\supfun f_{k}X}{X\in\up\mathcal{X}}$.
-Then there exist $X,Y\in\up\mathcal{X}$ such that $\mathcal{K}=\supfun f_{k}X$,
-$\mathcal{L}=\supfun f_{k}Y$. We can take $Z\in\up\mathcal{X}$ such
-that $Z\sqsubseteq X,Y$. Then evidently $\langle f\rangle_{k}Z\sqsubseteq\mathcal{K}$
-and $\supfun f_{k}Z\sqsubseteq\mathcal{L}$ and $\supfun f_{k}Z\in\setcond{\supfun f_{k}X}{X\in\up\mathcal{X}}$.\end{proof}
+Let $\mathcal{K},\mathcal{L}\in\setcond{\rsupfun f_{k}X}{X\in\up\mathcal{X}}$.
+Then there exist $X,Y\in\up\mathcal{X}$ such that $\mathcal{K}=\rsupfun f_{k}X$,
+$\mathcal{L}=\rsupfun f_{k}Y$. We can take $Z\in\up\mathcal{X}$ such
+that $Z\sqsubseteq X,Y$. Then evidently $\rsupfun{f}_{k}Z\sqsubseteq\mathcal{K}$
+and $\rsupfun f_{k}Z\sqsubseteq\mathcal{L}$ and $\rsupfun f_{k}Z\in\setcond{\rsupfun f_{k}X}{X\in\up\mathcal{X}}$.\end{proof}
 \begin{defn}
 \emph{Square} mult is a mult whose base and core are the same.
 \end{defn}
@@ -2782,7 +2832,7 @@ every $\mathcal{X}\in\prod\base f$.\end{defn}
 \begin{lem}
 $\mathcal{L}_{i}\nasymp\rsupfun{\upuparrows f}\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}\Leftrightarrow\forall L\in\up\mathcal{L}:L_{i}\nasymp\rsupfun fL|_{(\dom\mathcal{L})\setminus\{i\}}$,
 if every $((\base f)_{i};(\core f)_{i})$ is a primary filtrator over
-a distributive lattice.\end{lem}
+a meet-semilattice with least element.\end{lem}
 \begin{proof}
 ~
 \begin{align*}
@@ -2793,17 +2843,19 @@ a distributive lattice.\end{lem}
 \bigsqcap_{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}\rsupfun{\mathcal{L}_{i}\sqcap}\rsupfun fX\ne\bot & \Leftrightarrow\\
 \bigsqcap\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}\ne\bot & \Leftrightarrow\text{ (*)}\\
 \bot\notin\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}} & \Leftrightarrow\\
-\forall X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}} : \mathcal{L}_{i}\sqcap\rsupfun fX \ne \bot & \Leftrightarrow\\
+\forall X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}} : \mathcal{L}_{i}\sqcap\rsupfun fX \ne \bot & \Leftrightarrow\text{ (**)}\\
 \forall L\in\up\mathcal{L}:\rsupfun fL|_{\dom\mathcal{L}}\sqcap L_{i}\ne\bot & \Leftrightarrow\\
 \forall L\in\up\mathcal{L}:L_{i}\nasymp\rsupfun fL|_{\dom\mathcal{L}}.
 \end{align*}
 
-
 ({*}) because $\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}$
-is a filter base (by lemma \ref{mf-f-base}) of the filter $\bigsqcap\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}$.\end{proof}
+is a filter base (by lemma \ref{mf-f-base}) of the filter $\bigsqcap\setcond{\mathcal{L}_{i}\sqcap\rsupfun fX}{X\in\up\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}}$.
+
+({**}) by theorem~\ref{when-sep-core}.
+\end{proof}
 \begin{prop}
 $\upuparrows f$ is a square multifuncoid, if every $((\base f)_{i};(\core f)_{i})$
-is a primary filtrator over a distributive lattice with greatest element.\end{prop}
+is a primary filtrator over a bounded meet-semilattice.\end{prop}
 \begin{proof}
 Our filtrators are with complete base by corollary \ref{filt-is-complete}.
 
@@ -2815,8 +2867,7 @@ So $\mathcal{L}_{i}\nasymp\rsupfun{\upuparrows f}\mathcal{L}|_{(\dom\mathcal{L})
 because $L_{i}\nasymp\rsupfun fL|_{(\dom\mathcal{L})\setminus\{i\}}\Leftrightarrow L_{j}\nasymp\rsupfun fL|_{(\dom\mathcal{L})\setminus\{j\}}$.\end{proof}
 \begin{prop}
 $\mathord{\rsuprel{\upuparrows f}}=\mathord{\suprel f}$ if every
-$((\base f)_{i};(\core f)_{i})$ is a primary filtrator over a distributive
-lattice with greatest element.\end{prop}
+$((\base f)_{i};(\core f)_{i})$ is a primary filtrator over a bounded meet-semilattice.\end{prop}
 \begin{proof}
 Our filtrators are with complete base by corollary \ref{filt-is-complete}.
 \begin{align*}
@@ -2830,12 +2881,13 @@ Our filtrators are with complete base by corollary \ref{filt-is-complete}.
 \begin{prop}
 $\mathcal{L}\in\mathord{\suprel f}\Leftrightarrow\mathcal{L}_{i}\nasymp\langle f\rangle\mathcal{L}|_{(\dom\mathcal{L})\setminus\{i\}}$
 if every $((\base f)_{i};(\core f)_{i})$ is a primary filtrator over
-a distributive lattice with greatest element.\end{prop}
+a bounded meet-semilattice.\end{prop}
 \begin{proof}
 Our filtrators are with complete base by corollary \ref{filt-is-complete}.
-\end{proof}
-Because $\upuparrows f$ is a multifuncoid and $\mathord{\suprel f}=\mathord{\rsuprel{\upuparrows f}}$
+
+The theorem holds because $\upuparrows f$ is a multifuncoid and $\mathord{\suprel f}=\mathord{\rsuprel{\upuparrows f}}$
 and $\supfun f=\rsupfun{\upuparrows f}$.
+\end{proof}
 \begin{prop}
 $\Lambda\upuparrows g=\upuparrows\Lambda g$ for every prestaroid
 $g$ on boolean lattices.\end{prop}
@@ -2880,7 +2932,7 @@ Downgrading of a square multifuncoid is a multifuncoid.
 $\downdownarrows\upuparrows f=f$ for every mult $f$ of the form
 $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$.\end{obvious}
 \begin{prop}
-Let $f$ be a mult whose base is a complete lattice. Then $\upuparrows\downdownarrows f=f$.\end{prop}
+Let $f$ be a square mult whose base is a complete lattice. Then $\upuparrows\downdownarrows f=f$.\end{prop}
 \begin{proof}
 $\left\langle \upuparrows\downdownarrows f\right\rangle ^{\ast}\mathcal{X}=\bigsqcap_{X\in\up\mathcal{X}}\langle\downdownarrows f\rangle^{\ast}X=\bigsqcap_{X\in\up\mathcal{X}}\langle f\rangle^{\ast}X=\supfun f^{\ast}\mathcal{X}$
 for every $\mathcal{X}\in\prod_{i\in\arity f}(\base f)_{i}$.
@@ -2891,8 +2943,8 @@ for every $\mathcal{X}\in\prod_{i\in\arity f}(\base f)_{i}$.
 \index{pseudofuncoid}\emph{Pseudofuncoid} from a set $A$ to a set
 $B$ is a relation $f$ between filters on $A$ and $B$ such that:
 \begin{eqnarray*}
- & \neg\left(I\mathrel{f}0\right),\hspace{1em}\mathcal{I}\sqcup\mathcal{J}\mathrel{f}\mathcal{K}\Leftrightarrow\mathcal{I}\mathrel{f}\mathcal{K}\vee\mathcal{J}\mathrel{f}\mathcal{K}\hspace{1em}\text{ (for every \ensuremath{\mathcal{I},\mathcal{J}\in\mathscr{F}(A)}, \ensuremath{\mathcal{K}\in\mathscr{F}(B)})},\\
- & \neg\left(0\mathrel{f}I\right),\hspace{1em}\mathcal{K}\mathrel{f}\mathcal{I}\sqcup\mathcal{J}\Leftrightarrow\mathcal{K}\mathrel{f}\mathcal{I}\vee\mathcal{K}\mathrel{f}\mathcal{J}\hspace{1em}\text{ (for every \ensuremath{\mathcal{I},\mathcal{J}\in\mathscr{F}(B)}, \ensuremath{\mathcal{K}\in\mathscr{F}(A)})}.
+ & \neg\left(\mathcal{I}\mathrel{f}\bot\right),\hspace{1em}\mathcal{I}\sqcup\mathcal{J}\mathrel{f}\mathcal{K}\Leftrightarrow\mathcal{I}\mathrel{f}\mathcal{K}\vee\mathcal{J}\mathrel{f}\mathcal{K}\hspace{1em}\text{ (for every \ensuremath{\mathcal{I},\mathcal{J}\in\mathscr{F}(A)}, \ensuremath{\mathcal{K}\in\mathscr{F}(B)})},\\
+ & \neg\left(\bot\mathrel{f}\mathcal{I}\right),\hspace{1em}\mathcal{K}\mathrel{f}\mathcal{I}\sqcup\mathcal{J}\Leftrightarrow\mathcal{K}\mathrel{f}\mathcal{I}\vee\mathcal{K}\mathrel{f}\mathcal{J}\hspace{1em}\text{ (for every \ensuremath{\mathcal{I},\mathcal{J}\in\mathscr{F}(B)}, \ensuremath{\mathcal{K}\in\mathscr{F}(A)})}.
 \end{eqnarray*}
 \end{defn}
 \begin{obvious}
@@ -2921,8 +2973,8 @@ $c$ is the funcoid defined by the relation
 \[
 \mathord{\rsuprel c}=\delta=\setcond{(X;Y)}{X\in\subsets A,Y\in\subsets B,X\text{ and }Y\text{ are infinite}}.
 \]
-First prove that $f$ is a pseudofuncoid. The formulas $\neg\left(I\mathrel{f}\bot\right)$
-and $\neg\left(\bot\mathrel{f}I\right)$ are obvious. We have 
+First prove that $f$ is a pseudofuncoid. The formulas $\neg\left(\mathcal{I}\mathrel{f}\bot\right)$
+and $\neg\left(\bot\mathrel{f}\mathcal{I}\right)$ are obvious. We have 
 \begin{multline*}
 \mathcal{I}\sqcup\mathcal{J}\mathrel{f}\mathcal{K}\Leftrightarrow\bigcap(\mathcal{I}\sqcup\mathcal{J})\text{ and }\bigcap\mathcal{Y}\text{ are infinite}\Leftrightarrow\\
 \bigcap\mathcal{I}\cup\bigcap\mathcal{J}\text{ and }\bigcap\mathcal{Y}\text{ are infinite}\Leftrightarrow\left(\bigcap\mathcal{I}\text{ or }\bigcap\mathcal{J}\text{ is infinite}\right)\wedge\bigcap\mathcal{Y}\text{ is infinite}\Leftrightarrow\\
@@ -2932,8 +2984,8 @@ and $\neg\left(\bot\mathrel{f}I\right)$ are obvious. We have
 Similarly $\mathcal{K}\mathrel{f}\mathcal{I}\sqcup\mathcal{J}\Leftrightarrow\mathcal{K}\mathrel{f}\mathcal{I}\vee\mathcal{K}\mathrel{f}\mathcal{J}$.
 So $f$ is a pseudofuncoid.
 
-Let now prove that $g$ is a pseudofuncoid. The formulas $\neg\left(I\mathrel{g}\bot\right)$
-and $\neg\left(\bot\mathrel{g}I\right)$ are obvious. Let $\mathcal{I}\sqcup\mathcal{J}\mathrel{g}\mathcal{K}$.
+Let now prove that $g$ is a pseudofuncoid. The formulas $\neg\left(\mathcal{I}\mathrel{g}\bot\right)$
+and $\neg\left(\bot\mathrel{g}\mathcal{I}\right)$ are obvious. Let $\mathcal{I}\sqcup\mathcal{J}\mathrel{g}\mathcal{K}$.
 Then either $\mathcal{I}\sqcup\mathcal{J}\mathrel{f}\mathcal{K}$
 and then $\mathcal{I}\sqcup\mathcal{J}\mathrel{g}\mathcal{K}$ or
 $\mathcal{I}\sqcup\mathcal{J}\sqsupseteq a$ and then $\mathcal{I}\sqsupseteq a\vee\mathcal{J}\sqsupseteq a$
@@ -2964,15 +3016,30 @@ sets).
 
 
 \subsection{More on free stars and principal free stars}
-\begin{obvious}
+\begin{prop}
 The following is an implications tuple:
 \begin{enumerate}
-\item $(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
-\item $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator.
-\item $\corestar\mathcal{F}=\downdownarrows\fullstar\mathcal{F}$ for every
-$\mathcal{F}\in\mathfrak{A}$.
+\item\label{down-fs-pow} $(\mathfrak{A};\mathfrak{Z})$ is a powerset filtrator.
+\item\label{down-fs-pri} $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator.
+\item\label{down-fs-any} $(\mathfrak{A};\mathfrak{Z})$ is a filtrator.
+\item\label{down-fs-res} $\corestar\mathcal{F}=\downdownarrows\fullstar\mathcal{F}$ for every
+  $\mathcal{F}\in\mathfrak{A}$.
 \end{enumerate}
-\end{obvious}
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item [\ref{down-fs-pow}$\Rightarrow$\ref{down-fs-pri}] Obvious.
+\item [\ref{down-fs-pri}$\Rightarrow$\ref{down-fs-any}] Obvious.
+\item [\ref{down-fs-any}$\Rightarrow$\ref{down-fs-res}]
+$X\in\corestar\mathcal{F} \Leftrightarrow
+X\nasymp^{\mathfrak{A}}\mathcal{F} \Leftrightarrow
+X\in\fullstar\mathcal{F}\Leftrightarrow
+X\in\downdownarrows\fullstar\mathcal{F}$ for every $X\in\mathfrak{Z}$.
+\end{description}
+\end{proof}
+
 \begin{prop}
 The following is an implications tuple:
 \begin{enumerate}
@@ -3020,7 +3087,7 @@ star on $\mathfrak{A}$.
 \item [{\ref{crit1-p}$\Rightarrow$\ref{crit1-f}}] Obvious.
 \item [{\ref{crit1-f}$\Rightarrow$\ref{crit1-fltr}}] The filtrator $(\mathfrak{A};\mathfrak{Z})$
 is with with join-closed core by theorem \ref{semifilt-joinclosed},
-binarily meet-closed core by proposition \ref{f-meet-closed}, with
+binarily meet-closed core by corollary~\ref{f-meet-closed}, with
 separable core by theorem \ref{when-sep-core}.
 \item [{\ref{crit1-fltr}$\Rightarrow$\ref{crit1-conc}}] ~
 
@@ -3059,7 +3126,6 @@ by obvious~\ref{filt-aligned} and with join-closed core by theorem~\ref{semifilt
 \item [{\ref{dfs-fltr}$\Rightarrow$\ref{dfs-conc}}] For every $X,Y\in\mathfrak{Z}$
 we have
 \end{description}
-
 \begin{multline*}
 X\sqcup^{\mathfrak{Z}}Y\in\downdownarrows S\Leftrightarrow X\sqcup^{\mathfrak{Z}}Y\in S\Leftrightarrow X\sqcup^{\mathfrak{A}}Y\in S\Leftrightarrow\\
 X\in S\vee Y\in S\Leftrightarrow X\in\downdownarrows S\vee Y\in\downdownarrows S;
@@ -3133,7 +3199,7 @@ then $\upuparrows S$ is a principal free star on $\mathfrak{A}$.
 \item [{\ref{upfs-fltr}$\Rightarrow$\ref{upfs-conc}}] There exists a
 principal filter $\mathcal{F}$ such that $S=\corestar\mathcal{F}$.
 \begin{multline*}
-\bigsqcup^{\mathfrak{A}}T\in\upuparrows S\Leftrightarrow\up\bigsqcup^{\mathfrak{A}}T\in S\Leftrightarrow\forall K\in\up\bigsqcup^{\mathfrak{A}}T:K\in\corestar\mathcal{F}\Leftrightarrow\\
+\bigsqcup^{\mathfrak{A}}T\in\upuparrows S\Leftrightarrow\up\bigsqcup^{\mathfrak{A}}T\subseteq S\Leftrightarrow\forall K\in\up\bigsqcup^{\mathfrak{A}}T:K\in\corestar\mathcal{F}\Leftrightarrow\\
 \forall K\in\up\bigsqcup^{\mathfrak{A}}T:K\nasymp\mathcal{F}\Leftrightarrow\bigsqcup^{\mathfrak{A}}T\nasymp\mathcal{F}\Leftrightarrow\bigsqcup^{\mathfrak{A}}T\in\fullstar\mathcal{F}\Leftrightarrow\exists\mathcal{K}\in T:\mathcal{K}\in\fullstar\mathcal{F}\Leftrightarrow\\
 \exists\mathcal{K}\in T:\mathcal{K}\nasymp\mathcal{F}\Leftrightarrow\exists\mathcal{K}\in T\forall K\in\up\mathcal{K}:K\nasymp\mathcal{F}\Leftrightarrow\exists\mathcal{K}\in T\forall K\in\up\mathcal{K}:K\in\corestar\mathcal{F}\Leftrightarrow\\
 \exists\mathcal{K}\in T:\up\mathcal{K}\subseteq S\Leftrightarrow\exists\mathcal{K}\in T:\mathcal{K}\in\upuparrows S\Leftrightarrow T\cap\upuparrows S\neq\emptyset.
@@ -3157,47 +3223,47 @@ star for every $L\in\prod_{i\in(\arity f)\setminus\{k\}}\mathfrak{Z}_{i}$.
 
 \begin{defn}
 \index{complete!multifuncoid}Consider an indexed family $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
-of filtrators and multifuncoid $f$ is of the form $\prod\mathfrak{Z}$.
-Then $f$ is \emph{complete} in argument $k\in\arity f$ iff $\supfun f_{k}L\in\mathfrak{Z}_{k}$
+of filtrators and multifuncoid $f$ is of the form $(\mathfrak{A};\mathfrak{Z})$.
+Then $f$ is \emph{complete} in argument $k\in\arity f$ iff $\rsupfun f_{k}L\in\mathfrak{Z}_{k}$
 for every family $L\in\prod_{i\in(\arity f)\setminus\{k\}}\mathfrak{Z}_{i}$.\end{defn}
 \begin{prop}
 Consider an indexed family $(\mathfrak{A}_{i};\mathfrak{Z}_{i})$
-of primary filtrators over boolean lattices. Let $f$ be a multifuncoid
-of the form $\mathfrak{A}$ and $k\in\arity f$. The following are
+of primary filtrators over complete boolean lattices. Let $f$ be a multifuncoid
+of the form $(\mathfrak{A};\mathfrak{Z})$ and $k\in\arity f$. The following are
 equivalent:
 \begin{enumerate}
 \item Multifuncoid $f$ is complete in argument $k$.
-\item Pre-staroid $\downdownarrows\mathord{\suprel f}$ is complete in argument
+\item Pre-staroid $\downdownarrows\mathord{\rsuprel f}$ is complete in argument
 $k$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Let $L\in\prod\mathfrak{Z}$. We have $L\in\GR\suprel f\Leftrightarrow L_{i}\nasymp\supfun f_{i}L|_{(\dom L)\setminus\{i\}}$;
+Let $L\in\prod\mathfrak{Z}$. We have $L\in\GR\rsuprel f\Leftrightarrow L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}$;
 
-$\left(\val\suprel f\right)_{k}L=\corestar\supfun f_{k}L$ by the
+$\left(\val\rsuprel f\right)_{k}L=\corestar\rsupfun f_{k}L$ by the
 definition.
 
-So $\left(\val\suprel f\right)_{k}L$ is a principal free star iff
-$\supfun f_{k}L\in\mathfrak{Z}_{k}$ (proposition \ref{compl-eq-princ})
+So $\left(\val\rsuprel f\right)_{k}L$ is a principal free star iff
+$\rsupfun f_{k}L\in\mathfrak{Z}_{k}$ (proposition \ref{compl-eq-princ})
 for every $L\in\prod_{i\in(\arity f)\setminus\{k\}}\mathfrak{Z}_{i}$.\end{proof}
 \begin{example}
 Consider funcoid $f=1_{U}^{\mathsf{FCD}}$. It is obviously complete
-in each its two arguments. Then $\suprel f$ is not complete in each
-of its two arguments because $(\mathcal{X};\mathcal{Y})\in\suprel f\Leftrightarrow\mathcal{X}\nasymp\mathcal{Y}$
+in each its two arguments. Then $\rsuprel f$ is not complete in each
+of its two arguments because $(\mathcal{X};\mathcal{Y})\in\rsuprel f\Leftrightarrow\mathcal{X}\nasymp\mathcal{Y}$
 what does not generate a principal free star if one of the arguments
 (say $\mathcal{X}$) is a fixed nonprincipal filter.\end{example}
 \begin{thm}
-\label{mfunc-compl-k}Consider a filtrator $(\mathfrak{A};\mathfrak{Z})$
-which is down-aligned, with join-closed, binarily meet-closed and
+\label{mfunc-compl-k}Consider an indexed family $(\mathfrak{A};\mathfrak{Z})$ of filtrators
+which are down-aligned, separable, with join-closed, binarily meet-closed and with
 separable core which is a complete boolean lattice.
 
 Let $f$ be a multifuncoid of the aforementioned form. Let $k,l\in\arity f$
 and $k\neq l$. The following are equivalent: 
 \begin{enumerate}
 \item \label{pf-compl-arg}$f$ is complete in the argument $k$.
-\item \label{pf-compl-princ}$\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})$
+\item \label{pf-compl-princ}$\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})$
 for every $X\in\subsets\mathfrak{Z}_{k}$, $L\in\prod_{i\in(\arity f)\setminus\{k,l\}}\mathfrak{Z}_{i}$.
-\item \label{pf-compl-all}$\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})$
+\item \label{pf-compl-all}$\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})$
 for every $X\in\subsets\mathfrak{A}_{k}$, $L\in\prod_{i\in(\arity f)\setminus\{k,l\}}\mathfrak{Z}_{i}$.
 \end{enumerate}
 \end{thm}
@@ -3207,25 +3273,26 @@ for every $X\in\subsets\mathfrak{A}_{k}$, $L\in\prod_{i\in(\arity f)\setminus\{k
 \item [{\ref{pf-compl-all}$\Rightarrow$\ref{pf-compl-princ}}] Obvious.
 \item [{\ref{pf-compl-princ}$\Rightarrow$\ref{pf-compl-arg}}] Let $Y\in\mathfrak{Z}$.
 \begin{multline*}
-\bigsqcup X\nasymp\supfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow Y\nasymp\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\\
-Y\nasymp\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\text{(proposition \ref{crit1})}\Leftrightarrow\\
-\exists x\in X:Y\nasymp\supfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\exists x\in X:x\nasymp\supfun f_{k}(L\cup(l;Y)).
+\bigsqcup X\nasymp\rsupfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow Y\nasymp\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\\
+Y\nasymp\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\text{(proposition \ref{crit1})}\Leftrightarrow\\
+\exists x\in X:Y\nasymp\rsupfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\exists x\in X:x\nasymp\rsupfun f_{k}(L\cup(l;Y)).
 \end{multline*}
 
 
 
 It is equivalent (proposition \ref{compl-eq-princ} and the fact that
-$\suprel f$ is an upper set) to $\supfun f_{k}(L\cup\{(l;Y)\})$
-being a principal filter and thus $\left(\val\suprel f\right)_{l}L$
+$\rsuprel f$ is an upper set) to $\rsupfun f_{k}(L\cup\{(l;Y)\})$
+being a principal filter and thus $\left(\val f\right)_{k}L$
 being a principal free star.
 
 \item [{\ref{pf-compl-arg}$\Rightarrow$\ref{pf-compl-all}}] 
 \begin{multline*}
-Y\nasymp\supfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\bigsqcup X\nasymp\langle f\rangle_{k}(L\cup\{(l;Y)\})\Leftrightarrow\\
-\exists x\in X:x\nasymp\supfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow\exists x\in X:Y\nasymp\supfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\\
-Y\nasymp\bigsqcup_{x\in X}\supfun f_{l}(L\cup\{(k;x)\})
+Y\nasymp\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)\Leftrightarrow\bigsqcup X\nasymp\langle f\rangle_{k}(L\cup\{(l;Y)\})\Leftrightarrow\\
+\exists x\in X:x\nasymp\rsupfun f_{k}(L\cup\{(l;Y)\})\Leftrightarrow\exists x\in X:Y\nasymp\rsupfun f_{l}(L\cup\{(k;x)\})\Leftrightarrow\\
+Y\nasymp\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})
 \end{multline*}
-for every principal $Y$.
+for every principal $Y$. Thus $\rsupfun f_{l}\left(L\cup\left\{ \left(k;\bigsqcup X\right)\right\} \right)=\bigsqcup_{x\in X}\rsupfun f_{l}(L\cup\{(k;x)\})$
+by separability.
 \end{description}
 \end{proof}
 
@@ -3293,8 +3360,8 @@ If $\mathfrak{A}$ is a complete lattice then there exists a multifuncoid
 $\Lambda\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$ such that $\langle\Lambda\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\rangle_{k}L=\bigsqcap_{i\in n}L_{i}\sqcap\mathcal{A}$
 for every $k\in n$, $L\in\mathfrak{A}^{n\setminus\{k\}}$.\end{obvious}
 \begin{prop}
-If $(\mathfrak{A};\mathfrak{Z})$ is a meet-closed filtrator and $\mathfrak{Z}$
-is a complete lattice and $\mathfrak{A}$ is a meet-semilattice. There
+Let $(\mathfrak{A};\mathfrak{Z})$ be a meet-closed filtrator and $\mathfrak{Z}$
+be a complete lattice and $\mathfrak{A}$ be a meet-semilattice. There
 exists a multifuncoid $\Lambda\id_{\mathcal{A}[n]}^{\mathsf{Strd}}$
 such that $\langle\Lambda\id_{\mathcal{A}[n]}^{\mathsf{Strd}}\rangle_{k}L=\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\sqcap^{\mathfrak{A}}\mathcal{A}$
 for every $k\in n$, $L\in\mathfrak{Z}^{n\setminus\{k\}}$.\end{prop}
@@ -3310,7 +3377,7 @@ But
 
 \subsection{Identities are staroids}
 \begin{prop}
-Let $\mathfrak{A}$ be a complete distributive lattice and $\mathcal{A}\in\mathfrak{A}$.
+Let $\mathfrak{A}$ be a complete meet infinite distributive lattice and $\mathcal{A}\in\mathfrak{A}$.
 Then $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$ is a staroid.\end{prop}
 \begin{proof}
 That $L\notin\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$ if $L_{k}=\bot$
@@ -3324,11 +3391,13 @@ It is equivalent to
 \]
 Really, 
 \begin{multline*}
-\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap(X\sqcup Y)\nasymp\mathcal{A}\Leftrightarrow\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap X\right)\sqcup\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap Y\right)\nasymp\mathcal{A}\Leftrightarrow\\
+\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap(X\sqcup Y)\nasymp\mathcal{A}\Leftrightarrow
+\bigsqcap_{i\in n\setminus\{k\}}((L_{i}\sqcap X)\sqcup(L_{i}\sqcap Y))\nasymp\mathcal{A}\Leftrightarrow \\
+\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap X\right)\sqcup\left(\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap Y\right)\nasymp\mathcal{A}\Leftrightarrow\\
 \bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap X\nasymp\mathcal{A}\vee\bigsqcap_{i\in n\setminus\{k\}}L_{i}\sqcap Y\nasymp\mathcal{A}.
 \end{multline*}
 \end{proof}
-\begin{prop}
+\begin{prop}\label{id-strd}
 Let $(\mathfrak{A};\mathfrak{Z})$ be a starrish filtrator over a
 complete meet infinite distributive lattice and $\mathcal{A}\in\mathfrak{A}$.
 Then $\id_{\mathcal{A}[n]}^{\mathsf{Strd}}$ is a staroid.\end{prop}
@@ -3344,21 +3413,21 @@ It is equivalent to
 \]
 Really,
 \begin{multline*}
-\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap(X\sqcup Y)\nasymp\mathcal{A}\Leftrightarrow\left(\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap X\right)\sqcup\left(\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap Y\right)\nasymp\mathcal{A}\Leftrightarrow\\
+\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap(X\sqcup Y)\nasymp\mathcal{A}\Leftrightarrow
+\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}((L_{i}\sqcap X)\sqcup(L_{i}\sqcap Y))\Leftrightarrow \\
+\left(\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap X\right)\sqcup\left(\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap Y\right)\nasymp\mathcal{A}\Leftrightarrow\\
 \bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap X\nasymp\mathcal{A}\vee\bigsqcap_{i\in n\setminus\{k\}}^{\mathfrak{Z}}L_{i}\sqcap Y\nasymp\mathcal{A}.
 \end{multline*}
 \end{proof}
 \begin{prop}
-\label{ID-completary}Let $(\mathfrak{A};\mathfrak{Z})$ be a distributive
-lattice filtrator with least element and binarily join-closed core
-which is a join semilattice. $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$
-is a completary staroid for every $\mathcal{A}\in\mathfrak{A}$.\end{prop}
+\label{ID-completary}Let $(\mathfrak{A};\mathfrak{Z})$ be a primary
+filtrator over a boolean lattice.
+$\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}$ is a completary staroid for every $\mathcal{A}\in\mathfrak{A}$.\end{prop}
 \begin{proof}
-$\corestar\mathcal{A}$ is a free star by theorem \ref{part-is-free}.
-
+$\fullstar\mathcal{A}$ is a free star by theorem~\ref{closed-free-star}.
 \begin{multline*}
-L_{0}\sqcup L_{i}\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\forall i\in n:(L_{0}\sqcup L_{i})i\in\corestar\mathcal{A}\Leftrightarrow\forall i\in n:L_{0}i\sqcup L_{1}i\in\corestar\mathcal{A}\Leftrightarrow\\
-\forall i\in n:(L_{0}i\in\corestar\mathcal{A}\vee L_{1}i\in\corestar\mathcal{A})\Leftrightarrow\exists c\in\{0,1\}^{n}\forall i\in n:L_{c(i)}i\in\corestar\mathcal{A}\Leftrightarrow\\
+L_{0}\sqcup L_{1}\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\forall i\in n:(L_{0}\sqcup L_{1})i\in\fullstar\mathcal{A}\Leftrightarrow\forall i\in n:L_{0}i\sqcup L_{1}i\in\fullstar\mathcal{A}\Leftrightarrow\\
+\forall i\in n:(L_{0}i\in\fullstar\mathcal{A}\vee L_{1}i\in\fullstar\mathcal{A})\Leftrightarrow\exists c\in\{0,1\}^{n}\forall i\in n:L_{c(i)}i\in\fullstar\mathcal{A}\Leftrightarrow\\
 \exists c\in\{0,1\}^{n}:(\lambda i\in n:L_{c(i)}i)\in\GR\ID_{\mathcal{A}[n].}^{\mathsf{Strd}}
 \end{multline*}
 \end{proof}
@@ -3368,11 +3437,12 @@ for a join-closed filtrator $(\mathfrak{A};\mathfrak{Z})$ such that
 both $\mathfrak{A}$ and $\mathfrak{Z}$ are complete lattices, provided
 that $\mathcal{A}\in\mathfrak{A}$.\end{lem}
 \begin{proof}
-$X\in\GR\id_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}^{\mathfrak{Z}}X_{i}\nasymp\mathcal{A}\Leftrightarrow\Cor'\bigsqcap_{i\in n}^{\mathfrak{A}}X_{i}\nasymp\mathcal{A}$.\end{proof}
+$X\in\GR\id_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}^{\mathfrak{Z}}X_{i}\nasymp\mathcal{A}\Leftrightarrow\Cor'\bigsqcap_{i\in n}^{\mathfrak{A}}X_{i}\nasymp\mathcal{A}$ (theorem~\ref{dual-cor-inf-meet}).\end{proof}
 \begin{conjecture}
 $\id_{\mathcal{A}[n]}^{\mathsf{Strd}}$ is a completary staroid for
 every set-theoretic filter~$\mathcal{A}$.
-
+\end{conjecture}
+\begin{conjecture}
 $\upuparrows\id_{\mathcal{A}[n]}^{\mathsf{Strd}}$ is a completary
 staroid if $\mathcal{A}$ is a filter on a set and $n$ is an index
 set.
@@ -3385,8 +3455,9 @@ for every filter $a$ on a powerset and index set $n$.\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
-\forall A\in a:\prod X\nasymp\id_{A[n]}\Leftrightarrow\forall A\in a:\bigcap_{i\in n}X_{i}\cap A\neq\emptyset\Leftrightarrow\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{Z}}\uparrow^{\mathfrak{Z}}X_{i}\nasymp\uparrow A\Leftrightarrow\\
-\bigsqcap_{i\in n}^{\mathfrak{Z}}(\uparrow^{\mathfrak{Z}^{n}}X_{i})\nasymp a\Leftrightarrow\bigsqcap_{i\in n}^{\mathfrak{Z}}(\uparrow^{\mathfrak{Z}^{n}}X)_{i}\nasymp a\Leftrightarrow\uparrow^{\mathfrak{Z}^{n}}X\in\GR\id_{a[n]}.
+\forall A\in a:\prod X\nasymp\id_{A[n]}\Leftrightarrow\forall A\in a:\bigcap_{i\in n}X_{i}\cap A\neq\emptyset\Leftrightarrow\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{Z}}X_{i}\nasymp A\Leftrightarrow\\
+\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{Z}}X_{i}\nasymp^{\mathfrak{A}}A\Leftrightarrow
+\bigsqcap_{i\in n}^{\mathfrak{Z}}\uparrow^{\mathfrak{Z}}X_{i}\nasymp^{\mathfrak{A}}a\Leftrightarrow\bigsqcap_{i\in n}^{\mathfrak{Z}}(\uparrow^{\mathfrak{Z}^{n}}X)_{i}\nasymp^{\mathfrak{A}}a\Leftrightarrow\uparrow^{\mathfrak{Z}^{n}}X\in\GR\id_{a[n]}.
 \end{multline*}
 \end{proof}
 \begin{prop}
@@ -3413,9 +3484,19 @@ $\uparrow^{\mathfrak{Z}^{n}}X\in\GR\id_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\for
 \begin{defn}
 $a_{\mathsf{Strd}}^{n}=\prod_{i\in n}^{\mathsf{Strd}}a$ for every
 element $a$ of a poset and an index set $n$.\end{defn}
+
+\begin{lem}
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}$ iff $\bigcup_{i\in n}\up\mathcal{L}_{i}\cup\{a\}$
+has finite intersection property (for primary filtrators over meet semilattices with greatest element).\end{lem}
+\begin{proof}
+The lattice~$\mathfrak{A}$ is complete by corollary~\ref{filt-is-complete}.
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\forall X\in\bigsqcap_{i\in n}\up\mathcal{L}\sqcap a:X\neq\bot$
+what is equivalent of $\bigcup_{i\in n}\mathcal{L}_{i}\cup\{a\}$ having
+finite intersection property.\end{proof}
+
 \begin{prop}
 $\upuparrows\id_{a[n]}^{\mathsf{Strd}}\sqsubseteq\ID_{a[n]}^{\mathsf{Strd}}\sqsubseteq a_{\mathsf{Strd}}^{n}$
-for every filter $a$ (on any distributive lattice) and an index set
+for every filter $a$ (on any distributive lattice with least element) and an index set
 $n$.\end{prop}
 \begin{proof}
 ~
@@ -3423,12 +3504,12 @@ $n$.\end{prop}
 \item [{$\GR\upuparrows\id_{a[n]}^{\mathsf{Strd}}\subseteq\GR\ID_{a[n]}^{\mathsf{Strd}}$}] ~
 \begin{multline*}
 \mathcal{L}\in\GR\upuparrows\id_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\up\mathcal{L}\subseteq\GR\id_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\forall L\in\up\mathcal{L}:L\in\GR\id_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\\
-\text{(proposition \ref{when-sep-core})}\Leftrightarrow\forall L\in\up\mathcal{L}\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\nasymp A\Leftrightarrow\\
+\text{(theorem~\ref{when-sep-core})}\Leftrightarrow\forall L\in\up\mathcal{L}\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\nasymp A\Leftrightarrow\\
 \forall L\in\up\mathcal{L}\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\sqcap A\neq\bot\Rightarrow\\
-\bigcup_{i\in n}\mathcal{L}_{i}\cup a\text{ has finite intersection property}\Leftrightarrow\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}
+\bigcup_{i\in n}\up\mathcal{L}_{i}\cup\{a\}\text{ has finite intersection property}\Leftrightarrow\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}.
 \end{multline*}
 
-\item [{$\GR\ID_{a[n]}^{\mathsf{Strd}}\subseteq\GR a_{\mathsf{Strd}}^{n}$}] $\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\MEET\left(\left\{ \mathcal{L}_{i}\hspace{1em}|\hspace{1em}i\in n\right\} \cup\{a\}\right)\Rightarrow\forall i\in a:\mathcal{L}_{i}\nasymp a\Leftrightarrow\mathcal{L}\in\GR a_{\mathsf{Strd}}^{a}$.
+\item [{$\GR\ID_{a[n]}^{\mathsf{Strd}}\subseteq\GR a_{\mathsf{Strd}}^{n}$}] $\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\MEET\left(\setcond{\mathcal{L}_{i}}{i\in n} \cup\{a\}\right)\Rightarrow\forall i\in a:\mathcal{L}_{i}\nasymp a\Leftrightarrow\mathcal{L}\in\GR a_{\mathsf{Strd}}^{a}$.
 \end{description}
 \end{proof}
 \begin{prop}
@@ -3445,7 +3526,7 @@ $L\in\up\mathcal{L}$. Really, take $L_{i}=\mathcal{L}_{i}=\uparrow^{\Base(a)}i$.
 Then $L\in\GR\id_{a[a]}^{\mathsf{Strd}}\Leftrightarrow\forall A\in a\exists t\in A\forall i\in a:t\in i$
 what is clearly false (we can always take $i\in a$ such that $t\notin i$
 for any point $t$).
-\item [{$\GR\ID_{a[a]}^{\mathsf{Strd}}=\GR a_{\mathsf{Strd}}^{a}$}] $\mathcal{L}\in\GR\ID_{a[a]}^{\mathsf{Strd}}\Leftrightarrow\forall i\in n:\mathcal{L}_{i}\sqsupseteq a\Leftrightarrow\forall i\in a:\mathcal{L}_{i}\nasymp a\Leftrightarrow\mathcal{L}\in\GR a_{\mathsf{Strd}}^{a}$.\end{description}
+\item [{$\GR\ID_{a[a]}^{\mathsf{Strd}}=\GR a_{\mathsf{Strd}}^{a}$}] $\mathcal{L}\in\GR\ID_{a[a]}^{\mathsf{Strd}}\Leftrightarrow\forall i\in a:\mathcal{L}_{i}\sqsupseteq a\Leftrightarrow\forall i\in a:\mathcal{L}_{i}\nasymp a\Leftrightarrow\mathcal{L}\in\GR a_{\mathsf{Strd}}^{a}$.\end{description}
 \begin{cor}
 $a_{\mathsf{Strd}}^{a}$ isn't an atom when $a$ is a nontrivial ultrafilter.
 \end{cor}
@@ -3454,27 +3535,21 @@ $a_{\mathsf{Strd}}^{a}$ isn't an atom when $a$ is a nontrivial ultrafilter.
 Staroidal product of an infinite indexed family of ultrafilters may
 be non-atomic.\end{cor}
 \begin{prop}
-$\id_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\upuparrows\id_{a[n]}^{\mathsf{Strd}}$.
+$\id_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\upuparrows\id_{a[n]}^{\mathsf{Strd}}$
+(for every element~$a$ of a filtrator $(\mathfrak{A};\mathfrak{Z})$ over a complete lattice~$\mathfrak{Z}$).
 Moreover $\id_{a[n]}^{\mathsf{Strd}}=\downdownarrows\upuparrows\id_{a[n]}^{\mathsf{Strd}}$.\end{prop}
 \begin{proof}
-Use general properties of upgrading and downgrading (proposition \ref{up-and-back}).\end{proof}
-\begin{lem}
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}$ iff $\bigcup_{i\in n}\mathcal{L}_{i}\cup a$
-has finite intersection property (for primary filtrators).\end{lem}
-\begin{proof}
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\bigsqcap_{i\in n}\mathcal{L}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\forall X\in\bigsqcap_{i\in n}\mathcal{L}\sqcap a:X\neq\emptyset$
-what is equivalent of $\bigcup_{i\in n}\mathcal{L}_{i}\cup a$ having
-finite intersection property.\end{proof}
+Use general properties of upgrading and downgrading (proposition~\ref{up-and-back}).\end{proof}
 \begin{prop}
 $\ID_{a[n]}^{\mathsf{Strd}}$ is determined by the value of $\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}$,
 moreover $\ID_{a[n]}^{\mathsf{Strd}}=\upuparrows\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}$
-(for primary filtrators).\end{prop}
+(for filter~$a$ on a primary filtrator over a meet semilattice with greatest element).\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
 \mathcal{L}\in\upuparrows\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\up\mathcal{L}\subseteq\downdownarrows\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\up\mathcal{L}\subseteq\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\\
 \forall L\in\up\mathcal{L}:L\in\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow\forall L\in\up\mathcal{L}:\bigsqcap_{i\in n}L_{i}\sqcap a\neq\bot^{\mathscr{F}}\Leftrightarrow\\
-\bigcup_{i\in n}\mathcal{L}_{i}\cup a\text{ has finite intersection property}\Leftrightarrow\text{(lemma)}\Leftrightarrow\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}.
+\bigcup_{i\in n}\up\mathcal{L}_{i}\cup\{a\}\text{ has finite intersection property}\Leftrightarrow\text{(lemma)}\Leftrightarrow\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}.
 \end{multline*}
 \end{proof}
 \begin{prop}
@@ -3490,7 +3565,7 @@ Suppose $\id_{a[a]}^{\mathsf{Strd}}=\downdownarrows\ID_{a[a]}^{\mathsf{Strd}}$.
 Then $\ID_{a[a]}^{\mathsf{Strd}}=\upuparrows\downdownarrows\ID_{a[a]}^{\mathsf{Strd}}=\upuparrows\id_{a[a]}^{\mathsf{Strd}}$
 what contradicts to the above.\end{proof}
 \begin{obvious}
-$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow a\sqcap\bigsqcap_{i\in n}\mathcal{L}_{i}\neq\bot^{\mathscr{F}}$
+$\mathcal{L}\in\GR\ID_{a[n]}^{\mathsf{Strd}}\Leftrightarrow a\sqcap\bigsqcap_{i\in n}\mathcal{L}_{i}\neq\bot$
 if $a$ is an element of a complete lattice.
 \end{obvious}
 
@@ -3525,8 +3600,8 @@ for every set $A$.\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
-L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow L\in\GR\id_{\uparrow A[n]}^{\mathsf{Strd}}\Leftrightarrow\uparrow A\nasymp\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\Leftarrow\\
-\uparrow A\nasymp\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\Leftrightarrow L\in\downdownarrows\GR\ID_{\uparrow A[n]}^{\mathsf{Strd}}.
+L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow L\in\GR\id_{\uparrow A[n]}^{\mathsf{Strd}}\Leftrightarrow\uparrow A\nasymp\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\Rightarrow\\
+\uparrow A\nasymp\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\Leftrightarrow L\in\downdownarrows\GR\ID_{\uparrow A[n]}^{\mathsf{Strd}}.
 \end{multline*}
 \end{proof}
 \begin{prop}
@@ -3548,8 +3623,8 @@ $\upuparrows\uparrow^{\mathsf{Strd}}\id_{A[n]}\sqsubseteq\ID_{\uparrow A[n]}^{\m
 ~
 \begin{multline*}
 \mathcal{X}\in\GR\upuparrows\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow\up\mathcal{X}\subseteq\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow\\
-\forall Y\in\up\mathcal{X}:Y\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow\forall Y\in\up\mathcal{X}:Y\in\id_{\uparrow A[n]}^{\mathsf{Strd}}\Leftrightarrow\\
-\forall Y\in\up\mathcal{X}:\bigsqcap_{i\in n}^{\mathfrak{Z}}Y_{i}\sqcap\uparrow A\neq\bot\Rightarrow\bigsqcap_{i\in n}^{\mathfrak{A}}\mathcal{X}_{i}\sqcap\uparrow A\neq0\Leftrightarrow\mathcal{X}\in\GR\ID_{\uparrow A[n]}^{\mathsf{Strd}}.
+\forall Y\in\up\mathcal{X}:Y\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow\forall Y\in\up\mathcal{X}:Y\in\GR\id_{\uparrow A[n]}^{\mathsf{Strd}}\Leftrightarrow\\
+\forall Y\in\up\mathcal{X}:\bigsqcap_{i\in n}^{\mathfrak{Z}}Y_{i}\sqcap\uparrow A\neq\bot\Rightarrow\bigsqcap_{i\in n}^{\mathfrak{A}}\mathcal{X}_{i}\sqcap\uparrow A\neq\bot\Leftrightarrow\mathcal{X}\in\GR\ID_{\uparrow A[n]}^{\mathsf{Strd}}.
 \end{multline*}
 \end{proof}
 \begin{prop}
@@ -3563,7 +3638,7 @@ A counter-example follows:
 $\forall Y\in\up\mathcal{X}:\bigsqcap_{i\in n}^{\mathfrak{Z}}Y_{i}\sqcap\uparrow A\neq\bot$
 does not hold for $n=\mathbb{N}$, $\mathcal{X}_{i}=\uparrow(-1/i;0)$
 for $i\in n$, $A=(-\infty;0)$. To show this, it's enough to prove
-$\bigsqcap_{i\in n}^{\mathfrak{Z}}Y_{i}\sqcap\uparrow A\neq\bot$
+$\bigsqcap_{i\in n}^{\mathfrak{Z}}Y_{i}\sqcap\uparrow A=\bot$
 for $Y_{i}=\uparrow(-1/i;0)$ but this is obvious since $\bigsqcap_{i\in n}^{\mathfrak{Z}}Y_{i}=\bot$.
 
 On the other hand, $\bigsqcap_{i\in n}^{\mathfrak{A}}\mathcal{X}_{i}\sqcap\uparrow A\neq\bot$
@@ -3603,24 +3678,34 @@ for some $A$ and $n$.
 
 \subsection{Identity staroids represented as meets and joins}
 \begin{prop}
-$\id_{a[n]}^{\mathsf{Strd}}=\bigsqcap_{A\in a}^{\mathsf{Strd}}\id_{A[n]}$
-for every filter $a$ on a powerset where the meet may be taken on
-every of the following posets: anchored relations, staroids.\end{prop}
+$\id_{a[n]}^{\mathsf{Strd}}=\bigsqcap_{A\in\up a}^{\Anch}\id_{A[n]}=\bigsqcap_{A\in\up a}^{\mathsf{Strd}}\id_{A[n]}$
+for every filter $a$ on a powerset.\end{prop}
 \begin{proof}
-That $\id_{a[n]}^{\mathsf{Strd}}\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$
-for every $A\in a$ is obvious.
+Since $\id_{a[n]}^{\mathsf{Strd}}$ is a staroid (proposition~\ref{id-strd}),
+it's enough to prove that $\id_{a[n]}^{\mathsf{Strd}}$ is the greatest lower bound of $\setcond{\uparrow^{\mathsf{Strd}}\id_{A[n]}}{A\in\up a}$.
 
-Let $f\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$ for every $A\in a$.
-\[
-L\in\GR f\Rightarrow L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Rightarrow\forall A\in a:\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp A\Rightarrow\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp a\Rightarrow L\in\GR\id_{a[n]}^{\mathsf{Strd}}.
-\]
+That $\id_{a[n]}^{\mathsf{Strd}}\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$
+for every $A\in\up a$ is obvious.
+
+Let $f\sqsubseteq\uparrow^{\mathsf{Strd}}\id_{A[n]}$ for every $A\in\up a$.
+\begin{multline*}
+L\in\GR f\Rightarrow \forall A\in\up a:L\in\GR\uparrow^{\mathsf{Strd}}\id_{A[n]}\Leftrightarrow \\
+\forall A\in\up a:\prod L\nasymp\id_{A[n]}\Leftrightarrow
+\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\nasymp A\Rightarrow \\
+\forall A\in\up a:\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp A\Rightarrow
+\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp a\Rightarrow L\in\GR\id_{a[n]}^{\mathsf{Strd}}.
+\end{multline*}
 Thus $f\sqsubseteq\id_{a[n]}^{\mathsf{Strd}}$.\end{proof}
 \begin{prop}
-$\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}\ID_{a[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}a_{\mathsf{Strd}}^{n}$
+$\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}=\bigsqcup_{a\in\atoms\mathcal{A}}\ID^{\mathsf{Strd}}_{a[n]}=\bigsqcup_{a\in\atoms\mathcal{A}}a_{\mathsf{Strd}}^{n}$
 where the join may be taken on every of the following posets: anchored
 relations, staroids, completary staroids, provided that $\mathcal{A}$
 is a filter on a set.\end{prop}
 \begin{proof}
+$\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}$ is a completary staroid (proposition~\ref{ID-completary}).
+Thus, it's enough to prove that $\ID^{\mathsf{Strd}}_{\mathcal{A}[n]}$ is the lowest upper bound of $\setcond{\ID^{\mathsf{Strd}}_{a[n]}}{a\in\atoms\mathcal{A}}$
+(also use the fact that $\ID^{\mathsf{Strd}}_{a[n]}=a_{\mathsf{Strd}}^{n}$).
+
 $\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\sqsupseteq\ID_{a[n]}^{\mathsf{Strd}}$
 for every $a\in\atoms\mathcal{A}$ is obvious.
 
@@ -3637,15 +3722,16 @@ But
 
 
 So $L\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Rightarrow L\in\GR f$.
-Thus $f\sqsupseteq\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$.
-
-Then use the fact that $\ID_{a[n]}^{\mathsf{Strd}}=a_{\mathsf{Strd}}^{n}$.\end{proof}
+Thus $f\sqsupseteq\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}$.\end{proof}
 \begin{prop}
 $\id_{\mathcal{A}[n]}^{\mathsf{Strd}}=\bigsqcup_{a\in\atoms\mathcal{A}}\id_{a[n]}^{\mathsf{Strd}}$
 where the meet may be taken on every of the following posets: anchored
 relations, staroids, provided that $\mathcal{A}$ is a filter on a
 set.\end{prop}
 \begin{proof}
+Since $\id^{\mathsf{Strd}}_{\mathcal{A}[n]}$ is a staroid (proposition~\ref{id-strd}),
+it's enough to prove the result for join on anchored relations.
+
 $\id_{\mathcal{A}[n]}^{\mathsf{Strd}}\sqsupseteq\id_{a[n]}^{\mathsf{Strd}}$
 for every $a\in\atoms\mathcal{A}$ is obvious.
 
@@ -3678,7 +3764,7 @@ lattice.
 \item [{\ref{id-fin-down}}] ~
 \begin{multline*}
 L\in\GR\downdownarrows\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow L\in\GR\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\MEET\left(\setcond{L_{i}}{i\in n}\cup\{\mathcal{A}\}\right)\Leftrightarrow\\
-\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\sqcap\mathcal{A}\neq0\Leftrightarrow\text{(by finiteness)}\Leftrightarrow\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\sqcap\mathcal{A}\neq0\Leftrightarrow L\in\id_{\mathcal{A}[n]}^{\mathsf{Strd}}
+\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\sqcap\mathcal{A}\neq0\Leftrightarrow\text{(by finiteness)}\Leftrightarrow\bigsqcap_{i\in n}^{\mathfrak{Z}}L_{i}\sqcap\mathcal{A}\neq0\Leftrightarrow L\in\GR\id_{\mathcal{A}[n]}^{\mathsf{Strd}}
 \end{multline*}
  for every $L\in\prod\mathfrak{Z}$.
 \item [{\ref{id-fin-up}}] ~
@@ -3688,7 +3774,7 @@ L\in\GR\upuparrows\id_{\mathcal{A}[n]}^{\mathsf{Strd}}\Leftrightarrow\up L\subse
 \text{(by finiteness and theorem \ref{up-filt-crit})}\Leftrightarrow\\
 \forall K\in\up L:\bigsqcap_{i\in n}^{\mathfrak{A}}K_{i}\nasymp\mathcal{A}\Leftrightarrow\mathcal{A}\in\bigcap\rsupfun{\fullstar}\setcond{\bigsqcap_{i\in n}^{\mathfrak{A}}K_{i}}{K\in\up L}\Leftrightarrow\\
 \text{(by the formula for finite meet of filters, theorem \ref{f-fin-filt-meet})}\Leftrightarrow\\
-\mathcal{A}\in\bigcap\rsupfun{\fullstar}\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\Leftrightarrow\forall K\in\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}:\mathcal{A}\in\fullstar K\Leftrightarrow\forall K\in\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}:\mathcal{A}\nasymp K\Leftrightarrow\\
+\mathcal{A}\in\bigcap\rsupfun{\fullstar}\up\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\Leftrightarrow\forall K\in\up\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}:\mathcal{A}\in\fullstar K\Leftrightarrow\forall K\in\up\bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}:\mathcal{A}\nasymp K\Leftrightarrow\\
 \text{(by separability of core, theorem \ref{when-sep-core})}\Leftrightarrow\\
 \bigsqcap_{i\in n}^{\mathfrak{A}}L_{i}\nasymp\mathcal{A}\Leftrightarrow L\in\ID_{\mathcal{A}[n]}^{\mathsf{Strd}}.
 \end{multline*}
@@ -3722,11 +3808,11 @@ A\sqcup B\in f\Leftrightarrow\uparrow^{\mho}\Cor(A\sqcup B)\nasymp\Delta\Leftrig
 Obviously $\bot^{\mathscr{F}(\mho)}\notin f$. So $f$ is a free star.
 But free stars are essentially the same as $1$-staroids.
 
-$\downdownarrows f=\partial\Delta$. $\upuparrows\downdownarrows f=\star\Delta\neq f$.
+$\downdownarrows f=\partial\Delta$. $\upuparrows\downdownarrows f=\setcond{Z\in\mathscr{F}}{\up Z\subseteq\corestar\Delta}=\setcond{Z\in\mathscr{F}}{\forall K\in\up Z:K\nasymp\Delta}=\setcond{Z\in\mathscr{F}}{Z\nasymp\Delta}=\star\Delta\neq f$.
 \end{proof}
 For the below counter-examples we will define a staroid $\vartheta$
 with $\arity\vartheta=\mathbb{N}$ and $\GR\vartheta\in\subsets(\mathbb{N}^{\mathbb{N}})$
-(based on a suggestion by Andreas Blass): 
+(based on a suggestion by \noun{Andreas Blass}): 
 \[
 A\in\GR\vartheta\Leftrightarrow\sup_{i\in\mathbb{N}}\card(A_{i}\cap i)=\mathbb{N}\wedge\forall i\in\mathbb{N}:A_{i}\neq\emptyset.
 \]
@@ -3737,7 +3823,7 @@ $\vartheta$ is a staroid.\end{prop}
 $(\val\vartheta)_{i}L=\subsets\mathbb{N}\setminus\{\emptyset\}$ for
 every $L\in(\subsets\mathbb{N})^{\mathbb{N}\setminus\{i\}}$ if 
 \[
-\sup_{i\in\mathbb{N}\setminus\{i\}}\card(A_{j}\cap j)=\mathbb{N}\wedge\forall j\in\mathbb{N}\setminus\{i\}:L_{j}\neq\emptyset.
+\sup_{j\in\mathbb{N}\setminus\{i\}}\card(A_{j}\cap j)=\mathbb{N}\wedge\forall j\in\mathbb{N}\setminus\{i\}:L_{j}\neq\emptyset.
 \]
 Otherwise $(\val\vartheta)_{i}L=\emptyset$. Thus $(\val\vartheta)_{i}L$
 is a free star. So $\vartheta$ is a staroid. (That $\vartheta$ is
@@ -3769,9 +3855,7 @@ Thus $\vartheta$ is completary.\end{proof}
 \begin{obvious}
 $\vartheta$ is non-zero.\end{obvious}
 \begin{example}
-For every family $a=a_{i\in\mathbb{N}}$ of ultrafilters $\prod^{\mathsf{Strd}}a$
-is not an atom nor of the poset of staroids neither of the poset of
-completary staroids of the form $\mylamdba i{\mathbb{N}}{\Base(a_{i})}$.\end{example}
+There is such a nonzero staroid~$f$ on powersets that $f\nsqsupseteq\prod^{\mathsf{Strd}}a$ for every family~$a=a_{i\in\mathbb{N}}$.\end{example}
 \begin{proof}
 It's enough to prove $\vartheta\nsqsupseteq\prod^{\mathsf{Strd}}a$.
 
@@ -3789,7 +3873,11 @@ So $\vartheta\nsqsupseteq\prod^{\mathsf{Strd}}a$.\end{proof}
 At \href{http://mathoverflow.net/questions/60925/special-infinitary-relations-and-ultrafilters}{http://mathoverflow.net/questions/60925/special-infinitary-relations-and-ultrafilters}
 there is a proof for arbitrary infinite form, not just for $\mathbb{N}$.\end{rem}
 \begin{conjecture}
-There exists a non-completary staroid.
+For every family $a=a_{i\in\mathbb{N}}$ of ultrafilters $\prod^{\mathsf{Strd}}a$
+is not an atom nor of the poset of staroids neither of the poset of
+completary staroids of the form $\mylamdba i{\mathbb{N}}{\Base(a_{i})}$.\end{conjecture}
+\begin{conjecture}
+There exists a non-completary staroid on powersets.
 \end{conjecture}
 
 \begin{conjecture}
@@ -3823,16 +3911,15 @@ Let $n=\{0,1\}$. Let $\GR a=\{(0;1),(1;0)\}$ and $f=\llbracket\{(0;1)\},\{(1;0)\
 $g=\llbracket\{(1;0)\},\{(0;1)\}\rrbracket$.
 
 For every $\{0,1\}$-indexed family of $\mu$ of functions:
-
 \begin{multline*}
-L\in\StarComp(a;\mu)\Leftrightarrow\exists y\in a:(y_{0}\mathrel{\mu_{0}}L_{0}\wedge y_{1}\mathrel{\mu_{1}}L_{0}L_{1})\Leftrightarrow\\
-\exists y_{0}\in\dom\mu_{0},y_{1}\in\dom\mu_{1}:(y_{0}\mathrel{\mu_{0}}L_{0}L_{0}\wedge y_{1}\mathrel{\mu_{1}}L_{0}L_{1})
+L\in\StarComp(a;\mu)\Leftrightarrow\exists y\in a:(y_{0}\mathrel{\mu_{0}}L_{0}\wedge y_{1}\mathrel{\mu_{1}}L_{1})\Leftrightarrow\\
+\exists y_{0}\in\dom\mu_{0},y_{1}\in\dom\mu_{1}:(y_{0}\mathrel{\mu_{0}}L_{0}\wedge y_{1}\mathrel{\mu_{1}}L_{1})
 \end{multline*}
  for every $n$-ary relation $\mu$.
 
 Consequently 
 \[
-L\in\StarComp(a;f)\Leftrightarrow L_{0}=1\wedge L_{1}=0\Leftrightarrow L=(0;1)
+L\in\StarComp(a;f)\Leftrightarrow L_{0}=1\wedge L_{1}=0\Leftrightarrow L=(1;0)
 \]
 that is $\StarComp(a;f)=\{(1;0)\}$. Similarly
 
@@ -3875,7 +3962,7 @@ $\bigsqcup_{x\in X}\supfun f_{0}(L\cup\{(k;x)\})=\bigsqcup_{x\in X}(Y\sqcap x)$.
 
 It can be $Y\sqcap\bigsqcup X=\bigsqcup_{x\in X}(Y\sqcap x)$ only
 if $Y$ is principal: Really: $Y\sqcap\bigsqcup X=\bigsqcup_{x\in X}(Y\sqcap x)$
-implies $Y\nasymp\bigsqcup X\Rightarrow\bigsqcup_{x\in X}(Y\sqcap x)\neq0\Rightarrow\exists x\in X:Y\nasymp x$
+implies $Y\nasymp\bigsqcup X\Rightarrow\bigsqcup_{x\in X}(Y\sqcap x)\neq\bot\Rightarrow\exists x\in X:Y\nasymp x$
 and thus $Y$ is principal. But we claimed above that it is nonprincipal.\end{proof}
 \begin{example}
 There exists a staroid $f$ and an indexed family $X$ of principal
@@ -3894,8 +3981,8 @@ In other words, $A$, $B$ are arbitrary nonempty sets such that $\emptyset\neq A\
 and $a$ be an ultrafilter on $A\cap B$.
 
 Let $f$ be the staroid whose graph consists of functions $p:U\rightarrow a$
-such that either $p(n)\supseteq A$ for all but binarily many $n$
-or $p(n)\supseteq B$ for all but binarily many $n$. Let's prove
+such that either $p(n)\supseteq A$ for all but finitely many $n$
+or $p(n)\supseteq B$ for all but finitely many $n$. Let's prove
 $f$ is really a staroid.
 
 It's obvious $px\neq\emptyset$ for every $x\in U$. Let $k\in U$,
@@ -3905,9 +3992,9 @@ to prove that
 L\cup\{(k;x\sqcup y)\}\in\GR f\Leftrightarrow L\cup\{(k;x)\}\in\GR f\vee L\cup\{(k;y)\}\in\GR f.\label{ex-spec-staroid}
 \end{equation}
 Really, $L\cup\{(k;x\sqcup y)\}\in\GR f$ iff $x\sqcup y\in a$ and
-$L(n)\supseteq A$ for all but binarily many $n$ or $L(n)\supseteq B$
-for all but binarily many $n$; $L\cup\{(k;x)\}\in\GR f$ iff $x\in a$
-and $L(n)\supseteq A$ for all but binarily many $n$ or $L(n)\supseteq B$;
+$L(n)\supseteq A$ for all but finitely many $n$ or $L(n)\supseteq B$
+for all but finitely many $n$; $L\cup\{(k;x)\}\in\GR f$ iff $x\in a$
+and $L(n)\supseteq A$ for all but finitely many $n$ or $L(n)\supseteq B$;
 and similarly for $y$.
 
 But $x\sqcup y\in a\Leftrightarrow x\in a\vee y\in a$ because $a$
@@ -3950,9 +4037,6 @@ for every funcoids $a\in\mathsf{FCD}(\Src f;\Src g)$, $b\in\mathsf{FCD}(\Dst f;\
 for every reloids $a\in\mathsf{RLD}(\Src f;\Src g)$, $b\in\mathsf{RLD}(\Dst f;\Dst g)$.
 \end{enumerate}
 \end{conjecture}
-\begin{defn}
-A \emph{staroid on power sets} is such a staroid $f$ that every $(\form f)_{i}$
-is a lattice of all subsets of some set.\end{defn}
 \begin{conjecture}
 \label{conj-meet-two-prod}$\prod^{\mathsf{Strd}}a\nasymp\prod^{\mathsf{Strd}}b\Leftrightarrow b\in\prod^{\mathsf{Strd}}a\Leftrightarrow a\in\prod^{\mathsf{Strd}}b\Leftrightarrow\forall i\in n:a_{i}\nasymp b_{i}$
 for every $n$-indexed families $a$ and $b$ of filters on powersets.
@@ -3966,8 +4050,7 @@ $b\in\prod_{i\in\arity f}\Dst f_{i}$. Then
 \]
 \end{conjecture}
 \begin{prop}
-The conjecture \ref{two-prod-c} is a consequence of the conjecture
-\ref{conj-meet-two-prod}.\end{prop}
+The conjecture~\ref{two-prod-c} is a consequence of the conjecture~\ref{conj-meet-two-prod}.\end{prop}
 \begin{proof}
 ~
 
@@ -4109,7 +4192,7 @@ is an atom of the lattice of:
 
 \subsection{On finite unions of infinite Cartesian products}
 
-Let $\mathfrak{A}$ is an indexed family of sets.
+Let $\mathfrak{A}$ be an indexed family of sets.
 
 \emph{Products} are $\prod A$ for $A\in\prod\mathfrak{A}$.
 

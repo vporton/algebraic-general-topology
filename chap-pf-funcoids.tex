@@ -22,8 +22,8 @@ funcoids.
 \section{Definition}
 \begin{defn}
 \index{funcoid!pointfree}\emph{Pointfree funcoid} is a quadruple
-$(\mathfrak{A};\mathfrak{B};\alpha;\beta)$ where $\mathfrak{A}$
-and $\mathfrak{B}$ are posets, $\alpha\in\mathfrak{B}^{\mathfrak{A}}$
+$(\mathfrak{A};\mathfrak{B};\alpha;\beta)$ where~$\mathfrak{A}$
+and~$\mathfrak{B}$ are posets, $\alpha\in\mathfrak{B}^{\mathfrak{A}}$
 and $\beta\in\mathfrak{A}^{\mathfrak{B}}$ such that 
 \[
 \forall x\in\mathfrak{A},y\in\mathfrak{B}:(y\nasymp\alpha x\Leftrightarrow x\nasymp\beta y).
@@ -114,7 +114,7 @@ $y\nasymp\supfun f\bot^{\Src f}\Leftrightarrow\bot^{\Src f}\nasymp\supfun{f^{-1}
 for every $y\in\Dst f$. Thus $\supfun f\bot^{\Src f}\asymp\supfun f\bot^{\Src f}$.
 So $\supfun f\bot^{\Src f}=\bot^{\Dst f}$.\end{proof}
 \begin{prop}
-\label{pfcd-mono}If $\Dst f$ is a separable meet-semilattice then
+\label{pfcd-mono}If $\Dst f$ is strongly separable then
 $\supfun f$ is a monotone function (for a pointfree funcoid $f$).\end{prop}
 \begin{proof}
 ~
@@ -123,9 +123,9 @@ a\sqsubseteq b & \Rightarrow\\
 \forall x\in\Dst f:(a\nasymp\supfun{f^{-1}}x\Rightarrow b\nasymp\supfun{f^{-1}}x) & \Rightarrow\\
 \forall x\in\Dst f:(x\nasymp\supfun fa\Rightarrow x\nasymp\supfun fb) & \Leftrightarrow\\
 \fullstar\supfun fa\subseteq\fullstar\supfun fb & \Rightarrow\\
-\supfun fa\sqsubseteq\supfun fb
+\supfun fa\sqsubseteq\supfun fb.
 \end{align*}
-(used theorem \ref{msl-sep-conds} and that it is a separable meet-semilattice).\end{proof}
+\end{proof}
 \begin{thm}
 \label{pf-dist-func}Let $f$ be a pointfree funcoid from a starrish
 join-semilattice $\Src f$ to a separable starrish join-semilattice
@@ -186,10 +186,10 @@ So $(\mathfrak{A};\mathfrak{C};\alpha_{2}\circ\alpha_{1};\beta_{1}\circ\beta_{2}
 is a pointfree funcoid.\end{proof}
 \begin{obvious}
 $\langle g\circ f\rangle=\langle g\rangle\circ\langle f\rangle$ for
-every composable pointfree funcoids $f$ and $g$.\end{obvious}
+every composable pointfree funcoids~$f$ and~$g$.\end{obvious}
 \begin{thm}
 $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$ for every composable pointfree
-funcoids $f$ and $g$.\end{thm}
+funcoids~$f$ and~$g$.\end{thm}
 \begin{proof}
 ~
 \begin{gather*}
@@ -202,7 +202,6 @@ $(h\circ g)\circ f=h\circ(g\circ f)$ for every composable pointfree
 funcoids $f$, $g$, $h$.\end{prop}
 \begin{proof}
 $\supfun{(h\circ g)\circ f}=\supfun{h\circ g}\circ\supfun f=\supfun h\circ\supfun g\circ\supfun f=\supfun h\circ\supfun{g\circ f}=\supfun{h\circ(g\circ f)};$
-
 \begin{multline*}
 \supfun{((h\circ g)\circ f)^{-1}}=\supfun{f^{-1}\circ(h\circ g)^{-1}}=\supfun{f^{-1}\circ g^{-1}\circ h^{-1}}=\\
 \supfun{(g\circ f)^{-1}\circ h^{-1}}=\supfun{(h\circ(g\circ f))^{-1}}.
@@ -242,7 +241,7 @@ Apply the proposition twice.\end{proof}
 \label{pf-supfun-up}Let $f$ be a pointfree funcoid. Let $(\Src f;\mathfrak{Z}_{0})$
 be a binarily meet-closed filtrator with separable core which is a
 meet-semilattice and $\forall x\in\Src f:\up^{\mathfrak{Z}_{0}}x\neq\emptyset$
-and $(\Dst f;\mathfrak{Z}_{1})$ is a primary filtrator over a boolean
+and $(\Dst f;\mathfrak{Z}_{1})$ be a primary filtrator over a boolean
 lattice.
 \[
 \supfun fx=\bigsqcap^{\Dst f}\rsupfun{\supfun f}\up^{\mathfrak{Z}_{0}}x.
@@ -255,32 +254,32 @@ y\nasymp^{\Dst f}\supfun fx\Leftrightarrow x\suprel fy\Leftrightarrow\forall X\i
 \]
 
 
-Let's denote $W=\setcond{y\sqcap^{\Dst f}\rsupfun fX}{X\in\up^{\mathfrak{Z}_{0}}x}$.
+Let's denote $W=\setcond{y\sqcap^{\Dst f}\supfun fX}{X\in\up^{\mathfrak{Z}_{0}}x}$.
 We will prove that $W$ is a generalized filter base over $\mathfrak{Z}_{1}$.
-To prove this enough to show that $V=\setcond{\rsupfun fX}{X\in\up^{\mathfrak{Z}_{0}}x}$
+To prove this enough to show that $V=\setcond{\supfun fX}{X\in\up^{\mathfrak{Z}_{0}}x}$
 is a generalized filter base.
 
-Let $\mathcal{P},\mathcal{Q}\in V$. Then $\mathcal{P}=\rsupfun fA$,
-$\mathcal{Q}=\rsupfun fB$ where $A,B\in\up^{\mathfrak{Z}_{0}}x$;
+Let $\mathcal{P},\mathcal{Q}\in V$. Then $\mathcal{P}=\supfun fA$,
+$\mathcal{Q}=\supfun fB$ where $A,B\in\up^{\mathfrak{Z}_{0}}x$;
 $A\sqcap^{\mathfrak{Z}_{0}}B\in\up^{\mathfrak{Z}_{0}}x$
 (used the fact that it is a binarily meet-closed and theorem \ref{up-filt-crit})
 and $\mathcal{R}\sqsubseteq\mathcal{P}\sqcap^{\Dst f}\mathcal{Q}$
 for $\mathcal{R}=\langle f\rangle(A\sqcap^{\mathfrak{Z}_{0}}B)\in V$
-because $\Dst f$ is separable by obvious \ref{filt-is-sep}. So $V$
+because $\Dst f$ is strongly separable by proposition~\ref{filt-is-sep}. So $V$
 is a generalized filter base and thus $W$ is a generalized filter
 base.
 
 $\bot^{\Dst f}\notin W\Leftrightarrow\bot^{\Dst f}\notin\bigsqcap^{\Dst f}W$
 by theorem \ref{genbase-main}. That is
 \[
-\forall X\in\up^{\mathfrak{Z}_{0}}x:y\sqcap^{\Dst f}\rsupfun fX\ne\bot^{\Dst f}\Leftrightarrow y\sqcap^{\Dst f}\bigsqcap^{\Dst f}\rsupfun{\supfun f}\up^{\mathfrak{Z}_{0}}x\ne\bot^{\Dst f}.
+\forall X\in\up^{\mathfrak{Z}_{0}}x:y\sqcap^{\Dst f}\supfun fX\ne\bot^{\Dst f}\Leftrightarrow y\sqcap^{\Dst f}\bigsqcap^{\Dst f}\rsupfun{\supfun f}\up^{\mathfrak{Z}_{0}}x\ne\bot^{\Dst f}.
 \]
 Comparing with the above, 
 \[
 y\sqcap^{\Dst f}\supfun fx\ne\bot^{\Dst f}\Leftrightarrow y\sqcap^{\Dst f}\bigsqcap^{\Dst f}\rsupfun{\supfun f}\up^{\mathfrak{Z}_{0}}x\ne\bot^{\Dst f}.
 \]
 So $\supfun fx=\bigsqcap^{\Dst f}\rsupfun{\supfun f}\up^{\mathfrak{Z}_{0}}x$
-because $\Dst f$ is separable (obvious \ref{filt-is-sep} and the
+because $\Dst f$ is separable (proposition~\ref{filt-is-sep} and the
 fact that $\mathfrak{Z}_{1}$ is a boolean lattice).\end{proof}
 \begin{thm}
 \label{pf-cont}Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
@@ -383,7 +382,7 @@ K\mathrel{\delta}I'\sqcup^{\mathfrak{Z}_{1}}J' & \Leftrightarrow\\
 (I'\sqcup^{\mathfrak{Z}_{1}}J')\sqcap^{\mathfrak{B}}\alpha K\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
 (I'\sqcup^{\mathfrak{B}}J')\sqcap\alpha K\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
 (I'\sqcap^{\mathfrak{B}}\alpha K)\sqcup(J'\sqcap^{\mathfrak{B}}\alpha K)\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
-I'\sqcap^{\mathfrak{B}}\alpha K\neq0^{\mathfrak{B}}\vee J'\sqcap^{\mathfrak{B}}\alpha K\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
+I'\sqcap^{\mathfrak{B}}\alpha K\neq\bot^{\mathfrak{B}}\vee J'\sqcap^{\mathfrak{B}}\alpha K\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
 K\mathrel{\delta}I'\vee K\mathrel{\delta}J'
 \end{align*}
 and
@@ -392,7 +391,7 @@ I\sqcup^{\mathfrak{Z}_{0}}J\mathrel{\delta}K' & \Leftrightarrow\\
 K'\sqcap^{\mathfrak{B}}\alpha(I\sqcup^{\mathfrak{Z}_{0}}J)\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
 K'\sqcap^{\mathfrak{B}}(\alpha I\sqcup\alpha J)\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
 (K'\sqcap^{\mathfrak{B}}\alpha I)\sqcup(K'\sqcap^{\mathfrak{B}}\alpha J)\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
-K'\sqcap^{\mathfrak{B}}\alpha I\neq0^{\mathfrak{B}}\vee K'\sqcap^{\mathfrak{B}}\alpha J\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
+K'\sqcap^{\mathfrak{B}}\alpha I\neq\bot^{\mathfrak{B}}\vee K'\sqcap^{\mathfrak{B}}\alpha J\neq\bot^{\mathfrak{B}} & \Leftrightarrow\\
 I\mathrel{\delta}K'\vee J\mathrel{\delta}K'.
 \end{align*}
 
@@ -439,12 +438,12 @@ First the meets $\bigsqcap^{\Src f}S$ and $\bigsqcap^{\Dst f}\rsupfun{\supfun f}
 exist by corollary \ref{filt-is-complete}.
 
 $(\Src f;\mathfrak{Z}_{0})$ is a binarily meet-closed filtrator by
-proposition \ref{f-meet-closed} and with separable core by theorem
+corollary~\ref{f-meet-closed} and with separable core by theorem
 \ref{when-sep-core}; thus we can apply theorem \ref{pf-supfun-up}
 ($\up x\neq\emptyset$ is obvious).
 
 $\supfun f\bigsqcap^{\Src f}S\sqsubseteq\supfun fX$ for every $X\in S$
-because $\Dst f$ is separable by obvious \ref{filt-is-sep} and thus
+because $\Dst f$ is strongly separable by proposition~\ref{filt-is-sep} and thus
 $\supfun f\bigsqcap^{\Src f}S\sqsubseteq\bigsqcap^{\Dst f}\rsupfun{\supfun f}S$.
 
 Taking into account properties of generalized filter bases:
@@ -452,7 +451,7 @@ Taking into account properties of generalized filter bases:
 \supfun f\bigsqcap^{\Src f}S & =\\
 \bigsqcap^{\Dst f}\rsupfun{\supfun f}\up\bigsqcap S & =\\
 \bigsqcap^{\Dst f}\rsupfun{\supfun f}\setcond X{\exists\mathcal{P}\in S:X\in\up\mathcal{P}} & =\\
-\bigsqcap^{\Dst f}\setcond{\rsupfun fX}{\exists\mathcal{P}\in S:X\in\up\mathcal{P}} & \sqsupseteq\text{ (because \ensuremath{\Dst f} is a separable poset)}\\
+\bigsqcap^{\Dst f}\setcond{\rsupfun fX}{\exists\mathcal{P}\in S:X\in\up\mathcal{P}} & \sqsupseteq\text{ (because \ensuremath{\Dst f} is a strongly separable poset)}\\
 \bigsqcap^{\Dst f}\setcond{\supfun f\mathcal{P}}{\mathcal{P}\in S} & =\\
 \bigsqcap^{\Dst f}\rsupfun{\supfun f}S.
 \end{align*}
@@ -484,17 +483,17 @@ $\rsupfun f=\psi$.
 
 It remains to prove that $\supfun f=\varphi$.
 
-Really, $\supfun f\mathcal{X}=\bigsqcap\rsupfun{\rsupfun f}\up\mathcal{X}=\bigsqcap\rsupfun{\psi}\up\mathcal{X}=\bigsqcap\rsupfun{\varphi}\up\mathcal{X}=\varphi\bigsqcap\mathcal{X}=\varphi\mathcal{X}$
+Really, $\supfun f\mathcal{X}=\bigsqcap\rsupfun{\supfun f}\up\mathcal{X}=\bigsqcap\rsupfun{\psi}\up\mathcal{X}=\bigsqcap\rsupfun{\varphi}\up\mathcal{X}=\varphi\bigsqcap\up\mathcal{X}=\varphi\mathcal{X}$
 for every $\mathcal{X}\in\mathscr{F}(\Src f)$.\end{proof}
 \begin{cor}
 Funcoids $f$ from $A$ to $B$ bijectively correspond by the formula
 $\langle f\rangle=\varphi$ to functions $\varphi:\mathscr{F}(A)\rightarrow\mathscr{F}(B)$
 preserving finite joins and filtered meets.\end{cor}
 \begin{thm}
-The set of pointfree funcoids between sets sets of filters on boolean
+The set of pointfree funcoids between sets of filters on boolean
 lattices is a co-frame.\end{thm}
 \begin{proof}
-Theorems \ref{pfcd-as-func} and \ref{frame-main}.
+Theorems~\ref{pf-cont} and~\ref{frame-main}.
 \end{proof}
 
 \section{The order of pointfree funcoids}
@@ -623,24 +622,6 @@ y\nasymp\supfun fx\lor y\nasymp\supfun gx & \Leftrightarrow\\
 x\suprel fy\lor x\suprel gy
 \end{align*}
 for every $x\in\mathfrak{A}$, $y\in\mathfrak{B}$.\end{widedisorder}
-\begin{thm}
-Let $f$ be a pointfree funcoid from a separable poset $\mathfrak{A}$
-to a separable poset $\mathfrak{B}$. If $\supfun f$ is an injection,
-then $\supfun f$ is an order embedding $\mathfrak{A}\rightarrow\mathfrak{B}$.\end{thm}
-\begin{proof}
-Suppose $x\sqsupseteq y$ but $\supfun fx\nsqsupseteq\supfun fy$.
-
-Then by separability of $\mathfrak{B}$ there exist $z\nasymp\supfun fy$
-such that $z\asymp\supfun fx$.
-
-Thus $\supfun{f^{-1}}z\asymp x$ and $\supfun{f^{-1}}z\nasymp y$
-what is impossible for $x\sqsupseteq y$.\end{proof}
-\begin{cor}
-Let $f$ be a pointfree funcoid from a separable poset $\mathfrak{A}$
-to a separable poset $\mathfrak{B}$. If $\supfun f$ is a bijection
-$\mathfrak{A}\rightarrow\mathfrak{B}$, then $\supfun f$ is an order
-isomorphism $\mathfrak{A}\rightarrow\mathfrak{B}$.
-\end{cor}
 
 \section{Domain and range of a pointfree funcoid}
 \begin{defn}
@@ -675,45 +656,50 @@ $f|_{a}\eqdef f\circ\id_{a}^{\mathsf{pFCD}(\Src f)}$.
 \index{funcoid!pointfree!image}Let $f$ be a pointfree funcoid whose
 source is a set with greatest element. \emph{Image} of $f$ will be
 defined by the formula $\im f=\supfun f\top$.\end{defn}
-\begin{obvious}
-$\im f\sqsupseteq fx$ for every $x\in\Src f$ whenever $\Dst f$
-is a separable meet-semilattice with greatest element.\end{obvious}
+\begin{prop}
+$\im f\sqsupseteq\supfun{f}x$ for every $x\in\Src f$ whenever $\Dst f$
+is a strongly separable poset with greatest element.\end{prop}
 \begin{proof}
 $\supfun f\top$ is greater than every $\supfun fx$ (where $x\in\Src f$)
-by proposition \ref{pfcd-mono}.\end{proof}
+by proposition~\ref{pfcd-mono}.\end{proof}
 \begin{defn}
 \index{funcoid!pointfree!domain}\emph{Domain} of a pointfree funcoid
 $f$ is defined by the formula $\dom f=\im f^{-1}$.\end{defn}
-\begin{prop}
-$\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and $\Src f$
-has greatest element $\top$ and $\Dst f$ is a separable poset.\end{prop}
+\begin{prop}\label{f-dom-f}
+$\supfun f\dom f=\im f$ if $f$ is a pointfree funcoid and
+$\Src f$ is a strongly separable poset with greatest element
+and $\Dst f$ is a separable poset with greatest element.\end{prop}
 \begin{proof}
 For every $y\in\Dst f$
 \begin{multline*}
 y\nasymp\supfun f\dom f\Leftrightarrow\dom f\nasymp\supfun{f^{-1}}y\Leftrightarrow\supfun{f^{-1}}\top\nasymp\supfun{f^{-1}}y\Leftrightarrow\\
-\supfun{f^{-1}}y\ne\bot\Leftrightarrow\top\nasymp\supfun{f^{-1}}y\Leftrightarrow y\nasymp\supfun f\top\Leftrightarrow y\nasymp\im f.
+\text{(by strong separability of $\Src f$)}\\
+\supfun{f^{-1}}y\text{ is not least}\Leftrightarrow\top\nasymp\supfun{f^{-1}}y\Leftrightarrow y\nasymp\supfun f\top\Leftrightarrow y\nasymp\im f.
 \end{multline*}
 So $\supfun f\dom f=\im f$ by separability of $\Dst f$.\end{proof}
-\begin{prop}
+\begin{prop}\label{pf-cap-dom}
 $\supfun fx=\supfun f(x\sqcap\dom f)$
 for every $x\in\Src f$ for a pointfree funcoid $f$ whose source
-is a separable meet-semilattice with least element and destination is a bounded separable poset.\end{prop}
+is a bounded separable meet-semilattice and destination is a bounded separable poset.\end{prop}
 \begin{proof}
+$\Src f$ is strongly separable by theorem~\ref{msl-sep-conds}.
 For every $y\in\Dst f$ we have
 \begin{multline*}
 y\nasymp\supfun f(x\sqcap\dom f)\Leftrightarrow x\sqcap\dom f\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow\\
-x\sqcap\im f^{-1}\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow x\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow y\nasymp\supfun fx.
+x\sqcap\im f^{-1}\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow\\
+\text{(by strong separability of $\Src f$)}\\
+x\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow y\nasymp\supfun fx.
 \end{multline*}
 Thus $\supfun fx=\supfun f(x\sqcap\dom f)$ by separability of $\Dst f$.\end{proof}
 \begin{prop}
 $x\nasymp\dom f\Leftrightarrow(\supfun fx\text{ is not least})$ for
 every pointfree funcoid $f$ and $x\in\Src f$ if $\Dst f$ has greatest
-element $\top$ and $\Src f$ is a separable poset.\end{prop}
+element $\top$.\end{prop}
 \begin{proof}
 $x\nasymp\dom f\Leftrightarrow x\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fx\Leftrightarrow(\supfun fx\text{ is not least})$.\end{proof}
 \begin{prop}
 $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$
-for every pointfree funcoid $f$ whose destination is a bounded poset
+for every pointfree funcoid $f$ whose destination is a bounded strongly separable poset
 and source is an atomistic poset.\end{prop}
 \begin{proof}
 For every $a\in\atoms^{\Src f}$ we have 
@@ -736,50 +722,22 @@ $\Dst f$ has greatest element.\end{prop}
 For every composable pointfree funcoids $f$ and $g$
 \begin{enumerate}
 \item \label{pf-im-ge-dom}If $\im f\sqsupseteq\dom g$ then $\im(g\circ f)=\im g$, provided that
-the posets $\Src f$ and $\Dst f=\Src g$ have greatest elements and $\Dst f$
-and $\Dst g$ are separable.
+the posets $\Src f$, $\Dst f=\Src g$ and $\Dst g$ have greatest elements and $\Src g$ and $\Dst g$ are strongly separable.
 \item \label{pf-im-le-dom}If $\im f\sqsubseteq\dom g$ then $\dom(g\circ f)=\dom g$, provided that
-the posets $\Dst g$ and $\Dst f=\Src g$ have greatest elements and $\Src g$
-and $\Src f$ are separable.
+the posets $\Dst g$, $\Dst f=\Src g$ and $\Src f$ have greatest elements and $\Dst f$ and $\Src f$ are strongly separable.
 \end{enumerate}
 \end{prop}
 \begin{proof}
 ~
 \begin{widedisorder}
-\item [{\ref{pf-im-ge-dom}}] $\im(g\circ f)=\supfun{g\circ f}\top^{\Src f}=\supfun g\supfun f\top^{\Src f}=\supfun g\im f=\supfun g\dom g=\supfun g\top^{\Src g}=\im g$.
+\item [{\ref{pf-im-ge-dom}}] $\im(g\circ f)=\supfun{g\circ f}\top^{\Src f}=\supfun g\supfun f\top^{\Src f}\sqsubseteq\im g$
+by strong separability of $\Dst g$;
+$\im(g\circ f)=\supfun{g\circ f}\top^{\Src f}=\supfun{g}\im f\sqsupseteq\supfun{g}\dom g=\im g$ by strong separability of $\Dst g$
+and proposition~\ref{f-dom-f}.
 \item [{\ref{pf-im-le-dom}}] $\dom(g\circ f)=\im(f^{-1}\circ g^{-1})$
 what by the proved is equal to $\im f^{-1}$ that is $\dom f$.
 \end{widedisorder}
 \end{proof}
-
-\section{Category of pointfree funcoids}
-
-\index{category!of pointfree funcoids}I will define the category
-$\mathsf{pFCD}$ of pointfree funcoids:
-\begin{itemize}
-\item The class of objects are small posets.
-\item The set of morphisms from $\mathfrak{A}$ to $\mathfrak{B}$ is $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
-\item The composition is the composition of pointfree funcoids.
-\item Identity morphism for an object $\mathfrak{A}$ is $(\mathfrak{A};\mathfrak{A};\id_{\mathfrak{A}};\id_{\mathfrak{A}})$.
-\end{itemize}
-To prove that it is really a category is trivial.
-
-\index{category!of pointfree funcoid triples}The \emph{category of
-pointfree funcoid quintuples} is defined as follows:
-\begin{itemize}
-\item Objects are pairs $(\mathfrak{A};\mathcal{A})$ where $\mathfrak{A}$
-is a small meet-semilattice with least element and $\mathcal{A}\in\mathfrak{A}$.
-\item The morphisms from an object $(\mathfrak{A};\mathcal{A})$ to an object
-$(\mathfrak{B};\mathcal{B})$ are tuples $(\mathfrak{A};\mathfrak{B};\mathcal{A};\mathcal{B};f)$
-where $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
-(Note: least elements are required for $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-to be properly defined.)
-\item The composition is defined by the formula $(\mathcal{B};\mathcal{C};g)\circ(\mathcal{A};\mathcal{B};f)=(\mathcal{A};\mathcal{C};g\circ f)$.
-\item Identity morphism for an object $(\mathfrak{A};\mathcal{A})$ is $\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}$.
-(Note: this is defined only for meet-semilattices.)
-\end{itemize}
-To prove that it is really a category is trivial.
-
 
 \section{Specifying funcoids by functions or relations on atomic filters}
 \begin{thm}
@@ -797,7 +755,7 @@ Y\nasymp^{\mathfrak{B}}\supfun f\mathcal{X}\Leftrightarrow\mathcal{X}\nasymp^{\m
 \exists x\in\atoms^{\mathfrak{A}}\mathcal{X}:x\nasymp^{\mathfrak{A}}\supfun{f^{-1}}Y\Leftrightarrow\exists x\in\atoms^{\mathfrak{A}}\mathcal{X}:Y\nasymp^{\mathfrak{B}}\supfun fx.
 \end{multline*}
 Thus $\corestar\supfun f\mathcal{X}=\bigcup\rsupfun{\corestar}\rsupfun{\supfun f}\atoms^{\mathfrak{A}}\mathcal{X}=\corestar\bigsqcup^{\mathfrak{B}}\rsupfun{\supfun f}\atoms^{\mathfrak{A}}\mathcal{X}$
-(used theorem \ref{d-f-join}). Consequently $\supfun f\mathcal{X}=\bigsqcup^{\mathfrak{B}}\rsupfun{\supfun f}\atoms^{\mathfrak{A}}\mathcal{X}$
+(used corollary~\ref{d-f-join}). Consequently $\supfun f\mathcal{X}=\bigsqcup^{\mathfrak{B}}\rsupfun{\supfun f}\atoms^{\mathfrak{A}}\mathcal{X}$
 by the corollary \ref{d-inj}.\end{proof}
 \begin{prop}
 Let $f$ be a pointfree funcoid. Then for every $\mathcal{X}\in\Src f$
@@ -867,9 +825,9 @@ for every $\mathcal{X}\in\mathfrak{A}$, $\mathcal{Y}\in\mathfrak{B}$.
 \end{thm}
 \begin{proof}
 Existence of no more than one such funcoids and formulas (\ref{pf-atoms-fun-cont})
-and (\ref{pf-atoms-rel-cont}) follow from the theorem \ref{pf-fcd-atom-args}
-and corollary \ref{pf-relatom-both} and the fact that our filtrators
-are with separable core.
+and (\ref{pf-atoms-rel-cont}) follow from theorem~\ref{spfn-atoms}
+and corollary~\ref{pf-suprel-atoms} and the fact that our filtrators
+are separable.
 \begin{widedisorder}
 \item [{\ref{pf-at-f}}] Consider the function $\alpha'\in\mathfrak{B}^{\mathfrak{Z}_{0}}$
 defined by the formula (for every $X\in\mathfrak{Z}_{0}$) 
@@ -897,7 +855,7 @@ Let's prove the reverse of (\ref{pf-alpha-a-greater}):
 \begin{align*}
 \bigsqcap\rsupfun{\bigsqcup\circ\rsupfun{\alpha}\circ\atoms^{\mathfrak{A}}}\up^{\mathfrak{Z}_{0}}a & =\\
 \bigsqcap\rsupfun{\bigsqcup\circ\rsupfun{\alpha}}\rsupfun{\atoms^{\mathfrak{A}}}\up^{\mathfrak{Z}_{0}}a & \sqsubseteq\\
-\bigsqcap\rsupfun{\bigsqcup\circ\rsupfun{\alpha}}\rsupfun{\atoms^{\mathfrak{A}}}\{\{a\}\} & =\\
+\bigsqcap\rsupfun{\bigsqcup\circ\rsupfun{\alpha}}\{\{a\}\} & =\\
 \bigsqcap\left\{ \left(\bigsqcup\circ\rsupfun{\alpha}\right)\{a\}\right\}  & =\\
 \bigsqcap\left\{ \bigsqcup\rsupfun{\alpha}\{a\}\right\}  & =\\
 \bigsqcap\left\{ \bigsqcup\{\alpha a\}\right\}  & =\\
@@ -935,11 +893,8 @@ Let's continue $\delta'$ till a funcoid $f$ (by the theorem \ref{pf-cont}):
 
 The reverse of (\ref{pf-atoms-delta}) implication is trivial, so
 \[
-\forall X\in\up^{\mathfrak{Z}_{0}}a,Y\in\up^{\mathfrak{Z}_{1}}b\exists x\in\atoms^{\mathfrak{A}}X,y\in\atoms^{\mathfrak{B}}Y:x\mathrel{\delta}y\Leftrightarrow a\mathrel{\delta}b.
+\forall X\in\up^{\mathfrak{Z}_{0}}a,Y\in\up^{\mathfrak{Z}_{1}}b\exists x\in\atoms^{\mathfrak{A}}X,y\in\atoms^{\mathfrak{B}}Y:x\mathrel{\delta}y\Leftrightarrow a\mathrel{\delta}b;
 \]
-
-
-
 \begin{align*}
 \forall X\in\up^{\mathfrak{Z}_{0}}a,Y\in\up^{\mathfrak{Z}_{1}}b\exists x\in\atoms^{\mathfrak{A}}X,y\in\atoms^{\mathfrak{B}}Y:x\mathrel{\delta}y & \Leftrightarrow\\
 \forall X\in\up^{\mathfrak{Z}_{0}}a,Y\in\up^{\mathfrak{Z}_{1}}b:X\mathrel{\delta'}Y & \Leftrightarrow\\
@@ -970,7 +925,7 @@ and $x\in\atoms^{\mathfrak{A}}$, $y\in\atoms^{\mathfrak{B}}$, then
 \forall f\in R:a\suprel fb\Leftrightarrow\\
 a\mathrel\delta b.
 \end{gather*}
-So by the theorem \ref{pf-atom-cont}, $\delta$ can be continued
+So by theorem \ref{pf-atom-cont}, $\delta$ can be continued
 till $\suprel p$ for some $p\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
 
 
@@ -1011,7 +966,7 @@ Thus $\mathord{\suprel{g\circ f}}=\mathord{\suprel g}\circ\supfun f$.
 \end{proof}
 \begin{thm}
 \label{pf-fcd-atom-middle}Let $f$ and $g$ be pointfree funcoids
-and $\mathfrak{A}=\Dst f=\Src g$ is an atomic poset. Then for every
+and $\mathfrak{A}=\Dst f=\Src g$ be an atomic poset. Then for every
 $\mathcal{X}\in\Src f$ and $\mathcal{Z}\in\Dst g$
 \[
 \mathcal{X}\suprel{g\circ f}\mathcal{Z}\Leftrightarrow\exists y\in\atoms^{\mathfrak{A}}:(\mathcal{X}\suprel fy\land y\suprel g\mathcal{Z}).
@@ -1069,8 +1024,8 @@ g\circ f\nasymp h & \Leftrightarrow\\
 \exists a\in\atoms^{\mathfrak{A}},c\in\atoms^{\mathfrak{C}}:a\suprel{(g\circ f)\sqcap h}c & \Leftrightarrow\\
 \exists a\in\atoms^{\mathfrak{A}},c\in\atoms^{\mathfrak{C}}:(a\suprel{g\circ f}c\land a\suprel hc) & \Leftrightarrow\\
 \exists a\in\atoms^{\mathfrak{A}},b\in\atoms^{\mathfrak{B}},c\in\atoms^{\mathfrak{C}}:(a\suprel fb\land b\suprel gc\land a\suprel hc) & \Leftrightarrow\\
-\exists a\in\atoms^{\mathfrak{A}},c\in\atoms^{\mathfrak{C}}:(b\suprel gc\land b\suprel{h\circ f^{-1}}c) & \Leftrightarrow\\
-\exists a\in\atoms^{\mathfrak{A}},c\in\atoms^{\mathfrak{C}}:b\suprel{g\sqcap(h\circ f^{-1})}c & \Leftrightarrow\\
+\exists b\in\atoms^{\mathfrak{B}},c\in\atoms^{\mathfrak{C}}:(b\suprel gc\land b\suprel{h\circ f^{-1}}c) & \Leftrightarrow\\
+\exists b\in\atoms^{\mathfrak{B}},c\in\atoms^{\mathfrak{C}}:b\suprel{g\sqcap(h\circ f^{-1})}c & \Leftrightarrow\\
 g\nasymp h\circ f^{-1}.
 \end{align*}
 
@@ -1114,8 +1069,8 @@ f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Rightarrow\dom f\sqsubse
 If $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$ then
 $\dom f\sqsubseteq\dom(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{A}$,
 $\im f\sqsubseteq\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{B}$.\end{proof}
-\begin{thm}
-Let $\mathfrak{A}$ and $\mathfrak{B}$ be separable bounded posets,
+\begin{thm}\label{pf-im-dom}
+Let $\mathfrak{A}$ and $\mathfrak{B}$ be strongly separable bounded posets,
 $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$, $\mathcal{A}\in\mathfrak{A}$,
 $\mathcal{B}\in\mathfrak{B}$. Then
 \[
@@ -1126,7 +1081,8 @@ f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\dom f\sqs
 One direction is the proposition above. The other:
 
 If $\dom f\sqsubseteq\mathcal{A}\wedge\im f\sqsubseteq\mathcal{B}$
-then $\mathcal{X}\suprel f\mathcal{Y}\Rightarrow\mathcal{Y}\nasymp\supfun f\mathcal{X}\Rightarrow\mathcal{Y}\nasymp\mathcal{B}$
+then $\mathcal{X}\suprel f\mathcal{Y}\Rightarrow\mathcal{Y}\nasymp\supfun f\mathcal{X}\Rightarrow\mathcal{Y}\nasymp\im f\Rightarrow\mathcal{Y}\nasymp\mathcal{B}$
+(strong separability used)
 and similarly $\mathcal{X}\suprel f\mathcal{Y}\Rightarrow\mathcal{X}\nasymp\mathcal{A}$.
 
 So $\mathord{\suprel f}\subseteq\mathord{\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}}$
@@ -1160,8 +1116,9 @@ $\im g\sqsubseteq\mathcal{B}$,
 \supfun g\mathcal{X}=\mathcal{B}\sqcap\supfun g(\mathcal{A}\sqcap\mathcal{X})\sqsubseteq\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\mathcal{X})=\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}}\supfun f\supfun{\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\mathcal{X}=\supfun h\mathcal{X},
 \]
 and similarly $\supfun{g^{-1}}\mathcal{Y}\sqsubseteq\supfun{h^{-1}}\mathcal{Y}$.
+Thus $g\sqsubseteq h$.
 
-$g\sqsubseteq h$. So $h=f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$.\end{proof}
+So $h=f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$.\end{proof}
 \begin{cor}
 Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
 lattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
@@ -1182,11 +1139,11 @@ f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\mathcal{A}\su
 \begin{align*}
 f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B} & \Leftrightarrow\\
 f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\ne\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})} & \Leftrightarrow\\
-\supfun{f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}\top^{\mathfrak{A}}\ne\bot^{B} & \Leftrightarrow\\
-\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}\circ f\circ\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\top^{\mathfrak{A}}\ne\bot^{B} & \Leftrightarrow\\
-\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}}\supfun f\supfun{\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\top^{\mathfrak{A}}\ne\bot^{B} & \Leftrightarrow\\
-\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\top^{\mathfrak{A}})\ne\bot^{B} & \Leftrightarrow\\
-\mathcal{B}\sqcap\supfun f\mathcal{A}\ne\bot^{B} & \Leftrightarrow\\
+\supfun{f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}\top^{\mathfrak{A}}\ne\bot^{\mathfrak{B}} & \Leftrightarrow\\
+\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}\circ f\circ\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\top^{\mathfrak{A}}\ne\bot^{\mathfrak{B}} & \Leftrightarrow\\
+\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}}\supfun f\supfun{\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\top^{\mathfrak{A}}\ne\bot^{\mathfrak{B}} & \Leftrightarrow\\
+\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\top^{\mathfrak{A}})\ne\bot^{\mathfrak{B}} & \Leftrightarrow\\
+\mathcal{B}\sqcap\supfun f\mathcal{A}\ne\bot^{\mathfrak{B}} & \Leftrightarrow\\
 \mathcal{A}\suprel f\mathcal{B}.
 \end{align*}
 \end{proof}
@@ -1220,7 +1177,7 @@ If $x\sqcap\bigsqcap\dom S\ne\bot^{\mathfrak{A}}$ then
 \end{gather*}
 if $x\sqcap\bigsqcap\dom S=\bot^{\mathfrak{A}}$ then
 \begin{gather*}
-\forall(\mathcal{A};\mathcal{B})\in S:(x\sqcap\mathcal{A}=\bot^{\mathfrak{A}}\land\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x=\bot^{\mathcal{B}});\\
+\exists(\mathcal{A};\mathcal{B})\in S:(x\sqcap\mathcal{A}=\bot^{\mathfrak{A}}\land\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x=\bot^{\mathcal{B}});\\
 \setcond{\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x}{(\mathcal{A};\mathcal{B})\in S}\ni\bot^{\mathfrak{B}}.
 \end{gather*}
 So
@@ -1248,7 +1205,7 @@ what is by the last theorem equal to $(\mathcal{A}_{0}\sqcap\mathcal{A}_{1})\tim
 Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
 be primary filtrators over boolean lattices. If $\mathcal{A}\in\mathfrak{A}$
 then $\mathcal{A}\times^{\mathsf{FCD}}$ is a complete homomorphism
-of the lattice $\mathfrak{A}$ to a the lattice $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$,
+from the lattice~$\mathfrak{A}$ to the lattice $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$,
 if also $\mathcal{A}\neq\bot^{\mathfrak{A}}$ then it is an order
 embedding.\end{thm}
 \begin{proof}
@@ -1263,7 +1220,7 @@ Let $S\in\mathscr{P}\mathfrak{A}$, $X\in\mathfrak{Z}_{0}$, $x\in\atoms^{\mathfra
 \supfun{\mathcal{A}\times^{\mathsf{FCD}}\bigsqcup S}X.
 \end{align*}
 Thus $\bigsqcup\rsupfun{\mathcal{A}\times^{\mathsf{FCD}}}S=\mathcal{A}\times^{\mathsf{FCD}}\bigsqcup S$
-by theorem \ref{pf-supfun-up}.
+by theorem~\ref{pf-supfun-up}.
 \begin{align*}
 \supfun{\bigsqcap\rsupfun{\mathcal{A}\times^{\mathsf{FCD}}}S}x & =\\
 \bigsqcap_{\mathcal{B}\in S}\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x & =\\
@@ -1276,8 +1233,10 @@ by theorem \ref{pf-supfun-up}.
 Thus $\bigsqcap\rsupfun{\mathcal{A}\times^{\mathsf{FCD}}}S=\mathcal{A}\times^{\mathsf{FCD}}\bigsqcap S$
 by theorem \ref{spfn-atoms}.
 
-If $\mathcal{A}\neq\bot^{\mathfrak{A}}$ then obviously the function
-$\mathcal{A}\times^{\mathsf{FCD}}$ is injective.\end{proof}
+If $\mathcal{A}\neq\bot^{\mathfrak{A}}$ then obviously
+$\mathcal{A}\times^{\mathsf{FCD}}\mathcal{X}\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{Y} \Leftrightarrow
+\mathcal{X}\sqsubseteq\mathcal{Y}$, because $\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{X})=\mathcal{X}$ and
+$\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{Y})=\mathcal{Y}$.\end{proof}
 \begin{prop}
 Let $\mathfrak{A}$ be a meet-semilattice with least element and $\mathfrak{B}$
 be a poset with least element. If $a$ is an atom of $\mathfrak{A}$,
@@ -1317,10 +1276,51 @@ Let $\mathcal{X}\in\mathfrak{A}$, $\mathcal{Y}\in\mathfrak{B}$.
 
 \end{proof}
 
+\section{Category of pointfree funcoids}
+
+\index{category!of pointfree funcoids}I will define the category
+$\mathsf{pFCD}$ of pointfree funcoids:
+\begin{itemize}
+\item The class of objects are small posets.
+\item The set of morphisms from $\mathfrak{A}$ to $\mathfrak{B}$ is $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
+\item The composition is the composition of pointfree funcoids.
+\item Identity morphism for an object $\mathfrak{A}$ is $(\mathfrak{A};\mathfrak{A};\id_{\mathfrak{A}};\id_{\mathfrak{A}})$.
+\end{itemize}
+To prove that it is really a category is trivial.
+
+\index{category!of pointfree funcoid triples}The \emph{category of
+pointfree funcoid quintuples} is defined as follows:
+\begin{itemize}
+\item Objects are pairs $(\mathfrak{A};\mathcal{A})$ where $\mathfrak{A}$
+is a small meet-semilattice and $\mathcal{A}\in\mathfrak{A}$.
+\item The morphisms from an object $(\mathfrak{A};\mathcal{A})$ to an object
+$(\mathfrak{B};\mathcal{B})$ are tuples $(\mathfrak{A};\mathfrak{B};\mathcal{A};\mathcal{B};f)$
+where $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and
+\begin{equation}\label{pffcd-cat-cr}
+\forall x\in\mathfrak{A}:\supfun{f}x\sqsubseteq\mathcal{A},\quad \forall y\in\mathfrak{B}:\supfun{f^{-1}}y\sqsubseteq\mathcal{B}.
+\end{equation}
+\item The composition is defined by the formula $(\mathcal{B};\mathcal{C};g)\circ(\mathcal{A};\mathcal{B};f)=(\mathcal{A};\mathcal{C};g\circ f)$.
+\item Identity morphism for an object $(\mathfrak{A};\mathcal{A})$ is $\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}$.
+(Note: this is defined only for meet-semilattices.)
+\end{itemize}
+To prove that it is really a category is trivial.
+
+\begin{prop}
+For strongly separated and bounded~$\mathfrak{A}$ and~$\mathfrak{B}$ formula~\eqref{pffcd-cat-cr} is equivalent to each of the following:
+\begin{enumerate}
+\item $\dom f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$;
+\item $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Because $\supfun{f}x\sqsubseteq\im f$, $\supfun{f^{-1}}y\sqsubseteq\dom f$, and theorem~\ref{pf-im-dom}.
+\end{proof}
+
 \section{Atomic pointfree funcoids}
 \begin{thm}
 \label{pf-atom}Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters
-over boolean lattices. A $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+over boolean lattices. An $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 is an atom of the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 iff there exist $a\in\atoms^{\mathfrak{A}}$ and $b\in\atoms^{\mathfrak{B}}$
 such that $f=a\times^{\mathsf{FCD}}b$.\end{thm}
@@ -1358,7 +1358,7 @@ filters over boolean lattices. Then the poset $\mathsf{pFCD}(\mathfrak{A};\mathf
 is separable.\end{thm}
 \begin{proof}
 Let $f,g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$, $f\sqsubset g$.
-Then taking into account the theorem \ref{pf-fcd-atom-args} exists
+Then taking into account the theorem~\ref{spfn-atoms} exists
 $a\in\atoms^{\mathfrak{A}}$ such that $\supfun fa\sqsubset\supfun ga$.
 By corollary \ref{f-atom-sep} $\mathfrak{B}$ is atomically separable.
 So exists $b\in\atoms^{\mathfrak{B}}$ such that $\supfun fa\sqcap b=\bot^{\mathfrak{B}}$
@@ -1408,8 +1408,8 @@ $\atoms(f\sqcup g)=\atoms f\cup\atoms g$ for every $f,g\in\mathsf{pFCD}(\mathfra
 \begin{proof}
 ~
 \begin{multline*}
-(a\times^{\mathsf{FCD}}b)\sqcap(f\sqcup g)\neq\emptyset\Leftrightarrow a\suprel{f\sqcup g}b\Leftrightarrow a\suprel fb\vee a\suprel gb\Leftrightarrow\\
-(a\times^{\mathsf{\mathsf{pFCD}}}b)\sqcap f\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\vee(a\times^{\mathsf{FCD}}b)\sqcap g\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}
+(a\times^{\mathsf{FCD}}b)\sqcap(f\sqcup g)\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\Leftrightarrow a\suprel{f\sqcup g}b\Leftrightarrow a\suprel fb\vee a\suprel gb\Leftrightarrow\\
+(a\times^{\mathsf{FCD}}b)\sqcap f\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\vee(a\times^{\mathsf{FCD}}b)\sqcap g\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}
 \end{multline*}
 for every $a\in\atoms^{\mathfrak{A}}$ and $b\in\atoms^{\mathfrak{B}}$
 (used the corollary \ref{pf-intr-prod} and theorem \ref{pf-fin-join}).\end{proof}
@@ -1418,7 +1418,7 @@ Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
 be primary filtrators over boolean lattices. Then $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 is a co-frame.\end{thm}
 \begin{proof}
-Theorems \ref{pfcd-as-func} and \ref{frame-main}.\end{proof}
+Theorems \ref{pf-cont} and \ref{frame-main}.\end{proof}
 \begin{cor}
 Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
 be primary filtrators over boolean lattices. Then $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
@@ -1426,15 +1426,14 @@ is a co-brouwerian lattice.\end{cor}
 \begin{prop}
 Let $\mathfrak{A}$, $\mathfrak{B}$, $\mathfrak{C}$ be sets of filters
 over some boolean lattices and $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$,
-$g\in\mathsf{pFCD}(\mathfrak{B};\mathfrak{C})$. Let $\mathfrak{B}$
-be an atomic poset. Then
+$g\in\mathsf{pFCD}(\mathfrak{B};\mathfrak{C})$. Then
 \begin{multline*}
 \atoms(g\circ f)=\\
 \setcond{x\times^{\mathsf{FCD}}z}{x\in\atoms^{\mathfrak{A}},z\in\atoms^{\mathfrak{C}},\exists y\in\atoms^{\mathfrak{B}}:(x\times^{\mathsf{FCD}}y\in\atoms f\land y\times^{\mathsf{FCD}}z\in\atoms g)}.
 \end{multline*}
 \end{prop}
 \begin{proof}
-~
+$\mathfrak{B}$~is atomic by theorem~\ref{filt-atomic}.
 \begin{align*}
 (x\times^{\mathsf{FCD}}z)\sqcap(g\circ f)\ne\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{C})} & \Leftrightarrow\\
 x\suprel{g\circ f}z & \Leftrightarrow\\
@@ -1486,27 +1485,6 @@ are defined we have
 \supfun f\bigsqcup S=\bigsqcup\rsupfun{\supfun f}S.
 \]
 \end{defn}
-\begin{prop}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices. A pointfree funcoid $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
-is complete iff $\supfun fa=\bigsqcup\rsupfun{\supfun f}\atoms a$
-for every $a\in\mathfrak{A}$.\end{prop}
-\begin{proof}
-Direct implication is obvious. The reverse implication:
-
-Let $S$ be a set of filters.
-\begin{align*}
-\supfun f\bigsqcup S & =\\
-\bigsqcup\rsupfun{\supfun f}\atoms\bigsqcup S & =\\
-\bigsqcup\rsupfun{\supfun f}\bigcup\rsupfun{\atoms}S & =\\
-\bigsqcup\bigcup\rsupfun{\rsupfun{\supfun f}}\rsupfun{\atoms}S & =\\
-\bigsqcup\rsupfun{\bigsqcup}\rsupfun{\rsupfun{\supfun f}}\rsupfun{\atoms}S & =\\
-\bigsqcup\rsupfun{\bigsqcup\circ\rsupfun{\supfun f}\circ\atoms}S & =\\
-\bigsqcup\setcond{\bigsqcup\rsupfun{\supfun f}\atoms a}{a\in S} & =\\
-\bigsqcup\setcond{\supfun fa}{a\in S} & =\\
-\bigsqcup\rsupfun{\supfun f}S.
-\end{align*}
-\end{proof}
 \begin{defn}
 \index{funcoid!pointfree!co-complete}Let $(\mathfrak{A};\mathfrak{Z}_{0})$
 and $(\mathfrak{B};\mathfrak{Z}_{1})$ be filtrators. I will call a \emph{co-complete pointfree funcoid}
@@ -1521,7 +1499,7 @@ joins, where the bijection is $f\mapsto\supfun f|_{\mathfrak{Z}_{0}}$.\end{prop}
 \begin{proof}
 It follows from the theorem \ref{pf-cont}.\end{proof}
 \begin{thm}
-\label{pf-compl-conds}Let $(\mathfrak{A};\mathfrak{Z})$ be a down-aligned,
+\label{pf-compl-conds}Let $(\mathfrak{A};\mathfrak{Z}_0)$ be a down-aligned,
 with join-closed, binarily meet-closed and separable core which is
 a complete boolean lattice.
 
@@ -1590,7 +1568,7 @@ $X\in\mathfrak{Z}_{0}$
 \[
 \supfun{\bigsqcup R}X=\bigsqcup_{f\in R}^{\mathfrak{B}}\supfun fX=\bigsqcup_{f\in R}^{\mathfrak{Z}_{1}}\supfun fX\in\mathfrak{Z}_{1}
 \]
-(used the theorem \ref{pf-join-core} and corollary \ref{semifilt-joinclosed}).
+(used the theorems~\ref{pf-join-core} and~\ref{semifilt-joinclosed}).
 \end{proof}
 Let $\mathfrak{A}$ and $\mathfrak{B}$ be posets with least elements.
 I will denote $\mathsf{ComplpFCD}(\mathfrak{A};\mathfrak{B})$ and
@@ -1636,7 +1614,7 @@ are boolean lattices. Let $R$ be a set of pointfree funcoids from
 $\mathfrak{A}$ to $\mathfrak{B}$.
 
 $g\circ\left(\bigsqcup R\right)=\bigsqcup_{g\in R}(g\circ f)=\bigsqcup\rsupfun{g\circ}R$
-if $g$ is a complete pointfree funcoid from $\mathfrak{B}$.\end{thm}
+if $g$ is a complete pointfree funcoid from~$\mathfrak{B}$.\end{thm}
 \begin{proof}
 For every $X\in\mathfrak{A}$
 \begin{align*}
@@ -1674,7 +1652,7 @@ We may apply the theorem \ref{pf-cont} because
 \[
 \Cor\supfun f(X\sqcup^{\mathfrak{Z}_{0}}Y)=\Cor(\supfun fX\sqcup^{\mathfrak{B}}\supfun fY)=\Cor\supfun fX\sqcup^{\mathfrak{Z}_{1}}\Cor\supfun fY
 \]
-by proposition \ref{dual-core-join}.\end{proof}
+by theorem~\ref{dual-core-join}.\end{proof}
 \begin{obvious}
 Co-completion is always co-complete.\end{obvious}
 \begin{prop}
@@ -1700,9 +1678,9 @@ Let $\mathfrak{A}$ and $\mathfrak{B}$ be posets. Let $f\in\mathsf{pFCD}(\mathfra
 The pointfree funcoid $f$ is:
 \begin{itemize}
 \item monovalued iff $f\circ f^{-1}\sqsubseteq\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}$,
-if $\mathfrak{A}$ has greatest element is defined and $\mathfrak{B}$ is a meet-semilattice;
+if $\mathfrak{A}$ has greatest element and $\mathfrak{B}$ is a strongly separable meet-semilattice;
 \item injective iff $f^{-1}\circ f\sqsubseteq\id_{\dom f}^{\mathsf{pFCD}(\mathfrak{A})}$,
-if $\mathfrak{B}$ has greatest element is defined and $\mathfrak{A}$ is a meet-semilattice. 
+if $\mathfrak{B}$ has greatest element and $\mathfrak{A}$ is a strongly separable meet-semilattice. 
 \end{itemize}
 \end{prop}
 \begin{proof}
@@ -1711,11 +1689,11 @@ $\im f$ is defined because $\mathfrak{A}$ has greatest element. $\id_{\im f}^{\m
 \begin{description}
 \item [{$\Leftarrow$}] Obvious.
 \item [{$\Rightarrow$}] Let $f\circ f^{-1}\sqsubseteq1_{\mathfrak{B}}^{\mathsf{pFCD}}$.
-Then $\supfun{f\circ f^{-1}}x\sqsubseteq x$; $\supfun{f\circ f^{-1}}x\sqsubseteq\im f$.
+Then $\supfun{f\circ f^{-1}}x\sqsubseteq x$; $\supfun{f\circ f^{-1}}x\sqsubseteq\im f$ (proposition~\ref{pfcd-mono}).
 Thus $\supfun{f\circ f^{-1}}x\sqsubseteq x\sqcap\im f=\supfun{\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}}x$.
 
 
-$\supfun{(f\circ f^{-1})^{-1}}x\sqsubseteq x$ and $\supfun{(f\circ f^{-1})^{-1}}x\sqsubseteq\supfun{f\circ f^{-1}}x\sqsubseteq\im f$.
+$\supfun{(f\circ f^{-1})^{-1}}x\sqsubseteq x$ and $\supfun{(f\circ f^{-1})^{-1}}x=\supfun{f\circ f^{-1}}x\sqsubseteq\im f$.
 Thus $\supfun{(f\circ f^{-1})^{-1}}x\sqsubseteq x\sqcap\im f=\supfun{\id_{\im f}^{\mathsf{pFCD}(\mathfrak{B})}}x$.
 
 
@@ -1730,7 +1708,7 @@ statements are equivalent for every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B}
 \begin{enumerate}
 \item \label{pf-thm:func-mono-def}$f$ is monovalued.
 \item \label{pf-thm:func-mono-atom}$\forall a\in\atoms^{\mathfrak{A}}:\supfun fa\in\atoms^{\mathfrak{B}}\cup\{\bot^{\mathfrak{B}}\}$.
-\item \label{pf-thm:func-mono-intr-flt}$\forall i,j\in\mathfrak{A}:\supfun{f^{-1}}(i\sqcap j)=\supfun{f^{-1}}i\sqcap\supfun{f^{-1}}j$.
+\item \label{pf-thm:func-mono-intr-flt}$\forall i,j\in\mathfrak{B}:\supfun{f^{-1}}(i\sqcap j)=\supfun{f^{-1}}i\sqcap\supfun{f^{-1}}j$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1759,10 +1737,10 @@ that $\mathfrak{B}$ is atomic) when $f\circ f^{-1}\sqsubseteq1_{\mathfrak{B}}^{\
 $\supfun fa\notin\atoms^{\mathfrak{B}}\cup\{\bot^{\mathfrak{B}}\}$
 for some $a\in\atoms^{\mathfrak{A}}$. Then there exist two atoms
 $p\neq q$ such that $\supfun fa\sqsupseteq p\wedge\supfun fa\sqsupseteq q$.
-Consequently $p\sqcap\supfun fa\neq0^{\mathfrak{B}}$; $a\sqcap\supfun{f^{-1}}p\ne\bot^{\mathfrak{A}}$;
+Consequently $p\sqcap\supfun fa\neq\bot^{\mathfrak{B}}$; $a\sqcap\supfun{f^{-1}}p\ne\bot^{\mathfrak{A}}$;
 $a\sqsubseteq\supfun{f^{-1}}p$; $\supfun{f\circ f^{-1}}p=\supfun f\supfun{f^{-1}}p\sqsupseteq\supfun fa\sqsupseteq q$
 (by proposition \ref{pfcd-mono} because $\mathfrak{B}$ is separable
-by proposition \ref{atom-is-sep});
+by proposition \ref{atom-is-sep} and thus strongly separable by theorem~\ref{msl-sep-conds});
 $\supfun{f\circ f^{-1}}p\nsqsubseteq p$ and $\supfun{f\circ f^{-1}}p\ne\bot^{\mathfrak{B}}$.
 So it cannot be $f\circ f^{-1}\sqsubseteq1_{\mathfrak{B}}^{\mathsf{pFCD}}$.
 \end{description}
@@ -1772,9 +1750,9 @@ The following is equivalent for primary filtrators $(\mathfrak{A};\mathfrak{Z}_{
 and $(\mathfrak{B};\mathfrak{Z}_{1})$ over boolean lattices and pointfree
 funcoids $f:\mathfrak{A}\rightarrow\mathfrak{B}$:
 \begin{enumerate}
-\item \label{pfcd-mv}$f$ is monovalued.
-\item \label{pfcd-mmv}It is metamonovalued.
-\item \label{pfcd-wmmv}It is weakly metamonovalued.
+\item \label{pfcd-mv}$f$~is monovalued.
+\item \label{pfcd-mmv}$f$~is metamonovalued.
+\item \label{pfcd-wmmv}$f$~is weakly metamonovalued.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1797,9 +1775,8 @@ Thus $f$ is monovalued.
 \end{proof}
 \begin{thm}
 Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
-be primary filtrators over a boolean lattice. A pointfree funcoid
+be primary filtrators over boolean lattices. A pointfree funcoid
 $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is monovalued iff
-
 \[
 \forall I,J\in\mathfrak{Z}_{1}:\supfun{f^{-1}}(I\sqcap^{\mathfrak{Z}_{1}}J)=\supfun{f^{-1}}I\sqcap\supfun{f^{-1}}J.
 \]
@@ -1809,16 +1786,16 @@ $\mathfrak{A}$ and $\mathfrak{B}$ are complete lattices (corollary
 \ref{filt-is-complete}).
 
 $(\mathfrak{B};\mathfrak{Z}_{1})$ is a filtrator with separable core
-by the theorem \ref{when-sep-core}.
+by theorem~\ref{when-sep-core}.
 
-$(\mathfrak{B};\mathfrak{Z}_{1})$ is binarily meet-closed by the
-theorem \ref{f-meet-closed}.
+$(\mathfrak{B};\mathfrak{Z}_{1})$ is binarily meet-closed by
+corollary~\ref{f-meet-closed}.
 
 $\mathfrak{A}$ and $\mathfrak{B}$ are starrish by corollary \ref{filt-also-distr}.
 
-$\mathfrak{A}$ is separable by proposition~\ref{filt-is-sep}.
+$(\mathfrak{A};\mathfrak{Z}_{0})$ is with separable core by theorem~\ref{when-sep-core}.
 
-We are under conditions of the theorem \ref{pf-supfun-up}.
+We are under conditions of theorem~\ref{pf-supfun-up} for the pointfree funcoid~$f^{-1}$.
 \begin{description}
 \item [{$\Rightarrow$}] Obvious (taking into account that $(\mathfrak{B};\mathfrak{Z}_{1})$
 is binarily meet-closed).
@@ -1832,7 +1809,7 @@ is binarily meet-closed).
 \bigsqcap\setcond{\supfun{f^{-1}}I}{I\in\up\mathcal{I}}\sqcap\bigsqcap\setcond{\supfun{f^{-1}}J}{J\in\up\mathcal{J}} & =\\
 \supfun{f^{-1}}\mathcal{I}\sqcap^{\mathfrak{A}}\supfun{f^{-1}}\mathcal{J}
 \end{align*}
-(used theorem \ref{pf-supfun-up}, theorem \ref{f-inf-meet-form},
+(used theorem \ref{pf-supfun-up}, corollary~\ref{f-inf-meet-form},
 theorem \ref{pf-dist-func}).
 \end{description}
 \end{proof}
@@ -1860,18 +1837,18 @@ $S$ is a set of closed elements (regarding $f$), then
 \begin{enumerate}
 \item $i\sqcup j$ is a closed element, if $\mathfrak{A}$ is a separable
 starrish join-semilattice;
-\item $\bigsqcap S$ is a closed element if $\mathfrak{A}$ is a separable
+\item $\bigsqcap S$ is a closed element if $\mathfrak{A}$ is a strongly separable
 complete lattice.
 \end{enumerate}
 \end{prop}
 \begin{proof}
 $\supfun f(i\sqcup j)=\supfun fi\sqcup\supfun fj\sqsubseteq i\sqcup j$
 (theorem \ref{pf-dist-func}), $\supfun f\bigsqcap S\sqsubseteq\bigsqcap\rsupfun{\supfun f}S\sqsubseteq\bigsqcap S$
-(used separability of $\mathfrak{A}$ twice). Consequently the elements
+(used strong separability of $\mathfrak{A}$ twice). Consequently the elements
 $i\sqcup j$ and $\bigsqcap S$ are closed.\end{proof}
 \begin{prop}
 If $S$ is a set of elements closed regarding a complete pointfree
-funcoid $f$ with separable destination which is a complete lattice,
+funcoid $f$ with strongly separable destination which is a complete lattice,
 then the element $\bigsqcup S$ is also closed regarding our funcoid.\end{prop}
 \begin{proof}
 $\supfun f\bigsqcup S=\bigsqcup\rsupfun{\supfun f}S\sqsubseteq\bigsqcup S$.
@@ -1890,7 +1867,7 @@ $\mathfrak{A}$ when
 \end{defn}
 \begin{prop}
 Let $(\mathfrak{A};\mathfrak{Z})$ be a co-separable filtrator with
-join-closed core. An $A\in\mathfrak{Z}$ is connected regarding a
+finitely join-closed core. An $A\in\mathfrak{Z}$ is connected regarding a
 funcoid $\mu$ iff 
 \[
 \forall X,Y\in\mathfrak{Z}\setminus\{\bot^{\mathfrak{Z}}\}:(X\sqcup^{\mathfrak{Z}}Y=A\Rightarrow X\suprel{\mu}Y).
@@ -1951,7 +1928,7 @@ corresponds to~$p_{0}$ by the formula~(\ref{pf-rel-f}); let $p_{1}\in\mathbf{Rel
 corresponds to~$f$ by the formula~(\ref{pf-rel-gr}). Then $p_{0}=p_{1}$
 because 
 \[
-(x;y)\in\GR p_{0}\Leftrightarrow y\in\supfun f\{x\}\Leftrightarrow y\in\rsupfun{p_{0}}\{x\}\Leftrightarrow(x;y)\in\GR p_{1}.
+(x;y)\in\GR p_{0}\Leftrightarrow y\in\rsupfun{p_{0}}\{x\}\Leftrightarrow y\in\supfun f\{x\}\Leftrightarrow(x;y)\in\GR p_{1}.
 \]
 
 
@@ -1976,25 +1953,25 @@ Let $p=1_{\mathbf{Rel}}^{A}$ for some set~$A$. Then $\supfun f=\rsupfun p=\rsupf
 and likewise $\supfun{f^{-1}}=\id_{\subsets A}$, that is $f$ is
 an identity pointfree funcoid. So it preserves identities.\end{proof}
 \begin{prop}
-The bijection defined by the theorem~\ref{pf-rel} preserves reversal.\end{prop}
+The bijection defined by theorem~\ref{pf-rel} preserves reversal.\end{prop}
 \begin{proof}
 $\supfun{f^{-1}}=\rsupfun{p^{-1}}$.\end{proof}
 \begin{prop}
-The bijection defined by the theorem~\ref{pf-rel} preserves monovaluedness
+The bijection defined by theorem~\ref{pf-rel} preserves monovaluedness
 and injectivity.\end{prop}
 \begin{proof}
 Because it is a functor which preserves reversal.\end{proof}
 \begin{prop}
-The bijection defined by the theorem~\ref{pf-rel} preserves domain
+The bijection defined by theorem~\ref{pf-rel} preserves domain
 an image.\end{prop}
 \begin{proof}
 $\im f=\supfun f\top=\rsupfun p\top=\im p$, likewise for domain.\end{proof}
 \begin{prop}
-The bijection defined by the theorem~\ref{pf-rel} maps cartesian
+The bijection defined by theorem~\ref{pf-rel} maps cartesian
 products to corresponding funcoidal products.\end{prop}
 \begin{proof}
 $\supfun{A\times^{\mathsf{FCD}}B}X=\begin{cases}
 B & \text{if }X\nasymp A\\
 \bot & \text{if }X\asymp A
-\end{cases}=\rsupfun{A\times B}X$. Likewise $\supfun{(A\times^{\mathsf{FCD}}B)^{-1}}X=\rsupfun{(A\times B)^{-1}}X$.\end{proof}
+\end{cases}=\rsupfun{A\times B}X$. Likewise $\supfun{(A\times^{\mathsf{FCD}}B)^{-1}}Y=\rsupfun{(A\times B)^{-1}}Y$.\end{proof}
 

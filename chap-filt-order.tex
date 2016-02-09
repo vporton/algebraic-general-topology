@@ -14,7 +14,7 @@ on a set (not on an arbitrary poset) only.
 \index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
 (with possibly different base sets) are equivalent ($\mathcal{A}\sim\mathcal{B}$)
 iff there exists a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
-\emph{and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$.}\end{defn}
+and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$.\end{defn}
 \begin{prop}
 If two filters with the same base are equivalent they are equal.\end{prop}
 \begin{proof}
@@ -117,7 +117,6 @@ $\subsets Y\cap\mathcal{A}=\subsets Y\cap\mathcal{B}$ for some set
 $Y\in\mathcal{A}$, $Y\in\mathcal{B}$. There exists a set $X\in\mathcal{A}$
 such that $X\in\mathcal{B}$. Thus $\exists X\in\mathcal{A}:X\subseteq\Base(\mathcal{B})$
 and so $\mathcal{A}\div\Base(\mathcal{B})$ is a filter.
-
 \begin{multline*}
 X\in\mathcal{A}\div\Base(\mathcal{B})\Leftrightarrow X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{A}:Y\subseteq X\Leftrightarrow\\
 X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{B}:Y\subseteq X\Leftrightarrow X\in\mathcal{B}
@@ -161,7 +160,7 @@ For every set $C\in\subsets\Base(\mathcal{B})$ we have
 \exists K\in\mathcal{A}:C\in\rsupfun{\uparrow^{\mathsf{FCD}}f}K & \Rightarrow\\
 C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}.
 \end{align*}
-So $C\in f\ast\mathcal{A}\Rightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+So $C\in \setcond{C\in\subsets(\Dst f)}{\rsupfun{f^{-1}}C\in\mathcal{A}}\Rightarrow C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
 
 Let now $C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$. Then
 $\uparrow\rsupfun{f^{-1}}C\sqsupseteq\supfun{\uparrow^{\mathsf{FCD}}f^{-1}}\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\sqsupseteq\mathcal{A}$
@@ -176,7 +175,7 @@ vertices of these multigraphs objects and edges morphisms.
 I will denote $\mathbf{GreFunc}{}_{1}$ the multigraph whose objects
 are filters and whose morphisms between objects $\mathcal{A}$ and
 $\mathcal{B}$ are $\mathbf{Set}$-morphisms from $\Base(\mathcal{A})$
-to $\Base(\mathcal{B})$ such that $\mathcal{B}\supseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
+to $\Base(\mathcal{B})$ such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
 \end{defn}
 
 \begin{defn}
@@ -187,13 +186,13 @@ to $\Base(\mathcal{B})$ such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}
 \end{defn}
 
 \begin{defn}
-Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ is
+Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ be
 a filter on a set $Y$. $\mathcal{A}\ge_{1}\mathcal{B}$ iff $\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})$
 is not empty.
 \end{defn}
 
 \begin{defn}
-Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ is
+Let $\mathcal{A}$ be a filter on a set $X$ and $\mathcal{B}$ be
 a filter on a set $Y$. $\mathcal{A}\ge_{2}\mathcal{B}$ iff $\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$
 is not empty.\end{defn}
 \begin{prop}
@@ -220,7 +219,7 @@ for every $C\in\subsets\Base(\mathcal{B})$.
 \begin{widedisorder}
 \item [{\ref{gre-imp}}] ~
 \begin{multline*}
-f\in\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\supseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\\
+f\in\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}\Leftrightarrow\\
 \forall C\in\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}:C\in\mathcal{B}\Leftrightarrow\forall C\in\subsets\Base(\mathcal{B}):(\rsupfun{f^{-1}}C\in\mathcal{A}\Rightarrow C\in\mathcal{B}).
 \end{multline*}
 
@@ -242,15 +241,15 @@ morphisms.
 \begin{defn}
 \index{directly isomorphic}A filter $\mathcal{A}$ is \emph{directly
 isomorphic} to a filter $\mathcal{B}$ iff there is a morphism $f\in\Hom_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.\end{defn}
-\begin{cor}
+\begin{obvious}
 $f\in\Hom_{\mathbf{GreFunc}_{1}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
 for every $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$ to $\Base(\mathcal{B})$.
-\end{cor}
+\end{obvious}
 
-\begin{cor}
+\begin{obvious}
 $f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})\Leftrightarrow\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$
 for every $\mathbf{Set}$-morphism from $\Base(\mathcal{A})$ to $\Base(\mathcal{B})$.
-\end{cor}
+\end{obvious}
 
 \begin{cor}
 $\mathcal{A}\ge_{1}\mathcal{B}$ iff it exists a $\mathbf{Set}$-morphism
@@ -264,7 +263,7 @@ $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$ such that $\mathcal{B}=\supf
 For a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 the following are equivalent:
 \begin{enumerate}
-\item \label{fbij-star}$\mathcal{B}=f\ast\mathcal{A}$.
+\item \label{fbij-star}$\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}$.
 \item \label{fbij-eback}$\forall C\in\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A})$.
 \item \label{fbij-eforw}$\forall C\in\Base(\mathcal{A}):(C\in\rsupfun f\mathcal{B}\Leftrightarrow C\in\mathcal{A})$.
 \item \label{fbij-rbij}$\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$
@@ -280,10 +279,10 @@ is a function onto~$\mathcal{B}$.
 ~
 \begin{description}
 \item [{\ref{fbij-star}$\Leftrightarrow$\ref{fbij-eback}}] ~
-\begin{multline*}
-\mathcal{B}=f\ast\mathcal{A}\Leftrightarrow\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}\Leftrightarrow\\
+\[
+\mathcal{B}=\setcond{C\in\subsets\Base(\mathcal{B})}{\rsupfun{f^{-1}}C\in\mathcal{A}}\Leftrightarrow\\
 \forall C\in\subsets\Base(\mathcal{B}):(C\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}C\in\mathcal{A}).
-\end{multline*}
+\]
 
 \item [{\ref{fbij-eback}$\Leftrightarrow$\ref{fbij-eforw}}] Because
 $f$ is a bijection.
@@ -294,7 +293,7 @@ Thus $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is onto $\mathcal{B}$.
 \item [{\ref{fbij-rsurj}$\Rightarrow$\ref{fbij-rbij}}] We need to prove
 only that $\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}}$ is an
 injection. But this follows from the fact that $f$ is a bijection.
-\item [{\ref{fbij-rbij}$\Rightarrow$\ref{fbij-eforw}}] We have $\forall C\in\Base(\mathcal{A}):((\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}})C\Leftrightarrow C\in\mathcal{A})$
+\item [{\ref{fbij-rbij}$\Rightarrow$\ref{fbij-eforw}}] We have $\forall C\in\Base(\mathcal{A}):((\supfun{\uparrow^{\mathsf{FCD}}f}|_{\mathcal{A}})C\in\mathcal{B}\Leftrightarrow C\in\mathcal{A})$
 and consequently $\forall C\in\Base(\mathcal{A}):(\rsupfun fC\in\mathcal{B}\Leftrightarrow C\in\mathcal{A})$.
 \item [{\ref{fbij-feq}$\Leftrightarrow$\ref{fbij-star}}] From the last
 corollary.
@@ -328,6 +327,7 @@ function onto $\mathcal{B}$.
 \item There is a bijective $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 such that $\mathcal{B}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
 \item There is a bijective morphism $f\in\Hom_{\mathbf{GreFunc}_{2}}(\mathcal{A};\mathcal{B})$.
+\item There is a bijective morphism $f\in\Hom_{\mathbf{FuncBij}}(\mathcal{A};\mathcal{B})$.
 \end{enumerate}
 \end{cor}
 \begin{prop}
@@ -415,9 +415,9 @@ $B_{1}\in\mathcal{B}$, $B_{2}\in\mathcal{B}$, $C\in\mathcal{C}$
 such that there are bijections $f:A\rightarrow B_{1}$ and $g:B_{2}\rightarrow C$
 such that
 \[
-\forall X\in\subsets A:(X\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}X\in\mathcal{A})\quad\text{and}\quad\forall X\in\subsets B_{2}:(X\in\mathcal{A}\Leftrightarrow\rsupfun fX\in\mathcal{B}).
+\forall X\in\subsets A:(X\in\mathcal{B}\Leftrightarrow\rsupfun{f^{-1}}X\in\mathcal{A})\quad\text{and}\quad\forall X\in\subsets B_{1}:(X\in\mathcal{A}\Leftrightarrow\rsupfun fX\in\mathcal{B})
 \]
-Also $\forall X\in\subsets B_{2}:(X\in\mathcal{B}\Leftrightarrow\rsupfun gX\in\mathcal{C})$.
+and also $\forall X\in\subsets B_{2}:(X\in\mathcal{B}\Leftrightarrow\rsupfun gX\in\mathcal{C})$.
 
 
 So $g\circ f$ is a bijection from $\rsupfun{f^{-1}}(B_{1}\cap B_{2})\in\mathcal{A}$
@@ -459,7 +459,7 @@ from the last lemma.
 
 Now assume without loss of generality $\card(X\setminus A)<\card(Y\setminus B)$.
 
-$\card B=\card Y$ because $\card(Y\setminus B)<\card Y$.
+$\card B=\card Y$ because otherwise $\card(X\setminus A)=\card(Y\setminus B)$.
 
 It is easy to show that there exists $B'\supset B$ such that $\card(X\setminus A)=\card(Y\setminus B')$
 and $\card B'=\card B$.
@@ -522,7 +522,7 @@ $\mathcal{A}\div A$ and $\mathcal{B}$ with $\mathcal{B}\div B$.
 For ultrafilters $\ge_{2}$ is the same as Rudin-Keisler ordering
 (as defined in \cite{comfort-ultra}).\end{prop}
 \begin{proof}
-$x\ge_{2}y$ iff there exist sets $A\in x$ and $B\in y$ a bijective
+$x\ge_{2}y$ iff there exist sets $A\in x$ and $B\in y$ and a bijective
 $\mathbf{Set}$-morphism $f:X\rightarrow Y$ such that
 \[
 y\div B=\setcond{C\in\subsets Y}{\rsupfun{f^{-1}}C\in x\div A}
@@ -536,7 +536,7 @@ for ultrafilters is traditionally called \emph{Rudin-Keisler equivalence}.\end{r
 \begin{obvious}
 $(\ge_{1})\supseteq(\ge_{2})$.\end{obvious}
 \begin{defn}
-Let $Q$ and $R$ be binary relations on the set of filters. I will
+Let $Q$ and $R$ be binary relations on the set of (small) filters. I will
 denote $\mathbf{MonRld}_{Q,R}$ the directed multigraph with objects
 being filters and morphisms such monovalued reloids $f$ that $(\dom f)\mathrel Q\mathcal{A}$
 and $(\im f)\mathrel R\mathcal{B}$.
@@ -549,6 +549,17 @@ These are essentially the duals.
 Some of these directed multigraphs are categories with reloid composition
 (see below). By abuse of notation I will denote these categories the
 same as these directed multigraphs.
+
+\begin{lem}
+$\mathbf{CoMonRld}_{Q,R}\ne\emptyset \Leftrightarrow\mathbf{MonRld}_{Q,R}\ne\emptyset$.
+\end{lem}
+\begin{proof}
+$f\in\mathbf{CoMonRld}_{Q,R} \Leftrightarrow
+(\im f)\mathrel Q\mathcal{A} \land (\dom f)\mathrel R\mathcal{B} \Leftrightarrow
+(\dom f^{-1})\mathrel Q\mathcal{A} \land (\im f^{-1})\mathrel R\mathcal{B} \Leftrightarrow
+f^{-1}\in\mathbf{MonRld}_{Q,R}$ for every monovalued reloid~$f$ (or what is the same, injective reloid~$f^{-1}$).
+\end{proof}
+
 \begin{thm}
 For every filters $\mathcal{A}$ and $\mathcal{B}$ the following
 are equivalent:
@@ -585,10 +596,12 @@ for a monovalued reloid $f\in\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{B}))
 Then there exists a $\mathbf{Set}$-morphism $F:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{A}$
 that is $\mathcal{A}\ge_{1}\mathcal{B}$.
-\item [{\ref{g1-c-le-ge}$\Rightarrow$\ref{g1-c-le-eq}}] $\dom f|_{\mathcal{B}}=\mathcal{B}$
-and $\im f|_{\mathcal{B}}\sqsupseteq\mathcal{A}$.
+\item [{\ref{g1-c-le-ge}$\Rightarrow$\ref{g1-c-le-eq}}] Let $f$ be an injective reloid such that
+$\im f\sqsubseteq\mathcal{A}$ and $\dom f\sqsupseteq\mathcal{B}$. Then
+$\im f|_{\mathcal{B}}\sqsubseteq\mathcal{A}$ and $\dom f|_{\mathcal{B}}=\mathcal{B}$.
+So $f|_{\mathcal{B}}\in\Hom_{\mathbf{CoMonRld}_{\sqsubseteq,=}}(\mathcal{A};\mathcal{B})$.
 \item [{\ref{ge1-eq-ge}$\Leftrightarrow$\ref{g1-c-eq-ge},~\ref{ge1-le-ge}$\Leftrightarrow$\ref{g1-c-le-ge},~\ref{ge1-le-eq}$\Leftrightarrow$\ref{g1-c-le-eq}}] By
-duality.
+the lemma.
 \end{description}
 \end{proof}
 \begin{thm}
@@ -612,15 +625,17 @@ and
 \im(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\im\tofcd(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\im(\uparrow^{\mathsf{FCD}}f)|_{\mathcal{A}}=\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}=\mathcal{B}.
 \]
 So $(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}$ is a sought for reloid.
-\item [{\ref{ge2-mon}$\Rightarrow$\ref{ge2-in}}] By corollary \ref{mv-is-restr}
+\item [{\ref{ge2-mon}$\Rightarrow$\ref{ge2-in}}] There exists a monovalued reloid~$f$ with domain~$\mathcal{A}$
+such that $\supfun{\tofcd f}\mathcal{A}=\mathcal{B}$.
+By corollary \ref{mv-is-restr}
 below, there exists a $\mathbf{Set}$-morphism $F:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
-such that $f=(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}$. Thus
+such that $f=(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}$. Thus
 \[
 \supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{A}=\im(\uparrow^{\mathsf{FCD}}F)|_{\mathcal{A}}=\im\tofcd(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}=\im\tofcd f=\im f=\mathcal{B}.
 \]
 Thus $\mathcal{A}\ge_{2}\mathcal{B}$ is testified by the morphism
 $F$.
-\item [{\ref{ge2-mon}$\Leftrightarrow$\ref{ge2-comon}}] By duality.
+\item [{\ref{ge2-mon}$\Leftrightarrow$\ref{ge2-comon}}] By the lemma.
 \end{description}
 \end{proof}
 \begin{thm}
@@ -678,13 +693,13 @@ Obviously $f=(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}$ is monovalued
 and injective.
 \begin{align*}
 \im f & =\\
-\bigsqcap\setcond{\uparrow \im G}{G\in(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}} & =\\
-\bigsqcap\setcond{\uparrow \im(H\cap F|_{X})}{H\in(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}},X\in\mathcal{A}} & =\\
-\bigsqcap\setcond{\uparrow \im F|_{P}}{P\in\mathcal{A}} & =\\
-\bigsqcap\setcond{\uparrow \rsupfun FP}{P\in\mathcal{A}} & =\\
-\bigsqcap\setcond{\uparrow \rsupfun FP}{P\in\subsets A\cap\mathcal{A}} & =\\
-\bigsqcap\rsupfun{\uparrow }(\subsets B\cap\mathcal{B}) & =\\
-\bigsqcap\rsupfun{\uparrow }\mathcal{B}=\mathcal{B}.
+\bigsqcap^{\mathfrak{F}}\setcond{\im G}{G\in\up(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}}} & =\\
+\bigsqcap^{\mathfrak{F}}\setcond{\im(H\cap F|_{X})}{H\in\up(\uparrow^{\mathsf{RLD}}F)|_{\mathcal{A}},X\in\mathcal{A}} & =\\
+\bigsqcap^{\mathfrak{F}}\setcond{\im F|_{P}}{P\in\mathcal{A}} & =\\
+\bigsqcap^{\mathfrak{F}}\setcond{\rsupfun FP}{P\in\mathcal{A}} & =\\
+\bigsqcap^{\mathfrak{F}}\setcond{\rsupfun FP}{P\in\subsets A\cap\mathcal{A}} & =\\
+\bigsqcap^{\mathfrak{F}}(\subsets B\cap\mathcal{B}) & =\\
+\bigsqcap^{\mathfrak{F}}\mathcal{B}=\mathcal{B}.
 \end{align*}
 Thus $\dom f=\mathcal{A}$ and $\im f=\mathcal{B}$.
 
@@ -722,7 +737,7 @@ We need to prove only $b\ge_{1}a\Rightarrow b\ge_{2}a$. If $b\ge_{1}a$
 then there exists a monovalued reloid $f:\Base(b)\rightarrow\Base(a)$
 such that $\dom f=b$ and $\im f\sqsupseteq a$. Then $\im f=\im\tofcd f\in\{\bot^{\mathscr{F}(\Base(a))}\}\cup\atoms^{\mathscr{F}(\Base(a))}$
 because $\tofcd f$ is a monovalued funcoid. So $\im f=a$ (taken
-into account $a\ne\bot^{\mathscr{F}(\Base(a))}$) and thus $b\ge_{2}a$\@.\end{proof}
+into account $\im f\ne\bot^{\mathscr{F}(\Base(a))}$) and thus $b\ge_{2}a$\@.\end{proof}
 \begin{cor}
 For atomic filters $\ge_{1}$ is the same as $\ge_{2}$.
 \end{cor}
@@ -735,8 +750,8 @@ pair of ultrafilters}
 
 \subsubsection{The lemmas}
 
-The lemmas in this section were provided to me by Robert Martin Solovay
-in \cite{solovay-on-identity}. They are based on Wistar Comfort's
+The lemmas in this section were provided to me by \noun{Robert Martin Solovay}
+in \cite{solovay-on-identity}. They are based on \noun{Wistar Comfort}'s
 work.
 
 In this section we will assume $\mu$ is an ultrafilter on a set $I$
@@ -829,7 +844,7 @@ $C\notin\mu$.\end{lem}
 Let $\beta$ be a function $C\rightarrow\mathbb{N}$ such that $\beta(x)$
 is the least $n\in\mathbb{N}$ such that $f^{n}(x)$ is periodic.
 
-Let $C_{0}=\setcond{x\in C}{\beta(x)\text{ is even}}$ and $C_{0}=\setcond{x\in C}{\beta(x)\text{ is odd}}$.
+Let $C_{0}=\setcond{x\in C}{\beta(x)\text{ is even}}$ and $C_{1}=\setcond{x\in C}{\beta(x)\text{ is odd}}$.
 
 Obviously $C_{j}\cap\rsupfun fC_{j}=\emptyset$ for $j=0,1$. Hence
 by lemma \ref{lem:one-reloid-first} we have $C_{0},C_{1}\notin\mu$
@@ -891,7 +906,7 @@ $a$.
 We will prove only \ref{atom-oneiso} because the rest follow from
 it.
 
-Let $f$ be a monovalued morphism from $\Base(a)$ to $\Base(a)$.
+Let $f$ be a monovalued morphism of reloid triples from~$a$ to~$a$.
 Then it exists a $\mathbf{Set}$-morphism $F$ such that $F\in f$.
 Trivially $\supfun{\uparrow^{\mathsf{FCD}}F}a\sqsupseteq a$ and thus
 $\rsupfun FA\in a$ for every $A\in a$. Thus by the lemma we have
@@ -905,7 +920,7 @@ from $\mathcal{A}$ to $\mathcal{B}$.\end{cor}
 Suppose that $f$ and $g$ are two different bijective reloids from
 $\mathcal{A}$ to $\mathcal{B}$. Then $g^{-1}\circ f$ is not the
 identity reloid (otherwise $g^{-1}\circ f=\id_{\dom f}^{\mathsf{RLD}}$
-and so $f=g$). But $g^{-1}\circ f$ is a bijective reloid (as a composition
+and so $f=g$ because $f$ and~$g$ are isomorphisms). But $g^{-1}\circ f$ is a bijective reloid (as a composition
 of bijective reloids) from $\mathcal{A}$ to $\mathcal{A}$ what is
 impossible.
 \end{proof}
@@ -939,14 +954,14 @@ principal.\end{proof}
 Let $f_{0}$ and $f_{1}$ be $\mathbf{Set}$-morphisms. Let $f(x;y)=(f_{0}x;f_{1}y)$
 for a function $f$. Then
 \[
-\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\supfun{\uparrow^{\mathsf{FCD}}f_{0}}\mathcal{A}\times^{\mathsf{RLD}}\supfun{\uparrow^{\mathsf{FCD}}f_{1}}\mathcal{B}.
+\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\supfun{\uparrow^{\mathsf{FCD}}f_{0}}\mathcal{A}\times^{\mathsf{RLD}}\supfun{\uparrow^{\mathsf{FCD}}f_{1}}\mathcal{B}.
 \]
 \end{lem}
 \begin{proof}
 ~
 \begin{align*}
-\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
-\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}}\bigsqcap\setcond{\uparrow^{\Src f_{0}\times\Src f_{1}}(A\times B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
+\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
+\supfun{\uparrow^{\mathsf{FCD}(\Src f_{0}\times\Src f_{1};\Dst f_{0}\times\Dst f_{1})}f}\bigsqcap\setcond{\uparrow^{\Src f_{0}\times\Src f_{1}}(A\times B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
 \bigsqcap\setcond{\uparrow^{\Dst f_{0}\times\Dst f_{1}}\rsupfun f(A\times B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
 \bigsqcap\setcond{\uparrow^{\Dst f_{0}\times\Dst f_{1}}(\rsupfun{f_{0}}A\times\rsupfun{f_{1}}B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\\
 \bigsqcap\setcond{\uparrow^{\Dst f_{0}}\rsupfun{f_{0}}A\times\uparrow^{\Dst f_{1}}\rsupfun{f_{1}}B)}{A\in\mathcal{A},B\in\mathcal{B}} & =\text{ (theorem \ref{meet-prod-fcd})}\\
@@ -1021,7 +1036,7 @@ a principal filter (of the same cardinality as $A$).\end{proof}
 A filter isomorphic to a non-trivial ultrafilter is a non-trivial
 ultrafilter.\end{prop}
 \begin{proof}
-Let $a$ be a non-trivial ultrafilter and $a$ is isomorphic to $b$.
+Let $a$ be a non-trivial ultrafilter and $a$ be isomorphic to $b$.
 Then $a\ge_{2}b$ and thus $b$ is an ultrafilter. The filter $b$
 cannot be trivial because otherwise $a$ would be also trivial.\end{proof}
 \begin{thm}
@@ -1099,7 +1114,7 @@ $f$ is a restricted principal monovalued reloid. Thus $f=F|_{\dom f}$
 where $F$ is a principal monovalued reloid. Thus $f$ is principal.\end{proof}
 \begin{lem}
 If a filter $\mathcal{A}$ is isomorphic to a filter $\mathcal{B}$
-then if $X$ is a set then there exists a set $Y$ such that $\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$
+then if $X$ is a typed set then there exists a typed set~$Y$ such that $\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$
 is a filter isomorphic to $\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.\end{lem}
 \begin{proof}
 Let $f$ be a monovalued injective reloid such that $\dom f=\mathcal{A}$,
@@ -1109,7 +1124,7 @@ By proposition \ref{factor-isomor} we have: $\uparrow^{\Base(\mathcal{A})}X\sqca
 where $\mathcal{X}$ is a filter complementive to $\mathcal{A}$.
 Let $\mathcal{Y}=\mathcal{A}\setminus\mathcal{X}$.
 
-$\supfun{\tofcd f}\mathcal{X}\sqcap\supfun{\tofcd f}\mathcal{Y}=\bot^{\mathscr{F}(\Base(\mathcal{B}))}$
+$\supfun{\tofcd f}\mathcal{X}\sqcap\supfun{\tofcd f}\mathcal{Y}=\supfun{\tofcd f}(\mathcal{X}\sqcap\mathcal{Y})=\bot^{\mathscr{F}(\Base(\mathcal{B}))}$
 by injectivity of $f$.
 
 $\supfun{\tofcd f}\mathcal{X}\sqcup\supfun{\tofcd f}\mathcal{Y}=\supfun{\tofcd f}(\mathcal{X}\sqcup\mathcal{Y})=\supfun{\tofcd f}\mathcal{A}=\mathcal{B}$.
@@ -1135,8 +1150,8 @@ such that $\supfun{\uparrow^{\mathsf{FCD}(\mathbb{N};\mathbb{N})}h_{n}}u_{n+1}=u
 and $u_{n}$ are pairwise non-isomorphic. (See \cite{kleene-degrees}
 for a proof that such ultrafilters and functions exist.)
 
-$\mathcal{A}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1})$;
-$\mathcal{B}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n})$.
+$\mathcal{A}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n+1})$;
+$\mathcal{B}\eqdef\bigsqcup_{n\in\mathbb{Z}}(\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n})$.
 
 Let the $\mathbf{Set}$-morphisms $f,g:\mathbb{Z}\times\mathbb{N}\rightarrow\mathbb{Z}\times\mathbb{N}$
 be defined by the formulas $f(n;x)=(n;h_{2n}x)$ and $g(n;x)=(n-1;h_{2n-1}x)$.
@@ -1145,13 +1160,13 @@ Using the fact that every function induces a complete funcoid and
 a lemma above we get:
 \begin{align*}
 \supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A} & =\\
-\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1}}{n\in\mathbb{Z}} & =\\
-\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n+1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n}}{n\in\mathbb{Z}} & =\\
 \mathcal{B}.\\
-\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{B} & =\\
-\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}} & =\\
-\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}f}}\setcond{\uparrow^{\mathbb{Z}}\{n-1\}\times u_{2n-1}}{n\in\mathbb{Z}} & =\\
-\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n+1}}{n\in\mathbb{Z}} & =\\
+\supfun{\uparrow^{\mathsf{FCD}}g}\mathcal{B} & =\\
+\bigsqcup\rsupfun{\supfun{\uparrow^{\mathsf{FCD}}g}}\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n-1\}\times^{\mathsf{RLD}} u_{2n-1}}{n\in\mathbb{Z}} & =\\
+\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n+1}}{n\in\mathbb{Z}} & =\\
 \mathcal{A}.
 \end{align*}
 
@@ -1171,8 +1186,8 @@ and thus $\uparrow^{\mathbb{Z}\times\mathbb{N}}X\sqcap\mathcal{A}=\bot^{\mathbb{
 
 We have also
 \begin{multline*}
-(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\mathcal{B}=(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times u_{2n}}{n\in\mathbb{Z}}=\\
-\bigsqcup\setcond{(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap(\uparrow^{\mathbb{Z}}\{n\}\times u_{2n})}{n\in\mathbb{Z}}=\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}u_{0}\text{ (an ultrafilter).}
+(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\mathcal{B}=(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap\bigsqcup\setcond{\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n}}{n\in\mathbb{Z}}=\\
+\bigsqcup\setcond{(\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}\mathbb{N})\sqcap(\uparrow^{\mathbb{Z}}\{n\}\times^{\mathsf{RLD}} u_{2n})}{n\in\mathbb{Z}}=\uparrow^{\mathbb{Z}}\{0\}\times^{\mathsf{RLD}}u_{0}\text{ (an ultrafilter).}
 \end{multline*}
 
 
@@ -1212,12 +1227,12 @@ $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in\up\bigsqcap G}^{\mathsf{RLD}}(g
 \up\bigsqcap_{g\in G}\bigsqcap_{\Gamma\in\up g}^{\mathsf{RLD}}(\Gamma\circ\varphi) & =\\
 \up\bigsqcap\bigcup_{g\in G}\setcond{\uparrow^{\mathsf{RLD}}(\Gamma\circ\varphi)}{\Gamma\in\up g} & =\\
 \up\bigsqcap_{\Gamma\in\up\bigsqcap G}^{\mathsf{RLD}}(\Gamma\circ\varphi) & =\\
-\up\bigsqcap\setcond{(\Gamma_{0}\circ\varphi)\sqcap\dots\sqcap(\Gamma_{n}\circ\varphi)}{\Gamma_{i}\in\bigcup G\text{ where \ensuremath{i=0,\dots,n} for \ensuremath{n\in\mathbb{N}}}} & =\text{ (proposition above)}\\
-\up\bigsqcap\setcond{(\Gamma_{0}\sqcap\dots\sqcap\Gamma_{n})\circ\varphi}{\Gamma_{i}\in\bigcup G\text{ where \ensuremath{i=0,\dots,n} for \ensuremath{n\in\mathbb{N}}}} & =\\
+\up\bigsqcap\setcond{(\Gamma_{0}\circ\varphi)\sqcap\dots\sqcap(\Gamma_{n}\circ\varphi)}{\Gamma_{i}\in\up\bigsqcap G\text{ where \ensuremath{i=0,\dots,n} for \ensuremath{n\in\mathbb{N}}}} & =\text{ (proposition above)}\\
+\up\bigsqcap\setcond{(\Gamma_{0}\sqcap\dots\sqcap\Gamma_{n})\circ\varphi}{\Gamma_{i}\in\up\bigsqcap G\text{ where \ensuremath{i=0,\dots,n} for \ensuremath{n\in\mathbb{N}}}} & =\\
 \up\bigsqcap\setcond{\Gamma\circ\varphi}{\Gamma\in\up\bigsqcap G}.
 \end{align*}
 Thus $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.\end{proof}
-\begin{thm}
+\begin{thm}\label{rld-meta}
 ~
 \begin{enumerate}
 \item Monovalued reloids are metamonovalued.

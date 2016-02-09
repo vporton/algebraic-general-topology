@@ -5,10 +5,10 @@
 \section{Some lemmas}
 \begin{lem}
 Let $U$ be a set, $A,B\in\mathscr{T}U$ be typed sets, $f$ be an
-endo-funcoid on $U$. If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$
+endo-funcoid on $U$. If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$
 then $f$ is closed on $A$.\end{lem}
 \begin{proof}
-Let $A\sqcup B\in\dom f\sqcup\im f$.
+Let $A\sqcup B\in\up(\dom f\sqcup\im f)$.
 \begin{align*}
 \lnot(A\rsuprel fB) & \Leftrightarrow\\
 B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
@@ -18,20 +18,20 @@ B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
 \end{align*}
 \end{proof}
 \begin{cor}
-If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$ then
+If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$ then
 $f$ is closed on $A\setminus B$ for a funcoid $f\in\mathsf{FCD}(U;U)$
 for every sets $U$ and typed sets $A,B\in\mathscr{T}U$.\end{cor}
 \begin{proof}
-Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$. Then
+Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$. Then
 \[
-\lnot((A\setminus B)\rsuprel fB)\land(A\setminus B)\sqcup B\in\dom f\sqcup\im f.
+\lnot((A\setminus B)\rsuprel fB)\land(A\setminus B)\sqcup B\in\up(\dom f\sqcup\im f).
 \]
 \end{proof}
 \begin{lem}
-If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$ then
+If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$ then
 $\lnot(A\rsuprel{f^{n}}B)$ for every whole positive $n$.\end{lem}
 \begin{proof}
-Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\dom f\sqcup\im f$. From
+Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$. From
 the above lemma $\rsupfun fA\sqsubseteq A$. $B\sqcap\supfun fA=\bot^{\mathscr{F}(U)}$,
 consequently $\rsupfun fA\sqsubseteq A\setminus B$. Because (by the
 above corollary) $f$ is closed on $A\setminus B$, then $\supfun f\supfun fA\sqsubseteq A\setminus B$,
@@ -89,7 +89,7 @@ when
 -endomorphism@regarding $\mathbf{Rel}$-endomorphism}A typed set~$A$ of type~$U$ is called \emph{(strongly) connected}
 regarding a $\mathbf{Rel}$-endomorphism~$\mu$ on~$U$ when
 \[
-\forall X\in\mathscr{T}(\Ob\mu)\setminus\{\bot^{\mathscr{T}(\Ob\mu)}\},Y\in\mathscr{T}(\Ob\mu)\setminus\{\bot^{\mathscr{T}(\Ob\mu)}\}:(X\sqcup Y=A\Rightarrow X\rsuprel{\mu}Y).
+\forall X,Y\in\mathscr{T}(\Ob\mu)\setminus\{\bot^{\mathscr{T}(\Ob\mu)}\}:(X\sqcup Y=A\Rightarrow X\rsuprel{\mu}Y).
 \]
 \end{defn}
 \begin{obvious}
@@ -268,7 +268,7 @@ S^{\ast}(\uparrow^{\mathsf{RLD}}(\mu\sqcap(A\times A))) & =\\
 So
 \begin{align*}
 S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A))\sqsupseteq A\times^{\mathsf{RLD}}A & \Leftrightarrow\\
-\uparrow^{\mathsf{RLD}(U;U)}S(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=A\times^{\mathsf{RLD}}A.
+\uparrow^{\mathsf{RLD}}S(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=A\times^{\mathsf{RLD}}A.
 \end{align*}
 
 \item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-fcd}}] It
@@ -277,7 +277,7 @@ follows from the previous proposition.
 \end{proof}
 Next is conjectured a statement more strong than the above theorem:
 \begin{conjecture}
-Let $\mathcal{A}$ be a filter on a set $U$ and $F$ is a $\mathbf{Rel}$-endomorphism
+Let $\mathcal{A}$ be a filter on a set $U$ and $F$ be a $\mathbf{Rel}$-endomorphism
 on $U$.
 
 $\mathcal{A}$ is connected regarding $\uparrow^{\mathsf{FCD}}F$
@@ -298,7 +298,7 @@ is connected regarding every $F\in\rsupfun{\uparrow^{\mathsf{RLD}}}\up f$.\end{t
 \begin{description}
 \item [{$\Rightarrow$}] Obvious.
 \item [{$\Leftarrow$}] $\mathcal{A}$ is connected regarding $\uparrow^{\mathsf{RLD}}F$
-iff $S(F)=F^{0}\sqcup F^{1}\sqcup F^{2}\sqcup\dots\in\up\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
+iff $S(F)=F^{0}\sqcup F^{1}\sqcup F^{2}\sqcup\dots\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})$.
 
 
 $S^{\ast}(f)=\bigsqcap_{F\in\up f}^{\mathsf{RLD}}S(F)\sqsupseteq\bigsqcap_{F\in\up f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
@@ -358,8 +358,8 @@ $S^{\ast}(S^{\ast}(f))=S^{\ast}(f)$ for every endoreloid $f$.\end{thm}
 S^{\ast}(S^{\ast}(f)) & =\\
 \bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(R) & \sqsubseteq\\
 \bigsqcap_{R\in\setcond{S(F)}{F\in\up f}}^{\mathsf{RLD}}S(R) & =\\
-\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(S(R)) & =\\
-\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(R) & =\\
+\bigsqcap_{R\in\up f}^{\mathsf{RLD}}S(S(R)) & =\\
+\bigsqcap_{R\in\up f}^{\mathsf{RLD}}S(R) & =\\
 S^{\ast}(f).
 \end{align*}
 

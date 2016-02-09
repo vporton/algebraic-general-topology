@@ -62,13 +62,13 @@ Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
 $\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
 If $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ then
 \[
-f|_{\supfun{\mu}\mathcal{A}}\overset{\mu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}.
+f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}.
 \]
 \end{lem}
 \begin{proof}
 ~
 \begin{multline*}
-f|_{\supfun{\mu}\mathcal{A}}\overset{\mu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\im f|_{\supfun{\mu}\mathcal{A}}\sqsubseteq\supfun{\nu}\supfun f\mathcal{A}\Leftrightarrow\\
+f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\im f|_{\supfun{\mu}\mathcal{A}}\sqsubseteq\supfun{\nu}\supfun f\mathcal{A}\Leftrightarrow\\
 \supfun f\supfun{\mu}\mathcal{A}\sqsubseteq\supfun{\nu}\supfun f\mathcal{A}\Leftrightarrow\supfun{f\circ\mu}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}.
 \end{multline*}
 \end{proof}
@@ -139,6 +139,7 @@ group on $\Ob\mu$.
 
 For an element $r\in G$ we will denote $\uparrow r=\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\mu)}r$.
 
+We require that $\mu$ and every $r\in G$ commute, that is
 \[
 \mu\circ\uparrow r=\uparrow r\circ\mu.
 \]
@@ -203,7 +204,7 @@ for every (fixed) $x\in D$.\end{prop}
 (\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\})\circ\uparrow r & =\\
 \supfun{\uparrow r^{-1}}\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\} & =\\
 \supfun{\mu}\rsupfun{\uparrow r^{-1}}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\} & =\\
-\rsupfun{\mu}@\{r^{-1}x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\} & \in\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\}.
+\rsupfun{\mu}@\{r^{-1}x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\} & \in \setcond{\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\}}{x\in D}.
 \end{align*}
 
 
@@ -216,13 +217,13 @@ of a constant funcoid.\end{prop}
 \begin{proof}
 ~
 \begin{align*}
-\xlim(\uparrow^{\Ob\mu}\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\uparrow^{\Base(\Ob\nu)}\{y\}) & =\\
+\xlim(\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\uparrow^{\Base(\Ob\nu)}\{y\}) & =\\
 \setcond{\nu\circ(\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\uparrow^{\Base(\Ob\nu)}\{y\})\circ\uparrow r}{r\in G} & =\\
 \setcond{(\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\})\circ\uparrow r}{r\in G} & =\tau(y).
 \end{align*}
 \end{proof}
 \begin{thm}
-If $f|_{\rsupfun{\mu}@\{x\}}\in\continuous(\mu;\nu)$
+If $f$ is a function and $f|_{\rsupfun{\mu}@\{x\}}\in\continuous(\mu;\nu)$
 and $\rsupfun{\mu}@\{x\}\sqsupseteq\uparrow^{\Ob\mu}\{x\}$
 then $\xlim_{x}f=\tau(fx)$.\end{thm}
 \begin{proof}
@@ -279,7 +280,7 @@ So $\nu\circ f|_{\rsupfun{\mu}@\{x\}}=\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\r
 
 $\xlim_{x}f=\setcond{\nu\circ f|_{\rsupfun{\mu}@\{x\}}\circ\uparrow r}{r\in G}=\setcond{(\rsupfun{\mu}@\{x\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\})\circ\uparrow r}{r\in G}=\tau(y)$.\end{proof}
 \begin{cor}
-If $\lim_{\rsupfun{\mu}@\{x\}}^{\nu}f=y$ then $\xlim_{x}f=\tau(y)$.
+If $\lim_{\rsupfun{\mu}@\{x\}}^{\nu}f=y$ then $\xlim_{x}f=\tau(y)$ (provided that $\nu\sqsubseteq\nu\circ\nu$).
 \end{cor}
 We have injective $\tau$ if $\rsupfun{\nu}@\{y_{1}\}\sqcap\rsupfun{\nu}@\{y_{2}\}=\bot^{\mathscr{F}(\Ob\mu)}$
 for every distinct $y_{1},y_{2}\in\Ob\nu$ that is if $\nu$ is $T_{2}$-separable.

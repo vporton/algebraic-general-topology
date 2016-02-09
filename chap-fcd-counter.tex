@@ -87,7 +87,7 @@ is trivial a ultrafilter or the least filter.\end{proof}
 \begin{cor}
 Reloidal product of a non-trivial atomic filter with itself is non-atomic.\end{cor}
 \begin{proof}
-Obviously $(a\times^{\mathsf{RLD}}a)\sqcap1_{\Base(a)}^{\mathsf{RLD}}\ne\bot^{\mathscr{F}(\Base(a))}$
+Obviously $(a\times^{\mathsf{RLD}}a)\sqcap1_{\Base(a)}^{\mathsf{RLD}}\ne\bot^{\mathsf{RLD}}$
 and $(a\times^{\mathsf{RLD}}a)\sqcap1_{\Base(a)}^{\mathsf{RLD}}\sqsubset a\times^{\mathsf{RLD}}a$.\end{proof}
 \begin{example}
 There exist two atomic reloids whose composition is non-atomic and
@@ -157,7 +157,7 @@ There exists a principal funcoid which is not a complemented element
 of the lattice of funcoids.\end{example}
 \begin{proof}
 I will prove that quasi-complement of the funcoid $1_{\mathbb{N}}^{\mathsf{FCD}}$
-is not its complement. We have:
+is not its complement (it is enough by proposition~\ref{compl-is-pseud}). We have:
 \begin{align*}
 (1_{\mathbb{N}}^{\mathsf{FCD}})^{\ast} & =\\
 \bigsqcup\setcond{c\in\mathsf{FCD}(\mathbb{N};\mathbb{N})}{c\asymp1_{\mathbb{N}}^{\mathsf{FCD}}} & \sqsupseteq\\
@@ -210,22 +210,23 @@ and thus $\torldout g\circ\torldout f=\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}
 
 We have $g\circ f=\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
 
-Let's prove $\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\})=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
+$\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\})=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}$
+by properties of funcoidal reloids.
 
-Really:
-\begin{align*}
-\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}) & =\\
-\bigsqcap^{\mathsf{RLD}}\up(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}) & =\\
-\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(K\times\uparrow^{\mathbb{N}}\{\alpha\});\\
-F\in\up\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(K\times\uparrow^{\mathbb{N}}\{\alpha\}) & \Leftrightarrow\up\left(\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathscr{F}}K\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}\right)
-\end{align*}
-for every $F\in\subsets(\mathbb{N}\times\mathbb{N})$. Thus 
-\[
-\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}}(K\times\uparrow^{\mathbb{N}}\{\alpha\})=\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathscr{F}}K\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}.
-\]
+% Really:
+% \begin{align*}
+% \torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}) & =\\
+% \bigsqcap^{\mathsf{RLD}}\up(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\}) & =\\
+% \bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(K\times\uparrow^{\mathbb{N}}\{\alpha\});\\
+% F\in\up\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}(K\times\uparrow^{\mathbb{N}}\{\alpha\}) & \Leftrightarrow F\in\up\left(\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathscr{F}}K\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}\right)
+% \end{align*}
+% for every $F\in\subsets(\mathbb{N}\times\mathbb{N})$. Thus 
+% \[
+% \bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathsf{RLD}}(K\times\uparrow^{\mathbb{N}}\{\alpha\})=\bigsqcap_{K\in\up\Omega(\mathbb{N})}^{\mathscr{F}}K\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}.
+% \]
 
 
-So $\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\})=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
+% So $\torldout(\Omega(\mathbb{N})\times^{\mathsf{FCD}}\uparrow^{\mathbb{N}}\{\alpha\})=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}$.
 
 Thus $\torldout(g\circ f)=\Omega(\mathbb{N})\times^{\mathsf{RLD}}\uparrow^{\mathbb{N}}\{\alpha\}\ne\bot^{\mathsf{RLD}(\mathbb{N};\mathbb{N})}$.\end{proof}
 \begin{example}
@@ -272,10 +273,11 @@ for some $x\in\mathbb{N}$ what is impossible by proved above. So
 $g$ is not constant.
 
 Suppose that $g$ is injective. Then there exists an injection $G\in\up g$.
-So $\dom G$ intersects each vertical line by atmost one element that
-is $\overline{\dom G}$ intersects every vertical line by the whole
-line or the line without one element. Thus $\overline{\dom G}\in T\sqsupseteq\omega$
-and consequently $\dom G\notin\omega$ what is impossible.
+$F\sqcap G\in\up g$ is an injection which depends only on the first argument.
+So $\dom(F\sqcap G)$ intersects each vertical line by atmost one element that
+is $\overline{\dom(F\sqcap G)}$ intersects every vertical line by the whole
+line or the line without one element. Thus $\overline{\dom(F\sqcap G)}\in T\sqsupseteq\omega$
+and consequently $\dom(F\sqcap G)\notin\omega$ what is impossible.
 
 Thus $g$ is neither injective nor constant.
 \end{proof}
@@ -284,7 +286,7 @@ Thus $g$ is neither injective nor constant.
 \begin{defn}
 \index{product!second}$\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}=\torldout(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$
 for every filters $\mathcal{A}$ and $\mathcal{B}$. I will call it
-\emph{second direct product} of filters $A$ and $\mathcal{B}$.\end{defn}
+\emph{second product} of filters $A$ and $\mathcal{B}$.\end{defn}
 \begin{rem}
 The letter $F$ is the above definition is from the word ``funcoid''.
 It signifies that it seems to be impossible to define $\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
@@ -293,8 +295,8 @@ directly without referring to funcoidal product.\end{rem}
 \index{product!oblique}\emph{Oblique products} of filters $\mathcal{A}$
 and $\mathcal{B}$ are defined as
 \begin{align*}
-\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B};\\
-\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow^{\Base(\mathcal{B})}A\times^{\mathsf{FCD}}\mathcal{B}}.
+\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow B};\\
+\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\mathcal{B}}.
 \end{align*}
 \end{defn}
 \begin{prop}
@@ -304,8 +306,8 @@ for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
 ~
 \begin{align*}
 \mathcal{A}\ltimes\mathcal{B} & \sqsubseteq\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow^{\Base(\mathcal{B})}A\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B} & \sqsubseteq\\
-\bigsqcap\setcond{\uparrow^{\Base(\mathcal{B})}A\times^{\mathsf{RLD}}\uparrow^{\Base(\mathcal{B})}B}{A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\uparrow B} & \sqsubseteq\\
+\bigsqcap\setcond{\uparrow A\times^{\mathsf{RLD}}\uparrow B}{A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
 \mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}.\\
 \mathcal{A}\ltimes\mathcal{B} & \sqsupseteq\\
 \bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}} & =\\
@@ -343,9 +345,12 @@ Obviously $K\notin\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.
 $\mathcal{A}\ltimes\mathcal{B}\sqsubseteq\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K$
 and thus $K\in\up(\mathcal{A}\ltimes\mathcal{B})$ because 
 \[
-\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K\sqsupseteq\Delta_{+}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B=\mathcal{A}\times^{\mathsf{FCD}}\uparrow^{\Base(\mathcal{B})}B
+\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{B}))}K\sqsupseteq\Delta_{+}\times^{\mathsf{FCD}}\uparrow B=\mathcal{A}\times^{\mathsf{FCD}}\uparrow B
 \]
-for $B=(0;+\infty)$.
+for $B=(0;+\infty)$
+because for every $X\in\corestar\Delta_{+}$ there is $x\in X$ such that $x\in(0;\epsilon)$ (for every positive $\epsilon$)
+and thus $(\epsilon;+\infty)\subseteq\rsupfun{K}\{x\}$ so having
+\[\rsupfun{K}X = (0;+\infty) \in \GR\rsupfun{\Delta_{+}\times^{\mathsf{FCD}}\uparrow B}X.\]
 
 Thus $\mathcal{A}\ltimes\mathcal{B}\neq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$.\end{proof}
 \begin{example}
@@ -353,24 +358,10 @@ Thus $\mathcal{A}\ltimes\mathcal{B}\neq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{
 for some filters $\mathcal{A}$, $\mathcal{B}$.\end{example}
 \begin{proof}
 This follows from the above example.\end{proof}
-\begin{prop}
-$(\mathcal{A}\ltimes\mathcal{B})\sqcap(\mathcal{A}\rtimes\mathcal{B})=\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
-for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
-\begin{proof}
-~
-\begin{align*}
-(\mathcal{A}\ltimes\mathcal{B})\sqcap(\mathcal{A}\rtimes\mathcal{B}) & \sqsubseteq\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}} & =\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\uparrow^{\mathsf{FCD}}f\in\up(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})} & =\\
-\torldout(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}) & =\\
-\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}.
-\end{align*}
-
-
-To finish the proof we need to show $\mathcal{A}\ltimes\mathcal{B}\sqsupseteq\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
-and $\mathcal{A}\rtimes\mathcal{B}\sqsupseteq\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$.
-By symmetry it's enough to show $\mathcal{A}\ltimes\mathcal{B}\sqsupseteq\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
-what is proved above.\end{proof}
+\begin{conjecture}
+$(\mathcal{A}\ltimes\mathcal{B})\sqcap(\mathcal{A}\rtimes\mathcal{B})\ne\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}$
+for some filters $\mathcal{A}$, $\mathcal{B}$.\end{conjecture}
+(Earlier I presented a proof of the negation of this conjecture, but it was in error.)
 \begin{example}
 $(\mathcal{A}\ltimes\mathcal{B})\sqcup(\mathcal{A}\rtimes\mathcal{B})\sqsubset\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
 for some filters $\mathcal{A}$, $\mathcal{B}$.\end{example}
@@ -388,9 +379,10 @@ $Q\in\Omega(\mathbb{N})$.
 Obviously $(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\in\up((\mathcal{A}\ltimes\mathcal{B})\sqcup(\mathcal{A}\rtimes\mathcal{B}))$.
 
 $(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\nsupseteq X\times Y$
-because $(x;y)\in X\times Y$ but $(x;y)\notin(P\times\mathbb{N})\cup(\mathbb{N}\times Q)$.
+because $(x;y)\in X\times Y$ but $(x;y)\notin(P\times\mathbb{N})\cup(\mathbb{N}\times Q)$
+for every $X\in\up\mathcal{A}$, $Y\in\up\mathcal{B}$.
 
-Thus $(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\notin\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$
+Thus some $(P\times\mathbb{N})\cup(\mathbb{N}\times Q)\notin\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$
 by properties of filter bases.\end{proof}
 \begin{example}
 $\torldout\tofcd f\ne f$ for some convex reloid $f$.\end{example}

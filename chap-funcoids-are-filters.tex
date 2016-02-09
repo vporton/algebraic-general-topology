@@ -1,7 +1,7 @@
 
 \chapter{Funcoids are filters}
 
-The motto of this chapter is: ``Funcoids are filters on a lattice.''
+The motto of this chapter is: ``Funcoids are filters on a (boolean) lattice.''
 
 
 \section{Rearrangement of collections of sets}
@@ -37,7 +37,7 @@ $\emptyset\notin\mathfrak{R}(Q)$.\end{obvious}
 $\card\mathfrak{R}(Q)\leq2^{\card Q}$.\end{lem}
 \begin{proof}
 Having an equivalence class $C$, we can find the set $f\in\subsets Q$
-of all $X\in Q$ such that $a\in X$ for all $a\in C$. 
+of all $X\in Q$ such that $a\in X$, for every $a\in C$. 
 \[
 b\equiv a\Leftrightarrow\forall X\in Q:(a\in X\Leftrightarrow b\in X)\Leftrightarrow\forall X\in Q:(X\in f\Leftrightarrow b\in X).
 \]
@@ -62,8 +62,8 @@ such that $Y\subseteq X\wedge X\cap Y\neq\emptyset$.\end{prop}
 \begin{proof}
 Let $a\in X$. Then 
 \begin{multline*}
-[a]=\setcond{b\in\bigcup Q}{\forall X'\in Q:(a\in X'\Leftrightarrow b\in X')}=\\
-\setcond{b\in\bigcup Q}{\forall X'\in Q:b\in X'}\subseteq\setcond{b\in\bigcup Q}{b\in X}=X.
+[a]=\setcond{b\in\bigcup Q}{\forall X'\in Q:(a\in X'\Leftrightarrow b\in X')}\subseteq\\
+\setcond{b\in\bigcup Q}{a\in X\Leftrightarrow b\in X} = \setcond{b\in\bigcup Q}{b\in X}=X.
 \end{multline*}
 But $[a]\in\mathfrak{R}(Q)$.
 
@@ -114,21 +114,21 @@ for every $i=0,\ldots,n-1$.
 \item [{\ref{gamma-gamma}$\supseteq$\ref{gamma-YX},~\ref{gamma-YX}$\supseteq$\ref{gamma-YXpart}}] Obvious.
 \item [{\ref{gamma-gamma}$\subseteq$\ref{gamma-YX}}] Let $Q\in\Gamma(A;B)$.
 Then $Q=X_{0}\times Y_{0}\cup\ldots\cup X_{n-1}\times Y_{n-1}$. Denote
-$S=\{X_{0},\ldots,X_{n-1}\}$. We have $Q=\bigcup_{X'\in S}\left(X'\times\bigcup\setcond{Y_{i}}{X_{i}=X'}\right)\in\text{\ref{gamma-YX}}$.
+$S=\{X_{0},\ldots,X_{n-1}\}$. We have $Q=\bigcup_{X'\in S}\left(X'\times\bigcup_{i=0,\dots,n-1}\setcond{Y_{i}}{X_{i}=X'}\right)\in\text{\ref{gamma-YX}}$.
 \item [{\ref{gamma-YX}$\subseteq$\ref{gamma-YXpart}}] Let $Q=\bigcup_{X\in S}(X\times Y_{X})$
 where $S$ is a finite collection on $A$ and $Y_{X}\in\subsets B$
 for every $X\in S$. Let 
 \[
-P=\bigcup_{X'\in\mathfrak{R}(S)}\left(X'\times\bigcup\setcond{Y_{X}}{X\in S\wedge X'\subseteq X}\right)
+P=\bigcup_{X'\in\mathfrak{R}(S)}\left(X'\times\bigcup_{X\in S}\setcond{Y_{X}}{\exists X\in S:X'\subseteq X}\right).
 \]
 To finish the proof let's show $P=Q$.
 
 
-$\langle P\rangle^{\ast}\{x\}=\bigcup\setcond{Y_{X}}{X\in S\wedge X'\subseteq X}$
+$\langle P\rangle^{\ast}\{x\}=\bigcup_{X\in S}\setcond{Y_{X}}{\exists X\in S:X'\subseteq X}$
 where $x\in X'$.
 
 
-Thus $\langle P\rangle^{\ast}\{x\}=\bigcup\setcond{Y_{X}}{X\in S\wedge x\in X}=\langle Q\rangle^{\ast}\{x\}$.
+Thus $\langle P\rangle^{\ast}\{x\}=\bigcup\setcond{Y_{X}}{\exists X\in S:x\in X}=\langle Q\rangle^{\ast}\{x\}$.
 So $P=Q$.
 
 \item [{\ref{gamma-sigma}$\subseteq$\ref{gamma-YXpart}}] $\bigcup_{(X;Y)\in\sigma}(X\times Y)=\bigcup_{X\in\dom\sigma}\left(X\times\bigcup\setcond{Y\in\subsets B}{(X;Y)\in\sigma}\right)\in\text{\text{\ref{gamma-YXpart}}}$.
@@ -140,7 +140,7 @@ So $P=Q$.
 \end{multline*}
  where $\sigma$ is a relation between $S$ and $\mathfrak{R}\left(\setcond{Y_{X}}{X\in S}\right)$,
 and $(X;Y')\in\sigma\Leftrightarrow Y'\subseteq Y_{X}$.
-\item [{\ref{gamma-lineX}$\subseteq$\ref{gamma-YXpart}}] Obvious.
+\item [{\ref{gamma-lineX}$\subseteq$\ref{gamma-gamma}}] Obvious.
 \item [{\ref{gamma-YXpart}$\subseteq$\ref{gamma-lineX}}] Let $Q=\bigcup_{X\in S}(X\times Y_{X})=\bigcup_{i=0,\ldots,n-1}(X_{i}\times Y_{i})$
 for a partition $S=\{X_{0},\ldots,X_{n-1}\}$ of $A$. Then $Q=\bigcap_{i=0,\ldots,n-1}\left(X_{i}\times Y_{i}\cup\overline{X_{i}}\times B\right)$.
 \end{description}
@@ -153,11 +153,6 @@ $\Gamma(A;B)$ is a boolean lattice, a sublattice of the lattice $\subsets(A\time
 That it's a sublattice is obvious. That it has complement, is also
 obvious. Distributivity follows from distributivity of $\subsets(A\times B)$.
 \end{proof}
-I will denote $\mathfrak{F}\Gamma(A;B)=\setcond{(A;B;F)}{F\in\mathfrak{F}\Gamma[A;B]}$.
-\begin{rem}
-It should be instead be denoted as $(\mathfrak{F}\circ\Gamma)(A;B)$
-but for brevity I omit $\circ$.
-\end{rem}
 
 \section{Before the diagram}
 
@@ -208,27 +203,26 @@ and thus $P\cap Q\in\up f$.
 Let $\mathcal{A}$, $\mathcal{B}$ be filters on $\Gamma$. Let $\bigsqcap^{\mathsf{FCD}}\up\mathcal{A}=\bigsqcap^{\mathsf{FCD}}\up\mathcal{B}$.
 We need to prove $\mathcal{A}=\mathcal{B}$. (The rest follows from
 proof of the lemma~\ref{fcd-rep}). We have:
-
 \begin{align*}
-\mathcal{A}=\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B\in\mathcal{A}}{X\in\subsets A,Y\in\subsets B} & =\\
-\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\exists P\in\mathcal{A}:P\subseteq X\times Y\cup\overline{X}\times B} & =\\
-\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\exists P\in\mathcal{A}:\rsupfun PX\subseteq Y} & =\text{(*)}\\
-\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\bigsqcap\setcond{\rsupfun PX}{A\in\up\mathcal{A}}\sqsubseteq Y} & =\\
-\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\bigsqcap\setcond{\rsupfun PX}{A\in\up\bigsqcap^{\mathsf{RLD}}\up\mathcal{A}}\sqsubseteq Y} & =\\
+\mathcal{A}=\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B\in\up\mathcal{A}}{X\in\subsets A,Y\in\subsets B} & =\\
+\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\exists P\in\up\mathcal{A}:P\subseteq X\times Y\cup\overline{X}\times B} & =\\
+\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\exists P\in\up\mathcal{A}:\rsupfun PX\subseteq Y} & =\text{(*)}\\
+\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\bigsqcap\setcond{\rsupfun PX}{X\in\up\mathcal{A}}\sqsubseteq Y} & =\\
+\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\bigsqcap\setcond{\rsupfun PX}{X\in\up\bigsqcap^{\mathsf{RLD}}\up\mathcal{A}}\sqsubseteq Y} & =\\
 \bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\left\langle \tofcd\bigsqcap^{\mathsf{RLD}}\up\mathcal{A}\right\rangle X\sqsubseteq Y} & =\text{(**)}\\
-\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\left\langle \bigsqcap^{\mathsf{FCD}}\up\bigsqcap^{\mathsf{RLD}}\up\mathcal{A}\right\rangle X\sqsubseteq Y}\left\{ \right\}  & =\\
+\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\left\langle \bigsqcap^{\mathsf{FCD}}\up\bigsqcap^{\mathsf{RLD}}\up\mathcal{A}\right\rangle X\sqsubseteq Y} & =\\
 \bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\left\langle \bigsqcap^{\mathsf{FCD}}\up\mathcal{A}\right\rangle X\sqsubseteq Y}.
 \end{align*}
 
 
-({*}) by properties of generalized filter bases, because $\setcond{\rsupfun PX}{P\in\mathcal{A}}$
+({*}) by properties of generalized filter bases, because $\setcond{\rsupfun PX}{P\in\up\mathcal{A}}$
 is a filter base.
 
 ({*}{*}) by theorem \ref{fcd-as-meet}.
 
 Similarly 
 \[
-\up\mathcal{B}=\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\left\langle \bigsqcap^{\mathsf{FCD}}\up\mathcal{B}\right\rangle X\sqsubseteq Y}.
+\mathcal{B}=\bigsqcap^{\mathsf{FCD}}\setcond{X\times Y\cup\overline{X}\times B}{X\in\subsets A,Y\in\subsets B,\left\langle \bigsqcap^{\mathsf{FCD}}\up\mathcal{B}\right\rangle X\sqsubseteq Y}.
 \]
 Thus $\mathcal{A}=\mathcal{B}$.\end{proof}
 \begin{prop}
@@ -281,7 +275,6 @@ Thus $K\in\up^{\Gamma(A;C)}(g\circ f)$ and so $K\in\up\bigsqcap^{\mathsf{RLD}}\u
 $\torldin X=X$ for $X\in\Gamma(A;B)$.\end{lem}
 \begin{proof}
 $X=X_{0}\times Y_{0}\cup\ldots\cup X_{n}\times Y_{n}=(X_{0}\times^{\mathsf{FCD}}Y_{0})\sqcup^{\mathsf{FCD}}\ldots\sqcup^{\mathsf{FCD}}(X_{n}\times^{\mathsf{FCD}}Y_{n})$.
-
 \begin{multline*}
 \torldin X=\\
 \torldin(X_{0}\times^{\mathsf{FCD}}Y_{0})\sqcup^{\mathsf{RLD}}\ldots\sqcup^{\mathsf{RLD}}\torldin(X_{n}\times^{\mathsf{FCD}}Y)=\\
@@ -290,10 +283,15 @@ X_{0}\times Y_{0}\cup\ldots\cup X_{n}\times Y_{n}=X.
 \end{multline*}
 \end{proof}
 \begin{lem}
-\label{rld-in-fcd-meet}$\bigsqcap^{\mathsf{RLD}}\up f=\torldin\bigsqcap^{\mathsf{FCD}}\up f$
+\label{rld-in-fcd-meet}$\bigsqcap^{\mathsf{RLD}} f=\torldin\bigsqcap^{\mathsf{FCD}} f$
 for every filter $f\in\mathfrak{F}\Gamma(A;B)$.\end{lem}
 \begin{proof}
-$\torldin\bigsqcap^{\mathsf{FCD}}f=\bigsqcap^{\mathsf{RLD}}\rsupfun{\torldin}\up f=\text{(by the previous lemma)}=\bigsqcap^{\mathsf{RLD}}\up f$.\end{proof}
+~
+\[
+\torldin\bigsqcap^{\mathsf{FCD}} f=\bigsqcap^{\mathsf{RLD}}\rsupfun{\torldin} f=
+\text{(by the previous lemma)}=\bigsqcap^{\mathsf{RLD}} f.
+\]
+\end{proof}
 \begin{lem}
 \label{rld-gamma-bij}~
 \begin{enumerate}
@@ -329,7 +327,7 @@ for every funcoids $f\in\mathsf{FCD}(A;B)$ and $g\in\mathsf{FCD}(B:C)$.
 \end{lem}
 \begin{proof}
 It's enough to prove only the first formula, because of the bijection
-from theorem~\ref{faf-bij}.
+from lemma~\ref{faf-bij}.
 
 Really: 
 \begin{multline*}
@@ -370,7 +368,7 @@ that is
 \]
 that is 
 \[
-\bigsqcap_{F\in\up f}^{\mathfrak{F}}\supfun Fa=\bigsqcap_{F\in\Gamma(A;B)\cap\up f}^{\mathfrak{F}}\supfun Fa.
+\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun Fa=\bigsqcap_{F\in\Gamma(A;B)\cap\up f}^{\mathscr{F}}\supfun Fa.
 \]
 For this it's enough to prove that $Y\in\up\supfun Fa$ for some $F\in\up f$
 implies $Y\in\up\supfun{F'}a$ for some $F'\in\Gamma(A;B)\cap\GR f$.
@@ -380,12 +378,12 @@ such that $Y\in\up\supfun FA$.
 
 $Y\in\up\supfun{A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top}a$;
 $\supfun{A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top}\mathcal{X}=Y\in\up\supfun F\mathcal{X}$
-if $\bot\neq\mathcal{X}\sqsubseteq A$ and $\supfun{A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top}\mathcal{X}=1\in\up\langle F\rangle\mathcal{X}$
+if $\bot\neq\mathcal{X}\sqsubseteq A$ and $\supfun{A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top}\mathcal{X}=\top\in\up\langle F\rangle\mathcal{X}$
 if $\mathcal{X}\nsqsubseteq A$.
 
 Thus $A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top\sqsupseteq F$.
 So $A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top$
-is the sought for $F'$.
+is the sought for~$F'$.
 \end{proof}
 
 \section{\texorpdfstring{Relationships between $\protect\tofcd$ and 
@@ -394,8 +392,6 @@ $(\mathsf{RLD})_{\Gamma}$}{Relationships between (FCD) and (RLD)\_Gamma}}
 $(\mathsf{RLD})_{\Gamma}f=\bigsqcap^{\mathsf{RLD}}\up^{\Gamma(\Src f;\Dst f)}f$
 for every funcoid $f$. I call $(\mathsf{RLD})_{\Gamma}$ as $\Gamma$-reloid
 or Gamma-reloid.\end{defn}
-\begin{conjecture}
-$(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin f$ for every funcoid~$f$.\end{conjecture}
 \begin{obvious}
 $(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldout f$ for every funcoid
 $f$.\end{obvious}
@@ -408,15 +404,15 @@ but $1_{\mathbf{Rel}(A;A)}\notin\GR(\mathsf{RLD})_{\Gamma}f.$\end{proof}
 \begin{lem}
 $\tofcd(\mathsf{RLD})_{\Gamma}f=f$ for every funcoid $f$.\end{lem}
 \begin{proof}
-For every filter $\mathcal{X}\in\mathscr{F}(\Src f)$ we have $\langle\tofcd(\mathsf{RLD})_{\Gamma}f\rangle\mathcal{X}=\bigsqcap_{F\in\up(\mathsf{RLD})_{\Gamma}f}^{\mathfrak{F}}\supfun F\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}$.
+For every filter $\mathcal{X}\in\mathscr{F}(\Src f)$ we have $\langle\tofcd(\mathsf{RLD})_{\Gamma}f\rangle\mathcal{X}=\bigsqcap_{F\in\up(\mathsf{RLD})_{\Gamma}f}^{\mathscr{F}}\supfun F\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}$.
 
-Obviously $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}\sqsupseteq\supfun f\mathcal{X}$.
+Obviously $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsupseteq\supfun f\mathcal{X}$.
 So $\tofcd(\mathsf{RLD})_{\Gamma}f\sqsupseteq f$.
 
 Let $Y\in\up\supfun f\mathcal{X}$. Then (proposition above) there
 exists $A\in\up\mathcal{X}$ such that $Y\in\up\langle f\rangle A$.
 
-Thus $A\times Y\cup\overline{A}\times\top\in\up f$. So $\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}\sqsubseteq\supfun{A\times Y\cup\overline{A}\times\top}\mathcal{X}=Y$.
+Thus $A\times Y\sqcup\overline{A}\times\top\in\up f$. So $\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsubseteq\supfun{A\times Y\sqcup\overline{A}\times\top}\mathcal{X}=Y$.
 So $Y\in\up\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}$ that
 is $\supfun f\mathcal{X}\sqsupseteq\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}$
 that is $f\sqsupseteq\tofcd(\mathsf{RLD})_{\Gamma}f$.\end{proof}
@@ -471,7 +467,7 @@ inverse.
 That $\tofcd$ and $\torldin$ are mutually inverse was proved above
 in the book.
 
-That $\bigsqcap^{\mathsf{RLD}}$and $f\mapsto f\cap\Gamma$ are mutually
+That $\bigsqcap^{\mathsf{RLD}}$ and $f\mapsto f\cap\Gamma$ are mutually
 inverse was proved above.
 
 That $\bigsqcap^{\mathsf{FCD}}$ and $\up^{\Gamma}$ are mutually
@@ -503,7 +499,8 @@ We already know that $\torldin f\sqsupseteq\torldout f$ (see above
 in the book).
 
 The formula $(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin f$ follows
-from $\forall G\in\up^{\Gamma(\Src f;\Dst f)}f:G\sqsupseteq f$.\end{proof}
+from $\forall G\in\up^{\Gamma(\Src f;\Dst f)}f:G\sqsupseteq f$
+and thus $G\sqsupseteq a\times^{\mathsf{RLD}}b$ for every $a\times^{\mathsf{FCD}}b\sqsubseteq f$ where $a$, $b$ are atomic filter objects.\end{proof}
 \begin{example}
 \label{three-rld}$(\mathsf{RLD})_{\Gamma}f\sqsupset\torldin f\sqsupset\torldout f$
 for some funcoid $f$.\end{example}
@@ -529,10 +526,10 @@ $q\in[i;i+1[\times[i;i+1[$ for each $i\in\mathbb{Z}$; thus, $F'\notin\Gamma(\Src
 
 Thus $F\notin\up(\mathsf{RLD})_{\Gamma}f$.\end{proof}
 \begin{thm}
-For every reloid $f$ and $\mathcal{X}\in\mathfrak{F}(\Src f)$, $\mathcal{Y}\in\mathfrak{F}(\Dst f)$:
+For every reloid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$:
 \begin{enumerate}
 \item \label{fcd-up-g-rel}$\mathcal{X}\mathrel{[\tofcd f]}\mathcal{Y}\Leftrightarrow\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:\mathcal{X}\suprel F\mathcal{Y}$;
-\item \label{fcd-up-g-fcd}$\langle\tofcd f\rangle\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun F\mathcal{X}$.
+\item \label{fcd-up-g-fcd}$\langle\tofcd f\rangle\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -540,7 +537,9 @@ For every reloid $f$ and $\mathcal{X}\in\mathfrak{F}(\Src f)$, $\mathcal{Y}\in\m
 \begin{widedisorder}
 \item [{\ref{fcd-up-g-rel}}] ~
 \begin{multline*}
-\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:\mathcal{X}\suprel F\mathcal{Y}\Leftrightarrow\text{(*)}\\
+\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:\mathcal{X}\suprel F\mathcal{Y}\Leftrightarrow\\
+\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:(\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y})\sqcap F\ne\bot\Leftrightarrow\text{(*)}\\
+(\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y})\sqcap \bigsqcap^{\mathsf{FCD}}\up^{\Gamma(\Src f;\Dst f)}f\ne\bot\Leftrightarrow\\
 \mathcal{X}\suprel{\bigsqcap^{\mathsf{FCD}}\up^{\Gamma(\Src f;\Dst f)}f}\mathcal{Y}\Leftrightarrow\mathcal{X}\suprel{\tofcd f}\mathcal{Y}.
 \end{multline*}
 
@@ -549,13 +548,13 @@ For every reloid $f$ and $\mathcal{X}\in\mathfrak{F}(\Src f)$, $\mathcal{Y}\in\m
 ({*}) by properties of generalized filter bases, taking into account
 that funcoids are isomorphic to filters.
 
-\item [{\ref{fcd-up-g-fcd}}] $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathfrak{F}}\supfun Fa=\left\langle \bigsqcap^{\mathsf{FCD}}\up^{\Gamma(\Src f;\Dst f)}f\right\rangle a=\supfun{\tofcd f}a$
+\item [{\ref{fcd-up-g-fcd}}] $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun Fa=\left\langle \bigsqcap^{\mathsf{FCD}}\up^{\Gamma(\Src f;\Dst f)}f\right\rangle a=\supfun{\tofcd f}a$
 for every ultrafilter $a$.
 
 
 It remains to prove that the function 
 \[
-\varphi=\lambda\mathcal{X}\in\mathfrak{F}(\Src f):\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}
+\varphi=\lambda\mathcal{X}\in\mathscr{F}(\Src f):\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}
 \]
 is a component of a funcoid (from what follows that $\varphi=\supfun{\tofcd f}$).
 To prove this, it's enough to show that it preserves finite joins
@@ -601,17 +600,16 @@ Another proof of the theorem ``$\dom\torldin f=\dom f$ and $\im\torldin f=\im f$
 for every funcoid $f$.'':
 \begin{proof}
 We have for every filter $\mathcal{X}\in\mathscr{F}(\Src f)$:
-
 \begin{multline*}
 \mathcal{X}\sqsupseteq\dom\torldin f\Leftrightarrow\mathcal{X}\times^{\mathsf{RLD}}\top\sqsupseteq\torldin f\Leftrightarrow\\
-\forall a\in\mathfrak{F}(\Src f),b\in\mathfrak{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\times^{\mathsf{RLD}}b\sqsubseteq\mathcal{X}\times^{\mathsf{RLD}}\top)\Leftrightarrow\\
-\forall a\in\mathfrak{F}(\Src f),b\in\mathfrak{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\sqsubseteq\mathcal{X})
+\forall a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\times^{\mathsf{RLD}}b\sqsubseteq\mathcal{X}\times^{\mathsf{RLD}}\top)\Leftrightarrow\\
+\forall a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\sqsubseteq\mathcal{X})
 \end{multline*}
 and 
 \begin{multline*}
-\mathcal{X}\sqsupseteq\dom f\Leftrightarrow\mathcal{X}\times^{\mathsf{RLD}}\top\sqsupseteq f\Leftrightarrow\mathcal{X}\times^{\mathsf{FCD}}\top\sqsupseteq f\Leftrightarrow\\
-\forall a\in\mathfrak{F}(\Src f),b\in\mathfrak{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\times^{\mathsf{FCD}}b\sqsubseteq\mathcal{X}\times^{\mathsf{FCD}}\top)\Leftrightarrow\\
-\forall a\in\mathfrak{F}(\Src f),b\in\mathfrak{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\sqsubseteq\mathcal{X}).
+\mathcal{X}\sqsupseteq\dom f\Leftrightarrow\mathcal{X}\times^{\mathsf{FCD}}\top\sqsupseteq f\Leftrightarrow\\
+\forall a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\times^{\mathsf{FCD}}b\sqsubseteq\mathcal{X}\times^{\mathsf{FCD}}\top)\Leftrightarrow\\
+\forall a\in\mathscr{F}(\Src f),b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\sqsubseteq f\Rightarrow a\sqsubseteq\mathcal{X}).
 \end{multline*}
 
 
@@ -648,7 +646,7 @@ on the lattice $\Gamma(A;B)$.\end{prop}
 \begin{proof}
 It follows from the fact that $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}=\bigsqcap^{\mathsf{FCD}}\setcond{A\times B}{A\in\up\mathcal{A},B\in\up\mathcal{B}}$.\end{proof}
 \begin{prop}
-$\up^{\Gamma(A;B)}(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\mathfrak{F}(\Gamma(A;B))\cap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.\end{prop}
+$\up^{\Gamma(A;B)}(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\mathfrak{F}(\Gamma(A;B))\cap\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.\end{prop}
 \begin{proof}
 It follows from the fact that $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}=\bigsqcap^{\mathsf{FCD}}\setcond{A\times B}{A\in\up\mathcal{A},B\in\up\mathcal{B}}$.\end{proof}
 \begin{prop}
@@ -697,7 +695,7 @@ and $g=X'_{0}\times Y'_{0}\sqcup^{\mathsf{FCD}}\ldots\sqcup^{\mathsf{FCD}}X'_{m}
 
 \begin{multline*}
 f\sqcap^{\mathsf{FCD}}g=\bigsqcup_{i=0,\ldots,n;j=0,\ldots,m}((X_{i}\times Y_{i})\sqcap^{\mathsf{FCD}}(X'_{j}\times Y'_{j}))=\\
-\bigsqcup_{i=0,\ldots,n;j=0,\ldots,m}((X_{i}\sqcap X'_{j})\times(Y_{i}\sqcap Y'_{j})).
+\bigsqcup_{i=0,\ldots,n;j=0,\ldots,m}((X_{i}\sqcap X'_{j})\times^{\mathsf{FCD}}(Y_{i}\sqcap Y'_{j})).
 \end{multline*}
 
 
@@ -715,10 +713,10 @@ by the previous theorem $F\sqcap^{\mathsf{FCD}}G=\bot$.\end{proof}
 The coatoms of funcoids from a set~$A$ to a set~$B$ are exactly
 $(A\times B)\setminus(\{x\}\times\{y\})$ for $x\in A$, $y\in B$.\end{thm}
 \begin{proof}
-That coatoms of binary relations between a set~$A$ and a set~$B$
+That coatoms of $\Gamma(A;B)$
 are exactly $(A\times B)\setminus(\{x\}\times\{y\})$ for $x\in A$,
 $y\in B$, is obvious. To show that coatoms of funcoids are the same,
-it remains to apply theorem~\ref{coat}.\end{proof}
+it remains to apply proposition~\ref{coat}.\end{proof}
 \begin{thm}
 The set of funcoids (for given~$A$ and~$B$) is coatomic.\end{thm}
 \begin{proof}

@@ -7,6 +7,16 @@
 
 \subsection{Straight maps}
 \begin{defn}
+\index{order reflecting}An \emph{order reflecting} map from a poset~$\mathfrak{A}$ to a poset~$\mathfrak{B}$
+is such a function~$f$ that (for every $x,y\in\mathfrak{A}$)
+\[ fx\sqsubseteq fy \Rightarrow x\sqsubseteq y. \]
+\end{defn}
+
+\begin{obvious}
+Order embeddings are exactly the same as monotone and order reflecting maps.
+\end{obvious}
+
+\begin{defn}
 \index{straight map}Let $f$ be a monotone map from a meet-semilattice
 $\mathfrak{A}$ to some poset $\mathfrak{B}$. I call $f$ a \emph{straight}
 map when
@@ -51,19 +61,18 @@ then $f$ is a straight map.\end{prop}
 Let $fa\sqsubseteq fb$. Then $f(a\sqcap b)=fa\sqcap fb=fa$.\end{proof}
 \begin{prop}
 Let $f$ be a monotone map from a meet-semilattice $\mathfrak{A}$
-to some poset $\mathfrak{B}$. If
-\[
-\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow a\sqsubseteq b)
-\]
+to some poset $\mathfrak{B}$. If $f$ is order reflecting,
 then $f$ is a straight map.\end{prop}
 \begin{proof}
 $fa\sqsubseteq fb\Rightarrow a\sqsubseteq b\Rightarrow a=a\sqcap b\Rightarrow fa=f(a\sqcap b)$.\end{proof}
+
+The following theorem is the main reason of why we are interested in straight maps:
 \begin{thm}
 If $f$ is a straight monotone map from a meet-semilattice $\mathfrak{A}$
 then the following statements are equivalent:
 \begin{enumerate}
 \item \label{stra-inj}$f$ is an injection.
-\item \label{stra-sqe-sqe}$\forall a,b\in\mathfrak{A}:(fa\sqsubseteq fb\Rightarrow a\sqsubseteq b)$.
+\item \label{stra-sqe-sqe}$f$ is order reflecting.
 \item \label{stra-sq-sq}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\sqsubset fb)$.
 \item \label{stra-sq-ne}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\neq fb)$.
 \item \label{stra-sq-nsqe}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow fa\nsqsupseteq fb)$.
@@ -115,10 +124,17 @@ is such its subset $Y$ that
 \end{defn}
 
 \begin{defn}
-\index{separable}\index{poset!separable}I call separable such poset
+\index{separable}\index{poset!separable}I call \emph{separable} such poset
 that $\fullstar$ is an injection.\end{defn}
+\begin{defn}
+\index{separable}\index{poset!strongly separable}I call \emph{strongly separable} such poset
+that $\fullstar$ is order reflecting.\end{defn}
 \begin{obvious}
 A poset is separable iff it has a separation subset.\end{obvious}
+\begin{obvious}
+A poset is strongly separable iff $\star$ is order embedding.\end{obvious}
+\begin{obvious}
+Strong separability implies separability.\end{obvious}
 \begin{defn}
 \index{disjunction property of Wallman}A poset $\mathfrak{A}$ has
 \emph{disjunction property of Wallman} iff for any $a,b\in\mathfrak{A}$
@@ -129,7 +145,7 @@ such that $a\asymp c$.\end{defn}
 following statements are equivalent:
 \begin{enumerate}
 \item \label{la1}$\mathfrak{A}$ is separable.
-\item \label{la2}$\forall a,b\in\mathfrak{A}:(\fullstar a\sqsubseteq\fullstar b\Rightarrow a\sqsubseteq b)$.
+\item \label{la2}$\mathfrak{A}$ is strongly separable.
 \item \label{la3}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\sqsubset\fullstar b)$.
 \item \label{la4}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\neq\fullstar b)$.
 \item \label{la5}$\forall a,b\in\mathfrak{A}:(a\sqsubset b\Rightarrow\fullstar a\nsqsupseteq\fullstar b)$.
@@ -157,18 +173,21 @@ disjunction property of Wallman holds.
 \item [{\ref{la8}$\Rightarrow$\ref{la7}}] Let $b\nsqsubseteq a$. Then
 $a\sqcap b\sqsubset b$ that is $a'\sqsubset b$ where $a'=a\sqcap b$.
 Consequently $\exists c\in\mathfrak{A}\setminus\{\bot\}:(c\asymp a'\land c\sqsubseteq b)$.
-We have $c\sqcap a=c\sqcap b\sqcap a=c\sqcap a'$. So $c\sqsubseteq b$
+We have $c\sqcap a=c\sqcap b\sqcap a=c\sqcap a'=\bot$. So $c\sqsubseteq b$
 and $c\sqcap a=\bot$. Thus Wallman's disjunction property holds.
 \end{description}
 \end{proof}
 \begin{prop}
-Every boolean lattice is separable.\end{prop}
+Every boolean lattice is strongly separable.\end{prop}
 \begin{proof}
 Let $a,b\in\mathfrak{A}$ where $\mathfrak{A}$ is a boolean lattice
 an $a\neq b$. Then $a\sqcap\bar{b}\neq\bot$ or $\bar{a}\sqcap b\neq\bot$
 because otherwise $a\sqcap\bar{b}=\bot$ and $a\sqcup\bar{b}=\top$
 and thus $a=b$. Without loss of generality assume $a\sqcap\bar{b}\neq\bot$.
-Then $a\sqcap c\neq\bot$ and $b\sqcap c=\bot$ for $c=a\sqcap\bar{b}\neq\bot$.
+Then $a\sqcap c\neq\bot$ and $b\sqcap c=\bot$ for $c=a\sqcap\bar{b}\neq\bot$,
+that is our lattice is separable.
+
+It is strongly separable by theorem~\ref{msl-sep-conds}.
 \end{proof}
 
 \subsection{\label{atm-sep}Atomically Separable Lattices}
@@ -231,6 +250,7 @@ But $d\in\atoms a$. Contradiction.\end{proof}
 with least element. Then the following statements are equivalent:
 \begin{enumerate}
 \item \label{sc-sep}$\mathfrak{A}$ is separable.
+\item \label{sc-stsep}$\mathfrak{A}$ is strongly separable.
 \item \label{sc-at-sep}$\mathfrak{A}$ is atomically separable.
 \item \label{sc-wall}$\mathfrak{A}$ conforms to Wallman's disjunction
 property.
@@ -240,7 +260,7 @@ property.
 \begin{proof}
 ~
 \begin{description}
-\item [{\ref{sc-sep}$\Leftrightarrow$\ref{sc-wall}$\Leftrightarrow$\ref{sc-other}}] Proved
+\item [{\ref{sc-sep}$\Leftrightarrow$\ref{sc-stsep}$\Leftrightarrow$\ref{sc-wall}$\Leftrightarrow$\ref{sc-other}}] Proved
 above.
 \item [{\ref{sc-at-sep}$\Rightarrow$\ref{sc-other}}] Let our semilattice
 be atomically separable. Let $a\sqsubset b$. Then $\atoms a\subset\atoms b$
@@ -319,9 +339,9 @@ Thus $\bigsqcap\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land a\sqsubseteq b\sqc
 
 Let $z\in\mathfrak{A}$ and $z'=z\sqcap a$.
 
-$a\sqsubseteq b\sqcup z\Rightarrow a\sqsubseteq(b\sqcup z)\sqcap a\Leftrightarrow a\sqsubseteq(b\sqcap a)\sqcup(z\sqcap a)\Leftrightarrow a\sqsubseteq(b\sqcap a)\sqcup z'\Rightarrow a\sqsubseteq b\sqcap z'$
-and $a\sqsubseteq b\sqcup z\Leftarrow a\sqsubseteq b\sqcap z'$. Thus
-$a\sqsubseteq b\sqcup z\Leftrightarrow a\sqsubseteq b\sqcap z'$.
+$a\sqsubseteq b\sqcup z\Rightarrow a\sqsubseteq(b\sqcup z)\sqcap a\Leftrightarrow a\sqsubseteq(b\sqcap a)\sqcup(z\sqcap a)\Leftrightarrow a\sqsubseteq(b\sqcap a)\sqcup z'\Rightarrow a\sqsubseteq b\sqcup z'$
+and $a\sqsubseteq b\sqcup z\Leftarrow a\sqsubseteq b\sqcup z'$. Thus
+$a\sqsubseteq b\sqcup z\Leftrightarrow a\sqsubseteq b\sqcup z'$.
 
 If $z\in\setcond{z\in\mathfrak{A}}{a\sqsubseteq b\sqcup z}$ then
 $a\sqsubseteq b\sqcup z$ and thus
@@ -458,17 +478,17 @@ into account, we have
 \begin{align*}
 a\psetminus b & =\\
 \bigsqcup(\atoms a\setminus\atoms b) & =\\
-\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot.}
+\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot}.
 \end{align*}
 
 
 
-So $\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot.}$ is defined.
+So $\bigsqcup\setcond{z\in\atoms a}{z\sqcap b=\bot}$ is defined.
 
 
 If $z\sqsubseteq a\land z\sqcap b=\bot$ then $z'=\bigsqcup\setcond{x\in\atoms z}{x\sqcap b=\bot}$
 is defined because $z'=z\psetminus b$ (atomisticity taken into account).
-$z'$ is a lower bound for $\setcond{z\in\atoms a}{x\sqcap b=\bot}$ 
+$z'$ is a lower bound for $\setcond{z\in\atoms a}{x\sqcap b=\bot}$.
 
 
 Thus $z'\in\setcond{z\in\mathfrak{A}}{z\sqsubseteq a\land z\sqcap b=\bot}$
@@ -650,7 +670,7 @@ Then
 g\circ f\circ f^{\dagger}\circ g^{\dagger} & \sqsubseteq\\
 g\circ1_{\Src g}\circ g^{\dagger} & =\\
 g\circ g^{\dagger} & \sqsubseteq\\
-1_{\Dst g}=1_{\Dst(g\circ f)}.
+1_{\Dst g}&=1_{\Dst(g\circ f)}.
 \end{align*}
 
 
@@ -672,7 +692,7 @@ f^{\dagger}\circ g^{\dagger}\circ g\circ f & \sqsupseteq\\
 f^{\dagger}\circ1_{\Src g}\circ f & =\\
 f^{\dagger}\circ1_{\Dst f}\circ f & =\\
 f^{\dagger}\circ f & \sqsupseteq\\
-1_{\Src f}=1_{\Src(g\circ f)}.
+1_{\Src f}&=1_{\Src(g\circ f)}.
 \end{align*}
 
 
@@ -804,7 +824,7 @@ g\circ f\nasymp h & \Leftrightarrow\\
 \exists a,c:a\mathrel{((g\circ f)\cap h)}c & \Leftrightarrow\\
 \exists a,c:(a\mathrel{(g\circ f)}c\land a\mathrel{h}c) & \Leftrightarrow\\
 \exists a,b,c:(a\mathrel{f}b\land b\mathrel{g}c\land a\mathrel{h}c) & \Leftrightarrow\\
-\exists b,c:(b\mathrel{g}c\land b\mathrel{h\circ f^{-1}}c) & \Leftrightarrow\\
+\exists b,c:(b\mathrel{g}c\land b\mathrel{(h\circ f^{-1})}c) & \Leftrightarrow\\
 \exists b,c:b\mathrel{(g\cap(h\circ f^{-1}))}c & \Leftrightarrow\\
 g\nasymp h\circ f^{-1}.
 \end{align*}
@@ -854,7 +874,7 @@ By definition
 
 
 Note that an ordered pair $(a;b)$ is not the same as the tuple $\left\llbracket a;b\right\rrbracket $
-of two elements.
+of two elements. (However, we will use them interchangeably.)
 \begin{defn}
 \index{relation!anchored}An \emph{anchored relation} is a tuple $\left\llbracket n;r\right\rrbracket $
 where $n$ is an index set and $r$ is an $n$-ary relation.
@@ -1015,14 +1035,14 @@ family of functions each taking an ordinal number of arguments. The
 \concat z=\uncurry(z)\circ\left(\bigoplus(\dom\circ z)\right)^{-1}.
 \]
 \end{defn}
-\begin{obvious}
-If $z$ is a finite family of finitary tuples, it is concatenation
+\begin{xca}
+Prove, that if $z$ is a finite family of finitary tuples, it is concatenation
 of $\dom z$ tuples in the usual sense (as it is commonly used in
-computer science).\end{obvious}
+computer science).\end{xca}
 \begin{prop}
 If $z\in\prod(\GR\circ F)$ then $\concat z=\uncurry(z)\circ\left(\bigoplus(\arity\circ F)\right)^{-1}.$\end{prop}
 \begin{proof}
-If $z\in\prod(\GR\circ F)$ then $\dom z(i)=\dom(\GR\circ F)_{i}=\dom F_{i}=\arity F_{i}$
+If $z\in\prod(\GR\circ F)$ then $\dom z(i)=\dom(\GR\circ F)_{i}=\arity F_{i}$
 for every $i\in\dom F$. Thus $\dom\circ z=\arity\circ F$.\end{proof}
 \begin{prop}
 $\dom\concat z=\sum_{i\in\dom z}\dom z_{i}$.\end{prop}
@@ -1182,7 +1202,9 @@ So $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity 
 Let now $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.
 Then there exists $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$
 such that $L'=\bigcup\im P$ and $\curry(L')\in\prod(\GR\circ F)$.
-Evidently $L'\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}$. So $L'\in\setcond{\bigcup\im P}{P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}\land\curry(\bigcup\im P)\in\prod(\GR\circ F)}$.\end{proof}
+Evidently $L'\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}$. So
+$L'\in\setcond{L\in\mho^{\coprod_{i\in\dom F}\arity F_{i}}}{\curry(L)\in\prod(\GR\circ F)}$.
+\end{proof}
 \begin{lem}
 $\setcond{f\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\setcond{\bigcup\im P}{P\in\prod_{i\in\dom F}F'_{i}}$.\end{lem}
 \begin{proof}
@@ -1290,8 +1312,7 @@ $\uncurry\circ S=\mylamdba iS{\uncurry(S_{i})}$;
 
 $(\uncurry(\uncurry\circ S))((i;x);y)=(\uncurry S_{i})(x;y)=(S_{i}x)y$;
 
-$(\uncurry(\uncurry S))((i;x);y)=((\uncurry S)(i;x))y=(S_{i}x)y$
-.
+$(\uncurry(\uncurry S))((i;x);y)=((\uncurry S)(i;x))y=(S_{i}x)y$.
 
 Thus $(\uncurry(\uncurry\circ S))((i;x);y)=(\uncurry(\uncurry S))((i;x);y)$
 and thus evidently $\uncurry(\uncurry\circ S)\sim\uncurry(\uncurry S)$.\end{proof}
@@ -1322,7 +1343,7 @@ Consequently $\concat(\concat\circ S)=\concat(\concat S)$.\end{proof}
 Ordinated product is an infinitely associative function.
 \end{cor}
 
-\section{Some properties of frames}
+\section{Some properties of frames}\label{some-frames}
 
 This section is based on a \noun{Todd Trimble}'s proof. A shorter
 but less elementary proof (also by \noun{Todd Trimble}) is available
@@ -1331,7 +1352,7 @@ at\\
 
 I will abbreviate \emph{join-semilattice with least element} as JSWLE.
 \begin{obvious}
-JSWLEs are the same as finitely meet-closed posets (with nullary joins
+JSWLEs are the same as finitely join-closed posets (with nullary joins
 included).
 \end{obvious}
 
@@ -1365,7 +1386,7 @@ Every co-nucleus is a monotone function.\end{prop}
 It follows from $F(p\sqcup q)=F(p)\sqcup F(q)$.\end{proof}
 \begin{lem}
 $\bigsqcup^{\Fix(F)}S=\bigsqcup S$ for every $S\in\subsets\Fix(F)$
-for every co-nucleus $F$.\end{lem}
+for every co-nucleus~$F$ on a complete lattice.\end{lem}
 \begin{proof}
 Obviously $\bigsqcup S\sqsupseteq x$ for every $x\in S$.
 
@@ -1382,7 +1403,7 @@ So $\bigsqcup^{\Fix(F)}S=\bigsqcup S$ by the definition of join.\end{proof}
 $\bigsqcup^{\Fix(F)}S$ is defined for every $S\in\subsets\Fix(F)$.\end{cor}
 \begin{lem}
 $\bigsqcap^{\Fix(F)}S=F\left(\bigsqcap S\right)$ for every $S\in\subsets\Fix(F)$
-for every co-nucleus $F$.\end{lem}
+for every co-nucleus~$F$ on a complete lattice.\end{lem}
 \begin{proof}
 Obviously $F\left(\bigsqcap S\right)\sqsubseteq x$ for every $x\in S$.
 
@@ -1414,6 +1435,9 @@ F\left(\bigsqcap\langle b\sqcup\rangle^{\ast}S\right) & =\\
 \begin{defn}
 Denote $\Upper(\mathfrak{A})$ the set of upper sets on $\mathfrak{A}$
 ordered \emph{reverse} to set theoretic inclusion.\end{defn}
+\begin{defn}
+Denote $\uparrow a = \setcond{x\in\mathfrak{A}}{x\sqsupseteq a} \in \Upper(\mathfrak{A})$.
+\end{defn}
 \begin{lem}
 The set $\Upper(\mathfrak{A})$ is closed under arbitrary meets and
 joins.\end{lem}
@@ -1455,13 +1479,13 @@ That $s$ is the meet follows from the definition of meets.
 It remains to prove that $\mathfrak{A}$ is a complete lattice.
 
 
-Take any subset $S$ of $\mathfrak{A}$. Let $D$ be the smallest
-upper set containing $S$. (It exists because $\Upper(\mathfrak{A})$
+Take any subset~$S$ of $\mathfrak{A}$. Let $D$ be the smallest
+upper set containing~$S$. (It exists because $\Upper(\mathfrak{A})$
 is closed under arbitrary joins.) This is 
 \[
 D=\setcond{x\in\mathfrak{A}}{\exists s\in S:x\sqsupseteq s}.
 \]
-Any lower bound of $D$ is clearly an upper bound of $S$ since $D\supseteq S$.
+Any lower bound of $D$ is clearly a lower bound of $S$ since $D\supseteq S$.
 Conversely any lower bound of $S$ is a lower bound of $D$.~ Thus
 $S$ and $D$ have the same set of lower bounds, hence have the same
 greatest lower bound.
@@ -1548,7 +1572,7 @@ It preserves nullary joins since $\bigsqcap^{\Upper(\mathfrak{A})}\bot^{\Upper(\
 \item [{$\Leftarrow$}] Suppose $\bigsqcap:\Upper(\mathfrak{A})\rightarrow\mathfrak{A}$
 preserves finite joins. Let $b\in\mathfrak{A}$, $S\in\subsets\mathfrak{A}$.
 Let $D$ be the smallest upper set containing $S$ (so $D=\bigcup\rsupfun{\uparrow}S$).
-We have $\bigsqcap D=\bigcup S$. So 
+Then
 \begin{align*}
 b\sqcup\bigsqcap S & =\\
 \bigsqcap\uparrow b\sqcup\bigcup\bigsqcap\rsupfun{\uparrow}S & =\\
@@ -1609,7 +1633,7 @@ hfx\sqcup hf'x=(h\circ f)x\sqcup(h\circ f')x=((h\circ f)\sqcup(h\circ f'))x.
 \end{multline*}
 Thus $h\circ(f\sqcup f')=(h\circ f)\sqcup(h\circ f')$.
 
-$(h\circ\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})})x=h\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})}x=h\bot^{\mathfrak{B}}=\bot^{\mathfrak{A}}$.\end{proof}
+$(h\circ\bot^{\operatorname{Join}(P;Q)})x=h\bot^{\operatorname{Join}(P;Q)}x=h\bot^Q=\bot^R$.\end{proof}
 \begin{prop}
 If $h,h':Q\rightarrow R$ are finite join preserving maps and $h\sqsupseteq h'$,
 then $\operatorname{Join}(P,h)\sqsupseteq\operatorname{Join}(P,h')$.\end{prop}
@@ -1645,7 +1669,7 @@ by the second co-nucleus axiom for $F$, showing that $\operatorname{Join}(P;F)$
 satisfies the second co-nucleus axiom.
 
 By an other lemma, we have that $\operatorname{Join}(P;F)$ preserves
-finite joins, given that $F$ preserves finite joins, which is the
+binary joins, given that $F$ preserves binary joins, which is the
 third co-nucleus axiom.\end{proof}
 \begin{lem}
 \label{join-fix-inter}$\Fix(\operatorname{Join}(P;F))=\operatorname{Join}(P;\Fix(F))$
@@ -1667,6 +1691,7 @@ then $\mathbf{Pos}(P;R)$ is a JSWLE and $\mathbf{Pos}(P;\operatorname{Join}(Q;R)
 is isomorphic to $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$.
 If $R$ is a co-frame, then also $\mathbf{Pos}(P;R)$ is a co-frame.
 \end{lem}
+\begin{proof}
 Let $f,g\in\mathbf{Pos}(P;R)$. Then $\lambda x\in P:(fx\sqcup gx)$
 is obviously monotone and then it is evident that $f\sqcup^{\mathbf{Pos}(P;R)}g=\lambda x\in P:(fx\sqcup gx)$.
 $\lambda x\in P:\bot^{R}$ is also obviously monotone and it is evident
@@ -1714,37 +1739,6 @@ b(x)\sqcup\bigsqcap_{f\in S}f(x)=\bigsqcap_{f\in S}(b(x)\sqcup f(x))=\bigsqcap_{
 
 
 Thus $b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S=\bigsqcap_{f\in S}^{\mathbf{Pos}(P;R)}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)=\bigsqcap^{\mathbf{Pos}(P;R)}\left\langle b\sqcup^{\mathbf{Pos}(P;R)}\right\rangle ^{\ast}S$.
+\end{proof}
 \begin{defn}
 $P\cong Q$ means that posets $P$ and $Q$ are isomorphic.\end{defn}
-\begin{thm}
-\label{frame-main}If $\mathfrak{A}$ is a co-frame and $L$ is a
-distributive lattice with greatest element, then $\operatorname{Join}(L;\mathfrak{A})$
-is also a co-frame.
-\end{thm}
-Let $F=\uparrow\circ\bigsqcap:\Upper(\mathfrak{A})\rightarrow\Upper(\mathfrak{A})$;
-$F$ is a co-nucleus by above.
-
-Since $\Upper(\mathfrak{A})\cong\mathbf{Pos}(\mathfrak{A};2)$ by
-proposition \ref{down-is-homo}, we may regard $F$ as a co-nucleus
-on $\mathbf{Pos}(\mathfrak{A};2)$.
-
-$\operatorname{Join}(L;\mathfrak{A})\cong\operatorname{Join}(L;\Fix(F))$
-by corollary \ref{down-meet-co-nucleus}.
-
-$\operatorname{Join}(L;\Fix(F))\cong\Fix(\operatorname{Join}(L;F))$
-by lemma \ref{join-fix-inter}.
-
-By corollary \ref{join-map-co-nucleus} the function $\operatorname{Join}(L;F)$
-is a co-nucleus on $\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right)$.
-\begin{eqnarray*}
-\operatorname{Join}\left(L;\mathbf{Pos}(\mathfrak{A};2)\right) & \cong & \text{(by lemma \ref{join-pos-interch})}\\
-\mathbf{Pos}(\mathfrak{A};\operatorname{Join}(L;2)) & \cong\\
-\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X)).
-\end{eqnarray*}
-But $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$ is a co-frame by
-lemma \ref{join-pos-interch}.
-
-Thus $\operatorname{Join}(L;\mathfrak{A})$ is isomorphic to a poset
-of fixed points of a co-nucleus on the co-frame $\mathbf{Pos}(\mathfrak{A};\mathfrak{F}(X))$.
-By lemma \ref{fix-is-co-frame} $\operatorname{Join}(L;\mathfrak{A})$
-is also a co-frame.

@@ -12,7 +12,7 @@ See also [the homepage of the book](http://www.mathematics21.org/algebraic-gener
 
 The following PDF files are created by the command `make` by default:
 
-* `book.pdf` - the book (known as "volume 1"), ready to read. This volume is meant to be accessible to a student which knows ZFC only.
+* `book.pdf` - the book (known as "volume 1"), ready to [read](http://www.mathematics21.org/binaries/volume-1.pdf). This volume is meant to be accessible to a student which knows ZFC only.
 
 The following PDF files are also created by the command `make all`:
 

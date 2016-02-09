@@ -31,7 +31,9 @@ composition of reloids}
 A similar thing for reloids:
 
 In this chapter we will equate reloids with filters on cartesian products
-of sets. 
+of sets.
+
+For composable reloids~$f$ and~$g$ we have
 \begin{align*}
 g\circ f & =\\
 \bigsqcap^{\mathsf{RLD}(\Src f;\Dst g)}\setcond{G\circ F}{F\in\GR f,G\in\GR g} & =\\
@@ -76,7 +78,7 @@ g\otimes f=\setcond{G\otimes F}{F\in\GR f,G\in\GR g}.
 \]
 Then
 \[
-g\circ f=\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\rsupfun{\dom}(g\otimes f)=\dom\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times\Dst g;\mho)}}(g\otimes f)
+g\circ f=\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\rsupfun{\dom}(g\otimes f)=\dom\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times\Dst g;\mho)}}(g\otimes f).
 \]
 
 
@@ -94,13 +96,13 @@ $f$, $g$, $h$.\end{lem}
 \end{proof}
 \begin{lem}
 Let $F=\uparrow^{\mathsf{RLD}}f$ be a principal reloid (for a $\mathbf{Rel}$-morphism~$f$),
-$T$ be~a set of reloids from $\Dst F$ to a set $V$.
+$T$~be a set of reloids from $\Dst F$ to a set $V$.
 \[
-\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}G\otimes f=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F).
+\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F).
 \]
 \end{lem}
 \begin{proof}
-$\bigsqcap_{G\in\up\bigsqcup T}\uparrow^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)\sqsupseteq\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$
+$\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)\sqsupseteq\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$
 is obvious.
 
 Let $K\in\up\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$.
@@ -108,7 +110,7 @@ Then for each $G\in T$
 \[
 K\in\up\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F);
 \]
-$K\in\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times V;\mho)}}\setcond{\Gamma\otimes f}{\Gamma\in G}$.
+$K\in\up\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\setcond{\Gamma\otimes f}{\Gamma\in G}$.
 Then $K\in\setcond{\Gamma\otimes f}{\Gamma\in G}$ by properties of
 generalized filter bases.
 
@@ -125,12 +127,13 @@ So
 \begin{multline*}
 K\in\setcond{(\Gamma'_{0}\otimes f)\cap\dots\cap(\Gamma'_{n}\otimes f)}{n\in\mathbb{N},\Gamma'_{i}\in\up\bigsqcup T}=\\
 \setcond{(\Gamma'_{0}\cap\dots\cap\Gamma'_{n})\otimes f}{n\in\mathbb{N},\Gamma'_{i}\in\up\bigsqcup T}=\\
-\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\setcond{G\otimes f}{G\in\up\bigsqcup T}.
+\up\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\setcond{G\otimes f}{G\in\up\bigsqcup T}.
 \end{multline*}
 
 \end{proof}
 
 \section{Proof of the main result}
+Let's prove a special case of conjecture~\ref{rld-compl-mcompl}:
 \begin{thm}
 $\left(\bigsqcup T\right)\circ F=\bigsqcup\setcond{G\circ F}{G\in T}$
 for every principal reloid $F=\uparrow^{\mathsf{RLD}}f$ (for a $\mathbf{Rel}$-morphism~$f$)
@@ -143,11 +146,11 @@ by duality.)\end{thm}
 \left(\bigsqcup T\right)\circ F & =\\
 \bigsqcap^{\mathsf{RLD}(\Src f;V)}\rsupfun{\dom}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
 \dom\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
-\dom\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}G\otimes f;\\
-\bigsqcup_{G\in T}G\circ F & =\\
+\dom\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f);\\
+\bigsqcup_{G\in T}(G\circ F) & =\\
 \bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f;V)}\rsupfun{\dom}(G\otimes F) & =\\
-\bigsqcup_{G\in T}\dom\bigsqcap^{\mathsf{RLD}(\Src f;V)}(G\otimes F) & =\\
-\dom\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f;V)}(G\otimes F).
+\bigsqcup_{G\in T}\dom\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F) & =\\
+\dom\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F).
 \end{align*}
 
 
@@ -212,7 +215,7 @@ $\rho\bigsqcap F=\bigsqcap\rsupfun{\rho}F$ for a set $F$ of reloids.\end{conject
 \begin{prop}
 $\rho1_{A}^{\mathsf{RLD}}=1_{\subsets(A\times A)}^{\mathsf{FCD}}$.\end{prop}
 \begin{proof}
-$\supfun{\rho1_{A}^{\mathsf{RLD}}}x=1_{\subsets(A\times A)}^{\mathsf{FCD}}\circ x=x$.
+$\supfun{\rho 1_{A}^{\mathsf{RLD}}}x=1_{A}^{\mathsf{RLD}}\circ x=x=\supfun{1_{\subsets(A\times A)}^{\mathsf{FCD}}}x$.
 \end{proof}
 We can try to develop further theory by applying embedding of reloids
 into funcoids for researching of properties of reloids.

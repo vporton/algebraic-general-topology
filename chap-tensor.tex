@@ -1,0 +1,127 @@
+\chapter{Matters related to tensor product}
+
+These consideration on (possibly infinite) indexed families of
+join-semilattices is based on \cite{nforum-todd-tensor} (for the finite case).
+
+Let $\mathfrak{A}$ be an indexed family of join-semilattices with least
+elements. Let $T$ also be a join-semilattice.
+
+Let $F (X)$ mean free join-semilattice for a set $X$.
+
+\begin{defn}
+$\mathbf{SepJoin}(\prod\mathfrak{A};T)$ is the set of maps from $\prod\mathfrak{A}$
+to~$T$, preserving joins in every argument $i\in\dom\mathfrak{A}$.
+\end{defn}
+
+\begin{obvious}
+The set of free join-semilattices $F (X)$ is order-isomorphic to the set of
+subsets $X$ of a ``universal'' set $\mho$.{\hspace*{\fill}}{\medskip}
+\end{obvious}
+
+Let $i : \prod \mathfrak{A} \rightarrow F \left( \prod \mathfrak{A} \right)$
+be the universal embedding.
+
+Let $\sim$ be defined as the smallest equivalence relation on $F \left( \prod
+\mathfrak{A} \right)$ that for every $k \in \dom \mathfrak{A}$, $L \in
+\prod_{i \in (\dom \mathfrak{A}) \setminus \{ k \}} \mathfrak{A}_i$:
+\begin{enumerate}
+  \item $i (L \cup \{ (k ; g \sqcup h) \}) \sim i (L \cup \{ (k ; g) \})
+  \sqcup i (L \cup \{ (k ; h) \})$;
+  
+  \item $\bot \sim i (L \cup \{ (k ; \bot) \})$;
+  
+  \item $x \sim y \wedge x' \sim y' \Rightarrow x \sqcup x' \sim y \sqcup y'$
+  for all $x, y, x', y' \in F \left( \prod \mathfrak{A} \right)$.
+\end{enumerate}
+
+\begin{obvious}
+Some function $h : X \rightarrow Y$ induces a well defined map $\psi : X / E
+\rightarrow Y$ on equivalence classes, if $E \subseteq F$ where $x \mathrel{F}
+y \Leftrightarrow h x = h y$.{\hspace*{\fill}}{\medskip}
+\end{obvious}
+
+\begin{lem}
+  The set of join-homomorphisms $\psi : F \left( \prod \mathfrak{A} \right) / \sim
+  \rightarrow T$ is isomorphic to the set of maps $\phi :
+  \prod \mathfrak{A} \rightarrow T$ preserving finite joins in separate arguments.
+\end{lem}
+
+\begin{proof}
+  The quotient map $q : F \left( \prod \mathfrak{A} \right) \rightarrow F
+  \left( \prod \mathfrak{A} \right) / \sim$ which takes an element $x$ to its
+  equivalence class $[x]$ map is well defined because
+  \[ x \sim y \wedge x' \sim y' \Rightarrow x \sqcup x' \sim y \sqcup y' . \]
+  The map $q$ \ preserves join. $F \left( \prod \mathfrak{A} \right) / \sim$
+  is associative, commutative, and idempotent since it is so on $F \left(
+  \prod \mathfrak{A} \right)$ and thus is a join-semilattice.
+  
+  Let join-preserving map $\psi : F \left( \prod \mathfrak{A} \right) / \sim
+  \rightarrow T$. It is easy to show that $\psi \circ q \circ i$ preserves
+  joins in separate arguments.
+  
+  Let now $\phi : \prod \mathfrak{A} \rightarrow T$ preserves joins in
+  separate arguments. There is a unique join-preserving map $\tilde{\phi} : F
+  \left( \prod \mathfrak{A} \right) \rightarrow T$ such that $\tilde{\phi}
+  \circ i = \phi$. We must show that this induces a well-defined
+  join-preserving map $\psi : F \left( \prod \mathfrak{A} \right) / \sim
+  \rightarrow T$ such that $\psi (q (x)) = \tilde{\phi} (x)$ for all $x \in F
+  \left( \prod \mathfrak{A} \right)$ (clearly at most one function $\psi$ can
+  satisfy this equation since $q$ is surjective). This will show that $\psi$
+  bijectively correspond to $\tilde{\phi}$ and thus bijectively correspond to
+  $\phi$. (This will finish the proof as that this bijection is monotone is
+  obvious.)
+  
+  Using the ``obvious'' above, it's enough (taking into account that $\sim$ is
+  the minimal equivalence relation subject to the above formulas) to prove
+  that:
+  \begin{enumerate}
+    \item $\tilde{\phi} (i (L \cup \{ (k ; g \sqcup h) \})) = \tilde{\phi} (i
+    (L \cup \{ (k ; g) \}) \sqcup i (L \cup \{ (k ; h) \}))$;
+    
+    \item $\tilde{\phi} (\bot) = \tilde{\phi} (i (L \cup \{ (k ; \bot) \}))$;
+    
+    \item $\tilde{\phi} (x) = \tilde{\phi} (y) \wedge \tilde{\phi} (x') =
+    \tilde{\phi} (y') \Rightarrow \tilde{\phi} (x \sqcup x') = \tilde{\phi} (y
+    \sqcup y')$
+  \end{enumerate}
+  The first easily follows from $\tilde{\phi} \circ i = \phi$ and the fact
+  that $\tilde{\phi}$ preserves binary joins.
+  
+  The second easily follows from $\tilde{\phi} \circ i = \phi$ and that $\phi$
+  preserves $\bot$.
+  
+  The third follows from the fact that $\tilde{\phi}$ preserves joins.
+\end{proof}
+
+\begin{cor}
+  The poset of prestaroids
+  $\mathsf{preStrd} (\mathfrak{A})$ is isomorphic to an ideal
+  (on a join-semilattice), provided that $\mathfrak{A}$ is an indexed family
+  of join-semilattices.
+\end{cor}
+
+\begin{proof}
+  $\mathsf{preStrd} (\mathfrak{A}) \cong \mathbf{SepJoin} (\mathfrak{A}; 2)
+  \cong F \left( \prod \mathfrak{A} \right) / \sim \rightarrow 2 \cong
+  \mathfrak{I} \left( F \left( \prod \mathfrak{A} \right) / \sim \right)$.
+\end{proof}
+
+\fxwarning{Check below (especially posets vs dual posets) for errors.}
+
+\begin{cor}
+$\mathsf{preStrd}$ is a complete lattice.
+\end{cor}
+
+\begin{proof}
+Corollary~\bookref{filt-is-complete}.
+\end{proof}
+
+\begin{cor}
+$\mathsf{preStrd}$ is a filtered filtrator.
+\end{cor}
+
+\begin{proof}
+Theorem~\bookref{semifilt-joinclosed}.
+\end{proof}
+
+\fxnote{Try to prove that $\mathsf{preStrd}$ is atomic and moreover atomistic (under certain conditions). Other properties?}

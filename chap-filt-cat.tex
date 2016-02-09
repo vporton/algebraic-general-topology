@@ -1,0 +1,127 @@
+\chapter{Categories of filters}
+
+In~\cite{filt-cat} two categories, whose objects are related with filters on sets, are defined and researched.
+
+Accordingly~\cite{filt-cat} infinite product is defined just in the first (denoted $\mathscr{F}$ there) of these two categories.
+So we will for now consider the first category. (Usefulness of the second category for our research is questionable.)
+
+Let $f:A\rightarrow B$ be a function, $\mathcal{A}$ be a filter on~$A$.
+
+\begin{prop}
+$\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$ is a filter.
+\end{prop}
+
+\begin{proof}
+That it is an upper set is obvious.
+
+Let $Y_0,Y_1\in\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$. Then
+$\rsupfun{f^{-1}}Y_0\in\mathcal{A}$ and $\rsupfun{f^{-1}}Y_1\in\mathcal{A}$.
+We have
+\[ \rsupfun{f^{-1}}(Y_0\cap Y_1) = \rsupfun{f^{-1}}Y_0 \cap \rsupfun{f^{-1}}Y_1 \in \mathcal{A} \]
+since $f$ is monovalued.
+Thus $Y_0 \cap Y_1\in\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$.
+\end{proof}
+
+\begin{thm}
+\fxwarning{Should be moved above in the book.}
+$\setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$ is equal to the filter generated
+by the filter base $\rsupfun{\rsupfun{f}}\mathcal{A}$, for every filter~$\mathcal{A}$.
+\end{thm}
+
+\begin{proof}
+Denote $\mathcal{B} = \setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\mathcal{A}}$,
+$\mathcal{C} = \rsupfun{\rsupfun{f}}\mathcal{A}$.
+
+Let $Y\in\mathcal{C}$. Then $Y=\rsupfun{f}A$ where $A\in\mathcal{A}$.
+Then $\rsupfun{f^{-1}}\rsupfun{f}A\supseteq A$ and so $\rsupfun{f^{-1}}\rsupfun{f}A\in\mathcal{A}$.
+This proves $\rsupfun{f}A\in\mathcal{B}$, that is $Y\in\mathcal{B}$.
+
+Let now $Y\in\mathcal{B}$. Then $\rsupfun{f}\rsupfun{f^{-1}}Y\subseteq Y$. Since $\rsupfun{f^{-1}}Y\in\mathcal{A}$,
+we have that $Y$ is a supset of some set of the form $\rsupfun{f}A$, so $Y\in\mathcal{C}$.
+\end{proof}
+
+\begin{cor}
+$\up\supfun{f}\mathcal{A} = \setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\up\mathcal{A}}$.
+\end{cor}
+
+\begin{defn}
+The \emph{category of filtered sets} $\mathbf{Filt}$ is the category defined as follows:
+\begin{enumerate}
+\item Objects are pairs $(A;\mathcal{A})$ where $A$ is a (small) set and $\mathcal{A}$ is a filter on~$A$.
+\item Morphisms from $(A;\mathcal{A})$ to $(B;\mathcal{B})$ are functions $f:A\rightarrow B$ such that
+$\supfun{f}\mathcal{A} \sqsubseteq \mathcal{B}$.
+\item Identities are identity functions.
+\end{enumerate}
+\end{defn}
+
+To verify that it is a category is straightforward.
+
+It is the same category as $\mathscr{F}$ in \cite{filt-cat}, as follows from an above proposition.
+
+We will prove that starred reloidal product is a categorical product in this category.
+First we will prove the special case that binary reloidal product is a categorical product in this category.
+
+\begin{thm}
+  $\times^{\mathsf{RLD}}$ (together with projections $\Pr_0$ and
+  $\Pr_1$) is a categorical product in $\mathbf{Filt}$.
+\end{thm}
+
+\begin{proof}
+  Let our objects be $\mathcal{A}$, $\mathcal{B}$.
+  
+  Denote $p$ the left projection from $\Base (\mathcal{A}) \times
+  \Base (\mathcal{B})$ to $\Base (\mathcal{A})$.
+  
+  We need to check that $p$ is a $\mathbf{Filt}$-morphism that is $p
+  (\mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}) \sqsubseteq
+  \mathcal{A}$ what is obvious.
+  
+  Similarly for the right projection $q$.
+  
+  It remains to check the universal property: Let $\mathcal{C}$ be a filter
+  and $f : \mathcal{C} \rightarrow \mathcal{A}$, $g : \mathcal{C} \rightarrow
+  \mathcal{B}$. We need to prove that there are a unique $u : \mathcal{C}
+  \rightarrow \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}$ such that
+  $f = p \circ u$ and $g = q \circ u$. Denote $h (z) = (f (z) ; g (z))$.
+  
+  $h$ is the unique function $\Base (\mathcal{C}) \rightarrow
+  \Base (\mathcal{A}) \times \Base (\mathcal{B})$ such that $f = p
+  \circ h$ and $g = q \circ h$, so it remains to check that $h$ is a morphism
+  of $\mathbf{Filt}$ that is $\langle h \rangle \mathcal{C}
+  \sqsubseteq \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}$, what
+  obviously follows from $\supfun{f} \mathcal{C} \sqsubseteq
+  \mathcal{A}$ and $\supfun{g} \mathcal{C} \sqsubseteq \mathcal{B}$.
+\end{proof}
+
+\begin{thm}
+  $\prod^{\mathsf{RLD} \ast}$ together with projections $\Pr_k$ is a
+  categorical product in $\mathbf{Filt}$.
+\end{thm}
+
+\begin{proof}
+  Consider an indexed family $\mathcal{A}$ of objects.
+  
+  Denote $p_k$ the $k$-th projection from $\prod_{i \in \dom
+  \mathcal{A}} \Base (\mathcal{A}_i)$.
+  
+  We need to check that $p_k$ s a $\mathbf{Filt}$-morphism that is
+  $p_k \left( \prod^{\mathsf{RLD} \ast} \mathcal{A} \right) \sqsubseteq
+  \mathcal{A}_k$ what is obvious.
+  
+  It remains to check the universal property: Let $\mathcal{C}$ be a filter
+  and $f_k : \mathcal{C} \rightarrow \mathcal{A}_k$. We need to prove that
+  there are a unique $u : \mathcal{C} \rightarrow \prod^{\mathsf{RLD}
+  \ast} \mathcal{A}$ such that $f_k = p_k \circ u$. Denote $h (z) = \lambda i
+  \in \dom \mathcal{A} : f_i z$.
+  
+  $h$ is the unique function $\Base (\mathcal{C}) \rightarrow \prod_{i
+  \in \dom \mathcal{A}} \Base (\mathcal{A}_i)$ such that $f_k =
+  p_k \circ h$, so it remains to check that $h$ is a morphism of
+  $\mathbf{Filt}$ that is $\langle h \rangle \mathcal{C} \sqsubseteq
+  \prod^{\mathsf{RLD} \ast} \mathcal{A}$. It follows from
+  \[ \Pr^{\mathsf{RLD}}_i \langle h \rangle \mathcal{C} = \bigsqcap
+     \rsupfun{Pr_i} \langle h \rangle^{\ast} \up
+     \mathcal{C} = \bigsqcap \langle \Pr_i \circ h \rangle^{\ast} \up
+     \mathcal{C} = \bigsqcap \langle f_i \rangle^{\ast} \up \mathcal{C}
+     = \langle f_i \rangle \mathcal{C} \sqsubseteq \mathcal{A}_i . \]
+\end{proof}

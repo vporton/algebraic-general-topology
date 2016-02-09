@@ -236,8 +236,9 @@ defined for given $x$ and $y$).\end{obvious}
 \end{thm}
 \begin{proof}
 I will prove only the first as the second follows by duality.
-\end{proof}
+
 $y\sqsupseteq\bigsqcup X\Leftrightarrow y\text{ is an upper bound for }X\Leftrightarrow\forall x\in X:y\sqsupseteq x$.
+\end{proof}
 \begin{cor}
 ~
 \begin{enumerate}
@@ -543,21 +544,17 @@ that is $x\sqcap y\sqsubseteq u$ for all $y\in S$. Then
 \[
 y=y\sqcap(x\sqcup\bar{x})=(y\sqcap x)\sqcup(y\sqcap\bar{x})\sqsubseteq u\sqcup\bar{x},
 \]
-
-
 and so $\bigsqcup S\sqsubseteq u\sqcup\bar{x}$. Thus
 \[
 x\sqcap\bigsqcup S\sqsubseteq x\sqcap(u\sqcup\bar{x})=(x\sqcap u)\sqcup(x\sqcap\bar{x})=(x\sqcap u)\sqcup\bot=x\sqcap u\sqsubseteq u,
 \]
-
-
 that is $x\sqcap\bigsqcup S$ is the least upper bound of $\rsupfun{x\sqcap}S$.\end{proof}
 \begin{thm}
 \index{De Morgan's laws!infinite}(infinite \noun{De Morgan}'s laws) For
 every subset $S$ of a complete boolean lattice
 \begin{enumerate}
 \item $\overline{\bigsqcup S}=\bigsqcap_{x\in S}\bar{x}$;
-\item $\overline{\bigsqcap S}=\bigsqcup{}_{x\in S}\bar{x}$.
+\item $\overline{\bigsqcap S}=\bigsqcup_{x\in S}\bar{x}$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -602,7 +599,7 @@ be its center. Let $a,b\in Z(\mathfrak{A})$. Consequently $\bar{a},\bar{b}\in Z(
 Then $\bar{a}\sqcup\bar{b}$ is the complement of $a\sqcap b$ because
 \begin{align*}
 (a\sqcap b)\sqcap(\bar{a}\sqcup\bar{b})=(a\sqcap b\sqcap\bar{a})\sqcup(a\sqcap b\sqcap\bar{b})=\bot\sqcup\bot=\bot & \text{\quad and}\\
-(a\sqcap b)\sqcup(\bar{a}\sqcup\bar{b})=(a\sqcup\bar{a}\sqcup\bar{b})\sqcap(b\sqcup\bar{a\sqcup\bar{b}})=\top\sqcap\top=\top.
+(a\sqcap b)\sqcup(\bar{a}\sqcup\bar{b})=(a\sqcup\bar{a}\sqcup\bar{b})\sqcap(b\sqcup{\bar{a}\sqcup\bar{b}})=\top\sqcap\top=\top.
 \end{align*}
 
 
@@ -654,6 +651,22 @@ existence of non-least element $x$ such that $x\sqsubseteq B$ and
 $x\sqsubseteq a$. Because $a$ is an atom, we have $x=a$. So $a\sqsubseteq B$.
 \end{description}
 \end{proof}
+\begin{thm}
+A poset is atomistic iff every its element can be represented as join of atoms.
+\end{thm}
+\begin{proof}
+~
+\begin{description}
+\item[$\Rightarrow$] Obvious.
+\item[$\Leftarrow$] Let $a = \bigsqcup S$ where $S$ is a set of atoms. We will prove that $a$ is
+the least upper bound of $\atoms a$.
+
+That $a$ is an upper bound of $\atoms a$ is obvious. Let $x$ is an upper
+bound of $\atoms a$. Then $x \sqsupseteq \bigsqcup S$ because $S\subseteq \atoms a$. Thus $x \sqsupseteq a$.
+\end{description}
+
+\end{proof}
+
 \begin{thm}
 $\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ whenever $\bigsqcap S$
 is defined for every $S\in\subsets\mathfrak{A}$ where $\mathfrak{A}$
@@ -710,14 +723,30 @@ for every $x,y\in\mathfrak{A}$.
 \end{defn}
 
 \begin{defn}
-\index{order embedding}\emph{Order embedding} is a monotone injective
-function whose inverse is also monotone.
+\index{order embedding}\emph{Order embedding} is a function~$f$ from poset~$\mathfrak{A}$ to a poset~$\mathfrak{B}$
+such that $x\sqsubseteq y\Leftrightarrow fx\sqsubseteq fy$ for every $x,y\in\mathfrak{A}$.
 \end{defn}
 
+\begin{prop}
+Every order embedding is injective.
+\end{prop}
+
+\begin{proof}
+$fx=fy$ implies $x\sqsubseteq y$ and $y\sqsubseteq x$.
+\end{proof}
+
+\begin{obvious}
+Every order embedding is an order homomorphism.
+\end{obvious}
+
 \begin{defn}
-\index{antitone order embedding}\emph{Antitone order embedding} is
-an antitone injective function whose inverse is also antitone.
+\index{antitone order embedding}\emph{Antitone order embedding} is a function~$f$ from poset~$\mathfrak{A}$ to a poset~$\mathfrak{B}$
+such that $x\sqsubseteq y\Leftrightarrow fx\sqsupseteq fy$ for every $x,y\in\mathfrak{A}$.
 \end{defn}
+
+\begin{obvious}
+Antitone order embedding is an order embedding between a poset and a dual of (another) poset.
+\end{obvious}
 
 \begin{defn}
 \index{order isomorphism}\emph{Order isomorphism} is a surjective
@@ -828,7 +857,7 @@ So $f^{\ast}f_{\ast}f^{\ast}x=f^{\ast}x$.
 \end{disorder}
 \end{proof}
 \begin{defn}
-\index{idempotent}A function $f$ is called idempotent iff $f(f(X))=f(X)$
+\index{idempotent}A function $f$ is called \emph{idempotent} iff $f(f(X))=f(X)$
 for every argument $X$.\end{defn}
 \begin{prop}
 $f^{\ast}\circ f_{\ast}$ and $f_{\ast}\circ f^{\ast}$ are idempotent.\end{prop}
@@ -909,7 +938,7 @@ $\mathfrak{B}\rightarrow\mathfrak{A}$.
 \item If $f$ is a lower adjoint, $f$ preserves all existing suprema in
 $\mathfrak{A}$.
 \item If $\mathfrak{A}$ is a complete lattice and $f$ preserves all suprema,
-then $f$ is an lower adjoint of a function $\mathfrak{B}\rightarrow\mathfrak{A}$.
+then $f$ is a lower adjoint of a function $\mathfrak{B}\rightarrow\mathfrak{A}$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -976,7 +1005,7 @@ pseudocomplement} of $a\in\mathfrak{A}$ is
 
 
 If $z$ is the dual pseudocomplement of $a$ we will denote $z=a^{+}$.\end{defn}
-\begin{prop}
+\begin{prop}\label{compl-is-pseud}
 If $a$ is a complemented element of a bounded distributive lattice,
 then $\bar{a}$ is both pseudocomplement and dual pseudocomplement
 of $a$.\end{prop}
@@ -1067,6 +1096,7 @@ a\sqcup b.
 \begin{thm}
 \label{brow-crit}The following are equivalent for a complete lattice~$\mathfrak{A}$:
 \begin{enumerate}
+\item \label{cobrow-cnd-frame}$\mathfrak{A}$ is a co-frame.
 \item \label{cobrow-cnd-dist}$\mathfrak{A}$ is meet infinite distributive.
 \item \label{cobrow-cnd-cobrow}$\mathfrak{A}$ is a co-brouwerian lattice.
 \item \label{cobrow-cnd-cohey}$\mathfrak{A}$ is a co-Heyting lattice.
@@ -1077,6 +1107,7 @@ $a\in\mathfrak{A}$.
 \begin{proof}
 ~\end{proof}
 \begin{description}
+\item [{\ref{cobrow-cnd-frame}$\Leftrightarrow$\ref{cobrow-cnd-cobrow}}] Because it is complete.
 \item [{\ref{cobrow-cnd-cobrow}$\Leftrightarrow$\ref{cobrow-cnd-cohey}}] Obvious
 (taking into account completeness of $\mathfrak{A}$).
 \item [{\ref{cobrow-cnd-adj}$\Rightarrow$\ref{cobrow-cnd-dist}}] Let
@@ -1200,12 +1231,12 @@ For co-Heyting algebras $\top\psetminus b=b^{+}$.\end{thm}
 \top\psetminus b=\min\setcond{z\in\mathfrak{A}}{\top\sqsubseteq b\sqcup z}=\min\setcond{z\in\mathfrak{A}}{\top=b\sqcup z}=\min\setcond{z\in\mathfrak{A}}{b\equiv z}=b^{+}.
 \]
 \end{proof}
-\begin{thm}
+\begin{thm}\label{dpdfiff-meet}
 $(a\sqcap b)^{+}=a^{+}\sqcup b^{+}$ for every elements $a$, $b$
 of a co-Heyting algebra.\end{thm}
 \begin{proof}
 $a\sqcup(a\sqcap b)^{+}\sqsupseteq(a\sqcap b)\sqcup(a\sqcap b)^{+}\sqsupseteq\top$.
-So $a\sqcup(a\sqcap b)^{+}\sqsupseteq\top$; $(a\sqcap b)^{+}\sqsupseteq1\psetminus a=a^{+}$.
+So $a\sqcup(a\sqcap b)^{+}\sqsupseteq\top$; $(a\sqcap b)^{+}\sqsupseteq\top\psetminus a=a^{+}$.
 
 We have $(a\sqcap b)^{+}\sqsupseteq a^{+}$. Similarly $(a\sqcap b)^{+}\sqsupseteq b^{+}$.
 Thus $(a\sqcap b)^{+}\sqsupseteq a^{+}\sqcup b^{+}$.
@@ -1382,7 +1413,7 @@ I will denote the morphism corresponding to a edge~$e$ as $D(e)$.
 \begin{defn}
 A diagram in~$C$ is \emph{commutative} when the composition of morphisms
 corresponding to a finite path is always the same for finite paths
-from a every vertex~$A$ to a vertex~$B$ independently of the
+from a fixed vertex~$A$ to a fixed vertex~$B$ independently of the
 path choice.
 
 We will say ``\emph{commutative diagram}'' when commutativity of
@@ -1401,11 +1432,11 @@ The following is an example of a commutative diagram in~$\mathbf{Set}$
 \end{tikzcd}
 \]
 
-We are essentially interested in the special case of commutative diagrams
+We are especially interested in the special case of commutative diagrams
 every morphism of which is an isomorphism. So, the below theorem.
 \begin{thm}
 \label{rehash-isos}If morphisms corresponding to every edge~$e_{i}$
-of a path $\llbracket e_{0},\ldots,e_{n}\rrbracket$ are isomorphisms
+of a cycle $\llbracket e_{0},\ldots,e_{n}\rrbracket$ are isomorphisms
 then the following are equivalent:
 \begin{itemize}
 \item The morphism induced by $\llbracket e_{0},\ldots,e_{n}\rrbracket$
@@ -1459,7 +1490,7 @@ For cycles of length~$2$ it holds by definition of isomorphism.
 For cycles of length~$3$ it holds by theorem~\ref{rehash-isos}.
 
 Consider a cycle of length above~$3$. It is easy to show that this
-cycles contains a sub-cycle of length~$3$ or below. (Consider three
+cycle contains a sub-cycle of length~$3$ or below. (Consider three
 first edges $a\overset{e_{0}}{\rightarrow}b\overset{e_{1}}{\rightarrow}c\overset{e_{2}}{\rightarrow}d$
 of the path, by pigeonhole principle we have that there are equal
 elements among $a$, $b$, $c$,~$d$.) We can exclude the sub-cycle
@@ -1491,7 +1522,7 @@ is commutative, every cycle in the diagram is an identity.
 Assign to every vertex $(i;j)$ of the diagram morphism $W(i;j)$
 defined by the table~\ref{square-table}.
 
-\begin{table}[h]
+\begin{table}[ht]
 \caption{\label{square-table}}
 
 
@@ -1504,9 +1535,9 @@ $0$ & $0$ & $1_{\Src f}$\tabularnewline
 \hline 
 $0$ & $1$ & $f$\tabularnewline
 \hline 
-$1$ & $0$ & $g\circ f$\tabularnewline
+$1$ & $0$ & $t^{-1}$\tabularnewline
 \hline 
-$1$ & $1$ & $t^{-1}$\tabularnewline
+$1$ & $1$ & $g\circ f$\tabularnewline
 \hline 
 \end{tabular}
 \end{table}
@@ -1546,7 +1577,7 @@ $f\cdot f^{-1}=f^{-1}\cdot f=e$.
 \begin{obvious}
 Every group is a semigroup.\end{obvious}
 \begin{prop}
-In every group there exist exactly one identity element.\end{prop}
+In every group there exists exactly one identity element.\end{prop}
 \begin{proof}
 If $p$ and $q$ are both identities, then $p=p\cdot q=q$.\end{proof}
 \begin{prop}

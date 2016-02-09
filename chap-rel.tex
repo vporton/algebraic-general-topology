@@ -96,7 +96,7 @@ $\mathscr{T}U$ is a complete atomistic boolean lattice. Particularly:
 \item $(\subsets U;A)\sqcup(\subsets U;B)=(\subsets U;A\cup B)$;
 \item $(\subsets U;A)\sqcap(\subsets U;B)=(\subsets U;A\cap B)$;
 \item $\bigsqcup_{A\in S}(\subsets U;A)=(\subsets U;\bigcup_{A\in S}A)$;
-\item $\bigsqcap_{A\in S}(\subsets U;A)=(\subsets U;\bigcap_{A\in S}A)$;
+\item $\bigsqcap_{A\in S}(\subsets U;A)=\left(\subsets U;\begin{cases}\bigcap_{A\in S}A&\text{ if }A\ne\emptyset\\U&\text{ if }A=\emptyset\end{cases}\right)$;
 \item $\overline{(\subsets U;A)}=(\subsets U;U\setminus A)$;
 \item atomic elements are $(\subsets U;\{x\})$ where $x\in U$.
 \end{enumerate}
@@ -143,7 +143,7 @@ $Y\in\mathscr{T}\Dst f$.
 \end{defn}
 
 \begin{defn}
-For category $\mathbf{Rel}$ there is defined reverse morphism: $(A;B;F)^{-1}=(A;B;F^{-1})$.\end{defn}
+For category $\mathbf{Rel}$ there is defined reverse morphism: $(A;B;F)^{-1}=(B;A;F^{-1})$.\end{defn}
 \begin{obvious}
 $(f^{-1})^{-1}=f$ for every $\mathbf{Rel}$-morphism~$f$.
 \end{obvious}
@@ -172,7 +172,7 @@ The following are equivalent:
 \begin{itemize}
 \item $f$ is a monovalued relation;
 \item $\forall x\in A,y_{0},y_{1}\in B:(x\mathrel fy_{0}\land x\mathrel fy_{1}\Rightarrow y_{0}=y_{1})$;
-\item $\forall x\in A,y_{0},y_{1}\in B:(y_{0}\ne y_{1}\Rightarrow\lnot(x\mathrel fy_{0})\lor\lnot(x\mathrel fy_{1})))$;
+\item $\forall x\in A,y_{0},y_{1}\in B:(y_{0}\ne y_{1}\Rightarrow\lnot(x\mathrel fy_{0})\lor\lnot(x\mathrel fy_{1}))$;
 \item $\forall y_{0},y_{1}\in B\forall x\in A:(y_{0}\ne y_{1}\Rightarrow\lnot(x\mathrel fy_{0})\lor\lnot(x\mathrel fy_{1}))$;
 \item $\forall y_{0},y_{1}\in B:(y_{0}\ne y_{1}\Rightarrow\forall x\in A:(\lnot(x\mathrel fy_{0})\lor\lnot(x\mathrel fy_{1})))$;
 \item $\forall y_{0},y_{1}\in B:(\exists x\in A:(x\mathrel fy_{0}\land x\mathrel fy_{1})\Rightarrow y_{0}=y_{1})$;
@@ -202,10 +202,10 @@ for a set of sets $S$;
 for a set of sets $T$;
 \item \label{br-j12}$\bigcup S\rsuprel f\bigcup T\Leftrightarrow\exists X\in S,Y\in T:X\rsuprel fY$
 for sets of sets $S$ and $T$;
-\item \label{br-at-r}$X\rsuprel fY\Leftrightarrow\exists\alpha,\beta:\{\alpha\}\rsuprel f\{\beta\}$
+\item \label{br-at-r}$X\rsuprel fY\Leftrightarrow\exists\alpha\in X,\beta\in Y:\{\alpha\}\rsuprel f\{\beta\}$
 for sets $X$ and $Y$;
 \item \label{br-at-f}$\rsupfun fX=\bigcup\rsupfun{\rsupfun f}\atoms X$ for a
-set $X$.
+set $X$ (where $\atoms X=\setcond{\{x\}}{x\in X}$).
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -226,7 +226,7 @@ y\in\rsupfun f\bigcup S\Leftrightarrow\exists x\in\bigcup S:x\mathrel fy\Leftrig
 
 \item [{\ref{br-j2}}] By symmetry.
 \item [{\ref{br-j12}}] From two previous formulas.
-\item [{\ref{br-at-r}}] $X\rsuprel fY\Leftrightarrow\exists\alpha,\beta:\alpha\mathrel f\beta\Leftrightarrow\exists\alpha,\beta:\{\alpha\}\rsuprel f\{\beta\}$.
+\item [{\ref{br-at-r}}] $X\rsuprel fY\Leftrightarrow\exists\alpha\in X,\beta\in Y:\alpha\mathrel f\beta\Leftrightarrow\exists\alpha\in X,\beta\in Y:\{\alpha\}\rsuprel f\{\beta\}$.
 \item [\ref{br-at-f}] Obvious.
 \end{widedisorder}
 \end{proof}
@@ -256,11 +256,11 @@ Let $A$, $B$ be sets, $R$ be a set of binary relations.
 \item \textbf{\label{bsr-jf}$\rsupfun{\bigcup R}X=\bigcup_{f\in R}\rsupfun fX$}
 for every set $X$;
 \item \label{bsr-mf}$\rsupfun{\bigcap R}\{\alpha\}=\bigcap_{f\in R}\rsupfun f\{\alpha\}$
-for every $\alpha$;
+for every $\alpha$, if $R$ is nonempty;
 \item \label{bsr-jr}$X\rsuprel{\bigcup R}Y\Leftrightarrow\exists f\in R:X\rsuprel fY$
 for every sets $X$, $Y$;
 \item \label{bsr-mr}$\alpha\mathrel{\left(\bigcap R\right)}\beta\Leftrightarrow\forall f\in R:\alpha\mathrel f\beta$
-for every $\alpha$ and $\beta$.
+for every $\alpha$ and $\beta$, if $R$ is nonempty.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -306,8 +306,8 @@ for every binary relation~$f$ and sets $X$ and $Y$.\end{prop}
 ~
 \begin{multline*}
 X\rsuprel{g\circ f}Z\Leftrightarrow\exists x\in X,z\in Z:x\mathrel{(g\circ f)}z\Leftrightarrow\\
-\exists x\in X,z\in Z,\beta:(x\mathrel f\beta\land\beta\mathrel fz)\Leftrightarrow\\
-\exists\beta:(\exists x\in X:x\mathrel f\beta\land\exists y\in Y:\beta\mathrel fz)\Leftrightarrow\exists\beta:(X\rsuprel f\{\beta\}\land\{\beta\}\rsuprel gZ).
+\exists x\in X,z\in Z,\beta:(x\mathrel f\beta\land\beta\mathrel gz)\Leftrightarrow\\
+\exists\beta:(\exists x\in X:x\mathrel f\beta\land\exists y\in Y:\beta\mathrel gz)\Leftrightarrow\exists\beta:(X\rsuprel f\{\beta\}\land\{\beta\}\rsuprel gZ).
 \end{multline*}
 \end{proof}
 \begin{cor}
@@ -332,6 +332,8 @@ Every $\mathbf{Rel}$-morphism is metacomplete and co-metacomplete.\end{cor}
 \label{rel-mono}The following are equivalent for a $\mathbf{Rel}$-morphism~$f$:
 \begin{enumerate}
 \item \label{rel-mono-mono}$f$ is monovalued.
+\item \label{rel-mmv}$f$ is metamonovalued.
+\item \label{rel-wmmv}$f$ is weakly metamonovalued.
 \item \label{rel-mono-atom}$\rsupfun fa$ is either atomic or least whenever
 $a\in\atoms^{\mathscr{T}\Src f}$.
 \item \label{rel-mono-bin}$\rsupfun{f^{-1}}(I\sqcap J)=\rsupfun{f^{-1}}I\sqcap\rsupfun{f^{-1}}J$
@@ -343,6 +345,19 @@ for every $S\in\subsets\mathscr{T}\Src f$.
 \begin{proof}
 ~
 \begin{description}
+\item [{\ref{rel-mmv}$\Rightarrow$\ref{rel-wmmv}}] Obvious.
+\item [{\ref{rel-mono-mono}$\Rightarrow$\ref{rel-mmv}}] Take $x\in\atoms^{\mathscr{T}\Src f}$;
+then $fx\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$ and thus 
+\begin{multline*}
+\rsupfun{\left(\bigsqcap G\right)\circ f}x=\rsupfun{\bigsqcap G}\rsupfun fx=\bigsqcap_{g\in G}\rsupfun g\rsupfun fx=\\
+\bigsqcap_{g\in G}\rsupfun{g\circ f}x=\rsupfun{\bigsqcap_{g\in G}(g\circ f)}x;
+\end{multline*}
+so $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.
+\item [{\ref{rel-wmmv}$\Rightarrow$\ref{rel-mono-mono}}] Take $g=\{(a;y)\}$
+and $h=\{(b;y)\}$ for arbitrary $a\ne b$ and arbitrary~$y$. We
+have $g\cap h=\emptyset$; thus $(g\circ f)\cap(h\circ f)=(g\cap h)\circ f=\bot$
+and thus impossible $x\mathrel fa\land x\mathrel fb$ as otherwise
+$(x;y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
 \item [{\ref{rel-mono-atom}$\Rightarrow$\ref{rel-mono-meet}}] Let $a\in\atoms^{\mathscr{T}\Src f}$,
 $\rsupfun fa=b$. Then because $b\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$
 \begin{gather*}
@@ -355,7 +370,7 @@ a\nasymp\rsupfun{f^{-1}}\bigsqcap S\Leftrightarrow a\nasymp\bigsqcap_{Y\in S}\rs
 \end{gather*}
 
 \item [{\ref{rel-mono-meet}$\Rightarrow$\ref{rel-mono-bin}}] Obvious.
-\item [{\ref{rel-mono-bin}$\Rightarrow$\ref{rel-mono-mono}}] $\rsupfun{f^{-1}}a\sqcap\rsupfun{f^{-1}}b=\rsupfun{f^{-1}}(a\sqcap b)=\rsupfun{f^{-1}}\bot^{\mathscr{T}\Dst f}$
+\item [{\ref{rel-mono-bin}$\Rightarrow$\ref{rel-mono-mono}}] $\rsupfun{f^{-1}}a\sqcap\rsupfun{f^{-1}}b=\rsupfun{f^{-1}}(a\sqcap b)=\rsupfun{f^{-1}}\bot^{\mathscr{T}\Dst f}=\bot^{\mathscr{T}\Src f}$
 for every two distinct atoms $a=\{\alpha\},b=\{\beta\}\in\mathscr{T}\Dst f$.
 From this 
 \begin{multline*}
@@ -370,40 +385,6 @@ points $p$, $q$ such that $p,q\in\rsupfun fa$. Thus $p\mathrel{(f\circ f^{-1})}q
 and so $f\circ f^{-1}\nsqsubseteq1_{\Dst f}^{\mathbf{Rel}}$.
 \end{description}
 \end{proof}
-\begin{prop}
-The following are equivalent for every $\mathbf{Rel}$-morphism:
-\begin{enumerate}
-\item \label{rel-mv}It is monovalued.
-\item \label{rel-mmv}It is metamonovalued.
-\item \label{rel-wmmv}It is weakly metamonovalued.
-\end{enumerate}
-\end{prop}
-\begin{proof}
-~
-\begin{description}
-\item [{\ref{rel-mmv}$\Rightarrow$\ref{rel-wmmv}}] Obvious.
-\item [{\ref{rel-mv}$\Rightarrow$\ref{rel-mmv}}] Take $x\in\atoms^{\mathscr{T}\Src f}$;
-then $fx\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$ and thus 
-\begin{multline*}
-\rsupfun{\left(\bigsqcap G\right)\circ f}x=\rsupfun{\bigsqcap G}\rsupfun fx=\bigsqcap_{g\in G}\rsupfun g\rsupfun fx=\\
-\bigsqcap_{g\in G}\rsupfun{g\circ f}x=\rsupfun{\bigsqcap_{g\in G}(g\circ f)}x;
-\end{multline*}
-so $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.
-\item [{\ref{rel-wmmv}$\Rightarrow$\ref{rel-mv}}] Take $g=\{(a;y)\}$
-and $h=\{(b;y)\}$ for arbitrary $a\ne b$ and arbitrary~$y$. We
-have $g\cap h=\emptyset$; thus $(g\circ f)\cap(h\circ f)=(g\cap h)\circ f=\emptyset$
-and thus impossible $x\mathrel fa\land x\mathrel fb$ as otherwise
-$(x;y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
-\end{description}
-\end{proof}
-\begin{cor}
-The following are equivalent for every $\mathbf{Rel}$-morphism:
-\begin{enumerate}
-\item It is injective.
-\item It is metainjective.
-\item It is weakly metainjective.
-\end{enumerate}
-\end{cor}
 
 \section{Product of typed sets}
 \begin{defn}

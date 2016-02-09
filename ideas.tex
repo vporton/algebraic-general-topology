@@ -9,16 +9,17 @@ General Topology.
 
 This research plan is not formal and may contain vague statements.
 
+Should clearly denote $\mathsf{pFCD}(\mathfrak{A};\mathfrak{Z})$ or $\mathsf{pFCD}(\mathfrak{A})$.
+
 \section{Category theory}
 
 Misc properties of continuous functions between endofuncoids and endoreloids.
 
-$(A;B)\mapsto\mathsf{pFCD}(A;B)$ for posets $A$, $B$ is a tensor product
-(in category theory sense). It is specifically likely that it is a tensor
-product in the category of join-semilattices or a similar category.
-See \url{http://mathoverflow.net/a/191444/4086} for a proof. It follows
-$\mathsf{pFCD}(\mathsf{FCD}(\Src\circ f); \mathsf{FCD}(\Dst\circ f))$ in the book,
-chapter ``Staroids and Multifuncoids'' can be reduced to a single tensor product.
+\url{http://nforum.ncatlab.org/discussion/6765/please-help-with-a-proof-that-a-category-is-monoidal/} proves that
+finitary staroids are isomorphic to an ideal on a poset (for semilattices only).
+
+\url{http://matwbn.icm.edu.pl/ksiazki/fm/fm94/fm94115.pdf} defines two categories with objects being filters. Another article on the same topic:\\
+\url{https://eudml.org/doc/16352} (Koubek, V\'aclav, and Reiterman, Jan. "On the category of filters.")
 
 \section{Compact funcoids}
 
@@ -39,6 +40,55 @@ Every closed subset of a compact space is compact. A compact subset of a Hausdor
 Compactification.
 
 \section{Misc}
+
+$L \in \GR \prod^{\mathsf{Strd} \ast} A \Leftrightarrow \forall
+\text{finite } M \subseteq \dom A \forall i \in M : A_i \nasymp L_i$?
+
+Star-composition with identity staroids?
+
+Does upgrading/downgrading of the ideal which represents a prestaroid coincide with upgrading/downgrading of the prestaroid?
+
+It seems that equivalence of filters on different bases can be generalized:
+filters~$\mathcal{A}\in\mathfrak{A}$ and~$\mathcal{B}\in\mathfrak{B}$ are \emph{equivalent} iff
+there exists an $X\in\mathfrak{A}\cap\mathfrak{B}$ which is greater than both~$\mathcal{A}$ and~$\mathcal{B}$.
+This however works only in the case if order of the orders~$\mathfrak{A}$ and~$\mathfrak{B}$ agree,
+that is if then are both a suborders of a greater fixed order.
+
+Under which conditions a function spaces of posets is strongly separable?
+
+Generalize both funcoids and reloids as filters on a superset of the lattice~$\Gamma$ (see ``Funcoids are filters'' chapter).
+
+When the set of filters closed regarding a funcoid is a (co-)frame?
+
+If a formula $F(x_0,\dots,x_n)$ holds for every poset $\mathfrak{A}_i$ then it also holds for product order $\prod\mathfrak{A}$.
+(What about infinite formulas like complete lattice joins and meets?)
+Moreover $F(x_0,\dots,x_n) = \mylamdba{i}{n}{F(x_{0,i},\dots,x_{n,i})}$ (confused logical forms and functions).
+It looks like a promising approach, but how to define it exactly? For example, $F$ may be a form always true for boolean
+lattices or for Heyting lattices, or whatsoever. How one theorem can encompass all kinds of lattices and posets?
+We may attempt to restrict to (partial) functions determined by order.
+(This is not enough, because we can define an operation restricting $\setminus$ defined only for posets
+of cardinality above or below some cardinal~$\kappa$. For such restricted $\setminus$ the above formula does not work.)
+See also \url{https://portonmath.wordpress.com/2016/01/12/a-conjecture-about-product-order-and-logic/}.
+It seems that \noun{Todd Trimble} shows a general category-theoretic way to describe this:
+\url{https://nforum.ncatlab.org/discussion/6887/operations-on-product-order/}.
+
+Get results from \url{http://ncatlab.org/toddtrimble/published/topogeny}.
+
+What about distributivity of quasicomplements over meets and joins for the filtrator of funcoids? Seems like nontrivial conjectures.
+
+Conjecture: Each filtered filtrator is isomorphic to a primary filtrator. (If it holds, then primary and filtered filtrators are the same!)
+
+Add analog of the last item of the theorem about co-complete funcoids for pointfree funcoids.
+
+Generalize theorems about $\mathsf{RLD}(A;B)$ as $\mathscr{F}(A\times B)$ in order to clean up the notation
+(for example in the chapter ``Funcoids are filters'').
+
+Define reloids as a filtrator whose core is an ordered semigroup.
+This way reloids can be described in several isomorphic ways (just like primary filtrators are both filtrators of filters, of ideals, etc.)
+Is it enough to describe all properties of reloids? Well, it is not a semigroup, it is a precategory.
+It seems that we also need functions $\dom$ and $\im$ into partially ordered sets and ``reversion'' (dagger).
+
+\url{http://mathoverflow.net/a/191381/4086} says that $n$-staroids can be identified with certain ideals!
 
 To relax theorem conditions and definition, we can define \emph{protofuncoids} as arbitrary pairs $(\alpha;\beta)$ of functions
 between two posets. For protofuncoids composition and reverse are defined.

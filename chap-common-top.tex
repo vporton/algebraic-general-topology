@@ -31,7 +31,7 @@ and $y$, distance between points of a plane, etc.
 \begin{defn}
 \index{space!metric}\index{distance}A \emph{metric space} is a set
 $U$ together with a function $d:U\times U\rightarrow\mathbb{R}$
-(\emph{distance}) such that for every $x,y,z\in U$:
+(\emph{distance} or \emph{metric}) such that for every $x,y,z\in U$:
 \begin{enumerate}
 \item $d(x,y)\ge0$;
 \item $d(x,y)=0\Leftrightarrow x=y$;
@@ -72,6 +72,10 @@ B_{r}[a]=\setcond{x\in U}{d(a,x)\le r}.
 closed when its complement $U\setminus A$ is open.
 \end{defn}
 
+\begin{xca}
+Show that: closed intervals on real line are closed sets, open intervals are open sets.
+\end{xca}
+
 \begin{defn}
 \index{closure!in metric space}Closure $\cl(A)$ of a set $A$ in
 a metric space is the set of points $y$ such that
@@ -102,7 +106,7 @@ $\Delta$~is called a \emph{pretopology} on $U$.
 \end{defn}
 
 \begin{defn}
-\index{preclosure}\emph{Preclosure} on a set $U$ is an unary operation
+\index{preclosure}\emph{Preclosure} on a set $U$ is a unary operation
 $\cl$ on $\subsets U$ such that for every $A,B\in\subsets U$:
 \begin{enumerate}
 \item $\cl(\emptyset)=\emptyset$;
@@ -139,14 +143,14 @@ object.
 
 Let's prove $\uparrow^{U}\{x\}\sqsubseteq\Delta(x)$. If $A\in\up\Delta(x)$
 then $x\notin\cl(U\setminus A)$ and consequently $x\notin U\setminus A$;
-$x\in A$; $A\in\uparrow^{U}\{x\}$. So $\uparrow^{U}\{x\}\sqsubseteq\Delta(x)$
+$x\in A$; $A\in\up\uparrow^{U}\{x\}$. So $\uparrow^{U}\{x\}\sqsubseteq\Delta(x)$
 and thus $\Delta$ is a pretopology.
 
 It is left to prove that the functions defined by the above formulas
 are mutually inverse.
 
-Let $\cl_{0}$ be a preclosure, let $\Delta$ is the pretopology induced
-by $\cl_{0}$ by the formula (\ref{pt-neigh}), let $\cl_{1}$ is
+Let $\cl_{0}$ be a preclosure, let $\Delta$ be the pretopology induced
+by $\cl_{0}$ by the formula (\ref{pt-neigh}), let $\cl_{1}$ be
 the preclosure induced by $\Delta$ by the formula (\ref{pt-cl}).
 Let's prove $\cl_{1}=\cl_{0}$. Really,
 \begin{align*}
@@ -163,9 +167,9 @@ x\in\cl_{0}(A).
 
 So $\cl_{1}(A)=\cl_{0}(A)$.
 
-Let now $\Delta_{0}$ be a pretopology, let $\cl$ is the closure
+Let now $\Delta_{0}$ be a pretopology, let $\cl$ be the closure
 induced by $\Delta_{0}$ by the formula (\ref{pt-cl}), let $\Delta_{1}$
-is the pretopology induced by $\cl$ by the formula (\ref{pt-neigh}).
+be the pretopology induced by $\cl$ by the formula (\ref{pt-neigh}).
 Really
 \begin{align*}
 A\in\up\Delta_{1}(x) & \Leftrightarrow\\
@@ -283,10 +287,8 @@ is a closed set.
 
 Let now $A_{0},\dots,A_{n}$ be closed sets, then
 \[
-\cl(A_{0}\cup\dots\cup A_{n})=\cl(A_{0})\cup\dots\cup cl(A_{n})=A_{0}\cup\dots\cup A_{n}
+\cl(A_{0}\cup\dots\cup A_{n})=\cl(A_{0})\cup\dots\cup\cl(A_{n})=A_{0}\cup\dots\cup A_{n}
 \]
-
-
 that is $A_{0}\cup\dots\cup A_{n}$ is a closed set.
 
 That $\emptyset$ is a closed set is obvious.
@@ -333,7 +335,7 @@ A\text{ is \ensuremath{\tau}-open} & \Leftrightarrow\\
 \end{align*}
 
 
-So $\rho$-closed and $\tau$-open are negations of each other. It
+So $\rho$-closed and $\tau$-open sets are complements of each other. It
 follows $\rho=\tau$.
 \end{proof}
 
@@ -365,7 +367,7 @@ $\cl(A)\supseteq A$ is obvious.
 
 Thus $\cl$ is a preclosure.
 \end{proof}
-Or: $\Delta(x)=\bigsqcap\setcond{\uparrow^{U}X}{X\in\mathcal{O},x\in X}$.
+Or: $\Delta(x)=\bigsqcap^{\mathscr{F}}\setcond{X\in\mathcal{O}}{x\in X}$.
 
 It is trivially a pretopology (used the fact that $U\in\mathcal{O}$).
 \begin{prop}
@@ -375,18 +377,18 @@ to each other (by the formulas from theorem \ref{pretop-bij}).\end{prop}
 We need to prove $\cl(A)=\setcond{x\in U}{\Delta(x)\nasymp\uparrow^{U}A}$,
 that is
 \[
-\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A}=\setcond{x\in U}{\bigsqcap^{\mathscr{F}U}\setcond X{X\in\mathcal{O},x\in X}\nasymp\uparrow^{U}A}.
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A}=\setcond{x\in U}{\bigsqcap^{\mathscr{F}U}\setcond{X\in\mathcal{O}}{x\in X}\nasymp\uparrow^{U}A}.
 \]
 
 
 Equivalently transforming it, we get:
 \begin{align*}
-\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & =\setcond{x\in U}{\forall X\in\mathcal{O}:(x\in X\Rightarrow\uparrow^{U}X\nasymp\uparrow^{U}A)}\\
+\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & =\setcond{x\in U}{\forall X\in\mathcal{O}:(x\in X\Rightarrow\uparrow^{U}X\nasymp\uparrow^{U}A)};\\
 \bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & =\setcond{x\in U}{\forall X\in\mathcal{O}:(x\in X\Rightarrow X\nasymp A)}.
 \end{align*}
 
 
-Thus
+We have
 \begin{align*}
 x\in\bigcap\setcond{X\in\subsets U}{X\text{ is a closed set},X\supseteq A} & \Leftrightarrow\\
 \forall X\in\subsets U:(X\text{ is a closed set}\land X\supseteq A\Rightarrow x\in X) & \Leftrightarrow\\
@@ -526,7 +528,7 @@ spaces.
 \emph{Uniform space} is a pair $(U;D)$ of a set~$U$ and filter~$D\in\mathfrak{F}(U\times U)$
 (called \emph{uniformity} or the set of \emph{entourages}) such that:
 \begin{enumerate}
-\item If $F\in D$ then $\id_{U}\subseteq D$.
+\item If $F\in D$ then $\id_{U}\subseteq F$.
 \item If $F\in D$ then there exists $G\in D$ such that $G\circ G\subseteq F$.
 \item If $F\in D$ then $F^{-1}\in D$.\end{enumerate}
 \end{defn}
