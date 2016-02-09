@@ -537,7 +537,9 @@ For every reloid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\ma
 \begin{widedisorder}
 \item [{\ref{fcd-up-g-rel}}] ~
 \begin{multline*}
-\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:\mathcal{X}\suprel F\mathcal{Y}\Leftrightarrow\text{(*)}\\
+\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:\mathcal{X}\suprel F\mathcal{Y}\Leftrightarrow\\
+\forall F\in\up^{\Gamma(\Src f;\Dst f)}f:(\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y})\sqcap F\ne\bot\Leftrightarrow\text{(*)}\\
+(\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y})\sqcap \bigsqcap^{\mathsf{FCD}}\up^{\Gamma(\Src f;\Dst f)}f\ne\bot\Leftrightarrow\\
 \mathcal{X}\suprel{\bigsqcap^{\mathsf{FCD}}\up^{\Gamma(\Src f;\Dst f)}f}\mathcal{Y}\Leftrightarrow\mathcal{X}\suprel{\tofcd f}\mathcal{Y}.
 \end{multline*}
 
