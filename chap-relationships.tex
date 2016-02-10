@@ -4,9 +4,13 @@
 
 \section{Funcoid induced by a reloid}
 
-\index{funcoid!induced by reloid}Every reloid $f$ induces a funcoid
-$\tofcd f\in\mathsf{FCD}(\Src f;\Dst f)$ by the following formulas
-(for every $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$):
+\index{funcoid!induced by reloid}We will define funcoid $\tofcd f$ induced by reloid~$f$ (that is
+a function $\tofcd:\mathsf{RLD}(A;B)\rightarrow\mathsf{FCD}(A;B)$ for every sets~$A$,~$B$). But first we define
+a little more general case of $\tofcd f:\mathsf{RLD}\sharp(A;B)\rightarrow\mathsf{FCD}(A;B)$ for given sets~$A$ and~$B$
+(recall that $\mathsf{RLD}(A;B)$ is a special case of $\mathsf{RLD}\sharp(A;B)$).
+
+$\tofcd f\in\mathsf{FCD}(A;B)$ is defined by the formulas
+(for every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Y}\in\mathscr{F}(B)$):
 \begin{gather*}
 \mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y};\\
 \supfun{\tofcd f}\mathcal{X}=\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}.
@@ -51,6 +55,17 @@ $P,Q\in\up f$. Then for $\mathcal{C}=\supfun{\uparrow^{\mathsf{FCD}}(P\sqcap Q)}
 is true both $\mathcal{C}\in V$ and $\mathcal{C}\sqsubseteq\mathcal{A},\mathcal{B}$.
 So $V$ is a generalized filter base and thus $W$ is a generalized
 filter base.\end{proof}
+
+Now define $\tofcd f\in\mathsf{FCD}(\Src f;\Dst f)$ for every $f\in\mathsf{RLD}(\Src f;\Dst f)$ (that is for a reloid~$f$ with specific source and destination)
+by the above formulas with sets~$A$, $B$ taken as~$\Src f$,~$\Dst f$,
+with $\mathsf{RLD}(\Src f;\Dst f)$ taken for $\mathsf{RLD}\sharp(\Src f;\Dst f)$)
+(recall that $\mathsf{RLD}(\Src f;\Dst f)$ is the base of a primary filtrator over $\mathbf{Rel}(\Src f;\Dst f)$ and
+$\mathsf{RLD}\sharp(\Src f;\Dst f)$ can be taken as the base of an arbitrary primary filtrator over $\mathbf{Rel}(\Src f;\Dst f)$).
+
+\begin{obvious}
+$\Src\tofcd f=\Src f$, $\Dst\tofcd f=\Dst f$ for every reloid~$f$.
+\end{obvious}
+
 \begin{prop}
 \label{fcd-discr}$\tofcd\uparrow^{\mathsf{RLD}}f=\uparrow^{\mathsf{FCD}}f$
 for every $\mathbf{Rel}$-morphism $f$.\end{prop}
