@@ -48,10 +48,11 @@ same source and destination.
 \begin{defn}
 ~
 \begin{itemize}
-\item $\uparrow^{\mathsf{RLD}}f=(\Src f;\Dst f;\uparrow^{\Src f\times\Dst f}\GR f)$
+\item $\uparrow^{\mathsf{RLD}\sharp}f$ is the principal filter object corresponding to a $\mathbf{Rel}$-morphism~$f$.
+\item $\uparrow^{\mathsf{RLD}\sharp(A;B)} f=\uparrow^{\mathsf{RLD}\sharp}(A;B;f)$ for every binary relation $f\in\subsets(A\times B)$.
+\item $\uparrow^{\mathsf{RLD}}f=(\Src f;\Dst f;\uparrow^{\mathsf{RLD}\sharp}f)$
 for every $\mathbf{Rel}$-morphism $f$.
-\item $\uparrow^{\mathsf{RLD}(A;B)}f=\uparrow^{\mathsf{RLD}}(A;B;f)$ for
-every binary relation $f\in\subsets(A\times B)$.
+\item $\uparrow^{\mathsf{RLD}(A;B)}f=\uparrow^{\mathsf{RLD}}(A;B;f)$ for every binary relation $f\in\subsets(A\times B)$.
 \end{itemize}
 \end{defn}
 
