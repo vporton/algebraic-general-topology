@@ -9,11 +9,6 @@ Let $A$, $B$ be sets.
 $\mathsf{RLD}\sharp(A;B)$ is the base of an arbitrary but fixed primary filtrator over $\mathbf{Rel}(A;B)$.
 \end{defn}
 
-\begin{defn} \fxwarning{Move below.}
-$\up f^{-1} = \setcond{F^{-1}}{F\in\up f}$.
-\fxwarning{Prove that is exists.}
-\end{defn}
-
 \begin{obvious}
 $(\mathsf{RLD}\sharp(A;B);\mathbf{Rel}(A;B))$ is a powerset filtrator.
 \end{obvious}
@@ -63,6 +58,19 @@ as \emph{principal} reloids.
 
 Reloids are a generalization of uniform spaces. Also reloids are generalization
 of binary relations.
+
+\begin{defn}
+$\up f^{-1} = \setcond{F^{-1}}{F\in\up f}$.
+\end{defn}
+
+\begin{prop}
+$f^{-1}$ exists.
+\end{prop}
+
+\begin{proof}
+We need to prove that $\setcond{F^{-1}}{F\in\up f}$ is a filter, but that's obvious.
+\end{proof}
+
 \begin{defn}
 \index{reloid!reverse}The \emph{reverse} reloid of a reloid is defined
 by the formula
