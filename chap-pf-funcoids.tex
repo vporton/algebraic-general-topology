@@ -656,7 +656,7 @@ $f|_{a}\eqdef f\circ\id_{a}^{\mathsf{pFCD}(\Src f)}$.
 \index{funcoid!pointfree!image}Let $f$ be a pointfree funcoid whose
 source is a set with greatest element. \emph{Image} of $f$ will be
 defined by the formula $\im f=\supfun f\top$.\end{defn}
-\begin{prop}
+\begin{prop}\label{pf-im-sub}
 $\im f\sqsupseteq\supfun{f}x$ for every $x\in\Src f$ whenever $\Dst f$
 is a strongly separable poset with greatest element.\end{prop}
 \begin{proof}
@@ -1088,17 +1088,13 @@ and similarly $\mathcal{X}\suprel f\mathcal{Y}\Rightarrow\mathcal{X}\nasymp\math
 So $\mathord{\suprel f}\subseteq\mathord{\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}}$
 and thus using separability $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.\end{proof}
 \begin{thm}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+Let $\mathfrak{A}$, $\mathfrak{B}$ be bounded separable meet-semilattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 and $\mathcal{A}\in\mathfrak{A}$, $\mathcal{B}\in\mathfrak{B}$ 
 \[
 f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}\circ f\circ\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}.
 \]
 \end{thm}
 \begin{proof}
-From above $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is a (complete)
-lattice.
-
 $h\eqdef\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}\circ f\circ\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}$.
 For every $\mathcal{X}\in\mathfrak{A}$
 \[
@@ -1110,8 +1106,8 @@ and
 \]
 From this, as easy to show, $h\sqsubseteq f$ and $h\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
 If $g\sqsubseteq f\wedge g\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-for a $g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ then $\dom g\sqsubseteq\mathcal{A}$,
-$\im g\sqsubseteq\mathcal{B}$,
+for a $g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ then $\dom g\sqsubseteq\mathcal{A}$;
+by propositions~\ref{pf-cap-dom} we have:
 \[
 \supfun g\mathcal{X}=\mathcal{B}\sqcap\supfun g(\mathcal{A}\sqcap\mathcal{X})\sqsubseteq\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\mathcal{X})=\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}}\supfun f\supfun{\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\mathcal{X}=\supfun h\mathcal{X},
 \]
@@ -1120,14 +1116,14 @@ Thus $g\sqsubseteq h$.
 
 So $h=f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$.\end{proof}
 \begin{cor}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+Let $\mathfrak{A}$, $\mathfrak{B}$ be bounded separable
+meet-semilattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 and $\mathcal{A}\in\mathfrak{A}$ we have $f|_{\mathcal{A}}=f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\top^{\mathfrak{B}})$.\end{cor}
 \begin{proof}
 $\text{\ensuremath{f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\top^{\mathfrak{B}})}}=\id_{\top^{\mathfrak{B}}}^{\mathsf{pFCD}(\mathfrak{B})}\circ f\circ\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}=f\circ\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}=f|_{\mathcal{A}}$.\end{proof}
 \begin{cor}
-\label{pf-intr-prod}Let $\mathfrak{A}$, $\mathfrak{B}$ be sets
-of filters over boolean lattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+\label{pf-intr-prod}Let $\mathfrak{A}$, $\mathfrak{B}$ be
+bounded separable meet-semilattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 and $\mathcal{A}\in\mathfrak{A}$, $\mathcal{B}\in\mathfrak{B}$ we
 have
 \[
@@ -1319,13 +1315,13 @@ Because $\supfun{f}x\sqsubseteq\im f$, $\supfun{f^{-1}}y\sqsubseteq\dom f$, and 
 
 \section{Atomic pointfree funcoids}
 \begin{thm}
-\label{pf-atom}Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters
-over boolean lattices. An $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+\label{pf-atom}Let $\mathfrak{A}$, $\mathfrak{B}$ be atomic bounded separable meet-semilattices.
+An $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 is an atom of the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 iff there exist $a\in\atoms^{\mathfrak{A}}$ and $b\in\atoms^{\mathfrak{B}}$
 such that $f=a\times^{\mathsf{FCD}}b$.\end{thm}
 \begin{proof}
-$\mathfrak{A}$ and $\mathfrak{B}$ are atomic by the theorem \ref{filt-atomic}.
+~\fxwarning{More detailed proof.}
 \begin{description}
 \item [{$\Rightarrow$}] Let $f$ be an atom of the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
 Let's get elements $a\in\atoms\dom f$ and $b\in\atoms\supfun fa$.
@@ -1345,15 +1341,16 @@ that is $a\times^{\mathsf{FCD}}b$ is an atomic pointfree funcoid.
 \end{description}
 \end{proof}
 \begin{thm}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices. Then $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is atomic.\end{thm}
+Let $\mathfrak{A}$, $\mathfrak{B}$ be atomic bounded separable meet-semilattices.
+Then $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is atomic.\end{thm}
 \begin{proof}
 Let $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}$.
 Then $\dom f\neq\bot^{\mathfrak{A}}$, thus exists $a\in\atoms\dom f$.
 So $\supfun fa\neq\bot^{\mathfrak{B}}$ thus exists $b\in\atoms\supfun fa$.
 Finally the atomic pointfree funcoid $a\times^{\mathsf{FCD}}b\sqsubseteq f$.\end{proof}
 \begin{thm}
-\label{pf-fcd-sep}Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of
+\label{pf-fcd-sep}\fxwarning{It seem that this theorem (and below theorems also) conditions can be weakened.}
+Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of
 filters over boolean lattices. Then the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 is separable.\end{thm}
 \begin{proof}
