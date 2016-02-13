@@ -1329,13 +1329,17 @@ Then for every $\mathcal{X}\in\mathfrak{A}$
 \[
 \mathcal{X}\asymp a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=\bot^{\mathfrak{B}}\sqsubseteq\supfun f\mathcal{X},\quad\mathcal{X}\nasymp a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=b\sqsubseteq\supfun f\mathcal{X}.
 \]
-So \fxwarning{Also show for $f^{-1}$ (here and below in this proof).} $a\times^{\mathsf{FCD}}b\sqsubseteq f$; because $f$ is atomic
+So $\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}\sqsubseteq\supfun{f}\mathcal{X}$ and similarly
+$\supfun{b\times^{\mathsf{FCD}}a}\mathcal{Y}\sqsubseteq\supfun{f^{-1}}\mathcal{Y}$ thus
+$a\times^{\mathsf{FCD}}b\sqsubseteq f$; because $f$ is atomic
 we have $f=a\times^{\mathsf{FCD}}b$.
 \item [{$\Leftarrow$}] Let $a\in\atoms^{\mathfrak{A}}$, $b\in\atoms^{\mathfrak{B}}$,
 $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$. If $b\asymp^{\mathfrak{B}}\supfun fa$
 then $\lnot(a\suprel fb)$, $f\sqcap(a\times^{\mathsf{FCD}}b)=\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}$
 (because $\mathfrak{A}$ and $\mathfrak{B}$ are bounded meet-semilattices);
-if $b\sqsubseteq\supfun fa$ then $\forall\mathcal{X}\in\mathfrak{A}:(\mathcal{X}\nasymp a\Rightarrow\supfun f\mathcal{X}\sqsupseteq b)$,
+if $b\sqsubseteq\supfun fa$ then $\forall\mathcal{X}\in\mathfrak{A}:(\mathcal{X}\nasymp a\Rightarrow\supfun f\mathcal{X}\sqsupseteq b)$
+that is \fxwarning{More detailed.} $\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}\sqsubseteq\supfun{f}\mathcal{X}$ and likewise
+$\supfun{b\times^{\mathsf{FCD}}a}\mathcal{Y}\sqsubseteq\supfun{f^{-1}}\mathcal{Y}$, so
 $f\sqsupseteq a\times^{\mathsf{FCD}}b$. Consequently $f\sqcap(a\times^{\mathsf{FCD}}b)=\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\lor f\sqsupseteq a\times^{\mathsf{FCD}}b$;
 that is $a\times^{\mathsf{FCD}}b$ is an atomic pointfree funcoid.
 \end{description}
