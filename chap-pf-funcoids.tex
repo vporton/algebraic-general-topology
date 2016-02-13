@@ -1321,7 +1321,7 @@ is an atom of the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 iff there exist $a\in\atoms^{\mathfrak{A}}$ and $b\in\atoms^{\mathfrak{B}}$
 such that $f=a\times^{\mathsf{FCD}}b$.\end{thm}
 \begin{proof}
-~\fxwarning{More detailed proof.}
+~
 \begin{description}
 \item [{$\Rightarrow$}] Let $f$ be an atom of the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.
 Let's get elements $a\in\atoms\dom f$ and $b\in\atoms\supfun fa$.
@@ -1336,7 +1336,7 @@ we have $f=a\times^{\mathsf{FCD}}b$.
 \item [{$\Leftarrow$}] Let $a\in\atoms^{\mathfrak{A}}$, $b\in\atoms^{\mathfrak{B}}$,
 $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$. If $b\asymp^{\mathfrak{B}}\supfun fa$
 then $\lnot(a\suprel fb)$, $f\sqcap(a\times^{\mathsf{FCD}}b)=\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}$
-(because $\mathfrak{A}$ and $\mathfrak{B}$ are bounded meet-semilattices);
+(by corollary~\ref{pf-intr-prod} because $\mathfrak{A}$ and $\mathfrak{B}$ are bounded meet-semilattices);
 if $b\sqsubseteq\supfun fa$, then for every $\mathcal{X}\in\mathfrak{A}$
 \[
 \mathcal{X}\asymp a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=\bot^{\mathfrak{B}}\sqsubseteq\supfun f\mathcal{X},\quad\mathcal{X}\nasymp a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=b\sqsubseteq\supfun f\mathcal{X}
