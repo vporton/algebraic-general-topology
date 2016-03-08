@@ -1425,12 +1425,12 @@ x\suprel{g\circ f}z & \Leftrightarrow\\
 \end{align*}
 (were used corollary \ref{pf-intr-prod} and theorem \ref{pf-fcd-atom-middle}).\end{proof}
 \begin{thm}
-Let $f$ be a pointfree funcoid between atomic bounded separable meet-semilattices.
+Let $f$ be a pointfree funcoid between atomic bounded separable meet-semilattices~$\mathfrak{A}$ and~$\mathfrak{B}$.
 \begin{enumerate}
 \item \label{pf-r-at}$\mathcal{X}\suprel f\mathcal{Y}\Leftrightarrow\exists F\in\atoms f:\mathcal{X}\suprel F\mathcal{Y}$
-for every $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$;
+for every $\mathcal{X}\in\mathfrak{A}$, $\mathcal{Y}\in\mathfrak{B}$;
 \item \label{pf-f-at}$\supfun f\mathcal{X}=\bigsqcup_{F\in\atoms f}\supfun F\mathcal{X}$
-for every $\mathcal{X}\in\mathscr{F}(\Src f)$.
+for every $\mathcal{X}\in\mathfrak{A}$ provided that $\mathfrak{B}$ is a complete lattice.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1447,11 +1447,12 @@ f\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y} & \Leftrightarrow\\
 \mathcal{X}\suprel f\mathcal{Y}.
 \end{align*}
 
-\item [{\ref{pf-f-at}}] \fxwarning{Check the proof for our new generality.} Let $\mathcal{Y}\in\mathscr{F}(\Dst f)$. Suppose
+\item [{\ref{pf-f-at}}] Let $\mathcal{Y}\in\mathfrak{B}$. Suppose
 $\mathcal{Y}\nasymp\supfun f\mathcal{X}$. Then $\mathcal{X}\suprel f\mathcal{Y}$;
 $\exists F\in\atoms f:\mathcal{X}\suprel F\mathcal{Y}$; $\exists F\in\atoms f:\mathcal{Y}\nasymp\supfun F\mathcal{X}$;
+and (taking into account that $\mathfrak{B}$ is strongly separable by theorem~\ref{msl-sep-conds})
 $\mathcal{Y}\nasymp\bigsqcup_{F\in\atoms f}\supfun F\mathcal{X}$.
-So $\supfun f\mathcal{X}\sqsubseteq\bigsqcup_{F\in\atoms f}\supfun F\mathcal{X}$.
+So $\supfun f\mathcal{X}\sqsubseteq\bigsqcup_{F\in\atoms f}\supfun F\mathcal{X}$ by strong separability.
 The contrary $\supfun f\mathcal{X}\sqsupseteq\bigsqcup_{F\in\atoms f}\supfun F\mathcal{X}$
 is obvious.
 \end{widedisorder}
