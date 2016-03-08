@@ -1373,7 +1373,7 @@ $f\sqsupseteq a\times^{\mathsf{FCD}}b$. Consequently $f\sqcap(a\times^{\mathsf{F
 that is $a\times^{\mathsf{FCD}}b$ is an atomic pointfree funcoid.
 \end{description}
 \end{proof}
-\begin{thm}
+\begin{thm}\label{pfcd-atomic}
 Let $\mathfrak{A}$, $\mathfrak{B}$ be atomic bounded separable meet-semilattices.
 Then $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is atomic.\end{thm}
 \begin{proof}
@@ -1442,11 +1442,12 @@ for every $\mathcal{X}\in\mathscr{F}(\Src f)$.
 \exists a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)}:(a\times^{\mathsf{FCD}}b\nasymp f\land\mathcal{X}\suprel{a\times^{\mathsf{FCD}}b}\mathcal{Y}) & \Leftrightarrow\\
 \exists a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)}:(a\times^{\mathsf{FCD}}b\nasymp f\land a\times^{\mathsf{FCD}}b\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y}) & \Leftrightarrow\\
 \exists F\in\atoms f:(F\nasymp f\land F\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y}) & \Leftrightarrow\\
+\text{(by theorem~\ref{pfcd-atomic})}\\
 f\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y} & \Leftrightarrow\\
 \mathcal{X}\suprel f\mathcal{Y}.
 \end{align*}
 
-\item [{\ref{pf-f-at}}] Let $\mathcal{Y}\in\mathscr{F}(\Dst f)$. Suppose
+\item [{\ref{pf-f-at}}] \fxwarning{Check the proof for our new generality.} Let $\mathcal{Y}\in\mathscr{F}(\Dst f)$. Suppose
 $\mathcal{Y}\nasymp\supfun f\mathcal{X}$. Then $\mathcal{X}\suprel f\mathcal{Y}$;
 $\exists F\in\atoms f:\mathcal{X}\suprel F\mathcal{Y}$; $\exists F\in\atoms f:\mathcal{Y}\nasymp\supfun F\mathcal{X}$;
 $\mathcal{Y}\nasymp\bigsqcup_{F\in\atoms f}\supfun F\mathcal{X}$.
