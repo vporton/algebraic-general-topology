@@ -1147,8 +1147,7 @@ f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\ne\bot^{\mathsf{pFCD}(\math
 \end{align*}
 \end{proof}
 \begin{thm}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices. \fxwarning{Seems too strong requirement.} Then the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+\label{pf-fcd-sep}Let $\mathfrak{A}$, $\mathfrak{B}$ be bounded separable meet-semilattices. Then the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 is separable.\end{thm}
 \begin{proof}
 Let $f,g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\neq g$.
@@ -1156,6 +1155,30 @@ By the theorem \ref{one-funcoid} $\mathord{\suprel f}\neq\mathord{\suprel g}$.
 That is there exist $x,y\in\mathfrak{A}$ such that $x\suprel fy\nLeftrightarrow x\suprel gy$
 that is $f\sqcap(x\times^{\mathsf{FCD}}y)\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\nLeftrightarrow g\sqcap(x\times^{\mathsf{FCD}}y)\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}$.
 Thus $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is separable.\end{proof}
+
+\begin{cor}
+\label{pf-fcd-is-sep}Let $\mathfrak{A}$, $\mathfrak{B}$ be atomic bounded separable meet-semilattices. The poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+is:
+\begin{enumerate}
+\item separable;
+\item atomically separable;
+\item conforming to Wallman's disjunction property.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+By the theorem \ref{sep-conds}.\end{proof}
+\begin{rem}
+For more ways to characterize (atomic) separability of the lattice
+of pointfree funcoids see subsections ``\nameref{sep-and-full}''
+and ``\nameref{atm-sep}''.\end{rem}
+\begin{cor}
+\label{pf-atomistic}Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
+be primary filtrators over boolean lattices. The poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
+is an atomistic lattice.\end{cor}
+\begin{proof}
+By the corollary \ref{pf-fcd-compl} $\text{\ensuremath{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}}$
+is a complete lattice. We can use theorem~\ref{amstc-sep}.\end{proof}
+
 \begin{thm}
 Let $\mathfrak{A}$ and $\mathfrak{B}$ be posets of filters over
 boolean lattices. If $S\in\subsets(\mathfrak{A}\times\mathfrak{B})$
@@ -1358,55 +1381,7 @@ Let $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ and $f\neq\bot^{\mathsf{pFCD}
 Then $\dom f\neq\bot^{\mathfrak{A}}$, thus exists $a\in\atoms\dom f$.
 So $\supfun fa\neq\bot^{\mathfrak{B}}$ thus exists $b\in\atoms\supfun fa$.
 Finally the atomic pointfree funcoid $a\times^{\mathsf{FCD}}b\sqsubseteq f$.\end{proof}
-\begin{thm}
-\label{pf-fcd-sep}\fxwarning{It seem that this theorem (and below theorems also) conditions can be weakened.}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of
-filters over boolean lattices. Then the poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
-is separable.\end{thm}
-\begin{proof}
-Let $f,g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$, $f\sqsubset g$.
-Then taking into account the theorem~\ref{spfn-atoms} exists
-$a\in\atoms^{\mathfrak{A}}$ such that $\supfun fa\sqsubset\supfun ga$.
-By corollary \ref{f-atom-sep} $\mathfrak{B}$ is atomically separable.
-So exists $b\in\atoms^{\mathfrak{B}}$ such that $\supfun fa\sqcap b=\bot^{\mathfrak{B}}$
-and $b\sqsubseteq\supfun ga$. For every $x\in\atoms^{\mathfrak{A}}$
-\begin{gather*}
-\supfun fa\sqcap\supfun{a\times^{\mathsf{FCD}}b}a=\supfun fa\sqcap b=\bot^{\mathfrak{B}},\\
-x\ne a\Rightarrow\supfun fx\sqcap\supfun{a\times^{\mathsf{FCD}}b}x=\supfun fx\sqcap\bot^{\mathfrak{B}}=\bot^{\mathfrak{B}}.
-\end{gather*}
-Thus $\supfun fx\sqcap\supfun{a\times^{\mathsf{FCD}}b}x=\bot^{\mathfrak{B}}$
-and consequently $f\sqcap(a\times^{\mathsf{FCD}}b)=\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}$.
-\begin{gather*}
-\supfun{a\times^{\mathsf{FCD}}b}a=b\sqsubseteq\supfun ga,\\
-x\ne a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}x=\bot^{\mathfrak{B}}\sqsubseteq\supfun gx.
-\end{gather*}
-Thus $\supfun{a\times^{\mathsf{FCD}}b}x\sqsubseteq\supfun gx$ and
-consequently $a\times^{\mathsf{FCD}}b\sqsubseteq g$.
 
-So the lattice of pointfree funcoids is separable by the theorem \ref{msl-sep-conds}.\end{proof}
-\begin{cor}
-\label{pf-fcd-is-sep}Let $\mathfrak{A}$, $\mathfrak{B}$ be sets
-of filters over boolean lattices. The poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
-is:
-\begin{enumerate}
-\item separable;
-\item atomically separable;
-\item conforming to Wallman's disjunction property.
-\end{enumerate}
-\end{cor}
-\begin{proof}
-By the theorem \ref{sep-conds}.\end{proof}
-\begin{rem}
-For more ways to characterize (atomic) separability of the lattice
-of pointfree funcoids see subsections ``\nameref{sep-and-full}''
-and ``\nameref{atm-sep}''.\end{rem}
-\begin{cor}
-\label{pf-atomistic}Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
-be primary filtrators over boolean lattices. The poset $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
-is an atomistic lattice.\end{cor}
-\begin{proof}
-By the corollary \ref{pf-fcd-compl} $\text{\ensuremath{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}}$
-is a complete lattice. We can use theorem~\ref{amstc-sep}.\end{proof}
 \begin{prop}
 Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
 lattices.
