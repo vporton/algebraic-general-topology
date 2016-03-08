@@ -1134,7 +1134,7 @@ f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\mathcal{A}\su
 \]
 \end{cor}
 \begin{proof}
-~
+Existence of $f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$ follows from the above theorem.
 \begin{align*}
 f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B} & \Leftrightarrow\\
 f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\ne\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})} & \Leftrightarrow\\
@@ -1161,6 +1161,7 @@ Thus $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ is separable.\end{proof}
 is:
 \begin{enumerate}
 \item separable;
+\item strongly separable;
 \item atomically separable;
 \item conforming to Wallman's disjunction property.
 \end{enumerate}
@@ -1439,8 +1440,8 @@ for every $\mathcal{X}\in\mathfrak{A}$ provided that $\mathfrak{B}$ is a complet
 \item [{\ref{pf-r-at}}] ~
 \begin{align*}
 \exists F\in\atoms f:\mathcal{X}\suprel F\mathcal{Y} & \Leftrightarrow\\
-\exists a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)}:(a\times^{\mathsf{FCD}}b\nasymp f\land\mathcal{X}\suprel{a\times^{\mathsf{FCD}}b}\mathcal{Y}) & \Leftrightarrow\\
-\exists a\in\atoms^{\mathscr{F}(\Src f)},b\in\atoms^{\mathscr{F}(\Dst f)}:(a\times^{\mathsf{FCD}}b\nasymp f\land a\times^{\mathsf{FCD}}b\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y}) & \Leftrightarrow\\
+\exists a\in\atoms^{\mathfrak{A}},b\in\atoms^{\mathfrak{B}}:(a\times^{\mathsf{FCD}}b\nasymp f\land\mathcal{X}\suprel{a\times^{\mathsf{FCD}}b}\mathcal{Y}) & \Leftrightarrow\\
+\exists a\in\atoms^{\mathfrak{A}},b\in\atoms^{\mathfrak{B}}:(a\times^{\mathsf{FCD}}b\nasymp f\land a\times^{\mathsf{FCD}}b\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y}) & \Leftrightarrow\\
 \exists F\in\atoms f:(F\nasymp f\land F\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y}) & \Leftrightarrow\\
 \text{(by theorem~\ref{pfcd-atomic})}\\
 f\nasymp\mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y} & \Leftrightarrow\\
