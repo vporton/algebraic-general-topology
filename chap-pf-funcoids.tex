@@ -1383,18 +1383,19 @@ So $\supfun fa\neq\bot^{\mathfrak{B}}$ thus exists $b\in\atoms\supfun fa$.
 Finally the atomic pointfree funcoid $a\times^{\mathsf{FCD}}b\sqsubseteq f$.\end{proof}
 
 \begin{prop}
-Let $\mathfrak{A}$, $\mathfrak{B}$ be sets of filters over boolean
-lattices.
+Let $\mathfrak{A}$, $\mathfrak{B}$ be starrish bounded separable lattices.
 
 $\atoms(f\sqcup g)=\atoms f\cup\atoms g$ for every $f,g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$.\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
-(a\times^{\mathsf{FCD}}b)\sqcap(f\sqcup g)\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\Leftrightarrow a\suprel{f\sqcup g}b\Leftrightarrow a\suprel fb\vee a\suprel gb\Leftrightarrow\\
+(a\times^{\mathsf{FCD}}b)\sqcap(f\sqcup g)\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}
+\Leftrightarrow \text{(corollary~\ref{pf-intr-prod})} \Leftrightarrow \\
+a\suprel{f\sqcup g}b\Leftrightarrow \text{(theorem~\ref{pf-fin-join})} \Leftrightarrow \\ a\suprel fb\vee a\suprel gb
+\Leftrightarrow \text{(corollary~\ref{pf-intr-prod})} \Leftrightarrow \\
 (a\times^{\mathsf{FCD}}b)\sqcap f\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}\vee(a\times^{\mathsf{FCD}}b)\sqcap g\neq\bot^{\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})}
 \end{multline*}
-for every $a\in\atoms^{\mathfrak{A}}$ and $b\in\atoms^{\mathfrak{B}}$
-(used the corollary \ref{pf-intr-prod} and theorem \ref{pf-fin-join}).\end{proof}
+for every $a\in\atoms^{\mathfrak{A}}$ and $b\in\atoms^{\mathfrak{B}}$.\end{proof}
 \begin{thm}
 Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
 be primary filtrators over boolean lattices. Then $\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
