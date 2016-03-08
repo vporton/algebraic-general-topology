@@ -23,5 +23,5 @@ The following PDF files are also created by the command `make all`:
 ## Branches ##
 
 * The `master` branch is the polished version of the book with errors checked.
-* The `prelease` branch is not so polished version of the book believed to be mostly correct.
+* The `prelease` branch is a newer but not so polished version of the book believed to be mostly correct.
 * The `devel` branch is the "development" version of the book which is in process of rewriting and may contain errors.
