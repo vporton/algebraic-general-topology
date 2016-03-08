@@ -19,3 +19,9 @@ The following PDF files are also created by the command `make all`:
 * `addons.pdf` - future addons for the book volume 1, which are yet not enough ripe to be included into the book.
 * `volume-2.pdf` - "volume 2" of the book. It is meant to contain materials which refer to more advanced prerequisites: category theory, classical pointfree topology, etc.
 * `ideas.pdf` - a list of short future research ideas
+
+## Branches ##
+
+* The `master` branch is the polished version of the book with errors checked.
+* The `prelease` branch is not so polished version of the book believed to be mostly correct.
+* The `devel` branch is the "development" version of the book which is in process of rewriting and may contain errors.
