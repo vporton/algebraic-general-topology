@@ -1087,7 +1087,7 @@ and similarly $\mathcal{X}\suprel f\mathcal{Y}\Rightarrow\mathcal{X}\nasymp\math
 
 So $\mathord{\suprel f}\subseteq\mathord{\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}}$
 and thus using separability $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.\end{proof}
-\begin{thm} \fxwarning{This theorem was generalized. Generalize also it's consequences. Also note error below and consider it propogation to consequences.}
+\begin{thm} \fxwarning{This theorem was generalized. Generalize also it's consequences.}
 Let $\mathfrak{A}$, $\mathfrak{B}$ be bounded separable meet-semilattices. For every $f\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
 and $\mathcal{A}\in\mathfrak{A}$, $\mathcal{B}\in\mathfrak{B}$ 
 \[
@@ -1106,11 +1106,14 @@ and
 \]
 From this, as easy to show, $h\sqsubseteq f$ and $h\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
 If $g\sqsubseteq f\wedge g\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-for a $g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ then $\dom g\sqsubseteq\mathcal{A}$;
-by propositions~\ref{pf-cap-dom} we have: \fxwarning{Check that we really have, strong separability is required for $\supfun{f}$ to be monotone.}
-\[
-\supfun g\mathcal{X}=\mathcal{B}\sqcap\supfun g(\mathcal{A}\sqcap\mathcal{X})\sqsubseteq\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\mathcal{X})=\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}}\supfun f\supfun{\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\mathcal{X}=\supfun h\mathcal{X},
-\]
+for a $g\in\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$ then $\dom g\sqsubseteq\mathcal{A}$.
+$\mathfrak{A}$ and $\mathfrak{B}$ are are strongly separable by theorem~\ref{msl-sep-conds}. Thus
+by propositions~\ref{pf-cap-dom} we have:
+\begin{multline*}
+\supfun g\mathcal{X}=\supfun g(\mathcal{X}\sqcap\dom g)=\supfun g(\mathcal{X}\sqcap\mathcal{A})=
+\mathcal{B}\sqcap\supfun g(\mathcal{A}\sqcap\mathcal{X})\sqsubseteq \\
+\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\mathcal{X})=\supfun{\id_{\mathcal{B}}^{\mathsf{pFCD}(\mathfrak{B})}}\supfun f\supfun{\id_{\mathcal{A}}^{\mathsf{pFCD}(\mathfrak{A})}}\mathcal{X}=\supfun h\mathcal{X},
+\end{multline*}
 and similarly $\supfun{g^{-1}}\mathcal{Y}\sqsubseteq\supfun{h^{-1}}\mathcal{Y}$.
 Thus $g\sqsubseteq h$.
 
