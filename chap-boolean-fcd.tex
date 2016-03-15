@@ -1,0 +1,246 @@
+\chapter{Boolean funcoids}
+
+I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
+
+\begin{prop}
+  Every boolean funcoid is complete and co-complete.
+\end{prop}
+
+\begin{proof}
+  It's enough to prove $\supfun{f} \bigsqcup S = \bigsqcup \langle
+  \supfun{f} \rangle^{\ast} S$ for a boolean funcoid $f$ for every $S
+  \in \subsets \Src f$ whenever both $\bigsqcup S$ and $\bigsqcup
+  \langle \supfun{f} \rangle^{\ast} S$ are defined.
+  
+  Really, $Y \nasymp \supfun{f} \bigsqcup S \Leftrightarrow \bigsqcup S
+  \nasymp \langle f^{- 1} \rangle Y \Leftrightarrow \exists X \in S : X
+  \nasymp \langle f^{- 1} \rangle Y \Leftrightarrow \exists X \in S : Y
+  \nasymp \supfun{f} X \Leftrightarrow Y \nasymp \bigsqcup \langle
+  \supfun{f} \rangle^{\ast} S$ for every $Y \in \Dst f$ and thus
+  by proposition ??205 we have $\supfun{f} \bigsqcup S = \bigsqcup
+  \langle \supfun{f} \rangle^{\ast} S$.
+\end{proof}
+
+\section{One-element boolean lattice}
+
+Let $\mathfrak{A}$ be a boolean lattice and $\mathfrak{B}= \subsets 0$.
+It's sole element is $\bot$.
+
+$f \in \mathsf{pFCD} (\mathfrak{A}; \mathfrak{B}) \Leftrightarrow \forall X \in
+\mathfrak{A}: (\supfun{f} X \nasymp \bot \Leftrightarrow \langle f^{-
+1} \rangle \bot \nasymp X) \Leftrightarrow \forall X \in \mathfrak{A}: (0
+\Leftrightarrow \langle f^{- 1} \rangle \bot \nasymp X) \Leftrightarrow
+\forall X \in \mathfrak{A}: \langle f^{- 1} \rangle \bot \asymp X
+\Leftrightarrow \forall X \in \mathfrak{A}: \langle f^{- 1} \rangle \bot =
+\bot^{\mathfrak{A}} \Leftrightarrow \langle f^{- 1} \rangle \bot =
+\bot^{\mathfrak{A}} \Leftrightarrow \langle f^{- 1} \rangle = \{ (\bot ;
+\bot^{\mathfrak{A}}) \}$.
+
+Thus $\card \mathsf{pFCD} (\mathfrak{A}; \subsets 0) = 1$.
+
+\section{Two-element boolean lattice}
+
+Consider the two-element boolean lattice $\mathfrak{B}= \subsets 1$.
+
+Let $f$ be a pointfree protofuncoid from $\mathfrak{A}$ to $\mathfrak{B}$
+(that is $(\mathfrak{A};\mathfrak{B};\alpha;\beta)$ where $\alpha\in\mathfrak{B}^{\mathfrak{A}}$, $\beta\in\mathfrak{A}^{\mathfrak{B}}$).
+
+$f \in \mathsf{pFCD} (\mathfrak{A}; \mathfrak{B}) \Leftrightarrow \forall X \in
+\mathfrak{A}, Y \in \mathfrak{B}: (\supfun{f} X \nasymp Y
+\Leftrightarrow \langle f^{- 1} \rangle Y \nasymp X) \Leftrightarrow \forall X
+\in \mathfrak{A}, Y \in \mathfrak{B}: ((0 \in \supfun{f} X \wedge 0 \in
+Y) \vee (1 \in \supfun{f} X \wedge 1 \in Y) \Leftrightarrow \langle
+f^{- 1} \rangle Y \nasymp X)$.
+
+$T = \setcond{ X \in \mathfrak{A} }{ 0 \in \langle f
+\rangle X }$ is an ideal. Really: That it's an upper set is obvious.
+Let $P \cup Q \in \setcond{ X \in \mathfrak{A} }{ 0 \in
+\supfun{f} X }$. Then $0 \in \supfun{f} (P \cup Q) =
+\supfun{f} P \cup \supfun{f} Q$; $0 \in \supfun{f} P \vee
+0 \in \supfun{f} Q$.
+
+Similarly $S = \setcond{ X \in \mathfrak{A} }{ 1 \in
+\supfun{f} X }$ is an ideal.
+
+Let now $T, S \in \subsets \mathfrak{A}$ be ideals. Can we restore $\langle
+f \rangle$? Yes, because we know $0 \in \supfun{f} X$ and $1 \in
+\supfun{f} X$ for every $X \in \mathfrak{A}$.
+
+So it is equivalent to $\forall X \in \mathfrak{A}, Y \in \mathfrak{B}: ((X
+\in T \wedge 0 \in Y) \vee (X \in S \wedge 1 \in Y) \Leftrightarrow \langle
+f^{- 1} \rangle Y \nasymp X)$.
+
+$f \in \mathsf{pFCD} (\mathfrak{A}; \mathfrak{B})$ is equivalent to conjunction
+of all rows of this table:
+
+\begin{tabular}{|l|l|}
+  \hline
+  $Y$ & equality \\ \hline\hline
+  $\emptyset$ & $\langle f^{- 1} \rangle \emptyset = \emptyset$\\
+  \{0\} & $X \in T \Leftrightarrow \langle f^{- 1} \rangle \{ 0 \} \nasymp
+  X$\\ \hline
+  \{1\} & $X \in S \Leftrightarrow \langle f^{- 1} \rangle \{ 1 \} \nasymp
+  X$\\ \hline
+  \{0,1\} & $X \in T \vee X \in S \Leftrightarrow \langle f^{- 1} \rangle \{
+  0, 1 \} \nasymp X$ \\
+  \hline
+\end{tabular}
+
+Simplified:
+
+\begin{tabular}{|l|l|}
+  \hline
+  $Y$ & equality \\ \hline\hline
+  $\emptyset$ & $\langle f^{- 1} \rangle \emptyset = \emptyset$\\ \hline
+  \{0\} & $T = \corestar \langle f^{- 1} \rangle \{ 0 \}$\\ \hline
+  \{1\} & $S = \corestar \langle f^{- 1} \rangle \{ 1 \}$\\ \hline
+  \{0,1\} & $T \cup S = \corestar \langle f^{- 1} \rangle \{ 0, 1 \}$ \\
+  \hline
+\end{tabular}
+
+From the last table it follows that $T$ and $S$ are principal ideals.
+
+So we can take arbitrary either $\langle f^{- 1} \rangle \{ 0 \}$, $\langle
+f^{- 1} \rangle \{ 1 \}$ or principal ideals $T$ and $S$.
+
+In other words, we take $\langle f^{- 1} \rangle \{ 0 \}$, $\langle f^{- 1}
+\rangle \{ 1 \}$ arbitrary and indepently. So we have $\mathsf{pFCD}
+(\mathfrak{A}; \mathfrak{B})$ equivalent to disjoint union of two instances of
+$\mathfrak{A}$. So it a boolean lattice.
+
+\section{Finite boolean lattices}
+
+We can assume $\mathfrak{B}= \subsets B$ for a set $B$, $\card B =
+n$. Then
+
+$f \in \mathsf{pFCD} (\mathfrak{A}; \mathfrak{B}) \Leftrightarrow \forall X \in
+\mathfrak{A}, Y \in \mathfrak{B}: (\supfun{f} X \nasymp Y
+\Leftrightarrow \langle f^{- 1} \rangle Y \nasymp X) \Leftrightarrow \forall X
+\in \mathfrak{A}, Y \in \mathfrak{B}: (\exists i \in Y : i \in \langle f
+\rangle X \Leftrightarrow \langle f^{- 1} \rangle Y \nasymp X)$.
+
+Having values of $\langle f^{- 1} \rangle \{ i \}$ we can restore all $\langle
+f^{- 1} \rangle Y$. [need this paragraph?]
+
+Let $T_i = \setcond{ X \in \mathfrak{A} }{ i \in
+\supfun{f} X }$.
+
+Let now $T_i \in \subsets \mathfrak{A}$ be ideals. Can we restore $\langle
+f \rangle$? Yes, because we know $i \in \supfun{f} X$ for every $X \in
+\mathfrak{A}$.
+
+So, it is equivalent to:
+\begin{equation}
+  \label{pfcond-x} \forall X \in \mathfrak{A}, Y \in \mathfrak{B}: (\exists i
+  \in Y : X \in T_i \Leftrightarrow \langle f^{- 1} \rangle Y \nasymp X) .
+\end{equation}
+\begin{lem}
+  The formula (\ref{pfcond-x}) is equivalent to:
+  \begin{equation}
+    \label{pfcond-i} \forall X \in \mathfrak{A}, i \in B : (X \in T_i
+    \Leftrightarrow \langle f^{- 1} \rangle \{ i \} \nasymp X) .
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  
+  \begin{description}
+    \item[(\ref{pfcond-x})$\Rightarrow$(\ref{pfcond-i})] Just take $Y = \{ i
+    \}$.
+    
+    \item[(\ref{pfcond-i})$\Rightarrow$(\ref{pfcond-x})] Let (\ref{pfcond-i})
+    holds. Let also $X \in \mathfrak{A}, Y \in \mathfrak{B}$. Then $\langle
+    f^{- 1} \rangle Y \nasymp X \Leftrightarrow \bigcup_{i \in Y} \langle f^{-
+    1} \rangle \{ i \} \nasymp X \Leftrightarrow \exists i \in Y : \langle
+    f^{- 1} \rangle \{ i \} \nasymp X \Leftrightarrow \exists i \in Y : X \in
+    T_i$.
+  \end{description}
+\end{proof}
+
+Further transforming: $\forall i \in B : T_i = \corestar \langle f^{- 1}
+\rangle \{ i \}$.
+
+So $\langle f^{- 1} \rangle \{ i \}$ are arbitary elements of $\mathfrak{B}$
+and $T_i$ are corresponding arbitrary principal ideals.
+
+In other words, $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{B}) \cong \mathfrak{A}
+\amalg \ldots \amalg \mathfrak{A}$ ($\card B$ times). Thus $\mathsf{pFCD}
+(\mathfrak{A}; \mathfrak{B})$ is a boolean lattice.
+
+\section{About infinite case}
+
+Let $\mathfrak{A}$ be a complete boolean lattice, $\mathfrak{B}$ be an
+atomistic boolean lattice.
+
+$f \in \mathsf{pFCD} (\mathfrak{A}; \mathfrak{B}) \Leftrightarrow \forall X \in
+\mathfrak{A}, Y \in \mathfrak{B}: (\supfun{f} X \nasymp Y
+\Leftrightarrow \langle f^{- 1} \rangle Y \nasymp X) \Leftrightarrow \forall X
+\in \mathfrak{A}, Y \in \mathfrak{B}: (\exists i \in \atoms Y : i \in
+\atoms \supfun{f} X \Leftrightarrow \langle f^{- 1} \rangle Y
+\nasymp X)$.
+
+Let $T_i = \setcond{ X \in \mathfrak{A} }{ i \in
+\atoms \supfun{f} X }$.
+
+$T_i$ is an ideal: Really: That it's an upper set is obvious. Let $P \cup Q
+\in \setcond{ X \in \mathfrak{A} }{ i \in \atoms
+\supfun{f} X }$. Then $i \in \atoms \supfun{f} (P
+\cup Q) = \atoms \supfun{f} P \cup \atoms \supfun{f}
+Q$; $i \in \supfun{f} P \vee i \in \supfun{f} Q$.
+
+Let now $T_i \in \subsets \mathfrak{A}$ be ideals. Can we restore $\langle
+f \rangle$? Yes, because we know $i \in \atoms \supfun{f} X$ for
+every $X \in \mathfrak{A}$ and $\mathfrak{B}$ is atomistic.
+
+So, it is equivalent to:
+\begin{equation}
+  \label{mpfcond-x} \forall X \in \mathfrak{A}, Y \in \mathfrak{B}: (\exists i
+  \in \atoms Y : X \in T_i \Leftrightarrow \langle f^{- 1} \rangle Y
+  \nasymp X) .
+\end{equation}
+\begin{lem}
+  The formula (\ref{mpfcond-x}) is equivalent to:
+  \begin{equation}
+    \label{mpfcond-i} \forall X \in \mathfrak{A}, i \in
+    \atoms^{\mathfrak{B}} : (X \in T_i \Leftrightarrow \langle f^{- 1}
+    \rangle i \nasymp X) .
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  
+  \begin{description}
+    \item[(\ref{mpfcond-x})$\Rightarrow$(\ref{mpfcond-i})] Let
+    (\ref{mpfcond-x}) holds. Take $Y = i$. Then $\atoms Y = \{ i \}$ and
+    thus $X \in T_i \Leftrightarrow \exists i \in \atoms Y : X \in T_i
+    \Leftrightarrow \langle f^{- 1} \rangle Y \nasymp X \Leftrightarrow
+    \langle f^{- 1} \rangle i \nasymp X$.
+    
+    \item[(\ref{mpfcond-i})$\Rightarrow$(\ref{mpfcond-x})] Let
+    (\ref{pfcond-i}) holds. Let also $X \in \mathfrak{A}, Y \in \mathfrak{B}$.
+    Then $\langle f^{- 1} \rangle Y \nasymp X \Leftrightarrow \langle f^{- 1}
+    \rangle \bigsqcup \atoms Y \nasymp X \Leftrightarrow \bigsqcup_{i
+    \in \atoms Y} \langle f^{- 1} \rangle i \nasymp X \Leftrightarrow
+    \exists i \in \atoms Y : \langle f^{- 1} \rangle i \nasymp X
+    \Leftrightarrow \exists i \in \atoms Y : X \in T_i$.
+  \end{description}
+\end{proof}
+
+Further equivalently transforming: $\forall i \in \atoms^{\mathfrak{B}}
+: T_i = \corestar \langle f^{- 1} \rangle i$.
+
+So $\langle f^{- 1} \rangle i$ are arbitary elements of $\mathfrak{B}$ and
+$T_i$ are corresponding arbitrary principal ideals.
+
+In other words, $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{B}) \cong \coprod_{i \in
+\card \atoms^{\mathfrak{B}}} \mathfrak{A}$. Thus $\mathsf{pFCD}
+(\mathfrak{A}; \mathfrak{B})$ is a boolean lattice.
+
+So finally we have a very weird theorem, which is a partial solution for the
+above open problem (The weirdness is in its partiality):
+
+\begin{thm}
+  If $\mathfrak{A}$ is a complete boolean lattice and $\mathfrak{B}$ is an
+  atomistic boolean lattice (or vice versa), then $\mathsf{pFCD} (\mathfrak{A};
+  \mathfrak{B})$ is a boolean lattice.
+\end{thm}
