@@ -21,6 +21,59 @@ I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
   \langle \supfun{f} \rangle^{\ast} S$.
 \end{proof}
 
+\begin{thm}
+  Let $\mathfrak{A}$, $\mathfrak{B}$ be complete boolean lattices.
+  
+  A function $\alpha \in \mathfrak{B}^{\mathfrak{A}}$ is equal to the
+  component $\supfun{f}$ of a pointree funcoid $f \in \mathsf{pFCD}
+  (\mathfrak{A}; \mathfrak{B})$ iff $\alpha$ is preserving all joins (= lower
+  adjoint).
+\end{thm}
+
+\begin{proof}
+  Let $\alpha \in \mathfrak{B}^{\mathfrak{A}}$ and preserves all joins. Then
+  $\alpha \in \mathscr{F} (\mathfrak{B})^{\mathfrak{A}}$ (We equate principal
+  filters of the set $\mathscr{F} \mathfrak{A}$ of filters on $\mathfrak{A}$
+  with elements of $\mathfrak{A}$). Thus $\alpha = \rsupfun{g}$
+  for some $g \in \mathsf{pFCD} \left( \mathscr{F} \mathfrak{A}; \mathscr{F}
+  \mathfrak{B} \right)$.
+  
+  $\langle g^{- 1} \rangle \in \mathscr{F} (\mathfrak{A})^{\mathscr{F}
+  (\mathfrak{B})}$.
+  
+  Let $y \in \mathfrak{B}$. We need to prove $\langle g^{- 1} \rangle y \in
+  \mathfrak{A}$ that is $\bigsqcup S \nasymp \langle g^{- 1} \rangle y
+  \Leftrightarrow \exists x \in S : \langle g^{- 1} \rangle y \nasymp x$ for
+  every $S \in \subsets \mathfrak{A}$.
+  
+  Really, $\bigsqcup S \nasymp \langle g^{- 1} \rangle y \Leftrightarrow y
+  \nasymp \supfun{g} \bigsqcup S \Leftrightarrow y \nasymp \bigsqcup
+  \langle \supfun{g} \rangle^{\ast} S \Leftrightarrow \exists x \in S :
+  y \nasymp \supfun{g} x \Leftrightarrow \exists x \in S : \langle g^{-
+  1} \rangle y \nasymp x$.
+  
+  Take $\beta = \langle g^{- 1} \rangle^{\ast}$. We have $\beta \in
+  \mathfrak{A}^{\mathfrak{B}}$.
+  
+  $x \nasymp \beta y \Leftrightarrow x \nasymp \langle g^{- 1} \rangle y
+  \Leftrightarrow y \nasymp \supfun{g} x \Leftrightarrow y \nasymp
+  \alpha x$.
+  
+  So $(\mathfrak{A}; \mathfrak{B}; \alpha ; \beta)$ is a pointfree funcoid.
+  
+  The other direction: Let now $f \in \mathsf{pFCD} (\mathfrak{A};
+  \mathfrak{B})$. We need to prove that it preserves all joins. But it was
+  proved above.
+\end{proof}
+
+\begin{conjecture}
+  Let $\mathfrak{A}$, $\mathfrak{B}$ be boolean lattices.
+  
+  A function $\alpha \in \mathfrak{B}^{\mathfrak{A}}$ is equal to the
+  component $\supfun{f}$ of a pointree funcoid $f \in \mathsf{pFCD}
+  (\mathfrak{A}; \mathfrak{B})$ iff $\alpha$ is a lower adjoint.
+\end{conjecture}
+
 \section{One-element boolean lattice}
 
 Let $\mathfrak{A}$ be a boolean lattice and $\mathfrak{B}= \subsets 0$.
