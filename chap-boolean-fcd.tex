@@ -323,7 +323,44 @@ above open problem (The weirdness is in its partiality and asymmetry):
 distributive complete Boolean lattice iff $A$ and $B$ are completely distributive
 Boolean lattices.'' (where $A \otimes B$ is equivalent to the set of Galois connections between~$A$ and~$B$) and other interesting results.
 
-Theorem~3.8 in~\cite{tprod-dist-lat} states:
-Let $A$ be a non-atomic Boolean lattice. Then $A\otimes A$ is not a Boolean lattice.
-Try to prove a similar theorem for pointfree funcoids. It suffices to prove that the
-identity is not complemented.
+\section{Negative results}
+
+The following negative result is modeled after theorem~3.8 in~\cite{tprod-dist-lat}.
+
+\begin{prop}
+  The element $1^{\mathsf{pFCD} (\mathfrak{A}; \mathfrak{A})}$ is not
+  complemented if $\mathfrak{A}$ is a non-atomic boolean lattice.
+\end{prop}
+
+\begin{proof}
+  Let $T = 1^{\mathsf{pFCD} (\mathfrak{A}; \mathfrak{A})}$.
+  
+  Let's suppose $T \sqcup V = \top$ for $V \in \mathsf{pFCD} (\mathfrak{A};
+  \mathfrak{A})$ and prove $T \sqcap V \neq \bot$.
+  
+  Then $\langle T \sqcup V \rangle a = \top$ for all $a \neq \bot$ and thus $V
+  a \sqcup a = \top$.
+  
+  Consequently $V a \sqsupseteq \neg a$ for all $a \neq \bot$.
+  
+  if $a$ isn't an atom, then there exists $b$ with $0 \sqsubset b \sqsubset a$
+  and hence $V (a) \sqsupseteq V (b) \sqsupseteq \neg b \sqsupset \neg a$;
+  thus $V a \sqsupset \neg a$.
+  
+  There is such $c < \top$ that $a \sqsubseteq c$ for every atom $a$. (Really,
+  suppose some element $p \neq \bot$ has no atoms. Thus all atoms are in $\neg
+  p$.)
+  
+  For $a \nsqsubseteq c$ we have $V a \sqcap a \sqsupset \bot$
+  for all $a \sqsubseteq \neg c$ thus $\langle T \sqcap V \rangle a \sqsupset
+  V a \sqcap a \sqsupset \bot$. Thus $\langle (T \sqcap V) \circ
+  \id_{\neg c} \rangle a \sqsupset \bot$
+  
+  So $T \sqcap V \sqsupseteq (T \sqcap V) \circ \id_{\neg c} \sqsupset
+  \bot$. So $V$ is not a complement of $T$.
+\end{proof}
+
+\begin{cor}
+  $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{A})$ is not boolean if $\mathfrak{A}$
+  is a non-atomic boolean lattice.
+\end{cor}
