@@ -91,6 +91,9 @@ a Galois connection~$q$ such that $q^\ast = \supfun{f^{-1}}$. We have found that
 to every Galois connection between two complete boolean lattices corresponds
 another Galois connection. TODO: Research it in details.
 
+Galois connections (particularly between boolean lattice) are studied in~\cite{tprod-dist-lat}
+and~\cite{shmuely1974}. We should study them in details.
+
 \section{One-element boolean lattice}
 
 Let $\mathfrak{A}$ be a boolean lattice and $\mathfrak{B}= \subsets 0$.
@@ -315,10 +318,12 @@ above open problem (The weirdness is in its partiality and asymmetry):
   \mathfrak{B})$ is a boolean lattice.
 \end{thm}
 
-\href{http://msp.org/pjm/1974/54-2/pjm-v54-n2-p15-s.pdf}{This article} proves
+\cite{shmuely1974}~proves
 ``THEOREM 4.6. Let $A$, $B$ be bounded posets. $A \otimes B$ is a completely
 distributive complete Boolean lattice iff $A$ and $B$ are completely distributive
 Boolean lattices.'' (where $A \otimes B$ is equivalent to the set of Galois connections between~$A$ and~$B$) and other interesting results.
 
-\href{http://link.springer.com/article/10.1007\%2FBF02488040}{This article} says:
-``for non-atomic Boolean lattices $A$, $B$ $A\otimes B$ is not in general a Boolean lattice.''
+Theorem~3.8 in~\cite{tprod-dist-lat} states:
+Let $A$ be a non-atomic Boolean lattice. Then $A\otimes A$ is not a Boolean lattice.
+Try to prove a similar theorem for pointfree funcoids. It suffices to prove that the
+identity is not complemented.
