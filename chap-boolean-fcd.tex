@@ -1,5 +1,37 @@
 \chapter{Boolean funcoids}
 
+\section{Categories of sides}
+
+Category of \emph{sides} $\Upsilon$ is an ordered category
+whose objects are (small) bounded lattices and whose morphisms are maps
+between lattices such that every Hom-set is a bounded lattice and (for all
+relevant variables):
+\begin{enumerate}
+  \item $(a \sqcup b) X = a X \sqcup b X$
+  
+  \item $(a \sqcap b) X \sqsubseteq a X \sqcap b X$
+  
+  \item $(\lambda x \in \mathfrak{A}: x \sqcap c) \in \Upsilon (\mathfrak{A};
+  \mathfrak{A})$ for every $c \in \mathfrak{A}$
+  
+  \item $a \bot = \bot$
+  
+  \item $\top X = \top$ unless $X = \bot$
+\end{enumerate}
+I call morphisms of such categories \emph{sides}.
+
+\begin{obvious}
+$1^{\mathfrak{A}} \in \Upsilon(\mathfrak{A};\mathfrak{A})$.
+\end{obvious}
+
+Boolean funcoids \fxnote{Extend this for a wider class of pointfree funcoids?} are sides.
+($\supfun{f}$ is a side for every boolean funcoid~$f$.)
+
+It seems \fxwarning{Check!} that Galois connections between boolean lattices \fxnote{A wider class of lattices?}
+are also a side.
+
+\section{Definitions}
+
 I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
 
 \begin{prop}
@@ -325,21 +357,21 @@ Boolean lattices.'' (where $A \otimes B$ is equivalent to the set of Galois conn
 
 \section{Negative results}
 
-The following negative result is modeled after theorem~3.8 in~\cite{tprod-dist-lat}.
-It seems interesting to find a common generalization of my below theorem and the theorem after which it was modeled.
+The following negative result generalizes (?) theorem~3.8 in~\cite{tprod-dist-lat}.
 
 \begin{prop}
-  The element $1^{\mathsf{pFCD} (\mathfrak{A}; \mathfrak{A})}$ is not
-  complemented if $\mathfrak{A}$ is a non-atomic boolean lattice.
+  The element $1^{\Upsilon (\mathfrak{A}; \mathfrak{A})}$ is not
+  complemented if $\mathfrak{A}$ is a non-atomic boolean lattice,
+  for every category~$\Upsilon$ of sides.
 \end{prop}
 
 \begin{proof}
-  Let $T = 1^{\mathsf{pFCD} (\mathfrak{A}; \mathfrak{A})}$.
+  Let $T = 1^{\Upsilon (\mathfrak{A}; \mathfrak{A})}$.
   
   Let's suppose $T \sqcup V = \top$ for $V \in \mathsf{pFCD} (\mathfrak{A};
   \mathfrak{A})$ and prove $T \sqcap V \neq \bot$.
   
-  Then $\langle T \sqcup V \rangle a = \top$ for all $a \neq \bot$ and thus $V
+  Then $( T \sqcup V ) a = \top$ for all $a \neq \bot$ and thus $V
   a \sqcup a = \top$.
   
   Consequently $V a \sqsupseteq \neg a$ for all $a \neq \bot$.
@@ -353,15 +385,15 @@ It seems interesting to find a common generalization of my below theorem and the
   p$.)
   
   For $a \nsqsubseteq c$ we have $V a \sqcap a \sqsupset \bot$
-  for all $a \sqsubseteq \neg c$ thus $\supfun{T \sqcap V} a \sqsupseteq
-  V a \sqcap a \sqsupset \bot$. Thus $\langle (T \sqcap V) \circ
-  \id_{\neg c} \rangle a \sqsupset \bot$
+  for all $a \sqsubseteq \neg c$ thus $(T \sqcap V) a \sqsupseteq
+  V a \sqcap a \sqsupset \bot$. Thus $((T \sqcap V) \circ
+  \id_{\neg c} ) a \sqsupset \bot$
   
   So $T \sqcap V \sqsupseteq (T \sqcap V) \circ \id_{\neg c} \sqsupset
   \bot$. So $V$ is not a complement of $T$.
 \end{proof}
 
 \begin{cor}
-  $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{A})$ is not boolean if $\mathfrak{A}$
+  $\Upsilon (\mathfrak{A}; \mathfrak{A})$ is not boolean if $\mathfrak{A}$
   is a non-atomic boolean lattice.
 \end{cor}
