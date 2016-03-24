@@ -33,37 +33,35 @@ such that (for all relevant variables):
 I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
 \end{defn}
 
-\fxnote{Can probably consider reloids as sides?}
+\begin{defn}
+I call a system of \emph{monotone} sides a system of sides with additional axiom: \fxwarning{Weaker axiom: $\supfun{a}$ is monotone.}
+\begin{enumerate}
+\item $\supfun{a}$ is monotone.
+\end{enumerate}
+\end{defn}
 
 \begin{defn}
-I call a system of \emph{distributive} sides a system of sides with additional axiom: \fxwarning{Weaker axiom: $\supfun{a}$ is monotone.}
+I call a system of \emph{distributive} sides a system of sides with additional axiom:
 \begin{enumerate}
 \item $\supfun{a}(X\sqcup Y) = \supfun{a}X\sqcup\supfun{a}Y$.
 \end{enumerate}
 \end{defn}
 
+\begin{obvious}
+Every distributive system of sides is monotone.
+\end{obvious}
 
 \begin{prop}
-~
-\begin{enumerate}
-  \item $\supfun{a}$ is monotone.
-  \item $\supfun{a}(a\sqcup b)=\supfun{a}a\sqcup\supfun{a}b$.
-  \item $\supfun{a} \bot = \bot$
-  \item $\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$
-\end{enumerate}
+$\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$ for monotone systems of sides.
 \end{prop}
-
-\begin{obvious}
-$1^{\mathfrak{A}} \in (\Src\Upsilon)(\mathfrak{A};\mathfrak{A})$.
-\end{obvious}
 
 Boolean funcoids \fxnote{Extend this for a wider class of pointfree funcoids, such that all pointfree funcoids between bounded lattices?} are sides.
 ($\supfun{f}$ is a side for every boolean funcoid~$f$.)
 
 It seems \fxwarning{Check!} that Galois connections between boolean lattices \fxnote{A wider class of lattices?}
-are also a side.
+are also a (distributive) side.
 
-Reloids (and pointfree reloids?) also can be made into a side?
+\fxnote{Reloids (and pointfree reloids?) also can be made into a side?}
 
 \section{Definitions}
 
