@@ -2,19 +2,25 @@
 
 \section{Categories of sides}
 
-\emph{System of sides} $\Upsilon = (f\mapsto\supfun{f})$ is a functor from an ordered category~$\Src\Upsilon$
-to the category of functions between (small) bounded lattices,
-such that every Hom-set of~$\Src\Upsilon$ is a bounded lattice and (for all relevant variables):
+\emph{System of sides} consist of:
 \begin{enumerate}
+\item an ordered category~$\Src\Upsilon$;
+\item a functor $\Upsilon = (f\mapsto\supfun{f})$ from $\Src\Upsilon$
+  to the category of functions between (small) bounded lattices;
+\item a morphism $\id_X\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $X\in\mathfrak{A}$
+\end{enumerate}
+such that (for all relevant variables):
+\begin{enumerate}
+  \item Every Hom-set of~$\Src\Upsilon$ is a bounded lattice.
+
   \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$
-  
+
   \item $\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$ (equivalent to monotonicity of morphisms?)
-  
-  \item $(\lambda x \in \mathfrak{A}: x \sqcap c) \in (\Dst\Upsilon)(\mathfrak{A}; \mathfrak{A})$ for every $c \in \mathfrak{A}$
-  \fxerror{Source and destination categories of our functor confused.}
-  
+
+  \item $\supfun{\id_c} = (\lambda x \in \mathfrak{A}: x \sqcap c) \in (\Dst\Upsilon)(\mathfrak{A}; \mathfrak{A})$ for every $c \in \mathfrak{A}$
+
   \item $\supfun{a} \bot = \bot$
-  
+
   \item $\supfun{\top} X = \top$ unless $X = \bot$
 \end{enumerate}
 I call morphisms of such categories \emph{sides}.
