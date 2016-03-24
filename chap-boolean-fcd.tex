@@ -2,6 +2,7 @@
 
 \section{Systems of sides}
 
+\begin{defn}
 \emph{System of sides} consist of:
 \begin{enumerate}
 \item an ordered category~$\Src\Upsilon$;
@@ -13,7 +14,7 @@ such that (for all relevant variables):
 \begin{enumerate}
   \item Every Hom-set of~$\Src\Upsilon$ is a bounded lattice.
 
-  \item $\supfun{a}$ preserves finite joins. \fxwarning{This axiom does not hold for arbitrary pointfree funcoids. Remove?}
+  \item $\supfun{a}\bot = \bot$.
 
   \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$ (equivalent to $\Upsilon$ to be a join-semilattice homomorphism,
     if we order functions between small bounded lattices component-wise)
@@ -26,8 +27,17 @@ such that (for all relevant variables):
   \item $\supfun{\top} X = \top$ unless $X = \bot$
 \end{enumerate}
 I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
+\end{defn}
 
 \fxnote{Can probably consider reloids as sides?}
+
+\begin{defn}
+I call a system of \emph{distributive} sides a system of sides with additional axiom:
+\begin{enumerate}
+\item $\supfun{a}(X\sqcup Y) = \supfun{a}X\sqcup\supfun{a}Y$.
+\end{enumerate}
+\end{defn}
+
 
 \begin{prop}
 ~
