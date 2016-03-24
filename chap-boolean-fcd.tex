@@ -2,28 +2,26 @@
 
 \section{Categories of sides}
 
-Category of \emph{sides} $\Upsilon$ is an ordered category
-whose objects are (small) bounded lattices and whose morphisms are maps
-between lattices such that every Hom-set is a bounded lattice and (for all
-relevant variables):
+\emph{System of sides} $\Upsilon = (f\mapsto\supfun{f})$ is a functor from an ordered category~$\Src\Upsilon$
+to the category of functions between (small) bounded lattices,
+such that every Hom-set of~$\Src f$ is a bounded lattice and (for all relevant variables):
 \begin{enumerate}
-  \item $(a \sqcup b) X = a X \sqcup b X$
+  \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$
   
-  \item $(a \sqcap b) X \sqsubseteq a X \sqcap b X$ (equivalent to monotonicity of morphisms?)
+  \item $\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$ (equivalent to monotonicity of morphisms?)
   
-  \item $(\lambda x \in \mathfrak{A}: x \sqcap c) \in \Upsilon (\mathfrak{A};
-  \mathfrak{A})$ for every $c \in \mathfrak{A}$
+  \item $(\lambda x \in \mathfrak{A}: x \sqcap c) \in (\Dst\Upsilon)(\mathfrak{A}; \mathfrak{A})$ for every $c \in \mathfrak{A}$
   
-  \item $a \bot = \bot$
+  \item $\supfun{a} \bot = \bot$
   
-  \item $\top X = \top$ unless $X = \bot$
+  \item $\supfun{\top} X = \top$ unless $X = \bot$
 \end{enumerate}
 I call morphisms of such categories \emph{sides}.
 
-\fxnote{Redefine sides as $f\rightarrow\supfun{f}$ function? Then we can probably consider reloids as sides?}
+\fxnote{Can probably consider reloids as sides?}
 
 \begin{obvious}
-$1^{\mathfrak{A}} \in \Upsilon(\mathfrak{A};\mathfrak{A})$.
+$1^{\mathfrak{A}} \in (\Src\Upsilon)(\mathfrak{A};\mathfrak{A})$.
 \end{obvious}
 
 Boolean funcoids \fxnote{Extend this for a wider class of pointfree funcoids, such that all pointfree funcoids between bounded lattices?} are sides.
@@ -364,37 +362,37 @@ Boolean lattices.'' (where $A \otimes B$ is equivalent to the set of Galois conn
 The following negative result generalizes (?) theorem~3.8 in~\cite{tprod-dist-lat}.
 
 \begin{prop}
-  The element $1^{\Upsilon (\mathfrak{A}; \mathfrak{A})}$ is not
+  The element $1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$ is not
   complemented if $\mathfrak{A}$ is a non-atomic boolean lattice,
-  for every category~$\Upsilon$ of sides.
+  for every system~$\Upsilon$ of sides.
 \end{prop}
 
 \begin{proof}
-  Let $T = 1^{\Upsilon (\mathfrak{A}; \mathfrak{A})}$.
+  Let $T = 1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$.
   
-  Let's suppose $T \sqcup V = \top$ for $V \in \mathsf{pFCD} (\mathfrak{A};
+  Let's suppose $T \sqcup V = \top$ for $V \in (\Src\Upsilon) (\mathfrak{A};
   \mathfrak{A})$ and prove $T \sqcap V \neq \bot$.
   
-  Then $( T \sqcup V ) a = \top$ for all $a \neq \bot$ and thus $V
+  Then $\supfun{T \sqcup V} a = \top$ for all $a \neq \bot$ and thus $\supfun{V}
   a \sqcup a = \top$.
   
-  Consequently $V a \sqsupseteq \neg a$ for all $a \neq \bot$.
+  Consequently $\supfun{V} a \sqsupseteq \neg a$ for all $a \neq \bot$.
   
   if $a$ isn't an atom, then there exists $b$ with $0 \sqsubset b \sqsubset a$
-  and hence $V (a) \sqsupseteq V (b) \sqsupseteq \neg b \sqsupset \neg a$;
-  thus $V a \sqsupset \neg a$.
+  and hence $\supfun{V} a \sqsupseteq \supfun{V} b \sqsupseteq \neg b \sqsupset \neg a$;
+  thus $\supfun{V} a \sqsupset \neg a$.
   
   There is such $c < \top$ that $a \sqsubseteq c$ for every atom $a$. (Really,
   suppose some element $p \neq \bot$ has no atoms. Thus all atoms are in $\neg
   p$.)
   
-  For $a \nsqsubseteq c$ we have $V a \sqcap a \sqsupset \bot$
-  for all $a \sqsubseteq \neg c$ thus $(T \sqcap V) a \sqsupseteq
-  V a \sqcap a \sqsupset \bot$. Thus $((T \sqcap V) \circ
-  \id_{\neg c} ) a \sqsupset \bot$
+  For $a \nsqsubseteq c$ we have $\supfun{V} a \sqcap a \sqsupset \bot$
+  for all $a \sqsubseteq \neg c$ thus $\supfun{T \sqcap V} a \sqsupseteq
+  \supfun{V} a \sqcap a \sqsupset \bot$. Thus $\supfun{(T \sqcap V) \circ
+  \id_{\neg c}} a \sqsupset \bot$
   
   So $T \sqcap V \sqsupseteq (T \sqcap V) \circ \id_{\neg c} \sqsupset
-  \bot$. So $V$ is not a complement of $T$.
+  \bot$. So $V$ is not a complement of $T$. \fxwarning{Define $\id$.}
 \end{proof}
 
 \begin{cor}
