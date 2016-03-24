@@ -7,26 +7,34 @@
 \item an ordered category~$\Src\Upsilon$;
 \item a functor $\Upsilon = (f\mapsto\supfun{f})$ from $\Src\Upsilon$
   to the category of functions between (small) bounded lattices;
-\item a morphism $\id_X\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $X\in\mathfrak{A}$
+\item a morphism $\id_X\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $X\in\mathfrak{A}$.
 \end{enumerate}
 such that (for all relevant variables):
 \begin{enumerate}
   \item Every Hom-set of~$\Src\Upsilon$ is a bounded lattice.
 
-  \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$
+  \item $\supfun{a}$ preserves finite joins.
 
-  \item $\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$ (equivalent to monotonicity of morphisms?)
+  \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$ (equivalent to $\Upsilon$ to be a join-semilattice homomorphism,
+    if we order functions between small bounded lattices component-wise)
 
   \item $\supfun{\id_c} = (\lambda x \in \mathfrak{A}: x \sqcap c)$ for every $c \in \mathfrak{A}$
     where $\mathfrak{A}$ is an object of~$\Src\Upsilon$
-
-  \item $\supfun{a} \bot = \bot$
 
   \item $\supfun{\top} X = \top$ unless $X = \bot$
 \end{enumerate}
 I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
 
 \fxnote{Can probably consider reloids as sides?}
+
+\begin{prop}
+~
+\begin{enumerate}
+  \item $\supfun{a}$ is monotone.
+  \item $\supfun{a} \bot = \bot$
+  \item $\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$
+\end{enumerate}
+\end{prop}
 
 \begin{obvious}
 $1^{\mathfrak{A}} \in (\Src\Upsilon)(\mathfrak{A};\mathfrak{A})$.
