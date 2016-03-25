@@ -88,8 +88,8 @@ A \emph{bijective} system of sides is a system of sides with faithful functor~$\
 A \emph{system of sides with binary product} is a system of sides together with functions $\mathord{\times}:\mathfrak{A}\rightarrow\mathfrak{B}$
 for every objects~$\mathfrak{A}$,~$\mathfrak{B}$, such that
 \begin{enumerate}
-\item $f\sqcap(X\times Y) = \id_Y\circ f\circ\id_X$
-\item $(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ \fxwarning{Does it follow from the previous axiom?}
+\item \label{f-c-x-y}$f\sqcap(X\times Y) = \id_Y\circ f\circ\id_X$
+\item \label{f-xy-x0y0}$(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$
 \item $g\circ(X\times Y)\circ f = \supfun{f}X\times\supfun{g}Y$
 \end{enumerate}
 \end{defn}
@@ -112,6 +112,22 @@ B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{ca
 \begin{cor}
 For bijective systems of sides binary product can be defined no more than in one way.
 \end{cor}
+
+\begin{prop}
+For bijective systems of sides axiom~\ref{f-xy-x0y0} follows from axiom~\ref{f-c-x-y}.
+\end{prop}
+
+\begin{proof}
+$(X_0\times Y_0)\sqcap(X_1\times Y_1) = \id_{Y_1}\circ(X_0\times Y_0)\circ\id_{X_1}$.
+Thus
+\begin{multline*}
+\supfun{(X_0\times Y_0)\sqcap(X_1\times Y_1)} P = \supfun{\id_{Y_1}}\supfun{X_0\times Y_0}\supfun{\id_{X_1}} P = \\
+\supfun{\id_{Y_1}}\begin{cases}\bot&\text{ if }X_0\asymp\supfun{\id_{X_1}}P\\Y_0&\text{ if }X_0\nasymp\supfun{\id_{X_1}}P\end{cases} =
+\begin{cases}\bot&\text{ if }X_0\sqcap X_1\asymp P\\Y_0\sqcap Y_1&\text{ if }X_0\sqcap X_1\nasymp P\end{cases} = \\
+\supfun{(X_0\sqcap X_1)\times(Y_0\sqcap Y_1)} P.
+\end{multline*}
+So $(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ follows by bijectivity.
+\end{proof}
 
 \fxnote{Hm, what about alternative definition of product (for example the ``second'' product) for reloids?}
 
