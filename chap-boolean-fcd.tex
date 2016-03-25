@@ -21,13 +21,15 @@ such that (for all relevant variables):
 
   \item $\supfun{\bot} a = \bot$.
 
+  \item $\supfun{\top} X = \top$ unless $X = \bot$
+
+  \item $\supfun{1^{\Src\Upsilon}_\mathfrak{A}}X = X$ (in other words, $\supfun{1^{\Src\Upsilon}_\mathfrak{A}} = 1_X$).
+
   \item $\id_c \sqsubseteq 1_{\mathfrak{A}}$ for every $c \in \mathfrak{A}$
     where $\mathfrak{A}$ is an object of~$\Src\Upsilon$.
 
   \item $\supfun{\id_c} = (\lambda x \in \mathfrak{A}: x \sqcap c)$ for every $c \in \mathfrak{A}$
     where $\mathfrak{A}$ is an object of~$\Src\Upsilon$
-
-  \item $\supfun{\top} X = \top$ unless $X = \bot$
 \end{enumerate}
 I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
 \end{defn}
