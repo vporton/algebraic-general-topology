@@ -1,0 +1,129 @@
+\chapter{Systems of sides}
+
+\section{Systems of sides}
+
+\begin{defn}
+\emph{System of sides} consist of:
+\begin{enumerate}
+\item an ordered category~$\Src\Upsilon$;
+\item a functor $\Upsilon = (f\mapsto\supfun{f})$ from $\Src\Upsilon$
+  to the category of functions between (small) bounded lattices;
+\item a morphism $\id_X\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $X\in\mathfrak{A}$.
+\end{enumerate}
+such that (for all relevant variables):
+\begin{enumerate}
+  \item Every Hom-set of~$\Src\Upsilon$ is a bounded join-semilattice.
+
+  \item $\supfun{a}\bot = \bot$.
+
+  \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$ (equivalent to $\Upsilon$ to be a join-semilattice homomorphism,
+    if we order functions between small bounded lattices component-wise)
+
+  \item $\supfun{\bot} a = \bot$.
+
+  \item $\supfun{\top} X = \top$ unless $X = \bot$
+
+  \item $\id_c \sqsubseteq 1_{\mathfrak{A}}$ for every $c \in \mathfrak{A}$
+    where $\mathfrak{A}$ is an object of~$\Src\Upsilon$.
+
+  \item $\supfun{\id_c} = (\lambda x \in \mathfrak{A}: x \sqcap c)$ for every $c \in \mathfrak{A}$
+    where $\mathfrak{A}$ is an object of~$\Src\Upsilon$
+\end{enumerate}
+I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
+\end{defn}
+
+\begin{prop}
+$\supfun{1^{\Src\Upsilon}_\mathfrak{A}} X = X$ for every system of sides.
+\end{prop}
+
+\begin{proof}
+By properties of functors.
+\end{proof}
+
+\begin{defn}
+I call a system of \emph{monotone} sides a system of sides with additional axiom:
+\begin{enumerate}
+\item $\supfun{a}$ is monotone.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+I call a system of \emph{distributive} sides a system of sides with additional axiom:
+\begin{enumerate}
+\item $\supfun{a}(X\sqcup Y) = \supfun{a}X\sqcup\supfun{a}Y$.
+\end{enumerate}
+\end{defn}
+
+\begin{obvious}
+Every distributive system of sides is monotone.
+\end{obvious}
+
+\begin{prop}
+$\supfun{a \sqcap b} X \sqsubseteq \supfun{a} X \sqcap \supfun{b} X$ for monotone systems of sides.
+\end{prop}
+
+\begin{defn}
+A system of sides \emph{with correct identities} is a system of sides with additional axiom:
+\begin{enumerate}
+\item $\id_a\circ\id_b = \id_{a\sqcap b}$.
+\end{enumerate}
+\end{defn}
+
+Boolean funcoids \fxnote{Extend this for a wider class of pointfree funcoids, such that all pointfree funcoids between bounded lattices?} are sides.
+($\supfun{f}$ is a side for every boolean funcoid~$f$.)
+
+It seems \fxwarning{Check!} that Galois connections between boolean lattices \fxnote{A wider class of lattices?}
+are also a (distributive) side.
+
+\fxnote{Reloids (and pointfree reloids?) also can be made into a side?}
+
+\begin{defn}
+A \emph{bijective} system of sides is a system of sides with faithful functor~$\Upsilon$.
+\end{defn}
+
+\fxnote{We can define \emph{product} in a system of sides, but only if it's bijective.
+However, we can add axioms for product for any system of sides.
+Hm, what about alternative definition of product (for example the ``second'' product) for reloids?}
+
+\section{Negative results}
+
+The following negative result generalizes (?) theorem~3.8 in~\cite{tprod-dist-lat}.
+
+\begin{prop}
+  The element $1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$ is not
+  complemented if $\mathfrak{A}$ is a non-atomic boolean lattice,
+  for every monotone system of sides.
+\end{prop}
+
+\begin{proof}
+  Let $T = 1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$.
+  
+  Let's suppose $T \sqcup V = \top$ for $V \in (\Src\Upsilon) (\mathfrak{A};
+  \mathfrak{A})$ and prove $T \sqcap V \neq \bot$.
+  
+  Then $\supfun{T \sqcup V} a = \top$ for all $a \neq \bot$ and thus $\supfun{V}
+  a \sqcup a = \top$.
+  
+  Consequently $\supfun{V} a \sqsupseteq \neg a$ for all $a \neq \bot$.
+  
+  If $a$ isn't an atom, then there exists $b$ with $0 \sqsubset b \sqsubset a$
+  and hence $\supfun{V} a \sqsupseteq \supfun{V} b \sqsupseteq \neg b \sqsupset \neg a$;
+  thus $\supfun{V} a \sqsupset \neg a$.
+  
+  There is such $c < \top$ that $a \sqsubseteq c$ for every atom $a$. (Really,
+  suppose some element $p \neq \bot$ has no atoms. Thus all atoms are in $\neg
+  p$.)
+  
+  For $a \nsqsubseteq c$ we have $\supfun{V} a \sqcap a \sqsupset \bot$
+  for all $a \sqsubseteq \neg c$ thus $\supfun{T \sqcap V} a \sqsupseteq
+  \supfun{V} a \sqcap a \sqsupset \bot$. Thus $\supfun{(T \sqcap V) \circ
+  \id_{\neg c}} a \sqsupset \bot$
+  
+  So $T \sqcap V \sqsupseteq (T \sqcap V) \circ \id_{\neg c} \sqsupset
+  \bot$. So $V$ is not a complement of $T$. \fxwarning{Define $\id$.}
+\end{proof}
+
+\begin{cor}
+  $\Upsilon (\mathfrak{A}; \mathfrak{A})$ is not boolean if $\mathfrak{A}$
+  is a non-atomic boolean lattice.
+\end{cor}
