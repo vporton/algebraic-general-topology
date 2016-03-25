@@ -95,11 +95,18 @@ for every objects~$\mathfrak{A}$,~$\mathfrak{B}$, such that
 \end{defn}
 
 \begin{prop}
-$\supfun{A\times B}X = \begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}$.
+$\supfun{A\times B}X = \begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}$
 \end{prop}
 
 \begin{proof}
-??
+~
+\begin{multline*}
+\supfun{A\times B}X = \supfun{\top\sqcap(A\times B)}X = \supfun{\id_B\circ\top\circ\id_A}X = \\
+\supfun{\id_B}\supfun{\top}\supfun{\id_A}X =
+B\sqcap\supfun{\top}(X\sqcap A) = \\
+B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{cases} =
+\begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}
+\end{multline*}
 \end{proof}
 
 \begin{prop}
