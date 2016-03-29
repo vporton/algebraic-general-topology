@@ -345,14 +345,14 @@ arrows preserve order, composition, and reversal ($f\mapsto f^{-1}$).
 \begin{tabular}{c}
 pointfree funcoids\\ between powersets\end{tabular}
 \arrow[ru, shift left, "f\mapsto\suprel{f}"]
-\arrow[rr, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(X\mapsto\bigsqcap_{x\in\subsets X\setminus\{\emptyset\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\subsets Y\setminus\{\emptyset\}}\supfun{f^{-1}}y\right)=\\
-  \scriptscriptstyle\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)\end{aligned}"]
+\arrow[rr, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in\subsets Y\setminus\{\emptyset\}}\supfun{f^{-1}}y\right)=\\
+  \scriptscriptstyle\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)\end{aligned}"]
 & & \begin{tabular}{c}
     antitone Galois\\ connections\\ between powersets
     \end{tabular}
 \arrow[lu, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\setcond{(x;y)}{y\in f_1\{x\}}=\\\scriptscriptstyle\setcond{(x;y)}{x\in f_2\{y\}}\end{aligned}"]
-\arrow[ll, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(X\mapsto\bigsqcup_{x\in\subsets X}f_1 x;Y\mapsto\bigsqcup_{y\in\subsets Y}f_2 y\right)=\\
-  \scriptscriptstyle\left(X\mapsto\bigsqcup_{x\in X}f_1\{x\};Y\mapsto\bigsqcup_{y\in Y}f_2\{y\}\right)\end{aligned}"]
+\arrow[ll, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(X\mapsto\lnot f_1 X;Y\mapsto\bigsqcup_{y\in\subsets Y}f_2 y\right)=\\
+  \scriptscriptstyle\left(X\mapsto\lnot f_1 X;Y\mapsto\bigsqcup_{y\in Y}f_2\{y\}\right)\end{aligned}"]
 \end{tikzcd}
 % \end{sideways}
 \end{figure}
