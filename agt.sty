@@ -8,6 +8,16 @@
 
 \makeatletter
 
+% \bigsqcup wrong size with \scriptscriptstyle
+\renewcommand{\bigsqcup}{%
+  \mathop{%
+    \mathpalette\@updown\bigsqcap
+  }%
+}
+\newcommand*{\@updown}[2]{%
+  \rotatebox[origin=c]{180}{$\m@th#1#2$}%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 \pdfpageheight\paperheight
 \pdfpagewidth\paperwidth
