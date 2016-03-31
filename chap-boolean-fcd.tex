@@ -334,7 +334,7 @@ this diagram is an isomorphism. Every cycle in this diagram is an
 identity (therefore ``parallel'' arrows are mutually inverse). The
 arrows preserve order, and reversal ($f\mapsto f^{-1}$).
 All paths of the diagram (except of paths starting or ending with ``antitone Galois connections'' for which we do not define composition)
-preserve composition.
+preserve composition. Note that for a Galois connection~$f$ I denote $f_0$ the lower adjoint and $f_1$ the upper adjoint.
 
 \begin{figure}[ht]
 % \begin{sidewaysfigure}
@@ -357,8 +357,8 @@ preserve composition.
 \arrow[ld, leftrightarrow, "f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})"]
 \\
 \& \begin{tabular}{c}Galois connections\\ between $\subsets A$ and $\subsets B$\end{tabular}
-\arrow[lu, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(f^\ast;Y\mapsto\bigsqcap_{y\in\subsets Y}f_{\ast}\lnot y\right)=\\
-  \scriptscriptstyle\left(f^\ast;Y\mapsto\bigsqcap_{y\in Y}f_{\ast}\lnot\{y\}\right)\end{aligned}"]
+\arrow[lu, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(f_0;Y\mapsto\bigsqcap_{y\in\subsets Y}f_1\lnot y\right)=\\
+  \scriptscriptstyle\left(f_0;Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)\end{aligned}"]
 \end{tikzcd}
 % \end{sideways}
 \end{figure}
