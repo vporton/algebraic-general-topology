@@ -343,7 +343,7 @@ For brevity I will denote a pointfree funcoid between~$\subsets A$ and~$\subsets
 % \begin{sideways}
 \begin{tikzcd}[row sep=4cm, column sep=2cm, ampersand replacement=\&]
 \& \begin{tabular}{c}binary relations\\ between $A$ and $B$\end{tabular}
-\arrow[rd, shift left, "r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in A:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in B:x\mathrel{r}y}\right)"]
+\arrow[rd, shift left, "r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)"]
 \arrow[ld, shift left, "r\mapsto\left(\rsupfun{r};\rsupfun{r^{-1}}\right)"] \\
 \begin{tabular}{c}pointfree funcoids\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
 \arrow[ru, shift left, "f\mapsto\suprel{f}"]
