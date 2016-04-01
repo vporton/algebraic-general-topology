@@ -335,33 +335,44 @@ identity (therefore ``parallel'' arrows are mutually inverse). The
 arrows preserve order, and reversal ($f\mapsto f^{-1}$).
 All paths of the diagram (except of paths starting or ending with ``antitone Galois connections'' for which we do not define composition)
 preserve composition. For a Galois connection~$f$ I denote $f_0$ the lower adjoint and $f_1$ the upper adjoint.
-For brevity I will denote a pointfree funcoid between~$\subsets A$ and~$\subsets B$ as $(\supfun{f};\supfun{f^{-1}})$ instead of $(\subsets A;\subsets B;\supfun{f};\supfun{f^{-1}})$.
 
 \begin{figure}[ht]
 % \begin{sidewaysfigure}
 \caption{\label{rels-dia}}
 % \begin{sideways}
-\begin{tikzcd}[row sep=4cm, column sep=2cm, ampersand replacement=\&]
+\begin{tikzcd}[row sep=1cm, column sep=-1.0cm, ampersand replacement=\&]
 \& \begin{tabular}{c}binary relations\\ between $A$ and $B$\end{tabular}
-\arrow[rd, shift left, "r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)"]
-\arrow[ld, shift left, "r\mapsto\left(\rsupfun{r};\rsupfun{r^{-1}}\right)"] \\
+\arrow[rd, shift left, "\Psi_1^{-1}"]
+\arrow[ld, shift left, "\Psi_2"] \\
 \begin{tabular}{c}pointfree funcoids\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
-\arrow[ru, shift left, "f\mapsto\suprel{f}"]
-\arrow[rr, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=\\
-  \scriptscriptstyle\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)\end{aligned}"]
-\arrow[rd, shift left, "{\begin{aligned}&\scriptscriptstyle f\mapsto\left(\supfun{f};Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\top\}}\supfun{f^{-1}}\lnot y\right)=\\
-&\scriptscriptstyle \left(\supfun{f};Y\mapsto\bigsqcup_{y\in Y}\supfun{f^{-1}}\lnot\{y\}\right)\end{aligned}}"]
+\arrow[ru, shift left, "\Psi_2^{-1}"]
+\arrow[rr, shift left, "\Psi_3"]
+\arrow[rd, shift left, "\Psi_4"]
 \& \& \begin{tabular}{c}antitone Galois\\ connections\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
-\arrow[lu, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\setcond{(x;y)}{y\in f_0\{x\}}=\\\scriptscriptstyle\setcond{(x;y)}{x\in f_1\{y\}}\end{aligned}"]
-\arrow[ll, shift left, "\scriptscriptstyle f\mapsto\left(X\mapsto\lnot f_0 X;Y\mapsto\bigsqcup_{y\in\subsets Y}f_1 y\right)=
-  \scriptscriptstyle\left(X\mapsto\lnot f_0 X;Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)"]
-\arrow[ld, leftrightarrow, "f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})"]
+\arrow[lu, shift left, "\Psi_1"]
+\arrow[ll, shift left, "\Psi_3^{-1}"]
+\arrow[ld, leftrightarrow, "\Psi_5=\Psi_5^{-1}"]
 \\
 \& \begin{tabular}{c}Galois connections\\ between $\subsets A$ and $\subsets B$\end{tabular}
-\arrow[lu, shift left, "\begin{aligned}\scriptscriptstyle f\mapsto\left(f_0;Y\mapsto\bigsqcap_{y\in\subsets Y}f_1\lnot y\right)=\\
-  \scriptscriptstyle\left(f_0;Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)\end{aligned}"]
+\arrow[lu, shift left, "\Psi_4^{-1}"]
 \end{tikzcd}
 % \end{sideways}
+
+\begin{itemize}
+\item $\Psi_1:f\mapsto\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$
+\item $\Psi_1^{-1}:r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)$
+\item $\Psi_2:r\mapsto\left(A;B;\rsupfun{r};\rsupfun{r^{-1}}\right)$
+\item $\Psi_2^{-1}:f\mapsto\suprel{f}$
+\item $\Psi_3:f\mapsto\scriptstyle\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
+\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
+\item $\Psi_3^{-1}:f\mapsto\scriptstyle\left(X\mapsto\lnot f_0 X;Y\mapsto\bigsqcup_{y\in\subsets Y}f_1 y\right)=
+  \left(X\mapsto\lnot f_0 X;Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
+\item $\Psi_4:f\mapsto\scriptstyle\left(\supfun{f};Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\top\}}\supfun{f^{-1}}\lnot y\right)=
+  \left(\supfun{f};Y\mapsto\bigsqcup_{y\in Y}\supfun{f^{-1}}\lnot\{y\}\right)$
+\item $\Psi_4^{-1}:f\mapsto\left(f_0;Y\mapsto\bigsqcap_{y\in\subsets Y}f_1\lnot y\right)=\left(f_0;Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)$
+\item $\Psi_5=\Psi_5^{-1}:f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})$
+\end{itemize}
+
 \end{figure}
 % \end{sidewaysfigure}
 \end{thm}
