@@ -339,20 +339,19 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 
 \begin{figure}[ht]
 \caption{\label{rels-dia}}
-\begin{tikzcd}[row sep=1cm, column sep=-1.0cm, ampersand replacement=\&]
-\& \begin{tabular}{c}binary relations\\ between $A$ and $B$\end{tabular}
+\begin{tikzcd}[row sep=1cm, column sep=-1.0cm]
+& \begin{tabular}{c}binary relations\\ between $A$ and $B$\end{tabular}
 \arrow[rd, shift left, "\Psi_1^{-1}"]
 \arrow[ld, shift left, "\Psi_2"] \\
 \begin{tabular}{c}pointfree funcoids\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
 \arrow[ru, shift left, "\Psi_2^{-1}"]
 \arrow[rr, shift left, "\Psi_3"]
 \arrow[rd, shift left, "\Psi_4"]
-\& \& \begin{tabular}{c}antitone Galois\\ connections\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
+& & \begin{tabular}{c}antitone Galois\\ connections\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
 \arrow[lu, shift left, "\Psi_1"]
 \arrow[ll, shift left, "\Psi_3^{-1}"]
-\arrow[ld, leftrightarrow, "\Psi_5=\Psi_5^{-1}"]
-\\
-\& \begin{tabular}{c}Galois connections\\ between $\subsets A$ and $\subsets B$\end{tabular}
+\arrow[ld, leftrightarrow, "\Psi_5=\Psi_5^{-1}"]\\
+& \begin{tabular}{c}Galois connections\\ between $\subsets A$ and $\subsets B$\end{tabular}
 \arrow[lu, shift left, "\Psi_4^{-1}"]
 \end{tikzcd}
 
