@@ -379,6 +379,15 @@ First, note that despite we use the notation~$\Phi_i^{-1}$, it is not yet proved
 Now prove a list of claims:
 
 \begin{claim}
+$\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$ when $f$ is an antitone Galois connection between~$\subsets A$ and~$\subsets B$.
+\end{claim}
+\begin{claimproof}
+$y\in f_0\{x\}\Leftrightarrow\{y\}\sqsubseteq f_0\{x\}\Leftrightarrow\{x\}\sqsubseteq f_1\{y\}\Leftrightarrow x\in f_1\{y\}$.
+\end{claimproof}
+
+TODO: More equalities
+
+\begin{claim}
 $\Phi_1$ maps antitone Galois connections between~$\subsets A$ and~$\subsets B$ into binary relations between~$A$ and~$B$.
 \end{claim}
 \begin{claimproof}
@@ -391,6 +400,25 @@ $\Psi_5$ is self-inverse.
 \begin{claimproof}
 Obvious.
 \end{claimproof}
+
+\begin{claim}
+$\Psi_1^{-1}$ maps binary relations between~$A$ and~$B$ into antitone Galois connections between~$\subsets A$ and~$\subsets B$.
+\end{claim}
+\begin{claimproof}
+We need to prove $Y\subseteq\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}\Leftrightarrow X\subseteq\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}$.
+After we equivalently rewrite it:
+\[\forall y\in Y \forall x\in X:x\mathrel{r}y\Leftrightarrow\forall x\in X\forall y\in Y:x\mathrel{r}y\]
+it becomes obvious.
+\end{claimproof}
+
+\begin{claim}
+$\Phi_2$ maps binary relations between~$A$ and~$B$ into pointfree funcoids between~$\subsets A$ and~$\subsets B$.
+\end{claim}
+\begin{claimproof}
+We need to prove that $Y\nasymp\rsupfun{r}X\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y$. Really,
+$Y\nasymp\rsupfun{r}X\Leftrightarrow Y\rsupfun{r}X\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y$.
+\end{claimproof}
+
 
 TODO
 \end{proof}
