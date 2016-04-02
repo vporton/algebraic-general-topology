@@ -362,22 +362,22 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 \arrow[lu, shift left, bend left=40, dashed, "\Phi^{-1}"]
 \end{tikzcd}
 
-\begin{itemize}
-\item $\Psi_1:f\mapsto\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$
-\item $\Psi_1^{-1}:r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)$
-\item $\Psi_2:r\mapsto(\subsets A;\subsets B;\rsupfun{r};\rsupfun{r^{-1}})$
-\item $\Psi_2^{-1}:f\mapsto\setcond{(x;y)}{\{x\}\suprel{f}\{y\}}$
-\item $\Psi_3:f\mapsto\left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
-\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
-\item $\Psi_3^{-1}:f\mapsto\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\subsets X}f_0 x;Y\mapsto\bigsqcup_{y\in\subsets Y}f_1 y\right)=
+\begin{description}
+\item[$\Psi_1$] $f\mapsto\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$
+\item[$\Psi_1^{-1}$] $r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)$
+\item[$\Psi_2$] $r\mapsto(\subsets A;\subsets B;\rsupfun{r};\rsupfun{r^{-1}})$
+\item[$\Psi_2^{-1}$] $f\mapsto\setcond{(x;y)}{\{x\}\suprel{f}\{y\}}$
+\item[$\Psi_3$] $f\mapsto\left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
+  \left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
+\item[$\Psi_3^{-1}$] $f\mapsto\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\subsets X}f_0 x;Y\mapsto\bigsqcup_{y\in\subsets Y}f_1 y\right)=
   \left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
-\item $\Psi_4:f\mapsto\left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\top\}}\supfun{f}\lnot x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\top\}}\supfun{f^{-1}}\lnot y\right)=
-  \left(\supfun{f};Y\mapsto\bigsqcup_{y\in Y}\supfun{f^{-1}}\lnot\{y\}\right)$
-\item $\Psi_4^{-1}:f\mapsto\left(X\mapsto\bigsqcap_{x\in\subsets X}f_0\lnot x;Y\mapsto\bigsqcap_{y\in\subsets Y}f_1\lnot y\right)=\left(X\mapsto\bigsqcap_{x\in X}f_1\lnot\{x\};Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)$
-\item $\Psi_5=\Psi_5^{-1}:f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})$
-\item $\Phi$ maps a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$
-\item $\Phi^{-1}$ maps a Galois connection whose lower adjoint is~$c$ into the pointfree funcoid whose first component is~$c$
-\end{itemize}
+\item[$\Psi_4$] $f\mapsto\left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\top\}}\supfun{f}\lnot x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\top\}}\supfun{f^{-1}}\lnot y\right)=
+  \left(X\mapsto\bigsqcup_{x\in X}\supfun{f}\lnot\{x\};Y\mapsto\bigsqcup_{y\in Y}\supfun{f^{-1}}\lnot\{y\}\right)$
+\item[$\Psi_4^{-1}$] $f\mapsto\left(X\mapsto\bigsqcap_{x\in\subsets X}f_0\lnot x;Y\mapsto\bigsqcap_{y\in\subsets Y}f_1\lnot y\right)=\left(X\mapsto\bigsqcap_{x\in X}f_1\lnot\{x\};Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)$
+\item[$\Psi_5=\Psi_5^{-1}$] $f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})$
+\item[$\Phi$] maps a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$
+\item[$\Phi^{-1}$] maps a Galois connection whose lower adjoint is~$c$ into the pointfree funcoid whose first component is~$c$
+\end{description}
 
 \end{figure}
 \end{thm}
