@@ -376,13 +376,23 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 \begin{proof}
 First, note that despite we use the notation~$\Phi_i^{-1}$, it is not yet proved that~$\Phi_i^{-1}$ is the inverse of~$\Phi_i$. We will prove it below.
 
-Now prove a list of claims:
+Now prove a list of claims. First concentrate on the upper ``triangle'' of the diagram (the lower one will be considered later).
 
 \begin{claim}
 $\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$ when $f$ is an antitone Galois connection between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
 $y\in f_0\{x\}\Leftrightarrow\{y\}\sqsubseteq f_0\{x\}\Leftrightarrow\{x\}\sqsubseteq f_1\{y\}\Leftrightarrow x\in f_1\{y\}$.
+\end{claimproof}
+
+\begin{claim}
+$\scriptstyle \left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
+\left(X\mapsto\lnot\supfun{f}X;Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
+when $f$ is a pointfree funcoid between~$\subsets A$ and~$\subsets B$.
+\end{claim}
+\begin{claimproof}
+We need to prove $\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y = \bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}$.
+??
 \end{claimproof}
 
 TODO: More equalities
