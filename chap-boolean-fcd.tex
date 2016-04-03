@@ -440,7 +440,10 @@ $\Psi_2\Psi_1 f = \left(\subsets A;\subsets B;X\mapsto\setcond{y}{\exists x\in X
 $\Psi_3 = \Psi_1^{-1}\circ\Psi_2^{-1}$.
 \end{claim}
 \begin{claimproof}
-??
+$\Psi_1^{-1}\Psi_2^{-1} f = 
+\left(X\mapsto\setcond{y\in B}{\forall x\in X:\{x\}\suprel{f}\{y\}}; Y\mapsto\setcond{x\in A}{\forall y\in Y:\{x\}\suprel{f}\{y\}}\right) =
+\left(X\mapsto\setcond{y\in B}{\forall x\in X:y\in\supfun{f}\{x\}}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\in\supfun{f^{-1}}\{y\}}\right) =
+\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right) = \Psi_3 f$.
 \end{claimproof}
 
 \begin{claim}
@@ -479,14 +482,14 @@ Obvious.
 $\Psi_3$ maps pointfree funcoids between~$\subsets A$ and~$\subsets B$ into antitone Galois connections between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
-??
+Because $\Psi_3 = \Psi_1^{-1}\circ\Psi_2^{-1}$.
 \end{claimproof}
 
 \begin{claim}
 $\Psi_3^{-1}$ maps antitone Galois connections between~$\subsets A$ and~$\subsets B$ into pointfree funcoids between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
-Because $\Psi_3^{-1} = \Psi_2\circ\Psi_1$. \fxwarning{Prove this above.}
+Because $\Psi_3^{-1} = \Psi_2\circ\Psi_1$.
 \end{claimproof}
 
 
