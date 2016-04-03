@@ -396,8 +396,6 @@ $\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$ when $f$ is an a
 $y\in f_0\{x\}\Leftrightarrow\{y\}\sqsubseteq f_0\{x\}\Leftrightarrow\{x\}\sqsubseteq f_1\{y\}\Leftrightarrow x\in f_1\{y\}$.
 \end{claimproof}
 
-\fxwarning{Correct the first term of formulas below.}
-
 \begin{claim}
 $\scriptstyle \left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
 \left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
@@ -423,7 +421,8 @@ $\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\
 \begin{claimproof}
 It is enough to prove $\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x=\bigsqcup_{x\in X}f_0\{x\}$ (the rest follows from symmetry).
 We have $\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x\sqsupseteq\bigsqcup_{x\in X}f_0\{x\}$ because $\{x\}\in\mathscr{T}X\setminus\{\bot\}$.
-??
+Let $x\in\mathscr{T}X\setminus\{\bot\}$. Take $x'\in X$. We have $f_0 x\sqsubseteq f_0\{x'\}$ and thus
+$f_0 x\sqsubseteq \bigsqcup_{x\in X}f_0\{x\}$. So $\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x\sqsubseteq\bigsqcup_{x\in X}f_0\{x\}$.
 \end{claimproof}
 
 \begin{claim}
