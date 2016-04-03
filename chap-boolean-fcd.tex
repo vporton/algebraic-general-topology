@@ -469,15 +469,25 @@ it becomes obvious.
 $\Psi_2$ maps binary relations between~$A$ and~$B$ into pointfree funcoids between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
-We need to prove that $Y\nasymp\rsupfun{r}X\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y$. Really,
-$Y\nasymp\rsupfun{r}X\Leftrightarrow Y\rsupfun{r}X\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y$.
+We need to prove that $f=(\subsets A;\subsets B;\supfun{f};\supfun{f^{-1}})$ is a pointfree funcoids that is $Y\nasymp\supfun{f}X\Leftrightarrow X\nasymp\supfun{f^{-1}}Y$. Really, for every
+$X\in\mathscr{T}A$, $Y\in\mathscr{T}B$ 
+\begin{multline*}
+Y\nasymp\supfun fX\Leftrightarrow Y\nasymp\rsupfun rX\Leftrightarrow Y\nasymp\supfun rX\Leftrightarrow\\
+X\nasymp\supfun{r^{-1}}Y\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y\Leftrightarrow X\nasymp\supfun{f^{-1}}Y.
+\end{multline*}
 \end{claimproof}
 
 \begin{claim}
 $\Psi_2^{-1}$ maps pointfree funcoids between~$\subsets A$ and~$\subsets B$ into binary relations between~$A$ and~$B$.
 \end{claim}
 \begin{claimproof}
-Obvious.
+Suppose $f\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$ and prove
+that the relation defined by the formula~$\Psi_2^{-1}$ exists.
+To prove it, it's enough to show that $y\in\supfun f\{x\}\Leftrightarrow x\in\supfun{f^{-1}}\{y\}$.
+Really, 
+\[
+y\in\supfun f\{x\}\Leftrightarrow\{y\}\nasymp\supfun f\{x\}\Leftrightarrow\{x\}\nasymp\supfun{f^{-1}}\{y\}\Leftrightarrow x\in\supfun{f^{-1}}\{y\}.
+\]
 \end{claimproof}
 
 \begin{claim}
@@ -498,36 +508,17 @@ Because $\Psi_3^{-1} = \Psi_2\circ\Psi_1$.
 $\Psi_2$ and $\Psi_2^{-1}$ are mutually inverse.
 \end{claim}
 \begin{claimproof}
-Suppose $r\in\subsets(A\times B)$ and prove that there is a pointfree
-funcoid~$f$ conforming to~$\Phi_2$. Really, for every
-$X\in\mathscr{T}A$, $Y\in\mathscr{T}B$ 
-\begin{multline*}
-Y\nasymp\supfun fX\Leftrightarrow Y\nasymp\rsupfun rX\Leftrightarrow Y\nasymp\supfun rX\Leftrightarrow\\
-X\nasymp\supfun{r^{-1}}Y\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y\Leftrightarrow X\nasymp\supfun{f^{-1}}Y.
-\end{multline*}
-
-Now suppose $f\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$ and prove
-that the relation defined by the formula~$\Phi_2^{-1}$ exists.
-To prove it, it's enough to show that $y\in\supfun f\{x\}\Leftrightarrow x\in\supfun{f^{-1}}\{y\}$.
-Really, 
-\[
-y\in\supfun f\{x\}\Leftrightarrow\{y\}\nasymp\supfun f\{x\}\Leftrightarrow\{x\}\nasymp\supfun{f^{-1}}\{y\}\Leftrightarrow x\in\supfun{f^{-1}}\{y\}.
-\]
-
-It remains to prove that functions defined by~$\Phi_2$ and~$\Phi_2^{-1}$
-are mutually inverse. (That these functions are monotone is obvious.)
-
 Let $r_{0}\in\subsets(A\times B)$ and $f\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$
-corresponds to~$r_{0}$ by the formula~$\Phi_2$; let $r_{1}\in\subsets(A\times B)$
-corresponds to~$f$ by the formula~$\Phi_2^{-1}$. Then $r_{0}=r_{1}$
+corresponds to~$r_{0}$ by the formula~$\Psi_2$; let $r_{1}\in\subsets(A\times B)$
+corresponds to~$f$ by the formula~$\Psi_2^{-1}$. Then $r_{0}=r_{1}$
 because 
 \[
 (x;y)\in r_{0}\Leftrightarrow y\in\rsupfun{r_{0}}\{x\}\Leftrightarrow y\in\supfun f\{x\}\Leftrightarrow(x;y)\in r_{1}.
 \]
 
 Let now $f_{0}\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$ and $r\in\subsets(A\times B)$
-corresponds to~$f_{0}$ by the formula~$\Phi_2^{-1}$; let $f_{1}\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$
-corresponds to~$r$ by the formula~$\Phi_2$. Then $(x;y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}$
+corresponds to~$f_{0}$ by the formula~$\Psi_2^{-1}$; let $f_{1}\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$
+corresponds to~$r$ by the formula~$\Psi_2$. Then $(x;y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}$
 and $\supfun{f_{1}}=\rsupfun r$; thus 
 \[
 y\in\supfun{f_{1}}\{x\}\Leftrightarrow y\in\rsupfun r\{x\}\Leftrightarrow(x;y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}.
