@@ -530,7 +530,20 @@ So $\supfun{f_{0}}=\supfun{f_{1}}$. Similarly $\supfun{f_{0}^{-1}}=\supfun{f_{1}
 $\Psi_1$ and $\Psi_1^{-1}$ are mutually inverse.
 \end{claim}
 \begin{claimproof}
-??
+Let $r_0\in\subsets(A\times B)$ and $f\in\mathscr{T}A\otimes\mathscr{T}B$ \fxwarning{Define this notation.} 
+corresponds to~$r_{0}$ by the formula~$\Psi_1^{-1}$; let $r_{1}\in\subsets(A\times B)$
+corresponds to~$f$ by the formula~$\Psi_1$. Then $r_{0}=r_{1}$ because
+\[
+(x;y)\in r_1 \Leftrightarrow y\in f_0\{x\} \Leftrightarrow y\in\setcond{y\in B}{x\mathrel{r_0}y} \Leftrightarrow x\mathrel{r_0}y.
+\]
+
+Let now $f_{0}\in\mathscr{T}A\otimes\mathscr{T}B$ and $r\in\subsets(A\times B)$
+corresponds to~$f_{0}$ by the formula~$\Psi_1$; let $f_{1}\in\mathscr{T}A\otimes\mathscr{T}B$
+corresponds to~$r$ by the formula~$\Psi_1^{-1}$. Then $f_0=f_1$ because
+\begin{multline*}
+f_{10} X = \setcond{y\in B}{\forall x\in X:x\mathrel{r}y} = \setcond{y\in B}{\forall x\in X:y\in f_{00}\{x\}} = \\
+f_{00}\{x\} = \text{\fxwarning{explicit proof}} = \bigsqcap_{x\in X}f_{00}\{x\} = f_{00}X.
+\end{multline*}
 \end{claimproof}
 
 Now switch to the lower ``triangle'':
