@@ -341,8 +341,6 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 
 \fxwarning{This theorem supersedes a theorem in ``Binary relations are pointfree funcoids'' in the master version of the book.}
 
-\fxwarning{What happens if we travel from binary relations through solid arrows and one dashed arrow back to binary relations?}
-
 \begin{figure}[ht]
 \caption{\label{rels-dia}}
 \begin{tikzcd}[row sep=1cm, column sep=-1.0cm]
@@ -650,7 +648,27 @@ Diagram~\ref{rels-dia} is commutative.
 From the previous claim.
 \end{claimproof}
 
-\fxwarning{It remains to prove that the arrows preserve order, composition, and reversal, and also about dashed arrows.}
+\fxwarning{It remains to prove that the arrows preserve order, composition, and reversal.}
 
-TODO
 \end{proof}
+
+Informally speaking, dashed arrows replace a relation~$r$ with its complement relations~$\lnot r$. Formally:
+
+\begin{prop}
+$\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r = \neg r$ for every relation~$r$ between~$A$ and~$B$.
+\end{prop}
+
+\begin{proof}
+$\Psi_4 \Psi_2 r = \left( X \mapsto \neg \bigsqcap_{x \in X} \rsuprel{r}
+\{ x \} ; Y \mapsto \bigsqcap_{y \in Y} \rsuprel{r} \neg \{ y \} \right)$.
+
+$\Phi^{-1} \Psi_4 \Psi_2 r$ is pointfree funcoid $f$ with $\supfun{f}
+= X \mapsto \neg \bigsqcap_{x \in X} \rsupfun{r} \{ x \}$
+
+$\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r$ is the relation consisting of $(x ;
+y)$ such that $\{ x \} \suprel{f} \{ y \}$ what is equivalent to: $\{ y \}
+\nasymp \supfun{f} \{ x \}$; $\{ y \} \nasymp \neg \rsuprel{r} \{ x \}$; $\{ y \} \mathrel{\not{\sqsubseteq}} \rsuprel{r} \{ x \}$; $y \notin \rsupfun{r} \{ x \}$.
+
+So $\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r = \neg r$.
+\end{proof}
+
