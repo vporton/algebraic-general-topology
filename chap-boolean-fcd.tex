@@ -374,9 +374,14 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
   \left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
 \item[$\Psi_3^{-1}$] $f\mapsto\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1 y\right)=
   \left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
-\item[$\Psi_4$] $f\mapsto\left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\top\}}\supfun{f}\lnot x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\top\}}\supfun{f^{-1}}\lnot y\right)=
-  \left(X\mapsto\bigsqcup_{x\in X}\supfun{f}\lnot\{x\};Y\mapsto\bigsqcup_{y\in Y}\supfun{f^{-1}}\lnot\{y\}\right)$
-\item[$\Psi_4^{-1}$] $f\mapsto\left(X\mapsto\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x;Y\mapsto\bigsqcap_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=\left(X\mapsto\bigsqcap_{x\in X}f_1\lnot\{x\};Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)$
+\item[$\Psi_4$] $f\mapsto\left(X\mapsto\lnot\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}\lnot y\right)=
+  \left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}\lnot y\right)=
+  \left(X\mapsto\lnot \bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\lnot \{y\}\right)=
+  \left(X\mapsto\bigsqcup_{x\in X}\lnot\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\lnot \{y\}\right)$
+\item[$\Psi_4^{-1}$] $f\mapsto\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=
+  \left(\subsets A;\subsets B;X\mapsto\lnot\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=
+  \left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)=
+  \left(\subsets A;\subsets B;X\mapsto\lnot\bigsqcap_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$
 \item[$\Psi_5=\Psi_5^{-1}$] $f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})$
 \item[$\Phi$] maps a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$
 \item[$\Phi^{-1}$] maps a Galois connection whose lower adjoint is~$c$ into the pointfree funcoid whose first component is~$c$
@@ -546,7 +551,30 @@ f_{00}\{x\} = \text{\fxwarning{explicit proof}} = \bigsqcap_{x\in X}f_{00}\{x\} 
 \end{multline*}
 \end{claimproof}
 
+\begin{claim}
+$\Psi_3$ and $\Psi_3^{-1}$ are mutually inverse.
+\end{claim}
+\begin{claimproof}
+Because $\Psi_3^{-1} = \Psi_2\circ\Psi_1$ and $\Psi_3 = \Psi_1^{-1}\circ\Psi_2^{-1}$
+and that $\Psi_2^{-1}$ is the inverse of $\Psi_2$ and $\Psi_3^{-1}$ is the inverse of $\Psi_3$ were proved above.
+\end{claimproof}
+
 Now switch to the lower ``triangle'':
+
+\begin{flushleft}
+\begin{claim}
+$\left(X\mapsto\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x;Y\mapsto\bigsqcap_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=\left(X\mapsto\bigsqcap_{x\in X}f_1\lnot\{x\};Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)$.
+\end{claim}
+\end{flushleft}
+\begin{claimproof}
+It is enough to prove $\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x = \bigsqcap_{x\in X}f_1\lnot\{x\}$ for a Galois connection~$f$
+(the rest follows from symmetry).
+
+$\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x \sqsupseteq \bigsqcap_{x\in X}f_1\lnot\{x\}$ because $\{x\}\in\mathscr{T}X\setminus\{\bot\}$.
+If $x\in\mathscr{T}X\setminus\{\bot\}$ then there exists $x'\in\{x\}$ and thus $f_1\lnot\{x'\}\sqsupseteq f_0\lnot x$. Thus
+$\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x \sqsubseteq f_1\lnot x$ and so
+$\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x \sqsubseteq \bigsqcap_{x\in X}f_1\lnot\{x\}$.
+\end{claimproof}
 
 \begin{claim}
 $\Psi_5$ is self-inverse.
@@ -555,6 +583,74 @@ $\Psi_5$ is self-inverse.
 Obvious.
 \end{claimproof}
 
+\begin{claim}
+$\Psi_4 = \Psi_5\circ\Psi_3$.
+\end{claim}
+\begin{claimproof}
+Easily follows from symmetry.
+\end{claimproof}
+
+\begin{claim}
+$\Psi_4^{-1} = \Psi_3^{-1}\circ\Psi_5^{-1}$.
+\end{claim}
+\begin{claimproof}
+Easily follows from symmetry.
+\end{claimproof}
+
+\begin{claim}
+$\Psi_4$ and $\Psi_4^{-1}$ are mutually inverse.
+\end{claim}
+\begin{claimproof}
+From two above claims and the fact that
+$\Psi_3^{-1}$ is the inverse of $\Psi_3$ and $\Psi_5^{-1}$ is the inverse of $\Psi_5$ proved above.
+\end{claimproof}
+
+Note that now we have proved that $\Psi_i$ and $\Psi_i^{-1}$ are mutually inverse for all $i=1,2,3,4,5$.
+
+\begin{claim}
+For every path of the diagram on figure~\ref{rels-dia2} started with the circled node, the corresponding morphism is with which the node is labeled.
+\begin{figure}[ht]
+\caption{\label{rels-dia2}}
+\begin{tikzcd}[row sep=1cm, column sep=0.5cm]
+& \circled{1}
+\arrow[rd, shift left, "\Psi_1^{-1}"]
+\arrow[ld, shift left, "\Psi_2"] \\
+\Psi_2
+\arrow[ru, shift left, "\Psi_2^{-1}"]
+\arrow[rr, shift left, "\Psi_3"]
+\arrow[rd, shift left, "\Psi_4"]
+& & \Psi_1^{-1}
+\arrow[lu, shift left, "\Psi_1"]
+\arrow[ll, shift left, "\Psi_3^{-1}"]
+\arrow[ld, leftrightarrow, "\Psi_5=\Psi_5^{-1}"]
+\\
+& \Psi_5\circ\Psi_1^{-1}
+\arrow[lu, shift left, "\Psi_4^{-1}"]
+\end{tikzcd}
+\end{figure}
+\end{claim}
+\begin{claimproof}
+Take into account that $\Psi_3^{-1} = \Psi_2\circ\Psi_1$, $\Psi_4 = \Psi_5\circ\Psi_3$
+and thus also $\Psi_4\circ\Psi_2 = \Psi_5\circ\Psi_1^{-1}$.
+Now prove it by induction on path length.
+\end{claimproof}
+
+\begin{claim}
+Every cycle in the diagram~\ref{rels-dia} is identity.
+\end{claim}
+\begin{claimproof}
+For cycles starting at the top node it follows from the previous claim.
+For arbitrary cycles it follows from theorem ??.
+\end{claimproof}
+
+\begin{claim}
+Diagram~\ref{rels-dia} is commutative.
+\end{claim}
+\begin{claimproof}
+From the previous claim.
+\end{claimproof}
+
+\fxwarning{It remains to prove that the arrows preserve order, composition, and reversal, and also about dashed arrows.}
 
 TODO
 \end{proof}
