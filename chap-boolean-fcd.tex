@@ -333,7 +333,7 @@ a commutative diagram (in category $\mathbf{Set}$), every arrow (including the d
 this diagram is an isomorphism. Every cycle through solid arrows in this diagram is an
 identity. All ``parallel'' arrows are mutually inverse. All arrows preserve order (and thus are order isomorphisms).
 
-The following arrows (and their inverses) preserve composition: $\Psi_2$, $\Psi_4$,~$\Phi$.
+The following arrows (and their inverses) preserve composition: $\Psi_2$, $\Psi_4$.
 The following arrows (and their inverses) preserve reversal ($f\mapsto f^{-1}$): $\Psi_1$, $\Psi_2$,~$\Psi_3$.
 
 For a Galois connection~$f$ I denote $f_0$ the lower adjoint and $f_1$ the upper adjoint.
@@ -351,7 +351,6 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 \arrow[ru, shift left, "\Psi_2^{-1}"]
 \arrow[rr, shift left, "\Psi_3"]
 \arrow[rd, shift left, "\Psi_4"]
-\arrow[rd, shift left, bend right=40, dashed, "\Phi"]
 & & \begin{tabular}{c}antitone Galois\\ connections\\ between\\ $\subsets A$ and $\subsets B$\end{tabular}
 \arrow[lu, shift left, "\Psi_1"]
 \arrow[ll, shift left, "\Psi_3^{-1}"]
@@ -359,7 +358,6 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 \\
 & \begin{tabular}{c}Galois connections\\ between $\subsets A$ and $\subsets B$\end{tabular}
 \arrow[lu, shift left, "\Psi_4^{-1}"]
-\arrow[lu, shift left, bend left=40, dashed, "\Phi^{-1}"]
 \end{tikzcd}
 
 \begin{flushleft}
@@ -381,8 +379,6 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
   \left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)=
   \left(\subsets A;\subsets B;X\mapsto\lnot\bigsqcap_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$
 \item[$\Psi_5=\Psi_5^{-1}$] $f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})$
-\item[$\Phi$] maps a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$
-\item[$\Phi^{-1}$] maps a Galois connection whose lower adjoint is~$c$ into the pointfree funcoid whose first component is~$c$
 \end{description}
 \end{flushleft}
 
@@ -605,8 +601,6 @@ $\Psi_3^{-1}$ is the inverse of $\Psi_3$ and $\Psi_5^{-1}$ is the inverse of $\P
 
 Note that now we have proved that $\Psi_i$ and $\Psi_i^{-1}$ are mutually inverse for all $i=1,2,3,4,5$.
 
-That $\Phi^{-1}$ is the inverse of~$\Phi$ is obvious.
-
 \begin{claim}
 For every path of the diagram on figure~\ref{rels-dia2} started with the circled node, the corresponding morphism is with which the node is labeled.
 \begin{figure}[ht]
@@ -654,13 +648,37 @@ From the previous claim.
 
 \end{proof}
 
-Informally speaking, dashed arrows replace a relation~$r$ with its complement relations~$\lnot r$. Formally:
+Let $\Phi$ map a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$.
+Then $\Phi$ is an isomorphism \fxwarning{Refer to the theorem.} and
+$\Phi^{-1}$ maps a Galois connection whose lower adjoint is~$c$ into the pointfree funcoid whose first component is~$c$.
+
+Informally speaking, $\Phi$ replaces a relation~$r$ with its complement relations~$\lnot r$. Formally:
 
 \begin{prop}
-$\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r = \neg r$ for every relation~$r$ between~$A$ and~$B$.
+~
+\begin{enumerate}
+\item For every path~$P$ in the diagram~\ref{rels-dia} from binary relations between $A$ and $B$
+to pointfree funcoids between $\subsets A$ and $\subsets B$
+and every path~$Q$ in the diagram~\ref{rels-dia} from
+Galois connections between $\subsets A$ and $\subsets B$
+to binary relations between $A$ and $B$,
+we have $Q\Phi P r = \lnot r$.
+
+\item For every path~$Q$ in the diagram~\ref{rels-dia} from binary relations between $A$ and $B$
+to pointfree funcoids between $\subsets A$ and $\subsets B$
+and every path~$P$ in the diagram~\ref{rels-dia}
+from Galois connections between $\subsets A$ and $\subsets B$
+to binary relations between $A$ and $B$,
+we have $P\Phi^{-1} Q r = \lnot r$.
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
+We will prove only the second, because the first can be obtained from it by inverting the morphisms.
+
+Because the diagram is commutative, it is enough to prove it for some fixed~$P$ and~$Q$.
+For example, we will prove $\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r = \neg r$.
+
 $\Psi_4 \Psi_2 r = \left( X \mapsto \neg \bigsqcap_{x \in X} \rsuprel{r}
 \{ x \} ; Y \mapsto \bigsqcap_{y \in Y} \rsuprel{r} \neg \{ y \} \right)$.
 
@@ -669,8 +687,15 @@ $\Phi^{-1} \Psi_4 \Psi_2 r$ is pointfree funcoid $f$ with $\supfun{f}
 
 $\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r$ is the relation consisting of $(x ;
 y)$ such that $\{ x \} \suprel{f} \{ y \}$ what is equivalent to: $\{ y \}
-\nasymp \supfun{f} \{ x \}$; $\{ y \} \nasymp \neg \rsuprel{r} \{ x \}$; $\{ y \} \mathrel{\not{\sqsubseteq}} \rsuprel{r} \{ x \}$; $y \notin \rsupfun{r} \{ x \}$.
+\nasymp \supfun{f} \{ x \}$; $\{ y \} \nasymp \neg \rsupfun{r} \{ x \}$; $\{ y \} \nsqsubseteq \rsupfun{r} \{ x \}$; $y \notin \rsupfun{r} \{ x \}$.
 
 So $\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r = \neg r$.
 \end{proof}
 
+\begin{prop}
+$\Phi$ preserves composition.
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
