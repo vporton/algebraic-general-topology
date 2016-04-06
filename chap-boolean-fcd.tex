@@ -325,10 +325,40 @@ above open problem (The weirdness is in its partiality and asymmetry):
 distributive complete Boolean lattice iff $A$ and $B$ are completely distributive
 Boolean lattices.'' (where $A \otimes B$ is equivalent to the set of Galois connections between~$A$ and~$B$) and other interesting results.
 
-\section{The diagram}
+\section{More about Galois connections}
+
+\fxwarning{Move above in the text.}
 
 Following~\cite{tprod-dist-lat} we will denote the set of Galois connection between posets~$\mathfrak{A}$ and~$\mathfrak{B}$
-as $\mathfrak{A}\otimes\mathfrak{B}$. \fxwarning{Move above in the text.}
+as $\mathfrak{A}\otimes\mathfrak{B}$.
+
+\begin{defn}
+I will order Galois connections by the formula: $f\sqsubseteq g\Leftrightarrow f^{\ast}\sqsubseteq g^{\ast}$
+(where $f^{\ast}\sqsubseteq g^{\ast}\Leftrightarrow\forall x\in\mathfrak{A}:f^{\ast}x\sqsubseteq g^{\ast}x$).
+\end{defn}
+
+\begin{obvious}
+Galois connections $\mathfrak{A}\otimes\mathfrak{B}$ between two given posets form a poset.
+\end{obvious}
+
+\begin{prop}
+$f\sqsubseteq g\Leftrightarrow f_{\ast}\sqsupseteq g_{\ast}$.
+\end{prop}
+
+\begin{proof}
+It is enough to prove $f\sqsubseteq g\Rightarrow f_{\ast}\sqsupseteq g_{\ast}$ (the rest follows from the fact that a Galois connection is determined by one adjoint).
+
+Really, let $f\sqsubseteq g$. Then $f_0^{\ast} \sqsubseteq f_1^{\ast}$ and thus:
+
+$f_{0 \ast} (b) = \max \setcond{ x \in \mathfrak{A} }{
+f_0^{\ast} x \sqsubseteq b }$, $f_{1 \ast} (b) = \max \setcond{ x \in
+\mathfrak{A} }{ f_1^{\ast} x \sqsubseteq b }$.
+
+Thus $f_{0 \ast} (b) \sqsupseteq f_{1 \ast} (b)$ for every $b\in\mathfrak{B}$ and so $f_{0 \ast} \sqsupseteq f_{1 \ast}$.
+\end{proof}
+
+
+\section{The diagram}
 
 \begin{thm}
 \label{fcd-diagram}Let $A$ and~$B$ be fixed sets. The diagram at the figure~\ref{rels-dia} is
