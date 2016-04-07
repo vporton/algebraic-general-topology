@@ -529,16 +529,22 @@ for all $x\in\mathfrak{A}$ and $S\in\subsets\mathfrak{A}$.
 \index{infinite distributive}\emph{Infinite distributive complete
 lattice} is a complete lattice which is both join infinite distributive
 and meet infinite distributive.\end{defn}
-\begin{thm}\label{bool-inf-distr}
-Every complete boolean lattice is both join infinite distributive
-and meet infinite distributive.\end{thm}
+
+\begin{thm}\label{bool-inf-distr1}
+For every boolean lattice~$\mathfrak{A}$, $x\in\mathfrak{A}$ and $S\in\subsets\mathfrak{A}$ we have:
+\begin{enumerate}
+\item $\bigsqcup\rsupfun{x\sqcap}S$ is defined and $x\sqcap\bigsqcup S=\bigsqcup\rsupfun{x\sqcap}S$ whenever $\bigsqcup S$ is defined.
+\item $\bigsqcap\rsupfun{x\sqcup}S$ is defined and $x\sqcup\bigsqcap S=\bigsqcap\rsupfun{x\sqcup}S$ whenever $\bigsqcap S$ is defined.
+\end{enumerate}
+\end{thm}
+
 \begin{proof}
-We will prove only join infinitely distributivity, as the other is
-dual.
+We will prove only the first, as the other is dual.
 
-Let $S$ be a subset of a complete boolean lattice.
+We need to prove that $x\sqcap\bigsqcup S$ is the least upper bound of $\rsupfun{x\sqcap}S$.
 
-$x\sqcap\bigsqcup S\sqsupseteq\bigsqcup\rsupfun{x\sqcap}S$ is obvious.
+That $x\sqcap\bigsqcup S$ is an upper bound of $\rsupfun{x\sqcap}S$ is obvious.
+
 Now let \textbf{$u$} be any upper bound of $\rsupfun{x\sqcap}S$,
 that is $x\sqcap y\sqsubseteq u$ for all $y\in S$. Then
 \[
@@ -549,6 +555,10 @@ and so $\bigsqcup S\sqsubseteq u\sqcup\bar{x}$. Thus
 x\sqcap\bigsqcup S\sqsubseteq x\sqcap(u\sqcup\bar{x})=(x\sqcap u)\sqcup(x\sqcap\bar{x})=(x\sqcap u)\sqcup\bot=x\sqcap u\sqsubseteq u,
 \]
 that is $x\sqcap\bigsqcup S$ is the least upper bound of $\rsupfun{x\sqcap}S$.\end{proof}
+
+\begin{cor}\label{bool-inf-distr}
+Every complete boolean lattice is both join infinite distributive
+and meet infinite distributive.\end{cor}
 \begin{thm}
 \index{De Morgan's laws!infinite}(infinite \noun{De Morgan}'s laws) For
 every subset $S$ of a complete boolean lattice
