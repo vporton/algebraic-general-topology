@@ -13,13 +13,12 @@ I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
   It's enough to prove $\supfun{f} \bigsqcup S = \bigsqcup \langle
   \supfun{f} \rangle^{\ast} S$ for a boolean funcoid $f$ for every $S
   \in \subsets \Src f$ whenever both $\bigsqcup S$ and $\bigsqcup
-  \langle \supfun{f} \rangle^{\ast} S$ are defined.
+  \rsupfun{\supfun{f}} S$ are defined.
   
   Really, $Y \nasymp \supfun{f} \bigsqcup S \Leftrightarrow \bigsqcup S
   \nasymp \supfun{f^{- 1}} Y \Leftrightarrow \exists X \in S : X
   \nasymp \supfun{f^{- 1}} Y \Leftrightarrow \exists X \in S : Y
-  \nasymp \supfun{f} X \Leftrightarrow Y \nasymp \bigsqcup \langle
-  \supfun{f} \rangle^{\ast} S$ for every $Y \in \Dst f$ and thus
+  \nasymp \supfun{f} X \Leftrightarrow Y \nasymp \bigsqcup \rsupfun{\supfun{f}} S$ for every $Y \in \Dst f$ and thus
   by proposition~\bookref{bool-sep} we have $\supfun{f} \bigsqcup S = \bigsqcup
   \langle \supfun{f} \rangle^{\ast} S$.
 \end{proof}
