@@ -5,13 +5,13 @@
 I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
 
 \begin{prop}
-  Every boolean funcoid is complete and co-complete.
-  \fxnote{Generalize.}
+  Every pointfree funcoid, whose source is completely starrish and whose destination is completely starrish and separable,
+  is complete and co-complete.
 \end{prop}
 
 \begin{proof}
   It's enough to prove $\supfun{f} \bigsqcup S = \bigsqcup \langle
-  \supfun{f} \rangle^{\ast} S$ for a boolean funcoid $f$ for every $S
+  \supfun{f} \rangle^{\ast} S$ for our pointfree funcoid~$f$ for every $S
   \in \subsets \Src f$ whenever both $\bigsqcup S$ and $\bigsqcup
   \rsupfun{\supfun{f}} S$ are defined.
   
@@ -19,8 +19,16 @@ I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
   \nasymp \supfun{f^{- 1}} Y \Leftrightarrow \exists X \in S : X
   \nasymp \supfun{f^{- 1}} Y \Leftrightarrow \exists X \in S : Y
   \nasymp \supfun{f} X \Leftrightarrow Y \nasymp \bigsqcup \rsupfun{\supfun{f}} S$ for every $Y \in \Dst f$ and thus
-  by proposition~\bookref{bool-sep} we have $\supfun{f} \bigsqcup S = \bigsqcup
-  \rsupfun{\supfun{f}} S$.
+  we have $\supfun{f} \bigsqcup S = \bigsqcup
+  \rsupfun{\supfun{f}} S$ because $\Dst f$ is separable.
+\end{proof}
+
+\begin{cor}
+  Every boolean funcoid is complete and co-complete.
+\end{cor}
+
+\begin{proof}
+Using proposition~\bookref{bool-sep} and theorem~\bookref{bool-inf-distr}. \fxerror{The last theorem holds only for complete boolean lattices!}
 \end{proof}
 
 \begin{thm}\label{bfunc-is-adj}
