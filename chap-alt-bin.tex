@@ -225,17 +225,17 @@ Now switch to the lower ``triangle'':
 
 \begin{flushleft}
 \begin{claim}
-$\left(X\mapsto\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x;Y\mapsto\bigsqcap_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=\left(X\mapsto\bigsqcap_{x\in X}f_1\lnot\{x\};Y\mapsto\bigsqcap_{y\in Y}f_1\lnot\{y\}\right)$.
+$\left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=\left(X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$.
 \end{claim}
 \end{flushleft}
 \begin{claimproof}
-It is enough to prove $\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x = \bigsqcap_{x\in X}f_1\lnot\{x\}$ for a Galois connection~$f$
+It is enough to prove $\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x = \bigsqcup_{x\in X}\lnot f_0\{x\}$ for a Galois connection~$f$
 (the rest follows from symmetry).
 
-$\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x \sqsupseteq \bigsqcap_{x\in X}f_1\lnot\{x\}$ because $\{x\}\in\mathscr{T}X\setminus\{\bot\}$.
-If $x\in\mathscr{T}X\setminus\{\bot\}$ then there exists $x'\in\{x\}$ and thus $f_1\lnot\{x'\}\sqsupseteq f_0\lnot x$. Thus
-$\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x \sqsubseteq f_1\lnot x$ and so
-$\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0\lnot x \sqsubseteq \bigsqcap_{x\in X}f_1\lnot\{x\}$.
+$\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x \sqsupseteq \bigsqcup_{x\in X}\lnot f_0\{x\}$ because $\{x\}\in\mathscr{T}X\setminus\{\bot\}$.
+If $x\in\mathscr{T}X\setminus\{\bot\}$ then there exists $x'\in\{x\}$ and thus $\lnot f_0\{x'\}\sqsupseteq \lnot f_0 x$. Thus
+$\lnot f_0 x \sqsubseteq \bigsqcup_{x\in X} \lnot f_0 \{x\}$ and so
+$\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x \sqsubseteq \bigsqcup_{x\in X}\lnot f_0\{x\}$.
 \end{claimproof}
 
 \begin{claim}
