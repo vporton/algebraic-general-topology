@@ -1,103 +1,5 @@
 \chapter{Boolean funcoids}
 
-\section{Definitions}
-
-I call \emph{boolean funcoids} pointfree funcoids between boolean lattices.
-
-\begin{prop}
-  Every pointfree funcoid, whose source is a complete and completely starrish and whose destination is complete and completely starrish and separable,
-  is complete and co-complete.
-\end{prop}
-
-\begin{proof}
-  It's enough to prove $\supfun{f} \bigsqcup S = \bigsqcup \langle
-  \supfun{f} \rangle^{\ast} S$ for our pointfree funcoid~$f$ for every $S
-  \in \subsets \Src f$ whenever both $\bigsqcup S$ and $\bigsqcup
-  \rsupfun{\supfun{f}} S$ are defined.
-  
-  Really, $Y \nasymp \supfun{f} \bigsqcup S \Leftrightarrow \bigsqcup S
-  \nasymp \supfun{f^{- 1}} Y \Leftrightarrow \exists X \in S : X
-  \nasymp \supfun{f^{- 1}} Y \Leftrightarrow \exists X \in S : Y
-  \nasymp \supfun{f} X \Leftrightarrow Y \nasymp \bigsqcup \rsupfun{\supfun{f}} S$ for every $Y \in \Dst f$ and thus
-  we have $\supfun{f} \bigsqcup S = \bigsqcup
-  \rsupfun{\supfun{f}} S$ because $\Dst f$ is separable.
-\end{proof}
-
-\begin{rem}
-It seems that this theorem can be generalized for non-complete lattices.
-\end{rem}
-
-\begin{cor}
-  Every boolean funcoid is complete and co-complete.
-\end{cor}
-
-\begin{proof}
-Using proposition~\bookref{bool-sep} and corollary~\bookref{bool-inf-distr}.
-\end{proof}
-
-\begin{thm}\label{bfunc-is-adj}
-  Let $\mathfrak{A}$, $\mathfrak{B}$ be complete boolean lattices.
-
-  A function $\alpha \in \mathfrak{B}^{\mathfrak{A}}$ is equal to the
-  component $\supfun{f}$ of a pointree funcoid $f \in \mathsf{pFCD}
-  (\mathfrak{A}; \mathfrak{B})$ iff $\alpha$ is preserving all joins (=~lower
-  adjoint).
-\end{thm}
-
-\begin{proof}
-  Let $\alpha \in \mathfrak{B}^{\mathfrak{A}}$ and preserves all joins. Then
-  $\alpha \in \mathscr{F} (\mathfrak{B})^{\mathfrak{A}}$ (We equate principal
-  filters of the set $\mathscr{F} \mathfrak{A}$ of filters on $\mathfrak{A}$
-  with elements of $\mathfrak{A}$). Thus (theorem~\bookref{pf-cont}) $\alpha = \rsupfun{g}$
-  for some $g \in \mathsf{pFCD} \left( \mathscr{F} \mathfrak{A}; \mathscr{F}
-  \mathfrak{B} \right)$.
-  
-  $\langle g^{- 1} \rangle \in \mathscr{F} (\mathfrak{A})^{\mathscr{F}
-  (\mathfrak{B})}$.
-  
-  Let $y \in \mathfrak{B}$. We need to prove $\langle g^{- 1} \rangle y \in
-  \mathfrak{A}$ that is $\bigsqcup S \nasymp \langle g^{- 1} \rangle y
-  \Leftrightarrow \exists x \in S : \langle g^{- 1} \rangle y \nasymp x$ for
-  every $S \in \subsets \mathfrak{A}$.
-  
-  Really, $\bigsqcup S \nasymp \langle g^{- 1} \rangle y \Leftrightarrow y
-  \nasymp \supfun{g} \bigsqcup S \Leftrightarrow y \nasymp \bigsqcup
-  \langle \supfun{g} \rangle^{\ast} S \Leftrightarrow \exists x \in S :
-  y \nasymp \supfun{g} x \Leftrightarrow \exists x \in S : \langle g^{-
-  1} \rangle y \nasymp x$.
-  
-  Take $\beta = \langle g^{- 1} \rangle^{\ast}$. We have $\beta \in
-  \mathfrak{A}^{\mathfrak{B}}$.
-  
-  $x \nasymp \beta y \Leftrightarrow x \nasymp \langle g^{- 1} \rangle y
-  \Leftrightarrow y \nasymp \supfun{g} x \Leftrightarrow y \nasymp
-  \alpha x$.
-  
-  So $(\mathfrak{A}; \mathfrak{B}; \alpha ; \beta)$ is a pointfree funcoid.
-  
-  The other direction: Let now $f \in \mathsf{pFCD} (\mathfrak{A};
-  \mathfrak{B})$. We need to prove that it preserves all joins. But it was
-  proved above.
-\end{proof}
-
-\begin{conjecture}
-  Let $\mathfrak{A}$, $\mathfrak{B}$ be boolean lattices.
-  
-  A function $\alpha \in \mathfrak{B}^{\mathfrak{A}}$ is equal to the
-  component $\supfun{f}$ of a pointfree funcoid $f \in \mathsf{pFCD}
-  (\mathfrak{A}; \mathfrak{B})$ iff $\alpha$ is a lower adjoint.
-\end{conjecture}
-
-It is tempting to conclude that $\supfun{f}$ is a lower adjoint to
-$\supfun{f^{- 1}}$. But that's false:
-
-We should disprove that $Y \sqsubseteq \supfun{f} X \Leftrightarrow X
-\sqsubseteq \supfun{f^{- 1}} Y$.
-
-For a counter-example, take $f = \{ 0 \} \times \mathbb{N}$. Then our
-condition takes form $1 \Leftrightarrow X \sqsubseteq \{ 0 \}$ for $Y \ni 0$
-what obviously does not hold.
-
 \section{One-element boolean lattice}
 
 Let $\mathfrak{A}$ be a boolean lattice and $\mathfrak{B}= \subsets 0$.
@@ -649,7 +551,7 @@ From the previous claim.
 \end{proof}
 
 Let $\Phi$ map a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$.
-Then $\Phi$ is an isomorphism (theorem~\ref{bfunc-is-adj}) and
+Then $\Phi$ is an isomorphism (theorem~\bookref{bfunc-is-adj}) and
 $\Phi^{-1}$ maps a Galois connection whose lower adjoint is~$c$ into the pointfree funcoid whose first component is~$c$.
 
 Informally speaking, $\Phi$ replaces a relation~$r$ with its complement relations~$\lnot r$. Formally:
