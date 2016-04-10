@@ -22,15 +22,25 @@ sketch that proximities correspond to totally bounded uniformities.
 \begin{defn}
 A \emph{lower set}\footnote{Remember that our orders on filters is the
 reverse to set theoretic inclusion. It could be called an \emph{upper} set
-in other sources.} of proper filters on $U$ (a set) is a set $\mathscr{C}$
-of proper filters on $U$, such that if $\bot \neq \mathcal{G} \sqsubseteq
+in other sources.} of filters on $U$ (a set) is a set $\mathscr{C}$
+of filters on $U$, such that if $\mathcal{G} \sqsubseteq
 \mathcal{F}$ and $\mathcal{F} \in \mathscr{C}$ then $\mathcal{G} \in
-\mathscr{C}$. \fxwarning{Probably should include the improper filter. (It has the advantage that meet of any lower filters is a lower filter.)}
-\fxnote{It can alternatively be described as being a lower set of filters.}
+\mathscr{C}$.
 \end{defn}
 
+\begin{rem}
+Note that we are particularly interested in nonempty (=~containing the improper filter) lower sets of filters.
+This does not match the traditional theory of Cauchy spaces (see below) which are traditionally defined as not containing empty set.
+Allowing them to contain empty set has some advantages:
+\begin{itemize}
+\item Meet of any lower filters is a lower filter.
+\item Some formulas become a little simpler.
+\end{itemize}
+\end{rem}
+
+
 \begin{defn}
-  I call \emph{low filters space} a set together with a lower set of proper
+  I call \emph{low filters space} a set together with a nonempty lower set of proper
   filters on this set.
 \end{defn}
 
@@ -102,9 +112,8 @@ Every completely Cauchy space is a Cauchy space.
 \begin{defn}
   $(\Low) \nu$ (\emph{low filters} for reloid $\nu$) is a low filters
   space on $U$ such that
-  \[ \GR (\Low) \nu = \setcond{\mathcal{X} \in \mathscr{F}^U
-     \setminus \{ \bot^{\mathscr{F}} \}} {\mathcal{X}
-     \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq \nu } . \]
+  \[ \GR (\Low) \nu = \setcond{\mathcal{X} \in \mathscr{F}(U)}
+     {\mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq \nu } . \]
 \end{defn}
 
 \begin{thm}
