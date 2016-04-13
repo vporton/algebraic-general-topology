@@ -55,6 +55,26 @@ Allowing them to contain empty set has some advantages:
   \sqsubseteq \mathscr{D}$.
 \end{defn}
 
+\section{Quasi upward directed sets}
+
+\begin{rem}
+In this version of the book we will consider quasi upward directed sets only on join-semilattices. I see no need to generalize it further.
+\end{rem}
+
+\begin{defn}
+For a join-semilattice~$\mathfrak{A}$, a \emph{quasi upward directed set} is such a set~$S\in\subsets\mathfrak{A}$, that
+if $\mathcal{F},\mathcal{G}\in S$ and $\mathcal{F} \nasymp \mathcal{G}$ then $\mathcal{F} \sqcup \mathcal{G}\in S$.
+\end{defn}
+
+\begin{defn}
+For a complete lattice~$\mathfrak{A}$, a \emph{completely quasi upward directed set} is such a set~$S\in\subsets\mathfrak{A}$, that
+if $\bigsqcap T \neq \bot^{\mathscr{F}(X)}$ then $\bigsqcup T\in S$ for every $T\in\subsets S$. \fxnote{Can this be simplified?}
+\end{defn}
+
+\begin{obvious}
+Every completely quasi upward directed set is a quasi upward directed set.
+\end{obvious}
+
 \section{Cauchy spaces}
 
 \begin{defn}
@@ -62,18 +82,14 @@ A \emph{reflexive} low space is a low filters space $( U ; \mathscr{C})$ such th
 $\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$.
 \end{defn}
 
-\fxwarning{Two following definitions should be split into two, by one enumerated item in each.}
-
 \begin{defn}
   A \emph{Cauchy space} on a set $X$ is a low space $\left( U ;
   \mathscr{C} \right)$ (element of $\mathscr{C}$ are called \emph{Cauchy
   filters}) such that:
   \begin{enumerate}
+    \item $\mathscr{C}$ is nonempty.
     \item It is reflexive.
-    
-    \item If $\mathcal{F}$, $\mathcal{G}$ are Cauchy filters and $\mathcal{F}
-    \nasymp \mathcal{G}$ then $\mathcal{F} \sqcup \mathcal{G}$ is a Cauchy
-    filter.
+    \item $\mathscr{C}$ is a quasi upward directed set.
   \end{enumerate}
 \end{defn}
 
@@ -82,10 +98,9 @@ $\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$.
   $\left( U ; \mathscr{C} \right)$ (element of $\mathscr{C}$ are called
   \emph{Cauchy filters}) such that:
   \begin{enumerate}
+    \item $\mathscr{C}$ is nonempty.
     \item It is reflexive.
-    
-    \item If $S$ is a nonempty set of Cauchy filters and $\bigsqcap S \neq
-    \bot^{\mathscr{F} (X)}$ then $\bigsqcup S$ is a Cauchy filter.
+    \item $\mathscr{C}$ is a completely quasi upward directed set.
   \end{enumerate}
 \end{defn}
 
