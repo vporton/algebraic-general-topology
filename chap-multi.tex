@@ -196,7 +196,7 @@ instead of arbitrary posets.
 relation between posets conforming to the formulas:
 \begin{enumerate}
 \item $\forall K\in\prod\form f:(K\sqsupseteq L_{0}\wedge K\sqsupseteq L_{1}\Rightarrow K\in\GR f)$
-is equivalent to $\exists c\in\{0,1\}^{n}:(\mylamdba in{L_{c(i)}i})\in\GR f$
+is equivalent to $\exists c\in\{0,1\}^{n}:(\mylambda in{L_{c(i)}i})\in\GR f$
 for every $L_{0},L_{1}\in\prod\form f$.
 \item If $L\in\prod\form f$ and $L_{i}=\bot^{(\form f)_{i}}$ for some
 $i\in\arity f$ then $L\notin\GR f$.
@@ -207,13 +207,13 @@ Every graph of completary staroid is an upper set.\end{lem}
 \begin{proof}
 Let $f$ be a completary staroid. Let $L_{0}\sqsubseteq L_{1}$ for
 some $L_{0},L_{1}\in\prod\form f$ and $L_{0}\in\GR f$. Then taking
-$c=n\times\{0\}$ we get $\mylamdba in{L_{c(i)}i}=\mylamdba in{L_{0}i}=L_{0}\in\GR f$
+$c=n\times\{0\}$ we get $\mylambda in{L_{c(i)}i}=\mylambda in{L_{0}i}=L_{0}\in\GR f$
 and thus $L_{1}\in\GR f$ because $L_{1}\sqsupseteq L_{0}\wedge L_{1}\sqsupseteq L_{1}$.\end{proof}
 \begin{prop}
 \index{staroid!completary}An anchored relation~$f$ between posets whose form is
 a family of join-semilattices is a completary staroid iff both:
 \begin{enumerate}
-\item \label{cary-main}$L_{0}\sqcup L_{1}\in\GR f\Leftrightarrow\exists c\in\{0,1\}^{n}:(\mylamdba in{L_{c(i)}i})\in\GR f$
+\item \label{cary-main}$L_{0}\sqcup L_{1}\in\GR f\Leftrightarrow\exists c\in\{0,1\}^{n}:(\mylambda in{L_{c(i)}i})\in\GR f$
 for every $L_{0},L_{1}\in\prod\form f$.
 \item \label{cary-zero}If $L\in\prod\form f$ and $L_{i}=\bot^{(\form f)_{i}}$
 for some $i\in\arity f$ then $L\notin\GR f$.
@@ -222,7 +222,7 @@ for some $i\in\arity f$ then $L\notin\GR f$.
 \begin{proof}
 Let the formulas \ref{cary-main} and \ref{cary-zero} hold. Then
 $f$ is an upper set: Let $L_{0}\sqsubseteq L_{1}$ for some $L_{0},L_{1}\in\prod\form f$
-and $L_{0}\in f$. Then taking $c=n\times\{0\}$ we get $\mylamdba in{L_{c(i)}i}=\mylamdba in{L_{0}i}=L_{0}\in\GR f$
+and $L_{0}\in f$. Then taking $c=n\times\{0\}$ we get $\mylambda in{L_{c(i)}i}=\mylambda in{L_{0}i}=L_{0}\in\GR f$
 and thus $L_{1}=L_{0}\sqcup L_{1}\in\GR f$.
 
 Thus to finish the proof it is enough to show that 
@@ -268,21 +268,21 @@ Every finitary prestaroid is completary.\end{lem}
 \begin{proof}
 ~
 \begin{align*}
-\exists c\in\{0,1\}^{n}:(\mylamdba in{L_{c(i)}i})\in\GR f & \Leftrightarrow\\
-\exists c\in\{0,1\}^{n-1}:\left(\begin{aligned}(\{(n-1;L_{0}(n-1))\}\cup(\mylamdba i{n-1}{L_{c(i)}i}))\in\GR f & \lor\\
-(\{(n-1;L_{1}(n-1))\}\cup(\mylamdba i{n-1}{L_{c(i)}i}))\in\GR f
+\exists c\in\{0,1\}^{n}:(\mylambda in{L_{c(i)}i})\in\GR f & \Leftrightarrow\\
+\exists c\in\{0,1\}^{n-1}:\left(\begin{aligned}(\{(n-1;L_{0}(n-1))\}\cup(\mylambda i{n-1}{L_{c(i)}i}))\in\GR f & \lor\\
+(\{(n-1;L_{1}(n-1))\}\cup(\mylambda i{n-1}{L_{c(i)}i}))\in\GR f
 \end{aligned}
 \right) & \Leftrightarrow\\
-\exists c\in\{0,1\}^{n-1}:\left(\begin{aligned}L_{0}(n-1)\in(\val f)_{n-1}(\mylamdba i{n-1}{L_{c(i)}i}) & \lor\\
-L_{1}(n-1)\in(\val f)_{n-1}(\mylamdba i{n-1}{L_{c(i)}i})
-\end{aligned}
-\right) & \Leftrightarrow\\
-\exists c\in\{0,1\}^{n-1}\forall K\in(\form f)_{i}:\left(\begin{aligned}K\sqsupseteq L_{0}(n-1)\lor K\sqsupseteq L_{1}(n-1) & \Rightarrow\\
-K\in(\val f)_{n-1}(\mylamdba i{n-1}{L_{c(i)}i})
+\exists c\in\{0,1\}^{n-1}:\left(\begin{aligned}L_{0}(n-1)\in(\val f)_{n-1}(\mylambda i{n-1}{L_{c(i)}i}) & \lor\\
+L_{1}(n-1)\in(\val f)_{n-1}(\mylambda i{n-1}{L_{c(i)}i})
 \end{aligned}
 \right) & \Leftrightarrow\\
 \exists c\in\{0,1\}^{n-1}\forall K\in(\form f)_{i}:\left(\begin{aligned}K\sqsupseteq L_{0}(n-1)\lor K\sqsupseteq L_{1}(n-1) & \Rightarrow\\
-\{(n-1;K)\}\cup(\mylamdba i{n-1}{L_{c(i)}i})\in\GR f
+K\in(\val f)_{n-1}(\mylambda i{n-1}{L_{c(i)}i})
+\end{aligned}
+\right) & \Leftrightarrow\\
+\exists c\in\{0,1\}^{n-1}\forall K\in(\form f)_{i}:\left(\begin{aligned}K\sqsupseteq L_{0}(n-1)\lor K\sqsupseteq L_{1}(n-1) & \Rightarrow\\
+\{(n-1;K)\}\cup(\mylambda i{n-1}{L_{c(i)}i})\in\GR f
 \end{aligned}
 \right) & \Leftrightarrow\\
 \dots\\
@@ -430,7 +430,7 @@ number and $x_{i}=\left\{ \begin{array}{ll}
 0 & \text{if }n\leqslant x_{0}\\
 1 & \text{if }n>x_{0}
 \end{array}\right.$ for $i=1,2,3,\ldots$.
-Thus $f$ is the graph of a staroid of the form $\mylamdba{i}{\mathbb{N}}{\subsets\mathbb{N}}$ (on powersets).
+Thus $f$ is the graph of a staroid of the form $\mylambda{i}{\mathbb{N}}{\subsets\mathbb{N}}$ (on powersets).
 
 Let $\mathcal{L}_{0}(0)=\mathcal{L}_{1}(0)=\Omega(\mathbb{N})$, $\mathcal{L}_{0}(i)=\uparrow\{0\}$
 and $\mathcal{L}_{1}(i)=\uparrow\{1\}$ for $i>0$.
@@ -508,7 +508,7 @@ I denote $\arity f=n$.
 \end{defn}
 
 \begin{defn}
-\emph{Prestaroidal mult} is a relational mult of the form $(\mathfrak{A};\mylamdba i{\dom\mathfrak{A}}{\mathfrak{S}(\mathfrak{A}_{i})})$
+\emph{Prestaroidal mult} is a relational mult of the form $(\mathfrak{A};\mylambda i{\dom\mathfrak{A}}{\mathfrak{S}(\mathfrak{A}_{i})})$
 (where $\mathfrak{A}$ is a poset), that is such that $\rsupfun f_{i}L$
 is a free star for every $i\in n$ and $L\in\prod_{i\in(\dom L)\setminus\{i\}}\core f_i$.
 \end{defn}
@@ -533,7 +533,7 @@ L\in\GR g\Leftrightarrow L_{i}\nasymp\rsupfun f_{i}L|_{(\dom L)\setminus\{i\}}.
 \]
 \end{defn}
 \begin{prop}
-Prestaroidal mults~$\Lambda g=f$ of the form $(\mathfrak{Z};\mylamdba i{\dom\mathfrak{Z}}{\mathfrak{S}(\mathfrak{Z}_{i})})$
+Prestaroidal mults~$\Lambda g=f$ of the form $(\mathfrak{Z};\mylambda i{\dom\mathfrak{Z}}{\mathfrak{S}(\mathfrak{Z}_{i})})$
 bijectively correspond to pre-staroids~$g$ of the form~$\mathfrak{Z}$
 by the formulas (for every $K\in\prod\mathfrak{Z}$, $i\in\dom\mathfrak{Z}$,
 $L\in\prod_{j\in(\dom\mathfrak{A})\setminus\{i\}}\mathfrak{Z}_{j}$,
@@ -576,7 +576,7 @@ I will denote $\rsuprel{f}=\GR g$ for the prestaroidal mult~$f$ corresponding to
 \end{defn}
 
 \begin{prop}
-For a form $(\mathfrak{Z};\mylamdba i{\dom\mathfrak{Z}}{\mathfrak{S}(\mathfrak{Z}_{i})})$
+For a form $(\mathfrak{Z};\mylambda i{\dom\mathfrak{Z}}{\mathfrak{S}(\mathfrak{Z}_{i})})$
 where each $\mathfrak{Z}_{i}$ is a boolean lattice, relational mults
 are the same as multifuncoids (if we equate poset elements with principal
 free stars).\end{prop}
@@ -1067,11 +1067,11 @@ Really $L_{0}\sqcup L_{1}\in\GR\prod^{(D)}F\Leftrightarrow L_{0}\sqcup L_{1}\in\
 \exists c\in\{0,1\}^{\arity\prod^{(D)}F}:\left(\lambda i\in\arity\prod^{(D)}F:L_{c(i_{})}i\right)\in\GR\prod^{(D)}F & \Leftrightarrow\\
 \exists c\in\{0,1\}^{\arity\prod^{(D)}F}:\left(\lambda i\in\arity\prod^{(D)}F:L_{c(i_{})}i\right)\in\setcond{\uncurry z}{z\in\prod(\GR\circ F)} & \Leftrightarrow\\
 \exists c\in\{0,1\}^{\arity\prod^{(D)}F}:\curry\left(\lambda i\in\arity\prod^{(D)}F:L_{c(i_{})}i\right)\in\prod(\GR\circ F) & \Leftrightarrow\\
-\exists c\in\{0,1\}^{\arity\prod^{(D)}F}:\curry\left(\mylamdba{(i;j)}{\arity\prod^{(D)}F}{L_{c(i;j)}(i;j)}\right)\in\prod(\GR\circ F) & \Leftrightarrow\\
-\exists c\in\{0,1\}^{\arity\prod^{(D)}F}:(\mylamdba i{\dom F}{(\mylamdba j{\dom F_{i}}{L_{c(i;j)}(i;j)})})\in\prod(\GR\circ F) & \Leftrightarrow\\
-\exists c\in\{0,1\}^{\arity\prod^{(D)}F}\forall i\in\dom F:(\mylamdba j{\dom F_{i}}{L_{c(i;j)}(i;j)})\in\GR F_{i} & \Leftrightarrow\\
-\forall i\in\dom F\exists c\in\{0,1\}^{\dom F_{i}}:(\mylamdba j{\dom F_{i}}{L_{c(j)}(i;j)})\in\GR F_{i} & \Leftrightarrow\\
-\forall i\in\dom F\exists c\in\{0,1\}^{\dom F_{i}}:(\mylamdba j{\dom F_{i}}{(\curry(L_{c(j)})i)j})\in\GR F_{i} & \Leftrightarrow\\
+\exists c\in\{0,1\}^{\arity\prod^{(D)}F}:\curry\left(\mylambda{(i;j)}{\arity\prod^{(D)}F}{L_{c(i;j)}(i;j)}\right)\in\prod(\GR\circ F) & \Leftrightarrow\\
+\exists c\in\{0,1\}^{\arity\prod^{(D)}F}:(\mylambda i{\dom F}{(\mylambda j{\dom F_{i}}{L_{c(i;j)}(i;j)})})\in\prod(\GR\circ F) & \Leftrightarrow\\
+\exists c\in\{0,1\}^{\arity\prod^{(D)}F}\forall i\in\dom F:(\mylambda j{\dom F_{i}}{L_{c(i;j)}(i;j)})\in\GR F_{i} & \Leftrightarrow\\
+\forall i\in\dom F\exists c\in\{0,1\}^{\dom F_{i}}:(\mylambda j{\dom F_{i}}{L_{c(j)}(i;j)})\in\GR F_{i} & \Leftrightarrow\\
+\forall i\in\dom F\exists c\in\{0,1\}^{\dom F_{i}}:(\mylambda j{\dom F_{i}}{(\curry(L_{c(j)})i)j})\in\GR F_{i} & \Leftrightarrow\\
 \forall i\in\dom F:\curry(L_{0})i\sqcup\curry(L_{1})i\in\GR F_{i} & \Leftrightarrow\\
 \forall i\in\dom F:(\curry(L_{0})\sqcup\curry(L_{1}))i\in\GR F_{i} & \Leftrightarrow\\
 \forall i\in\dom F:\curry(L_{0}\sqcup L_{1})i\in\GR F_{i} & \Leftrightarrow\\
@@ -1137,7 +1137,7 @@ such that it holds:
 \item $\Obj_{\StarComp(m;f)}i=\Dst f_i$;
 \item (\emph{associativity law}) 
 \[
-\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}}).
+\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylambda i{\arity m}{g_{i}\circ f_{i}}).
 \]
 
 \end{enumerate}
@@ -1162,7 +1162,7 @@ is a precategory with star-morphisms whose base is a category and
 the following equality (\emph{the law of composition with identity})
 holds for every star-morphism $m$:
 \[
-\StarComp(m;\mylamdba i{\arity m}{1_{\Obj_{m}i})=m.}
+\StarComp(m;\mylambda i{\arity m}{1_{\Obj_{m}i})=m.}
 \]
 
 \end{defn}
@@ -1229,15 +1229,15 @@ of $C$;
 \item Source and destination of morphisms are defined by the formulas:
 
 \begin{itemize}
-\item $\Src f=\mylamdba i{\dom f}{\Src f_{i}}$;
-\item $\Dst f=\mylamdba i{\dom f}{\Dst f_{i}}$;
+\item $\Src f=\mylambda i{\dom f}{\Src f_{i}}$;
+\item $\Dst f=\mylambda i{\dom f}{\Dst f_{i}}$;
 \item $\Src m=\None$;
 \item $\Dst m=\Obj_{m}$.
 \end{itemize}
 \item Compositions of morphisms are defined by the formulas:
 
 \begin{itemize}
-\item $g\circ f=\mylamdba i{\dom f}{g_{i}\circ f_{i}}$ for our indexed
+\item $g\circ f=\mylambda i{\dom f}{g_{i}\circ f_{i}}$ for our indexed
 families $f$ and $g$ of morphisms;
 \item $f\circ m=\StarComp(m;f)$ for $m\in M$ and a composable indexed
 family $f$;
@@ -1247,7 +1247,7 @@ family $f$;
 \item Identity morphisms for an object $X$ are:
 
 \begin{itemize}
-\item $\mylamdba iX{1_{X_{i}}}$ if $X\ne\None$;
+\item $\mylambda iX{1_{X_{i}}}$ if $X\ne\None$;
 \item $1_{\None}$ if $X=\None$.
 \end{itemize}
 \end{itemize}
@@ -1262,13 +1262,13 @@ law.
 \end{enumerate}
 Really:
 \begin{widedisorder}
-\item [{\ref{abr-assoc}}] $(h\circ g)\circ f=\mylamdba i{\dom f}{(h_{i}\circ g_{i})\circ f_{i}}=\mylamdba i{\dom f}{h_{i}\circ(g_{i}\circ f_{i})}=h\circ(g\circ f)$;
+\item [{\ref{abr-assoc}}] $(h\circ g)\circ f=\mylambda i{\dom f}{(h_{i}\circ g_{i})\circ f_{i}}=\mylambda i{\dom f}{h_{i}\circ(g_{i}\circ f_{i})}=h\circ(g\circ f)$;
 \begin{multline*}
 g\circ(f\circ m)=\StarComp(\StarComp(m;f);g)=\\
-\StarComp(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}})=\StarComp(m;g\circ f)=(g\circ f)\circ m;
+\StarComp(m;\mylambda i{\arity m}{g_{i}\circ f_{i}})=\StarComp(m;g\circ f)=(g\circ f)\circ m;
 \end{multline*}
 $f\circ(m\circ1_{\None})=f\circ m=(f\circ m)\circ1_{\None}$.
-\item [{\ref{abr-id}}] $m\circ1_{\None}=m$; $1_{\Dst m}\circ m=\StarComp(m;\mylamdba i{\arity m}{1_{\Obj_{m}i}})=m$.
+\item [{\ref{abr-id}}] $m\circ1_{\None}=m$; $1_{\Dst m}\circ m=\StarComp(m;\mylambda i{\arity m}{1_{\Obj_{m}i}})=m$.
 \end{widedisorder}
 \end{proof}
 \begin{rem}
@@ -1369,8 +1369,8 @@ $f$ and $g$ or a quasi-invertible category.
 \index{product!cross-composition}Let fix a quasi-invertible category
 with with star-morphisms. If $f$ is an indexed family of morphisms
 from its base category, then the pointfree funcoid $\prod^{(C)}f$
-(\emph{cross-composition product} of $f$) from $\StarHom(\mylamdba i{\dom f}{\Src f_{i}})$
-to $\StarHom(\mylamdba i{\dom f}{\Dst f_{i}})$ is defined by the
+(\emph{cross-composition product} of $f$) from $\StarHom(\mylambda i{\dom f}{\Src f_{i}})$
+to $\StarHom(\mylambda i{\dom f}{\Dst f_{i}})$ is defined by the
 formulas (for all star-morphisms $a$ and $b$ of these forms): 
 \[
 \supfun{\prod^{(C)}f}a=\StarComp(a;f)\quad\text{and}\quad\supfun{\left(\prod^{(C)}f\right)^{-1}}b=\StarComp(b;f^{\dagger}).
@@ -1384,7 +1384,7 @@ $\left(\prod^{(C)}g\right)\circ\left(\prod^{(C)}f\right)=\prod_{i\in n}^{(C)}(g_
 for every $n$-indexed families $f$ and $g$ of composable morphisms
 of a quasi-invertible category with star-morphisms.\end{thm}
 \begin{proof}
-$\supfun{\prod_{i\in n}^{(C)}(g_{i}\circ f_{i})}a=\StarComp(a;\mylamdba in{g_{i}\circ f_{i}})=\StarComp(\StarComp(a;f);g)$
+$\supfun{\prod_{i\in n}^{(C)}(g_{i}\circ f_{i})}a=\StarComp(a;\mylambda in{g_{i}\circ f_{i}})=\StarComp(\StarComp(a;f);g)$
 and 
 \[
 \supfun{\left(\prod^{(C)}g\right)\circ\left(\prod^{(C)}f\right)}a=\supfun{\prod^{(C)}g}\supfun{\prod^{(C)}f}a=\StarComp(\StarComp(a;f);g).
@@ -1428,8 +1428,8 @@ with star-morphisms.\end{thm}
 \begin{proof}
 We need to prove:
 \begin{enumerate}
-\item \label{brel-comp}$\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylamdba in{g_{i}\circ f_{i}});$
-\item \label{brel-id}$\StarComp(m;\mylamdba i{\arity m}{1_{\Obj_{m}i}})=m;$
+\item \label{brel-comp}$\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylambda in{g_{i}\circ f_{i}});$
+\item \label{brel-id}$\StarComp(m;\mylambda i{\arity m}{1_{\Obj_{m}i}})=m;$
 \item \label{brel-cross}$b\nasymp\StarComp(a;f)\Leftrightarrow a\nasymp\StarComp(b;f^{\dagger})$
 (the rest is obvious).
 \end{enumerate}
@@ -1441,13 +1441,13 @@ Really,
 Define the relation $R(f)$ by the formula $x\mathrel{R(f)}y\Leftrightarrow\forall i\in n:x_{i}\mathrel{f_{i}}y_{i}$.
 Obviously 
 \[
-R(\mylamdba in{g_{i}\circ f_{i}})=R(g)\circ R(f).
+R(\mylambda in{g_{i}\circ f_{i}})=R(g)\circ R(f).
 \]
 $L\in\StarComp(a;f)\Leftrightarrow\exists y\in a:y\mathrel{R(f)}L$.
 \begin{multline*}
 L\in\StarComp(\StarComp(a;f);g)\Leftrightarrow\exists p\in\StarComp(a;f):p\mathrel{R(g)}L\Leftrightarrow\\
 \exists p,y\in a:(y\mathrel{R(f)}p\wedge p\mathrel{R(g)}L)\Leftrightarrow\exists y\in a:y\mathrel{(R(g)\circ R(f))}L\Leftrightarrow\\
-\exists y\in a:y\mathrel{R(\mylamdba in{g_{i}\circ f_{i}})}L\Leftrightarrow L\in\StarComp(a;\mylamdba in{g_{i}\circ f_{i}})
+\exists y\in a:y\mathrel{R(\mylambda in{g_{i}\circ f_{i}})}L\Leftrightarrow L\in\StarComp(a;\mylambda in{g_{i}\circ f_{i}})
 \end{multline*}
  because $p\in\StarComp(a;f)\Leftrightarrow\exists y\in a:y\mathrel{R(f)}p$.
 
@@ -1484,7 +1484,7 @@ Define \emph{star composition} for an $n$-ary anchored relation $a$
 and an $n$-indexed family $f$ of $\mathbf{Rel}$-morphisms as an
 $n$-ary anchored relation complying with the formulas: 
 \begin{gather*}
-\Obj_{\StarComp(a;f)}=\mylamdba i{\arity a}{\Dst f_{i}};\\
+\Obj_{\StarComp(a;f)}=\mylambda i{\arity a}{\Dst f_{i}};\\
 \arity\StarComp(a;f)=\arity a;\\
 L\in\GR\StarComp(a;f)\Leftrightarrow L\in\StarComp(\GR a;\GR\circ f).
 \end{gather*}
@@ -1500,8 +1500,8 @@ category with star-morphisms.\end{thm}
 \begin{proof}
 We need to prove:
 \begin{enumerate}
-\item $\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}});$
-\item $\StarComp(m;\mylamdba i{\arity m}{1_{\Obj_{m}i}})=m;$
+\item $\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylambda i{\arity m}{g_{i}\circ f_{i}});$
+\item $\StarComp(m;\mylambda i{\arity m}{1_{\Obj_{m}i}})=m;$
 \item $b\nasymp\StarComp(a;f)\Leftrightarrow a\nasymp\StarComp(b;f^{\dagger})$
 \end{enumerate}
 (the rest is obvious).
@@ -1666,7 +1666,7 @@ Let every $f_{i}$ (for all $i\in n$) be a pointfree funcoid with
 $\Src f_{i}=\mathfrak{A}_{i}$.
 
 The \emph{atomary star-composition} of $a$ with $f$ is an anchored relation of
-the form $\mylamdba i{\dom\mathfrak{A}}{\Dst f_{i}}$ defined by the
+the form $\mylambda i{\dom\mathfrak{A}}{\Dst f_{i}}$ defined by the
 formula 
 \[
 L\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}\forall i\in n:y_{i}\suprel{f_{i}}L_{i}.
@@ -1738,7 +1738,7 @@ upper set, but this is obvious.
 \item [{\ref{starcomp-compl}}] Let $a$ be a completary staroid. Let $L_{0}\sqcup L_{1}\in\GR\StarComp^{(a)}(a;f)$
 that is $\exists y\in\prod_{i\in n}\atoms\mathfrak{A}_{i}:\left(\forall i\in n:y_{i}\suprel{f_{i}}L_{0}i\sqcup L_{1}i\wedge y\in\GR a\right)$
 that is $\exists c\in\{0,1\}^{n},y\in\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:\left(\forall i\in n:y_{i}\suprel{f_{i}}L_{c(i)}i\wedge y\in\GR a\right)$
-(taken into account that $\Dst f_{i}$ is starrish) that is $\exists c\in\{0,1\}^{n}:(\mylamdba in{L_{c(i_{})}i})\in\GR\StarComp^{(a)}(a;f)$.
+(taken into account that $\Dst f_{i}$ is starrish) that is $\exists c\in\{0,1\}^{n}:(\mylambda in{L_{c(i_{})}i})\in\GR\StarComp^{(a)}(a;f)$.
 So $\StarComp^{(a)}(a;f)$ is a completary staroid.
 \end{widedisorder}
 \end{proof}
@@ -1781,7 +1781,7 @@ It seems that this precategory with star-morphisms isn't a category with star-mo
 \begin{proof}
 We need to prove:
 \begin{enumerate}
-\item \label{arel-comp}$\StarComp^{(a)}(\StarComp^{(a)}(m;f);g)=\StarComp^{(a)}(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}});$
+\item \label{arel-comp}$\StarComp^{(a)}(\StarComp^{(a)}(m;f);g)=\StarComp^{(a)}(m;\mylambda i{\arity m}{g_{i}\circ f_{i}});$
 \item \label{arel-cross}$b\nasymp\StarComp^{(a)}(a;f)\Leftrightarrow a\nasymp\StarComp^{(a)}(b;f^{\dagger})$
 \end{enumerate}
 (the rest is obvious).
@@ -1794,7 +1794,7 @@ Really, let $a$ be a star morphism and $\mathfrak{A}_i=(\Obj_a)i$ for every $i\i
 Define the relation $R(f)$ by the formula $x\mathrel{R(f)}y\Leftrightarrow\forall i\in n:x_{i}\suprel{f_{i}}y_{i}$.
 Obviously
 \[
-R(\mylamdba in{g_{i}\circ f_{i}})=R(g)\circ R(f).
+R(\mylambda in{g_{i}\circ f_{i}})=R(g)\circ R(f).
 \]
 $L\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{\mathfrak{A}_{i}}:y\mathrel{R(f)}L$.
 \begin{align*}
@@ -1802,9 +1802,9 @@ L\in\GR\StarComp^{(a)}(\StarComp(a;f);g) & \Leftrightarrow\\
 \exists p\in\GR\StarComp^{(a)}(a;f)\cap\prod_{i\in n}\atoms^{(\Dst f)_{i}}:p\mathrel{R(g)}L & \Leftrightarrow\\
 \exists p\in\prod_{i\in n}\atoms^{(\Dst f)_{i}},y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:(y\mathrel{R(f)}p\land p\mathrel{R(g)}L) & \Leftrightarrow\\
 \exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:y\mathrel{(R(g)\circ R(f))}L & \Leftrightarrow\\
-\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:y\mathrel{R(\mylamdba in{g_{i}\circ f_{i}})}L & \Leftrightarrow\\
+\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}:y\mathrel{R(\mylambda in{g_{i}\circ f_{i}})}L & \Leftrightarrow\\
 \exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}y\forall i\in n:y_{i}\suprel{g_{i}\circ f_{i}}L_{i} & \Leftrightarrow\\
-L\in\GR\StarComp^{(a)}(a;\mylamdba in{g_{i}\circ f_{i}})
+L\in\GR\StarComp^{(a)}(a;\mylambda in{g_{i}\circ f_{i}})
 \end{align*}
 because $p\in\GR\StarComp^{(a)}(a;f)\Leftrightarrow\exists y\in\GR a\cap\prod_{i\in n}\atoms^{(\Src f)_{i}}y:y\mathrel{R(f)}p$.
 
@@ -1840,7 +1840,7 @@ family $f$ of pointfree funcoids with $\Src f_{i}=\mathfrak{A}_{i}$.
 funcoids with every $\Src f_{i}$ and $\Dst f_{i}$ (for all $i\in\dom f$)
 being a poset with least element. \emph{Simple product} of $f$ is
 \[
-\prod^{(S)}f=\left(\mylamdba x{\prod_{i\in\dom f}\Src f_{i}}{\mylamdba i{\dom f}{\supfun{f_{i}}x_{i}}};\mylamdba y{\prod_{i\in\dom f}\Dst f_{i}}{\mylamdba i{\dom f}{\supfun{f_{i}^{-1}}y_{i}}}\right).
+\prod^{(S)}f=\left(\mylambda x{\prod_{i\in\dom f}\Src f_{i}}{\mylambda i{\dom f}{\supfun{f_{i}}x_{i}}};\mylambda y{\prod_{i\in\dom f}\Dst f_{i}}{\mylambda i{\dom f}{\supfun{f_{i}^{-1}}y_{i}}}\right).
 \]
 \end{defn}
 \begin{prop}
@@ -1854,16 +1854,16 @@ Let $x\in\prod_{i\in\dom f}\Src f_{i}$ and $y\in\prod_{i\in\dom f}\Dst f_{i}$.
 Then (take into account that $\Src f_{i}$ and $\Dst f_{i}$ are posets
 with least elements)
 \begin{align*}
-y\nasymp\left(\mylamdba x{\prod_{i\in\dom f}\Src f_{i}}{\mylamdba i{\dom f}{\supfun{f_{i}}x_{i}}}\right)x & \Leftrightarrow\\
-y\nasymp\mylamdba i{\dom f}{\supfun{f_{i}}x_{i}} & \Leftrightarrow\\
+y\nasymp\left(\mylambda x{\prod_{i\in\dom f}\Src f_{i}}{\mylambda i{\dom f}{\supfun{f_{i}}x_{i}}}\right)x & \Leftrightarrow\\
+y\nasymp\mylambda i{\dom f}{\supfun{f_{i}}x_{i}} & \Leftrightarrow\\
 \exists i\in\dom f:y_{i}\nasymp\supfun{f_{i}}x_{i} & \Leftrightarrow\\
 \exists i\in\dom f:x_{i}\nasymp\supfun{f_{i}^{-1}}y_{i} & \Leftrightarrow\\
-x\nasymp\mylamdba i{\dom f}{\supfun{f_{i}^{-1}}y_{i}} & \Leftrightarrow\\
-x\nasymp\left(\mylamdba y{\prod_{i\in\dom f}\Dst f_{i}}{\mylamdba i{\dom f}{\supfun{f_{i}^{-1}}y_{i}}}\right)y.
+x\nasymp\mylambda i{\dom f}{\supfun{f_{i}^{-1}}y_{i}} & \Leftrightarrow\\
+x\nasymp\left(\mylambda y{\prod_{i\in\dom f}\Dst f_{i}}{\mylambda i{\dom f}{\supfun{f_{i}^{-1}}y_{i}}}\right)y.
 \end{align*}
 \end{proof}
 \begin{obvious}
-$\supfun{\prod^{(S)}f}x=\mylamdba i{\dom f}{\supfun{f_{i}}x_{i}}$
+$\supfun{\prod^{(S)}f}x=\mylambda i{\dom f}{\supfun{f_{i}}x_{i}}$
 for $x\in\prod\Src f_{i}$.
 \end{obvious}
 
@@ -1892,8 +1892,8 @@ between posets with least elements.\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
-\supfun{\prod_{i\in n}^{(S)}(g_{i}\circ f_{i})}x=\mylamdba i{\dom f}{\supfun{g_{i}\circ f_{i}}x_{i}=}\mylamdba i{\dom f}{\supfun{g_{i}}\supfun{f_{i}}x_{i}}=\\
-\supfun{\prod^{(S)}g}\mylamdba i{\dom f}{\supfun{f_{i}}x_{i}}=\supfun{\prod^{(S)}g}\supfun{\prod^{(S)}f}x=\supfun{\left(\prod^{(S)}g\right)\circ\left(\prod^{(S)}f\right)}x.
+\supfun{\prod_{i\in n}^{(S)}(g_{i}\circ f_{i})}x=\mylambda i{\dom f}{\supfun{g_{i}\circ f_{i}}x_{i}=}\mylambda i{\dom f}{\supfun{g_{i}}\supfun{f_{i}}x_{i}}=\\
+\supfun{\prod^{(S)}g}\mylambda i{\dom f}{\supfun{f_{i}}x_{i}}=\supfun{\prod^{(S)}g}\supfun{\prod^{(S)}f}x=\supfun{\left(\prod^{(S)}g\right)\circ\left(\prod^{(S)}f\right)}x.
 \end{multline*}
 Thus $\supfun{\prod_{i\in n}^{(S)}(g_{i}\circ f_{i})}=\supfun{\left(\prod^{(S)}g\right)\circ\left(\prod^{(S)}f\right)}$.
 
@@ -1938,7 +1938,7 @@ $\lambda i\in\dom A:\Dst f_{i}$ defined by the formulas:
 \begin{gather*}
 \arity\StarComp(a;f)=n;\\
 \GR\StarComp(a;f)=\bigsqcap^{\mathsf{RLD}(A)}\setcond{\GR\StarComp(A;F)}{A\in\GR a,F\in\prod_{i\in n}\GR f_{i}};\\
-\Obj_{m}\StarComp(a;f)=\mylamdba in{\Dst f_{i}}.
+\Obj_{m}\StarComp(a;f)=\mylambda in{\Dst f_{i}}.
 \end{gather*}
 
 \begin{thm}
@@ -1947,8 +1947,8 @@ category with star-morphisms.\end{thm}
 \begin{proof}
 We need to prove:
 \begin{enumerate}
-\item \label{mrld-comp}$\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylamdba i{\arity m}{g_{i}\circ f_{i}})$;
-\item \label{mrld-id}$\StarComp(m;\mylamdba i{\arity m}{1_{\Obj_{m}i}})=m$;
+\item \label{mrld-comp}$\StarComp(\StarComp(m;f);g)=\StarComp(m;\mylambda i{\arity m}{g_{i}\circ f_{i}})$;
+\item \label{mrld-id}$\StarComp(m;\mylambda i{\arity m}{1_{\Obj_{m}i}})=m$;
 \item \label{mrld-cross}$b\nasymp\StarComp(a;f)\Leftrightarrow a\nasymp\StarComp(b;f^{\dagger})$
 \end{enumerate}
 (the rest is obvious).
@@ -1962,15 +1962,15 @@ Really,
 \bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(\StarComp(A;F);G)}{A\in\GR a,F\in\prod_{i\in n}\GR f_{i},G\in\prod_{i\in n}\GR g_{i}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(A;G\circ F)}{A\in\GR a,F\in\prod_{i\in n}\GR f_{i},G\in\prod_{i\in n}\GR g_{i}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{\StarComp(A;H)}{A\in\GR a,H\in\prod_{i\in n}\GR(g_{i}\circ f_{i})} & =\\
-\StarComp(a;\mylamdba i{\arity n}{g_{i}\circ f_{i}}).
+\StarComp(a;\mylambda i{\arity n}{g_{i}\circ f_{i}}).
 \end{align*}
 
 \item [{\ref{mrld-id}}] ~
 \begin{align*}
-\StarComp(m;\mylamdba i{\arity m}{1_{\Obj_{m}i}}) & =\\
+\StarComp(m;\mylambda i{\arity m}{1_{\Obj_{m}i}}) & =\\
 \bigsqcap^{\mathsf{RLD}(A)}\setcond{\StarComp(A;H)}{A\in\GR m,H\in\prod_{i\in\arity m}\GR1_{\Obj_{m}i}} & =\\
-\bigsqcap^{\mathsf{RLD}(A)}\setcond{\StarComp(A;\mylamdba i{\arity m}{H_{i}})}{A\in\GR m,H\in\prod_{i\in\arity m}\GR1_{\Obj_{m}i}} & =\\
-\bigsqcap^{\mathsf{RLD}(A)}\setcond{\StarComp(A;\mylamdba i{\arity m}{1_{X_{i}}})}{A\in\GR m,X\in\prod_{i\in\arity m}\Obj_{m}i} & =\\
+\bigsqcap^{\mathsf{RLD}(A)}\setcond{\StarComp(A;\mylambda i{\arity m}{H_{i}})}{A\in\GR m,H\in\prod_{i\in\arity m}\GR1_{\Obj_{m}i}} & =\\
+\bigsqcap^{\mathsf{RLD}(A)}\setcond{\StarComp(A;\mylambda i{\arity m}{1_{X_{i}}})}{A\in\GR m,X\in\prod_{i\in\arity m}\Obj_{m}i} & =\\
 \bigsqcap^{\mathsf{RLD}(A)}\setcond{(A\cap\prod X)}{A\in\GR m,X\in\prod_{i\in\arity m}\Obj_{m}i} & =\\
 \bigsqcap^{\mathsf{RLD}(A)}\setcond A{A\in\GR m} & =m.
 \end{align*}
@@ -2005,7 +2005,7 @@ Let $X,Y\in\rsupfun{\Pr_{i}}\GR f$. Then there exist $F,G\in\GR f$
 such that $X=\Pr_{i}F$, $Y=\Pr_{i}G$. Then $X\cap Y\supseteq\Pr_{i}(F\cap G)\in\rsupfun{\Pr_{i}}\GR f$.
 Thus $X\cap Y\in\rsupfun{\Pr_{i}}\GR f$.\end{proof}
 \begin{defn}
-$\prod^{\mathsf{RLD}}\mathcal{X}=\bigsqcap_{X\in\up\prod\mathcal{X}}^{\mathsf{RLD}(\mylamdba i{\dom\mathcal{X}}{\Base(\mathcal{X}_{i})})}\prod X$
+$\prod^{\mathsf{RLD}}\mathcal{X}=\bigsqcap_{X\in\up\prod\mathcal{X}}^{\mathsf{RLD}(\mylambda i{\dom\mathcal{X}}{\Base(\mathcal{X}_{i})})}\prod X$
 for every indexed family $\mathcal{X}$ of filters on powersets.\end{defn}
 \begin{prop}
 \label{Pr-prod-reloids}$\Pr_{k}^{\mathsf{RLD}}\prod^{\mathsf{RLD}}x=x_{k}$
@@ -2135,7 +2135,7 @@ $\prod^{\mathsf{RLD}\ast}a=\prod^{\mathsf{RLD}}a$ if $n$ is finite.\end{prop}
 \begin{proof}
 Take $m=n$ to show that $\prod^{\mathsf{RLD}\ast}a\sqsubseteq\prod^{\mathsf{RLD}}a$.\end{proof}
 \begin{prop}
-$\prod^{\mathsf{RLD}\ast}a=\bot^{\mathsf{RLD}(\mylamdba in{\Base(a_{i})})}$
+$\prod^{\mathsf{RLD}\ast}a=\bot^{\mathsf{RLD}(\mylambda in{\Base(a_{i})})}$
 if $a_{i}$ is the non-proper filter for some $i\in n$.\end{prop}
 \begin{proof}
 Take $A_{i}=\bot$ and $m=\{i\}$. Then $\prod_{i\in n}\left(\begin{cases}
@@ -2195,8 +2195,8 @@ It follows $f \sqsubseteq \prod^{\mathsf{RLD} \ast} \mathcal{A}$.
 \begin{defn}
 \index{product!subatomic}Let $f$ be an indexed family of funcoids.
 Then $\prod^{(A)}f$ (\emph{subatomic product}) is a funcoid $\prod_{i\in\dom f}\Src f_{i}\rightarrow\prod_{i\in\dom f}\Dst f_{i}$
-such that for every $a\in\atoms^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}$,
-$b\in\atoms^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}$
+such that for every $a\in\atoms^{\mathsf{RLD}(\mylambda i{\dom f}{\Src f_{i}})}$,
+$b\in\atoms^{\mathsf{RLD}(\mylambda i{\dom f}{\Dst f_{i}})}$
 \[
 a\suprel{\prod^{(A)}f}b\Leftrightarrow\forall i\in\dom f:\Pr_{i}^{\mathsf{RLD}}a\suprel{f_{i}}\Pr_{i}^{\mathsf{RLD}}b.
 \]
@@ -2204,11 +2204,11 @@ a\suprel{\prod^{(A)}f}b\Leftrightarrow\forall i\in\dom f:\Pr_{i}^{\mathsf{RLD}}a
 \begin{prop}
 The funcoid $\prod^{(A)}f$ exists.\end{prop}
 \begin{proof}
-To prove that $\prod^{(A)}f$ exists we need to prove (for every $a\in\atoms^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}$,
-$b\in\atoms^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}$)
+To prove that $\prod^{(A)}f$ exists we need to prove (for every $a\in\atoms^{\mathsf{RLD}(\mylambda i{\dom f}{\Src f_{i}})}$,
+$b\in\atoms^{\mathsf{RLD}(\mylambda i{\dom f}{\Dst f_{i}})}$)
 \begin{multline*}
 \forall X\in\GR a,Y\in\GR b\\
-\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y:a\suprel{\prod^{(A)}f}b\Rightarrow\\
+\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylambda i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylambda i{\dom f}{\Dst f_{i}})}Y:a\suprel{\prod^{(A)}f}b\Rightarrow\\
 a\suprel{\prod^{(A)}f}b.
 \end{multline*}
 
@@ -2216,14 +2216,14 @@ a\suprel{\prod^{(A)}f}b.
 Let
 \begin{multline*}
 \forall X\in\GR a,Y\in\GR b\\
-\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y:a\suprel{\prod^{(A)}f}b.
+\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylambda i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylambda i{\dom f}{\Dst f_{i}})}Y:a\suprel{\prod^{(A)}f}b.
 \end{multline*}
 
 
 Then
 \begin{multline*}
 \forall X\in\GR a,Y\in\GR b\\
-\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylamdba i{\dom f}{\Dst f_{i}})}Y\\
+\exists x\in\atoms\uparrow^{\mathsf{RLD}(\mylambda i{\dom f}{\Src f_{i}})}X,y\in\atoms\uparrow^{\mathsf{RLD}(\mylambda i{\dom f}{\Dst f_{i}})}Y\\
 \forall i\in\dom f:\Pr_{i}^{\mathsf{RLD}}x\suprel{f_i}\Pr_{i}^{\mathsf{RLD}}y.
 \end{multline*}
 
@@ -2261,9 +2261,9 @@ $\prod_{i\in n}\Dst g_{i}$ correspondingly,
 a\suprel{\prod_{i\in n}^{(A)}(g_{i}\circ f_{i})}b & \Leftrightarrow\\
 \forall i\in\dom f:\rsupfun{\Pr_{i}}a\suprel{g_{i}\circ f_{i}}\rsupfun{\Pr_{i}}b & \Leftrightarrow\\
 \forall i\in\dom f\exists C\in\atoms^{\mathscr{F}(\Dst f_{i})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}C\land C\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right) & \Leftrightarrow\\
-\forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right) & \Leftarrow\\
-\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right) & \Leftrightarrow\\
-\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(a\suprel{\prod^{(A)}f}c\land c\suprel{\prod^{(A)}g}b\right) & \Leftrightarrow\\
+\forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylambda in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right) & \Leftarrow\\
+\exists c\in\atoms^{\mathsf{RLD}(\mylambda in{\Dst f})}\forall i\in\dom f:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right) & \Leftrightarrow\\
+\exists c\in\atoms^{\mathsf{RLD}(\mylambda in{\Dst f})}:\left(a\suprel{\prod^{(A)}f}c\land c\suprel{\prod^{(A)}g}b\right) & \Leftrightarrow\\
 a\suprel{\prod^{(A)}g\circ\prod^{(A)}f}b.
 \end{align*}
 
@@ -2285,7 +2285,7 @@ that is
 \]
 % Let 
 % \[
-% \forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylamdba in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
+% \forall i\in\dom f\exists c\in\atoms^{\mathsf{RLD}(\mylambda in{\Dst f})}:\left(\rsupfun{\Pr_{i}}a\suprel{f_{i}}\rsupfun{\Pr_{i}}c\land\rsupfun{\Pr_{i}}c\suprel{g_{i}}\rsupfun{\Pr_{i}}b\right).
 % \]
 % Then there exists $c'\in(\atoms^{\mathsf{RLD}(\lambda i\in n:\Dst f)})^{n}$
 % such that
@@ -2326,7 +2326,7 @@ x\in\atoms\prod^{\mathsf{RLD}}a,\quad y\in\atoms\prod^{\mathsf{RLD}}b.
 \end{proof}
 \begin{thm}
 $\left\langle \prod^{(A)}f\right\rangle x=\prod_{i\in\dom f}^{\mathsf{RLD}}\langle f_{i}\rangle\Pr_{i}^{\mathsf{RLD}}x$
-for an indexed family $f$ of funcoids and $x\in\atoms^{\mathsf{RLD}(\mylamdba i{\dom f}{\Src f_{i}})}$
+for an indexed family $f$ of funcoids and $x\in\atoms^{\mathsf{RLD}(\mylambda i{\dom f}{\Src f_{i}})}$
 for every $n\in\dom f$.\end{thm}
 \begin{proof}
 For every ultrafilter $y\in\mathscr{F}\left(\prod_{i\in\dom f}\Dst f_{i}\right)$
@@ -2357,7 +2357,7 @@ Let $f$ be a staroid, whose form components are boolean lattices.
 $f$ is the filter $\Pr_{k}^{\mathsf{Strd}}f$ corresponding to the
 free star
 \[
-(\val f)_{k}(\mylamdba i{(\arity f)\setminus\{k\}}{\top^{(\form f)_{i}}}).
+(\val f)_{k}(\mylambda i{(\arity f)\setminus\{k\}}{\top^{(\form f)_{i}}}).
 \]
 \end{defn}
 \begin{prop}
@@ -2379,8 +2379,8 @@ if $x$ is an indexed family of proper filters, and $k\in\dom x$.\end{prop}
 ~
 \begin{align*}
 \corestar\Pr_{k}^{\mathsf{Strd}}\prod^{\mathsf{Strd}}x & =\\
-\left(\val\prod^{\mathsf{Strd}}x\right)_{k}(\mylamdba i{(\dom x)\setminus\{k\}}{\top^{(\form x)_{i}}}) & =\\
-\setcond{X\in\left(\form\prod^{\mathsf{Strd}}x\right)_{k}}{(\mylamdba i{(\dom x)\setminus\{k\}}{\top^{(\form x)_{i}}})\cup\{(k;X)\}\in\GR\prod^{\mathsf{Strd}}x} & =\\
+\left(\val\prod^{\mathsf{Strd}}x\right)_{k}(\mylambda i{(\dom x)\setminus\{k\}}{\top^{(\form x)_{i}}}) & =\\
+\setcond{X\in\left(\form\prod^{\mathsf{Strd}}x\right)_{k}}{(\mylambda i{(\dom x)\setminus\{k\}}{\top^{(\form x)_{i}}})\cup\{(k;X)\}\in\GR\prod^{\mathsf{Strd}}x} & =\\
 \setcond{X\in\Base x_{k}}{(\forall i\in(\dom x)\setminus\{k\}:\top^{(\form x)_{i}}\nasymp x_{i})\land X\nasymp x_{k}} & =\\
 \setcond{X\in\Base x_{k}}{X\nasymp x_{k}} & =\corestar x_{k}.
 \end{align*}
@@ -3301,7 +3301,7 @@ by separability.
 
 \subsection{Identity relations}
 
-\index{identity relation}Denote $\id_{A[n]}=\setcond{\mylamdba inx}{x\in A}=\setcond{n\times\{x\}}{x\in A}$
+\index{identity relation}Denote $\id_{A[n]}=\setcond{\mylambda inx}{x\in A}=\setcond{n\times\{x\}}{x\in A}$
 the $n$-ary identity relation on a set $A$ (for each index set $n$).
 \begin{prop}
 $\prod X\nasymp\id_{A[n]}\Leftrightarrow\bigcap_{i\in n}X_{i}\cap A\neq\emptyset$
@@ -3847,7 +3847,7 @@ and the similar cases $A_{0}i=\emptyset$ and $A_{1}i=\emptyset$.)
 So 
 \begin{multline*}
 A_{0}\sqcup A_{1}\in\GR\vartheta\Leftrightarrow\sup_{i\in\mathbb{N}}\card(A_{c(i)}i\cap i)=\mathbb{N}\wedge\forall i\in\mathbb{N}:A_{c(i)}i\neq\emptyset\Leftrightarrow\\
-(\mylamdba in{A_{c(i_{})}i})\in\GR\vartheta.
+(\mylambda in{A_{c(i_{})}i})\in\GR\vartheta.
 \end{multline*}
 
 
@@ -3875,7 +3875,7 @@ there is a proof for arbitrary infinite form, not just for $\mathbb{N}$.\end{rem
 \begin{conjecture}
 For every family $a=a_{i\in\mathbb{N}}$ of ultrafilters $\prod^{\mathsf{Strd}}a$
 is not an atom nor of the poset of staroids neither of the poset of
-completary staroids of the form $\mylamdba i{\mathbb{N}}{\Base(a_{i})}$.\end{conjecture}
+completary staroids of the form $\mylambda i{\mathbb{N}}{\Base(a_{i})}$.\end{conjecture}
 \begin{conjecture}
 There exists a non-completary staroid on powersets.
 \end{conjecture}
@@ -4123,7 +4123,7 @@ For every $\mathcal{X}\in\prod_{i\in n}\mathscr{F}(\mathfrak{A}_{i})$
 \end{conjecture}
 
 \begin{conjecture}
-Let $R$ be a set of staroids of the form $\mylamdba in{\mathscr{F}(\mathfrak{A}_{i})}$
+Let $R$ be a set of staroids of the form $\mylambda in{\mathscr{F}(\mathfrak{A}_{i})}$
 where every $\mathfrak{A}_{i}$ is a boolean lattice. If $x\in\prod_{i\in n}\atoms^{\mathscr{F}(\mathfrak{A}_{i})}$
 then $x\in\GR\upuparrows\bigsqcap R\Leftrightarrow\forall f\in R:x\in\upuparrows f$.
 
