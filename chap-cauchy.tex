@@ -243,14 +243,16 @@ $\GR\bigsqcap S=\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$ for every set
 \begin{proof}
 First prove that there is such low space~$\mu$ that $\GR\mu=\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. In other words,
 we need to prove that $\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$ is a nonempty lower set. That it is nonempty is obvious.
-Let filter $\mathcal{G}\sqsubseteq\mathcal{F}$ and $\mathcal{F}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. Then ??
-$\mathcal{F}=\bigsqcap P$ for a $P\in\prod\rsupfun{\GR}S$. Take $P'=(\mathcal{G}\sqcap)\circ P$. Then obviously
-$\mathcal{G}=\bigsqcap P'$ and thus $\mathcal{G}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. So such~$\mu$ exists.
+Let filter $\mathcal{G}\sqsubseteq\mathcal{F}$ and $\mathcal{F}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. Then
+$\mathcal{F}=\bigsqcap\im P$ for a $P\in\prod_{X\in S}\GR X$ that is $P(X)\in\GR X$ for every $X\in S$. Take $P'=(\mathcal{G}\sqcap)\circ P$.
+Then $P'\in\prod_{X\in S}\GR X$ because $P'(X)\in\GR X$ for every $X\in S$ and thus
+obviously $\mathcal{G}=\bigsqcap\im P'$ and thus $\mathcal{G}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. So such~$\mu$ exists.
 
 It remains to prove that $\mu$ is the greatest lower bound of~$S$.
 
-?? $\mu$ is a lower bound of~$S$, because $\bigsqcap\im P\sqsubseteq x$ for every $x\in S$
-that is $\GR\mu\subseteq\GR x$.
+$\mu$ is a lower bound of~$S$, because
+for every $X\in S$ exists $P\in\prod_{X\in S}\GR X$ such that $P(X)=\GR X$ (taken into account that every $\GR X$ is nonempty)
+and thus $\im P\ni\GR X$ and so $\bigsqcap\im P\sqsubseteq\GR X$, that is $\GR\mu\subseteq\GR X$.
 
 ??
 \end{proof}
