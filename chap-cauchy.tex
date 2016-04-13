@@ -58,11 +58,18 @@ Allowing them to contain empty set has some advantages:
 \section{Cauchy spaces}
 
 \begin{defn}
-  A \emph{Cauchy space} on a set $X$ is a low filters space $\left( U ;
+A \emph{reflexive} low space is a low filters space $( U ; \mathscr{C})$ such that
+$\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$.
+\end{defn}
+
+\fxwarning{Two following definitions should be split into two, by one enumerated item in each.}
+
+\begin{defn}
+  A \emph{Cauchy space} on a set $X$ is a low space $\left( U ;
   \mathscr{C} \right)$ (element of $\mathscr{C}$ are called \emph{Cauchy
   filters}) such that:
   \begin{enumerate}
-    \item $\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$;
+    \item It is reflexive.
     
     \item If $\mathcal{F}$, $\mathcal{G}$ are Cauchy filters and $\mathcal{F}
     \nasymp \mathcal{G}$ then $\mathcal{F} \sqcup \mathcal{G}$ is a Cauchy
@@ -75,7 +82,7 @@ Allowing them to contain empty set has some advantages:
   $\left( U ; \mathscr{C} \right)$ (element of $\mathscr{C}$ are called
   \emph{Cauchy filters}) such that:
   \begin{enumerate}
-    \item $\forall x \in X : \uparrow^X \{ x \} \in \mathscr{C}$;
+    \item It is reflexive.
     
     \item If $S$ is a nonempty set of Cauchy filters and $\bigsqcap S \neq
     \bot^{\mathscr{F} (X)}$ then $\bigsqcup S$ is a Cauchy filter.
@@ -85,6 +92,8 @@ Allowing them to contain empty set has some advantages:
 \begin{obvious}
 Every completely Cauchy space is a Cauchy space.
 \end{obvious}
+
+\fxnote{How reflexive low spaces correspond to reflexive reloids? What about low spaces corresponding to transitive reloids?}
 
 \begin{prop}
   $\bigsqcup^{
