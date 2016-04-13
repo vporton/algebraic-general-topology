@@ -202,10 +202,10 @@ $\mu \sqsubseteq \nu \Leftrightarrow \GR\mu\subseteq\GR\nu$ for low filter space
 Every set of low filters spaces on some set is partially ordered.
 \end{obvious}
 
-\begin{defn}
+\begin{prop}\label{ls-order2}
 $\mu \sqsubseteq \nu \Leftrightarrow \forall \mathcal{X}\in\GR\mu \exists\mathcal{Y}\in\GR\nu: \mathcal{X}\sqsubseteq\mathcal{Y}$ for
 low filter spaces (on the same set~$U$).
-\end{defn}
+\end{prop}
 
 \begin{proof}
 ~
@@ -250,9 +250,9 @@ obviously $\mathcal{G}=\bigsqcap\im P'$ and thus $\mathcal{G}\in\setcond{\bigsqc
 
 It remains to prove that $\mu$ is the greatest lower bound of~$S$.
 
-$\mu$ is a lower bound of~$S$, because
-for every $X\in S$ exists $P\in\prod_{X\in S}\GR X$ such that $P(X)=\GR X$ (taken into account that every $\GR X$ is nonempty)
-and thus $\im P\ni\GR X$ and so $\bigsqcap\im P\sqsubseteq\GR X$, that is $\GR\mu\subseteq\GR X$.
+$\mu$ is a lower bound of~$S$. Really, let $X\in S$ and $Y\in\GR X$.
+Then exists $P\in\prod_{X\in S}\GR X$ such that $P(X)=Y$ (taken into account that every $\GR X$ is nonempty)
+and thus $\im P\ni Y$ and so $\bigsqcap\im P\sqsubseteq Y$, that is (proposition~\ref{ls-order2}) $\mu\sqsubseteq X$.
 
 ??
 \end{proof}
