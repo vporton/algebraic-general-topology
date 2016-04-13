@@ -254,14 +254,9 @@ $\mu$ is a lower bound of~$S$. Really, let $X\in S$ and $Y\in\GR X$.
 Then exists $P\in\prod_{X\in S}\GR X$ such that $P(X)=Y$ (taken into account that every $\GR X$ is nonempty)
 and thus $\im P\ni Y$ and so $\bigsqcap\im P\sqsubseteq Y$, that is (proposition~\ref{ls-order2}) $\mu\sqsubseteq X$.
 
-??Let $\nu$ be a lower bound of~$S$. It remains to prove that $\GR\mu\supseteq\GR\nu$, that is
-$\bigsqcap\im P\in\GR\nu$ for every $P\in\prod_{X\in S}\GR X$.
-Really: $P(X)\in\GR X$, $\im P\subseteq\GR X$
-
-
-$\im P\subseteq\rsupfun{\GR}S$ and thus $\bigsqcap\im P\sqsupseteq\bigsqcap\rsupfun{\GR}S$
-
-??
+Let $\nu$ be a lower bound of~$S$. It remains to prove that $\mu\sqsupseteq\nu$, that is
+$\forall Q\in\GR\nu: Q\sqsubseteq\bigsqcap\im P$ for some $P\in\prod_{X\in S}\GR X$.
+Take $P=(\mylamdba{X}{S}{Q})$. This $P\in\prod_{X\in S}\GR X$ because $Q\in\GR X$ for every~$X\in S$.
 \end{proof}
 
 \fxnote{Also describe lattice operations on Cauchy spaces (and complete Cauchy spaces?)}
