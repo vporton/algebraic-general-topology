@@ -17,7 +17,7 @@ To understand this article you need first look into my book \cite{volume-1}.
 \url{http://ncatlab.org/nlab/show/proximity+space\#uniform\_spaces} for a proof
 sketch that proximities correspond to totally bounded uniformities.
 
-\section{Low filters space}
+\section{Low space}
 
 \fxwarning{Analyze \url{http://link.springer.com/article/10.1007/s10474-011-0136-9} (``A note on Cauchy spaces''),
 \url{http://link.springer.com/article/10.1007/BF00873992} (``Filter spaces''). It also contains references to some useful results,
@@ -45,8 +45,8 @@ Allowing them to contain empty set has some advantages:
 
 
 \begin{defn}
-  I call \emph{low filters space} a set together with a nonempty lower set of proper
-  filters on this set. \fxerror{I use both ``low filters space'' and ``low space''. Standardize.}
+  I call \emph{low space} a set together with a nonempty lower set of proper
+  filters on this set.
 \end{defn}
 
 \begin{defn}
@@ -55,7 +55,7 @@ Allowing them to contain empty set has some advantages:
 \end{defn}
 
 \begin{defn}
-  Introduce an order on low filters spaces: $\left( U ; \mathscr{C} \right)
+  Introduce an order on low spaces: $\left( U ; \mathscr{C} \right)
   \sqsubseteq \left( U ; \mathscr{D} \right) \Leftrightarrow \mathscr{C}
   \sqsubseteq \mathscr{D}$.
 \end{defn}
@@ -79,7 +79,7 @@ Every completely almost sub-join-semilattice is a almost sub-join-semilattice.
 \section{Cauchy spaces}
 
 \begin{defn}
-A \emph{reflexive} low space is a low filters space $( U ; \mathscr{C})$ such that
+A \emph{reflexive} low space is a low space $( U ; \mathscr{C})$ such that
 $\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$.
 \end{defn}
 
@@ -145,14 +145,14 @@ Every low space is ``symmetric'' in the sense that it corresponds to a symmetric
 \end{defn}
 
 \begin{defn}
-  $(\Low) \nu$ (\emph{low filters} for reloid $\nu$) is a low filters
+  $(\Low) \nu$ (\emph{low filters} for reloid $\nu$) is a low
   space on $U$ such that
   \[ \GR (\Low) \nu = \setcond{\mathcal{X} \in \mathscr{F}(U)}
      {\mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq \nu } . \]
 \end{defn}
 
 \begin{thm}
-  If $\left( U ; \mathscr{C} \right)$ is a low filters space, then $\left( U ;
+  If $\left( U ; \mathscr{C} \right)$ is a low space, then $\left( U ;
   \mathscr{C} \right) = (\Low) (\mathsf{RLD})_{\Low} \left(
   U ; \mathscr{C} \right)$.
 \end{thm}
@@ -474,7 +474,7 @@ Low filter on an endoreloid $\nu$ is a filter $\mathcal{F}$ such that
 
 \begin{defn}
   A function $f : U \rightarrow V$ is \emph{Cauchy continuous} from a low
-  filters space $\left( U ; \mathscr{C} \right)$ to a low filters space
+  space $\left( U ; \mathscr{C} \right)$ to a low space
   $\left( V ; \mathscr{D} \right)$ when $\forall \mathcal{X} \in \mathscr{C} :
   \langle \uparrow^{\mathsf{FCD}} f \rangle \mathcal{X} \in
   \mathscr{D}$.
