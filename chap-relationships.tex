@@ -629,7 +629,7 @@ It remains to prove $\torldin\tofcd f=f$ for a funcoidal reloid $f$.
 Funcoidal reloids are convex.\end{cor}
 \begin{proof}
 Every $\torldin f$ is obviously convex.\end{proof}
-\begin{thm}
+\begin{thm}\label{rldin-dist}
 $\torldin(g\circ f)=\torldin g\circ\torldin f$ for every composable
 funcoids $f$ and $g$.\end{thm}
 \begin{proof}
@@ -810,3 +810,152 @@ we have $\torldout g\circ\torldout f=\torldout(g\circ f)$.
 
 For co-complete funcoids it's dual.\end{proof}
 
+\section{Properties preserved by relationships}
+
+\begin{prop}
+  $\tofcd f$ is reflexive iff $f$ is reflexive (for every
+  endoreloid~$f$).
+\end{prop}
+
+\begin{proof}
+  $\text{$f$ is reflexive} \Leftrightarrow
+  1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq f \Leftrightarrow
+  \forall F \in \up f : 1^{\mathbf{Rel}}_{\Ob f}
+  \sqsubseteq F \Leftrightarrow 1^{\mathbf{Rel}}_{\Ob f}
+  \sqsubseteq \bigsqcap^{\mathsf{FCD}} \up f \Leftrightarrow
+  1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq \tofcd f
+  \Leftrightarrow \text{$\tofcd f$ is reflexive}$.
+\end{proof}
+
+\begin{prop}
+  $(\mathsf{RLD})_{\operatorname{out}} f$ is reflexive iff $f$ is reflexive
+  (for every endofuncoid $f$).
+\end{prop}
+
+\begin{proof}
+  $\text{$f$ is reflexive} \Leftrightarrow
+  1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq f \Leftrightarrow
+  \text{(corollary~\ref{fcd-filtered})} \Leftrightarrow \forall F \in \up f :
+  1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq F \Leftrightarrow
+  1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq
+  \bigsqcap^{\mathsf{RLD}} \up f \Leftrightarrow
+  1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq
+  (\mathsf{RLD})_{\operatorname{out}} f \Leftrightarrow
+  \text{$(\mathsf{RLD})_{\operatorname{out}} f$ is reflexive}$.
+\end{proof}
+
+\begin{prop}
+  $(\mathsf{RLD})_{\operatorname{in}} f$ is reflexive iff $f$ is reflexive (for
+  every endofuncoid~$f$).
+\end{prop}
+
+\begin{proof}
+  $(\mathsf{RLD})_{\operatorname{in}} f$ is reflexive iff
+  $\tofcd (\mathsf{RLD})_{\operatorname{in}} f$ if reflexive iff
+  $f$ is reflexive.
+\end{proof}
+
+\begin{obvious}
+$\tofcd$, $(\mathsf{RLD})_{\operatorname{in}}$, and
+$(\mathsf{RLD})_{\operatorname{out}}$ preserve symmetry of the argument funcoid
+or reloid.\end{obvious}
+
+\begin{prop}
+  $a \times^{\mathsf{RLD}}_F a = \bot$ for every nontrivial ultrafilter~$a$.
+\end{prop}
+
+\begin{proof}
+  $a \times^{\mathsf{RLD}}_F a = (\mathsf{RLD})_{\operatorname{out}} (a
+  \times^{\mathsf{FCD}} a) = \bigsqcap^{\mathsf{RLD}} \up
+  (a \times^{\mathsf{FCD}} a) \sqsubseteq 1^{\mathsf{FCD}}
+  \sqcap (\top^{\mathsf{FCD}} \setminus 1^{\mathsf{FCD}}) =
+  \bot^{\mathsf{FCD}}$.
+\end{proof}
+
+\begin{example}
+  There exist filters $\mathcal{A}$ and $\mathcal{B}$ such that
+  $\tofcd (\mathcal{A} \times^{\mathsf{RLD}}_F
+  \mathcal{B}) \sqsubset \mathcal{A} \times^{\mathsf{FCD}}
+  \mathcal{B}$.
+\end{example}
+
+\begin{proof}
+  Take $\mathcal{A} = \mathcal{B} = a$ for a nontrivial ultrafilter~$a$. $a
+  \times^{\mathsf{RLD}}_F a = \bot$. Thus $\tofcd (a
+  \times^{\mathsf{RLD}}_F a) = \bot \sqsubset a
+  \times^{\mathsf{FCD}} a$.
+\end{proof}
+
+\begin{conjecture}
+  There exist filters $\mathcal{A}$ and $\mathcal{B}$ such that
+  $\tofcd (\mathcal{A} \ltimes \mathcal{B}) \sqsubset
+  \mathcal{A} \times^{\mathsf{FCD}} \mathcal{B}$.
+\end{conjecture}
+
+\begin{conjecture}
+  There is such a non-symmetric reloid $f$ that $\tofcd f$ is
+  symmetric.
+\end{conjecture}
+
+A candidate for a counter-example proving the above conjecture is the reloid
+$a \ltimes a$ for a nontrivial ultrafilter $a$.
+
+\begin{prop}
+  If $(\mathsf{RLD})_{\operatorname{in}} f$ is symmetric then endofuncoid~$f$
+  is symmetric.
+\end{prop}
+
+\begin{proof}
+  Suppose $(\mathsf{RLD})_{\operatorname{in}} f$ is symmetric then $f =
+  \tofcd (\mathsf{RLD})_{\operatorname{in}} f$ is symmetric.
+\end{proof}
+
+\begin{conjecture}
+  If $(\mathsf{RLD})_{\operatorname{out}} f$ is symmetric then endofuncoid~$f$
+  is symmetric.
+\end{conjecture}
+
+\begin{prop}
+  If $f$ is a transitive endoreloid, then $\tofcd f$ is a
+  transitive funcoid.
+\end{prop}
+
+\begin{proof}
+  $f = f \circ f$; $\tofcd f = \tofcd (f \circ
+  f)$; $\tofcd f = \tofcd f \circ
+  \tofcd f$.
+\end{proof}
+
+\begin{conjecture}
+  There exists a non-transitive endoreloid $f$ such that
+  $\tofcd f$ is a transitive funcoid.
+\end{conjecture}
+
+\begin{prop}
+  $(\mathsf{RLD})_{\operatorname{in}} f$ is transitive iff $f$ is transitive
+  (for every endofuncoid $f$).
+\end{prop}
+
+\begin{proof}
+  $f = f \circ f \Rightarrow (\mathsf{RLD})_{\operatorname{in}} f =
+  (\mathsf{RLD})_{\operatorname{in}} (f \circ f) \Leftrightarrow \text{(theorem~\ref{rldin-dist})} \Leftrightarrow
+  (\mathsf{RLD})_{\operatorname{in}} f =
+  (\mathsf{RLD})_{\operatorname{in}} f \circ (\mathsf{RLD})_{\operatorname{in}}
+  f \Rightarrow \tofcd (\mathsf{RLD})_{\operatorname{in}} f =
+  \tofcd (\mathsf{RLD})_{\operatorname{in}} f \circ
+  \tofcd (\mathsf{RLD})_{\operatorname{in}} f \Leftrightarrow f
+  = f \circ f$. Thus $f = f \circ f \Leftrightarrow
+  (\mathsf{RLD})_{\operatorname{in}} f \circ (\mathsf{RLD})_{\operatorname{in}}
+  f$.
+\end{proof}
+
+\begin{conjecture}
+  ~  
+  \begin{enumerate}
+    \item There exists such a transitive endofuncoid $f$, that
+    $(\mathsf{RLD})_{\operatorname{out}} f$ is not a transitive reloid.
+    
+    \item There exists such a non-transitive endofuncoid $f$, that
+    $(\mathsf{RLD})_{\operatorname{out}} f$ is transitive reloid.
+  \end{enumerate}
+\end{conjecture}
