@@ -103,46 +103,6 @@ A \emph{precauchy space} (aka \emph{filter space}) is a reflexive low space.
 Every completely Cauchy space is a Cauchy space.
 \end{obvious}
 
-\begin{prop}
-~
-\begin{enumerate}
-\item \label{low-rld-relf}$(\Low)f$~is reflexive iff endoreloid~$f$ is reflexive.
-\item \label{rld-low-relf}$(\mathsf{RLD})_{\Low}f$~is reflexive iff low space~$f$ is reflexive.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-~\fxwarning{Move below the definition.}
-\begin{widedisorder}
-\item[\ref{low-rld-relf}] $\text{$f$ is reflexive} \Leftrightarrow
-  1^{\mathsf{RLD}}\sqsubseteq f  \Leftrightarrow \forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq f \Leftrightarrow
-  \forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq f \Leftrightarrow
-  \forall x\in\Ob f:\uparrow\{x\}\in(\Low)f \Leftrightarrow \text{$(\Low)f$~is reflexive}$.
-
-\item[\ref{rld-low-relf}] Let $f$ is reflexive. Then $\forall x\in\Ob f:\uparrow\{x\}\in f$;
-  $\forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq(\mathsf{RLD})_{\Low}f$;
-  $\forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq(\mathsf{RLD})_{\Low}f$;
-  $1^{\mathsf{RLD}}\sqsubseteq(\mathsf{RLD})_{\Low}f$.
-  
-  Let now $(\mathsf{RLD})_{\Low}f$~be reflexive. Then $f = (\Low)(\mathsf{RLD})_{\Low}f$ is reflexive.
-  
-\end{widedisorder}
-\end{proof}
-
-\begin{defn}
-A \emph{transitive} low space is such low space~$f$ that $(\mathsf{RLD})_{\Low}f\circ(\mathsf{RLD})_{\Low}f=(\mathsf{RLD})_{\Low}f$.
-\fxwarning{Move this below definition of $(\mathsf{RLD})_{\Low}$.}
-\end{defn}
-
-\begin{rem}
-The composition $(\mathsf{RLD})_{\Low}f\circ(\mathsf{RLD})_{\Low}f$ may be inequal to $(\mathsf{RLD})_{\Low}\mu$ for all low spaces~$\mu$ (exercise!).
-Thus usefulness of the concept of transitive low spaces is questionable.
-\end{rem}
-
-\begin{rem}
-Every low space is ``symmetric'' in the sense that it corresponds to a symmetric reloid.
-\end{rem}
-
 \fxwarning{Usage of the term ``Cauchy filter'' below for low spaces.}
 
 \begin{prop}
@@ -260,6 +220,44 @@ Every low space is ``symmetric'' in the sense that it corresponds to a symmetric
   Cauchy space $\left( U ; \mathscr{C} \right)$. The same Cauchy space can be
   induced by different uniform spaces. See
   \url{http://math.stackexchange.com/questions/702182/different-uniform-spaces-having-the-same-set-of-cauchy-filters}
+\end{rem}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item \label{low-rld-relf}$(\Low)f$~is reflexive iff endoreloid~$f$ is reflexive.
+\item \label{rld-low-relf}$(\mathsf{RLD})_{\Low}f$~is reflexive iff low space~$f$ is reflexive.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{low-rld-relf}] $\text{$f$ is reflexive} \Leftrightarrow
+  1^{\mathsf{RLD}}\sqsubseteq f  \Leftrightarrow \forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq f \Leftrightarrow
+  \forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq f \Leftrightarrow
+  \forall x\in\Ob f:\uparrow\{x\}\in(\Low)f \Leftrightarrow \text{$(\Low)f$~is reflexive}$.
+
+\item[\ref{rld-low-relf}] Let $f$ is reflexive. Then $\forall x\in\Ob f:\uparrow\{x\}\in f$;
+  $\forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq(\mathsf{RLD})_{\Low}f$;
+  $\forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq(\mathsf{RLD})_{\Low}f$;
+  $1^{\mathsf{RLD}}\sqsubseteq(\mathsf{RLD})_{\Low}f$.
+  
+  Let now $(\mathsf{RLD})_{\Low}f$~be reflexive. Then $f = (\Low)(\mathsf{RLD})_{\Low}f$ is reflexive.
+\end{widedisorder}
+\end{proof}
+
+\begin{defn}
+A \emph{transitive} low space is such low space~$f$ that $(\mathsf{RLD})_{\Low}f\circ(\mathsf{RLD})_{\Low}f=(\mathsf{RLD})_{\Low}f$.
+\end{defn}
+
+\begin{rem}
+The composition $(\mathsf{RLD})_{\Low}f\circ(\mathsf{RLD})_{\Low}f$ may be inequal to $(\mathsf{RLD})_{\Low}\mu$ for all low spaces~$\mu$ (exercise!).
+Thus usefulness of the concept of transitive low spaces is questionable.
+\end{rem}
+
+\begin{rem}
+Every low space is ``symmetric'' in the sense that it corresponds to a symmetric reloid.
 \end{rem}
 
 \section{Lattices of low spaces}
