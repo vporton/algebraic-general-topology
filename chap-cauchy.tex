@@ -119,13 +119,28 @@ Thus usefulness of the concept of transitive low spaces is questionable.
 Every low space is ``symmetric'' in the sense that it corresponds to a symmetric reloid.
 \end{rem}
 
+\fxwarning{Usage of the term ``Cauchy filter'' below for low spaces.}
+
+\begin{prop}
+  $a\sqcup^{
+    \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}
+  } b = a\sqcup b$ for
+  $a,b \in \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$,
+  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on an almost sub-join-semilattice low space.
+\end{prop}
+
+\begin{proof}
+  $\mathcal{F}$ is proper. So
+  we have $a \sqcap b \sqsupseteq \mathcal{F} \neq \bot^{\mathscr{F} (X)}$. Thus $a\sqcup b$ is a Cauchy
+  filter and so $a\sqcup b \in \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$.
+\end{proof}
+
 \begin{prop}
   $\bigsqcup^{
     \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}
   } S = \bigsqcup S$ for nonempty
   $S \in \subsets \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$,
   provided that $\mathcal{F}$ is a proper fixed Cauchy filter on a  completely almost sub-join-semilattice low space.
-  \fxnote{What about analogous binary join for Cauchy spaces?}
 \end{prop}
 
 \begin{proof}
