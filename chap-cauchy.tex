@@ -106,13 +106,28 @@ Every completely Cauchy space is a Cauchy space.
 \begin{prop}
 ~
 \begin{enumerate}
-\item $(\Low)f$~is reflexive iff reloid~$f$ is reflexive.
-\item $(\mathsf{RLD})_{\Low}f$~is reflexive iff low space~$f$ is reflexive.
+\item \label{low-rld-relf}$(\Low)f$~is reflexive iff endoreloid~$f$ is reflexive.
+\item \label{rld-low-relf}$(\mathsf{RLD})_{\Low}f$~is reflexive iff low space~$f$ is reflexive.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-??
+~
+\begin{widedisorder}
+\item[\ref{low-rld-relf}] Let $f$ be reflexive. Then
+  $1^{\mathsf{RLD}}\sqsubseteq f$; $\forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq f$;
+  $\forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq f$;
+  $\forall x\in\Ob f:\uparrow\{x\}\in(\Low)f$; $(\Low)f$~is reflexive.
+  
+  Let now $(\Low)f$~be reflexive. ??
+
+\item[\ref{rld-low-relf}] Let $f$ is reflexive. Then $\forall x\in\Ob f:\uparrow\{x\}\in f$;
+  $\forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq(\mathsf{RLD})_{\Low}f$;
+  $\forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq(\mathsf{RLD})_{\Low}f$;
+  $1^{\mathsf{RLD}}\sqsubseteq(\mathsf{RLD})_{\Low}f$.
+  
+  Let now $(\mathsf{RLD})_{\Low}f$~be reflexive. ??
+\end{widedisorder}
 \end{proof}
 
 \begin{defn}
