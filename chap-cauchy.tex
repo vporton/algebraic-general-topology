@@ -404,12 +404,23 @@ Binary join on the lattice of Cauchy spaces is described by the formula
 \[
 \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
 \]
-where $Z(f)=\setcond{F\sqcup G}{F\in\GR f,G\in\GR f,F\nasymp G}$.
+where $Z(f)=\setcond{F\sqcup G}{F\in\GR f,G\in\GR f,F\nasymp G}\cup\{\emptyset\}$.
 \end{prop}
 
 \begin{proof}
 ??
 \end{proof}
+
+\begin{prop}
+Join on the lattice of Cauchy filters is described by the formula
+\[
+\bigcup\rsupfun{\GR}S \cup Z\left(\bigcup\rsupfun{\GR}S\right) \cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots.
+\]
+\end{prop}
+
+\begin{obvious}
+$Z(f)\sqsupseteq f$ for every graph~$f$ of a low space.
+\end{obvious}
 
 \section{More on Cauchy filters}
 
