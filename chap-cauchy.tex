@@ -112,14 +112,12 @@ Every completely Cauchy space is a Cauchy space.
 \end{prop}
 
 \begin{proof}
-~
+~\fxwarning{Move below the definition.}
 \begin{widedisorder}
-\item[\ref{low-rld-relf}] Let $f$ be a reflexive endoreloid. Then
-  $1^{\mathsf{RLD}}\sqsubseteq f$; $\forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq f$;
-  $\forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq f$;
-  $\forall x\in\Ob f:\uparrow\{x\}\in(\Low)f$; $(\Low)f$~is reflexive.
-
-  Let now $(\Low)f$~be reflexive. ??
+\item[\ref{low-rld-relf}] $\text{$f$ is reflexive} \Leftrightarrow
+  1^{\mathsf{RLD}}\sqsubseteq f  \Leftrightarrow \forall x\in\Ob f:\uparrow(\{x\}\times\{x\})\sqsubseteq f \Leftrightarrow
+  \forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq f \Leftrightarrow
+  \forall x\in\Ob f:\uparrow\{x\}\in(\Low)f \Leftrightarrow \text{$(\Low)f$~is reflexive}$.
 
 \item[\ref{rld-low-relf}] Let $f$ is reflexive. Then $\forall x\in\Ob f:\uparrow\{x\}\in f$;
   $\forall x\in\Ob f:\uparrow\{x\}\times^{\mathsf{RLD}}\uparrow\{x\}\sqsubseteq(\mathsf{RLD})_{\Low}f$;
