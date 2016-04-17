@@ -400,6 +400,11 @@ Binary join on the lattice of Cauchy spaces is described by the formula
 \[
 \GR f\cup\GR g\cup\setcond{F\sqcup G}{F\in\GR f,G\in\GR g,F\nasymp G}.
 \]
+\fxerror{It seems that the above formula is wrong (not hard to invent a counter-example with a principal reloid), consider instead the recursive formula:}
+\[
+\GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
+\]
+where $Z(f)=\setcond{F\sqcup G}{F\in\GR f,G\in\GR f,F\nasymp G}$.
 \end{prop}
 
 \begin{proof}
