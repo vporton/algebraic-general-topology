@@ -449,14 +449,50 @@ $Z(\GR\nu)\subseteq\GR\nu$, likewise $Z(Z(\GR\nu))\subseteq\GR\nu$, etc. Consequ
 So we have $Q\subseteq\GR\nu$ that is $\mu\sqsubseteq\nu$.
 \end{proof}
 
-Rewrite it in another way:
-\[
+\begin{prop}
+~ \fxnote{Should be merged with the previous proposition.}
+\begin{multline*}
+\GR(f\sqcup^{\mathbf{ASJ}}g) = \\
 \setcond{F_0\sqcup\dots\sqcup F_{n-1}}{F_0,\dots,F_{n-1}\in\GR f\cup\GR g,F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1} \text{ for } n\in\mathbb{N}}.
-\]
+\end{multline*}
+\end{prop}
 
 \begin{rem}
 We take $F_0\sqcup\dots\sqcup F_{n-1} = \bot$ for $n=0$.
 \end{rem}
+
+\begin{proof}
+Denote the right part of the above formula as~$R$.
+
+Suppose $F\in R$. Let's prove by induction that $F\in Q$. If $F=\bot$ that's obvious. Suppose we know that
+$F_0\sqcup\dots\sqcup F_{n-1}\in Q$ that is for a natural~$m$
+\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}(\GR f\cup\GR g)\]
+for $F_0,\dots,F_{n-1}\in\GR f\cup\GR g$, $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$
+and also $F_{n-1}\nasymp F_n$. Then $F_0\sqcup\dots\sqcup F_{n-1}\nasymp F_n$ and thus
+$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}(\GR f\cup\GR g)$ that is
+$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in Q$. So $F\in Q$ for every~$F\in R$.
+
+Now suppose $F\in Q$ that is for a natural~$m$
+\[F \in \underbrace{Z\dots Z}_{m\text{ times}}(\GR f\cup\GR g).\]
+Let's prove by induction that $F=F_0\sqcup\dots\sqcup F_{n-1}$ for some $F_0,\dots,F_{n-1}\in\GR f\cup\GR g$
+such that $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
+If $m=0$ then $F\in\GR f\cup\GR g$ and our promise is obvious.
+Let our statement holds for a natural~$m$. Prove that it holds for
+\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}(\GR f\cup\GR g).\]
+We have $F'=Z(F)$ for some $F=F_0\sqcup\dots\sqcup F_{n-1}$ where $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
+The case $F'=\bot$ is easy. So we can assume $F'=A\sqcup B$ where $A,B\in F$ and $A\nasymp B$.
+By the statement of induction $A=A_0\sqcup\dots\sqcup A_{p-1}$, $B=B_0\sqcup\dots\sqcup B_{q-1}$ for natural~$p$ and~$q$,
+where $A_0\nasymp A_1\land A_1\nasymp A_2\land\dots\land A_{p-2}\nasymp A_{p-1}$,
+$B_0\nasymp B_1\land B_1\nasymp B_2\land\dots\land B_{n-2}\nasymp B_{n-1}$.
+Take $j$ such that $A\nasymp B_j$ and then take $i$ such that $A_i\nasymp B_j$.
+Then (using symmetry of the relation~$\nasymp$) we have
+$(A_0\nasymp A_1\land A_1\nasymp A_2\land\dots\land A_{p-2}\nasymp A_{p-1}) \land
+(A_{p-1} \nasymp A_{p-2} \nasymp \dots A_{i+1} \nasymp A_i) \land A_i \nasymp B_j \land
+(B_j \nasymp B_{j-1} \land \dots \land B_1\nasymp B_0) \land
+(B_0\nasymp B_1\land B_1\nasymp B_2\land\dots\land B_{q-2}\nasymp B_{q-1})$.
+So $F'=A\sqcup B$ is representable as the join of a finite sequence of filters with each adjacent pair of filters in this sequence being intersecting.
+That is $F'\in Q$.
+\end{proof}
 
 \begin{prop}
 Join on the lattice of Cauchy spaces \fxwarning{also on the lattice of almost sub-join spaces} is described by the formula
