@@ -395,12 +395,17 @@ The following sets are complete lattices in our order:
 
 It remains (as far as I know) an open problem to find explicit formulas for join on the lattices of Cauchy spaces and complete Cauchy spaces.
 
+Denote $Z(f)=\setcond{F\sqcup G}{F\in f,G\in f,F\nasymp G}\cup\{\bot\}$ for every set $f$ of filters (on some fixed set).
+
+\begin{obvious}
+$Z(f)\sqsupseteq f$ for every set $f$ of filters.
+\end{obvious}
+
 \begin{prop}
 Binary join on the lattice of Cauchy spaces is described by the formula
 \[
-\GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
+\GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots.
 \]
-where $Z(f)=\setcond{F\sqcup G}{F\in f,G\in f,F\nasymp G}\cup\{\emptyset\}$.
 \end{prop}
 
 \begin{proof}
@@ -422,10 +427,6 @@ Join on the lattice of Cauchy filters is described by the formula
 \bigcup\rsupfun{\GR}S \cup Z\left(\bigcup\rsupfun{\GR}S\right) \cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots.
 \]
 \end{prop}
-
-\begin{obvious}
-$Z(f)\sqsupseteq f$ for every graph~$f$ of a low space.
-\end{obvious}
 
 \section{More on Cauchy filters}
 
