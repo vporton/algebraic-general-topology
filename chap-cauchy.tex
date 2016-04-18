@@ -439,7 +439,14 @@ Binary join on the lattice of almost sub-join spaces is described by the formula
 \end{prop}
 
 \begin{proof}
-??
+Denote $\mu$ the almost join space such that $\GR\mu = Q$ where $Q$ is the right part of the above formula. (It exists by the lemma.)
+That $\mu$ is an upper bound of $\{f,g\}$ is obvious.
+
+It remains to prove that $\mu$ is the least upper bound.
+
+Suppose $\nu$~is an upper bound of $\{f,g\}$. Then $\GR\nu\supseteq\GR f\cup\GR g$. Thus, because $\GR\nu$ is an almost sub-join-semilattice,
+$Z(\GR\nu)\subseteq\GR\nu$, likewise $Z(Z(\GR\nu))\subseteq\GR\nu$, etc. Consequently $Z(\GR f\cup\GR g)\subseteq\GR\nu$, $Z(Z(\GR f\cup\GR g))\subseteq\GR\nu$, etc.
+So we have $Q\subseteq\GR\nu$ that is $\mu\sqsubseteq\nu$.
 \end{proof}
 
 Rewrite it in another way:
