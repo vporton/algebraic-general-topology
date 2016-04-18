@@ -88,7 +88,7 @@ $\forall x \in U : \uparrow^X \{ x \} \in \mathscr{C}$.
 The \emph{identity} low space~$1^{\Low(U)}$ on a set~$U$ is the low space with graph $\setcond{\{x\}}{x\in U}$.
 \end{defn}
 
-\begin{obvious}
+\begin{obvious}\label{cs-refl-by-id}
 A low space~$f$ is reflexive iff $f\sqsupseteq 1^{\Low(\Ob f)}$.
 \end{obvious}
 
@@ -347,11 +347,11 @@ $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$ for every low spaces
 \subsection{It's subsets}
 
 \begin{prop}
-The set of almost sub-join-semilattices is meet-closed in the lattice of low spaces on a set.
+The set of low spaces (on some fixed set), whose graphs are almost sub-join-semilattices, is meet-closed in the lattice of low spaces on a set.
 \end{prop}
 
 \begin{proof}
-Let $f$, $g$ be a Cauchy spaces (on some fixed set). $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$.
+Let $f$, $g$ be low spaces, whose graphs are almost sub-join-semilattices (on some fixed set), $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$.
 
 If $\mathcal{A}, \mathcal{B} \in \GR(f\sqcap g)$ and $\mathcal{A}
 \nasymp \mathcal{B}$, then $\mathcal{A}, \mathcal{B} \in \GR f$ and $\mathcal{A}, \mathcal{B} \in \GR g$.
@@ -360,15 +360,15 @@ $\mathcal{A} \sqcup \mathcal{B} \in \GR(f\sqcap g)$.
 \end{proof}
 
 \begin{cor}
-The set of Cauchy spaces is meet-closed in the lattice of low spaces on a set.
+The set of Cauchy spaces (on some fixed set), is meet-closed in the lattice of low spaces on a set.
 \end{cor}
 
 \begin{prop}
-The set of completely almost sub-join-semilattices is meet-closed in the lattice of low spaces on a set.
+The set of low spaces, whose graphs are almost completely sub-join-semilattices, is meet-closed in the lattice of low spaces on a set.
 \end{prop}
 
 \begin{proof}
-Let $S$~be a set of Cauchy spaces (on some fixed set). $\GR \bigsqcap S = \setcond{ \bigsqcap
+Let $S$~be a set of low spaces, whose graphs are almost completely sub-join-semilattices (on some fixed set). $\GR \bigsqcap S = \setcond{ \bigsqcap
 \im P }{ P \in \prod_{X \in S} \GR X}$.
 
 If $\mathcal{A}, \mathcal{B} \in \GR \bigsqcap S$ and $\mathcal{A}
@@ -388,12 +388,11 @@ The following sets are complete lattices in our order:
 \begin{enumerate}
 \item almost sub-join-semilattices;
 \item completely almost sub-join-semilattices;
+\item precauchy spaces;
 \item Cauchy spaces;
 \item completely Cauchy spaces.
 \end{enumerate}
 \end{obvious}
-
-It remains (as far as I know) an open problem to find explicit formulas for join on the lattices of Cauchy spaces and complete Cauchy spaces.
 
 Denote $Z(f)=\setcond{F\sqcup G}{F\in f,G\in f,F\nasymp G}\cup\{\bot\}$ for every set $f$ of filters (on some fixed set).
 
@@ -406,8 +405,7 @@ Consider for $F\in f$ both cases $F=\bot$ and $F\ne\bot$.
 \end{proof}
 
 \begin{prop}
-Binary join on the lattice of Cauchy spaces is described by the formula
-\fxnote{The same formula describes binary join on the lattice of almost sub-join-semilattices.}
+Binary join on the lattice of low spaces whose graphs are almost sub-join-semilattices spaces is described by the formula
 \[
 \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots.
 \]
@@ -432,6 +430,14 @@ Join on the lattice of Cauchy filters is described by the formula
 \bigcup\rsupfun{\GR}S \cup Z\left(\bigcup\rsupfun{\GR}S\right) \cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots.
 \]
 \end{prop}
+
+\begin{prop}
+The lattice of Cauchy spaces (on some set) is a complete sublattice of the lattice of low spaces whose graphs are almost sub-join-semilattices.
+\end{prop}
+
+\begin{proof}
+It's obvious, taking into account obvious~\ref{cs-refl-by-id}.
+\end{proof}
 
 \section{More on Cauchy filters}
 
