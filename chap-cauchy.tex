@@ -93,19 +93,20 @@ A low space~$f$ is reflexive iff $f\sqsupseteq 1^{\Low(\Ob f)}$.
 \end{obvious}
 
 \begin{defn}
+\emph{An almost sub-join space} is a low space whose graph is an almost sub-join-semilattice.
+\end{defn}
+
+\begin{defn}
 A \emph{precauchy space} (aka \emph{filter space}) is a reflexive low space.
 \end{defn}
 
 
 \begin{defn}
-  A \emph{Cauchy space} on a set $X$ is a precauchy space $\left( U ;
-  \mathscr{C} \right)$ (elements of $\mathscr{C}$ are called \emph{Cauchy
-  filters}) such that $\mathscr{C}$ is an almost sub-join-semilattice.
+  A \emph{Cauchy space} is a precauchy space which is also a sub-join space.
 \end{defn}
 
 \begin{defn}
-  A \emph{completely Cauchy space} on a set $X$ is a precauchy space $\left( U ;
-  \mathscr{C} \right)$ such that $\mathscr{C}$ is a completely almost sub-join-semilattice.
+  A \emph{completely Cauchy space} is a precauchy space which is also a completely almost sub-join space.
 \end{defn}
 
 \begin{obvious}
@@ -117,7 +118,7 @@ Every completely Cauchy space is a Cauchy space.
     \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}
   } b = a\sqcup b$ for
   $a,b \in \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$,
-  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on an almost sub-join-semilattice low space.
+  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on an almost sub-join space.
 \end{prop}
 
 \begin{proof}
@@ -131,7 +132,7 @@ Every completely Cauchy space is a Cauchy space.
     \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}
   } S = \bigsqcup S$ for nonempty
   $S \in \subsets \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$,
-  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on a  completely almost sub-join-semilattice low space.
+  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on a  completely almost sub-join space.
 \end{prop}
 
 \begin{proof}
@@ -347,11 +348,11 @@ $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$ for every low spaces
 \subsection{It's subsets}
 
 \begin{prop}
-The set of low spaces (on some fixed set), whose graphs are almost sub-join-semilattices, is meet-closed in the lattice of low spaces on a set.
+The set of sub-join low spaces (on some fixed set) is meet-closed in the lattice of low spaces on a set.
 \end{prop}
 
 \begin{proof}
-Let $f$, $g$ be low spaces, whose graphs are almost sub-join-semilattices (on some fixed set), $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$.
+Let $f$, $g$ be almost sub-join spaces (on some fixed set), $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$.
 
 If $\mathcal{A}, \mathcal{B} \in \GR(f\sqcap g)$ and $\mathcal{A}
 \nasymp \mathcal{B}$, then $\mathcal{A}, \mathcal{B} \in \GR f$ and $\mathcal{A}, \mathcal{B} \in \GR g$.
@@ -364,11 +365,11 @@ The set of Cauchy spaces (on some fixed set), is meet-closed in the lattice of l
 \end{cor}
 
 \begin{prop}
-The set of low spaces, whose graphs are almost completely sub-join-semilattices, is meet-closed in the lattice of low spaces on a set.
+The set of completely almost sub-join spaces is meet-closed in the lattice of low spaces on a set.
 \end{prop}
 
 \begin{proof}
-Let $S$~be a set of low spaces, whose graphs are almost completely sub-join-semilattices (on some fixed set). $\GR \bigsqcap S = \setcond{ \bigsqcap
+Let $S$~be a set of almost completely sub-join low spaces (on some fixed set). $\GR \bigsqcap S = \setcond{ \bigsqcap
 \im P }{ P \in \prod_{X \in S} \GR X}$.
 
 If $\mathcal{A}, \mathcal{B} \in \GR \bigsqcap S$ and $\mathcal{A}
@@ -386,8 +387,8 @@ From the above it follows:
 \begin{obvious}
 The following sets are complete lattices in our order:
 \begin{enumerate}
-\item low spaces, whose graphs are almost sub-join-semilattices;
-\item low spaces, whose graphs are completely almost sub-join-semilattices;
+\item almost sub-join spaces, whose graphs are almost sub-join-semilattices;
+\item completely almost sub-join spaces;
 \item reflexive low spaces;
 \item precauchy spaces;
 \item Cauchy spaces;
@@ -406,11 +407,11 @@ Consider for $F\in f$ both cases $F=\bot$ and $F\ne\bot$.
 \end{proof}
 
 \begin{lem}
-For low spaces~$f$, $g$, whose graphs are sub-join-semilattices
+For almost sub-join spaces~$f$, $g$ (on the same set)
 \[
 \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
 \]
-is a sub-join-semilattice and a graph of some low space.
+is a graph of some almost sub-join space.
 \end{lem}
 
 \begin{proof}
@@ -418,7 +419,7 @@ is a sub-join-semilattice and a graph of some low space.
 \end{proof}
 
 \begin{prop}
-Binary join on the lattice of low spaces whose graphs are almost sub-join-semilattices spaces is described by the formula
+Binary join on the lattice of almost sub-join spaces is described by the formula
 \[
 \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots.
 \]
@@ -445,7 +446,7 @@ Join on the lattice of Cauchy filters is described by the formula
 \end{prop}
 
 \begin{prop}
-The lattice of Cauchy spaces (on some set) is a complete sublattice of the lattice of low spaces whose graphs are almost sub-join-semilattices.
+The lattice of Cauchy spaces (on some set) is a complete sublattice of the lattice of almost sub-join spaces.
 \end{prop}
 
 \begin{proof}
