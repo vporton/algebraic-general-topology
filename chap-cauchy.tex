@@ -94,15 +94,17 @@ A low space~$f$ is reflexive iff $f\sqsupseteq 1^{\Low(\Ob f)}$.
 
 \begin{defn}
 \emph{An almost sub-join space} is a low space whose graph is an almost sub-join-semilattice.
+I will denote such spaces as $\mathbf{ASJ}$.
 \end{defn}
 
 \begin{defn}
 A \emph{precauchy space} (aka \emph{filter space}) is a reflexive low space.
+I will denote such spaces as $\mathbf{preCau}$.
 \end{defn}
 
-
 \begin{defn}
-  A \emph{Cauchy space} is a precauchy space which is also a sub-join space.
+A \emph{Cauchy space} is a precauchy space which is also a sub-join space.
+I will denote such spaces as $\mathbf{Cau}$.
 \end{defn}
 
 \begin{defn}
@@ -409,13 +411,24 @@ Consider for $F\in f$ both cases $F=\bot$ and $F\ne\bot$.
 \begin{lem}
 For almost sub-join spaces~$f$, $g$ (on the same set)
 \[
-\GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
+Q = \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
 \]
 is a graph of some almost sub-join space.
 \end{lem}
 
 \begin{proof}
-??
+That it is non empty and a lower set of filters is obvious. It remains to prove that it is an almost sub-join-semilattice.
+
+Let $\mathcal{A},\mathcal{B}\in Q$ and $\mathcal{A}\nasymp\mathcal{B}$.
+Then
+\[
+\mathcal{A},\mathcal{B} \in \underbrace{Z\dots Z}_{n\text{ times}}(\GR f\cup\GR g)
+\]
+for a natural~$n$. Thus
+\[
+\mathcal{A}\sqcup\mathcal{B} \in \underbrace{Z\dots Z}_{n+1\text{ times}}(\GR f\cup\GR g)
+\]
+and so $\mathcal{A}\sqcup\mathcal{B}\in Q$.
 \end{proof}
 
 \begin{prop}
