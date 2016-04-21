@@ -962,3 +962,76 @@ $a \ltimes a$ for a nontrivial ultrafilter $a$.
 
 We should also consider preservation and reflecting properties by the function
 $(\mathsf{RLD})_{\Gamma}$ (defined below in the chapter ``\nameref{fcd-filters}'').
+
+\section{Some sub-posets of funcoids and reloids}
+
+\begin{prop}
+The following are complete sub-meet-semilattices (that is subsets closed for arbitrary meets) of~$\mathsf{RLD}(A;A)$ (for every set~$A$):
+\begin{enumerate}
+\item symmetric reloids on~$A$;
+\item reflexive reloids on~$A$;
+\item symmetric reflexive reloids on~$A$;
+\item transitive reloids on~$A$;
+\item symmetric reflexive transitive reloids (=~reloids of equivalence =~uniform spaces) on~$A$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+The first three items are obvious.
+
+Fourth: Let $S$ be a set of transitive reloids on~$A$. That is $f\circ f\sqsubseteq f$ for every~$f\in S$. Then $(\bigsqcap S)\circ(\bigsqcap S)\sqsubseteq f\circ f\sqsubseteq f$.
+Consequently $(\bigsqcap S)\circ(\bigsqcap S)\sqsubseteq \bigsqcap S$.
+
+The last item follows from the previous.
+\end{proof}
+
+
+\begin{prop}
+The following are complete sub-meet-semilattices (that is subsets closed for arbitrary meets) of~$\mathsf{FCD}(A;A)$ (for every set~$A$):
+\begin{enumerate}
+\item symmetric funcoids on~$A$;
+\item reflexive funcoids on~$A$;
+\item symmetric reflexive funcoids on~$A$;
+\item transitive funcoids on~$A$;
+\item symmetric reflexive transitive funcoids (=~funcoids of equivalence =~proximity spaces) on~$A$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Analogous.
+\end{proof}
+
+Obvious corollaries:
+
+\begin{cor}
+The following are complete lattices (for every set~$A$):
+\begin{enumerate}
+\item symmetric reloids on~$A$;
+\item reflexive reloids on~$A$;
+\item symmetric reflexive reloids on~$A$;
+\item transitive reloids on~$A$;
+\item symmetric reflexive transitive reloids (=~reloids of equivalence =~uniform spaces) on~$A$.
+\end{enumerate}
+\end{cor}
+
+\begin{cor}
+The following are complete lattices (for every set~$A$):
+\begin{enumerate}
+\item symmetric funcoids on~$A$;
+\item reflexive funcoids on~$A$;
+\item symmetric reflexive funcoids on~$A$;
+\item transitive funcoids on~$A$;
+\item symmetric reflexive transitive funcoids (=~funcoids of equivalence =~proximity spaces) on~$A$.
+\end{enumerate}
+\end{cor}
+
+The following conjecture was inspired by~\cite{Weber2007}:
+
+\begin{conjecture}
+Join of a set~$S$ on the lattice of transitive reloids is
+the join (on the lattice of reloids) of all compositions of finite sequences of elements of~$S$.
+\end{conjecture}
+
+The similar question can be asked about uniform spaces.
+
+Does the same hold for funcoids?
