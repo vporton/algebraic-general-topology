@@ -436,6 +436,7 @@ and so $\mathcal{A}\sqcup\mathcal{B}\in Q$.
 
 \begin{prop}
 Binary join on the lattice of almost sub-join spaces is described by the formula
+\fxnote{The same formula describes join of Cauchy spaces.}
 \[
 \GR(f\sqcup^{\mathbf{ASJ}}g) = \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
 \]
@@ -497,9 +498,22 @@ So $F'=A\sqcup B$ is representable as the join of a finite sequence of filters w
 That is $F'\in Q$.
 \end{proof}
 
+\begin{lem}
+If $S$ is a set of lower spaces, then
+\[
+Q = \bigcup\rsupfun{\GR}S \cup Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
+\]
+is a graph of a completely Cauchy space.
+\end{lem}
+
+\begin{proof}
+??
+\end{proof}
+
 \begin{prop}
 Join on the lattice of Cauchy spaces \fxwarning{also on the lattice of almost sub-join spaces} is described by the formula
 \fxnote{Does also the formula with ``chain'' of intersecting filters work?}
+\fxnote{Remove above special cases of binary joins.}
 \[
 \bigcup\rsupfun{\GR}S \cup Z\left(\bigcup\rsupfun{\GR}S\right) \cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
 \]
