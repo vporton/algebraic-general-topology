@@ -414,7 +414,7 @@ Consider for $F\in f$ both cases $F=\bot$ and $F\ne\bot$.
 \begin{lem}
 For lower spaces~$f$, $g$ (on the same set)
 \[
-Q = \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
+Q = \bigcup\rsupfun{\GR}S\cup Z\left(\bigcup\rsupfun{\GR}S\right)\cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right)\cup\dots
 \]
 is a graph of some almost sub-join space.
 \end{lem}
@@ -425,11 +425,11 @@ That it is nonempty and a lower set of filters is obvious. It remains to prove t
 Let $\mathcal{A},\mathcal{B}\in Q$ and $\mathcal{A}\nasymp\mathcal{B}$.
 Then
 \[
-\mathcal{A},\mathcal{B} \in \underbrace{Z\dots Z}_{n\text{ times}}(\GR f\cup\GR g)
+\mathcal{A},\mathcal{B} \in \underbrace{Z\dots Z}_{n\text{ times}}\left(\bigcup\rsupfun{\GR}S\right)
 \]
 for a natural~$n$. Thus
 \[
-\mathcal{A}\sqcup\mathcal{B} \in \underbrace{Z\dots Z}_{n+1\text{ times}}(\GR f\cup\GR g)
+\mathcal{A}\sqcup\mathcal{B} \in \underbrace{Z\dots Z}_{n+1\text{ times}}\left(\bigcup\rsupfun{\GR}S\right)
 \]
 and so $\mathcal{A}\sqcup\mathcal{B}\in Q$.
 \end{proof}
