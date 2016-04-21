@@ -438,18 +438,18 @@ and so $\mathcal{A}\sqcup\mathcal{B}\in Q$.
 Binary join on the lattice of almost sub-join spaces is described by the formula
 \fxnote{The same formula describes join of Cauchy spaces.}
 \[
-\GR(f\sqcup^{\mathbf{ASJ}}g) = \GR f\cup\GR g\cup Z(\GR f\cup\GR g)\cup Z(Z(\GR f\cup\GR g))\cup\dots
+\GR\bigsqcup^{\mathbf{ASJ}}S = \bigcup\rsupfun{\GR}S\cup Z\left(\bigcup\rsupfun{\GR}S\right)\cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right)\cup\dots
 \]
 \end{prop}
 
 \begin{proof}
 Denote $\mu$ the almost join space such that $\GR\mu = Q$ where $Q$ is the right part of the above formula. (It exists by the lemma.)
-That $\mu$ is an upper bound of $\{f,g\}$ is obvious.
+That $\mu$ is an upper bound of $S$ is obvious.
 
 It remains to prove that $\mu$ is the least upper bound.
 
-Suppose $\nu$~is an upper bound of $\{f,g\}$. Then $\GR\nu\supseteq\GR f\cup\GR g$. Thus, because $\GR\nu$ is an almost sub-join-semilattice,
-$Z(\GR\nu)\subseteq\GR\nu$, likewise $Z(Z(\GR\nu))\subseteq\GR\nu$, etc. Consequently $Z(\GR f\cup\GR g)\subseteq\GR\nu$, $Z(Z(\GR f\cup\GR g))\subseteq\GR\nu$, etc.
+Suppose $\nu$~is an upper bound of $S$. Then $\GR\nu\supseteq\bigcup\rsupfun{\GR}S$. Thus, because $\GR\nu$ is an almost sub-join-semilattice,
+$Z(\GR\nu)\subseteq\GR\nu$, likewise $Z(Z(\GR\nu))\subseteq\GR\nu$, etc. Consequently $Z(\bigcup\rsupfun{\GR}S)\subseteq\GR\nu$, $Z(Z(\bigcup\rsupfun{\GR}S))\subseteq\GR\nu$, etc.
 So we have $Q\subseteq\GR\nu$ that is $\mu\sqsubseteq\nu$.
 \end{proof}
 
