@@ -436,7 +436,6 @@ and so $\mathcal{A}\sqcup\mathcal{B}\in Q$.
 
 \begin{prop}
 Binary join on the lattice of almost sub-join spaces is described by the formula
-\fxnote{The same formula describes join of Cauchy spaces.}
 \[
 \GR\bigsqcup^{\mathbf{ASJ}}S = \bigcup\rsupfun{\GR}S\cup Z\left(\bigcup\rsupfun{\GR}S\right)\cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right)\cup\dots
 \]
@@ -456,8 +455,8 @@ So we have $Q\subseteq\GR\nu$ that is $\mu\sqsubseteq\nu$.
 \begin{prop}
 ~ \fxnote{Should be merged with the previous proposition.}
 \begin{multline*}
-\GR(f\sqcup^{\mathbf{ASJ}}g) = \\
-\setcond{F_0\sqcup\dots\sqcup F_{n-1}}{F_0,\dots,F_{n-1}\in\GR f\cup\GR g,F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1} \text{ for } n\in\mathbb{N}}.
+\GR\bigsqcup^{\mathbf{ASJ}}S = \\
+\setcond{F_0\sqcup\dots\sqcup F_{n-1}}{F_0,\dots,F_{n-1}\in\bigcup\rsupfun{\GR}S,F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1} \text{ for } n\in\mathbb{N}}.
 \end{multline*}
 \end{prop}
 
@@ -470,19 +469,19 @@ Denote the right part of the above formula as~$R$.
 
 Suppose $F\in R$. Let's prove by induction that $F\in Q$. If $F=\bot$ that's obvious. Suppose we know that
 $F_0\sqcup\dots\sqcup F_{n-1}\in Q$ that is for a natural~$m$
-\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}(\GR f\cup\GR g)\]
-for $F_0,\dots,F_{n-1}\in\GR f\cup\GR g$, $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$
+\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup\rsupfun{\GR}\right)\]
+for $F_0,\dots,F_{n-1}\in\bigcup\rsupfun{\GR}S$, $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$
 and also $F_{n-1}\nasymp F_n$. Then $F_0\sqcup\dots\sqcup F_{n-1}\nasymp F_n$ and thus
-$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}(\GR f\cup\GR g)$ that is
+$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup\rsupfun{\GR}\right)$ that is
 $F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in Q$. So $F\in Q$ for every~$F\in R$.
 
 Now suppose $F\in Q$ that is for a natural~$m$
-\[F \in \underbrace{Z\dots Z}_{m\text{ times}}(\GR f\cup\GR g).\]
-Let's prove by induction that $F=F_0\sqcup\dots\sqcup F_{n-1}$ for some $F_0,\dots,F_{n-1}\in\GR f\cup\GR g$
+\[F \in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup\rsupfun{\GR}\right).\]
+Let's prove by induction that $F=F_0\sqcup\dots\sqcup F_{n-1}$ for some $F_0,\dots,F_{n-1}\in\bigcup\rsupfun{\GR}S$
 such that $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
-If $m=0$ then $F\in\GR f\cup\GR g$ and our promise is obvious.
+If $m=0$ then $F\in\bigcup\rsupfun{\GR}S$ and our promise is obvious.
 Let our statement holds for a natural~$m$. Prove that it holds for
-\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}(\GR f\cup\GR g).\]
+\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup\rsupfun{\GR}\right).\]
 We have $F'=Z(F)$ for some $F=F_0\sqcup\dots\sqcup F_{n-1}$ where $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
 The case $F'=\bot$ is easy. So we can assume $F'=A\sqcup B$ where $A,B\in F$ and $A\nasymp B$.
 By the statement of induction $A=A_0\sqcup\dots\sqcup A_{p-1}$, $B=B_0\sqcup\dots\sqcup B_{q-1}$ for natural~$p$ and~$q$,
@@ -505,19 +504,6 @@ Q = \bigcup\rsupfun{\GR}S \cup Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right) \cup
 \]
 is a graph of a completely Cauchy space.
 \end{lem}
-
-\begin{proof}
-??
-\end{proof}
-
-\begin{prop}
-Join on the lattice of Cauchy spaces \fxwarning{also on the lattice of almost sub-join spaces} is described by the formula
-\fxnote{Does also the formula with ``chain'' of intersecting filters work?}
-\fxnote{Remove above special cases of binary joins.}
-\[
-\bigcup\rsupfun{\GR}S \cup Z\left(\bigcup\rsupfun{\GR}S\right) \cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
-\]
-\end{prop}
 
 \begin{proof}
 ??
