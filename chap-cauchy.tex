@@ -54,6 +54,8 @@ Allowing them to contain empty set has some advantages:
   $\GR \left( U ; \mathscr{C} \right) = \mathscr{C}$; $\Ob \left(
   U ; \mathscr{C} \right) = U$.
   $\GR (U; \mathscr{C})$ is read as \emph{graph} of space $(U; \mathscr{C})$.
+  I denote $\Low(U)$ the set of graphs of low spaces on the set~$U$.
+  Similarly I will denote its subsets $\mathbf{ASJ}(U)$, $\mathbf{CASJ}(U)$, $\mathbf{Cau}(U)$, $\mathbf{CCau}(U)$ (see below).
 \end{defn}
 
 \begin{defn}
@@ -62,7 +64,9 @@ Allowing them to contain empty set has some advantages:
   $\left( U ; \mathscr{C} \right) \sqsubseteq \left( U ; \mathscr{D} \right) \Leftrightarrow \mathscr{C} \sqsubseteq \mathscr{D}$.
 \end{defn}
 
-\fxnote{Rewrite some theorems in terms of graphs of low spaces rather than low spaces themselves. This simplifies the formulas.}
+\begin{obvious}
+Every set of low spaces on some set is partially ordered.
+\end{obvious}
 
 \section{Almost sub-join-semilattices}
 
@@ -283,14 +287,6 @@ Every low space is ``symmetric'' in the sense that it corresponds to a symmetric
 
 \section{Lattices of low spaces}
 
-\begin{defn}
-$\mu \sqsubseteq \nu \Leftrightarrow \GR\mu\subseteq\GR\nu$ for low spaces (on the same set~$U$).
-\end{defn}
-
-\begin{obvious}
-Every set of low spaces on some set is partially ordered.
-\end{obvious}
-
 \begin{prop}\label{ls-order2}
 $\mu \sqsubseteq \nu \Leftrightarrow \forall \mathcal{X}\in\GR\mu \exists\mathcal{Y}\in\GR\nu: \mathcal{X}\sqsubseteq\mathcal{Y}$ for
 low filter spaces (on the same set~$U$).
@@ -316,40 +312,42 @@ low filter spaces (on the same set~$U$).
 \end{enumerate}
 \end{obvious}
 
+I will denote $\bigsqcup$, $\bigsqcap$, $\sqcup$, $\sqcap$ the lattice operations on low spaces or graphs of low spaces.
+
 \begin{prop}
-$\GR\bigsqcup S=\bigcup\rsupfun{\GR}S$ for every set~$S$ of low spaces on some set.
+$\bigsqcup S=\bigcup S$ for every set~$S$ of graphs of low spaces on some set.
 \end{prop}
 
 \begin{proof}
-It's enough to prove that there is a low space~$\mu$ such that $\GR\mu=\bigcup\rsupfun{\GR}S$. In other words, it's enough to prove
-that $\bigcup\rsupfun{\GR}S$ is a nonempty lower set, but that's obvious. \fxwarning{A little more detailed proof.}
+It's enough to prove that there is a low space~$\mu$ such that $\GR\mu=\bigcup S$. In other words, it's enough to prove
+that $\bigcup S$ is a nonempty lower set, but that's obvious. \fxwarning{A little more detailed proof.}
 \end{proof}
 
 \begin{prop}
-$\GR\bigsqcap S=\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$ for every set~$S$ of low spaces on some set.
+$\bigsqcap S=\setcond{\bigsqcap\im P}{P\in\prod_{X\in S} X}$ for every set~$S$ of graphs of low spaces on some set.
 \end{prop}
 
 \begin{proof}
-First prove that there is such low space~$\mu$ that $\GR\mu=\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. In other words,
-we need to prove that $\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$ is a nonempty lower set. That it is nonempty is obvious.
-Let filter $\mathcal{G}\sqsubseteq\mathcal{F}$ and $\mathcal{F}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. Then
-$\mathcal{F}=\bigsqcap\im P$ for a $P\in\prod_{X\in S}\GR X$ that is $P(X)\in\GR X$ for every $X\in S$. Take $P'=(\mathcal{G}\sqcap)\circ P$.
-Then $P'\in\prod_{X\in S}\GR X$ because $P'(X)\in\GR X$ for every $X\in S$ and thus
-obviously $\mathcal{G}=\bigsqcap\im P'$ and thus $\mathcal{G}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S}\GR X}$. So such~$\mu$ exists.
+First prove that there is such low space~$\mu$ that $\mu=\setcond{\bigsqcap\im P}{P\in\prod_{X\in S} X}$. In other words,
+we need to prove that $\setcond{\bigsqcap\im P}{P\in\prod_{X\in S} X}$ is a nonempty lower set. That it is nonempty is obvious.
+Let filter $\mathcal{G}\sqsubseteq\mathcal{F}$ and $\mathcal{F}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S} X}$. Then
+$\mathcal{F}=\bigsqcap\im P$ for a $P\in\prod_{X\in S} X$ that is $P(X)\in X$ for every $X\in S$. Take $P'=(\mathcal{G}\sqcap)\circ P$.
+Then $P'\in\prod_{X\in S} X$ because $P'(X)\in X$ for every $X\in S$ and thus
+obviously $\mathcal{G}=\bigsqcap\im P'$ and thus $\mathcal{G}\in\setcond{\bigsqcap\im P}{P\in\prod_{X\in S} X}$. So such~$\mu$ exists.
 
 It remains to prove that $\mu$ is the greatest lower bound of~$S$.
 
-$\mu$ is a lower bound of~$S$. Really, let $X\in S$ and $Y\in\GR X$.
-Then exists $P\in\prod_{X\in S}\GR X$ such that $P(X)=Y$ (taken into account that every $\GR X$ is nonempty)
+$\mu$ is a lower bound of~$S$. Really, let $X\in S$ and $Y\in X$.
+Then exists $P\in\prod_{X\in S} X$ such that $P(X)=Y$ (taken into account that every $ X$ is nonempty)
 and thus $\im P\ni Y$ and so $\bigsqcap\im P\sqsubseteq Y$, that is (proposition~\ref{ls-order2}) $\mu\sqsubseteq X$.
 
 Let $\nu$ be a lower bound of~$S$. It remains to prove that $\mu\sqsupseteq\nu$, that is
-$\forall Q\in\GR\nu: Q=\bigsqcap\im P$ for some $P\in\prod_{X\in S}\GR X$.
-Take $P=(\mylambda{X}{S}{Q})$. This $P\in\prod_{X\in S}\GR X$ because $Q\in\GR X$ for every~$X\in S$.
+$\forall Q\in\nu: Q=\bigsqcap\im P$ for some $P\in\prod_{X\in S} X$.
+Take $P=(\mylambda{X}{S}{Q})$. This $P\in\prod_{X\in S} X$ because $Q\in X$ for every~$X\in S$.
 \end{proof}
 
 \begin{cor}
-$\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$ for every low spaces~$f$ and~$g$ (on some set).
+$f\sqcap g = \setcond{F\sqcap G}{F\in f,G\in g}$ for every graphs~$f$ and~$g$ of low spaces (on some set).
 \end{cor}
 
 \fxnote{Also describe lattice operations on complete Cauchy spaces}
@@ -365,12 +363,12 @@ The set of sub-join low spaces (on some fixed set) is meet-closed in the lattice
 \end{prop}
 
 \begin{proof}
-Let $f$, $g$ be almost sub-join spaces (on some fixed set), $\GR(f\sqcap g) = \setcond{F\sqcap G}{F\in\GR f,G\in\GR g}$.
+Let $f$, $g$ be graphs of almost sub-join spaces (on some fixed set), $f\sqcap g = \setcond{F\sqcap G}{F\in f,G\in g}$.
 
-If $\mathcal{A}, \mathcal{B} \in \GR(f\sqcap g)$ and $\mathcal{A}
-\nasymp \mathcal{B}$, then $\mathcal{A}, \mathcal{B} \in \GR f$ and $\mathcal{A}, \mathcal{B} \in \GR g$.
-Thus $\mathcal{A}\sqcup\mathcal{B}\in\GR f$ and $\mathcal{A}\sqcup\mathcal{B}\in\GR g$ and so
-$\mathcal{A} \sqcup \mathcal{B} \in \GR(f\sqcap g)$.
+If $\mathcal{A}, \mathcal{B} \in f\sqcap g$ and $\mathcal{A}
+\nasymp \mathcal{B}$, then $\mathcal{A}, \mathcal{B} \in f$ and $\mathcal{A}, \mathcal{B} \in g$.
+Thus $\mathcal{A}\sqcup\mathcal{B}\in f$ and $\mathcal{A}\sqcup\mathcal{B}\in g$ and so
+$\mathcal{A} \sqcup \mathcal{B} \in f\sqcap g$.
 \end{proof}
 
 \begin{cor}
@@ -382,13 +380,13 @@ The set of completely almost sub-join spaces is meet-closed in the lattice of lo
 \end{prop}
 
 \begin{proof}
-Let $S$~be a set of almost completely sub-join low spaces (on some fixed set). $\GR \bigsqcap S = \setcond{ \bigsqcap
-\im P }{ P \in \prod_{X \in S} \GR X}$.
+Let $S$~be a set of graphs of almost completely sub-join low spaces (on some fixed set). $ \bigsqcap S = \setcond{ \bigsqcap
+\im P }{ P \in \prod_{X \in S}  X}$.
 
-If $\mathcal{A}, \mathcal{B} \in \GR \bigsqcap S$ and $\mathcal{A}
-\nasymp \mathcal{B}$, then $\mathcal{A}, \mathcal{B} \in \GR X$ for
-every $X \in S$. Thus $\mathcal{A} \sqcup \mathcal{B} \in \GR X$ and so
-$\mathcal{A} \sqcup \mathcal{B} \in \GR \bigsqcap S$.
+If $\mathcal{A}, \mathcal{B} \in  \bigsqcap S$ and $\mathcal{A}
+\nasymp \mathcal{B}$, then $\mathcal{A}, \mathcal{B} \in  X$ for
+every $X \in S$. Thus $\mathcal{A} \sqcup \mathcal{B} \in  X$ and so
+$\mathcal{A} \sqcup \mathcal{B} \in  \bigsqcap S$.
 \end{proof}
 
 \begin{cor}
@@ -420,9 +418,9 @@ Consider for $F\in f$ both cases $F=\bot$ and $F\ne\bot$.
 \end{proof}
 
 \begin{lem}
-For lower spaces~$f$, $g$ (on the same set)
+For graphs of lower spaces~$f$, $g$ (on the same set)
 \[
-Q = \bigcup\rsupfun{\GR}S\cup Z\left(\bigcup\rsupfun{\GR}S\right)\cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right)\cup\dots
+Q = \bigcup S\cup Z\left(\bigcup S\right)\cup Z\left(Z\left(\bigcup S\right)\right)\cup\dots
 \]
 is a graph of some almost sub-join space.
 \end{lem}
@@ -433,38 +431,39 @@ That it is nonempty and a lower set of filters is obvious. It remains to prove t
 Let $\mathcal{A},\mathcal{B}\in Q$ and $\mathcal{A}\nasymp\mathcal{B}$.
 Then
 \[
-\mathcal{A},\mathcal{B} \in \underbrace{Z\dots Z}_{n\text{ times}}\left(\bigcup\rsupfun{\GR}S\right)
+\mathcal{A},\mathcal{B} \in \underbrace{Z\dots Z}_{n\text{ times}}\left(\bigcup S\right)
 \]
 for a natural~$n$. Thus
 \[
-\mathcal{A}\sqcup\mathcal{B} \in \underbrace{Z\dots Z}_{n+1\text{ times}}\left(\bigcup\rsupfun{\GR}S\right)
+\mathcal{A}\sqcup\mathcal{B} \in \underbrace{Z\dots Z}_{n+1\text{ times}}\left(\bigcup S\right)
 \]
 and so $\mathcal{A}\sqcup\mathcal{B}\in Q$.
 \end{proof}
 
 \begin{prop}
-Binary join on the lattice of almost sub-join spaces is described by the formula
+Binary join on the lattice of graphs of almost sub-join spaces is described by the formula
 \[
-\GR\bigsqcup^{\mathbf{ASJ}}S = \bigcup\rsupfun{\GR}S\cup Z\left(\bigcup\rsupfun{\GR}S\right)\cup Z\left(Z\left(\bigcup\rsupfun{\GR}S\right)\right)\cup\dots
+\bigsqcup^{\mathbf{ASJ}}S = \bigcup S\cup Z\left(\bigcup S\right)\cup Z\left(Z\left(\bigcup S\right)\right)\cup\dots
 \]
 \end{prop}
 
 \begin{proof}
-Denote $\mu$ the almost join space such that $\GR\mu = Q$ where $Q$ is the right part of the above formula. (It exists by the lemma.)
+The right part of the above formula~$\mu$ is a graph of an almost sub-join space (lemma).
+
 That $\mu$ is an upper bound of $S$ is obvious.
 
 It remains to prove that $\mu$ is the least upper bound.
 
-Suppose $\nu$~is an upper bound of $S$. Then $\GR\nu\supseteq\bigcup\rsupfun{\GR}S$. Thus, because $\GR\nu$ is an almost sub-join-semilattice,
-$Z(\GR\nu)\subseteq\GR\nu$, likewise $Z(Z(\GR\nu))\subseteq\GR\nu$, etc. Consequently $Z(\bigcup\rsupfun{\GR}S)\subseteq\GR\nu$, $Z(Z(\bigcup\rsupfun{\GR}S))\subseteq\GR\nu$, etc.
-So we have $Q\subseteq\GR\nu$ that is $\mu\sqsubseteq\nu$.
+Suppose $\nu$~is an upper bound of $S$. Then $\nu\supseteq\bigcup S$. Thus, because $\nu$ is an almost sub-join-semilattice,
+$Z(\nu)\subseteq\nu$, likewise $Z(Z(\nu))\subseteq\nu$, etc. Consequently $Z(\bigcup S)\subseteq\nu$, $Z(Z(\bigcup S))\subseteq\nu$, etc.
+So we have $Q\subseteq\nu$ that is $\mu\sqsubseteq\nu$.
 \end{proof}
 
 \begin{prop}
 ~ \fxnote{Should be merged with the previous proposition.}
 \begin{multline*}
-\GR\bigsqcup^{\mathbf{ASJ}}S = \\
-\setcond{F_0\sqcup\dots\sqcup F_{n-1}}{F_0,\dots,F_{n-1}\in\bigcup\rsupfun{\GR}S,F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1} \text{ for } n\in\mathbb{N}}.
+\bigsqcup^{\mathbf{ASJ}}S = \\
+\setcond{F_0\sqcup\dots\sqcup F_{n-1}}{F_0,\dots,F_{n-1}\in\bigcup S,F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1} \text{ for } n\in\mathbb{N}}.
 \end{multline*}
 \end{prop}
 
@@ -477,19 +476,19 @@ Denote the right part of the above formula as~$R$.
 
 Suppose $F\in R$. Let's prove by induction that $F\in Q$. If $F=\bot$ that's obvious. Suppose we know that
 $F_0\sqcup\dots\sqcup F_{n-1}\in Q$ that is for a natural~$m$
-\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup\rsupfun{\GR}\right)\]
-for $F_0,\dots,F_{n-1}\in\bigcup\rsupfun{\GR}S$, $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$
+\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup \right)\]
+for $F_0,\dots,F_{n-1}\in\bigcup S$, $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$
 and also $F_{n-1}\nasymp F_n$. Then $F_0\sqcup\dots\sqcup F_{n-1}\nasymp F_n$ and thus
-$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup\rsupfun{\GR}\right)$ that is
+$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup \right)$ that is
 $F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in Q$. So $F\in Q$ for every~$F\in R$.
 
 Now suppose $F\in Q$ that is for a natural~$m$
-\[F \in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup\rsupfun{\GR}\right).\]
-Let's prove by induction that $F=F_0\sqcup\dots\sqcup F_{n-1}$ for some $F_0,\dots,F_{n-1}\in\bigcup\rsupfun{\GR}S$
+\[F \in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup \right).\]
+Let's prove by induction that $F=F_0\sqcup\dots\sqcup F_{n-1}$ for some $F_0,\dots,F_{n-1}\in\bigcup S$
 such that $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
-If $m=0$ then $F\in\bigcup\rsupfun{\GR}S$ and our promise is obvious.
+If $m=0$ then $F\in\bigcup S$ and our promise is obvious.
 Let our statement holds for a natural~$m$. Prove that it holds for
-\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup\rsupfun{\GR}\right).\]
+\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup \right).\]
 We have $F'=Z(F)$ for some $F=F_0\sqcup\dots\sqcup F_{n-1}$ where $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
 The case $F'=\bot$ is easy. So we can assume $F'=A\sqcup B$ where $A,B\in F$ and $A\nasymp B$.
 By the statement of induction $A=A_0\sqcup\dots\sqcup A_{p-1}$, $B=B_0\sqcup\dots\sqcup B_{q-1}$ for natural~$p$ and~$q$,
@@ -506,9 +505,9 @@ That is $F'\in Q$.
 \end{proof}
 
 \begin{lem}
-If $S$ is a set of lower spaces, then
+If $S$ is a set of graphs of lower spaces, then
 \[
-Q = \bigcup\rsupfun{\GR}S \cup Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
+Q = \bigcup S \cup Z_{\infty}\left(\bigcup S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup S\right)\right) \cup \dots
 \]
 is a graph of a completely Cauchy space.
 \end{lem}
@@ -528,9 +527,9 @@ It's obvious, taking into account obvious~\ref{cs-refl-by-id}.
 Denote $Z_{\infty}(f)=\setcond{\bigsqcup T}{T\in\subsets f\land\bigsqcap T\ne\bot}$.
 
 \begin{prop}
-Join of a set~$S$ on the lattice of completely almost sub-join-semilattice is described by the formula:
+Join of a set~$S$ on the lattice of graphs of completely almost sub-join-semilattice is described by the formula:
 \[
-\GR\bigsqcup^{\mathbf{CASJ}}S=\bigcup\rsupfun{\GR}S \cup Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
+\bigsqcup^{\mathbf{CASJ}}S=\bigcup S \cup Z_{\infty}\left(\bigcup S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup S\right)\right) \cup \dots
 \]
 \end{prop}
 
@@ -540,10 +539,10 @@ Join of a set~$S$ on the lattice of completely almost sub-join-semilattice is de
 
 \begin{prop}
 \[
-\GR\bigsqcup^{\mathbf{CASJ}}S=
+\bigsqcup^{\mathbf{CASJ}}S=
 \setcond{\bigsqcup T_0\sqcup\dots\sqcup\bigsqcup T_{n-1}}{
 \begin{aligned}
-&n\in\mathbb{N},T_0,\dots,T_{n-1}\in\bigcup\rsupfun{\GR}S, \\
+&n\in\mathbb{N},T_0,\dots,T_{n-1}\in\bigcup S, \\
 &\bigsqcap T_0\ne\bot\land\dots\land\bigsqcap T_{n-1}\ne\bot,
 \bigsqcap T_0\nasymp\bigsqcap T_1\land\dots\land\bigsqcap T_{n-2}\nasymp\bigsqcap T_{n-1}.
 \end{aligned}}
