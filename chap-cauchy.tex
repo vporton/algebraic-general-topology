@@ -285,6 +285,52 @@ Thus usefulness of the concept of transitive low spaces is questionable.
 Every low space is ``symmetric'' in the sense that it corresponds to a symmetric reloid.
 \end{rem}
 
+\begin{thm}
+  $(\Low)$ is the upper adjoint of $(\mathsf{RLD})_{\Low}$.
+\end{thm}
+
+\begin{proof}
+  We will prove $(\Low) (\mathsf{RLD})_{\Low} f \sqsupseteq
+  f$ and $(\mathsf{RLD})_{\Low} (\Low) g \sqsubseteq g$
+  (that $(\Low)$ and $(\mathsf{RLD})_{\Low}$ are monotone
+  is obvious).
+  
+  Really:
+  \begin{multline*}
+  \GR (\Low) (\mathsf{RLD})_{\Low} f =
+  \GR (\Low) \bigsqcup \setcond{ \mathcal{X}
+  \times^{\mathsf{RLD}} \mathcal{X} }{
+  \mathcal{X} \in \GR f } = \\
+  \setcond{ \mathcal{Y} \in \mathscr{F}\Ob (f) }{ \mathcal{Y}
+  \times^{\mathsf{RLD}} \mathcal{Y} \sqsubseteq \bigsqcup \setcond{
+  \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} }{
+  \mathcal{X} \in \GR f } } \supseteq \setcond{
+  \mathcal{Y} \in \mathscr{F} \Ob (f) }{
+  \mathcal{Y} \in \GR f } = \GR f;
+  \end{multline*}
+  
+  $(\mathsf{RLD})_{\Low} (\Low) g = \bigsqcup \setcond{
+  \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} }{
+  \mathcal{X} \in \GR (\Low) g } = \bigsqcup
+  \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} }{
+  \mathcal{X} \in \mathscr{F}(\Ob g),
+  \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X}
+  \sqsubseteq g } \sqsubseteq g$.
+\end{proof}
+
+\begin{cor}
+  ~
+  \begin{enumerate}
+    \item $(\mathsf{RLD})_{\Low} \bigsqcup S = \bigsqcup \langle
+    (\mathsf{RLD})_{\Low} \rangle^{\ast} S$;
+    
+    \item $(\Low) \bigsqcap S = \bigsqcap \langle (\Low)
+    \rangle^{\ast} S$.
+  \end{enumerate}
+\end{cor}
+
+\fxnote{Also do $(\mathsf{RLD})_{\Low}$ and $(\Low)$ preserve lattice operations for lattices of complete low spaces and of Cauchy spaces (and complete Cauchy spaces?).}
+
 \section{Lattices of low spaces}
 
 \begin{prop}\label{ls-order2}
@@ -349,10 +395,6 @@ Take $P=(\mylambda{X}{S}{Q})$. This $P\in\prod_{X\in S} X$ because $Q\in X$ for 
 \begin{cor}
 $f\sqcap g = \setcond{F\sqcap G}{F\in f,G\in g}$ for every graphs~$f$ and~$g$ of low spaces (on some set).
 \end{cor}
-
-\fxnote{Do $(\mathsf{RLD})_{\Low}$ and $(\Low)$ preserve lattice (for various lattices) operations? If yes, what are their adjoints? Are they adjoints of each other?}
-
-\fxnote{Also do they preserve lattice operations for lattices of complete low spaces and of Cauchy spaces (and complete Cauchy spaces?).}
 
 \subsection{Its subsets}
 
