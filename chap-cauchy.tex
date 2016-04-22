@@ -524,8 +524,25 @@ Denote $Z_{\infty}(f)=\setcond{\bigsqcup T}{T\in\subsets f\land\bigsqcap T\ne\bo
 
 \begin{prop}
 Join of a set~$S$ on the lattice of completely almost sub-join-semilattice is described by the formula:
+\fxwarning{Define $\mathbf{CASJ}$.}
 \[
-\GR\bigsqcup S=\bigcup\rsupfun{\GR}S \cup Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
+\GR\bigsqcup^{\mathbf{CASJ}}S=\bigcup\rsupfun{\GR}S \cup Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right) \cup Z_{\infty}\left(Z_{\infty}\left(\bigcup\rsupfun{\GR}S\right)\right) \cup \dots
+\]
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{prop}
+\[
+\GR\bigsqcup^{\mathbf{CASJ}}S=
+\setcond{\bigsqcup T_0\sqcup\dots\sqcup\bigsqcup T_{n-1}}{
+\begin{aligned}
+&n\in\mathbb{N},T_0,\dots,T_{n-1}\in\bigcup\rsupfun{\GR}S, \\
+&\bigsqcap T_0\ne\bot\land\dots\land\bigsqcap T_{n-1}\ne\bot,
+\bigsqcap T_0\nasymp\bigsqcap T_1\land\dots\land\bigsqcap T_{n-2}\nasymp\bigsqcap T_{n-1}.
+\end{aligned}}
 \]
 \end{prop}
 
