@@ -476,19 +476,19 @@ Denote the right part of the above formula as~$R$.
 
 Suppose $F\in R$. Let's prove by induction that $F\in Q$. If $F=\bot$ that's obvious. Suppose we know that
 $F_0\sqcup\dots\sqcup F_{n-1}\in Q$ that is for a natural~$m$
-\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup \right)\]
+\[F_0\sqcup\dots\sqcup F_{n-1}\in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup S\right)\]
 for $F_0,\dots,F_{n-1}\in\bigcup S$, $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$
 and also $F_{n-1}\nasymp F_n$. Then $F_0\sqcup\dots\sqcup F_{n-1}\nasymp F_n$ and thus
-$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup \right)$ that is
+$F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup S\right)$ that is
 $F_0\sqcup\dots\sqcup F_{n-1}\sqcup F_n\in Q$. So $F\in Q$ for every~$F\in R$.
 
 Now suppose $F\in Q$ that is for a natural~$m$
-\[F \in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup \right).\]
+\[F \in \underbrace{Z\dots Z}_{m\text{ times}}\left(\bigcup S\right).\]
 Let's prove by induction that $F=F_0\sqcup\dots\sqcup F_{n-1}$ for some $F_0,\dots,F_{n-1}\in\bigcup S$
 such that $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
 If $m=0$ then $F\in\bigcup S$ and our promise is obvious.
 Let our statement holds for a natural~$m$. Prove that it holds for
-\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup \right).\]
+\[F' \in \underbrace{Z\dots Z}_{m+1\text{ times}}\left(\bigcup S\right).\]
 We have $F'=Z(F)$ for some $F=F_0\sqcup\dots\sqcup F_{n-1}$ where $F_0\nasymp F_1\land F_1\nasymp F_2\land\dots\land F_{n-2}\nasymp F_{n-1}$.
 The case $F'=\bot$ is easy. So we can assume $F'=A\sqcup B$ where $A,B\in F$ and $A\nasymp B$.
 By the statement of induction $A=A_0\sqcup\dots\sqcup A_{p-1}$, $B=B_0\sqcup\dots\sqcup B_{q-1}$ for natural~$p$ and~$q$,
