@@ -504,6 +504,24 @@ So $F'=A\sqcup B$ is representable as the join of a finite sequence of filters w
 That is $F'\in Q$.
 \end{proof}
 
+\begin{prop}
+The lattice of Cauchy spaces (on some set) is a complete sublattice of the lattice of almost sub-join spaces.
+\end{prop}
+
+\begin{proof}
+It's obvious, taking into account obvious~\ref{cs-refl-by-id}.
+\end{proof}
+
+Denote $Z_{\infty}(f)=\setcond{\bigsqcup T}{T\in\subsets f\land\bigsqcap T\ne\bot}\cup\{\bot\}$.
+
+\begin{prop}
+$Z_{\infty}(f)\sqsupseteq f$.
+\end{prop}
+
+\begin{proof}
+Consider for $F\in f$ both cases $F=\bot$ and $F\ne\bot$.
+\end{proof}
+
 \begin{lem}
 If $S$ is a set of graphs of low spaces, then
 \[
@@ -513,18 +531,27 @@ is a graph of a completely Cauchy space.
 \end{lem}
 
 \begin{proof}
-??
+That it is nonempty and a lower set of filters is obvious. It remains to prove that it is a completely almost sub-join-semilattice.
+
+Let $T\in\subsets Q$ and $\bigsqcap T\ne\bot$.
+Then
+\[
+T\in\subsets \underbrace{Z\dots Z}_{n\text{ times}}\left(\bigcup S\right)
+\]
+for a natural~$n$. Thus
+\[
+T\in\subsets \underbrace{Z\dots Z}_{n+1\text{ times}}\left(\bigcup S\right)
+\]
+and so $\bigsqcup T\in Q$.
 \end{proof}
 
 \begin{prop}
-The lattice of Cauchy spaces (on some set) is a complete sublattice of the lattice of almost sub-join spaces.
+The lattice of completely Cauchy spaces (on some set) is a complete sublattice of the lattice of completely almost sub-join spaces.
 \end{prop}
 
 \begin{proof}
 It's obvious, taking into account obvious~\ref{cs-refl-by-id}.
 \end{proof}
-
-Denote $Z_{\infty}(f)=\setcond{\bigsqcup T}{T\in\subsets f\land\bigsqcap T\ne\bot}$.
 
 \begin{prop}
 Join of a set~$S$ on the lattice of graphs of completely almost sub-join-semilattice is described by the formula:
