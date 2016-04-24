@@ -747,23 +747,20 @@ Ideal base is dual of filter base.
 \end{prop}
 
 \begin{proof}
-  Let $f$ be a reloid. $\GR (\Low) f = \setcond{ \mathcal{X} \in
+  Let $f$ be an endoreloid. $\GR (\Low) f = \setcond{ \mathcal{X} \in
   \Ob f }{ \mathcal{X}
   \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f }$.
+
+  Let $T\subseteq \setcond{ \mathcal{X} \in \Ob f }{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f }$
+  be an ideal base.
   
-  We have \fxerror{Left of $\subseteq$ is a set of filters but right is of pairs of filters. Error.}
-  \[ T = \setcond{ \mathcal{X} \in \Ob f }{
-     \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f
-     } \subseteq \setcond{ (\mathcal{A} ; \mathcal{B}) }{
-     \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}
-     \sqsubseteq f } . \]
-  Thus it has join in $\setcond{ (\mathcal{A} ; \mathcal{B}) }{
-  \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}
-  \sqsubseteq f }$. Obviously this join is in
-  \[ \setcond{ \mathcal{X} \in \Ob f }{
-     \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f
-     } = \GR (\Low) f \]
-  subset. Thus $\GR (\Low) f$ is ideal base.
+  Then $N = \setcond{(\mathcal{F};\mathcal{F})}{\mathcal{F}\in T}$ is also an ideal base.
+  Obviously $N \subseteq \setcond{ (\mathcal{A} ; \mathcal{B}) }{ \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$.
+  Thus by the lemma it has a join in
+  $\setcond{ (\mathcal{A} ; \mathcal{B}) }{ \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$.
+  It's easy to see that this join is in
+  $\setcond{ (\mathcal{A} ; \mathcal{A}) }{ \mathcal{A}\in\Ob f, \mathcal{A} \times^{\mathsf{RLD}} \mathcal{A} \sqsubseteq f }$.
+  Consequently $T$ has a join in $\setcond{ \mathcal{X} \in \Ob f }{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f }$.
 \end{proof}
 
 It is long time known that (using our terminology) low space induced by a
