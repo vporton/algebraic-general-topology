@@ -2383,7 +2383,7 @@ From the previous lemma.\end{proof}
 \index{filter-closed}Let $\mathfrak{A}$ be a complete lattice. A
 set $S\in\subsets\mathfrak{A}$ is \emph{filter-closed} when for every
 filter base $T\in\subsets S$ we have $\bigsqcap T\in S$.\end{defn}
-\begin{thm}
+\begin{thm}\label{fclosed}
 A subset $S$ of a complete lattice is filter-closed iff for every
 nonempty chain $T\in\subsets S$ we have $\bigsqcap T\in S$.\end{thm}
 \begin{proof}
@@ -3686,7 +3686,7 @@ is a boolean lattice.\end{prop}
 \begin{proof}
 We need to prove only that every element $a\in\prod\mathfrak{A}$
 has a complement. But this complement is evidently $\mylambda i{\dom a}{\overline{a_{i}}}$.\end{proof}
-\begin{prop}
+\begin{prop}\label{cw-join}
 If every $\mathfrak{A}_{i}$ is a poset then for every $S\in\subsets\prod\mathfrak{A}$
 \begin{enumerate}
 \item $\bigsqcup S=\mylambda i{\dom\mathfrak{A}}{\bigsqcup_{x\in S}x_{i}}$
@@ -3707,7 +3707,7 @@ that is $y\sqsupseteq\mylambda i{\dom\mathfrak{A}}{\bigsqcup_{x\in S}x_{i}}$.
 
 Thus $\bigsqcup S=\mylambda i{\dom\mathfrak{A}}{\bigsqcup_{x\in S}x_{i}}$
 by the definition of join.\end{proof}
-\begin{cor}
+\begin{cor}\label{cw-join-back}
 \label{prod-join2}If $\mathfrak{A}_{i}$ are posets then for every
 $S\in\subsets\prod\mathfrak{A}$
 \begin{enumerate}
