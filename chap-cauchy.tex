@@ -149,7 +149,7 @@ Every completely Cauchy space is a Cauchy space.
     \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}
   } S = \bigsqcup S$ for nonempty
   $S \in \subsets \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$,
-  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on a  completely almost sub-join space.
+  provided that $\mathcal{F}$ is a proper fixed Cauchy filter on a completely almost sub-join space.
 \end{prop}
 
 \begin{proof}
@@ -157,6 +157,19 @@ Every completely Cauchy space is a Cauchy space.
   \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$
   we have $\bigsqcap S \sqsupseteq \mathcal{F} \neq \bot^{\mathscr{F} (X)}$. Thus $\bigsqcup S$ is a Cauchy
   filter and so $\bigsqcup S \in \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$.
+\end{proof}
+
+\begin{cor}
+Every proper Cauchy filter is contained in a unique maximal Cauchy filter (for completely almost sub-join spaces).
+\end{cor}
+
+\begin{proof}
+Let $\mathcal{F}$ be a proper Cauchy filter. Then
+$\bigsqcup^{ \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}} }\setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$
+(existing by the above proposition) is the maximal Cauchy filter containing~$\mathcal{F}$.
+
+Suppose another maximal Cauchy filter~$\mathcal{T}$ contains~$\mathcal{F}$. Then $T\in\setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$
+and thus $\mathcal{T} = \bigsqcup^{ \setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}} }\setcond{\mathcal{X} \in \mathscr{C} }{\mathcal{X} \sqsupseteq \mathcal{F}}$.
 \end{proof}
 
 \section{Relationships with symmetric reloids}
