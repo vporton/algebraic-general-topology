@@ -131,14 +131,14 @@ By corollary~\ref{fcd-dom-join} we have
 \end{proof}
 
 \begin{thm}
-$(f\sqcup g)|_{\mathcal{B}}\overset{\mu}{\rightarrow}\mathcal{A} \Leftrightarrow
-f|_{\mathcal{B}}\overset{\mu}{\rightarrow}\mathcal{A} \land g|_{\mathcal{B}}\overset{\mu}{\rightarrow}\mathcal{A}$
-for all filters~$\mathcal{A}$,~$\mathcal{B}$ and funcoids~$\mu$, $f$ and~$g$ with suitable images and domains.
+$f|_{\mathcal{B}_0\sqcup\mathcal{B}_1}\overset{\mu}{\rightarrow}\mathcal{A} \Leftrightarrow
+f|_{\mathcal{B}_0}\overset{\mu}{\rightarrow}\mathcal{A} \land f|_{\mathcal{B}_1}\overset{\mu}{\rightarrow}\mathcal{A}$.
+for all filters~$\mathcal{A}$, $\mathcal{B}_0$, $\mathcal{B}_1$ and funcoids~$\mu$, $f$ and~$g$ on suitable sets.
 \end{thm}
 
 \begin{proof}
-By distributivity of the lattices of funcoids we have
-$(f\sqcup g)|_{\mathcal{B}} = f|_{\mathcal{B}}\sqcup g|_{\mathcal{B}}$.
+As easily follows from distributivity of the lattices of funcoids we have
+$f|_{\mathcal{B}_0\sqcup\mathcal{B}_1} = f|_{\mathcal{B}_0}\sqcup f|_{\mathcal{B}_1}$.
 Thus our theorem follows from the previous corollary.
 \end{proof}
 
