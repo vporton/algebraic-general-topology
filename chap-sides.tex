@@ -6,7 +6,7 @@
 Need to generalize further.}
 
 \begin{defn}
-\emph{System of sides} consist of:
+\emph{System of presides} consist of:
 \begin{enumerate}
 \item an ordered category~$\Src\Upsilon$;
 \item a functor $\Upsilon = (f\mapsto\supfun{f})$ from $\Src\Upsilon$
@@ -21,7 +21,13 @@ such that (for all relevant variables):
 
   \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$ (equivalent to $\Upsilon$ to be a join-semilattice homomorphism,
     if we order functions between small bounded lattices component-wise)
+\end{enumerate}
+I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
+\end{defn}
 
+\begin{defn}
+\emph{System of sides} is system of presides with the following additional axioms:
+\begin{enumerate}
   \item $\supfun{\bot} a = \bot$.
 
   \item $\supfun{\top} X = \top$ unless $X = \bot$
@@ -32,11 +38,10 @@ such that (for all relevant variables):
   \item $\supfun{\id_c} = (\lambda x \in \mathfrak{A}: x \sqcap c)$ for every $c \in \mathfrak{A}$
     where $\mathfrak{A}$ is an object of~$\Src\Upsilon$
 \end{enumerate}
-I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
 \end{defn}
 
 \begin{prop}
-$\supfun{1^{\Src\Upsilon}_\mathfrak{A}} X = X$ for every system of sides.
+$\supfun{1^{\Src\Upsilon}_\mathfrak{A}} X = X$ for every system of presides.
 \end{prop}
 
 \begin{proof}
@@ -44,21 +49,21 @@ By properties of functors.
 \end{proof}
 
 \begin{defn}
-I call a system of \emph{monotone} sides a system of sides with additional axiom:
+I call a system of \emph{monotone} presides a system of presides with additional axiom:
 \begin{enumerate}
 \item $\supfun{a}$ is monotone.
 \end{enumerate}
 \end{defn}
 
 \begin{defn}
-I call a system of \emph{distributive} sides a system of sides with additional axiom:
+I call a system of \emph{distributive} presides a system of presides with additional axiom:
 \begin{enumerate}
 \item $\supfun{a}(X\sqcup Y) = \supfun{a}X\sqcup\supfun{a}Y$.
 \end{enumerate}
 \end{defn}
 
 \begin{obvious}
-Every distributive system of sides is monotone.
+Every distributive system of presides is monotone.
 \end{obvious}
 
 \begin{prop}
@@ -84,7 +89,7 @@ are also a (distributive) side.
 \fxnote{$\mathbf{Rel}$~is a system of sides.}
 
 \begin{defn}
-A \emph{bijective} system of sides is a system of sides with faithful functor~$\Upsilon$.
+A \emph{bijective} system of presides is a system of presides with faithful functor~$\Upsilon$.
 \end{defn}
 
 \begin{defn}
