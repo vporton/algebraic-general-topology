@@ -6,13 +6,10 @@
 Need to generalize further.}
 
 \begin{defn}
-\emph{System of presides} consist of:
-\begin{enumerate}
-\item an ordered category~$\Src\Upsilon$;
-\item a functor $\Upsilon = (f\mapsto\supfun{f})$ from $\Src\Upsilon$
-  to the category of functions between (small) bounded lattices;
-  \fxwarning{Lattices (rather than join semilattices) are needed only for the special case of sides.}
-\end{enumerate}
+\emph{System of presides} is
+a functor $\Upsilon = (f\mapsto\supfun{f})$ from an ordered category
+to the category of functions between (small) bounded lattices,
+\fxwarning{Lattices (rather than join semilattices) are needed only for the special case of sides.}
 such that (for all relevant variables):
 \begin{enumerate}
   \item Every Hom-set of~$\Src\Upsilon$ is a bounded join-semilattice.
@@ -20,7 +17,7 @@ such that (for all relevant variables):
   \item $\supfun{a}\bot = \bot$.
 
   \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$ (equivalent to $\Upsilon$ to be a join-semilattice homomorphism,
-    if we order functions between small bounded lattices component-wise)
+    if we order functions between small bounded lattices component-wise).
 \end{enumerate}
 I call morphisms of such categories \emph{sides}.\footnote{The idea for the name is that we consider one ``side''~$\supfun{f}$ of a funcoid instead of both sides~$\supfun{f}$ and~$\supfun{f^{-1}}$.}
 \end{defn}
