@@ -88,10 +88,6 @@ are also a (distributive) side.
 \fxnote{$\mathbf{Rel}$~is a system of sides.}
 
 \begin{defn}
-A \emph{bijective} system of presides is a system of presides with faithful functor~$\Upsilon$.
-\end{defn}
-
-\begin{defn}
 \emph{Sidish} category of pointfree protofuncoids is a (wide?) subcategory of the category of pointfree protofuncoids,
 such that both $f\mapsto\supfun{f}$ and $f\mapsto\supfun{f^{-1}}$ define systems of sides.
 \fxwarning{Specify what ``define systems of sides'' means.}
@@ -132,11 +128,11 @@ B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{ca
 \end{proof}
 
 \begin{cor}
-For bijective systems of sides binary product can be defined no more than in one way.
+For fully faithful systems of sides binary product can be defined no more than in one way.
 \end{cor}
 
 \begin{prop}
-For bijective systems of sides axiom~\ref{f-xy-x0y0} follows from axiom~\ref{f-c-x-y}.
+For fully faithful systems of sides axiom~\ref{f-xy-x0y0} follows from axiom~\ref{f-c-x-y}.
 \end{prop}
 
 \begin{proof}
@@ -148,7 +144,7 @@ Thus
 \begin{cases}\bot&\text{ if }X_0\sqcap X_1\asymp P\\Y_0\sqcap Y_1&\text{ if }X_0\sqcap X_1\nasymp P\end{cases} = \\
 \supfun{(X_0\sqcap X_1)\times(Y_0\sqcap Y_1)} P.
 \end{multline*}
-So $(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ follows by bijectivity.
+So $(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ follows by full faithfulness.
 \end{proof}
 
 \fxnote{Hm, what about alternative definition of product (for example the ``second'' product) for reloids?}
