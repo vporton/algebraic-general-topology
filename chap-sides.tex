@@ -10,7 +10,7 @@ such that (for all relevant variables):
 \begin{enumerate}
   \item Every Hom-set of~$\Src\Upsilon$ is a bounded join-semilattice.
 
-  \item $\supfun{a}\bot^{\Src\supfun{a}} = \bot^{\Dst\supfun{a}}$.
+  \item $\supfun{a}\bot = \bot$.
 
   \item $\supfun{a \sqcup b} X = \supfun{a} X \sqcup \supfun{b} X$ (equivalent to $\Upsilon$ to be a join-semilattice homomorphism,
     if we order functions between small bounded lattices component-wise).
@@ -27,9 +27,9 @@ We could generalize to functions between small join-semilattices with least elem
 a morphism $\id_X\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $X\in\mathfrak{A}$
 and the following additional axioms: \fxwarning{$\bot$ and $\top$ are defined only for specific Hom-sets.}
 \begin{enumerate}
-  \item $\supfun{\bot} a = \bot$.
+  \item $\supfun{\bot^{\Hom(X;Y)}} a = \bot$.
 
-  \item $\supfun{\top} X = \top$ unless $X = \bot$
+  \item $\supfun{\top^{\Hom(X;Y)}} X = \top$ unless $X = \bot$
 
   \item $\id_c \sqsubseteq 1_{\mathfrak{A}}$ for every $c \in \mathfrak{A}$
     where $\mathfrak{A}$ is an object of~$\Src\Upsilon$.
