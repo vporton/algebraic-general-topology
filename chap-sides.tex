@@ -23,14 +23,20 @@ We could generalize to functions between small join-semilattices with least elem
 \end{rem}
 
 \begin{defn}
-\emph{System of sides} is system of presides from an ordered category with bounded Hom-sets with
-a morphism $\id_a\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $a\in\mathfrak{A}$
-and $X,Y\in\Ob\Src\Upsilon$ and the following additional axioms:
+\emph{Bounded} system of presides is system of presides from an ordered category with bounded Hom-sets
+such that $X,Y\in\Ob\Src\Upsilon$ the following additional axioms hold for all suitable~$a$:
 \begin{enumerate}
   \item $\supfun{\bot^{\Hom(X;Y)}} a = \bot$.
 
   \item $\supfun{\top^{\Hom(X;Y)}} a = \top$ unless $a = \bot$
+\end{enumerate}
+\end{defn}
 
+\begin{defn}
+\emph{System of sides} is bounded system of presides with
+a morphism $\id_a\in\Src\Upsilon$ for every object $\mathfrak{A}$ of~$\Src\Upsilon$ and $a\in\mathfrak{A}$
+and the following additional axioms:
+\begin{enumerate}
   \item $\id_c \sqsubseteq 1_{\mathfrak{A}}$ for every $c \in \mathfrak{A}$
     where $\mathfrak{A}$ is an object of~$\Src\Upsilon$.
 
