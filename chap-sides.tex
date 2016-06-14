@@ -83,7 +83,7 @@ if Hom-sets are lattices.
 \begin{defn}
 A system of presides \emph{with correct identities} is a system of presides with identities with additional axiom:
 \begin{enumerate}
-\item $\id_a\circ\id_b = \id_{a\sqcap b}$.
+\item $\id_b\circ\id_a = \id_{a\sqcap b}$.
 \end{enumerate}
 \end{defn}
 
@@ -92,7 +92,8 @@ Every faithful system of presides with identities is with correct identities.
 \end{prop}
 
 \begin{proof}
-\fxnote{Prove.}
+$\supfun{\id_b\circ\id_a}x = (\supfun{\id_b}\circ\supfun{\id_a})x = \supfun{\id_b}\supfun{\id_a}x = b\sqcap a\sqcap x = \supfun{\id_{b\sqcap a}}x$.
+Thus by faithfulness $\id_b\circ\id_a = \id_{b\sqcap a} = \id_{a\sqcap b}$.
 \end{proof}
 
 \begin{defn}
