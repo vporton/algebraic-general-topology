@@ -534,6 +534,56 @@ If $\mathfrak{A}$ and $\mathfrak{B}$ have least elements, then $\mathsf{pFCD}(\m
 has least element.\end{prop}
 \begin{proof}
 It is $(\mathfrak{A};\mathfrak{B};\mathfrak{A}\times\{\bot^{\mathfrak{B}}\};\mathfrak{B}\times\{\bot^{\mathfrak{A}}\})$.\end{proof}
+
+\begin{thm}
+If $\mathfrak{A}$ and $\mathfrak{B}$ are bounded posets, then $\mathsf{pFCD}(\mathfrak{A}; \mathfrak{B})$ is bounded.
+\end{thm}
+
+\begin{proof}
+That $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{B})$ has least element was proved
+above. I will demonstrate that $(\mathfrak{A}; \mathfrak{B}; \alpha ; \beta)$
+is the greatest element of $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{B})$ for
+\[ \alpha X = \begin{cases}
+     \bot^{\mathfrak{B}} & \text{if } X = \bot^{\mathfrak{A}}\\
+     \top^{\mathfrak{B}} & \text{if } X \neq \bot^{\mathfrak{A}}
+   \end{cases} ; \quad
+   \beta Y = \begin{cases}
+     \bot^{\mathfrak{A}} & \text{if } Y = \bot^{\mathfrak{B}}\\
+     \top^{\mathfrak{A}} & \text{if } Y \neq \bot^{\mathfrak{B}}
+   \end{cases} . \]
+First prove $Y \nasymp \alpha X \Leftrightarrow X \nasymp \beta Y$.
+
+If $\top^{\mathfrak{B}} = \bot^{\mathfrak{B}}$ then $Y \nasymp \alpha X
+\Leftrightarrow Y \nasymp \bot^{\mathfrak{B}} \Leftrightarrow 0
+\Leftrightarrow X \nasymp \bot^{\mathfrak{A}} \Leftrightarrow X \nasymp \beta
+\bot^{\mathfrak{A}}$ (proposition~\ref{pfcd-zero}). The case $\top^{\mathfrak{A}} =
+\bot^{\mathfrak{A}}$ is similar. So we can assume $\top^{\mathfrak{A}} \neq
+\bot^{\mathfrak{A}}$ and $\top^{\mathfrak{B}} \neq \bot^{\mathfrak{B}}$.
+
+Consider all variants:
+\begin{description}
+  \item[$X = \bot^{\mathfrak{A}}$ and $Y = \bot^{\mathfrak{B}}$] $Y \nasymp
+  \alpha X \Leftrightarrow 0 \Leftrightarrow X \nasymp \beta Y$.
+  
+  \item[$X \neq \bot^{\mathfrak{A}}$ and $Y \neq \bot^{\mathfrak{B}}$] $\alpha
+  X = \top^{\mathfrak{B}}$ and $\beta Y = \top^{\mathfrak{A}}$; $Y \nasymp
+  \alpha X \Leftrightarrow Y \nasymp \top^{\mathfrak{B}} \Leftrightarrow 1
+  \Leftrightarrow X \nasymp \top^{\mathfrak{A}} \Leftrightarrow X \nasymp
+  \beta Y$ (used that $\top^{\mathfrak{A}} \neq \bot^{\mathfrak{A}}$ and
+  $\top^{\mathfrak{B}} \neq \bot^{\mathfrak{B}}$).
+  
+  \item[$X = \bot^{\mathfrak{A}}$ and $Y \neq \bot^{\mathfrak{B}}$] $\alpha X
+  = \bot^{\mathfrak{B}}$ (proposition~\ref{pfcd-zero}) and $\beta Y =
+  \top^{\mathfrak{A}}$; $Y \nasymp \alpha X \Leftrightarrow Y \nasymp
+  \bot^{\mathfrak{B}} \Leftrightarrow 0 \Leftrightarrow \bot^{\mathfrak{A}}
+  \nasymp \beta Y \Leftrightarrow X \nasymp \beta Y$.
+  
+  \item[$X = \bot^{\mathfrak{A}}$ and $Y \neq \bot^{\mathfrak{B}}$] Similar.
+\end{description}
+It's easy to show that both $\alpha$ and $\beta$ are the greatest possible
+components of a pointfree funcoid taking into account proposition~\ref{pfcd-zero}.
+\end{proof}
+
 \begin{thm}
 \label{pf-join-core}Let $(\mathfrak{A};\mathfrak{Z}_{0})$ and $(\mathfrak{B};\mathfrak{Z}_{1})$
 be primary filtrators over boolean lattices. Then for $R\in\subsets\mathsf{pFCD}(\mathfrak{A};\mathfrak{B})$
@@ -1711,7 +1761,7 @@ a\sqcap^{\mathfrak{A}}\supfun{f^{-1}}(i\sqcap j)\ne\bot^{\mathfrak{A}}\Leftright
 \end{gather*}
 
 \item [{\ref{pf-thm:func-mono-intr-flt}$\Rightarrow$\ref{pf-thm:func-mono-def}}] $\supfun{f^{-1}}a\sqcap\supfun{f^{-1}}b=\supfun{f^{-1}}(a\sqcap b)=\supfun{f^{-1}}\bot^{\mathfrak{B}}=\bot^{\mathfrak{A}}$
-(by proposition \ref{pfcd-zero})
+(by proposition~\ref{pfcd-zero})
 for every two distinct $a,b\in\atoms^{\mathfrak{B}}$. This is equivalent
 to $\lnot(\supfun{f^{-1}}a\suprel fb)$; $b\sqcap\supfun f\supfun{f^{-1}}a=\bot^{\mathfrak{B}}$;
 $b\sqcap\supfun{f\circ f^{-1}}a=\bot^{\mathfrak{B}}$; $\lnot(a\suprel{f\circ f^{-1}}b)$.
