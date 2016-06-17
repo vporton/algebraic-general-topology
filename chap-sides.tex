@@ -11,19 +11,31 @@ Here I will denote $\supfun{f}$ the lower adjoint of a Galois connection~$f$. \f
 I will denote $(f;g)^{-1}=(g;f)$ for a Galois connection~$(f;g)$.
 
 We will order Galois connections by the formula
-\[ f\sqsubseteq g \Leftrightarrow \supfun{f}\sqsubseteq\supfun{g} \Leftrightarrow \supfun{f^{-1}}\sqsubseteq\supfun{g^{-1}}. \]
+\[ f\sqsubseteq g \Leftrightarrow \supfun{f}\sqsubseteq\supfun{g} \Leftrightarrow \supfun{f^{-1}}\sqsupseteq\supfun{g^{-1}}. \]
 
 \begin{obvious}
 This defines a partial order on the set of Galois connections between any two (fixed) posets.
 \end{obvious}
 
 \begin{prop}
-If $f$ and~$g$ are Galois connections (between some fixed posets \fxerror{join-semilattices}), then there exists a Galois connection~$f\sqcup g$
-determined by the formula~$\supfun{f\sqcup g}p = \supfun{f}p\sqcup\supfun{g}p$.
+If $f$ and~$g$ are Galois connections (between a join-semilattice~$\mathfrak{A}$ and a meet-semilattice~$\mathfrak{B}$),
+then there exists a Galois connection~$f\sqcup g$
+determined by the formula~$\supfun{f\sqcup g}x = \supfun{f}x\sqcup\supfun{g}x$.
 \end{prop}
 
 \begin{proof}
-??
+It is enough to prove that
+\[ (x\mapsto\supfun{f}x\sqcup\supfun{g}x; y\mapsto\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y) \]
+is a Galois connection that is that
+\[ \supfun{f}x\sqcup\supfun{g}x\sqsubseteq y\Leftrightarrow x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y \] for all relevant~$x$ and~$y$.
+
+Really,
+\begin{multline*}
+\supfun{f}x\sqcup\supfun{g}x\sqsubseteq y \Leftrightarrow
+\supfun{f}x\sqsubseteq y\land\supfun{g}x\sqsubseteq y \Leftrightarrow \\
+x\sqsubseteq\supfun{f^{-1}}y\land x\sqsubseteq\supfun{g^{-1}}y \Leftrightarrow
+x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y.
+\end{multline*}
 \end{proof}
 
 \section{Definition}
