@@ -21,7 +21,7 @@ We will order Galois connections by the formula
 This defines a partial order on the set of Galois connections between any two (fixed) posets.
 \end{obvious}
 
-\begin{prop}
+\begin{prop}\label{gal-fjoin-x}
 If $f$ and~$g$ are Galois connections (between a join-semilattice~$\mathfrak{A}$ and a meet-semilattice~$\mathfrak{B}$),
 then there exists a Galois connection~$f\sqcup g$
 determined by the formula~$\supfun{f\sqcup g}x = \supfun{f}x\sqcup\supfun{g}x$.
@@ -72,7 +72,7 @@ a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with leas
 \fxwarning{Clarify.}
 \end{cor}
 
-\begin{thm}
+\begin{thm}\label{gal-bound}
 If $\mathfrak{A}$ and $\mathfrak{B}$ are bounded posets, then $\mathsf{GAL}(\mathfrak{A}; \mathfrak{B})$ is bounded.
 \end{thm}
 
@@ -95,7 +95,7 @@ Really $\alpha X\sqsubseteq Y \Leftrightarrow X=\bot^{\mathfrak{A}}\lor Y=\top^{
 That it is the greatest Galois connection between~$\mathfrak{A}$ and~$\mathfrak{B}$ easily follows from proposition~\ref{a-bot}.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{gal-id-ex}
   For every brouwerian lattice $x \mapsto c \sqcap x$ is a lower adjoint.
 \end{thm}
 
@@ -259,10 +259,38 @@ The category of pointfree funcoids between bounded starrish lattices with usual~
 
 \subsection{Galois connections}
 
-It seems \fxwarning{Check!} that Galois connections between boolean lattices \fxnote{A wider class of lattices?}
-are also a (distributive) side.
+\begin{prop}
+The category of Galois connections between (small) lattices with least elements together with usual~$\supfun{f}$
+defines a distributive system of presides.
+\end{prop}
 
-\fxnote{Reloids (and pointfree reloids?) also can be made into a side?}
+\begin{proof}
+Propositions~\ref{gal-fjoin-x} and~\ref{a-bot} for a system of presides.
+
+It is distributive because lower adjoints preserve all joins.
+\end{proof}
+
+\begin{prop}
+The category of Galois connections between (small) bounded lattices together with usual~$\supfun{f}$
+defines a bounded system of presides.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{gal-bound}.
+\end{proof}
+
+\begin{prop}
+The category of Galois connections between (small) Heyting lattices together with usual~$\supfun{f}$
+defines a system of sides with correct identities.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{gal-id-ex} ensures that they a system of sides with identities. The identities are correct due to faithfulness.
+\end{proof}
+
+\subsection{Reloids}
+
+??
 
 \fxnote{These examples works for (dagger) systems of sides with binary product.}
 
