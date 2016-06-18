@@ -41,6 +41,10 @@ x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y.
 \fxnote{Describe infinite join of Galois connections.}
 
 \begin{prop}
+
+\end{prop}
+
+\begin{prop}
 $(\mathfrak{A}\times\{\bot^\mathfrak{B}\}; \mathfrak{B}\times\{\top^\mathfrak{A}\})$ is the least Galois connection from
 a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with least element.
 \end{prop}
@@ -52,6 +56,12 @@ But this is trivially equivalent to $1\Leftrightarrow 1$. Thus it's a Galois con
 
 That it the least is obvious.
 \end{proof}
+
+\begin{cor}
+$\supfun{\bot}a=\bot$ for Galois connections from
+a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with least element.
+\fxwarning{Clarify.}
+\end{cor}
 
 \section{Definition}
 
@@ -299,9 +309,10 @@ The following negative result generalizes (?) theorem~3.8 in~\cite{tprod-dist-la
 \begin{prop}
   The element $1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$ is not
   complemented if $\mathfrak{A}$ is a non-atomic boolean lattice,
-  for every monotone system of sides.
+  for every monotone system of presides with identities.
   \fxwarning{Does we need also faithfulness? (or only special case for the side~$\bot$?)
   Oh well, $\supfun{f}x\sqsupset\bot \Rightarrow f\ne\bot \Rightarrow f\sqsupset\bot$.}
+  \fxwarning{Check again.}
 \end{prop}
 
 \begin{proof}
