@@ -40,6 +40,19 @@ x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y.
 
 \fxnote{Describe infinite join of Galois connections.}
 
+\begin{prop}
+$(\mathfrak{A}\times\{\bot^\mathfrak{B}\}; \mathfrak{B}\times\{\top^\mathfrak{A}\})$ is the least Galois connection from
+a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with least element.
+\end{prop}
+
+\begin{proof}
+Let's prove that it is a Galois connection. We need to prove
+\[ (\mathfrak{A}\times\{\bot^\mathfrak{B}\})x\sqsubseteq y \Leftrightarrow x\sqsubseteq (\mathfrak{B}\times\{\top^\mathfrak{A}\})y. \]
+But this is trivially equivalent to $1\Leftrightarrow 1$. Thus it's a Galois connection.
+
+That it the least is obvious.
+\end{proof}
+
 \section{Definition}
 
 \begin{defn}
