@@ -8,6 +8,9 @@ First consider some properties of Galois connections:
 
 Here I will denote $\supfun{f}$ the lower adjoint of a Galois connection~$f$. \fxnote{Switch to this notation in the book?}
 
+Let $\mathsf{GAL}$ be the category of Galois connections.
+\fxwarning{Need to decide whether use $\mathsf{GAL}(A;B)$ or $A\otimes B$.}
+
 I will denote $(f;g)^{-1}=(g;f)$ for a Galois connection~$(f;g)$.
 
 We will order Galois connections by the formula
@@ -40,7 +43,7 @@ x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y.
 
 \fxnote{Describe infinite join of Galois connections.}
 
-\begin{prop}
+\begin{prop}\label{a-bot}
 If $\mathfrak{A}$ is a poset with least element, then $\supfun{a}\bot=\bot$.
 \end{prop}
 
@@ -67,6 +70,29 @@ $\supfun{\bot}x=\bot$ for Galois connections from
 a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with least element.
 \fxwarning{Clarify.}
 \end{cor}
+
+\begin{thm}
+If $\mathfrak{A}$ and $\mathfrak{B}$ are bounded posets, then $\mathsf{GAL}(\mathfrak{A}; \mathfrak{B})$ is bounded.
+\end{thm}
+
+\begin{proof}
+That $\mathsf{GAL} (\mathfrak{A}; \mathfrak{B})$ has least element was proved
+above. I will demonstrate that $(\alpha ; \beta)$
+is the greatest element of $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{B})$ for
+\[ \alpha X = \begin{cases}
+     \bot^{\mathfrak{B}} & \text{if } X = \bot^{\mathfrak{A}}\\
+     \top^{\mathfrak{B}} & \text{if } X \neq \bot^{\mathfrak{A}}
+   \end{cases} ; \quad
+   \beta Y = \begin{cases}
+     \top^{\mathfrak{A}} & \text{if } Y = \top^{\mathfrak{B}}\\
+     \bot^{\mathfrak{A}} & \text{if } Y \neq \top^{\mathfrak{B}}
+   \end{cases} . \]
+First prove $Y \sqsubseteq \alpha X \Leftrightarrow X \sqsubseteq \beta Y$.
+
+Really $\alpha X\sqsubseteq Y \Leftrightarrow X=\bot^{\mathfrak{A}}\lor Y=\top^{\mathfrak{B}} \Leftrightarrow X \sqsubseteq \beta Y$.
+
+That it is the greatest Galois connection between~$\mathfrak{A}$ and~$\mathfrak{B}$ easily follows from proposition~\ref{a-bot}.
+\end{proof}
 
 \begin{thm}
   For every brouwerian lattice $x \mapsto c \sqcap x$ is a lower adjoint.
