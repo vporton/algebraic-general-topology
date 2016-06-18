@@ -41,8 +41,13 @@ x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y.
 \fxnote{Describe infinite join of Galois connections.}
 
 \begin{prop}
-
+If $\mathfrak{A}$ is a poset with least element, then $\supfun{a}\bot=\bot$.
 \end{prop}
+
+\begin{proof}
+$\supfun{a}\bot\sqsubseteq y\Leftrightarrow \bot\sqsubseteq\supfun{a^{-1}}y\Leftrightarrow 1$.
+Thus $\supfun{a}\bot$ is the least element.
+\end{proof}
 
 \begin{prop}
 $(\mathfrak{A}\times\{\bot^\mathfrak{B}\}; \mathfrak{B}\times\{\top^\mathfrak{A}\})$ is the least Galois connection from
@@ -58,7 +63,7 @@ That it the least is obvious.
 \end{proof}
 
 \begin{cor}
-$\supfun{\bot}a=\bot$ for Galois connections from
+$\supfun{\bot}x=\bot$ for Galois connections from
 a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with least element.
 \fxwarning{Clarify.}
 \end{cor}
