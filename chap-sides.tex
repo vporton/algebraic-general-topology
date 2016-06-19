@@ -384,21 +384,8 @@ B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{ca
 \end{multline*}
 \end{proof}
 
-\fxwarning{Rewrite below using the above definition.}
-
-\begin{defn}
-A \emph{system of sides with binary product} is a system of sides together with functions $\mathord{\times}:\mathfrak{A}\rightarrow\mathfrak{B}$
-\fxerror{Wrong source and destination.}
-for every objects~$\mathfrak{A}$,~$\mathfrak{B}$, such that
-\begin{enumerate}
-\item \label{f-c-x-y}$f\sqcap(X\times Y) = \id_Y\circ f\circ\id_X$
-\item \label{f-xy-x0y0}$(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$
-\item $f\circ(X\times Y) = X\times\supfun{f}Y$
-\end{enumerate}
-\end{defn}
-
 \begin{prop}
-For faithful systems of sides axiom~\ref{f-xy-x0y0} follows from axiom~\ref{f-c-x-y}.
+$(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ for faithful systems of presides with identities.
 \end{prop}
 
 \begin{proof}
@@ -412,6 +399,22 @@ Thus
 \end{multline*}
 So $(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ follows by full faithfulness.
 \end{proof}
+
+\begin{prop}
+$(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ for systems of presides with correct identities.
+\end{prop}
+
+\begin{proof}
+$(X_0 \times Y_0) \sqcap (X_1 \times Y_1) = \id_{Y_1} \circ (X_0 \times
+Y_0) \circ \id_{X_1} = \id_{Y_1} \circ (\id_{Y_0} \circ \top
+\circ \id_{X_0}) \circ \id_{X_1} = \id_{Y_0 \sqcap Y_1}
+\circ \top \circ \id_{X_0 \sqcap X_1} = (X_0 \sqcap X_1) \times (Y_0
+\sqcap Y_1)$.
+\end{proof}
+
+\fxwarning{Rewrite below using the above definition.}
+
+When $f\circ(X\times Y) = X\times\supfun{f}Y$?
 
 \fxnote{Prove existence of binary product for the system of sides for Galois connections.}
 
