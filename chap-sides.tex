@@ -334,6 +334,10 @@ Reloids with the functor $f\mapsto\supfun{\tofcd f}$ and usual $\id_c$ form a sy
 \end{prop}
 
 \begin{proof}
+It is really a functor because
+$\supfun{\tofcd g}\circ\supfun{\tofcd f} = \supfun{\tofcd g\circ\tofcd f} = \supfun{\tofcd(g\circ f)}$
+for every composable reloids~$f$ and~$g$.
+
 $\supfun{a}\bot = \supfun{\tofcd a}\bot = \bot$;
 \begin{multline*}
 \supfun{a\sqcup b}X = \supfun{\tofcd(a\sqcup b)}X = \supfun{\tofcd a\sqcup\tofcd b)}X = \\
