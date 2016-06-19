@@ -376,16 +376,21 @@ $\supfun{A\times B}X = \begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\na
 \begin{proof}
 ~
 \begin{multline*}
-\supfun{A\times B}X = \supfun{\id_B\circ\top\circ\id_A}X = \\
-\supfun{\id_B}\supfun{\top}\supfun{\id_A}X =
-B\sqcap\supfun{\top}(X\sqcap A) = \\
+\supfun{A\times B}X = \supfun{\id_B\circ\top\circ\id_A}X =
+\supfun{\id_B}\supfun{\top}\supfun{\id_A}X = \\
+B\sqcap\supfun{\top}(X\sqcap A) =
 B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{cases} =
 \begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}
 \end{multline*}
 \end{proof}
 
+\begin{defn}
+I will call a system of sides \emph{with correct meet} when
+\[ (X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1). \]
+\end{defn}
+
 \begin{prop}
-$(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ for faithful systems of presides with identities.
+Faithful systems of presides with identities are with correct meet.
 \end{prop}
 
 \begin{proof}
@@ -401,7 +406,7 @@ So $(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$
 \end{proof}
 
 \begin{prop}
-$(X_0\times Y_0)\sqcap(X_1\times Y_1) = (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$ for systems of presides with correct identities.
+Systems of presides with correct identities are with correct meet.
 \end{prop}
 
 \begin{proof}
@@ -412,9 +417,8 @@ Y_0) \circ \id_{X_1} = \id_{Y_1} \circ (\id_{Y_0} \circ \top
 \sqcap Y_1)$.
 \end{proof}
 
-\fxwarning{Rewrite below using the above definition.}
-
-When $f\circ(X\times Y) = X\times\supfun{f}Y$?
+For some sides holds the formula $f\circ(X\times Y) = X\times\supfun{f}Y$.
+I refrain to give a name for this property.
 
 \fxnote{Prove existence of binary product for the system of sides for Galois connections.}
 
