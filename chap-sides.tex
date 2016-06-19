@@ -369,6 +369,21 @@ System of presides with identities is \emph{with correct binary product} when $f
 for every preside~$f$.
 \end{defn}
 
+\begin{prop}
+$\supfun{A\times B}X = \begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}$
+\end{prop}
+
+\begin{proof}
+~
+\begin{multline*}
+\supfun{A\times B}X = \supfun{\id_B\circ\top\circ\id_A}X = \\
+\supfun{\id_B}\supfun{\top}\supfun{\id_A}X =
+B\sqcap\supfun{\top}(X\sqcap A) = \\
+B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{cases} =
+\begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}
+\end{multline*}
+\end{proof}
+
 \fxwarning{Rewrite below using the above definition.}
 
 \begin{defn}
@@ -381,27 +396,6 @@ for every objects~$\mathfrak{A}$,~$\mathfrak{B}$, such that
 \item $f\circ(X\times Y) = X\times\supfun{f}Y$
 \end{enumerate}
 \end{defn}
-
-\begin{prop}
-$\supfun{A\times B}X = \begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}$
-\end{prop}
-
-\begin{proof}
-~
-\begin{multline*}
-\supfun{A\times B}X = \supfun{\top\sqcap(A\times B)}X = \supfun{\id_B\circ\top\circ\id_A}X = \\
-\supfun{\id_B}\supfun{\top}\supfun{\id_A}X =
-B\sqcap\supfun{\top}(X\sqcap A) = \\
-B\sqcap\begin{cases}\bot&\text{ if }X\asymp A\\\top&\text{ if }X\nasymp A\end{cases} =
-\begin{cases}\bot&\text{ if }X\asymp A\\B&\text{ if }X\nasymp A\end{cases}
-\end{multline*}
-\end{proof}
-
-\begin{cor}
-For faithful systems of sides binary product can be defined no more than in one way.
-\fxnote{Give a definition of faithful.}
-\fxwarning{Not only for faithful, if we define $A\times B=\id_B\circ\top\circ\id_A$.}
-\end{cor}
 
 \begin{prop}
 For faithful systems of sides axiom~\ref{f-xy-x0y0} follows from axiom~\ref{f-c-x-y}.
