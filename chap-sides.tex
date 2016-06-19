@@ -334,7 +334,19 @@ Reloids with the functor $f\mapsto\supfun{\tofcd f}$ and usual $\id_c$ form a sy
 \end{prop}
 
 \begin{proof}
-??
+$\supfun{a}\bot = \supfun{\tofcd a}\bot = \bot$;
+\begin{multline*}
+\supfun{a\sqcup b}X = \supfun{\tofcd(a\sqcup b)}X = \supfun{\tofcd a\sqcup\tofcd b)}X = \\
+\supfun{\tofcd a}X\sqcup\supfun{\tofcd b}X = \supfun{a}X\sqcup\supfun{b}X;
+\end{multline*}
+thus it is a system of presides.
+
+That this is a bounded system of presides follows from the formulas
+$\tofcd\bot^{\mathsf{RLD}(A;B)}=\bot$ and $\tofcd\top^{\mathsf{RLD}(A;B)}=\top$.
+
+It is with identities, because ??.
+
+It is with correct identities because ??.
 \end{proof}
 
 \fxnote{Also for pointfree reloids.}
