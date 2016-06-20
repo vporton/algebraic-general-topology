@@ -467,12 +467,33 @@ The following negative result generalizes theorem~3.8 in~\cite{tprod-dist-lat}.
 
 \section{Dagger systems of sides}
 
+\begin{prop}
+~
+\begin{enumerate}
+\item For a partially ordered dagger category, each of Hom-set of which has least element, we have $\bot^\dagger = \bot$.
+\item For a partially ordered dagger category, each of Hom-set of which has greatest element, we have $\top^\dagger = \top$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$\forall f\in\Hom(A;B):\bot^\dagger\sqsubseteq f \Leftrightarrow
+\forall f\in\Hom(A;B):\bot\sqsubseteq f^\dagger \Leftrightarrow
+\forall f\in\Hom(A;B):\bot\sqsubseteq f \Leftrightarrow 1$. Thus $\bot^\dagger$ is the least.
+
+The other items is dual.
+\end{proof}
+
 \begin{defn}
-\emph{Dagger system of sides} is system of sides with category~$\Src\Upsilon$ being a dagger category
+\emph{Dagger system of presides with identities} is system of presides with identities with category~$\Src\Upsilon$ being
+a partially ordered dagger category
 and $(\id_X)^\dagger = \id_X$ for every~$X$.
 \end{defn}
 
-\begin{defn}
-\emph{Dagger system of sides with binary products} is a system which is both a dagger system of sides and system of sides with binary products
-such that $(X\times Y)^\dagger = Y\times X$.
-\end{defn}
+\begin{prop}
+For a system of sides we have $(X\times Y)^\dagger = Y\times X$.
+\end{prop}
+
+\begin{proof}
+$(X\times Y)^\dagger = (\id_Y\circ\top\circ\id_X)^\dagger = \id_X^\dagger\circ\top^\dagger\circ\id_Y^\dagger =
+\id_X\circ\top\circ\id_Y = Y\times X$.
+\end{proof}
