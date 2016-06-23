@@ -1,0 +1,93 @@
+\chapter{Interior funcoids}
+
+Having a funcoid $f$ let define \emph{interior funcoid} $f^{\circ}$.
+
+\begin{defn}
+  Let $f \in \mathsf{\mathsf{FCD}} (A ; B) = \mathsf{\mathsf{pFCD}} \left(
+  \mathscr{T} A ; \mathscr{T} B \right)$ be a co-complete funcoid. Then
+  $f^{\circ} \in \mathsf{\mathsf{pFCD}} \left( \dual \mathscr{T} A ;
+  \dual \mathscr{T} B \right)$ is defined by the formula $\langle
+  f^{\circ} \rangle^{\ast} X = \overline{\supfun{f}
+  \overline{X}}$.
+\end{defn}
+
+\begin{prop}
+  Pointfree funcoid $f^{\circ}$ exists and is unique.
+\end{prop}
+
+\begin{proof}
+  $X \mapsto \overline{\supfun{f} \overline{X}}$ is a component
+  of pointfree funcoid $\dual \mathscr{T} A \rightarrow \dual
+  \mathscr{T} B$ iff $\supfun{f}$ is a component of the
+  corresponding pointfree funcoid $\mathscr{T} A \rightarrow \mathscr{T} B$
+  that is essentially component of the corresponding funcoid
+  $\mathsf{\mathsf{FCD}} (A ; B)$ what holds for a unique funcoid.
+\end{proof}
+
+It can be also defined for arbitrary funcoids by the formula $f^{\circ} =
+(\CoCompl f)^{\circ}$.
+
+\begin{obvious}
+$f^{\circ}$ is co-complete.
+\end{obvious}
+
+\begin{thm}
+  The following values are pairwise equal for a co-complete funcoid $f$ and $X
+  \in \mathscr{T} \Src f$:
+  \begin{enumerate}
+    \item\label{int-simpl} $\rsupfun{f^{\circ}} X$;
+    
+    \item\label{int-set} $\setcond{ y \in \Dst f }{ \rsupfun{ f^{-
+    1} } \{ y \} \sqsubseteq X }$
+    
+    \item\label{int-sset-set} $\bigsqcup \setcond{ Y \in \mathscr{T} \Dst f }{
+    \rsupfun{f^{- 1}} Y \sqsubseteq X }$
+    
+    \item\label{int-sset-flt} $\bigsqcup \setcond{ \mathcal{Y} \in \mathscr{F} \Dst f
+    }{ \supfun{f^{- 1}} \mathcal{Y}
+    \sqsubseteq X }$
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[\ref{int-simpl}=\ref{int-set}] $\setcond{ y \in \Dst f }{
+    \rsupfun{f^{- 1}} \{ y \} \sqsubseteq X } = \setcond{ x \in
+    \Dst f }{ \rsupfun{f^{- 1}} \{
+    x \} \asymp \overline{X} } = \setcond{ x \in \Dst f
+    }{ \{ x \} \asymp \supfun{f}
+    \overline{X} } = \overline{\supfun{f} \overline{X}} =
+    \rsupfun{f^{\circ}} X$.
+    
+    \item[\ref{int-set}=\ref{int-sset-set}] If $\rsupfun{f^{- 1}} Y \sqsubseteq X$ then (by
+    completeness of $f^{- 1}$) $Y = \setcond{ y \in Y }{
+    \rsupfun{f^{- 1}} \{ y \} \sqsubseteq X }$ and thus
+    \[ \bigsqcup \setcond{ Y \in \mathscr{T} \Dst f }
+       { \rsupfun{f^{- 1}} Y \sqsubseteq X }
+       \sqsubseteq \setcond{ y \in \Dst f }{
+       \rsupfun{f^{- 1}} \{ y \} \sqsubseteq X } . \]
+    The reverse inequality is obvious.
+    
+    \item[\ref{int-sset-set}=\ref{int-sset-flt}] It's enough to prove that if $\supfun{f^{- 1}}
+    \mathcal{Y} \sqsubseteq X$ for $\mathcal{Y} \in \mathscr{F} \Dst f$
+    then exists $Y \in \up \mathcal{Y}$ such that $\langle f^{- 1}
+    \rangle^{\ast} Y \sqsubseteq X$. Really let $\supfun{f^{- 1}}
+    \mathcal{Y} \sqsubseteq X$. Then $\bigsqcap \langle \langle f^{- 1}
+    \rangle^{\ast} \rangle^{\ast} \up \mathcal{Y} \sqsubseteq X$ and
+    thus exists $Y \in \up \mathcal{Y}$ such that $\langle f^{- 1}
+    \rangle^{\ast} Y \sqsubseteq X$ by properties of generalized filter bases.
+  \end{description}
+\end{proof}
+
+This coincides with the customary definition of interior in topological
+spaces.
+
+\begin{prop}
+  $f^{\circ \circ} = f$ for every funcoid $f$.
+\end{prop}
+
+\begin{proof}
+  $\rsupfun{f^{\circ\circ}} X = \neg \neg \supfun{f}
+  \neg \neg X = \supfun{f} X$.
+\end{proof}
