@@ -1,0 +1,73 @@
+\chapter{On ``Each regular paratopological group is completely regular'' article}
+
+In this chapter I attempt to rewrite the paper~\cite{2014arXiv1410.1504B} in more general setting of funcoids and reloids.
+I attempt to construct a ``royal road'' to finding proofs of statements of this paper and similar ones, what is
+important because we lose 60 years waiting for any proof.
+
+\section{Definition of normality}
+
+By definition (slightly generalizing the special case if $f$ is a
+quasi-uniform space) an endo-reloid $f$ on a set $U$ is \emph{normal} when
+\[ \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq \rsupfun{
+((\mathsf{FCD}) f)^{\circ}} \rsupfun{(\mathsf{FCD})
+f } \rsupfun{F} A \] for every entourage $F \in
+\up f$ of $f$ and every set $A \subseteq U$.
+
+Note that this is apparently not the same as customary definition of normal topological spaces.
+
+\begin{thm}
+  The following are pairwise equivalent:
+  \begin{enumerate}
+    \item Endoreloid $f$ is normal.
+    
+    \item $(\mathsf{FCD}) f^{- 1} \circ (\mathsf{FCD}) f
+    \sqsubseteq (\mathsf{FCD}) f \circ (\mathsf{FCD}) f$.
+    
+    \item $(\mathsf{FCD}) (f^{- 1} \circ f) \sqsubseteq
+    (\mathsf{FCD}) (f \circ f)$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Equivalently transforming the criterion of normality (which should hold for
+  all $F \in \up f$):
+  
+  $\rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{(\mathsf{FCD}) f^{\circ}}
+  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$;
+  
+  $\rsupfun{(\mathsf{FCD}) f} A \sqsubseteq \neg
+  \rsupfun{(\mathsf{FCD}) f} \neg \rsupfun{ (\mathsf{FCD}) f }
+  \rsupfun{F} A$;
+  
+  $\rsupfun{(\mathsf{FCD}) f} A \asymp
+  \rsupfun{(\mathsf{FCD}) f} \neg \supfun{(\mathsf{FCD}) f} \rsupfun{F} A$;
+  
+  $\rsupfun{(\mathsf{FCD}) f^{- 1}}
+  \rsupfun{(\mathsf{FCD}) f} A \asymp \neg
+  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$;
+  
+  $\rsupfun{(\mathsf{FCD}) f^{- 1}}
+  \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$.
+  
+  Also note:
+  \[ \rsupfun{(\mathsf{FCD}) f} \rsupfun{f} A
+     = \rsupfun{(\mathsf{FCD}) f} \bigsqcap_{F \in
+     \up f} \rsupfun{F} A = \bigsqcap_{F \in \up f}
+     \rsupfun{(\mathsf{FCD}) f} \rsupfun{F}
+     A. \]
+  So $\forall F \in \up f : \rsupfun{ (\mathsf{FCD}) f^{- 1}
+  } \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A
+  \Leftrightarrow \rsupfun{(\mathsf{FCD}) f^{- 1}}
+  \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{(\mathsf{FCD}) f} \rsupfun{f} A$. This is
+  evidently equivalent to $(\mathsf{FCD}) f^{- 1} \circ
+  (\mathsf{FCD}) f \sqsubseteq (\mathsf{FCD}) f \circ
+  (\mathsf{FCD}) f$. The rest of the proof is left as an easy exercise.
+\end{proof}
+
+\begin{cor}
+  Every uniform space is normal.
+\end{cor}
