@@ -52,11 +52,12 @@ Note that this is apparently not the same as customary definition of normal topo
   \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$.
   
   Also note:
-  \[ \rsupfun{(\mathsf{FCD}) f} \rsupfun{f} A
-     = \rsupfun{(\mathsf{FCD}) f} \bigsqcap_{F \in
-     \up f} \rsupfun{F} A = \bigsqcap_{F \in \up f}
-     \rsupfun{(\mathsf{FCD}) f} \rsupfun{F}
-     A. \]
+  \begin{multline*}
+     \rsupfun{(\mathsf{FCD}) f} \rsupfun{f} A = \text{(by lemma~\bookref{fcd-up-x-lem})} \\
+     \rsupfun{(\mathsf{FCD}) f} \bigsqcap_{F \in \up f} \rsupfun{F} A = \text{(because funcoids preserve filtered meets)} \\
+     \bigsqcap_{F \in \up f} \rsupfun{(\mathsf{FCD}) f} \rsupfun{F}
+     A.
+  \end{multline*}
   So $\forall F \in \up f : \rsupfun{ (\mathsf{FCD}) f^{- 1}
   } \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
   \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A
