@@ -248,7 +248,7 @@ $\dom\tofcd f=\dom f$ and $\im\tofcd f=\im f$ for every reloid~$f$.\end{prop}
 
 
 $\dom\tofcd f=\dom f$ is similar.\end{proof}
-\begin{prop}
+\begin{prop}\label{fcd-meet-prod-rld}
 $\tofcd(f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}))=\tofcd f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$
 for every reloid~$f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$ and
 $\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{prop}
@@ -557,6 +557,32 @@ $\Cor\tofcd g=\tofcd\Cor g$ for every reloid $g$.\end{thm}
 \item $\Cor\torldin g=\torldin\Cor g$;
 \item $\Cor\torldout g=\torldout\Cor g$.
 \end{enumerate}
+\end{conjecture}
+
+\begin{thm}
+  For every reloid $f$:
+  \begin{enumerate}
+    \item $\Compl (\mathsf{FCD}) f = (\mathsf{FCD})
+    \Compl f$;
+    \item $\CoCompl (\mathsf{FCD}) f = (\mathsf{FCD})
+    \CoCompl f$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  We will prove only the first, because the second is dual.
+  
+  $\Compl (\mathsf{FCD}) f = \bigsqcup_{\alpha \in \Src f}
+  ((\mathsf{FCD}) f) |_{\uparrow \{ \alpha \}} = \text{(proposition~\ref{fcd-meet-prod-rld})} =
+  \bigsqcup_{\alpha \in \Src f} (\mathsf{FCD})
+  (f|_{\uparrow \{ \alpha \}}) = (\mathsf{FCD}) \bigsqcup_{\alpha \in
+  \Src f} f|_{\uparrow \{ \alpha \}} = (\mathsf{FCD})
+  \Compl f$.
+\end{proof}
+
+\begin{conjecture}
+\item $\Compl\torldin g=\torldin\Compl g$;
+\item $\Compl\torldout g=\torldout\Compl g$.
 \end{conjecture}
 
 \section{\label{fcd-rld}Funcoidal reloids}
