@@ -6,51 +6,45 @@ important because we lose 60 years waiting for any proof.
 
 \section{Definition of normality}
 
-\fxwarning{Ensure that normality of a quasi-uniformity~$f$ corresponds to normality of reloid~$f$ (not $f^{-1}$).}
-
 By definition (slightly generalizing the special case if $f$ is a
-quasi-uniform space) an endo-reloid $f$ on a set $U$ is \emph{normal} when
-\[ \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq \rsupfun{
-(\CoCompl (\mathsf{FCD}) f)^{\circ}} \rsupfun{\CoCompl (\mathsf{FCD})
-f } \rsupfun{F} A \] for every entourage $F \in
+quasi-uniform space) a pair of an endo-reloid~$f$ and a co-complete funcoid~$g$ (playing role of a generalization of a topological space)
+on a set $U$ is \emph{normal} when
+\[ \rsupfun{g} A \sqsubseteq \rsupfun{
+g^{\circ}} \rsupfun{g } \rsupfun{F} A \] for every entourage $F \in
 \up f$ of $f$ and every set $A \subseteq U$.
 
 Note that this is \emph{not} the same as customary definition of normal topological spaces.
 
 \begin{thm}
   An endoreloid $f$ is normal iff
-  \[ \Compl (\mathsf{FCD}) f^{- 1} \circ \CoCompl (\mathsf{FCD}) f \sqsubseteq
-  \CoCompl (\mathsf{FCD}) f \circ (\mathsf{FCD}) f. \]
+  \[ g^{- 1} \circ g \sqsubseteq
+  g \circ (\mathsf{FCD}) f. \]
 \end{thm}
 
 \begin{proof}
   Equivalently transforming the criterion of normality (which should hold for
   all $F \in \up f$) using proposition~\ref{get-rid-interior}:
 
-  $\rsupfun{(\CoCompl (\mathsf{FCD}) f)^{- 1}}
-  \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{F} A$.
-
-  $\rsupfun{\Compl (\mathsf{FCD}) f^{- 1}}
-  \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{F} A$.
+  $\rsupfun{g^{- 1}}
+  \rsupfun{g} A \sqsubseteq
+  \rsupfun{g} \rsupfun{F} A$.
 
   Also note
   
-  $\bigsqcap_{F \in \up f} \rsupfun{ \CoCompl (\mathsf{FCD}) f
+  $\bigsqcap_{F \in \up f} \rsupfun{ g
   } \langle F \rangle^{\ast} A = \text{(because funcoids preserve
-  filtered meets)} = \rsupfun{ \CoCompl (\mathsf{FCD}) f
+  filtered meets)} = \rsupfun{ g
   }  \bigsqcap_{F \in \up f} \rsupfun{F} A =
-  \rsupfun{ \CoCompl (\mathsf{FCD}) f }
+  \rsupfun{ g }
   \rsupfun{ (\mathsf{FCD}) f } A$.
 
   Thus the above is equivalent to
-  $\rsupfun{\Compl (\mathsf{FCD}) f^{- 1}}
-  \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{ \CoCompl (\mathsf{FCD}) f }
+  $\rsupfun{g^{-1}}
+  \rsupfun{g} A \sqsubseteq
+  \rsupfun{ g }
   \rsupfun{ (\mathsf{FCD}) f } A$.
 
   And this is in turn equivalent to
-  \[ \Compl (\mathsf{FCD}) f^{- 1} \circ \CoCompl (\mathsf{FCD}) f \sqsubseteq
-  \CoCompl (\mathsf{FCD}) f \circ (\mathsf{FCD}) f. \]
+  \[ g^{-1} \circ g \sqsubseteq
+  g \circ (\mathsf{FCD}) f. \]
 \end{proof}
