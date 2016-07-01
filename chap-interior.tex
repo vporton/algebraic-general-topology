@@ -91,3 +91,34 @@ spaces.
   $\rsupfun{f^{\circ\circ}} X = \neg \neg \supfun{f}
   \neg \neg X = \supfun{f} X$.
 \end{proof}
+
+\begin{prop}
+  Let $g \in \mathsf{FCD} (A ; B)$, $f \in \mathsf{FCD} (B ;
+  C)$, $h \in \mathsf{FCD} (A ; C)$ for some sets $A$. $B$, $C$.
+  
+  $g \sqsubseteq f^{\circ} \circ h \Leftrightarrow f^{- 1} \circ g \sqsubseteq
+  h$, provided $f$ and $h$ are co-complete.
+\end{prop}
+
+\begin{proof}
+  $g \sqsubseteq f^{\circ} \circ h \Leftrightarrow \forall X \in A : \rsupfun{ g
+  } X \sqsubseteq \rsupfun{ f^{\circ} \circ h } X
+  \Leftrightarrow \forall X \in A : \rsupfun{ g } X \sqsubseteq
+  \rsupfun{ f^{\circ} } \rsupfun{ h } X \Leftrightarrow
+  \forall X \in A : \rsupfun{ g } X \sqsubseteq \neg \rsupfun{ f
+  } \neg \rsupfun{ h } X \Leftrightarrow \forall X \in
+  A : \rsupfun{ g } X \asymp \rsupfun{ f } \neg \rsupfun{
+  h } X \Leftrightarrow \forall X \in A : \rsupfun{ g
+  } X \asymp \rsupfun{ f } \neg \rsupfun{ h
+  } X \Leftrightarrow \forall X \in A : \rsupfun{ f^{- 1}
+  } \rsupfun{ g } X \asymp \neg \rsupfun{ h
+  } X \Leftrightarrow \forall X \in A : \rsupfun{ f^{- 1}
+  } \rsupfun{ g } X \sqsubseteq \rsupfun{ h
+  } X \Leftrightarrow \forall X \in A : \rsupfun{ f^{- 1} \circ g
+  } X \sqsubseteq \rsupfun{ h } X \Leftrightarrow f^{-
+  1} \circ g \sqsubseteq h$.
+\end{proof}
+
+\begin{rem}
+The above theorem allows to get rid of interior funcoids (and use only ``regular'' funcoids) in some formulas.
+\end{rem}
