@@ -6,15 +6,16 @@ important because we lose 60 years waiting for any proof.
 
 \section{Definition of normality}
 
+\fxwarning{This section is in the middle of a rewrite.}
+
 By definition (slightly generalizing the special case if $f$ is a
 quasi-uniform space) an endo-reloid $f$ on a set $U$ is \emph{normal} when
-\[ \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq \rsupfun{
-((\mathsf{FCD}) f)^{\circ}} \rsupfun{(\mathsf{FCD})
+\[ \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq \rsupfun{
+(\CoCompl (\mathsf{FCD}) f)^{\circ}} \rsupfun{\CoCompl (\mathsf{FCD})
 f } \rsupfun{F} A \] for every entourage $F \in
 \up f$ of $f$ and every set $A \subseteq U$.
-\fxerror{$(\mathsf{FCD})f$ is \emph{not} the Kuratowski closure corresponding to the quasi-uniformity~$f$!}
 
-Note that this is apparently not the same as customary definition of normal topological spaces.
+Note that this is \emph{not} the same as customary definition of normal topological spaces.
 
 \begin{thm}
   \fxerror{The proof is with an error.}
@@ -32,44 +33,29 @@ Note that this is apparently not the same as customary definition of normal topo
 
 \begin{proof}
   Equivalently transforming the criterion of normality (which should hold for
-  all $F \in \up f$):
-  
-  $\rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{(\mathsf{FCD}) f^{\circ}}
-  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$;
-  
-  $\rsupfun{(\mathsf{FCD}) f} A \sqsubseteq \neg
-  \rsupfun{(\mathsf{FCD}) f} \neg \rsupfun{ (\mathsf{FCD}) f }
-  \rsupfun{F} A$;
-  
-  $\rsupfun{(\mathsf{FCD}) f} A \asymp
-  \rsupfun{(\mathsf{FCD}) f} \neg \supfun{(\mathsf{FCD}) f} \rsupfun{F} A$;
-  
-  $\rsupfun{(\mathsf{FCD}) f^{- 1}}
-  \rsupfun{(\mathsf{FCD}) f} A \asymp \neg
-  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$;
-  
-  $\rsupfun{(\mathsf{FCD}) f^{- 1}}
-  \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A$.
+  all $F \in \up f$) using proposition~\ref{get-rid-interior}:
+
+  $\rsupfun{\CoCompl (\mathsf{FCD}) f^{- 1}}
+  \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{F} A$.
   
   Also note:
-  \fxerror{Below $F \in \up f$ and $F \in \up (\mathsf{FCD}) f$ are confused.}
+  \fxerror{Below $F \in \up f$ and $F \in \up \CoCompl (\mathsf{FCD}) f$ are confused.}
   \begin{multline*}
-     \rsupfun{(\mathsf{FCD}) f} \rsupfun{(\mathsf{FCD}) f} A = \text{(by lemma~\bookref{fcd-up-x-lem})} \\
-     \rsupfun{(\mathsf{FCD}) f} \bigsqcap_{F \in \up (\mathsf{FCD}) f} \rsupfun{F} A = \text{(because funcoids preserve filtered meets)} \\
-     \bigsqcap_{F \in \up (\mathsf{FCD}) f} \rsupfun{(\mathsf{FCD}) f} \rsupfun{F}
+     \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{\CoCompl (\mathsf{FCD}) f} A = \text{(by lemma~\bookref{fcd-up-x-lem})} \\
+     \rsupfun{\CoCompl (\mathsf{FCD}) f} \bigsqcap_{F \in \up \CoCompl (\mathsf{FCD}) f} \rsupfun{F} A = \text{(because funcoids preserve filtered meets)} \\
+     \bigsqcap_{F \in \up \CoCompl (\mathsf{FCD}) f} \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{F}
      A.
   \end{multline*}
-  So $\forall F \in \up f : \rsupfun{ (\mathsf{FCD}) f^{- 1}
-  } \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{(\mathsf{FCD}) f} \rsupfun{F} A
-  \Leftrightarrow \rsupfun{(\mathsf{FCD}) f^{- 1}}
-  \rsupfun{(\mathsf{FCD}) f} A \sqsubseteq
-  \rsupfun{(\mathsf{FCD}) f} \rsupfun{(\mathsf{FCD}) f} A$. This is
-  evidently equivalent to $(\mathsf{FCD}) f^{- 1} \circ
-  (\mathsf{FCD}) f \sqsubseteq (\mathsf{FCD}) f \circ
-  (\mathsf{FCD}) f$. The rest of the proof is left as an easy exercise.
+  So $\forall F \in \up f : \rsupfun{ \CoCompl (\mathsf{FCD}) f^{- 1}
+  } \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{F} A
+  \Leftrightarrow \rsupfun{\CoCompl (\mathsf{FCD}) f^{- 1}}
+  \rsupfun{\CoCompl (\mathsf{FCD}) f} A \sqsubseteq
+  \rsupfun{\CoCompl (\mathsf{FCD}) f} \rsupfun{\CoCompl (\mathsf{FCD}) f} A$. This is
+  evidently equivalent to $\CoCompl (\mathsf{FCD}) f^{- 1} \circ
+  \CoCompl (\mathsf{FCD}) f \sqsubseteq \CoCompl (\mathsf{FCD}) f \circ
+  \CoCompl (\mathsf{FCD}) f$. The rest of the proof is left as an easy exercise.
 \end{proof}
 
 \begin{cor}
