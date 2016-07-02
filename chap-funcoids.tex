@@ -3091,7 +3091,7 @@ It should refer to a lemma which may use a particular point, but the proof of th
 theorem itself should be without a particular point.
 \end{problem}
 
-\section{\texorpdfstring{$T_{0}$-, $T_{1}$-, $T_{2}$-, and $T_{3}$-separable 
+\section{\texorpdfstring{$T_{0}$-, $T_{1}$-, $T_{2}$-, $T_{3}$-, and $T_{4}$-separable 
 funcoids}%
 {T0-, T1-, T2-, and T3-separable funcoids}}
 
@@ -3197,6 +3197,35 @@ wrong.
 \begin{defn}
 An endofuncoid is $T_{3}$- iff it is both $T_{2}$- and regular.
 \end{defn}
+
+A topological space~$S$ is called $T_4$-separable when for any two disjoint closed sets $A,B\subseteq S$
+there exist disjoint open sets~$U$,~$V$ containing $A$ and $B$ respectively.
+
+Let $f$ be the complete funcoid corresponding to the topological space.
+
+Since the closed sets are exactly sets of the form $\rsupfun{f^{- 1}} X$ and sets $X$ and $Y$ having non-intersecting open
+neighborhood is equivalent to $\rsupfun{f} X \asymp \langle f
+\rangle^{\ast} Y$, the above is equivalent to:
+
+$\rsupfun{f^{-1}} A \asymp \rsupfun{f^{-1}} B
+\Rightarrow \rsupfun{f} \rsupfun{f^{-1}} A \asymp
+\rsupfun{f} \rsupfun{f^{-1}} B$;
+
+$\rsupfun{f} \rsupfun{f^{-1}} A \nasymp \langle f
+\rangle^{\ast} \rsupfun{f^{-1}} B \Rightarrow \langle f^{- 1}
+\rangle^{\ast} A \nasymp \rsupfun{f^{-1}} B$;
+
+$\rsupfun{f} \rsupfun{f^{-1}} \langle f
+\rangle^{\ast} \rsupfun{f^{-1}} A \nasymp B \Rightarrow \langle
+f \rangle^{\ast} \rsupfun{f^{-1}} A \nasymp B$;
+
+$\rsupfun{f} \rsupfun{f^{-1}} \langle f
+\rangle^{\ast} \rsupfun{f^{-1}} A \sqsubseteq \langle f
+\rangle^{\ast} \rsupfun{f^{-1}} A$;
+
+$f \circ f^{- 1} \circ f \circ f^{- 1} \sqsubseteq f \circ f^{- 1}$.
+
+Take the last formula as the definition of $T_4$-funcoid~$f$.
 
 \section{Filters closed regarding a funcoid}
 \begin{defn}
