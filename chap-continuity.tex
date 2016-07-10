@@ -180,6 +180,27 @@ then $\mathsf{\tofcd}f\in\mathrm{C}'(\tofcd\mu;\tofcd\nu)$.\end{thm}
 I leave a simple exercise for the reader to prove the last theorem.
 \end{xca}
 
+\begin{thm}
+Let $\mu$ and $\nu$ be endomorphisms of some partially ordered dagger precategory and
+$f\in\Hom(\Ob\mu;\Ob\nu)$ be a monovalued, entirely defined morphism. Then
+\[ f\in\continuous(\mu;\nu)\Leftrightarrow f\in\continuous(\mu^{\dagger};\nu^{\dagger}). \]
+\end{thm}
+
+\begin{proof}
+$f \circ \mu \sqsubseteq \nu \circ f \Leftrightarrow \mu
+\sqsubseteq f^{\dagger} \circ \nu \circ f \Rightarrow \mu \circ
+f^{\dagger} \sqsubseteq f^{\dagger} \circ \nu \circ f \circ f^{\dagger}
+\Rightarrow \mu \circ f^{\dagger} \sqsubseteq f^{\dagger} \circ \nu
+\Leftrightarrow f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f
+\Rightarrow f^{\dagger} \circ f \circ \mu^{\dagger} \sqsubseteq
+f^{\dagger} \circ \nu^{\dagger} \circ f \Rightarrow \mu^{\dagger}
+\sqsubseteq f^{\dagger} \circ \nu^{\dagger} \circ f \Leftrightarrow \mu
+\sqsubseteq f^{\dagger} \circ \nu \circ f$.
+
+Thus $f \circ \mu \sqsubseteq \nu \circ f \Leftrightarrow \mu \Leftrightarrow
+f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
+\end{proof}
+
 \section{\index{continuity!of restricted morphism}Continuity of a restricted
 morphism}
 
