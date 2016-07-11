@@ -201,6 +201,84 @@ Thus $f \circ \mu \sqsubseteq \nu \circ f \Leftrightarrow \mu \Leftrightarrow
 f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
 \end{proof}
 
+\section{Continuity for topological spaces}
+
+\begin{prop}
+  The following are pairwise equivalent for funcoids $\mu$, $\nu$:
+  \begin{enumerate}
+    \item\label{fcd-cont-unfold} $\forall A \in \mathscr{T} \Ob \mu, B \in \up
+    \supfun{\nu} \rsupfun{f} A : \rsupfun{f^{- 1}}
+    B \in \up \rsupfun{\mu} A$.
+
+    \item\label{fcd-cont-main}  $f \in \mathrm{C} (\mu; \nu)$.
+
+    \item\label{fcd-cont-rev} $f \in \mathrm{C} (\mu^{- 1} ; \nu^{- 1})$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+  \item[\ref{fcd-cont-main}$\Leftrightarrow$\ref{fcd-cont-rev}] By general $f \circ \mu \sqsubseteq \nu \circ
+  f \Leftrightarrow f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger}
+  \circ f$ formula above.
+
+  \item[\ref{fcd-cont-unfold}$\Leftrightarrow$\ref{fcd-cont-main}] \ref{fcd-cont-unfold} is equivalent to
+  $\rsupfun{\rsupfun{f^{- 1}}}
+  \up \supfun{\nu} \rsupfun{f} A \subseteq \up
+  \rsupfun{\mu} A$ equivalent to $\supfun{\nu} \rsupfun{f}
+  A \sqsupseteq \supfun{f} \rsupfun{\mu} A$
+  (used ``Orderings of filters'' chapter).
+  \end{description}
+\end{proof}
+
+\begin{cor}
+  The following are pairwise equivalent for topological spaces $\mu$,
+  $\nu$:
+  \begin{enumerate}
+    \item\label{top-cont-unfold} $\forall x \in \Ob \mu, B \in \up \supfun{\nu}
+    \rsupfun{f} A : \rsupfun{f^{- 1}} B \in
+    \up \rsupfun{\mu} A$.
+
+    \item\label{top-cont-preim} Preimages (by $f$) of open sets are open.
+
+    \item\label{top-cont-main} $f \in \mathrm{C} (\mu; \nu)$ that is $\supfun{f}
+    \rsupfun{\mu} \{ x \} \sqsubseteq \supfun{\nu}
+    \rsupfun{f} \{ x \}$ for every $x \in \Ob \mu$.
+
+    \item\label{top-cont-rev} $f \in \mathrm{C} (\mu^{- 1} ; \nu^{- 1})$ that is $\supfun{f}
+    \rsupfun{\mu^{- 1}} A \sqsubseteq \supfun{\nu^{- 1}}
+    \rsupfun{f} A$ for every $A \in \mathscr{T}
+    \Ob \mu$.
+  \end{enumerate}
+\end{cor}
+
+\begin{proof}
+  \ref{fcd-cont-main} from the previous proposition is equivalent to
+  $\supfun{f}\rsupfun{\mu}\{x\}\sqsubseteq\supfun{\nu}\rsupfun{f}\{x\}$
+  equivalent to $\rsupfun{\rsupfun{f^{- 1}}}
+  \up \supfun{\nu} \rsupfun{f} \{ x \} \subseteq
+  \up \rsupfun{\mu} \{ x \}$ for every $x \in \Ob
+  \mu$, equivalent to \ref{top-cont-main} (used ``Orderings of filters'' chapter).
+
+  It remains to prove \ref{top-cont-main}$\Leftrightarrow$\ref{top-cont-preim}.
+
+  \begin{description}
+  \item[\ref{top-cont-main}$\Rightarrow$\ref{top-cont-preim}] Let $B$ be an open set in $\nu$. For every $x \in
+  \rsupfun{f^{- 1}} B$ we have $f (x) \in B$ that is $B$ is a
+  neighborhood of $f (x)$, thus $\rsupfun{f^{-1}}B$ is a neighborhood of $x$. We have
+  proved that $\rsupfun{f^{- 1}} B$ is open.
+
+  \item[\ref{top-cont-preim}$\Rightarrow$\ref{top-cont-main}] Let $B$ be a neighborhood of $f (x)$. Then there is an
+  open neighborhood $B' \subseteq B$ of $f (x)$. $\rsupfun{f^{-1}}
+  B'$ is open and thus is a neighborhood of $x$ ($x \in \rsupfun{f^{-1}} B'$ because $f (x) \in B'$). Consequently
+  $\rsupfun{f^{-1}} B$ is a neighborhood of $x$.
+  \end{description}
+
+  Alternative proof of \ref{top-cont-preim}$\Leftrightarrow$\ref{top-cont-rev}:
+  \url{http://math.stackexchange.com/a/1855782/4876}
+\end{proof}
+
 \section{\index{continuity!of restricted morphism}Continuity of a restricted
 morphism}
 
