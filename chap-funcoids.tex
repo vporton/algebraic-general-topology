@@ -1696,7 +1696,7 @@ R}x=\bigsqcap_{f\in R}\supfun fx$.
 \end{widedisorder}
 \end{proof}
 \begin{thm}
-$g\circ f=\bigsqcap\setcond{G\circ F}{F\in\up f.G\in\up g}$ for every
+$g\circ f=\bigsqcap^{\mathsf{FCD}}\setcond{G\circ F}{F\in\up f.G\in\up g}$ for every
 composable funcoids~$f$ and~$g$.\end{thm}
 \begin{proof}
 Let $x\in\atoms^{\mathscr{F}(\Src f)}$. Then
@@ -1709,14 +1709,14 @@ Let $x\in\atoms^{\mathscr{F}(\Src f)}$. Then
 f}^{\mathscr{F}}\supfun Fx & =\text{ (theorem \ref{supfun-genbase})}\\
 \bigsqcap_{G\in\up g}^{\mathscr{F}}\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun 
 G\supfun Fx & =\\
-\bigsqcap\setcond{\supfun G\supfun Fx}{F\in\up f,G\in\up g} & =\\
-\bigsqcap\setcond{\supfun{G\circ F}x}{F\in\up f,G\in\up g} & =\text{ (theorem 
+\bigsqcap^{\mathscr{F}}\setcond{\supfun G\supfun Fx}{F\in\up f,G\in\up g} & =\\
+\bigsqcap^{\mathscr{F}}\setcond{\supfun{G\circ F}x}{F\in\up f,G\in\up g} & =\text{ (theorem 
 \ref{fcd-intrs-atom})}\\
-\supfun{\bigsqcap\setcond{G\circ F}{F\in\up f.G\in\up g}}x.
+\supfun{\bigsqcap^{\mathsf{FCD}}\setcond{G\circ F}{F\in\up f,G\in\up g}}x.
 \end{align*}
 
 
-Thus $g\circ f=\bigsqcap\setcond{G\circ F}{F\in\up f.G\in\up g}$.\end{proof}
+Thus $g\circ f=\bigsqcap^{\mathsf{FCD}}\setcond{G\circ F}{F\in\up f.G\in\up g}$.\end{proof}
 \begin{thm}
 \label{fcd-cross}Let $A$, $B$, $C$ be sets, $f\in\mathsf{FCD}(A;B)$,
 $g\in\mathsf{FCD}(B;C)$, $h\in\mathsf{FCD}(A;C)$. Then
