@@ -836,6 +836,52 @@ we have $\torldout g\circ\torldout f=\torldout(g\circ f)$.
 
 For co-complete funcoids it's dual.\end{proof}
 
+\begin{prop}
+  If $f$ is a (co-)complete funcoid then $\up f$ is a filter.
+\end{prop}
+
+\begin{proof}
+  It is enough to consider the case if $f$ is complete.
+  
+  We need to prove that $\forall F, G \in \up f : F \sqcap G \in
+  \up f$.
+  
+  For every $F \in \mathbf{Rel} (\Src f ; \Dst f)$ we
+  have
+  
+  $F \in \up f \Leftrightarrow F \sqsupseteq f \Leftrightarrow \langle F
+  \rangle^{\ast} \{ x \} \sqsupseteq \rsupfun{f} \{ x \}$.
+  
+  Thus $F, G \in \up f \Rightarrow \rsupfun{F} \{ x \}
+  \sqsupseteq \rsupfun{f} \{ x \} \wedge \rsupfun{G}
+  \{ x \} \sqsupseteq \rsupfun{f} \{ x \} \Rightarrow \langle F
+  \sqcap G \rangle^{\ast} \{ x \} = \rsupfun{F} \{ x \} \sqcap
+  \rsupfun{G} \{ x \} \sqsupseteq \rsupfun{f} \{ x
+  \} \Rightarrow F \sqcap G \in \up f$.
+  
+  That $\up f$ is nonempty and up-directed is obvious.
+\end{proof}
+
+\begin{cor}
+  ~  
+  \begin{enumerate}
+    \item If $f$ is a (co-)complete funcoid then $\up f = \up
+    \torldout f$.
+    
+    \item If $f$ is a (co-)complete reloid then $\up f = \up
+    \tofcd f$.
+  \end{enumerate}
+\end{cor}
+
+\begin{proof}
+  By order isomorphism, it is enough to prove the first.
+  
+  Because $\up f$ is a filter, by properties of generalized filter bases
+  we have $F \in \up \torldout f
+  \Leftrightarrow \exists g \in \up f : F \sqsupseteq g \Leftrightarrow
+  F \in \up f$.
+\end{proof}
+
 \section{Properties preserved by relationships}
 
 \begin{prop}
