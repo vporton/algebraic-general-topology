@@ -60,3 +60,107 @@ For a detailed proof of Urysohn's lemma see also:\\
 \url{http://homepage.math.uiowa.edu/~jsimon/COURSES/M132Fall07/UrysohnLemma_v5.pdf}\\
 \url{https://proofwiki.org/wiki/Urysohn's_Lemma}\\
 \url{http://planetmath.org/proofofurysohnslemma}
+
+Below follows an alternative proof of Urysohn lemma. Warning: This proof is conditional,
+based on unproved conjecture~\bookref{fcd-comp-ent}.
+
+\begin{lem}
+  (assuming conjecture~\bookref{fcd-comp-ent}) For every $U \in \up \mu$ (where $\mu$ is a $T_4$ topological space) such that
+  $\neg \left( A \rsuprel{U \circ U^{- 1}} B \right)$ there is $W \in
+  \up \mu$ such that $U \circ U^{- 1} \sqsupseteq W \circ W^{- 1}
+  \circ W \circ W^{- 1}$. For it holds $\neg \left( A \rsuprel{W \circ W^{-
+  1}} B \right)$.
+\end{lem}
+
+\begin{proof}
+  $U \circ U^{- 1} \in \up (\mu \circ \mu^{- 1}) \subseteq
+  \up (\mu \circ \mu^{- 1} \circ \mu \circ
+  \mu^{- 1})$ (normality used). Thus by the conjecture there exists $W
+  \in \up \mu$ such that $U \circ U^{- 1} \sqsupseteq W \circ W^{-
+  1} \circ W \circ W^{- 1}$. $W \circ W^{- 1} \sqsubseteq U \circ U^{- 1}$
+  thus $\neg \left( A \rsuprel{W \circ W^{- 1}} B \right)$.
+\end{proof}
+
+\begin{thm}
+Urysohn's lemma (see Wikipedia) for disjoint closed sets~$A$ and~$B$ and function~$f$ on a topological space~$\mu$
+(considered as complete funcoid). \fxwarning{The proof was not thoroughly checked for errors.}
+\end{thm}
+
+\begin{proof}
+(assuming conjecture~\bookref{fcd-comp-ent}) Because $A$ and $B$ are disjoint closed sets, we
+have $\rsupfun{\mu} A \asymp \langle \mu
+\rangle^{\ast} B$. Thus by the corollary of the lemma take $S_0 \in \up
+\mu$ and $\neg \left( A \rsuprel{S_0 \circ S_0^{- 1}} B
+\right)$.
+
+We have $\mu \circ \mu^{- 1} \circ \mu \circ \mu^{- 1}
+\sqsubseteq \mu \circ \mu^{- 1}$ that is $\up (\mu
+\circ \mu^{- 1} \circ \mu \circ \mu^{- 1}) \supseteq
+\up (\mu \circ \mu^{- 1})$.
+
+Let's prove by induction: There is a sequence $S$ of binary relations starting
+with $S_0$ such that $\neg \left( A \rsuprel{S_i \circ S_i^{- 1}} B
+\right)$ and $S_i \circ S_i^{- 1} \sqsupseteq S_{i + 1} \circ S_{i + 1}^{- 1}
+\circ S_{i + 1} \circ S_{i + 1}^{- 1}$. It directly follows from the lemma
+(and uses the conjecture).
+
+Denote $U_i = S_{i + 1} \circ S_{i + 1}^{- 1}$. We have $U_i \supseteq U_{i +
+1} \circ U_{i + 1}$ and $\neg \left( A \mathrel{[U_i]^{\ast}} B \right)$.
+
+Define fractional degree of $U$: $U^r \eqdef U_1^{r_1} \circ
+\ldots \circ U_{l_r}^{r_{l_r}}$ for every $r \in \mathbb{Q}_2$ where $r_1
+\ldots r_{l_r}$ is the binary expansion of $r$.
+\[ f (z) \eqdef \inf \{ 1 \} \cup \setcond{ q \in
+   \mathbb{Q}_2 }{ z \in \rsupfun{U^q}
+   A } . \]
+$f$ is properly defined because $\{ 1 \} \cup \setcond{ q \in \mathbb{Q}_2
+}{ z \in \rsupfun{U^q} A }$ is
+nonempty and bounded.
+
+If $z \in A$ then $z \in \rsupfun{U^q} A$ for every $q \in
+\mathbb{Q}_2$, thus $f (z) = 0$, because obviously $U^q \sqsupseteq 1$.
+
+If $z \in B$ then $z \notin \rsupfun{U^q} A$ for every $q \in
+\mathbb{Q}_2$, thus $f (z) = 1$, because $U^q \sqsubseteq U_0$ (??prove by
+induction).
+
+It remains to prove that $f$ is continuous.
+
+Let $D (x) = \{ 1 \} \cup \setcond{ q \in \mathbb{Q}_2 }{
+z \in \rsupfun{U^q} A }$.
+
+Claim A: $f (x) > q \Rightarrow x \notin \langle \mu^{- 1}
+\rangle^{\ast} \rsupfun{U^q} A$
+
+Claim B: $f (x) < q \Rightarrow x \in \rsupfun{U^q} A$
+
+Proof of claim A: If $f (x) > q$ then then there must be some gap between $q$
+and $D (x)$; in particular, there exists some $q'$ such that $q < q' < f (x)$.
+But $q' < f (x) \Rightarrow x \notin \rsupfun{U^q} A \Rightarrow x
+\notin \langle f^{- 1} \rangle^{\ast} \rsupfun{U^q} A$.
+
+Proof of claim B: If $f (x) < q$ then there exists $q' \in D (x)$ such that $f
+(x) < q' < q$, in which case $q \in D (x)$, so $x \in \langle U^q
+\rangle^{\ast} A$.
+
+To show that $f$ is continuous, it's enough to prove that preimages of $] a ;
+1]$ and $[0 ; a [$ are open.
+
+\fxnote{This argument is limited to topological spaces!}
+\fxnote{TODO: For arbitrary pretopologies try to use ``For all neighborhoods $B$ of $f(x)$, $f^(-1)B$ is a neighborhood of $x$.''}
+\fxnote{However, for both Urysohn lemma and Taras Banakh's result topological spaces suffice.}
+
+Suppose $f (x) \in] a ; 1]$. Pick some $q$ with $a < q < f (x)$. We claim that
+the open set $W = X \setminus \langle f^{- 1} \rangle^{\ast} \langle U^q
+\rangle^{\ast} A$ is a neighborhood of $x$ that is mapped by $f$ into $] a ;
+1]$. First, by (A), $f (x) > q \Rightarrow x \in W$, so $W$ is a neighborhood
+of $x$. If $y$ is any point of $W$, then $f (y)$ must be $\geq q > a$;
+otherwise, if $f (y) < q$, then, by (B) $y \in \rsupfun{U^q} A
+\subseteq \langle f^{- 1} \rangle^{\ast} \rsupfun{U^q} A$.
+
+Suppose $x \in f^{- 1} [0 ; b [$ that is $f (x) < b$ and pick $q$ such that $f
+(x) < q < b$. By (B) $x \in \rsupfun{U^q} A$. We claim that the
+neighborhood $\rsupfun{U^q} A$ is mapped by $f$ into $[0 ; b [$.
+Suppose $y$ is any point of $\rsupfun{U^q} A$. Then $q \in D
+(y)$, so $f (y) \leq q < b$.
+\end{proof}
