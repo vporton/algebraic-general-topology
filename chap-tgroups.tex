@@ -113,9 +113,9 @@ Denote $U_i = S_{i + 1} \circ S_{i + 1}^{- 1}$. We have $U_i \supseteq U_{i +
 Define fractional degree of $U$: $U^r \eqdef U_1^{r_1} \circ
 \ldots \circ U_{l_r}^{r_{l_r}}$ for every $r \in \mathbb{Q}_2$ where $r_1
 \ldots r_{l_r}$ is the binary expansion of $r$.
-\[ f (z) \eqdef \inf \{ 1 \} \cup \setcond{ q \in
+\[ f (z) \eqdef \inf \left( \{ 1 \} \cup \setcond{ q \in
    \mathbb{Q}_2 }{ z \in \rsupfun{U^q}
-   A } . \]
+   A } \right). \]
 $f$ is properly defined because $\{ 1 \} \cup \setcond{ q \in \mathbb{Q}_2
 }{ z \in \rsupfun{U^q} A }$ is
 nonempty and bounded.
@@ -150,7 +150,7 @@ To show that $f$ is continuous, it's enough to prove that preimages of $] a ;
 1]$ and $[0 ; a [$ are open.
 
 \fxnote{This argument is limited to topological spaces!}
-\fxnote{TODO: For arbitrary pretopologies try to use ``For all neighborhoods $B$ of $f(x)$, $f^(-1)B$ is a neighborhood of $x$.''}
+\fxnote{TODO: For arbitrary pretopologies try to use ``For all neighborhoods $B$ of $f(x)$, $f^{-1}B$ is a neighborhood of $x$.''}
 \fxnote{However, for both Urysohn lemma and Taras Banakh's result topological spaces suffice.}
 
 Suppose $f (x) \in] a ; 1]$. Pick some $q$ with $a < q < f (x)$. We claim that
