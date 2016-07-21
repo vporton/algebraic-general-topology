@@ -129,6 +129,9 @@ $U_0 \supseteq U_1 \circ \ldots \circ U_{l_r}$. It follows from $U_2 \circ
 \ldots \circ U_{l_r} \subseteq U_1$, $U_3 \circ \ldots \circ U_{l_r} \subseteq
 U_2$, \dots, $U_{l_r} \subseteq U_{l_r - 1}$ what was shown above.
 
+Let's prove: For each $p,q\in\mathbb{Q}_2$ such that $p<q$ we have
+$\rsupfun{\mu^{-1}}U^p\subseteq U^q$. ??
+
 It is easy to prove that $\rsupfun{U^r}X$ is open for every set~$X$.
 
 \[ f (z) \eqdef \inf \left( \{ 1 \} \cup \setcond{ q \in
@@ -149,6 +152,9 @@ It remains to prove that $f$ is continuous.
 Let $D (x) = \{ 1 \} \cup \setcond{ q \in \mathbb{Q}_2 }{
 z \in \rsupfun{U^q} A }$.
 
+
+
+\begin{grayed}
 Claim A: $f (x) > q \Rightarrow x \notin \langle \mu^{- 1}
 \rangle^{\ast} \rsupfun{U^q} A$
 
@@ -186,4 +192,5 @@ Suppose $y$ is any point of $\rsupfun{U^q} A$. Then $q \in D
 
 \fxnote{\url{https://proofwiki.org/wiki/Urysohn\%27s_Lemma} presents a proof
 without using open sets. Should generalize to pretopological spaces.}
+\end{grayed}
 \end{proof}
