@@ -92,6 +92,8 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
 A modified proof of Urysohn's lemma follows. This proof is in part based on~\cite{2014arXiv1410.1504B}.
 (I attempt to find common generalization of Urysohn's lemma and results from~\cite{2014arXiv1410.1504B}).
 
+$\mathbb{Q}_2 \eqdef \setcond{ \frac{k}{2^n} }{k, n \in \mathbb{N}, 0 < k < 2^n }$.
+
 \begin{thm}
 Urysohn's lemma (see Wikipedia) for disjoint closed sets~$A$ and~$B$ and function~$f$ on a topological space~$\mu$
 (considered as complete funcoid). \fxwarning{The proof was not thoroughly checked for errors.}
@@ -130,7 +132,13 @@ $U_0 \supseteq U_1 \circ \ldots \circ U_{l_r}$. It follows from $U_2 \circ
 U_2$, \dots, $U_{l_r} \subseteq U_{l_r - 1}$ what was shown above.
 
 Let's prove: For each $p,q\in\mathbb{Q}_2$ such that $p<q$ we have
-$\rsupfun{\mu^{-1}}U^p\subseteq U^q$. ??
+$\rsupfun{\mu^{-1}}U^p\subseteq U^q$.
+We can assume binary expansion of~$p$ and~$q$ be the same length~$t$ (add zeros at the end of the shorter one).
+Now it is enough to prove
+\[ U_k\circ U_{k+1}^{q_{k+1}}\circ\dots\circ U_c^{q_c}\supseteq U_{k+1}^{p_{k+1}}\circ U_{k+2}^{p_{k+2}}\circ\dots\circ U_c^{r_c}. \]
+But for this it's enough
+\[ U_k\supseteq U_{k+1}\circ U_{k+2}\circ\dots\circ U_c \]
+what can be easily proved by induction.
 
 It is easy to prove that $\rsupfun{U^r}X$ is open for every set~$X$.
 
