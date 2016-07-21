@@ -100,7 +100,9 @@ Urysohn's lemma (see Wikipedia) for disjoint closed sets~$A$ and~$B$ and functio
 \end{thm}
 
 \begin{proof}
-(assuming conjecture~\bookref{fcd-comp-ent}) Because $A$ and $B$ are disjoint closed sets, we
+(assuming conjecture~\bookref{fcd-comp-ent}) (used ProofWiki among other sources)
+
+Because $A$ and $B$ are disjoint closed sets, we
 have $\rsupfun{\mu} A \asymp \langle \mu
 \rangle^{\ast} B$. Thus by the corollary of the lemma take $S_0 \in \up
 \mu$ and $\neg \left( A \rsuprel{S_0 \circ S_0^{- 1}} B
@@ -161,7 +163,38 @@ It remains to prove that $f$ is continuous.
 Let $D (x) = \{ 1 \} \cup \setcond{ q \in \mathbb{Q}_2 }{
 z \in \rsupfun{U^q} A }$.
 
+To show that f is continuous, we first prove two smaller results:
 
+(a) $x\in\rsupfun{U^r}A \Rightarrow f(x)\leq r$.
+
+We have $x\in\rsupfun{\mu^{-1}}\rsupfun{U^r}A \Rightarrow \forall s>r:x\in\rsupfun{U^s}A$,
+so $D(x)$ contains all rationals greater than $r$. Thus $f(x)\leq r$ by definition of~$f$.
+
+(b) $x\notin\rsupfun{U^r}A \Rightarrow f(x)\geq r$.
+
+We have $x\in\rsupfun{U^r}A \Rightarrow \forall s<r:x\notin\rsupfun{U^s}A$.
+So $D(x)$ contains no rational less than $r$. Thus $f(x)\geq r$.
+
+Let $x_0\in S$ and let $]c;d[$ be an open real interval containing $f(x)$.
+We will find a neighborhood $T$ of $x_0$ such that $f(T)\subseteq]c..d[$.
+
+Choose $p,q\in\mathbb{Q}$ such that $c < p < f(x_0) < q < d$. Let $T=\rsupfun{U^q}A\setminus\rsupfun{\mu^{-1}}\rsupfun{U^p}A$.
+
+Then since $f(x_0)<q$, we have that (b) implies vacuously that $x\in\rsupfun{U^q}A$.
+
+Since $f(x_0)>p$, (a) implies $x_0\notin\rsupfun{U^p}A$.
+
+Hence $x_0\in T$.
+
+Finally, let $x\in T$.
+
+Then $x\in\rsupfun{U^q}A\subseteq\rsupfun{\mu^{-1}}\rsupfun{U^q}A$. So $f(x)<q$ by~(a).
+
+Also $x\notin\rsupfun{\mu^{-1}}\rsupfun{U^p}A$, so $x\notin\rsupfun{U^p}A$ and $f(x)\geq p$ by~(b).
+
+Thus: $f(x)\in[p;q]\subseteq]c;d[$.
+
+Therefore f is continuous.
 
 \begin{grayed}
 Claim A: $f (x) > q \Rightarrow x \notin \langle \mu^{- 1}
