@@ -150,7 +150,8 @@ Claim B: $f (x) < q \Rightarrow x \in \rsupfun{U^q} A$
 Proof of claim A: If $f (x) > q$ then then there must be some gap between $q$
 and $D (x)$; in particular, there exists some $q'$ such that $q < q' < f (x)$.
 But $q' < f (x) \Rightarrow x \notin \rsupfun{U^q} A \Rightarrow x
-\notin \langle f^{- 1} \rangle^{\ast} \rsupfun{U^q} A$. \fxwarning{Does it follow?}
+\notin \rsupfun{\mu^{- 1}} \rsupfun{U^q} A$.
+\fxerror{It follows only for open $\rsupfun{U^q} A$.}
 
 Proof of claim B: If $f (x) < q$ then there exists $q' \in D (x)$ such that $f
 (x) < q' < q$, in which case $q \in D (x)$, so $x \in \langle U^q
@@ -164,12 +165,12 @@ To show that $f$ is continuous, it's enough to prove that preimages of $] a ;
 \fxnote{However, for both Urysohn lemma and Taras Banakh's result topological spaces suffice.}
 
 Suppose $f (x) \in] a ; 1]$. Pick some $q$ with $a < q < f (x)$. We claim that
-the open set $W = X \setminus \langle f^{- 1} \rangle^{\ast} \langle U^q
+the open set $W = X \setminus \rsupfun{f^{- 1}} \langle U^q
 \rangle^{\ast} A$ is a neighborhood of $x$ that is mapped by $f$ into $] a ;
 1]$. First, by (A), $f (x) > q \Rightarrow x \in W$, so $W$ is a neighborhood
 of $x$. If $y$ is any point of $W$, then $f (y)$ must be $\geq q > a$;
 otherwise, if $f (y) < q$, then, by (B) $y \in \rsupfun{U^q} A
-\subseteq \langle f^{- 1} \rangle^{\ast} \rsupfun{U^q} A$.
+\subseteq \rsupfun{f^{- 1}} \rsupfun{U^q} A$.
 
 Suppose $x \in f^{- 1} [0 ; b [$ that is $f (x) < b$ and pick $q$ such that $f
 (x) < q < b$. By (B) $x \in \rsupfun{U^q} A$. We claim that the
