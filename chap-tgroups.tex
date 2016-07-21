@@ -111,11 +111,19 @@ with $S_0$ such that $\neg \left( A \rsuprel{S_i \circ S_i^{- 1}} B
 (and uses the conjecture).
 
 Denote $U_i = S_{i + 1} \circ S_{i + 1}^{- 1}$. We have $U_i \supseteq U_{i +
-1} \circ U_{i + 1}$ and $\neg \left( A \mathrel{[U_i]^{\ast}} B \right)$.
+1} \circ U_{i + 1}$ and $\neg \left( A \rsuprel{U_i} B \right)$.
+
+By reflexivity of~$\mu$ we have $U_{i+1} \subseteq U_{i+1}\circ U_{i+1} \subseteq U_i$.
 
 Define fractional degree of $U$: $U^r \eqdef U_1^{r_1} \circ
 \ldots \circ U_{l_r}^{r_{l_r}}$ for every $r \in \mathbb{Q}_2$ where $r_1
 \ldots r_{l_r}$ is the binary expansion of $r$.
+
+Prove $U_r\subseteq U_0$. It is enough to prove
+$U_0 \supseteq U_1 \circ \ldots \circ U_{l_r}$. It follows from $U_2 \circ
+\ldots \circ U_{l_r} \subseteq U_1$, $U_3 \circ \ldots \circ U_{l_r} \subseteq
+U_2$, \dots, $U_{l_r} \subseteq U_{l_r - 1}$ what was shown above.
+
 \[ f (z) \eqdef \inf \left( \{ 1 \} \cup \setcond{ q \in
    \mathbb{Q}_2 }{ z \in \rsupfun{U^q}
    A } \right). \]
@@ -127,8 +135,7 @@ If $z \in A$ then $z \in \rsupfun{U^q} A$ for every $q \in
 \mathbb{Q}_2$, thus $f (z) = 0$, because obviously $U^q \sqsupseteq 1$.
 
 If $z \in B$ then $z \notin \rsupfun{U^q} A$ for every $q \in
-\mathbb{Q}_2$, thus $f (z) = 1$, because $U^q \sqsubseteq U_0$ (??prove by
-induction).
+\mathbb{Q}_2$, thus $f (z) = 1$, because $U^q \sqsubseteq U_0$.
 
 It remains to prove that $f$ is continuous.
 
