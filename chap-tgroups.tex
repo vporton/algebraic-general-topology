@@ -90,6 +90,21 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
   This new $W$ holds all necessary properties.
 \end{proof}
 
+\begin{lem}
+  (assuming conjecture~\bookref{fcd-comp-ent}) For every $U \in \up \mu$ (where $\mu$ is a $T_4$ topological space) such that
+  $\neg \left( A \rsuprel{U \circ U^{- 1}} B \right)$ there is $W \in \up\mu$
+  such that $U \circ U^{- 1} \sqsupseteq \mu \circ W \circ W^{-1}\circ W \circ W^{- 1}$.
+  For it holds $\neg \left( A \rsuprel{W \circ W^{-
+  1}} B \right)$.
+  We can assume that $\rsupfun{W}X$ is open for every set~$X$..
+\end{lem}
+
+\begin{proof}
+Applying the previous lemma two times, we have some $W\in\up\mu$ such that
+$U\circ U^{-1} \sqsupseteq W \circ W^{-1}\circ W \circ W^{- 1} \circ W \circ W^{-1}\circ W \circ W^{- 1}$.
+From this easily follows that $U \circ U^{- 1} \sqsupseteq \mu \circ W \circ W^{-1}\circ W \circ W^{- 1}$.
+\end{proof}
+
 A modified proof of Urysohn's lemma follows. This proof is in part based on~\cite{2014arXiv1410.1504B}.
 (I attempt to find common generalization of Urysohn's lemma and results from~\cite{2014arXiv1410.1504B}).
 
@@ -116,11 +131,11 @@ We have $\mu \circ \mu^{- 1} \circ \mu \circ \mu^{- 1}
 
 Let's prove by induction: There is a sequence $S$ of binary relations starting
 with $S_0$ such that $\neg \left( A \rsuprel{S_i \circ S_i^{- 1}} B
-\right)$ and $S_i \circ S_i^{- 1} \sqsupseteq S_{i + 1} \circ S_{i + 1}^{- 1}
+\right)$ and $S_i \circ S_i^{- 1} \sqsupseteq \mu^{-1} \circ S_{i + 1} \circ S_{i + 1}^{- 1}
 \circ S_{i + 1} \circ S_{i + 1}^{- 1}$. It directly follows from the lemma
 (and uses the conjecture).
 
-Denote $U_i = S_{i + 1} \circ S_{i + 1}^{- 1}$. We have $U_i \supseteq U_{i +
+Denote $U_i = S_{i + 1} \circ S_{i + 1}^{- 1}$. We have $U_i \sqsupseteq \mu^{-1} \circ U_{i +
 1} \circ U_{i + 1}$ and $\neg \left( A \rsuprel{U_i} B \right)$.
 
 By reflexivity of~$\mu$ we have $U_{i+1} \subseteq U_{i+1}\circ U_{i+1} \subseteq U_i$.
@@ -134,18 +149,23 @@ $U_0 \supseteq U_1 \circ \ldots \circ U_{l_r}$. It follows from $U_2 \circ
 \ldots \circ U_{l_r} \subseteq U_1$, $U_3 \circ \ldots \circ U_{l_r} \subseteq
 U_2$, \dots, $U_{l_r} \subseteq U_{l_r - 1}$ what was shown above.
 
-Let's prove: For each $p,q\in\mathbb{Q}_2$ such that $p<q$ we have $U^p\subseteq U^q$.
-We can assume binary expansion of~$p$ and~$q$ be the same length~$t$ (add zeros at the end of the shorter one).
+Let's prove: For each $p,q\in\mathbb{Q}_2$ such that $p<q$ we have $\mu^{-1}\circ U^p\sqsubseteq U^q$.
+We can assume binary expansion of~$p$ and~$q$ be the same length~$c$ (add zeros at the end of the shorter one).
 Now it is enough to prove
-\[ U_k\circ U_{k+1}^{q_{k+1}}\circ\dots\circ U_c^{q_c}\supseteq U_{k+1}^{p_{k+1}}\circ U_{k+2}^{p_{k+2}}\circ\dots\circ U_c^{r_c}. \]
+\[ U_k\circ U_{k+1}^{q_{k+1}}\circ\dots\circ U_c^{q_c}\sqsupseteq\mu^{-1}\circ U_{k+1}^{p_{k+1}}\circ U_{k+2}^{p_{k+2}}\circ\dots\circ U_c^{p_c}. \]
 But for this it's enough
-\[ U_k\supseteq U_{k+1}\circ U_{k+2}\circ\dots\circ U_c \]
-what can be easily proved by induction.
+\[ U_k\sqsupseteq\mu^{-1}\circ U_{k+1}\circ U_{k+2}\circ\dots\circ U_c \]
+what can be easily proved by induction:
+If $k=c$ then it takes the form $U_k\sqsupseteq\mu^{-1}$
+what is obvious.
+Suppose it holds for~$k$. Then $U_{k-1}\sqsupseteq\mu^{-1}\circ U_k\circ U_k\sqsupseteq
+\mu^{-1}\circ U_k\circ \mu^{-1}\circ U_{k+1}\circ U_{k+2}\circ\dots\circ U_c\sqsupseteq
+\mu^{-1}\circ U_k\circ U_{k+1}\circ U_{k+2}\circ\dots\circ U_c$, that is it holds
+for all natural $k\leq c$.
 
 It is easy to prove that $\rsupfun{U^r}X$ is open for every set~$X$.
 
-Because $\rsupfun{U^p}X$ is open, we have $\rsupfun{\mu^{-1}}\rsupfun{U^p}X\subseteq\rsupfun{U^q}X$.
-\fxerror{It does not follow!}
+We have $\rsupfun{\mu^{-1}}\rsupfun{U^p}X\sqsubseteq\rsupfun{U^q}X$.
 
 \[ f (z) \eqdef \inf \left( \{ 1 \} \cup \setcond{ q \in
    \mathbb{Q}_2 }{ z \in \rsupfun{U^q}
