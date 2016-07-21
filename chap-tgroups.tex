@@ -73,6 +73,7 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
   \up \mu$ such that $U \circ U^{- 1} \sqsupseteq W \circ W^{- 1}
   \circ W \circ W^{- 1}$. For it holds $\neg \left( A \rsuprel{W \circ W^{-
   1}} B \right)$.
+  We can assume that $\rsupfun{W}X$ is open for every set~$X$.
 \end{lem}
 
 \begin{proof}
@@ -82,6 +83,10 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
   \in \up \mu$ such that $U \circ U^{- 1} \sqsupseteq W \circ W^{-
   1} \circ W \circ W^{- 1}$. $W \circ W^{- 1} \sqsubseteq U \circ U^{- 1}$
   thus $\neg \left( A \rsuprel{W \circ W^{- 1}} B \right)$.
+  
+  To prove that $\rsupfun{W}X$ is open for every set~$X$, replace every $\rsupfun{W}\{x\}$
+  with an open entourage $E\subseteq\rsupfun{W}X$ of $\rsupfun{\mu}\{x\}$.
+  This new $W$ holds all necessary properties.
 \end{proof}
 
 A modified proof of Urysohn's lemma follows. This proof is in part based on~\cite{2014arXiv1410.1504B}.
@@ -124,6 +129,8 @@ $U_0 \supseteq U_1 \circ \ldots \circ U_{l_r}$. It follows from $U_2 \circ
 \ldots \circ U_{l_r} \subseteq U_1$, $U_3 \circ \ldots \circ U_{l_r} \subseteq
 U_2$, \dots, $U_{l_r} \subseteq U_{l_r - 1}$ what was shown above.
 
+It is easy to prove that $\rsupfun{U^r}X$ is open for every set~$X$.
+
 \[ f (z) \eqdef \inf \left( \{ 1 \} \cup \setcond{ q \in
    \mathbb{Q}_2 }{ z \in \rsupfun{U^q}
    A } \right). \]
@@ -150,8 +157,7 @@ Claim B: $f (x) < q \Rightarrow x \in \rsupfun{U^q} A$
 Proof of claim A: If $f (x) > q$ then then there must be some gap between $q$
 and $D (x)$; in particular, there exists some $q'$ such that $q < q' < f (x)$.
 But $q' < f (x) \Rightarrow x \notin \rsupfun{U^q} A \Rightarrow x
-\notin \rsupfun{\mu^{- 1}} \rsupfun{U^q} A$.
-\fxerror{It follows only for open $\rsupfun{U^q} A$.}
+\notin \rsupfun{\mu^{- 1}} \rsupfun{U^q} A$ (using that $\rsupfun{U^r}X$ is open).
 
 Proof of claim B: If $f (x) < q$ then there exists $q' \in D (x)$ such that $f
 (x) < q' < q$, in which case $q \in D (x)$, so $x \in \langle U^q
