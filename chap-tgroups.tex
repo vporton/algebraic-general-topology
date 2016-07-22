@@ -284,10 +284,6 @@ Proof of claim B: If $f (x) < q$ then there exists $q' \in D (x)$ such that $f
 To show that $f$ is continuous, it's enough to prove that preimages of $] a ;
 1]$ and $[0 ; a [$ are open.
 
-\fxnote{This argument is limited to topological spaces!}
-\fxnote{TODO: For arbitrary pretopologies try to use ``For all neighborhoods $B$ of $f(x)$, $f^{-1}B$ is a neighborhood of $x$.''}
-\fxnote{However, for both Urysohn lemma and Taras Banakh's result topological spaces suffice.}
-
 Suppose $f (x) \in] a ; 1]$. Pick some $q$ with $a < q < f (x)$. We claim that
 the open set $W = X \setminus \rsupfun{f^{- 1}} \langle U^q
 \rangle^{\ast} A$ is a neighborhood of $x$ that is mapped by $f$ into $] a ;
@@ -301,8 +297,5 @@ Suppose $x \in f^{- 1} [0 ; b [$ that is $f (x) < b$ and pick $q$ such that $f
 neighborhood $\rsupfun{U^q} A$ is mapped by $f$ into $[0 ; b [$.
 Suppose $y$ is any point of $\rsupfun{U^q} A$. Then $q \in D
 (y)$, so $f (y) \leq q < b$.
-
-\fxnote{\url{https://proofwiki.org/wiki/Urysohn\%27s_Lemma} presents a proof
-without using open sets. Should generalize to pretopological spaces.}
 \end{grayed}
 \end{proof}
