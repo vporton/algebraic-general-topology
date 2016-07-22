@@ -67,13 +67,11 @@ For a detailed proof of Urysohn's lemma see also:\\
 Below follows an alternative proof of Urysohn lemma. Warning: This proof is conditional,
 based on unproved conjecture~\bookref{fcd-comp-ent}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{lem}
   If $\langle \mu \rangle \mathcal{A} \asymp \mathcal{B}$ for a complete
   funcoid $\mu$ and $\mathcal{A}$, $\mathcal{B}$ are filters on relevant
   sets, then there exists $U \in \up \mu$ such that $\langle U
-  \rangle A \asymp B$.
+  \rangle \mathcal{A} \asymp \mathcal{B}$.
 \end{lem}
 
 \begin{proof}
@@ -83,8 +81,8 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
   
   Let $\mathcal{X}, \mathcal{Y} \in \setcond{ \supfun{U} \mathcal{A}
   }{ U \in \up \mu }$. Then
-  $\mathcal{X} = \langle U_{\mathcal{X}} \rangle A$, $Y = \langle
-  U_{\mathcal{Y}} \rangle A$. Because $\mu$ is complete, we have
+  $\mathcal{X} = \supfun{U_{\mathcal{X}}} \mathcal{A}$, $Y = \supfun{
+  U_{\mathcal{Y}}} \supfun{A}$. Because $\mu$ is complete, we have
   (proposition~\bookref{up-f-filt}) $U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} \in \up
   \mu$. Thus $\mathcal{X}, \mathcal{Y} \sqsupseteq \langle
   U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} \rangle \mathcal{A} \in \setcond{
@@ -106,12 +104,10 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
 
 \begin{proof}
   Applying the lemma two times we can obtain $P, Q \in \up \mu$
-  such that $\langle P \rangle A \asymp \langle Q \rangle B$. But because
+  such that $\supfun{P} \mathcal{A} \asymp \supfun{Q} \mathcal{B}$. But because
   $\mu$ is complete, we have $U = P \sqcap Q \in \up \mu$,
-  while obviously $\supfun{U} A \asymp \supfun{U} B$.
+  while obviously $\supfun{U} \mathcal{A} \asymp \supfun{U} \mathcal{B}$.
 \end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lem}
   (assuming conjecture~\bookref{fcd-comp-ent}) For every $U \in \up \mu$ (where $\mu$ is a $T_4$ topological space) such that
