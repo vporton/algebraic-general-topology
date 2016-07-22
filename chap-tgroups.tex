@@ -67,6 +67,53 @@ For a detailed proof of Urysohn's lemma see also:\\
 Below follows an alternative proof of Urysohn lemma. Warning: This proof is conditional,
 based on unproved conjecture~\bookref{fcd-comp-ent}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lem}
+  If $\langle \mu \rangle \mathcal{A} \asymp \mathcal{B}$ for a complete
+  funcoid $\mu$ and $\mathcal{A}$, $\mathcal{B}$ are filters on relevant
+  sets, then there exists $U \in \up \mu$ such that $\langle U
+  \rangle A \asymp B$.
+\end{lem}
+
+\begin{proof}
+  Prove that $\setcond{ \supfun{U} \mathcal{A} }{
+  U \in \up \mu }$ is a filter base. That it
+  is nonempty is obvious.
+  
+  Let $\mathcal{X}, \mathcal{Y} \in \setcond{ \supfun{U} \mathcal{A}
+  }{ U \in \up \mu }$. Then
+  $\mathcal{X} = \langle U_{\mathcal{X}} \rangle A$, $Y = \langle
+  U_{\mathcal{Y}} \rangle A$. Because $\mu$ is complete, we have
+  (proposition~\bookref{up-f-filt}) $U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} \in \up
+  \mu$. Thus $\mathcal{X}, \mathcal{Y} \sqsupseteq \langle
+  U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} \rangle \mathcal{A} \in \setcond{
+  \supfun{U} \mathcal{A} }{ U \in \up \mu }$.
+  
+  Thus $\langle \mu \rangle \mathcal{A} \asymp \mathcal{B}
+  \Leftrightarrow \mathcal{B} \sqcap \langle \mu \rangle \mathcal{A} =
+  \bot \Leftrightarrow \exists U \in \up \mu: \mathcal{B} \sqcap
+  \supfun{U} \mathcal{A} = \bot \Leftrightarrow \exists U \in \up
+  \mu: \supfun{U} \mathcal{A} \asymp \mathcal{B}$.
+\end{proof}
+
+\begin{cor}\label{disj-mu}
+  If $\langle \mu \rangle \mathcal{A} \asymp \langle \mu \rangle
+  \mathcal{B}$ for a complete funcoid $\mu$ and $\mathcal{A}$,
+  $\mathcal{B}$ are filters on relevant sets, then there exists $U \in
+  \up \mu$ such that $\supfun{U} A \asymp \supfun{U}
+  B$.
+\end{cor}
+
+\begin{proof}
+  Applying the lemma two times we can obtain $P, Q \in \up \mu$
+  such that $\langle P \rangle A \asymp \langle Q \rangle B$. But because
+  $\mu$ is complete, we have $U = P \sqcap Q \in \up \mu$,
+  while obviously $\supfun{U} A \asymp \supfun{U} B$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{lem}
   (assuming conjecture~\bookref{fcd-comp-ent}) For every $U \in \up \mu$ (where $\mu$ is a $T_4$ topological space) such that
   $\neg \left( A \rsuprel{U \circ U^{- 1}} B \right)$ there is $W \in
@@ -121,7 +168,7 @@ Urysohn's lemma (see Wikipedia) for disjoint closed sets~$A$ and~$B$ and functio
 
 Because $A$ and $B$ are disjoint closed sets, we
 have $\rsupfun{\mu} A \asymp \langle \mu
-\rangle^{\ast} B$. Thus by the corollary of the lemma take $S_0 \in \up
+\rangle^{\ast} B$. Thus by the corollary~\ref{disj-mu} take $S_0 \in \up
 \mu$ and $\neg \left( A \rsuprel{S_0 \circ S_0^{- 1}} B
 \right)$.
 
