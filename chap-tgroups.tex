@@ -6,53 +6,85 @@ important because we lose 60 years waiting for any proof.
 
 \section{Definition of normality}
 
-By definition (slightly generalizing the special case if $f$ is a
-quasi-uniform space) a pair of an endo-reloid~$f$ and a co-complete funcoid~$g$ (playing role of a generalization of a topological space)
+By definition (slightly generalizing the special case if $\mu$ is a
+quasi-uniform space from~\cite{2014arXiv1410.1504B})
+a pair of an endo-reloid~$\mu$ and a complete funcoid~$\nu$ (playing role of a generalization of a topological space)
 on a set $U$ is \emph{normal} when
-\[ \rsupfun{g} A \sqsubseteq \rsupfun{
-g^{\circ}} \rsupfun{g } \rsupfun{F} A \] for every entourage $F \in
-\up f$ of $f$ and every set $A \subseteq U$.
+\[ \rsupfun{\nu^{-1}} A \sqsubseteq \rsupfun{
+{\nu^{-1}}^{\circ}} \rsupfun{\nu^{-1}} \rsupfun{F} A \] for every entourage $F \in
+\up \mu$ of $\mu$ and every set $A \subseteq U$.
 
 Note that this is \emph{not} the same as customary definition of normal topological spaces.
 
 \begin{thm}
-  An endoreloid $f$ is normal iff
-  \[ g^{- 1} \circ g \sqsubseteq
-  g \circ (\mathsf{FCD}) f. \]
+  An endoreloid $\mu$ is normal on endoreloid~$\nu$ iff
+  \[ \nu \circ \nu^{-1} \sqsubseteq
+  \nu^{-1} \circ (\mathsf{FCD}) \mu. \]
 \end{thm}
 
 \begin{proof}
   Equivalently transforming the criterion of normality (which should hold for
-  all $F \in \up f$) using proposition~\ref{get-rid-interior}:
+  all $F \in \up \mu$) using proposition~\ref{get-rid-interior}:
 
-  $\rsupfun{g^{- 1}}
-  \rsupfun{g} A \sqsubseteq
-  \rsupfun{g} \rsupfun{F} A$.
+  $\rsupfun{\nu}
+  \rsupfun{\nu^{-1}} A \sqsubseteq
+  \rsupfun{\nu^{-1}} \rsupfun{F} A$.
 
   Also note
   
-  $\bigsqcap^{\mathscr{F}}_{F \in \up f} \rsupfun{ g
+  $\bigsqcap^{\mathscr{F}}_{F \in \up \mu} \rsupfun{ \nu^{-1}
   } \langle F \rangle^{\ast} A = \text{(because funcoids preserve
-  filtered meets)} = \rsupfun{ g
-  }  \bigsqcap^{\mathscr{F}}_{F \in \up f} \rsupfun{F} A =
-  \rsupfun{ g }
-  \rsupfun{ (\mathsf{FCD}) f } A$.
+  filtered meets)} = \rsupfun{ \nu^{-1}
+  }  \bigsqcap^{\mathscr{F}}_{F \in \up \mu} \rsupfun{F} A =
+  \rsupfun{ \nu^{-1} }
+  \rsupfun{ (\mathsf{FCD}) \mu } A$.
 
   Thus the above is equivalent to
-  $\rsupfun{g^{-1}}
-  \rsupfun{g} A \sqsubseteq
-  \rsupfun{ g }
-  \rsupfun{ (\mathsf{FCD}) f } A$.
+  $\rsupfun{\nu}
+  \rsupfun{\nu^{-1}} A \sqsubseteq
+  \rsupfun{ \nu^{-1} }
+  \rsupfun{ (\mathsf{FCD}) \mu } A$.
 
   And this is in turn equivalent to
-  \[ g^{-1} \circ g \sqsubseteq
-  g \circ (\mathsf{FCD}) f. \]
+  \[ \nu \circ \nu^{-1} \sqsubseteq
+  \nu^{-1} \circ (\mathsf{FCD}) \mu. \]
 \end{proof}
 
 \begin{cor}
-If $g$ is a symmetric endoreloid and $\tofcd f\sqsupseteq g$, then it is normal.
-\fxnote{Not quite the same as \noun{Banakh}'s theorem, because the induced topological space is $\CoCompl\tofcd f$ not $\tofcd f$.}
+If $\nu$ is a symmetric endoreloid and $\tofcd \mu\sqsupseteq \nu^{-1}$, then it is normal.
 \end{cor}
+
+\begin{cor} (generalization of proposition~1 in~\cite{2014arXiv1410.1504B})
+If $\nu$ is a symmetric endoreloid and $\Compl\tofcd \mu\sqsupseteq \nu^{-1}$, then it is normal.
+\end{cor}
+
+\begin{defn}
+A funcoid~$\nu$ is \emph{normally reloidazable} iff there exist a reloid~$\mu$ such that
+$(\mu;\nu)$ is normal.
+\end{defn}
+
+\begin{defn}
+A funcoid~$\nu$ is \emph{normally quasi-uniformizable} iff there exist a quasi-uniform space (=~reflexive and transitive reloid)~$\mu$ such that
+$(\mu;\nu)$ is normal.
+\end{defn}
+
+\begin{prop}
+A funcoid~$\nu$ is normally reloidazable iff there exists a funcoid~$t$ such that
+$\nu\circ\nu^{-1}\sqsubseteq\nu^{-1}\circ t$.
+\end{prop}
+
+\begin{proof}
+Because $\tofcd$ is an isomorphism from funcoidal reloids to funcoids.
+\end{proof}
+
+\begin{prop}
+A funcoid~$\nu$ is normally quasi-uniformizable iff there exists a quasi-proximity space (=~reflexive and transitive funcoid)~$t$ such that
+$\nu\circ\nu^{-1}\sqsubseteq\nu^{-1}\circ t$.
+\end{prop}
+
+\begin{proof}
+Evidently $\tofcd$ is an isomorphism from reflexive and transitive funcoidal reloids to reflexive and transitive funcoids.
+\end{proof}
 
 \section{Urysohn's lemma and friends}
 
