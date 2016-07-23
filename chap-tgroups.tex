@@ -50,12 +50,25 @@ Note that this is \emph{not} the same as customary definition of normal topologi
   \nu^{-1} \circ (\mathsf{FCD}) \mu. \]
 \end{proof}
 
+\begin{defn}
+An endofuncoid~$\mu$ is \emph{normal} on endofuncoid~$\nu$ when $\nu \circ \nu^{-1} \sqsubseteq \nu^{-1} \circ \mu$.
+\fxwarning{No need for $\nu$ to be endomorphism.}
+\end{defn}
+
+\begin{obvious}\label{norm-fcd-rld}
+~
+\begin{enumerate}
+\item Endoreloid~$\mu$ is normal on endofuncoid~$\nu$ iff endofuncoid~$\tofcd\mu$ is normal on endofuncoid~$\nu$.
+\item Endofuncoid~$\mu$ is normal on endoreloid~$\nu$ iff endofuncoid~$\torldin\mu$ is normal on endofuncoid~$\nu$.
+\end{enumerate}
+\end{obvious}
+
 \begin{cor}
-If $\nu$ is a symmetric endoreloid and $\tofcd \mu\sqsupseteq \nu^{-1}$, then it is normal.
+If $\nu$ is a symmetric endofuncoid and $\mu\sqsupseteq \nu^{-1}$, then it is normal.
 \end{cor}
 
 \begin{cor} (generalization of proposition~1 in~\cite{2014arXiv1410.1504B})
-If $\nu$ is a symmetric endoreloid and $\Compl\tofcd \mu\sqsupseteq \nu^{-1}$, then it is normal.
+If $\nu$ is a symmetric endofuncoid and $\Compl\mu\sqsupseteq \nu^{-1}$, then it is normal.
 \end{cor}
 
 \begin{defn}
@@ -68,11 +81,24 @@ A funcoid~$\nu$ is \emph{normally quasi-uniformizable} iff there exist a quasi-u
 $(\mu;\nu)$ is normal and $\nu=\Compl\tofcd\mu$.
 \end{defn}
 
-In other words, it is normally reloidazable or normally quasi-uniformizable when
-\[ \Compl\tofcd\mu\circ(\Compl\tofcd\mu)^{-1}\sqsubseteq(\Compl\tofcd\mu)^{-1}\circ\tofcd\mu \]
-for suitable~$\mu$.
+\begin{prop}
+A funcoid~$\nu$ is normally reloidazable iff there exist a funcoid~$\mu$ such that
+$\mu$ is normal on~$\nu$ and $\nu=\Compl\mu$.
+\end{prop}
 
-Normal reloidazability and normal quasi-uniformizability depends only on funcoid~$\tofcd\mu$ (a proximity space if $\mu$ is a uniform space).
+\begin{prop}
+A funcoid~$\nu$ is normally quasi-uniformizable iff there exist a quasi-proximity space (=~reflexive and transitive funcoid)~$\mu$ such that
+$\mu$ is normal on~$\nu$ and $\nu=\Compl\mu$.
+\end{prop}
+
+\begin{proof}
+Obvious~\ref{norm-fcd-rld} and the fact that~$\tofcd$ is an isomorphism between reflexive and transitive funcoids
+and reflexive and transitive reloids.
+\end{proof}
+
+In other words, it is normally reloidazable or normally quasi-uniformizable when
+\[ (\Compl\mu)\circ(\Compl\mu)^{-1}\sqsubseteq(\Compl\mu)^{-1}\circ\mu \]
+for suitable~$\mu$.
 
 \section{Urysohn's lemma and friends}
 
