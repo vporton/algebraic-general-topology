@@ -33,7 +33,7 @@ Note that this is \emph{not} the same as customary definition of normal topologi
   Also note
   
   $\bigsqcap^{\mathscr{F}}_{F \in \up \mu} \rsupfun{ \nu^{-1}
-  } \langle F \rangle^{\ast} A = \text{(because funcoids preserve
+  } \rsupfun{F} A = \text{(because funcoids preserve
   filtered meets)} = \rsupfun{ \nu^{-1}
   }  \bigsqcap^{\mathscr{F}}_{F \in \up \mu} \rsupfun{F} A =
   \rsupfun{ \nu^{-1} }
@@ -114,10 +114,9 @@ Below follows an alternative proof of Urysohn lemma. Warning: This proof is cond
 based on unproved conjecture~\bookref{fcd-comp-ent}.
 
 \begin{lem}
-  If $\langle \mu \rangle \mathcal{A} \asymp \mathcal{B}$ for a complete
+  If $\supfun{\mu} \mathcal{A} \asymp \mathcal{B}$ for a complete
   funcoid $\mu$ and $\mathcal{A}$, $\mathcal{B}$ are filters on relevant
-  sets, then there exists $U \in \up \mu$ such that $\langle U
-  \rangle \mathcal{A} \asymp \mathcal{B}$.
+  sets, then there exists $U \in \up \mu$ such that $\supfun{U} \mathcal{A} \asymp \mathcal{B}$.
 \end{lem}
 
 \begin{proof}
@@ -130,19 +129,19 @@ based on unproved conjecture~\bookref{fcd-comp-ent}.
   $\mathcal{X} = \supfun{U_{\mathcal{X}}} \mathcal{A}$, $Y = \supfun{
   U_{\mathcal{Y}}} \supfun{A}$. Because $\mu$ is complete, we have
   (proposition~\bookref{up-f-filt}) $U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} \in \up
-  \mu$. Thus $\mathcal{X}, \mathcal{Y} \sqsupseteq \langle
-  U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} \rangle \mathcal{A} \in \setcond{
+  \mu$. Thus $\mathcal{X}, \mathcal{Y} \sqsupseteq \supfun{
+  U_{\mathcal{X}} \sqcap U_{\mathcal{Y}} } \mathcal{A} \in \setcond{
   \supfun{U} \mathcal{A} }{ U \in \up \mu }$.
   
-  Thus $\langle \mu \rangle \mathcal{A} \asymp \mathcal{B}
-  \Leftrightarrow \mathcal{B} \sqcap \langle \mu \rangle \mathcal{A} =
+  Thus $\supfun{\mu} \mathcal{A} \asymp \mathcal{B}
+  \Leftrightarrow \mathcal{B} \sqcap \supfun{\mu} \mathcal{A} =
   \bot \Leftrightarrow \exists U \in \up \mu: \mathcal{B} \sqcap
   \supfun{U} \mathcal{A} = \bot \Leftrightarrow \exists U \in \up
   \mu: \supfun{U} \mathcal{A} \asymp \mathcal{B}$.
 \end{proof}
 
 \begin{cor}\label{disj-mu}
-  If $\langle \mu \rangle \mathcal{A} \asymp \langle \mu \rangle
+  If $\supfun{\mu} \mathcal{A} \asymp \supfun{\mu}
   \mathcal{B}$ for a complete funcoid $\mu$ and $\mathcal{A}$,
   $\mathcal{B}$ are filters on relevant sets, then there exists $U \in
   \up \mu$ such that $\supfun{U} \mathcal{A} \asymp \supfun{U} \mathcal{B}$.
@@ -208,8 +207,7 @@ Urysohn's lemma (see Wikipedia) for disjoint closed sets~$A$ and~$B$ and functio
 (assuming conjecture~\bookref{fcd-comp-ent}) (used ProofWiki among other sources)
 
 Because $A$ and $B$ are disjoint closed sets, we
-have $\rsupfun{\mu} A \asymp \langle \mu
-\rangle^{\ast} B$. Thus by the corollary~\ref{disj-mu} take $S_0 \in \up
+have $\rsupfun{\mu} A \asymp \rsupfun{\mu} B$. Thus by the corollary~\ref{disj-mu} take $S_0 \in \up
 \mu$ and $\neg \left( A \rsuprel{S_0 \circ S_0^{- 1}} B
 \right)$.
 
@@ -339,4 +337,88 @@ neighborhood $\rsupfun{U^q} A$ is mapped by $f$ into $[0 ; b [$.
 Suppose $y$ is any point of $\rsupfun{U^q} A$. Then $q \in D
 (y)$, so $f (y) \leq q < b$.
 \end{grayed}
+\end{proof}
+
+\begin{thm}
+(from~\cite{2014arXiv1410.1504B})
+If $\mu$ is a normal quasi-uniformity on a topological space~$\nu$, then for any nonempty subset $A\in\Ob\nu$
+and entourage~$U\in\up\mu$ there exists a continuous function $f:\Ob\nu\rightarrow[0;1]$ such that
+$A\sqsubseteq\rsupfun{f^{-1}}\{0\}\sqsubseteq\rsupfun{f^{-1}}[0;1[\sqsubseteq\rsupfun{{\nu^{-1}}^\circ}\rsupfun{\nu^{-1}}\rsupfun{U}A$.
+\end{thm}
+
+\begin{proof}
+Choose inductively a sequence of entourages $(U_n)_{n = 0}^{\infty}$ such that
+$U_0 = U$ and $U_{n + 1} \circ U_{n + 1} \sqsubseteq U_n$.
+
+Denote $l_r = \max \setcond{ n \in \mathbb{N} }{ r_n = 1 }$.
+
+Define $U^r = U_{l_r}^{r_{l_r}} \circ \ldots \circ U_1^{r_1}$
+
+Prove $\rsupfun{\nu^{- 1}} \rsupfun{U^q} A
+\sqsubseteq \rsupfun{\nu^{- 1 \circ}} \rsupfun{\nu^{- 1}}
+\rsupfun{U^r} A$ for any $q < r$ in
+$\mathbb{Q}_2$. \fxnote{Can be easily rewritten with the formula $\rsupfun{\nu} \rsupfun{\nu^{- 1}} \rsupfun{U^q} A
+\sqsubseteq \rsupfun{\nu^{- 1}} \rsupfun{U^r} A$
+instead. It may extend to non-complete funcoids.}
+
+There is such $l$ that $0 = q_l < r_l = 1$ and $q_i = r_i$ for all $i < l$.
+
+It follows $l_q \neq l \leq l_r$.
+
+Consider variants:
+\begin{description}
+  \item[$l_q < l$] $\rsupfun{\nu^{- 1}} \rsupfun{U^q} A \sqsubseteq \rsupfun{\nu^{- 1}} \left\langle
+  U_{l_q} \circ \ldots \circ U_1^{q_1q_{l_q}} \right\rangle^{\ast} A = \rsupfun{\nu^{- 1}} \left\langle U_{l_q}^{r_{l_q}} \circ \ldots \circ
+  U_1^{r_1} \right\rangle^{\ast} A \sqsubseteq \langle \nu^{- 1}
+  \rangle^{\ast} \left\langle U_{l - 1}^{r_{l - 1}} \circ \ldots \circ
+  U_1^{r_1} \right\rangle^{\ast} A \sqsubseteq \langle \nu^{- 1 \circ}
+  \rangle^{\ast} \rsupfun{\nu^{- 1}} \langle U_l^{r_l} \circ U_{l
+  - 1}^{r_{l - 1}} \circ \ldots \circ U_1^{r_1} \rangle^{\ast} A = \langle
+  \nu^{- 1 \circ} \rangle^{\ast} \rsupfun{\nu^{- 1}} \langle U^r
+  \rangle^{\ast} A$ (use $U_l^{r_l} \in \up \tofcd
+  \mu$ by theorem 992).
+  
+  \item[$l < l_q$] Inclusions $U_k \circ U_k \sqsubseteq U_{k - 1}$ for $l < k
+  \leq l_q + 1$ guarantee that $U_{l_q + 1} \circ U_{l_q} \circ \ldots \circ
+  U_{l + 1} \sqsubseteq U_l$ and then $\rsupfun{\nu^{- 1}}
+  \rsupfun{U^q} A \sqsubseteq \rsupfun{\nu^{- 1}}
+  \left\langle U_{l_q}^{q_{l_q}} \circ \ldots \circ U_1^{q_1}
+  \right\rangle^{\ast} A \sqsubseteq \rsupfun{\nu^{- 1 \circ}}
+  \rsupfun{\nu^{- 1}} \left\langle U_{l_q + 1}^{q_{l_q + 1}}
+  \circ U_{l_q}^{q_{l_q}} \circ \ldots \circ U_1^{q_1} \right\rangle^{\ast} A
+  = \rsupfun{\nu^{- 1 \circ}} \rsupfun{\nu^{- 1}}
+  \left\langle U_{l_q + 1} \circ U_{l_q}^{q_{l_q}} \circ \ldots \circ U_l^0
+  \circ \ldots \circ U_1^{q_1} \right\rangle^{\ast} A \sqsubseteq \left\langle
+  \nu^{- 1 \circ} \right\rangle^{\ast} \rsupfun{\nu^{- 1}}
+  \langle U_l \circ U_{l - 1}^{q_{l - 1}} \circ \ldots \circ U_1^{q_1}
+  \rangle^{\ast} A \sqsubseteq \rsupfun{\nu^{- 1 \circ}} \langle
+  \nu^{- 1} \rangle^{\ast} \left\langle U_l^{r_l} \circ U_{l - 1}^{r_{l - 1}}
+  \circ \ldots \circ U_1^{r_1} \right\rangle^{\ast} A \sqsubseteq \langle
+  \nu^{- 1 \circ} \rangle^{\ast} \rsupfun{\nu^{- 1}} \left\langle
+  U_{l_r}^{r_{l_r}} \circ \ldots \circ U_1^{r_1} \right\rangle^{\ast} A =
+  \rsupfun{\nu^{- 1 \circ}} \rsupfun{\nu^{- 1}}
+  \langle U_r \rangle^{\ast} A$.
+\end{description}
+Define $f$ by the formula $f (z) = \inf \left( \{ 1 \} \cup \setcond{ q \in
+\mathbb{Q}_2 }{ z \in \langle \nu^{- 1}
+\rangle^{\ast} \rsupfun{U^q} A } \right)$.
+
+It is clear?? that $A \sqsubseteq \rsupfun{f^{- 1}} \{ 0 \}$ and
+$\rsupfun{f^{- 1}} [0 ; 1 [ \sqsubseteq
+\bigcup_{q \in \mathbb{Q}_2} \rsupfun{\nu^{- 1}} \langle U^q
+\rangle^{\ast} A = \bigcup_{r \in \mathbb{Q}_2} \langle \nu^{- 1 \circ}
+\rangle^{\ast} \rsupfun{\nu^{- 1}} \rsupfun{U^r} A
+\sqsubseteq \rsupfun{\nu^{- 1 \circ}} \langle \nu^{- 1}
+\rangle^{\ast} \langle U_0 \rangle^{\ast} A$.
+
+To prove that the map $f : X \rightarrow [0, 1]$ is continuous, it suffices to
+check that for every real number $a \in] 0 ; 1 [$ the sets $\langle f^{- 1}
+\rangle^{\ast} [0 ; a [$ and $\rsupfun{f^{- 1}}] a ; 1]$ are
+open. This follows from the equalitites
+
+$\rsupfun{f^{- 1}} [0 ; a [= \bigcup_{\mathbb{Q}_2 \ni q < a}
+\rsupfun{\nu^{- 1 \circ}} \rsupfun{\nu^{- 1}}
+\rsupfun{U^q} A$ and $\rsupfun{f^{- 1}}] a ; 1] =
+\bigcup_{\mathbb{Q}_2 \ni r > a} (X \setminus \langle \nu^{- 1}
+\rangle^{\ast} \rsupfun{U^r} A)$.
 \end{proof}
