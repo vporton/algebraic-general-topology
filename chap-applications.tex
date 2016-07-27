@@ -53,11 +53,21 @@ For every set $A\in\subsets\mathbb{R}$
 If $A$ is an interval, then $\overrightarrow{A}$ is called \emph{right directed interval} and $\overleftarrow{A}$ is called \emph{left directed interval}.
 \end{defn}
 
-First prove a special case of the below theorem: \fxwarning{Should we remove this?}
+I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up\mathcal{A}$ on which the property holds.
+
+\begin{prop}
+$f\in\continuous(\overrightarrow{A};\overrightarrow{B})$ iff
+$f$ is monotone on the filter~$\Delta_+$ and right-continuous.
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
 
 \begin{conjecture}
 A function~$f:A\rightarrow B$ where $A,B\in\subsets\mathbb{R}$ is continuous (regarding the usual topologies on~$A$ and~$B$) and monotone iff
-$f\in\continuous(\overrightarrow{A};\overrightarrow{B})$, provided that $A$ is a connected set (=interval).
+both $f\in\continuous(\overrightarrow{A};\overrightarrow{B})$ and $f\in\continuous(A;B)$, provided that $A$ is a connected set (=interval).
+\url{http://math.stackexchange.com/a/1872906/4876}
 \fxnote{It is also locally monotone even if $A$ is not a connected set.}
 \end{conjecture}
 
@@ -65,8 +75,15 @@ $f\in\continuous(\overrightarrow{A};\overrightarrow{B})$, provided that $A$ is a
 \url{http://math.stackexchange.com/questions/1473668/locally-monotone-function-is-monotone}
 
 The hard part is to prove that it is monotone. It's enough to prove that it is locally monotone.
+$f\in\continuous(\overrightarrow{A};\overrightarrow{B}) \Leftrightarrow
+f\circ\overrightarrow{A} \sqsubseteq \overrightarrow{B}\circ f \Leftrightarrow
+\forall x\in\Src f:\rsupfun{f\circ\overrightarrow{A}}\{x\} \sqsubseteq \rsupfun{\overrightarrow{B}\circ f}\{x\}
+$.
 
-Without lost of generality, prove just that it is locally monotone at~$0$. Suppose for the contrary
+Without lost of generality, prove just that it is locally monotone at~$0$.
+
+
+Suppose for the contrary
 that there is an $\epsilon>0$ such that $f(x) > f(0)$ for $x\in]-\epsilon;0[$ (for $x>0$ it follows from ??).
 
 $\rsupfun{f\circ\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}} ]-\epsilon;0[ =
