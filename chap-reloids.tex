@@ -790,8 +790,24 @@ for some function $G:\Src f\rightarrow\mathscr{F}(\Dst f)$.
 
 We have $\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)=g|_{\uparrow^{\Src f}\{\alpha\}}\sqsubseteq f|_{\uparrow \{\alpha\}}$.
 Thus $g\sqsubseteq R$.\end{proof}
-\begin{conjecture}
+\begin{conjecture}\label{compl-rld-intrs}
 $\Compl f\sqcap\Compl g=\Compl(f\sqcap g)$ for every $f,g\in\mathsf{RLD}(A;B)$.\end{conjecture}
+
+\begin{prop}
+Conjecture~\ref{compl-rld-intrs} is equivalent to the statement that meet of every two complete reloids is a complete reloid.
+\end{prop}
+
+\begin{proof}
+Let conjecture~\ref{compl-rld-intrs} holds. Then for complete funcoids $f$ and $g$ we have $f \sqcap g =
+\Compl (f \sqcap g)$ and thus $f \sqcap g$ is complete.
+
+Let meet of every two complete reloid is complete. Then $\Compl f \sqcap
+\Compl g$ is complete and thus it is greatest complete reloid which is
+less $\Compl f$ and less $\Compl g$ what is the same as greatest
+complete reloid which is less than $f$ and $g$ that is $\Compl (f \sqcap
+g)$.
+\end{proof}
+
 \begin{thm}
 $\Compl\bigsqcup R=\bigsqcup\rsupfun{\Compl}R$ for every set $R\in\subsets\mathsf{RLD}(A;B)$
 for every sets $A$, $B$.\end{thm}
