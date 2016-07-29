@@ -19,14 +19,26 @@ rather than the join of two objects may have an exponential benefit for simplici
 
 \subsection{Directed line and directed intervals}
 
-\begin{defn}~
+\begin{defn}
+Let $a$ be an element of a poset~$\mathfrak{A}$.
 \begin{enumerate}
-\item $\Delta_{+} = \bigsqcap^{\mathscr{F}} \setcond{[0;0+\epsilon[}{\epsilon\in\mathbb{R}, \epsilon>0} = \Delta\sqcap [0;\infty\mathclose[$;
-\item $\Delta_{-} = \bigsqcap^{\mathscr{F}} \setcond{]0-\epsilon;0]}{\epsilon\in\mathbb{R}, \epsilon>0} = \Delta\sqcap \mathopen]\infty;0]$;
-\item $\Delta_{+} + a = \bigsqcap^{\mathscr{F}} \setcond{[a;a+\epsilon[}{\epsilon\in\mathbb{R}, \epsilon>0} = \rsupfun{a+}\Delta_+$;
-\item $\Delta_{-} + a = \bigsqcap^{\mathscr{F}} \setcond{]a-\epsilon;a]}{\epsilon\in\mathbb{R}, \epsilon>0} = \rsupfun{a+}\Delta_-$.
+\item $\Delta(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;y[}{x,y\in\mathfrak{A}, x<a\land y>a}$;
+\item $\Delta_{>}(a) = \bigsqcap^{\mathscr{F}} \setcond{]a;y[}{y\in\mathfrak{A}, x<a\land y>a}$;
+\item $\Delta_{\geq}(a) = \bigsqcap^{\mathscr{F}} \setcond{[a;y[}{y\in\mathfrak{A}, y>a}$;
+\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\mathfrak{A}, x<a}$;
+\item $\Delta_{\leq}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a]}{x\in\mathfrak{A}, x<a}$.
 \end{enumerate}
 \end{defn}
+
+\begin{obvious}
+~
+\begin{enumerate}
+\item $\Delta_{>}(a) = \Delta(a)\sqcap^{\mathscr{F}} \setcond{y\in\mathfrak{A}}{y>a}$;
+\item $\Delta_{\geq}(a) = \Delta(a)\sqcap^{\mathscr{F}} \setcond{y\in\mathfrak{A}}{y\geq a}$;
+\item $\Delta_{<}(a) = \Delta(a)\sqcap^{\mathscr{F}} \setcond{x\in\mathfrak{A}}{x<a}$;
+\item $\Delta_{\leq}(a) = \Delta(a)\sqcap^{\mathscr{F}} \setcond{x\in\mathfrak{A}}{x\leq a}$.
+\end{enumerate}
+\end{obvious}
 
 \begin{defn}~
 \begin{enumerate}
