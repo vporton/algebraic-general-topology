@@ -55,8 +55,8 @@ Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defin
 \begin{xca}
 \fxnote{Generalize for arbitrary posets.}
 \begin{enumerate}
-\item $\rsupfun{|\mathbb{R}|_{\geq}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap[a;a+\epsilon[\ne\emptyset}$;
-\item $\rsupfun{|\mathbb{R}|_{\leq}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap]a-\epsilon;a]\ne\emptyset}$.
+\item $\rsupfun{\rsupfun{|\mathbb{R}|_{\geq}^{-1}}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap[a;a+\epsilon[\ne\emptyset}$;
+\item $\rsupfun{\rsupfun{|\mathbb{R}|_{\leq}^{-1}}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap]a-\epsilon;a]\ne\emptyset}$.
 \end{enumerate}
 \end{xca}
 
@@ -69,6 +69,16 @@ Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defin
 \item $|\mathbb{R}|_{<} = |\mathbb{R}| \sqcap <$.
 \end{enumerate}
 \end{conjecture}
+
+\begin{rem}
+On trivial ultrafilters these obviously agree:
+\begin{enumerate}
+\item $\rsupfun{|\mathbb{R}|_{\geq}}\{x\} = \rsupfun{|\mathbb{R}| \sqcap \geq}\{x\}$;
+\item $\rsupfun{|\mathbb{R}|_{>}}\{x\} = \rsupfun{|\mathbb{R}| \sqcap >}\{x\}$;
+\item $\rsupfun{|\mathbb{R}|_{\leq}}\{x\} = \rsupfun{|\mathbb{R}| \sqcap \leq}\{x\}$;
+\item $\rsupfun{|\mathbb{R}|_{<}}\{x\} = \rsupfun{|\mathbb{R}| \sqcap <}\{x\}$.
+\end{enumerate}
+\end{rem}
 
 I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up\mathcal{A}$ on which the property holds.
 
