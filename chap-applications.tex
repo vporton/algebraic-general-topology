@@ -82,37 +82,35 @@ On trivial ultrafilters these obviously agree:
 
 I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up\mathcal{A}$ on which the property holds.
 
-\begin{conjecture}
-A function~$f:A\rightarrow B$ where $A,B\in\subsets\mathbb{R}$ is continuous (regarding the usual topologies on~$A$ and~$B$) and monotone iff
-both $f\in\continuous(\overrightarrow{A};\overrightarrow{B})$ and $f\in\continuous(A;B)$, provided that $A$ is a connected set (=interval).
+\begin{thm}
+Let function~$f\in\continuous(A;B)$ where $A,B\in\subsets\mathbb{R}$.
+\begin{enumerate}
+\item $f$ is monotone iff $f\in\continuous(|A|_{\geq};|B|_{\geq})$.
+\item $f$ is strictly monotone iff $f\in\continuous(|A|_{>};|B|_{>})$.
+\end{enumerate}
 \url{http://math.stackexchange.com/a/1872906/4876}
 \fxnote{It is also locally monotone even if $A$ is not a connected set.}
-\end{conjecture}
+\fxnote{Generalize for arbitrary posets.}
+\fxnote{Generalize for $f$ being a funcoid.}
+\fxnote{Consider generalized continuity $f\in\continuous((A;|A|_{\geq});(B;|B|_{\geq}))$.}
+\end{thm}
 
-\begin{proof} (attempted)
+\begin{proof}
 \url{http://math.stackexchange.com/questions/1473668/locally-monotone-function-is-monotone}
 
-The hard part is to prove that it is monotone. It's enough to prove that it is locally monotone.
-$f\in\continuous(\overrightarrow{A};\overrightarrow{B}) \Leftrightarrow
-f\circ\overrightarrow{A} \sqsubseteq \overrightarrow{B}\circ f \Leftrightarrow
-\forall x\in\Src f:\rsupfun{f\circ\overrightarrow{A}}\{x\} \sqsubseteq \rsupfun{\overrightarrow{B}\circ f}\{x\}
-$.
+Because $f$ is continuous, we have $\rsupfun{f\circ A}\{x\} \sqsubseteq \rsupfun{B\circ f}\{x\}$
+that is $\rsupfun{f} \Delta(x) \sqsubseteq \Delta(f(x))$ for every~$x$.
 
-Without lost of generality, prove just that it is locally monotone at~$0$.
+If $f$ is monotone, we have $\rsupfun{f} \Delta_{\geq}(x) \sqsubseteq [f(x);\infty[$.
+Thus $\rsupfun{f} \Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}(f(x))$, that is
+$\rsupfun{f\circ |A|_{\geq}}\{x\} \sqsubseteq \rsupfun{|B|_{\geq}\circ f}\{x\}$, thus
+$f\in\continuous(|A|_{\geq};|B|_{\geq})$.
 
+If $f$ is strictly monotone, we have $\rsupfun{f} \Delta_{>}(x) \sqsubseteq ]f(x);\infty[$.
+Thus $\rsupfun{f} \Delta_{>}(x) \sqsubseteq \Delta_{>}(f(x))$, that is
+$\rsupfun{f\circ |A|_{>}}\{x\} \sqsubseteq \rsupfun{|B|_{>}\circ f}\{x\}$, thus
+$f\in\continuous(|A|_{>};|B|_{\geq})$.
 
-Suppose for the contrary
-that there is an $\epsilon>0$ such that $f(x) > f(0)$ for $x\in]-\epsilon;0[$ (for $x>0$ it follows from ??).
-
-$\rsupfun{f\circ\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}} ]-\epsilon;0[ =
-\rsupfun{f\circ\overrightarrow{[0;1]}} ]-\epsilon;0] \ni f(x), f(0)$
-
-$\rsupfun{B\circ f} ]-\epsilon;0[ \not\ni ?? \not\ni f(0)$;
-
-Consider for counter-examples $f(t) = t\sin(1/t)$ or
-\[ f(t) = \begin{cases}t\sin(1/t)&\text{ if }x<0\\0&\text{ if }x\ge 0\end{cases}. \]
-
-Old counter-example: $f(t) = \begin{cases}-1/x&\text{ if }x<0\\0&\text{ if }x\ge 0\end{cases}$.
 ??
 \end{proof}
 
