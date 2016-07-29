@@ -40,56 +40,37 @@ Let $a$ be an element of a poset~$\mathfrak{A}$.
 \end{enumerate}
 \end{obvious}
 
-\begin{defn}~
+\begin{defn}
+~
+Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defines complete funcoids:
 \begin{enumerate}
-\item \emph{Right directed (real) line} is the complete funcoid $\overrightarrow{\mathbb{R}}$ defined by the formula
-$\rsupfun{\overrightarrow{\mathbb{R}}}@\{a\} = \Delta_{+} + a$ for every $a\in\mathbb{R}$;
-\item \emph{Left directed (real) line} is the complete funcoid $\overleftarrow{\mathbb{R}}$ defined by the formula
-$\rsupfun{\overleftarrow{\mathbb{R}}}@\{a\} = \Delta_{-} + a$ for every $a\in\mathbb{R}$;
+\item $|\mathfrak{A}|\{x\} = \Delta(x)$;
+\item $|\mathfrak{A}|_{>}\{x\} = \Delta_{>}(x)$;
+\item $|\mathfrak{A}|_{\geq}\{x\} = \Delta_{\geq}(x)$;
+\item $|\mathfrak{A}|_{<}\{x\} = \Delta_{<}(x)$;
+\item $|\mathfrak{A}|_{\leq}\{x\} = \Delta_{\leq}(x)$;
 \end{enumerate}
 \end{defn}
 
-\begin{xca}~
+\begin{xca}
+\fxnote{Generalize for arbitrary posets.}
 \begin{enumerate}
-\item $\rsupfun{\overrightarrow{\mathbb{R}}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap[a;a+\epsilon[\ne\emptyset}$;
-\item $\rsupfun{\overleftarrow{\mathbb{R}}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap]a-\epsilon;a]\ne\emptyset}$.
+\item $\rsupfun{|\mathbb{R}|_{\geq}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap[a;a+\epsilon[\ne\emptyset}$;
+\item $\rsupfun{|\mathbb{R}|_{\leq}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap]a-\epsilon;a]\ne\emptyset}$.
 \end{enumerate}
 \end{xca}
 
-\begin{defn}
-For every set $A\in\subsets\mathbb{R}$
+\begin{conjecture}
+~
 \begin{enumerate}
-\item $\overrightarrow{A} = \overrightarrow{\mathbb{R}} \sqcap(A\times A)$;
-\item $\overleftarrow{A} = \overleftarrow{\mathbb{R}} \sqcap(A\times A)$.
+\item $|\mathbb{R}|_{\geq} = |\mathbb{R}| \sqcap \geq$;
+\item $|\mathbb{R}|_{>} = |\mathbb{R}| \sqcap >$;
+\item $|\mathbb{R}|_{\leq} = |\mathbb{R}| \sqcap \leq$;
+\item $|\mathbb{R}|_{<} = |\mathbb{R}| \sqcap <$.
 \end{enumerate}
-If $A$ is an interval, then $\overrightarrow{A}$ is called \emph{right directed interval} and $\overleftarrow{A}$ is called \emph{left directed interval}.
-\end{defn}
-
-We can generalize it for arbitrary ordered endofuncoids or endoreloids:
-
-\begin{defn}
-An \emph{ordered endofuncoid} is a pair of an endofuncoid~$\mu$ and a poset on~$\Ob\mu$.
-\emph{Ordered endoreloids} are defined similarly.
-\fxwarning{Should we also require that order and the structure agree?}
-\end{defn}
-
-\[
-\overrightarrow{\mu} = \mu \sqcap @\setcond{(x;y)}{x,y\in\Ob\mu, y\geq x}
-\quad\text{and}\quad
-\overleftarrow{\mu} = \mu \sqcap @\setcond{(x;y)}{x,y\in\Ob\mu, y\leq x}.
-\]
-
-\fxwarning{Prove it is the same as above defined for real numbers.}
+\end{conjecture}
 
 I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up\mathcal{A}$ on which the property holds.
-
-\begin{prop}
-$\overrightarrow{\mu} \sqcup \overleftarrow{\mu} = \mu$ for both funcoids and reloids.
-\end{prop}
-
-\begin{proof}
-Both funcoids and reloids are distributive lattices.
-\end{proof}
 
 \begin{prop}
 $f\in\continuous(\overrightarrow{A};\overrightarrow{B})$ iff
