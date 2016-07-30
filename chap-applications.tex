@@ -167,7 +167,7 @@ I propose a new way to construct a directed topological space. My way is more ge
 
 \begin{defn}
 Let $ T$ be the complete endofuncoid corresponding to a topological space
-and $\nu\sqsubseteq T$ be its ``subfuncoid''. The $\mathrm{d}$-space induced by the pair $( T;\nu)$
+and $\nu\sqsubseteq T$ be its ``subfuncoid''. The $\mathrm{d}$-space $\operatorname{(dir)}(T;\nu)$ induced by the pair $(T;\nu)$
 consists of~$ T$ and paths $f\in\continuous([0;1]; T) \cap \continuous(|[0;1]|_{\geq}; \nu)$
 such that $f(0)=f(1)$.
 \end{defn}
@@ -193,7 +193,6 @@ using the fact that the operation $\circ$ is distributive over $\sqcup$.
 
 \begin{conjecture}
 Every directed topological space can be constructed in the above described way.
-\fxnote{And every one with complete funcoid~$\nu$ is directed topological space?}
 \end{conjecture}
 
 Let now we have a $\mathrm{d}$-space $(X;d)$. Define complete funcoid~$\nu$ corresponding to the $\mathrm{d}$-space by the formula
@@ -202,6 +201,15 @@ Let now we have a $\mathrm{d}$-space $(X;d)$. Define complete funcoid~$\nu$ corr
 
 $\nu = \Compl \bigsqcup_{a\in d}(a\circ |\mathbb{R}|_{\geq}\circ a^{-1}) =
 \bigsqcup_{a\in d}\Compl(a\circ |\mathbb{R}|_{\geq}\circ a^{-1})$.
+
+Then attempt to restore $(X;d)$ from the funcoid~$\nu$:
+$f\in\continuous(|[0;1]|_{\geq}; \bigsqcup_{a\in d}(a\circ |\mathbb{R}|_{\geq}\circ a^{-1})) \Leftrightarrow
+|[0;1]|_{\geq}\sqsubseteq f^{-1}\circ \bigsqcup_{a\in d}(a\circ |\mathbb{R}|_{\geq}\circ a^{-1}) \circ f \Leftrightarrow
+|[0;1]|_{\geq}\sqsubseteq \bigsqcup_{a\in d}(f^{-1}\circ a\circ |\mathbb{R}|_{\geq}\circ a^{-1}\circ f) \Leftrightarrow ?? \Leftrightarrow
+f\in d$.
+If $f\in d$ then $f^{-1}\circ a\circ |\mathbb{R}|_{\geq}\circ a^{-1}\circ f\sqsubseteq |\mathbb{R}|_{\geq} \sqcap [0;1]\times[0;1] =
+|\mathbb{R}|_{\geq}$. Thus $f\in d \Rightarrow |[0;1]|_{\geq}\sqsubseteq \bigsqcup_{a\in d}(f^{-1}\circ a\circ |\mathbb{R}|_{\geq}\circ a^{-1}\circ f)$.
+Let now $|[0;1]|_{\geq}\sqsubseteq \bigsqcup_{a\in d}(f^{-1}\circ a\circ |\mathbb{R}|_{\geq}\circ a^{-1}\circ f)$. Then ??
 
 \begin{example}
 The two directed topological spaces, constructed from a fixed topological space and two different reflexive funcoids,
