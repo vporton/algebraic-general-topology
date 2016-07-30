@@ -165,18 +165,36 @@ a set $d\subseteq\continuous([0;1];X)$ (called \emph{directed paths} or \emph{d-
 
 I propose a new way to construct a directed topological space. My way is more geometric/topological as it does not involve dealing with particular paths.
 
+\begin{defn}
+Let $ T$ be the complete endofuncoid corresponding to a topological space
+and $\nu\sqsubseteq T$ be its ``subfuncoid''. The $\mathrm{d}$-space induced by the pair $( T;\nu)$
+consists of~$ T$ and paths $f\in\continuous([0;1]; T) \cap \continuous(|[0;1]|_{\geq}; \nu)$
+such that $f(0)=f(1)$.
+\end{defn}
+
+\begin{prop}
+It is really a $\mathrm{d}$-space.
+\end{prop}
+
+\begin{proof}
+Every $\mathrm{d}$-path is continuous.
+
+Constant path are $\mathrm{d}$-paths because $\nu$ is reflexive.
+
+Every reparameterization is a $\mathrm{d}$-path because they are $\continuous(|[0;1]|_{\geq}; \nu)$ and we can apply the theorem about
+composition of continuous functions.
+
+Every concatenation is a $\mathrm{d}$-path. Denote
+$f_0 = \mylambda{t}{[0;\frac{1}{2}]}{a(2t)}$ and $f_1 = \mylambda{t}{[\frac{1}{2};1]}{b(2t-1)}$.
+Obviously $f_0,f_1 \in \continuous([0;1];\mu) \cap \continuous(|[0;1]|_{\geq}; \nu)$.
+Then we conclude that $a+b = f_1\sqcup f_1$ is in $f_0,f_1 \in \continuous([0;1];\mu) \cap \continuous(|[0;1]|_{\geq}; \nu)$
+using the fact that the operation $\circ$ is distributive over $\sqcup$.
+\end{proof}
+
 \begin{conjecture}
-Every directed topological space can be constructed in the below described way.
-\fxnote{And every one with complete funcoid~$F$ is directed topological space?}
+Every directed topological space can be constructed in the above described way.
+\fxnote{And every one with complete funcoid~$\nu$ is directed topological space?}
 \end{conjecture}
-
-Consider topological space $T$ and its reflexive subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
-Note that in our consideration $F$ is an endofuncoid (its source and destination are the same).
-
-Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from
-$\overrightarrow{[0;1]}\circ\overleftarrow{[0;1]}^{-1}$ to $F$ such that $f(0)=A$ and $f(1)=B$.
-
-Because $F$ is less that $T$, we have that every directed path is a path.
 
 \begin{conjecture}
 The two directed topological spaces, constructed from a fixed topological space and two different funcoids,
