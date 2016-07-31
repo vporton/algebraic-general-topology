@@ -15,14 +15,27 @@ rather than the join of two objects may have an exponential benefit for simplici
 
 \subsection{Directed line and directed intervals}
 
+\fxwarning{Confusion between induced order topology and subspace topology:
+\url{https://en.wikipedia.org/wiki/Order_topology}}
+
+\begin{defn}
+For an element~$a$ of a poset~$\mathfrak{A}$
+\begin{enumerate}
+\item $J_{\geq}(a) = \setcond{x\in\mathfrak{A}}{x\geq a}$;
+\item $J_{>}(a) = \setcond{x\in\mathfrak{A}}{x>a}$;
+\item $J_{\leq}(a) = \setcond{x\in\mathfrak{A}}{x\leq a}$;
+\item $J_{<}(a) = \setcond{x\in\mathfrak{A}}{x<a}$.
+\end{enumerate}
+\end{defn}
+
 \begin{defn}
 Let $a$ be an element of a poset~$\mathfrak{A}$.
 \begin{enumerate}
 \item $\Delta(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;y[}{x,y\in\mathfrak{A}, x<a\land y>a}$;
-\item $\Delta_{>}(a) = \bigsqcap^{\mathscr{F}} \setcond{]a;y[}{y\in\mathfrak{A}, x<a\land y>a}$;
 \item $\Delta_{\geq}(a) = \bigsqcap^{\mathscr{F}} \setcond{[a;y[}{y\in\mathfrak{A}, y>a}$;
-\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\mathfrak{A}, x<a}$;
+\item $\Delta_{>}(a) = \bigsqcap^{\mathscr{F}} \setcond{]a;y[}{y\in\mathfrak{A}, x<a\land y>a}$;
 \item $\Delta_{\leq}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a]}{x\in\mathfrak{A}, x<a}$.
+\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\mathfrak{A}, x<a}$;
 \end{enumerate}
 \end{defn}
 
@@ -48,13 +61,31 @@ Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defin
 \end{enumerate}
 \end{defn}
 
-\begin{xca}
-\fxnote{Generalize for arbitrary posets.}
+\begin{prop}
+~\fxerror{Wrong if $a$ is the maximum or minimum.}
 \begin{enumerate}
-\item $\rsupfun{|\mathbb{R}|_{\geq}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap[a;a+\epsilon[\ne\emptyset}$;
-\item $\rsupfun{|\mathbb{R}|_{\leq}^{-1}}@X = @\setcond{a\in\mathbb{R}}{\forall\epsilon>0:X\cap]a-\epsilon;a]\ne\emptyset}$.
+\item $\rsupfun{|\mathfrak{A}|_{\geq}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall y>a:X\cap[a;y[\ne\emptyset}$;
+\item $\rsupfun{|\mathfrak{A}|_{>}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall y>a:X\cap]a;y[\ne\emptyset}$;
+\item $\rsupfun{|\mathfrak{A}|_{\leq}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall x<a:X\cap]x;a]\ne\emptyset}$.
+\item $\rsupfun{|\mathfrak{A}|_{<}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall x<a:X\cap]x;a[\ne\emptyset}$.
 \end{enumerate}
-\end{xca}
+\end{prop}
+
+\begin{proof}
+$a\in\rsupfun{|\mathfrak{A}|_{\geq}^{-1}}@X \Leftrightarrow
+@\{a\} \nasymp \rsupfun{|\mathfrak{A}|_{\geq}^{-1}}@X \Leftrightarrow
+\rsupfun{|\mathfrak{A}|_{\geq}}@\{a\} \nasymp @X \Leftrightarrow
+\Delta_{\geq}(a) \nasymp @X \Leftrightarrow
+\forall y>a:X\cap[a;y[\ne\emptyset$.
+
+$a\in\rsupfun{|\mathfrak{A}|_{>}^{-1}}@X \Leftrightarrow
+@\{a\} \nasymp \rsupfun{|\mathfrak{A}|_{>}^{-1}}@X \Leftrightarrow
+\rsupfun{|\mathfrak{A}|_{>}}@\{a\} \nasymp @X \Leftrightarrow
+\Delta_{>}(a) \nasymp @X \Leftrightarrow
+\forall y>a:X\cap[a;y[\ne\emptyset$.
+
+The rest follows from duality.
+\end{proof}
 
 \begin{conjecture}
 ~
