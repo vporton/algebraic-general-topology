@@ -167,7 +167,21 @@ So we have $\forall x\in[a;b'[: f(x)\geq f(c)$ what contradicts to the above.
 
 So $f$ is monotone on the entire~$A$.
 
-Let now moreover \fxwarning{Show that it is moreover.} $f\in\continuous(|A|_{>};|B|_{>})$. We need to prove that $f$ is strictly monotone.
+\fxerror{$|A|_{\geq}$ and similar confused with $|\mathbb{R}|_{\geq}$.}
+$f\in\continuous(|A|_{\geq};|B|_{\geq}) \Rightarrow f\in\continuous(|A|_{>};|B|_{\geq})$ is obvious. Reversely
+$f\in\continuous(|A|_{>};|B|_{\geq}) \Rightarrow
+f\circ |A|_{>} \sqsubseteq |B|_{\geq}\circ f \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\rsupfun{|A|_{>}}\{x\} \sqsubseteq \rsupfun{|B|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x)\} \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x)\} \sqcup \{f(x)\} \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqcup \{x\} \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\rsupfun{|A|_{\geq}}\{x\} \sqsubseteq \rsupfun{|B|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+\forall x\in\mathbb{R}: f\circ |A|_{\geq} \sqsubseteq |B|_{\geq}\circ f \Leftrightarrow
+f\in\continuous(|A|_{\geq};|B|_{\geq})$.
+
+Let $f\in\continuous(|A|_{>};|B|_{>})$. Then $f\in\continuous(|A|_{>};|B|_{\geq})$ and thus it is monotone.
+We need to prove that $f$ is strictly monotone.
 Suppose the contrary. Then there is a nonempty interval $[p;q]\subseteq A$ such that $f$ is constant on this interval.
 But this is impossible because $f\in\continuous(|A|_{>};|B|_{>})$.
 \end{proof}
