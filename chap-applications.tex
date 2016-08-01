@@ -18,6 +18,10 @@ rather than the join of two objects may have an exponential benefit for simplici
 \fxwarning{Confusion between induced order topology and subspace topology:
 \url{https://en.wikipedia.org/wiki/Order_topology}}
 
+Let $\mathfrak{A}$ be a poset. We will denote $\overline{\mathfrak{A}}=\mathfrak{A}\cup\{-\infty,+\infty\}$ the poset
+with two added elements $-\infty$ and $+\infty$, such that $+\infty$ is strictly greater than every element of~$\mathfrak{A}$
+and $-\infty$ is strictly less.
+
 \fxerror{Below is wrong because intervals don't contain infinities.}
 
 \begin{defn}
@@ -33,11 +37,11 @@ For an element~$a$ of a poset~$\mathfrak{A}$
 \begin{defn}
 Let $a$ be an element of a poset~$\mathfrak{A}$.
 \begin{enumerate}
-\item $\Delta(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;y[}{x,y\in\mathfrak{A}, x<a\land y>a}$;
-\item $\Delta_{\geq}(a) = \bigsqcap^{\mathscr{F}} \setcond{[a;y[}{y\in\mathfrak{A}, y>a}$;
-\item $\Delta_{>}(a) = \bigsqcap^{\mathscr{F}} \setcond{]a;y[}{y\in\mathfrak{A}, x<a\land y>a}$;
-\item $\Delta_{\leq}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a]}{x\in\mathfrak{A}, x<a}$.
-\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\mathfrak{A}, x<a}$;
+\item $\Delta(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;y[}{x,y\in\overline{\mathfrak{A}}, x<a\land y>a}$;
+\item $\Delta_{\geq}(a) = \bigsqcap^{\mathscr{F}} \setcond{[a;y[}{y\in\overline{\mathfrak{A}}, y>a}$;
+\item $\Delta_{>}(a) = \bigsqcap^{\mathscr{F}} \setcond{]a;y[}{y\in\overline{\mathfrak{A}}, x<a\land y>a}$;
+\item $\Delta_{\leq}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a]}{x\in\overline{\mathfrak{A}}, x<a}$.
+\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\overline{\mathfrak{A}}, x<a}$;
 \end{enumerate}
 \end{defn}
 
@@ -65,12 +69,12 @@ Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defin
 \end{defn}
 
 \begin{prop}
-~\fxerror{Wrong if $a$ is the maximum or minimum.}
+~
 \begin{enumerate}
-\item $\rsupfun{|\mathfrak{A}|_{\geq}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall y>a:X\cap[a;y[\ne\emptyset}$;
-\item $\rsupfun{|\mathfrak{A}|_{>}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall y>a:X\cap]a;y[\ne\emptyset}$;
-\item $\rsupfun{|\mathfrak{A}|_{\leq}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall x<a:X\cap]x;a]\ne\emptyset}$.
-\item $\rsupfun{|\mathfrak{A}|_{<}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall x<a:X\cap]x;a[\ne\emptyset}$.
+\item $\rsupfun{|\mathfrak{A}|_{\geq}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall y\in\overline{\mathfrak{A}}:(y>a \Rightarrow X\cap[a;y[\ne\emptyset)}$;
+\item $\rsupfun{|\mathfrak{A}|_{>}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall y\in\overline{\mathfrak{A}}:(y>a \Rightarrow X\cap]a;y[\ne\emptyset)}$;
+\item $\rsupfun{|\mathfrak{A}|_{\leq}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall \in\overline{\mathfrak{A}}:(x<a \Rightarrow X\cap]x;a]\ne\emptyset)}$;
+\item $\rsupfun{|\mathfrak{A}|_{<}^{-1}}@X = @\setcond{a\in\mathfrak{A}}{\forall \in\overline{\mathfrak{A}}:(x<a \Rightarrow X\cap]x;a[\ne\emptyset)}$.
 \end{enumerate}
 \end{prop}
 
