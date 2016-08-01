@@ -22,8 +22,6 @@ Let $\mathfrak{A}$ be a poset. We will denote $\overline{\mathfrak{A}}=\mathfrak
 with two added elements $-\infty$ and $+\infty$, such that $+\infty$ is strictly greater than every element of~$\mathfrak{A}$
 and $-\infty$ is strictly less.
 
-\fxerror{Below is wrong because intervals don't contain infinities.}
-
 \begin{defn}
 For an element~$a$ of a poset~$\mathfrak{A}$
 \begin{enumerate}
@@ -59,13 +57,28 @@ Let $a$ be an element of a poset~$\mathfrak{A}$.
 ~
 Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defines complete funcoids:
 \begin{enumerate}
-\item $|\mathfrak{A}|\{x\} = \Delta(x)$; \fxwarning{Should coincide with the usual definition of order topology.}
-\item $|\mathfrak{A}|_{>}\{x\} = \Delta_{>}(x)$;
-\item $|\mathfrak{A}|_{\geq}\{x\} = \Delta_{\geq}(x)$;
-\item $|\mathfrak{A}|_{<}\{x\} = \Delta_{<}(x)$;
-\item $|\mathfrak{A}|_{\leq}\{x\} = \Delta_{\leq}(x)$;
+\item $\rsupfun{|\mathfrak{A}|}\{x\} = \Delta(x)$;
+\item $\rsupfun{|\mathfrak{A}|_{\geq}}\{x\} = \Delta_{\geq}(x)$;
+\item $\rsupfun{|\mathfrak{A}|_{>}}\{x\} = \Delta_{>}(x)$;
+\item $\rsupfun{|\mathfrak{A}|_{\leq}}\{x\} = \Delta_{\leq}(x)$;
+\item $\rsupfun{|\mathfrak{A}|_{<}}\{x\} = \Delta_{<}(x)$.
 \end{enumerate}
 \end{defn}
+
+\begin{prop}
+The complete funcoid corresponding to the order topology\footnote{See Wikipedia for a definition of ``Order topology''.}
+is equal to $|\mathfrak{A}|$.
+\end{prop}
+
+\begin{proof}
+Because every open set is a finite union of open intervals, the complete funcoid~$f$ corresponding to the order topology
+is described by the formula: $\rsupfun{f}\{x\} = \bigsqcap^{\mathscr{F}}\setcond{]a;b[}{a,b\in\overline{\mathfrak{A}}, a<x\land b>x} =
+\Delta(x) = \rsupfun{|\mathfrak{A}|}\{x\}$. Thus $f=|\mathfrak{A}|$.
+\end{proof}
+
+\begin{xca}
+Show that $|\mathfrak{A}|_{\geq}$ (in general) is not the same as ``right order topology''\footnote{See Wikipedia}.
+\end{xca}
 
 \begin{prop}
 ~
