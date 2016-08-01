@@ -134,7 +134,8 @@ I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up
 \begin{lem}
 Let function~$f\in\continuous(A;B)$ where $A,B\in\subsets\mathbb{R}$ and $A$ is connected.
 \begin{enumerate}
-\item $f$ is monotone iff $f\in\continuous(|A|_{\geq};|B|_{\geq})$.
+\item $f$ is monotone iff $f\in\continuous(|A|_{\geq};|B|_{\geq})$ iff
+$f\in\continuous(|A|_{>};|B|_{\geq})$.\fxwarning{Prove the second ``iff''!}
 \item $f$ is strictly monotone iff $f\in\continuous(|A|_{>};|B|_{>})$.
 \end{enumerate}
 \fxnote{Generalize for arbitrary posets.}
@@ -166,7 +167,7 @@ So we have $\forall x\in[a;b'[: f(x)\geq f(c)$ what contradicts to the above.
 
 So $f$ is monotone on the entire~$A$.
 
-Let now moreover $f\in\continuous(|A|_{>};|B|_{>})$. We need to prove that $f$ is strictly monotone.
+Let now moreover \fxwarning{Show that it is moreover.} $f\in\continuous(|A|_{>};|B|_{>})$. We need to prove that $f$ is strictly monotone.
 Suppose the contrary. Then there is a nonempty interval $[p;q]\subseteq A$ such that $f$ is constant on this interval.
 But this is impossible because $f\in\continuous(|A|_{>};|B|_{>})$.
 \end{proof}
