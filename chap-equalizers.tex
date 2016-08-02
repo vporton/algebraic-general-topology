@@ -329,25 +329,24 @@ and every set $A$:
 \end{defn}
 
 \begin{prop}
-  In the case of $\exists X \in \mathcal{A} : X \subseteq A$ these two
-  definitions coincide.
+  These two definitions coincide.
 \end{prop}
 
 \begin{proof}
-  Let $\exists X \in \mathcal{A} : X \subseteq A$. Then as it is proved in
+  It is proved in
 {\cite{volume-1}} $\setcond{ X \in \subsets A }
-{\exists Y \in \mathcal{A} : Y \subseteq X }$ is a filter.
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter.
 
 If $P \in \setcond{ X \in \subsets A }{ \exists Y
-\in \mathcal{A} : Y \subseteq X }$ then $P \in \subsets A$ and $Y
+\in \mathcal{A} : Y\cap A \subseteq X }$ then $P \in \subsets A$ and $Y\cap A
 \subseteq P$ for some $Y \in \mathcal{A}$. Thus $P \supseteq Y \cap A \in
-\bigsqcap \setcond{ \uparrow^B  (Y \cap A) }{ Y \in \mathcal{A} }$.
+\bigsqcap \setcond{ \uparrow^A  (Y \cap A) }{ Y \in \mathcal{A} }$.
 
-If $P \in \bigsqcap \setcond{ \uparrow^B  (X \cap A) }{
+If $P \in \bigsqcap \setcond{ \uparrow^A  (X \cap A) }{
 X \in \mathcal{A} }$ then by properties of generalized filter bases,
 there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
-\subsets A$. Thus $P \supseteq X$. Thus $P \in \setcond{ X \in \subsets A
-}{ \exists Y \in \mathcal{A} : Y \subseteq X }$.
+\subsets A$. Thus $P \in \setcond{ X \in \subsets A
+}{ \exists Y \in \mathcal{A} : Y\cap A \subseteq X }$.
 
 \fxwarning{Clear this proof: wording, consistent use of letters.}
 \end{proof}
