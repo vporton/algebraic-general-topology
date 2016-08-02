@@ -50,14 +50,26 @@ Similarly we have $X\cap Y\in\mathcal{C}$. Finally
 
 \end{description}
 \end{proof}
+
 \begin{defn}
 \index{filter!rebase}The \emph{rebase} $\mathcal{A}\div A$ for a
-filter $\mathcal{A}$ and a set $A$ (base) such that $\exists X\in\mathcal{A}:X\subseteq A$
-is defined by the formula
+filter $\mathcal{A}$ and a set $A$ (base) is defined by the formula
+\[
+\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\cap A\subseteq X}.
+\]
+\end{defn}
+
+\begin{prop}
+If $\exists X\in\mathcal{A}:X\subseteq A$ then
 \[
 \mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}.
 \]
-\end{defn}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
 \begin{prop}
 If $\exists X\in\mathcal{A}:X\subseteq A$ then:
 \begin{enumerate}
