@@ -77,15 +77,15 @@ If $\exists X\in\mathcal{A}:X\subseteq A$ then
 \end{prop}
 
 \begin{proof}
-\begin{grayed}
-We need to prove that $\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$
-is a filter on $A$. That it is an upper set is obvious. It is non-empty
-because $\exists Y\in\mathcal{A}:Y\subseteq A$ and thus $A\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
-Let $P,Q\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
-Then $P,Q\subseteq A$ and $\exists P'\in\mathcal{A}:P'\subseteq P$
-and $\exists Q'\in\mathcal{A}:Q'\subseteq Q$. So $P\cap Q\subseteq A$
-and $P'\cap Q'\subseteq P\cap Q$. Thus $P\cap Q\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
-\end{grayed}
+Let $\exists X\in\mathcal{A}:X\subseteq A$.
+
+$\exists Y\in\mathcal{A}:Y\subseteq X \Rightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ is obvious.
+
+Reversely, if $Y\cap A\subseteq X$ for $Y\in\mathcal{A}$ then take $Y'=Y\cap A$, then $Y'\in\mathcal{A} $ and $Y'\subseteq X$.
+Thus $\exists Y\in\mathcal{A}:Y\subseteq X$.
+
+So $\exists Y\in\mathcal{A}:Y\subseteq X \Leftrightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ and thus
+$\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
 \end{proof}
 
 \begin{prop}
