@@ -60,6 +60,14 @@ filter $\mathcal{A}$ and a set $A$ (base) is defined by the formula
 \end{defn}
 
 \begin{prop}
+$\mathcal{A}\div A$ is a filter on $A$;
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{prop}
 If $\exists X\in\mathcal{A}:X\subseteq A$ then
 \[
 \mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}.
@@ -67,27 +75,22 @@ If $\exists X\in\mathcal{A}:X\subseteq A$ then
 \end{prop}
 
 \begin{proof}
-??
-\end{proof}
-
-\begin{prop}
-If $\exists X\in\mathcal{A}:X\subseteq A$ then:
-\begin{enumerate}
-\item \label{div-filt}$\mathcal{A}\div A$ is a filter on $A$;
-\item \label{div-eq}$\mathcal{A}\div A\sim\mathcal{A}$.
-\end{enumerate}
-\end{prop}
-\begin{proof}
-~
-\begin{widedisorder}
-\item [{\ref{div-filt}}] We need to prove that $\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$
+\begin{grayed}
+We need to prove that $\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$
 is a filter on $A$. That it is an upper set is obvious. It is non-empty
 because $\exists Y\in\mathcal{A}:Y\subseteq A$ and thus $A\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
 Let $P,Q\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
 Then $P,Q\subseteq A$ and $\exists P'\in\mathcal{A}:P'\subseteq P$
 and $\exists Q'\in\mathcal{A}:Q'\subseteq Q$. So $P\cap Q\subseteq A$
 and $P'\cap Q'\subseteq P\cap Q$. Thus $P\cap Q\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
-\item [{\ref{div-eq}}] ~
+\end{grayed}
+\end{proof}
+
+\begin{prop}
+If $\exists X\in\mathcal{A}:X\subseteq A$ then $\mathcal{A}\div A\sim\mathcal{A}$.
+\end{prop}
+\begin{proof}
+~
 \begin{align*}
 (\mathcal{A}\div A)\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
 \setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
@@ -100,8 +103,6 @@ for some $X\in\mathcal{A}$ and
 \[
 A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\mathcal{A}\div A.
 \]
-
-\end{widedisorder}
 \end{proof}
 \begin{prop}
 $A\in\mathcal{A}\Rightarrow\mathcal{A}\div A=\subsets A\cap\mathcal{A}$.\end{prop}
