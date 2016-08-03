@@ -119,7 +119,7 @@ $\uparrow$ \emph{up-arrow functor}.
 \end{prop}
 
 \begin{proof}
-  $\mathcal{E}_{\mathcal{C}}^{A,A} = \uparrow (\mathcal{E}^{A,A}) =
+  $\mathcal{E}_{\mathcal{C}}^{A,A} = \uparrow \mathcal{E}^{A,A} =
   \uparrow 1_{\mathbf{Rel}} = 1_{\mathcal{C}}^A$.
 \end{proof}
 
@@ -137,7 +137,7 @@ $\uparrow$ \emph{up-arrow functor}.
 \begin{cor}
   If $f : X \rightarrow Y$ is a morphism of a category under
   $\mathbf{Rel}$ and $\im f = A \subseteq Y$, then
-  \[ (\mathcal{E}_{\mathcal{C}}^{A,Y}) \circ \mathcal{E}_{\mathcal{C}}^{Y,A}
+  \[ \mathcal{E}_{\mathcal{C}}^{A,Y} \circ \mathcal{E}_{\mathcal{C}}^{Y,A}
   \circ \uparrow f = \uparrow f. \]
 \end{cor}
 
@@ -156,18 +156,18 @@ $\uparrow$ \emph{up-arrow functor}.
   We'll prove only the first as the second is dual.
   
   Let $\mathcal{E}_{\mathcal{C}}^{A,B} \circ f = \mathcal{E}^{A,B} \circ g$. Then
-  $\mathcal{E}^{B,A} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})
-  \circ f = (\mathcal{E}_{\mathcal{C}}^{B,A}) \circ \mathcal{E}_{\mathcal{C}}^{A,B} \circ g$;
+  $\mathcal{E}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B}
+  \circ f = \mathcal{E}_{\mathcal{C}}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \circ g$;
   $1^A \circ f = 1^A \circ g$; $f = g$.
 \end{proof}
 
 \begin{prop}
-  $\mathcal{E}^{B,C} \circ (\mathcal{E}^{A,B}) = \mathcal{A,C}$
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{A,C}$
   iff $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
 \end{prop}
 
 \begin{proof}
-  $\mathcal{E}^{B,C} \circ (\mathcal{E}^{A,B}) = \mathcal{A,C}$
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{A,C}$
   is equivalent to:
   
   $(B ; C ; \id_{B \cap C}) \circ (A ; B ; \id_{A \cap B}) = (A ;
@@ -200,7 +200,7 @@ $\uparrow$ \emph{up-arrow functor}.
 
 \begin{proof}
   $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} = (\uparrow \mathcal{E}^{A,B})^{\dagger} = \uparrow (\mathcal{E}^{A,B})^{- 1} =
-  \uparrow (\mathcal{E}^{B,A}) = \mathcal{E}_{\mathcal{C}}^{B,A}$.
+  \uparrow \mathcal{E}^{B,A} = \mathcal{E}_{\mathcal{C}}^{B,A}$.
 \end{proof}
 
 \begin{prop}
@@ -220,20 +220,20 @@ $\uparrow$ \emph{up-arrow functor}.
 \begin{proof}
   ~
   \begin{enumerate}
-    \item $(\mathcal{E}^{A,B}) \circ (\mathcal{E}^{B,A}) \sqsubseteq
-    1^{\mathbf{Rel}}_B$; $(\mathcal{E}^{A,B}) \circ (\mathcal{E}^{A,B})^{- 1} \sqsubseteq 1^{\mathbf{Rel}}_B$;
+    \item $\mathcal{E}^{A,B} \circ \mathcal{E}^{B,A} \sqsubseteq
+    1^{\mathbf{Rel}}_B$; $\mathcal{E}^{A,B} \circ (\mathcal{E}^{A,B})^{- 1} \sqsubseteq 1^{\mathbf{Rel}}_B$;
     $\mathcal{E}_{\mathcal{C}}^{A,B} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \sqsubseteq 1^{\mathcal{C}}_B$.
     
-    \item $(\mathcal{E}^{B,A}) \circ (\mathcal{E}^{A,B}) \sqsubseteq
+    \item $\mathcal{E}^{B,A} \circ \mathcal{E}^{A,B} \sqsubseteq
     1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B})^{- 1} \circ \mathcal{E}^{A,B} \sqsubseteq 1^{\mathbf{Rel}}_A$;
     $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \circ \mathcal{E}^{A,B} \sqsubseteq 1^{\mathcal{C}}_A$.
     
-    \item $(\mathcal{E}^{B,A}) \circ (\mathcal{E}^{A,B}) \sqsupseteq
+    \item $\mathcal{E}^{B,A} \circ \mathcal{E}^{A,B} \sqsupseteq
     1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B})^{- 1} \circ \mathcal{E}^{A,B} \sqsupseteq 1^{\mathbf{Rel}}_A$;
     $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \sqsupseteq 1^{\mathcal{C}}_A$.
     
-    \item $(\mathcal{E}^{A,B}) \circ (\mathcal{E}^{B,A}) \sqsupseteq
-    1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B}) \circ (\mathcal{E}^{A,B})^{- 1} \sqsupseteq 1^{\mathbf{Rel}}_A$;
+    \item $\mathcal{E}^{A,B} \circ \mathcal{E}^{B,A} \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $\mathcal{E}^{A,B} \circ (\mathcal{E}^{A,B})^{- 1} \sqsupseteq 1^{\mathbf{Rel}}_A$;
     $\mathcal{E}_{\mathcal{C}}^{A,B} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \sqsupseteq 1^{\mathcal{C}}_A$.
   \end{enumerate}
 \end{proof}
@@ -274,7 +274,7 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 
 \begin{proof}
   $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1,C_1}
-  \circ (\mathcal{E}_{\mathcal{C}}^{A_1,B_1}) \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} \circ
+  \circ \mathcal{E}_{\mathcal{C}}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} \circ
   \mathcal{E}_{\mathcal{C}}^{C_0,B_0} = \mathcal{E}_{\mathcal{C}}^{A_1,C_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{C_0,A_0} =
   \iota_{C_0,C_1} f$.
 \end{proof}
@@ -398,7 +398,7 @@ partially ordered dagger category under $\mathbf{Rel}$.
     \item $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle^{\ast} X
     = \uparrow^B X$ for every $X \in \subsets A$ if $A \subseteq B$.
     
-    \item $\langle (\mathcal{E}_{\mathsf{FCD}}^{B,A}) \rangle^{\ast}
+    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{B,A} \rangle^{\ast}
     Y = \uparrow^A (Y \cap A)$ for every $Y \in \subsets B$ if $A \subseteq
     B$.
   \end{enumerate}
@@ -471,12 +471,12 @@ values of $\uparrow$ as principal morphisms. \fxwarning{Wording.}
   
   $X \sqsubseteq (\uparrow u)^{- 1} \circ \pi_A Y \circ \uparrow u
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ
-  (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y}) \circ \pi_A Y \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ \pi_A Y \circ
   (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \uparrow \varphi
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ
-  (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y}) \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ
   (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ Y \circ
-  (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y}) \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ
   (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \uparrow \varphi
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ Y \circ
   \uparrow \varphi \Leftrightarrow X \sqsubseteq (W f)^{- 1} \circ Y \circ W
