@@ -454,30 +454,30 @@ values of $\uparrow$ as principal morphisms. \fxwarning{Wording.}
   $\cont (\mathcal{C})$ where $\mathcal{C}$ is a concrete
   category (so $W f = \uparrow \varphi$ for a $\mathbf{Rel}$-morphism
   $\varphi$ because $f$ is principal) and $\im \varphi = A \subseteq
-  \Ob Y$. Factor it $\varphi = \mathcal{E}^{A, \Ob Y} \circ u$
+  \Ob Y$. Factor it $\varphi = \mathcal{E}^{\Ob Y} \circ u$
   where $u : \Ob X \rightarrow A$ using properties of
   $\mathbf{Set}$. Then $u$ is a morphism of $\cont
   (\mathcal{C})$ (that is a continuous function $X \rightarrow \iota_A Y$).
 \end{lem}
 
 \begin{proof}
-  $(\mathcal{E}^{A, \Ob Y})^{- 1} \circ \varphi = (\mathcal{E}^{A, \Ob Y})^{- 1} \circ \mathcal{E}^{A, \Ob Y} \circ u$;
+  $(\mathcal{E}^{\Ob Y})^{- 1} \circ \varphi = (\mathcal{E}^{\Ob Y})^{- 1} \circ \mathcal{E}^{\Ob Y} \circ u$;
   
-  $(\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \uparrow \varphi
-  = (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ \uparrow u$;
+  $(\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
+  = (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ \uparrow u$;
   
-  $(\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \uparrow \varphi
+  $(\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
   = \uparrow u$;
   
   $X \sqsubseteq (\uparrow u)^{- 1} \circ \pi_A Y \circ \uparrow u
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ
-  \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ \pi_A Y \circ
-  (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \uparrow \varphi
+  \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ \pi_A Y \circ
+  (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ
-  \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ
-  (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ Y \circ
-  \mathcal{E}_{\mathcal{C}}^{A, \Ob Y} \circ
-  (\mathcal{E}_{\mathcal{C}}^{A, \Ob Y})^{- 1} \circ \uparrow \varphi
+  \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ
+  (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ Y \circ
+  \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ
+  (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ Y \circ
   \uparrow \varphi \Leftrightarrow X \sqsubseteq (W f)^{- 1} \circ Y \circ W
   f$ what is true by definition of continuity.
