@@ -109,7 +109,7 @@ $\uparrow$ \emph{up-arrow functor}.
 
 \begin{defn}
   $\mathcal{E}_{\mathcal{C}}^{A,B} = \uparrow \mathcal{E}^{A,B}$. In
-  other words, $\mathcal{E}^{\mathcal{C}} = \uparrow \circ \mathcal{E}$.
+  other words, $\mathcal{E}_{\mathcal{C}} = \uparrow \circ \mathcal{E}$.
   
   When $A$ is clear from context, I will denote it just as $\mathcal{E}_{\mathcal{C}}^B$.
 \end{defn}
@@ -181,7 +181,7 @@ $\uparrow$ \emph{up-arrow functor}.
 \end{proof}
 
 \begin{cor}
-  $\mahcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$ if
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$ if
   $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
 \end{cor}
 
@@ -275,9 +275,8 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \begin{proof}
   $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1,C_1}
   \circ (\mathcal{E}_{\mathcal{C}}^{A_1,B_1}) \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} \circ
-  \mathcal{E}_{\mathcal{C}}^{C_0,B_0} = (A_1 \rightleftarrows^{\mathcal{C}}
-  C_1) \circ f \circ (C_0 \rightleftarrows^{\mathcal{C}} A_0) = \iota_{C_0,
-  C_1} f$.
+  \mathcal{E}_{\mathcal{C}}^{C_0,B_0} = \mathcal{E}_{\mathcal{C}}^{A_1,C_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{C_0,A_0} =
+  \iota_{C_0,C_1} f$.
 \end{proof}
 
 \begin{prop}
@@ -287,13 +286,10 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{B_0, B_2} (g \circ f) = (A_2 \rightleftarrows^{\mathcal{C}} B_2)
-  \circ (g \circ f) \circ (B_0 \rightleftarrows^{\mathcal{C}} A_0) = (A_2
-  \rightleftarrows^{\mathcal{C}} B_2) \circ g \circ \id_{A_1} \circ f
-  \circ (B_0 \rightleftarrows^{\mathcal{C}} A_0) = (A_2
-  \rightleftarrows^{\mathcal{C}} B_2) \circ g \circ (B_1 \rightleftarrows A_1)
-  \circ (A_1 \rightleftarrows B_1) \circ f \circ (B_0
-  \rightleftarrows^{\mathcal{C}} A_0) = \iota_{B_1, B_1} g \circ \iota_{B_0,
+  $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
+  \circ (g \circ f) \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id_{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
+  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_1} g \circ \iota_{B_0,
   B_1} f$.
 \end{proof}
 
@@ -367,8 +363,7 @@ ordered dagger category under $\mathbf{Rel}$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{A, B} f = (\Dst f \rightleftarrows B) \circ f \circ (A
-  \rightleftarrows \Src f) = (A ; B ; \GR f \cap (A \times B))$.
+  $\iota_{A, B} f = \mathcal{E}^{\Dst f, B} \circ f \circ \mathcal{E}^{A, \Src f} = (A ; B ; \GR f \cap (A \times B))$.
 \end{proof}
 
 \subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
@@ -378,15 +373,15 @@ $\uparrow^{\mathsf{FCD}}$ and ``reverse funcoid'' as the dagger is a
 partially ordered dagger category under $\mathbf{Rel}$.
 
 \begin{prop}
-  $A \rightleftarrows^{\mathsf{FCD}} B = (A ; B ; \lambda \mathcal{X}
+  $\mathcal{E}_{\mathsf{FCD}}^{A,B} = (A ; B ; \lambda \mathcal{X}
   \in \mathfrak{F} (A) : \mathcal{X} \div B ; \lambda \mathcal{Y} \in
   \mathfrak{F} (B) : \mathcal{Y} \div A)$ for objects $A \subseteq B$ of
   $\mathsf{FCD}$.
 \end{prop}
 
 \begin{proof}
-  $\langle A \rightleftarrows^{\mathsf{FCD}} B \rangle \mathcal{X} =
-  \bigsqcap \left\{ \langle A \rightleftarrows^{\mathsf{FCD}} B
+  $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle \mathcal{X} =
+  \bigsqcap \left\{ \langle \mathcal{E}_{\mathsf{FCD}}^{A,B}
   \rangle^{\ast} X \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} =
   \bigsqcap \left\{ \uparrow^B  \langle \mathcal{E}^{A,B} \rangle X
   \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} = \bigsqcap \left\{
@@ -400,10 +395,10 @@ partially ordered dagger category under $\mathbf{Rel}$.
 \begin{prop}
   ~
   \begin{enumerate}
-    \item $\langle A \rightleftarrows^{\mathsf{FCD}} B \rangle^{\ast} X
+    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle^{\ast} X
     = \uparrow^B X$ for every $X \in \subsets A$ if $A \subseteq B$.
     
-    \item $\langle (B \rightleftarrows^{\mathsf{FCD}} A) \rangle^{\ast}
+    \item $\langle (\mathcal{E}_{\mathsf{FCD}}^{B,A}) \rangle^{\ast}
     Y = \uparrow^A (Y \cap A)$ for every $Y \in \subsets B$ if $A \subseteq
     B$.
   \end{enumerate}
@@ -420,7 +415,7 @@ $\uparrow^{\mathsf{RLD}}$ and ``reverse reloid'' as the dagger is a
 partially ordered dagger category under $\mathbf{Rel}$.
 
 \begin{obvious}
-$A \rightleftarrows^{\mathsf{RLD}} B = \uparrow^{\mathsf{RLD} (A ;
+$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ;
 B)} \id_{A \cap B}$.
 \end{obvious}
 
@@ -434,10 +429,9 @@ B)} \id_{A \cap B}$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{A, B} f = (\Dst f \rightleftarrows^{\mathsf{RLD}} B)
-\circ f \circ (A \rightleftarrows^{\mathsf{RLD}} \Src f) =
-\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} ((\Dst f
-\rightleftarrows B) \circ F \circ (A \rightleftarrows \Src f))
+  $\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{\Dst f, B}
+\circ f \circ \mathcal{E}_{\mathsf{RLD}}^{A, \Src f} =
+\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} (\mathcal{E}^{\Dst f, B} \circ F \circ \mathcal{E}^{A, \Src f})
 }{ F \in \GR f } = \bigsqcap \setcond{
 \uparrow^{\mathsf{RLD}} (F \cap (A \times B))}
 {F \in \GR f } = f \div (A \times B)$.
