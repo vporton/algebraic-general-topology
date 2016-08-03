@@ -381,13 +381,13 @@ partially ordered dagger category under $\mathbf{Rel}$.
 
 \begin{proof}
   $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle \mathcal{X} =
-  \bigsqcap \left\{ \langle \mathcal{E}_{\mathsf{FCD}}^{A,B}
-  \rangle^{\ast} X \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} =
-  \bigsqcap \left\{ \uparrow^B  \langle \mathcal{E}^{A,B} \rangle X
-  \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} = \bigsqcap \left\{
-  \uparrow^B  (X \cap A \cap B) \hspace{1em} | \hspace{1em} X \in \mathcal{X}
-  \right\} = \bigsqcap \left\{ \uparrow^B  (X \cap B) \hspace{1em} |
-  \hspace{1em} X \in \mathcal{X} \right\} = \mathcal{X} \div B$.
+  \bigsqcap \setcond{ \langle \mathcal{E}_{\mathsf{FCD}}^{A,B}
+  \rangle^{\ast} X }{ X \in \mathcal{X} } =
+  \bigsqcap \setcond{ \uparrow^B  \langle \mathcal{E}^{A,B} \rangle X
+  }{ X \in \mathcal{X} } = \bigsqcap \setcond{
+  \uparrow^B  (X \cap A \cap B) }{ X \in \mathcal{X}
+  } = \bigsqcap \setcond{ \uparrow^B  (X \cap B) }{
+  X \in \mathcal{X} } = \mathcal{X} \div B$.
   
   Rest follows from symmetry.
 \end{proof}
