@@ -62,27 +62,29 @@ $A \hookrightarrow B : A \rightarrow B$ when $A \sqsubseteq B$.
 \section{\texorpdfstring{Categories under $\mathbf{Rel}$}{Categories under Rel}}
 
 \begin{defn}
-  The $\mathbf{Rel}$-morphism $A \rightleftarrows B$
-  (\emph{restriction-embedding}) is defined by the formula: $A
-  \rightleftarrows B = (A ; B ; \id_{A \cap B})$.
+  The $\mathbf{Rel}$-morphism $\mathcal{E}^{A,B}$
+  (\emph{restriction-embedding}) is defined by the formula: $\mathcal{E}^{A,B}
+  = (A ; B ; \id_{A \cap B})$.
+  
+  When $A$ is clear from context, I will denote it just as $\mathcal{E}^B$.
 \end{defn}
 
 \begin{obvious}
-If $A \subseteq B$ then $A \rightleftarrows B$ is an embedding $A \hookrightarrow B
+If $A \subseteq B$ then $\mathcal{E}^{A,B}$ is an embedding $A \hookrightarrow B
 = (A ; B ; \id_A)$.
 \end{obvious}
 
 \begin{obvious}
-If $A \supseteq B$ then $A \rightleftarrows B = (A ; B ;
+If $A \supseteq B$ then $\mathcal{E}^{A,B} = (A ; B ;
 \id_B)$.
 \end{obvious}
 
 \begin{obvious}
-$A \rightleftarrows A = 1^{\mathbf{Rel}}_A$.
+$\mathcal{E}^{A,A} = 1^{\mathbf{Rel}}_A$.
 \end{obvious}
 
 \begin{obvious}
-$(A \rightleftarrows B)^{- 1} = B \rightleftarrows A$.
+$(\mathcal{E}^{A,B})^{- 1} = \mathcal{E}^{B,A}$.
 \end{obvious}
 
 \begin{defn}
@@ -106,45 +108,46 @@ $\uparrow$ \emph{up-arrow functor}.
 \end{defn}
 
 \begin{defn}
-  $A \rightleftarrows^{\mathcal{C}} B = \uparrow (A \rightleftarrows B)$. In
-  other words, $\rightleftarrows^{\mathcal{C}} = \uparrow \circ
-  \rightleftarrows$.
+  $\mathcal{E}_{\mathcal{C}}^{A,B} = \uparrow \mathcal{E}^{A,B}$. In
+  other words, $\mathcal{E}_{\mathcal{C}} = \uparrow \circ \mathcal{E}$.
+  
+  When $A$ is clear from context, I will denote it just as $\mathcal{E}_{\mathcal{C}}^B$.
 \end{defn}
 
 \begin{prop}
-  $A \rightleftarrows^{\mathcal{C}} A = 1_{\mathcal{C}}^A$.
+  $\mathcal{E}_{\mathcal{C}}^{A,A} = 1_{\mathcal{C}}^A$.
 \end{prop}
 
 \begin{proof}
-  $A \rightleftarrows^{\mathcal{C}} A = \uparrow (A \rightleftarrows A) =
+  $\mathcal{E}_{\mathcal{C}}^{A,A} = \uparrow \mathcal{E}^{A,A} =
   \uparrow 1_{\mathbf{Rel}} = 1_{\mathcal{C}}^A$.
 \end{proof}
 
 \begin{prop}
   If $f : X \rightarrow Y$ is a $\mathbf{Rel}$-morphism and
   $\im f = A \subseteq Y$ then
-  \[ (A \rightleftarrows Y) \circ (Y \rightleftarrows A) \circ f = f. \]
+  \[ \mathcal{E}^{A,Y} \circ \mathcal{E}^{Y,A} \circ f = f. \]
 \end{prop}
 
 \begin{proof}
-  $(A \rightleftarrows Y) \circ (Y \rightleftarrows A) \circ f = \id_A
+  $\mathcal{E}^{A,Y} \circ \mathcal{E}^{Y,A} \circ f = \id_A
   \circ f = f$.
 \end{proof}
 
 \begin{cor}
   If $f : X \rightarrow Y$ is a morphism of a category under
   $\mathbf{Rel}$ and $\im f = A \subseteq Y$, then
-  \[ (A \rightleftarrows^{\mathcal{C}} Y) \circ (Y
-     \rightleftarrows^{\mathcal{C}} A) \circ \uparrow f = \uparrow f. \]
+  \[ \mathcal{E}_{\mathcal{C}}^{A,Y} \circ \mathcal{E}_{\mathcal{C}}^{Y,A}
+  \circ \uparrow f = \uparrow f. \]
 \end{cor}
 
 \begin{prop}
   ~  
   \begin{enumerate}
-    \item If $A \subseteq B$ then $A \rightleftarrows^{\mathcal{C}} B$ is a
+    \item If $A \subseteq B$ then $\mathcal{E}_{\mathcal{C}}^{A,B}$ is a
     monomorphism.
     
-    \item If $A \supseteq B$ then $A \rightleftarrows^{\mathcal{C}} B$ is a
+    \item If $A \supseteq B$ then $\mathcal{E}_{\mathcal{C}}^{A,B}$ is a
     epimorphism.
   \end{enumerate}
 \end{prop}
@@ -152,21 +155,19 @@ $\uparrow$ \emph{up-arrow functor}.
 \begin{proof}
   We'll prove only the first as the second is dual.
   
-  Let $(A \rightleftarrows^{\mathcal{C}} B) \circ f = (A
-  \rightleftarrows^{\mathcal{C}} B) \circ g$. Then $(B
-  \rightleftarrows^{\mathcal{C}} A) \circ (A \rightleftarrows^{\mathcal{C}} B)
-  \circ f = (B \rightleftarrows^{\mathcal{C}} A) \circ (A
-  \rightleftarrows^{\mathcal{C}} B) \circ g$; $1^A \circ f = 1^A \circ g$; $f
-  = g$.
+  Let $\mathcal{E}_{\mathcal{C}}^{A,B} \circ f = \mathcal{E}^{A,B} \circ g$. Then
+  $\mathcal{E}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B}
+  \circ f = \mathcal{E}_{\mathcal{C}}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \circ g$;
+  $1^A \circ f = 1^A \circ g$; $f = g$.
 \end{proof}
 
 \begin{prop}
-  $(B \rightleftarrows C) \circ (A \rightleftarrows B) = A \rightleftarrows C$
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}^{A,C}$
   iff $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
 \end{prop}
 
 \begin{proof}
-  $(B \rightleftarrows C) \circ (A \rightleftarrows B) = A \rightleftarrows C$
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}^{A,C}$
   is equivalent to:
   
   $(B ; C ; \id_{B \cap C}) \circ (A ; B ; \id_{A \cap B}) = (A ;
@@ -180,8 +181,7 @@ $\uparrow$ \emph{up-arrow functor}.
 \end{proof}
 
 \begin{cor}
-  $(B \rightleftarrows^{\mathcal{C}} C) \circ (A
-  \rightleftarrows^{\mathcal{C}} B) = (A \rightleftarrows^{\mathcal{C}} C)$ if
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$ if
   $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
 \end{cor}
 
@@ -194,20 +194,18 @@ $\uparrow$ \emph{up-arrow functor}.
 \end{defn}
 
 \begin{prop}
-  $(A \rightleftarrows^{\mathcal{C}} B)^{\dagger} = B
-  \rightleftarrows^{\mathcal{C}} A$ for a dagger category under
+  $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} = \mathcal{E}_{\mathcal{C}}^{B,A}$ for a dagger category under
   $\mathbf{Rel}$.
 \end{prop}
 
 \begin{proof}
-  $(A \rightleftarrows^{\mathcal{C}} B)^{\dagger} = (\uparrow (A
-  \rightleftarrows B))^{\dagger} = \uparrow (A \rightleftarrows B)^{- 1} =
-  \uparrow (B \rightleftarrows A) = B \rightleftarrows^{\mathcal{C}} A$.
+  $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} = (\uparrow \mathcal{E}^{A,B})^{\dagger} = \uparrow (\mathcal{E}^{A,B})^{- 1} =
+  \uparrow \mathcal{E}^{B,A} = \mathcal{E}_{\mathcal{C}}^{B,A}$.
 \end{proof}
 
 \begin{prop}
   For a partially ordered dagger category $\mathcal{C}$ under
-  $\mathbf{Rel}$ we have $A \rightleftarrows^{\mathcal{C}} B$ is:
+  $\mathbf{Rel}$ we have $\mathcal{E}_{\mathcal{C}}^{A,B}$ is:
   \begin{enumerate}
     \item monovalued;
     
@@ -222,37 +220,29 @@ $\uparrow$ \emph{up-arrow functor}.
 \begin{proof}
   ~
   \begin{enumerate}
-    \item $(A \rightleftarrows B) \circ (B \rightleftarrows A) \sqsubseteq
-    1^{\mathbf{Rel}}_B$; $(A \rightleftarrows B) \circ (A
-    \rightleftarrows B)^{- 1} \sqsubseteq 1^{\mathbf{Rel}}_B$; $(A
-    \rightleftarrows^{\mathcal{C}} B) \circ (A \rightleftarrows^{\mathcal{C}}
-    B)^{\dagger} \sqsubseteq 1^{\mathcal{C}}_B$.
+    \item $\mathcal{E}^{A,B} \circ \mathcal{E}^{B,A} \sqsubseteq
+    1^{\mathbf{Rel}}_B$; $\mathcal{E}^{A,B} \circ (\mathcal{E}^{A,B})^{- 1} \sqsubseteq 1^{\mathbf{Rel}}_B$;
+    $\mathcal{E}_{\mathcal{C}}^{A,B} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \sqsubseteq 1^{\mathcal{C}}_B$.
     
-    \item $(B \rightleftarrows A) \circ (A \rightleftarrows B) \sqsubseteq
-    1^{\mathbf{Rel}}_A$; $(A \rightleftarrows B)^{- 1} \circ (A
-    \rightleftarrows B) \sqsubseteq 1^{\mathbf{Rel}}_A$; $(A
-    \rightleftarrows^{\mathcal{C}} B)^{\dagger} \circ (A
-    \rightleftarrows^{\mathcal{C}} B) \sqsubseteq 1^{\mathcal{C}}_A$.
+    \item $\mathcal{E}^{B,A} \circ \mathcal{E}^{A,B} \sqsubseteq
+    1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B})^{- 1} \circ \mathcal{E}^{A,B} \sqsubseteq 1^{\mathbf{Rel}}_A$;
+    $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \circ \mathcal{E}^{A,B} \sqsubseteq 1^{\mathcal{C}}_A$.
     
-    \item $(B \rightleftarrows A) \circ (A \rightleftarrows B) \sqsupseteq
-    1^{\mathbf{Rel}}_A$; $(A \rightleftarrows B)^{- 1} \circ (A
-    \rightleftarrows B) \sqsupseteq 1^{\mathbf{Rel}}_A$; $(A
-    \rightleftarrows^{\mathcal{C}} B)^{\dagger} \circ (A
-    \rightleftarrows^{\mathcal{C}} B) \sqsupseteq 1^{\mathcal{C}}_A$.
+    \item $\mathcal{E}^{B,A} \circ \mathcal{E}^{A,B} \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B})^{- 1} \circ \mathcal{E}^{A,B} \sqsupseteq 1^{\mathbf{Rel}}_A$;
+    $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \sqsupseteq 1^{\mathcal{C}}_A$.
     
-    \item $(A \rightleftarrows B) \circ (B \rightleftarrows A) \sqsupseteq
-    1^{\mathbf{Rel}}_A$; $(A \rightleftarrows B) \circ (A
-    \rightleftarrows B)^{- 1} \sqsupseteq 1^{\mathbf{Rel}}_A$; $(A
-    \rightleftarrows^{\mathcal{C}} B) \circ (A \rightleftarrows^{\mathcal{C}}
-    B)^{\dagger} \sqsupseteq 1^{\mathcal{C}}_A$.
+    \item $\mathcal{E}^{A,B} \circ \mathcal{E}^{B,A} \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $\mathcal{E}^{A,B} \circ (\mathcal{E}^{A,B})^{- 1} \sqsupseteq 1^{\mathbf{Rel}}_A$;
+    $\mathcal{E}_{\mathcal{C}}^{A,B} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \sqsupseteq 1^{\mathcal{C}}_A$.
   \end{enumerate}
 \end{proof}
 
 \section{Rectangular embedding-restriction}
 
 \begin{defn}
-  $\iota_{B_0, B_1} f = (A_1 \rightleftarrows^{\mathcal{C}} B_1) \circ f \circ
-  (B_0 \rightleftarrows^{\mathcal{C}} A_0)$ for $f \in
+  $\iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1} \circ f \circ
+  (\mathcal{E}_{\mathcal{C}}^{B_0})^{-1}$ for $f \in
   \Hom_{\mathcal{C}} (A_0 ; A_1)$.
 \end{defn}
 
@@ -263,10 +253,8 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{\Src f, \Dst f} f = (\Dst f
-  \rightleftarrows^{\mathcal{C}} \Dst f) \circ f \circ (\Src f
-  \rightleftarrows^{\mathcal{C}} \Src f) = 1_{\mathcal{C}}^{\Dst
-  f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f$.
+  $\iota_{\Src f, \Dst f} f = \mathcal{E}_\mathcal{C}^{\Dst f} \circ f \circ \mathcal{E}_\mathcal{C}^{\Src f} =
+  1_{\mathcal{C}}^{\Dst f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f$.
 \end{proof}
 
 \begin{prop}
@@ -275,8 +263,7 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{prop}
 
 \begin{proof}
-  Because $A_1 \rightleftarrows^{\mathcal{C}} B_1$ is a monomorphism and $A_0
-  \rightleftarrows^{\mathcal{C}} B_0$ is an epimorphism.
+  Because $\mathcal{E}_{\mathcal{C}}^{A_1,B_1}$ is a monomorphism and $\mathcal{E}_{\mathcal{C}}^{A_0,B_0}$ is an epimorphism.
 \end{proof}
 
 \begin{prop}
@@ -286,12 +273,10 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = (B_1 \rightleftarrows^{\mathcal{C}}
-  C_1) \circ (A_1 \rightleftarrows^{\mathcal{C}} B_1) \circ f \circ (B_0
-  \rightleftarrows^{\mathcal{C}} A_0) \circ (C_0
-  \rightleftarrows^{\mathcal{C}} B_0) = (A_1 \rightleftarrows^{\mathcal{C}}
-  C_1) \circ f \circ (C_0 \rightleftarrows^{\mathcal{C}} A_0) = \iota_{C_0,
-  C_1} f$.
+  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1,C_1}
+  \circ \mathcal{E}_{\mathcal{C}}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} \circ
+  \mathcal{E}_{\mathcal{C}}^{C_0,B_0} = \mathcal{E}_{\mathcal{C}}^{A_1,C_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{C_0,A_0} =
+  \iota_{C_0,C_1} f$.
 \end{proof}
 
 \begin{prop}
@@ -301,13 +286,10 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{B_0, B_2} (g \circ f) = (A_2 \rightleftarrows^{\mathcal{C}} B_2)
-  \circ (g \circ f) \circ (B_0 \rightleftarrows^{\mathcal{C}} A_0) = (A_2
-  \rightleftarrows^{\mathcal{C}} B_2) \circ g \circ \id_{A_1} \circ f
-  \circ (B_0 \rightleftarrows^{\mathcal{C}} A_0) = (A_2
-  \rightleftarrows^{\mathcal{C}} B_2) \circ g \circ (B_1 \rightleftarrows A_1)
-  \circ (A_1 \rightleftarrows B_1) \circ f \circ (B_0
-  \rightleftarrows^{\mathcal{C}} A_0) = \iota_{B_1, B_1} g \circ \iota_{B_0,
+  $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
+  \circ (g \circ f) \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id_{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
+  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_1} g \circ \iota_{B_0,
   B_1} f$.
 \end{proof}
 
@@ -376,8 +358,7 @@ ordered dagger category under $\mathbf{Rel}$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{A, B} f = (\Dst f \rightleftarrows B) \circ f \circ (A
-  \rightleftarrows \Src f) = (A ; B ; \GR f \cap (A \times B))$.
+  $\iota_{A, B} f = \mathcal{E}^{B} \circ f \circ (\mathcal{E}^{A})^{-1} = (A ; B ; \GR f \cap (A \times B))$.
 \end{proof}
 
 \subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
@@ -387,21 +368,21 @@ $\uparrow^{\mathsf{FCD}}$ and ``reverse funcoid'' as the dagger is a
 partially ordered dagger category under $\mathbf{Rel}$.
 
 \begin{prop}
-  $A \rightleftarrows^{\mathsf{FCD}} B = (A ; B ; \lambda \mathcal{X}
+  $\mathcal{E}_{\mathsf{FCD}}^{A,B} = (A ; B ; \lambda \mathcal{X}
   \in \mathfrak{F} (A) : \mathcal{X} \div B ; \lambda \mathcal{Y} \in
   \mathfrak{F} (B) : \mathcal{Y} \div A)$ for objects $A \subseteq B$ of
   $\mathsf{FCD}$.
 \end{prop}
 
 \begin{proof}
-  $\langle A \rightleftarrows^{\mathsf{FCD}} B \rangle \mathcal{X} =
-  \bigsqcap \left\{ \langle A \rightleftarrows^{\mathsf{FCD}} B
-  \rangle^{\ast} X \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} =
-  \bigsqcap \left\{ \uparrow^B  \langle A \rightleftarrows B \rangle X
-  \hspace{1em} | \hspace{1em} X \in \mathcal{X} \right\} = \bigsqcap \left\{
-  \uparrow^B  (X \cap A \cap B) \hspace{1em} | \hspace{1em} X \in \mathcal{X}
-  \right\} = \bigsqcap \left\{ \uparrow^B  (X \cap B) \hspace{1em} |
-  \hspace{1em} X \in \mathcal{X} \right\} = \mathcal{X} \div B$.
+  $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle \mathcal{X} =
+  \bigsqcap \setcond{ \langle \mathcal{E}_{\mathsf{FCD}}^{A,B}
+  \rangle^{\ast} X }{ X \in \mathcal{X} } =
+  \bigsqcap \setcond{ \uparrow^B  \langle \mathcal{E}^{A,B} \rangle X
+  }{ X \in \mathcal{X} } = \bigsqcap \setcond{
+  \uparrow^B  (X \cap A \cap B) }{ X \in \mathcal{X}
+  } = \bigsqcap \setcond{ \uparrow^B  (X \cap B) }{
+  X \in \mathcal{X} } = \mathcal{X} \div B$.
   
   Rest follows from symmetry.
 \end{proof}
@@ -409,10 +390,10 @@ partially ordered dagger category under $\mathbf{Rel}$.
 \begin{prop}
   ~
   \begin{enumerate}
-    \item $\langle A \rightleftarrows^{\mathsf{FCD}} B \rangle^{\ast} X
+    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle^{\ast} X
     = \uparrow^B X$ for every $X \in \subsets A$ if $A \subseteq B$.
     
-    \item $\langle (B \rightleftarrows^{\mathsf{FCD}} A) \rangle^{\ast}
+    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{B,A} \rangle^{\ast}
     Y = \uparrow^A (Y \cap A)$ for every $Y \in \subsets B$ if $A \subseteq
     B$.
   \end{enumerate}
@@ -429,7 +410,7 @@ $\uparrow^{\mathsf{RLD}}$ and ``reverse reloid'' as the dagger is a
 partially ordered dagger category under $\mathbf{Rel}$.
 
 \begin{obvious}
-$A \rightleftarrows^{\mathsf{RLD}} B = \uparrow^{\mathsf{RLD} (A ;
+$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ;
 B)} \id_{A \cap B}$.
 \end{obvious}
 
@@ -443,10 +424,9 @@ B)} \id_{A \cap B}$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{A, B} f = (\Dst f \rightleftarrows^{\mathsf{RLD}} B)
-\circ f \circ (A \rightleftarrows^{\mathsf{RLD}} \Src f) =
-\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} ((\Dst f
-\rightleftarrows B) \circ F \circ (A \rightleftarrows \Src f))
+  $\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{B}
+\circ f \circ (\mathcal{E}_{\mathsf{RLD}}^{A})^{-1} =
+\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} (\mathcal{E}^{B} \circ F \circ (\mathcal{E}^{A})^{-1}
 }{ F \in \GR f } = \bigsqcap \setcond{
 \uparrow^{\mathsf{RLD}} (F \cap (A \times B))}
 {F \in \GR f } = f \div (A \times B)$.
@@ -469,32 +449,30 @@ values of $\uparrow$ as principal morphisms. \fxwarning{Wording.}
   $\cont (\mathcal{C})$ where $\mathcal{C}$ is a concrete
   category (so $W f = \uparrow \varphi$ for a $\mathbf{Rel}$-morphism
   $\varphi$ because $f$ is principal) and $\im \varphi = A \subseteq
-  \Ob Y$. Factor it $\varphi = (A \rightleftarrows \Ob Y) \circ u$
+  \Ob Y$. Factor it $\varphi = \mathcal{E}^{\Ob Y} \circ u$
   where $u : \Ob X \rightarrow A$ using properties of
   $\mathbf{Set}$. Then $u$ is a morphism of $\cont
   (\mathcal{C})$ (that is a continuous function $X \rightarrow \iota_A Y$).
 \end{lem}
 
 \begin{proof}
-  $(A \rightleftarrows \Ob Y)^{- 1} \circ \varphi = (A \rightleftarrows
-  \Ob Y)^{- 1} \circ (A \rightleftarrows \Ob Y) \circ u$;
+  $(\mathcal{E}^{\Ob Y})^{- 1} \circ \varphi = (\mathcal{E}^{\Ob Y})^{- 1} \circ \mathcal{E}^{\Ob Y} \circ u$;
   
-  $(A \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
-  = (A \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ \uparrow u$;
+  $(\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
+  = (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ \uparrow u$;
   
-  $(A \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
+  $(\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
   = \uparrow u$;
   
   $X \sqsubseteq (\uparrow u)^{- 1} \circ \pi_A Y \circ \uparrow u
-  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ \pi_A Y \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
-  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ Y \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y) \circ (A
-  \rightleftarrows^{\mathcal{C}} \Ob Y)^{- 1} \circ \uparrow \varphi
+  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ
+  \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ \pi_A Y \circ
+  (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
+  \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ
+  \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ
+  (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ Y \circ
+  \mathcal{E}_{\mathcal{C}}^{\Ob Y} \circ
+  (\mathcal{E}_{\mathcal{C}}^{\Ob Y})^{- 1} \circ \uparrow \varphi
   \Leftrightarrow X \sqsubseteq (\uparrow \varphi)^{- 1} \circ Y \circ
   \uparrow \varphi \Leftrightarrow X \sqsubseteq (W f)^{- 1} \circ Y \circ W
   f$ what is true by definition of continuity.
@@ -511,13 +489,13 @@ Equational definition of equalizers:
     \item the object $X = \iota_{\setcond{ x \in \Ob A }{
     f x = g x }} A$;
     
-    \item the morphism $\Ob X \rightleftarrows \Ob A$ considered
+    \item the morphism $\mathcal{E}^{\Ob X, \Ob A}$ considered
     as a morphism $X \rightarrow A$.
   \end{itemize}
 \end{thm}
 
 \begin{proof}
-  Denote $e = \Ob X \rightleftarrows \Ob A$.
+  Denote $e = \mathcal{E}^{\Ob X, \Ob A}$.
   
   Let $f \circ z = g \circ z$ for some morphism $z$.
   
