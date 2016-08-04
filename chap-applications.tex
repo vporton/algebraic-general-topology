@@ -307,6 +307,36 @@ A $\mathrm{d}$-path~$a$ is determined by the funcoids (where $x$ spans $[0;1]$)
 \[ (\mylambda{t}{\mathbb{R}}{a(x+t)})|_{\Delta(0)}. \]
 \end{conjecture}
 
+\section{A way to construct directed topological spaces}
+
+\fxnote{Should include definition of directed topological space.}
+
+Directed topological spaces are defined at\\
+\url{http://ncatlab.org/nlab/show/directed+topological+space}
+
+I propose a new way to construct a directed topological space. My way is more geometric/topological as it does not involve dealing with particular paths.
+
+\begin{conjecture}
+Every directed topological space can be constructed in the below described way.
+\end{conjecture}
+
+Consider topological space $T$ and its subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
+Note that in our consideration $F$ is an endofuncoid (its source and destination are the same).
+
+Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from $[0;1]$ to $F$ such that $f(0)=A$ and $f(1)=B$.
+\fxwarning{Specify whether the interval $[0;1]$ is treated as a proximity, pretopology, or preclosure.}
+
+Because $F$ is less that $T$, we have that every directed path is a path.
+
+\begin{conjecture}
+The two directed topological spaces, constructed from a fixed topological space and two different funcoids,
+are different.
+\end{conjecture}
+
+For a counter-example of (which of the two?) the conjecture consider funcoid $T\sqcap(\mathbb{Q}\times^{\mathsf{FCD}}\mathbb{Q})$
+where $T$ is the usual topology on real line.We need to consider stability of existence and uniqueness of a path under transformations of our funcoid and
+under transformations of the vector field. Can this be a step to solve Navier-Stokes existence and smoothness problems?
+
 \section{Integral curves}
 
 \fxwarning{This section is a very rough draft.}
@@ -380,7 +410,6 @@ $\rsupfun{f}(\Delta_{+} + t)-f(t)\sqsubseteq W(D(f(t)))$;
 ??
 \end{proof}
 
-
 Take $I_+$ and $Q_+$ as described above in forward direction and $I_-$ and $Q_-$ in backward direction. Then
 \[ f\in\continuous(I_+;Q_+)\land f\in\continuous(I_-;Q_-) \Leftrightarrow f\times f\in\continuous(I_+\times^{(A)}I_-;Q_+\times^{(A)}Q_-)? \]
 
@@ -400,41 +429,11 @@ If the curve goes only through points with exactly one direction, then the curve
 $f'(t)=d(f(t))$ is equivalent to $f$ being a continuous function on~$\mathbb{R}^{n+1}$ with direction specified by
 $F(v(t), 1)$.
 
-\section{Multiple allowed directions per point}
+\subsection{Multiple allowed directions per point}
 
 \[ \rsupfun{Q}@\{p\} = \bigsqcup_{d\in D(p)} \supfun{p+} W(d). \]
 
 One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
-
-\section{A way to construct directed topological spaces}
-
-\fxnote{Should include definition of directed topological space.}
-
-Directed topological spaces are defined at\\
-\url{http://ncatlab.org/nlab/show/directed+topological+space}
-
-I propose a new way to construct a directed topological space. My way is more geometric/topological as it does not involve dealing with particular paths.
-
-\begin{conjecture}
-Every directed topological space can be constructed in the below described way.
-\end{conjecture}
-
-Consider topological space $T$ and its subfuncoid $F$ (that is $F$ is a funcoid which is less that $T$ in the order of funcoids).
-Note that in our consideration $F$ is an endofuncoid (its source and destination are the same).
-
-Then a directed path from point $A$ to point $B$ is defined as a continuous function $f$ from $[0;1]$ to $F$ such that $f(0)=A$ and $f(1)=B$.
-\fxwarning{Specify whether the interval $[0;1]$ is treated as a proximity, pretopology, or preclosure.}
-
-Because $F$ is less that $T$, we have that every directed path is a path.
-
-\begin{conjecture}
-The two directed topological spaces, constructed from a fixed topological space and two different funcoids,
-are different.
-\end{conjecture}
-
-For a counter-example of (which of the two?) the conjecture consider funcoid $T\sqcap(\mathbb{Q}\times^{\mathsf{FCD}}\mathbb{Q})$
-where $T$ is the usual topology on real line.We need to consider stability of existence and uniqueness of a path under transformations of our funcoid and
-under transformations of the vector field. Can this be a step to solve Navier-Stokes existence and smoothness problems?
 
 It seems (check!) that solutions not only of differential equations but also of difference equations can be
 expressed as paths in funcoids.
