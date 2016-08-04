@@ -168,15 +168,6 @@ $f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|
 $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})\cap
 \continuous(\iota_A|\mathbb{R}|_{<};\iota_B|\mathbb{R}|_{<})$.
 \end{enumerate}
-\fxnote{It is equivalent to
-\[
-(\mylambda{t}{\mathbb{R}}{f(x+t)})|_{\Delta}\sqsubseteq
-(\Delta_{\leq}\times^{\mathsf{FCD}}\Delta_{\leq}(f(x)))\sqcup(\Delta_{\geq}\times^{\mathsf{FCD}}\Delta_{\geq}(f(x)))).
-\]
-The other is equivalent to\[
-(\mylambda{t}{\mathbb{R}}{f(x+t)})|_{\Delta}\sqsubseteq
-(\Delta_{<}\times^{\mathsf{FCD}}\Delta_{<}(f(x)))\sqcup(\Delta_{>}\times^{\mathsf{FCD}}\Delta_{>}(f(x)))) \sqcup \{(0;fx)\}.
-\]}
 \fxnote{Generalize for arbitrary posets.}
 \fxnote{Generalize for $f$ being a funcoid.}
 \end{lem}
@@ -437,10 +428,6 @@ $\rsupfun{f}\Delta_{>}(t)-f(t)\sqsubseteq W(D(f(t)))$;
 \fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
 
 Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
-
-Alternatively consider
-\[ G(p) = (\Delta_{>}\times^{\mathsf{RLD}}Q_+(p)) \sqcup (\Delta_{<}\times^{\mathsf{RLD}}Q_-(p)) \sqcup @\{(0;p)\}. \]
-\[ (\mylambda{t}{\mathbb{R}}{f(x+t)-f(x)})|_{\Delta} \sqsubseteq G(x). \]
 
 \begin{conjecture}
 If the curve goes only through points with exactly one direction, then the curve is smooth (if it is continuous regarding the above funcoid).
