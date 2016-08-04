@@ -42,10 +42,6 @@ For funcoids, reloids, and binary relations:
 
 \subsection{Directed line and directed intervals}
 
-\fxwarning{Confusion between induced order topology and subspace topology:
-\url{https://en.wikipedia.org/wiki/Order_topology}
-Use subspace topology with rectangular embedding-restriction (volume-2.pdf).}
-
 Let $\mathfrak{A}$ be a poset. We will denote $\overline{\mathfrak{A}}=\mathfrak{A}\cup\{-\infty,+\infty\}$ the poset
 with two added elements $-\infty$ and $+\infty$, such that $+\infty$ is strictly greater than every element of~$\mathfrak{A}$
 and $-\infty$ is strictly less.
@@ -156,35 +152,36 @@ On trivial ultrafilters these obviously agree:
 
 I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up\mathcal{A}$ on which the property holds.
 
-\fxnote{$f\in\continuous(A;B)\land f\in\continuous(|A|_{\geq};|B|_{\geq}) \Leftrightarrow
-(f;f)\in\continuous((A;|A|_{\geq});(B;|B|_{\geq}))$}
+\fxnote{$f\in\continuous(A;B)\land f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq}) \Leftrightarrow
+(f;f)\in\continuous((A;\iota_A|\mathbb{R}|_{\geq});(B;\iota_B|\mathbb{R}|_{\geq}))$}
 
 \begin{lem}
 Let function~$f\in\continuous(A;B)$ where $A,B\in\subsets\mathbb{R}$ and $A$ is connected.
 \begin{enumerate}
-\item $f$ is monotone iff $f\in\continuous(|A|_{\geq};|B|_{\geq})$ iff
-$f\in\continuous(|A|_{>};|B|_{\geq})$.
-\item $f$ is strictly monotone iff $f\in\continuous(|A|_{>};|B|_{>})$.
+\item $f$ is monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq})$.
+\item $f$ is strictly monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
 \end{enumerate}
 \fxnote{Generalize for arbitrary posets.}
 \fxnote{Generalize for $f$ being a funcoid.}
 \end{lem}
 
 \begin{proof}
+\fxwarning{Check the proof.}
 Because $f$ is continuous, we have $\rsupfun{f\circ A}\{x\} \sqsubseteq \rsupfun{B\circ f}\{x\}$
 that is $\rsupfun{f} \Delta(x) \sqsubseteq \Delta(f(x))$ for every~$x$.
 
 If $f$ is monotone, we have $\rsupfun{f} \Delta_{\geq}(x) \sqsubseteq [f(x);\infty[$.
 Thus $\rsupfun{f} \Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}(f(x))$, that is
-$\rsupfun{f\circ |A|_{\geq}}\{x\} \sqsubseteq \rsupfun{|B|_{\geq}\circ f}\{x\}$, thus
-$f\in\continuous(|A|_{\geq};|B|_{\geq})$.
+$\rsupfun{f\circ \iota_A|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{\geq}\circ f}\{x\}$, thus
+$f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$.
 
 If $f$ is strictly monotone, we have $\rsupfun{f} \Delta_{>}(x) \sqsubseteq ]f(x);\infty[$.
 Thus $\rsupfun{f} \Delta_{>}(x) \sqsubseteq \Delta_{>}(f(x))$, that is
-$\rsupfun{f\circ |A|_{>}}\{x\} \sqsubseteq \rsupfun{|B|_{>}\circ f}\{x\}$, thus
-$f\in\continuous(|A|_{>};|B|_{>})$.
+$\rsupfun{f\circ \iota_A|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{>}\circ f}\{x\}$, thus
+$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
 
-Let now $f\in\continuous(|A|_{\geq};|B|_{\geq})$.
+Let now $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$.
 
 Take any~$a\in A$ and let $c=\setcond{b\in B}{b\geq a, \forall x\in[a;b[: f(x)\geq f(a)}$.
 It's enough to prove that $c$ is the right endpoint (finite or infinite) of~$A$.
@@ -195,30 +192,29 @@ So we have $\forall x\in[a;b'[: f(x)\geq f(c)$ what contradicts to the above.
 
 So $f$ is monotone on the entire~$A$.
 
-\fxerror{$|A|_{\geq}$ and similar confused with $|\mathbb{R}|_{\geq}$.}
-$f\in\continuous(|A|_{\geq};|B|_{\geq}) \Rightarrow f\in\continuous(|A|_{>};|B|_{\geq})$ is obvious. Reversely
-$f\in\continuous(|A|_{>};|B|_{\geq}) \Rightarrow
-f\circ |A|_{>} \sqsubseteq |B|_{\geq}\circ f \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\rsupfun{|A|_{>}}\{x\} \sqsubseteq \rsupfun{|B|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+$f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq}) \Rightarrow f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq})$ is obvious. Reversely
+$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq}) \Rightarrow
+f\circ \iota_A|\mathbb{R}|_{>} \sqsubseteq \iota_B|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_A|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x)\} \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x)\} \sqcup \{f(x)\} \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqcup \{x\} \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}\{f(x)\} \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\rsupfun{|A|_{\geq}}\{x\} \sqsubseteq \rsupfun{|B|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
-\forall x\in\mathbb{R}: f\circ |A|_{\geq} \sqsubseteq |B|_{\geq}\circ f \Leftrightarrow
-f\in\continuous(|A|_{\geq};|B|_{\geq})$.
+\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_A|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+\forall x\in\mathbb{R}: f\circ \iota_A|\mathbb{R}|_{\geq} \sqsubseteq \iota_B|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
+f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$.
 
-Let $f\in\continuous(|A|_{>};|B|_{>})$. Then $f\in\continuous(|A|_{>};|B|_{\geq})$ and thus it is monotone.
+Let $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$. Then $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq})$ and thus it is monotone.
 We need to prove that $f$ is strictly monotone.
 Suppose the contrary. Then there is a nonempty interval $[p;q]\subseteq A$ such that $f$ is constant on this interval.
-But this is impossible because $f\in\continuous(|A|_{>};|B|_{>})$.
+But this is impossible because $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
 \end{proof}
 
 \begin{thm}
 Let function~$f\in\continuous(A;B)$ where $A,B\in\subsets\mathbb{R}$.
 \begin{enumerate}
-\item $f$ is locally monotone iff $f\in\continuous(|A|_{\geq};|B|_{\geq})$.
-\item $f$ is locally strictly monotone iff $f\in\continuous(|A|_{>};|B|_{>})$.
+\item $f$ is locally monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$.
+\item $f$ is locally strictly monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
 \end{enumerate}
 \end{thm}
 
