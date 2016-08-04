@@ -156,20 +156,21 @@ I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up
 (f;f)\in\continuous((A;\iota_A|\mathbb{R}|_{\geq});(B;\iota_B|\mathbb{R}|_{\geq}))$}
 
 \begin{lem}
-Let function~$f\in\continuous(A;B)$ where $A,B\in\subsets\mathbb{R}$ and $A$ is connected.
+Let function~$f:A\rightarrow B$ where $A,B\in\subsets\mathbb{R}$ and $A$ is connected.
 \begin{enumerate}
-\item $f$ is monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$ iff
-$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq})$.
-\item $f$ is strictly monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
+\item $f$ is monotone and $f\in\continuous(A;B)$ iff
+$f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})\cap
+\continuous(\iota_A|\mathbb{R}|_{\leq};\iota_B|\mathbb{R}|_{\leq})$.
+\item $f$ is strictly monotone and $\in\continuous(A;B)$ iff
+$f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$ iff
+$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})\cap
+\continuous(\iota_A|\mathbb{R}|_{<};\iota_B|\mathbb{R}|_{<})$.
 \end{enumerate}
 \fxnote{Generalize for arbitrary posets.}
 \fxnote{Generalize for $f$ being a funcoid.}
 \end{lem}
-
-\fxnote{Isn't it equivalent to $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})\cap
-\continuous(\iota_A|\mathbb{R}|_{\leq};\iota_B|\mathbb{R}|_{\leq})$ and
-$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})\cap
-\continuous(\iota_A|\mathbb{R}|_{<};\iota_B|\mathbb{R}|_{<})$?}
 
 \begin{proof}
 Because $f$ is continuous, we have $\rsupfun{f\circ\iota_A|\mathbb{R}|}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|\circ f}\{x\}$
@@ -212,13 +213,35 @@ Let $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$. Then $f\
 We need to prove that $f$ is strictly monotone.
 Suppose the contrary. Then there is a nonempty interval $[p;q]\subseteq A$ such that $f$ is constant on this interval.
 But this is impossible because $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
+
+Prove that $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})\cap
+\continuous(\iota_A|\mathbb{R}|_{\leq};\iota_B|\mathbb{R}|_{\leq})$ implies
+$f\in\continuous(A;B)$. Really, it implies
+$\supfun{f}\Delta_{\leq}(x)\sqsubseteq\Delta_{\leq}(fx)$ and $\supfun{f}\Delta_{\geq}(x)\sqsubseteq\Delta_{\geq}(fx)$
+thus $\supfun{f}\Delta(x) = \supfun{f}(\Delta_{\leq}(x)\sqcup\{x\}\sqcup\Delta_{\geq}(x)) \subseteq
+\Delta_{\leq}f(x)\sqcup\{f(x)\}\sqcup\Delta_{\geq}f(x) =
+\Delta(f(x))$.
+
+Prove that $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})\cap
+\continuous(\iota_A|\mathbb{R}|_{<};\iota_B|\mathbb{R}|_{<})$
+$f\in\continuous(A;B)$. Really, it implies
+$\supfun{f}\Delta_{<}(x)\sqsubseteq\Delta_{<}(fx)$ and $\supfun{f}\Delta_{>}(x)\sqsubseteq\Delta_{>}(fx)$
+thus $\supfun{f}\Delta(x) = \supfun{f}(\Delta_{<}(x)\sqcup\{x\}\sqcup\Delta_{>}(x)) \subseteq
+\Delta_{<}f(x)\sqcup\{f(x)\}\sqcup\Delta_{>}f(x) = \Delta(f(x))$.
 \end{proof}
 
 \begin{thm}
-Let function~$f\in\continuous(A;B)$ where $A,B\in\subsets\mathbb{R}$.
+Let function~$f:A\rightarrow B$ where $A,B\in\subsets\mathbb{R}$.
 \begin{enumerate}
-\item $f$ is locally monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$.
-\item $f$ is locally strictly monotone iff $f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$.
+\item $f$ is locally monotone and $f\in\continuous(A;B)$ iff
+$f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(\iota_A|\mathbb{R}|_{\geq};\iota_B|\mathbb{R}|_{\geq})\cap
+\continuous(\iota_A|\mathbb{R}|_{\leq};\iota_B|\mathbb{R}|_{\leq})$.
+\item $f$ is locally strictly monotone and $\in\continuous(A;B)$ iff
+$f\in\continuous(A;B)\cap\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})$ iff
+$f\in\continuous(\iota_A|\mathbb{R}|_{>};\iota_B|\mathbb{R}|_{>})\cap
+\continuous(\iota_A|\mathbb{R}|_{<};\iota_B|\mathbb{R}|_{<})$.
 \end{enumerate}
 \end{thm}
 
