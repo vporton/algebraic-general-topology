@@ -15,20 +15,18 @@ rather than the join of two objects may have an exponential benefit for simplici
 
 \subsection{Some notation}
 
-I use~$\mathcal{E}$ notation from {\tt volume-2.pdf}. \fxwarning{Reorder document fragments to describe it before use.}
+I use~$\mathcal{E}$ and $\iota$ notations from {\tt volume-2.pdf}. \fxwarning{Reorder document fragments to describe it before use.}
 
 I remind that $f|_X = f\circ \id_X$ for binary relations, funcoids, and reloid.
 
 $f\parallel_X = f\circ(\mathcal{E}^X)^{-1}$.
-
-$f\boxbox X = \mathcal{E}^X\circ f\circ(\mathcal{E}^X)^{-1}$. \fxwarning{We already have $\iota$ notation for this.}
 
 $f\square X = \id_X\circ f\circ\id_X^{-1}$.
 
 As proved in {\tt volume-2.pdf}, the following are bijections and moreover isomorphisms (for $R$ being either funcoids or reloids or binary relations):
 \begin{enumerate}
 \item $\setcond{(f|_X;f\parallel_X)}{f\in R}$;
-\item $\setcond{(f\square X;f\boxbox X)}{f\in R}$.
+\item $\setcond{(f\square X;\iota_X f)}{f\in R}$.
 \end{enumerate}
 
 As follows from these isomorphisms and theorem~\bookref{rect-cont}:
