@@ -412,19 +412,6 @@ $f$ is an image of integral curve for a direction field~$d$ iff
 $f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
 \end{thm}
 
-\fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
-
-It seems that this problem can be reformulated in the language of funcoids: From the sets of directions we easily construct certain funcoid.
-Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
-condition that it smooth, I have not yet defined it quite formally).
-
-Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
-
-\begin{thm}
-A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as
-a function in $\continuous(\iota_{[0;1]}|\mathbb{R}|;\mathbb{R}^n)\cap\continuous(\iota_{[0;1]}|\mathbb{R}|_{>};Q)$.
-\end{thm}
-
 \begin{proof}
 Equivalently transform $f\in\continuous(\iota_{[0;1]}|\mathbb{R}|;Q)$; $f\circ \iota_{[0;1]}|\mathbb{R}|\sqsubseteq Q\circ f$;
 $\rsupfun{f\circ \iota_{[0;1]}|\mathbb{R}|}@\{t\}\sqsubseteq \rsupfun{Q\circ f}@\{t\}$;
@@ -436,6 +423,14 @@ $\rsupfun{f}\Delta_{>}(t)-f(t)\sqsubseteq W(D(f(t)))$;
 \[ \forall r>0, \phi>0 \exists\delta>0: \frac{\rsupfun{f}(]t;t+\delta[)-f(t)}{\delta}\subseteq R(d;\phi) \cap B_{r/\delta}(f(t)) \]
 ??
 \end{proof}
+
+\fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
+
+It seems that this problem can be reformulated in the language of funcoids: From the sets of directions we easily construct certain funcoid.
+Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
+condition that it smooth, I have not yet defined it quite formally).
+
+Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
 
 Alternatively consider $G(p) = \Delta_+\times^{\mathsf{RLD}}Q_+(p) \sqcup \Delta_-\times^{\mathsf{RLD}}Q_-(p)$.
 \[ (\mylambda{t}{\mathbb{R}}{f(x+t)-f(x)})|_{\Delta} \sqsubseteq G(x). \]
