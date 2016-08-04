@@ -434,6 +434,112 @@ B)} \id_{A \cap B}$.
 \fxwarning{Filters on cartesian products vs reloids.}
 \end{proof}
 
+\subsection{Some isomorphisms}
+
+\begin{prop}
+  $\setcond{ (\mathcal{A} \div A ; \mathcal{A} \sqcap A) }{
+  \mathcal{A} \in \mathfrak{F} (U) }$ is a function and
+  moreover is an order isomorphism for a set $A \subseteq U$.
+\end{prop}
+
+\begin{proof}
+  $\mathcal{A} \div A$ and $\mathcal{A} \sqcap A$ are determined by each other
+  by the following formulas:
+  \[ \mathcal{A} \div A = (\mathcal{A} \sqcap A) \div A \quad
+     \text{and} \quad \mathcal{A} \sqcap A = (\mathcal{A} \div A) \div
+     \Base (\mathcal{A}) . \]
+  Prove the formulas: $(\mathcal{A} \sqcap A) \div A = \bigsqcap \setcond{
+  \uparrow^A (X \cap A) }{ X \in \mathcal{A} \sqcap A
+  } = \bigsqcap \setcond{ \uparrow^A (X \cap A) }{
+  X \in \mathcal{A} } = \mathcal{A} \div A$.
+  
+  $(\mathcal{A} \div A) \div \Base (\mathcal{A}) = \bigsqcap \setcond{
+  \uparrow^A (X \cap A) }{ X \in \mathcal{A} }
+  \div \Base (\mathcal{A}) = \bigsqcap \setcond{ \uparrow^{\Base
+  (\mathcal{A})} (Y \cap \Base (\mathcal{A})) }{
+  Y \in \bigsqcap \setcond{ \uparrow^A (X \cap A) }{
+  X \in \mathcal{A} } } = \text{(by properties of
+  filter bases)} = \bigsqcap \setcond{ \uparrow^{\Base (\mathcal{A})} (X
+  \cap A \cap \Base (\mathcal{A})) }{ X \in
+  } = \bigsqcap \setcond{ \uparrow^{\Base
+  (\mathcal{A})} (X \cap A) }{ X \in \mathcal{A}
+  } = \mathcal{A} \sqcap A$.
+  
+  That this defines a bijection, follows from $\mathcal{A} \div A \sim
+  \mathcal{A} \sqcap A$ what easily follows from the above formulas.
+\end{proof}
+
+\begin{prop}
+  $\setcond{ (\iota_{X, Y} f ; \id^{\mathbf{Rel}}_Y \circ f \circ
+  \id^{\mathbf{Rel}}_X) }{ f \in
+  \mathbf{Rel} (A ; B) }$ is a function and moreover is an
+  (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
+  \subseteq \Dst f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{X, Y} f = (X ; Y ; \GR f \cap (X \times Y))$;
+  $\id^{\mathbf{Rel}}_Y \circ f \circ
+  \id^{\mathbf{Rel}}_X = (\Src f ; \Dst f ;
+  \GR f \cap (X \times Y))$. The isomorphism (both order and semigroup)
+  is evident.
+\end{proof}
+
+\begin{prop}
+  $\setcond{ (\iota_{X, Y} f ; \id^{\mathsf{FCD}}_Y
+  \circ f \circ \id^{\mathsf{FCD}}_X) }{
+  f \in \mathsf{FCD} (A ; B) }$ is a function and moreover is an
+  (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
+  \subseteq \Dst f$.
+\end{prop}
+
+\begin{proof}
+  From symmetry it follows that it's enough to prove that $\setcond{ \left(
+  \mathcal{E}^Y \circ f ; \id^{\mathsf{FCD}}_Y \circ f \right)
+  }{ f \in \mathsf{FCD} (A ; B) }$ is a
+  function and moreover is an (order and semigroup) isomorphism, for a set $Y
+  \subseteq \Dst f$.
+  
+  Really, $\setcond{ (\langle \mathcal{E}^Y \rangle x ; \langle
+  \id^{\mathsf{FCD}}_Y \rangle x) }{ x
+  \in \Dst f } = \setcond{ (x \div Y ; x \sqcap Y) }{
+  x \in \Dst f }$ is an order isomorphism by proved
+  above. This implies that $\setcond{ \left( \mathcal{E}^Y \circ f ;
+  \id^{\mathsf{FCD}}_Y \circ f \right) }{
+  f \in \mathsf{FCD} (A ; B) }$ is an isomorphism
+  (both order and semigroup).
+\end{proof}
+
+\begin{prop}
+  $\setcond{ (\iota_{X, Y} f ; \id^{\mathsf{RLD}}_Y \circ f \circ
+  \id^{\mathsf{RLD}}_X) }{ f \in
+  \mathsf{RLD} (A ; B) }$ is a function and moreover is an
+  (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
+  \subseteq \Dst f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{X, Y} f = (X ; Y ; (\up f) \div (X \times Y))$;
+  $\id^{\mathsf{RLD}}_Y \circ f \circ
+  \id^{\mathsf{RLD}}_X = (\Src f ; \Dst f ;
+  (\up f) \sqcap (X \times Y))$. They are order isomorphic by proved
+  above.
+  
+  $\iota_{Y, Z} g \circ \iota_{X, Y} f =\mathcal{E}^Z \circ g \circ
+  (\mathcal{E}^Y)^{- 1} \circ \mathcal{E}^Y \circ f \circ (\mathcal{E}^X)^{-
+  1} =\mathcal{E}^Z \circ g \circ \id^{\mathsf{RLD}}_Y \circ
+  \id^{\mathsf{RLD}}_Y \circ f \circ (\mathcal{E}^X)^{- 1}$
+  because $(\mathcal{E}^Y)^{- 1} \circ \mathcal{E}^Y =
+  \id^{\mathbf{Rel}}_Y = \id^{\mathbf{Rel}}_Y
+  \circ \id^{\mathbf{Rel}}_Y$. Thus by proved above
+  \[ \setcond{ (\iota_{Y, Z} g \circ \iota_{X, Y} f ;
+     \id^{\mathsf{RLD}}_Z \circ g \circ
+     \id^{\mathsf{RLD}}_Y \circ \id^{\mathsf{RLD}}_Y
+     \circ f \circ \id^{\mathsf{RLD}}_X) }{
+     f \in \mathsf{RLD} (A ; B) } \]
+  is a bijection.
+\end{proof}
+
 \section{Equalizers}
 
 Categories $\cont (\mathcal{C})$ are defined above.
