@@ -392,17 +392,24 @@ $W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \s
 where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
 \fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use pointfree funcoids.}
 
-Finally our funcoid is the complete funcoid~$Q$ described by the formula
-\[ \rsupfun{Q}@\{p\} = \supfun{p+} W(D(p)). \]
-Here $\Delta$ is taken from the ``counter-examples'' section;
-$D(p)$ is the given set of directions for a point~$p$.
+Finally our funcoids are the complete funcoid~$Q_+$ and~$Q_-$ described by the formulas
+\[
+\rsupfun{Q_+}@\{p\} = \supfun{p+} W(d(p)) \quad\text{and}\quad \rsupfun{Q_-}@\{p\} = \supfun{p+} W(-d(p)).
+\]
+Here $\Delta$ is taken from the ``counter-examples'' section.
 
-In other words, $Q = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(D(p))})$.
+In other words,
+\[
+Q_+ = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(d(p))});
+\quad
+Q_- = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(-d(p))}).
+\]
 
-\fxnote{Describe the co-complete funcoid reverse to this complete funcoid.}
+\fxnote{Describe the co-complete funcoids reverse to these complete funcoids.}
 
 \begin{thm}
-$f$ is an image of integral curve for a direction field~$d$ iff $f\in\continuous(|\mathbb{R}|_{>};Q)$.
+$f$ is an image of integral curve for a direction field~$d$ iff
+$f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
 \end{thm}
 
 \fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
@@ -411,7 +418,7 @@ It seems that this problem can be reformulated in the language of funcoids: From
 Existence of such smooth curve is equivalent to existence of a continuous function from $[0;1]$ to our funcoid (it seems that we also need to add the
 condition that it smooth, I have not yet defined it quite formally).
 
-Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $D(p)$ per point~$p$):
+Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
 
 \begin{thm}
 A $C^1$ integral curve (for our vector field~$D$) (having a start and end points) in $\mathbb{R}^n$ is exactly the same as
@@ -453,7 +460,7 @@ Well, do we need this? Isn't it the same as infimum product of funcoids?
 
 \subsection{Multiple allowed directions per point}
 
-\[ \rsupfun{Q}@\{p\} = \bigsqcup_{d\in D(p)} \supfun{p+} W(d). \]
+\[ \rsupfun{Q}@\{p\} = \bigsqcup_{d\in d(p)} \supfun{p+} W(d). \]
 
 One advantage to use funcoids in this case, that when describing the curves we don't need to require that the curve is smooth. I think, it's a big advantage.
 
