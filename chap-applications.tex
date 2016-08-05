@@ -525,14 +525,13 @@ What about curves limited by an exponent?}
 
 \begin{thm}
 $f$ is an reparametrized integral curve for a direction field~$d$ iff
-$f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
-\fxnote{Generalize for subsets of real numbers.}
+$f\in\continuous(\iota_D|\mathbb{R}|_{>};Q_+)\cap\continuous(\iota_D|\mathbb{R}|_{<};Q_-)$.
 \end{thm}
 
 \begin{proof}
-Equivalently transform $f\in\continuous(\iota_{[0;1]}|\mathbb{R}|;Q_+)$; $f\circ \iota_{[0;1]}|\mathbb{R}|\sqsubseteq Q_+\circ f$;
-$\rsupfun{f\circ \iota_{[0;1]}|\mathbb{R}|}@\{t\}\sqsubseteq \rsupfun{Q_+\circ f}@\{t\}$;
-$\rsupfun{f}\Delta_{>}(t)\sqcap[0;1])\sqsubseteq \rsupfun{Q_+}f(t)$;
+Equivalently transform $f\in\continuous(\iota_D|\mathbb{R}|;Q_+)$; $f\circ \iota_D|\mathbb{R}|\sqsubseteq Q_+\circ f$;
+$\rsupfun{f\circ \iota_D|\mathbb{R}|}@\{t\}\sqsubseteq \rsupfun{Q_+\circ f}@\{t\}$;
+$\rsupfun{f}\Delta_{>}(t)\sqcap D\sqsubseteq \rsupfun{Q_+}f(t)$;
 $\rsupfun{f}\Delta_{>}(t)\sqsubseteq \rsupfun{Q_+}f(t)$;
 $\rsupfun{f}\Delta_{>}(t)\sqsubseteq f(t)+W(D(f(t)))$;
 $\rsupfun{f}\Delta_{>}(t)-f(t)\sqsubseteq W(D(f(t)))$;
