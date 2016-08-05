@@ -407,8 +407,11 @@ Q_- = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(-d(p)
 
 \fxnote{Describe the co-complete funcoids reverse to these complete funcoids.}
 
+See \url{http://math.stackexchange.com/questions/1882625/a-modification-of-integral-curves/1882696} for
+description of reparametrized integral curves.
+
 \begin{thm}
-$f$ is an image of integral curve for a direction field~$d$ iff
+$f$ is an reparametrized integral curve for a direction field~$d$ iff
 $f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
 \fxnote{Generalize for subsets of real numbers.}
 \end{thm}
@@ -434,6 +437,63 @@ If the curve goes only through points with exactly one direction, then the curve
 \end{conjecture}
 
 \fxnote{This probably can be generalized for $C^n$ and $C^\infty$ curves. Consider also fractional~$n$. What about curves limited by an exponent?}
+
+\subsection{Path reparameterization}
+
+$C^1$~is a function which has continuous derivative on every point of the domain.
+
+By $D^1$ I will denote a $C^1$ function whose derivative is either nonzero at every point or is zero everywhere.
+
+\begin{defn}
+A differentiable function $f$ is an \emph{integral curve} of the vector field~$d$ when $f'(t)=d(f(t))$.
+\end{defn}
+
+\begin{defn}
+A \emph{reparameterization} of a $C^1$ path is a bijective $C^1$~real function $\phi$ such that
+$\phi'(t)>0$. A curve $f_2$ is called a reparametrized curve $f_1$ if there is a reparameterization~$\phi$ such that
+$f_2=f_1\circ\phi$.
+\end{defn}
+
+It is well known that this defines an equivalence relation of functions.
+
+\begin{prop}
+Reparameterization of $D^1$ function is $D^1$.
+\end{prop}
+
+\begin{proof}
+If the function has zero derivative, it is obvious.
+
+Let $f_1$ has everywhere nonzero derivative. Then $f_2'(t) = f_1'(\phi(t))\phi'(t)$ what is trivially nonzero.
+\end{proof}
+
+\begin{defn}
+Vectors~$p$ and~$q$ have the \emph{same direction} ($p\upuparrows q$) iff there exists a strictly positive real~$c$ such that $p=cq$.
+\end{defn}
+
+\begin{obvious}
+Being same direction is an equivalence relation.
+\end{obvious}
+
+\begin{obvious}
+The only vector with the same direction as the zero vector is zero vector.
+\end{obvious}
+
+\begin{thm}
+A $D^1$ function~$y$ is some reparameterization of a $D^1$ integral curve~$x$ of vector field~$d$ iff
+$f'(t)\upuparrows d(f(t))$ that is vectors~$f'(t)$ and $d(f(t))$ have the same direction (for every $t$).
+\end{thm}
+
+\begin{proof}
+If $y$ is a reparameterization of~$x$, then $y(t)=x(\phi(t))$. Thus $y'(t)=x'(\phi(t))\phi'(t)=d(x(\phi(t)))\phi'(t)=d(y(t))\phi'(t)$.
+So $y'(t)\upuparrows d(y(t))$ because $\phi'(t)>0$.
+
+Let now $f'(t)\upuparrows d(f(t))$ that is that is there is a strictly positive function $c(t)$ such that
+$x'(t) = c(t) F(x(t))$.
+
+??
+\end{proof}
+
+\subsection{The slope field}
 
 $f'(t)=d(f(t))$ is equivalent to $w(x,t)=(v(x),t)$ being a continuous function on~$\mathbb{R}^{n+1}$ with direction specified by
 $F(v(t), 1)$.
