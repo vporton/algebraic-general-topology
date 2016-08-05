@@ -369,17 +369,19 @@ under transformations of the vector field. Can this be a step to solve Navier-St
 
 \fxwarning{This section is a very rough draft.}
 
-See also \url{https://en.wikipedia.org/wiki/Slope_field}
+We will consider paths in a normed vector space~$R$.
 
-Let $d$ be a vector field in a normed vector space.
+\begin{defn}
+Let $D$ be a connected subset of~$\mathbb{R}$. A \emph{path} is a function $D\rightarrow R$.
+\end{defn}
+
+Let $d$ be a vector field in a normed vector space~$R$.
 \fxnote{I yet haven't succeed to prove it for a larger class of spaces such as all topological vector spaces.}
 
 \fxwarning{Below the interval $[0;1]$ and the set~$\mathbb{R}$ are confused with each other.}
 
-\fxnote{$\mathbb{R}$ is made into a ``locally ordered'' space by a direction field. Then use properties of ordered spaces to define the funcoid.}
-
 \begin{defn}
-\emph{Integral curve} is a function $f:[0;1]\rightarrow\mathbb{R}^n$ such that $f'(t)=d(f(t))$ for every $t\in[0;1]$.
+\emph{Integral curve} of a vector field~$d$ is a differentiable function $f:D\rightarrow R$ such that $f'(t)=d(f(t))$ for every $t\in D$.
 \end{defn}
 
 \begin{defn}
@@ -394,11 +396,7 @@ $C^1$~is a function which has continuous derivative on every point of the domain
 By $D^1$ I will denote a $C^1$ function whose derivative is either nonzero at every point or is zero everywhere.
 
 \begin{defn}
-A differentiable function $f$ is an \emph{integral curve} of the vector field~$d$ when $f'(t)=d(f(t))$.
-\end{defn}
-
-\begin{defn}
-A \emph{reparameterization} of a $C^1$ path is a bijective $C^1$~real function $\phi$ such that
+A \emph{reparameterization} of a $C^1$ path is a bijective $C^1$ function $\phi:D\rightarrow D$ such that
 $\phi'(t)>0$. A curve $f_2$ is called a reparametrized curve $f_1$ if there is a reparameterization~$\phi$ such that
 $f_2=f_1\circ\phi$.
 \end{defn}
@@ -480,9 +478,9 @@ We will also describe being a reparametrized integral curve topologically (throu
 
 \subsection{Topological description of $C^1$ curves}
 
-Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
+Explicitly construct this funcoid as follows:
 
-$R(d;\phi) = \setcond{v\in\mathbb{R}^n}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$ and $R(d;\phi) = 0$ if $d=0$,
+$R(d;\phi) = \setcond{v\in R}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$ and $R(d;\phi) = 0$ if $d=0$,
 where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
 for a direction~$d$ and an angle~$\phi$.
 
