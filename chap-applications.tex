@@ -384,60 +384,6 @@ The definition of \emph{right side integral curve} is the above definition with 
 \emph{Left side integral curve} is defined similarly.
 \end{defn}
 
-$R(d;\phi) = \setcond{v\in\mathbb{R}^n}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$ and $R(d;\phi) = 0$ if $d=0$,
-where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
-for a direction~$d$ and an angle~$\phi$.
-
-$W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \Delta^{(\mathsf{RLD})n}$
-where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
-\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use pointfree funcoids.}
-
-Finally our funcoids are the complete funcoid~$Q_+$ and~$Q_-$ described by the formulas
-\[
-\rsupfun{Q_+}@\{p\} = \supfun{p+} W(d(p)) \quad\text{and}\quad \rsupfun{Q_-}@\{p\} = \supfun{p+} W(-d(p)).
-\]
-Here $\Delta$ is taken from the ``counter-examples'' section.
-
-In other words,
-\[
-Q_+ = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(d(p))});
-\quad
-Q_- = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(-d(p))}).
-\]
-
-\fxnote{Describe the co-complete funcoids reverse to these complete funcoids.}
-
-See \url{http://math.stackexchange.com/questions/1882625/a-modification-of-integral-curves/1882696} for
-description of reparametrized integral curves.
-
-\begin{thm}
-$f$ is an reparametrized integral curve for a direction field~$d$ iff
-$f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
-\fxnote{Generalize for subsets of real numbers.}
-\end{thm}
-
-\begin{proof}
-Equivalently transform $f\in\continuous(\iota_{[0;1]}|\mathbb{R}|;Q)$; $f\circ \iota_{[0;1]}|\mathbb{R}|\sqsubseteq Q\circ f$;
-$\rsupfun{f\circ \iota_{[0;1]}|\mathbb{R}|}@\{t\}\sqsubseteq \rsupfun{Q\circ f}@\{t\}$;
-$\rsupfun{f}\Delta_{>}(t)\sqcap[0;1])\sqsubseteq \rsupfun{Q}f(t)$;
-$\rsupfun{f}\Delta_{>}(t)\sqsubseteq \rsupfun{Q}f(t)$;
-$\rsupfun{f}\Delta_{>}(t)\sqsubseteq f(t)+W(D(f(t)))$;
-$\rsupfun{f}\Delta_{>}(t)-f(t)\sqsubseteq W(D(f(t)))$;
-\[ \forall r>0, \phi>0 \exists\delta>0: \rsupfun{f}(]t;t+\delta[)-f(t)\subseteq R(d;\phi) \cap B_r(f(t)) \]
-\[ \forall r>0, \phi>0 \exists\delta>0: \frac{\rsupfun{f}(]t;t+\delta[)-f(t)}{\delta}\subseteq R(d;\phi) \cap B_{r/\delta}(f(t)) \]
-??
-\end{proof}
-
-\fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
-
-Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
-
-\begin{conjecture}
-If the curve goes only through points with exactly one direction, then the curve is smooth (if it is continuous regarding the above funcoid).
-\end{conjecture}
-
-\fxnote{This probably can be generalized for $C^n$ and $C^\infty$ curves. Consider also fractional~$n$. What about curves limited by an exponent?}
-
 \subsection{Path reparameterization}
 
 $C^1$~is a function which has continuous derivative on every point of the domain.
@@ -525,6 +471,58 @@ First note that $\hat{f}$ always has a nonzero derivative.
 $\hat{f}'(t)\upuparrows \hat{d}(\hat{f}(t)) \Leftrightarrow (1,f'(t))\upuparrows (1,d(f(t))) \Leftrightarrow
 f'(t)=d(f(t))$.
 \end{proof}
+
+Thus we have reduced (for $D^1$ paths) being an integral curve to being a reparametrized integral curve.
+We will also describe being a reparametrized integral curve topologically (through funcoids).
+
+\subsection{Topological description of $C^1$ curves}
+
+Explicitly construct this funcoid as (now, for simplicity only for $\mathbb{R}^n$, there is only one direction $d(p)$ per point~$p$):
+
+$R(d;\phi) = \setcond{v\in\mathbb{R}^n}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$ and $R(d;\phi) = 0$ if $d=0$,
+where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
+for a direction~$d$ and an angle~$\phi$.
+
+$W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \Delta^{(\mathsf{RLD})n}$
+where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
+\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use pointfree funcoids.}
+
+Finally our funcoids are the complete funcoid~$Q_+$ and~$Q_-$ described by the formulas
+\[
+\rsupfun{Q_+}@\{p\} = \supfun{p+} W(d(p)) \quad\text{and}\quad \rsupfun{Q_-}@\{p\} = \supfun{p+} W(-d(p)).
+\]
+Here $\Delta$ is taken from the ``counter-examples'' section.
+
+In other words,
+\[
+Q_+ = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(d(p))});
+\quad
+Q_- = \bigsqcup_{p\in\mathbb{R}} (@\{p\}\times^{\mathsf{FCD}}\supfun{p+}{W(-d(p))}).
+\]
+
+\fxnote{Describe the co-complete funcoids reverse to these complete funcoids.}
+
+\fxnote{This probably can be generalized for $C^n$ and $C^\infty$ curves. Consider also fractional~$n$. What about curves limited by an exponent?}
+
+\begin{thm}
+$f$ is an reparametrized integral curve for a direction field~$d$ iff
+$f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
+\fxnote{Generalize for subsets of real numbers.}
+\end{thm}
+
+\begin{proof}
+Equivalently transform $f\in\continuous(\iota_{[0;1]}|\mathbb{R}|;Q)$; $f\circ \iota_{[0;1]}|\mathbb{R}|\sqsubseteq Q\circ f$;
+$\rsupfun{f\circ \iota_{[0;1]}|\mathbb{R}|}@\{t\}\sqsubseteq \rsupfun{Q\circ f}@\{t\}$;
+$\rsupfun{f}\Delta_{>}(t)\sqcap[0;1])\sqsubseteq \rsupfun{Q}f(t)$;
+$\rsupfun{f}\Delta_{>}(t)\sqsubseteq \rsupfun{Q}f(t)$;
+$\rsupfun{f}\Delta_{>}(t)\sqsubseteq f(t)+W(D(f(t)))$;
+$\rsupfun{f}\Delta_{>}(t)-f(t)\sqsubseteq W(D(f(t)))$;
+\[ \forall r>0, \phi>0 \exists\delta>0: \rsupfun{f}(]t;t+\delta[)-f(t)\subseteq R(d;\phi) \cap B_r(f(t)) \]
+\[ \forall r>0, \phi>0 \exists\delta>0: \frac{\rsupfun{f}(]t;t+\delta[)-f(t)}{\delta}\subseteq R(d;\phi) \cap B_{r/\delta}(f(t)) \]
+??
+\end{proof}
+
+\fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
 
 \subsection{Plural funcoids}
 
