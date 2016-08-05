@@ -483,13 +483,16 @@ $R(d;\phi) = \setcond{v\in\mathbb{R}^n}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$
 where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
 for a direction~$d$ and an angle~$\phi$.
 
-$W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \Delta^{(\mathsf{RLD})n}$
-where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
-\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use either pointfree funcoids or the below formula.}
-
-\begin{prop}
+\begin{defn}
 $W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
 \fxnote{This is defined for infinite dimensional case.}
+\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$.}
+\end{defn}
+
+\begin{prop}
+For finite dimensional case~$\mathbb{R}^n$ we have
+$W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \Delta^{(\mathsf{RLD})n}$
+where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
 \end{prop}
 
 \begin{proof}
