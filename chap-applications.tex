@@ -479,24 +479,52 @@ The only vector with the same direction as the zero vector is zero vector.
 \end{obvious}
 
 \begin{thm}
-A $D^1$ function~$y$ is some reparameterization of a $D^1$ integral curve~$x$ of vector field~$d$ iff
-$f'(t)\upuparrows d(f(t))$ that is vectors~$f'(t)$ and $d(f(t))$ have the same direction (for every $t$).
+A $D^1$ function~$y$ is some reparameterization of a $D^1$ integral curve~$x$ of a continuous vector field~$d$ iff
+$y'(t)\upuparrows d(y(t))$ that is vectors~$y'(t)$ and $d(y(t))$ have the same direction (for every $t$).
 \end{thm}
 
 \begin{proof}
 If $y$ is a reparameterization of~$x$, then $y(t)=x(\phi(t))$. Thus $y'(t)=x'(\phi(t))\phi'(t)=d(x(\phi(t)))\phi'(t)=d(y(t))\phi'(t)$.
 So $y'(t)\upuparrows d(y(t))$ because $\phi'(t)>0$.
 
-Let now $f'(t)\upuparrows d(f(t))$ that is that is there is a strictly positive function $c(t)$ such that
-$x'(t) = c(t) F(x(t))$.
+Let now $x'(t)\upuparrows d(x(t))$ that is that is there is a strictly positive function $c(t)$ such that
+$x'(t) = c(t) d(x(t))$.
 
-??
+If $x'(t)$ is zero everywhere, then $d(x(t))=0$ and thus $x'(t)=d(x(t))$ that is $x$ is an Integral curve.
+Note that $y$ is a reparameterization of itself.
+
+We can assume that $x'(t)\ne 0$ everywhere. Then $F(x(t))\ne 0$. We have
+that $c(t) = \frac{||x'(t)||}{||d(x(t))||}$ is a continuous function. \fxnote{Does it work for non-normed spaces?}
+
+Let $y(u(t)) = x(t)$, where \[ u(t)=\int_0^t c(s)ds, \]
+which is defined and finite because $c$ is continuous and monotone (thus having inverse defined on its image)
+because $c$ is positive.
+
+Then
+\begin{align*}
+y'(u(t)) u'(t) &= x'(t) \\
+&= c(t) d(x(t)) \text{, so}\\
+y'(u(t)) c(t) &= c(t) d(y(u(t))) \\
+y'(u(t))  &=  d(y(u(t)))
+\end{align*}
+and letting $s=u(t)$ we have $y'(s)=d(y(s))$ for a reparameterization~$y$ of~$x$.
 \end{proof}
 
-\subsection{The slope field}
+\subsection{Vector space with additional coordinate}
 
-$f'(t)=d(f(t))$ is equivalent to $w(x,t)=(v(x),t)$ being a continuous function on~$\mathbb{R}^{n+1}$ with direction specified by
-$F(v(t), 1)$.
+Consider the vector space with additional coordinate~$t$.
+
+Our vector field~$d(t)$ induces vector field~$\hat{d}(t,v)=(1,d(v))$ in this space. Also $\hat{f}(t)=(t,f(t))$.
+
+\begin{prop}
+Let $f$ be a $D^1$ function. $f$ is an integral curve of~$d$ iff $\hat{f}$ is a reparametrized integral curve of~$\hat{d}$.
+\end{prop}
+
+\begin{proof}
+First note that $\hat{f}$ always has a nonzero derivative.
+$\hat{f}'(t)\upuparrows \hat{d}(\hat{f}(t)) \Leftrightarrow (1,f'(t))\upuparrows (1,d(f(t))) \Leftrightarrow
+f'(t)=d(f(t))$.
+\end{proof}
 
 \subsection{Plural funcoids}
 
