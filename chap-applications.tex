@@ -485,7 +485,16 @@ for a direction~$d$ and an angle~$\phi$.
 
 $W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \Delta^{(\mathsf{RLD})n}$
 where \[ \Delta^{(\mathsf{RLD})n} = \underbrace{\Delta\times^{\mathsf{RLD}}\dots\times^{\mathsf{RLD}}\Delta}_{n\text{ times}}. \]
-\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use pointfree funcoids.}
+\fxnote{Consider also $\mathsf{FCD}$ instead of $\mathsf{RLD}$. This would use either pointfree funcoids or the below formula.}
+
+\begin{prop}
+$W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
+\fxnote{This is defined for infinite dimensional case.}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
 
 Finally our funcoids are the complete funcoid~$Q_+$ and~$Q_-$ described by the formulas
 \[
