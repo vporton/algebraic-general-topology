@@ -532,12 +532,18 @@ $\rsupfun{f}\Delta_{>}(t)\sqcap[0;1])\sqsubseteq \rsupfun{Q_+}f(t)$;
 $\rsupfun{f}\Delta_{>}(t)\sqsubseteq \rsupfun{Q_+}f(t)$;
 $\rsupfun{f}\Delta_{>}(t)\sqsubseteq f(t)+W(D(f(t)))$;
 $\rsupfun{f}\Delta_{>}(t)-f(t)\sqsubseteq W(D(f(t)))$;
-\[ \forall r>0, \phi>0 \exists\delta>0: \rsupfun{f}(]t;t+\delta[)-f(t)\subseteq R(d;\phi) \cap B_r(f(t)) \]
-\[ \forall r>0, \phi>0 \exists\delta>0: \frac{\rsupfun{f}(]t;t+\delta[)-f(t)}{\delta}\subseteq R(d;\phi) \cap B_{r/\delta}(f(t)) \]
-??
-\end{proof}
+\[ \forall r>0, \phi>0 \exists\delta>0: \rsupfun{f}(]t;t+\delta[)-f(t)\subseteq R(d(f(t));\phi) \cap B_r(f(t)); \]
+\[ \forall r>0, \phi>0 \exists\delta>0 \forall 0<\gamma<\delta: \rsupfun{f}(]t;t+\gamma[)-f(t)\subseteq R(d(f(t));\phi) \cap B_r(f(t)); \]
+\[ \forall r>0, \phi>0 \exists\delta>0 \forall 0<\gamma<\delta: \frac{\rsupfun{f}(]t;t+\gamma[)-f(t)}{\gamma}\subseteq R(d(f(t));\phi) \cap B_{r/\delta}(f(t)); \]
+\[ \forall r>0, \phi>0 \exists\delta>0: \partial_+ f(t)\subseteq R(d(f(t));\phi) \cap B_{r/\delta}(f(t)); \]
+\[ \forall r>0, \phi>0: \partial_+ f(t)\subseteq R(d(f(t));\phi); \]
+\[ \partial_+ f(t) \upuparrows d(f(t)) \]
+where $\partial_+$ is the right derivative.
 
-\fxnote{The condition that left and right derivatives are the same is equal to continuity in $\mathbb{R}^{n+1}$.}
+In the same way we derive that $\continuous(|\mathbb{R}|_{<};Q_-)\Leftrightarrow \partial_- f(t) \upuparrows d(f(t))$.
+
+Thus $f'(t) \upuparrows d(f(t))$ iff $f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
+\end{proof}
 
 \subsection{Plural funcoids}
 
