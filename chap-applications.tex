@@ -544,6 +544,10 @@ In the same way we derive that $\continuous(|\mathbb{R}|_{<};Q_-)\Leftrightarrow
 Thus $f'(t) \upuparrows d(f(t))$ iff $f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\continuous(|\mathbb{R}|_{<};Q_-)$.
 \end{proof}
 
+The following idea seems wrong. I grayed it out as a candidate for deletion from the text:
+
+\begin{grayed}
+
 \subsection{$C^n$ curves}
 
 \fxnote{Related questions:
@@ -562,9 +566,31 @@ Finally our funcoids are the complete funcoids~$Q_+^n$ and~$Q_-^n$ described by 
 \rsupfun{Q_+^n}@\{p\} = \supfun{p+} W^n(d(p)) \quad\text{and}\quad \rsupfun{Q_-^n}@\{p\} = \supfun{p+} W^n(-d(p)).
 \]
 
+\begin{lem}
+Let for every $x$ in the domain of the path for small $t > 0$ we have $f (x + t) \in R^n (F (f (x)))$ and $f (x - t) \in R^n (- F (f (x)))$.
+Then $f$ is $C^n$ smooth.
+\end{lem}
+
+\begin{proof}
+\fxerror{Not yet proved!}\\
+See also \url{http://math.stackexchange.com/q/1884930/4876}.
+\end{proof}
+
 \begin{conjecture}
 A path~$f$ is $C^n$ smooth iff $f\in\continuous(\iota_D|\mathbb{R}|_{>};Q_+^n)\cap\continuous(\iota_D|\mathbb{R}|_{<};Q_-^n)$.
 \end{conjecture}
+
+\begin{proof}
+Reverse implication follows from the lemma.
+
+Let now a path~$f$ is $C^n$. Then
+\[
+f(x+t) = \sum_{i=0}^n f^{(i)}(x)\frac{t^i}{i!} + o(t^i) =
+f(x)+f'(x)t + \sum_{i=2}^n f^{(i)}(x)\frac{t^i}{i!} + o(t^i)
+\]
+\end{proof}
+
+\end{grayed}
 
 \subsection{Plural funcoids}
 
