@@ -367,17 +367,17 @@ under transformations of the vector field. Can this be a step to solve Navier-St
 
 \section{Integral curves}
 
-We will consider paths in a normed vector space~$R$.
+We will consider paths in a normed vector space~$V$.
 
 \begin{defn}
-Let $D$ be a connected subset of~$\mathbb{R}$. A \emph{path} is a function $D\rightarrow R$.
+Let $D$ be a connected subset of~$\mathbb{R}$. A \emph{path} is a function $D\rightarrow V$.
 \end{defn}
 
-Let $d$ be a vector field in a normed vector space~$R$.
+Let $d$ be a vector field in a normed vector space~$V$.
 \fxnote{I yet haven't succeed to prove it for a larger class of spaces such as all topological vector spaces.}
 
 \begin{defn}
-\emph{Integral curve} of a vector field~$d$ is a differentiable function $f:D\rightarrow R$ such that $f'(t)=d(f(t))$ for every $t\in D$.
+\emph{Integral curve} of a vector field~$d$ is a differentiable function $f:D\rightarrow V$ such that $f'(t)=d(f(t))$ for every $t\in D$.
 \end{defn}
 
 \begin{defn}
@@ -476,9 +476,9 @@ We will also describe being a reparametrized integral curve topologically (throu
 
 Explicitly construct this funcoid as follows:
 
-$R(d;\phi) = \setcond{v\in R}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$ and $R(0;\phi) = \{0\}$,
+$R(d;\phi) = \setcond{v\in V}{\widehat{vd}<\phi, v\ne 0}$ for $d\ne 0$ and $R(0;\phi) = \{0\}$,
 where $\widehat{ab}$ is the angle between the vectors $a$ and $b$,
-for a direction~$d$ and an angle~$\phi$. \fxwarning{I use $R$ in two different senses. Change the notation.}
+for a direction~$d$ and an angle~$\phi$.
 
 \begin{defn}
 $W(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
@@ -546,10 +546,10 @@ Thus $f'(t) \upuparrows d(f(t))$ iff $f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\
 
 \subsection{$C^n$ curves}
 
-Define $R^n(d;\phi) = \setcond{v\in R}{\widehat{vd}<\phi |v|^n, v\ne 0}$ for $d\ne 0$ and $R^n(0;\phi) = \{0\}$.
+Define $R^n(d;\phi) = \setcond{v\in V}{\widehat{vd}<\phi |v|^n, v\ne 0}$ for $d\ne 0$ and $R^n(0;\phi) = \{0\}$.
 
 \fxnote{Alternatively define
-$R^n(d;\phi) = \setcond{v\in R}{\forall h<n:\widehat{vd}<\phi |v|^h, v\ne 0}$ for $d\ne 0$ and $R^n(0;\phi) = \{0\}$.
+$R^n(d;\phi) = \setcond{v\in V}{\forall h<n:\widehat{vd}<\phi |v|^h, v\ne 0}$ for $d\ne 0$ and $R^n(0;\phi) = \{0\}$.
 Also express the second definition of~$R$ through the first one.}
 
 \begin{defn}
