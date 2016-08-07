@@ -551,14 +551,10 @@ Thus $f'(t) \upuparrows d(f(t))$ iff $f\in\continuous(|\mathbb{R}|_{>};Q_+)\cap\
 \url{http://math.stackexchange.com/q/107460/4876}
 \url{http://mathoverflow.net/q/88501}}
 
-Define $R^n(d;\phi) = \setcond{v\in V}{\widehat{vd}<\phi |v|^n, v\ne 0}$ for $d\ne 0$ and $R^n(0;\phi) = \{0\}$.
-
-\fxnote{Alternatively define
-$R^n(d;\phi) = \setcond{v\in V}{\forall h<n:\widehat{vd}<\phi |v|^h, v\ne 0}$ for $d\ne 0$ and $R^n(0;\phi) = \{0\}$.
-Also express the second definition of~$R$ through the first one.}
+Define $R^n(d) = \setcond{v\in V}{\widehat{vd}<o(|v|^n), v\ne 0}$ for $d\ne 0$ and $R^n(0) = \{0\}$.
 
 \begin{defn}
-$W^n(d) = \bigsqcap^{\mathsf{RLD}}\setcond{R^n(d;\phi)}{\phi\in\mathbb{R},\phi>0} \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
+$W^n(d) = R^n(d) \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
 \end{defn}
 
 Finally our funcoids are the complete funcoids~$Q_+^n$ and~$Q_-^n$ described by the formulas
@@ -567,14 +563,7 @@ Finally our funcoids are the complete funcoids~$Q_+^n$ and~$Q_-^n$ described by 
 \]
 
 \begin{conjecture}
-~
-\begin{enumerate}
-\item A path~$f$ is $C^n$ smooth iff
-$f\in\continuous(\iota_D|\mathbb{R}|_{>};Q_+^m)\cap\continuous(\iota_D|\mathbb{R}|_{<};Q_-^m)$
-for all $m<n$.
-\item $f\in\continuous(\iota_D|\mathbb{R}|_{>};Q_+^m)\cap\continuous(\iota_D|\mathbb{R}|_{<};Q_-^m)$ for a path~$f$ iff
-it is $C^n$ smooth for all $m<n$ (this requires $C^n$ for fractional~$n$).
-\end{enumerate}
+A path~$f$ is $C^n$ smooth iff $f\in\continuous(\iota_D|\mathbb{R}|_{>};Q_+^n)\cap\continuous(\iota_D|\mathbb{R}|_{<};Q_-^n)$.
 \end{conjecture}
 
 \subsection{Plural funcoids}
