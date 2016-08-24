@@ -218,7 +218,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
   \rangle \uparrow^{\mathsf{RLD}} M$
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{ffm}
   $\langle f \times f \rangle^{\ast} M \sqsubseteq g \circ
   \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ whenever
   $\tofcd g = f$ for a reloid $g$.
@@ -277,29 +277,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{thm}
 
 \begin{proof}
-Prove $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g \circ
-g^{- 1} \sqsubseteq g$: \fxerror{The direction of~$\sqsupseteq$ is wrong.}
-\begin{multline*}
-\rsupfun{f \times^{(A)} f} 1^{\mathsf{RLD}} = \bigsqcup
-\setcond{ \supfun{f} x \times^{\mathsf{RLD}} \supfun{f} x
-}{ x \in \atoms^{\mathscr{F}} } = \\
-\bigsqcup \setcond{ \torldin (\supfun{f} x
-\times^{\mathsf{FCD}} \supfun{f} x) }{
-x \in \atoms^{\mathscr{F}} } \sqsubseteq
-\torldin  \bigsqcup \setcond{ \supfun{f} x
-\times^{\mathsf{FCD}} \supfun{f} x }{ x
-\in \atoms^{\mathscr{F}} } = \\
-\torldin 
-\bigsqcup \setcond{ \langle f \times^{(C)} f \rangle (x
-\times^{\mathsf{FCD}} x) }{ x \in
-\atoms^{\mathscr{F}} } =
-\torldin \bigsqcup \setcond{ f \circ (x \times^{\mathsf{FCD}} x) \circ f^{- 1}
-}{ x \in \atoms^{\mathscr{F}} } \sqsubseteq \\
-\torldin  (f \circ f^{- 1}) = \\
-\torldin f \circ \torldin f^{- 1} =
-\torldin\tofcd g \circ \torldin \tofcd g^{- 1} \sqsupseteq
-g \circ g^{- 1} \sqsubseteq g.
-\end{multline*}
+$\rsupfun{ f \times^{(A)} f } 1^{\mathsf{RLD}} = g \circ g^{- 1} \sqsubseteq g$ by proposition~\ref{ffm}.
 
 It remains to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
 1^{\mathsf{RLD}}$. \fxwarning{Isn't it already proved in \ref{ff-ge-g}?}
