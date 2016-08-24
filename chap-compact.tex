@@ -126,37 +126,41 @@ Let $f$ be an indexed family of funcoids. \fxnote{Reverse theorem (for non-least
   So $\prod f$ is directly compact.
 \end{proof}
 
-I will denote $1^{\mathsf{RLD}}$ the diagonal reloid.
-
 \begin{prop}
   The following expressions are pairwise equal:
+  \fxwarning{We can take $f$ either a funcoid or a reloid. If $f$ is a funcoid then
+    replace $1^{\mathsf{RLD}}\rightarrow 1^{\mathsf{FCD}}$.}
   \begin{enumerate}
-    \item $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$;
+    \item\label{ff-id-s} $\langle f \times^{(C)} f \rangle^{\ast} 1^{\mathsf{RLD}}$;
     
-    \item $\bigsqcup \setcond{ \langle f \times f \rangle p }
+    \item\label{ff-id-at}  $\bigsqcup \setcond{ \langle f \times^{(C)} f \rangle p }
     {p \in \atoms 1^{\mathsf{RLD}} }$;
     
-    \item $\bigsqcup \setcond{ \supfun{f} x \times^{\mathsf{RLD}}
+    \item\label{ff-id-p}  $\bigsqcup \setcond{ \supfun{f} x \times^{\mathsf{RLD}}
     \supfun{f} x }{ x \in \mathfrak{F} }$;
     
-    \item $\torldin  \bigsqcup \setcond{ \langle f
+    \item\label{ff-id-rp}  $\torldin  \bigsqcup \setcond{ \langle f
     \rangle x \times^{\mathsf{FCD}} \supfun{f} x }
     {x \in \mathfrak{F} }$;
     
-    \item $\torldin  \bigsqcup \setcond{ f \circ (x
+    \item\label{ff-id-rc}  $\torldin  \bigsqcup \setcond{ f \circ (x
     \times^{\mathsf{FCD}} x) \circ f^{- 1} }{
     x \in \mathfrak{F} }$;
     
-    \item $\bigsqcup \setcond{ (\torldin f) \circ (x
+    \item\label{ff-id-rrc}  $\bigsqcup \setcond{ (\torldin f) \circ (x
     \times^{\mathsf{RLD}} x) \circ (\torldin
     f)^{- 1} }{ x \in \mathfrak{F} }$.
     
-    \item $\torldin (f^{- 1} \circ f)$
+    \item\label{ff-id-rcomp}  $\torldin (f^{- 1} \circ f)$
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
-  ??
+~
+\begin{widedisorder}
+\item[\ref{ff-id-s}$\Leftrightarrow$\ref{ff-id-at}] Theorem~\bookref{fcd-atoms}.
+\end{widedisorder}
+??
 \end{proof}
 
 \begin{prop}
