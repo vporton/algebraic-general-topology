@@ -132,6 +132,8 @@ Let $f$ be an indexed family of funcoids. \fxnote{Reverse theorem (for non-least
     replace $1^{\mathsf{RLD}}\rightarrow 1^{\mathsf{FCD}}$.}
   \begin{enumerate}
     \item\label{ff-id-s} $\langle f \times^{(C)} f \rangle^{\ast} 1^{\mathsf{RLD}}$;
+      \fxwarning{We need to prove that $\langle f \times^{(C)} f \rangle^{\ast} 1^{\mathsf{FCD}}$
+      is a filter (because it should be the set of neighborhoods of the diagonal, as per Bourbaki).}
     
     \item\label{ff-id-at}  $\bigsqcup \setcond{ \langle f \times^{(C)} f \rangle p }
     {p \in \atoms 1^{\mathsf{RLD}} }$;
@@ -158,7 +160,8 @@ Let $f$ be an indexed family of funcoids. \fxnote{Reverse theorem (for non-least
 \begin{proof}
 ~
 \begin{widedisorder}
-\item[\ref{ff-id-s}$\Leftrightarrow$\ref{ff-id-at}] Theorem~\bookref{fcd-atoms}.
+\item[\ref{ff-id-s}$\Leftrightarrow$\ref{ff-id-at}] Theorem~\bookref{fcd-atoms} or
+more generally theorem~\bookref{spfn-atoms} (it applies to funcoids due theorem~\bookref{fcd-diagram}).
 \end{widedisorder}
 ??
 \end{proof}
