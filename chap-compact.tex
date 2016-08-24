@@ -92,7 +92,7 @@ a}^{\mathsf{RLD}} \Cor a_i$.
     \prod^{\mathsf{RLD}} \mathcal{X} . &  & 
   \end{eqnarray*}
   (*) You should verify the special case when $\mathcal{X}_i =
-  0^{\mathfrak{F}}$ for some $i$.
+  \bot^{\mathfrak{F}}$ for some $i$.
 \end{proof}
 
 \begin{thm}
@@ -112,16 +112,16 @@ Let $f$ be an indexed family of funcoids. \fxnote{Reverse theorem (for non-least
   
   Let each $f_i$ is directly compact.
   
-  Let $\left\langle \prod f \right\rangle a \neq 0$. Then $\left\langle \prod
+  Let $\left\langle \prod f \right\rangle a \neq \bot$. Then $\left\langle \prod
   f \right\rangle a = \left\langle \prod^{(A)} f \right\rangle a =
   \prod^{\mathsf{RLD}}_{i \in \dom f} \langle f_i \rangle
   \Pr^{\mathsf{RLD}}_i a$. Thus every $\langle f_i \rangle
-  \Pr^{\mathsf{RLD}}_i a \neq 0$. Consequently by compactness
-  $\Cor \langle f_i \rangle \Pr^{\mathsf{RLD}}_i a \neq 0$;
+  \Pr^{\mathsf{RLD}}_i a \neq \bot$. Consequently by compactness
+  $\Cor \langle f_i \rangle \Pr^{\mathsf{RLD}}_i a \neq \bot$;
   $\prod_{i \in \dom f} \Cor \langle f_i \rangle
-  \Pr^{\mathsf{RLD}}_i a \neq 0$; $\Cor \prod_{i \in \dom
-  f} \langle f_i \rangle \Pr^{\mathsf{RLD}}_i a \neq 0$; $\Cor
-  \left\langle \prod f \right\rangle a \neq 0$.
+  \Pr^{\mathsf{RLD}}_i a \neq \bot$; $\Cor \prod_{i \in \dom
+  f} \langle f_i \rangle \Pr^{\mathsf{RLD}}_i a \neq \bot$; $\Cor
+  \left\langle \prod f \right\rangle a \neq \bot$.
   
   So $\prod f$ is directly compact.
 \end{proof}
@@ -175,17 +175,17 @@ I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \circ f^{- 1} \nasymp
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \nasymp
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \sqcap
-  \uparrow^{\mathsf{FCD}} Y \neq 0 \Leftarrow
+  \uparrow^{\mathsf{FCD}} Y \neq \bot \Leftarrow
   \torldin (f \sqcap \uparrow^{\mathsf{FCD}}
-  Y) \neq 0 \Leftrightarrow \torldin f \sqcap
-  \torldin \uparrow^{\mathsf{FCD}} Y \neq 0
+  Y) \neq \bot \Leftrightarrow \torldin f \sqcap
+  \torldin \uparrow^{\mathsf{FCD}} Y \neq \bot
   \Leftarrow \torldin f \sqcap
-  \torldout \uparrow^{\mathsf{FCD}} Y \neq 0
+  \torldout \uparrow^{\mathsf{FCD}} Y \neq \bot
   \Leftrightarrow \torldin f \sqcap
-  \uparrow^{\mathsf{RLD}} Y \neq 0 \Leftrightarrow
+  \uparrow^{\mathsf{RLD}} Y \neq \bot \Leftrightarrow
   \torldin  \tofcd g \sqcap
-  \uparrow^{\mathsf{RLD}} Y \neq 0 \Leftarrow g \sqcap
-  \uparrow^{\mathsf{RLD}} Y \neq 0 \Leftrightarrow g \nasymp
+  \uparrow^{\mathsf{RLD}} Y \neq \bot \Leftarrow g \sqcap
+  \uparrow^{\mathsf{RLD}} Y \neq \bot \Leftrightarrow g \nasymp
   \uparrow^{\mathsf{RLD}} Y$.
 \end{proof}
 
@@ -207,9 +207,9 @@ I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead
   \uparrow^{\mathsf{RLD}} X \nasymp \langle f \times f \rangle
   \uparrow^{\mathsf{RLD}} M \Leftrightarrow \tofcd
   (\uparrow^{\mathsf{RLD}} X \sqcap \langle f \times f \rangle
-  \uparrow^{\mathsf{RLD}} M) \neq 0 \Rightarrow \tofcd
+  \uparrow^{\mathsf{RLD}} M) \neq \bot \Rightarrow \tofcd
   \uparrow^{\mathsf{RLD}} X \sqcap \tofcd \langle f
-  \times f \rangle \uparrow^{\mathsf{RLD}} M \neq 0 \Leftrightarrow
+  \times f \rangle \uparrow^{\mathsf{RLD}} M \neq \bot \Leftrightarrow
   \tofcd \uparrow^{\mathsf{RLD}} X \nasymp
   \tofcd \langle f \times f \rangle
   \uparrow^{\mathsf{RLD}} M \Leftrightarrow
@@ -300,10 +300,10 @@ Then $\left\{ V \setminus U \hspace{1em} | \hspace{1em} V \in \GR g
 \right\} = g \setminus U$ would be a proper filter.
 
 Thus by reflexivity $\langle f \times f \rangle^{\ast} (g \setminus U) \neq
-0$.
+\bot$.
 
 By compactness of $f \times f$, $\Cor \langle f \times f \rangle^{\ast}
-(g \setminus U) \neq 0$.
+(g \setminus U) \neq \bot$.
 
 Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times f \rangle^{\ast}
 (g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times f^{- 1}
