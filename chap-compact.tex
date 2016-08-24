@@ -151,7 +151,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{widedisorder}
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{ff-ge-g}
   Let $g$ be a reloid and $f = \tofcd g$. Then $\langle f
   \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
 \end{prop}
@@ -266,7 +266,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{rem}
 
 \begin{thm}
-  Let $f$ be a $T_1$-separable compact reflexive symmetric funcoid and $g$ be
+  Let $f$ be a $T_1$-separable compact \fxwarning{Isn't direct compactness enough?} reflexive symmetric funcoid and $g$ be
   a reloid such that
   \begin{enumerate}
     \item $\tofcd g = f$;
@@ -297,11 +297,11 @@ x \in \atoms^{\mathscr{F}} } \sqsubseteq
 }{ x \in \atoms^{\mathscr{F}} } \sqsubseteq \\
 \torldin  (f \circ f^{- 1}) =
 \torldin f \circ \torldin
-f^{- 1} = g \circ g^{- 1}.
+f^{- 1} = g \circ g^{- 1} \sqsubseteq g.
 \end{multline*}
 
 It remains to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
-1^{\mathsf{RLD}}$.
+1^{\mathsf{RLD}}$. \fxwarning{Isn't it already proved in \ref{ff-ge-g}?}
 
 \fxwarning{Possible errors.}
 
