@@ -126,15 +126,15 @@ Let $f$ be an indexed family of funcoids. \fxnote{Reverse theorem (for non-least
   So $\prod f$ is directly compact.
 \end{proof}
 
-I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead.}
+I will denote $1^{\mathsf{RLD}}$ the diagonal reloid.
 
 \begin{prop}
   The following expressions are pairwise equal:
   \begin{enumerate}
-    \item $\langle f \times f \rangle^{\ast} \Delta$;
+    \item $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$;
     
     \item $\bigsqcup \setcond{ \langle f \times f \rangle p }
-    {p \in \atoms \Delta }$;
+    {p \in \atoms 1^{\mathsf{RLD}} }$;
     
     \item $\bigsqcup \setcond{ \supfun{f} x \times^{\mathsf{RLD}}
     \supfun{f} x }{ x \in \mathfrak{F} }$;
@@ -161,17 +161,17 @@ I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead
 
 \begin{prop}
   Let $g$ be a reloid and $f = \tofcd g$. Then $\langle f
-  \times f \rangle^{\ast} \Delta \sqsupseteq g$.
+  \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
 \end{prop}
 
 \begin{proof}
-  $\langle f \times f \rangle^{\ast} \Delta \nasymp
+  $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \nasymp
   \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
-  \uparrow^{\mathsf{RLD}} \Delta \mathrel{[f \times f]}
+  \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}} \mathrel{[f \times f]}
   \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
-  \uparrow^{\mathsf{FCD}} \Delta \mathrel{[f \times^{(C)} f]}
+  \uparrow^{\mathsf{FCD}} 1^{\mathsf{RLD}} \mathrel{[f \times^{(C)} f]}
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \circ
-  \uparrow^{\mathsf{FCD}} \Delta \circ f^{- 1} \nasymp
+  \uparrow^{\mathsf{FCD}} 1^{\mathsf{RLD}} \circ f^{- 1} \nasymp
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \circ f^{- 1} \nasymp
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \nasymp
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \sqcap
@@ -247,8 +247,8 @@ I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead
 \end{cor}
 
 \begin{cor}
-  $V \circ V^{- 1} \in \GR \langle f \times f \rangle^{\ast} \Delta$; $f
-  \circ f^{- 1} \sqsupseteq \langle f \times f \rangle^{\ast} \Delta$.
+  $V \circ V^{- 1} \in \GR \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
+  \circ f^{- 1} \sqsupseteq \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{cor}
 
 \begin{proof}
@@ -256,7 +256,7 @@ I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead
 \end{proof}
 
 \begin{lem}
-  $\Cor \langle f \times f \rangle^{\ast} g \sqsubseteq \Delta$ if
+  $\Cor \langle f \times f \rangle^{\ast} g \sqsubseteq 1^{\mathsf{RLD}}$ if
   $\tofcd g = f$ where $\tofcd g = f$ for a
   $T_1$-separable reloid $g$.
 \end{lem}
@@ -281,23 +281,22 @@ I will denote $\Delta$ the diagonal relation. \fxwarning{Denote it $1^C$ instead
     
     \item $g \circ g^{- 1} \sqsubseteq g$.
   \end{enumerate}
-  Then $g = \langle f \times f \rangle^{\ast} \Delta$.
+  Then $g = \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{thm}
 
 \begin{proof}
-From the above $\langle f \times f \rangle^{\ast} \Delta \sqsubseteq g \circ
+From the above $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g \circ
 g^{- 1} \sqsubseteq g$. \fxerror{Funcoids and reloids are confused.}
 
 It's remained to prove $g \sqsubseteq \langle f \times f \rangle^{\ast}
-\Delta$.
+1^{\mathsf{RLD}}$.
 
 \fxwarning{Possible errors.}
 
-Suppose there is $U \in \GR \langle f \times f \rangle^{\ast} \Delta$
+Suppose there is $U \in \GR \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$
 such that $U \notin \GR g$.
 
-Then $\left\{ V \setminus U \hspace{1em} | \hspace{1em} V \in \GR g
-\right\} = g \setminus U$ would be a proper filter.
+Then $\setcond{ V \setminus U }{ V \in \GR g } = g \setminus U$ would be a proper filter.
 
 Thus by reflexivity $\langle f \times f \rangle^{\ast} (g \setminus U) \neq
 \bot$.
@@ -308,25 +307,25 @@ By compactness of $f \times f$, $\Cor \langle f \times f \rangle^{\ast}
 Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times f \rangle^{\ast}
 (g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times f^{- 1}
 \rangle \{ (x ; x) \}$; $U \sqsubset \langle f^{- 1} \times f^{- 1} \rangle \{
-(x ; x) \} \sqsubseteq \langle f^{- 1} \times f^{- 1} \rangle \Delta$ what is
+(x ; x) \} \sqsubseteq \langle f^{- 1} \times f^{- 1} \rangle 1^{\mathsf{RLD}}$ what is
 impossible.
 
 Thus there exist $x \neq y$ such that $\{ (x ; y) \} \sqsubseteq \Cor
 \langle f \times f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x ; y) \}
 \sqsubseteq \langle f \times f \rangle^{\ast} g$.
 
-Thus by the lemma $\{ (x ; y) \} \sqsubseteq \Delta$ what is impossible. So $U
+Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossible. So $U
 \in \GR g$.
 
-We have $\GR \langle f \times f \rangle^{\ast} \Delta \subseteq
-\GR g$; $\langle f \times f \rangle^{\ast} \Delta \sqsupseteq g$.
+We have $\GR \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
+\GR g$; $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
 \end{proof}
 
 \begin{cor}
   Let $f$ is a $T_1$-separable (the same as $T_2$ for symmetric transitive)
   compact funcoid and $g$ is a uniform space (reflexive, symmetric, and
   transitive endoreloid) such that $\tofcd g = f$. Then $g =
-  \langle f \times f \rangle^{\ast} \Delta$.
+  \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{cor}
 
 An (incomplete) attempt to prove one more theorem follows:
@@ -344,7 +343,7 @@ An (incomplete) attempt to prove one more theorem follows:
 http://math.stackexchange.com/questions/665202/bourbaki-on-the-fact-that-continuous-function-on-a-compact-is-uniformly-continuo/670956?iemail=1\&noredirect=1\#670956
 
 We have $\mu= \langle \tofcd \mu \times
-\tofcd \mu \rangle \uparrow^{\mathsf{RLD}} \Delta$
+\tofcd \mu \rangle \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}}$
 
 $f \in \mathrm{C}_? (\tofcd \mu; \tofcd
 \nu)$. Then
@@ -358,7 +357,7 @@ V \in \langle \tofcd (\mu \times \mu) \rangle
 \{ y \}$ for some $y$.
 
 $\langle g^{- 1} \rangle V \in \langle \tofcd \mu \times
-\tofcd \mu \rangle \uparrow^{\mathsf{RLD}} \Delta
+\tofcd \mu \rangle \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}}
 = \GR \mu$
 
 $\supfun{g} \langle g^{- 1} \rangle V \sqsubseteq V$
