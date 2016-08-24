@@ -279,26 +279,28 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \begin{proof}
 Prove $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g \circ
 g^{- 1} \sqsubseteq g$:
-
-$\rsupfun{f \times^{(A)} } 1^{\mathsf{RLD}} = \bigsqcup
+\begin{multline*}
+\rsupfun{f \times^{(A)} } 1^{\mathsf{RLD}} = \bigsqcup
 \setcond{ \supfun{f} x \times^{\mathsf{RLD}} \supfun{f} x
-}{ x \in \atoms^{\mathscr{F}} } =
+}{ x \in \atoms^{\mathscr{F}} } = \\
 \bigsqcup \setcond{ \torldin (\supfun{f} x
 \times^{\mathsf{FCD}} \supfun{f} x) }{
 x \in \atoms^{\mathscr{F}} } \sqsubseteq
 \torldin  \bigsqcup \setcond{ \supfun{f} x
 \times^{\mathsf{FCD}} \supfun{f} x }{ x
-\in \atoms^{\mathscr{F}} } = \torldin 
+\in \atoms^{\mathscr{F}} } = \\
+\torldin 
 \bigsqcup \setcond{ \langle f \times^{(C)} f \rangle (x
 \times^{\mathsf{FCD}} x) }{ x \in
-\atoms^{\mathscr{F}} } = \torldin 
-\bigsqcup \setcond{ f \circ (x \times^{\mathsf{FCD}} x) \circ f^{- 1}
-}{ x \in \atoms^{\mathscr{F}} }
-\sqsubseteq \torldin  (f \circ f^{- 1}) =
+\atoms^{\mathscr{F}} } =
+\torldin \bigsqcup \setcond{ f \circ (x \times^{\mathsf{FCD}} x) \circ f^{- 1}
+}{ x \in \atoms^{\mathscr{F}} } \sqsubseteq \\
+\torldin  (f \circ f^{- 1}) =
 \torldin f \circ \torldin
-f^{- 1} = g \circ g^{- 1}$.
+f^{- 1} = g \circ g^{- 1}.
+\end{multline*}
 
-It's remained to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
+It remains to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
 1^{\mathsf{RLD}}$.
 
 \fxwarning{Possible errors.}
