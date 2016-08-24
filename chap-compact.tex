@@ -273,44 +273,44 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
     
     \item $g \circ g^{- 1} \sqsubseteq g$.
   \end{enumerate}
-  Then $g = \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$.
+  Then $g = \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{thm}
 
 \begin{proof}
-From the above $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g \circ
-g^{- 1} \sqsubseteq g$. \fxerror{Funcoids and reloids are confused.}
+From the above $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g \circ
+g^{- 1} \sqsubseteq g$.
 
-It's remained to prove $g \sqsubseteq \langle f \times f \rangle^{\ast}
+It's remained to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
 1^{\mathsf{RLD}}$.
 
 \fxwarning{Possible errors.}
 
-Suppose there is $U \in \GR \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$
+Suppose there is $U \in \GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$
 such that $U \notin \GR g$.
 
 Then $\setcond{ V \setminus U }{ V \in \GR g } = g \setminus U$ would be a proper filter.
 
-Thus by reflexivity $\langle f \times f \rangle^{\ast} (g \setminus U) \neq
+Thus by reflexivity $\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U) \neq
 \bot$.
 
-By compactness of $f \times f$, $\Cor \langle f \times f \rangle^{\ast}
+By compactness of $f \times^{(A)} f$, $\Cor \langle f \times^{(A)} f \rangle^{\ast}
 (g \setminus U) \neq \bot$.
 
-Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times f \rangle^{\ast}
-(g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times f^{- 1}
-\rangle \{ (x ; x) \}$; $U \sqsubset \langle f^{- 1} \times f^{- 1} \rangle \{
-(x ; x) \} \sqsubseteq \langle f^{- 1} \times f^{- 1} \rangle 1^{\mathsf{RLD}}$ what is
+Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
+(g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times^{(A)} f^{- 1}
+\rangle \{ (x ; x) \}$; $U \sqsubset \langle f^{- 1} \times^{(A)} f^{- 1} \rangle \{
+(x ; x) \} \sqsubseteq \langle f^{- 1} \times^{(A)} f^{- 1} \rangle 1^{\mathsf{RLD}}$ what is
 impossible.
 
 Thus there exist $x \neq y$ such that $\{ (x ; y) \} \sqsubseteq \Cor
-\langle f \times f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x ; y) \}
-\sqsubseteq \langle f \times f \rangle^{\ast} g$.
+\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x ; y) \}
+\sqsubseteq \langle f \times^{(A)} f \rangle^{\ast} g$.
 
 Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossible. So $U
 \in \GR g$.
 
-We have $\GR \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
-\GR g$; $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
+We have $\GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
+\GR g$; $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
 \end{proof}
 
 \begin{cor}
