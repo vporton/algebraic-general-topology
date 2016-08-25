@@ -153,13 +153,13 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 
 \begin{prop}\label{ff-ge-g}
   Let $g$ be a reloid and $f = \tofcd g$. Then $\langle f
-  \times f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
+  \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
 \end{prop}
 
 \begin{proof}
-  $\langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}} \nasymp
+  $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \nasymp
   \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
-  \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}} \mathrel{[f \times f]}
+  \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}} \mathrel{[f \times^{(A)} f]}
   \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
   \uparrow^{\mathsf{FCD}} 1^{\mathsf{RLD}} \mathrel{[f \times^{(C)} f]}
   \uparrow^{\mathsf{FCD}} Y \Leftrightarrow f \circ
@@ -183,64 +183,64 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 
 \begin{prop}
   Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \GR \langle f
-  \times f \rangle^{\ast} M$ for every $V \in \GR f$.
+  \times^{(A)} f \rangle^{\ast} M$ for every $V \in \GR f$.
 \end{prop}
 
 \begin{proof}
   $V \circ M \circ V^{- 1} \in \GR (f \circ \uparrow M \circ f^{- 1}) =
   \GR \langle f \times^{(C)} f \rangle \uparrow M \supseteq \GR
-  \langle f \times f \rangle \uparrow M = \GR \langle f \times f
+  \langle f \times^{(A)} f \rangle \uparrow M = \GR \langle f \times^{(A)} f
   \rangle^{\ast} M$.
   
   Because
   
   $\uparrow^{\mathsf{FCD}} X \nasymp \langle f \times^{(C)} f \rangle
   \uparrow^{\mathsf{FCD}} M \Leftrightarrow
-  \uparrow^{\mathsf{RLD}} X \nasymp \langle f \times f \rangle
+  \uparrow^{\mathsf{RLD}} X \nasymp \langle f \times^{(A)} f \rangle
   \uparrow^{\mathsf{RLD}} M \Leftrightarrow \tofcd
-  (\uparrow^{\mathsf{RLD}} X \sqcap \langle f \times f \rangle
+  (\uparrow^{\mathsf{RLD}} X \sqcap \langle f \times^{(A)} f \rangle
   \uparrow^{\mathsf{RLD}} M) \neq \bot \Rightarrow \tofcd
   \uparrow^{\mathsf{RLD}} X \sqcap \tofcd \langle f
-  \times f \rangle \uparrow^{\mathsf{RLD}} M \neq \bot \Leftrightarrow
+  \times^{(A)} f \rangle \uparrow^{\mathsf{RLD}} M \neq \bot \Leftrightarrow
   \tofcd \uparrow^{\mathsf{RLD}} X \nasymp
-  \tofcd \langle f \times f \rangle
+  \tofcd \langle f \times^{(A)} f \rangle
   \uparrow^{\mathsf{RLD}} M \Leftrightarrow
   \uparrow^{\mathsf{FCD}} X \nasymp \tofcd \langle f
-  \times f \rangle \uparrow^{\mathsf{RLD}} M$;
+  \times^{(A)} f \rangle \uparrow^{\mathsf{RLD}} M$;
   
   $\langle f \times^{(C)} f \rangle \uparrow^{\mathsf{FCD}} M
-  \sqsubseteq \tofcd \langle f \times f \rangle
+  \sqsubseteq \tofcd \langle f \times^{(A)} f \rangle
   \uparrow^{\mathsf{RLD}} M$
   
   $\GR \langle f \times^{(C)} f \rangle \uparrow^{\mathsf{FCD}} M
-  \supseteq \GR \tofcd \langle f \times f \rangle
-  \uparrow^{\mathsf{RLD}} M \supseteq \GR \langle f \times f
+  \supseteq \GR \tofcd \langle f \times^{(A)} f \rangle
+  \uparrow^{\mathsf{RLD}} M \supseteq \GR \langle f \times^{(A)} f
   \rangle \uparrow^{\mathsf{RLD}} M$
 \end{proof}
 
 \begin{prop}\label{ffm}
-  $\langle f \times f \rangle^{\ast} M \sqsubseteq g \circ
+  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq g \circ
   \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ whenever
   $\tofcd g = f$ for a reloid $g$.
 \end{prop}
 
 \begin{proof}
   For every $V \in \GR g$ we have $V \circ M \circ V^{- 1} \in \GR
-  \langle f \times f \rangle^{\ast} M$. Thus $g \circ
+  \langle f \times^{(A)} f \rangle^{\ast} M$. Thus $g \circ
   \uparrow^{\mathsf{RLD}} M \circ g^{- 1} = \bigsqcap \setcond{ V \circ M
   \circ V^{- 1} }{ V \in \GR g }
-  \sqsupseteq \bigsqcap \GR \langle f \times f \rangle^{\ast} M =
-  \GR \langle f \times f \rangle^{\ast} M$.
+  \sqsupseteq \bigsqcap \GR \langle f \times^{(A)} f \rangle^{\ast} M =
+  \GR \langle f \times^{(A)} f \rangle^{\ast} M$.
 \end{proof}
 
 \begin{cor}
-  $\langle f \times f \rangle^{\ast} M \sqsubseteq \langle f \times^{(C)} f
+  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq \langle f \times^{(C)} f
   \rangle^{\ast} M$.
 \end{cor}
 
 \begin{cor}
-  $V \circ V^{- 1} \in \GR \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
-  \circ f^{- 1} \sqsupseteq \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$.
+  $V \circ V^{- 1} \in \GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
+  \circ f^{- 1} \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{cor}
 
 \begin{proof}
@@ -248,7 +248,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{proof}
 
 \begin{lem}
-  $\Cor \langle f \times f \rangle^{\ast} g \sqsubseteq 1^{\mathsf{RLD}}$ if
+  $\Cor \langle f \times^{(A)} f \rangle^{\ast} g \sqsubseteq 1^{\mathsf{RLD}}$ if
   $\tofcd g = f$ where $\tofcd g = f$ for a
   $T_1$-separable reloid $g$.
 \end{lem}
@@ -317,7 +317,7 @@ We have $\GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
   Let $f$ is a $T_1$-separable (the same as $T_2$ for symmetric transitive)
   compact funcoid and $g$ is a uniform space (reflexive, symmetric, and
   transitive endoreloid) such that $\tofcd g = f$. Then $g =
-  \langle f \times f \rangle^{\ast} 1^{\mathsf{RLD}}$.
+  \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{cor}
 
 An (incomplete) attempt to prove one more theorem follows:
@@ -339,16 +339,16 @@ We have $\mu= \langle \tofcd \mu \times
 
 $f \in \mathrm{C}_? (\tofcd \mu; \tofcd
 \nu)$. Then
-\[ f \times f \in \mathrm{C}_? (\tofcd (\mu \times
-   \mu) ; \tofcd (\nu \times \nu)) \]
-$(f \times f) \circ \tofcd (\mu \times \mu)
-\sqsubseteq \tofcd (\nu \times \nu) \circ (f \times f)$
+\[ f \times^{(A)} f \in \mathrm{C}_? (\tofcd (\mu \times^{(A)}
+   \mu) ; \tofcd (\nu \times^{(A)} \nu)) \]
+$(f \times^{(A)} f) \circ \tofcd (\mu \times^{(A)} \mu)
+\sqsubseteq \tofcd (\nu \times^{(A)} \nu) \circ (f \times^{(A)} f)$
 
-For every $V \in \GR (\nu \times \nu)$ we have $\langle g^{- 1} \rangle
-V \in \langle \tofcd (\mu \times \mu) \rangle
+For every $V \in \GR (\nu \times^{(A)} \nu)$ we have $\langle g^{- 1} \rangle
+V \in \langle \tofcd (\mu \times^{(A)} \mu) \rangle
 \{ y \}$ for some $y$.
 
-$\langle g^{- 1} \rangle V \in \langle \tofcd \mu \times
+$\langle g^{- 1} \rangle V \in \langle \tofcd \mu \times^{(A)}
 \tofcd \mu \rangle \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}}
 = \GR \mu$
 
