@@ -38,7 +38,7 @@ A funcoid $f$ is directly compact iff $\forall a \in \atoms \dom f :
 
 \begin{proof}
 Because $\prod_{i \in \dom a} (\uparrow^{\mathsf{RLD}})^{- 1} a_i
-\in \GR \prod^{\mathsf{RLD}} a$.
+\in \up \prod^{\mathsf{RLD}} a$.
 \fxwarning{More detailed proof.}
 \end{proof}
 
@@ -182,14 +182,14 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{proof}
 
 \begin{prop}
-  Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \GR \langle f
-  \times^{(A)} f \rangle^{\ast} M$ for every $V \in \GR f$.
+  Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \up \langle f
+  \times^{(A)} f \rangle^{\ast} M$ for every $V \in \up f$.
 \end{prop}
 
 \begin{proof}
-  $V \circ M \circ V^{- 1} \in \GR (f \circ \uparrow M \circ f^{- 1}) =
-  \GR \langle f \times^{(C)} f \rangle \uparrow M \supseteq \GR
-  \langle f \times^{(A)} f \rangle \uparrow M = \GR \langle f \times^{(A)} f
+  $V \circ M \circ V^{- 1} \in \up (f \circ \uparrow M \circ f^{- 1}) =
+  \up \langle f \times^{(C)} f \rangle \uparrow M \supseteq \up
+  \langle f \times^{(A)} f \rangle \uparrow M = \up \langle f \times^{(A)} f
   \rangle^{\ast} M$.
   
   Because
@@ -212,9 +212,9 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
   \sqsubseteq \tofcd \langle f \times^{(A)} f \rangle
   \uparrow^{\mathsf{RLD}} M$
   
-  $\GR \langle f \times^{(C)} f \rangle \uparrow^{\mathsf{FCD}} M
-  \supseteq \GR \tofcd \langle f \times^{(A)} f \rangle
-  \uparrow^{\mathsf{RLD}} M \supseteq \GR \langle f \times^{(A)} f
+  $\up \langle f \times^{(C)} f \rangle \uparrow^{\mathsf{FCD}} M
+  \supseteq \up \tofcd \langle f \times^{(A)} f \rangle
+  \uparrow^{\mathsf{RLD}} M \supseteq \up \langle f \times^{(A)} f
   \rangle \uparrow^{\mathsf{RLD}} M$
 \end{proof}
 
@@ -225,12 +225,12 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{prop}
 
 \begin{proof}
-  For every $V \in \GR g$ we have $V \circ M \circ V^{- 1} \in \GR
+  For every $V \in \up g$ we have $V \circ M \circ V^{- 1} \in \up
   \langle f \times^{(A)} f \rangle^{\ast} M$. Thus $g \circ
   \uparrow^{\mathsf{RLD}} M \circ g^{- 1} = \bigsqcap \setcond{ V \circ M
-  \circ V^{- 1} }{ V \in \GR g }
-  \sqsupseteq \bigsqcap \GR \langle f \times^{(A)} f \rangle^{\ast} M =
-  \GR \langle f \times^{(A)} f \rangle^{\ast} M$.
+  \circ V^{- 1} }{ V \in \up g }
+  \sqsupseteq \bigsqcap \up \langle f \times^{(A)} f \rangle^{\ast} M =
+  \up \langle f \times^{(A)} f \rangle^{\ast} M$.
 \end{proof}
 
 \begin{cor}
@@ -239,7 +239,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{cor}
 
 \begin{cor}
-  $V \circ V^{- 1} \in \GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
+  $V \circ V^{- 1} \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
   \circ f^{- 1} \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{cor}
 
@@ -285,10 +285,10 @@ It remains to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
 
 \fxwarning{Possible errors.}
 
-Suppose there is $U \in \GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$
-such that $U \notin \GR g$.
+Suppose there is $U \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$
+such that $U \notin \up g$.
 
-Then $\setcond{ V \setminus U }{ V \in \GR g } = g \setminus U$ would be a proper filter.
+Then $\setcond{ V \setminus U }{ V \in \up g } = g \setminus U$ would be a proper filter.
 
 Thus by reflexivity $\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U) \neq
 \bot$.
@@ -307,10 +307,10 @@ Thus there exist $x \neq y$ such that $\{ (x ; y) \} \sqsubseteq \Cor
 \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast} g$.
 
 Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossible. So $U
-\in \GR g$.
+\in \up g$.
 
-We have $\GR \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
-\GR g$; $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
+We have $\up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
+\up g$; $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
 \end{proof}
 
 \begin{cor}
@@ -344,18 +344,18 @@ $f \in \mathrm{C}_? (\tofcd \mu; \tofcd
 $(f \times^{(A)} f) \circ \tofcd (\mu \times^{(A)} \mu)
 \sqsubseteq \tofcd (\nu \times^{(A)} \nu) \circ (f \times^{(A)} f)$
 
-For every $V \in \GR (\nu \times^{(A)} \nu)$ we have $\langle g^{- 1} \rangle
+For every $V \in \up (\nu \times^{(A)} \nu)$ we have $\langle g^{- 1} \rangle
 V \in \langle \tofcd (\mu \times^{(A)} \mu) \rangle
 \{ y \}$ for some $y$.
 
 $\langle g^{- 1} \rangle V \in \langle \tofcd \mu \times^{(A)}
 \tofcd \mu \rangle \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}}
-= \GR \mu$
+= \up \mu$
 
 $\supfun{g} \langle g^{- 1} \rangle V \sqsubseteq V$
 
 We need to prove $f \in \mathrm{C} (\mu; \nu)$ that is $\forall p \in
-\GR \nu \exists q \in \GR \mu: \supfun{f} q
+\up \nu \exists q \in \up \mu: \supfun{f} q
 \sqsubseteq p$. But this follows from the above.
 \end{proof}
 
