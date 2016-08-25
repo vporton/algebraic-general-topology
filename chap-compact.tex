@@ -157,6 +157,15 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
   \fxerror{This proposition seems wrong because it proves theorem~\ref{cmp-main} without using compactness.}
 \end{prop}
 
+Counter-example against $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g\circ g^{-1}$:
+$f=1^{\mathsf{FCD}}$ and $g=1^{\mathsf{RLD}}$.
+$\rsupfun{f\times^{(A)} f} 1^{\mathsf{RLD}} = 
+\bigsqcup_{x\in\atoms 1^{\mathsf{RLD}}} \rsupfun{f\times^{(A)} f}x =
+\bigsqcup_{x\in\atoms 1^{\mathsf{RLD}}} (\supfun{f}\dom x \times^{\mathsf{RLD}} \supfun{f}\im x) =
+\bigsqcup_{x\in\atoms^{\mathscr{F}}} (\supfun{f} x \times^{\mathsf{RLD}} \supfun{f} x) =
+\bigsqcup_{x\in\atoms^{\mathscr{F}}} (x \times^{\mathsf{RLD}} x) \nsqsubseteq
+g = g\circ g^{-1}$.
+
 \begin{proof}
   $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \nasymp
   \uparrow^{\mathsf{RLD}} Y \Leftrightarrow
