@@ -152,8 +152,9 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{proof}
 
 \begin{prop}\label{ff-ge-g}
-  Let $g$ be a reloid and $f = \tofcd g$. Then $\langle f
+  Let $g$ be a reloid and $f = \tofcd g$ and $f=f\circ f^{-1}$. Then $\langle f
   \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
+  \fxerror{This proposition seems wrong because it proves theorem~\ref{cmp-main} without using compactness.}
 \end{prop}
 
 \begin{proof}
@@ -265,7 +266,7 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
   space as in the standard general topology.
 \end{rem}
 
-\begin{thm}
+\begin{thm}\label{cmp-main}
   Let $f$ be a $T_1$-separable compact \fxwarning{Isn't direct compactness enough? Yes, it is by symmetry.}
   reflexive symmetric funcoid and $g$ be a reloid such that
   \begin{enumerate}
