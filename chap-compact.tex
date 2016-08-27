@@ -271,16 +271,14 @@ g = g\circ g^{-1}$.
 \end{thm}
 
 \begin{proof}
-$\rsupfun{ f \times^{(A)} f } 1^{\mathsf{RLD}} = g \circ g^{- 1} \sqsubseteq g$ by proposition~\ref{ffm}.
+$\rsupfun{ f \times^{(A)} f } 1^{\mathsf{RLD}} \sqsupseteq g$ by proposition~\ref{ff-ge-g}.
 
-It remains to prove $g \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
-1^{\mathsf{RLD}}$. \fxwarning{Isn't it already proved in \ref{ff-ge-g}?}
-\fxerror{It seems that \ref{ff-ge-g} is an error because it is ``proved'' without assumption of compactness.}
+It remains to prove $g \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast}
+1^{\mathsf{RLD}}$.
 
-\fxwarning{Possible errors.}
+??
 
-It remains to prove $g \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast}$
-
+\begin{grayed}
 Suppose there is $U \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$
 such that $U \notin \up g$.
 
@@ -307,6 +305,7 @@ Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossibl
 
 We have $\up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
 \up g$; $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
+\end{grayed}
 \end{proof}
 
 \begin{cor}
