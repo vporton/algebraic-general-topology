@@ -14,14 +14,26 @@ does not coincide with topological product (as per Bourbaki).
 
 \begin{defn}
   A funcoid $f$ is \emph{directly compact} iff
-  \[ \text{$\forall \mathcal{F} \in \mathfrak{F}: (\supfun{f}
+  \[ \forall \mathcal{F} \in \mathfrak{F}: (\supfun{f}
      \mathcal{F} \neq \bot \Rightarrow \Cor \supfun{f} \mathcal{F}
-     \neq \bot)$.} \]
+     \neq \bot). \]
 \end{defn}
 
 \begin{obvious}
 A funcoid $f$ is directly compact iff $\forall a \in \atoms \dom f :
 \Cor \supfun{f} a \neq \bot$.
+\end{obvious}
+
+\begin{obvious}
+A funcoid $f$ is \emph{directly compact} iff
+  \[ \forall \mathcal{F} \in \mathfrak{F}: (\supfun{f}
+     \mathcal{F} \neq \bot \Rightarrow \supfun{\CoCompl f} \mathcal{F}
+     \neq \bot). \]
+\end{obvious}
+
+\begin{obvious}
+A funcoid $f$ is directly compact iff $\forall a \in \atoms \dom f :
+\supfun{\CoCompl f} a \neq \bot$.
 \end{obvious}
 
 \begin{defn}
