@@ -1,6 +1,6 @@
 \chapter{Compact funcoids}
 
-Compact funcoids are defined. Under certain conditions it's proved that the
+Compact funcoids are defined. Attempted to prove that under certain conditions the
 reloid corresponding to a compact funcoid is the neighborhood of the diagonal
 of the product funcoid.
 
@@ -155,10 +155,6 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
 \end{widedisorder}
 \end{proof}
 
-\fxwarning{It seems that the conditions~$\sqsubseteq$ and~$\sqsupseteq$ are interchanged for the classical topological space theory
-and for subatomic product of funcoids. This makes both cases interesting (we should \emph{not} remove the theory with
-subatomic product).}
-
 \begin{prop}\label{ff-ge-g}
   Let $g$ be a reloid and $f = \tofcd g$ and $f=f\circ f^{-1}$. Then $\langle f
   \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
@@ -188,15 +184,6 @@ subatomic product).}
   \uparrow^{\mathsf{RLD}} Y \neq \bot \Leftrightarrow g \nasymp
   \uparrow^{\mathsf{RLD}} Y$.
 \end{proof}
-
-Counter-example against $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsubseteq g\circ g^{-1}$:
-$f=1^{\mathsf{FCD}}$ and $g=1^{\mathsf{RLD}}$.
-$\rsupfun{f\times^{(A)} f} 1^{\mathsf{RLD}} = 
-\bigsqcup_{x\in\atoms 1^{\mathsf{RLD}}} \rsupfun{f\times^{(A)} f}x =
-\bigsqcup_{x\in\atoms 1^{\mathsf{RLD}}} (\supfun{f}\dom x \times^{\mathsf{RLD}} \supfun{f}\im x) =
-\bigsqcup_{x\in\atoms^{\mathscr{F}}} (\supfun{f} x \times^{\mathsf{RLD}} \supfun{f} x) =
-\bigsqcup_{x\in\atoms^{\mathscr{F}}} (x \times^{\mathsf{RLD}} x) \nsqsubseteq
-g = g\circ g^{-1}$.
 
 \begin{grayed}
 \begin{prop}\label{vmv}
@@ -259,26 +246,21 @@ g = g\circ g^{-1}$.
   space as in the standard general topology.
 \end{rem}
 
-\begin{thm}\label{cmp-main}
-  Let $f$ be a $T_1$-separable compact \fxwarning{Isn't direct compactness enough? Yes, it is by symmetry.}
-  reflexive symmetric funcoid and $g$ be a reloid such that
-  \begin{enumerate}
-    \item $\tofcd g = f$;
-    
-    \item $g \circ g^{- 1} \sqsubseteq g$.
-  \end{enumerate}
-  Then $g = \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
-\end{thm}
+Does the reverse inequality hold, that is $g \sqsupseteq \rsupfun{f \times^{(A)} f} 1^{\mathsf{RLD}}$
+(for compact~$f$)?
 
-\begin{proof}
-$\rsupfun{ f \times^{(A)} f } 1^{\mathsf{RLD}} \sqsupseteq g$ by proposition~\ref{ff-ge-g}.
+It doesn't:
 
-It remains to prove $g \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast}
-1^{\mathsf{RLD}}$.
-
-??
+\begin{example}
+$f=\mathbb{R}|_{[0;1]}$ (where $\mathbb{R}$ denotes usual topology on real line),
+$g=\mathbb{R}|_{[0;1]}$ (where $\mathbb{R}$ denotes usual uniformity on real line).
+Then $\rsupfun{f \times^{(A)} f} x = \rsupfun{f}\dom x\times^{\mathsf{RLD}}\rsupfun{f}\im x = \dom x\times^{\mathsf{RLD}}\im x\nsqsubseteq g$
+for every nontrivial ultrafilter~$x\in\atoms^{\mathscr{F}[0;1]}$.
+\end{example}
 
 \begin{grayed}
+\emph{An old proof attempt (which works only for Tychonoff product, not for our subatomic product):}
+
 Suppose there is $U \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$
 such that $U \notin \up g$.
 
@@ -305,8 +287,6 @@ Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossibl
 
 We have $\up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
 \up g$; $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
-\end{grayed}
-\end{proof}
 
 \begin{cor}
   Let $f$ is a $T_1$-separable (the same as $T_2$ for symmetric transitive)
@@ -314,6 +294,7 @@ We have $\up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
   transitive endoreloid) such that $\tofcd g = f$. Then $g =
   \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
 \end{cor}
+\end{grayed}
 
 An (incomplete) attempt to prove one more theorem follows:
 
