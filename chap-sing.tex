@@ -1,0 +1,99 @@
+\chapter{Singularities}
+
+\textbf{Very} rough draft.
+
+\section{Singularities funcoids: some special cases}
+We attempt to prove that $\up z$ is closed regarding finite intersections.
+
+For consideration of this, let's consider two special cases (first of which is a specialization of the second).
+
+Let $\mu=\nu$ be the natural proximity on real numbers $\mathbb{R}$.
+
+Let $\Delta$ is the entourage filter of zero.
+
+1. $z=\Delta\times^{\mathsf{FCD}}\Delta$.
+
+2. $z=\nu\circ (\uparrow^{\mathsf{FCD}} f)|_{\Delta}$ for an arbitrary function $f:\mathbb{R}\rightarrow\mathbb{R}$.
+
+(1) is [[also formulated in elementary terms|http://math.stackexchange.com/questions/568513/is-a-set-closed-under-finite-intersections-about-filters]] (without using funcoids).
+
+These two above conjectures are shown to be false by a counter-example in [[this blog post|http://portonmath.wordpress.com/2013/12/18/a-negative-result-on-a-conjecture/]]. It is a discouraging result as it seems from it the plain funcoids can't be used for the multilevel theory of singularities.
+
+\section{Using plain funcoids}
+This way if we succeed is the best way to create metasingular numbers because, it (if we succeed) involves just funcoids not some fancy generalization of funcoids.
+
+Approximate definition of "singularity level": //Singularity level// is a transitive, $T_2$-separable endofuncoid.
+
+Now define the funcoid $\nu_{i+1}=\operatorname{SLA}(\nu_i)$:
+
+$\operatorname{Ob}(\nu_{i+1})$ is defined as the set of all generalized limits (having fixed $\mu$, $\nu$, and $G$).
+
+$X \mathrel{[ \nu_{i+1}]^{\ast}} Y \Leftrightarrow \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists x \in \bigcup X, y \in \bigcup Y : x, y\sqsubseteq K$.
+
+The trouble is to prove that the funcoid $\nu_{i+1}$ exists (is really a funcoid).
+
+$\neg(X \mathrel{[ \nu_{i+1}]^{\ast}} \emptyset)$ and $\neg(\emptyset \mathrel{[ \nu_{i+1}]^{\ast}} Y)$ are obvious. We need to prove
+$$I\cup J \mathrel{[ \nu_{i+1}]^{\ast}} Y \Leftrightarrow I \mathrel{[ \nu_{i+1}]^{\ast}} Y \vee J \mathrel{[ \nu_{i+1}]^{\ast}} Y$$ and
+$$X \mathrel{[ \nu_{i+1}]^{\ast}} I\cup J \Leftrightarrow X \mathrel{[ \nu_{i+1}]^{\ast}} I \vee X \mathrel{[ \nu_{i+1}]^{\ast}} J.$$
+
+Let's attempt to prove the first of the above equations (the second is dual).
+
+$I \cup J \mathrel{[ \operatorname{SLA} ( \nu)]^{\ast}} Y \Leftrightarrow \\ \exists z
+\in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists x \in \bigcup I \cup \bigcup J, y \in \bigcup Y :
+x, y \sqsubseteq K \Leftrightarrow \\
+\exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z : ( \exists x \in \bigcup I \cup
+\bigcup J : x \sqsubseteq K \wedge \exists y \in \bigcup Y : y \sqsubseteq K) \Leftrightarrow \\
+\exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists x \in \bigcup I \cup \bigcup J :
+x \sqsubseteq K \wedge \\ \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z
+\exists y \in \bigcup Y : y \sqsubseteq K \Leftrightarrow \\
+?? \\
+\exists z \in \bigcup \operatorname{Ob} \nu : ( \forall K \in \operatorname{up} z \exists x \in \bigcup I : x
+\sqsubseteq K \vee \\ \forall K \in \operatorname{up} z \exists x \in \bigcup J : x \sqsubseteq
+K) \wedge \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists y \in
+\bigcup Y : y \sqsubseteq K \Leftrightarrow \\
+( \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists x \in \bigcup I : x
+\sqsubseteq K \vee \\ \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z
+\exists x \in \bigcup J : x \sqsubseteq K) \wedge \exists z \in \bigcup \operatorname{Ob} \nu \forall
+K \in \operatorname{up} z \exists y \in \bigcup Y : y \sqsubseteq K \Leftrightarrow \\
+( \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists x \in \bigcup I : x
+\sqsubseteq K \wedge \exists z \in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z
+\exists y \in \bigcup Y : y \sqsubseteq K) \vee \\ ( \exists z \in \bigcup \operatorname{Ob} \nu \forall
+K \in \operatorname{up} z \exists x \in \bigcup J : x \sqsubseteq K \wedge \exists z \in
+\bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z \exists y \in \bigcup Y : y \sqsubseteq K)
+\Leftrightarrow \\
+( \exists z \in \bigcup \operatorname{Ob} \nu : ( \forall K \in \operatorname{up} z \exists x \in \bigcup I :
+x \sqsubseteq K \wedge \forall K \in \operatorname{up} z \exists y \in \bigcup Y : y
+\sqsubseteq K)) \vee \\ ( \exists z \in \bigcup \operatorname{Ob} \nu : ( \forall K \in \operatorname{up}
+z \exists x \in \bigcup J : x \sqsubseteq K \wedge \forall K \in \operatorname{up} z \exists y
+\in \bigcup Y : y \sqsubseteq K)) \Leftrightarrow \\
+( \exists z \in \bigcup \operatorname{Ob} \nu : ( \forall K \in \operatorname{up} z : ( \exists x \in
+\bigcup I : x \sqsubseteq K \wedge \exists y \in \bigcup Y : y \sqsubseteq K))) \vee \\ \exists z
+\in \bigcup \operatorname{Ob} \nu \forall K \in \operatorname{up} z : ( \exists x \in \bigcup J : x
+\sqsubseteq K \wedge \exists y \in \bigcup Y : y \sqsubseteq K) \Leftrightarrow \\
+I \mathrel{[ \operatorname{SLA} ( \nu)]^{\ast}} Y \vee J \mathrel{[ \operatorname{SLA} (
+\nu)]^{\ast}} Y$.
+
+To finish the proof we need to fulfill ?? in the above formula. For this it's enough to prove
+
+$\forall K \in \operatorname{up} z \exists x \in \bigcup I\cup \bigcup J : x \sqsubseteq K \Rightarrow \\ \forall K \in \operatorname{up}
+z \exists x \in \bigcup I : x \sqsubseteq K \vee \forall K \in \operatorname{up} z \exists x
+\in \bigcup J : x \sqsubseteq K$.
+
+If $z=\uparrow Z$ is a principal funcoid, then
+
+$\forall K \in \operatorname{up} z \exists x \in \bigcup I\cup \bigcup J : x \sqsubseteq K \Rightarrow \\ 
+\exists x \in \bigcup I\cup \bigcup J : x \sqsubseteq z \Rightarrow \\
+\exists x \in \bigcup I : x \sqsubseteq z \vee \exists x \in \bigcup J : x \sqsubseteq z \Rightarrow \\
+\forall K \in \operatorname{up}
+z \exists x \in \bigcup I : x \sqsubseteq K \vee \forall K \in \operatorname{up} z \exists x
+\in \bigcup J : x \sqsubseteq K$.
+
+Following the idea of [[the proof in this math.stackexchange.com question|http://math.stackexchange.com/questions/562908/an-implication-involving-filters\#562974]] it is easy to show that our implication is true if $\operatorname{up} z$ is closed regarding finite meets. See [[this page|Singularities funcoids: some special cases]] for attempts to set it true.
+The question is whether our statement holds for non-principal funcoids. Or is there a counterexampe?
+
+\section{Singularities funcoids: special cases proof attempts}
+To prove that $\operatorname{GR} ( \Delta \times^{\mathsf{FCD}} \Delta)$ is closed under finite intersections, it's enough to prove that for every $f \in \operatorname{GR} ( \Delta \times^{\mathsf{FCD}} \Delta)$ there is a positive $\varepsilon$ such that $\forall x \in ( - \varepsilon ; \varepsilon) : f x \in \Delta$.
+
+Really, under this assumption:
+
+For $g \in \operatorname{GR} ( \Delta \times^{\mathsf{FCD}} \Delta)$ exists $\zeta > 0$ such that $\forall x \in ( - \zeta ; \zeta) : g x \in \Delta$. Let $\eta = \min \{ \varepsilon, \zeta \}$. So $\forall x \in ( - \eta ; \eta) : ( \langle f \rangle x \in \Delta \wedge \langle g \rangle x \in \Delta)$ and so $\forall x \in ( - \eta ; \eta) : \langle f \cap g \rangle x \in \Delta$ that is $\forall x \in ( - \eta ; \eta) : \langle \uparrow^{\mathsf{FCD}} ( f \cap g) \rangle^{\ast} \{ x \} \sqsupseteq \Delta$ and consequently $f \cap g \in \operatorname{GR} ( \Delta \times^{\mathsf{FCD}} \Delta)$.
