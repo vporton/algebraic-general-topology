@@ -713,6 +713,10 @@ If $n = \emptyset$ then $Z = \{ \emptyset \}$; $\prod^{(L)} \emptyset = \max
 Does the formula $\prod^{(L)}_{i \in n} (g_i \circ f_i) = \prod^{(L)} g \circ
 \prod^{(L)} f$ hold?
 
+Coordinate-wise continuity.
+
+\section{Cartesian closedness}
+
 \begin{conjecture}
   The categories $\mathbf{Fcd}$ and $\mathbf{Rld}$ are
   cartesian closed (actually two conjectures).
@@ -722,4 +726,87 @@ Does the formula $\prod^{(L)}_{i \in n} (g_i \circ f_i) = \prod^{(L)} g \circ
 suggests to investigate colimits to prove that there are no exponential
 object.
 
-Coordinate-wise continuity.
+Our purpose is to prove (or disprove) that categories $\mathbf{Dig}$, $\mathbf{Fcd}$, and $\mathbf{Rld}$ are cartesian closed. Note that they have finite (and even infinite) products is already proved.
+
+Alternative way to prove:
+you can prove that the functor $-\times B$ is left adjoint to the exponentiation $-^B$ where the counit is given by the evaluation map.
+
+See \url{http://www.springer.com/us/book/9780387977102} for another way to prove Cartesian closedness.
+
+\subsection{Proof for Fcd using sets}
+
+Currying for sets is $\langle f \rangle ( X \times Y) = \bigcup \langle \langle \sim f \rangle X
+\rangle Y$ (as it's easy to prove). This simple formula gives hope, but...
+
+It does not work with sets because an analogy for sets of the last equality of the above mentioned long formula would be:
+
+$\forall X, Y, V, W \in \mathscr{P} \operatorname{Ob} A : \left( X \times V \mathrel{[
+A \times B]^{\ast}} Y \times W \Rightarrow \langle f \rangle ( X \times V)
+\mathrel{[ C]^{\ast}} \langle f \rangle ( Y \times W) \right) \Rightarrow \\ f : A
+\times B \rightarrow C$
+
+but this implication seems false.
+
+\subsection{By analogy with the proof that Dig is cartesian closed}
+
+The most obvious way for proof attempt that $\mathbf{Fcd}$ is cartesian closed is an analogy with the proof that Dig is cartesian closed.
+
+Use the exponential object, transposition, and evaluation as defined in [[this page|Is category Fcd cartesian closed?]]
+
+Consider the long formula at the bottom of ``Category Dig is cartesian closed''. The proof would arise if we replace $x$ and $y$ in this formula with filters and operations and relations on set element with operations and relations on filters.
+
+This proof could be simplified in either of two ways:
+\begin{itemize}
+\item replace $x$ and $y$ with ultrafilters, see [[Proof for Fcd using ultrafilters]];
+\item replace $x$ and $y$ with sets (principal filter), see [[Proof for Fcd using sets]].
+\end{itemize}
+
+This is not quite easy however, because we need to calculate uncurrying for a entirely defined monovalued principal funcoid (what is essentially the same as a function of a $\mathbf{Set}$-morphisms) taking either ultrafilters or principal filters as arguments. Such (generalized) uncurrying is not quite easy.
+
+To sum what we need to prove:
+\begin{itemize}
+\item Transposition is a morphism.
+\item Evaluation is a morphism.
+\item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
+\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
+\end{itemize}
+
+
+Possible ways to prove that $\mathbf{Fcd}$ is cartesian closed follow:
+
+\subsection{Reducing to the fact that Dig is cartesian closed}
+It is probably a simpler way to prove that $\mathbf{Fcd}$ is cartesian closed by embedding it into $\mathbf{Dig}$ (which is [[already known to be cartesian closed|Category Dig is cartesian closed]]).
+
+$\mathbf{Fcd}$ can be embedded into $\mathbf{Dig}$ by the formulas:
+\begin{itemize}
+\item $A \mapsto \langle A \rangle$;
+\item $f \mapsto \langle f \rangle$.
+\end{itemize}
+
+That this really maps a morphism of $\mathbf{Fcd}$ into a morphism of $\mathbf{Dig}$ follows from the fact that $\langle g\circ f\rangle = \langle g\rangle\circ\langle f\rangle$.
+
+Obviously this embedding (denote it $T$) is an injective (both on objects and morphisms) functor.
+
+We will define:
+\begin{itemize}
+\item $\varepsilon^{\mathbf{Fcd}}_{A, B} = T^{-1} \varepsilon^{\mathbf{Dig}}_{T A, T B}$;
+\item $\sim^{\mathbf{Fcd}} f = T^{-1} \sim^{\mathbf{Dig}} T f$.
+\end{itemize}
+
+Due to functoriality and injectivity of $T$ it is enough to prove that above defined $\varepsilon^{\mathbf{Fcd}}_{A, B}$ and $\sim^{\mathbf{Fcd}} f$ exist and are morphisms of $\mathbf{Fcd}$.
+
+$\varepsilon^{\mathbf{Dig}}_{T A, T B} \ne T\varepsilon^{\mathbf{Fcd}}_{A, B}$ because $\varepsilon^{\mathbf{Dig}}_{T A, T B}$ accepts ordered pairs as the argument and $T \varepsilon^{\mathbf{Fcd}}_{A, B}$ accepts sets as the argument. So this is a dead end. Can the proof idea be salvaged?
+
+\subsection{Attempt to describe exponentials in Fcd}
+
+\begin{itemize}
+\item Exponential object $\operatorname{HOM(A;B)}$ is:
+\item\begin{itemize}
+\item Object $\operatorname{Ob}\operatorname{HOM(A;B)} = (\operatorname{Ob} B)^{\operatorname{Ob} B}$;
+\item Graph is $\operatorname{GR} \operatorname{HOM} ( A ; B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f ; g) }{ f, g \in \operatorname{Mor}_{\mathbf{Set}} (\operatorname{Ob} A;\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
+\end{itemize}
+\item Transposition is uncurrying.
+\item Evaluation is $\varepsilon_{A, B} x = \langle \operatorname{Pr}^{(A)}_0 x \rangle \operatorname{Pr}^{(A)}_1 x$.
+\end{itemize}
+
+We need to prove that the above defined are really an exponential and an evaluation.
