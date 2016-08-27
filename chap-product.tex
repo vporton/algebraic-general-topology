@@ -735,6 +735,23 @@ Our purpose is to prove (or disprove) that categories $\mathbf{Dig}$, $\mathbf{F
 Alternative way to prove:
 you can prove that the functor $-\times B$ is left adjoint to the exponentiation $-^B$ where the counit is given by the evaluation map.
 
+\subsection{Definitions}
+
+Categories $\mathbf{Dig}$, $\mathbf{Fcd}$, and $\mathbf{Rld}$ are respectively categories of:
+\begin{enumerate}
+\item discretely continuous maps between digraphs;
+\item (proximally) continuous maps between endofuncoids;
+\item (uniformly) continuous maps between endoreloids.
+\end{enumerate}
+
+''Definition'' //Digraph// is an endomorphism of the category $\mathbf{Rel}$.
+
+For a digraph $A$ we denote $\operatorname{Ob} A$ the set of vertexes or $A$ and $\operatorname{GR} A$ the set of edges or $A$.
+
+''Definition'' Category $\mathbf{Dig}$ of digraphs is the category whose objects are digraphs and morphisms are discretely continuous maps between digraphs. That is morphisms from a digraph $\mu$ to a digraph $\nu$ are functions (or more precisely morphisms of $\mathbf{Set}$) $f$ such that $f \circ \mu \sqsubseteq \nu \circ f$ (or equivalently $\mu \sqsubseteq f^{- 1} \circ \nu \circ f$ or equivalently $f \circ \mu \circ f^{- 1} \sqsubseteq \nu$).
+
+''Remark'' Category of digraphs is sometimes defined in an other (non equivalent) way, allowing multiple edges between two given vertices.
+
 \subsection{Conjectures}
 
 \begin{conjecture}
@@ -753,101 +770,15 @@ you can prove that the functor $-\times B$ is left adjoint to the exponentiation
 
 See \url{http://www.springer.com/us/book/9780387977102} for another way to prove Cartesian closedness.
 
-\subsection{Proof for Fcd using sets}
-
-Currying for sets is $\langle f \rangle ( X \times Y) = \bigcup \langle \langle \sim f \rangle X
-\rangle Y$ (as it's easy to prove). This simple formula gives hope, but...
-
-It does not work with sets because an analogy for sets of the last equality of the above mentioned long formula would be:
-
-$\forall X, Y, V, W \in \mathscr{P} \operatorname{Ob} A : \left( X \times V \mathrel{[
-A \times B]^{\ast}} Y \times W \Rightarrow \langle f \rangle ( X \times V)
-\mathrel{[ C]^{\ast}} \langle f \rangle ( Y \times W) \right) \Rightarrow \\ f : A
-\times B \rightarrow C$
-
-but this implication seems false.
-
-\subsection{By analogy with the proof that Dig is cartesian closed}
-
-The most obvious way for proof attempt that $\mathbf{Fcd}$ is cartesian closed is an analogy with the proof that
-$\mathbf{Dig}$ is cartesian closed.
-
-Consider the long formula at the bottom of [[this page|Category Dig is cartesian closed]]. The proof would arise if we replace $x$ and $y$ in this formula with filters and operations and relations on set element with operations and relations on filters.
-
-This proof could be simplified in either of two ways:
-\begin{itemize}
-\item replace $x$ and $y$ with ultrafilters, see [[Proof for Fcd using ultrafilters]];
-\item replace $x$ and $y$ with sets (principal filter), see [[Proof for Fcd using sets]].
-\end{itemize}
-
-This is not quite easy however, because we need to calculate uncurrying for a entirely defined monovalued principal funcoid (what is essentially the same as a function of a $\mathbf{Set}$-morphisms) taking either ultrafilters or principal filters as arguments. Such (generalized) uncurrying is not quite easy.
-
-To sum what we need to prove:
-* Transposition is a morphism.
-* Evaluation is a morphism.
-* $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
-* $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
-
-\subsection{Proof for Fcd using sets}
-
-Currying for sets is $\langle f \rangle ( X \times Y) = \bigcup \langle \langle \sim f \rangle X
-\rangle Y$ (as it's easy to prove). This simple formula gives hope, but...
-
-It does not work with sets because an analogy for sets of the last equality of the above mentioned long formula would be:
-
-$\forall X, Y, V, W \in \mathscr{P} \operatorname{Ob} A : \left( X \times V \mathrel{[
-A \times B]^{\ast}} Y \times W \Rightarrow \langle f \rangle ( X \times V)
-\mathrel{[ C]^{\ast}} \langle f \rangle ( Y \times W) \right) \Rightarrow \\ f : A
-\times B \rightarrow C$
-
-but this implication seems false.
-
-Categories $\mathbf{Dig}$, $\mathbf{Fcd}$, and $\mathbf{Rld}$ are respectively categories of:
-\begin{enumerate}
-\item discretely continuous maps between digraphs;
-\item (proximally) continuous maps between endofuncoids;
-\item (uniformly) continuous maps between endoreloids.
-\end{enumerate}
-
-''Definition'' //Digraph// is an endomorphism of the category $\mathbf{Rel}$.
-
-For a digraph $A$ we denote $\operatorname{Ob} A$ the set of vertexes or $A$ and $\operatorname{GR} A$ the set of edges or $A$.
-
-''Definition'' Category $\mathbf{Dig}$ of digraphs is the category whose objects are digraphs and morphisms are discretely continuous maps between digraphs. That is morphisms from a digraph $\mu$ to a digraph $\nu$ are functions (or more precisely morphisms of $\mathbf{Set}$) $f$ such that $f \circ \mu \sqsubseteq \nu \circ f$ (or equivalently $\mu \sqsubseteq f^{- 1} \circ \nu \circ f$ or equivalently $f \circ \mu \circ f^{- 1} \sqsubseteq \nu$).
-
-''Remark'' Category of digraphs is sometimes defined in an other (non equivalent) way, allowing multiple edges between two given vertices.
-
-The most obvious way for proof attempt that $\mathbf{Fcd}$ is cartesian closed is an analogy with the proof that Dig is cartesian closed.
-
-Use the exponential object, transposition, and evaluation as defined in [[this page|Is category Fcd cartesian closed?]]
-
-Consider the long formula at the bottom of ``Category Dig is cartesian closed''. The proof would arise if we replace $x$ and $y$ in this formula with filters and operations and relations on set element with operations and relations on filters.
-
-This proof could be simplified in either of two ways:
-\begin{itemize}
-\item replace $x$ and $y$ with ultrafilters, see [[Proof for Fcd using ultrafilters]];
-\item replace $x$ and $y$ with sets (principal filter), see [[Proof for Fcd using sets]].
-\end{itemize}
-
-This is not quite easy however, because we need to calculate uncurrying for a entirely defined monovalued principal funcoid (what is essentially the same as a function of a $\mathbf{Set}$-morphisms) taking either ultrafilters or principal filters as arguments. Such (generalized) uncurrying is not quite easy.
-
-To sum what we need to prove:
-\begin{itemize}
-\item Transposition is a morphism.
-\item Evaluation is a morphism.
-\item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
-\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
-\end{itemize}
-
-Possible ways to prove that $\mathbf{Fcd}$ is cartesian closed follow:
-
 \subsection{Category Dig is cartesian closed}
 
 Category of digraphs is the simplest of our three categories and it is easy to demonstrate that it is cartesian closed. I demonstrate cartesian closedness of $\mathbf{Dig}$ mainly with the purpose to show a pattern similarly to which we may probably demonstrate our two other categories are cartesian closed.
 
 Let $G$ and $H$ be graphs:
-* $\operatorname{Ob} \operatorname{MOR} ( G ; H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
-* $( f ; g) \in \operatorname{GR} \operatorname{MOR} ( G ; H) \Leftrightarrow \forall ( v ; w) \in \operatorname{GR} G : ( f ( v) ; g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{MOR} ( G ; H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\begin{itemize}
+\item $\operatorname{Ob} \operatorname{MOR} ( G ; H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\item $( f ; g) \in \operatorname{GR} \operatorname{MOR} ( G ; H) \Leftrightarrow \forall ( v ; w) \in \operatorname{GR} G : ( f ( v) ; g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{MOR} ( G ; H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\end{itemize}
 
 $\operatorname{GR} 1_{\operatorname{MOR} ( B ; C)} = \operatorname{id}_{\operatorname{Ob} \operatorname{MOR} ( B ; C)} = \operatorname{id}_{( \operatorname{Ob} H)^{\operatorname{Ob} G}}$
 
@@ -889,6 +820,63 @@ It remains to prove:
 
   $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p) ( q) = ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p ; q) = \varepsilon_{B, C} ( g \times 1_{A}) ( p ; q) = \varepsilon_{B, C} ( g p ; q) = g ( p) ( q)$. So $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$.
 
+\subsection{By analogy with the proof that Dig is cartesian closed}
+
+The most obvious way for proof attempt that $\mathbf{Fcd}$ is cartesian closed is an analogy with the proof that
+$\mathbf{Dig}$ is cartesian closed.
+
+Consider the long formula above. The proof would arise if we replace $x$ and $y$ in this formula with filters and operations and relations on set element with operations and relations on filters.
+
+This proof could be simplified in either of two ways:
+\begin{itemize}
+\item replace $x$ and $y$ with ultrafilters, see [[Proof for Fcd using ultrafilters]];
+\item replace $x$ and $y$ with sets (principal filter), see [[Proof for Fcd using sets]].
+\end{itemize}
+
+This is not quite easy however, because we need to calculate uncurrying for a entirely defined monovalued principal funcoid (what is essentially the same as a function of a $\mathbf{Set}$-morphisms) taking either ultrafilters or principal filters as arguments. Such (generalized) uncurrying is not quite easy.
+
+To sum what we need to prove:
+\begin{itemize}
+\item Transposition is a morphism.
+\item Evaluation is a morphism.
+\item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
+\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
+\end{itemize}
+
+\subsection{Attempt to describe exponentials in Fcd}
+
+\begin{itemize}
+\item Exponential object $\operatorname{HOM(A;B)}$ is the following endofuncoid:
+\item\begin{itemize}
+\item Object $\operatorname{Ob}\operatorname{HOM(A;B)} = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
+\item Graph is $\operatorname{GR} \operatorname{HOM} ( A ; B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f ; g) }{ f, g \in \Hom_{\mathbf{Set}} (\operatorname{Ob} A;\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
+\end{itemize}
+\item Transposition is uncurrying.
+\item Evaluation is $\varepsilon_{A, B} x = \langle \operatorname{Pr}^{(A)}_0 x \rangle \operatorname{Pr}^{(A)}_1 x$.
+\end{itemize}
+
+We need to prove that the above defined are really an exponential and an evaluation.
+
+Possible ways to prove that $\mathbf{Fcd}$ is cartesian closed follow:
+
+\subsection{Proof for Fcd using sets}
+
+Currying for sets is $\langle f \rangle ( X \times Y) = \bigcup \langle \langle \sim f \rangle X
+\rangle Y$ (as it's easy to prove). This simple formula gives hope, but...
+
+It does not work with sets because an analogy for sets of the last equality of the above mentioned long formula would be:
+
+$\forall X, Y, V, W \in \mathscr{P} \operatorname{Ob} A : \left( X \times V \mathrel{[
+A \times B]^{\ast}} Y \times W \Rightarrow \langle f \rangle ( X \times V)
+\mathrel{[ C]^{\ast}} \langle f \rangle ( Y \times W) \right) \Rightarrow \\ f : A
+\times B \rightarrow C$
+
+but this implication seems false.
+
+The most obvious way for proof attempt that $\mathbf{Fcd}$ is cartesian closed is an analogy with the proof that Dig is cartesian closed.
+
+Use the exponential object, transposition, and evaluation as defined in [[this page|Is category Fcd cartesian closed?]]
+
 \subsection{Reducing to the fact that Dig is cartesian closed}
 It is probably a simpler way to prove that $\mathbf{Fcd}$ is cartesian closed by embedding it into $\mathbf{Dig}$ (which is [[already known to be cartesian closed|Category Dig is cartesian closed]]).
 
@@ -911,20 +899,6 @@ We will define:
 Due to functoriality and injectivity of $T$ it is enough to prove that above defined $\varepsilon^{\mathbf{Fcd}}_{A, B}$ and $\sim^{\mathbf{Fcd}} f$ exist and are morphisms of $\mathbf{Fcd}$.
 
 $\varepsilon^{\mathbf{Dig}}_{T A, T B} \ne T\varepsilon^{\mathbf{Fcd}}_{A, B}$ because $\varepsilon^{\mathbf{Dig}}_{T A, T B}$ accepts ordered pairs as the argument and $T \varepsilon^{\mathbf{Fcd}}_{A, B}$ accepts sets as the argument. So this is a dead end. Can the proof idea be salvaged?
-
-\subsection{Attempt to describe exponentials in Fcd}
-
-\begin{itemize}
-\item Exponential object $\operatorname{HOM(A;B)}$ is the following endofuncoid:
-\item\begin{itemize}
-\item Object $\operatorname{Ob}\operatorname{HOM(A;B)} = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
-\item Graph is $\operatorname{GR} \operatorname{HOM} ( A ; B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f ; g) }{ f, g \in \Hom_{\mathbf{Set}} (\operatorname{Ob} A;\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
-\end{itemize}
-\item Transposition is uncurrying.
-\item Evaluation is $\varepsilon_{A, B} x = \langle \operatorname{Pr}^{(A)}_0 x \rangle \operatorname{Pr}^{(A)}_1 x$.
-\end{itemize}
-
-We need to prove that the above defined are really an exponential and an evaluation.
 
 \section{Is category Rld cartesian closed?}
 
