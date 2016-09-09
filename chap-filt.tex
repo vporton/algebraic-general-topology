@@ -2964,6 +2964,65 @@ part and dual edge part are always defined.\end{prop}
 Core part and dual core part are defined because the core is a complete
 lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
 
+\begin{thm}\label{pdiff-eq2}
+  Let $(\mathfrak{A}; \mathfrak{Z})$ be a complete co-brouwerian atomistic
+  lattice filtrator with binarily meet-closed and separable boolean
+  core. Then the three expressions of pseudodifference in theorem~\ref{pdiff-eq1} are also equal to
+  $\bigsqcup \setcond{ a \sqcap \overline{B} }{ B \in \up b }$.
+\end{thm}
+
+\begin{proof}
+  $\bigsqcup \setcond{ z \in \mathscr{F} }{ z
+  \sqsubseteq a \wedge z \sqcap b = \bot } \sqsubseteq \bigsqcup
+  \setcond{ a \sqcap \overline{B} }{ B \in \up b }$ because
+  
+  \begin{multline*}
+    z \in \setcond{ z \in \mathscr{F} }{ z \sqsubseteq
+    a \wedge z \sqcap b = \bot } \Leftrightarrow z \sqsubseteq a \wedge
+    z \sqcap b = \bot \Leftrightarrow \text{(separability)}\\
+    z \sqsubseteq a \wedge \exists B \in \up b : z \sqcap B = \bot
+    \Leftrightarrow \text{(theorem~\ref{f-intrs-and-compl})} \Leftrightarrow z \sqsubseteq a
+    \wedge \exists B \in \up b : z \sqsubseteq \overline{B}
+    \Leftrightarrow\\
+    \exists B \in \up b : \left( z \sqsubseteq a \wedge z \sqsubseteq
+    \overline{B} \right) \Leftrightarrow \exists B \in \up b : z
+    \sqsubseteq a \sqcap \overline{B} \Rightarrow\\
+    z \sqsubseteq \bigsqcup \setcond{ a \sqcap \overline{B} }{ B \in \up b } .
+  \end{multline*}
+  
+  But $a \sqcap \overline{B} \in \setcond{ z \in \mathscr{F} }{ z \sqsubseteq a \wedge z \sqcap b = \bot }$ because
+  \[ \left( a \sqcap \overline{B} \right) \sqcap b = a \sqcap \left(
+     \overline{B} \sqcap b \right) \sqsubseteq a \sqcap \left( \overline{B}
+     \sqcap^{\mathfrak{A}} B \right) = a \sqcap \left( \overline{B}
+     \sqcap^{\mathfrak{Z}} B \right) = a \sqcap \bot = \bot \]
+  and thus
+  \[ a \sqcap \overline{B} \sqsubseteq \bigsqcup \setcond{ z \in \mathscr{F}
+     }{ z \sqsubseteq a \wedge z \sqcap b = \bot
+     } \]
+  so $\bigsqcup \setcond{ z \in \mathscr{F} }{ z
+  \sqsubseteq a \wedge z \sqcap b = \bot } \sqsupseteq \bigsqcup
+  \setcond{ a \sqcap \overline{B} }{ B \in \up b
+  }$.
+\end{proof}
+
+\begin{prop}
+For filters on boolean lattices, the three expressions of the pseudodifference of filters~$a$ and~$b$
+in theorem~\ref{pdiff-eq1} are also equal to
+  $\bigsqcup \setcond{ a \sqcap \overline{B} }{ B \in \up b }$.
+\end{prop}
+
+\begin{proof}
+We can apply theorem~\ref{pdiff-eq2} because
+the filtrator of filters on a boolean lattice is:
+\begin{itemize}
+\item complete by corollary~\ref{filt-is-complete};
+\item atomistic by theorem~\ref{filt-atomistic};
+\item co-brouwerian by corollary~\ref{filt-also-distr};
+\item with separable core by theorem~\ref{when-sep-core};
+\item with meet-closed core by corollary~\ref{f-meet-closed}.
+\end{itemize}
+\end{proof}
+
 \section{Distributivity for an Element of Boolean Core}
 \begin{lem}
 \label{bb-bool-adj}The following is an implications tuple:
@@ -4563,13 +4622,6 @@ But for any $A,B\in R$ there exist $X,Y\in\subsets S$ such that
 $A=\bigsqcup^{\mathfrak{A}}X$, $B=\bigsqcup^{\mathfrak{A}}Y$. So
 $A\sqcap^{\mathfrak{A}}B=\bigsqcup^{\mathfrak{A}}X\sqcap\bigsqcup^{\mathfrak{A}}Y=\bigsqcup^{\mathfrak{A}}(X\cap Y)\in R$.
 \end{proof}
-
-\subsection{Quasidifference}
-\begin{conjecture}
-$a\psetminus b=\bigsqcup_{B\in\up b}(a\sqcap^{\mathfrak{A}}(U\setminus B))$
-for all $a,b\in\mathfrak{A}$ for each lattice $\mathfrak{A}$ of
-filters on a set $U$.
-\end{conjecture}
 
 \subsection{Non-Formal Problems}
 
