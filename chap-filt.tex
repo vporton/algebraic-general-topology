@@ -2964,18 +2964,35 @@ part and dual edge part are always defined.\end{prop}
 Core part and dual core part are defined because the core is a complete
 lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
 
-\begin{thm}\label{pdiff-eq2}
-  Let $(\mathfrak{A}; \mathfrak{Z})$ be a complete co-brouwerian atomistic
-  lattice filtrator with binarily meet-closed and separable boolean
-  core. Then the three expressions of pseudodifference in theorem~\ref{pdiff-eq1} are also equal to
+\begin{thm}
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{filt-pseud-filt} $(\mathfrak{A}; \mathfrak{Z})$ is a primary filtrator over a boolean lattice.
+\item\label{filt-pseud-fltr} $(\mathfrak{A}; \mathfrak{Z})$ is a complete co-brouwerian atomistic
+  down-aligned lattice filtrator with binarily meet-closed and separable boolean core.
+\item\label{filt-pseud-res} The three expressions of pseudodifference in theorem~\ref{pdiff-eq1} are also equal to
   $\bigsqcup \setcond{ a \sqcap \overline{B} }{ B \in \up b }$.
+\end{enumerate}
+
 \end{thm}
 
 \begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{filt-pseud-filt}$\Rightarrow$\ref{filt-pseud-fltr}]
+  The filtrator of filters on a boolean lattice is:
+  \begin{itemize}
+  \item complete by corollary~\ref{filt-is-complete};
+  \item atomistic by theorem~\ref{filt-atomistic};
+  \item co-brouwerian by corollary~\ref{filt-also-distr};
+  \item with separable core by theorem~\ref{when-sep-core};
+  \item with meet-closed core by corollary~\ref{f-meet-closed}.
+  \end{itemize}
+
+\item[\ref{filt-pseud-fltr}$\Rightarrow$\ref{filt-pseud-res}]
   $\bigsqcup \setcond{ z \in \mathscr{F} }{ z
   \sqsubseteq a \wedge z \sqcap b = \bot } \sqsubseteq \bigsqcup
   \setcond{ a \sqcap \overline{B} }{ B \in \up b }$ because
-  
   \begin{multline*}
     z \in \setcond{ z \in \mathscr{F} }{ z \sqsubseteq
     a \wedge z \sqcap b = \bot } \Leftrightarrow z \sqsubseteq a \wedge
@@ -3003,24 +3020,7 @@ lattice. Using the theorem \ref{b-bool-minus}.\end{proof}
   \sqsubseteq a \wedge z \sqcap b = \bot } \sqsupseteq \bigsqcup
   \setcond{ a \sqcap \overline{B} }{ B \in \up b
   }$.
-\end{proof}
-
-\begin{prop}
-For filters on boolean lattices, the three expressions of the pseudodifference of filters~$a$ and~$b$
-in theorem~\ref{pdiff-eq1} are also equal to
-  $\bigsqcup \setcond{ a \sqcap \overline{B} }{ B \in \up b }$.
-\end{prop}
-
-\begin{proof}
-We can apply theorem~\ref{pdiff-eq2} because
-the filtrator of filters on a boolean lattice is:
-\begin{itemize}
-\item complete by corollary~\ref{filt-is-complete};
-\item atomistic by theorem~\ref{filt-atomistic};
-\item co-brouwerian by corollary~\ref{filt-also-distr};
-\item with separable core by theorem~\ref{when-sep-core};
-\item with meet-closed core by corollary~\ref{f-meet-closed}.
-\end{itemize}
+\end{widedisorder}
 \end{proof}
 
 \section{Distributivity for an Element of Boolean Core}
