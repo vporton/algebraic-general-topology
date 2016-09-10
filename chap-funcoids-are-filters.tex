@@ -390,8 +390,9 @@ is the sought for~$F'$.
 $(\mathsf{RLD})_{\Gamma}$}{Relationships between (FCD) and (RLD)\_Gamma}}
 
 \fxerror{Noted Sep 10 2016:
-Example~\ref{three-rld} says that $(\mathsf{RLD})_{\Gamma}\ne\torldin$ but
-from theorem~\ref{fcd-diagram} it follows that they are equal. What is the error?
+An erroneous example said that $(\mathsf{RLD})_{\Gamma}\ne\torldin$ but
+from theorem~\ref{fcd-diagram} it follows that they are equal. Rewrite knowing that
+$(\mathsf{RLD})_{\Gamma}=\torldin$.
 }
 
 \begin{defn}
@@ -427,8 +428,8 @@ $(\mathsf{RLD})_{\Gamma}$ is neither upper nor lower adjoint of $\tofcd$
 (in general).\end{prop}
 \begin{proof}
 It is not upper adjoint because $\torldin$ is the upper adjoint of
-$\tofcd$ and $\torldin\neq(\mathsf{RLD})_{\Gamma}$ (See example
-\ref{three-rld} below.).
+$\tofcd$ and $\torldin\neq(\mathsf{RLD})_{\Gamma}$ \fxerror{(See example
+?? below.)}
 
 If $(\mathsf{RLD})_{\Gamma}$ is the lower adjoint of $\tofcd$, then
 $f\sqsupseteq(\mathsf{RLD})_{\Gamma}\tofcd f$ and thus $f\sqsupseteq\torldin\tofcd f$.
@@ -507,30 +508,6 @@ in the book).
 The formula $(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin f$ follows
 from $\forall G\in\up^{\Gamma(\Src f;\Dst f)}f:G\sqsupseteq f$
 and thus $G\sqsupseteq a\times^{\mathsf{RLD}}b$ for every $a\times^{\mathsf{FCD}}b\sqsubseteq f$ where $a$, $b$ are atomic filter objects.\end{proof}
-\begin{example}
-\label{three-rld}$(\mathsf{RLD})_{\Gamma}f\sqsupset\torldin f\sqsupset\torldout f$
-for some funcoid $f$.\end{example}
-\begin{proof}
-Take $f={(\mathord{=})}|_{\mathbb{R}}$. We already know that $\torldin f\sqsupset\torldout f$
-(see above in the book).
-
-It remains to prove $(\mathsf{RLD})_{\Gamma}f\neq\torldin f$.
-
-Take $F=\bigcup_{i\in\mathbb{Z}}([i;i+1[\times[i;i+1[)$.
-
-Then $F\in f=\up\torldin f$ (because $\supfun Fa\sqsupseteq\supfun fa$
-for both principal ultrafilter $a=\{i\}$ and every other ultrafilter
-$a$).
-
-It remains to prove $F\notin\up(\mathsf{RLD})_{\Gamma}f$.
-
-Suppose $F\in\up(\mathsf{RLD})_{\Gamma}=\up\bigsqcap^{\mathsf{RLD}}\up^{\Gamma(\Src f;\Dst f)}f$.
-Then by properties of generalized filter bases, there is $F'\in\up^{\Gamma(\Src f;\Dst f)}f$
-such that $F\supseteq F'$. Because $F'\subseteq\bigcup_{i\in\mathbb{Z}}([i;i+1[\times[i;i+1[)$
-and $F'\supseteq{(\mathord{=})}|_{\mathbb{R}}$, there is a point
-$q\in[i;i+1[\times[i;i+1[$ for each $i\in\mathbb{Z}$; thus, $F'\notin\Gamma(\Src f;\Dst f)$.
-
-Thus $F\notin\up(\mathsf{RLD})_{\Gamma}f$.\end{proof}
 \begin{thm}
 For every reloid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$:
 \begin{enumerate}
