@@ -386,58 +386,6 @@ So $A\times^{\mathsf{FCD}}Y\sqcup\overline{A}\times^{\mathsf{FCD}}\top$
 is the sought for~$F'$.
 \end{proof}
 
-\section{\texorpdfstring{Relationships between $\protect\tofcd$ and 
-$(\mathsf{RLD})_{\Gamma}$}{Relationships between (FCD) and (RLD)\_Gamma}}
-
-\fxerror{Noted Sep 10 2016:
-An erroneous example said that $(\mathsf{RLD})_{\Gamma}\ne\torldin$ but
-from theorem~\ref{fcd-diagram} it follows that they are equal. Rewrite knowing that
-$(\mathsf{RLD})_{\Gamma}=\torldin$.
-}
-
-\begin{defn}
-$(\mathsf{RLD})_{\Gamma}f=\bigsqcap^{\mathsf{RLD}}\up^{\Gamma(\Src f;\Dst f)}f$
-for every funcoid $f$. I call $(\mathsf{RLD})_{\Gamma}$ as $\Gamma$-reloid
-or Gamma-reloid.\end{defn}
-\begin{obvious}
-$(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldout f$ for every funcoid
-$f$.\end{obvious}
-\begin{example}
-$(\mathsf{RLD})_{\Gamma}f\sqsupset\torldout f$ for some funcoid~$f$.\end{example}
-\begin{proof}
-Consider $f=\uparrow^{\mathsf{FCD}}1_{\mathbf{Rel}(A;A)}$ for an
-infinite set~$A$. Then $1_{\mathbf{Rel}(A;A)}\in\GR\torldout f$
-but $1_{\mathbf{Rel}(A;A)}\notin\GR(\mathsf{RLD})_{\Gamma}f.$\end{proof}
-\begin{thm}
-$\tofcd(\mathsf{RLD})_{\Gamma}f=f$ for every funcoid $f$.\end{thm}
-\begin{proof}
-For every filter $\mathcal{X}\in\mathscr{F}(\Src f)$ we have $\langle\tofcd(\mathsf{RLD})_{\Gamma}f\rangle\mathcal{X}=\bigsqcap_{F\in\up(\mathsf{RLD})_{\Gamma}f}^{\mathscr{F}}\supfun F\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}$.
-
-Obviously $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsupseteq\supfun f\mathcal{X}$.
-So $\tofcd(\mathsf{RLD})_{\Gamma}f\sqsupseteq f$.
-
-Let $Y\in\up\supfun f\mathcal{X}$. Then (proposition above) there
-exists $A\in\up\mathcal{X}$ such that $Y\in\up\langle f\rangle A$.
-
-Thus $A\times Y\sqcup\overline{A}\times\top\in\up f$. So $\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsubseteq\supfun{A\times Y\sqcup\overline{A}\times\top}\mathcal{X}=Y$.
-So $Y\in\up\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}$ that
-is $\supfun f\mathcal{X}\sqsupseteq\supfun{\tofcd(\mathsf{RLD})_{\Gamma}f}\mathcal{X}$
-that is $f\sqsupseteq\tofcd(\mathsf{RLD})_{\Gamma}f$.\end{proof}
-\begin{prop}
-$(\mathsf{RLD})_{\Gamma}$ is neither upper nor lower adjoint of $\tofcd$
-(in general).\end{prop}
-\begin{proof}
-It is not upper adjoint because $\torldin$ is the upper adjoint of
-$\tofcd$ and $\torldin\neq(\mathsf{RLD})_{\Gamma}$ \fxerror{(See example
-?? below.)}
-
-If $(\mathsf{RLD})_{\Gamma}$ is the lower adjoint of $\tofcd$, then
-$f\sqsupseteq(\mathsf{RLD})_{\Gamma}\tofcd f$ and thus $f\sqsupseteq\torldin\tofcd f$.
-But $f\sqsubseteq\torldin\tofcd f$, thus having $\torldin\tofcd f=f$
-what is not an identity (take $f={(\mathord{=})}|_{A}$ for an infinite
-set $A$).
-\end{proof}
-
 \section{The diagram}
 \begin{thm}
 \label{fcd-diagram}The diagram at the figure~\ref{gamma-dia} is
@@ -487,6 +435,21 @@ So it remains to apply lemma~\ref{three-loop-lem} (taking into account
 lemma~\ref{rld-in-fcd-meet}).
 \end{proof}
 
+Another proof that $\tofcd\torldin f=f$ for every funcoid $f$:
+\begin{proof}
+For every filter $\mathcal{X}\in\mathscr{F}(\Src f)$ we have $\langle\tofcd\torldin f\rangle\mathcal{X}=\bigsqcap_{F\in\up\torldin f}^{\mathscr{F}}\supfun F\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}$.
+
+Obviously $\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsupseteq\supfun f\mathcal{X}$.
+So $\tofcd\torldin f\sqsupseteq f$.
+
+Let $Y\in\up\supfun f\mathcal{X}$. Then (proposition above) there
+exists $A\in\up\mathcal{X}$ such that $Y\in\up\langle f\rangle A$.
+
+Thus $A\times Y\sqcup\overline{A}\times\top\in\up f$. So $\supfun{\tofcd\torldin f}\mathcal{X}=\bigsqcap_{F\in\up^{\Gamma(\Src f;\Dst f)}f}^{\mathscr{F}}\supfun F\mathcal{X}\sqsubseteq\supfun{A\times Y\sqcup\overline{A}\times\top}\mathcal{X}=Y$.
+So $Y\in\up\supfun{\tofcd\torldin f}\mathcal{X}$ that
+is $\supfun f\mathcal{X}\sqsupseteq\supfun{\tofcd\torldin f}\mathcal{X}$
+that is $f\sqsupseteq\tofcd\torldin f$.\end{proof}
+
 \section{Some additional properties}
 \begin{prop}
 For every funcoid $f\in\mathsf{FCD}(A;B)$ (for sets $A$, $B$):
@@ -498,16 +461,6 @@ For every funcoid $f\in\mathsf{FCD}(A;B)$ (for sets $A$, $B$):
 \begin{proof}
 Take $\setcond{X\times Y}{X\in\subsets A,Y\in\subsets B,X\times Y\supseteq f}\subseteq\up^{\Gamma(A;B)}f$.
 I leave the rest reasoning as an exercise.\end{proof}
-\begin{prop}
-$(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin f\sqsupseteq\torldout f$
-for every funcoid $f$.\end{prop}
-\begin{proof}
-We already know that $\torldin f\sqsupseteq\torldout f$ (see above
-in the book).
-
-The formula $(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin f$ follows
-from $\forall G\in\up^{\Gamma(\Src f;\Dst f)}f:G\sqsupseteq f$
-and thus $G\sqsupseteq a\times^{\mathsf{RLD}}b$ for every $a\times^{\mathsf{FCD}}b\sqsubseteq f$ where $a$, $b$ are atomic filter objects.\end{proof}
 \begin{thm}
 For every reloid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$:
 \begin{enumerate}
@@ -561,24 +514,17 @@ So $\varphi$ is a component of a funcoid.
 $\boxbox f=\bigsqcap^{\mathsf{RLD}}\up^{\Gamma(\Src f;\Dst f)}f$
 for reloid $f$.\end{defn}
 \begin{conjecture}
-For every reloid $f$:
-\begin{enumerate}
-\item $\boxbox f=\torldin\tofcd f$;
-\item $\boxbox f=(\mathsf{RLD})_{\Gamma}\tofcd f$.
-\end{enumerate}
+$\boxbox f=\torldin \tofcd f$ for every reloid $f$.
 \end{conjecture}
 \begin{obvious}
 $\boxbox f\sqsupseteq f$ for every reloid $f$.\end{obvious}
 \begin{example}
-$(\mathsf{RLD})_{\Gamma}f\neq\boxbox\torldout f$ for some funcoid
+$\torldin f\neq\boxbox\torldout f$ for some funcoid
 $f$.\end{example}
 \begin{proof}
 Take $f=\id_{\Omega(\mathbb{N})}^{\mathsf{FCD}}$. Then, as it was
 shown above, $\torldout f=\bot$ and thus $\boxbox\torldout f=\bot$.
-But $(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin f\neq\bot$. So $(\mathsf{RLD})_{\Gamma}f\neq\boxbox\torldout f$.\end{proof}
-\begin{conjecture}
-$(\mathsf{RLD})_{\Gamma}f=\boxbox\torldin f$ for every funcoid $f$.
-\end{conjecture}
+But $\torldin f\sqsupseteq\torldin f\neq\bot$. So $\torldin f\neq\boxbox\torldout f$.\end{proof}
 Another proof of the theorem ``$\dom\torldin f=\dom f$ and $\im\torldin f=\im f$
 for every funcoid $f$.'':
 \begin{proof}
@@ -597,25 +543,22 @@ and
 
 
 Thus $\dom\torldin f=\dom f$. The rest follows from symmetry.\end{proof}
-\begin{prop}
-$\dom(\mathsf{RLD})_{\Gamma}f=\dom f$ and $\im(\mathsf{RLD})_{\Gamma}f=\im f$
-for every funcoid $f$.\end{prop}
+
+Another proof that
+$\dom\torldin f=\dom f$ and $\im\torldin f=\im f$ for every funcoid $f$:
 \begin{proof}
-$\dom(\mathsf{RLD})_{\Gamma}f\sqsupseteq\dom f$ and $\im(\mathsf{RLD})_{\Gamma}f\sqsupseteq\im f$
-because $(\mathsf{RLD})_{\Gamma}f\sqsupseteq\torldin$ and $\dom\torldin f=\dom f$
+$\dom\torldin f\sqsupseteq\dom f$ and $\im\torldin f\sqsupseteq\im f$
+because $\torldin f\sqsupseteq\torldin$ and $\dom\torldin f=\dom f$
 and $\im\torldin f=\im f$.
 
-It remains to prove (as the rest follows from symmetry) that $\dom(\mathsf{RLD})_{\Gamma}f\sqsubseteq\dom f$.
+It remains to prove (as the rest follows from symmetry) that $\dom\torldin f\sqsubseteq\dom f$.
 
 Really, 
 \begin{multline*}
-\dom(\mathsf{RLD})_{\Gamma}f\sqsubseteq\bigsqcap^{\mathscr{F}}\setcond{X\in\up\dom f}{X\times\top\in\up f}=\\
+\dom\torldin f\sqsubseteq\bigsqcap^{\mathscr{F}}\setcond{X\in\up\dom f}{X\times\top\in\up f}=\\
 \bigsqcap^{\mathscr{F}}\setcond{X\in\up\dom f}{X\in\up\dom f}=\bigsqcap^{\mathscr{F}}\up\dom f=\dom f.
 \end{multline*}
 \end{proof}
-\begin{conjecture}
-For every funcoid $g$ we have $\Cor(\mathsf{RLD})_{\Gamma}g=(\mathsf{RLD})_{\Gamma}\Cor g$.
-\end{conjecture}
 
 \section{More on properties of funcoids}
 \begin{prop}
