@@ -2729,6 +2729,124 @@ that is $a_{0}\times^{\mathsf{FCD}}b_{0}\rsuprel{f\times^{(C)}g}a_{1}\times^{\ma
 \end{proof}
 Can the above theorem be generalized for the infinitary case?
 
+\section{Cross-inner and cross-outer product}
+
+Let $f$ be an indexed family of funcoids.
+
+\begin{defn}
+  $\prod^{\operatorname{in}}_{i \in \dom f} f = \prod^{(C)}_{i \in \dom f}
+  \torldin f_i$ (\emph{cross-inner product}).
+\end{defn}
+
+\begin{defn}
+  $\prod^{\operatorname{out}}_{i \in \dom f} f = \prod^{(C)}_{i \in \dom
+  f} \torldout f_i$ (\emph{cross-outer product}).
+\end{defn}
+
+\begin{prop}
+  $\prod^{\operatorname{in}}_{i \in \dom f} f$ and $\prod^{\operatorname{out}}_{i \in
+  \dom f} f$ are funcoids (not just pointfree funcoids).
+\end{prop}
+
+\begin{proof}
+  They are both morphisms $\StarHom (\lambda i \in \dom f :
+  \Src f_i) \rightarrow \StarHom (\lambda i \in \dom f :
+  \Src f_i)$ for the category of multireloids with star-morphisms, that
+  is $\StarHom (\lambda i \in \dom f : \Src f_i)$ is the set
+  of filters on the cartesian product $\prod_{i \in \dom f} \Src
+  f_i$ and likewise for $\StarHom (\lambda i \in \dom f :
+  \Src f_i)$.
+\end{proof}
+
+\begin{obvious}
+For every funcoids $f$ and $g$
+\begin{enumerate}
+  \item $f \times^{\operatorname{in}} g = \torldin f
+  \times^{(C)} \torldin g$;
+  
+  \item $f \times^{\operatorname{out}} g = \torldout f
+  \times^{(C)} \torldout g$.
+\end{enumerate}
+\end{obvious}
+
+\begin{cor}
+  ~
+  \begin{enumerate}
+    \item $\langle f \times^{\operatorname{in}} g \rangle a =
+    \torldin g \circ a \circ
+    \torldin f^{- 1}$;
+    
+    \item $\langle f \times^{\operatorname{out}} g \rangle a =
+    \torldout g \circ a \circ
+    \torldout f^{- 1}$
+  \end{enumerate}
+\end{cor}
+
+\begin{cor}
+  For every funcoids $f$ and $g$ and filters $a$ and $b$ on suitable sets:
+  \begin{enumerate}
+    \item $a \mathrel{[f \times^{\operatorname{in}} g]} b \Leftrightarrow b \nasymp
+    \torldin g \circ a \circ
+    \torldin f^{- 1} \Leftrightarrow b \circ
+    \torldin f \nasymp
+    \torldin g \circ a$;
+    
+    \item $a \mathrel{[f \times^{\operatorname{out}} g]} b \Leftrightarrow b \nasymp
+    \torldout g \circ a \circ
+    \torldout f^{- 1} \Leftrightarrow b \circ
+    \torldout f \nasymp
+    \torldout g \circ a$.
+  \end{enumerate}
+\end{cor}
+
+\begin{prop}
+  Knowing that every $f_i$ is nonzero, we can restore the values of $f_i$ from
+  the value of $\prod^{\operatorname{in}}_{i \in \dom f} f$.
+\end{prop}
+
+\begin{proof}
+  It follows that every $\torldin f_i$ is nonzero,
+  thus we can restore each $\torldin f_i$ from
+  $\prod^{(C)}_{i \in \dom f} \torldin f_i =
+  \prod^{\operatorname{in}}_{i \in \dom f} f$ and then we know $f_i =
+  \tofcd \torldin f_i$.
+\end{proof}
+
+\begin{example}
+  The values of $f$ and $g$ cannot be restored from $f \times^{\operatorname{out}} g$
+  for some nonzero funcoids $f$ and $g$.
+\end{example}
+
+\begin{proof}
+  Obviously $\id^{\mathsf{FCD}}_{\Omega (\mathbb{N})} \neq
+  \id^{\mathsf{FCD}}_{\Omega (\mathbb{R})}$, but
+  $\id^{\mathsf{FCD}}_{\Omega (\mathbb{N})} \times^{\operatorname{out}}
+  \id^{\mathsf{FCD}}_{\Omega (\mathbb{N})} =
+  \torldout \id^{\mathsf{FCD}}_{\Omega
+  (\mathbb{N})} \times^{(C)} \torldout
+  \id^{\mathsf{FCD}}_{\Omega (\mathbb{N})} = \bot \times^{(C)}
+  \bot = \torldout
+  \id^{\mathsf{FCD}}_{\Omega (\mathbb{R})} \times^{(C)}
+  \torldout \id^{\mathsf{FCD}}_{\Omega
+  (\mathbb{R})} = \id^{\mathsf{FCD}}_{\Omega (\mathbb{R})}
+  \times^{\operatorname{out}} \id^{\mathsf{FCD}}_{\Omega (\mathbb{R})}$.
+  
+  That is the product $f \times^{\operatorname{out}} g$ is the same if we take $f = g
+  = \id^{\mathsf{FCD}}_{\Omega (\mathbb{N})}$ and if we take $f
+  = g = \id^{\mathsf{FCD}}_{\Omega (\mathbb{R})}$.
+\end{proof}
+
+\begin{question}
+  Which of the following are pairwise equal (for a. two funcoids, b. any
+  (possibly infinite) number of funcoids)?
+  \begin{enumerate}
+    \item  subatomic product;
+    
+    \item displaced product;
+    
+    \item cross-inner product.
+  \end{enumerate}
+\end{question}
 
 \section{\index{continuity!coordinate-wise}Coordinate-wise continuity}
 \begin{thm}
