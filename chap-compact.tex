@@ -183,6 +183,19 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
   \uparrow^{\mathsf{RLD}} Y$.
 \end{proof}
 
+\begin{prop}
+  Let $g$ be a reloid and $f = \tofcd g$ and $f=f\circ f^{-1}$. Then
+  $\rsupfun{f \times^{\mathrm{in}} f} 1^{\mathsf{RLD}} \sqsupseteq g$.
+\end{prop}
+
+\begin{proof}
+$\rsupfun{f \times^{\mathrm{in}} f} 1^{\mathsf{RLD}} =
+\rsupfun{\torldin f\circ^{(C)}\torldin f} 1^{\mathsf{RLD}} =
+\torldin f\circ 1^{\mathsf{RLD}} \circ \torldin f^{-1} = 
+\torldin f\circ \torldin f^{-1} = 
+\torldin (f\circ f^{-1}) = \torldin f = \torldin\tofcd g \sqsupseteq g$.
+\end{proof}
+
 \begin{lem}
   $\Cor \langle f \times^{(A)} f \rangle^{\ast} g \sqsubseteq 1^{\mathsf{RLD}}$ if
   $\tofcd g = f$ where $\tofcd g = f$ for a
