@@ -202,6 +202,42 @@ $\rsupfun{f \times^{\mathrm{in}} f} 1^{\mathsf{RLD}} =
   $T_1$-separable reloid $g$.
 \end{lem}
 
+\begin{prop}\label{vmv}
+  (attempt to generalize statement~2 in page~172 of~\cite{bourb-top-1})
+  Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \up \langle f
+  \times^{(A)} f \rangle^{\ast} M$ for every $V \in \up f$.
+  \fxerror{Wrong: Counter-example above: $f=M=V=1^{\mathbf{Rel}}$.}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{prop}\label{ffm}
+  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq g \circ
+  \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ whenever
+  $\tofcd g = f$ for a reloid $g$.
+  \fxerror{The same counter-example.}
+\end{prop}
+
+\begin{proof}
+$\rsupfun{f \times^{\mathrm{in}} f} 1^{\mathsf{RLD}} =
+\rsupfun{\torldin f\circ^{(C)}\torldin f} 1^{\mathsf{RLD}} =
+\torldin f\circ 1^{\mathsf{RLD}} \circ \torldin f^{-1} = 
+\torldin f\circ \torldin f^{-1} = 
+\torldin (f\circ f^{-1}) = \torldin f = \torldin\tofcd g \sqsupseteq g$.
+\end{proof}
+
+\begin{cor}
+  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq \langle f \times^{(C)} f
+  \rangle^{\ast} M$.
+\end{cor}
+
+\begin{cor}
+  $V \circ V^{- 1} \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
+  \circ f^{- 1} \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
+\end{cor}
+
 \begin{proof}
   ??
 \end{proof}
@@ -236,6 +272,45 @@ Then $\rsupfun{f \times^{\mathrm{in}} f} x =
 ??$
 for every nontrivial ultrafilter~$x\in\atoms^{\mathscr{F}[0;1]}$.
 \end{example}
+
+\begin{grayed}
+\emph{An old proof attempt (which works only for Tychonoff product, not for our subatomic product):}
+
+Suppose there is $U \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$
+such that $U \notin \up g$.
+
+Then $\setcond{ V \setminus U }{ V \in \up g } = g \setminus U$ would be a proper filter.
+
+Thus by reflexivity $\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U) \neq
+\bot$.
+
+By compactness of $f \times^{(A)} f$, $\Cor \langle f \times^{(A)} f \rangle^{\ast}
+(g \setminus U) \neq \bot$.
+
+Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
+(g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times^{(A)} f^{- 1}
+\rangle \{ (x ; x) \}$; $U \sqsubset \langle f^{- 1} \times^{(A)} f^{- 1} \rangle \{
+(x ; x) \} \sqsubseteq \langle f^{- 1} \times^{(A)} f^{- 1} \rangle 1^{\mathsf{RLD}}$ what is
+impossible.
+
+Thus there exist $x \neq y$ such that $\{ (x ; y) \} \sqsubseteq \Cor
+\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x ; y) \}
+\sqsubseteq \langle f \times^{(A)} f \rangle^{\ast} g$.
+
+Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossible. So $U
+\in \up g$.
+
+We have $\up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
+\up g$; $\langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \sqsupseteq g$.
+
+\begin{cor}
+  Let $f$ is a $T_1$-separable (the same as $T_2$ for symmetric transitive)
+  compact funcoid and $g$ is a uniform space (reflexive, symmetric, and
+  transitive endoreloid) such that $\tofcd g = f$. Then $g =
+  \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
+\end{cor}
+\end{grayed}
+
 
 An (incomplete) attempt to prove one more theorem follows:
 
