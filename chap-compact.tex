@@ -6,9 +6,7 @@ of the product funcoid.
 
 This is a rough partial draft. The proofs are with errors.
 
-There is a counter-example against alleged generalization of a Bourbaki's theorem:
-proposition~\ref{vmv}. It seems to indicate that subatomic product which I attempted to use
-does not coincide with topological product (as per Bourbaki).
+\fxnote{The below examples also show that subatomic product does not coincide with Tychonoff product.}
 
 \section{The rest}
 
@@ -184,49 +182,6 @@ $\bigsqcup \setcond{ \langle f \times^{(A)} f \rangle p }{p \in \atoms 1^{\maths
   \uparrow^{\mathsf{RLD}} Y \neq \bot \Leftrightarrow g \nasymp
   \uparrow^{\mathsf{RLD}} Y$.
 \end{proof}
-
-\begin{grayed}
-\begin{prop}\label{vmv}
-  (attempt to generalize statement~2 in page~172 of~\cite{bourb-top-1})
-  Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \up \langle f
-  \times^{(A)} f \rangle^{\ast} M$ for every $V \in \up f$.
-  \fxerror{Wrong: Counter-example above: $f=M=V=1^{\mathbf{Rel}}$.}
-\end{prop}
-
-\begin{proof}
-??
-\end{proof}
-
-\begin{prop}\label{ffm}
-  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq g \circ
-  \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ whenever
-  $\tofcd g = f$ for a reloid $g$.
-  \fxerror{The same counter-example.}
-\end{prop}
-
-\begin{proof}
-  For every $V \in \up g$ we have $V \circ M \circ V^{- 1} \in \up
-  \langle f \times^{(A)} f \rangle^{\ast} M$. Thus $g \circ
-  \uparrow^{\mathsf{RLD}} M \circ g^{- 1} = \bigsqcap \setcond{ V \circ M
-  \circ V^{- 1} }{ V \in \up g }
-  \sqsupseteq \bigsqcap \up \langle f \times^{(A)} f \rangle^{\ast} M =
-  \up \langle f \times^{(A)} f \rangle^{\ast} M$.
-\end{proof}
-
-\begin{cor}
-  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq \langle f \times^{(C)} f
-  \rangle^{\ast} M$.
-\end{cor}
-
-\begin{cor}
-  $V \circ V^{- 1} \in \up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$; $f
-  \circ f^{- 1} \sqsupseteq \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}}$.
-\end{cor}
-
-\begin{proof}
-  ??
-\end{proof}
-\end{grayed}
 
 \begin{lem}
   $\Cor \langle f \times^{(A)} f \rangle^{\ast} g \sqsubseteq 1^{\mathsf{RLD}}$ if
