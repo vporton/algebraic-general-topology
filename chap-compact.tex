@@ -208,6 +208,23 @@ $\rsupfun{f \times^{\mathrm{in}} f} 1^{\mathsf{RLD}} =
   $T_1$-separable reloid $g$.
 \end{lem}
 
+\subsection{Propositions from~\cite{bourb-top-1} which do not hold for our products}
+
+In this subsection I present counter-examples against modified propositions from~\cite{bourb-top-1}
+in which I replace Tychonoff product with our subatomic or cross-inner products.
+
+\begin{example}
+$\rsupfun{1^{\mathbf{Rel}} \times^{(A)} 1^{\mathbf{Rel}}} 1^{\mathbf{Rel}} \sqsupset 1^{\mathbf{Rel}}$.
+\end{example}
+
+\begin{proof}
+$\rsupfun{1^{\mathbf{Rel}} \times^{(A)} 1^{\mathbf{Rel}}} 1^{\mathbf{Rel}} =
+\bigsqcup_{x\in\atoms 1^{\mathbf{Rel}}} \rsupfun{1^{\mathbf{Rel}} \times^{(A)} 1^{\mathbf{Rel}}} x =
+\bigsqcup_{x\in\atoms 1^{\mathbf{Rel}}} \left( \rsupfun{1^{\mathbf{Rel}}} \dom x \times^{\mathsf{RLD}} \rsupfun{1^{\mathbf{Rel}}} \im x \right) =
+\bigsqcup_{x\in\atoms 1^{\mathbf{Rel}}} \left( \dom x \times^{\mathsf{RLD}} \im x \right) \sqsupset
+1^{\mathbf{Rel}}$.
+\end{proof}
+
 \begin{prop}\label{vmv}
   (attempt to generalize statement~2 in page~172 of~\cite{bourb-top-1})
   Let $f$ be a funcoid. Then $V \circ M \circ V^{- 1} \in \up \langle f
