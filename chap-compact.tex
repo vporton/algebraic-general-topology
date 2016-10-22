@@ -227,30 +227,24 @@ $\rsupfun{1^{\mathbf{Rel}} \times^{(A)} 1^{\mathbf{Rel}}} 1^{\mathbf{Rel}} =
 
 Statement~2 in page~172 of~\cite{bourb-top-1} does not survive modification:
 
-\begin{example}\label{vmv}
-  There is a funcoid~$f$ and $V \in \up f$ such that
-  $V \circ M \circ V^{- 1} \notin \up \rsupfun{f
-  \times^{(A)} f } M$.
+\begin{example}
+  ~
+  \begin{enumerate}
+    \item\label{vmv} There is a funcoid~$f$ and $V \in \up f$ such that
+      $V \circ M \circ V^{- 1} \notin \up \rsupfun{f
+      \times^{(A)} f } M$.
+    \item\label{ffm} $\langle f \times^{(A)} f \rangle^{\ast} M \sqsupset g \circ
+      \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ for some reloid~$g$, binary relation~$M$ and
+      the funcoid~$f=\tofcd g$.
+  \end{enumerate}
 \end{example}
 
 \begin{proof}
-Take $f=M=V=1^{\mathbf{Rel}}$ and use the example above.
-\end{proof}
-
-\begin{prop}\label{ffm}
-  $\langle f \times^{(A)} f \rangle^{\ast} M \sqsubseteq g \circ
-  \uparrow^{\mathsf{RLD}} M \circ g^{- 1}$ whenever
-  $\tofcd g = f$ for a reloid $g$.
-  \fxerror{The same counter-example.}
-\end{prop}
-
-\begin{proof}
-  For every $V \in \up g$ we have $V \circ M \circ V^{- 1} \in \up
-  \langle f \times^{(A)} f \rangle^{\ast} M$. Thus $g \circ
-  \uparrow^{\mathsf{RLD}} M \circ g^{- 1} = \bigsqcap \setcond{ V \circ M
-  \circ V^{- 1} }{ V \in \up g }
-  \sqsupseteq \bigsqcap \up \langle f \times^{(A)} f \rangle^{\ast} M =
-  \up \langle f \times^{(A)} f \rangle^{\ast} M$.
+  ~
+  \begin{widedisorder}
+    \item[\ref{vmv}] Take $f=M=V=1^{\mathbf{Rel}}$ and use the example above.
+    \item[\ref{ffm}] Take $f=g=M=1^{\mathbf{Rel}}$ and use the example above.
+  \end{widedisorder}
 \end{proof}
 
 \begin{cor}
