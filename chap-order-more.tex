@@ -1343,6 +1343,35 @@ Consequently $\concat(\concat\circ S)=\concat(\concat S)$.\end{proof}
 Ordinated product is an infinitely associative function.
 \end{cor}
 
+\section{Galois surjections}
+
+\begin{defn}\index{Galois surjection}
+  \emph{Galois surjection} is the special case of Galois connection such
+  that $f^{\ast} \circ f_{\ast} $ is identity.
+\end{defn}
+
+\begin{prop}\label{gal-eq}
+  For Galois surjection $\mathfrak{A} \rightarrow \mathfrak{B}$ such that
+  $\mathfrak{A}$ is a join-semilattice we have (for every $y \in
+  \mathfrak{B}$)
+  \[ f_{\ast} y = \max \setcond{ x \in \mathfrak{A} }{
+     f^{\ast} x = y } . \]
+\end{prop}
+
+\begin{proof}
+  We need to prove
+  \[ \max \setcond{ x \in \mathfrak{A} }{ f^{\ast} x = y } =
+     \max \setcond{ x \in \mathfrak{A} }{ f^{\ast} x \sqsubseteq y } . \]
+  To prove it, it's enough to show that for each $f^{\ast} x \sqsubseteq y$
+  there exists an $x' \sqsupseteq x$ such that $f^{\ast} x' = y$.
+  
+  Really, $y = f^{\ast} f_{\ast} y$. It's enough to prove $f^{\ast} (x \sqcup
+  f_{\ast} y) = y$.
+  
+  Indeed (because lower adjoints preserve joins),
+  $f^{\ast} (x \sqcup f_{\ast} y) = f^{\ast} x \sqcup f^{\ast} f_{\ast} y = f^{\ast} x \sqcup y = y$.
+\end{proof}
+
 \section{Some properties of frames}\label{some-frames}
 
 This section is based on a \noun{Todd Trimble}'s proof. A shorter
