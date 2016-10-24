@@ -8,6 +8,10 @@ $\mu(E) = \bigsqcap^{\mathsf{RLD}} \setcond{f\in\mathbf{Rel}}{S(f)\sqsupseteq E}
 \fxnote{It directly generalized for a funcoid or reloid~$E$.}
 \end{defn}
 
+\begin{obvious}
+Micronization is always reflexive.
+\end{obvious}
+
 \begin{defn}
 \emph{Interval}~$I$ on a poset~$\mathfrak{A}$ is such a subset of~$\mathfrak{A}$ that
 \[ \forall a,b\in I, x\in\mathfrak{A}:(a\leq x\leq b\Rightarrow x\in I). \]
@@ -21,7 +25,18 @@ Consider $L$ as a poset (with the induced order~$\leq$). Then
 \end{prop}
 
 \begin{proof}
-??
+Let's denote~$D$ the right part of the formula to be proved.
+
+We will prove that $D \in \min \setcond{f\in\mathbf{Rel}}{S(f)\sqsupseteq E}$.
+
+We have $S(D)=L\times L$ and thus $D\sqsupseteq L$; thus $D\in\setcond{f\in\mathbf{Rel}}{S(f)\sqsupseteq E}$.
+
+It remains to prove that $S(f)\sqsupseteq E\Rightarrow D\sqsubseteq f$.
+
+Suppose contrary that $D\nsqsubseteq f$. Then either $(i;i)\notin f$ for $i\in L$ or $(i;i+1)\notin f$ for $i,i+1\in L$.
+
+In either case $S(f)\subset (L\times L) \cap \bigcup_{i\in\mathbb{Z}} \{(i;i), (i;i+1)\} = D$
+and thus $(f)\nsqsupseteq E$.
 \end{proof}
 
 \begin{question}
