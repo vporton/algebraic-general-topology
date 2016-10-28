@@ -444,6 +444,49 @@ and thus $(f)\nsqsupseteq E$.
 $\mu(E) = \bigsqcap^{\mathsf{RLD}} \setcond{f\in\mathbf{Rel}}{S(f)=E}$, if $E$ is reflexive and transitive?
 \end{question}
 
-\begin{conjecture}
-$S^{\ast}(\mu(E)) = E$ for every partial order~$E$.
-\end{conjecture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lem}
+  $\bigsqcap^{\mathsf{RLD}} \setcond{ S (f) }{f
+  \in \mathbf{Rel}, S (f) \sqsupseteq E } = E$ if $E$ is a
+  reflexive and transitive binary relation.
+\end{lem}
+
+\begin{proof}
+  $\bigsqcap^{\mathsf{RLD}} \setcond{ S (f) }{a f
+  \in \mathbf{Rel}, S (f) \sqsupseteq E } \sqsubseteq S (E) =
+  E$;
+  
+  $\bigsqcap^{\mathsf{RLD}} \setcond{ S (f) }{a f
+  \in \mathbf{Rel}, S (f) \sqsupseteq E } \sqsupseteq E$.
+\end{proof}
+
+\begin{prop}
+  $\mu (E) \sqsubseteq E$ if $E$ is a reflexive and transitive binary
+  relation.
+\end{prop}
+
+\begin{proof}
+  $\mu (E) = \bigsqcap^{\mathsf{RLD}} \setcond{ f \in
+  \mathbf{Rel} }{ S (f) \sqsupseteq E
+  } \sqsubseteq \bigsqcap^{\mathsf{RLD}} \setcond{ S (f)
+  }{ f \in \mathbf{Rel}, S (f) \sqsupseteq E
+  } = E$.
+\end{proof}
+
+\begin{prop}
+  $S^{\ast} (\mu (E)) = E$ if $E$ is a reflexive and transitive binary
+  relation.
+\end{prop}
+
+\begin{proof}
+  $\setcond{ f }{ f \in \mathbf{Rel}, S (f)
+  \sqsupseteq E }$ is a filter base of $\mu (E)$. Thus $\setcond{ S
+  (f) }{ f \in \mathbf{Rel}, S (f)
+  \sqsupseteq E }$ is a filter base of $S^{\ast} (\mu (E))$.
+  
+  By properties of filter bases
+  \[ S^{\ast} (\mu (E)) = \bigsqcap^{\mathsf{RLD}} \setcond{ S (f)
+     }{ f \in \mathbf{Rel}, S (f)
+     \sqsupseteq E } = E. \]
+\end{proof}
