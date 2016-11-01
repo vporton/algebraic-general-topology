@@ -39,11 +39,13 @@ Every germ is a filter on $\mathbf{Set}$.
   The following are mutually inverse bijections between monovalued reloids $f
   : A \rightarrow B$ with $\dom f = \mathcal{X}$ and $\mathcal{X}$-germs
   $S$ of functions $A \rightarrow B$ for $\mathcal{X} \in \mathscr{F} A$:
-  \begin{itemize}
+  \begin{enumerate}
     \item $f \mapsto \up^{\mathbf{Set}} f$;
     \item $S \mapsto \left(\bigsqcap^{\mathsf{RLD}} S\right)|_{\mathcal{X}}$.
-  \end{itemize}
-\end{thm}
+  \end{enumerate}
+  The second bijection can also be written as
+  $S \mapsto \bigsqcap^{\mathsf{RLD}} S$ if $\card B\ne 1$ or
+      $S \mapsto s|_{\mathcal{X}}$ if $s\in S$.\end{thm}
 
 \begin{proof}
   We can assume that $A, B \neq \emptyset$ because otherwise the theorem is
@@ -102,21 +104,6 @@ Every germ is a filter on $\mathbf{Set}$.
      \up^{\mathbf{Rel}}  \bigsqcap^{\mathsf{RLD}}
      \up \bigsqcap^{\mathscr{F} (\mathbf{Set})} S_0 = \up
      \bigsqcap^{\mathscr{F} (\mathbf{Set})} S_0 = S_0 . \]
-\end{proof}
-
-\begin{prop}
-  The second bijection above can be also written:
-
-  \fxwarning{(Move into the main theorem?) It is equal to $s|_{\mathcal{X}}$ if $s\in S$.}
-  
-  \begin{itemize}
-    \item $S \mapsto \bigsqcap^{\mathsf{RLD}} S$ if $\card B\ne 1$ or
-      $S = \{s\} = s|_{\mathcal{X}}$ if $\card B=1$.
-  \end{itemize}
-\end{prop}
-
-\begin{proof}
-??
 \end{proof}
 
 \section{Power of filters}
