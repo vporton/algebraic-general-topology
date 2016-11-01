@@ -1,5 +1,111 @@
 \chapter{Power of filters}
 
+\section{Germs of functions}
+
+\begin{defn}
+  Functions $f, g \in \mathbf{Rel} (\Ob \mathcal{X} ; B)$
+  \emph{are of the same $\mathcal{X}$-germ} for a filter object
+  $\mathcal{X}$ iff there exists $X \in \up \mathcal{X}$ such that $f|_X
+  = g|_X$.
+\end{defn}
+
+\begin{prop}
+  Being of the same germ is an equivalence relation.
+\end{prop}
+
+\begin{proof}
+  
+  \begin{description}
+    \item[Reflexivity] Take arbitrary $X \in \up \mathcal{X}$.
+    
+    \item[Symmetry] Obvious.
+    
+    \item[Transitivity] Let $f|_X = g|_X$ and $g|_Y = h|_Y$. Then $f|_{X \cap
+    Y} = h|_{X \cap Y}$.
+  \end{description}
+\end{proof}
+
+\begin{defn}
+  A \emph{germ} is an equivalence class of being the same germ.
+\end{defn}
+
+\begin{obvious}
+Every germ is a filter on $\mathbf{Set}$.
+\end{obvious}
+
+\begin{thm}
+  Let $A$, $B$ be sets. Suppose $\card B \neq 1$.
+  
+  The following are mutually inverse bijections between monovalued reloids $f
+  : A \rightarrow B$ with $\dom f = \mathcal{X}$ and $\mathcal{X}$-germs
+  $S$ of functions $A \rightarrow B$ for $\mathcal{X} \in \mathscr{F} A$:
+  \begin{itemize}
+    \item $f \mapsto \up^{\mathbf{Set}} f$;
+    
+    \item $S \mapsto \bigsqcap^{\mathsf{RLD}} S$.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  We can assume that $A, B \neq \emptyset$ because otherwise the theorem is
+  obvious.
+  
+  First prove that $\up^{\mathbf{Set}} f$ is an
+  $\mathcal{X}$-germ. Really, $F \in \up^{\mathbf{Set}} f
+  \Leftrightarrow F \sqsupseteq f \Leftrightarrow F|_{\mathcal{X}} = f
+  \Leftrightarrow \exists X \in \up \mathcal{X} : F|_X \sqsupseteq f$;
+  thus $F, G \in \up^{\mathbf{Set}} f \Rightarrow \exists X \in
+  \up \mathcal{X} : F|_X \sqsupseteq f \wedge \exists Y \in \up
+  \mathcal{X} : G|_Y \sqsupseteq f \Rightarrow \exists X \in \up
+  \mathcal{X} : F|_{X \cap Y} \sqsupseteq f \wedge \exists Y \in \up
+  \mathcal{X} : G|_{X \cap Y} \sqsupseteq f \Rightarrow \exists Z \in
+  \up \mathcal{X} : (F|_Z \sqsupseteq f \wedge G|_Z \sqsupseteq f)
+  \Rightarrow \exists Z \in \up \mathcal{X} : (F \sqcap G) |_Z
+  \sqsupseteq f$ and $F \in \up^{\mathbf{Set}} f \wedge \exists
+  X \in \up \mathcal{X} : F|_X = G|_X \Rightarrow F \sqsupseteq f \wedge
+  F|_{\mathcal{X}} = G|_{\mathcal{X}} \Rightarrow G|_{\mathcal{X}} \sqsupseteq
+  f \Rightarrow G \in \up^{\mathbf{Set}} f$. We have proved
+  that $\up^{\mathbf{Set}} f$ is an equivalence class of the
+  suitable equivalence relation, that is $\up^{\mathbf{Set}} f$
+  is an $\mathcal{X}$-germ.
+  
+  That $\bigsqcap^{\mathsf{RLD}} S$ is a monovalued reloid is obvious.
+  We need to prove that $\im \bigsqcap^{\mathsf{RLD}} S =
+  \mathcal{X}$.
+  
+  If $\mathcal{X} = X$ then obviously $S$ has just one element $F$ and
+  $\im \bigsqcap^{\mathsf{RLD}} S = \im F = X =
+  \mathcal{X}$. Otherwise for every $X \in \up \mathcal{X}$ there are
+  elements $F$, $G$ of $S$ such that $\dom (F \sqcap G) \sqsubseteq X$
+  (using $\card B > 1$).
+  
+  By properties of generalized filter bases $X \times \top \sqsupseteq
+  \bigsqcap^{\mathsf{RLD}} S \Leftrightarrow \exists F, G \in S : X
+  \times \top \sqsupseteq F \sqcap G \Leftrightarrow X \sqsupseteq
+  \mathcal{X}$. Thus $\im \bigsqcap^{\mathsf{RLD}} S =
+  \mathcal{X}$.
+  
+  It remains to prove that our correspondences are mutually inverse.
+  
+  Let $f_0 : A \rightarrow B$ be a monovalued reloid and $\dom f =
+  \mathcal{X}$. Let $S = \up^{\mathbf{Set}} f$ and $f_1 =
+  \bigsqcap^{\mathsf{RLD}} S$. We need to prove $f_1 = f_0$. Really,
+  $f_1 \sqsupseteq f_0$ is obvious and $f_1 = \bigsqcap^{\mathsf{RLD}}
+  \up^{\mathbf{Set}} f_0 \sqsubseteq
+  \bigsqcap^{\mathsf{RLD}} \up^{\mathbf{Rel}} f_0$.
+  
+  Let $S_0$ be an $\mathcal{X}$-germ of functions $A \rightarrow B$. Let $f =
+  \bigsqcap^{\mathsf{RLD}} S_0$ and $S_1 =
+  \up^{\mathbf{Set}} f$. We need to prove $S_1 = S_0$. Really,
+  \[ S_1 = \up^{\mathbf{Set}}  \bigsqcap^{\mathsf{RLD}}
+     S_0 = \mathbf{Set} \cap \up^{\mathbf{Rel}} 
+     \bigsqcap^{\mathsf{RLD}} S_0 = \mathbf{Set} \cap
+     \up^{\mathbf{Rel}}  \bigsqcap^{\mathsf{RLD}}
+     \up \bigsqcap^{\mathscr{F} (\mathbf{Set})} S_0 = \up
+     \bigsqcap^{\mathscr{F} (\mathbf{Set})} S_0 = S_0 . \]
+\end{proof}
+\section{Power of filters}
+
 Let's define $\mathcal{Y}^{\mathcal{X}}$ for filters~$\mathcal{X}$,~$\mathcal{Y}$:
 
 First define $Y^{\mathcal{X}}$ for a set~$Y$:
@@ -25,3 +131,5 @@ near the bottom of page 141.  The operation of cartesian product with
 the cofinite filter on the natural numbers has no right adjoint,
 because it does not preserve infinite coproducts.''
 \url{http://matwbn.icm.edu.pl/ksiazki/fm/fm94/fm94115.pdf}
+
+But it is probably a braided closed monoidal category?
