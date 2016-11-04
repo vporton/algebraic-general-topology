@@ -1,0 +1,96 @@
+\chapter{Product of funcoids over a filter}
+
+The following definition is inspired by the usual definition of Tychonoff
+product of topological spaces.
+
+\begin{defn}
+  Let $f$ be an indexed family of funcoids. Let $\mathcal{F}$ be a filter on
+  $\dom f$.
+  \[ a \mathrel{\left[ \prod^{[\mathcal{F}]} f \right]} b \Leftrightarrow
+     \exists N \in \mathcal{F} \forall i \in N : \Pr^{\mathsf{RLD}}_i a
+     \suprel{f_i} \Pr^{\mathsf{RLD}}_i b \]
+  for atomic reloids $a$ and $b$.
+\end{defn}
+
+\begin{rem}
+  We are especially interested in the special case when $\mathcal{F}$ is the
+  cofinite filter. In this case $a \mathrel{\left[ \prod^{[\mathcal{F}]} f
+  \right]} b$ is defined by the condition that $\Pr^{\mathsf{RLD}}_i a
+  \suprel{f_i} \Pr^{\mathsf{RLD}}_i $ for an infinite number of
+  indexes $i$.
+\end{rem}
+
+\begin{obvious}
+$a \mathrel{\left[ \prod^{\suprel{ \top^{\mathscr{F} (\dom f)} }} f
+\right]} b \Leftrightarrow a \mathrel{\left[ \prod^{(A)} f \right]} b$.
+\end{obvious}
+
+\begin{prop}
+  $\neg \left( \mathcal{X} \suprel{f} \mathcal{Y} \right)$ implies $\neg
+  \left( X \suprel{f} Y \right)$ for some $X \in \up \mathcal{X}$, $Y
+  \in \up \mathcal{Y}$.
+\end{prop}
+
+\begin{proof}
+  Suppose $\neg \left( \mathcal{X} \suprel{f} \mathcal{Y} \right)$. Then
+  $\mathcal{Y} \asymp \supfun{f} \mathcal{X}$. Thus by separability of
+  core for filters $Y \asymp \supfun{f} \mathcal{X}$ for some $Y \in
+  \up \mathcal{Y}$, that is $\neg \left( \mathcal{X} \suprel{f} Y
+  \right)$. Apply this result twice.
+\end{proof}
+
+\begin{lem}
+  ~  
+  \[ \forall X \in \prod_{i \in D} \up a_i, Y \in \prod_{i \in D}
+     \up b_i \exists x \in \prod_{i \in D} \mathrm{atoms} \uparrow X_i,
+     y \in \prod_{i \in D} \mathrm{atoms} \uparrow Y_i \exists N \in
+     \mathcal{F} \forall j \in N : x_j \mathrel{[f_j]} y_j \]
+  implies $\exists N \in \mathcal{F} \forall i \in N : a_i \suprel{f_i}
+  b_i$.
+\end{lem}
+
+\begin{proof}
+  Suppose for the contrary $\neg \left( a_i \suprel{f_i} b_i \right)$ for
+  all $i \in N$ where $N \in \mathcal{F}$ (i.e. for an infinite number of
+  indexes if $\mathcal{F}$ is the cofinite filter). Then (lemma above) there
+  are $X_i \in \up a_i$ and $Y_i \in \up b_i$ such that $\neg
+  \left( X_i \mathrel{[f_j]^{\ast}} Y_i \right)$ for $i \in N$. Thus $\neg
+  \left( x_i \suprel{f_i} y_i \right)$ for $i \in N$, contrary to the
+  condition.
+\end{proof}
+
+\begin{prop}
+  The funcoid $\prod^{[\mathcal{F}]} f$ exists.
+\end{prop}
+
+\begin{proof}
+  We need to prove that
+  \[ \forall X \in \up a, Y \in \up b \exists x \in \atoms
+     \uparrow^{\mathsf{RLD}} X, y \in \atoms
+     \uparrow^{\mathsf{RLD}} Y : x \mathrel{\left[ \prod^{(A 2)} f
+     \right]} y \]
+  implies $a \mathrel{\left[ \prod^{[\mathcal{F}]} f \right]} b$.
+  
+  Equivalently transforming it: \fxwarning{More detailed proof.}
+  
+  $\forall X \in \up a, Y \in \up b \exists x \in \atoms
+  \uparrow^{\mathsf{RLD}} X, y \in \atoms
+  \uparrow^{\mathsf{RLD}} Y \\  
+  \exists N \in \mathcal{F} \forall i \in N : \Pr^{\mathsf{RLD}}_i x
+  \suprel{f_i} \Pr^{\mathsf{RLD}}_i y$; \\
+  $\forall X \in \up a, Y \in \up b \exists x \in \prod_{i \in
+  \dom f} \atoms \uparrow^{\mathsf{RLD}} X_i, y \in
+  \prod_{i \in \dom f} \atoms \uparrow^{\mathsf{RLD}} Y_i \\  
+  \exists N \in \mathcal{F} \forall i \in N : x_i \suprel{f_i} y_i$;
+
+  \[ \forall X \in \prod_{i \in D} \up a_i, Y \in \prod_{i \in D}
+     \up b_i \exists x \in \prod_{i \in D} \mathrm{atoms} \uparrow X_i,
+     y \in \prod_{i \in D} \mathrm{atoms} \uparrow Y_i \exists N \in
+     \mathcal{F} \forall j \in N : x_j \mathrel{[f_j]} y_j \]
+  where $D = \dom f$.
+  
+  Thus by the lemma $\exists N \in \mathcal{F} \forall i \in N : a_i
+  \suprel{f_i} b_i$, that is $a \suprel{\prod^{[\mathcal{F}]} f} b$.
+\end{proof}
+
+An interesting question is how product over the cofinite filter relates with compactness.
