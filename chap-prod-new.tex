@@ -94,3 +94,52 @@ $a \mathrel{\left[ \prod^{\suprel{ \top^{\mathscr{F} (\dom f)} }} f
 \end{proof}
 
 \fxnote{TODO: when $\Pr_j \prod^{[\mathcal{F}]}_{i\in D} a_i = a_j$?}
+
+\section{More on product of reloids}
+
+\fxwarning{Move this to a more appropriate place.}
+
+\begin{defn}
+  $\prod^{(Y)}_{i \in \dom f} f = \prod^{(A)}_{i \in \dom f}
+  \tofcd f$ for an indexed family~$f$ of reloids.
+\end{defn}
+
+\begin{prop}
+  \[ a \mathrel{\left[ \prod^{(Y)}_{i \in \dom f} f \right]} b
+  \Leftrightarrow \forall i \in \dom f : f_i \nasymp
+  \Pr^{\mathsf{RLD}}_i a \times^{\mathsf{RLD}}
+  \Pr^{\mathsf{RLD}}_i b. \]
+\end{prop}
+
+\begin{proof}
+  $f_i \nasymp \dom a \times^{\mathsf{RLD}} \dom b
+  \Leftrightarrow \tofcd f_i \sqsupseteq
+  \Pr^{\mathsf{RLD}}_i a \times^{\mathsf{FCD}}
+  \Pr^{\mathsf{RLD}}_i b \Leftrightarrow a
+  \mathrel{[\tofcd f_i]} b$.
+\end{proof}
+
+\begin{example}
+  The funcoid $p$ described by the formula (for atomic reloids $a$ and $b$)
+  \[ a \mathrel{\mathrel{p}} b \Leftrightarrow \forall i \in \dom f : f_i
+     \sqsupseteq \Pr^{\mathsf{RLD}}_i a \times^{\mathsf{RLD}}
+     \Pr^{\mathsf{RLD}}_i b \]
+  does not exist (in general), even if we restrict to $2$-indexed families
+  only.
+\end{example}
+
+\begin{proof}
+  For the case if $f = \llbracket v ; w \rrbracket$ is a $2$-indexed family of
+  reloids, the formula which we need to disprove takes the form:
+  \[ a \mathrel{\mathrel{p}} b \Leftrightarrow v \sqsupseteq \dom a
+     \times^{\mathsf{RLD}} \dom b \wedge w \sqsupseteq \im
+     a \times^{\mathsf{RLD}} \im b. \]
+  Take $v = w = 1^{\mathbf{Rel}}$ on an infinite set. Suppose for the
+  contrary $p$ exists and is a funcoid. Then
+  \[ \forall X \in \up a, Y \in \up b \exists x \in \atoms
+     \uparrow X, y \in \atoms \uparrow Y : x \mathrel{\mathrel{p}} y \Rightarrow
+     a \mathrel{\mathrel{p}} b. \]
+  For a counter-example take $a = b$ to be a nontrivial ultrafilter. Then for
+  every $X \in \up a$, $Y \in \up b$ take $x = y$ to be singletons
+  on $X \cap Y$. We have $x \mathrel{\mathrel{p}} y$, but not $a \mathrel{\mathrel{p}} b$.
+\end{proof}
