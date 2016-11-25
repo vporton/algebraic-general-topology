@@ -1,0 +1,104 @@
+\chapter{Extending Galois connections between funcoids and reloids}
+
+\begin{defn}
+~
+\begin{enumerate}
+\item $\Phi_{\ast} f = \lambda b \in \mathfrak{B}: \bigsqcup \setcond{ x \in
+\mathfrak{A} }{ f x \sqsubseteq b }$;
+\item $\Phi^{\ast} f = \lambda b \in \mathfrak{A}: \bigsqcap \setcond{ x \in
+\mathfrak{B} }{ f x \sqsupseteq b }$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+  ~
+  \begin{enumerate}
+    \item If $f$ has upper adjoint then $\Phi_{\ast} f$ is the upper adjoint
+    of $f$.
+    
+    \item If $f$ has lower adjoint then $\Phi^{\ast} f$ is the lower adjoint
+    of $f$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  By theorem \bookref{adj-max}.
+\end{proof}
+
+\begin{lem}
+  $\Phi^{\ast} \torldout = \tofcd$.
+\end{lem}
+
+\begin{proof}
+  $(\Phi^{\ast} \torldout) f = \bigsqcap \setcond{ g
+  \in \mathsf{FCD} }{
+ \torldout g \sqsupseteq f } =
+  \bigsqcap^{\mathsf{FCD}} \setcond{ g \in \mathbf{Rel}
+  }{ \torldout g \sqsupseteq
+  f } = \bigsqcap^{\mathsf{FCD}} \setcond{ g \in
+  \mathbf{Rel} }{ g \sqsupseteq f } =
+  \tofcd f$.
+\end{proof}
+
+\begin{lem}
+  $\Phi_{\ast} \torldout \neq
+  \tofcd$.
+\end{lem}
+
+\begin{proof}
+  $(\Phi_{\ast} \torldout) f = \bigsqcup \setcond{ g
+  \in \mathsf{FCD} }{
+ \torldout g \sqsubseteq f }$
+  
+  $(\Phi_{\ast} \torldout) \bot \neq \bot$.
+\end{proof}
+
+\begin{lem}
+  $\Phi^{\ast}  \tofcd = \id$.
+\end{lem}
+
+\begin{proof}
+  $(\Phi^{\ast}  \tofcd) f = \bigsqcap \setcond{ g \in
+  \mathsf{RLD} }{ \tofcd g
+  \sqsupseteq f } = \bigsqcap \setcond{ g \in \mathbf{Rel}
+  }{ \tofcd g \sqsupseteq f } =
+  \bigsqcap \setcond{ g \in \mathbf{Rel} }{ g
+  \sqsupseteq f } = f$.
+\end{proof}
+
+\begin{lem}
+  $\Phi_{\ast} \torldin = \tofcd$.
+\end{lem}
+
+\begin{proof}
+  $(\Phi_{\ast} \torldin) f = \bigsqcup \setcond{ g
+  \in \mathsf{FCD} }{
+ \torldin g \sqsubseteq f } = \bigsqcup
+  \setcond{ g \in \mathsf{FCD} }{ g \sqsubseteq
+  \tofcd f } = \tofcd f$.
+\end{proof}
+
+\begin{thm}
+The picture at figure~\ref{dia:fcd-rld-gal} is a diagram (in category~$\mathbf{Set}$).
+All nodes of this diagram are distinct.
+\begin{figure}
+  \caption{\label{dia:fcd-rld-gal}}
+  \begin{tikzcd}
+    \arrow[loop left]{l}{\Phi_{\ast}} \id \arrow[loop right]{r}{\Phi^{\ast}} \\
+    \tofcd \arrow{u}{\Phi^{\ast}}
+      \arrow[leftrightarrow, shift left=1.0ex]{r}{\Phi_{\ast}} &
+      \torldin \arrow[shift left=1.0ex]{l}{\Phi^{\ast}} \\
+    \torldout \arrow{u}{\Phi^{\ast}} \arrow{d}{\Phi_{\ast}} \\
+    \text{other}
+  \end{tikzcd}
+\end{figure}
+\end{thm}
+
+\begin{proof}
+Follows from the above lemmas.
+\end{proof}
+
+\begin{question}
+What happens if we keep applying $\Phi^{\ast}$ and $\Phi_{\ast}$ to the node ``other''?
+Will we this way get a finite or infinite set?
+\end{question}
