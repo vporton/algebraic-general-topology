@@ -54,16 +54,16 @@
 \end{proof}
 
 \begin{lem}
-  $\Phi^{\ast}  \tofcd = \id$.
+  $\Phi^{\ast}  \tofcd = \torldout$.
 \end{lem}
 
 \begin{proof}
   $(\Phi^{\ast}  \tofcd) f = \bigsqcap \setcond{ g \in
   \mathsf{RLD} }{ \tofcd g
-  \sqsupseteq f } = \bigsqcap \setcond{ g \in \mathbf{Rel}
+  \sqsupseteq f } = \bigsqcap^{\mathsf{RLD}} \setcond{ g \in \mathbf{Rel}
   }{ \tofcd g \sqsupseteq f } =
-  \bigsqcap \setcond{ g \in \mathbf{Rel} }{ g
-  \sqsupseteq f } = f$.
+  \bigsqcap^{\mathsf{RLD}} \setcond{ g \in \mathbf{Rel} }{ g
+  \sqsupseteq f } = \torldout f$.
 \end{proof}
 
 \begin{lem}
@@ -84,11 +84,11 @@ All nodes of this diagram are distinct.
 \begin{figure}
   \caption{\label{dia:fcd-rld-gal}}
   \begin{tikzcd}
-    \arrow[loop left]{l}{\Phi_{\ast}} \id \arrow[loop right]{r}{\Phi^{\ast}} \\
-    \tofcd \arrow{u}{\Phi^{\ast}}
+    %\arrow[loop left]{l}{\Phi_{\ast}} \id \arrow[loop right]{r}{\Phi^{\ast}} \\
+    \tofcd %\arrow{u}{\Phi^{\ast}}
       \arrow[leftrightarrow, shift left=1.0ex]{r}{\Phi_{\ast}} &
       \torldin \arrow[shift left=1.0ex]{l}{\Phi^{\ast}} \\
-    \torldout \arrow{u}{\Phi^{\ast}} \arrow{d}{\Phi_{\ast}} \\
+    \torldout \arrow[leftrightarrow]{u}{\Phi^{\ast}} \arrow{d}{\Phi_{\ast}} \\
     \text{other}
   \end{tikzcd}
 \end{figure}
