@@ -17,7 +17,7 @@ coatomic poset.
   Proposition 531.
 \end{proof}
 
-Thus for primary filtrators I will denote it just $\Omega_1$.
+Thus for primary filtrators I will denote it just $\Omega$.
 
 \begin{prop}
   Let $\mathfrak{A}$ be a subset of $\subsets U$. Let it be a
@@ -25,16 +25,16 @@ Thus for primary filtrators I will denote it just $\Omega_1$.
   seems unnecessary.} Let also every non-coempty cofinite set lies in
   $\mathfrak{A}$. Then
   \begin{equation}
-    \corestar \Omega_1 = \setcond{ Y \in \mathfrak{A} }{
+    \corestar \Omega = \setcond{ Y \in \mathfrak{A} }{
     \card \atoms^{\mathfrak{A}} Y \geq \omega } .
     \label{d-cofin}
   \end{equation}
 \end{prop}
 
 \begin{proof}
-  $\Omega_1$ exists by corollary 496.
+  $\Omega$ exists by corollary 496.
   
-  $Y \in \corestar \Omega_1 \Leftrightarrow Y \nasymp^{\mathscr{F}} 
+  $Y \in \corestar \Omega \Leftrightarrow Y \nasymp^{\mathscr{F}} 
   \bigsqcap^{\mathscr{F}}_{X \in \operatorname{coatoms}^{\mathfrak{A}}} X
   \Leftrightarrow \text{(by properties of filter bases)} \Leftrightarrow
   \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} : Y
@@ -57,5 +57,124 @@ Thus for primary filtrators I will denote it just $\Omega_1$.
 \end{proof}
 
 \begin{cor}
-$\Omega_1^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A;B)$ where $A\times B$ is an infinite set).
+$\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A;B)$ where $A\times B$ is an infinite set).
 \end{cor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{prop}
+  $\up \Omega = \setcond{ \bigsqcap S }{ S \in
+  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} }$.
+\end{prop}
+
+\begin{proof}
+  Because $\setcond{ \bigsqcap S }{ S \in
+  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} }$ is a
+  filter.
+\end{proof}
+
+\begin{cor}
+  $\up \Omega^{\mathsf{FCD}} = \up
+  \Omega^{\mathsf{RLD}}$.
+\end{cor}
+
+\begin{prop}
+  ~  
+  \begin{enumerate}
+    \item $\langle \Omega^{\mathsf{FCD}} \rangle \{ x \} = \Omega^U$;
+    
+    \item $\langle \Omega^{\mathsf{FCD}} \rangle p = \top$ for every
+    nontrivial atomic filter $p$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  $\langle \Omega^{\mathsf{FCD}} \rangle \{ x \} =
+  \bigsqcap^{\mathscr{F}}_{y \in U} (U \setminus \{ y \}) = \Omega^U$;
+  $\langle \Omega^{\mathsf{FCD}} \rangle p = \bigsqcap^{\mathscr{F}}_{y
+  \in U} \top = \top$.
+\end{proof}
+
+\begin{prop}
+  $\tofcd \Omega^{\mathsf{RLD}} =
+  \Omega^{\mathsf{FCD}}$.
+\end{prop}
+
+\begin{proof}
+  $\tofcd \Omega^{\mathsf{RLD}} =
+  \bigsqcap^{\mathsf{FCD}} \up \Omega^{\mathsf{RLD}} =
+  \Omega^{\mathsf{FCD}}$.
+\end{proof}
+
+\begin{prop}
+  $(\mathsf{RLD})_{\operatorname{out}} \Omega^{\mathsf{FCD}} =
+  \Omega^{\mathsf{RLD}}$.
+\end{prop}
+
+\begin{proof}
+  $(\mathsf{RLD})_{\operatorname{out}} \Omega^{\mathsf{FCD}} =
+  \bigsqcap^{\mathsf{RLD}} \up \Omega^{\mathsf{FCD}} =
+  \bigsqcap^{\mathsf{RLD}} \up \Omega^{\mathsf{RLD}} =
+  \Omega^{\mathsf{RLD}}$.
+\end{proof}
+
+\begin{prop}
+  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
+  \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
+  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right)$.
+\end{prop}
+
+\begin{proof}
+  \fxwarning{Check the proof.}
+  
+  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \bigsqcup
+  \setcond{ a \times^{\mathsf{RLD}} b }{ a \in
+  \atoms^{\mathscr{F}}, b \in \atoms^{\mathscr{F}}, a
+  \times^{\mathsf{FCD}} b \sqsubseteq \Omega^{\mathsf{FCD}}
+  } = \bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}} b
+  }{ \alpha \in A, b \in \atoms^{\mathscr{F}}
+  \Omega } \sqcup \bigsqcup \setcond{ a \times^{\mathsf{RLD}} \{
+  \beta \} }{ a \in \atoms^{\mathscr{F}}
+  \Omega, \beta \in B } = \bigsqcup \setcond{ \{ \alpha \}
+  \times^{\mathsf{RLD}} \Omega^{\mathscr{F}} }{
+  \alpha \in A } \sqcup \bigsqcup \setcond{
+  \Omega^{\mathscr{F}} \times^{\mathsf{RLD}} \{ \beta \} }{
+  \hspace{1em} \beta \in B }$
+  
+  $\up \bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}}
+  \Omega^{\mathscr{F}} }{ \alpha \in A } =
+  \bigcap \setcond{ \up \left( \{ \alpha \} \times^{\mathsf{RLD}}
+  \Omega^{\mathscr{F}} \right) }{ \alpha \in A
+  } = \bigcap \setcond{ \up \left( \{ \alpha \}
+  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} \right) }{
+  \alpha \in A } = \up \bigsqcup \setcond{ \{ \alpha
+  \} \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} }{
+  \alpha \in A } = \up \left( \top
+  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} \right)$.
+  
+  $\bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}}
+  \Omega^{\mathscr{F}} }{ \alpha \in A } =
+  \bigsqcap^{\mathsf{RLD}} \up \left( \top
+  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} \right) =
+  (\mathsf{RLD})_{\operatorname{out}}  \left( \top \times^{\mathsf{FCD}}
+  \Omega^{\mathscr{F}} \right) = \top \times^{\mathsf{RLD}}_F
+  \Omega^{\mathscr{F}}$.
+  
+  So $\bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}}
+  \Omega^{\mathscr{F}} }{ \alpha \in A } =
+  \top \times^{\mathsf{RLD}} \Omega^{\mathscr{F}}$ and thus
+  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
+  \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
+  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right)$
+  
+  because
+  
+  $f \sqsupseteq \{ \alpha \} \times^{\mathsf{RLD}}
+  \Omega^{\mathscr{F}} \Leftrightarrow \rsupfun{f} \{ \alpha \}
+  \sqsupseteq \Omega^{\mathscr{F}} \Leftrightarrow f \sqsupseteq \{ \alpha \}
+  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}}$.
+\end{proof}
+
+\begin{question}
+  Can the right part of the formula in the last proposition be simplified?
+\end{question}
