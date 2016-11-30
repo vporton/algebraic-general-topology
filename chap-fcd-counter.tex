@@ -302,8 +302,8 @@ directly without referring to funcoidal product.\end{rem}
 \index{product!oblique}\emph{Oblique products} of filters $\mathcal{A}$
 and $\mathcal{B}$ are defined as
 \begin{align*}
-\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow B};\\
-\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\mathcal{B}}.
+\mathcal{A}\ltimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\exists B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\mathcal{A}\times^{\mathsf{FCD}}\uparrow B};\\
+\mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\exists A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\mathcal{B}}.
 \end{align*}
 \end{defn}
 \begin{prop}
@@ -313,7 +313,7 @@ for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
 ~
 \begin{align*}
 \mathcal{A}\ltimes\mathcal{B} & \sqsubseteq\\
-\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\forall A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\uparrow B} & \sqsubseteq\\
+\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\exists A\in\up\mathcal{A},B\in\up\mathcal{B}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\uparrow B} & \sqsubseteq\\
 \bigsqcap\setcond{\uparrow A\times^{\mathsf{RLD}}\uparrow B}{A\in\up\mathcal{A},B\in\up\mathcal{B}} & =\\
 \mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}.\\
 \mathcal{A}\ltimes\mathcal{B} & \sqsupseteq\\
