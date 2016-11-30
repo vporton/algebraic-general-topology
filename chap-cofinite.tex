@@ -1,0 +1,57 @@
+\chapter{Generalized cofinite filters}
+
+The following is a straightforward generalization of cofinite filter on a
+coatomic poset.
+
+\begin{defn}
+  $\Omega_{1 a} = \bigsqcap^{\mathscr{F}}_{X \in
+  \operatorname{coatoms}^{\mathfrak{A}}} X$; $\Omega_{1 b} =
+  \bigsqcap^{\mathscr{F}}_{X \in \operatorname{coatoms}^{\mathscr{F}}} X$.
+\end{defn}
+
+\begin{prop}
+  For primary filtrators $\Omega_{1 a} = \Omega_{1 b}$.
+\end{prop}
+
+\begin{proof}
+  Proposition 531.
+\end{proof}
+
+Thus for primary filtrators I will denote it just $\Omega_1$.
+
+\begin{prop}
+  Let $\mathfrak{A}$ be a subset of $\subsets U$. Let it be a
+  meet-semilattice with greatest element \fxnote{existence of greatest element
+  seems unnecessary.} Let also every non-coempty cofinite set lies in
+  $\mathfrak{A}$. Then
+  \begin{equation}
+    \corestar \Omega_1 = \setcond{ Y \in \mathfrak{A} }{
+    \card \atoms^{\mathfrak{A}} Y \geq \omega } .
+    \label{d-cofin}
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  $\Omega_1$ exists by corollary 496.
+  
+  $Y \in \corestar \Omega_1 \Leftrightarrow Y \nasymp^{\mathscr{F}} 
+  \bigsqcap^{\mathscr{F}}_{X \in \operatorname{coatoms}^{\mathfrak{A}}} X
+  \Leftrightarrow \text{(by properties of filter bases)} \Leftrightarrow
+  \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} : Y
+  \nasymp^{\mathscr{F}} \bigsqcap^{\mathscr{F}} S \Leftrightarrow
+  \text{(theorem 512)} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
+  \operatorname{coatoms}^{\mathfrak{A}} : Y \nasymp \bigsqcap S \Leftrightarrow
+  \forall K \in \subsets_{\operatorname{fin}} U : Y \setminus K \neq \emptyset
+  \Leftrightarrow \card Y \geq \omega \Leftrightarrow \card
+  \atoms^{\mathfrak{A}} Y \geq \omega$.
+  \fxwarning{Define $\subsets_{\operatorname{fin}}$.}
+\end{proof}
+
+\begin{cor}
+  Formula (\ref{d-cofin}) holds for both reloids and funcoids.
+\end{cor}
+
+\begin{proof}
+  For reloiods it's straightforward, for funcoids take that they are
+  isomorphic to filters on lattice $\Gamma$.
+\end{proof}
