@@ -119,73 +119,26 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A;B)$ where $
 \end{proof}
 
 \begin{prop}
-  \[ (\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
-  \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
-  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right) =
-  \left(
-  \top \rtimes^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
-  \left( \Omega^{\mathscr{F}} \ltimes^{\mathsf{RLD}}_F \top \right). \]
+  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \Omega^{\mathsf{RLD}}$.
 \end{prop}
 
 \begin{proof}
-  \fxerror{There is an error in this proof.}
-  
-  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \bigsqcup
+  \begin{multline*}
+  (\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \bigsqcup
   \setcond{ a \times^{\mathsf{RLD}} b }{ a \in
   \atoms^{\mathscr{F}}, b \in \atoms^{\mathscr{F}}, a
   \times^{\mathsf{FCD}} b \sqsubseteq \Omega^{\mathsf{FCD}}
-  } = 
-  \bigsqcup \setcond{ a\times^{\mathsf{RLD}} b}{ a \in \atoms^{\mathscr{F}} \Omega, b \in \atoms^{\mathscr{F}} \Omega } \sqcup
-  \bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}} b
-  }{ \alpha \in A, b \in \atoms^{\mathscr{F}}
-  \Omega } \sqcup \bigsqcup \setcond{ a \times^{\mathsf{RLD}} \{
-  \beta \} }{ a \in \atoms^{\mathscr{F}}
-  \Omega, \beta \in B } = ?? = \bigsqcup \setcond{ \{ \alpha \}
-  \times^{\mathsf{RLD}} \Omega^{\mathscr{F}} }{
-  \alpha \in A } \sqcup \bigsqcup \setcond{
-  \Omega^{\mathscr{F}} \times^{\mathsf{RLD}} \{ \beta \} }{
-  \hspace{1em} \beta \in B }$
-  
-  $\up \bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}}
-  \Omega^{\mathscr{F}} }{ \alpha \in A } =
-  \bigcap \setcond{ \up \left( \{ \alpha \} \times^{\mathsf{RLD}}
-  \Omega^{\mathscr{F}} \right) }{ \alpha \in A
-  } = \bigcap \setcond{ \up \left( \{ \alpha \}
-  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} \right) }{
-  \alpha \in A } = \up \bigsqcup \setcond{ \{ \alpha
-  \} \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} }{
-  \alpha \in A } = \up \left( \top
-  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} \right)$.
-  
-  $\bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}}
-  \Omega^{\mathscr{F}} }{ \alpha \in A } =
-  \bigsqcap^{\mathsf{RLD}} \up \left( \top
-  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}} \right) =
-  (\mathsf{RLD})_{\operatorname{out}}  \left( \top \times^{\mathsf{FCD}}
-  \Omega^{\mathscr{F}} \right) = \top \times^{\mathsf{RLD}}_F
-  \Omega^{\mathscr{F}}$.
-  
-  So $\bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}}
-  \Omega^{\mathscr{F}} }{ \alpha \in A } =
-  \top \times^{\mathsf{RLD}} \Omega^{\mathscr{F}}$ and thus
-  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
-  \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
-  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right)$
-  because
-  $f \sqsupseteq \{ \alpha \} \times^{\mathsf{RLD}}
-  \Omega^{\mathscr{F}} \Leftrightarrow \rsupfun{f} \{ \alpha \}
-  \sqsupseteq \Omega^{\mathscr{F}} \Leftrightarrow f \sqsupseteq \{ \alpha \}
-  \times^{\mathsf{FCD}} \Omega^{\mathscr{F}}$.
-  
-  $\left(
-  \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
-  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right) =
-  \left(
-  \top \rtimes^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
-  \left( \Omega^{\mathscr{F}} \ltimes^{\mathsf{RLD}}_F \top \right)$
-  follows from properties of oblique products.
+  } = \\
+  \bigsqcup \setcond{ a \times^{\mathsf{RLD}} b }{
+  a \in \atoms^{\mathscr{F}}, b \in
+  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both atomic} } = \\
+  \bigsqcup \setcond{ \bigsqcup \atoms (a \times^{\mathsf{RLD}} b)
+  }{ a \in \atoms^{\mathscr{F}}, b \in
+  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both atomic} } = \\
+  \bigsqcup \bigcup \setcond{ \atoms (a \times^{\mathsf{RLD}} b) }{
+  a \in \atoms^{\mathscr{F}}, b \in
+  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both atomic} } = \\
+  \bigsqcup \left( \text{nontrivial atomic reloids under $A \times B$} \right) =
+  \Omega^{\mathsf{RLD}}.
+  \end{multline*}
 \end{proof}
-
-\begin{question}
-  Can the right part of the formula in the last proposition be simplified?
-\end{question}
