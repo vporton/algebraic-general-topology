@@ -306,6 +306,25 @@ and $\mathcal{B}$ are defined as
 \mathcal{A}\rtimes\mathcal{B} & =\bigsqcap\setcond{\uparrow^{\mathsf{RLD}}f}{f\in\mathbf{Rel}(\Base(\mathcal{A});\Base(\mathcal{B})),\exists A\in\up\mathcal{A}:\uparrow^{\mathsf{FCD}}f\sqsupseteq\uparrow A\times^{\mathsf{FCD}}\mathcal{B}}.
 \end{align*}
 \end{defn}
+
+\begin{prop}
+  ~
+  \begin{enumerate}
+    \item $\mathcal{A} \ltimes B = \mathcal{A} \times^{\mathsf{RLD}}_F
+    B$ if $\mathcal{A}$ and $B$ are filters and $B$ is principal.
+    
+    \item $A \rtimes \mathcal{B} = A \times^{\mathsf{RLD}}_F
+    \mathcal{B}$ if $A$ and $\mathcal{B}$ are filters and $A$ is principal.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  $A \rtimes \mathcal{B} = \bigsqcap^{\mathsf{RLD}} \setcond{ f
+  }{ f \in \mathbf{Rel}, f \sqsupseteq A
+  \times^{\mathsf{FCD}} \mathcal{B} } = A
+  \times^{\mathsf{RLD}}_F \mathcal{B}$. The other is analogous.
+\end{proof}
+
 \begin{prop}
 $\mathcal{A}\times_{F}^{\mathsf{RLD}}\mathcal{B}\sqsubseteq\mathcal{A}\ltimes\mathcal{B}\sqsubseteq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}$
 for every filters $\mathcal{A}$, $\mathcal{B}$.\end{prop}
