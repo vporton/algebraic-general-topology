@@ -128,17 +128,19 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A;B)$ where $
 \end{prop}
 
 \begin{proof}
-  \fxwarning{Check the proof.}
+  \fxerror{There is an error in this proof.}
   
   $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \bigsqcup
   \setcond{ a \times^{\mathsf{RLD}} b }{ a \in
   \atoms^{\mathscr{F}}, b \in \atoms^{\mathscr{F}}, a
   \times^{\mathsf{FCD}} b \sqsubseteq \Omega^{\mathsf{FCD}}
-  } = \bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}} b
+  } = 
+  \bigsqcup \setcond{ a\times^{\mathsf{RLD}} b}{ a \in \atoms^{\mathscr{F}} \Omega, b \in \atoms^{\mathscr{F}} \Omega } \sqcup
+  \bigsqcup \setcond{ \{ \alpha \} \times^{\mathsf{RLD}} b
   }{ \alpha \in A, b \in \atoms^{\mathscr{F}}
   \Omega } \sqcup \bigsqcup \setcond{ a \times^{\mathsf{RLD}} \{
   \beta \} }{ a \in \atoms^{\mathscr{F}}
-  \Omega, \beta \in B } = \bigsqcup \setcond{ \{ \alpha \}
+  \Omega, \beta \in B } = ?? = \bigsqcup \setcond{ \{ \alpha \}
   \times^{\mathsf{RLD}} \Omega^{\mathscr{F}} }{
   \alpha \in A } \sqcup \bigsqcup \setcond{
   \Omega^{\mathscr{F}} \times^{\mathsf{RLD}} \{ \beta \} }{
