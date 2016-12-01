@@ -119,9 +119,12 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A;B)$ where $
 \end{proof}
 
 \begin{prop}
-  $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
+  \[ (\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
   \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
-  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right)$.
+  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right) =
+  \left(
+  \top \rtimes^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
+  \left( \Omega^{\mathscr{F}} \ltimes^{\mathsf{RLD}}_F \top \right). \]
 \end{prop}
 
 \begin{proof}
@@ -166,13 +169,19 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A;B)$ where $
   $(\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \left(
   \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
   \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right)$
-  
   because
-  
   $f \sqsupseteq \{ \alpha \} \times^{\mathsf{RLD}}
   \Omega^{\mathscr{F}} \Leftrightarrow \rsupfun{f} \{ \alpha \}
   \sqsupseteq \Omega^{\mathscr{F}} \Leftrightarrow f \sqsupseteq \{ \alpha \}
   \times^{\mathsf{FCD}} \Omega^{\mathscr{F}}$.
+  
+  $\left(
+  \top \times^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
+  \left( \Omega^{\mathscr{F}} \times^{\mathsf{RLD}}_F \top \right) =
+  \left(
+  \top \rtimes^{\mathsf{RLD}}_F \Omega^{\mathscr{F}} \right) \sqcup
+  \left( \Omega^{\mathscr{F}} \ltimes^{\mathsf{RLD}}_F \top \right)$
+  follows from properties of oblique products.
 \end{proof}
 
 \begin{question}
