@@ -48,7 +48,7 @@ There is a $\beta$-thick Rel-morphism which is not $\alpha$-thick.\end{example}
 Consider the $\mathbf{Rel}$-morphism on $[0;1]$ with the graph on
 figure~\ref{fig:thick-counterexample}:
 \[
-\Gamma=\setcond{(x;x)}{x\in[0;1]}\cup\setcond{(x;0)}{x\in[0;1]}\cup\setcond{(0;x)}{x\in[0;1]}.
+\Gamma=\setcond{(x,x)}{x\in[0;1]}\cup\setcond{(x,0)}{x\in[0;1]}\cup\setcond{(0,x)}{x\in[0;1]}.
 \]
 \begin{figure}[ht]
 \begin{tikzpicture}
@@ -72,8 +72,8 @@ that every set $A$ such that $A\times A\subseteq\Gamma$ is finite.
 
 Suppose for the contrary that $A$ is infinite. Then $A$ contains
 more than one non-zero points $y$, $z$ ($y\ne z$). Without loss
-of generality $y<z$. So we have that $(y;z)$ is not of the form
-$(y;y)$ nor $(0;y)$ nor $(y;0)$. Therefore $A\times A$ isn't a
+of generality $y<z$. So we have that $(y,z)$ is not of the form
+$(y,y)$ nor $(0,y)$ nor $(y,0)$. Therefore $A\times A$ isn't a
 subset of $\Gamma$.
 \end{proof}
 
@@ -164,7 +164,7 @@ specifying whether it is $\alpha$ or $\beta$).
 
 \section{Relationships with other properties}
 \begin{thm}
-Let $\mu$ and $\nu$ be endoreloids. Let $f$ be a principal $\continuous'(\mu;\nu)$
+Let $\mu$ and $\nu$ be endoreloids. Let $f$ be a principal $\continuous'(\mu,\nu)$
 continuous, monovalued, surjective reloid. Then if $\mu$ is $\beta$-totally
 bounded then $\nu$ is also $\beta$-totally bounded.\end{thm}
 \begin{proof}
@@ -183,10 +183,10 @@ We claim $\rsupfun{\GR F}\rsupfun{\varphi}A=\Ob\nu$.
 Indeed let $y\in\Ob\nu$ be an arbitrary point. Since $\varphi$ is
 surjective, there exists $x\in\Ob\mu$ such that $\varphi x=y$. Since
 $\rsupfun{\GR E}A=\Ob\mu$ there exists $a\in A$ such that $a\mathrel{(\GR E)}x$
-and thus $a\mathrel{(\varphi^{-1}\circ F\circ\varphi)}x$. So $(\varphi a;y)=(\varphi a;\varphi x)\in\GR F$.
+and thus $a\mathrel{(\varphi^{-1}\circ F\circ\varphi)}x$. So $(\varphi a,y)=(\varphi a,\varphi x)\in\GR F$.
 Therefore $y\in\rsupfun{\GR F}\rsupfun{\varphi}A$.\end{proof}
 \begin{thm}
-Let $\mu$ and $\nu$ be endoreloids. Let $f$ be a principal $\continuous''(\mu;\nu)$
+Let $\mu$ and $\nu$ be endoreloids. Let $f$ be a principal $\continuous''(\mu,\nu)$
 continuous, surjective reloid. Then if $\mu$ is $\alpha$-totally
 bounded then $\nu$ is also $\alpha$-totally bounded.\end{thm}
 \begin{proof}

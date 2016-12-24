@@ -533,9 +533,9 @@ for every morphisms $f_{1}$, $g_{1}$, $f_{2}$, $g_{2}$ such that
 $\Src f_{1}=\Src f_{2}$ and $\Dst f_{1}=\Dst f_{2}=\Src g_{1}=\Src g_{2}$
 and $\Dst g_{1}=\Dst g_{2}$.
 \end{defn}
-I will denote lattice operations on a $\Hom$-set $C(A;B)$ of a category
+I will denote lattice operations on a $\Hom$-set $C(A,B)$ of a category
 (or any directed multigraph) like $\sqcup^{C}$ instead of writing
-$\sqcup^{C(A;B)}$ explicitly.
+$\sqcup^{C(A,B)}$ explicitly.
 
 
 \subsection{Dagger categories}
@@ -866,22 +866,22 @@ For simplicity we will deal with small sets (members of a Grothendieck
 universe). We will denote the Grothendieck universe (aka \emph{universal
 set}) as $\mho$.
 
-I will denote a tuple of $n$ elements like $\left\llbracket a_{0};\ldots;a_{n-1}\right\rrbracket $.
+I will denote a tuple of $n$ elements like $\left\llbracket a_{0},\ldots,a_{n-1}\right\rrbracket $.
 By definition
 \[
-\left\llbracket a_{0};\ldots;a_{n-1}\right\rrbracket =\{(0;a_{0}),\ldots,(n-1;a_{n-1})\}.
+\left\llbracket a_{0},\ldots,a_{n-1}\right\rrbracket =\{(0,a_{0}),\ldots,(n-1,a_{n-1})\}.
 \]
 
 
-Note that an ordered pair $(a;b)$ is not the same as the tuple $\left\llbracket a;b\right\rrbracket $
+Note that an ordered pair $(a,b)$ is not the same as the tuple $\left\llbracket a,b\right\rrbracket $
 of two elements. (However, we will use them interchangeably.)
 \begin{defn}
-\index{relation!anchored}An \emph{anchored relation} is a tuple $\left\llbracket n;r\right\rrbracket $
+\index{relation!anchored}An \emph{anchored relation} is a tuple $\left\llbracket n,r\right\rrbracket $
 where $n$ is an index set and $r$ is an $n$-ary relation.
 \end{defn}
-\index{graph!of anchored relation}For an anchored relation $\arity\left\llbracket n;r\right\rrbracket =n$.
-The graph\footnote{It is unrelated with graph theory.} of $\left\llbracket n;r\right\rrbracket $
-is defined as follows: $\GR\left\llbracket n;r\right\rrbracket =r$.
+\index{graph!of anchored relation}For an anchored relation $\arity\left\llbracket n,r\right\rrbracket =n$.
+The graph\footnote{It is unrelated with graph theory.} of $\left\llbracket n,r\right\rrbracket $
+is defined as follows: $\GR\left\llbracket n,r\right\rrbracket =r$.
 \begin{defn}
 $\Pr_{i}f$ is a function defined by the formula
 \[
@@ -891,7 +891,7 @@ for every small $n$-ary relation $f$ where $n$ is an ordinal number
 and $i\in n$. Particularly for every $n$-ary relation $f$ and $i\in n$
 where $n\in\mathbb{N}$
 \[
-\Pr_{i}f=\setcond{x_{i}}{\left\llbracket x_{0};\ldots;x_{n-1}\right\rrbracket \in f}.
+\Pr_{i}f=\setcond{x_{i}}{\left\llbracket x_{0},\ldots,x_{n-1}\right\rrbracket \in f}.
 \]
 
 \end{defn}
@@ -915,10 +915,10 @@ Let $X$, $Y$, $Z$ be sets.
 We will consider variables $x\in X$ and $y\in Y$.
 
 \index{currying}Let a function $f\in Z^{X\times Y}$. Then $\curry(f)\in(Z^{Y})^{X}$
-is the function defined by the formula $(\curry(f)x)y=f(x;y)$.
+is the function defined by the formula $(\curry(f)x)y=f(x,y)$.
 
 \index{uncurrying}Let now $f\in(Z^{Y})^{X}$. Then $\uncurry(f)\in Z^{X\times Y}$
-is the function defined by the formula $\uncurry(f)(x;y)=(fx)y$.
+is the function defined by the formula $\uncurry(f)(x,y)=(fx)y$.
 \begin{obvious}
 ~
 \begin{enumerate}
@@ -932,16 +932,16 @@ is the function defined by the formula $\uncurry(f)(x;y)=(fx)y$.
 Let $X$, $Z$ be sets and $Y$ be a function with the domain $X$.
 (Vaguely saying, $Y$ is a variable dependent on $X$.)
 
-The disjoint union $\coprod Y=\bigcup_{i\in\dom Y}(\{i\}\times Y_{i})=\setcond{(i;x)}{i\in\dom Y,x\in Y_{i}}$.
+The disjoint union $\coprod Y=\bigcup_{i\in\dom Y}(\{i\}\times Y_{i})=\setcond{(i,x)}{i\in\dom Y,x\in Y_{i}}$.
 
 We will consider variables $x\in X$ and $y\in Y_{x}$.
 
 \index{currying}Let a function $f\in Z^{\coprod_{i\in X}Y_{i}}$
 (or equivalently $f\in Z^{\coprod Y}$). Then $\curry(f)\in\prod_{i\in X}Z^{Y_{i}}$
-is the function defined by the formula $(\curry(f)x)y=f(x;y)$.
+is the function defined by the formula $(\curry(f)x)y=f(x,y)$.
 
 \index{uncurrying}Let now $f\in\prod_{i\in X}Z^{Y_{i}}$. Then $\uncurry(f)\in Z^{\coprod_{i\in X}Y_{i}}$
-is the function defined by the formula $\uncurry(f)(x;y)=(fx)y$.
+is the function defined by the formula $\uncurry(f)(x,y)=(fx)y$.
 \begin{obvious}
 ~
 \begin{enumerate}
@@ -976,7 +976,7 @@ $\coprod a$ with lexicographic order is a well-ordered set.\end{prop}
 Let $S$ be non-empty subset of $\coprod a$.
 
 Take $i_{0}=\min\Pr_{0}S$ and $x_{0}=\min\setcond{\Pr_{1}y}{y\in S,y(0)=i_{0}}$
-(these exist by properties of ordinals). Then $(i_{0};x_{0})$ is
+(these exist by properties of ordinals). Then $(i_{0},x_{0})$ is
 the least element of $S$.\end{proof}
 \begin{defn}
 $\sum a$ is the unique ordinal order-isomorphic to $\coprod a$.\end{defn}
@@ -996,7 +996,7 @@ of well-ordered sets.
 \begin{obvious}
 $\sum a=\im\bigoplus a$.\end{obvious}
 \begin{thm}
-$\left(\bigoplus a\right)(n;x)=\sum_{i\in n}a_{i}+x$.\end{thm}
+$\left(\bigoplus a\right)(n,x)=\sum_{i\in n}a_{i}+x$.\end{thm}
 \begin{proof}
 We need to prove that it is an order isomorphism. Let's prove it is
 an injection that is $m>n\Rightarrow\sum_{i\in m}a_{i}+x>\sum_{i\in n}a_{i}+x$
@@ -1006,9 +1006,9 @@ Really, if $m>n$ then $\sum_{i\in m}a_{i}+x\geq\sum_{i\in n+1}a_{i}+x>\sum_{i\in
 The second formula is true by properties of ordinals.
 
 Let's prove that it is a surjection. Let $r\in\sum a$. There exist
-$n\in\dom a$ and $x\in a_{n}$ such that $r=\left(\bigoplus a\right)(n;x)$.
-Thus $r=\left(\bigoplus a\right)(n;0)+x=\sum_{i\in n}a_{i}+x$ because
-$\left(\bigoplus a\right)(n;0)=\sum_{i\in n}a_{i}$ since $(n;0)$
+$n\in\dom a$ and $x\in a_{n}$ such that $r=\left(\bigoplus a\right)(n,x)$.
+Thus $r=\left(\bigoplus a\right)(n,0)+x=\sum_{i\in n}a_{i}+x$ because
+$\left(\bigoplus a\right)(n,0)=\sum_{i\in n}a_{i}$ since $(n,0)$
 has $\sum_{i\in n}a_{i}$ predecessors.
 \end{proof}
 
@@ -1057,8 +1057,8 @@ it is enough to prove that
 Really,
 \begin{align*}
 \sum_{i\in\dom f}(\dom\circ z) & =\\
-\setcond{(i;x)}{i\in\dom(\dom\circ z),x\in\dom z_{i}} & =\\
-\setcond{(i;x)}{i\in\dom z,x\in\dom z_{i}} & =\\
+\setcond{(i,x)}{i\in\dom(\dom\circ z),x\in\dom z_{i}} & =\\
+\setcond{(i,x)}{i\in\dom z,x\in\dom z_{i}} & =\\
 \coprod z
 \end{align*}
 and $\dom\uncurry(z)=\coprod_{i\in X}z_{i}=\coprod z$.
@@ -1070,9 +1070,9 @@ If $F$ is a finite family (indexed by a natural number $\dom F$)
 of anchored finitary relations, then by definition \[
 \GR\prod^\mathrm{(ord)} =
 \setcond{
-\llbracket a_{0, 0} ; \ldots ; a_{0, \arity F_0 - 1} ; \ldots ; a_{\dom F - 1, 0} ; \ldots ; a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket
+\llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} , \ldots , a_{\dom F - 1, 0} , \ldots , a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket
 }{
-\llbracket a_{0, 0} ; \ldots ; a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
+\llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
 }
 \]and 
 \[
@@ -1163,7 +1163,7 @@ P\in\prod_{i\in\dom F}F'_{i} & \Leftrightarrow\\
 P\in\setcond{z\in\mho^{\dom F}}{\forall i\in\dom F:z(i)\in F'_{i}} & \Leftrightarrow\\
 P\in\mho^{\dom F}\land\forall i\in\dom F:P(i)\in F'_{i} & \Leftrightarrow\\
 P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:P_{i}=L\circ(\Pr_{1}|_{\{i\}\times\mho}) & \Leftrightarrow\\
-P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\forall x\in\arity F_{i}:P_{i}(i;x)=Lx) & \Leftrightarrow\\
+P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\forall x\in\arity F_{i}:P_{i}(i,x)=Lx) & \Leftrightarrow\\
 P\in\mho^{\dom F}\land\forall i\in\dom F\exists L\in\GR F_{i}:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\curry(P_{i})i=L) & \Leftrightarrow\\
 P\in\mho^{\dom F}\land\forall i\in\dom F:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}\land\curry(P_{i})i\in\GR F_{i}) & \Leftrightarrow\\
 \forall i\in\dom F\exists Q_{i}\in(\mho^{\arity F_{i}})^{\{i\}}:(P_{i}=\uncurry(Q_{i})\land(Q_{i})i\in\mho^{\arity F_{i}}\land Q_{i}i\in\GR F_{i}) & \Leftrightarrow\\
@@ -1256,11 +1256,11 @@ when
 \paragraph{Infinite associativity implies associativity}
 \begin{prop}
 Let $f$ be an infinitely associative function taking an ordinal number
-of arguments in a set $X$. Define $x\star y=f\llbracket x;y\rrbracket$
+of arguments in a set $X$. Define $x\star y=f\llbracket x,y\rrbracket$
 for $x,y\in X$. Then the binary operation $\star$ is associative.\end{prop}
 \begin{proof}
-Let $x,y,z\in X$. Then $(x\star y)\star z=f\llbracket f\llbracket x;y\rrbracket;z\rrbracket=f(f\llbracket x;y\rrbracket;f\llbracket z\rrbracket)=f\llbracket x;y;z\rrbracket$.
-Similarly $x\star(y\star z)=f\llbracket x;y;z\rrbracket$. So $(x\star y)\star z=x\star(y\star z)$.
+Let $x,y,z\in X$. Then $(x\star y)\star z=f\llbracket f\llbracket x,y\rrbracket,z\rrbracket=f(f\llbracket x,y\rrbracket,f\llbracket z\rrbracket)=f\llbracket x,y,z\rrbracket$.
+Similarly $x\star(y\star z)=f\llbracket x,y,z\rrbracket$. So $(x\star y)\star z=x\star(y\star z)$.
 \end{proof}
 
 \paragraph{Concatenation is associative}
@@ -1283,10 +1283,10 @@ families $a$ and $b$ of functions taking an ordinal number of arguments.\end{lem
 \begin{proof}
 There exist an order isomorphism $f$ such that $a=b\circ f$.
 
-$\uncurry(a)(x;y)=(ax)y=(bfx)y=\uncurry(b)(fx;y)=\uncurry(b)g(x;y)$
-where $g(x;y)=(fx;y)$.
+$\uncurry(a)(x,y)=(ax)y=(bfx)y=\uncurry(b)(fx,y)=\uncurry(b)g(x,y)$
+where $g(x,y)=(fx,y)$.
 
-$g$ is an order isomorphism because $g(x_{0};y_{0})\ge g(x_{1};y_{1})\Leftrightarrow(x_{0};y_{0})\ge(x_{1};y_{1})$.
+$g$ is an order isomorphism because $g(x_{0},y_{0})\ge g(x_{1},y_{1})\Leftrightarrow(x_{0},y_{0})\ge(x_{1},y_{1})$.
 (Injectivity and surjectivity are obvious.)\end{proof}
 \begin{lem}
 \label{by-member}Let $a_{i}\sim b_{i}$ for every $i$. Then $\uncurry a\sim\uncurry b$
@@ -1296,11 +1296,11 @@ families of functions taking an ordinal number of arguments.\end{lem}
 Let $a_{i}=b_{i}\circ f_{i}$ where $f_{i}$ is an order isomorphism
 for every $i$.
 
-$\uncurry(a)(i;y)=a_{i}y=b_{i}f_{i}y=\uncurry(b)(i;f_{i}y)=\uncurry(b)g(i;y)=(\uncurry(b)\circ g)(i;y)$
-where $g(i;y)=(i;f_{i}y)$.
+$\uncurry(a)(i,y)=a_{i}y=b_{i}f_{i}y=\uncurry(b)(i,f_{i}y)=\uncurry(b)g(i,y)=(\uncurry(b)\circ g)(i,y)$
+where $g(i,y)=(i,f_{i}y)$.
 
-$g$ is an order isomorphism because $g(i;y_{0})\ge g(i;y_{1})\Leftrightarrow f_{i}y_{0}\ge f_{i}y_{1}\Leftrightarrow y_{0}\ge y_{1}$
-and $i_{0}>i_{1}\Rightarrow g(i;y_{0})>g(i;y_{1})$. (Injectivity
+$g$ is an order isomorphism because $g(i,y_{0})\ge g(i,y_{1})\Leftrightarrow f_{i}y_{0}\ge f_{i}y_{1}\Leftrightarrow y_{0}\ge y_{1}$
+and $i_{0}>i_{1}\Rightarrow g(i,y_{0})>g(i,y_{1})$. (Injectivity
 and surjectivity are obvious.)
 \end{proof}
 Let now $S$ be an ordinal indexed family of ordinal indexed families
@@ -1310,11 +1310,11 @@ $\uncurry(\uncurry\circ S)\sim\uncurry(\uncurry S)$.\end{lem}
 \begin{proof}
 $\uncurry\circ S=\mylambda iS{\uncurry(S_{i})}$;
 
-$(\uncurry(\uncurry\circ S))((i;x);y)=(\uncurry S_{i})(x;y)=(S_{i}x)y$;
+$(\uncurry(\uncurry\circ S))((i,x),y)=(\uncurry S_{i})(x,y)=(S_{i}x)y$;
 
-$(\uncurry(\uncurry S))((i;x);y)=((\uncurry S)(i;x))y=(S_{i}x)y$.
+$(\uncurry(\uncurry S))((i,x),y)=((\uncurry S)(i,x))y=(S_{i}x)y$.
 
-Thus $(\uncurry(\uncurry\circ S))((i;x);y)=(\uncurry(\uncurry S))((i;x);y)$
+Thus $(\uncurry(\uncurry\circ S))((i,x),y)=(\uncurry(\uncurry S))((i,x),y)$
 and thus evidently $\uncurry(\uncurry\circ S)\sim\uncurry(\uncurry S)$.\end{proof}
 \begin{thm}
 $\concat$ is an infinitely associative function.\end{thm}
@@ -1640,16 +1640,16 @@ if $D=\uparrow\bigsqcap D$), then $D$ clearly belongs to $\rsupfun{\uparrow}\mat
 and conversely $\uparrow a$ is always a fixed point of $F=\uparrow\circ\bigsqcap$
 since $F(\uparrow a)=\uparrow\bigsqcap\uparrow a=\uparrow a$.\end{proof}
 \begin{defn}
-If $\mathfrak{A}$, $\mathfrak{B}$ are two JSWLEs, then $\operatorname{Join}(\mathfrak{A};\mathfrak{B})$
+If $\mathfrak{A}$, $\mathfrak{B}$ are two JSWLEs, then $\operatorname{Join}(\mathfrak{A},\mathfrak{B})$
 is the (ordered pointwise) set of finite joins preserving maps $\mathfrak{A}\rightarrow\mathfrak{B}$.\end{defn}
 \begin{obvious}
-$\operatorname{Join}(\mathfrak{A};\mathfrak{B})$ is a JSWLE, where~$f\sqcup g$
-is given by the formula $(f\sqcup g)(p)=f(p)\sqcup g(p)$, $\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})}$
-is given by the formula $\bot^{\operatorname{Join}(\mathfrak{A};\mathfrak{B})}(p)=\bot^{\mathfrak{B}}$.\end{obvious}
+$\operatorname{Join}(\mathfrak{A},\mathfrak{B})$ is a JSWLE, where~$f\sqcup g$
+is given by the formula $(f\sqcup g)(p)=f(p)\sqcup g(p)$, $\bot^{\operatorname{Join}(\mathfrak{A},\mathfrak{B})}$
+is given by the formula $\bot^{\operatorname{Join}(\mathfrak{A},\mathfrak{B})}(p)=\bot^{\mathfrak{B}}$.\end{obvious}
 \begin{defn}
 Let $h:Q\rightarrow R$ be a finite joins preserving map. Then by
-definition $\operatorname{Join}(P,h):\operatorname{Join}(P;Q)\rightarrow\operatorname{Join}(P;R)$
-takes $f\in\operatorname{Join}(P;Q)$ into the composition $h\circ f\in\operatorname{Join}(P;R)$.\end{defn}
+definition $\operatorname{Join}(P,h):\operatorname{Join}(P,Q)\rightarrow\operatorname{Join}(P,R)$
+takes $f\in\operatorname{Join}(P,Q)$ into the composition $h\circ f\in\operatorname{Join}(P,R)$.\end{defn}
 \begin{lem}
 Above defined $\operatorname{Join}(P,h)$ is a finite joins preserving
 map.\end{lem}
@@ -1662,7 +1662,7 @@ hfx\sqcup hf'x=(h\circ f)x\sqcup(h\circ f')x=((h\circ f)\sqcup(h\circ f'))x.
 \end{multline*}
 Thus $h\circ(f\sqcup f')=(h\circ f)\sqcup(h\circ f')$.
 
-$(h\circ\bot^{\operatorname{Join}(P;Q)})x=h\bot^{\operatorname{Join}(P;Q)}x=h\bot^Q=\bot^R$.\end{proof}
+$(h\circ\bot^{\operatorname{Join}(P,Q)})x=h\bot^{\operatorname{Join}(P,Q)}x=h\bot^Q=\bot^R$.\end{proof}
 \begin{prop}
 If $h,h':Q\rightarrow R$ are finite join preserving maps and $h\sqsupseteq h'$,
 then $\operatorname{Join}(P,h)\sqsupseteq\operatorname{Join}(P,h')$.\end{prop}
@@ -1670,104 +1670,104 @@ then $\operatorname{Join}(P,h)\sqsupseteq\operatorname{Join}(P,h')$.\end{prop}
 $\operatorname{Join}(P,h)(f)(x)=(h\circ f)(x)=hfx\sqsupseteq h'fx=(h'\circ f)(x)=\operatorname{Join}(P,h')(f)(x)$.\end{proof}
 \begin{lem}
 If $g:Q\rightarrow R$ and $h:R\rightarrow S$ are finite joins preserving,
-then the composition $\operatorname{Join}(P;h)\circ\operatorname{Join}(P;g)$
-is equal to $\operatorname{Join}(P;h\circ g)$. Also $\operatorname{Join}(P;\id_{Q})$
-for identity map $\id_{Q}$ on $Q$ is the identity map $\id_{\operatorname{Join}(P;Q)}$
-on $\operatorname{Join}(P;Q)$.\end{lem}
+then the composition $\operatorname{Join}(P,h)\circ\operatorname{Join}(P,g)$
+is equal to $\operatorname{Join}(P,h\circ g)$. Also $\operatorname{Join}(P,\id_{Q})$
+for identity map $\id_{Q}$ on $Q$ is the identity map $\id_{\operatorname{Join}(P,Q)}$
+on $\operatorname{Join}(P,Q)$.\end{lem}
 \begin{proof}
-$\operatorname{Join}(P;h)\operatorname{Join}(P;g)f=\operatorname{Join}(P;h)(g\circ f)=h\circ g\circ f=\operatorname{Join}(P;h\circ g)f$.
+$\operatorname{Join}(P,h)\operatorname{Join}(P,g)f=\operatorname{Join}(P,h)(g\circ f)=h\circ g\circ f=\operatorname{Join}(P,h\circ g)f$.
 
-$\operatorname{Join}(P;\id_{Q})f=\id_{Q}\circ f=f$.\end{proof}
+$\operatorname{Join}(P,\id_{Q})f=\id_{Q}\circ f=f$.\end{proof}
 \begin{cor}
 \label{join-map-co-nucleus}If $Q$ is a JSWLE and $F:Q\rightarrow Q$
 is a co-nucleus, then for any JSWLE $P$ we have that 
 \[
-\operatorname{Join}(P;F):\operatorname{Join}(P;Q)\rightarrow\operatorname{Join}(P;Q)
+\operatorname{Join}(P,F):\operatorname{Join}(P,Q)\rightarrow\operatorname{Join}(P,Q)
 \]
  is also a co-nucleus.\end{cor}
 \begin{proof}
 From $\id_{Q}\sqsupseteq F$ (co-nucleus axiom \ref{co-nucleus-less})
-we have $\operatorname{Join}(P;\id_{Q})\sqsupseteq\operatorname{Join}(P;F)$
-and since by the last lemma the left side is the identity on $\operatorname{Join}(P;Q)$,
-we see that $\operatorname{Join}(P;F)$ also satisfies co-nucleus
+we have $\operatorname{Join}(P,\id_{Q})\sqsupseteq\operatorname{Join}(P,F)$
+and since by the last lemma the left side is the identity on $\operatorname{Join}(P,Q)$,
+we see that $\operatorname{Join}(P,F)$ also satisfies co-nucleus
 axiom \ref{co-nucleus-less}.
 
-$\operatorname{Join}(P;F)\circ\operatorname{Join}(P;F)=\operatorname{Join}(P;F\circ F)$
-by the same lemma and thus $\operatorname{Join}(P;F)\circ\operatorname{Join}(P;F)=\operatorname{Join}(P;F)$
-by the second co-nucleus axiom for $F$, showing that $\operatorname{Join}(P;F)$
+$\operatorname{Join}(P,F)\circ\operatorname{Join}(P,F)=\operatorname{Join}(P,F\circ F)$
+by the same lemma and thus $\operatorname{Join}(P,F)\circ\operatorname{Join}(P,F)=\operatorname{Join}(P,F)$
+by the second co-nucleus axiom for $F$, showing that $\operatorname{Join}(P,F)$
 satisfies the second co-nucleus axiom.
 
-By an other lemma, we have that $\operatorname{Join}(P;F)$ preserves
+By an other lemma, we have that $\operatorname{Join}(P,F)$ preserves
 binary joins, given that $F$ preserves binary joins, which is the
 third co-nucleus axiom.\end{proof}
 \begin{lem}
-\label{join-fix-inter}$\Fix(\operatorname{Join}(P;F))=\operatorname{Join}(P;\Fix(F))$
+\label{join-fix-inter}$\Fix(\operatorname{Join}(P,F))=\operatorname{Join}(P,\Fix(F))$
 for every JSWLEs $P$, $Q$ and a join preserving function $F:Q\rightarrow Q$.\end{lem}
 \begin{proof}
-$a\in\Fix(\operatorname{Join}(P;F))\Leftrightarrow a\in F^{P}\wedge F\circ a=a\Leftrightarrow a\in F^{P}\wedge\forall x\in P:F(a(x))=a(x)$.
+$a\in\Fix(\operatorname{Join}(P,F))\Leftrightarrow a\in F^{P}\wedge F\circ a=a\Leftrightarrow a\in F^{P}\wedge\forall x\in P:F(a(x))=a(x)$.
 
-$a\in\operatorname{Join}(P;\Fix(F))\Leftrightarrow a\in\Fix(F)^{P}\Leftrightarrow a\in F^{P}\wedge\forall x\in P:F(a(x))=a(x)$.
+$a\in\operatorname{Join}(P,\Fix(F))\Leftrightarrow a\in\Fix(F)^{P}\Leftrightarrow a\in F^{P}\wedge\forall x\in P:F(a(x))=a(x)$.
 
-Thus $\Fix(\operatorname{Join}(P;F))=\operatorname{Join}(P;\Fix(F))$.
+Thus $\Fix(\operatorname{Join}(P,F))=\operatorname{Join}(P,\Fix(F))$.
 That the order of the left and right sides of the equality agrees
 is obvious.\end{proof}
 \begin{defn}
-$\mathbf{Pos}(\mathfrak{A};\mathfrak{B})$ is the pointwise ordered
+$\mathbf{Pos}(\mathfrak{A},\mathfrak{B})$ is the pointwise ordered
 poset of monotone maps from a poset $\mathfrak{A}$ to a poset $\mathfrak{B}$.\end{defn}
 \begin{lem}
 \label{join-pos-interch}If $Q$, $R$ are JSWLEs and $P$ is a poset,
-then $\mathbf{Pos}(P;R)$ is a JSWLE and $\mathbf{Pos}(P;\operatorname{Join}(Q;R))$
-is isomorphic to $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$.
-If $R$ is a co-frame, then also $\mathbf{Pos}(P;R)$ is a co-frame.
+then $\mathbf{Pos}(P,R)$ is a JSWLE and $\mathbf{Pos}(P,\operatorname{Join}(Q,R))$
+is isomorphic to $\operatorname{Join}\left(Q,\mathbf{Pos}(P,R)\right)$.
+If $R$ is a co-frame, then also $\mathbf{Pos}(P,R)$ is a co-frame.
 \end{lem}
 \begin{proof}
-Let $f,g\in\mathbf{Pos}(P;R)$. Then $\lambda x\in P:(fx\sqcup gx)$
-is obviously monotone and then it is evident that $f\sqcup^{\mathbf{Pos}(P;R)}g=\lambda x\in P:(fx\sqcup gx)$.
+Let $f,g\in\mathbf{Pos}(P,R)$. Then $\lambda x\in P:(fx\sqcup gx)$
+is obviously monotone and then it is evident that $f\sqcup^{\mathbf{Pos}(P,R)}g=\lambda x\in P:(fx\sqcup gx)$.
 $\lambda x\in P:\bot^{R}$ is also obviously monotone and it is evident
-that $\bot^{\mathbf{Pos}(P;R)}=\lambda x\in P:\bot^{R}$.
+that $\bot^{\mathbf{Pos}(P,R)}=\lambda x\in P:\bot^{R}$.
 
-Obviously both $\mathbf{Pos}(P;\operatorname{Join}(Q;R))$ and $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$
+Obviously both $\mathbf{Pos}(P,\operatorname{Join}(Q,R))$ and $\operatorname{Join}\left(Q,\mathbf{Pos}(P,R)\right)$
 are sets of order preserving maps.
 
 Let $f$ be a monotone map.
 
-$f\in\mathbf{Pos}(P;\operatorname{Join}(Q;R))$ iff $f\in\operatorname{Join}(Q;R)^{P}$
+$f\in\mathbf{Pos}(P,\operatorname{Join}(Q,R))$ iff $f\in\operatorname{Join}(Q,R)^{P}$
 iff $f\in\setcond{ g\in R^{Q} }{ g\text{ preserves finite joins}} ^{P}$
 iff $f\in(R^{Q})^{P}$ and every $g=f(x)$ (for $x\in P$) preserving
 finite joins. This is bijectively equivalent ($f\mapsto f'$) to $f'\in(R^{P})^{Q}$
 preserving finite joins.
 
-$f'\in\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$ iff $f'$
-preserves finite joins and $f'\in\mathbf{Pos}(P;R)^{Q}$ iff $f'$
+$f'\in\operatorname{Join}\left(Q,\mathbf{Pos}(P,R)\right)$ iff $f'$
+preserves finite joins and $f'\in\mathbf{Pos}(P,R)^{Q}$ iff $f'$
 preserves finite joins and $f'\in\setcond{g\in(R^{P})^{Q}}{g(x)\text{ is monotone}}$
 iff $f'$ preserves finite joins and $f'\in(R^{P})^{Q}$.
 
-So we have proved that $f\mapsto f'$ is a bijection between $\mathbf{Pos}(P;\operatorname{Join}(Q;R))$
-and $\operatorname{Join}\left(Q;\mathbf{Pos}(P;R)\right)$. That it
+So we have proved that $f\mapsto f'$ is a bijection between $\mathbf{Pos}(P,\operatorname{Join}(Q,R))$
+and $\operatorname{Join}\left(Q,\mathbf{Pos}(P,R)\right)$. That it
 preserves order is obvious.
 
-It remains to prove that if $R$ is a co-frame, then also $\mathbf{Pos}(P;R)$
+It remains to prove that if $R$ is a co-frame, then also $\mathbf{Pos}(P,R)$
 is a co-frame.
 
-First, we need to prove that $\mathbf{Pos}(P;R)$ is a complete lattice.
-But it is easy to prove that for every set $S\in\subsets\mathbf{Pos}(P;R)$
+First, we need to prove that $\mathbf{Pos}(P,R)$ is a complete lattice.
+But it is easy to prove that for every set $S\in\subsets\mathbf{Pos}(P,R)$
 we have $\lambda x\in P:\bigsqcup_{f\in S}f(x)$ and $\lambda x\in P:\bigsqcap_{f\in S}f(x)$
-are monotone and thus are the joins and meets on $\mathbf{Pos}(P;R)$.
+are monotone and thus are the joins and meets on $\mathbf{Pos}(P,R)$.
 
 Next we need to prove that 
 \[
-b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S=\bigsqcap^{\mathbf{Pos}(P;R)}\left\langle b\sqcup^{\mathbf{Pos}(P;R)}\right\rangle ^{\ast}S.
+b\sqcup^{\mathbf{Pos}(P,R)}\bigsqcap^{\mathbf{Pos}(P,R)}S=\bigsqcap^{\mathbf{Pos}(P,R)}\left\langle b\sqcup^{\mathbf{Pos}(P,R)}\right\rangle ^{\ast}S.
 \]
 Really (for every $x\in P$),
 
 \begin{multline*}
-\left(b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S\right)x=b(x)\sqcup\left(\bigsqcap^{\mathbf{Pos}(P;R)}S\right)x=\\
-b(x)\sqcup\bigsqcap_{f\in S}f(x)=\bigsqcap_{f\in S}(b(x)\sqcup f(x))=\bigsqcap_{f\in S}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)x=\\
-\left(\bigsqcap_{f\in S}^{\mathbf{Pos}(P;R)}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)\right)x.
+\left(b\sqcup^{\mathbf{Pos}(P,R)}\bigsqcap^{\mathbf{Pos}(P,R)}S\right)x=b(x)\sqcup\left(\bigsqcap^{\mathbf{Pos}(P,R)}S\right)x=\\
+b(x)\sqcup\bigsqcap_{f\in S}f(x)=\bigsqcap_{f\in S}(b(x)\sqcup f(x))=\bigsqcap_{f\in S}\left(b\sqcup^{\mathbf{Pos}(P,R)}f\right)x=\\
+\left(\bigsqcap_{f\in S}^{\mathbf{Pos}(P,R)}\left(b\sqcup^{\mathbf{Pos}(P,R)}f\right)\right)x.
 \end{multline*}
 
 
-Thus $b\sqcup^{\mathbf{Pos}(P;R)}\bigsqcap^{\mathbf{Pos}(P;R)}S=\bigsqcap_{f\in S}^{\mathbf{Pos}(P;R)}\left(b\sqcup^{\mathbf{Pos}(P;R)}f\right)=\bigsqcap^{\mathbf{Pos}(P;R)}\left\langle b\sqcup^{\mathbf{Pos}(P;R)}\right\rangle ^{\ast}S$.
+Thus $b\sqcup^{\mathbf{Pos}(P,R)}\bigsqcap^{\mathbf{Pos}(P,R)}S=\bigsqcap_{f\in S}^{\mathbf{Pos}(P,R)}\left(b\sqcup^{\mathbf{Pos}(P,R)}f\right)=\bigsqcap^{\mathbf{Pos}(P,R)}\left\langle b\sqcup^{\mathbf{Pos}(P,R)}\right\rangle ^{\ast}S$.
 \end{proof}
 \begin{defn}
 $P\cong Q$ means that posets $P$ and $Q$ are isomorphic.\end{defn}

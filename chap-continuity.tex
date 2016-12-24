@@ -15,13 +15,13 @@ similar formulas) where $\mu$ and $\nu$ are some spaces.
 
 \subsection{\index{continuity!pre-topology}Pretopology}
 
-Let $(A;\cl_{A})$ and $(B;\cl_{B})$ be preclosure spaces. Then by
+Let $(A,\cl_{A})$ and $(B,\cl_{B})$ be preclosure spaces. Then by
 definition a function $f:A\rightarrow B$ is continuous iff $f\cl_{A}(X)\subseteq\cl_{B}(fX)$
 for every $X\in\subsets A$. Let now $\mu$ and $\nu$ be endofuncoids
 corresponding correspondingly to $\cl_{A}$ and $\cl_{B}$. Then the
 condition for continuity can be rewritten as
 \[
-\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\nu)}f\circ\mu\sqsubseteq\nu\circ\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\nu)}f.
+\uparrow^{\mathsf{FCD}(\Ob\mu,\Ob\nu)}f\circ\mu\sqsubseteq\nu\circ\uparrow^{\mathsf{FCD}(\Ob\mu,\Ob\nu)}f.
 \]
 
 
@@ -56,17 +56,17 @@ Uniform spaces are a special case of endoreloids.
 Let $\mu$ and $\nu$ be uniform spaces. By definition a $\mathbf{Set}$-morphism~$f$
 is a uniformly continuous map from $\mu$ to $\nu$ iff 
 \[
-\forall\varepsilon\in\up\nu\exists\delta\in\up\nu\forall(x;y)\in\delta:(fx;fy)\in\varepsilon.
+\forall\varepsilon\in\up\nu\exists\delta\in\up\nu\forall(x,y)\in\delta:(fx,fy)\in\varepsilon.
 \]
 
 
 Equivalently transforming this formula we get:
 \begin{gather*}
-\forall\epsilon\in\up\nu\exists\delta\in\up\mu\forall(x;y)\in\delta:\{(fx;fy)\}\subseteq\epsilon;\\
-\forall\epsilon\in\up\nu\exists\delta\in\up\mu\forall(x;y)\in\delta:f\circ\{(x;y)\}\circ f^{-1}\subseteq\epsilon;\\
+\forall\epsilon\in\up\nu\exists\delta\in\up\mu\forall(x,y)\in\delta:\{(fx,fy)\}\subseteq\epsilon;\\
+\forall\epsilon\in\up\nu\exists\delta\in\up\mu\forall(x,y)\in\delta:f\circ\{(x,y)\}\circ f^{-1}\subseteq\epsilon;\\
 \forall\epsilon\in\up\nu\exists\delta\in\up\mu:f\circ\delta\circ f^{-1}\subseteq\epsilon;\\
-\forall\epsilon\in\up\nu:\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f\circ\mu\circ(\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f)^{-1}\sqsubseteq\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}\epsilon;\\
-\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f\circ\mu\circ(\uparrow^{\mathsf{RLD}(\Ob\mu;\Ob\nu)}f)^{-1}\sqsubseteq\nu.
+\forall\epsilon\in\up\nu:\uparrow^{\mathsf{RLD}(\Ob\mu,\Ob\nu)}f\circ\mu\circ(\uparrow^{\mathsf{RLD}(\Ob\mu,\Ob\nu)}f)^{-1}\sqsubseteq\uparrow^{\mathsf{RLD}(\Ob\mu,\Ob\nu)}\epsilon;\\
+\uparrow^{\mathsf{RLD}(\Ob\mu,\Ob\nu)}f\circ\mu\circ(\uparrow^{\mathsf{RLD}(\Ob\mu,\Ob\nu)}f)^{-1}\sqsubseteq\nu.
 \end{gather*}
 So a function $f$ is uniformly continuous iff $f\circ\mu\circ f^{-1}\sqsubseteq\nu$.
 
@@ -81,13 +81,13 @@ Let $\mu$ and $\nu$ be endomorphisms of some partially ordered precategory.
 Continuous functions can be defined as these morphisms $f$ of this
 precategory which conform to the following formula:
 \[
-f\in\continuous(\mu;\nu)\Leftrightarrow f\in\Hom(\Ob\mu;\Ob\nu)\land f\circ\mu\sqsubseteq\nu\circ f.
+f\in\continuous(\mu,\nu)\Leftrightarrow f\in\Hom(\Ob\mu,\Ob\nu)\land f\circ\mu\sqsubseteq\nu\circ f.
 \]
 If the precategory is a partially ordered dagger precategory then
 continuity also can be defined in two other ways:
 \begin{gather*}
-f\in\continuous'(\mu;\nu)\Leftrightarrow f\in\Hom(\Ob\mu;\Ob\nu)\land\mu\sqsubseteq f^{\dagger}\circ\nu\circ f;\\
-f\in\continuous''(\mu;\nu)\Leftrightarrow f\in\Hom(\Ob\mu;\Ob\nu)\land f\circ\mu\circ f^{\dagger}\sqsubseteq\nu.
+f\in\continuous'(\mu,\nu)\Leftrightarrow f\in\Hom(\Ob\mu,\Ob\nu)\land\mu\sqsubseteq f^{\dagger}\circ\nu\circ f;\\
+f\in\continuous''(\mu,\nu)\Leftrightarrow f\in\Hom(\Ob\mu,\Ob\nu)\land f\circ\mu\circ f^{\dagger}\sqsubseteq\nu.
 \end{gather*}
 
 \begin{rem}
@@ -99,24 +99,24 @@ Every of these three definitions of continuity forms a wide sub-precategory
 \begin{proof}
 ~
 \begin{description}
-\item [{$\continuous$}] Let $f\in\continuous(\mu;\nu)$, $g\in\continuous(\nu;\pi)$.
+\item [{$\continuous$}] Let $f\in\continuous(\mu,\nu)$, $g\in\continuous(\nu,\pi)$.
 Then $f\circ\mu\sqsubseteq\nu\circ f$, $g\circ\nu\sqsubseteq\pi\circ g$,
 $g\circ f\circ\mu\sqsubseteq g\circ\nu\circ f\sqsubseteq\pi\circ g\circ f$.
-So $g\circ f\in\continuous(\mu;\pi)$. $1_{\Ob\mu}\in\continuous(\mu;\mu)$
+So $g\circ f\in\continuous(\mu,\pi)$. $1_{\Ob\mu}\in\continuous(\mu,\mu)$
 is obvious.
-\item [{$\continuous'$}] Let $f\in\continuous'(\mu;\nu)$, $g\in\continuous'(\nu;\pi)$.
+\item [{$\continuous'$}] Let $f\in\continuous'(\mu,\nu)$, $g\in\continuous'(\nu,\pi)$.
 Then $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$, $\nu\sqsubseteq g^{\dagger}\circ\pi\circ g$;
 \[
 \mu\sqsubseteq f^{\dagger}\circ g^{\dagger}\circ\pi\circ g\circ f;\quad\mu\sqsubseteq(g\circ f)^{\dagger}\circ\pi\circ(g\circ f).
 \]
-So $g\circ f\in\continuous'(\mu;\pi)$. $1_{\Ob\mu}\in\continuous'(\mu;\mu)$
+So $g\circ f\in\continuous'(\mu,\pi)$. $1_{\Ob\mu}\in\continuous'(\mu,\mu)$
 is obvious.
-\item [{$\continuous''$}] Let $f\in\continuous''(\mu;\nu)$, $g\in\continuous''(\nu;\pi)$.
+\item [{$\continuous''$}] Let $f\in\continuous''(\mu,\nu)$, $g\in\continuous''(\nu,\pi)$.
 Then $f\circ\mu\circ f^{\dagger}\sqsubseteq\nu$, $g\circ\nu\circ g^{\dagger}\sqsubseteq\pi$;
 \[
 g\circ f\circ\mu\circ f^{\dagger}\circ g^{\dagger}\sqsubseteq\pi;\quad(g\circ f)\circ\mu\circ(g\circ f)^{\dagger}\sqsubseteq\pi.
 \]
-So $g\circ f\in\continuous''(\mu;\pi)$. $1_{\Ob\mu}\in\continuous''(\mu;\mu)$
+So $g\circ f\in\continuous''(\mu,\pi)$. $1_{\Ob\mu}\in\continuous''(\mu,\mu)$
 is obvious.
 \end{description}
 \end{proof}
@@ -124,37 +124,37 @@ is obvious.
 For a monovalued morphism $f$ of a partially ordered dagger category
 and its endomorphisms $\mu$ and $\nu$ 
 \[
-f\in\continuous'(\mu;\nu)\Rightarrow f\in\continuous(\mu;\nu)\Rightarrow f\in\continuous''(\mu;\nu).
+f\in\continuous'(\mu,\nu)\Rightarrow f\in\continuous(\mu,\nu)\Rightarrow f\in\continuous''(\mu,\nu).
 \]
 \end{prop}
 \begin{proof}
-Let $f\in\continuous'(\mu;\nu)$. Then $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
+Let $f\in\continuous'(\mu,\nu)$. Then $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
 \[
-f\circ\mu\sqsubseteq f\circ f^{\dagger}\circ\nu\circ f\sqsubseteq1_{\Dst f}\circ\nu\circ f=\nu\circ f;\quad f\in\continuous(\mu;\nu).
+f\circ\mu\sqsubseteq f\circ f^{\dagger}\circ\nu\circ f\sqsubseteq1_{\Dst f}\circ\nu\circ f=\nu\circ f;\quad f\in\continuous(\mu,\nu).
 \]
 
 
-Let $f\in\continuous(\mu;\nu)$. Then $f\circ\mu\sqsubseteq\nu\circ f$;
+Let $f\in\continuous(\mu,\nu)$. Then $f\circ\mu\sqsubseteq\nu\circ f$;
 \[
-f\circ\mu\circ f^{\dagger}\sqsubseteq\nu\circ f\circ f^{\dagger}\sqsubseteq\nu\circ1_{\Dst f}=\nu;\quad f\in\continuous''(\mu;\nu).
+f\circ\mu\circ f^{\dagger}\sqsubseteq\nu\circ f\circ f^{\dagger}\sqsubseteq\nu\circ1_{\Dst f}=\nu;\quad f\in\continuous''(\mu,\nu).
 \]
 \end{proof}
 \begin{prop}
 For an entirely defined morphism $f$ of a partially ordered dagger
 category and its endomorphisms $\mu$ and $\nu$
 \[
-f\in\continuous''(\mu;\nu)\Rightarrow f\in\continuous(\mu;\nu)\Rightarrow f\in\continuous'(\mu;\nu).
+f\in\continuous''(\mu,\nu)\Rightarrow f\in\continuous(\mu,\nu)\Rightarrow f\in\continuous'(\mu,\nu).
 \]
 \end{prop}
 \begin{proof}
-Let $f\in\continuous''(\mu;\nu)$. Then $f\circ\mu\circ f^{\dagger}\sqsubseteq\nu$;
+Let $f\in\continuous''(\mu,\nu)$. Then $f\circ\mu\circ f^{\dagger}\sqsubseteq\nu$;
 $f\circ\mu\circ f^{\dagger}\circ f\sqsubseteq\nu\circ f$; $f\circ\mu\circ1_{\Src f}\sqsubseteq\nu\circ f$;
-$f\circ\mu\sqsubseteq\nu\circ f$; $f\in\continuous(\mu;\nu)$.
+$f\circ\mu\sqsubseteq\nu\circ f$; $f\in\continuous(\mu,\nu)$.
 
-Let $f\in\continuous(\mu;\nu)$. Then $f\circ\mu\sqsubseteq\nu\circ f$;
+Let $f\in\continuous(\mu,\nu)$. Then $f\circ\mu\sqsubseteq\nu\circ f$;
 $f^{\dagger}\circ f\circ\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
 $1_{\Src\mu}\circ\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$; $\mu\sqsubseteq f^{\dagger}\circ\nu\circ f$;
-$f\in\continuous'(\mu;\nu)$.
+$f\in\continuous'(\mu,\nu)$.
 \end{proof}
 For entirely defined monovalued morphisms our three definitions of
 continuity coincide:
@@ -162,7 +162,7 @@ continuity coincide:
 If $f$ is a monovalued and entirely defined morphism of a partially
 ordered dagger precategory then
 \[
-f\in\continuous'(\mu;\nu)\Leftrightarrow f\in\continuous(\mu;\nu)\Leftrightarrow f\in\continuous''(\mu;\nu).
+f\in\continuous'(\mu,\nu)\Leftrightarrow f\in\continuous(\mu,\nu)\Leftrightarrow f\in\continuous''(\mu,\nu).
 \]
 \end{thm}
 \begin{proof}
@@ -173,17 +173,17 @@ from a uniform space to an other uniform space is proximity-continuous
 regarding the proximities generated by the uniformities, generalized
 for reloids and funcoids takes the following form:
 \begin{thm}
-If an entirely defined morphism of the category of reloids $f\in\continuous''(\mu;\nu)$
+If an entirely defined morphism of the category of reloids $f\in\continuous''(\mu,\nu)$
 for some endomorphisms $\mu$ and $\nu$ of the category of reloids,
-then $\mathsf{\tofcd}f\in\continuous'(\tofcd\mu;\tofcd\nu)$.\end{thm}
+then $\mathsf{\tofcd}f\in\continuous'(\tofcd\mu,\tofcd\nu)$.\end{thm}
 \begin{xca}
 I leave a simple exercise for the reader to prove the last theorem.
 \end{xca}
 
 \begin{thm}
 Let $\mu$ and $\nu$ be endomorphisms of some partially ordered dagger precategory and
-$f\in\Hom(\Ob\mu;\Ob\nu)$ be a monovalued, entirely defined morphism. Then
-\[ f\in\continuous(\mu;\nu)\Leftrightarrow f\in\continuous(\mu^{\dagger};\nu^{\dagger}). \]
+$f\in\Hom(\Ob\mu,\Ob\nu)$ be a monovalued, entirely defined morphism. Then
+\[ f\in\continuous(\mu,\nu)\Leftrightarrow f\in\continuous(\mu^{\dagger},\nu^{\dagger}). \]
 \end{thm}
 
 \begin{proof}
@@ -210,9 +210,9 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
     \supfun{\nu} \rsupfun{f} A : \rsupfun{f^{- 1}}
     B \in \up \rsupfun{\mu} A$.
 
-    \item\label{fcd-cont-main}  $f \in \continuous (\mu; \nu)$.
+    \item\label{fcd-cont-main}  $f \in \continuous (\mu, \nu)$.
 
-    \item\label{fcd-cont-rev} $f \in \continuous (\mu^{- 1} ; \nu^{- 1})$.
+    \item\label{fcd-cont-rev} $f \in \continuous (\mu^{- 1} , \nu^{- 1})$.
   \end{enumerate}
 \end{prop}
 
@@ -242,11 +242,11 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
 
     \item\label{top-cont-preim} Preimages (by $f$) of open sets are open.
 
-    \item\label{top-cont-main} $f \in \continuous (\mu; \nu)$ that is $\supfun{f}
+    \item\label{top-cont-main} $f \in \continuous (\mu, \nu)$ that is $\supfun{f}
     \rsupfun{\mu} \{ x \} \sqsubseteq \supfun{\nu}
     \rsupfun{f} \{ x \}$ for every $x \in \Ob \mu$.
 
-    \item\label{top-cont-rev} $f \in \continuous (\mu^{- 1} ; \nu^{- 1})$ that is $\supfun{f}
+    \item\label{top-cont-rev} $f \in \continuous (\mu^{- 1} , \nu^{- 1})$ that is $\supfun{f}
     \rsupfun{\mu^{- 1}} A \sqsubseteq \supfun{\nu^{- 1}}
     \rsupfun{f} A$ for every $A \in \mathscr{T}
     \Ob \mu$.
@@ -279,17 +279,17 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
   \url{http://math.stackexchange.com/a/1855782/4876}
 \end{proof}
 
-\section{\texorpdfstring{$\continuous (\mu \circ \mu^{- 1} ; \nu \circ \nu^{- 1})$}{C(mu o mu\textasciicircum-1; nu o nu\textasciicircum-1)}}
+\section{\texorpdfstring{$\continuous (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})$}{C(mu o mu\textasciicircum-1, nu o nu\textasciicircum-1)}}
 
 \begin{prop}
-  $f \in \continuous (\mu; \nu) \Rightarrow f \in \continuous'' (\mu
-  \circ \mu^{- 1} ; \nu \circ \nu^{- 1})$ for endofuncoids $\mu$,
+  $f \in \continuous (\mu, \nu) \Rightarrow f \in \continuous'' (\mu
+  \circ \mu^{- 1} , \nu \circ \nu^{- 1})$ for endofuncoids $\mu$,
   $\nu$ and monovalued funcoid $f \in \mathsf{FCD} (\Ob
-  \mu; \Ob \nu)$.
+  \mu, \Ob \nu)$.
 \end{prop}
 
 \begin{proof}
-  Let $f \in \continuous (\mu; \nu)$.
+  Let $f \in \continuous (\mu, \nu)$.
   
   $X \mathrel{[f \circ \mu \circ \mu^{- 1} \circ f^{- 1}]^{\ast}}
   Z \Leftrightarrow \exists p \in \atoms^{\mathscr{F}} : \left( X
@@ -305,20 +305,20 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
   1}]^{\ast}} Z$ (taken into account monovaluedness of $f$ and thus that
   $\rsupfun{f} p$ is atomic or least). Thus $f \circ \mu
   \circ \mu^{- 1} \circ f^{- 1} \sqsubseteq \nu \circ \nu^{- 1}$ that is
-  $f \in \continuous'' (\mu \circ \mu^{- 1} ; \nu \circ \nu^{-
+  $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{-
   1})$.
 \end{proof}
 
 \begin{prop}
-  $f \in \continuous'' (\mu \circ \mu^{- 1} ; \nu \circ \nu^{- 1})
-  \Rightarrow f \in \continuous'' (\mu; \nu)$ for complete endofuncoids
+  $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
+  \Rightarrow f \in \continuous'' (\mu, \nu)$ for complete endofuncoids
   $\mu$, $\nu$ and principal funcoid $f \in \mathsf{FCD}
-  (\Ob \mu; \Ob \nu)$, provided that $\mu$ is
+  (\Ob \mu, \Ob \nu)$, provided that $\mu$ is
   reflexive, and $\nu$ is $T_1$-separable.
 \end{prop}
 
 \begin{proof}
-  $f \in \continuous'' (\mu \circ \mu^{- 1} ; \nu \circ \nu^{- 1})
+  $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
   \Leftrightarrow f \circ \mu \circ \mu^{- 1} \circ f^{- 1}
   \sqsubseteq \nu \circ \nu^{- 1} \Rightarrow \text{(reflexivity of
   $\mu$)} \Rightarrow f \circ \mu \circ f^{- 1} \sqsubseteq \nu
@@ -333,17 +333,17 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
   \rangle^{\ast} X \Rightarrow \text{($T_1$-separability)} \Rightarrow \langle
   f \circ \mu^{- 1} \circ f^{- 1} \rangle^{\ast} X \sqsubseteq \langle
   \nu^{- 1} \rangle^{\ast} X$ for any typed set $X$ on $\Ob \nu$. Thus
-  $f \in \continuous'' (\mu \circ \mu^{- 1} ; \nu \circ \nu^{- 1})
+  $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
   \Rightarrow f \circ \mu^{- 1} \circ f^{- 1} \sqsubseteq \nu^{- 1}
   \Leftrightarrow f \circ \mu \circ f^{- 1} \sqsubseteq \nu
-  \Leftrightarrow f \in \continuous'' (\mu; \nu)$.
+  \Leftrightarrow f \in \continuous'' (\mu, \nu)$.
 \end{proof}
 
 \begin{thm}
-  $f \in \continuous (\mu \circ \mu^{- 1} ; \nu \circ \nu^{- 1})
-  \Leftrightarrow f \in \continuous (\mu; \nu)$ for complete endofuncoids
+  $f \in \continuous (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
+  \Leftrightarrow f \in \continuous (\mu, \nu)$ for complete endofuncoids
   $\mu$, $\nu$ and principal monovalued and entirely defined funcoid $f
-  \in \mathsf{FCD} (\Ob \mu; \Ob \nu)$, provided that
+  \in \mathsf{FCD} (\Ob \mu, \Ob \nu)$, provided that
   $\mu$ is reflexive, and $\nu$ is $T_1$-separable.
 \end{thm}
 
@@ -390,9 +390,9 @@ formula $f\sqcap(A\times A)$).
 \label{rect-cont}For every elements~$f$, $\mu$, $\nu$ of our semigroup
 and an object $A$
 \begin{enumerate}
-\item \label{contrestr-C}$f\in\continuous(\mu;\nu)\Rightarrow f|_{A}\in\continuous(I_{A}\circ\mu\circ I_{A};\nu)$;
-\item \label{contrestr-Ci}$f\in\continuous'(\mu;\nu)\Rightarrow f|_{A}\in\continuous'(I_{A}\circ\mu\circ I_{A};\nu)$;
-\item \label{contrestr-Cii}$f\in\continuous''(\mu;\nu)\Rightarrow f|_{A}\in\continuous''(I_{A}\circ\mu\circ I_{A};\nu)$. 
+\item \label{contrestr-C}$f\in\continuous(\mu,\nu)\Rightarrow f|_{A}\in\continuous(I_{A}\circ\mu\circ I_{A},\nu)$;
+\item \label{contrestr-Ci}$f\in\continuous'(\mu,\nu)\Rightarrow f|_{A}\in\continuous'(I_{A}\circ\mu\circ I_{A},\nu)$;
+\item \label{contrestr-Cii}$f\in\continuous''(\mu,\nu)\Rightarrow f|_{A}\in\continuous''(I_{A}\circ\mu\circ I_{A},\nu)$. 
 \end{enumerate}
 
 (Two last items are true for the case when our semigroup is dagger.)
@@ -403,33 +403,33 @@ and an object $A$
 \begin{widedisorder}
 \item [{\ref{contrestr-C}}] ~
 \begin{align*}
-f|_{A}\in\continuous(I_{A}\circ\mu\circ I_{A};\nu) & \Leftrightarrow\\
+f|_{A}\in\continuous(I_{A}\circ\mu\circ I_{A},\nu) & \Leftrightarrow\\
 f|_{A}\circ I_{A}\circ\mu\circ I_{A}\sqsubseteq\nu\circ f|_{A} & \Leftrightarrow\\
 f\circ I_{A}\circ I_{A}\circ\mu\circ I_{A}\sqsubseteq\nu\circ f|_{A} & \Leftrightarrow\\
 f\circ I_{A}\circ\mu\circ I_{A}\sqsubseteq\nu\circ f\circ I_{A} & \Leftarrow\\
 f\circ I_{A}\circ\mu\sqsubseteq\nu\circ f & \Leftarrow\\
 f\circ\mu\sqsubseteq\nu\circ f & \Leftrightarrow\\
-f\in\continuous(\mu;\nu).
+f\in\continuous(\mu,\nu).
 \end{align*}
 
 \item [{\ref{contrestr-Ci}}] ~
 \begin{align*}
-f|_{A}\in\continuous'(I_{A}\circ\mu\circ I_{A};\nu) & \Leftrightarrow\\
+f|_{A}\in\continuous'(I_{A}\circ\mu\circ I_{A},\nu) & \Leftrightarrow\\
 I_{A}\circ\mu\circ I_{A}\sqsubseteq(f|_{A})^{\dagger}\circ\nu\circ f|_{A} & \Leftarrow\\
 I_{A}\circ\mu\circ I_{A}\sqsubseteq(f\circ I_{A})^{\dagger}\circ\nu\circ f\circ I_{A} & \Leftrightarrow\\
 I_{A}\circ\mu\circ I_{A}\sqsubseteq I_{A}\circ f^{\dagger}\circ\nu\circ f\circ I_{A} & \Leftarrow\\
 \mu\sqsubseteq f^{\dagger}\circ\nu\circ f & \Leftrightarrow\\
-f\in\continuous'(\mu;\nu).
+f\in\continuous'(\mu,\nu).
 \end{align*}
 
 \item [{\ref{contrestr-Cii}}] ~
 \begin{align*}
-f|_{A}\in\continuous''(I_{A}\circ\mu\circ I_{A};\nu) & \Leftrightarrow\\
+f|_{A}\in\continuous''(I_{A}\circ\mu\circ I_{A},\nu) & \Leftrightarrow\\
 f|_{A}\circ I_{A}\circ\mu\circ I_{A}\circ(f|_{A})^{\dagger}\sqsubseteq\nu & \Leftrightarrow\\
 f\circ I_{A}\circ I_{A}\circ\mu\circ I_{A}\circ I_{A}\circ f^{\dagger}\sqsubseteq\nu & \Leftrightarrow\\
 f\circ I_{A}\circ\mu\circ I_{A}\circ f^{\dagger}\sqsubseteq\nu & \Leftarrow\\
 f\circ\mu\circ f^{\dagger}\sqsubseteq\nu & \Leftrightarrow\\
-f\in\continuous''(\mu;\nu).
+f\in\continuous''(\mu,\nu).
 \end{align*}
 \end{widedisorder}
 \end{proof}

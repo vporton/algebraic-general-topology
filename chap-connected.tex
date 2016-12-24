@@ -19,7 +19,7 @@ B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
 \end{proof}
 \begin{cor}
 If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$ then
-$f$ is closed on $A\setminus B$ for a funcoid $f\in\mathsf{FCD}(U;U)$
+$f$ is closed on $A\setminus B$ for a funcoid $f\in\mathsf{FCD}(U,U)$
 for every sets $U$ and typed sets $A,B\in\mathscr{T}U$.\end{cor}
 \begin{proof}
 Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$. Then
@@ -111,7 +111,7 @@ It is the path consisting of one vertex (of length $0$).\end{proof}
 \begin{prop}
 There is a path from element $a$ to element $b$ in a set $A$ through
 a binary relation $\mu$ iff $a\mathrel{(S(\mu\cap A\times A))}b$
-(that is $(a;b)\in S(\mu\cap A\times A)$).\end{prop}
+(that is $(a,b)\in S(\mu\cap A\times A)$).\end{prop}
 \begin{proof}
 ~
 \begin{description}
@@ -422,7 +422,7 @@ Let $L$ be a interval on~$\mathbb{Z}$ (with the standard order).
 
 \begin{prop}
 Consider $L$ as a poset (with the induced order~$\leq$). Then
-\[ \mu(L) = (L\times L) \cap \bigcup_{i\in\mathbb{Z}} \{(i;i), (i;i+1)\}. \]
+\[ \mu(L) = (L\times L) \cap \bigcup_{i\in\mathbb{Z}} \{(i,i), (i,i+1)\}. \]
 \end{prop}
 
 \begin{proof}
@@ -434,9 +434,9 @@ We have $S(D)=L\times L$ and thus $D\sqsupseteq L$; thus $D\in\setcond{f\in\math
 
 It remains to prove that $S(f)\sqsupseteq E\Rightarrow D\sqsubseteq f$.
 
-Suppose contrary that $D\nsqsubseteq f$. Then either $(i;i)\notin f$ for $i\in L$ or $(i;i+1)\notin f$ for $i,i+1\in L$.
+Suppose contrary that $D\nsqsubseteq f$. Then either $(i,i)\notin f$ for $i\in L$ or $(i,i+1)\notin f$ for $i,i+1\in L$.
 
-In either case $S(f)\subset (L\times L) \cap \bigcup_{i\in\mathbb{Z}} \{(i;i), (i;i+1)\} = D$
+In either case $S(f)\subset (L\times L) \cap \bigcup_{i\in\mathbb{Z}} \{(i,i), (i,i+1)\} = D$
 and thus $(f)\nsqsupseteq E$.
 \end{proof}
 

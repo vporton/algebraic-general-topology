@@ -40,7 +40,7 @@ such that
 \]
 
 
-The pair $(\alpha;\beta)$ is called \emph{funcoid} when 
+The pair $(\alpha,\beta)$ is called \emph{funcoid} when 
 $\mathcal{B}\sqcap\alpha\mathcal{A}\ne\bot^{\mathscr{F}}\Leftrightarrow\mathcal{
 A}\sqcap\beta\mathcal{B}\ne\bot^{\mathscr{F}}$.
 So funcoids are a generalization of proximity spaces.
@@ -93,7 +93,7 @@ Funcoids with this composition form a category (\emph{the category
 of funcoids}).
 
 Also funcoids can be reversed (like reversal of $X$ and $Y$ in a
-binary relation) by the formula $(\alpha;\beta)^{-1}=(\beta;\alpha)$.
+binary relation) by the formula $(\alpha,\beta)^{-1}=(\beta,\alpha)$.
 In the particular case if $\mu$ is a proximity we have $\mu^{-1}=\mu$
 because proximities are symmetric.
 
@@ -106,7 +106,7 @@ filters).
 \section{Basic definitions}
 \begin{defn}
 \index{funcoid}Let us call a \emph{funcoid} from a set $A$ to a
-set $B$ a quadruple $(A;B;\alpha;\beta)$ where 
+set $B$ a quadruple $(A,B,\alpha,\beta)$ where 
 $\alpha\in\mathscr{F}(B)^{\mathscr{F}(A)}$,
 $\alpha\in\mathscr{F}(A)^{\mathscr{F}(B)}$ such that
 \[
@@ -118,14 +118,14 @@ $\alpha\in\mathscr{F}(A)^{\mathscr{F}(B)}$ such that
 
 \begin{defn}
 \index{funcoid!source}\index{funcoid!destination}\emph{Source} and
-\emph{destination} of every funcoid $(A;B;\alpha;\beta)$ are defined
+\emph{destination} of every funcoid $(A,B,\alpha,\beta)$ are defined
 as:
 \[
-\Src(A;B;\alpha;\beta)=A\quad\text{and}\quad\Dst(A;B;\alpha;\beta)=B.
+\Src(A,B,\alpha,\beta)=A\quad\text{and}\quad\Dst(A,B,\alpha,\beta)=B.
 \]
 
 \end{defn}
-I will denote $\mathsf{FCD}(A;B)$ the set of funcoids from $A$ to
+I will denote $\mathsf{FCD}(A,B)$ the set of funcoids from $A$ to
 $B$.
 
 I will denote $\mathsf{FCD}$ the set of all funcoids (for small sets).
@@ -134,13 +134,13 @@ I will denote $\mathsf{FCD}$ the set of all funcoids (for small sets).
 \end{defn}
 
 \begin{defn}
-$\supfun{(A;B;\alpha;\beta)}\eqdef\alpha$ for a funcoid $(A;B;\alpha;\beta)$.
+$\supfun{(A,B,\alpha,\beta)}\eqdef\alpha$ for a funcoid $(A,B,\alpha,\beta)$.
 \end{defn}
 
 \begin{defn}
 \index{funcoid!reverse}The \emph{reverse} funcoid 
-$(A;B;\alpha;\beta)^{-1}=(B;A;\beta;\alpha)$
-for a funcoid $(A;B;\alpha;\beta)$.\end{defn}
+$(A,B,\alpha,\beta)^{-1}=(B,A,\beta,\alpha)$
+for a funcoid $(A,B,\alpha,\beta)$.\end{defn}
 \begin{note}
 The reverse funcoid is \emph{not} an inverse in the sense of group
 theory or category theory.\end{note}
@@ -169,14 +169,14 @@ $\suprel{f^{-1}}=\suprel f^{-1}$ for a funcoid $f$.\end{obvious}
 Let $A$, $B$ be sets.
 \begin{enumerate}
 \item For given value of $\supfun f\in\mathscr{F}(B)^{\mathscr{F}(A)}$
-there exists no more than one funcoid $f\in\mathsf{FCD}(A;B)$.
+there exists no more than one funcoid $f\in\mathsf{FCD}(A,B)$.
 \item For given value of $\mathord{\suprel 
 f}\in\subsets(\mathscr{F}(A)\times\mathscr{F}(B))$
-there exists no more than one funcoid $f\in\mathsf{FCD}(A;B)$.
+there exists no more than one funcoid $f\in\mathsf{FCD}(A,B)$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Let $f,g\in\mathsf{FCD}(A;B)$.
+Let $f,g\in\mathsf{FCD}(A,B)$.
 
 Obviously, $\supfun f=\supfun g\Rightarrow\suprel f=\suprel g$ and
 $\supfun{f^{-1}}=\supfun{g^{-1}}\Rightarrow\suprel f=\suprel g$.
@@ -227,7 +227,7 @@ Thus $\supfun f(\mathcal{I}\sqcup\mathcal{J})=\supfun f\mathcal{I}\sqcup\supfun
 f\mathcal{J}$
 because $\mathscr{F}(\Dst f)$ is separable.\end{proof}
 \begin{prop}
-For every $f\in\mathsf{FCD}(A;B)$ for every sets $A$ and $B$ we
+For every $f\in\mathsf{FCD}(A,B)$ for every sets $A$ and $B$ we
 have:
 \begin{enumerate}
 \item \label{fcd-f-d1}$\mathcal{K}\suprel 
@@ -270,14 +270,14 @@ and $g$ are \emph{composable} when $\Dst f=\Src g$.
 \index{composition!funcoids}\index{funcoids!composition}\emph{Composition}
 of composable funcoids is defined by the formula
 \[
-(B;C;\alpha_{2};\beta_{2})\circ(A;B;\alpha_{1};\beta_{1})=(A;C;\alpha_{2}
-\circ\alpha_{1};\beta_{1}\circ\beta_{2}).
+(B,C,\alpha_{2},\beta_{2})\circ(A,B,\alpha_{1},\beta_{1})=(A,C,\alpha_{2}
+\circ\alpha_{1},\beta_{1}\circ\beta_{2}).
 \]
 \end{defn}
 \begin{prop}
 If $f$, $g$ are composable funcoids then $g\circ f$ is a funcoid.\end{prop}
 \begin{proof}
-Let $f=(A;B;\alpha_{1};\beta_{1})$, $g=(B;C;\alpha_{2};\beta_{2})$.
+Let $f=(A,B,\alpha_{1},\beta_{1})$, $g=(B,C,\alpha_{2},\beta_{2})$.
 For every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Y}\in\mathscr{F}(C)$
 we have
 \[
@@ -289,7 +289,7 @@ Y}\nasymp\alpha_{2}\alpha_{1}\mathcal{X}\Leftrightarrow\alpha_{1}\mathcal{X}
 \]
 
 
-So $(A;C;\alpha_{2}\circ\alpha_{1};\beta_{1}\circ\beta_{2})$ is a
+So $(A,C,\alpha_{2}\circ\alpha_{1},\beta_{1}\circ\beta_{2})$ is a
 funcoid.\end{proof}
 \begin{obvious}
 $\supfun{g\circ f}=\supfun g\circ\supfun f$ for every composable
@@ -438,7 +438,7 @@ Let $f$ be a funcoid.
 \end{enumerate}
 \end{cor}
 \begin{prop}
-For every $f\in\mathsf{FCD}(A;B)$ we have (for every $I,J\in\mathscr{T}A$)
+For every $f\in\mathsf{FCD}(A,B)$ we have (for every $I,J\in\mathscr{T}A$)
 \[
 \rsupfun f\bot^{\mathscr{T}(A)}=\bot^{\mathscr{F}(B)},\quad\rsupfun f(I\sqcup 
 J)=\rsupfun fI\sqcup\rsupfun fJ
@@ -479,10 +479,10 @@ I\rsuprel fK\lor J\rsuprel fK.
 The rest follows from symmetry.\end{proof}
 \begin{thm}
 \label{fcd-as-cont}(fundamental theorem of theory of funcoids) Fix sets $A$ and $B$. Let $L_{F}=\mylambda 
-f{\mathsf{FCD}(A;B)}{\rsupfun f}$
-and $L_{R}=\mylambda f{\mathsf{FCD}(A;B)}{\mathord{\rsuprel f}}$.
+f{\mathsf{FCD}(A,B)}{\rsupfun f}$
+and $L_{R}=\mylambda f{\mathsf{FCD}(A,B)}{\mathord{\rsuprel f}}$.
 \begin{enumerate}
-\item \label{main-f}$L_{F}$ is a bijection from the set $\mathsf{FCD}(A;B)$
+\item \label{main-f}$L_{F}$ is a bijection from the set $\mathsf{FCD}(A,B)$
 to the set of functions $\alpha\in\mathscr{F}(B)^{\mathscr{T}A}$
 that obey the conditions (for every $I,J\in\mathscr{T}A$)
 \begin{equation}
@@ -499,7 +499,7 @@ For such $\alpha$ it holds (for every $\mathcal{X}\in\mathscr{F}(A)$)
 \end{equation}
 
 
-\item \label{main-r}$L_{R}$ is a bijection from the set $\mathsf{FCD}(A;B)$
+\item \label{main-r}$L_{R}$ is a bijection from the set $\mathsf{FCD}(A,B)$
 to the set of binary relations 
 $\delta\in\subsets(\mathscr{T}A\times\mathscr{T}B)$
 that obey the conditions
@@ -607,12 +607,12 @@ $\mathcal{X}\sqcap\beta'\mathcal{Y}\ne\bot^{\mathscr{F}(A)}
 So 
 $\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot^{\mathscr{F}(B)}
 \Leftrightarrow\mathcal{X}\sqcap\beta'\mathcal{Y}\ne\bot^{\mathscr{F}(A)}$,
-that is $(A;B;\alpha';\beta')$ is a funcoid. From the formula 
+that is $(A,B,\alpha',\beta')$ is a funcoid. From the formula 
 $\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot^{\mathscr{F}(B)}
 \Leftrightarrow\mathcal{X}\mathrel{\delta'}\mathcal{Y}$
 it follows that
 \[
-X\rsuprel{(A;B;\alpha';\beta')}Y\Leftrightarrow\uparrow Y\sqcap\alpha'\uparrow 
+X\rsuprel{(A,B,\alpha',\beta')}Y\Leftrightarrow\uparrow Y\sqcap\alpha'\uparrow 
 X\ne\bot^{\mathscr{F}(B)}\Leftrightarrow\uparrow X\mathrel{\delta'}\uparrow 
 Y\Leftrightarrow X\mathrel\delta Y.
 \]
@@ -698,7 +698,7 @@ $\langle f^{-1}\rangle^{\ast}=\beta$.
 That this funcoid is unique, follows from the above.\end{proof}
 \begin{defn}
 Any $\mathbf{Rel}$-morphism $F:A\rightarrow B$ corresponds to a
-funcoid $\uparrow^{\mathsf{FCD}}F\in\mathsf{FCD}(A;B)$, where by
+funcoid $\uparrow^{\mathsf{FCD}}F\in\mathsf{FCD}(A,B)$, where by
 definition 
 $\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}=\bigsqcap^{\mathscr{F}}\rsupfun{
 \rsupfun F}\up\mathcal{X}$
@@ -723,7 +723,7 @@ Y\nasymp\rsupfun{\uparrow^{\mathsf{FCD}}f}X\Leftrightarrow Y\nasymp\rsupfun
 fX\Leftrightarrow X\rsuprel fY$
 for $X\in\mathscr{T}\Src f$, $Y\in\mathscr{T}\Dst f$.\end{proof}
 \begin{defn}
-$\uparrow^{\mathsf{FCD}(A;B)}f=\uparrow^{\mathsf{FCD}}(A;B;f)$ for
+$\uparrow^{\mathsf{FCD}(A,B)}f=\uparrow^{\mathsf{FCD}}(A,B,f)$ for
 every binary relation~$f$ between sets~$A$ and~$B$.
 \end{defn}
 
@@ -751,7 +751,7 @@ for describing relationships of funcoids and binary relations, such
 as for the formulas of continuous functions and continuous funcoids
 (see below).
 
-Thus $(\mathsf{FCD}(A;B);\mathbf{Rel}(A;B))$ is a filtrator. I call
+Thus $(\mathsf{FCD}(A,B),\mathbf{Rel}(A,B))$ is a filtrator. I call
 it \emph{filtrator of funcoids}.
 \begin{thm}
 \label{supfun-genbase}If $S$ is a generalized filter base on $\Src f$
@@ -918,14 +918,14 @@ is represented as relational composition of binary relations.
 
 \section{Lattices of funcoids}
 \begin{defn}
-$f\sqsubseteq g\eqdef\mathord{\suprel f}\subseteq\mathord{\suprel g}$ for $f,g\in\mathsf{FCD}(A;B)$
+$f\sqsubseteq g\eqdef\mathord{\suprel f}\subseteq\mathord{\suprel g}$ for $f,g\in\mathsf{FCD}(A,B)$
 for every sets $A$, $B$.
 \end{defn}
-Thus every $\mathsf{FCD}(A;B)$ is a poset. (It's taken into account
+Thus every $\mathsf{FCD}(A,B)$ is a poset. (It's taken into account
 that $\mathord{\suprel f}\ne\mathord{\suprel g}$ when $f\ne g$.)
 
 \index{filtrator!of funcoids}We will consider filtrators (\emph{filtrators
-of funcoids}) whose base is $\mathsf{FCD}(A;B)$ and whose core are
+of funcoids}) whose base is $\mathsf{FCD}(A,B)$ and whose core are
 principal funcoids from $A$ to $B$.
 \begin{lem}\label{fcd-up-x-lem}
 $\rsupfun fX=\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun FX$ for
@@ -977,12 +977,12 @@ f}^{\mathscr{F}}\rsupfun FX & =\\
 \end{align*}
 (the lemma used).
 \end{proof}
-Below it is shown that $\mathsf{FCD}(A;B)$ are complete lattices
+Below it is shown that $\mathsf{FCD}(A,B)$ are complete lattices
 for every sets $A$ and $B$. We will apply lattice operations to
-subsets of such sets without explicitly mentioning $\mathsf{FCD}(A;B)$.
+subsets of such sets without explicitly mentioning $\mathsf{FCD}(A,B)$.
 \begin{thm}
-\label{fcd-join-sets}$\mathsf{FCD}(A;B)$ is a complete lattice (for
-every sets $A$ and $B$). For every $R\in\subsets\mathsf{FCD}(A;B)$
+\label{fcd-join-sets}$\mathsf{FCD}(A,B)$ is a complete lattice (for
+every sets $A$ and $B$). For every $R\in\subsets\mathsf{FCD}(A,B)$
 and $X\in\mathscr{T}A$, $Y\in\mathscr{T}B$
 \begin{enumerate}
 \item \label{sr-join}$X\rsuprel{\bigsqcup R}Y\Leftrightarrow\exists f\in 
@@ -1034,7 +1034,7 @@ In the next theorem, compared to the previous one, the class of infinite
 joins is replaced with lesser class of binary joins and simultaneously
 class of sets is changed to more wide class of filters.
 \begin{thm}
-\label{fcd-fin-join}For every $f,g\in\mathsf{FCD}(A;B)$ and 
+\label{fcd-fin-join}For every $f,g\in\mathsf{FCD}(A,B)$ and 
 $\mathcal{X}\in\mathscr{F}(A)$
 (for every sets $A$,~$B$)
 \begin{enumerate}
@@ -1062,7 +1062,7 @@ g\mathcal{X}\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
 X}\sqcap\supfun{g^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(A)} & \Leftrightarrow\\
 \mathcal{X}\sqcap\beta\mathcal{Y}\ne\bot^{\mathscr{F}(A)}.
 \end{align*}
-So $h=(A;B;\alpha;\beta)$ is a funcoid. Obviously $h\sqsupseteq f$
+So $h=(A,B,\alpha,\beta)$ is a funcoid. Obviously $h\sqsupseteq f$
 and $h\sqsupseteq g$. If $p\sqsupseteq f$ and $p\sqsupseteq g$
 for some funcoid $p$ then $\supfun p\mathcal{X}\sqsupseteq\supfun 
 f\mathcal{X}\sqcup\supfun g\mathcal{X}=\supfun h\mathcal{X}$
@@ -1118,8 +1118,8 @@ defines compositions of relations) that $x\mathrel{(g\circ
 f)}z\Leftrightarrow\exists y:(x\mathrel fy\land y\mathrel gz)$
 for every $x$ and $z$ and every binary relations $f$ and $g$.
 \begin{thm}
-\label{fcd-atom-middle}For every sets $A$, $B$, $C$ and $f\in\mathsf{FCD}(A;B)$,
-$g\in\mathsf{FCD}(B;C)$ and $\mathcal{X}\in\mathscr{F}(A)$, 
+\label{fcd-atom-middle}For every sets $A$, $B$, $C$ and $f\in\mathsf{FCD}(A,B)$,
+$g\in\mathsf{FCD}(B,C)$ and $\mathcal{X}\in\mathscr{F}(A)$, 
 $\mathcal{Z}\in\mathscr{F}(C)$
 \[
 \mathcal{X}\suprel{g\circ f}\mathcal{Z}\Leftrightarrow\exists 
@@ -1150,11 +1150,11 @@ $y\suprel g\mathcal{Z}$; we have $\mathcal{X}\suprel fy$.\end{proof}
 \begin{thm}
 For every sets $A$, $B$, $C$
 \begin{enumerate}
-\item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$ for $g,h\in\mathsf{FCD}(A;B)$,
-$f\in\mathsf{FCD}(B;C)$;
+\item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$ for $g,h\in\mathsf{FCD}(A,B)$,
+$f\in\mathsf{FCD}(B,C)$;
 \item $(g\sqcup h)\circ f=g\circ f\sqcup h\circ f$ for 
-$g,h\in\mathsf{FCD}(B;C)$,
-$f\in\mathsf{FCD}(A;B)$.
+$g,h\in\mathsf{FCD}(B,C)$,
+$f\in\mathsf{FCD}(A,B)$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1196,7 +1196,7 @@ Another proof of the above theorem (without atomic filters):
 \section{Domain and range of a funcoid}
 \begin{defn}
 \index{funcoid!identity}Let $A$ be a set. The \emph{identity funcoid}
-$1_{A}^{\mathsf{FCD}}=(A;A;\id_{\mathscr{F}(A)};\id_{\mathscr{F}(A)})$.
+$1_{A}^{\mathsf{FCD}}=(A,A,\id_{\mathscr{F}(A)},\id_{\mathscr{F}(A)})$.
 \end{defn}
 \begin{obvious}
 The identity funcoid is a funcoid.\end{obvious}
@@ -1210,7 +1210,7 @@ From proposition~\ref{comp-fcd-r}.\end{proof}
 $\mathcal{A}\in\mathscr{F}(A)$.
 The \emph{restricted identity funcoid
 \[
-\id_{\mathcal{A}}^{\mathsf{FCD}}=(A;A;\mathcal{A}\sqcap;\mathcal{A}\sqcap).
+\id_{\mathcal{A}}^{\mathsf{FCD}}=(A,A,\mathcal{A}\sqcap,\mathcal{A}\sqcap).
 \]
 }\end{defn}
 \begin{prop}
@@ -1259,7 +1259,7 @@ by the formula $\im f=\supfun f\top^{\mathscr{F}(\Src f)}$.
 \index{domain!of funcoid}\emph{Domain} of a funcoid $f$ is defined
 by the formula $\dom f=\im f^{-1}$.\end{defn}
 \begin{obvious}
-For every morphism $f\in\mathbf{Rel}(A;B)$ for sets~$A$ and~$B$
+For every morphism $f\in\mathbf{Rel}(A,B)$ for sets~$A$ and~$B$
 \begin{enumerate}
 \item $\im\uparrow^{\mathsf{FCD}}f=\uparrow\im f$;
 \item $\dom\uparrow^{\mathsf{FCD}}f=\uparrow\dom f$.
@@ -1387,7 +1387,7 @@ the \emph{category of funcoid triples}.
 as follows:
 \begin{itemize}
 \item Objects are small sets.
-\item The set of morphisms from a set $A$ to a set $B$ is $\mathsf{FCD}(A;B)$.
+\item The set of morphisms from a set $A$ to a set $B$ is $\mathsf{FCD}(A,B)$.
 \item The composition is the composition of funcoids.
 \item Identity morphism for a set is the identity funcoid for that set.
 \end{itemize}
@@ -1398,12 +1398,12 @@ triples} is defined as follows:
 \begin{itemize}
 \item Objects are filters on small sets.
 \item The morphisms from a filter $\mathcal{A}$ to a filter $\mathcal{B}$
-are triples $(\mathcal{A};\mathcal{B};f)$ where 
-$f\in\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{B}))$
+are triples $(\mathcal{A},\mathcal{B},f)$ where 
+$f\in\mathsf{FCD}(\Base(\mathcal{A}),\Base(\mathcal{B}))$
 and $\dom f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$.
 \item The composition is defined by the formula 
-$(\mathcal{B};\mathcal{C};g)\circ(\mathcal{A};\mathcal{B};f)=(\mathcal{A}
-;\mathcal{C};g\circ f)$.
+$(\mathcal{B},\mathcal{C},g)\circ(\mathcal{A},\mathcal{B},f)=(\mathcal{A}
+,\mathcal{C},g\circ f)$.
 \item Identity morphism for a filter $\mathcal{A}$ is 
 $\id_{\mathcal{A}}^{\mathsf{FCD}}$.
 \end{itemize}
@@ -1492,7 +1492,7 @@ a\sqsubseteq\bigsqcap\rsupfun{\bigsqcup\circ\rsupfun{\alpha}
 \circ\atoms\circ\uparrow}\up a\label{at-func-cond}
 \end{equation}
 can be continued to the function $\supfun f$ for a unique 
-$f\in\mathsf{FCD}(A;B)$;
+$f\in\mathsf{FCD}(A,B)$;
 \begin{equation}
 \supfun 
 f\mathcal{X}=\bigsqcup\rsupfun{\alpha}\atoms\mathcal{X}\label{at-func-eq}
@@ -1508,7 +1508,7 @@ $b\in\atoms^{\mathscr{F}(B)}$)
 Y:x\mathrel\delta y\Rightarrow a\mathrel\delta b\label{at-rel-cond}
 \end{equation}
 can be continued to the relation $\suprel f$ for a unique 
-$f\in\mathsf{FCD}(A;B)$;
+$f\in\mathsf{FCD}(A,B)$;
 \begin{equation}
 \mathcal{X}\suprel f\mathcal{Y}\Leftrightarrow\exists 
 x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\mathrel\delta y\label{at-rel-eq}
@@ -1638,7 +1638,7 @@ is a continuation of $\delta$.
 One of uses of the previous theorem is the proof of the following
 theorem:
 \begin{thm}
-\label{fcd-intrs-atom}If $A$ and $B$ are sets, $R\in\subsets\mathsf{FCD}(A;B)$,
+\label{fcd-intrs-atom}If $A$ and $B$ are sets, $R\in\subsets\mathsf{FCD}(A,B)$,
 $x\in\atoms^{\mathscr{F}(A)}$, $y\in\atoms^{\mathscr{F}(B)}$, then
 \begin{enumerate}
 \item \label{meet-f-at}$\supfun{\bigsqcap R}x=\bigsqcap_{f\in R}\supfun fx$;
@@ -1665,10 +1665,10 @@ a\mathrel\delta b.
 
 
 So by theorem~\ref{cont-fcd-on-atoms}, $\delta$ can be continued
-till $\suprel p$ for some funcoid $p\in\mathsf{FCD}(A;B)$.
+till $\suprel p$ for some funcoid $p\in\mathsf{FCD}(A,B)$.
 
 
-For every funcoid $q\in\mathsf{FCD}(A;B)$ such that $\forall f\in R:q\sqsubseteq 
+For every funcoid $q\in\mathsf{FCD}(A,B)$ such that $\forall f\in R:q\sqsubseteq 
 f$
 we have 
 \[
@@ -1723,8 +1723,8 @@ $\forall H\in\up(g\circ f)\exists F\in\up f,G\in\up g: H\sqsupseteq G\circ F$ fo
 \end{conjecture}
 
 \begin{thm}
-\label{fcd-cross}Let $A$, $B$, $C$ be sets, $f\in\mathsf{FCD}(A;B)$,
-$g\in\mathsf{FCD}(B;C)$, $h\in\mathsf{FCD}(A;C)$. Then
+\label{fcd-cross}Let $A$, $B$, $C$ be sets, $f\in\mathsf{FCD}(A,B)$,
+$g\in\mathsf{FCD}(B,C)$, $h\in\mathsf{FCD}(A,C)$. Then
 \[
 g\circ f\nasymp h\Leftrightarrow g\nasymp h\circ f^{-1}.
 \]
@@ -1758,7 +1758,7 @@ of two filters:
 \index{product!funcoidal}\emph{Funcoidal product} of filters $\mathcal{A}$
 and $\mathcal{B}$ is such a funcoid 
 $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\in\mathsf{FCD}(\Base(\mathcal{A}
-);\Base(\mathcal{B}))$
+),\Base(\mathcal{B}))$
 that for every $\mathcal{X}\in\Base(\mathcal{A})$, 
 $\mathcal{Y}\in\Base(\mathcal{B})$
 \[
@@ -1781,7 +1781,7 @@ Obvious.\end{proof}
 \begin{obvious}
 ~
 \begin{itemize}
-\item $\uparrow^{\mathsf{FCD}(U;V)}(A\times B)=\uparrow^{U}A\times\uparrow^{V}B$
+\item $\uparrow^{\mathsf{FCD}(U,V)}(A\times B)=\uparrow^{U}A\times\uparrow^{V}B$
 for sets $A\subseteq U$ and $B\subseteq V$.
 \item $\uparrow^{\mathsf{FCD}}(A\times B)=\uparrow A\times\uparrow B$ for
 typed sets~$A$ and~$B$.
@@ -1790,7 +1790,7 @@ typed sets~$A$ and~$B$.
 \begin{prop}
 $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\dom 
 f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$
-for every $f\in\mathsf{FCD}(A;B)$ and $\mathcal{A}\in\mathscr{F}(A)$,
+for every $f\in\mathsf{FCD}(A,B)$ and $\mathcal{A}\in\mathscr{F}(A)$,
 $\mathcal{B}\in\mathscr{F}(B)$.\end{prop}
 \begin{proof}
 If $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$ then
@@ -1831,7 +1831,7 @@ f(\mathcal{A}\sqcap\mathcal{X}).
 From this, as easy to show, $h\sqsubseteq f$ and 
 $h\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
 If $g\sqsubseteq f\land g\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-for a $g\in\mathsf{FCD}(\Src f;\Dst f)$ then $\dom g\sqsubseteq\mathcal{A}$,
+for a $g\in\mathsf{FCD}(\Src f,\Dst f)$ then $\dom g\sqsubseteq\mathcal{A}$,
 $\im g\sqsubseteq\mathcal{B}$,
 \[
 \supfun g\mathcal{X}=\mathcal{B}\sqcap\supfun 
@@ -1884,7 +1884,7 @@ subset of the lattice of funcoids.\end{proof}
 $S\in\subsets(\mathscr{F}(A)\times\mathscr{F}(B))$
 then
 \[
-\bigsqcap_{(\mathcal{A};\mathcal{B})\in 
+\bigsqcap_{(\mathcal{A},\mathcal{B})\in 
 S}(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\bigsqcap\dom 
 S\times^{\mathsf{FCD}}\bigsqcap\im S.
 \]
@@ -1892,35 +1892,35 @@ S\times^{\mathsf{FCD}}\bigsqcap\im S.
 \begin{proof}
 If $x\in\atoms^{\mathscr{F}(A)}$ then by theorem \ref{fcd-intrs-atom}
 \[
-\supfun{\bigsqcap_{(\mathcal{A};\mathcal{B})\in 
+\supfun{\bigsqcap_{(\mathcal{A},\mathcal{B})\in 
 S}(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}x=\bigsqcap_{(\mathcal{A}
-;\mathcal{B})\in S}\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x.
+,\mathcal{B})\in S}\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x.
 \]
 
 
 If $x\nasymp\bigsqcap\dom S$ then
 \begin{gather*}
-\forall(\mathcal{A};\mathcal{B})\in 
+\forall(\mathcal{A},\mathcal{B})\in 
 S:(x\sqcap\mathcal{A}\ne\bot^{\mathscr{F}(A)}\land\supfun{\mathcal{A}\times^{
 \mathsf{FCD}}\mathcal{B}}x=\mathcal{B});\\
 \setcond{\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x}{(\mathcal{A}
-;\mathcal{B})\in S}=\im S;
+,\mathcal{B})\in S}=\im S;
 \end{gather*}
 
 
 if $x\asymp\bigsqcap\dom S$ then
 \begin{gather*}
-\exists(\mathcal{A};\mathcal{B})\in 
+\exists(\mathcal{A},\mathcal{B})\in 
 S:(x\sqcap\mathcal{A}=\bot^{\mathscr{F}(A)}\land\supfun{\mathcal{A}\times^{
 \mathsf{FCD}}\mathcal{B}}x=\bot^{\mathscr{F}(B)});\\
 \setcond{\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x}{(\mathcal{A}
-;\mathcal{B})\in S}\ni\bot^{\mathscr{F}(B)}.
+,\mathcal{B})\in S}\ni\bot^{\mathscr{F}(B)}.
 \end{gather*}
 
 
 So
 \[
-\supfun{\bigsqcap_{(\mathcal{A};\mathcal{B})\in 
+\supfun{\bigsqcap_{(\mathcal{A},\mathcal{B})\in 
 S}(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}x=\begin{cases}
 \bigsqcap\im S & \text{if }x\nasymp\bigsqcap\dom S\\
 \bot^{\mathscr{F}(B)} & \text{if }x\asymp\bigsqcap\dom S.
@@ -1950,7 +1950,7 @@ $(\mathcal{A}_{0}\sqcap\mathcal{A}_{1})\times^{\mathsf{FCD}}(\mathcal{B}_{0}
 If $A$, $B$ are sets and $\mathcal{A}\in\mathscr{F}(A)$ then 
 $\mathcal{A}\times^{\mathsf{FCD}}$
 is a complete homomorphism from the lattice $\mathscr{F}(B)$ to the
-lattice $\mathsf{FCD}(A;B)$, if also $\mathcal{A}\ne\bot^{\mathscr{F}(A)}$
+lattice $\mathsf{FCD}(A,B)$, if also $\mathcal{A}\ne\bot^{\mathscr{F}(A)}$
 then it is an order embedding.\end{thm}
 \begin{proof}
 Let $S\in\subsets\mathscr{F}(B)$, $X\in\mathscr{T}A$, 
@@ -2007,7 +2007,7 @@ a\Rightarrow\supfun{f|_{a}}\mathcal{X}=\bot^{\mathscr{F}(\Dst f)}.
 \begin{lem}
 $\mylambda{\mathcal{B}}{\mathscr{F}(B)}{\top^{\mathscr{F}}\times^{\mathsf{FCD}}
 \mathcal{B}}$
-is an upper adjoint of $\mylambda f{\mathsf{FCD}(A;B)}{\im f}$ (for
+is an upper adjoint of $\mylambda f{\mathsf{FCD}(A,B)}{\im f}$ (for
 every sets $A$, $B$).\end{lem}
 \begin{proof}
 We need to prove $\im f\sqsubseteq\mathcal{B}\Leftrightarrow 
@@ -2037,14 +2037,14 @@ $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
 
 \section{Atomic funcoids}
 \begin{thm}
-An $f\in\mathsf{FCD}(A;B)$ is an atom of the lattice $\mathsf{FCD}(A;B)$
+An $f\in\mathsf{FCD}(A,B)$ is an atom of the lattice $\mathsf{FCD}(A,B)$
 (for some sets $A$, $B$) iff it is a funcoidal product of two atomic
 filter objects.\end{thm}
 \begin{proof}
 ~
 \begin{description}
-\item [{$\Rightarrow$}] Let $f\in\mathsf{FCD}(A;B)$ be an atom of the
-lattice $\mathsf{FCD}(A;B)$. Let's get elements $a\in\atoms\dom f$
+\item [{$\Rightarrow$}] Let $f\in\mathsf{FCD}(A,B)$ be an atom of the
+lattice $\mathsf{FCD}(A,B)$. Let's get elements $a\in\atoms\dom f$
 and $b\in\atoms\supfun fa$. Then for every $\mathcal{X}\in\mathscr{F}(A)$
 \[
 \mathcal{X}\asymp 
@@ -2061,7 +2061,7 @@ have $f=a\times^{\mathsf{FCD}}b$.
 
 \item [{$\Leftarrow$}] Let $a\in\atoms^{\mathscr{F}(A)}$, 
 $b\in\atoms^{\mathscr{F}(B)}$,
-$f\in\mathsf{FCD}(A;B)$. If $b\asymp\supfun fa$ then $\lnot(a\suprel fb)$,
+$f\in\mathsf{FCD}(A,B)$. If $b\asymp\supfun fa$ then $\lnot(a\suprel fb)$,
 $f\asymp a\times^{\mathsf{FCD}}b$; if $b\sqsubseteq\supfun fa$ then
 $\forall\mathcal{X}\in\mathscr{F}(A):(\mathcal{X}\nasymp a\Rightarrow\supfun 
 f\mathcal{X}\sqsupseteq b)$,
@@ -2071,7 +2071,7 @@ that is $a\times^{\mathsf{FCD}}b$ is an atom.
 \end{description}
 \end{proof}
 \begin{thm}
-The lattice $\mathsf{FCD}(A;B)$ is atomic (for every fixed sets $A$, $B$).\end{thm}
+The lattice $\mathsf{FCD}(A,B)$ is atomic (for every fixed sets $A$, $B$).\end{thm}
 \begin{proof}
 Let $f$ be a non-empty funcoid from $A$ to $B$. Then $\dom 
 f\ne\bot^{\mathscr{F}(A)}$,
@@ -2079,10 +2079,10 @@ thus by theorem~\ref{filt-atomic} there exists $a\in\atoms\dom f$.
 So $\supfun fa\ne\bot^{\mathscr{F}(B)}$ thus it exists $b\in\atoms\supfun fa$.
 Finally the atomic funcoid $a\times^{\mathsf{FCD}}b\sqsubseteq f$.\end{proof}
 \begin{thm}
-The lattice $\mathsf{FCD}(A;B)$ is separable (for every fixed sets $A$,
+The lattice $\mathsf{FCD}(A,B)$ is separable (for every fixed sets $A$,
 $B$).\end{thm}
 \begin{proof}
-Let $f,g\in\mathsf{FCD}(A;B)$, $f\sqsubset g$. Then there exists
+Let $f,g\in\mathsf{FCD}(A,B)$, $f\sqsubset g$. Then there exists
 $a\in\atoms^{\mathscr{F}(A)}$ such that $\supfun fa\sqsubset\supfun ga$.
 So because the lattice $\mathscr{F}(B)$ is atomically separable,
 there exists $b\in\atoms^{\mathscr{F}(B)}$ such that $\supfun fa\sqcap 
@@ -2109,10 +2109,10 @@ a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}x=\bot^{\mathscr{F}(B)}
 Thus $\supfun{a\times^{\mathsf{FCD}}b}x\sqsubseteq\supfun gx$ and
 consequently $a\times^{\mathsf{FCD}}b\sqsubseteq g$.
 
-So the lattice $\mathsf{FCD}(A;B)$ is separable by theorem 
+So the lattice $\mathsf{FCD}(A,B)$ is separable by theorem 
 \ref{msl-sep-conds}.\end{proof}
 \begin{cor}
-\label{fcd-is-sep}The lattice $\mathsf{FCD}(A;B)$ is:
+\label{fcd-is-sep}The lattice $\mathsf{FCD}(A,B)$ is:
 \begin{enumerate}
 \item separable;
 \item strongly separable;
@@ -2127,12 +2127,12 @@ For more ways to characterize (atomic) separability of the lattice
 of funcoids see subsections ``Separation subsets and full stars''
 and ``Atomically separable lattices''.\end{rem}
 \begin{cor}
-The lattice $\mathsf{FCD}(A;B)$ is an atomistic lattice.\end{cor}
+The lattice $\mathsf{FCD}(A,B)$ is an atomistic lattice.\end{cor}
 \begin{proof}
 By theorem~\ref{amstc-sep}.\end{proof}
 \begin{prop}
 $\atoms(f\sqcup g)=\atoms f\cup\atoms g$ for every funcoids 
-$f,g\in\mathsf{FCD}(A;B)$
+$f,g\in\mathsf{FCD}(A,B)$
 (for every sets $A$, $B$).\end{prop}
 \begin{proof}
 $a\times^{\mathsf{FCD}}b\nasymp f\sqcup g\Leftrightarrow a\suprel{f\sqcup 
@@ -2148,7 +2148,7 @@ The above proof does not use axiom of choice (unlike the below proof).
 \end{rem}
 See also an older proof of the set of funcoids being co-brouwerian:
 \begin{thm}
-For every $f,g,h\in\mathsf{FCD}(A;B)$, $R\in\subsets\mathsf{FCD}(A;B)$
+For every $f,g,h\in\mathsf{FCD}(A,B)$, $R\in\subsets\mathsf{FCD}(A,B)$
 (for every sets $A$ and $B$)
 \begin{enumerate}
 \item \label{fcd-dist-j}$f\sqcap(g\sqcup h)=(f\sqcap g)\sqcup(f\sqcap h)$;
@@ -2396,12 +2396,12 @@ funcoid $f$ is the funcoid corresponding to $g$.
 \end{description}
 \end{proof}
 \begin{thm}
-\label{fcd-join-compl}If $R\in\subsets\mathsf{FCD}(A;B)$ is a set
+\label{fcd-join-compl}If $R\in\subsets\mathsf{FCD}(A,B)$ is a set
 of (co-)complete funcoids then $\bigsqcup R$ is a (co-)complete funcoid
 (for every sets $A$ and $B$).\end{thm}
 \begin{proof}
 It is enough to prove for co-complete funcoids. Let 
-$R\in\subsets\mathsf{FCD}(A;B)$
+$R\in\subsets\mathsf{FCD}(A,B)$
 be a set of co-complete funcoids. Then for every $X\in\mathscr{T}(\Src f)$
 \[
 \rsupfun{\bigsqcup R}X=\bigsqcup_{f\in R}\rsupfun fX
@@ -2410,7 +2410,7 @@ is a principal filter (used theorem \ref{fcd-join-sets}).\end{proof}
 \begin{cor}
 \label{fcd-compl-join}If $R$ is a set of binary relations between
 sets $A$ and $B$ then 
-$\bigsqcup\rsupfun{\uparrow^{\mathsf{FCD}(A;B)}}R=\uparrow^{\mathsf{FCD}(A;B)}
+$\bigsqcup\rsupfun{\uparrow^{\mathsf{FCD}(A,B)}}R=\uparrow^{\mathsf{FCD}(A,B)}
 \bigcup R$.\end{cor}
 \begin{proof}
 From two last theorems.\end{proof}
@@ -2419,12 +2419,12 @@ From two last theorems.\end{proof}
 of funcoids) of binary relations of the form 
 $X\times Y\sqcup\overline{X}\times\top^{\mathscr{T}(B)}$ (where $X$, $Y$ are typed sets).\end{lem}
 \begin{proof}
-Let $f\in\mathsf{FCD}(A;B)$, $X\in\mathscr{T}A$, $Y\in\up\supfun fX$,
-$g(X;Y)\eqdef X\times Y\sqcup\overline{X}\times\top^{\mathscr{T}(B)}$.
-Then $g(X;Y)=X\times^{\mathsf{FCD}}Y\sqcup\overline{X}\times^{\mathsf{FCD}}\top^{\mathscr{F}(B)}$.
+Let $f\in\mathsf{FCD}(A,B)$, $X\in\mathscr{T}A$, $Y\in\up\supfun fX$,
+$g(X,Y)\eqdef X\times Y\sqcup\overline{X}\times\top^{\mathscr{T}(B)}$.
+Then $g(X,Y)=X\times^{\mathsf{FCD}}Y\sqcup\overline{X}\times^{\mathsf{FCD}}\top^{\mathscr{F}(B)}$.
 For every $K\in\mathscr{T}A$
 \begin{multline*}
-\rsupfun{g(X;Y)}K=\rsupfun{X\times^{\mathsf{FCD}}Y}K\sqcup\rsupfun{\overline{X}
+\rsupfun{g(X,Y)}K=\rsupfun{X\times^{\mathsf{FCD}}Y}K\sqcup\rsupfun{\overline{X}
 \times^{\mathsf{FCD}}\top^{\mathscr{F}(B)}}K=\\
 \left(\begin{cases}
 \bot^{\mathscr{F}(B)} & \text{if }K=\bot^{\mathscr{T}A}\\
@@ -2432,23 +2432,23 @@ Y & \text{if }\bot^{\mathscr{T}A}\ne K\sqsubseteq X\\
 \top^{\mathscr{F}(B)} & \text{if }K\nsqsubseteq X
 \end{cases}\right)\sqsupseteq\rsupfun fK;
 \end{multline*}
-so $g(X;Y)\sqsupseteq f$. For every $X\in\mathscr{T}A$
+so $g(X,Y)\sqsupseteq f$. For every $X\in\mathscr{T}A$
 \[
-\bigsqcap_{Y\in\up\rsupfun fX}\rsupfun{g(X;Y)}X=\bigsqcap^{\mathscr{F}}_{Y\in\up\rsupfun 
+\bigsqcap_{Y\in\up\rsupfun fX}\rsupfun{g(X,Y)}X=\bigsqcap^{\mathscr{F}}_{Y\in\up\rsupfun 
 fX}Y=\rsupfun fX;
 \]
 consequently
 \[
-\rsupfun{\bigsqcap\setcond{g(X;Y)}{X\in\mathscr{T}A,Y\in\up\rsupfun 
+\rsupfun{\bigsqcap\setcond{g(X,Y)}{X\in\mathscr{T}A,Y\in\up\rsupfun 
 fX}}X\sqsubseteq\rsupfun fX
 \]
 that is
 \[
-\bigsqcap\setcond{g(X;Y)}{X\in\mathscr{T}A,Y\in\up\rsupfun fX}\sqsubseteq f
+\bigsqcap\setcond{g(X,Y)}{X\in\mathscr{T}A,Y\in\up\rsupfun fX}\sqsubseteq f
 \]
  and finally
 \[
-f=\bigsqcap\setcond{g(X;Y)}{X\in\mathscr{T}A,Y\in\up\rsupfun fX}.
+f=\bigsqcap\setcond{g(X,Y)}{X\in\mathscr{T}A,Y\in\up\rsupfun fX}.
 \]
 \end{proof}
 \begin{cor}
@@ -2487,9 +2487,9 @@ $g$ is complete if $g$ is a metacomplete funcoid.
 \end{conjecture}
 I will denote $\mathsf{ComplFCD}$ and $\mathsf{CoComplFCD}$ the
 sets of small complete and co-complete funcoids correspondingly. 
-$\mathsf{ComplFCD}(A;B)$
+$\mathsf{ComplFCD}(A,B)$
 are complete funcoids from $A$ to $B$ and likewise with 
-$\mathsf{CoComplFCD}(A;B)$.
+$\mathsf{CoComplFCD}(A,B)$.
 \begin{obvious}
 $\mathsf{ComplFCD}$ and $\mathsf{CoComplFCD}$ are closed regarding
 composition of funcoids.\end{obvious}
@@ -2499,23 +2499,23 @@ are complete lattices.\end{prop}
 \begin{proof}
 It follows from theorem \ref{fcd-join-compl}.\end{proof}
 \begin{thm}
-Atoms of the lattice $\mathsf{ComplFCD}(A;B)$ are exactly funcoidal
+Atoms of the lattice $\mathsf{ComplFCD}(A,B)$ are exactly funcoidal
 products of the form $\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}b$
 where $\alpha\in A$ and $b$ is an ultrafilter on $B$.\end{thm}
 \begin{proof}
 First, it's easy to see that $\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}b$
-are elements of $\mathsf{ComplFCD}(A;B)$. Also $\bot^{\mathsf{FCD}(A;B)}$
-is an element of $\mathsf{ComplFCD}(A;B)$.
+are elements of $\mathsf{ComplFCD}(A,B)$. Also $\bot^{\mathsf{FCD}(A,B)}$
+is an element of $\mathsf{ComplFCD}(A,B)$.
 
 $\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}b$ are atoms of 
-$\mathsf{ComplFCD}(A;B)$
-because they are atoms of $\mathsf{FCD}(A;B)$.
+$\mathsf{ComplFCD}(A,B)$
+because they are atoms of $\mathsf{FCD}(A,B)$.
 
-It remains to prove that if $f$ is an atom of $\mathsf{ComplFCD}(A;B)$
+It remains to prove that if $f$ is an atom of $\mathsf{ComplFCD}(A,B)$
 then $f=\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}b$ for some $\alpha\in A$
 and an ultrafilter $b$ on $B$.
 
-Suppose $f\in\mathsf{FCD}(A;B)$ is a non-empty complete funcoid.
+Suppose $f\in\mathsf{FCD}(A,B)$ is a non-empty complete funcoid.
 Then there exists $\alpha\in A$ such that $\rsupfun 
 f@\{\alpha\}\ne\bot^{\mathscr{F}(B)}$.
 Thus $\uparrow^{A}\{\alpha\}\text{\texttimes}^{\mathsf{FCD}}b\sqsubseteq f$
@@ -2525,7 +2525,7 @@ $f=\uparrow^{A}\{\alpha\}\text{\texttimes}^{\mathsf{FCD}}b$.\end{proof}
 \label{complfcd-rep}$G\mapsto\bigsqcup_{\alpha\in 
 A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$
 is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
-to the set $\mathsf{ComplFCD}(A;B)$.
+to the set $\mathsf{ComplFCD}(A,B)$.
 
 The inverse isomorphism is described by the formula $G(\alpha)=\rsupfun 
 f@\{\alpha\}$
@@ -2540,7 +2540,7 @@ A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))=\bigsqcup\setcond{
 \]
 is complete. So $G\mapsto\bigsqcup_{\alpha\in 
 A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$
-is a function from $G\in\mathscr{F}(B)^{A}$ to $\mathsf{ComplFCD}(A;B)$.
+is a function from $G\in\mathscr{F}(B)^{A}$ to $\mathsf{ComplFCD}(A,B)$.
 
 Let $f$ be complete. Then take
 \[
@@ -2551,7 +2551,7 @@ and we have $f=\bigsqcup_{\alpha\in
 A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$
 obviously. So $G\mapsto\bigsqcup_{\alpha\in 
 A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$
-is surjection onto $\mathsf{ComplFCD}(A;B)$.
+is surjection onto $\mathsf{ComplFCD}(A,B)$.
 
 Let now prove that it is an injection:
 
@@ -2589,7 +2589,7 @@ A}\supfun{\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha)}@\{
 $G\mapsto\bigsqcup_{\alpha\in 
 A}(G(\alpha)\times^{\mathsf{FCD}}\uparrow^{A}\{\alpha\})$
 is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
-to the set $\mathsf{CoComplFCD}(A;B)$.
+to the set $\mathsf{CoComplFCD}(A,B)$.
 
 The inverse isomorphism is described by the formula 
 $G(\alpha)=\rsupfun{f^{-1}}@\{\alpha\}$
@@ -2597,7 +2597,7 @@ where $f$ is a co-complete funcoid.
 \end{cor}
 
 \begin{cor}
-$\mathsf{ComplFCD}(A;B)$ and $\mathsf{CoComplFCD}(A;B)$ are co-frames.
+$\mathsf{ComplFCD}(A,B)$ and $\mathsf{CoComplFCD}(A,B)$ are co-frames.
 \end{cor}
 
 \section{Funcoids corresponding to pretopologies}
@@ -2639,8 +2639,8 @@ $\Cor f=\Cor'f$ for an element $f$ of a filtrator of funcoids.\end{thm}
 By theorem~\ref{cor-eq} and corollary~\ref{fcd-filtered}.\end{proof}
 \begin{defn}
 \index{completion!of funcoid}\emph{Completion} of a funcoid 
-$f\in\mathsf{FCD}(A;B)$
-is the complete funcoid $\Compl f\in\mathsf{FCD}(A;B)$ defined by
+$f\in\mathsf{FCD}(A,B)$
+is the complete funcoid $\Compl f\in\mathsf{FCD}(A,B)$ defined by
 the formula $\rsupfun{\Compl f}@\{\alpha\}=\rsupfun 
 f@\{\alpha\}$
 for $\alpha\in\Src f$.
@@ -2656,36 +2656,36 @@ $f$ is defined by the formula
 \begin{obvious}
 $\Compl f\sqsubseteq f$ and $\CoCompl f\sqsubseteq f$.\end{obvious}
 \begin{prop}
-The filtrator $(\mathsf{FCD}(A;B);\mathsf{ComplFCD}(A;B))$ is 
+The filtrator $(\mathsf{FCD}(A,B),\mathsf{ComplFCD}(A,B))$ is 
 filtered.\end{prop}
 \begin{proof}
 Because the filtrator of funcoids is filtered.\end{proof}
 \begin{thm}
-$\Compl f=\Cor^{\mathsf{ComplFCD}(A;B)}f=\Cor'^{\mathsf{ComplFCD}(A;B)}f$
-for every funcoid $f\in\mathsf{FCD}(A;B)$.\end{thm}
+$\Compl f=\Cor^{\mathsf{ComplFCD}(A,B)}f=\Cor'^{\mathsf{ComplFCD}(A,B)}f$
+for every funcoid $f\in\mathsf{FCD}(A,B)$.\end{thm}
 \begin{proof}
-$\Cor^{\mathsf{ComplFCD}(A;B)}f=\Cor'^{\mathsf{ComplFCD}(A;B)}f$
+$\Cor^{\mathsf{ComplFCD}(A,B)}f=\Cor'^{\mathsf{ComplFCD}(A,B)}f$
 using theorem \ref{cor-eq} since the filtrator 
-$(\mathsf{FCD}(A;B);\mathsf{ComplFCD}(A;B))$
+$(\mathsf{FCD}(A,B),\mathsf{ComplFCD}(A,B))$
 is filtered.
 
-Let $g\in\up^{\mathsf{ComplFCD}(A;B)}f$. Then
-$g\in\mathsf{ComplFCD}(A;B)$ and $g\sqsupseteq f$. Thus $g=\Compl 
+Let $g\in\up^{\mathsf{ComplFCD}(A,B)}f$. Then
+$g\in\mathsf{ComplFCD}(A,B)$ and $g\sqsupseteq f$. Thus $g=\Compl 
 g\sqsupseteq\Compl f$.
 
-Thus $\forall g\in\up^{\mathsf{ComplFCD}(A;B)}f:g\sqsupseteq\Compl f$.
+Thus $\forall g\in\up^{\mathsf{ComplFCD}(A,B)}f:g\sqsupseteq\Compl f$.
 
-Let $\forall g\in\up^{\mathsf{ComplFCD}(A;B)}f:h\sqsubseteq g$
-for some $h\in\mathsf{ComplFCD}(A;B)$.
+Let $\forall g\in\up^{\mathsf{ComplFCD}(A,B)}f:h\sqsubseteq g$
+for some $h\in\mathsf{ComplFCD}(A,B)$.
 
-Then $h\sqsubseteq\bigsqcap\up^{\mathsf{ComplFCD}(A;B)}f=f$
+Then $h\sqsubseteq\bigsqcap\up^{\mathsf{ComplFCD}(A,B)}f=f$
 and consequently $h=\Compl h\sqsubseteq\Compl f$.
 
 Thus
 \[
 \Compl 
-f=\bigsqcap^{\mathsf{ComplFCD}(A;B)}\up^{\mathsf{ComplFCD}(A;B)}f=\Cor^{\mathsf{
-ComplFCD}(A;B)}f.
+f=\bigsqcap^{\mathsf{ComplFCD}(A,B)}\up^{\mathsf{ComplFCD}(A,B)}f=\Cor^{\mathsf{
+ComplFCD}(A,B)}f.
 \]
 \end{proof}
 \begin{thm}
@@ -2707,33 +2707,33 @@ fY)=\\
 (used theorem~\ref{dual-core-join}). Thus $\alpha$ can be continued
 till $\supfun g$ for some funcoid $g$. This funcoid is co-complete.
 
-Evidently $g$ is the greatest co-complete element of $\mathsf{FCD}(\Src f;\Dst 
+Evidently $g$ is the greatest co-complete element of $\mathsf{FCD}(\Src f,\Dst 
 f)$
 which is lower than $f$.
 
 Thus $g=\CoCompl f$ and $\Cor\rsupfun fX=\alpha X=\rsupfun gX=\rsupfun{\CoCompl 
 f}X$.\end{proof}
 \begin{thm}
-$\mathsf{ComplFCD}(A;B)$ is an atomistic lattice.\end{thm}
+$\mathsf{ComplFCD}(A,B)$ is an atomistic lattice.\end{thm}
 \begin{proof}
-Let $f\in\mathsf{ComplFCD}(A;B)$, $X\in\mathscr{T}(\Src f)$.
+Let $f\in\mathsf{ComplFCD}(A,B)$, $X\in\mathscr{T}(\Src f)$.
 \[
 \rsupfun fX=\bigsqcup_{x\in\atoms X}\rsupfun fx=\bigsqcup_{x\in\atoms 
 X}\rsupfun{f|_{x}}x=\bigsqcup_{x\in\atoms X}\rsupfun{f|_{x}}X,
 \]
 thus $f=\bigsqcup_{x\in\atoms X}(f|_{x})$. It is trivial that every
-$f|_{x}$ is a join of atoms of $\mathsf{ComplFCD}(A;B)$.\end{proof}
+$f|_{x}$ is a join of atoms of $\mathsf{ComplFCD}(A,B)$.\end{proof}
 \begin{thm}
-A funcoid is complete iff it is a join (on the lattice $\mathsf{FCD}(A;B)$)
+A funcoid is complete iff it is a join (on the lattice $\mathsf{FCD}(A,B)$)
 of atomic complete funcoids.\end{thm}
 \begin{proof}
 It follows from the theorem \ref{fcd-join-compl} and the previous
 theorem.\end{proof}
 \begin{cor}
-$\mathsf{ComplFCD}(A;B)$ is join-closed.\end{cor}
+$\mathsf{ComplFCD}(A,B)$ is join-closed.\end{cor}
 \begin{thm}
 $\Compl\bigsqcup R=\bigsqcup\rsupfun{\Compl}R$ for every 
-$R\in\subsets\mathsf{FCD}(A;B)$
+$R\in\subsets\mathsf{FCD}(A,B)$
 (for every sets $A$, $B$).\end{thm}
 \begin{proof}
 For every typed set $X$
@@ -2880,7 +2880,7 @@ After variable replacement $\CoCompl((\CoCompl g)\circ f)=\CoCompl(g\circ f)$.
 The filtrator of funcoids (from a given set~$A$ to a given set~$B$)
 is with co-separable core.\end{thm}
 \begin{proof}
-Let $f,g\in\mathsf{FCD}(A;B)$ and $f\sqcup g=\top$. Then for every
+Let $f,g\in\mathsf{FCD}(A,B)$ and $f\sqcup g=\top$. Then for every
 $X\in\mathscr{T}A$ we have 
 \begin{multline*}
 \supfun f^{\ast}X\sqcup\supfun g^{\ast}X=\top\Leftrightarrow\Cor\supfun 
@@ -2897,7 +2897,7 @@ Applying the dual of the formulas (\ref{fcd-sep-d}) to the formula
 f\sqcup g=\top\Rightarrow\Compl\CoCompl f\sqcup\Compl\CoCompl g=\top
 \]
 that is $f\sqcup g=\top\Rightarrow\Cor f\sqcup\Cor g=\top$. So 
-$\mathsf{FCD}(A;B)$
+$\mathsf{FCD}(A,B)$
 is with co-separable core.\end{proof}
 \begin{cor}
 The filtrator of complete funcoids is also with co-separable core.
@@ -2925,9 +2925,9 @@ dual of injectivity.
 \begin{obvious}
 ~
 \begin{enumerate}
-\item A morphism $(\mathcal{A};\mathcal{B};f)$ of the category of funcoid
+\item A morphism $(\mathcal{A},\mathcal{B},f)$ of the category of funcoid
 triples is monovalued iff the funcoid $f$ is monovalued.
-\item A morphism $(\mathcal{A};\mathcal{B};f)$ of the category of funcoid
+\item A morphism $(\mathcal{A},\mathcal{B},f)$ of the category of funcoid
 triples is injective iff the funcoid $f$ is injective.
 \end{enumerate}
 \end{obvious}
@@ -3145,7 +3145,7 @@ x \} \Leftrightarrow \Compl \CoCompl f \sqsubseteq
 \end{proof}
 
 \begin{defn}
-Let call \emph{$T_{0}$-separable} such funcoid $f\in\mathsf{FCD}(A;A)$
+Let call \emph{$T_{0}$-separable} such funcoid $f\in\mathsf{FCD}(A,A)$
 that $f\sqcap f^{-1}$ is $T_{1}$-separable.
 \end{defn}
 
@@ -3258,7 +3258,7 @@ Take the last formula as the definition of $T_4$-funcoid~$f$.
 \section{Filters closed regarding a funcoid}
 \begin{defn}
 \index{filter!closed}Let's call \emph{closed} regarding a funcoid
-$f\in\mathsf{FCD}(A;A)$ such filter $\mathcal{A}\in\mathscr{F}(\Src f)$
+$f\in\mathsf{FCD}(A,A)$ such filter $\mathcal{A}\in\mathscr{F}(\Src f)$
 that $\supfun f\mathcal{A}\sqsubseteq\mathcal{A}$.
 \end{defn}
 This is a generalization of closedness of a set regarding an unary

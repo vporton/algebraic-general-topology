@@ -12,7 +12,7 @@ parts).
 \subsection{Posets}
 \begin{defn}
 \index{identity relation}The \emph{identity relation} on a set $A$
-is $\id_{A}=\setcond{(a;a)}{a\in A}$.
+is $\id_{A}=\setcond{(a,a)}{a\in A}$.
 \end{defn}
 
 \begin{defn}
@@ -72,8 +72,8 @@ By antisymmetry.\end{proof}
 \begin{obvious}
 Dual of a partial order is a partial order.\end{obvious}
 \begin{defn}
-\index{dual!poset}The \emph{dual} poset for a poset $(A;\mathord{\sqsubseteq})$
-is the poset $(A;\mathord{\sqsupseteq})$.
+\index{dual!poset}The \emph{dual} poset for a poset $(A,\mathord{\sqsubseteq})$
+is the poset $(A,\mathord{\sqsupseteq})$.
 \end{defn}
 I will denote dual of a poset~$\mathfrak{A}$ as $(\dual\mathfrak{A})$
 and dual of an element~$a\in\mathfrak{A}$ (that is the same element
@@ -810,7 +810,7 @@ of Galois connections.
 \begin{defn}
 \index{Galois!connection}Let $\mathfrak{A}$ and $\mathfrak{B}$
 be two posets. A \emph{Galois connection} between $\mathfrak{A}$
-and $\mathfrak{B}$ is a pair of functions $f=(f^{\ast};f_{\ast})$
+and $\mathfrak{B}$ is a pair of functions $f=(f^{\ast},f_{\ast})$
 with $f^{\ast}:\mathfrak{A}\rightarrow\mathfrak{B}$ and $f_{\ast}:\mathfrak{B}\rightarrow\mathfrak{A}$
 such that:
 \[
@@ -822,7 +822,7 @@ such that:
 \emph{the upper adjoint} of $f^{\ast}$ and $f^{\ast}$ is called
 \emph{the lower adjoint} of $f_{\ast}$.\end{defn}
 \begin{thm}
-\label{galois-second}A pair $(f^{\ast};f_{\ast})$ of functions $f^{\ast}:\mathfrak{A}\rightarrow\mathfrak{B}$
+\label{galois-second}A pair $(f^{\ast},f_{\ast})$ of functions $f^{\ast}:\mathfrak{A}\rightarrow\mathfrak{B}$
 and $f_{\ast}:\mathfrak{B}\rightarrow\mathfrak{A}$ is a Galois connection
 iff both of the following: 
 \begin{enumerate}
@@ -1026,7 +1026,7 @@ Thus $f_{0 \ast} (b) \sqsupseteq f_{1 \ast} (b)$ for every $b\in\mathfrak{B}$ an
 
 \begin{defn}
 Composition of Galois connections is defined by the formula:
-$g\circ f=(g^{\ast}\circ f^{\ast};f_{\ast}\circ g_{\ast})$.
+$g\circ f=(g^{\ast}\circ f^{\ast},f_{\ast}\circ g_{\ast})$.
 \end{defn}
 
 \begin{prop}
@@ -1359,7 +1359,7 @@ equation are defined.
 \end{defn}
 
 \begin{defn}
-The set $\Hom(A;B)$ (also denoted as $\Hom_{C}(A;B)$ or just $C(A;B)$,
+The set $\Hom(A,B)$ (also denoted as $\Hom_{C}(A,B)$ or just $C(A,B)$,
 where $C$ is our category) (morphisms from an object $A$ to an object
 $B$) is exactly morphisms which have $A$ as the source and $B$
 as the destination.
@@ -1425,9 +1425,9 @@ Prove that the below examples of categories are really categories.\end{xca}
 The category $\mathbf{Set}$ is:
 \begin{itemize}
 \item Objects are small sets.
-\item Morphisms from an object $A$ to an object $B$ are triples $(A;B;f)$
+\item Morphisms from an object $A$ to an object $B$ are triples $(A,B,f)$
 where $f$ is a function from $A$ to $B$.
-\item Composition of morphisms is defined by the formula: $(B;C;g)\circ(A;B;f)=(A;C;g\circ f)$
+\item Composition of morphisms is defined by the formula: $(B,C,g)\circ(A,B,f)=(A,C,g\circ f)$
 where $g\circ f$ is function composition.
 \end{itemize}
 \end{defn}
@@ -1436,13 +1436,13 @@ where $g\circ f$ is function composition.
 The category $\mathbf{Rel}$ is:
 \begin{itemize}
 \item Objects are small sets.
-\item Morphisms from an object $A$ to an object $B$ are triples $(A;B;f)$
+\item Morphisms from an object $A$ to an object $B$ are triples $(A,B,f)$
 where $f$ is a binary relation between $A$ and $B$.
-\item Composition of morphisms is defined by the formula: $(B;C;g)\circ(A;B;f)=(A;C;g\circ f)$
+\item Composition of morphisms is defined by the formula: $(B,C,g)\circ(A,B,f)=(A,C,g\circ f)$
 where $g\circ f$ is relation composition.
 \end{itemize}
 \end{defn}
-I will denote $\GR(A;B;f)=f$ for any morphism $(A;B;f)$ of either
+I will denote $\GR(A,B,f)=f$ for any morphism $(A,B,f)$ of either
 $\mathbf{Set}$ or $\mathbf{Rel}$.
 
 
@@ -1453,10 +1453,10 @@ morphisms is a subset of the set of morphisms of~$C$.
 \end{defn}
 
 \begin{defn}
-\index{subcategory!wide}\emph{Wide subcategory} of a category $(\mathcal{O};\mathcal{M})$
-is a category $(\mathcal{O};\mathcal{M}')$ where $\mathcal{M}\subseteq\mathcal{M}'$
-and the composition on $(\mathcal{O};\mathcal{M}')$ is a restriction
-of composition of $(\mathcal{O};\mathcal{M})$. (Similarly \emph{wide
+\index{subcategory!wide}\emph{Wide subcategory} of a category $(\mathcal{O},\mathcal{M})$
+is a category $(\mathcal{O},\mathcal{M}')$ where $\mathcal{M}\subseteq\mathcal{M}'$
+and the composition on $(\mathcal{O},\mathcal{M}')$ is a restriction
+of composition of $(\mathcal{O},\mathcal{M})$. (Similarly \emph{wide
 sub-precategory} can be defined.)
 \end{defn}
 
@@ -1593,15 +1593,15 @@ is commutative, every cycle in the diagram is an identity.
 
 
 \begin{tikzcd}[row sep=1.5cm, column sep=1.5cm]
-\circled{(0;0)} \arrow[r, shift left, "f"] \arrow[d, shift left, "t^{-1}"]
-  & \circled{(0;1)} \arrow[d, shift left, "g"] \arrow[l, shift left, "f^{-1}"] \\
-\circled{(1;0)} \arrow[u, shift left, "t"] \arrow[r, shift left, "h^{-1}"]
-  & \circled{(1;1)} \arrow[l, shift left, "h"] \arrow[u, shift left, "g^{-1}"]
+\circled{(0,0)} \arrow[r, shift left, "f"] \arrow[d, shift left, "t^{-1}"]
+  & \circled{(0,1)} \arrow[d, shift left, "g"] \arrow[l, shift left, "f^{-1}"] \\
+\circled{(1,0)} \arrow[u, shift left, "t"] \arrow[r, shift left, "h^{-1}"]
+  & \circled{(1,1)} \arrow[l, shift left, "h"] \arrow[u, shift left, "g^{-1}"]
 \end{tikzcd}
 \end{figure}
 \end{lem}
 \begin{proof}
-Assign to every vertex $(i;j)$ of the diagram morphism $W(i;j)$
+Assign to every vertex $(i,j)$ of the diagram morphism $W(i,j)$
 defined by the table~\ref{square-table}.
 
 \begin{table}[ht]
@@ -1610,7 +1610,7 @@ defined by the table~\ref{square-table}.
 
 \begin{tabular}{|c|c|c|}
 \hline 
-$i$ & $j$ & $W(i;j)$\tabularnewline
+$i$ & $j$ & $W(i,j)$\tabularnewline
 \hline 
 \hline 
 $0$ & $0$ & $1_{\Src f}$\tabularnewline
@@ -1626,11 +1626,11 @@ $1$ & $1$ & $g\circ f$\tabularnewline
 
 
 It is easy to verify by induction that the morphism corresponding
-every cycle in the diagram starting at the vertex $(0;0)$ and ending
-with a vertex $(x;y)$ is $W(x;y)$.
+every cycle in the diagram starting at the vertex $(0,0)$ and ending
+with a vertex $(x,y)$ is $W(x,y)$.
 
 Thus the morphism corresponding to every cycle starting at the vertex
-$(0;0)$ is identity.
+$(0,0)$ is identity.
 
 By symmetry, the morphism corresponding to every cycle is identity.
 

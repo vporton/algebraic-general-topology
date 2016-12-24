@@ -30,23 +30,23 @@ For simplicity, in the diagram I equate $\subsets A$ and $\mathscr{T}A$.
 
 \begin{flushleft}
 \begin{description}
-\item[$\Psi_1$] $f\mapsto\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$
-\item[$\Psi_1^{-1}$] $r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)$
-\item[$\Psi_2$] $r\mapsto(\subsets A;\subsets B;\rsupfun{r};\rsupfun{r^{-1}})$
-\item[$\Psi_2^{-1}$] $f\mapsto\setcond{(x;y)}{\{x\}\suprel{f}\{y\}}$
-\item[$\Psi_3$] $f\mapsto\left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
-  \left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
-\item[$\Psi_3^{-1}$] $f\mapsto\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1 y\right)=
-  \left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
-\item[$\Psi_4$] $f\mapsto\left(X\mapsto\lnot\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}\lnot y\right)=
-  \left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}\lnot y\right)=
-  \left(X\mapsto\lnot \bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\lnot \{y\}\right)=
-  \left(X\mapsto\bigsqcup_{x\in X}\lnot\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\lnot \{y\}\right)$
-\item[$\Psi_4^{-1}$] $f\mapsto\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=
-  \left(\subsets A;\subsets B;X\mapsto\lnot\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=
-  \left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)=
-  \left(\subsets A;\subsets B;X\mapsto\lnot\bigsqcap_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$
-\item[$\Psi_5=\Psi_5^{-1}$] $f\mapsto(\mathord{\lnot}\circ f_0;f_1\circ\mathord{\lnot})$
+\item[$\Psi_1$] $f\mapsto\setcond{(x,y)}{y\in f_0\{x\}}=\setcond{(x,y)}{x\in f_1\{y\}}$
+\item[$\Psi_1^{-1}$] $r\mapsto\left(X\mapsto\setcond{y\in B}{\forall x\in X:x\mathrel{r}y}, Y\mapsto\setcond{x\in A}{\forall y\in Y:x\mathrel{r}y}\right)$
+\item[$\Psi_2$] $r\mapsto(\subsets A,\subsets B,\rsupfun{r},\rsupfun{r^{-1}})$
+\item[$\Psi_2^{-1}$] $f\mapsto\setcond{(x,y)}{\{x\}\suprel{f}\{y\}}$
+\item[$\Psi_3$] $f\mapsto\left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x,Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
+  \left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
+\item[$\Psi_3^{-1}$] $f\mapsto\left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x,Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1 y\right)=
+  \left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in X}f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
+\item[$\Psi_4$] $f\mapsto\left(X\mapsto\lnot\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x,Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}\lnot y\right)=
+  \left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot\supfun{f}x,Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}\lnot y\right)=
+  \left(X\mapsto\lnot \bigsqcap_{x\in X}\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\lnot \{y\}\right)=
+  \left(X\mapsto\bigsqcup_{x\in X}\lnot\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\lnot \{y\}\right)$
+\item[$\Psi_4^{-1}$] $f\mapsto\left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x,Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=
+  \left(\subsets A,\subsets B,X\mapsto\lnot\bigsqcap_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x,Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=
+  \left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)=
+  \left(\subsets A,\subsets B,X\mapsto\lnot\bigsqcap_{x\in X}f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$
+\item[$\Psi_5=\Psi_5^{-1}$] $f\mapsto(\mathord{\lnot}\circ f_0,f_1\circ\mathord{\lnot})$
 \end{description}
 \end{flushleft}
 
@@ -59,15 +59,15 @@ First, note that despite we use the notation~$\Psi_i^{-1}$, it is not yet proved
 Now prove a list of claims. First concentrate on the upper ``triangle'' of the diagram (the lower one will be considered later).
 
 \begin{claim}
-$\setcond{(x;y)}{y\in f_0\{x\}}=\setcond{(x;y)}{x\in f_1\{y\}}$ when $f$ is an antitone Galois connection between~$\subsets A$ and~$\subsets B$.
+$\setcond{(x,y)}{y\in f_0\{x\}}=\setcond{(x,y)}{x\in f_1\{y\}}$ when $f$ is an antitone Galois connection between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
 $y\in f_0\{x\}\Leftrightarrow\{y\}\sqsubseteq f_0\{x\}\Leftrightarrow\{x\}\sqsubseteq f_1\{y\}\Leftrightarrow x\in f_1\{y\}$.
 \end{claimproof}
 
 \begin{claim}
-$\scriptstyle \left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x;Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
-\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
+$\scriptstyle \left(X\mapsto\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x,Y\mapsto\bigsqcap_{y\in\mathscr{T} Y\setminus\{\bot\}}\supfun{f^{-1}}y\right)=
+\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right)$
 when $f$ is a pointfree funcoid between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
@@ -83,8 +83,8 @@ $\bigsqcap_{x\in\mathscr{T} X\setminus\{\bot\}}\supfun{f}x \sqsupseteq \bigsqcap
 
 \begin{flushleft}
 \begin{claim}
-$\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1 y\right) =
-\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
+$\left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}f_0 x,Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1 y\right) =
+\left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in X}f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right)$
 when $f$ is an antitone Galois connection between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \end{flushleft}
@@ -99,9 +99,9 @@ $f_0 x\sqsubseteq \bigsqcup_{x\in X}f_0\{x\}$. So $\bigsqcup_{x\in\mathscr{T}X\s
 $\Psi_3^{-1} = \Psi_2\circ\Psi_1$.
 \end{claim}
 \begin{claimproof}
-$\Psi_2\Psi_1 f = \left(\subsets A;\subsets B;X\mapsto\setcond{y}{\exists x\in X:(x;y)\in\Psi_1 f};Y\mapsto\setcond{x}{\exists y\in Y:(x;y)\in\Psi_1 f}\right) =
-\left(\subsets A;\subsets B;X\mapsto\setcond{y}{\exists x\in X:y\in f_0\{x\}};Y\mapsto\setcond{x}{\exists y\in Y:x\in f_1\{y\}}\right) =
-\left(\subsets A;\subsets B;X\mapsto\bigsqcup_{x\in X}f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right) =
+$\Psi_2\Psi_1 f = \left(\subsets A,\subsets B,X\mapsto\setcond{y}{\exists x\in X:(x,y)\in\Psi_1 f},Y\mapsto\setcond{x}{\exists y\in Y:(x,y)\in\Psi_1 f}\right) =
+\left(\subsets A,\subsets B,X\mapsto\setcond{y}{\exists x\in X:y\in f_0\{x\}},Y\mapsto\setcond{x}{\exists y\in Y:x\in f_1\{y\}}\right) =
+\left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in X}f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right) =
 \Psi_3^{-1} f$.
 \end{claimproof}
 
@@ -110,9 +110,9 @@ $\Psi_3 = \Psi_1^{-1}\circ\Psi_2^{-1}$.
 \end{claim}
 \begin{claimproof}
 $\Psi_1^{-1}\Psi_2^{-1} f = 
-\left(X\mapsto\setcond{y\in B}{\forall x\in X:\{x\}\suprel{f}\{y\}}; Y\mapsto\setcond{x\in A}{\forall y\in Y:\{x\}\suprel{f}\{y\}}\right) =
-\left(X\mapsto\setcond{y\in B}{\forall x\in X:y\in\supfun{f}\{x\}}; Y\mapsto\setcond{x\in A}{\forall y\in Y:x\in\supfun{f^{-1}}\{y\}}\right) =
-\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\};Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right) = \Psi_3 f$.
+\left(X\mapsto\setcond{y\in B}{\forall x\in X:\{x\}\suprel{f}\{y\}}, Y\mapsto\setcond{x\in A}{\forall y\in Y:\{x\}\suprel{f}\{y\}}\right) =
+\left(X\mapsto\setcond{y\in B}{\forall x\in X:y\in\supfun{f}\{x\}}, Y\mapsto\setcond{x\in A}{\forall y\in Y:x\in\supfun{f^{-1}}\{y\}}\right) =
+\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right) = \Psi_3 f$.
 \end{claimproof}
 
 \begin{claim}
@@ -136,7 +136,7 @@ it becomes obvious.
 $\Psi_2$ maps binary relations between~$A$ and~$B$ into pointfree funcoids between~$\subsets A$ and~$\subsets B$.
 \end{claim}
 \begin{claimproof}
-We need to prove that $f=(\subsets A;\subsets B;\supfun{f};\supfun{f^{-1}})$ is a pointfree funcoids that is $Y\nasymp\supfun{f}X\Leftrightarrow X\nasymp\supfun{f^{-1}}Y$. Really, for every
+We need to prove that $f=(\subsets A,\subsets B,\supfun{f},\supfun{f^{-1}})$ is a pointfree funcoids that is $Y\nasymp\supfun{f}X\Leftrightarrow X\nasymp\supfun{f^{-1}}Y$. Really, for every
 $X\in\mathscr{T}A$, $Y\in\mathscr{T}B$ 
 \begin{multline*}
 Y\nasymp\supfun fX\Leftrightarrow Y\nasymp\rsupfun rX\Leftrightarrow Y\nasymp\supfun rX\Leftrightarrow\\
@@ -148,7 +148,7 @@ X\nasymp\supfun{r^{-1}}Y\Leftrightarrow X\nasymp\rsupfun{r^{-1}}Y\Leftrightarrow
 $\Psi_2^{-1}$ maps pointfree funcoids between~$\subsets A$ and~$\subsets B$ into binary relations between~$A$ and~$B$.
 \end{claim}
 \begin{claimproof}
-Suppose $f\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$ and prove
+Suppose $f\in\mathsf{pFCD}(\mathscr{T}A,\mathscr{T}B)$ and prove
 that the relation defined by the formula~$\Psi_2^{-1}$ exists.
 To prove it, it's enough to show that $y\in\supfun f\{x\}\Leftrightarrow x\in\supfun{f^{-1}}\{y\}$.
 Really, 
@@ -175,20 +175,20 @@ Because $\Psi_3^{-1} = \Psi_2\circ\Psi_1$.
 $\Psi_2$ and $\Psi_2^{-1}$ are mutually inverse.
 \end{claim}
 \begin{claimproof}
-Let $r_{0}\in\subsets(A\times B)$ and $f\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$
+Let $r_{0}\in\subsets(A\times B)$ and $f\in\mathsf{pFCD}(\mathscr{T}A,\mathscr{T}B)$
 corresponds to~$r_{0}$ by the formula~$\Psi_2$; let $r_{1}\in\subsets(A\times B)$
 corresponds to~$f$ by the formula~$\Psi_2^{-1}$. Then $r_{0}=r_{1}$
 because 
 \[
-(x;y)\in r_{0}\Leftrightarrow y\in\rsupfun{r_{0}}\{x\}\Leftrightarrow y\in\supfun f\{x\}\Leftrightarrow(x;y)\in r_{1}.
+(x,y)\in r_{0}\Leftrightarrow y\in\rsupfun{r_{0}}\{x\}\Leftrightarrow y\in\supfun f\{x\}\Leftrightarrow(x,y)\in r_{1}.
 \]
 
-Let now $f_{0}\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$ and $r\in\subsets(A\times B)$
-corresponds to~$f_{0}$ by the formula~$\Psi_2^{-1}$; let $f_{1}\in\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$
-corresponds to~$r$ by the formula~$\Psi_2$. Then $(x;y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}$
+Let now $f_{0}\in\mathsf{pFCD}(\mathscr{T}A,\mathscr{T}B)$ and $r\in\subsets(A\times B)$
+corresponds to~$f_{0}$ by the formula~$\Psi_2^{-1}$; let $f_{1}\in\mathsf{pFCD}(\mathscr{T}A,\mathscr{T}B)$
+corresponds to~$r$ by the formula~$\Psi_2$. Then $(x,y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}$
 and $\supfun{f_{1}}=\rsupfun r$; thus 
 \[
-y\in\supfun{f_{1}}\{x\}\Leftrightarrow y\in\rsupfun r\{x\}\Leftrightarrow(x;y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}.
+y\in\supfun{f_{1}}\{x\}\Leftrightarrow y\in\rsupfun r\{x\}\Leftrightarrow(x,y)\in r\Leftrightarrow y\in\supfun{f_{0}}\{x\}.
 \]
 So $\supfun{f_{0}}=\supfun{f_{1}}$. Similarly $\supfun{f_{0}^{-1}}=\supfun{f_{1}^{-1}}$.
 \end{claimproof}
@@ -201,7 +201,7 @@ Let $r_0\in\subsets(A\times B)$ and $f\in\mathscr{T}A\otimes\mathscr{T}B$
 corresponds to~$r_{0}$ by the formula~$\Psi_1^{-1}$; let $r_{1}\in\subsets(A\times B)$
 corresponds to~$f$ by the formula~$\Psi_1$. Then $r_{0}=r_{1}$ because
 \[
-(x;y)\in r_1 \Leftrightarrow y\in f_0\{x\} \Leftrightarrow y\in\setcond{y\in B}{x\mathrel{r_0}y} \Leftrightarrow x\mathrel{r_0}y.
+(x,y)\in r_1 \Leftrightarrow y\in f_0\{x\} \Leftrightarrow y\in\setcond{y\in B}{x\mathrel{r_0}y} \Leftrightarrow x\mathrel{r_0}y.
 \]
 
 Let now $f_{0}\in\mathscr{T}A\otimes\mathscr{T}B$ and $r\in\subsets(A\times B)$
@@ -225,7 +225,7 @@ Now switch to the lower ``triangle'':
 
 \begin{flushleft}
 \begin{claim}
-$\left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x;Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=\left(X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\};Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$.
+$\left(X\mapsto\bigsqcup_{x\in\mathscr{T}X\setminus\{\bot\}}\lnot f_0 x,Y\mapsto\bigsqcup_{y\in\mathscr{T}Y\setminus\{\bot\}}f_1\lnot y\right)=\left(X\mapsto\bigsqcup_{x\in X}\lnot f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\lnot\{y\}\right)$.
 \end{claim}
 \end{flushleft}
 \begin{claimproof}
@@ -315,9 +315,9 @@ From the previous claim.
 \end{proof}
 
 \begin{prop}
-We equate the set of binary relations between~$A$ and~$B$ with $\mathbf{Rld}(A;B)$.
+We equate the set of binary relations between~$A$ and~$B$ with $\mathbf{Rld}(A,B)$.
 $\Psi_2$ and~$\Psi_2^{-1}$ from the diagram at figure~\ref{rels-dia} preserve composition and identities (that are functors
-between categories $\mathbf{Rel}$ and $(A;B)\mapsto\mathsf{pFCD}(\mathscr{T}A;\mathscr{T}B)$) and also reversal ($f\mapsto f^{-1}$).
+between categories $\mathbf{Rel}$ and $(A,B)\mapsto\mathsf{pFCD}(\mathscr{T}A,\mathscr{T}B)$) and also reversal ($f\mapsto f^{-1}$).
 \end{prop}
 
 \begin{proof}
@@ -334,7 +334,6 @@ That $\Phi_2^{-1}$ preserves composition and identities follows from the fact th
 That is preserves reversal follows from the formula $\supfun{f^{-1}}=\rsupfun{p^{-1}}$.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{prop}
 The bijections $\Psi_2$ and~$\Psi_2^{-1}$ from the diagram at figure~\ref{rels-dia} preserves monovaluedness
 and injectivity.\end{prop}
@@ -353,7 +352,6 @@ $\supfun{A\times^{\mathsf{FCD}}B}X=\begin{cases}
 B & \text{if }X\nasymp A\\
 \bot & \text{if }X\asymp A
 \end{cases}=\rsupfun{A\times B}X$. Likewise $\supfun{(A\times^{\mathsf{FCD}}B)^{-1}}Y=\rsupfun{(A\times B)^{-1}}Y$.\end{proof}
-%%%%%%%%%%%%%%%%%%%%%%%%
 
 Let $\Phi$ map a pointfree funcoid whose first component is~$c$ into the Galois connection whose lower adjoint is~$c$.
 Then $\Phi$ is an isomorphism (theorem~\ref{bfunc-is-adj}) and
@@ -388,12 +386,12 @@ Because the diagram is commutative, it is enough to prove it for some fixed~$P$ 
 For example, we will prove $\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r = \neg r$.
 
 $\Psi_4 \Psi_2 r = \left( X \mapsto \neg \bigsqcap_{x \in X} \rsupfun{r}
-\{ x \} ; Y \mapsto \bigsqcap_{y \in Y} \rsupfun{r} \neg \{ y \} \right)$.
+\{ x \} , Y \mapsto \bigsqcap_{y \in Y} \rsupfun{r} \neg \{ y \} \right)$.
 
 $\Phi^{-1} \Psi_4 \Psi_2 r$ is pointfree funcoid $f$ with $\supfun{f}
 = X \mapsto \neg \bigsqcap_{x \in X} \rsupfun{r} \{ x \}$.
 
-$\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r$ is the relation consisting of $(x ;
+$\Psi_2^{-1} \Phi^{-1} \Psi_4 \Psi_2 r$ is the relation consisting of $(x ,
 y)$ such that $\{ x \} \suprel{f} \{ y \}$ what is equivalent to: $\{ y \}
 \nasymp \supfun{f} \{ x \}$; $\{ y \} \nasymp \neg \rsupfun{r} \{ x \}$; $\{ y \} \nsqsubseteq \rsupfun{r} \{ x \}$; $y \notin \rsupfun{r} \{ x \}$.
 

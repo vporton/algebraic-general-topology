@@ -44,14 +44,14 @@ Let $t=\subsets\bigcup\bigcup S$.
 
 Let $M(x)=\left\{ \begin{array}{ll}
 E^{-1}x & \text{if }x\in R;\\
-(t;x) & \text{if }x\notin R.
+(t,x) & \text{if }x\notin R.
 \end{array}\right.$
 
-Recall that in standard ZF $(t;x)=\{t,\{t,x\}\}$ by definition.
+Recall that in standard ZF $(t,x)=\{t,\{t,x\}\}$ by definition.
 \begin{thm}
-$(t;x)\notin S$.\end{thm}
+$(t,x)\notin S$.\end{thm}
 \begin{proof}
-Suppose $(t;x)\in S$. Then $\{t,\{t,x\}\}\in S$. Consequently $\{t\}\in\bigcup S$;
+Suppose $(t,x)\in S$. Then $\{t,\{t,x\}\}\in S$. Consequently $\{t\}\in\bigcup S$;
 $\{t\}\subseteq\bigcup\bigcup S$; $\{t\}\in\subsets\bigcup\bigcup S$;
 $\{t\}\in t$ what contradicts to the axiom of foundation (aka axiom
 of regularity).\end{proof}
@@ -71,10 +71,10 @@ and $M(a)=M(b)$. Consider all cases: \end{proof}
 \begin{description}
 \item [{$a,b\in R$}] $M(a)=E^{-1}a$; $M(b)=E^{-1}b$; $E^{-1}a=E^{-1}b$;
 thus $a=b$ because $E^{-1}$ is a bijection.
-\item [{$a\in R$,~$b\notin R$}] $M(a)=E^{-1}a$; $M(b)=(t;b)$; $M(a)\in S$;
+\item [{$a\in R$,~$b\notin R$}] $M(a)=E^{-1}a$; $M(b)=(t,b)$; $M(a)\in S$;
 $M(b)\notin S$. Thus $M(a)\neq M(b)$.
 \item [{$a\notin R$,~$b\in R$}] Analogous.
-\item [{$a,b\notin R$}] $M(a)=(t;a)$; $M(b)=(t;b)$. Thus $M(a)=M(b)$
+\item [{$a,b\notin R$}] $M(a)=(t,a)$; $M(b)=(t,b)$. Thus $M(a)=M(b)$
 implies $a=b$. \end{description}
 \begin{thm}
 $M\circ E=\id_{S}$.\end{thm}
@@ -87,7 +87,7 @@ $E=M^{-1}|_{S}$.
 \subsection{Existence of primary filtrator}
 \begin{thm}
 For every poset~$\mathfrak{Z}$ there exists a poset $\mathfrak{A}\supseteq\mathfrak{Z}$
-such that $(\mathfrak{A};\mathfrak{Z})$ is a primary filtrator.\end{thm}
+such that $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.\end{thm}
 \begin{proof}
 Take $S=\mathfrak{Z}$, $B=\mathfrak{F}$, $E=\uparrow$. By the above
 there exists an injection $M$ defined on~$\mathfrak{F}$ such that
@@ -101,10 +101,10 @@ Thus $\mathfrak{A}\supseteq\mathfrak{Z}$.
 If $x\sqsubseteq y$ for elements $x$, $y$ of $\mathfrak{Z}$, then
 $\uparrow x\sqsubseteq\uparrow y$ and thus $M\uparrow x\sqsubseteq'M\uparrow y$
 that is $x\sqsubseteq'y$, so $\mathfrak{Z}$ is a subposet of~$\mathfrak{A}$,
-that is $(\mathfrak{A};\mathfrak{Z})$ is a filtrator.
+that is $(\mathfrak{A},\mathfrak{Z})$ is a filtrator.
 
 It remains to prove that $M$ is an isomorphism between filtrators
-$(\mathfrak{F}(\mathfrak{Z});\mathfrak{P})$ and $(\mathfrak{A};\mathfrak{Z})$.
+$(\mathfrak{F}(\mathfrak{Z}),\mathfrak{P})$ and $(\mathfrak{A},\mathfrak{Z})$.
 That $M$ is an order isomorphism from $\mathfrak{F}(\mathfrak{Z})$
 to $\mathfrak{A}$ is already known. It remains to prove that $M$
 maps $\mathfrak{P}$ to~$\mathfrak{Z}$. We will instead prove that

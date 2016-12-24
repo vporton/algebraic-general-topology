@@ -215,7 +215,7 @@ for every set $A\in\subsets U$.
 
 \section{\label{sec-top}Topological spaces}
 \begin{prop}
-For the set of open sets of a metric space $(U;d)$ it holds:
+For the set of open sets of a metric space $(U,d)$ it holds:
 \begin{enumerate}
 \item Union of any (possibly infinite) number of open sets is an open set.
 \item Intersection of a finite number of open sets is an open set.
@@ -244,7 +244,7 @@ The above proposition suggests the following definition:
 \item Intersection of a finite number of open sets is an open set.
 \item $U$ is an open set.
 \end{enumerate}
-\index{space!topological}The pair $(U;\mathcal{O})$ is called a
+\index{space!topological}The pair $(U,\mathcal{O})$ is called a
 \emph{topological space}.\end{defn}
 \begin{rem}
 From the above it is clear that every metric induces a topology.\end{rem}
@@ -275,7 +275,7 @@ Show that the definitions using open and closed sets are equivalent.
 \subsubsection{Topological space induced by preclosure space}
 
 \index{space!topological!induced by preclosure}Having a preclosure
-space $(U;\cl)$ we define a topological space whose closed sets are
+space $(U,\cl)$ we define a topological space whose closed sets are
 such sets $A\in\subsets U$ that $\cl(A)=A$.
 \begin{prop}
 This really defines a topology.\end{prop}
@@ -294,7 +294,7 @@ that is $A_{0}\cup\dots\cup A_{n}$ is a closed set.
 
 That $\emptyset$ is a closed set is obvious.
 \end{proof}
-Having a pretopological space $(U;\Delta)$ we define a topological
+Having a pretopological space $(U,\Delta)$ we define a topological
 space whose open sets are
 \[
 \setcond{X\in\subsets U}{\forall x\in X:X\in\up\Delta(x)}.
@@ -450,7 +450,7 @@ space.
 
 \section{\label{sec-prox}Proximity spaces}
 
-Let $(U;d)$ be metric space. We will define \emph{distance} between
+Let $(U,d)$ be metric space. We will define \emph{distance} between
 sets $A,B\in\subsets U$ by the formula
 \[
 d(A,B)=\inf\setcond{d(a,b)}{a\in A,b\in B}.
@@ -466,7 +466,7 @@ $\delta$ defined in this way (for a metric space) is an example of
 proximity as defined below.
 \begin{defn}
 \label{prox}\index{proximity}\index{space!proximity}A \emph{proximity
-space} is a set $(U;\delta)$ conforming to the following axioms (for
+space} is a set $(U,\delta)$ conforming to the following axioms (for
 every $A,B,C\in\subsets U$):
 \begin{enumerate}
 \item $A\cap B\ne\emptyset\Rightarrow A\mathrel\delta B$;
@@ -526,7 +526,7 @@ Below in the chapter about reloids I will present a shortened and
 more algebraic (however a little less elementary) definition of uniform
 spaces.
 \begin{defn}
-\emph{Uniform space} is a pair $(U;D)$ of a set~$U$ and filter~$D\in\mathfrak{F}(U\times U)$
+\emph{Uniform space} is a pair $(U,D)$ of a set~$U$ and filter~$D\in\mathfrak{F}(U\times U)$
 (called \emph{uniformity} or the set of \emph{entourages}) such that:
 \begin{enumerate}
 \item If $F\in D$ then $\id_{U}\subseteq F$.

@@ -31,7 +31,7 @@ or what is the same $f\overset{\mu}{\rightarrow}\mathcal{A}\Leftrightarrow\tofcd
 Let $f$, $g$ be funcoids, $\mu$, $\nu$ be endofuncoids, $\Dst f=\Src g=\Ob\mu$,
 $\Dst g=\Ob\nu$, $\mathcal{A}\in\mathscr{F}(\Ob\mu)$. If $f\overset{\mu}{\rightarrow}\mathcal{A}$,
 \[
-g|_{\supfun{\mu}\mathcal{A}}\in\continuous(\mu\sqcap(\supfun{\mu}\mathcal{A}\times^{\mathsf{FCD}}\supfun{\mu}\mathcal{A});\nu),
+g|_{\supfun{\mu}\mathcal{A}}\in\continuous(\mu\sqcap(\supfun{\mu}\mathcal{A}\times^{\mathsf{FCD}}\supfun{\mu}\mathcal{A}),\nu),
 \]
 and $\supfun{\mu}\mathcal{A}\sqsupseteq\mathcal{A}$, then $g\circ f\overset{\nu}{\rightarrow}\supfun g\mathcal{A}$.\end{thm}
 \begin{proof}
@@ -50,7 +50,7 @@ g\circ f\overset{\nu}{\rightarrow}\supfun g\mathcal{A}.
 \begin{cor}
 Let $f$, $g$ be funcoids, $\mu$, $\nu$ be endofuncoids, $\Dst f=\Src g=\Ob\mu$,
 $\Dst g=\Ob\nu$, $\mathcal{A}\in\mathscr{F}(\Ob\mu)$. If $f\overset{\mu}{\rightarrow}\mathcal{A}$,
-$g\in\continuous(\mu;\nu)$, and $\supfun{\mu}\mathcal{A}\sqsupseteq\mathcal{A}$
+$g\in\continuous(\mu,\nu)$, and $\supfun{\mu}\mathcal{A}\sqsupseteq\mathcal{A}$
 then $g\circ f\overset{\nu}{\rightarrow}\supfun g\mathcal{A}$.\end{cor}
 \begin{proof}
 From the last theorem and theorem \ref{rect-cont}.
@@ -58,9 +58,9 @@ From the last theorem and theorem \ref{rect-cont}.
 
 \section{Relationships between convergence and continuity}
 \begin{lem}
-Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu,\Ob\nu)$,
 $\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
-If $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ then
+If $f\in\continuous(\mu|_{\mathcal{A}},\nu)$ then
 \[
 f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}.
 \]
@@ -73,30 +73,30 @@ f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftr
 \end{multline*}
 \end{proof}
 \begin{thm}
-Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu,\Ob\nu)$,
 $\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
-If $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ then $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{thm}
+If $f\in\continuous(\mu|_{\mathcal{A}},\nu)$ then $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{thm}
 \begin{proof}
 ~
 \begin{multline*}
 f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\text{(by the lemma)}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}\Leftarrow\\
-f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f\Leftrightarrow f\in\continuous(\mu|_{\mathcal{A}};\nu).
+f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f\Leftrightarrow f\in\continuous(\mu|_{\mathcal{A}},\nu).
 \end{multline*}
 \end{proof}
 \begin{cor}
-Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu,\Ob\nu)$,
 $\mathcal{A}\in\mathscr{F}(\Ob\mu)$, $\Src f=\Ob\mu$, $\Dst f=\Ob\nu$.
-If $f\in\continuous(\mu;\nu)$ then $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{cor}
+If $f\in\continuous(\mu,\nu)$ then $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{cor}
 \begin{thm}
-Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu;\Ob\nu)$,
+Let $\mu$, $\nu$ be endofuncoids, $f\in\mathsf{FCD}(\Ob\mu,\Ob\nu)$,
 $\mathcal{A}\in\mathscr{F}(\Ob\mu)$ be an ultrafilter, $\Src f=\Ob\mu$,
-$\Dst f=\Ob\nu$. $f\in\continuous(\mu|_{\mathcal{A}};\nu)$ iff $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{thm}
+$\Dst f=\Ob\nu$. $f\in\continuous(\mu|_{\mathcal{A}},\nu)$ iff $f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}$.\end{thm}
 \begin{proof}
 ~
 \begin{multline*}
 f|_{\supfun{\mu}\mathcal{A}}\overset{\nu}{\rightarrow}\supfun f\mathcal{A}\Leftrightarrow\text{(by the lemma)}\Leftrightarrow\supfun{f\circ\mu|_{\mathcal{A}}}\mathcal{A}\sqsubseteq\supfun{\nu\circ f}\mathcal{A}\Leftrightarrow\\
 \text{(used the fact that \ensuremath{\mathcal{A}} is an ultrafilter)}\\
-f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f|_{\mathcal{A}}\Leftrightarrow f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f\Leftrightarrow f\in\continuous(\mu|_{\mathcal{A}};\nu).
+f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f|_{\mathcal{A}}\Leftrightarrow f\circ\mu|_{\mathcal{A}}\sqsubseteq\nu\circ f\Leftrightarrow f\in\continuous(\mu|_{\mathcal{A}},\nu).
 \end{multline*}
 
 \end{proof}
@@ -153,7 +153,7 @@ It is defined correctly, that is $f$ has no more than one limit.
 Let $\lim^{\mu}f=a$ and $\lim^{\mu}f=b$. Then $\im f\sqsubseteq\rsupfun{\mu}@\{a\}$
 and $\im f\sqsubseteq\rsupfun{\mu}@\{b\}$.
 
-Because $f\ne\bot^{\mathsf{FCD}(\Src f;\Dst f)}$ we have $\im f\ne\bot^{\mathscr{F}(\Dst f)}$;
+Because $f\ne\bot^{\mathsf{FCD}(\Src f,\Dst f)}$ we have $\im f\ne\bot^{\mathscr{F}(\Dst f)}$;
 $\rsupfun{\mu}@\{a\}\sqcap\rsupfun{\mu}@\{b\}\ne\bot^{\mathscr{F}(\Dst f)}$;
 $\uparrow^{\Src\mu}\{b\}\sqcap\supfun{\mu^{-1}}\rsupfun{\mu}@\{a\}\ne\bot^{\mathscr{F}(\Src\mu)}$;
 $\uparrow^{\Src\mu}\{b\}\sqcap\supfun{\mu^{-1}\circ\mu}@\{a\}\ne\bot^{\mathscr{F}(\Src\mu)}$;
@@ -178,7 +178,7 @@ see this wiki:
 Let $\mu$ and $\nu$ be endofuncoids. Let $G$ be a transitive permutation
 group on $\Ob\mu$.
 
-For an element $r\in G$ we will denote $\uparrow r=\uparrow^{\mathsf{FCD}(\Ob\mu;\Ob\mu)}r$.
+For an element $r\in G$ we will denote $\uparrow r=\uparrow^{\mathsf{FCD}(\Ob\mu,\Ob\mu)}r$.
 
 We require that $\mu$ and every $r\in G$ commute, that is
 \[
@@ -199,7 +199,7 @@ Let $\nu\sqsupseteq\nu\circ\nu^{-1}$. Then
 \rsupfun{\nu}@\{y\}\times^{\mathsf{FCD}}\rsupfun{\nu}@\{y\} & =\\
 \supfun{\nu}@\{y\}\times^{\mathsf{FCD}}\supfun{\nu}@\{y\} & =\\
 \nu\circ(\uparrow^{\Ob\nu}\{y\}\times^{\mathsf{FCD}}\uparrow^{\Ob\nu}\{y\})\circ\nu^{-1} & =\\
-\nu\circ\uparrow^{\mathsf{FCD}(\Ob\nu;\Ob\nu)}(\{y\}\times\{y\})\circ\nu^{-1} & \sqsubseteq\\
+\nu\circ\uparrow^{\mathsf{FCD}(\Ob\nu,\Ob\nu)}(\{y\}\times\{y\})\circ\nu^{-1} & \sqsubseteq\\
 \nu\circ1_{\Ob\nu}^{\mathsf{FCD}}\circ\nu^{-1} & =\\
 \nu\circ\nu^{-1} & \sqsubseteq\nu.
 \end{align*}
@@ -264,7 +264,7 @@ of a constant funcoid.\end{prop}
 \end{align*}
 \end{proof}
 \begin{thm}
-If $f$ is a function and $f|_{\rsupfun{\mu}@\{x\}}\in\continuous(\mu;\nu)$
+If $f$ is a function and $f|_{\rsupfun{\mu}@\{x\}}\in\continuous(\mu,\nu)$
 and $\rsupfun{\mu}@\{x\}\sqsupseteq\uparrow^{\Ob\mu}\{x\}$
 then $\xlim_{x}f=\tau(fx)$.\end{thm}
 \begin{proof}

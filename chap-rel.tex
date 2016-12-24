@@ -8,11 +8,11 @@
 \index{relational structure}A \emph{relational structure} is a pair
 consisting of a set and a tuple of relations on this set.
 \end{defn}
-A poset $(\mathfrak{A};\sqsubseteq)$ can be considered as a relational
-structure: $(\mathfrak{A};\llbracket\sqsubseteq\rrbracket).$
+A poset $(\mathfrak{A},\sqsubseteq)$ can be considered as a relational
+structure: $(\mathfrak{A},\llbracket\sqsubseteq\rrbracket).$
 
 A set can $X$ be considered as a relational structure with zero relations:
-$(X;\llbracket\rrbracket).$
+$(X,\llbracket\rrbracket).$
 
 This book is not about relational structures. So I will not introduce
 more examples.
@@ -20,8 +20,8 @@ more examples.
 Think about relational structures as a common place for sets or posets,
 as far as they are considered in this book.
 
-We will denote $x\in(\mathfrak{A};R)$ iff $x\in\mathfrak{A}$ for
-a relational structure $(\mathfrak{A};R)$.
+We will denote $x\in(\mathfrak{A},R)$ iff $x\in\mathfrak{A}$ for
+a relational structure $(\mathfrak{A},R)$.
 
 
 \section{Typed elements and typed sets}
@@ -30,35 +30,35 @@ We sometimes want to differentiate between the same element of two
 different sets. For example, we may want to consider different the
 natural number~$3$ and the rational number~$3$. In order to describe
 this in a formal way we consider elements of sets together with sets
-themselves. For example, we can consider the pairs $(\mathbb{N};3)$
-and $(\mathbb{Q};3)$.
+themselves. For example, we can consider the pairs $(\mathbb{N},3)$
+and $(\mathbb{Q},3)$.
 \begin{defn}
 \index{typed element}\index{element!typed}A \emph{typed element}
-is a pair $(\mathfrak{A};a)$ where $\mathfrak{A}$ is a relational
+is a pair $(\mathfrak{A},a)$ where $\mathfrak{A}$ is a relational
 structure and $a\in\mathfrak{A}$.
 
-I denote $\type(\mathfrak{A};a)=\mathfrak{A}$ and $\GR(\mathfrak{A};a)=a$.
+I denote $\type(\mathfrak{A},a)=\mathfrak{A}$ and $\GR(\mathfrak{A},a)=a$.
 \end{defn}
 
 \begin{defn}
-I will denote typed element $(\mathfrak{A};a)$ as $@^{\mathfrak{A}} a$ or just
+I will denote typed element $(\mathfrak{A},a)$ as $@^{\mathfrak{A}} a$ or just
 $@a$ when $\mathfrak{A}$ is clear from context.
 \end{defn}
 
 \begin{defn}
 \index{typed set}\index{set!typed}A \emph{typed set} is a typed
-element equal to $(\subsets U;A)$ where $U$ is a set and $A$ is
+element equal to $(\subsets U,A)$ where $U$ is a set and $A$ is
 its subset.\end{defn}
 \begin{rem}
 \emph{Typed sets} is an awkward formalization of type theory sets
 in ZFC ($U$ is meant to express the \emph{type} of the set). This
 book could be better written using type theory instead of ZFC, but
-I want my book to be understandable for everyone knowing ZFC. $(\subsets U;A)$
+I want my book to be understandable for everyone knowing ZFC. $(\subsets U,A)$
 should be understood as a set $A$ of type $U$. For an example, consider
-$(\subsets\mathbb{R};[0;10])$; it is the closed interval $[0;10]$
+$(\subsets\mathbb{R},[0;10])$; it is the closed interval $[0;10]$
 whose elements are considered as real numbers.\end{rem}
 \begin{defn}
-$\mathfrak{T}\mathfrak{A}=\setcond{(\mathfrak{A};a)}{a\in\mathfrak{A}}=\{\mathfrak{A}\}\times\mathfrak{A}$
+$\mathfrak{T}\mathfrak{A}=\setcond{(\mathfrak{A},a)}{a\in\mathfrak{A}}=\{\mathfrak{A}\}\times\mathfrak{A}$
 for every relational structure~$\mathfrak{A}$.\end{defn}
 \begin{rem}
 $\mathfrak{T}\mathfrak{A}$ is the set of typed elements of~$\mathfrak{A}$.
@@ -66,18 +66,18 @@ $\mathfrak{T}\mathfrak{A}$ is the set of typed elements of~$\mathfrak{A}$.
 
 \begin{defn}
 If $\mathfrak{A}$ is a poset, we introduce order on its typed elements
-isomorphic to the order of the original poset: $(\mathfrak{A};a)\sqsubseteq(\mathfrak{A};b)\Leftrightarrow a\sqsubseteq b$.
+isomorphic to the order of the original poset: $(\mathfrak{A},a)\sqsubseteq(\mathfrak{A},b)\Leftrightarrow a\sqsubseteq b$.
 \end{defn}
 
 \begin{defn}
-I denote $\GR(\mathfrak{A};a)=a$ for a typed element~$(\mathfrak{A};a)$.
+I denote $\GR(\mathfrak{A},a)=a$ for a typed element~$(\mathfrak{A},a)$.
 \end{defn}
 
 \begin{defn}
-I will denote \emph{typed subsets} of a typed poset $(\subsets U;A)$
-as $\subsets(\subsets U;A)=\setcond{(\subsets U;X)}{X\in\subsets A}=\{\subsets U\}\times\subsets A$.\end{defn}
+I will denote \emph{typed subsets} of a typed poset $(\subsets U,A)$
+as $\subsets(\subsets U,A)=\setcond{(\subsets U,X)}{X\in\subsets A}=\{\subsets U\}\times\subsets A$.\end{defn}
 \begin{obvious}
-$\subsets(\subsets U;A)$ is also a set of typed sets.
+$\subsets(\subsets U,A)$ is also a set of typed sets.
 \end{obvious}
 
 \begin{defn}
@@ -85,20 +85,20 @@ I will denote $\mathscr{T}U=\mathfrak{T}\subsets U$.\end{defn}
 \begin{rem}
 This means that $\mathscr{T}U$ is the set of typed subsets of a set~$U$.\end{rem}
 \begin{obvious}
-$\mathscr{T}U=\setcond{(\subsets U;X)}{X\in\subsets U}=\{\subsets U\}\times\subsets U=\subsets(\subsets U;U)$.
+$\mathscr{T}U=\setcond{(\subsets U,X)}{X\in\subsets U}=\{\subsets U\}\times\subsets U=\subsets(\subsets U,U)$.
 \end{obvious}
 
 \begin{obvious}
 $\mathscr{T}U$ is a complete atomistic boolean lattice. Particularly:
 \begin{enumerate}
-\item $\bot^{\mathscr{T}U}=(\subsets U;\emptyset)$;
-\item $\top^{\mathscr{T}U}=(\subsets U;U)$;
-\item $(\subsets U;A)\sqcup(\subsets U;B)=(\subsets U;A\cup B)$;
-\item $(\subsets U;A)\sqcap(\subsets U;B)=(\subsets U;A\cap B)$;
-\item $\bigsqcup_{A\in S}(\subsets U;A)=(\subsets U;\bigcup_{A\in S}A)$;
-\item $\bigsqcap_{A\in S}(\subsets U;A)=\left(\subsets U;\begin{cases}\bigcap_{A\in S}A&\text{ if }A\ne\emptyset\\U&\text{ if }A=\emptyset\end{cases}\right)$;
-\item $\overline{(\subsets U;A)}=(\subsets U;U\setminus A)$;
-\item atomic elements are $(\subsets U;\{x\})$ where $x\in U$.
+\item $\bot^{\mathscr{T}U}=(\subsets U,\emptyset)$;
+\item $\top^{\mathscr{T}U}=(\subsets U,U)$;
+\item $(\subsets U,A)\sqcup(\subsets U,B)=(\subsets U,A\cup B)$;
+\item $(\subsets U,A)\sqcap(\subsets U,B)=(\subsets U,A\cap B)$;
+\item $\bigsqcup_{A\in S}(\subsets U,A)=(\subsets U,\bigcup_{A\in S}A)$;
+\item $\bigsqcap_{A\in S}(\subsets U,A)=\left(\subsets U,\begin{cases}\bigcap_{A\in S}A&\text{ if }A\ne\emptyset\\U&\text{ if }A=\emptyset\end{cases}\right)$;
+\item $\overline{(\subsets U,A)}=(\subsets U,U\setminus A)$;
+\item atomic elements are $(\subsets U,\{x\})$ where $x\in U$.
 \end{enumerate}
 Typed sets are ``better'' than regular sets as (for example) for
 a set~$U$ and a typed set~$X$ the following are defined by regular
@@ -132,18 +132,18 @@ I remind that $\mathbf{Rel}$ is the category of (small) binary relations
 between sets, and $\mathbf{Set}$ is its subcategory where only monovalued
 entirely defined morphisms (functions) are considered.
 \begin{defn}
-Order on $\mathbf{Rel}(A;B)$ is defined by the formula $f\sqsubseteq g\Leftrightarrow\GR f\subseteq\GR g$.\end{defn}
+Order on $\mathbf{Rel}(A,B)$ is defined by the formula $f\sqsubseteq g\Leftrightarrow\GR f\subseteq\GR g$.\end{defn}
 \begin{obvious}
 This order is isomorphic to the natural order of subsets of the set
 $A\times B$.\end{obvious}
 \begin{defn}
-$X\rsuprel fY\Leftrightarrow\GR X\rsuprel{\GR f}\GR Y$ and $\rsupfun fX=(\Dst f;\rsupfun{\GR f}\GR X)$
+$X\rsuprel fY\Leftrightarrow\GR X\rsuprel{\GR f}\GR Y$ and $\rsupfun fX=(\Dst f,\rsupfun{\GR f}\GR X)$
 for a $\mathbf{Rel}$-morphism~$f$ and typed sets $X\in\mathscr{T}\Src f$,
 $Y\in\mathscr{T}\Dst f$.
 \end{defn}
 
 \begin{defn}
-For category $\mathbf{Rel}$ there is defined reverse morphism: $(A;B;F)^{-1}=(B;A;F^{-1})$.\end{defn}
+For category $\mathbf{Rel}$ there is defined reverse morphism: $(A,B,F)^{-1}=(B,A,F^{-1})$.\end{defn}
 \begin{obvious}
 $(f^{-1})^{-1}=f$ for every $\mathbf{Rel}$-morphism~$f$.
 \end{obvious}
@@ -287,7 +287,7 @@ X\rsuprel{\bigcup R}Y\Leftrightarrow\exists x\in X,y\in Y:x\mathrel{\left(\bigcu
 \end{widedisorder}
 \end{proof}
 \begin{cor}
-Let $A$, $B$ be sets, $R\in\subsets\mathbf{Rel}(A;B)$.
+Let $A$, $B$ be sets, $R\in\subsets\mathbf{Rel}(A,B)$.
 \begin{enumerate}
 \item \textbf{$\rsupfun{\bigsqcup R}X=\bigsqcup_{f\in R}\rsupfun fX$} for
 $X\in\mathscr{T}A$;
@@ -312,7 +312,7 @@ X\rsuprel{g\circ f}Z\Leftrightarrow\exists x\in X,z\in Z:x\mathrel{(g\circ f)}z\
 \end{proof}
 \begin{cor}
 $X\rsuprel{g\circ f}Z\Leftrightarrow\exists y\in\atoms^{\mathscr{T}B}:(X\rsuprel fy\land y\rsuprel gZ)$
-for $f\in\mathbf{Rel}(A;B)$, $g\in\mathbf{Rel}(B;C)$ (for sets $A$,
+for $f\in\mathbf{Rel}(A,B)$, $g\in\mathbf{Rel}(B,C)$ (for sets $A$,
 $B$, $C$).\end{cor}
 \begin{prop}
 $f\circ\bigcup G=\bigcup_{g\in G}(f\circ g)$ and $\bigcup G\circ f=\bigcup_{g\in G}(g\circ f)$
@@ -322,8 +322,8 @@ We will prove only $\bigcup G\circ f=\bigcup_{g\in G}(g\circ f)$
 as the other formula follows from duality. Really
 
 \begin{multline*}
-(x;z)\in\bigcup G\circ f\Leftrightarrow\exists y:((x;y)\in f\land(y;z)\in\bigcup G)\Leftrightarrow\\
-\exists y,g\in G:((x;y)\in f\land(y;z)\in g)\Leftrightarrow\exists g\in G:(x;z)\in g\circ f\Leftrightarrow(x;z)\in\bigcup_{g\in G}(g\circ f).
+(x,z)\in\bigcup G\circ f\Leftrightarrow\exists y:((x,y)\in f\land(y,z)\in\bigcup G)\Leftrightarrow\\
+\exists y,g\in G:((x,y)\in f\land(y,z)\in g)\Leftrightarrow\exists g\in G:(x,z)\in g\circ f\Leftrightarrow(x,z)\in\bigcup_{g\in G}(g\circ f).
 \end{multline*}
 \end{proof}
 \begin{cor}
@@ -353,11 +353,11 @@ then $fx\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$ and thus
 \bigsqcap_{g\in G}\rsupfun{g\circ f}x=\rsupfun{\bigsqcap_{g\in G}(g\circ f)}x;
 \end{multline*}
 so $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.
-\item [{\ref{rel-wmmv}$\Rightarrow$\ref{rel-mono-mono}}] Take $g=\{(a;y)\}$
-and $h=\{(b;y)\}$ for arbitrary $a\ne b$ and arbitrary~$y$. We
+\item [{\ref{rel-wmmv}$\Rightarrow$\ref{rel-mono-mono}}] Take $g=\{(a,y)\}$
+and $h=\{(b,y)\}$ for arbitrary $a\ne b$ and arbitrary~$y$. We
 have $g\cap h=\emptyset$; thus $(g\circ f)\cap(h\circ f)=(g\cap h)\circ f=\bot$
 and thus impossible $x\mathrel fa\land x\mathrel fb$ as otherwise
-$(x;y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
+$(x,y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
 \item [{\ref{rel-mono-atom}$\Rightarrow$\ref{rel-mono-meet}}] Let $a\in\atoms^{\mathscr{T}\Src f}$,
 $\rsupfun fa=b$. Then because $b\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$
 \begin{gather*}
@@ -390,7 +390,7 @@ and so $f\circ f^{-1}\nsqsubseteq1_{\Dst f}^{\mathbf{Rel}}$.
 \begin{defn}
 Product of typed sets is defined by the formula
 \[
-(\subsets U;A)\times(\subsets W;B)=(U;W;A\times B).
+(\subsets U,A)\times(\subsets W,B)=(U,W,A\times B).
 \]
 \end{defn}
 \begin{prop}
@@ -398,9 +398,9 @@ Product of typed sets is a $\mathbf{Rel}$-morphism.\end{prop}
 \begin{proof}
 We need to prove $A\times B\subseteq U\times W$, but this is obvious.\end{proof}
 \begin{obvious}
-Atoms of $\mathbf{Rel}(A;B)$ are exactly products $a\times b$ where
+Atoms of $\mathbf{Rel}(A,B)$ are exactly products $a\times b$ where
 $a$ and $b$ are atoms correspondingly of $\mathscr{T}A$ and $\mathscr{T}B$.
-$\mathbf{Rel}(A;B)$ is an atomistic poset.\end{obvious}
+$\mathbf{Rel}(A,B)$ is an atomistic poset.\end{obvious}
 \begin{prop}
 $f\nasymp A\times B\Leftrightarrow A\rsuprel fB$ for every $\mathbf{Rel}$-morphism~$f$
 and $A\in\mathscr{T}\Src f$, $B\in\mathscr{T}\Dst f$.\end{prop}
@@ -415,14 +415,14 @@ A\rsuprel fB\Leftrightarrow\exists x\in\atoms A,y\in\atoms B:x\rsuprel fy\Leftri
 \emph{Image} and \emph{domain} of a $\mathbf{Rel}$-morphism~$f$
 are typed sets defined by the formulas 
 \[
-\dom(U;W;f)=(\subsets U;\dom f)\quad\text{and}\quad\im(U;W;f)=(\subsets W;\im f).
+\dom(U,W,f)=(\subsets U,\dom f)\quad\text{and}\quad\im(U,W,f)=(\subsets W,\im f).
 \]
 \end{defn}
 \begin{obvious}
 Image and domain of a $\mathbf{Rel}$-morphism are really typed sets.\end{obvious}
 \begin{defn}
 \emph{Restriction} of a $\mathbf{Rel}$-morphism to a typed set is
-defined by the formula $(U;W;f)|_{(\subsets U;X)}=(U;W;f|_{X})$.\end{defn}
+defined by the formula $(U,W,f)|_{(\subsets U,X)}=(U,W,f|_{X})$.\end{defn}
 \begin{obvious}
 Restriction of a $\mathbf{Rel}$-morphism is $\mathbf{Rel}$-morphism.
 \end{obvious}
@@ -445,20 +445,20 @@ for every $\mathbf{Rel}$-morphism~$f$ and $A\in\mathscr{T}\Src f$,
 Let $A$, $B$ be sets. If $S\in\subsets(\mathscr{T}A\times\mathscr{T}B)$
 then
 \[
-\bigsqcap_{(A;B)\in S}(A\times B)=\bigsqcap\dom S\times\bigsqcap\im S.
+\bigsqcap_{(A,B)\in S}(A\times B)=\bigsqcap\dom S\times\bigsqcap\im S.
 \]
 \end{thm}
 \begin{proof}
 For every atomic $x\in\mathscr{T}A$, $y\in\mathscr{T}B$ we have
 \begin{multline*}
-x\times y\sqsubseteq\bigsqcap_{(A;B)\in S}(A\times B)\Leftrightarrow\forall(A;B)\in S:x\times y\sqsubseteq A\times B\Leftrightarrow\\
-\forall(A;B)\in S:(x\sqsubseteq A\land y\sqsubseteq B)\Leftrightarrow\forall A\in\dom S:x\sqsubseteq A\land\forall B\in\im S:y\sqsubseteq B\Leftrightarrow\\
+x\times y\sqsubseteq\bigsqcap_{(A,B)\in S}(A\times B)\Leftrightarrow\forall(A,B)\in S:x\times y\sqsubseteq A\times B\Leftrightarrow\\
+\forall(A,B)\in S:(x\sqsubseteq A\land y\sqsubseteq B)\Leftrightarrow\forall A\in\dom S:x\sqsubseteq A\land\forall B\in\im S:y\sqsubseteq B\Leftrightarrow\\
 x\sqsubseteq\bigsqcap\dom S\land y\sqsubseteq\bigsqcap\im S\Leftrightarrow x\times y\sqsubseteq\bigsqcap\dom S\times\bigsqcap\im S.
 \end{multline*}
 \end{proof}
 \begin{obvious}
 If $U$, $W$ are sets and $A\in\mathscr{T}(U)$ then $A\times$ is
 a complete homomorphism from the lattice $\mathscr{T}(W)$ to the
-lattice $\mathbf{Rel}(U;W)$, if also $A\ne\bot^{\mathscr{T}(U)}$
+lattice $\mathbf{Rel}(U,W)$, if also $A\ne\bot^{\mathscr{T}(U)}$
 then it is an order embedding.\end{obvious}
 

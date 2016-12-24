@@ -11,14 +11,14 @@ and ``decomposition'' are unrelated.
 The idea of the proof below is that composition of binary relations
 can be decomposed into two operations: $\otimes$ and $\dom$:
 \[
-g\otimes f=\setcond{((x;z);y)}{x\mathrel fy\land y\mathrel gz}.
+g\otimes f=\setcond{((x,z),y)}{x\mathrel fy\land y\mathrel gz}.
 \]
 Composition of binary relations can be decomposed: $g\circ f=\dom(g\otimes f)$.
 
 It can be decomposed even further: $g\otimes f=\Theta_{0}f\cap\Theta_{1}g$
 where
 \[
-\Theta_{0}f=\setcond{((x;z);y)}{x\mathrel fy,z\in\mho}\quad\text{and}\quad\Theta_{1}f=\setcond{((x;z);y)}{y\mathrel fz,x\in\mho}.
+\Theta_{0}f=\setcond{((x,z),y)}{x\mathrel fy,z\in\mho}\quad\text{and}\quad\Theta_{1}f=\setcond{((x,z),y)}{y\mathrel fz,x\in\mho}.
 \]
 (Here $\mho$ is the Grothendieck universe.)
 
@@ -36,8 +36,8 @@ of sets.
 For composable reloids~$f$ and~$g$ we have
 \begin{align*}
 g\circ f & =\\
-\bigsqcap^{\mathsf{RLD}(\Src f;\Dst g)}\setcond{G\circ F}{F\in\GR f,G\in\GR g} & =\\
-\bigsqcap^{\mathsf{RLD}(\Src f;\Dst g)}\setcond{\dom(G\otimes F)}{F\in\GR f,G\in\GR g}.
+\bigsqcap^{\mathsf{RLD}(\Src f,\Dst g)}\setcond{G\circ F}{F\in\GR f,G\in\GR g} & =\\
+\bigsqcap^{\mathsf{RLD}(\Src f,\Dst g)}\setcond{\dom(G\otimes F)}{F\in\GR f,G\in\GR g}.
 \end{align*}
 
 \begin{lem}
@@ -78,7 +78,7 @@ g\otimes f=\setcond{G\otimes F}{F\in\GR f,G\in\GR g}.
 \]
 Then
 \[
-g\circ f=\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\rsupfun{\dom}(g\otimes f)=\dom\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times\Dst g;\mho)}}(g\otimes f).
+g\circ f=\bigsqcap^{\mathscr{F}(\Src f\times\Dst g)}\rsupfun{\dom}(g\otimes f)=\dom\rsupfun{\uparrow^{\mathsf{RLD}(\Src f\times\Dst g,\mho)}}(g\otimes f).
 \]
 
 
@@ -98,19 +98,19 @@ $f$, $g$, $h$.\end{lem}
 Let $F=\uparrow^{\mathsf{RLD}}f$ be a principal reloid (for a $\mathbf{Rel}$-morphism~$f$),
 $T$~be a set of reloids from $\Dst F$ to a set $V$.
 \[
-\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F).
+\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes f)=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F).
 \]
 \end{lem}
 \begin{proof}
-$\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)\sqsupseteq\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$
+$\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes f)\sqsupseteq\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F)$
 is obvious.
 
-Let $K\in\up\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)$.
+Let $K\in\up\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F)$.
 Then for each $G\in T$
 \[
-K\in\up\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F);
+K\in\up\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F);
 \]
-$K\in\up\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\setcond{\Gamma\otimes f}{\Gamma\in G}$.
+$K\in\up\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}\setcond{\Gamma\otimes f}{\Gamma\in G}$.
 Then $K\in\setcond{\Gamma\otimes f}{\Gamma\in G}$ by properties of
 generalized filter bases.
 
@@ -127,7 +127,7 @@ So
 \begin{multline*}
 K\in\setcond{(\Gamma'_{0}\otimes f)\cap\dots\cap(\Gamma'_{n}\otimes f)}{n\in\mathbb{N},\Gamma'_{i}\in\up\bigsqcup T}=\\
 \setcond{(\Gamma'_{0}\cap\dots\cap\Gamma'_{n})\otimes f}{n\in\mathbb{N},\Gamma'_{i}\in\up\bigsqcup T}=\\
-\up\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\setcond{G\otimes f}{G\in\up\bigsqcup T}.
+\up\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}\setcond{G\otimes f}{G\in\up\bigsqcup T}.
 \end{multline*}
 
 \end{proof}
@@ -144,19 +144,19 @@ by duality.)\end{thm}
 ~
 \begin{align*}
 \left(\bigsqcup T\right)\circ F & =\\
-\bigsqcap^{\mathsf{RLD}(\Src f;V)}\rsupfun{\dom}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
-\dom\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
-\dom\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f);\\
+\bigsqcap^{\mathsf{RLD}(\Src f,V)}\rsupfun{\dom}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
+\dom\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}\left(\left(\bigsqcup T\right)\otimes F\right) & =\\
+\dom\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes f);\\
 \bigsqcup_{G\in T}(G\circ F) & =\\
-\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f;V)}\rsupfun{\dom}(G\otimes F) & =\\
-\bigsqcup_{G\in T}\dom\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F) & =\\
-\dom\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F).
+\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f,V)}\rsupfun{\dom}(G\otimes F) & =\\
+\bigsqcup_{G\in T}\dom\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F) & =\\
+\dom\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F).
 \end{align*}
 
 
 It's enough to prove
 \[
-\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes f)=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V;\mho)}(G\otimes F)
+\bigsqcap_{G\in\up\bigsqcup T}^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes f)=\bigsqcup_{G\in T}\bigsqcap^{\mathsf{RLD}(\Src f\times V,\mho)}(G\otimes F)
 \]
 but this is the statement of the lemma.
 \end{proof}
@@ -165,7 +165,7 @@ but this is the statement of the lemma.
 \begin{defn}
 Let $f$ be a reloid. The funcoid
 \[
-\rho f=\mathsf{FCD}(\subsets(\Src f\times\Src f);\subsets(\Dst f\times\Dst f))
+\rho f=\mathsf{FCD}(\subsets(\Src f\times\Src f),\subsets(\Dst f\times\Dst f))
 \]
 is defined by the formulas:
 \[

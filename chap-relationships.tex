@@ -5,7 +5,7 @@
 \section{Funcoid induced by a reloid}
 
 \index{funcoid!induced by reloid}Every reloid $f$ induces a funcoid
-$\tofcd f\in\mathsf{FCD}(\Src f;\Dst f)$ by the following formulas
+$\tofcd f\in\mathsf{FCD}(\Src f,\Dst f)$ by the following formulas
 (for every $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$):
 \begin{gather*}
 \mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y};\\
@@ -88,7 +88,7 @@ So $\supfun{\tofcd f}a=\supfun{\bigsqcap^{\mathsf{FCD}}\up f}a$ for
 every ultrafilter $a$.\end{proof}
 \begin{lem}
 \label{base-intrs-lem}For every two filter bases $S$ and $T$ of
-morphisms $\mathbf{Rel}(U;V)$ and every typed set $A\in\mathscr{T}U$
+morphisms $\mathbf{Rel}(U,V)$ and every typed set $A\in\mathscr{T}U$
 \[
 \bigsqcap^{\mathsf{RLD}}S=\bigsqcap^{\mathsf{RLD}}T\Rightarrow\bigsqcap_{F\in S}^{\mathscr{F}}\rsupfun FA=\bigsqcap_{G\in T}^{\mathscr{F}}\rsupfun GA.
 \]
@@ -180,8 +180,8 @@ have
 \begin{align*}
 \mathcal{X}\suprel{\tofcd\id_{\mathcal{A}}^{\mathsf{RLD}}}\mathcal{Y} & \Leftrightarrow\\
 \mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\id_{\mathcal{A}}^{\mathsf{RLD}} & \Leftrightarrow\\
-\forall A\in\up\mathcal{A}:\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\uparrow^{\mathsf{RLD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{A} & \Leftrightarrow\\
-\forall A\in\up\mathcal{A}:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}(\Base(\mathcal{A});\Base(\mathcal{A}))}\id_{A}}\mathcal{Y} & \Leftrightarrow\\
+\forall A\in\up\mathcal{A}:\mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A} & \Leftrightarrow\\
+\forall A\in\up\mathcal{A}:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A}}\mathcal{Y} & \Leftrightarrow\\
 \forall A\in\up\mathcal{A}:\mathcal{X}\sqcap\mathcal{Y}\nasymp A & \Leftrightarrow\\
 \mathcal{X}\sqcap\mathcal{Y}\nasymp\mathcal{A} & \Leftrightarrow\\
 \mathcal{X}\suprel{\id_{\mathcal{A}}^{\mathsf{FCD}}}\mathcal{Y}
@@ -281,7 +281,7 @@ thus follows the theorem.
 
 \section{Reloids induced by a funcoid}
 
-\index{reloid!inward}\index{reloid!outward}Every funcoid $f\in\mathsf{FCD}(A;B)$
+\index{reloid!inward}\index{reloid!outward}Every funcoid $f\in\mathsf{FCD}(A,B)$
 induces a reloid from $A$ to $B$ in two ways (below I will also describe the third way, Gamma-reloid), intersection of \emph{outward}
 relations and union of \emph{inward} reloidal products of filters:
 \begin{gather*}
@@ -466,12 +466,12 @@ g\circ(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})\circ f & =\\
 \section{\index{Galois connection!between funcoids and reloids}Galois connections
 between funcoids and reloids}
 \begin{thm}
-$\tofcd:\mathsf{RLD}(A;B)\rightarrow\mathsf{FCD}(A;B)$ is the lower
-adjoint of $\torldin:\mathsf{FCD}(A;B)\rightarrow\mathsf{RLD}(A;B)$
+$\tofcd:\mathsf{RLD}(A,B)\rightarrow\mathsf{FCD}(A,B)$ is the lower
+adjoint of $\torldin:\mathsf{FCD}(A,B)\rightarrow\mathsf{RLD}(A,B)$
 for every sets $A$, $B$.\end{thm}
 \begin{proof}
 Because $\tofcd$ and $\torldin$ are trivially monotone, it's enough
-to prove (for every $f\in\mathsf{RLD}(A;B)$, $g\in\mathsf{FCD}(A;B)$)
+to prove (for every $f\in\mathsf{RLD}(A,B)$, $g\in\mathsf{FCD}(A,B)$)
 \[
 f\sqsubseteq\torldin\tofcd f\quad\text{and}\quad\tofcd\torldin g\sqsubseteq g.
 \]
@@ -484,20 +484,20 @@ The second formula follows from the fact that $\tofcd\torldin g=g$.
 \bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\suprel{\tofcd f}b} & =\\
 \bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{RLD}}b\nasymp f} & \sqsupseteq\\
 \bigsqcup\setcond{p\in\atoms(a\times^{\mathsf{RLD}}b)}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},p\nasymp f} & =\\
-\bigsqcup\setcond{p\in\atoms^{\mathsf{RLD}(A;B)}}{p\nasymp f} & =\\
+\bigsqcup\setcond{p\in\atoms^{\mathsf{RLD}(A,B)}}{p\nasymp f} & =\\
 \bigsqcup\setcond p{p\in\atoms f}=f.
 \end{align*}
 \end{proof}
 \begin{cor}
 ~
 \begin{enumerate}
-\item $\tofcd\bigsqcup S=\bigsqcup\rsupfun{\tofcd}S$ if $S\in\subsets\mathsf{RLD}(A;B)$.
-\item $\torldin\bigsqcap S=\bigsqcap\rsupfun{\torldin}S$ if $S\in\subsets\mathsf{FCD}(A;B)$.
+\item $\tofcd\bigsqcup S=\bigsqcup\rsupfun{\tofcd}S$ if $S\in\subsets\mathsf{RLD}(A,B)$.
+\item $\torldin\bigsqcap S=\bigsqcap\rsupfun{\torldin}S$ if $S\in\subsets\mathsf{FCD}(A,B)$.
 \end{enumerate}
 \end{cor}
 \begin{thm}
 $\torldin(f\sqcup g)=\torldin f\sqcup\torldin g$ for every funcoids
-$f,g\in\mathsf{FCD}(A;B)$.\end{thm}
+$f,g\in\mathsf{FCD}(A,B)$.\end{thm}
 \begin{proof}
 ~
 \begin{multline*}
@@ -525,17 +525,17 @@ $\torldin$ is not a lower adjoint (in general).
 \begin{conjecture}
 $\torldout$ is neither a lower adjoint nor an upper adjoint (in general).\end{conjecture}
 \begin{xca}
-Prove that $\card\mathsf{FCD}(A;B)=2^{2^{\max\{A,B\}}}$ if $A$ or
+Prove that $\card\mathsf{FCD}(A,B)=2^{2^{\max\{A,B\}}}$ if $A$ or
 $B$ is an infinite set (provided that $A$ and $B$ are nonempty).\end{xca}
 \begin{lem}
-$\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq\tofcd g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g$
+$\uparrow^{\mathsf{FCD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq\tofcd g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq g$
 for every reloid~$g$.\end{lem}
 \begin{proof}
 ~
 \begin{multline*}
-\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq\tofcd g\Leftrightarrow\\
-\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}\nasymp\tofcd g\Leftrightarrow @\{x\}\rsuprel{\tofcd g}@\{y\}\Leftrightarrow\\
-\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\nasymp g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g.
+\uparrow^{\mathsf{FCD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq\tofcd g\Leftrightarrow\\
+\uparrow^{\mathsf{FCD}(\Src g,\Dst g)}\{(x,y)\}\nasymp\tofcd g\Leftrightarrow @\{x\}\rsuprel{\tofcd g}@\{y\}\Leftrightarrow\\
+\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}\nasymp g\Leftrightarrow\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq g.
 \end{multline*}
 \end{proof}
 \begin{thm}
@@ -544,10 +544,10 @@ $\Cor\tofcd g=\tofcd\Cor g$ for every reloid $g$.\end{thm}
 ~
 \begin{align*}
 \Cor\tofcd g & =\\
-\bigsqcup\setcond{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{FCD}}\{(x;y)\}\sqsubseteq\tofcd g} & =\\
-\bigsqcup\setcond{\uparrow^{\mathsf{FCD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g} & =\\
-\bigsqcup\setcond{\tofcd\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g} & =\\
-\tofcd\bigsqcup\setcond{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}}{\uparrow^{\mathsf{RLD}(\Src g;\Dst g)}\{(x;y)\}\sqsubseteq g} & =\\
+\bigsqcup\setcond{\uparrow^{\mathsf{FCD}(\Src g,\Dst g)}\{(x,y)\}}{\uparrow^{\mathsf{FCD}}\{(x,y)\}\sqsubseteq\tofcd g} & =\\
+\bigsqcup\setcond{\uparrow^{\mathsf{FCD}(\Src g,\Dst g)}\{(x,y)\}}{\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq g} & =\\
+\bigsqcup\setcond{\tofcd\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}}{\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq g} & =\\
+\tofcd\bigsqcup\setcond{\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}}{\uparrow^{\mathsf{RLD}(\Src g,\Dst g)}\{(x,y)\}\sqsubseteq g} & =\\
 \tofcd\Cor g.
 \end{align*}
 \end{proof}
@@ -645,10 +645,10 @@ $\torldin\tofcd f$ is funcoidal for every reloid $f$.\end{lem}
 $x\times^{\mathsf{RLD}}y\nasymp\torldin\tofcd f\Rightarrow x\times^{\mathsf{RLD}}y\sqsubseteq\torldin\tofcd f$
 for atomic filters~$x$ and~$y$.\end{proof}
 \begin{thm}\label{fcdal-bij}
-$\torldin$ is a bijection from $\mathsf{FCD}(A;B)$ to the set of
+$\torldin$ is a bijection from $\mathsf{FCD}(A,B)$ to the set of
 funcoidal reloids from $A$ to $B$. The reverse bijection is given by $\tofcd$.\end{thm}
 \begin{proof}
-Let $f\in\mathsf{FCD}(A;B)$. Prove that $\torldin f$ is funcoidal.
+Let $f\in\mathsf{FCD}(A,B)$. Prove that $\torldin f$ is funcoidal.
 
 Really $\torldin f=\torldin\tofcd\torldin f$ and thus we can use
 the lemma stating that it is funcoidal.
@@ -678,7 +678,7 @@ funcoids $f$ and $g$.\end{thm}
 \end{multline*}
 
 
-Let $F$ be an atom of the poset $\mathsf{RLD}(\Src f;\Dst f)$.
+Let $F$ be an atom of the poset $\mathsf{RLD}(\Src f,\Dst f)$.
 \begin{multline*}
 F\in\atoms\torldin f\Rightarrow\dom F\times^{\mathsf{RLD}}\im F\nasymp\torldin f\Rightarrow\\
 \text{(because \ensuremath{\torldin f} is a funcoidal reloid)}\Rightarrow\\
@@ -708,7 +708,7 @@ Provided that $\im F\nasymp\dom G$, we have:
 \begin{multline*}
 \dom F\times^{\mathsf{RLD}}\im G=(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\dom G\times^{\mathsf{RLD}}\im G)}\sqsubseteq\text{ (*)}\\
-\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms^{\mathsf{RLD}(\Src F;\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G;\Dst G)},F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms^{\mathsf{RLD}(\Src F,\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G,\Dst G)},F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g}=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms\torldin f,G'\in\atoms\torldin g}=\torldin g\circ\torldin f.
 \end{multline*}
 (*) $F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F)$ and $\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$ implies $\dom F'\times^{\mathsf{FCD}}\im F'\sqsubseteq f$;
@@ -723,7 +723,7 @@ Thus
 \begin{multline*}
 \torldin g\circ\torldin f=\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{
-\begin{aligned}&F\in\atoms^{\mathsf{RLD}(\Src f;\Dst f)},G\in\atoms^{\mathsf{RLD}(\Dst f;\Dst g)},\\&\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f,\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g,\im F\nasymp\dom G\end{aligned}}.
+\begin{aligned}&F\in\atoms^{\mathsf{RLD}(\Src f,\Dst f)},G\in\atoms^{\mathsf{RLD}(\Dst f,\Dst g)},\\&\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f,\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g,\im F\nasymp\dom G\end{aligned}}.
 \end{multline*}
 
 
@@ -788,7 +788,7 @@ complete reloids and complete funcoids.\end{prop}
 From two last lemmas.\end{proof}
 \begin{thm}
 The diagram at the figure~\ref{cmpl-dia} (with the ``unnamed''
-arrow from $\mathsf{ComplRLD}(A;B)$ to $\mathscr{F}(B)^A$ \emph{defined} as the inverse isomorphism of its opposite arrow)
+arrow from $\mathsf{ComplRLD}(A,B)$ to $\mathscr{F}(B)^A$ \emph{defined} as the inverse isomorphism of its opposite arrow)
 is a commutative diagram (in category $\mathbf{Set}$), every arrow
 in this diagram is an isomorphism. Every cycle in this diagram is
 an identity (therefore ``parallel'' arrows are mutually inverse).
@@ -802,10 +802,10 @@ The arrows preserve order.
 & \mathscr{F}(B)^A
 \arrow[rd, shift left, "G\mapsto\bigsqcup\setcond{\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}"]
 \arrow[ld, shift left, "G\mapsto\bigsqcup\setcond{\{\alpha\}\times^{\mathsf{FCD}}G(\alpha)}{\alpha\in A}"] \\
-\mathsf{ComplFCD}(A;B)
+\mathsf{ComplFCD}(A,B)
 \arrow[ru, shift left, "f\mapsto(\alpha\mapsto\rsupfun{f}\{\alpha\})"]
 \arrow[rr, shift left, "\torldout"]
-& & \mathsf{ComplRLD}(A;B)
+& & \mathsf{ComplRLD}(A,B)
 \arrow[lu, shift left]
 \arrow[ll, shift left, "\tofcd"]
 \end{tikzcd}
@@ -858,7 +858,7 @@ For co-complete funcoids it's dual.\end{proof}
   We need to prove that $\forall F, G \in \up f : F \sqcap G \in
   \up f$.
   
-  For every $F \in \mathbf{Rel} (\Src f ; \Dst f)$ we
+  For every $F \in \mathbf{Rel} (\Src f , \Dst f)$ we
   have
   
   $F \in \up f \Leftrightarrow F \sqsupseteq f \Leftrightarrow \langle F
@@ -1047,7 +1047,7 @@ $a \ltimes a$ for a nontrivial ultrafilter $a$.
 \section{Some sub-posets of funcoids and reloids}
 
 \begin{prop}
-The following are complete sub-meet-semilattices (that is subsets closed for arbitrary meets) of~$\mathsf{RLD}(A;A)$ (for every set~$A$):
+The following are complete sub-meet-semilattices (that is subsets closed for arbitrary meets) of~$\mathsf{RLD}(A,A)$ (for every set~$A$):
 \begin{enumerate}
 \item symmetric reloids on~$A$;
 \item reflexive reloids on~$A$;
@@ -1068,7 +1068,7 @@ The last item follows from the previous.
 
 
 \begin{prop}
-The following are complete sub-meet-semilattices (that is subsets closed for arbitrary meets) of~$\mathsf{FCD}(A;A)$ (for every set~$A$):
+The following are complete sub-meet-semilattices (that is subsets closed for arbitrary meets) of~$\mathsf{FCD}(A,A)$ (for every set~$A$):
 \begin{enumerate}
 \item symmetric funcoids on~$A$;
 \item reflexive funcoids on~$A$;
