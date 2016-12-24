@@ -1,6 +1,6 @@
 \chapter{Filterization of pointfree funcoids}
 
-Let $(\mathfrak{A};\mathfrak{Z}_0)$ and $(\mathfrak{B};\mathfrak{Z}_1)$ be primary filtrators over boolean lattices.
+Let $(\mathfrak{A},\mathfrak{Z}_0)$ and $(\mathfrak{B},\mathfrak{Z}_1)$ be primary filtrators over boolean lattices.
 By corollary~\bookref{filt-is-complete} we have that $\mathfrak{A}$ and~$\mathfrak{B}$ are complete lattices.
 
 Let $f$ be a pointfree funcoid $\mathfrak{Z}_0\rightarrow\mathfrak{Z}_1$. Define pointfree funcoid~$\uparrow f$ (\emph{filterization} of~$f$)
@@ -48,10 +48,10 @@ So $\supfun{f}$ is determined by $\supfun{\uparrow f}$. Likewise $\supfun{f^{-1}
 \begin{conjecture}
 (Non generalizing of theorem~\bookref{pf-rel})
 Pointfree funcoids~$f$ between some: a. atomistic but non-complete; b. complete but non-atomistic boolean lattices~$\mathfrak{Z}_0$ and~$\mathfrak{Z}_1$
-do not bijectively correspond to morphisms~$p\in\mathbf{Rel}(\atoms\mathfrak{Z}_0;\atoms\mathfrak{Z}_1)$ by the formulas:
+do not bijectively correspond to morphisms~$p\in\mathbf{Rel}(\atoms\mathfrak{Z}_0,\atoms\mathfrak{Z}_1)$ by the formulas:
 \begin{gather*}
 \supfun{f}X = \bigsqcup\rsupfun{p}\atoms X, \quad
 \supfun{f^{-1}}Y = \bigsqcup\rsupfun{p^{-1}}\atoms Y; \\
-(x;y)\in\GR p \Leftrightarrow y\in\atoms\supfun{f}x \Leftrightarrow x\in\atoms\supfun{f^{-1}}y.
+(x,y)\in\GR p \Leftrightarrow y\in\atoms\supfun{f}x \Leftrightarrow x\in\atoms\supfun{f^{-1}}y.
 \end{gather*}
 \end{conjecture}

@@ -100,7 +100,7 @@ This formula can be (over)simplified to:
 \begin{rem}
   $(\pi^{\lambda j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ
   \pi^{\lambda j \in n : \Src F_j}_i \in \Hom \left(
-  \prod^{(Q)}_{j \in n} \Src F_j ; \prod^{(Q)}_{j \in n} \Dst F_j
+  \prod^{(Q)}_{j \in n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j
   \right)$ are properly defined and have the same sources and destination
   (whenever $i \in \dom F$ is), thus the meet in the formulas is
   properly defined.
@@ -108,16 +108,16 @@ This formula can be (over)simplified to:
 
 \begin{rem}
   Thus
-  \[ F_0 \times^{(L)} F_1 = ((\pi^{(\Dst F_0 ; \Dst
-     F_1)}_0)^{\dagger} \circ F_0 \circ \pi^{(\Src F_0 ; \Src
-     F_1)}_0) \sqcap ((\pi^{(\Dst F_0 ; \Dst F_1)}_1)^{\dagger}
-     \circ F_1 \circ \pi^{(\Src F_0 ; \Src F_1)}_1) \]
+  \[ F_0 \times^{(L)} F_1 = ((\pi^{(\Dst F_0 , \Dst
+     F_1)}_0)^{\dagger} \circ F_0 \circ \pi^{(\Src F_0 , \Src
+     F_1)}_0) \sqcap ((\pi^{(\Dst F_0 , \Dst F_1)}_1)^{\dagger}
+     \circ F_1 \circ \pi^{(\Src F_0 , \Src F_1)}_1) \]
   that is product is defined by a pure algebraic formula.
 \end{rem}
 
 \begin{prop}
   $\prod^{(L)} F = \max \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j \in
-  n} \Src F_j ; \prod^{(Q)}_{j \in n} \Dst F_j \right)
+  n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
   }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
   j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
   : \Src F_j}_i }$.
@@ -129,7 +129,7 @@ This formula can be (over)simplified to:
 
 \begin{cor}
   $\prod^{(L)} F = \bigsqcup \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j
-  \in n} \Src F_j ; \prod^{(Q)}_{j \in n} \Dst F_j \right)
+  \in n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
   }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
   j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
   : \Src F_j}_i }$.
@@ -137,37 +137,37 @@ This formula can be (over)simplified to:
 
 \begin{thm}
   Let $\pi^X_i$ be metamonovalued morphisms. If $S \in \subsets (\Hom
-  (A_0 ; B_0) \times \Hom (A_1 ; B_1))$ for some sets $A_0$, $B_0$,
+  (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
   $A_1$, $B_1$ then
-  \[ \bigsqcap \setcond{ a \times^{(L)} b }{(a ; b)\in S } =
+  \[ \bigsqcap \setcond{ a \times^{(L)} b }{(a , b)\in S } =
      \bigsqcap \dom S \times^{(L)} \bigsqcap \im S. \]
 \end{thm}
 
 \begin{proof}
   ~
   \begin{align*}
-  \bigsqcap \setcond{ a \times b }{ (a ; b) \in S } & = \\
-  \bigsqcap \setcond{ ((\pi^{(\Dst a ; \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a ; \Src b)}_0) \sqcap
-  ((\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a ; \Src b)}_1) }{ (a ; b) \in S } & = \\
-  \bigsqcap \setcond{ (\pi^{(\Dst a ; \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a ; \Src b)}_0
+  \bigsqcap \setcond{ a \times b }{ (a , b) \in S } & = \\
+  \bigsqcap \setcond{ ((\pi^{(\Dst a , \Dst
+  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0) \sqcap
+  ((\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
+  \pi^{(\Src a , \Src b)}_1) }{ (a , b) \in S } & = \\
+  \bigsqcap \setcond{ (\pi^{(\Dst a , \Dst
+  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0
   }{ a \in \dom S } \sqcap
   \bigsqcap
-  \setcond{ (\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a ; \Src b)}_1 }{ b \in \im S } & = \\
-  \left( (\pi^{(\Dst a ; \Dst
+  \setcond{ (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
+  \pi^{(\Src a , \Src b)}_1 }{ b \in \im S } & = \\
+  \left( (\pi^{(\Dst a , \Dst
   b)}_0)^{\dagger} \circ \bigsqcap \setcond{ a }{ a \in
-  \dom S } \circ \pi^{(\Src a ; \Src b)}_0 \right)
-  \sqcap \left( (\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ
+  \dom S } \circ \pi^{(\Src a , \Src b)}_0 \right)
+  \sqcap \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ
   \bigsqcap \setcond{ b }{ b \in \im S }
-  \circ \pi^{(\Src a ; \Src b)}_1 \right) & = \\
+  \circ \pi^{(\Src a , \Src b)}_1 \right) & = \\
   \left(
-  (\pi^{(\Dst a ; \Dst b)}_0)^{\dagger} \circ \left( \bigsqcap
-  \dom S \right) \circ \pi^{(\Src a ; \Src b)}_0 \right)
-  \sqcap \left( (\pi^{(\Dst a ; \Dst b)}_1)^{\dagger} \circ \left(
-  \bigsqcap \im S \right) \circ \pi^{(\Src a ; \Src b)}_1
+  (\pi^{(\Dst a , \Dst b)}_0)^{\dagger} \circ \left( \bigsqcap
+  \dom S \right) \circ \pi^{(\Src a , \Src b)}_0 \right)
+  \sqcap \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ \left(
+  \bigsqcap \im S \right) \circ \pi^{(\Src a , \Src b)}_1
   \right) & = \\
   \bigsqcap \dom S \times \bigsqcap \im S.
   \end{align*}
@@ -212,7 +212,7 @@ get:
 \begin{obvious}
 $\prod^{(L)} F = \max \setcond{ \Phi \in \End \left( \prod^{(Q)}_{j \in
 n} \Ob F_j \right) }{ \forall i \in n : \pi_i
-\in \mathrm{C} (\Phi ; F_i) }$.
+\in \mathrm{C} (\Phi , F_i) }$.
 \end{obvious}
 
 \begin{rem}
@@ -222,7 +222,7 @@ n} \Ob F_j \right) }{ \forall i \in n : \pi_i
 \end{rem}
 
 \begin{cor}
-  $\pi_i \in \mathrm{C} \left( \prod^{(L)} F ; F_i \right)$ for every $i \in
+  $\pi_i \in \mathrm{C} \left( \prod^{(L)} F , F_i \right)$ for every $i \in
   \dom F$.
 \end{cor}
 
@@ -239,16 +239,16 @@ Let $\bigotimes$ of an indexed family of morphisms is a morphism; $\pi_i \circ
   \begin{itemize}
     \item Objects are endomorphisms of the category $\mathcal{C}$.
     
-    \item Morphisms are triples $(f ; a ; b)$ where $a$ and $b$ are objects
+    \item Morphisms are triples $(f , a , b)$ where $a$ and $b$ are objects
     and $f : \Ob a \rightarrow \Ob b$ is an entirely defined
     monovalue principal morphism of the category $\mathcal{C}$ such that $f
-    \in \mathrm{C} (a ; b)$ (in other words, $f \circ a \sqsubseteq b \circ
+    \in \mathrm{C} (a , b)$ (in other words, $f \circ a \sqsubseteq b \circ
     f$).
     
-    \item Composition of morphisms is defined by the formula $(g ; b ; c)
-    \circ (f ; a ; b) = (g \circ f ; a ; c)$.
+    \item Composition of morphisms is defined by the formula $(g , b , c)
+    \circ (f , a , b) = (g \circ f , a , c)$.
     
-    \item Identity morphisms are $(a ; a ; 1^{\mathcal{C}}_a)$.
+    \item Identity morphisms are $(a , a , 1^{\mathcal{C}}_a)$.
   \end{itemize}
 \end{defn}
 
@@ -282,7 +282,7 @@ It is really a category:
 \end{rem}
 
 \begin{defn}
-  $\pi^{\cont (\mathcal{C})}_i = \left( \prod^{(L)} F ; F_i ;
+  $\pi^{\cont (\mathcal{C})}_i = \left( \prod^{(L)} F , F_i ,
   \pi_i \right)$.
 \end{defn}
 
@@ -292,12 +292,12 @@ It is really a category:
 \end{prop}
 
 \begin{proof}
-  We need to prove $\pi_i \in \mathrm{C} \left( \prod^{(L)} F ; F_i \right)$
+  We need to prove $\pi_i \in \mathrm{C} \left( \prod^{(L)} F , F_i \right)$
   but that was proved above.
 \end{proof}
 
 \begin{lem}
-  $f \in \Hom_{\cont (\mathcal{C})} \left( Y ;
+  $f \in \Hom_{\cont (\mathcal{C})} \left( Y ,
   \prod^{(L)} F \right)$ is continuous iff all $\pi_i \circ f$ are continuous.
 \end{lem}
 
@@ -305,7 +305,7 @@ It is really a category:
   ~
   \begin{description}
     \item[$\Rightarrow$] Let $f \in \Hom_{\cont
-    (\mathcal{C})} \left( Y ; \prod^{(L)} F \right)$. Then $f \circ Y
+    (\mathcal{C})} \left( Y , \prod^{(L)} F \right)$. Then $f \circ Y
     \sqsubseteq \left( \prod^{(L)} F \right) \circ f$; $\pi_i \circ f \circ Y
     \sqsubseteq \pi_i \circ \left( \prod^{(L)} F \right) \circ f$; $\pi_i
     \circ f \circ Y \sqsubseteq \left( \prod^{(L)} F \right) \circ \pi_i \circ
@@ -313,7 +313,7 @@ It is really a category:
     
     \item[$\Leftarrow$] Let all $\pi_i \circ f$ be continuous. Then
     $\pi^{\cont (\mathcal{C})}_i \circ f \in
-    \Hom_{\cont (\mathcal{C})} (Y ; F_i)$;
+    \Hom_{\cont (\mathcal{C})} (Y , F_i)$;
     $\pi^{\cont (\mathcal{C})}_i \circ f \circ Y \sqsubseteq
     F_i \circ \pi^{\cont (\mathcal{C})}_i \circ f$. We need
     to prove $Y \sqsubseteq f^{\dagger} \circ \left( \prod^{(L)} F \right)
@@ -348,15 +348,15 @@ Mor-sets are replaced with their dual. I will denote $A
 this duality.
 
 \begin{prop}
-  $f \in \mathrm{C} (\mu; \nu) \xleftrightarrow{\dual} f^{\dagger}
-  \in \mathrm{C} (\nu^{\dagger} ; \mu^{\dagger})$.
+  $f \in \mathrm{C} (\mu, \nu) \xleftrightarrow{\dual} f^{\dagger}
+  \in \mathrm{C} (\nu^{\dagger} , \mu^{\dagger})$.
 \end{prop}
 
 \begin{proof}
-  $f \in \mathrm{C} (\mu; \nu) \Leftrightarrow f \circ \mu
+  $f \in \mathrm{C} (\mu, \nu) \Leftrightarrow f \circ \mu
   \sqsubseteq \nu \circ f \xleftrightarrow{\dual} \mu^{\dagger}
   \circ f^{\dagger} \sqsupseteq f^{\dagger} \circ^{\dagger} \nu^{- 1}
-  \Leftrightarrow f^{\dagger} \in \mathrm{C} (\nu^{\dagger} ;
+  \Leftrightarrow f^{\dagger} \in \mathrm{C} (\nu^{\dagger} ,
   \mu^{\dagger})$.
 \end{proof}
 
@@ -414,7 +414,7 @@ This formula can be (over)simplified to:
 \begin{rem}
   $\iota^{\lambda j \in n : \Src F_j}_i \circ F_i \circ (\iota^{\lambda
   j \in n : \Dst F_j}_i)^{\dagger} \in \Hom \left(
-  \coprod^{(Q)}_{j \in n} \Src F_j ; \coprod^{(Q)}_{j \in n} \Dst
+  \coprod^{(Q)}_{j \in n} \Src F_j , \coprod^{(Q)}_{j \in n} \Dst
   F_j \right)$ are properly defined and have the same sources and destination
   (whenever $i \in \dom F$ is), thus the meet in the formulas is
   properly defined.
@@ -422,10 +422,10 @@ This formula can be (over)simplified to:
 
 \begin{rem}
   Thus
-  \[ F_0 \amalg^{(L)} F_1 = (\iota^{(\Src F_0 ; \Src F_1)}_0 \circ
-     F_0^{\dagger} \circ (\iota^{(\Dst F_0 ; \Dst
-     F_1)}_0)^{\dagger}) \sqcup (\iota^{(\Src F_0 ; \Src F_1)}_1
-     \circ F_1^{\dagger} \circ (\iota^{(\Dst F_0 ; \Dst
+  \[ F_0 \amalg^{(L)} F_1 = (\iota^{(\Src F_0 , \Src F_1)}_0 \circ
+     F_0^{\dagger} \circ (\iota^{(\Dst F_0 , \Dst
+     F_1)}_0)^{\dagger}) \sqcup (\iota^{(\Src F_0 , \Src F_1)}_1
+     \circ F_1^{\dagger} \circ (\iota^{(\Dst F_0 , \Dst
      F_1)}_1)^{\dagger}) \]
   that is coproduct is defined by a pure algebraic formula.
 \end{rem}
@@ -451,9 +451,9 @@ This formula can be (over)simplified to:
 
 \begin{thm}
   Let $\pi^X_i$ be metainjective morphisms. If $S \in \subsets (\Hom
-  (A_0 ; B_0) \times \Hom (A_1 ; B_1))$ for some sets $A_0$, $B_0$,
+  (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
   $A_1$, $B_1$ then
-  \[ \bigsqcup \setcond{ a \times^{(L)} b }{ (a ; b)
+  \[ \bigsqcup \setcond{ a \times^{(L)} b }{ (a , b)
      \in S } = \bigsqcup \dom S \times^{(L)} \bigsqcup \im
      S. \]
 \end{thm}
@@ -500,11 +500,11 @@ we get:
 \begin{obvious}
 $\coprod^{(L)} = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j \in
 n} \Ob F_j \right) }{ \forall i \in n : \iota_i
-\in \mathrm{C} (F_i^{\dagger} ; \Phi) }$.{\hspace*{\fill}}{\medskip}
+\in \mathrm{C} (F_i^{\dagger} , \Phi) }$.{\hspace*{\fill}}{\medskip}
 \end{obvious}
 
 \begin{cor}
-  $\iota_i \in \mathrm{C} \left( F_i ; \coprod^{(L)} F \right)$ for every $i
+  $\iota_i \in \mathrm{C} \left( F_i , \coprod^{(L)} F \right)$ for every $i
   \in \dom F$.
 \end{cor}
 
@@ -521,8 +521,8 @@ Let $F_i \in \End \left( \coprod^{(Q)}_{j \in n} \Ob F_j \right)$
 for all $i \in n$ (where $n$ is some index set) (a self-dual of the above).
 
 \begin{defn}
-  $\iota^{\cont (\mathcal{C})}_i = \left( \coprod^{(L)} F ;
-  F_i^{\dagger} ; \iota_i \right)$.
+  $\iota^{\cont (\mathcal{C})}_i = \left( \coprod^{(L)} F ,
+  F_i^{\dagger} , \iota_i \right)$.
 \end{defn}
 
 \begin{prop}
@@ -532,7 +532,7 @@ for all $i \in n$ (where $n$ is some index set) (a self-dual of the above).
 
 \begin{lem}
   $f \in \Hom_{\cont (\mathcal{C})} \left(
-  \coprod^{(L)} F ; Y \right)$ \fxwarning{What is $Y$?} is continuous iff all $f \circ
+  \coprod^{(L)} F , Y \right)$ \fxwarning{What is $Y$?} is continuous iff all $f \circ
   \iota^{\cont (\mathcal{C})}$ are continuous.
 \end{lem}
 
@@ -553,13 +553,13 @@ Let $F$ be a family of endofuncoids.
 
 The cartesian product $\prod^{(Q)} X \eqdef \prod X$.
 
-I define $\pi_i = \pi^X_i \in \mathsf{FCD} \left( \prod X ; X_i
+I define $\pi_i = \pi^X_i \in \mathsf{FCD} \left( \prod X , X_i
 \right)$ as the principal funcoid corresponding to the $i$-th projection.
 (Here $\pi$ is entirely defined.)
 
 The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
 
-I define $\iota_i = \iota^X_i \in \mathsf{FCD} \left( X_i ; \coprod X
+I define $\iota_i = \iota^X_i \in \mathsf{FCD} \left( X_i , \coprod X
 \right)$ as the principal funcoid corresponding to the $i$-th canonical
 injection. (Here $\iota$ is entirely defined.)
 
@@ -573,7 +573,7 @@ f$.
 
 \begin{obvious}
 $\left( \bigoplus f \right) \circ \iota_i = f_i$; $\bigoplus_{i \in n} (f
-\circ \iota_i) = f$.{\hspace*{\fill}}{\medskip}
+\circ \iota_i) = f$.
 \end{obvious}
 
 It is easy to show that $\pi_i$ is entirely defined monovalued, and $\iota_i$
@@ -592,14 +592,14 @@ Let $F$ be a family of endoreloids.
 
 The cartesian product $\prod^{(Q)} X \eqdef \prod X$.
 
-I define $\pi_i = \pi^X_i \in \mathsf{RLD} \left( \prod X ; X_i
+I define $\pi_i = \pi^X_i \in \mathsf{RLD} \left( \prod X , X_i
 \right)$ as the principal reloid corresponding to the $i$-th projection. (Here
 $\pi$ is entirely defined.)
 
 The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
 
 I define $\iota_i = \iota^X \in
-\mathsf{RLD} \left( X_i ; \coprod X \right)$ as the principal reloid
+\mathsf{RLD} \left( X_i , \coprod X \right)$ as the principal reloid
 corresponding to the $i$-th canonical injection. (Here $\iota$ is entirely
 defined.)
 
@@ -628,26 +628,26 @@ with product uniformilty.
 \section{Initial and terminal objects}
 
 Initial object of $\mathbf{Fcd}$ is the endofuncoid
-$\uparrow^{\mathsf{FCD} (\emptyset ; \emptyset)} \emptyset$. It is
+$\uparrow^{\mathsf{FCD} (\emptyset , \emptyset)} \emptyset$. It is
 initial because it has precisely one morphism $o$ (the empty set considered as
 a function) to any object $Y$. $o$ is a morphism because $o \circ
-\uparrow^{\mathsf{FCD} (\emptyset ; \emptyset)} \emptyset \sqsubseteq Y
+\uparrow^{\mathsf{FCD} (\emptyset , \emptyset)} \emptyset \sqsubseteq Y
 \circ o$.
 
 \begin{prop}
   Terminal objects of $\mathbf{Fcd}$ are exactly
   $\uparrow^{\mathscr{F}} \{ \ast \} \times^{\mathsf{FCD}}
   \uparrow^{\mathscr{F}} \{ \ast \} = \uparrow^{\mathsf{FCD}} \{ (\ast
-  ; \ast) \}$ where $\ast$ is an arbitrary point.
+  , \ast) \}$ where $\ast$ is an arbitrary point.
 \end{prop}
 
 \begin{proof}
   In order for a function $f : X \rightarrow \uparrow^{\mathsf{FCD}} \{
-  (\ast ; \ast) \}$ be a morphism, it is required exactly $f \circ X
-  \sqsubseteq \uparrow^{\mathsf{FCD}} \{ (\ast ; \ast) \} \circ f$
+  (\ast , \ast) \}$ be a morphism, it is required exactly $f \circ X
+  \sqsubseteq \uparrow^{\mathsf{FCD}} \{ (\ast , \ast) \} \circ f$
   
   $f \circ X \sqsubseteq (f^{- 1} \circ \uparrow^{\mathsf{FCD}} \{
-  (\ast ; \ast) \})^{- 1}$; $f \circ X \sqsubseteq (\{ \ast \}
+  (\ast , \ast) \})^{- 1}$; $f \circ X \sqsubseteq (\{ \ast \}
   \times^{\mathsf{FCD}} \langle f^{- 1} \rangle \{ \ast \})^{- 1}$; $f
   \circ X \sqsubseteq \langle f^{- 1} \rangle \{ \ast \}
   \times^{\mathsf{FCD}} \{ \ast \}$ what true exactly when $f$ is a
@@ -655,9 +655,9 @@ a function) to any object $Y$. $o$ is a morphism because $o \circ
 \end{proof}
 
 If $n = \emptyset$ then $Z = \{ \emptyset \}$; $\prod^{(L)} \emptyset = \max
-\mathsf{FCD} (Z ; Z) = \uparrow^{\mathscr{F}} \{ \emptyset \}
+\mathsf{FCD} (Z , Z) = \uparrow^{\mathscr{F}} \{ \emptyset \}
 \times^{\mathsf{FCD}} \uparrow^{\mathscr{F}} \{ \emptyset \} =
-\uparrow^{\mathsf{FCD}} \{ (\emptyset ; \emptyset) \}$.
+\uparrow^{\mathsf{FCD}} \{ (\emptyset , \emptyset) \}$.
 
 \fxnote{Initial and terminal objects of $\mathbf{Rld}$.}
 
@@ -722,10 +722,10 @@ We are not only to prove (or maybe disprove) that our categories are cartesian c
 ''Definition'' A category is //cartesian closed// iff:
 \begin{enumerate}
 \item It has finite products.
-\item For each objects $A$, $B$ is given an object $\operatorname{MOR} ( A ; B)$ (//exponentiation//) and a morphism $\varepsilon^{\mathbf{Dig}}_{A, B} : \operatorname{MOR} ( A ; B) \times A \rightarrow B$.
-\item For each morphism $f : Z \times A \rightarrow B$ there is given a morphism (//exponential transpose//) $\sim f : Z \rightarrow \operatorname{MOR} ( A ; B)$.
+\item For each objects $A$, $B$ is given an object $\operatorname{MOR} ( A , B)$ (//exponentiation//) and a morphism $\varepsilon^{\mathbf{Dig}}_{A, B} : \operatorname{MOR} ( A , B) \times A \rightarrow B$.
+\item For each morphism $f : Z \times A \rightarrow B$ there is given a morphism (//exponential transpose//) $\sim f : Z \rightarrow \operatorname{MOR} ( A , B)$.
 \item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
-\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
+\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
 \end{enumerate}
 
 We will also denote $f\mapsto (-f)$ the reverse of the bijection $f\mapsto (\sim f)$.
@@ -776,49 +776,49 @@ Category of digraphs is the simplest of our three categories and it is easy to d
 
 Let $G$ and $H$ be graphs:
 \begin{itemize}
-\item $\operatorname{Ob} \operatorname{MOR} ( G ; H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
-\item $( f ; g) \in \operatorname{GR} \operatorname{MOR} ( G ; H) \Leftrightarrow \forall ( v ; w) \in \operatorname{GR} G : ( f ( v) ; g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{MOR} ( G ; H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\item $\operatorname{Ob} \operatorname{MOR} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\item $( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : ( f ( v) , g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{MOR} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
 \end{itemize}
 
-$\operatorname{GR} 1_{\operatorname{MOR} ( B ; C)} = \operatorname{id}_{\operatorname{Ob} \operatorname{MOR} ( B ; C)} = \operatorname{id}_{( \operatorname{Ob} H)^{\operatorname{Ob} G}}$
+$\operatorname{GR} 1_{\operatorname{MOR} ( B , C)} = \operatorname{id}_{\operatorname{Ob} \operatorname{MOR} ( B , C)} = \operatorname{id}_{( \operatorname{Ob} H)^{\operatorname{Ob} G}}$
 
 Equivalently
 
-$( f ; g) \in \operatorname{GR} \operatorname{MOR} ( G ; H) \Leftrightarrow \forall ( v ; w) \in \operatorname{GR} G : g \circ \{ ( v ; w) \} \circ f^{- 1} \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : g \circ \{ ( v , w) \} \circ f^{- 1} \subseteq \operatorname{GR} H$
 
-$( f ; g) \in \operatorname{GR} \operatorname{MOR} ( G ; H) \Leftrightarrow g \circ ( \operatorname{GR} G) \circ f^{- 1} \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow g \circ ( \operatorname{GR} G) \circ f^{- 1} \subseteq \operatorname{GR} H$
 
-$( f ; g) \in \operatorname{GR} \operatorname{MOR} ( G ; H) \Leftrightarrow \langle f \times^{( C)} g \rangle \operatorname{GR} G \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \langle f \times^{( C)} g \rangle \operatorname{GR} G \subseteq \operatorname{GR} H$
 
 The transposition (the isomorphism) is uncurrying.
 
-$\sim f = \lambda a \in Z \lambda y \in A : f ( a ; y)$ that is $( \sim f) ( a) ( y) = f ( a ; y)$.
+$\sim f = \lambda a \in Z \lambda y \in A : f ( a , y)$ that is $( \sim f) ( a) ( y) = f ( a , y)$.
 
-$( - f) ( a ; y) = f ( a) ( y)$
+$( - f) ( a , y) = f ( a) ( y)$
 
-If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{MOR} ( B ; C)$
+If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{MOR} ( B , C)$
 
 ''Proposition'' Transposition and its inverse are morphisms of $\mathbf{Dig}$.
 
-''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{MOR} ( B ; C) \Leftrightarrow \forall x, y : ( x A y \Rightarrow ( \sim f) x ( \operatorname{MOR} ( B ; C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v ; w) \in B : ( ( \sim f) x v ; ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v ; ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x ; v)  ( A \times B)  ( y ; w) \Rightarrow ( f ( x ; v) ; f ( y ; w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
+''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{MOR} ( B , C) \Leftrightarrow \forall x, y : ( x A y \Rightarrow ( \sim f) x ( \operatorname{MOR} ( B , C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w) \Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
 
-Evaluation $\varepsilon : \operatorname{MOR} ( G ; H) \times G \rightarrow H$ is defined by the formula:
+Evaluation $\varepsilon : \operatorname{MOR} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
-Then evaluation is $\varepsilon_{B, C} = - ( 1_{\operatorname{MOR} ( B ; C)})$.
+Then evaluation is $\varepsilon_{B, C} = - ( 1_{\operatorname{MOR} ( B , C)})$.
 
-So $\varepsilon_{B, C} ( p ; q) = ( - ( 1_{\operatorname{MOR} ( B ; C)})) ( p ; q) = ( 1_{\operatorname{MOR} ( B ; C)}) ( p) ( q) = p ( q)$.
+So $\varepsilon_{B, C} ( p , q) = ( - ( 1_{\operatorname{MOR} ( B , C)})) ( p , q) = ( 1_{\operatorname{MOR} ( B , C)}) ( p) ( q) = p ( q)$.
 
 ''Proposition'' Evaluation is a morphism of $\mathbf{Dig}$.
 
-''Proof'' Because $\varepsilon_{B, C} ( p ; q) = - ( 1_{\operatorname{MOR} ( B ; C)})$.
+''Proof'' Because $\varepsilon_{B, C} ( p , q) = - ( 1_{\operatorname{MOR} ( B , C)})$.
 
 It remains to prove:
 * $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$ for $f : A \rightarrow B \times C$;
-* $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
+* $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
 
-''Proof'' $\varepsilon_{B, C} ( \sim f \times 1_{A}) ( a ; p) = \varepsilon_{B, C} ( ( \sim f) a ; p) = ( \sim f) a p = f ( a ; p)$. So $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$.
+''Proof'' $\varepsilon_{B, C} ( \sim f \times 1_{A}) ( a , p) = \varepsilon_{B, C} ( ( \sim f) a , p) = ( \sim f) a p = f ( a , p)$. So $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$.
 
-  $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p) ( q) = ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p ; q) = \varepsilon_{B, C} ( g \times 1_{A}) ( p ; q) = \varepsilon_{B, C} ( g p ; q) = g ( p) ( q)$. So $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$.
+  $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p) ( q) = ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p , q) = \varepsilon_{B, C} ( g \times 1_{A}) ( p , q) = \varepsilon_{B, C} ( g p , q) = g ( p) ( q)$. So $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$.
 
 \subsection{By analogy with the proof that Dig is cartesian closed}
 
@@ -840,16 +840,16 @@ To sum what we need to prove:
 \item Transposition is a morphism.
 \item Evaluation is a morphism.
 \item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
-\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B ; C)$.
+\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
 \end{itemize}
 
 \subsection{Attempt to describe exponentials in Fcd}
 
 \begin{itemize}
-\item Exponential object $\operatorname{HOM(A;B)}$ is the following endofuncoid:
+\item Exponential object $\operatorname{HOM(A,B)}$ is the following endofuncoid:
 \item\begin{itemize}
-\item Object $\operatorname{Ob}\operatorname{HOM(A;B)} = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
-\item Graph is $\operatorname{GR} \operatorname{HOM} ( A ; B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f ; g) }{ f, g \in \Hom_{\mathbf{Set}} (\operatorname{Ob} A;\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
+\item Object $\operatorname{Ob}\operatorname{HOM(A,B)} = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
+\item Graph is $\operatorname{GR} \operatorname{HOM} ( A , B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f , g) }{ f, g \in \Hom_{\mathbf{Set}} (\operatorname{Ob} A,\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
 \end{itemize}
 \item Transposition is uncurrying.
 \item Evaluation is $\varepsilon_{A, B} x = \langle \operatorname{Pr}^{(A)}_0 x \rangle \operatorname{Pr}^{(A)}_1 x$.

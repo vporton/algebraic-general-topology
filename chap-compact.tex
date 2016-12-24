@@ -213,7 +213,7 @@ In this subsection I present counter-examples against modified propositions from
 in which I replace Tychonoff product with our subatomic or cross-inner products.
 
 TODO: Consider as a counter-example the non-transitive compact funcoid
-$\setcond{(x;y)}{x,y\in [0;1], |x-y|<\frac{1}{3}}$.
+$\setcond{(x,y)}{x,y\in [0;1], |x-y|<\frac{1}{3}}$.
 
 \begin{example}
 $\rsupfun{1^{\mathbf{Rel}} \times^{(A)} 1^{\mathbf{Rel}}} 1^{\mathbf{Rel}} \sqsupset 1^{\mathbf{Rel}}$.
@@ -296,17 +296,17 @@ Thus by reflexivity $\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U) \ne
 By compactness of $f \times^{(A)} f$, $\Cor \langle f \times^{(A)} f \rangle^{\ast}
 (g \setminus U) \neq \bot$.
 
-Suppose $\uparrow \{ (x ; x) \} \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
+Suppose $\uparrow \{ (x , x) \} \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast}
 (g \setminus U)$; then $g \setminus U \nasymp \langle f^{- 1} \times^{(A)} f^{- 1}
-\rangle \{ (x ; x) \}$; $U \sqsubset \langle f^{- 1} \times^{(A)} f^{- 1} \rangle \{
-(x ; x) \} \sqsubseteq \langle f^{- 1} \times^{(A)} f^{- 1} \rangle 1^{\mathsf{RLD}}$ what is
+\rangle \{ (x , x) \}$; $U \sqsubset \langle f^{- 1} \times^{(A)} f^{- 1} \rangle \{
+(x , x) \} \sqsubseteq \langle f^{- 1} \times^{(A)} f^{- 1} \rangle 1^{\mathsf{RLD}}$ what is
 impossible.
 
-Thus there exist $x \neq y$ such that $\{ (x ; y) \} \sqsubseteq \Cor
-\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x ; y) \}
+Thus there exist $x \neq y$ such that $\{ (x , y) \} \sqsubseteq \Cor
+\langle f \times^{(A)} f \rangle^{\ast} (g \setminus U)$. Thus $\{ (x , y) \}
 \sqsubseteq \langle f \times^{(A)} f \rangle^{\ast} g$.
 
-Thus by the lemma $\{ (x ; y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossible. So $U
+Thus by the lemma $\{ (x , y) \} \sqsubseteq 1^{\mathsf{RLD}}$ what is impossible. So $U
 \in \up g$.
 
 We have $\up \langle f \times^{(A)} f \rangle^{\ast} 1^{\mathsf{RLD}} \subseteq
@@ -338,10 +338,10 @@ http://math.stackexchange.com/questions/665202/bourbaki-on-the-fact-that-continu
 We have $\mu= \langle \tofcd \mu \times
 \tofcd \mu \rangle \uparrow^{\mathsf{RLD}} 1^{\mathsf{RLD}}$
 
-$f \in \mathrm{C}_? (\tofcd \mu; \tofcd
+$f \in \mathrm{C}_? (\tofcd \mu, \tofcd
 \nu)$. Then
 \[ f \times^{(A)} f \in \mathrm{C}_? (\tofcd (\mu \times^{(A)}
-   \mu) ; \tofcd (\nu \times^{(A)} \nu)) \]
+   \mu) , \tofcd (\nu \times^{(A)} \nu)) \]
 $(f \times^{(A)} f) \circ \tofcd (\mu \times^{(A)} \mu)
 \sqsubseteq \tofcd (\nu \times^{(A)} \nu) \circ (f \times^{(A)} f)$
 
@@ -355,7 +355,7 @@ $\langle g^{- 1} \rangle V \in \langle \tofcd \mu \times^{(A)}
 
 $\supfun{g} \langle g^{- 1} \rangle V \sqsubseteq V$
 
-We need to prove $f \in \mathrm{C} (\mu; \nu)$ that is $\forall p \in
+We need to prove $f \in \mathrm{C} (\mu, \nu)$ that is $\forall p \in
 \up \nu \exists q \in \up \mu: \supfun{f} q
 \sqsubseteq p$. But this follows from the above.
 \end{proof}

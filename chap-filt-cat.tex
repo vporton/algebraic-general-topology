@@ -47,8 +47,8 @@ $\up\supfun{f}\mathcal{A} = \setcond{Y\in\subsets B}{\rsupfun{f^{-1}}Y\in\up\mat
 \begin{defn}
 The \emph{category of filtered sets} $\mathbf{Filt}$ is the category defined as follows:
 \begin{enumerate}
-\item Objects are pairs $(A;\mathcal{A})$ where $A$ is a (small) set and $\mathcal{A}$ is a filter on~$A$.
-\item Morphisms from $(A;\mathcal{A})$ to $(B;\mathcal{B})$ are functions $f:A\rightarrow B$ such that
+\item Objects are pairs $(A,\mathcal{A})$ where $A$ is a (small) set and $\mathcal{A}$ is a filter on~$A$.
+\item Morphisms from $(A,\mathcal{A})$ to $(B,\mathcal{B})$ are functions $f:A\rightarrow B$ such that
 $\supfun{f}\mathcal{A} \sqsubseteq \mathcal{B}$.
 \item Identities are identity functions.
 \end{enumerate}
@@ -82,7 +82,7 @@ First we will prove the special case that binary reloidal product is a categoric
   and $f : \mathcal{C} \rightarrow \mathcal{A}$, $g : \mathcal{C} \rightarrow
   \mathcal{B}$. We need to prove that there are a unique $u : \mathcal{C}
   \rightarrow \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B}$ such that
-  $f = p \circ u$ and $g = q \circ u$. Denote $h (z) = (f (z) ; g (z))$.
+  $f = p \circ u$ and $g = q \circ u$. Denote $h (z) = (f (z) , g (z))$.
   
   $h$ is the unique function $\Base (\mathcal{C}) \rightarrow
   \Base (\mathcal{A}) \times \Base (\mathcal{B})$ such that $f = p

@@ -23,14 +23,14 @@ endomorphism $f$.
   \begin{itemize}
     \item Objects are endomorphisms of category $C$.
     
-    \item Morphisms are triples $(f ; a ; b)$ where $a$ and $b$ are objects
+    \item Morphisms are triples $(f , a , b)$ where $a$ and $b$ are objects
     and $f : \Ob a \rightarrow \Ob b$ is a morphism of the
     category $C$ such that $f \circ a \sqsubseteq b \circ f$.
     
-    \item Composition of morphisms is defined by the formula $(g ; b ; c)
-    \circ (f ; a ; b) = (g \circ f ; a ; c)$.
+    \item Composition of morphisms is defined by the formula $(g , b , c)
+    \circ (f , a , b) = (g \circ f , a , c)$.
     
-    \item Identity morphisms are $(a ; a ; 1^C_a)$.
+    \item Identity morphisms are $(a , a , 1^C_a)$.
   \end{itemize}
 \end{defn}
 
@@ -65,7 +65,7 @@ It is really a category:
 \end{rem}
 
 \begin{rem}
-  Every $\Hom (\mathfrak{A}; \mathfrak{B})$ of $\mathbf{Pos}$
+  Every $\Hom (\mathfrak{A}, \mathfrak{B})$ of $\mathbf{Pos}$
   is partially ordered by the formula $a \leqslant b \Leftrightarrow \forall x
   \in \mathfrak{A}: a (x) \leqslant b (x)$. So $\cont
   (\mathbf{Pos})$ is defined.
@@ -122,7 +122,7 @@ The \emph{category of continuous pointfree funcoids} $\cont
 \begin{itemize}
   \item Objects are small pointfree endo-funcoids.
   
-  \item Morphisms from an object $a$ to an object $b$ are triples $(f ; a ;
+  \item Morphisms from an object $a$ to an object $b$ are triples $(f , a ,
   b)$ where $f$ is a pointfree funcoid from $\Ob a$ to $\Ob b$
   such that $f$ is a continuous morphism from $a$ to $b$ (that is $f \circ a
   \sqsubseteq b \circ f$, or equivalently $a \sqsubseteq f^{- 1} \circ b \circ
@@ -131,7 +131,7 @@ The \emph{category of continuous pointfree funcoids} $\cont
   \item Composition is the composition of pointfree funcoids.
   
   \item Identity for an object $a$ is $(I^{\mathsf{FCD}}_{\Ob a}
-  ; a ; a)$.
+  , a , a)$.
 \end{itemize}
 \end{obvious}
 

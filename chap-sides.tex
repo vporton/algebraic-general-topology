@@ -10,9 +10,9 @@ First consider some properties of Galois connections:
 Here I will denote $\supfun{f}$ the lower adjoint of a Galois connection~$f$. \fxnote{Switch to this notation in the book?}
 
 Let $\mathsf{GAL}$ be the category of Galois connections.
-\fxwarning{Need to decide whether use $\mathsf{GAL}(A;B)$ or $A\otimes B$.}
+\fxwarning{Need to decide whether use $\mathsf{GAL}(A,B)$ or $A\otimes B$.}
 
-I will denote $(f;g)^{-1}=(g;f)$ for a Galois connection~$(f;g)$.
+I will denote $(f,g)^{-1}=(g,f)$ for a Galois connection~$(f,g)$.
 
 We will order Galois connections by the formula
 \[ f\sqsubseteq g \Leftrightarrow \supfun{f}\sqsubseteq\supfun{g} \Leftrightarrow \supfun{f^{-1}}\sqsupseteq\supfun{g^{-1}}. \]
@@ -29,7 +29,7 @@ determined by the formula~$\supfun{f\sqcup g}x = \supfun{f}x\sqcup\supfun{g}x$.
 
 \begin{proof}
 It is enough to prove that
-\[ (x\mapsto\supfun{f}x\sqcup\supfun{g}x; y\mapsto\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y) \]
+\[ (x\mapsto\supfun{f}x\sqcup\supfun{g}x, y\mapsto\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y) \]
 is a Galois connection that is that
 \[ \supfun{f}x\sqcup\supfun{g}x\sqsubseteq y\Leftrightarrow x\sqsubseteq\supfun{f^{-1}}y\sqcap\supfun{g^{-1}}y \] for all relevant~$x$ and~$y$.
 
@@ -54,7 +54,7 @@ Thus $\supfun{a}\bot$ is the least element.
 \end{proof}
 
 \begin{prop}
-$(\mathfrak{A}\times\{\bot^\mathfrak{B}\}; \mathfrak{B}\times\{\top^\mathfrak{A}\})$ is the least Galois connection from
+$(\mathfrak{A}\times\{\bot^\mathfrak{B}\}, \mathfrak{B}\times\{\top^\mathfrak{A}\})$ is the least Galois connection from
 a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with least element.
 \end{prop}
 
@@ -73,13 +73,13 @@ a poset~$\mathfrak{A}$ with greatest element to a poset~$\mathfrak{B}$ with leas
 \end{cor}
 
 \begin{thm}\label{gal-bound}
-If $\mathfrak{A}$ and $\mathfrak{B}$ are bounded posets, then $\mathsf{GAL}(\mathfrak{A}; \mathfrak{B})$ is bounded.
+If $\mathfrak{A}$ and $\mathfrak{B}$ are bounded posets, then $\mathsf{GAL}(\mathfrak{A}, \mathfrak{B})$ is bounded.
 \end{thm}
 
 \begin{proof}
-That $\mathsf{GAL} (\mathfrak{A}; \mathfrak{B})$ has least element was proved
-above. I will demonstrate that $(\alpha ; \beta)$
-is the greatest element of $\mathsf{pFCD} (\mathfrak{A}; \mathfrak{B})$ for
+That $\mathsf{GAL} (\mathfrak{A}, \mathfrak{B})$ has least element was proved
+above. I will demonstrate that $(\alpha , \beta)$
+is the greatest element of $\mathsf{pFCD} (\mathfrak{A}, \mathfrak{B})$ for
 \[ \alpha X = \begin{cases}
      \bot^{\mathfrak{B}} & \text{if } X = \bot^{\mathfrak{A}}\\
      \top^{\mathfrak{B}} & \text{if } X \neq \bot^{\mathfrak{A}}
@@ -138,9 +138,9 @@ I will call objects of the source category of this functor simply \emph{objects 
 \emph{Bounded} system of presides is system of presides from an ordered category with bounded Hom-sets
 such that $X,Y\in\Ob\Src\Upsilon$ the following additional axioms hold for all suitable~$a$:
 \begin{enumerate}
-  \item $\supfun{\bot^{\Hom(X;Y)}} a = \bot$.
+  \item $\supfun{\bot^{\Hom(X,Y)}} a = \bot$.
 
-  \item $\supfun{\top^{\Hom(X;Y)}} a = \top$ unless $a = \bot$
+  \item $\supfun{\top^{\Hom(X,Y)}} a = \top$ unless $a = \bot$
 \end{enumerate}
 \end{defn}
 
@@ -358,7 +358,7 @@ $\supfun{a}\bot = \supfun{\tofcd a}\bot = \bot$;
 thus it is a system of presides.
 
 That this is a bounded system of presides follows from the formulas
-$\tofcd\bot^{\mathsf{RLD}(A;B)}=\bot$ and $\tofcd\top^{\mathsf{RLD}(A;B)}=\top$.
+$\tofcd\bot^{\mathsf{RLD}(A,B)}=\bot$ and $\tofcd\top^{\mathsf{RLD}(A,B)}=\top$.
 
 It is with identities, because proposition~\bookref{fcd-id}.
 It is with correct identities by proposition~\bookref{rld-id-comp}.
@@ -435,15 +435,15 @@ I refrain to give a name for this property.
 The following negative result generalizes theorem~3.8 in~\cite{tprod-dist-lat}.
 
 \begin{thm}\label{neg-prod}
-  The element $1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$ is not
+  The element $1^{(\Src\Upsilon)(\mathfrak{A}, \mathfrak{A})}$ is not
   complemented if $\mathfrak{A}$ is a non-atomic boolean lattice,
   for every monotone system of sides.
 \end{thm}
 
 \begin{proof}
-  Let $T = 1^{(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})}$.
+  Let $T = 1^{(\Src\Upsilon)(\mathfrak{A}, \mathfrak{A})}$.
   
-  Let's suppose $T \sqcup V = \top$ for $V \in (\Src\Upsilon) (\mathfrak{A};
+  Let's suppose $T \sqcup V = \top$ for $V \in (\Src\Upsilon) (\mathfrak{A},
   \mathfrak{A})$ and prove $T \sqcap V \neq \bot$.
   
   Then $\supfun{T \sqcup V} a = \top$ for all $a \neq \bot$ and thus $\supfun{V}
@@ -469,7 +469,7 @@ The following negative result generalizes theorem~3.8 in~\cite{tprod-dist-lat}.
 \end{proof}
 
 \begin{cor}
-  $(\Src\Upsilon)(\mathfrak{A}; \mathfrak{A})$ is not boolean if $\mathfrak{A}$
+  $(\Src\Upsilon)(\mathfrak{A}, \mathfrak{A})$ is not boolean if $\mathfrak{A}$
   is a non-atomic boolean lattice.
 \end{cor}
 
@@ -484,9 +484,9 @@ The following negative result generalizes theorem~3.8 in~\cite{tprod-dist-lat}.
 \end{prop}
 
 \begin{proof}
-$\forall f\in\Hom(A;B):\bot^\dagger\sqsubseteq f \Leftrightarrow
-\forall f\in\Hom(A;B):\bot\sqsubseteq f^\dagger \Leftrightarrow
-\forall f\in\Hom(A;B):\bot\sqsubseteq f \Leftrightarrow 1$. Thus $\bot^\dagger$ is the least.
+$\forall f\in\Hom(A,B):\bot^\dagger\sqsubseteq f \Leftrightarrow
+\forall f\in\Hom(A,B):\bot\sqsubseteq f^\dagger \Leftrightarrow
+\forall f\in\Hom(A,B):\bot\sqsubseteq f \Leftrightarrow 1$. Thus $\bot^\dagger$ is the least.
 
 The other items is dual.
 \end{proof}

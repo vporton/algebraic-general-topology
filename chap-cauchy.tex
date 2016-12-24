@@ -53,9 +53,9 @@ Allowing them to contain empty set has some advantages:
 \end{defn}
 
 \begin{defn}
-  $\GR \left( U ; \mathscr{C} \right) = \mathscr{C}$; $\Ob \left(
-  U ; \mathscr{C} \right) = U$.
-  $\GR (U; \mathscr{C})$ is read as \emph{graph} of space $(U; \mathscr{C})$.
+  $\GR \left( U , \mathscr{C} \right) = \mathscr{C}$; $\Ob \left(
+  U , \mathscr{C} \right) = U$.
+  $\GR (U, \mathscr{C})$ is read as \emph{graph} of space $(U, \mathscr{C})$.
   I denote $\Low(U)$ the set of graphs of low spaces on the set~$U$.
   Similarly I will denote its subsets $\mathbf{ASJ}(U)$, $\mathbf{CASJ}(U)$, $\mathbf{Cau}(U)$, $\mathbf{CCau}(U)$ (see below).
 \end{defn}
@@ -65,7 +65,7 @@ Allowing them to contain empty set has some advantages:
 \begin{defn}
   Introduce an order on graphs of low spaces and on low spaces:
   $\mathscr{C}\sqsubseteq\mathscr{D}\Leftrightarrow\mathscr{C}\subseteq\mathscr{D}$ and
-  $\left( U ; \mathscr{C} \right) \sqsubseteq \left( U ; \mathscr{D} \right) \Leftrightarrow \mathscr{C} \sqsubseteq \mathscr{D}$.
+  $\left( U , \mathscr{C} \right) \sqsubseteq \left( U , \mathscr{D} \right) \Leftrightarrow \mathscr{C} \sqsubseteq \mathscr{D}$.
 \end{defn}
 
 \begin{obvious}
@@ -91,7 +91,7 @@ Every completely almost sub-join-semilattice is a almost sub-join-semilattice.
 \section{Cauchy spaces}
 
 \begin{defn}
-A \emph{reflexive} low space is a low space $( U ; \mathscr{C})$ such that
+A \emph{reflexive} low space is a low space $( U , \mathscr{C})$ such that
 $\forall x \in U : \uparrow^U \{ x \} \in \mathscr{C}$.
 \end{defn}
 
@@ -179,7 +179,7 @@ and thus $\mathcal{T} = \bigsqcup^{ \setcond{\mathcal{X} \in \mathscr{C} }{\math
 \fxnote{Also consider relationships with funcoids.}
 
 \begin{defn}
-  Denote $(\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right) =
+  Denote $(\mathsf{RLD})_{\Low} \left( U , \mathscr{C} \right) =
   \bigsqcup \setcond{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X}}
   {\mathcal{X} \in \mathscr{C} }$.
 \end{defn}
@@ -192,29 +192,29 @@ and thus $\mathcal{T} = \bigsqcup^{ \setcond{\mathcal{X} \in \mathscr{C} }{\math
 \end{defn}
 
 \begin{thm}
-  If $\left( U ; \mathscr{C} \right)$ is a low space, then $\left( U ;
+  If $\left( U , \mathscr{C} \right)$ is a low space, then $\left( U ,
   \mathscr{C} \right) = (\Low) (\mathsf{RLD})_{\Low} \left(
-  U ; \mathscr{C} \right)$.
+  U , \mathscr{C} \right)$.
 \end{thm}
 
 \begin{proof}
   If $\mathcal{X} \in \mathscr{C}$ then $\mathcal{X}
   \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq
-  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$ and thus
+  (\mathsf{RLD})_{\Low} \left( U , \mathscr{C} \right)$ and thus
   $\mathcal{X} \in \GR (\Low) (\mathsf{RLD})_{\Low}
-  \left( U ; \mathscr{C} \right)$. Thus $\left( U ; \mathscr{C} \right)
-  \sqsubseteq (\Low) (\mathsf{RLD})_{\Low} \left( U ;
+  \left( U , \mathscr{C} \right)$. Thus $\left( U , \mathscr{C} \right)
+  \sqsubseteq (\Low) (\mathsf{RLD})_{\Low} \left( U ,
   \mathscr{C} \right)$.
   
-  Let's prove $\left( U ; \mathscr{C} \right) \sqsupseteq (\Low)
-  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$.
+  Let's prove $\left( U , \mathscr{C} \right) \sqsupseteq (\Low)
+  (\mathsf{RLD})_{\Low} \left( U , \mathscr{C} \right)$.
   
   Let $\mathcal{A} \in \GR (\Low)
-  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$. We need
+  (\mathsf{RLD})_{\Low} \left( U , \mathscr{C} \right)$. We need
   to prove $\mathcal{A} \in \mathscr{C}$.
   
   Really $\mathcal{A} \times^{\mathsf{RLD}} \mathcal{A} \sqsubseteq
-  (\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$. It is
+  (\mathsf{RLD})_{\Low} \left( U , \mathscr{C} \right)$. It is
   enough to prove that $\exists \mathcal{X} \in \mathscr{C} : \mathcal{A}
   \sqsubseteq \mathcal{X}$.
   
@@ -234,7 +234,7 @@ and thus $\mathcal{T} = \bigsqcup^{ \setcond{\mathcal{X} \in \mathscr{C} }{\math
   Really, $\bigsqcup \setcond{ \uparrow^U X_{\mathcal{X}}
   \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
   \mathcal{X} \in \mathscr{C} } =
-  \uparrow^{\mathsf{RLD} (U ; U)} \bigcup \setcond{ \uparrow^U X_{\mathcal{X}}
+  \uparrow^{\mathsf{RLD} (U , U)} \bigcup \setcond{ \uparrow^U X_{\mathcal{X}}
   \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
   \mathcal{X} \in \mathscr{C} }$. So our claim takes the form $\bigcup \setcond{ \uparrow^U X_{\mathcal{X}}
   \times^{\mathsf{RLD}} \uparrow^U X_{\mathcal{X}} }{
@@ -256,8 +256,8 @@ and thus $\mathcal{T} = \bigsqcup^{ \setcond{\mathcal{X} \in \mathscr{C} }{\math
 
 \begin{rem}
   Not every symmetric reloid is in the form
-  $(\mathsf{RLD})_{\Low} \left( U ; \mathscr{C} \right)$ for some
-  Cauchy space $\left( U ; \mathscr{C} \right)$. The same Cauchy space can be
+  $(\mathsf{RLD})_{\Low} \left( U , \mathscr{C} \right)$ for some
+  Cauchy space $\left( U , \mathscr{C} \right)$. The same Cauchy space can be
   induced by different uniform spaces. See
   \url{http://math.stackexchange.com/questions/702182/different-uniform-spaces-having-the-same-set-of-cauchy-filters}
 \end{rem}
@@ -693,28 +693,28 @@ Ideal base is dual of filter base.
 \begin{example}
   ~  
   \begin{enumerate}
-    \item $\setcond{ \mathcal{X} \in \mathfrak{F} (0 ; + \infty) }{
+    \item $\setcond{ \mathcal{X} \in \mathfrak{F} ]0 ; + \infty[ }{
     \exists \varepsilon > 0 : \mathcal{X} \sqsubseteq \uparrow
-    (\varepsilon ; + \infty) } \cup \uparrow\{ 0 \}$ is a graph of Cauchy space
+    ]\varepsilon ; + \infty[ } \cup \uparrow\{ 0 \}$ is a graph of Cauchy space
     on $\mathbb{R}_+$, but not up-complete.
     
-    \item $\mathfrak{F} [0 ; + \infty)$ is a strictly greater graph of Cauchy
+    \item $\mathfrak{F} [0 ; + \infty[$ is a strictly greater graph of Cauchy
     space on $\mathbb{R}_+$ and is up-complete.
   \end{enumerate}
 \end{example}
 
 \begin{lem}
-  Let $f$ be a reloid. Each ideal base $T \subseteq \setcond{ (\mathcal{A} ;
+  Let $f$ be a reloid. Each ideal base $T \subseteq \setcond{ (\mathcal{A} ,
   \mathcal{B}) }{ \mathcal{A}
   \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$ has a join
   in this set.
 \end{lem}
 
 \begin{proof}
-  Let $T$ be an ideal base and $\forall (\mathcal{A} ; \mathcal{B}) \in T :
+  Let $T$ be an ideal base and $\forall (\mathcal{A} , \mathcal{B}) \in T :
   \mathcal{A} \times^{\mathsf{FCD}} \mathcal{B} \sqsubseteq f$.
   
-  $\forall (\mathcal{A} ; \mathcal{B}) \in T \forall \mathcal{X} \in
+  $\forall (\mathcal{A} , \mathcal{B}) \in T \forall \mathcal{X} \in
   \mathscr{F} \Src f : (\mathcal{X} \nasymp \mathcal{A} \Rightarrow
   \mathcal{B} \sqsubseteq \supfun{f} \mathcal{X})$;
   
@@ -767,12 +767,12 @@ Ideal base is dual of filter base.
   Let $T\subseteq \setcond{ \mathcal{X} \in \Ob f }{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f }$
   be an ideal base.
   
-  Then $N = \setcond{(\mathcal{F};\mathcal{F})}{\mathcal{F}\in T}$ is also an ideal base.
-  Obviously $N \subseteq \setcond{ (\mathcal{A} ; \mathcal{B}) }{ \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$.
+  Then $N = \setcond{(\mathcal{F},\mathcal{F})}{\mathcal{F}\in T}$ is also an ideal base.
+  Obviously $N \subseteq \setcond{ (\mathcal{A} , \mathcal{B}) }{ \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$.
   Thus by the lemma it has a join in
-  $\setcond{ (\mathcal{A} ; \mathcal{B}) }{ \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$.
+  $\setcond{ (\mathcal{A} , \mathcal{B}) }{ \mathcal{A} \times^{\mathsf{RLD}} \mathcal{B} \sqsubseteq f }$.
   It's easy to see that this join is in
-  $\setcond{ (\mathcal{A} ; \mathcal{A}) }{ \mathcal{A}\in\Ob f, \mathcal{A} \times^{\mathsf{RLD}} \mathcal{A} \sqsubseteq f }$.
+  $\setcond{ (\mathcal{A} , \mathcal{A}) }{ \mathcal{A}\in\Ob f, \mathcal{A} \times^{\mathsf{RLD}} \mathcal{A} \sqsubseteq f }$.
   Consequently $T$ has a join in $\setcond{ \mathcal{X} \in \Ob f }{ \mathcal{X} \times^{\mathsf{RLD}} \mathcal{X} \sqsubseteq f }$.
 \end{proof}
 
@@ -808,9 +808,9 @@ Low filter on an endoreloid $\nu$ is a filter $\mathcal{F}$ such that
   \supfun{\tofcd \nu} \uparrow^{\Ob \nu} \{ x \} =
   \nu \circ (\uparrow^{\Ob \nu} \{ x \} \times^{\mathsf{RLD}}
   \uparrow^{\Ob \nu} \{ x \}) \circ \nu^{- 1} = \nu \circ
-  (\uparrow^{\mathsf{RLD} (\Ob \nu ; \Ob \nu)} \{ (x ; x)
+  (\uparrow^{\mathsf{RLD} (\Ob \nu , \Ob \nu)} \{ (x , x)
   \}) \circ \nu^{- 1} \sqsubseteq \nu \circ \id^{\mathsf{RLD}
-  (\Ob \nu ; \Ob \nu)} \circ \nu^{- 1} = \nu \circ \nu^{- 1}
+  (\Ob \nu , \Ob \nu)} \circ \nu^{- 1} = \nu \circ \nu^{- 1}
   \sqsubseteq \nu$.
 \end{proof}
 
@@ -888,7 +888,7 @@ Low filter on an endoreloid $\nu$ is a filter $\mathcal{F}$ such that
 
 \begin{defn}
   I call an endoreloid $\nu$ \emph{symmetrically transitive} iff for every
-  symmetric endofuncoid $f \in \mathsf{FCD} (\Ob \nu ; \Ob
+  symmetric endofuncoid $f \in \mathsf{FCD} (\Ob \nu , \Ob
   \nu)$ we have $f \sqsubseteq \nu \Rightarrow f \circ f \sqsubseteq \nu$.
 \end{defn}
 
@@ -957,15 +957,15 @@ Low filter on an endoreloid $\nu$ is a filter $\mathcal{F}$ such that
 
 \begin{defn}
   A function $f : U \rightarrow V$ is \emph{Cauchy continuous} from a low
-  space $\left( U ; \mathscr{C} \right)$ to a low space
-  $\left( V ; \mathscr{D} \right)$ when $\forall \mathcal{X} \in \mathscr{C} :
+  space $\left( U , \mathscr{C} \right)$ to a low space
+  $\left( V , \mathscr{D} \right)$ when $\forall \mathcal{X} \in \mathscr{C} :
   \langle \uparrow^{\mathsf{FCD}} f \rangle \mathcal{X} \in
   \mathscr{D}$.
 \end{defn}
 
 \begin{prop}
   Let $f$ be a principal reloid. Then $f \in \mathrm{C} \left( 
-  (\mathsf{RLD})_{\Low} \mathscr{C} ;
+  (\mathsf{RLD})_{\Low} \mathscr{C} ,
   (\mathsf{RLD})_{\Low} \mathscr{D} \right)$ iff $f$ is Cauchy
   continuous.
   \begin{eqnarray*}
@@ -1044,7 +1044,7 @@ A reloid $\nu$ is totally bounded iff
     \nu} \langle E \rangle \{ x \}$, but $\langle E \rangle \{ x \} \times
     \langle E \rangle \{ x \} = E^{- 1} \circ (\{ x \} \times \{ x \}) \circ E
     \subseteq D$, thus $a \times^{\mathsf{RLD}} a \sqsubseteq
-    \uparrow^{\mathsf{RLD} (\Ob \nu ; \Ob \nu)} D$.
+    \uparrow^{\mathsf{RLD} (\Ob \nu , \Ob \nu)} D$.
     
     Because $D$ was taken arbitrary, we have $a \times^{\mathsf{RLD}} a
     \sqsubseteq \nu$ that is $a$ is Cauchy.
@@ -1110,7 +1110,7 @@ Note that probably I am the first person which has written the above formula
 \section{On principal low spaces}
 
 \begin{defn}
-  A low space $\left( U ; \mathscr{C} \right)$ is \emph{principal}
+  A low space $\left( U , \mathscr{C} \right)$ is \emph{principal}
   when all filters in $\mathscr{C}$ are principal.
 \end{defn}
 

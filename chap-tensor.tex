@@ -9,7 +9,7 @@ elements. Let $T$ also be a join-semilattice.
 Let $F (X)$ mean free join-semilattice for a set $X$.
 
 \begin{defn}
-$\mathbf{SepJoin}(\prod\mathfrak{A};T)$ is the set of maps from $\prod\mathfrak{A}$
+$\mathbf{SepJoin}(\prod\mathfrak{A},T)$ is the set of maps from $\prod\mathfrak{A}$
 to~$T$, preserving joins in every argument $i\in\dom\mathfrak{A}$.
 \end{defn}
 
@@ -25,10 +25,10 @@ Let $\sim$ be defined as the smallest equivalence relation on $F \left( \prod
 \mathfrak{A} \right)$ that for every $k \in \dom \mathfrak{A}$, $L \in
 \prod_{i \in (\dom \mathfrak{A}) \setminus \{ k \}} \mathfrak{A}_i$:
 \begin{enumerate}
-  \item $i (L \cup \{ (k ; g \sqcup h) \}) \sim i (L \cup \{ (k ; g) \})
-  \sqcup i (L \cup \{ (k ; h) \})$;
+  \item $i (L \cup \{ (k , g \sqcup h) \}) \sim i (L \cup \{ (k , g) \})
+  \sqcup i (L \cup \{ (k , h) \})$;
   
-  \item $\bot \sim i (L \cup \{ (k ; \bot) \})$;
+  \item $\bot \sim i (L \cup \{ (k , \bot) \})$;
   
   \item $x \sim y \wedge x' \sim y' \Rightarrow x \sqcup x' \sim y \sqcup y'$
   for all $x, y, x', y' \in F \left( \prod \mathfrak{A} \right)$.
@@ -75,10 +75,10 @@ y \Leftrightarrow h x = h y$.{\hspace*{\fill}}{\medskip}
   the minimal equivalence relation subject to the above formulas) to prove
   that:
   \begin{enumerate}
-    \item $\tilde{\phi} (i (L \cup \{ (k ; g \sqcup h) \})) = \tilde{\phi} (i
-    (L \cup \{ (k ; g) \}) \sqcup i (L \cup \{ (k ; h) \}))$;
+    \item $\tilde{\phi} (i (L \cup \{ (k , g \sqcup h) \})) = \tilde{\phi} (i
+    (L \cup \{ (k , g) \}) \sqcup i (L \cup \{ (k , h) \}))$;
     
-    \item $\tilde{\phi} (\bot) = \tilde{\phi} (i (L \cup \{ (k ; \bot) \}))$;
+    \item $\tilde{\phi} (\bot) = \tilde{\phi} (i (L \cup \{ (k , \bot) \}))$;
     
     \item $\tilde{\phi} (x) = \tilde{\phi} (y) \wedge \tilde{\phi} (x') =
     \tilde{\phi} (y') \Rightarrow \tilde{\phi} (x \sqcup x') = \tilde{\phi} (y
@@ -101,7 +101,7 @@ y \Leftrightarrow h x = h y$.{\hspace*{\fill}}{\medskip}
 \end{cor}
 
 \begin{proof}
-  $\mathsf{preStrd} (\mathfrak{A}) \cong \mathbf{SepJoin} (\mathfrak{A}; 2)
+  $\mathsf{preStrd} (\mathfrak{A}) \cong \mathbf{SepJoin} (\mathfrak{A}, 2)
   \cong F \left( \prod \mathfrak{A} \right) / \sim \rightarrow 2 \cong
   \mathfrak{I} \left( F \left( \prod \mathfrak{A} \right) / \sim \right)$.
 \end{proof}
