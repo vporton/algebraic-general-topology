@@ -976,13 +976,17 @@ or reloid.\end{obvious}
   \mathcal{A} \times^{\mathsf{FCD}} \mathcal{B}$.
 \end{conjecture}
 
-\begin{conjecture}
+\begin{example}
   There is such a non-symmetric reloid $f$ that $\tofcd f$ is
   symmetric.
-\end{conjecture}
+\end{example}
 
-A candidate for a counter-example proving the above conjecture is the reloid
-$a \ltimes a$ for a nontrivial ultrafilter $a$.
+\begin{proof}
+Take $f=(\torldin\eqinparens|_{\mathbb{R}})\sqcap \opinparens{\geq}_{\mathbb{R}}$.
+$f$ is non-symmetric because $f\nasymp\opinparens{>}_{\mathbb{R}}$ but $f\asymp\opinparens{<}_{\mathbb{R}}$.
+$\tofcd f=\eqinparens|_{\mathbb{R}}$ because
+$\eqinparens|_{\mathbb{R}} \sqsubseteq f \sqsubseteq \torldin\eqinparens|_{\mathbb{R}}$.
+\end{proof}
 
 \begin{prop}
   If $(\mathsf{RLD})_{\operatorname{in}} f$ is symmetric then endofuncoid~$f$
