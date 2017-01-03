@@ -1,0 +1,85 @@
+\chapter{Bases on filtrators}
+
+In this chapter I consider generalization of filter bases
+for the filtrator of funcoids (and more general filtrators).
+
+\begin{prop}
+$\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$.
+\end{prop}
+
+Below I present mainly unproved conjectures.
+
+\fxwarning{Base must be nonempty.}
+
+\begin{defn}
+  A set $S$ of binary relations is a base of a funcoid $f$ when all elements
+  of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T
+  \sqsubseteq X$.
+\end{defn}
+
+\begin{lem}
+  Let for every $X, Y \in S$ and $Z \in \up (X
+  \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
+  \sqsubseteq Z$.
+  
+  Then for every $X_0, \ldots, X_n \in S$ and $Z \in \up (X_0
+  \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_n)$ there
+  is a $T \in S$ such that $T \sqsubseteq Z$. [The reverse implication is
+  trivial.]
+\end{lem}
+
+\begin{proof}
+  Prove by induction: Let it holds for $n$. Let $Z \in \up (X_0
+  \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_{n +
+  1})$. Then take ??$Z' = Z \sqcap^{\mathsf{FCD}} Y$ where $Y \in
+  \up X_{n + 1}$. Then $Z' \in \up ()$
+  
+  ??
+\end{proof}
+
+\begin{lem}
+  Let for every $X, Y \in S$ and $Z \in \up (X
+  \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
+  \sqsubseteq Z$.
+  
+  If $Z \in \up \bigsqcap S$ then $Z \in \up (X_0
+  \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_n)$ for
+  some $n \in \mathbb{N}$, $X_0, \ldots, X_n \in S$.
+\end{lem}
+
+\begin{proof}
+  $\bigsqcap S = \bigsqcap \up \bigsqcap S$ ??
+  
+  $Z \in \up \bigsqcap \up \bigsqcap S \Leftrightarrow Z \in
+  \up \bigsqcap S \Rightarrow ? ?$
+\end{proof}
+
+\begin{prop}
+  A set $S$ of binary relations [generalize for sets of funcoids] is a base of
+  a funcoid iff for every $X, Y \in S$ and $Z \in \up (X
+  \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
+  \sqsubseteq Z$.
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[$\Rightarrow$] Let $S$ be a base of a funcoid $f$. Take $X, Y \in S$
+    and $Z \in \up (X \sqcap^{\mathsf{FCD}} Y)$. Thus $Z \in
+    \up f$. Thus $\exists T \in S : T \sqsubseteq Z$.
+    
+    \item[$\Leftarrow$] Take $f = \bigsqcap^{\mathsf{FCD}} S$. Because
+    the filtrators of funcoids is filtered, $f =
+    \bigsqcap^{\mathsf{FCD}} \up f$.
+    
+    ?? For every $X \in S$ [need $X \in \up f$ instead] and $Z \in
+    \up X$ there is $T \in S$ such that $T \sqsubseteq Z$. Take $Z = X$
+    and we have $T \sqsubseteq X$.
+    
+    ??
+  \end{description}
+\end{proof}
+
+\fxnote{It seems that the above (when complete) can be easily generalized for more general filtrators.}
+
+Note that the initial incentive to consider all above was to prove this conjecture~\bookref{fcd-comp-ent}.
