@@ -3,11 +3,50 @@
 In this chapter I consider generalization of filter bases
 for the filtrator of funcoids (and more general filtrators).
 
+Below I present mainly unproved conjectures.
+
+\begin{lem}
+$\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
+\up (F \sqcap^{\mathsf{FCD}} G) }{ F \in \up f, G \in \up g }$.
+\end{lem}
+
+\begin{proof}
+$X \in \up (f \sqcap^{\mathsf{FCD}} g) \Rightarrow X \in \setcond{
+X \sqcup Y }{ Y \in \up (f
+\sqcap^{\mathsf{FCD}} g) } = X \in \setcond{ Z }{ Z \in \up (X \sqcup (f \sqcap^{\mathsf{FCD}} g))
+} \Leftrightarrow X \in \up (X \sqcup (f
+\sqcap^{\mathsf{FCD}} g)) \Rightarrow X \in \up (X
+\sqcap^{\mathsf{FCD}} g) \Rightarrow X \in \bigcup \setcond{ \up (F
+\sqcap^{\mathsf{FCD}} g) }{ F \in \up f
+}$ that is $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq
+\bigcup \setcond{ \up (F \sqcap^{\mathsf{FCD}} g) }{
+F \in \up f }$. Apply this formula second time:
+
+$\up (F \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
+\up (F \sqcap^{\mathsf{FCD}} G) }{ G \in
+\up g }$. So
+
+$\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
+\bigcup \setcond{ \up (F \sqcap^{\mathsf{FCD}} G) }{ G \in \up g } }{ F \in
+\up f } = \bigcup \setcond{ \up (F
+\sqcap^{\mathsf{FCD}} G) }{ F \in \up f,
+G \in \up g }$.
+\end{proof}
+
 \begin{prop}
 $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$.
 \end{prop}
 
-Below I present mainly unproved conjectures.
+\begin{proof}
+$\up (F \sqcap^{\mathsf{FCD}} G) \subseteq \up (F
+\sqcap G)$. So $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup
+\setcond{ \up (F \sqcap G) }{ F \in \up f,
+G \in \up g } \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$ because every
+element of $X \in \up (F \sqcap G)$ can be represented as $F' \sqcap G'$
+for $F' \in \up f$, $G' \in \up g$ (take $F' = F \sqcup X$ and $G'
+= G \sqcup X$; then $F' \sqcap G' = (F \sqcup X) \sqcap (G \sqcup X) = (F
+\sqcap G) \sqcup X = X$).
+\end{proof}
 
 \fxwarning{Base must be nonempty.}
 
