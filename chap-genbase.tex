@@ -48,6 +48,28 @@ for $F' \in \up f$, $G' \in \up g$ (take $F' = F \sqcup X$ and $G'
 \sqcap G) \sqcup X = X$).
 \end{proof}
 
+\begin{cor}
+$\up (f_0 \sqcap^{\mathsf{FCD}} \ldots
+\sqcap^{\mathsf{FCD}} f_n) \subseteq \setcond{ F_0 \sqcap \ldots \sqcap
+F_n }{ F_0 \in \up f_0 \wedge \ldots \wedge F_n \in \up f_n }$.
+\end{cor}
+
+\begin{proof}
+~
+\begin{multline*}
+\up (f_0 \sqcap^{\mathsf{FCD}} \ldots
+\sqcap^{\mathsf{FCD}} f_{n + 1}) \subseteq \setcond{ F \sqcap G
+}{ F \in \up (f_0 \sqcap^{\mathsf{FCD}}
+\ldots \sqcap^{\mathsf{FCD}} f_n), G \in \up f_{n + 1} } \subseteq \\
+\setcond{ F \sqcap G }{ F \in \setcond{ F_0
+\sqcap \ldots \sqcap F_n }{ F_0 \in \up f_0
+\wedge \ldots \wedge F_n \in \up f_n }, G \in \up f_{n + 1} } = \\
+\setcond{ F_0 \sqcap \ldots \sqcap F_{n + 1} }{
+F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
+\up f_{n + 1} }.
+\end{multline*}
+\end{proof}
+
 \fxwarning{Base must be nonempty.}
 
 \begin{defn}
