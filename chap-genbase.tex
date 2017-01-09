@@ -7,7 +7,10 @@ Below I present mainly unproved conjectures.
 
 \begin{lem}
 $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
-\up (F \sqcap^{\mathsf{FCD}} G) }{ F \in \up f, G \in \up g }$.
+\up (F \sqcap^{\mathsf{FCD}} G) }{ F \in \up f, G \in \up g }$
+or equivalently: If $Z\in\up (f \sqcap^{\mathsf{FCD}} g)$ then there exists
+$F \in \up f$, $G \in \up g$ such that $Z\in\up (F \sqcap^{\mathsf{FCD}} G)$.
+\fxnote{Which of the two statements is easier to show?}
 \end{lem}
 
 \begin{proof}
@@ -90,12 +93,16 @@ F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
 \end{lem}
 
 \begin{proof}
-  Prove by induction: Let it holds for $n$. Let $Z \in \up (X_0
-  \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_{n +
-  1})$. Then take ??$Z' = Z \sqcap^{\mathsf{FCD}} Y$ where $Y \in
-  \up X_{n + 1}$. Then $Z' \in \up ()$
-  
-  ??
+Prove by induction: Let it holds for $n$. Let $Z \in \up (X_0
+\sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_{n + 1})$.
+
+$Z \in \up (Q \sqcap^{\mathsf{FCD}} X_{n + 1})$ for some $Q \in
+\up (X_0 \sqcap^{\mathsf{FCD}} \ldots
+\sqcap^{\mathsf{FCD}} X_n)$ (first lemma).
+
+We have $T \in S$ such that $T \sqsubseteq Q$. So $Z \in \up (T
+\sqcap^{\mathsf{FCD}} X_{n + 1})$; thus there is $T' \in S$ such that
+$T' \sqsubseteq Z$.
 \end{proof}
 
 \begin{lem}
