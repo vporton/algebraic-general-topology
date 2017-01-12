@@ -77,10 +77,29 @@ F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
 \fxwarning{Base must be nonempty.}
 
 \begin{defn}
-  A set $S$ of binary relations is a base of a funcoid $f$ when all elements
+  A set $S$ of binary relations is a \emph{base} of a funcoid $f$ when all elements
   of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T
   \sqsubseteq X$.
 \end{defn}
+
+\begin{prop}
+  A set $S$ of binary relations is a base of a funcoid iff it is a base of
+  $\bigsqcap^{\mathsf{FCD}} S$.
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[$\Leftarrow$] Obvious.
+    
+    \item[$\Rightarrow$] Let $S$ be a base of funcoid $f$. All elements of $S$
+    are above $f$. So $\bigsqcap^{\mathsf{FCD}} S \sqsupseteq f$. We
+    have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ and
+    thus $\forall X \in \up \bigsqcap^{\mathsf{FCD}} S \exists T
+    \in S : T \sqsubseteq X$. To finish the proof note that all elements of
+    $S$ are above $\bigsqcap^{\mathsf{FCD}} S$.
+  \end{description}
+\end{proof}
 
 \begin{lem}
   Let for every $X, Y \in S$ and $Z \in \up (X
