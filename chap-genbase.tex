@@ -10,31 +10,11 @@ $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
 \up (F \sqcap^{\mathsf{FCD}} G) }{ F \in \up f, G \in \up g }$
 or equivalently: If $Z\in\up (f \sqcap^{\mathsf{FCD}} g)$ then there exists
 $F \in \up f$, $G \in \up g$ such that $Z\in\up (F \sqcap^{\mathsf{FCD}} G)$.
-\fxnote{Which of the two statements is easier to show?}
 \fxnote{What's about an infinitary variant of this lemma (and its consequences)?}
 \end{lem}
 
 \begin{proof}
-$X \in \up (f \sqcap^{\mathsf{FCD}} g) \Rightarrow X \in \setcond{
-X \sqcup Y }{ Y \in \up (f
-\sqcap^{\mathsf{FCD}} g) } \Rightarrow X \in \setcond{ Z }{ Z \in \up (X \sqcup (f \sqcap^{\mathsf{FCD}} g))
-} \Leftrightarrow X \in \up (X \sqcup (f
-\sqcap^{\mathsf{FCD}} g)) \Rightarrow X \in \up (X
-\sqcap^{\mathsf{FCD}} g) \Rightarrow X \in \bigcup \setcond{ \up (F
-\sqcap^{\mathsf{FCD}} g) }{ F \in \up f
-}$ that is $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq
-\bigcup \setcond{ \up (F \sqcap^{\mathsf{FCD}} g) }{
-F \in \up f }$. Apply this formula second time:
-
-$\up (F \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
-\up (F \sqcap^{\mathsf{FCD}} G) }{ G \in
-\up g }$. So
-
-$\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
-\bigcup \setcond{ \up (F \sqcap^{\mathsf{FCD}} G) }{ G \in \up g } }{ F \in
-\up f } = \bigcup \setcond{ \up (F
-\sqcap^{\mathsf{FCD}} G) }{ F \in \up f,
-G \in \up g }$.
+??
 \end{proof}
 
 \begin{prop}
