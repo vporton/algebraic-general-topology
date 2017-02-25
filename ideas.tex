@@ -63,8 +63,10 @@ Compactification.
 
 \section{Misc}
 
-Example that $\Compl f\sqcup\CoCompl f\ne f$ (for both funcoids and reloids).
-Also: How completion of reloids is related with oblique products?
+Example that $\Compl f\sqcup\CoCompl f\sqsubset f$ (for both funcoids and reloids).
+Proof for funcoids (for reloids it's similar): Take $f=\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$. Then (write an explicit proof)
+$\Compl f=(\Cor\mathcal{A})\times^{\mathsf{FCD}}\mathcal{B}$ and $\CoCompl f=\mathcal{A}\times^{\mathsf{FCD}}(\Cor\mathcal{B})$.
+Thus $\Compl f\sqcup\CoCompl f\ne f$ (if $\mathcal{A}$, $\mathcal{B}$ are non-principal).
 
 Every funcoid (reloid) is a join of monovalued funcoids (reloids). For funcoids it's obvious
 (because it's a join of atomic funcoids). For reloids?
