@@ -3,6 +3,132 @@
 In this chapter I consider generalization of filter bases
 for the filtrator of funcoids (and more general filtrators).
 
+\fxwarning{Base must be nonempty.}
+
+\begin{defn}
+  A set $S$ of binary relations is a \emph{base} of a funcoid $f$ when all elements
+  of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T
+  \sqsubseteq X$.
+\end{defn}
+
+\begin{prop}
+  A set $S$ of binary relations is a base of a funcoid iff it is a base of
+  $\bigsqcap^{\mathsf{FCD}} S$.
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[$\Leftarrow$] Obvious.
+    
+    \item[$\Rightarrow$] Let $S$ be a base of funcoid $f$. All elements of $S$
+    are above $f$. So $\bigsqcap^{\mathsf{FCD}} S \sqsupseteq f$. We
+    have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ and
+    thus $\forall X \in \up \bigsqcap^{\mathsf{FCD}} S \exists T
+    \in S : T \sqsubseteq X$. To finish the proof note that all elements of
+    $S$ are above $\bigsqcap^{\mathsf{FCD}} S$.
+  \end{description}
+\end{proof}
+
+\begin{thm}
+  If $S$ is a filter base on the set of funcoids then $S$ is a base of
+  $\bigsqcap^{\mathsf{FCD}} S$.
+  \fxnote{The reverse theorem?}
+\end{thm}
+
+First prove a special case of our theorem to get the idea:
+
+\begin{example}
+  Take $S = \setcond{
+  \setcond{ (x, y) }{ | x - y | < \varepsilon }}{ \varepsilon > 0 }$ and $K = \setcond{ (x, y) }{
+  | x - y | < \exp x }$ where $x$ and $y$ range real
+  numbers. Then $K \notin \up \bigsqcap^{\mathsf{FCD}} S$.
+\end{example}
+
+\begin{proof}
+  Take a nontrivial ultrafilter $x$ on $\mathbb{R}$. We can for simplicity
+  assume $x \sqsubseteq \mathbb{Z}$.
+  
+  $\supfun{\bigsqcap^{\mathsf{FCD}} S} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S} \supfun{L} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S, X \in \up x} \rsupfun{L} X =
+  \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up
+  x} \bigsqcup_{\alpha \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [$.
+  
+  $\supfun{K} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{K} X =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x}
+  \bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha [$.
+  
+  Suppose for the contrary that $\supfun{K} x \sqsupseteq \supfun{
+  \bigsqcap^{\mathsf{FCD}} S } x$.
+  
+  Then
+  
+  $\bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha
+  [\sqsupseteq \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up x}
+  \bigsqcup_{\alpha \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [$ for
+  every $X \in \up x$
+  
+  thus by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha
+  \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [ }{
+  \varepsilon > 0 }$ is a filter base and even a chain)
+  
+  $\bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha
+  [\sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in \up x} \bigsqcup_{\alpha
+  \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [$ for some $\varepsilon
+  > 0$ and thus
+  
+  by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha \in
+  X}] \alpha - \varepsilon ; \alpha + \varepsilon [ }{
+  X \in \up x }$ is a filter base) for some $X' \in \up x$
+  
+  $\bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha
+  [\sqsupseteq \bigsqcup_{\alpha \in X'}] \alpha - \varepsilon ; \alpha +
+  \varepsilon [$
+  
+  what is impossible by the fact that $\exp \alpha$ goes infinitely small as
+  $\alpha \rightarrow - \infty$ and the fact that we can take $X =\mathbb{Z}$
+  for some $x$.
+\end{proof}
+
+Now prove the general case:
+
+\begin{proof}
+  Take an ultrafilter $x$.
+  
+  $\supfun{\bigsqcap^{\mathsf{FCD}} S} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S} \supfun{L} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S, X \in \up x} \rsupfun{L} X$.
+  
+  $\supfun{K} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{K}X$.
+  
+  Suppose that $K \in \up \bigsqcap^{\mathsf{FCD}} S$ and thus
+  $\supfun{K} x \sqsupseteq \supfun{
+  \bigsqcap^{\mathsf{FCD}} S } x$.
+  
+  Then
+  
+  $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{L \in S, X
+  \in \up x} \rsupfun{L} X$ for every $X \in \up x$
+  
+  thus by properties of generalized filter bases ($\setcond{ \rsupfun{L}X
+  }{ L \in S }$ is a filter base)
+  
+%   $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in
+%   \up x} \rsupfun{L} X$ for some $L \in S$ and thus
+%   
+%   by properties of generalized filter bases ($\setcond{ \rsupfun{L}
+%   X }{ X \in \up x }$ is a filter base) for some $X' \in \up x$
+%   
+%   $\rsupfun{K} X \sqsupseteq \rsupfun{L} X'
+%   \sqsupseteq \supfun{L} x$
+%   
+%   So $\supfun{K} x \sqsupseteq \supfun{L} x$ because this
+%   equality holds for every $X \in \up x$. Therefore $K \sqsupseteq L$.
+\end{proof}
+
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
 Below I present mainly unproved conjectures.
 
 \begin{lem}
@@ -52,33 +178,6 @@ F_n }{ F_0 \in \up f_0 \wedge \ldots \wedge F_n \in \up f_n }$.
 F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
 \up f_{n + 1} }.
 \end{multline*}
-\end{proof}
-
-\fxwarning{Base must be nonempty.}
-
-\begin{defn}
-  A set $S$ of binary relations is a \emph{base} of a funcoid $f$ when all elements
-  of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T
-  \sqsubseteq X$.
-\end{defn}
-
-\begin{prop}
-  A set $S$ of binary relations is a base of a funcoid iff it is a base of
-  $\bigsqcap^{\mathsf{FCD}} S$.
-\end{prop}
-
-\begin{proof}
-  ~
-  \begin{description}
-    \item[$\Leftarrow$] Obvious.
-    
-    \item[$\Rightarrow$] Let $S$ be a base of funcoid $f$. All elements of $S$
-    are above $f$. So $\bigsqcap^{\mathsf{FCD}} S \sqsupseteq f$. We
-    have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ and
-    thus $\forall X \in \up \bigsqcap^{\mathsf{FCD}} S \exists T
-    \in S : T \sqsubseteq X$. To finish the proof note that all elements of
-    $S$ are above $\bigsqcap^{\mathsf{FCD}} S$.
-  \end{description}
 \end{proof}
 
 \begin{lem}
