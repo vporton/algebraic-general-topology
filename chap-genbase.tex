@@ -33,7 +33,6 @@ for the filtrator of funcoids (and more general filtrators).
 \begin{thm}
   If $S$ is a filter base on the set of funcoids then $S$ is a base of
   $\bigsqcap^{\mathsf{FCD}} S$.
-  \fxnote{The converse theorem?}
 \end{thm}
 
 First prove a special case of our theorem to get the idea:
@@ -125,6 +124,19 @@ Now prove the general case:
   
   So $\supfun{K} x \sqsupseteq \supfun{L} x$ because this
   equality holds for every $X \in \up x$. Therefore $K \sqsupseteq L$.
+\end{proof}
+
+\begin{example}
+A base of a funcoid which is not a filter base.
+\end{example}
+
+\begin{proof}
+Take $S = \up \id^{\mathsf{FCD}}_{\Omega}$. We know that $S$ is not a
+filter base.
+
+If $X \in \up \bigsqcap^{\mathsf{FCD}} S$ then $X \in \up
+\id^{\mathsf{FCD}}_{\Omega}$ and then $X \in S$ and thus $S$ is a
+base of a funcoid because $X \sqsubseteq X$.
 \end{proof}
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
