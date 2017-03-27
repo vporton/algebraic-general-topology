@@ -126,17 +126,25 @@ Now prove the general case:
   equality holds for every $X \in \up x$. Therefore $K \sqsupseteq L$.
 \end{proof}
 
+\begin{prop}
+$\up f$ is a base of~$f$ for every funcoid~$f$.
+\end{prop}
+
+\begin{proof}
+Denote $S=\up f$.
+$\bigsqcap^{\mathsf{FCD}} S = f$.
+If $X \in \up \bigsqcap^{\mathsf{FCD}} S$ then $X \in \up
+f$ and then $X \in S$ and thus $S$ is a base of a funcoid because $X
+\sqsubseteq X$.
+\end{proof}
+
 \begin{example}
 A base of a funcoid which is not a filter base.
 \end{example}
 
 \begin{proof}
-Take $S = \up \id^{\mathsf{FCD}}_{\Omega}$. We know that $S$ is not a
-filter base.
-
-If $X \in \up \bigsqcap^{\mathsf{FCD}} S$ then $X \in \up
-\id^{\mathsf{FCD}}_{\Omega}$ and then $X \in S$ and thus $S$ is a
-base of a funcoid because $X \sqsubseteq X$.
+Consider $f=\id^{\mathsf{FCD}}_{\Omega}$. We know that $\up f$ is not a
+filter base. But it is a base of a funcoid accordingly the last proposition.
 \end{proof}
 
 \fxnote{More generally than the above example, every $\up f$ for a funcoid~$f$ is a funcoid base.
