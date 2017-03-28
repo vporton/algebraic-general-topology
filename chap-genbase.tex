@@ -147,9 +147,41 @@ Consider $f=\id^{\mathsf{FCD}}_{\Omega}$. We know that $\up f$ is not a
 filter base. But it is a base of a funcoid accordingly the last proposition.
 \end{proof}
 
-\fxnote{How to restore $\up f$ for a funcoid from any its base?}
+\begin{prop}
+$f = \bigsqcap^{\mathsf{FCD}} S$ for every base~$S$ of a funcoid~$f$.
+\end{prop}
+
+\begin{proof}
+$f$ is an lower bound of $S$ by definition. So $f \sqsubseteq
+\bigsqcap^{\mathsf{FCD}} S$.
+
+We have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ thus
+$\bigsqcap^{\mathsf{FCD}} S \sqsubseteq \bigsqcap^{\mathsf{FCD}}
+\up f = f$.
+
+So $f = \bigsqcap^{\mathsf{FCD}} S$.
+\end{proof}
 
 \fxnote{What are funcoids~$f$ such that $\up f$ is a filter? or any its base is a filter base?}
+
+\begin{thm}
+  Let $S$ be a set of $\mathbf{Rel}$-morphisms. If for every $X, Y
+  \in S$ we have $\up (X \sqcap^{\mathsf{FCD}} Y) \subseteq S$
+  then there exists a funcoid $f$ such that $S = \up f$.
+\end{thm}
+
+\begin{proof}
+  Let $S' = S \cap \Gamma$. Then $\bigsqcap^{\mathsf{FCD}} S' =
+  \bigsqcap^{\mathsf{FCD}} S$ because the filtrator
+  $(\mathsf{FCD} ; \Gamma)$ if filtered. $S'$ is a filter on $\Gamma$
+  because $\up^{\Gamma} (X \sqcap Y) \subseteq S'$ for every $X, Y \in
+  S'$. Take $f = \bigsqcap^{\mathsf{FCD}} S$. We have
+  $\up^{\Gamma} f = S'$.
+  
+  $\up f = \setcond{ \bigsqcap^{\mathsf{FCD}} K }{
+  K \in \subsets S' } = S$ because every $T \in
+  \up f$ is representable as a meet of elements of $\up^{\Gamma} f$.
+\end{proof}
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
@@ -252,7 +284,7 @@ $T' \sqsubseteq Z$.
   a funcoid iff for every $X, Y \in S$ and $Z \in \up (X
   \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
   \sqsubseteq Z$.
-  \fxnote{Try to prove by replacing a base of a funcoid~$f$ with~$\up f$.}
+  \fxnote{Try to prove by replacing a base of a funcoid~$f$ with~$\up f$. (Proved above.)}
 \end{prop}
 
 \begin{proof}
