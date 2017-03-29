@@ -171,7 +171,18 @@ So $f = \bigsqcap^{\mathsf{FCD}} S$.
 \end{thm}
 
 \begin{proof}
-  Let $S' = S \cap \Gamma$. Then $\bigsqcap^{\mathsf{FCD}} S' =
+  \fxwarning{There are errors in this proof. I hope the proof idea is right however.}
+
+  $S$~is an upper set because
+  $X\in S\Rightarrow \up (X \sqcap^{\mathsf{FCD}} X) \subseteq S\Rightarrow \up X\subseteq S$.
+
+  Let $S' = S \cap \Gamma$.
+  
+  Every element of~$S$ is representable as a meet of a subset of~$S'$ because
+  $T\in S\Rightarrow T=\bigsqcap \up^{\Gamma} T=$
+  ??.
+  
+  Then $\bigsqcap^{\mathsf{FCD}} S' =
   \bigsqcap^{\mathsf{FCD}} S$ because the filtrator
   $(\mathsf{FCD} ; \Gamma)$ if filtered. $S'$ is a filter on $\Gamma$
   because $\up^{\Gamma} (X \sqcap Y) \subseteq S'$ for every $X, Y \in
@@ -181,6 +192,7 @@ So $f = \bigsqcap^{\mathsf{FCD}} S$.
   $\up f = \setcond{ \bigsqcap^{\mathsf{FCD}} K }{
   K \in \subsets S' } = S$ because every $T \in
   \up f$ is representable as a meet of elements of $\up^{\Gamma} f$.
+  \fxerror{$\bigsqcap^{\mathsf{FCD}} K \rightarrow \bigsqcap K$.}
 \end{proof}
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
