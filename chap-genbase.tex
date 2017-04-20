@@ -1,7 +1,8 @@
 \chapter{Bases on filtrators}
 
 \begin{lem}
-If $S$ is an upper set of principal funcoids, then $\bigsqcap (S\cap\Gamma)=\bigsqcap S$.
+If $S$ is an upper set of principal funcoids, then
+$\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)=\bigsqcap^{\mathsf{FCD}} S$.
 \end{lem}
 
 \begin{proof}
@@ -13,8 +14,6 @@ If $S$ is an upper set of principal funcoids, then $\bigsqcap (S\cap\Gamma)=\big
   where $T_K\in\subsets (S\cap\Gamma)$.
   So $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) = \bigsqcap^{\mathsf{FCD}} S$.
 \end{proof}
-
-\fxwarning{The main question was solved in \url{https://conference.portonvictor.org/wiki/Funcoid_bases}.}
 
 In this chapter I consider generalization of filter bases
 for the filtrator of funcoids (and more general filtrators).
@@ -178,23 +177,32 @@ $\bigsqcap^{\mathsf{FCD}} S \sqsubseteq \bigsqcap^{\mathsf{FCD}}
 So $f = \bigsqcap^{\mathsf{FCD}} S$.
 \end{proof}
 
-\fxnote{What are funcoids~$f$ such that $\up f$ is a filter? or any its base is a filter base?}
+\begin{xca}
+Prove that a set $S$ is a filter (on some set) iff
+\[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap\dots\sqcap X_n)\subseteq S \]
+for every natural~$n$.
+\end{xca}
 
-\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+A similar statement does \emph{not} hold for funcoids:
 
-Below I present mainly unproved conjectures.
-
-\begin{lem}
-$\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \bigcup \setcond{
-\up (F \sqcap^{\mathsf{FCD}} G) }{ F \in \up f, G \in \up g }$
-or equivalently: If $Z\in\up (f \sqcap^{\mathsf{FCD}} g)$ then there exists
-$F \in \up f$, $G \in \up g$ such that $Z\in\up (F \sqcap^{\mathsf{FCD}} G)$.
-\fxnote{What's about an infinitary variant of this lemma (and its consequences)?}
-\end{lem}
+\begin{example}
+For a set $S$ of binary relations
+\[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S \]
+does not imply that $S$ is a base of a funcoid.
+\end{example}
 
 \begin{proof}
-??
+solved in \url{https://conference.portonvictor.org/wiki/Funcoid_bases}
 \end{proof}
+
+\begin{conjecture}
+  Let $\forall X,Y\in S:\up(X\sqcap^{\mathsf{FCD}} Y)\subseteq S$.
+  
+  Then
+  \[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S. \]
+\end{conjecture}
+
+\fxnote{What are funcoids~$f$ such that $\up f$ is a filter? or any its base is a filter base?}
 
 \begin{prop}
 $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$.
@@ -232,16 +240,3 @@ F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
 \up f_{n + 1} }.
 \end{multline*}
 \end{proof}
-
-\begin{conjecture}
-  Let for every $X, Y \in S$ and $Z \in \up (X
-  \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
-  \sqsubseteq Z$.
-  
-  Then for every $X_0, \ldots, X_n \in S$ and $Z \in \up (X_0
-  \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_n)$ there
-  is a $T \in S$ such that $T \sqsubseteq Z$. [The reverse implication is
-  trivial.]
-\end{conjecture}
-
-Note that the initial incentive to consider all above was to prove this conjecture~\bookref{fcd-comp-ent}.
