@@ -1,5 +1,19 @@
 \chapter{Bases on filtrators}
 
+\begin{lem}
+If $S$ is an upper set of principal funcoids, then $\bigsqcap (S\cap\Gamma)=\bigsqcap S$.
+\end{lem}
+
+\begin{proof}
+  Let's prove $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) = \bigsqcap^{\mathsf{FCD}} S$.
+  
+  $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) \sqsupseteq \bigsqcap^{\mathsf{FCD}} S$ is obvious.
+  
+  $\bigsqcap^{\mathsf{FCD}} S = \bigsqcap^{\mathsf{FCD}} \bigsqcap^{\mathsf{FCD}}_{K\in S} T_K \sqsupseteq \bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)$.
+  where $T_K\in\subsets (S\cap\Gamma)$.
+  So $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) = \bigsqcap^{\mathsf{FCD}} S$.
+\end{proof}
+
 \fxwarning{The main question was solved in \url{https://conference.portonvictor.org/wiki/Funcoid_bases}.}
 
 In this chapter I consider generalization of filter bases
@@ -165,48 +179,6 @@ So $f = \bigsqcap^{\mathsf{FCD}} S$.
 \end{proof}
 
 \fxnote{What are funcoids~$f$ such that $\up f$ is a filter? or any its base is a filter base?}
-
-\begin{thm}
-  Let $S$ be a set of $\mathbf{Rel}$-morphisms. If for every $X, Y
-  \in S$ we have $\up (X \sqcap^{\mathsf{FCD}} Y) \subseteq S$
-  then there exists a funcoid $f$ such that $S = \up f$.
-\end{thm}
-
-\begin{proof}
-  \fxwarning{There are errors in this proof. I hope the proof idea is right however.}
-
-  $S$~is an upper set because
-  $X\in S\Rightarrow \up (X \sqcap^{\mathsf{FCD}} X) \subseteq S\Rightarrow \up X\subseteq S$.
-
-  Let $S' = S \cap \Gamma$.
-  
-  Every element of~$S$ is representable as a meet (on the set of $\mathbf{Rel}$-morphisms) of a subset of~$S'$ because
-  $T\in S\Rightarrow T=\bigsqcap \up^{\Gamma} T=\bigsqcap(\Gamma\cap\up T)$
-  but $\Gamma\cap\up T$ is a subset of~$S'$. \fxnote{Need this paragraph?}
-  
-  Every element of~$S$ is representable as a meet (on the set of funcoids) of a subset of~$S'$ because
-  $T\in S\Rightarrow T=\bigsqcap^{\mathsf{FCD}} \up^{\Gamma} T=\bigsqcap^{\mathsf{FCD}} (\Gamma\cap\up T)$
-  but $\Gamma\cap\up T$ is a subset of~$S'$.
-  
-  Let's prove $\bigsqcap^{\mathsf{FCD}} S' = \bigsqcap^{\mathsf{FCD}} S$.
-  
-  $\bigsqcap^{\mathsf{FCD}} S' \sqsupseteq \bigsqcap^{\mathsf{FCD}} S$ is obvious.
-  
-  $\bigsqcap^{\mathsf{FCD}} S = \bigsqcap^{\mathsf{FCD}} \bigsqcap^{\mathsf{FCD}}_{K\in S} T_K \sqsupseteq \bigsqcap^{\mathsf{FCD}} S'$.
-  where $T_K\in\subsets S'$.
-  So $\bigsqcap^{\mathsf{FCD}} S' = \bigsqcap^{\mathsf{FCD}} S$.
-  
-  Then  because the filtrator
-  $(\mathsf{FCD} ; \Gamma)$ if filtered. $S'$ is a filter on $\Gamma$
-  because $\up^{\Gamma} (X \sqcap Y) \subseteq S'$ for every $X, Y \in
-  S'$. Take $f = \bigsqcap^{\mathsf{FCD}} S$. We have
-  $\up^{\Gamma} f = S'$.
-  
-  $\up f = \setcond{ \bigsqcap^{\mathsf{FCD}} K }{
-  K \in \subsets S' } = S$ because every $T \in
-  \up f$ is representable as a meet of elements of $\up^{\Gamma} f$.
-  \fxerror{$\bigsqcap^{\mathsf{FCD}} K \rightarrow \bigsqcap K$.}
-\end{proof}
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
