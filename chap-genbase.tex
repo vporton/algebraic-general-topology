@@ -261,7 +261,7 @@ F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
 \end{multline*}
 \end{proof}
 
-\begin{lem}
+\begin{conjecture}
   Let for every $X, Y \in S$ and $Z \in \up (X
   \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
   \sqsubseteq Z$.
@@ -270,67 +270,6 @@ F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
   \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_n)$ there
   is a $T \in S$ such that $T \sqsubseteq Z$. [The reverse implication is
   trivial.]
-\end{lem}
-
-\begin{proof}
-Prove by induction: Let it holds for $n$. Let $Z \in \up (X_0
-\sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_{n + 1})$.
-
-$Z \in \up (Q \sqcap^{\mathsf{FCD}} X_{n + 1})$ for some $Q \in
-\up (X_0 \sqcap^{\mathsf{FCD}} \ldots
-\sqcap^{\mathsf{FCD}} X_n)$ (first lemma).
-
-We have $T \in S$ such that $T \sqsubseteq Q$. So $Z \in \up (T
-\sqcap^{\mathsf{FCD}} X_{n + 1})$; thus there is $T' \in S$ such that
-$T' \sqsubseteq Z$.
-\end{proof}
-
-\begin{lem}
-  Let for every $X, Y \in S$ and $Z \in \up (X
-  \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
-  \sqsubseteq Z$.
-  
-  If $Z \in \up \bigsqcap S$ then $Z \in \up (X_0
-  \sqcap^{\mathsf{FCD}} \ldots \sqcap^{\mathsf{FCD}} X_n)$ for
-  some $n \in \mathbb{N}$, $X_0, \ldots, X_n \in S$.
-\end{lem}
-
-\begin{proof}
-  ?? Try to prove with transfinite induction or transfinite recursion.
-
-  $\bigsqcap S = \bigsqcap \up \bigsqcap S$ ??
-  
-  $Z \in \up \bigsqcap \up \bigsqcap S \Leftrightarrow Z \in
-  \up \bigsqcap S \Rightarrow ? ?$
-\end{proof}
-
-\begin{prop}
-  A set $S$ of binary relations [generalize for sets of funcoids] is a base of
-  a funcoid iff for every $X, Y \in S$ and $Z \in \up (X
-  \sqcap^{\mathsf{FCD}} Y)$ there is a $T \in S$ such that $T
-  \sqsubseteq Z$.
-  \fxnote{Try to prove by replacing a base of a funcoid~$f$ with~$\up f$. (Proved above.)}
-\end{prop}
-
-\begin{proof}
-  ~
-  \begin{description}
-    \item[$\Rightarrow$] Let $S$ be a base of a funcoid $f$. Take $X, Y \in S$
-    and $Z \in \up (X \sqcap^{\mathsf{FCD}} Y)$. Thus $Z \in
-    \up f$. Thus $\exists T \in S : T \sqsubseteq Z$.
-    
-    \item[$\Leftarrow$] Take $f = \bigsqcap^{\mathsf{FCD}} S$. Because
-    the filtrators of funcoids is filtered, $f =
-    \bigsqcap^{\mathsf{FCD}} \up f$.
-    
-    ?? For every $X \in S$ [need $X \in \up f$ instead] and $Z \in
-    \up X$ there is $T \in S$ such that $T \sqsubseteq Z$. Take $Z = X$
-    and we have $T \sqsubseteq X$.
-    
-    ??
-  \end{description}
-\end{proof}
-
-\fxnote{It seems that the above (when complete) can be easily generalized for more general filtrators.}
+\end{conjecture}
 
 Note that the initial incentive to consider all above was to prove this conjecture~\bookref{fcd-comp-ent}.
