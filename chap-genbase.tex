@@ -197,11 +197,30 @@ A similar statement does \emph{not} hold for funcoids:
 \begin{example}
 For a set $S$ of binary relations
 \[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S \]
-does not imply that $S$ is a base of a funcoid.
+does not imply that there exists funcoid~$f$ such that $S=\up f$.
 \end{example}
 
 \begin{proof}
-solved in \url{https://conference.portonvictor.org/wiki/Funcoid_bases}
+Take $S_0 = \up 1^{\mathsf{FCD}}$ (where $1^{\mathsf{FCD}}$ is the identity funcoid on any infinite set)
+and $S_1 = \bigcup_{F\in S_0} \setcond{\up G}{G\in\up^{\Gamma} F}$ (that is
+$S_1 = \bigcup_{F\in\up^{\Gamma} 1^{\mathsf{FCD}}}\up F$).
+
+Both $S_0$ and $S_1$ are upper sets. $S_0\ne S_1$ because $1^{\mathsf{FCD}}\in S_0$ and $1^{\mathsf{FCD}}\notin S_1$.
+
+The formula in the example works for $S=S_0$ because $X_0,\dots,X_n\in \up 1^{\mathsf{FCD}}$. It also holds for $S=S_1$ by the
+following reason:
+
+Suppose $X_0,\dots,X_n\in S_1$. Then $X_i\sqsupseteq F_i$ where $F_i\in S_0$.
+Consequently (take into account that $\Gamma$ is a sublattice of $\mathsf{FCD}$)
+$X_0,\dots,X_n \sqsupseteq F_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} F_n$ and so
+$X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n=
+X_0\sqcap\dots\sqcap X_n \sqsupseteq F_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} F_n \sqsupseteq 1^{\mathsf{FCD}}$.
+Thus $X_0\sqcap\dots\sqcap X_n \in \up^{\Gamma} 1^{\mathsf{FCD}} \subseteq S_1$
+$\up(X_0\sqcap\dots\sqcap X_n)\subseteq S_1$ as $S_1$ is an upper set.
+
+To finish the proof suppose for the contrary that $\up f_0=S_0$ and $\up f_1=S_1$ for some funcoids~$f_0$ and~$f_1$.
+In this case $f_0=\bigsqcap^{\mathsf{FCD}} S_0 = 1^{\mathsf{FCD}} = \bigsqcap^{\mathsf{FCD}} \up^{\Gamma} 1^{\mathsf{FCD}} =
+\bigsqcap^{\mathsf{FCD}} S_1 = f_1$ and thus $S_0=S_1$, contradiction.
 \end{proof}
 
 \begin{conjecture}
