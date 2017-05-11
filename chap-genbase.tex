@@ -1,5 +1,84 @@
 \chapter{Bases on filtrators}
 
+In this chapter I consider generalization of filter bases
+for the filtrator of funcoids (and more general filtrators).
+
+\section{Bases on filtrators}
+
+\fxwarning{Base must be nonempty.}
+
+\begin{defn}
+  A set $S$ of binary relations is a \emph{base} on a filtrator~$(\mathfrak{A},\mathfrak{Z})$
+  of~$f\in\mathfrak{A}$ when all elements
+  of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T \sqsubseteq X$.
+\end{defn}
+
+\begin{prop}
+  A set $S\in\subsets\mathfrak{Z}$ is a base of a filtrator element iff it is a base of
+  $\bigsqcap^{\mathfrak{A}} S$.
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[$\Leftarrow$] Obvious.
+    
+    \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$. All elements of $S$
+    are above $f$. So $\bigsqcap^{\mathfrak{A}} S \sqsupseteq f$. We
+    have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ and
+    thus $\forall X \in \up \bigsqcap^{\mathfrak{A}} S \exists T
+    \in S : T \sqsubseteq X$. To finish the proof note that all elements of
+    $S$ are above $\bigsqcap^{\mathfrak{A}} S$.
+  \end{description}
+\end{proof}
+
+\begin{prop}
+There exists an~$f\in\mathfrak{A}$ such that $\up f=S$ iff $S$ is a base and is an upper set
+(for every set~$S\in\subsets\mathfrak{Z}$).
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{prop}
+$\up f$ is a base of~$f$ for every~$f\in\mathfrak{A}$.
+\end{prop}
+
+\begin{proof}
+Denote $S=\up f$.
+$\bigsqcap^{\mathfrak{A}} S = f$.
+If $X \in \up \bigsqcap^{\mathfrak{A}} S$ then $X \in \up
+f$ and then $X \in S$ and thus $S$ is a base of a funcoid because $X
+\sqsubseteq X$.
+\end{proof}
+
+\begin{prop}
+$f = \bigsqcap^{\mathfrak{A}} S$ for every base~$S$ of an~$f\in\mathfrak{A}$.
+\end{prop}
+
+\begin{proof}
+$f$ is an lower bound of $S$ by definition. So $f \sqsubseteq
+\bigsqcap^{\mathfrak{A}} S$.
+
+We have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ thus
+$\bigsqcap^{\mathfrak{A}} S \sqsubseteq \bigsqcap^{\mathfrak{A}}
+\up f = f$.
+
+So $f = \bigsqcap^{\mathfrak{A}} S$.
+\end{proof}
+
+\begin{prop}
+If $S$ is a base on a filtrator, then
+$\up \bigsqcap^{\mathfrak{A}} S = \bigcup_{K\in S}\up K$.
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\section{Funcoid bases}
+
 \begin{lem}
 If $S$ is an upper set of principal funcoids, then
 $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)=\bigsqcap^{\mathsf{FCD}} S$.
@@ -13,45 +92,6 @@ $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)=\bigsqcap^{\mathsf{FCD}} S$.
   $\bigsqcap^{\mathsf{FCD}} S = \bigsqcap^{\mathsf{FCD}} \bigsqcap^{\mathsf{FCD}}_{K\in S} T_K \sqsupseteq \bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)$.
   where $T_K\in\subsets (S\cap\Gamma)$.
   So $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) = \bigsqcap^{\mathsf{FCD}} S$.
-\end{proof}
-
-In this chapter I consider generalization of filter bases
-for the filtrator of funcoids (and more general filtrators).
-
-\fxwarning{Base must be nonempty.}
-
-\begin{defn}
-  A set $S$ of binary relations is a \emph{base} of a funcoid $f$ when all elements
-  of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T
-  \sqsubseteq X$.
-\end{defn}
-
-\begin{prop}
-  A set $S$ of binary relations is a base of a funcoid iff it is a base of
-  $\bigsqcap^{\mathsf{FCD}} S$.
-\end{prop}
-
-\begin{proof}
-  ~
-  \begin{description}
-    \item[$\Leftarrow$] Obvious.
-    
-    \item[$\Rightarrow$] Let $S$ be a base of funcoid $f$. All elements of $S$
-    are above $f$. So $\bigsqcap^{\mathsf{FCD}} S \sqsupseteq f$. We
-    have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ and
-    thus $\forall X \in \up \bigsqcap^{\mathsf{FCD}} S \exists T
-    \in S : T \sqsubseteq X$. To finish the proof note that all elements of
-    $S$ are above $\bigsqcap^{\mathsf{FCD}} S$.
-  \end{description}
-\end{proof}
-
-\begin{prop}
-There exists a funcoid~$f$ such that $\up f=S$ iff $S$ is a funcoid base and is an upper set
-(for every set~$S$ of binary relations).
-\end{prop}
-
-\begin{proof}
-??
 \end{proof}
 
 \begin{thm}
@@ -150,18 +190,6 @@ Now prove the general case:
   equality holds for every $X \in \up x$. Therefore $K \sqsupseteq L$.
 \end{proof}
 
-\begin{prop}
-$\up f$ is a base of~$f$ for every funcoid~$f$.
-\end{prop}
-
-\begin{proof}
-Denote $S=\up f$.
-$\bigsqcap^{\mathsf{FCD}} S = f$.
-If $X \in \up \bigsqcap^{\mathsf{FCD}} S$ then $X \in \up
-f$ and then $X \in S$ and thus $S$ is a base of a funcoid because $X
-\sqsubseteq X$.
-\end{proof}
-
 \begin{example}
 A base of a funcoid which is not a filter base.
 \end{example}
@@ -169,21 +197,6 @@ A base of a funcoid which is not a filter base.
 \begin{proof}
 Consider $f=\id^{\mathsf{FCD}}_{\Omega}$. We know that $\up f$ is not a
 filter base. But it is a base of a funcoid accordingly the last proposition.
-\end{proof}
-
-\begin{prop}
-$f = \bigsqcap^{\mathsf{FCD}} S$ for every base~$S$ of a funcoid~$f$.
-\end{prop}
-
-\begin{proof}
-$f$ is an lower bound of $S$ by definition. So $f \sqsubseteq
-\bigsqcap^{\mathsf{FCD}} S$.
-
-We have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ thus
-$\bigsqcap^{\mathsf{FCD}} S \sqsubseteq \bigsqcap^{\mathsf{FCD}}
-\up f = f$.
-
-So $f = \bigsqcap^{\mathsf{FCD}} S$.
 \end{proof}
 
 \begin{xca}
@@ -198,7 +211,6 @@ A similar statement does \emph{not} hold for funcoids:
 For a set $S$ of binary relations
 \[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S \]
 does not imply that there exists funcoid~$f$ such that $S=\up f$.
-\fxnote{Stronger: It does not imply that~$S$ is a funcoid base.}
 \end{example}
 
 \begin{proof}
@@ -224,6 +236,17 @@ In this case $f_0=\bigsqcap^{\mathsf{FCD}} S_0 = 1^{\mathsf{FCD}} = \bigsqcap^{\
 \bigsqcap^{\mathsf{FCD}} S_1 = f_1$ and thus $S_0=S_1$, contradiction.
 \end{proof}
 
+\begin{prop}
+For a set $S$ of binary relations
+\[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S \]
+does not imply that~$S$ is a funcoid base.
+\end{prop}
+
+\begin{proof}
+Suppose for the contrary that it does imply. Then, because~$S$ is an upper set (as follows from the condition,
+taking $n=0$), it implies that~$S=\up f$ for a funcoid~$f$, what contradicts to the above example.
+\end{proof}
+
 \begin{conjecture}
   Let $\forall X,Y\in S:\up(X\sqcap^{\mathsf{FCD}} Y)\subseteq S$.
   
@@ -232,6 +255,8 @@ In this case $f_0=\bigsqcap^{\mathsf{FCD}} S_0 = 1^{\mathsf{FCD}} = \bigsqcap^{\
 \end{conjecture}
 
 \fxnote{What are funcoids~$f$ such that $\up f$ is a filter? or any its base is a filter base?}
+
+\fxnote{Generalize the below for more general filtrators?}
 
 \begin{prop}
 $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$.
@@ -268,14 +293,4 @@ F_n }{ F_0 \in \up f_0 \wedge \ldots \wedge F_n \in \up f_n }$.
 F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
 \up f_{n + 1} }.
 \end{multline*}
-\end{proof}
-
-\begin{prop}
-\fxnote{Move above.}
-If $S$ is a funcoid base, then
-$\up \bigsqcap^{\mathsf{FCD}} S = \bigcup_{K\in S}\up K$.
-\end{prop}
-
-\begin{proof}
-??
 \end{proof}
