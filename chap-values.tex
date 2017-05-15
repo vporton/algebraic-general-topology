@@ -30,17 +30,30 @@ The left side is already calculated. The term~$\torldin 1^{\mathsf{FCD}}$ which 
 ``thick equality'' above is well understood. Let's compute $\torldin (\top \setminus 1^{\mathsf{FCD}})$.
 
 \begin{prop}
-$\torldin (\top \setminus 1^{\mathsf{FCD}}) = ??$.
+$\torldin (\top \setminus 1^{\mathsf{FCD}}) = \top \setminus 1^{\mathsf{FCD}}$.
 \end{prop}
 
 \begin{proof}
-??
+Consider funcoids on a set $U$. For any filters~$x$ and~$y$ (or without loss of generality ultrafilters~$x$ and~$y$) we have:
+
+$x \times^{\mathsf{FCD}} y \sqsubseteq \top \setminus
+1^{\mathsf{FCD}} \Leftrightarrow \text{(theorem 574 and the fact that
+funcoids are filters)} \Leftrightarrow x \times^{\mathsf{FCD}} y \asymp
+1^{\mathsf{FCD}} \Leftrightarrow \neg \left( x
+\mathrel{[1^{\mathsf{FCD}}]} y \right) \Leftrightarrow x \asymp y
+\Rightarrow \exists X \in \up x, Y \in \up y : X \asymp Y$.
+
+Thus $\torldin (\top \setminus
+1^{\mathsf{FCD}}) = \bigsqcup \setcond{ X \times Y}
+{X, Y \in \mathscr{T} U, X \asymp Y } = \top \setminus
+1^{\mathsf{FCD}}$.
 \end{proof}
 
-Now let's compute $\torldin 1^{\mathsf{FCD}} \sqcap \torldin (\top \setminus 1^{\mathsf{FCD}})$.
+Now let's compute $\torldin 1^{\mathsf{FCD}} \sqcap \torldin (\top \setminus 1^{\mathsf{FCD}})$
+that is $\torldin 1^{\mathsf{FCD}} \sqcap (\top \setminus 1^{\mathsf{FCD}})$.
 
 \begin{prop}
-$\torldin 1^{\mathsf{FCD}} \sqcap \torldin (\top \setminus 1^{\mathsf{FCD}}) = ??$.
+$\torldin 1^{\mathsf{FCD}} \sqcap^{\mathsf{FCD}} (\top \setminus 1^{\mathsf{FCD}}) = ??$.
 \end{prop}
 
 \begin{proof}
