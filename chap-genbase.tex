@@ -5,13 +5,15 @@ for the filtrator of funcoids (and more general filtrators).
 
 \section{Bases on filtrators}
 
-\fxwarning{Base must be nonempty.}
-
 \begin{defn}
   A set $S$ of binary relations is a \emph{base} on a filtrator~$(\mathfrak{A},\mathfrak{Z})$
   of~$f\in\mathfrak{A}$ when all elements
   of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T \sqsubseteq X$.
 \end{defn}
+
+\begin{obvious}
+Every base on an up-aligned filtrator is nonempty.
+\end{obvious}
 
 \begin{prop}
   A set $S\in\subsets\mathfrak{Z}$ is a base of a filtrator element iff it is a base of
@@ -71,6 +73,15 @@ So $f = \bigsqcap^{\mathfrak{A}} S$.
 \begin{prop}
 If $S$ is a base on a filtrator, then
 $\up \bigsqcap^{\mathfrak{A}} S = \bigcup_{K\in S}\up K$.
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{prop}
+(For $\mathfrak{Z}$ having the greatest element) a base on the filtrator on~$(\mathfrak{A};\mathfrak{Z})$ is the same
+as base of a filter (on~$\mathfrak{Z}$).
 \end{prop}
 
 \begin{proof}
@@ -235,6 +246,9 @@ To finish the proof suppose for the contrary that $\up f_0=S_0$ and $\up f_1=S_1
 In this case $f_0=\bigsqcap^{\mathsf{FCD}} S_0 = 1^{\mathsf{FCD}} = \bigsqcap^{\mathsf{FCD}} \up^{\Gamma} 1^{\mathsf{FCD}} =
 \bigsqcap^{\mathsf{FCD}} S_1 = f_1$ and thus $S_0=S_1$, contradiction.
 \end{proof}
+
+\fxnote{Maybe it holds for some combination of lattice meet and $\tofcd$, $\torldin$,~$\torldout$
+instead of~$\sqcap^{\mathsf{FCD}}$?}
 
 \begin{prop}
 For a set $S$ of binary relations
