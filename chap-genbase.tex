@@ -216,12 +216,11 @@ First prove a special case of our theorem to get the idea:
   > 0$ and thus
   by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha \in
   X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[ }{
-  X \in \up x }$ is a filter base) for some $X' \in \up x$;
+  X \in \up x }$ is a filter base) for some $X' \in \up x$
   
-  $\bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \[ \bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
   \sqsupseteq \bigsqcup_{\alpha \in X'} \mathopen] \alpha - \varepsilon ; \alpha +
-  \varepsilon \mathclose[$
-  
+  \varepsilon \mathclose[ \]
   what is impossible by the fact that $\exp \alpha$ goes infinitely small as
   $\alpha \rightarrow - \infty$ and the fact that we can take $X =\mathbb{Z}$
   for some $x$.
@@ -230,6 +229,11 @@ First prove a special case of our theorem to get the idea:
 Now prove the general case:
 
 \begin{proof}
+  Suppose that $K \in \up \bigsqcap^{\mathsf{FCD}} S$ and thus
+  $\supfun{K} x \sqsupseteq \supfun{
+  \bigsqcap^{\mathsf{FCD}} S } x$.
+  We need to prove that there is some~$L\in S$ such that $K\sqsupseteq L$.
+  
   Take an ultrafilter $x$.
   
   $\supfun{\bigsqcap^{\mathsf{FCD}} S} x =
@@ -237,10 +241,6 @@ Now prove the general case:
   \bigsqcap^{\mathscr{F}}_{L \in S, X \in \up x} \rsupfun{L} X$.
   
   $\supfun{K} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{K}X$.
-  
-  Suppose that $K \in \up \bigsqcap^{\mathsf{FCD}} S$ and thus
-  $\supfun{K} x \sqsupseteq \supfun{
-  \bigsqcap^{\mathsf{FCD}} S } x$.
   
   Then
   $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{L \in S, X
@@ -298,7 +298,7 @@ Consequently (take into account that $\Gamma$ is a sublattice of $\mathsf{FCD}$)
 $X_0,\dots,X_n \sqsupseteq F_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} F_n$ and so
 $X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n=
 X_0\sqcap\dots\sqcap X_n \sqsupseteq F_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} F_n \sqsupseteq 1^{\mathsf{FCD}}$.
-Thus $X_0\sqcap\dots\sqcap X_n \in \up^{\Gamma} 1^{\mathsf{FCD}} \subseteq S_1$
+Thus $X_0\sqcap\dots\sqcap X_n \in \up^{\Gamma} 1^{\mathsf{FCD}} \subseteq S_1$;
 $\up(X_0\sqcap\dots\sqcap X_n)\subseteq S_1$ as $S_1$ is an upper set.
 
 To finish the proof suppose for the contrary that $\up f_0=S_0$ and $\up f_1=S_1$ for some funcoids~$f_0$ and~$f_1$.
