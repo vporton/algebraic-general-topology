@@ -4243,6 +4243,156 @@ and the fact that filters are collections of sets and there cannot
 be more than $2^{2^{\card\mathfrak{U}}}$ collections of sets on $\mathfrak{U}$.
 \end{proof}
 
+\section{Bases on filtrators}
+
+\begin{defn}
+  A set $S$ of binary relations is a \emph{base} on a filtrator~$(\mathfrak{A},\mathfrak{Z})$
+  of~$f\in\mathfrak{A}$ when all elements
+  of $S$ are above $f$ and $\forall X \in \up f \exists T \in S : T \sqsubseteq X$.
+\end{defn}
+
+\begin{obvious}
+Every base on an up-aligned filtrator is nonempty.
+\end{obvious}
+
+\begin{prop}
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{maxbase-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{maxbase-prim} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+\item\label{maxbase-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
+\item\label{maxbase-res} A set $S\in\subsets\mathfrak{Z}$ is a base of a filtrator element iff
+  $\bigsqcap^{\mathfrak{A}} S$ exists and~$S$ is a base of $\bigsqcap^{\mathfrak{A}} S$.
+\end{enumerate}  
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+  \item[\ref{maxbase-pow}$\Rightarrow$\ref{maxbase-prim}, \ref{maxbase-prim}$\Rightarrow$\ref{maxbase-fltr}] Obvious.
+
+  \item[\ref{maxbase-fltr}$\Rightarrow$\ref{maxbase-res}]
+    ~
+    \begin{description}
+      \item[$\Leftarrow$] Obvious.
+      
+      \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$.
+      $f$~is obviously a lower bound of~$S$. Let~$g$ be a lower bound of~$S$.
+      Then for every $X\in\up f$ we have $g\sqsubseteq X$ that is $X\in\up g$.
+      Thus $\up f\subseteq\up g$ and thus $f\sqsupseteq g$ that is~$f$ is the greatest upper bound of~$S$.
+    \end{description}
+  \end{description}
+\end{proof}
+
+\begin{prop}
+There exists an~$f\in\mathfrak{A}$ such that $\up f=S$ iff $S$ is a base and is an upper set
+(for every set~$S\in\subsets\mathfrak{Z}$).
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[$\Rightarrow$] If $\up f=S$ then~$S$ is an upper set and~$S$ is a base of~$f$ because
+  $\forall X\in\up f\,\exists T\in S:T=X$.
+
+\item[$\Leftarrow$] Let~$S$ be a base of some filtrator element~$f$ and is an upper set.
+Then for every $X\in\up f$ there is $T\in S$ such that $T\sqsubseteq X$.
+Thus $X\in S$. We have $\up f\subseteq S$. But $S\subseteq\up f$ is obvious.
+We have $\up f=S$.
+\end{description}
+\end{proof}
+
+\begin{prop}
+$\up f$ is a base of~$f$ for every~$f\in\mathfrak{A}$.
+\end{prop}
+
+\begin{proof}
+Denote $S=\up f$. That~$f$ is a lower bound of~$S$ is obvious.
+
+If $X\in\up f$ then $\exists T\in S:T=X$. Thus~$S$ is a base of~$f$.
+\end{proof}
+
+\begin{prop}
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{baseint-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{baseint-prim} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+\item\label{baseint-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
+\item\label{baseint-res} $f = \bigsqcap^{\mathfrak{A}} S$ for every base~$S$ of an~$f\in\mathfrak{A}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+  \item[\ref{baseint-pow}$\Rightarrow$\ref{baseint-prim}, \ref{baseint-prim}$\Rightarrow$\ref{baseint-fltr}] Obvious.
+
+  \item[\ref{baseint-fltr}$\Rightarrow$\ref{baseint-res}]
+    $f$ is a lower bound of~$S$ by definition.
+
+    Let~$g$ be a lower bound of~$S$. Then for every $X\in\up f$ there we have $g\sqsubseteq X$ that is~$X\in\up g$.
+    Thus~$\up f\subseteq\up g$ and thus $f\sqsupseteq g$ that is $f$ is the greatest lower bound of~$S$.
+  \end{description}
+\end{proof}
+
+\begin{prop}
+The following is an implications tuple:
+  \begin{enumerate}
+  \item\label{base-inf-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+  \item\label{base-inf-prim} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+  \item\label{base-inf-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
+  \item\label{base-inf-res} If $S$ is a base on a filtrator, then $\bigsqcap^{\mathfrak{A}} S$ exists and
+    $\up \bigsqcap^{\mathfrak{A}} S = \bigcup_{K\in S}\up K$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+  \item[\ref{base-inf-pow}$\Rightarrow$\ref{base-inf-prim}, \ref{base-inf-prim}$\Rightarrow$\ref{base-inf-fltr}] Obvious.
+
+  \item[\ref{base-inf-fltr}$\Rightarrow$\ref{base-inf-res}]
+    $\bigsqcap^{\mathfrak{A}} S$ exists because our filtrator is filtered.
+    Above we proved that~$S$ is a base of~$\bigsqcap^{\mathfrak{A}} S$.
+    That $\bigcup_{K\in S}\up K \subseteq \up \bigsqcap^{\mathfrak{A}} S$ is obvious.
+    If $X\in\up\bigsqcap^{\mathfrak{A}} S$ then by properties of bases we have
+    $K\in S$ such that $K\sqsubseteq X$. Thus $X\in\up K$ and so $X\in\bigcup_{K\in S}\up K$.
+    So $\up \bigsqcap^{\mathfrak{A}} S \subseteq \bigcup_{K\in S}\up K$.
+  \end{description}
+\end{proof}
+
+\begin{prop}
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{same-base-prim} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{same-base-flt} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over a meet-semilattice.
+\item\label{same-base-mid} $(\mathfrak{A},\mathfrak{Z})$ is a filtrator with binarily meet-closed core such that
+  $\forall a\in\mathfrak{A}:\up a\ne\emptyset$.
+\item\label{same-base-res} A base on the filtrator~$(\mathfrak{A};\mathfrak{Z})$ is the same
+as base of a filter (on~$\mathfrak{Z}$).
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[\ref{same-base-prim}$\Rightarrow$\ref{same-base-flt}] Obvious.
+
+\item[\ref{same-base-flt}$\Rightarrow$\ref{same-base-mid}] Corollary~\ref{f-meet-closed}.
+
+\item[\ref{same-base-mid}$\Rightarrow$\ref{same-base-res}] ~
+  \begin{description}
+  \item[$\Rightarrow$] Let~$S$ be a base of~$f$ on the filtrator~$(\mathfrak{A};\mathfrak{Z})$.
+  Then for every $a,b\in S$ we have $a,b\in\up f$ and thus $a\sqcap^{\mathfrak{Z}}b=a\sqcap^{\mathfrak{A}}b\in\up f$.
+  Thus $\exists x\in S:x\sqsubseteq a\sqcap^{\mathfrak{Z}}b$ that is $x\sqsubseteq a\land x\sqsubseteq b$.
+  It remains to show that~$S$ is nonempty, but this follows from $\up a$ being nonempty.
+
+  \item[$\Leftarrow$] Let~$S$ be a base of filter~$f$ (on~$\mathfrak{Z}$).
+  Let $X\in\up f$. Then there is $T\in S$ such that $T\sqsubseteq X$.
+  \end{description}
+\end{description}
+\end{proof}
+
 \section{Some Counter-Examples}
 \begin{example}
 There exist a bounded distributive lattice which is not lattice with

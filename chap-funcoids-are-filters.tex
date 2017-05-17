@@ -660,3 +660,181 @@ Proposition~\ref{coat-ic}.\end{proof}
 \begin{xca}
 Prove that in general funcoids are not coatomistic.\end{xca}
 
+\section{Funcoid bases}
+
+This section will present mainly a counter-example against a statement you have not thought about anyway.
+
+\begin{lem}
+If $S$ is an upper set of principal funcoids, then
+$\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)=\bigsqcap^{\mathsf{FCD}} S$.
+\end{lem}
+
+\begin{proof}
+  $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) \sqsupseteq \bigsqcap^{\mathsf{FCD}} S$ is obvious.
+  
+  $\bigsqcap^{\mathsf{FCD}} S = \bigsqcap^{\mathsf{FCD}} \bigsqcap^{\mathsf{FCD}}_{K\in S} T_K \sqsupseteq \bigsqcap^{\mathsf{FCD}} (S\cap\Gamma)$.
+  where $T_K\in\subsets (S\cap\Gamma)$.
+  So $\bigsqcap^{\mathsf{FCD}} (S\cap\Gamma) = \bigsqcap^{\mathsf{FCD}} S$.
+\end{proof}
+
+\begin{thm}
+  If $S$ is a filter base on the set of binary relations then $S$ is a base of
+  $\bigsqcap^{\mathsf{FCD}} S$.
+\end{thm}
+
+First prove a special case of our theorem to get the idea:
+
+\begin{example}
+  Take the filter base $S = \setcond{
+  \setcond{ (x, y) }{ | x - y | < \varepsilon }}{ \varepsilon > 0 }$ and $K = \setcond{ (x, y) }{
+  | x - y | < \exp x }$ where $x$ and $y$ range real
+  numbers. Then $K \notin \up \bigsqcap^{\mathsf{FCD}} S$.
+\end{example}
+
+\begin{proof}
+  Take a nontrivial ultrafilter $x$ on $\mathbb{R}$. We can for simplicity
+  assume $x \sqsubseteq \mathbb{Z}$.
+  
+  \[ \supfun{\bigsqcap^{\mathsf{FCD}} S} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S} \supfun{L} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S, X \in \up x} \rsupfun{L} X =
+  \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up
+  x} \bigsqcup_{\alpha \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[. \]
+  
+  $\supfun{K} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{K} X =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x}
+  \bigsqcup_{\alpha \in X}\mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[$.
+  
+  Suppose for the contrary that $\supfun{K} x \sqsupseteq \supfun{
+  \bigsqcap^{\mathsf{FCD}} S } x$.
+  
+  Then
+  
+  $\bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \sqsupseteq \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up x}
+  \bigsqcup_{\alpha \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[$ for
+  every $X \in \up x$;
+  
+  thus by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha
+  \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[ }{
+  \varepsilon > 0 }$ is a filter base and even a chain)
+  
+  $\bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in \up x} \bigsqcup_{\alpha
+  \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[$ for some $\varepsilon
+  > 0$ and thus
+  by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha \in
+  X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[ }{
+  X \in \up x }$ is a filter base) for some $X' \in \up x$
+  
+  \[ \bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \sqsupseteq \bigsqcup_{\alpha \in X'} \mathopen] \alpha - \varepsilon ; \alpha +
+  \varepsilon \mathclose[ \]
+  what is impossible by the fact that $\exp \alpha$ goes infinitely small as
+  $\alpha \rightarrow - \infty$ and the fact that we can take $X =\mathbb{Z}$
+  for some $x$.
+\end{proof}
+
+Now prove the general case:
+
+\begin{proof}
+  Suppose that $K \in \up \bigsqcap^{\mathsf{FCD}} S$ and thus
+  $\supfun{K} x \sqsupseteq \supfun{
+  \bigsqcap^{\mathsf{FCD}} S } x$.
+  We need to prove that there is some~$L\in S$ such that $K\sqsupseteq L$.
+  
+  Take an ultrafilter $x$.
+  
+  $\supfun{\bigsqcap^{\mathsf{FCD}} S} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S} \supfun{L} x =
+  \bigsqcap^{\mathscr{F}}_{L \in S, X \in \up x} \rsupfun{L} X$.
+  
+  $\supfun{K} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{K}X$.
+  
+  Then
+  $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{L \in S, X
+  \in \up x} \rsupfun{L} X$ for every $X \in \up x$;
+  thus by properties of generalized filter bases ($\setcond{ \rsupfun{L}X
+  }{ L \in S }$ is a filter base);
+  
+  $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in
+  \up x} \rsupfun{L} X$ for some $L \in S$ and thus
+  by properties of generalized filter bases ($\setcond{ \rsupfun{L}
+  X }{ X \in \up x }$ is a filter base) for some $X' \in \up x$
+  
+  $\rsupfun{K} X \sqsupseteq \rsupfun{L} X'
+  \sqsupseteq \supfun{L} x$.
+  
+  So $\supfun{K} x \sqsupseteq \supfun{L} x$ because this
+  equality holds for every $X \in \up x$. Therefore $K \sqsupseteq L$.
+\end{proof}
+
+\begin{example}
+A base of a funcoid which is not a filter base.
+\end{example}
+
+\begin{proof}
+Consider $f=\id^{\mathsf{FCD}}_{\Omega}$. We know that $\up f$ is not a
+filter base. But it is a base of a funcoid.
+\end{proof}
+
+\begin{xca}
+Prove that a set $S$ is a filter (on some set) iff
+\[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap\dots\sqcap X_n)\subseteq S \]
+for every natural~$n$.
+\end{xca}
+
+A similar statement does \emph{not} hold for funcoids:
+
+\begin{example}
+For a set $S$ of binary relations
+\[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S \]
+does not imply that there exists funcoid~$f$ such that $S=\up f$.
+\end{example}
+
+\begin{proof}
+Take $S_0 = \up 1^{\mathsf{FCD}}$ (where $1^{\mathsf{FCD}}$ is the identity funcoid on any infinite set)
+and $S_1 = \bigcup_{F\in S_0} \setcond{\up G}{G\in\up^{\Gamma} F}$ (that is
+$S_1 = \bigcup_{F\in\up^{\Gamma} 1^{\mathsf{FCD}}}\up F$).
+
+Both $S_0$ and $S_1$ are upper sets. $S_0\ne S_1$ because $1^{\mathsf{FCD}}\in S_0$ and $1^{\mathsf{FCD}}\notin S_1$.
+
+The formula in the example works for $S=S_0$ because $X_0,\dots,X_n\in \up 1^{\mathsf{FCD}}$. It also holds for $S=S_1$ by the
+following reason:
+
+Suppose $X_0,\dots,X_n\in S_1$. Then $X_i\sqsupseteq F_i$ where $F_i\in S_0$.
+Consequently (take into account that $\Gamma$ is a sublattice of $\mathsf{FCD}$)
+$X_0,\dots,X_n \sqsupseteq F_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} F_n$ and so
+$X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n=
+X_0\sqcap\dots\sqcap X_n \sqsupseteq F_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} F_n \sqsupseteq 1^{\mathsf{FCD}}$.
+Thus $X_0\sqcap\dots\sqcap X_n \in \up^{\Gamma} 1^{\mathsf{FCD}} \subseteq S_1$;
+$\up(X_0\sqcap\dots\sqcap X_n)\subseteq S_1$ as $S_1$ is an upper set.
+
+To finish the proof suppose for the contrary that $\up f_0=S_0$ and $\up f_1=S_1$ for some funcoids~$f_0$ and~$f_1$.
+In this case $f_0=\bigsqcap^{\mathsf{FCD}} S_0 = 1^{\mathsf{FCD}} = \bigsqcap^{\mathsf{FCD}} \up^{\Gamma} 1^{\mathsf{FCD}} =
+\bigsqcap^{\mathsf{FCD}} S_1 = f_1$ and thus $S_0=S_1$, contradiction.
+\end{proof}
+
+\begin{prop}
+For a set $S$ of binary relations
+\[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S \]
+does not imply that~$S$ is a funcoid base.
+\end{prop}
+
+\begin{proof}
+Suppose for the contrary that it does imply. Then, because~$S$ is an upper set (as follows from the condition,
+taking $n=0$), it implies that~$S=\up f$ for a funcoid~$f$, what contradicts to the above example.
+\end{proof}
+
+\begin{conjecture}
+  Let $\forall X,Y\in S:\up(X\sqcap^{\mathsf{FCD}} Y)\subseteq S$.
+  
+  Then
+  \[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S. \]
+\end{conjecture}
+
+\begin{xca}
+$\up (f_0 \sqcap^{\mathsf{FCD}} \ldots
+\sqcap^{\mathsf{FCD}} f_n) \subseteq \setcond{ F_0 \sqcap \ldots \sqcap
+F_n }{ F_0 \in \up f_0 \wedge \ldots \wedge F_n \in \up f_n }$ for every funcoids~$f_0$, \dots, $f_n$ ($n\in\mathbb{N}$).
+\end{xca}
