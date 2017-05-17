@@ -159,42 +159,41 @@ First prove a special case of our theorem to get the idea:
   Take a nontrivial ultrafilter $x$ on $\mathbb{R}$. We can for simplicity
   assume $x \sqsubseteq \mathbb{Z}$.
   
-  $\supfun{\bigsqcap^{\mathsf{FCD}} S} x =
+  \[ \supfun{\bigsqcap^{\mathsf{FCD}} S} x =
   \bigsqcap^{\mathscr{F}}_{L \in S} \supfun{L} x =
   \bigsqcap^{\mathscr{F}}_{L \in S, X \in \up x} \rsupfun{L} X =
   \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up
-  x} \bigsqcup_{\alpha \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [$.
+  x} \bigsqcup_{\alpha \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[. \]
   
   $\supfun{K} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{K} X =
   \bigsqcap^{\mathscr{F}}_{X \in \up x}
-  \bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha [$.
+  \bigsqcup_{\alpha \in X}\mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[$.
   
   Suppose for the contrary that $\supfun{K} x \sqsupseteq \supfun{
   \bigsqcap^{\mathsf{FCD}} S } x$.
   
   Then
   
-  $\bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha
-  [\sqsupseteq \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up x}
-  \bigsqcup_{\alpha \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [$ for
-  every $X \in \up x$
+  $\bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \sqsupseteq \bigsqcap^{\mathscr{F}}_{\varepsilon > 0, X \in \up x}
+  \bigsqcup_{\alpha \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[$ for
+  every $X \in \up x$;
   
   thus by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha
-  \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [ }{
+  \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[ }{
   \varepsilon > 0 }$ is a filter base and even a chain)
   
-  $\bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha
-  [\sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in \up x} \bigsqcup_{\alpha
-  \in X}] \alpha - \varepsilon ; \alpha + \varepsilon [$ for some $\varepsilon
+  $\bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in \up x} \bigsqcup_{\alpha
+  \in X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[$ for some $\varepsilon
   > 0$ and thus
-  
   by properties of generalized filter bases ($\setcond{ \bigsqcup_{\alpha \in
-  X}] \alpha - \varepsilon ; \alpha + \varepsilon [ }{
-  X \in \up x }$ is a filter base) for some $X' \in \up x$
+  X} \mathopen] \alpha - \varepsilon ; \alpha + \varepsilon \mathclose[ }{
+  X \in \up x }$ is a filter base) for some $X' \in \up x$;
   
-  $\bigsqcup_{\alpha \in X}] \alpha - \exp \alpha ; \alpha + \exp \alpha
-  [\sqsupseteq \bigsqcup_{\alpha \in X'}] \alpha - \varepsilon ; \alpha +
-  \varepsilon [$
+  $\bigsqcup_{\alpha \in X} \mathopen] \alpha - \exp \alpha ; \alpha + \exp \alpha \mathclose[
+  \sqsupseteq \bigsqcup_{\alpha \in X'} \mathopen] \alpha - \varepsilon ; \alpha +
+  \varepsilon \mathclose[$
   
   what is impossible by the fact that $\exp \alpha$ goes infinitely small as
   $\alpha \rightarrow - \infty$ and the fact that we can take $X =\mathbb{Z}$
@@ -217,21 +216,18 @@ Now prove the general case:
   \bigsqcap^{\mathsf{FCD}} S } x$.
   
   Then
-  
   $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{L \in S, X
-  \in \up x} \rsupfun{L} X$ for every $X \in \up x$
-  
+  \in \up x} \rsupfun{L} X$ for every $X \in \up x$;
   thus by properties of generalized filter bases ($\setcond{ \rsupfun{L}X
-  }{ L \in S }$ is a filter base)
+  }{ L \in S }$ is a filter base);
   
   $\rsupfun{K} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in
   \up x} \rsupfun{L} X$ for some $L \in S$ and thus
-  
   by properties of generalized filter bases ($\setcond{ \rsupfun{L}
   X }{ X \in \up x }$ is a filter base) for some $X' \in \up x$
   
   $\rsupfun{K} X \sqsupseteq \rsupfun{L} X'
-  \sqsupseteq \supfun{L} x$
+  \sqsupseteq \supfun{L} x$.
   
   So $\supfun{K} x \sqsupseteq \supfun{L} x$ because this
   equality holds for every $X \in \up x$. Therefore $K \sqsupseteq L$.
@@ -243,7 +239,7 @@ A base of a funcoid which is not a filter base.
 
 \begin{proof}
 Consider $f=\id^{\mathsf{FCD}}_{\Omega}$. We know that $\up f$ is not a
-filter base. But it is a base of a funcoid accordingly the last proposition.
+filter base. But it is a base of a funcoid.
 \end{proof}
 
 \begin{xca}
@@ -301,41 +297,8 @@ taking $n=0$), it implies that~$S=\up f$ for a funcoid~$f$, what contradicts to 
   \[ \forall X_0,\dots,X_n\in S:\up(X_0\sqcap^{\mathsf{FCD}}\dots\sqcap^{\mathsf{FCD}} X_n)\subseteq S. \]
 \end{conjecture}
 
-\fxnote{Generalize the below for more general filtrators?}
-
-\begin{prop}
-$\up (f \sqcap^{\mathsf{FCD}} g) \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$.
-\end{prop}
-
-\begin{proof}
-$\up (F \sqcap^{\mathsf{FCD}} G) \subseteq \up (F
-\sqcap G)$. So $\up (f \sqcap^{\mathsf{FCD}} g) \subseteq ?? \subseteq \bigcup
-\setcond{ \up (F \sqcap G) }{ F \in \up f,
-G \in \up g } \subseteq \setcond{ F \sqcap G }{ F \in \up f, G \in \up g }$ because every
-element of $X \in \up (F \sqcap G)$ can be represented as $F' \sqcap G'$
-for $F' \in \up f$, $G' \in \up g$ (take $F' = F \sqcup X$ and $G'
-= G \sqcup X$; then $F' \sqcap G' = (F \sqcup X) \sqcap (G \sqcup X) = (F
-\sqcap G) \sqcup X = X$).
-\end{proof}
-
-\begin{cor}
+\begin{xca}
 $\up (f_0 \sqcap^{\mathsf{FCD}} \ldots
 \sqcap^{\mathsf{FCD}} f_n) \subseteq \setcond{ F_0 \sqcap \ldots \sqcap
-F_n }{ F_0 \in \up f_0 \wedge \ldots \wedge F_n \in \up f_n }$.
-\end{cor}
-
-\begin{proof}
-~
-\begin{multline*}
-\up (f_0 \sqcap^{\mathsf{FCD}} \ldots
-\sqcap^{\mathsf{FCD}} f_{n + 1}) \subseteq \setcond{ F \sqcap G
-}{ F \in \up (f_0 \sqcap^{\mathsf{FCD}}
-\ldots \sqcap^{\mathsf{FCD}} f_n), G \in \up f_{n + 1} } \subseteq \\
-\setcond{ F \sqcap G }{ F \in \setcond{ F_0
-\sqcap \ldots \sqcap F_n }{ F_0 \in \up f_0
-\wedge \ldots \wedge F_n \in \up f_n }, G \in \up f_{n + 1} } = \\
-\setcond{ F_0 \sqcap \ldots \sqcap F_{n + 1} }{
-F_0 \in \up f_0 \wedge \ldots \wedge F_{n + 1} \in
-\up f_{n + 1} }.
-\end{multline*}
-\end{proof}
+F_n }{ F_0 \in \up f_0 \wedge \ldots \wedge F_n \in \up f_n }$ for every funcoids~$f_0$, \dots, $f_n$ ($n\in\mathbb{N}$).
+\end{xca}
