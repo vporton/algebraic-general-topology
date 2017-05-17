@@ -16,19 +16,31 @@ Every base on an up-aligned filtrator is nonempty.
 \end{obvious}
 
 \begin{prop}
-  A set $S\in\subsets\mathfrak{Z}$ is a base of a filtered filtrator element iff $\bigsqcap^{\mathfrak{A}} S$ exists and~$S$ is a base of
-  $\bigsqcap^{\mathfrak{A}} S$.
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{maxbase-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{maxbase-prim} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+\item\label{maxbase-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
+\item\label{maxbase-res} A set $S\in\subsets\mathfrak{Z}$ is a base of a filtrator element iff
+  $\bigsqcap^{\mathfrak{A}} S$ exists and~$S$ is a base of $\bigsqcap^{\mathfrak{A}} S$.
+\end{enumerate}  
 \end{prop}
 
 \begin{proof}
   ~
   \begin{description}
-    \item[$\Leftarrow$] Obvious.
-    
-    \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$.
-    $f$~is obviously a lower bound of~$S$. Let~$g$ be a lower bound of~$S$.
-    Then for every $X\in\up f$ we have $g\sqsubseteq X$ that is $X\in\up g$.
-    Thus $\up f\subseteq\up g$ and thus $f\sqsupseteq g$ that is~$f$ is the greatest upper bound of~$S$.
+  \item[\ref{maxbase-pow}$\Rightarrow$\ref{maxbase-prim}, \ref{maxbase-prim}$\Rightarrow$\ref{maxbase-fltr}] Obvious.
+
+  \item[\ref{maxbase-fltr}$\Rightarrow$\ref{maxbase-res}]
+    ~
+    \begin{description}
+      \item[$\Leftarrow$] Obvious.
+      
+      \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$.
+      $f$~is obviously a lower bound of~$S$. Let~$g$ be a lower bound of~$S$.
+      Then for every $X\in\up f$ we have $g\sqsubseteq X$ that is $X\in\up g$.
+      Thus $\up f\subseteq\up g$ and thus $f\sqsupseteq g$ that is~$f$ is the greatest upper bound of~$S$.
+    \end{description}
   \end{description}
 \end{proof}
 
