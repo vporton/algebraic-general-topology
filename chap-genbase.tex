@@ -75,31 +75,52 @@ If $X\in\up f$ then $\exists T\in S:T=X$. Thus~$S$ is a base of~$f$.
 \fxwarning{Prove that $\bigsqcap^{\mathfrak{A}} S$ exists for several below propositions.}
 
 \begin{prop}
-$f = \bigsqcap^{\mathfrak{A}} S$ for every base~$S$ of an~$f\in\mathfrak{A}$.
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{baseint-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{baseint-prim} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+\item\label{baseint-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
+\item\label{baseint-res} $f = \bigsqcap^{\mathfrak{A}} S$ for every base~$S$ of an~$f\in\mathfrak{A}$.
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
-$f$ is an lower bound of $S$ by definition. So $f \sqsubseteq
-\bigsqcap^{\mathfrak{A}} S$.
+  ~
+  \begin{description}
+  \item[\ref{baseint-pow}$\Rightarrow$\ref{baseint-prim}, \ref{baseint-prim}$\Rightarrow$\ref{baseint-fltr}] Obvious.
 
-We have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ thus
-$\bigsqcap^{\mathfrak{A}} S \sqsubseteq \bigsqcap^{\mathfrak{A}}
-\up f = f$.
+  \item[\ref{baseint-fltr}$\Rightarrow$\ref{baseint-res}]
+    $f$ is a lower bound of~$S$ by definition.
 
-So $f = \bigsqcap^{\mathfrak{A}} S$.
+    Let~$g$ be a lower bound of~$S$. Then for every $X\in\up f$ there we have $g\sqsubseteq X$ that is~$X\in\up g$.
+    Thus~$\up f\subseteq\up g$ and thus $f\sqsupseteq g$ that is $f$ is the greatest lower bound of~$S$.
+  \end{description}
 \end{proof}
 
 \begin{prop}
-If $S$ is a base on a filtrator, then
-$\up \bigsqcap^{\mathfrak{A}} S = \bigcup_{K\in S}\up K$.
+The following is an implications tuple:
+  \begin{enumerate}
+  \item\label{base-inf-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+  \item\label{base-inf-prim} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+  \item\label{base-inf-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
+  \item\label{base-inf-res} If $S$ is a base on a filtrator, then $\bigsqcap^{\mathfrak{A}} S$ exists and
+    $\up \bigsqcap^{\mathfrak{A}} S = \bigcup_{K\in S}\up K$.
+  \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Above we proved that~$S$ is a base of~$\bigsqcap^{\mathfrak{A}} S$.
-That $\bigcup_{K\in S}\up K \subseteq \up \bigsqcap^{\mathfrak{A}} S$ is obvious.
-If $X\in\up\bigsqcap^{\mathfrak{A}} S$ then by properties of bases we have
-$K\in S$ such that $K\sqsubseteq X$. Thus $X\in\up K$ and so $X\in\bigcup_{K\in S}\up K$.
-So $\up \bigsqcap^{\mathfrak{A}} S \subseteq \bigcup_{K\in S}\up K$.
+  ~
+  \begin{description}
+  \item[\ref{base-inf-pow}$\Rightarrow$\ref{base-inf-prim}, \ref{base-inf-prim}$\Rightarrow$\ref{base-inf-fltr}] Obvious.
+
+  \item[\ref{base-inf-fltr}$\Rightarrow$\ref{base-inf-res}]
+    $\bigsqcap^{\mathfrak{A}} S$ exists because our filtrator is filtered.
+    Above we proved that~$S$ is a base of~$\bigsqcap^{\mathfrak{A}} S$.
+    That $\bigcup_{K\in S}\up K \subseteq \up \bigsqcap^{\mathfrak{A}} S$ is obvious.
+    If $X\in\up\bigsqcap^{\mathfrak{A}} S$ then by properties of bases we have
+    $K\in S$ such that $K\sqsubseteq X$. Thus $X\in\up K$ and so $X\in\bigcup_{K\in S}\up K$.
+    So $\up \bigsqcap^{\mathfrak{A}} S \subseteq \bigcup_{K\in S}\up K$.
+  \end{description}
 \end{proof}
 
 \begin{prop}
