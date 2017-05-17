@@ -16,7 +16,7 @@ Every base on an up-aligned filtrator is nonempty.
 \end{obvious}
 
 \begin{prop}
-  A set $S\in\subsets\mathfrak{Z}$ is a base of a filtrator element iff it is a base of
+  A set $S\in\subsets\mathfrak{Z}$ is a base of a filtered filtrator element iff $\bigsqcap^{\mathfrak{A}} S$ exists and~$S$ is a base of
   $\bigsqcap^{\mathfrak{A}} S$.
 \end{prop}
 
@@ -25,13 +25,10 @@ Every base on an up-aligned filtrator is nonempty.
   \begin{description}
     \item[$\Leftarrow$] Obvious.
     
-    \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$. All elements of $S$
-    are above $f$. So \fxerror{existence of $\bigsqcap^{\mathfrak{A}} S$ not proved}
-    $\bigsqcap^{\mathfrak{A}} S \sqsupseteq f$. We
-    have $\forall X \in \up f \exists T \in S : T \sqsubseteq X$ and
-    thus $\forall X \in \up \bigsqcap^{\mathfrak{A}} S \exists T
-    \in S : T \sqsubseteq X$. To finish the proof note that all elements of
-    $S$ are above $\bigsqcap^{\mathfrak{A}} S$.
+    \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$.
+    $f$~is obviously a lower bound of~$S$. Let~$g$ be a lower bound of~$S$.
+    Then for every $X\in\up f$ we have $g\sqsubseteq X$ that is $X\in\up g$.
+    Thus $\up f\subseteq\up g$ and thus $f\sqsupseteq g$ that is~$f$ is the greatest upper bound of~$S$.
   \end{description}
 \end{proof}
 
