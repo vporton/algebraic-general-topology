@@ -221,10 +221,10 @@ g\circ f\nasymp h\Leftrightarrow g\nasymp h\circ f^{-1}.
 ~
 \begin{align*}
 g\circ f\nasymp h & \Leftrightarrow\\
-\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}\sqcap\bigsqcap^{\mathsf{RLD}}\up h\ne\bot^{\mathsf{RLD}(A,C)} & \Leftrightarrow\\
-\bigsqcap^{\mathsf{RLD}}\setcond{(G\circ F)\sqcap^{\mathsf{RLD}} H}{F\in\up f,G\in\up g,H\in\up h}\ne\bot^{\mathsf{RLD}(A,C)} & \Leftrightarrow\\
-\bigsqcap^{\mathsf{RLD}}\setcond{(G\circ F)\sqcap H}{F\in\up f,G\in\up g,H\in\up h}\ne\bot^{\mathsf{RLD}(A,C)} & \Leftrightarrow\\
-\forall F\in\up f,G\in\up g,H\in\up h:\uparrow^{\mathsf{RLD}}((G\circ F)\sqcap H)\ne\bot^{\mathsf{RLD}(A,C)} & \Leftrightarrow\\
+\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}\sqcap\bigsqcap^{\mathsf{RLD}}\up h\ne\bot & \Leftrightarrow\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(G\circ F)\sqcap^{\mathsf{RLD}} H}{F\in\up f,G\in\up g,H\in\up h}\ne\bot & \Leftrightarrow\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(G\circ F)\sqcap H}{F\in\up f,G\in\up g,H\in\up h}\ne\bot & \Leftrightarrow\\
+\forall F\in\up f,G\in\up g,H\in\up h:\uparrow^{\mathsf{RLD}}((G\circ F)\sqcap H)\ne\bot & \Leftrightarrow\\
 \forall F\in\up f,G\in\up g,H\in\up h:G\circ F\nasymp H
 \end{align*}
 (used properties of generalized filter bases).
@@ -409,18 +409,18 @@ then there exists $A\in\up\mathcal{A}$ such that $\GR K\supseteq\id_{A}$.
 Then
 \begin{align*}
 \id_{\mathcal{A}}^{\mathsf{RLD}} & \sqsubseteq\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)}) & \sqsubseteq\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(A\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)}) & =\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap\uparrow^{\mathsf{RLD}}(A\times\top^{\mathscr{T}(\Base(\mathcal{A}))}) & =\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top^{\mathscr{T}(\Base(\mathcal{A}))})) & =\\
+\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top) & \sqsubseteq\\
+\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(A\times^{\mathsf{RLD}}\top) & =\\
+\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap\uparrow^{\mathsf{RLD}}(A\times\top) & =\\
+\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top)) & =\\
 \uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A} & \sqsubseteq K.
 \end{align*}
 Thus $K\in\up\id_{\mathcal{A}}^{\mathsf{RLD}}$.
 
-Reversely let $K\in\up\id_{\mathcal{A}}^{\mathsf{RLD}}=\up(1_{\Base(\mathcal{A})}^{\mathsf{RLD}}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)}))$,
+Reversely let $K\in\up\id_{\mathcal{A}}^{\mathsf{RLD}}=\up(1_{\Base(\mathcal{A})}^{\mathsf{RLD}}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top))$,
 then there exists $A\in\up\mathcal{A}$ such that 
 \begin{align*}
-K\in\up\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top^{\mathscr{T}(\Base(\mathcal{A}))})) & =\\
+K\in\up\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top)) & =\\
 \up\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A} & \sqsupseteq\\
 \up\bigsqcap_{A\in\up\mathcal{A}}^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A}.
 \end{align*}
@@ -433,7 +433,7 @@ reloid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{thm}
 \begin{proof}
 We need to prove that 
 \[
-f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})=f\circ\bigsqcap^{\mathsf{RLD}(\Src f,\Src f)}\setcond{\id_{A}}{A\in\up\mathcal{A}}.
+f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top)=f\circ\bigsqcap^{\mathsf{RLD}(\Src f,\Src f)}\setcond{\id_{A}}{A\in\up\mathcal{A}}.
 \]
 
 
@@ -444,7 +444,7 @@ f\circ\bigsqcap^{\mathsf{RLD}(\Src f,\Src f)}\setcond{\id_{A}}{A\in\up\mathcal{A
 \bigsqcap^{\mathsf{RLD}}\setcond{F|_{A}}{F\in\up f,A\in\up\mathcal{A}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond{F\sqcap(A\times\top^{\mathscr{T}(\Dst f)})}{F\in\up f,A\in\up\mathcal{A}} & =\\
 \bigsqcap^{\mathsf{RLD}}\setcond F{F\in\up f}\sqcap\bigsqcap^{\mathsf{RLD}}\setcond{A\times\top^{\mathscr{T}(\Dst f)}}{A\in\up\mathcal{A}} & =\\
-f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)}).
+f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top).
 \end{align*}
 \end{proof}
 \begin{thm}
