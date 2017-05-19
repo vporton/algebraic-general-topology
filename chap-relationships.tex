@@ -17,15 +17,16 @@ We should prove that $\tofcd f$ is really a funcoid.
 \begin{proof}
 We need to prove that
 \[
-\mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\mathcal{Y}\sqcap\supfun{\tofcd f}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}\Leftrightarrow\mathcal{X}\sqcap\supfun{\tofcd f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)}.
+\mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\mathcal{Y}\sqcap\supfun{\tofcd f}\mathcal{X}\ne\bot\Leftrightarrow
+\mathcal{X}\sqcap\supfun{\tofcd f^{-1}}\mathcal{Y}\ne\bot.
 \]
 
 
 The above formula is equivalent to:
 \begin{align*}
 \forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y} & \Leftrightarrow\\
-\mathcal{Y}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
-\mathcal{X}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)}.
+\mathcal{Y}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}\ne\bot & \Leftrightarrow\\
+\mathcal{X}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F^{-1}}\mathcal{Y}\ne\bot.
 \end{align*}
 
 
@@ -33,14 +34,14 @@ We have $\mathcal{Y}\sqcap\bigsqcap_{F\in\up f}\supfun{\uparrow^{\mathsf{FCD}}F}
 
 Let's denote $W=\setcond{\mathcal{Y}\sqcap\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}}{F\in\up f}$.
 
-\begin{multline*}
-\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y}\Leftrightarrow\\
-\forall F\in\up f:\mathcal{Y}\sqcap\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}\Leftrightarrow\bot^{\mathscr{F}(\Dst f)}\notin W.
-\end{multline*}
+\[
+\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y} \Leftrightarrow
+\forall F\in\up f:\mathcal{Y}\sqcap\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}\ne\bot\Leftrightarrow\bot\notin W.
+\]
 
 
-We need to prove only that $\bot^{\mathscr{F}(\Dst f)}\notin W\Leftrightarrow\bigsqcap W\ne\bot^{\mathscr{F}(\Dst f)}$.
-(The rest follows from symmetry.) To prove it is enough to show that $W$ is a generalized filter base.
+We need to prove only that $\bot\notin W\Leftrightarrow\bigsqcap W\ne\bot$.
+(The rest follows from symmetry.) To prove it is enough to show that~$W$ is a generalized filter base.
 
 Let's prove that $W$ is a generalized filter base. For this it's
 enough to prove that $V=\setcond{\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}}{F\in\up f}$
@@ -242,7 +243,7 @@ $\dom\tofcd f=\dom f$ and $\im\tofcd f=\im f$ for every reloid~$f$.\end{prop}
 \begin{proof}
 ~
 \begin{multline*}
-\im\tofcd f=\supfun{\tofcd f}\top^{\mathscr{F}(\Src f)}=\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun F\top^{\mathscr{F}(\Src f)}=\\
+\im\tofcd f=\supfun{\tofcd f}\top=\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun F\top=\\
 \bigsqcap_{F\in\up f}^{\mathscr{F}}\im F=\bigsqcap^{\mathscr{F}}\rsupfun{\im}\up f=\im f.
 \end{multline*}
 
@@ -282,7 +283,7 @@ thus follows the theorem.
 \section{Reloids induced by a funcoid}
 
 \index{reloid!inward}\index{reloid!outward}Every funcoid $f\in\mathsf{FCD}(A,B)$
-induces a reloid from $A$ to $B$ in two ways (below I will also describe the third way, Gamma-reloid), intersection of \emph{outward}
+induces a reloid from $A$ to $B$ in two ways, intersection of \emph{outward}
 relations and union of \emph{inward} reloidal products of filters:
 \begin{gather*}
 \torldout f=\bigsqcap^{\mathsf{RLD}}\up f;\\
@@ -581,8 +582,11 @@ $\Cor\tofcd g=\tofcd\Cor g$ for every reloid $g$.\end{thm}
 \end{proof}
 
 \begin{conjecture}
-\item $\Compl\torldin g=\torldin\Compl g$;
-\item $\Compl\torldout g=\torldout\Compl g$.
+  ~
+  \begin{enumerate}
+  \item $\Compl\torldin g=\torldin\Compl g$;
+  \item $\Compl\torldout g=\torldout\Compl g$.
+  \end{enumerate}
 \end{conjecture}
 
 Note that the above Galois connection between funcoids and reloids is a Galois surjection.
