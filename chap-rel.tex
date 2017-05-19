@@ -361,7 +361,7 @@ $(x,y)\in(g\circ f)\cap(h\circ f)$. Thus $f$ is monovalued.
 \item [{\ref{rel-mono-atom}$\Rightarrow$\ref{rel-mono-meet}}] Let $a\in\atoms^{\mathscr{T}\Src f}$,
 $\rsupfun fa=b$. Then because $b\in\atoms^{\mathscr{T}\Dst f}\cup\{\bot^{\mathscr{T}\Dst f}\}$
 \begin{gather*}
-\bigsqcap S\sqcap b\ne\bot^{\mathscr{T}\Dst f}\Leftrightarrow\forall Y\in S:Y\sqcap b\ne\bot^{\mathscr{T}\Dst f};\\
+\bigsqcap S\sqcap b\ne\bot\Leftrightarrow\forall Y\in S:Y\sqcap b\ne\bot;\\
 a\rsuprel f\bigsqcap S\Leftrightarrow\forall Y\in S:a\rsuprel fY;\\
 \bigsqcap S\rsuprel{f^{-1}}a\Leftrightarrow\forall Y\in S:Y\rsuprel{f^{-1}}a;\\
 a\nasymp\rsupfun{f^{-1}}\bigsqcap S\Leftrightarrow\forall Y\in S:a\nasymp\rsupfun{f^{-1}}Y;\\
@@ -370,7 +370,8 @@ a\nasymp\rsupfun{f^{-1}}\bigsqcap S\Leftrightarrow a\nasymp\bigsqcap_{Y\in S}\rs
 \end{gather*}
 
 \item [{\ref{rel-mono-meet}$\Rightarrow$\ref{rel-mono-bin}}] Obvious.
-\item [{\ref{rel-mono-bin}$\Rightarrow$\ref{rel-mono-mono}}] $\rsupfun{f^{-1}}a\sqcap\rsupfun{f^{-1}}b=\rsupfun{f^{-1}}(a\sqcap b)=\rsupfun{f^{-1}}\bot^{\mathscr{T}\Dst f}=\bot^{\mathscr{T}\Src f}$
+\item [{\ref{rel-mono-bin}$\Rightarrow$\ref{rel-mono-mono}}]
+$\rsupfun{f^{-1}}a\sqcap\rsupfun{f^{-1}}b=\rsupfun{f^{-1}}(a\sqcap b)=\rsupfun{f^{-1}}\bot=\bot$
 for every two distinct atoms $a=\{\alpha\},b=\{\beta\}\in\mathscr{T}\Dst f$.
 From this 
 \begin{multline*}
@@ -459,6 +460,6 @@ x\sqsubseteq\bigsqcap\dom S\land y\sqsubseteq\bigsqcap\im S\Leftrightarrow x\tim
 \begin{obvious}
 If $U$, $W$ are sets and $A\in\mathscr{T}(U)$ then $A\times$ is
 a complete homomorphism from the lattice $\mathscr{T}(W)$ to the
-lattice $\mathbf{Rel}(U,W)$, if also $A\ne\bot^{\mathscr{T}(U)}$
+lattice $\mathbf{Rel}(U,W)$, if also $A\ne\bot$
 then it is an order embedding.\end{obvious}
 
