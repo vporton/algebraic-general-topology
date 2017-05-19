@@ -1,0 +1,3 @@
+Rewriting with implicit arguments finished in ``Funcoids and reloids'' part.
+
+Next need to rewrite ``Pointfree funcoids and reloids.
