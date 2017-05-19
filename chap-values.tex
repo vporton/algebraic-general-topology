@@ -1,5 +1,7 @@
 \chapter{Some (example) values}
 
+\fxwarning{It should be moved to the book but only after ``Implicit arguments'' moved to the book.}
+
 I will do some calculations of particular funcoids and reloids.
 
 First note that $\sqcap^{\mathsf{FCD}}$ can be decomposed (see below): \[ f \sqcap^{\mathsf{FCD}} g =
@@ -18,13 +20,16 @@ More generally:
 The above formulas follow from the fact that~$\tofcd$ is an upper adjoint
 and that $\tofcd\torldin f=f$ for every funcoid $f$.
 
+Let $\mathsf{FCD}$ denote funcoids on a set $U$.
+
 Consider a special case of the above formulas:
 \begin{equation}\label{fcd-meet-spec}
 1^{\mathsf{FCD}} \sqcap^{\mathsf{FCD}} (\top \setminus 1^{\mathsf{FCD}}) =
 \tofcd ((\torldin 1^{\mathsf{FCD}} \sqcap \torldin (\top \setminus 1^{\mathsf{FCD}})).
 \end{equation}
 
-We want to calculate terms of the formula~\eqref{fcd-meet-spec}.
+We want to calculate terms of the formula~\eqref{fcd-meet-spec} and more generally do some
+(probably useless) calculations for particular funcoids and reloids related to the above formula.
 
 The left side is already calculated. The term~$\torldin 1^{\mathsf{FCD}}$ which I call
 ``thick equality'' above is well understood. Let's compute $\torldin (\top \setminus 1^{\mathsf{FCD}})$.
@@ -49,10 +54,109 @@ Thus $\torldin (\top \setminus
 1^{\mathsf{FCD}}$.
 \end{proof}
 
-so, we have:
+So, we have:
 
 \[
 1^{\mathsf{FCD}}_{\Omega} =
 1^{\mathsf{FCD}} \sqcap^{\mathsf{FCD}} (\top \setminus 1^{\mathsf{FCD}}) =
 \torldin 1^{\mathsf{FCD}} \sqcap^{\mathsf{FCD}} (\top \setminus 1^{\mathsf{FCD}}).
 \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{prop}\label{cj-rldin-diag}
+  If $X_0 \sqcup \ldots \sqcup X_n = \top$ then $(X_0 \times X_0) \sqcup
+  \ldots \sqcup (X_n \times X_n) \in \up
+  \torldin 1^{\mathsf{FCD}}$
+\end{prop}
+
+\begin{proof}
+  It's enough to prove $(X_0 \times X_0) \sqcup \ldots \sqcup (X_n \times X_n)
+  \in \up (x \times x)$ for every ultrafilter~$x$, what follows from the
+  fact that $x \sqsubseteq X_i$ for some~$i$ and thus $x \times x \sqsubseteq
+  X_i \times X_i$.
+\end{proof}
+
+\begin{prop}
+  For finite tuples $X$, $Y$ of typed sets
+  \[ (X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq 1
+     \Leftrightarrow (X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n) =
+     \top . \]
+\end{prop}
+
+\begin{proof}
+  $(X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq 1
+  \Leftrightarrow ((X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n))
+  \sqcap 1 = 1 \Leftrightarrow ((X_0 \times Y_0) \sqcap 1) \sqcup \ldots
+  \sqcup ((X_n \times Y_n) \sqcap 1) = 1 \Leftrightarrow \id_{X_0 \sqcap
+  Y_0} \sqcup \ldots \sqcup \id_{X_n \sqcap Y_n} = 1 \Leftrightarrow
+  \id_{(X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n)} = 1
+  \Leftrightarrow (X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n) =
+  \top$.
+\end{proof}
+
+\begin{cor}
+  ~
+  \[ \up^{\Gamma} 1 = \setcond{ (X_0 \times Y_0) \sqcup \ldots \sqcup (X_n
+     \times Y_n) }{ n \in \mathbb{N}, \forall i \in
+     n : X_i, Y_i \in \mathscr{T} U, (X_0 \sqcap Y_0) \sqcup \ldots \sqcup
+     (X_n \sqcap Y_n) = \top } . \]
+\end{cor}
+
+\begin{cor}
+  $(X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n) = \top$ for an
+  element $(X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n)$ of $\Gamma$
+  does not depend on its representation $(X_0 \times Y_0) \sqcup \ldots \sqcup
+  (X_n \times Y_n)$.
+\end{cor}
+
+\begin{prop}
+  ~
+  \[ \up^{\Gamma} 1 = \bigcup \setcond{ \up^{\Gamma} ((X_0 \times
+     X_0) \sqcup \ldots \sqcup (X_n \times X_n)) }{ n
+     \in \mathbb{N}, \forall i \in n : X_i \in \mathscr{T} U, X_0 \sqcup
+     \ldots \sqcup X_n = \top } . \]
+\end{prop}
+
+\begin{proof}
+  If $(X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \in
+  \up^{\Gamma} 1$ then we have
+  \[ (X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq ((X_0
+     \sqcap Y_0) \times (X_0 \sqcap Y_0)) \sqcup \ldots \sqcup ((X_n \sqcap
+     Y_n) \times (X_n \sqcap Y_n)) \in \up^{\Gamma} 1. \]
+  Thus
+  \[ \up^{\Gamma} 1 \subseteq \bigcup \setcond{ \up^{\Gamma} ((X_0
+     \times X_0) \sqcup \ldots \sqcup (X_n \times X_n)) }{
+     \hspace{1em} n \in \mathbb{N}, \forall i \in n : X_i \in \mathscr{T} U,
+     X_0 \sqcup \ldots \sqcup X_n = \top } . \]
+  The reverse inclusion is obvious.
+\end{proof}
+
+\begin{prop}
+  ~
+  \[ \torldin 1^{\mathsf{FCD}} =
+     \bigsqcap^{\mathsf{RLD}} \setcond{ (X_0 \times X_0) \sqcup \ldots
+     \sqcup (X_n \times X_n) }{ n \in \mathbb{N},
+     \forall i \in n : X_i \in \mathscr{T} U, X_0 \sqcup \ldots \sqcup X_n =
+     \top } . \]
+\end{prop}
+
+\begin{proof}
+  By the diagram we have $\torldin
+  1^{\mathsf{FCD}} = \bigsqcap^{\mathsf{RLD}} \up^{\Gamma} 1$. So it follows from the previous proposition.
+\end{proof}
+
+\begin{prop}
+  $\up^{\Gamma} \torldin 1^{\mathsf{FCD}} = \up^{\Gamma} 1$.
+\end{prop}
+
+\begin{proof}
+  If $K \in \up^{\Gamma} 1$ then $K \in \up^{\Gamma} ((X_0 \times
+  X_0) \sqcup \ldots \sqcup (X_n \times X_n))$ and thus $K \in
+  \up^{\Gamma}  \torldin
+  1^{\mathsf{FCD}}$ (see proposition~\ref{cj-rldin-diag}). Thus $\up^{\Gamma}
+  1 \subseteq \up^{\Gamma}  \torldin
+  1^{\mathsf{FCD}}$. But $\up^{\Gamma} 
+  \torldin 1^{\mathsf{FCD}} \subseteq
+  \up^{\Gamma} 1$ is obvious.
+\end{proof}
