@@ -191,14 +191,12 @@ and consequently $\supfun f\mathcal{X}=\supfun g\mathcal{X}$ for
 every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Y}\in\mathscr{F}(B)$
 because a set of filters is separable, thus $\supfun f=\supfun g$.\end{proof}
 \begin{prop}
-$\supfun f\bot^{\mathscr{F}(\Src f)}=\bot^{\mathscr{F}(\Dst f)}$
+$\supfun f\bot=\bot$
 for every funcoid $f$.\end{prop}
 \begin{proof}
-$\mathcal{Y}\nasymp\supfun f\bot^{\mathscr{F}(\Src 
-f)}\Leftrightarrow\bot^{\mathscr{F}(\Src 
-f)}\nasymp\supfun{f^{-1}}\mathcal{Y}\Leftrightarrow0\Leftrightarrow\mathcal{Y}
-\nasymp\bot^{\mathscr{F}(\Dst f)}$.
-Thus $\supfun f\bot^{\mathscr{F}(\Src f)}=\bot^{\mathscr{F}(\Dst f)}$
+$\mathcal{Y}\nasymp\supfun f\bot\Leftrightarrow\bot\nasymp\supfun{f^{-1}}\mathcal{Y}\Leftrightarrow0\Leftrightarrow\mathcal{Y}
+\nasymp\bot$.
+Thus $\supfun f\bot=\bot$
 by separability of filters.\end{proof}
 \begin{prop}
 $\supfun f(\mathcal{I}\sqcup\mathcal{J})=\supfun f\mathcal{I}\sqcup\supfun 
@@ -363,10 +361,10 @@ X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\rsuprel fY$.
 \item [{\ref{frel-filt}}] ~ 
 \begin{align*}
 \mathcal{X}\suprel f\mathcal{Y} & \Leftrightarrow\\
-\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)} & 
+\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot & 
 \Leftrightarrow\\
-\forall Y\in\up\mathcal{Y}:\uparrow^{\Dst f}Y\sqcap\supfun 
-f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
+\forall Y\in\up\mathcal{Y}:\uparrow Y\sqcap\supfun 
+f\mathcal{X}\ne\bot & \Leftrightarrow\\
 \forall Y\in\up\mathcal{Y}:\mathcal{X}\suprel f\uparrow Y.
 \end{align*}
 
@@ -384,12 +382,11 @@ Y\Leftrightarrow\forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\rsuprel fY.
 
 \item [{\ref{f-filt-x}}] ~
 \begin{align*}
-\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)} & 
+\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot & 
 \Leftrightarrow\\
 \mathcal{X}\suprel f\mathcal{Y} & \Leftrightarrow\\
 \forall X\in\up\mathcal{X}:\uparrow X\suprel f\mathcal{Y} & \Leftrightarrow\\
-\forall X\in\up\mathcal{X}:\mathcal{Y}\sqcap\rsupfun fX\ne\bot^{\mathscr{F}(\Dst 
-f)}.
+\forall X\in\up\mathcal{X}:\mathcal{Y}\sqcap\rsupfun fX\ne\bot.
 \end{align*}
 
 
@@ -409,14 +406,14 @@ So $V$ is a generalized filter base and thus $W$ is a generalized
 filter base.
 
 
-$\bot^{\mathscr{F}(\Dst f)}\notin W\Leftrightarrow\bigsqcap 
-W\ne\bot^{\mathscr{F}(\Dst f)}$
+$\bot\notin W\Leftrightarrow\bigsqcap 
+W\ne\bot$
 by properties of generalized filter bases. That is
 \[
 \forall X\in\up\mathcal{X}:\mathcal{Y}\sqcap\rsupfun 
 fX\neq\bot^{\mathscr{F}(\Dst 
 f)}\Leftrightarrow\mathcal{Y}\sqcap\bigsqcap\rsupfun{\rsupfun 
-f}\up\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}.
+f}\up\mathcal{X}\ne\bot.
 \]
 
 
@@ -424,7 +421,7 @@ f}\up\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}.
 Comparing with the above, $\mathcal{Y}\sqcap\supfun 
 f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst 
 f)}\Leftrightarrow\mathcal{Y}\sqcap\bigsqcap\rsupfun{\rsupfun 
-f}\up\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}$.
+f}\up\mathcal{X}\ne\bot$.
 So $\supfun f\mathcal{X}=\bigsqcap\rsupfun{\rsupfun f}\up\mathcal{X}$
 because the lattice of filters is separable.
 
@@ -440,22 +437,22 @@ Let $f$ be a funcoid.
 \begin{prop}
 For every $f\in\mathsf{FCD}(A,B)$ we have (for every $I,J\in\mathscr{T}A$)
 \[
-\rsupfun f\bot^{\mathscr{T}(A)}=\bot^{\mathscr{F}(B)},\quad\rsupfun f(I\sqcup 
+\rsupfun f\bot=\bot,\quad\rsupfun f(I\sqcup 
 J)=\rsupfun fI\sqcup\rsupfun fJ
 \]
 and
 \begin{align*}
-\lnot(I & \rsuprel f\bot^{\mathscr{T}(B)}), & I\sqcup J\rsuprel fK & 
+\lnot(I & \rsuprel f\bot), & I\sqcup J\rsuprel fK & 
 \Leftrightarrow I\rsuprel fK\lor J\rsuprel fK & \text{(for every 
 \ensuremath{I,J\in\mathscr{T}A}, \ensuremath{K\in\mathscr{T}B})},\\
-\lnot(\bot^{\mathscr{T}(A)} & \rsuprel fI), & K\rsuprel fI\sqcup J & 
+\lnot(\bot & \rsuprel fI), & K\rsuprel fI\sqcup J & 
 \Leftrightarrow K\rsuprel fI\lor K\rsuprel fJ & \text{(for every 
 \ensuremath{I,J\in\mathscr{T}B}, \ensuremath{K\in\mathscr{T}A})}.
 \end{align*}
 \end{prop}
 \begin{proof}
-$\rsupfun f\bot^{\mathscr{T}(A)}=\supfun f\bot^{\mathscr{T}(A)}=\supfun 
-f\bot^{\mathscr{F}(A)}=\bot^{\mathscr{F}(B)}$;
+$\rsupfun f\bot=\supfun f\bot=\supfun 
+f\bot=\bot$;
 \[
 \rsupfun f(I\sqcup J)=\supfun f\uparrow(I\sqcup J)=\supfun f\uparrow 
 I\sqcup\supfun f\uparrow J=\rsupfun fI\sqcup\rsupfun fJ.
@@ -463,7 +460,7 @@ I\sqcup\supfun f\uparrow J=\rsupfun fI\sqcup\rsupfun fJ.
 
 
 $I\rsuprel 
-f\bot^{\mathscr{T}(B)}\Leftrightarrow\bot^{\mathscr{F}(B)}\nasymp\supfun 
+f\bot\Leftrightarrow\bot\nasymp\supfun 
 f\uparrow I\Leftrightarrow0$;
 \begin{align*}
 I\sqcup J\rsuprel fK & \Leftrightarrow\\
@@ -486,7 +483,7 @@ and $L_{R}=\mylambda f{\mathsf{FCD}(A,B)}{\mathord{\rsuprel f}}$.
 to the set of functions $\alpha\in\mathscr{F}(B)^{\mathscr{T}A}$
 that obey the conditions (for every $I,J\in\mathscr{T}A$)
 \begin{equation}
-\alpha\bot^{\mathscr{T}(A)}=\bot^{\mathscr{F}(B)},\quad\alpha(I\sqcup J)=\alpha 
+\alpha\bot=\bot,\quad\alpha(I\sqcup J)=\alpha 
 I\sqcup\alpha J.\label{fchar-alph}
 \end{equation}
 
@@ -504,11 +501,11 @@ to the set of binary relations
 $\delta\in\subsets(\mathscr{T}A\times\mathscr{T}B)$
 that obey the conditions
 \begin{equation}
-\begin{aligned}\lnot(I & \mathrel\delta\bot^{\mathscr{T}(B)}), & I\sqcup 
+\begin{aligned}\lnot(I & \mathrel\delta\bot), & I\sqcup 
 J\mathrel\delta K & \Leftrightarrow I\mathrel\delta K\lor J\mathrel\delta K & 
 \text{(for every \ensuremath{I,J\in\mathscr{T}A}, 
 \ensuremath{K\in\mathscr{T}B})},\\
-\lnot(\bot^{\mathscr{T}(A)} & \mathrel\delta I), & K\mathrel\delta I\sqcup J & 
+\lnot(\bot & \mathrel\delta I), & K\mathrel\delta I\sqcup J & 
 \Leftrightarrow K\mathrel\delta I\lor K\mathrel\delta J & \text{(for every 
 \ensuremath{I,J\in\mathscr{T}B}, \ensuremath{K\in\mathscr{T}A})}.
 \end{aligned}
@@ -559,10 +556,10 @@ X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\mathrel\delta Y.
 
 
 
-$\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot^{\mathscr{F}(B)}
-\Leftrightarrow\mathcal{Y}\sqcap\bigsqcap\rsupfun{\alpha}\up\mathcal{X}\ne\bot^{
-\mathscr{F}(B)}\Leftrightarrow\bigsqcap\rsupfun{\mathcal{Y}\sqcap}\rsupfun{
-\alpha}\up\mathcal{X}\ne\bot^{\mathscr{F}(B)}$.
+$\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot
+\Leftrightarrow\mathcal{Y}\sqcap\bigsqcap\rsupfun{\alpha}\up\mathcal{X}\ne\bot
+\Leftrightarrow\bigsqcap\rsupfun{\mathcal{Y}\sqcap}\rsupfun{
+\alpha}\up\mathcal{X}\ne\bot$.
 Let's prove that
 \[
 W=\rsupfun{\mathcal{Y}\sqcap}\rsupfun{\alpha}\up\mathcal{X}
@@ -581,16 +578,15 @@ and thus $W$ is a generalized filter base.
 
 
 By properties of generalized filter bases, 
-$\bigsqcap\rsupfun{\mathcal{Y}\sqcap}\rsupfun{\alpha}\mathcal{X}\ne\bot^{
-\mathscr{F}(B)}$
+$\bigsqcap\rsupfun{\mathcal{Y}\sqcap}\rsupfun{\alpha}\mathcal{X}\ne\bot$
 is equivalent to
 \[
-\forall X\in\up\mathcal{X}:\mathcal{Y}\sqcap\alpha X\ne\bot^{\mathscr{F}(B)},
+\forall X\in\up\mathcal{X}:\mathcal{Y}\sqcap\alpha X\ne\bot,
 \]
 what is equivalent to
 \begin{align*}
 \forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:\uparrow Y\sqcap\alpha 
-X\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+X\ne\bot & \Leftrightarrow\\
 \forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:Y\in\corestar(\alpha X) & 
 \Leftrightarrow\\
 \forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\mathrel\delta Y.
@@ -599,21 +595,21 @@ X\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
 
 
 Combining the equivalencies we get 
-$\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot^{\mathscr{F}(B)}
+$\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot
 \Leftrightarrow\mathcal{X}\mathrel{\delta'}\mathcal{Y}$.
 Analogously 
-$\mathcal{X}\sqcap\beta'\mathcal{Y}\ne\bot^{\mathscr{F}(A)}
+$\mathcal{X}\sqcap\beta'\mathcal{Y}\ne\bot
 \Leftrightarrow\mathcal{X}\mathrel{\delta'}\mathcal{Y}$.
 So 
-$\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot^{\mathscr{F}(B)}
-\Leftrightarrow\mathcal{X}\sqcap\beta'\mathcal{Y}\ne\bot^{\mathscr{F}(A)}$,
+$\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot
+\Leftrightarrow\mathcal{X}\sqcap\beta'\mathcal{Y}\ne\bot$,
 that is $(A,B,\alpha',\beta')$ is a funcoid. From the formula 
 $\mathcal{Y}\sqcap\alpha'\mathcal{X}\ne\bot^{\mathscr{F}(B)}
 \Leftrightarrow\mathcal{X}\mathrel{\delta'}\mathcal{Y}$
 it follows that
 \[
 X\rsuprel{(A,B,\alpha',\beta')}Y\Leftrightarrow\uparrow Y\sqcap\alpha'\uparrow 
-X\ne\bot^{\mathscr{F}(B)}\Leftrightarrow\uparrow X\mathrel{\delta'}\uparrow 
+X\ne\bot\Leftrightarrow\uparrow X\mathrel{\delta'}\uparrow 
 Y\Leftrightarrow X\mathrel\delta Y.
 \]
 
@@ -621,29 +617,29 @@ Y\Leftrightarrow X\mathrel\delta Y.
 \item [{\ref{main-f}}] Let define the relation 
 $\delta\in\subsets(\mathscr{T}A\times\mathscr{T}B)$
 by the formula $X\mathrel\delta Y\Leftrightarrow\uparrow Y\sqcap\alpha 
-X\ne\bot^{\mathscr{F}(B)}$.
+X\ne\bot$.
 
 
-That $\lnot(I\mathrel\delta\bot^{\mathscr{T}B})$ and 
-$\lnot(\bot^{\mathscr{T}A}\mathrel\delta I)$
+That $\lnot(I\mathrel\delta\bot)$ and 
+$\lnot(\bot\mathrel\delta I)$
 is obvious. We have
 \begin{align*}
 I\sqcup J\mathrel\delta K & \Leftrightarrow\\
-\uparrow K\sqcap\alpha(I\sqcup J)\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
-\uparrow K\sqcap(\alpha I\sqcup\alpha J)\ne\bot^{\mathscr{F}(B)} & 
+\uparrow K\sqcap\alpha(I\sqcup J)\ne\bot & \Leftrightarrow\\
+\uparrow K\sqcap(\alpha I\sqcup\alpha J)\ne\bot & 
 \Leftrightarrow\\
-\uparrow K\sqcap\alpha I\ne\bot^{\mathscr{F}(B)}\lor\uparrow K\sqcap\alpha 
-J\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+\uparrow K\sqcap\alpha I\ne\bot\lor\uparrow K\sqcap\alpha 
+J\ne\bot & \Leftrightarrow\\
 I\mathrel\delta K\lor J\mathrel\delta K
 \end{align*}
 and
 \begin{align*}
 K\mathrel\delta I\sqcup J & \Leftrightarrow\\
-\uparrow(I\sqcup J)\sqcap\alpha K\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
-(\uparrow I\sqcup\uparrow J)\sqcap\alpha K\ne\bot^{\mathscr{F}(B)} & 
+\uparrow(I\sqcup J)\sqcap\alpha K\ne\bot & \Leftrightarrow\\
+(\uparrow I\sqcup\uparrow J)\sqcap\alpha K\ne\bot & 
 \Leftrightarrow\\
-\uparrow I\sqcap\alpha K\ne\bot^{\mathscr{F}(B)}\lor\uparrow J\sqcap\alpha 
-K\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+\uparrow I\sqcap\alpha K\ne\bot\lor\uparrow J\sqcap\alpha 
+K\ne\bot & \Leftrightarrow\\
 K\mathrel\delta I\lor K\mathrel\delta J.
 \end{align*}
 
@@ -663,9 +659,9 @@ X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\mathrel\delta Y.
 For every $X\in\mathscr{T}A$, $Y\in\mathscr{T}B$ we have:
 \[
 \uparrow Y\sqcap\supfun f\uparrow 
-X\ne\bot^{\mathscr{F}(B)}\Leftrightarrow\uparrow X\suprel f\uparrow 
+X\ne\bot\Leftrightarrow\uparrow X\suprel f\uparrow 
 Y\Leftrightarrow X\mathrel\delta Y\Leftrightarrow\uparrow Y\sqcap\alpha 
-X\ne\bot^{\mathscr{F}(B)},
+X\ne\bot,
 \]
 consequently $\forall X\in\mathscr{T}A:\alpha X=\supfun f\uparrow X=\rsupfun 
 fX$.
@@ -940,13 +936,13 @@ $\rsupfun{F_{B}}X=B$.
 
 Let $P\in\mathscr{T}(\Src f)$. We have 
 \[
-\bot^{\mathscr{T}(\Src f)}\ne P\sqsubseteq 
+\bot\ne P\sqsubseteq 
 X\Rightarrow\rsupfun{F_{B}}P=B\sqsupseteq\rsupfun fP
 \]
 and
 \[
 P\nsqsubseteq 
-X\Rightarrow\rsupfun{F_{B}}P=\top^{\mathscr{F}(\Dst f)}\sqsupseteq\rsupfun fP.
+X\Rightarrow\rsupfun{F_{B}}P=\top\sqsupseteq\rsupfun fP.
 \]
 
 
@@ -995,7 +991,7 @@ Accordingly \cite{pm:complete-lattice-criteria} to prove that it
 is a complete lattice it's enough to prove existence of all joins.
 \begin{widedisorder}
 \item [{\ref{sf-join}}] $\alpha X\eqdef\bigsqcup_{f\in R}\rsupfun fX$.
-We have $\alpha\bot^{\mathscr{T}(\Src f)}=\bot^{\mathscr{F}(\Dst f)}$;
+We have $\alpha\bot=\bot$;
 \begin{align*}
 \alpha(I\sqcup J) & =\\
 \bigsqcup_{f\in R}\rsupfun f(I\sqcup J) & =\\
@@ -1019,11 +1015,11 @@ So $h=\bigsqcup R$.
 \item [{\ref{sr-join}}] ~ 
 \begin{align*}
 X\rsuprel{\bigsqcup R}Y & \Leftrightarrow\\
-\uparrow Y\sqcap\rsupfun{\bigsqcup R}X\ne\bot^{\mathscr{F}(\Dst f)} & 
+\uparrow Y\sqcap\rsupfun{\bigsqcup R}X\ne\bot &
 \Leftrightarrow\\
-\uparrow Y\sqcap\bigsqcup_{f\in R}\rsupfun fX\ne\bot^{\mathscr{F}(\Dst f)} & 
+\uparrow Y\sqcap\bigsqcup_{f\in R}\rsupfun fX\ne\bot &
 \Leftrightarrow\\
-\exists f\in R:\uparrow Y\sqcap\rsupfun fX\ne\bot^{\mathscr{F}(\Dst f)} & 
+\exists f\in R:\uparrow Y\sqcap\rsupfun fX\ne\bot &
 \Leftrightarrow\\
 \exists f\in R:X\rsuprel fY
 \end{align*}
@@ -1054,13 +1050,13 @@ $\beta\mathcal{Y}\eqdef\supfun{f^{-1}}\mathcal{Y}\sqcup\supfun{g^{-1}}\mathcal{Y
 for every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Y}\in\mathscr{F}(B)$.
 Then
 \begin{align*}
-\mathcal{Y}\sqcap\alpha\mathcal{X}\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+\mathcal{Y}\sqcap\alpha\mathcal{X}\ne\bot & \Leftrightarrow\\
 \mathcal{Y}\sqcap\supfun 
-f\mathcal{X}\ne\bot^{\mathscr{F}(B)}\lor\mathcal{Y}\sqcap\supfun 
-g\mathcal{X}\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
-\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(A)}\lor\mathcal{
-X}\sqcap\supfun{g^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(A)} & \Leftrightarrow\\
-\mathcal{X}\sqcap\beta\mathcal{Y}\ne\bot^{\mathscr{F}(A)}.
+f\mathcal{X}\ne\bot\lor\mathcal{Y}\sqcap\supfun 
+g\mathcal{X}\ne\bot & \Leftrightarrow\\
+\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot\lor\mathcal{
+X}\sqcap\supfun{g^{-1}}\mathcal{Y}\ne\bot & \Leftrightarrow\\
+\mathcal{X}\sqcap\beta\mathcal{Y}\ne\bot.
 \end{align*}
 So $h=(A,B,\alpha,\beta)$ is a funcoid. Obviously $h\sqsupseteq f$
 and $h\sqsupseteq g$. If $p\sqsupseteq f$ and $p\sqsupseteq g$
@@ -1072,13 +1068,13 @@ $\mathcal{Y}\in\mathscr{F}(B)$
 we have 
 \begin{align*}
 \mathcal{X}\suprel{f\sqcup g}\mathcal{Y} & \Leftrightarrow\\
-\mathcal{Y}\sqcap\supfun{f\sqcup g}\mathcal{X}\ne\bot^{\mathscr{F}(B)} & 
+\mathcal{Y}\sqcap\supfun{f\sqcup g}\mathcal{X}\ne\bot & 
 \Leftrightarrow\\
 \mathcal{Y}\sqcap(\supfun f\mathcal{X}\sqcup\supfun 
-g\mathcal{X})\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+g\mathcal{X})\ne\bot & \Leftrightarrow\\
 \mathcal{Y}\sqcap\supfun 
-f\mathcal{X}\ne\bot^{\mathscr{F}(B)}\lor\mathcal{Y}\sqcap\supfun 
-g\mathcal{X}\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+f\mathcal{X}\ne\bot\lor\mathcal{Y}\sqcap\supfun 
+g\mathcal{X}\ne\bot & \Leftrightarrow\\
 \mathcal{X}\suprel f\mathcal{Y}\lor\mathcal{X}\suprel g\mathcal{Y}.
 \end{align*}
 
@@ -1096,9 +1092,9 @@ g)$
 we have
 \begin{align*}
 \mathcal{X}\suprel{g\circ f}\mathcal{Y} & \Leftrightarrow\\
-\mathcal{Y}\sqcap\supfun{g\circ f}\mathcal{X}\ne\bot^{\mathscr{F}(\Dst g)} & 
+\mathcal{Y}\sqcap\supfun{g\circ f}\mathcal{X}\ne\bot &
 \Leftrightarrow\\
-\mathcal{Y}\sqcap\supfun g\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst g)} & 
+\mathcal{Y}\sqcap\supfun g\supfun f\mathcal{X}\ne\bot &
 \Leftrightarrow\\
 \supfun f\mathcal{X}\suprel g\mathcal{Y} & \Leftrightarrow\\
 \mathcal{X}\mathrel{(\mathord{\suprel g}\circ\supfun f)}\mathcal{Y}
@@ -1132,12 +1128,12 @@ y\in\atoms^{\mathscr{F}(B)}:(\mathcal{X}\suprel fy\land y\suprel g\mathcal{Z}).
 \exists y\in\atoms^{\mathscr{F}(B)}:(\mathcal{X}\suprel fy\land y\suprel 
 g\mathcal{Z}) & \Leftrightarrow\\
 \exists y\in\atoms^{\mathscr{F}(B)}:(\mathcal{Z}\sqcap\supfun 
-gy\ne\bot^{\mathscr{F}(C)}\land y\sqcap\supfun 
-f\mathcal{X}\ne\bot^{\mathscr{F}(B)}) & \Leftrightarrow\\
+gy\ne\bot\land y\sqcap\supfun 
+f\mathcal{X}\ne\bot) & \Leftrightarrow\\
 \exists y\in\atoms^{\mathscr{F}(B)}:(\mathcal{Z}\sqcap\supfun 
-gy\ne\bot^{\mathscr{F}(C)}\land y\sqsubseteq\supfun f\mathcal{X}) & 
+gy\ne\bot\land y\sqsubseteq\supfun f\mathcal{X}) & 
 \Rightarrow\\
-\mathcal{Z}\sqcap\supfun g\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(C)} & 
+\mathcal{Z}\sqcap\supfun g\supfun f\mathcal{X}\ne\bot & 
 \Leftrightarrow\\
 \mathcal{X}\suprel{g\circ f}\mathcal{Z}.
 \end{align*}
@@ -1217,9 +1213,8 @@ The \emph{restricted identity funcoid
 The restricted identity funcoid is a funcoid.\end{prop}
 \begin{proof}
 We need to prove that 
-$(\mathcal{A}\sqcap\mathcal{X})\sqcap\mathcal{Y}\ne\bot^{\mathscr{F}(A)}
-\Leftrightarrow(\mathcal{A}\sqcap\mathcal{Y})\sqcap\mathcal{X}\ne\bot^{\mathscr{
-F}(A)}$
+$(\mathcal{A}\sqcap\mathcal{X})\sqcap\mathcal{Y}\ne\bot
+\Leftrightarrow(\mathcal{A}\sqcap\mathcal{Y})\sqcap\mathcal{X}\ne\bot$
 what is obvious.\end{proof}
 \begin{obvious}
 ~
@@ -1235,11 +1230,10 @@ For every $\mathcal{X},\mathcal{Y}\in\mathscr{F}(A)$
 \begin{enumerate}
 \item 
 $\mathcal{X}\suprel{1_{A}^{\mathsf{FCD}}}\mathcal{Y}\Leftrightarrow\mathcal{X}
-\sqcap\mathcal{Y}\ne\bot^{\mathscr{F}(A)}$;
+\sqcap\mathcal{Y}\ne\bot$;
 \item 
 $\mathcal{X}\suprel{\id_{\mathcal{A}}^{\mathsf{FCD}}}\mathcal{Y}
-\Leftrightarrow\mathcal{A}\sqcap\mathcal{X}\sqcap\mathcal{Y}\ne\bot^{\mathscr{F}
-(A)}$.
+\Leftrightarrow\mathcal{A}\sqcap\mathcal{X}\sqcap\mathcal{Y}\ne\bot$.
 \end{enumerate}
 \end{obvious}
 \begin{defn}
@@ -1271,16 +1265,15 @@ funcoid $f$, $\mathcal{X}\in\mathscr{F}(\Src f)$.\end{prop}
 \begin{proof}
 For every $\mathcal{Y}\in\mathscr{F}(\Dst f)$ we have
 \begin{align*}
-\mathcal{Y}\sqcap\supfun f(\mathcal{X}\sqcap\dom f)\ne\bot^{\mathscr{F}(\Dst f)} 
+\mathcal{Y}\sqcap\supfun f(\mathcal{X}\sqcap\dom f)\ne\bot
 & \Leftrightarrow\\
-\mathcal{X}\sqcap\dom f\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src 
-f)} & \Leftrightarrow\\
+\mathcal{X}\sqcap\dom f\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot & \Leftrightarrow\\
 \mathcal{X}\sqcap\im 
-f^{-1}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)} & 
+f^{-1}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot &
 \Leftrightarrow\\
-\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)} & 
+\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot &
 \Leftrightarrow\\
-\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}.
+\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot.
 \end{align*}
 
 
@@ -1293,31 +1286,30 @@ $\mathcal{X}\in\mathscr{F}(\Src f)$.\end{prop}
 ~
 \begin{align*}
 \im(f|_{\mathcal{X}}) & =\\
-\supfun{f\circ\id_{\mathcal{X}}^{\mathsf{FCD}}}\top^{\mathscr{F}(\Src f)} & =\\
-\supfun f\supfun{\id_{\mathcal{X}}^{\mathsf{FCD}}}\top^{\mathscr{F}(\Src f)} & 
+\supfun{f\circ\id_{\mathcal{X}}^{\mathsf{FCD}}}\top & =\\
+\supfun f\supfun{\id_{\mathcal{X}}^{\mathsf{FCD}}}\top & 
 =\\
-\supfun f(\mathcal{X}\sqcap\top^{\mathscr{F}(\Src f)}) & =\\
+\supfun f(\mathcal{X}\sqcap\top) & =\\
 \supfun f\mathcal{X}.
 \end{align*}
 \end{proof}
 \begin{prop}\label{x-dom-fcd}
-$\mathcal{X}\sqcap\dom f\ne\bot^{\mathscr{F}(\Src f)}\Leftrightarrow\supfun 
-f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}$
+$\mathcal{X}\sqcap\dom f\ne\bot\Leftrightarrow\supfun 
+f\mathcal{X}\ne\bot$
 for every funcoid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$.\end{prop}
 \begin{proof}
 ~
 \begin{align*}
-\mathcal{X}\sqcap\dom f\ne\bot^{\mathscr{F}(\Src f)} & \Leftrightarrow\\
+\mathcal{X}\sqcap\dom f\ne\bot & \Leftrightarrow\\
 \mathcal{X}\sqcap\supfun{f^{-1}}\top^{\mathscr{F}(\Dst 
-f)}\ne\bot^{\mathscr{F}(\Src f)} & \Leftrightarrow\\
-\top^{\mathscr{F}(\Dst f)}\sqcap\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst 
-f)} & \Leftrightarrow\\
-\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}.
+f)}\ne\bot & \Leftrightarrow\\
+\top\sqcap\supfun f\mathcal{X}\ne\bot & \Leftrightarrow\\
+\supfun f\mathcal{X}\ne\bot.
 \end{align*}
 \end{proof}
 \begin{cor}\label{dom-fcd-at}
 $\dom f=\bigsqcup\setcond{a\in\atoms^{\mathscr{F}(\Src f)}}{\supfun 
-fa\ne\bot^{\mathscr{F}(\Dst f)}}$.\end{cor}
+fa\ne\bot}$.\end{cor}
 \begin{proof}
 This follows from the fact that $\mathscr{F}(\Src f)$ is an atomistic
 lattice.\end{proof}
@@ -1330,9 +1322,8 @@ $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{prop}
 \begin{align*}
 \dom(f|_{\mathcal{A}}) & =\\
 \im(\id_{\mathcal{A}}^{\mathsf{FCD}}\circ f^{-1}) & =\\
-\supfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\supfun{f^{-1}}\top^{\mathscr{F}(\Dst 
-f)} & =\\
-\mathcal{A}\sqcap\supfun{f^{-1}}\top^{\mathscr{F}(\Dst f)} & =\\
+\supfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\supfun{f^{-1}}\top & =\\
+\mathcal{A}\sqcap\supfun{f^{-1}}\top & =\\
 \mathcal{A}\sqcap\dom f.
 \end{align*}
 \end{proof}
@@ -1344,8 +1335,8 @@ for every funcoid $f$.\end{thm}
 ~
 \begin{align*}
 \im f & =\\
-\supfun f\top^{\mathscr{F}(\Src f)} & =\\
-\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun F\top^{\mathscr{F}(\Src f)} & =\\
+\supfun f\top & =\\
+\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun F\top & =\\
 \bigsqcap_{F\in\up f}^{\mathscr{F}}\im F & =\\
 \bigsqcap^{\mathscr{F}}\rsupfun{\im}\up f.
 \end{align*}
@@ -1365,12 +1356,12 @@ For every composable funcoids $f$, $g$:
 \item [{\ref{im-gf}}] ~
 \begin{align*}
 \im(g\circ f) & =\\
-\supfun{g\circ f}\top^{\mathscr{F}(\Src f)} & =\\
-\supfun g\supfun f\top^{\mathscr{F}(\Src f)} & =\\
+\supfun{g\circ f}\top & =\\
+\supfun g\supfun f\top & =\\
 \supfun g\im f & =\\
 \supfun g(\im f\sqcap\dom g) & =\\
 \supfun g\dom g & =\\
-\supfun g\top^{\mathscr{F}(\Src g)} & =\\
+\supfun g\top & =\\
 \im g.
 \end{align*}
 
@@ -1436,15 +1427,14 @@ x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\suprel fy$.
 \begin{widedisorder}
 \item [{\ref{f-at-f}}] ~
 \begin{align*}
-\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)} & 
+\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot & 
 \Leftrightarrow\\
-\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src f)} & 
+\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot & 
 \Leftrightarrow\\
 \exists 
-x\in\atoms\mathcal{X}:x\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot^{\mathscr{F}(\Src 
-f)} & \Leftrightarrow\\
+x\in\atoms\mathcal{X}:x\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot & \Leftrightarrow\\
 \exists x\in\atoms\mathcal{X}:\mathcal{Y}\sqcap\supfun 
-fx\ne\bot^{\mathscr{F}(\Dst f)}.
+fx\ne\bot.
 \end{align*}
 
 
@@ -1455,9 +1445,9 @@ So $\supfun f\mathcal{X}=\bigsqcup\rsupfun{\supfun f}\atoms\mathcal{X}$
 by corollary~\ref{d-inj}.
 
 \item [{\ref{f-at-r}}] If $\mathcal{X}\suprel f\mathcal{Y}$, then 
-$\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}$,
+$\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot$,
 consequently there exists $y\in\atoms\mathcal{Y}$ such that $y\sqcap\supfun 
-f\mathcal{X}\ne\bot^{\mathscr{F}(\Dst f)}$,
+f\mathcal{X}\ne\bot$,
 $\mathcal{X}\suprel fy$. Repeating this second time we get that there
 exists $x\in\atoms\mathcal{X}$ such that $x\suprel fy$. From this
 it follows
@@ -1686,8 +1676,8 @@ From this $x\suprel{\bigsqcap R}y\Leftrightarrow\forall f\in R:x\suprel fy$.
 \item [{\ref{meet-f-at}}] From the former
 \begin{align*}
 y\in\atoms\supfun{\bigsqcap R}x & \Leftrightarrow\\
-y\sqcap\supfun{\bigsqcap R}x\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
-\forall f\in R:y\sqcap\supfun fx\ne\bot^{\mathscr{F}(B)} & \Leftrightarrow\\
+y\sqcap\supfun{\bigsqcap R}x\ne\bot & \Leftrightarrow\\
+\forall f\in R:y\sqcap\supfun fx\ne\bot & \Leftrightarrow\\
 y\in\bigsqcap\rsupfun{\atoms}\setcond{\supfun fx}{f\in R} & \Leftrightarrow\\
 y\in\atoms\bigsqcap_{f\in R}\supfun fx
 \end{align*}
@@ -1805,8 +1795,8 @@ then
 \[
 \forall\mathcal{X}\in\mathscr{F}(A),\mathcal{Y}\in\mathscr{F}(B):(\mathcal{X}
 \suprel 
-f\mathcal{Y}\Rightarrow\mathcal{X}\sqcap\mathcal{A}\ne\bot^{\mathscr{F}(A)}
-\land\mathcal{Y}\sqcap\mathcal{B}\ne\bot^{\mathscr{F}(B)});
+f\mathcal{Y}\Rightarrow\mathcal{X}\sqcap\mathcal{A}\ne\bot
+\land\mathcal{Y}\sqcap\mathcal{B}\ne\bot);
 \]
 consequently $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
 \end{proof}
@@ -1859,17 +1849,13 @@ $\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{cor}
 ~
 \begin{align*}
 f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B} & \Leftrightarrow\\
-\rsupfun{f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}\top^{\mathscr{T}
-(\Src f)}\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
+\rsupfun{f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}\top\ne\bot & \Leftrightarrow\\
 \rsupfun{\id_{\mathcal{B}}^{\mathsf{FCD}}\circ 
-f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}}\top^{\mathscr{T}(\Src 
-f)}\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
+f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}}\top\ne\bot & \Leftrightarrow\\
 \supfun{\id_{\mathcal{B}}^{\mathsf{FCD}}}\supfun 
-f\rsupfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\top^{\mathscr{F}(\Src 
-f)}\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
-\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\top^{\mathscr{F}(\Src 
-f)})\ne\bot^{\mathscr{F}(\Dst f)} & \Leftrightarrow\\
-\mathcal{B}\sqcap\supfun f\mathcal{A}\ne\bot^{\mathscr{F}(\Dst f)} & 
+f\rsupfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\top\ne\bot & \Leftrightarrow\\
+\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\top)\ne\bot & \Leftrightarrow\\
+\mathcal{B}\sqcap\supfun f\mathcal{A}\ne\bot & 
 \Leftrightarrow\\
 \mathcal{A}\suprel f\mathcal{B}.
 \end{align*}
@@ -1901,7 +1887,7 @@ S}(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}x=\bigsqcap_{(\mathcal{A}
 If $x\nasymp\bigsqcap\dom S$ then
 \begin{gather*}
 \forall(\mathcal{A},\mathcal{B})\in 
-S:(x\sqcap\mathcal{A}\ne\bot^{\mathscr{F}(A)}\land\supfun{\mathcal{A}\times^{
+S:(x\sqcap\mathcal{A}\ne\bot\land\supfun{\mathcal{A}\times^{
 \mathsf{FCD}}\mathcal{B}}x=\mathcal{B});\\
 \setcond{\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x}{(\mathcal{A}
 ,\mathcal{B})\in S}=\im S;
@@ -1911,10 +1897,10 @@ S:(x\sqcap\mathcal{A}\ne\bot^{\mathscr{F}(A)}\land\supfun{\mathcal{A}\times^{
 if $x\asymp\bigsqcap\dom S$ then
 \begin{gather*}
 \exists(\mathcal{A},\mathcal{B})\in 
-S:(x\sqcap\mathcal{A}=\bot^{\mathscr{F}(A)}\land\supfun{\mathcal{A}\times^{
-\mathsf{FCD}}\mathcal{B}}x=\bot^{\mathscr{F}(B)});\\
+S:(x\sqcap\mathcal{A}=\bot\land\supfun{\mathcal{A}\times^{
+\mathsf{FCD}}\mathcal{B}}x=\bot);\\
 \setcond{\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}x}{(\mathcal{A}
-,\mathcal{B})\in S}\ni\bot^{\mathscr{F}(B)}.
+,\mathcal{B})\in S}\ni\bot.
 \end{gather*}
 
 
@@ -1981,7 +1967,7 @@ and
 $\bigsqcap\rsupfun{\mathcal{A}\times^{\mathsf{FCD}}}S=\mathcal{A}\times^{\mathsf
 {FCD}}\bigsqcap S$.
 
-If $\mathcal{A}\ne\bot^{\mathscr{F}(A)}$ then obviously
+If $\mathcal{A}\ne\bot$ then obviously
 $\mathcal{A}\times^{\mathsf{FCD}}\mathcal{X}\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{Y} \Leftrightarrow
 \mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{proof}
@@ -2011,7 +1997,7 @@ is an upper adjoint of $\mylambda f{\mathsf{FCD}(A,B)}{\im f}$ (for
 every sets $A$, $B$).\end{lem}
 \begin{proof}
 We need to prove $\im f\sqsubseteq\mathcal{B}\Leftrightarrow 
-f\sqsubseteq\top^{\mathscr{F}}\times^{\mathsf{FCD}}\mathcal{B}$
+f\sqsubseteq\top\times^{\mathsf{FCD}}\mathcal{B}$
 what is obvious.\end{proof}
 \begin{cor}
 \label{fcd-dom-join}Image and domain of funcoids preserve joins.\end{cor}
@@ -2048,7 +2034,7 @@ lattice $\mathsf{FCD}(A,B)$. Let's get elements $a\in\atoms\dom f$
 and $b\in\atoms\supfun fa$. Then for every $\mathcal{X}\in\mathscr{F}(A)$
 \[
 \mathcal{X}\asymp 
-a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=\bot^{\mathscr{F}(B)}
+a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=\bot
 \sqsubseteq\supfun f\mathcal{X},\quad\mathcal{X}\nasymp 
 a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}\mathcal{X}=b\sqsubseteq\supfun 
 f\mathcal{X}.
@@ -2074,9 +2060,9 @@ that is $a\times^{\mathsf{FCD}}b$ is an atom.
 The lattice $\mathsf{FCD}(A,B)$ is atomic (for every fixed sets $A$, $B$).\end{thm}
 \begin{proof}
 Let $f$ be a non-empty funcoid from $A$ to $B$. Then $\dom 
-f\ne\bot^{\mathscr{F}(A)}$,
+f\ne\bot$,
 thus by theorem~\ref{filt-atomic} there exists $a\in\atoms\dom f$.
-So $\supfun fa\ne\bot^{\mathscr{F}(B)}$ thus it exists $b\in\atoms\supfun fa$.
+So $\supfun fa\ne\bot$ thus it exists $b\in\atoms\supfun fa$.
 Finally the atomic funcoid $a\times^{\mathsf{FCD}}b\sqsubseteq f$.\end{proof}
 \begin{thm}
 The lattice $\mathsf{FCD}(A,B)$ is separable (for every fixed sets $A$,
@@ -2085,23 +2071,23 @@ $B$).\end{thm}
 Let $f,g\in\mathsf{FCD}(A,B)$, $f\sqsubset g$. Then there exists
 $a\in\atoms^{\mathscr{F}(A)}$ such that $\supfun fa\sqsubset\supfun ga$.
 So because the lattice $\mathscr{F}(B)$ is atomically separable,
-there exists $b\in\atoms^{\mathscr{F}(B)}$ such that $\supfun fa\sqcap 
-b=\bot^{\mathscr{F}(B)}$
+there exists $b\in\atoms$ such that $\supfun fa\sqcap 
+b=\bot$
 and $b\sqsubseteq\supfun ga$. For every $x\in\atoms^{\mathscr{F}(A)}$
 \begin{gather*}
 \supfun fa\sqcap\supfun{a\times^{\mathsf{FCD}}b}a=\supfun fa\sqcap 
-b=\bot^{\mathscr{F}(B)},\\
+b=\bot,\\
 x\ne a\Rightarrow\supfun fx\sqcap\supfun{a\times^{\mathsf{FCD}}b}x=\supfun 
-fx\sqcap\bot^{\mathscr{F}(B)}=\bot^{\mathscr{F}(B)}.
+fx\sqcap\bot=\bot.
 \end{gather*}
 
 
-Thus $\supfun fx\sqcap\supfun{a\times^{\mathsf{FCD}}b}x=\bot^{\mathscr{F}(B)}$
+Thus $\supfun fx\sqcap\supfun{a\times^{\mathsf{FCD}}b}x=\bot$
 and consequently $f\asymp a\times^{\mathsf{FCD}}b$.
 \begin{gather*}
 \supfun{a\times^{\mathsf{FCD}}b}a=b\sqsubseteq\supfun ga,\\
 x\ne 
-a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}x=\bot^{\mathscr{F}(B)}
+a\Rightarrow\supfun{a\times^{\mathsf{FCD}}b}x=\bot
 \sqsubseteq\supfun gx.
 \end{gather*}
 
@@ -2283,12 +2269,12 @@ for every $\mathcal{X}\in\mathfrak{P}(\Src f)$.\end{obvious}
 such a function $\alpha\in(\mathscr{T}B)^{\mathscr{T}A}$ (for some
 sets $A$, $B$) that
 \begin{enumerate}
-\item $\alpha\bot^{\mathscr{T}A}=\bot^{\mathscr{T}B}$;
+\item $\alpha\bot=\bot$;
 \item $\forall I,J\in\mathscr{T}A:\alpha(I\sqcup J)=\alpha I\sqcup\alpha J$.
 \end{enumerate}
 \end{defn}
 \begin{obvious}
-A funcoid $f$ is co-complete iff $\rsupfun f=\uparrow\circ\alpha$
+A funcoid $f$ is co-complete iff $\rsupfun f=\mathord{\uparrow}\circ\alpha$
 for a generalized closure $\alpha$.\end{obvious}
 \begin{rem}
 Thus funcoids can be considered as a generalization of generalized
@@ -2323,9 +2309,8 @@ fA=\bigsqcup_{a\in\atoms A}\rsupfun fa$.
 $S\in\subsets\mathscr{T}(\Src f)$,
 $J\in\mathscr{T}(\Dst f)$
 \[
-\bigsqcup S\sqcap\rsupfun{f^{-1}}J\ne\bot^{\mathscr{F}(\Src 
-f)}\Leftrightarrow\exists I\in 
-S:I\sqcap\rsupfun{f^{-1}}J\ne\bot^{\mathscr{F}(\Src f)},
+\bigsqcup S\sqcap\rsupfun{f^{-1}}J\ne\bot\Leftrightarrow\exists I\in 
+S:I\sqcap\rsupfun{f^{-1}}J\ne\bot,
 \]
 consequently by theorem~\ref{crit1} we have that $\rsupfun{f^{-1}}J$
 is a principal filter.
@@ -2334,9 +2319,8 @@ $S\in\subsets\mathscr{F}(\Src f)$,
 $J\in\mathscr{T}(\Dst f)$ we have that $\rsupfun{f^{-1}}J$ is a
 principal filter, consequently
 \[
-\bigsqcup S\sqcap\rsupfun{f^{-1}}J\ne\bot^{\mathscr{F}(\Src 
-f)}\Leftrightarrow\exists\mathcal{I}\in 
-S:\mathcal{I}\sqcap\rsupfun{f^{-1}}J\ne\bot^{\mathscr{F}(\Src f)}.
+\bigsqcup S\sqcap\rsupfun{f^{-1}}J\ne\bot \Leftrightarrow\exists\mathcal{I}\in 
+S:\mathcal{I}\sqcap\rsupfun{f^{-1}}J\ne\bot.
 \]
 From this follows \ref{cfcd:r-filt}.
 \item [{\ref{cfcd:sing}$\Rightarrow$\ref{cfcd:f-set}}] ~
@@ -2954,23 +2938,22 @@ $a\in\atoms^{\mathscr{F}(\Src f)}$,
 $\supfun fa=b$. Then because $b\in\atoms^{\mathscr{F}(\Dst 
 f)}\cup\{\bot^{\mathscr{F}(\Dst f)}\}$
 \begin{gather*}
-(\mathcal{I}\sqcap\mathcal{J})\sqcap b\ne\bot^{\mathscr{F}(\Dst 
-f)}\Leftrightarrow\mathcal{I}\sqcap b\ne\bot^{\mathscr{F}(\Dst 
-f)}\land\mathcal{J}\sqcap b\ne\bot^{\mathscr{F}(\Dst f)};\\
+(\mathcal{I}\sqcap\mathcal{J})\sqcap b\ne\bot \Leftrightarrow
+\mathcal{I}\sqcap b\ne\bot\land\mathcal{J}\sqcap b\ne\bot;\\
 a\suprel f\mathcal{I}\sqcap\mathcal{J}\Leftrightarrow a\suprel f\mathcal{I}\land 
 a\suprel f\mathcal{J};\\
 \mathcal{I}\sqcap\mathcal{J}\suprel{f^{-1}}a\Leftrightarrow\mathcal{I}\suprel{f^
 {-1}}a\land\mathcal{J}\suprel{f^{-1}}a;\\
-a\sqcap\supfun{f^{-1}}(\mathcal{I}\sqcap\mathcal{J})\ne\bot^{\mathscr{F}(\Src 
-f)}\Leftrightarrow a\sqcap\supfun{f^{-1}}\mathcal{I}\ne\bot^{\mathscr{F}(\Src 
-f)}\land a\sqcap\supfun{f^{-1}}\mathcal{J}\ne\bot^{\mathscr{F}(\Src f)};\\
+a\sqcap\supfun{f^{-1}}(\mathcal{I}\sqcap\mathcal{J})\ne\bot
+\Leftrightarrow a\sqcap\supfun{f^{-1}}\mathcal{I}\ne\bot
+\land a\sqcap\supfun{f^{-1}}\mathcal{J}\ne\bot;\\
 \supfun{f^{-1}}(\mathcal{I}\sqcap\mathcal{J})=\supfun{f^{-1}}\mathcal{I}
 \sqcap\supfun{f^{-1}}\mathcal{J}.
 \end{gather*}
 
 \item [{\ref{mnv-flt}$\Rightarrow$\ref{fcd-mv}}] 
 $\supfun{f^{-1}}a\sqcap\supfun{f^{-1}}b=\supfun{f^{-1}}(a\sqcap 
-b)=\supfun{f^{-1}}\bot^{\mathscr{F}(\Dst f)}=\bot^{\mathscr{F}(\Src f)}$
+b)=\supfun{f^{-1}}\bot=\bot$
 for every two distinct atomic filter objects $a$ and $b$ on $\Dst f$.
 This is equivalent to $\lnot(\supfun{f^{-1}}a\suprel fb)$; $b\asymp\supfun 
 f\supfun{f^{-1}}a$;
