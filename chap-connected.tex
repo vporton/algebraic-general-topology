@@ -11,9 +11,9 @@ then $f$ is closed on $A$.\end{lem}
 Let $A\sqcup B\in\up(\dom f\sqcup\im f)$.
 \begin{align*}
 \lnot(A\rsuprel fB) & \Leftrightarrow\\
-B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
-(\dom f\sqcup\im f)\sqcap B\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Rightarrow\\
-((\dom f\sqcup\im f)\setminus A)\sqcap\rsupfun fA=\bot^{\mathscr{F}(U)} & \Leftrightarrow\\
+B\sqcap\rsupfun fA=\bot & \Rightarrow\\
+(\dom f\sqcup\im f)\sqcap B\sqcap\rsupfun fA=\bot & \Rightarrow\\
+((\dom f\sqcup\im f)\setminus A)\sqcap\rsupfun fA=\bot & \Leftrightarrow\\
 \rsupfun fA\sqsubseteq A.
 \end{align*}
 \end{proof}
@@ -32,7 +32,7 @@ If $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$ then
 $\lnot(A\rsuprel{f^{n}}B)$ for every whole positive $n$.\end{lem}
 \begin{proof}
 Let $\neg(A\rsuprel fB)\wedge A\sqcup B\in\up(\dom f\sqcup\im f)$. From
-the above lemma $\rsupfun fA\sqsubseteq A$. $B\sqcap\supfun fA=\bot^{\mathscr{F}(U)}$,
+the above lemma $\rsupfun fA\sqsubseteq A$. $B\sqcap\supfun fA=\bot$,
 consequently $\rsupfun fA\sqsubseteq A\setminus B$. Because (by the
 above corollary) $f$ is closed on $A\setminus B$, then $\supfun f\supfun fA\sqsubseteq A\setminus B$,
 $\supfun f\supfun f\supfun fA\sqsubseteq A\setminus B$, etc. So $\supfun{f^{n}}A\sqsubseteq A\setminus B$,
