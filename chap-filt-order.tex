@@ -595,7 +595,7 @@ $\mathbf{Set}$-morphism $f:\Base(\mathcal{A})\rightarrow\Base(\mathcal{B})$
 such that $\mathcal{B}\sqsubseteq\supfun{\uparrow^{\mathsf{FCD}}f}\mathcal{A}$.
 We have
 \[
-\dom(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\mathcal{A}\sqcap\top^{\mathscr{F}(\Base(\mathcal{A}))}=\mathcal{A}
+\dom(\uparrow^{\mathsf{RLD}}f)|_{\mathcal{A}}=\mathcal{A}\sqcap\top(\Base(\mathcal{A}))}=\mathcal{A}
 \]
 and
 \[
@@ -1138,19 +1138,19 @@ By proposition \ref{factor-isomor} we have: $\uparrow^{\Base(\mathcal{A})}X\sqca
 where $\mathcal{X}$ is a filter complementive to $\mathcal{A}$.
 Let $\mathcal{Y}=\mathcal{A}\setminus\mathcal{X}$.
 
-$\supfun{\tofcd f}\mathcal{X}\sqcap\supfun{\tofcd f}\mathcal{Y}=\supfun{\tofcd f}(\mathcal{X}\sqcap\mathcal{Y})=\bot^{\mathscr{F}(\Base(\mathcal{B}))}$
+$\supfun{\tofcd f}\mathcal{X}\sqcap\supfun{\tofcd f}\mathcal{Y}=\supfun{\tofcd f}(\mathcal{X}\sqcap\mathcal{Y})=\bot$
 by injectivity of $f$.
 
 $\supfun{\tofcd f}\mathcal{X}\sqcup\supfun{\tofcd f}\mathcal{Y}=\supfun{\tofcd f}(\mathcal{X}\sqcup\mathcal{Y})=\supfun{\tofcd f}\mathcal{A}=\mathcal{B}$.
 So $\supfun{\tofcd f}\mathcal{X}$ is a filter complementive to $\mathcal{B}$.
 So by proposition \ref{factor-isomor} there exists a set $Y$ such
-that $\supfun{\tofcd f}\mathcal{X}=\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.
+that $\supfun{\tofcd f}\mathcal{X}=\uparrow Y\sqcap\mathcal{B}$.
 
 $f|_{\mathcal{X}}$ is obviously a monovalued injective reloid with
-$\dom(f|_{\mathcal{X}})=\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$
-and $\im(f|_{\mathcal{X}})=\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.
-So $\uparrow^{\Base(\mathcal{A})}X\sqcap\mathcal{A}$ is isomorphic
-to $\uparrow^{\Base(\mathcal{B})}Y\sqcap\mathcal{B}$.\end{proof}
+$\dom(f|_{\mathcal{X}})=\uparrow X\sqcap\mathcal{A}$
+and $\im(f|_{\mathcal{X}})=\uparrow Y\sqcap\mathcal{B}$.
+So $\uparrow X\sqcap\mathcal{A}$ is isomorphic
+to $\uparrow Y\sqcap\mathcal{B}$.\end{proof}
 \begin{example}
 $\mathcal{A}\ge_{2}\mathcal{B}\wedge\mathcal{B}\ge_{2}\mathcal{A}$
 but $\mathcal{A}$ is not isomorphic to $\mathcal{B}$ for some filters
