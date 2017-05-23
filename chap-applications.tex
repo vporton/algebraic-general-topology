@@ -185,11 +185,19 @@ Note that on trivial ultrafilters they are already calculated above.
 Also define ``convergent ultrafilter''.}
 
 \begin{prop}
-  $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} = | \mathbb{R}
-  |_{\geq}$.
+~
+\begin{enumerate}
+\item\label{comp-ord-ge} $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} = | \mathbb{R} |_{\geq}$;
+\item\label{comp-ord-gt} $| \mathbb{R} |_{>} \circ | \mathbb{R} |_{>} = | \mathbb{R} |_{>}$;
+\item\label{comp-ord-gt} $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{>} = | \mathbb{R} |_{>}$;
+\item\label{comp-ord-gt} $| \mathbb{R} |_{>} \circ | \mathbb{R} |_{\geq} = | \mathbb{R} |_{>}$.
+\end{enumerate}  
 \end{prop}
 
 \begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{comp-ord-ge}]
   $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} \sqsupseteq |
   \mathbb{R} |_{\geq}$ because $| \mathbb{R} |_{\geq} \sqsupseteq
   {(\mathord{=})}$.
@@ -208,18 +216,12 @@ Also define ``convergent ultrafilter''.}
   \sqsubseteq \Delta_{\geq} + z$ and so $\supfun{ | \mathbb{R} |_{\geq} \circ |
   \mathbb{R} |_{\geq} } z \sqsubseteq \supfun{ | \mathbb{R} |_{\geq}
   } z$.
-\end{proof}
-
-\begin{prop}
-  $| \mathbb{R} |_{>} \circ | \mathbb{R} |_{>} = | \mathbb{R} |_{>}$.
-\end{prop}
-
-\begin{proof}
+\end{widedisorder}
 ??
 \end{proof}
 
 \begin{prop}
-~
+?? Most likely, there are counterexamples.
 \begin{enumerate}
 \item $(|\mathbb{R}| \sqcap {\geq}) \circ (|\mathbb{R}| \sqcap {\geq}) = (|\mathbb{R}| \sqcap {\geq})$.
 \item $(|\mathbb{R}| \sqcap {>}) \circ (|\mathbb{R}| \sqcap {>}) = (|\mathbb{R}| \sqcap {>})$.
@@ -248,7 +250,9 @@ Also define ``convergent ultrafilter''.}
   \supfun{ | \mathbb{R} |_{\geq} } X$.
   
   For every $Y$ such that $Y \nasymp \Delta_{>} + \alpha$ we have $Y \nasymp
-  \supfun{ | \mathbb{R} |_{\geq} } X$ for some $X \in \up x$ and
+  \supfun{ | \mathbb{R} |_{\geq} } X$ for some
+  \fxerror{Not enough ``for some'', need ``for every''!}
+  $X \in \up x$ and
   thus by properties of generalized filter bases $Y \nasymp \bigsqcap_{X \in
   \up x} \supfun{ | \mathbb{R} |_{\geq} } X$. So $\Delta_{>} +
   \alpha \sqsubseteq \supfun{ | \mathbb{R} |_{\geq} } x$.
