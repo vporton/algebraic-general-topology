@@ -152,6 +152,8 @@ On trivial ultrafilters these obviously agree:
 
 \section{Some inequalities}
 
+\fxerror{Below in this section there are errors. The results may be wrong.}
+
 We will prove
 
 \begin{thm}
@@ -234,28 +236,25 @@ Also define ``convergent ultrafilter''.}
 
 \begin{lem}
   If $x$ is a convergent ultrafilter at the right of its limit point $\alpha$,
-  $\supfun{ | \mathbb{R} |_{\geq} } x = \Delta_{>} + \alpha$.
+  $\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x \sqsubset \Delta_{>} + \alpha$.
 \end{lem}
 
 \begin{proof}
-  $x \sqsubseteq \Delta_{>} + \alpha$, thus $\supfun{ | \mathbb{R} |_{\geq}
-  } x \sqsubseteq \supfun{ | \mathbb{R} |_{\geq} } (\Delta_{>} +
-  \alpha) = \supfun{ | \mathbb{R} |_{\geq} } \supfun{ | \mathbb{R}
-  |_{\geq} } \{ \alpha \} = \supfun{ | \mathbb{R} |_{\geq} } \{
-  \alpha \} = \Delta_{\geq} + \alpha$ and obviously $\supfun{ | \mathbb{R}
-  |_{\geq} } x \sqsubseteq] \alpha ; + \infty [$. So $\supfun{ |
-  \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{>} + \alpha$.
-  
-  $\supfun{ | \mathbb{R} |_{\geq} } x = \bigsqcap_{X \in \up x}
-  \supfun{ | \mathbb{R} |_{\geq} } X$.
-  
-  For every $Y$ such that $Y \nasymp \Delta_{>} + \alpha$ we have $Y \nasymp
-  \supfun{ | \mathbb{R} |_{\geq} } X$ for some
-  \fxerror{Not enough ``for some'', need ``for every''!}
-  $X \in \up x$ and
-  thus by properties of generalized filter bases $Y \nasymp \bigsqcap_{X \in
-  \up x} \supfun{ | \mathbb{R} |_{\geq} } X$. So $\Delta_{>} +
-  \alpha \sqsubseteq \supfun{ | \mathbb{R} |_{\geq} } x$.
+$\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x$ because
+$\supfun{ | \mathbb{R} |_{\geq} } x \sqsupseteq \supfun{1} x = x$.
+
+Take a decreasing sequence $z$ of real numbers such that $\im z\sqsupseteq x$.
+
+$\supfun{ | \mathbb{R} |_{\geq} } \im z \sqsubseteq 
+\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots$
+for every $\varepsilon_i>0$.
+
+Easy to show that we can take such $\varepsilon_i$ that
+$\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots
+\nsqsupseteq \Delta_{>}$.
+
+So we have $\supfun{ | \mathbb{R} |_{\geq} } x \nsqsupseteq \Delta_{>} + \alpha$.
+But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
 \end{proof}
 
 \begin{lem}
@@ -282,18 +281,25 @@ Also define ``convergent ultrafilter''.}
 
 \begin{lem}
   If $x$ is a convergent ultrafilter at the right of its limit point $\alpha$,
-  $\supfun{| \mathbb{R} |} x = \Delta_{>} + \alpha$.
+  $\bot \sqsubset \supfun{ | \mathbb{R} | } x \sqsubset \Delta_{>} + \alpha$.
 \end{lem}
 
 \begin{proof}
-  $\supfun{| \mathbb{R} |} x \sqsubseteq \Delta_{>} + \alpha$ is
-  obvious.
-  
-  For every $Y$ such that $Y \nasymp \Delta_{>} + \alpha$ we have $Y \nasymp
-  \supfun{| \mathbb{R} |_{>}} X$ for some $X \in \up x$ and thus
-  by properties of generalized filter bases $Y \nasymp \bigsqcap_{X \in
-  \up x} \supfun{| \mathbb{R} |_{>}} X$. So $\Delta_{>} + \alpha
-  \sqsubseteq \supfun{| \mathbb{R} |_{>}} x$.
+$\bot \sqsubset \supfun{ | \mathbb{R} | } x$ because
+$\supfun{ | \mathbb{R} | } x \sqsupseteq \supfun{1} x = x$.
+
+Take a decreasing sequence $z$ of real numbers such that $\im z\sqsupseteq x$.
+
+$\supfun{ | \mathbb{R} | } \im z \sqsubseteq 
+\mathopen]z_0-\varepsilon_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen]z_1-\varepsilon_1;z_1+\varepsilon_1\mathclose[ \cup \dots$
+for every $\varepsilon_i>0$.
+
+Easy to show that we can take such $\varepsilon_i$ that
+$\mathopen]z_0-\varepsilon_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen]z_1-\varepsilon_1;z_1+\varepsilon_1\mathclose[ \cup \dots
+\nsqsupseteq \Delta_{>}$.
+
+So we have $\supfun{ | \mathbb{R} | } x \nsqsupseteq \Delta_{>} + \alpha$.
+But $\supfun{ | \mathbb{R} | } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
 \end{proof}
 
 \begin{lem}
@@ -315,7 +321,7 @@ Also define ``convergent ultrafilter''.}
 
 \begin{proof}
   From two previous lemmas and $\supfun{ | \mathbb{R} | \sqcap \geq } x
-  = \supfun{| \mathbb{R} |} \sqcap \supfun{\geq} x$.
+  = \supfun{| \mathbb{R} |} x \sqcap \supfun{\geq} x$.
 \end{proof}
 
 \begin{lem}
