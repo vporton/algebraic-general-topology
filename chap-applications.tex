@@ -260,6 +260,7 @@ But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{>} + \alpha$ is obvi
 \begin{lem}
   If $x$ is a convergent ultrafilter at the left of its
   limit point $\alpha$, $\supfun{ | \mathbb{R} |_{\geq} } x = \bot$.
+  \fxerror{Wrong because $\supfun{ | \mathbb{R} |_{\geq} } x \sqsupseteq \supfun{1}x =  x$.}
 \end{lem}
 
 \begin{proof}
@@ -269,7 +270,7 @@ But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{>} + \alpha$ is obvi
   Let $X_0 = \bigcup_{i \in \mathbb{N}} [x_{2 i} ; x_{2 i + 1} [$, $X_1 =
   \bigcup_{i \in \mathbb{N}} [x_{2 i + 1} ; x_{2 i + 2} [$.
   
-  $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \supfun{ | \mathbb{R}
+  $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq ?? \sqsubseteq \supfun{ | \mathbb{R}
   |_{\geq} } X = \bigsqcup_{\alpha \in X} (\Delta_{\geq} + \alpha)
   \sqsubseteq \bigsqcup_{\alpha \in X} (\Delta_{\geq} + \alpha) \sqsubseteq
   X_0$ if we take $X = i \mapsto x_{2 i}$ and likewise $\supfun{ | \mathbb{R}
@@ -326,7 +327,7 @@ But $\supfun{ | \mathbb{R} | } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
 
 \begin{lem}
   If $x$ is a convergent ultrafilter at the left of its limit point $\alpha$,
-  $\supfun{| \mathbb{R} |} x = \Delta_{<} + \alpha$.
+  $\bot \sqsubset \supfun{| \mathbb{R} |} x \sqsubset \Delta_{<} + \alpha$.
 \end{lem}
 
 \begin{proof}
