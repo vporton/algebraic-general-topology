@@ -152,7 +152,7 @@ On trivial ultrafilters these obviously agree:
 
 \section{Some inequalities}
 
-\fxerror{Below in this section there are errors. The results may be wrong.}
+\fxerror{Below in this section there were errors. The results may be wrong.}
 
 We will prove
 
@@ -259,25 +259,25 @@ But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{>} + \alpha$ is obvi
 
 \begin{lem}
   If $x$ is a convergent ultrafilter at the left of its
-  limit point $\alpha$, $\supfun{ | \mathbb{R} |_{\geq} } x = \bot$.
-  \fxerror{Wrong because $\supfun{ | \mathbb{R} |_{\geq} } x \sqsupseteq \supfun{1}x =  x$.}
+  limit point $\alpha$, $\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x \sqsubset \Delta_{<}+\alpha$.
 \end{lem}
 
 \begin{proof}
-  Take a strictly increasing sequence $z_i$ where $\im z \sqsupseteq x$
-  and $\lim z = \alpha$.
-  
-  Let $X_0 = \bigcup_{i \in \mathbb{N}} [x_{2 i} ; x_{2 i + 1} [$, $X_1 =
-  \bigcup_{i \in \mathbb{N}} [x_{2 i + 1} ; x_{2 i + 2} [$.
-  
-  $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq ?? \sqsubseteq \supfun{ | \mathbb{R}
-  |_{\geq} } X = \bigsqcup_{\alpha \in X} (\Delta_{\geq} + \alpha)
-  \sqsubseteq \bigsqcup_{\alpha \in X} (\Delta_{\geq} + \alpha) \sqsubseteq
-  X_0$ if we take $X = i \mapsto x_{2 i}$ and likewise $\supfun{ | \mathbb{R}
-  |_{\geq} } x \sqsubseteq X_1$ (take $X = i \mapsto x_{2 i + 1}$).
-  
-  Thus $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq X_0 \cap X_1 =
-  \bot$.
+$\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x$ because $\supfun{ | \mathbb{R} |_{\geq} } x \sqsupseteq \supfun{1}x = x$.
+
+Take a strictly increasing sequence $z_i$ where $\im z \sqsupseteq x$
+and $\lim z = \alpha$.
+
+$\supfun{ | \mathbb{R} |_{\geq} } \im z \sqsubseteq
+\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots$
+for every $\varepsilon_i>0$.
+
+Easy to show that we can take such $\varepsilon_i$ that
+$\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots
+\nsqsupseteq \Delta_{<}$.
+
+So we have $\supfun{ | \mathbb{R} |_{\geq} } x \nsqsupseteq \Delta_{<} + \alpha$.
+But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{<} + \alpha$ is obvious.
 \end{proof}
 
 \begin{lem}
@@ -356,12 +356,14 @@ But $\supfun{ | \mathbb{R} | } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
 From above.
 \end{proof}
 
+\begin{grayed}
 \begin{proof}
   (of the theorem above) $| \mathbb{R} |_{\geq} \neq | \mathbb{R} | \sqcap
   \geq$ follows from $\supfun{ | \mathbb{R} | \sqcap \geq } x =
   \Delta_{<} + \alpha \neq \bot = \supfun{ | \mathbb{R} |_{\geq} } x$
   for a convergent ultrafilter at the left of its limit point $\alpha$.
 \end{proof}
+\end{grayed}
 
 \section{Continuity}
 
