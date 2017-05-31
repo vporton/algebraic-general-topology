@@ -46,6 +46,8 @@ Let $\mathfrak{A}$ be a poset. We will denote $\overline{\mathfrak{A}}=\mathfrak
 with two added elements $-\infty$ and $+\infty$, such that $+\infty$ is strictly greater than every element of~$\mathfrak{A}$
 and $-\infty$ is strictly less.
 
+\fxnote{Generalize from~$\mathbb{R}$ to a wider class of posets.}
+
 \begin{defn}
 For an element~$a$ of a poset~$\mathfrak{A}$
 \begin{enumerate}
@@ -150,6 +152,14 @@ On trivial ultrafilters these obviously agree:
 \end{enumerate}
 \end{cor}
 
+\begin{obvious}
+~ \fxnote{also what is the values of $\setminus$ operation}
+\begin{enumerate}
+\item $|\mathbb{R}|_{\geq} = |\mathbb{R}|_{>} \sqcup 1$;
+\item $|\mathbb{R}|_{\leq} = |\mathbb{R}|_{<} \sqcup 1$.
+\end{enumerate}
+\end{obvious}
+
 \section{Some inequalities}
 
 \fxerror{Below in this section there were errors. The results may be wrong.}
@@ -185,6 +195,9 @@ Note that on trivial ultrafilters they are already calculated above.
 
 \fxwarning{Define the ultrafilter ``at the left'' and ``at the right'' of a real number.
 Also define ``convergent ultrafilter''.}
+
+\fxwarning{The below seems wrong as I assume that there is a countable set in every ultrafilter.
+Not sure if this is true.}
 
 \begin{prop}
 ~
@@ -354,6 +367,18 @@ But $\supfun{ | \mathbb{R} | } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
 
 \begin{proof}
 From above.
+\end{proof}
+
+\begin{lem}
+$\supfun{|\mathbb{R}|_{<}} x \asymp \supfun{|\mathbb{R}|_{\geq}} x$ for every ultrafilter~$x$.
+\end{lem}
+
+\begin{proof}
+There exists either strictly increasing or strictly decreasing sequence~$z$ such that
+$\im z\sqsupseteq x$.
+
+It is easy to see that $\supfun{|\mathbb{R}|_{<}} \im z \asymp \supfun{|\mathbb{R}|_{\geq}} \im z$.
+Thus $\supfun{|\mathbb{R}|_{<}} x \asymp \supfun{|\mathbb{R}|_{\geq}} x$.
 \end{proof}
 
 \begin{grayed}
