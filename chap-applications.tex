@@ -162,22 +162,6 @@ On trivial ultrafilters these obviously agree:
 
 \section{Some inequalities}
 
-We will prove
-
-\begin{thm}
-~
-\begin{enumerate}
-\item $|\mathbb{R}|_{\geq} \sqsubset |\mathbb{R}| \sqcap \geq$;
-\item $|\mathbb{R}|_{>} \sqsubset |\mathbb{R}| \sqcap >$;
-\item $|\mathbb{R}|_{\leq} \sqsubset |\mathbb{R}| \sqcap \leq$;
-\item $|\mathbb{R}|_{<} \sqsubset |\mathbb{R}| \sqcap <$.
-\end{enumerate}
-\end{thm}
-
-From the above it easily follows that it's enough to prove
-\[ |\mathbb{R}|_{\geq} \ne |\mathbb{R}| \sqcap \geq \quad \text{and} \quad
-|\mathbb{R}|_{>} \ne |\mathbb{R}| \sqcap >. \]
-
 \fxwarning{Define the ultrafilter ``at the left'' and ``at the right'' of a real number.
 Also define ``convergent ultrafilter''.}
 
@@ -290,6 +274,37 @@ $| \mathbb{R} |_{>} \sqcap > = | \mathbb{R} |_{>} \sqcap \geq = | \mathbb{R} |_{
 \begin{proof}
 $| \mathbb{R} |_{>} \sqsubseteq \mathord{>}$ because $\rsupfun{| \mathbb{R} |_{>}} x \sqsubseteq \rsupfun{>} x$ and
 $| \mathbb{R} |_{>}$ is a complete funcoid.
+\end{proof}
+
+\begin{lem}
+$\supfun{ | \mathbb{R} |_{>} } x \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x$ for a nontrivial ultrafilter~$x$.
+\end{lem}
+
+\begin{proof}
+It enough to prove $\supfun{ | \mathbb{R} |_{>} } x \ne \supfun{| \mathbb{R} |_{\geq} } x$.
+
+Take $x$ be an ultrafilter with limit point~$0$ on $\im z$ where $z$ is the sequence $n\mapsto \frac{1}{n}$.
+
+\[ \supfun{ | \mathbb{R} |_{>} } x \sqsubseteq \rsupfun{ | \mathbb{R} |_{>} } \im z =
+\bigsqcup_{n\in\im z} \Delta_{>}\left(\frac{1}{n}\right) \sqsubseteq
+\bigsqcup_{n\in\im z} \left]\frac{1}{n};\frac{1}{n-1}-\frac{1}{n}\right[ \asymp \im z. \]
+Thus $\supfun{ | \mathbb{R} |_{>} } x \asymp \im z$. But
+$\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \supfun{=} x \nasymp \im z$.
+\end{proof}
+
+\begin{cor}
+$| \mathbb{R} |_{>} \sqsubset | \mathbb{R} |_{\geq}$.
+\end{cor}
+
+\begin{prop}
+$| \mathbb{R} |_{>} \sqsubset | \mathbb{R} |_{\geq} \sqcap >$.
+\end{prop}
+
+\begin{proof}
+It's enough to prove $| \mathbb{R} |_{>} \neq | \mathbb{R} |_{\geq} \sqcap >$.
+
+Really, $\supfun{ | \mathbb{R} |_{\geq} \sqcap > } x = \supfun{ | \mathbb{R}
+|_{\geq} } x \neq \supfun{ | \mathbb{R} |_{>} } x$ (lemma).
 \end{proof}
 
 \begin{grayed}
