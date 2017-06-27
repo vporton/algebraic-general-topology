@@ -162,8 +162,6 @@ On trivial ultrafilters these obviously agree:
 
 \section{Some inequalities}
 
-\fxerror{Below in this section there were errors. The results may be wrong.}
-
 We will prove
 
 \begin{thm}
@@ -180,32 +178,129 @@ From the above it easily follows that it's enough to prove
 \[ |\mathbb{R}|_{\geq} \ne |\mathbb{R}| \sqcap \geq \quad \text{and} \quad
 |\mathbb{R}|_{>} \ne |\mathbb{R}| \sqcap >. \]
 
-\fxwarning{Below there is a proof only of $|\mathbb{R}|_{\geq} \ne |\mathbb{R}| \sqcap \geq$ not of
-$|\mathbb{R}|_{>} \ne |\mathbb{R}| \sqcap >$.}
-
-To check the inequalities, we will calculate $\supfun{|\mathbb{R}|_{\geq}} x$ and
-$\supfun{|\mathbb{R}| \sqcap \geq} x$ for ultrafilters~$x$.
-
-For simplicity, we will calculate it only for convergent ultrafilters (these
-of them which are required for disproving the equalities and for completeness
-these which are not required). (Exercise: Show that for non-convergent
-ultrafilters there are no simple formulas like below.)
-
-Note that on trivial ultrafilters they are already calculated above.
-
 \fxwarning{Define the ultrafilter ``at the left'' and ``at the right'' of a real number.
 Also define ``convergent ultrafilter''.}
 
-\fxerror{The below is wrong as I wrongly assume that there is a countable set in every ultrafilter.
-See \url{https://math.stackexchange.com/q/2304205/4876}.}
+Denote $\Delta_{+ \infty} = \bigsqcap_{x \in \mathbb{R}}] x ; + \infty [$ and
+$\Delta_{- \infty} = \bigsqcap_{x \in \mathbb{R}}] - \infty ; x [$.
+
+The following proposition calculates $\langle \geq \rangle x$ and $\langle > \rangle x$ for all
+kinds of ultrafilters on $\mathbb{R}$:
+
+\begin{prop}
+~
+\begin{enumerate}
+\item\label{g-uf-v-triv} $\supfun{\geq} \{ \alpha \} = [\alpha ; + \infty [$ and
+  $\supfun{>} \{ \alpha \} = ]\alpha ; + \infty [$.
+\item\label{g-uf-v-right} $\supfun{\geq} x = \supfun{>} x = ] \alpha ; + \infty [$
+  for ultrafilter $x$ at the right of a number $\alpha$.
+\item\label{g-uf-v-left} $\supfun{\geq} x = \supfun{>} x = \Delta_{<} (\alpha) \sqcup [\alpha ; + \infty [=
+  \Delta_{\leq} (\alpha) \sqcup] \alpha ; + \infty [$ for ultrafilter $x$ at the left of a number $\alpha$.
+\item\label{g-uf-v-posinf} $\supfun{\geq} x = \supfun{>} x = \Delta_{+ \infty}$ for
+  ultrafilter $x$ at positive infinity.
+\item\label{g-uf-v-neginf} $\supfun{\geq} x = \supfun{>} x = \mathbb{R}$ for
+  ultrafilter $x$ at negative infinity.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{g-uf-v-triv}] Obvious.
+\item[\ref{g-uf-v-right}]
+  \begin{gather*}
+  \supfun{\geq} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \supfun{\geq} (X \sqcap] \alpha ; + \infty [) =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x}] \alpha ; + \infty [=] \alpha ; + \infty [; \\
+  \supfun{>} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \supfun{>} (X \sqcap] \alpha ; + \infty [) =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x}] \alpha ; + \infty [=] \alpha ; + \infty [.
+  \end{gather*}
+\item[\ref{g-uf-v-left}] $\Delta_{<} (\alpha) \sqcup [\alpha ; + \infty [=
+  \Delta_{\leq} (\alpha) \sqcup] \alpha ; + \infty [$ is obvious.
+  \[ \supfun{>} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \supfun{>} X \sqsupseteq \bigsqcap^{\mathscr{F}}_{X \in \up x} (\Delta_{<}
+  (\alpha) \sqcup] \alpha ; + \infty [) = \Delta_{<} (\alpha) \sqcup] \alpha ; +
+  \infty [ \]
+  but $\supfun{\geq} x \sqsubseteq \Delta_{<} (\alpha) \sqcup
+  [\alpha ; + \infty [$ is obvious. It remains to take into account that
+  $\supfun{>} x \sqsubseteq \supfun{\geq} x$.
+\item[\ref{g-uf-v-posinf}] $\supfun{\geq} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \supfun{\geq} X =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x, \inf X \in X}
+  \supfun{\geq} (X \sqcap] \alpha ; + \infty [) =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x} [\inf X ; + \infty [=
+  \bigsqcap^{\mathscr{F}}_{x > \alpha} [x ; + \infty [= \Delta_{+ \infty}$;
+  $\supfun{>} x = \bigsqcap^{\mathscr{F}}_{X \in \up x} \supfun{>} X =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x, \inf X \in X}
+  \supfun{>} (X \sqcap] \alpha ; + \infty [) =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x} ]\inf X ; + \infty [=
+  \bigsqcap^{\mathscr{F}}_{x > \alpha} [x ; + \infty [= \Delta_{+ \infty}$.
+\item[\ref{g-uf-v-neginf}] $\supfun{\geq} x \sqsupseteq \supfun{>} x =
+  \bigsqcap^{\mathscr{F}}_{X \in \up x} \supfun{>} X$ but $\supfun{>} X =] - \infty ; + \infty [$ for $X \in \up x$
+  because $X$ has arbitrarily small elements.
+\end{widedisorder}
+\end{proof}
+
+\begin{lem}
+$\langle \lvert \mathbb{R} \rvert \rangle x \sqsubseteq \supfun{>} x = \supfun{\geq} x$ for every nontrivial ultrafilter $x$.
+\end{lem}
+
+\begin{proof}
+$\supfun{>} x = \supfun{\geq} x$ follows from the previous proposition.
+
+$\supfun{\lvert \mathbb{R} \rvert } x = \bigsqcap_{X \in \up x} \supfun{\lvert \mathbb{R} \rvert } X =
+\bigsqcap_{X \in \up x} \bigsqcup_{y \in X} \Delta (y)$.
+
+Consider cases:
+
+\begin{description}
+  \item[$x$ is an ultrafilter at the right of some number $\alpha$] \hfill \\ $\langle
+  | \mathbb{R} | \rangle x = \bigsqcap_{X \in \up x} \bigsqcup_{y \in
+  X \sqcap] \alpha ; + \infty [} \Delta (y) \sqsubseteq] \alpha ; + \infty
+  [= \langle \geq \rangle x$ because $\bigsqcup_{y \in X \sqcap] \alpha ; +
+  \infty [} \Delta (y) \sqsubseteq] \alpha ; + \infty [$.
+  
+  \item[$x$
+  is an ultrafilter at the left of some number $\alpha$] \hfill \\ $\langle |
+  \mathbb{R} | \rangle x \sqsubseteq \Delta (\alpha)$ is obvious. But
+  $\langle \geq \rangle x \sqsupseteq \Delta (\alpha)$.
+  
+  \item[$x$ is an ultrafilter at positive infinity] \hfill \\ $\langle | \mathbb{R} |
+  \rangle x \sqsubseteq \Delta_{+ \infty}$ is obvious. But $\langle \geq
+  \rangle x = \Delta_{+ \infty}$.
+  
+  \item[$x$ is an ultrafilter at negative infinity] \hfill \\ Because $\langle \geq
+  \rangle x =\mathbb{R}$.
+\end{description}
+\end{proof}
+
+\begin{cor}
+$\supfun{ | \mathbb{R} | \sqcap \geq } x = \supfun{ | \mathbb{R} |
+} x$ for every nontrivial ultrafilter $x$.
+\end{cor}
+
+\begin{proof}
+$\supfun{ | \mathbb{R} | \sqcap \geq } x = \supfun{ | \mathbb{R} | } \sqcap \supfun{\geq} x =
+\supfun{ | \mathbb{R} | } x$.
+\end{proof}
+
+So $\supfun{ | \mathbb{R} | \sqcap \geq }$ and $\supfun{ | \mathbb{R} | }$ agree on all ultrafilters except trivial ones.
+
+\begin{prop}
+$| \mathbb{R} |_{>} \sqcap > = | \mathbb{R} |_{>} \sqcap \geq = | \mathbb{R} |_{>}$.
+\end{prop}
+
+\begin{proof}
+$| \mathbb{R} |_{>} \sqsubseteq \mathord{>}$ because $\rsupfun{| \mathbb{R} |_{>}} x \sqsubseteq \rsupfun{>} x$ and
+$| \mathbb{R} |_{>}$ is a complete funcoid.
+\end{proof}
+
+\begin{grayed}
 
 \begin{prop}
 ~
 \begin{enumerate}
 \item\label{comp-ord-ge} $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} = | \mathbb{R} |_{\geq}$;
 \item\label{comp-ord-gt} $| \mathbb{R} |_{>} \circ | \mathbb{R} |_{>} = | \mathbb{R} |_{>}$;
-\item\label{comp-ord-gt} $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{>} = | \mathbb{R} |_{>}$;
-\item\label{comp-ord-gt} $| \mathbb{R} |_{>} \circ | \mathbb{R} |_{\geq} = | \mathbb{R} |_{>}$.
+\item $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{>} = | \mathbb{R} |_{>}$;
+\item $| \mathbb{R} |_{>} \circ | \mathbb{R} |_{\geq} = | \mathbb{R} |_{>}$.
 \end{enumerate}  
 \end{prop}
 
@@ -381,6 +476,8 @@ $\im z\sqsupseteq x$.
 It is easy to see that $\supfun{|\mathbb{R}|_{<}} \im z \asymp \supfun{|\mathbb{R}|_{\geq}} \im z$.
 Thus $\supfun{|\mathbb{R}|_{<}} x \asymp \supfun{|\mathbb{R}|_{\geq}} x$.
 \end{proof}
+
+\end{grayed}
 
 \section{Continuity}
 
