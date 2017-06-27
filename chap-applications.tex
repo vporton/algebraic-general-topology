@@ -307,8 +307,6 @@ Really, $\supfun{ | \mathbb{R} |_{\geq} \sqcap > } x = \supfun{ | \mathbb{R}
 |_{\geq} } x \neq \supfun{ | \mathbb{R} |_{>} } x$ (lemma).
 \end{proof}
 
-\begin{grayed}
-
 \begin{prop}
 ~
 \begin{enumerate}
@@ -320,179 +318,16 @@ Really, $\supfun{ | \mathbb{R} |_{\geq} \sqcap > } x = \supfun{ | \mathbb{R}
 \end{prop}
 
 \begin{proof}
-~
-\begin{widedisorder}
-\item[\ref{comp-ord-ge}]
-  $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} \sqsupseteq |
-  \mathbb{R} |_{\geq}$ because $| \mathbb{R} |_{\geq} \sqsupseteq
-  {(\mathord{=})}$.
-  
-  $| \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} \sqsubseteq \setcond{ (x,
-  y) }{ x \geq y \wedge | x - y | < \varepsilon
-  } \circ \setcond{ (x, y) }{ x \geq y \wedge |
-  x - y | < \varepsilon } = \setcond{ (x, y) }{
-  x \geq y \wedge | x - y | < 2 \varepsilon }$.
-  
-  So $\supfun{ | \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} } z
-  \sqsubseteq \supfun{ \setcond{ (x, y) }{ x \geq y
-  \wedge | x - y | < 2 \varepsilon } } z \sqsubseteq [0 ; 2
-  \varepsilon [+ z$ for every ultrafilter $z$ and $\varepsilon > 0$. Thus
-  $\supfun{ | \mathbb{R} |_{\geq} \circ | \mathbb{R} |_{\geq} } z
-  \sqsubseteq \Delta_{\geq} + z$ and so $\supfun{ | \mathbb{R} |_{\geq} \circ |
-  \mathbb{R} |_{\geq} } z \sqsubseteq \supfun{ | \mathbb{R} |_{\geq}
-  } z$.
-\end{widedisorder}
 ??
 \end{proof}
 
-\begin{prop}
-?? Most likely, there are counterexamples.
+\begin{conjecture}
+~
 \begin{enumerate}
 \item $(|\mathbb{R}| \sqcap {\geq}) \circ (|\mathbb{R}| \sqcap {\geq}) = (|\mathbb{R}| \sqcap {\geq})$.
 \item $(|\mathbb{R}| \sqcap {>}) \circ (|\mathbb{R}| \sqcap {>}) = (|\mathbb{R}| \sqcap {>})$.
 \end{enumerate}
-\end{prop}
-
-\begin{proof}
-??
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the right of its limit point $\alpha$,
-  $\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x \sqsubset \Delta_{>} + \alpha$.
-\end{lem}
-
-\begin{proof}
-$\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x$ because
-$\supfun{ | \mathbb{R} |_{\geq} } x \sqsupseteq \supfun{1} x = x$.
-
-Take a decreasing sequence $z$ of real numbers such that $\im z\sqsupseteq x$.
-\fxerror{It is at least non-obvious that such a sequence exists. For example $\mathbb{Q}$ cannot be represented as a monotone sequence.}
-
-$\supfun{ | \mathbb{R} |_{\geq} } \im z \sqsubseteq 
-\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots$
-for every $\varepsilon_i>0$.
-
-Easy to show that we can take such $\varepsilon_i$ that
-$\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots
-\nsqsupseteq \Delta_{>}$.
-
-So we have $\supfun{ | \mathbb{R} |_{\geq} } x \nsqsupseteq \Delta_{>} + \alpha$.
-But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the left of its
-  limit point $\alpha$, $\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x \sqsubset \Delta_{<}+\alpha$.
-\end{lem}
-
-\begin{proof}
-$\bot \sqsubset \supfun{ | \mathbb{R} |_{\geq} } x$ because $\supfun{ | \mathbb{R} |_{\geq} } x \sqsupseteq \supfun{1}x = x$.
-
-Take a strictly increasing sequence $z_i$ where $\im z \sqsupseteq x$
-and $\lim z = \alpha$.
-
-$\supfun{ | \mathbb{R} |_{\geq} } \im z \sqsubseteq
-\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots$
-for every $\varepsilon_i>0$.
-
-Easy to show that we can take such $\varepsilon_i$ that
-$\mathopen[z_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen[z_1;z_1+\varepsilon_1\mathclose[ \cup \dots
-\nsqsupseteq \Delta_{<}$.
-
-So we have $\supfun{ | \mathbb{R} |_{\geq} } x \nsqsupseteq \Delta_{<} + \alpha$.
-But $\supfun{ | \mathbb{R} |_{\geq} } x \sqsubseteq \Delta_{<} + \alpha$ is obvious.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the right of its limit point $\alpha$,
-  $\bot \sqsubset \supfun{ | \mathbb{R} | } x \sqsubset \Delta_{>} + \alpha$.
-\end{lem}
-
-\begin{proof}
-$\bot \sqsubset \supfun{ | \mathbb{R} | } x$ because
-$\supfun{ | \mathbb{R} | } x \sqsupseteq \supfun{1} x = x$.
-
-Take a decreasing sequence $z$ of real numbers such that $\im z\sqsupseteq x$.
-
-$\supfun{ | \mathbb{R} | } \im z \sqsubseteq 
-\mathopen]z_0-\varepsilon_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen]z_1-\varepsilon_1;z_1+\varepsilon_1\mathclose[ \cup \dots$
-for every $\varepsilon_i>0$.
-
-Easy to show that we can take such $\varepsilon_i$ that
-$\mathopen]z_0-\varepsilon_0;z_0+\varepsilon_0\mathclose[ \cup \mathopen]z_1-\varepsilon_1;z_1+\varepsilon_1\mathclose[ \cup \dots
-\nsqsupseteq \Delta_{>}$.
-
-So we have $\supfun{ | \mathbb{R} | } x \nsqsupseteq \Delta_{>} + \alpha$.
-But $\supfun{ | \mathbb{R} | } x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the right of its limit point $\alpha$,
-  $\supfun{\geq} x = \Delta_{>} + \alpha$.
-\end{lem}
-
-\begin{proof}
-  $\supfun{\geq} x \sqsubseteq \Delta_{>} + \alpha$ is obvious.
-  Obviously $\supfun{\geq} x \sqsupseteq \supfun{ | \mathbb{R} |_{\geq}
-  } x = \Delta_{>} + \alpha$. So $\supfun{\geq} x = \Delta_{>} +
-  \alpha$.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the right of its limit point $\alpha$,
-  $\supfun{ | \mathbb{R} | \sqcap \geq } x = \Delta_{>} + \alpha$.
-\end{lem}
-
-\begin{proof}
-  From two previous lemmas and $\supfun{ | \mathbb{R} | \sqcap \geq } x
-  = \supfun{| \mathbb{R} |} x \sqcap \supfun{\geq} x$.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the left of its limit point $\alpha$,
-  $\bot \sqsubset \supfun{| \mathbb{R} |} x \sqsubset \Delta_{<} + \alpha$.
-\end{lem}
-
-\begin{proof}
-  By symmetry from an above lemma.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the left of its limit point $\alpha$,
-  $\supfun{\geq} x \sqsupseteq \Delta_{<} + \alpha$.
-\end{lem}
-
-\begin{proof}
-  $\supfun{\geq} X \sqsupseteq] - \varepsilon ; 0 [$ for some
-  $\varepsilon > 0$ for every $X \in \up x$. Therefore $\supfun{ \geq
-  } X = \bigsqcap^{\mathscr{F}}_{X \in \up x} \rsupfun{ \geq
-  } X \sqsupseteq \Delta_{<} + \alpha$.
-\end{proof}
-
-\begin{lem}
-  If $x$ is a convergent ultrafilter at the left of its
-  limit point $\alpha$, $\supfun{ | \mathbb{R} | \sqcap \geq } x =
-  \Delta_{<} + \alpha$.
-\end{lem}
-
-\begin{proof}
-From above.
-\end{proof}
-
-\begin{lem}
-$\supfun{|\mathbb{R}|_{<}} x \asymp \supfun{|\mathbb{R}|_{\geq}} x$ for every ultrafilter~$x$.
-\end{lem}
-
-\begin{proof}
-There exists either strictly increasing or strictly decreasing sequence~$z$ such that
-$\im z\sqsupseteq x$.
-
-It is easy to see that $\supfun{|\mathbb{R}|_{<}} \im z \asymp \supfun{|\mathbb{R}|_{\geq}} \im z$.
-Thus $\supfun{|\mathbb{R}|_{<}} x \asymp \supfun{|\mathbb{R}|_{\geq}} x$.
-\end{proof}
-
-\end{grayed}
+\end{conjecture}
 
 \section{Continuity}
 
