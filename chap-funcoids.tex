@@ -1549,7 +1549,7 @@ Let's prove the reverse of (\ref{at-func-cond}):
 \bigsqcap\left\{ \left(\bigsqcup\circ\rsupfun{\alpha}\right)\{a\}\right\}  & =\\
 \bigsqcap\left\{ \bigsqcup\rsupfun{\alpha}\{a\}\right\}  & =\\
 \bigsqcap\left\{ \bigsqcup\{\alpha a\}\right\}  & =\\
-\bigsqcap\left\{ \{\alpha a\}\right\}  & =\\
+\bigsqcap\{\alpha a\}  & =\\
 \alpha a.
 \end{align*}
 
@@ -1717,6 +1717,8 @@ Let $f \in \mathsf{FCD} (A ; B)$ and $z \in \mathscr{F} (B)^A$. Then
 there is an (obviously unique) funcoid $g \in \mathsf{FCD} (A ; B)$
 such that $\supfun{g} x = \supfun{f} x$ for nontrivial
 ultrafilters $x$ and $\supfun{g} @\{ p \} = z (p)$ for $p \in A$.
+\fxerror{It seems that there is an error in this theorem. For a counterexample take
+$f=\bot$ and $z(p)=\top$ (for infinite~$A$ and~$B$).}
 \end{thm}
 
 \begin{proof}
