@@ -1713,48 +1713,6 @@ $\forall H\in\up(g\circ f)\exists F\in\up f,G\in\up g: H\sqsupseteq G\circ F$ fo
 \end{conjecture}
 
 \begin{thm}
-Let $f \in \mathsf{FCD} (A ; B)$ and $z \in \mathscr{F} (B)^A$. Then
-there is an (obviously unique) funcoid $g \in \mathsf{FCD} (A ; B)$
-such that $\supfun{g} x = \supfun{f} x$ for nontrivial
-ultrafilters $x$ and $\supfun{g} @\{ p \} = z (p)$ for $p \in A$.
-\fxerror{It seems that there is an error in this theorem. For a counterexample take
-$f=\bot$ and $z(p)=\top$ (for infinite~$A$ and~$B$).}
-\end{thm}
-
-\begin{proof}
-  It's enough (theorem~\ref{cont-fcd-on-atoms}) to prove the inequality \[ \alpha a \sqsubseteq
-  \bigsqcap \left\langle \bigsqcup \circ \rsupfun{\alpha} \circ
-  \atoms \circ \uparrow \right\rangle^{\ast} \up a \] for $\alpha$
-  defined by the formulas $\alpha x = \langle f \rangle x$ for nontrivial
-  ultrafilters~$x$ and $\alpha @\{ p \} = z (p)$ for $p \in A$.
-  \begin{multline*}
-     \bigsqcap \left\langle \bigsqcup \circ \rsupfun{\alpha}
-     \circ \atoms \circ \uparrow \right\rangle^{\ast} \up @\{ p \}
-     = \\ \bigsqcup \rsupfun{\alpha} \atoms \uparrow @\{ p \} =
-     \bigsqcup \rsupfun{\alpha} \{ @\{ p \} \} = \bigsqcup \{
-     \alpha @\{ p \} \} = \alpha @\{ p \} .
-  \end{multline*}
-  If $a$ is a nontrivial ultrafilter, then $a\sqsubseteq \Omega$ and thus
-  \begin{multline*}
-  \bigsqcap \left\langle \bigsqcup \circ \langle \alpha \rangle^{\ast} \circ
-  \atoms \circ \uparrow \right\rangle^{\ast} \up a \sqsupseteq
-  \bigsqcap \left\langle \bigsqcup \circ \langle \alpha \rangle^{\ast} \circ
-  \atoms \right\rangle^{\ast}  \langle \Omega \sqcap \rangle^{\ast}
-  \up a = \\
-  \bigsqcap \left\langle \bigsqcup \circ \rsupfun{
-  \alpha } \circ \atoms \circ (\Omega \sqcap)
-  \right\rangle^{\ast} \up a =
-  \bigsqcap \setcond{ \bigsqcup \langle \alpha \rangle^{\ast} \atoms (\Omega \sqcap X) }{ X \in \up a } = \\
-  \bigsqcap \setcond{ \bigsqcup \langle \langle
-  f \rangle \rangle^{\ast} \atoms (\Omega \sqcap X) }{ X \in \up a } \sqsupseteq
-  \bigsqcap \{ \bigsqcup \rsupfun{\supfun{f}} \atoms a \} = \\
-  \bigsqcup \rsupfun{\supfun{f}} \atoms a = \supfun{f} a = \alpha a.
-  \end{multline*}
-  
-  So we have proved the inequality for both trivial and nontrivial ultrafilters.
-\end{proof}
-
-\begin{thm}
 \label{fcd-cross}Let $A$, $B$, $C$ be sets, $f\in\mathsf{FCD}(A,B)$,
 $g\in\mathsf{FCD}(B,C)$, $h\in\mathsf{FCD}(A,C)$. Then
 \[
