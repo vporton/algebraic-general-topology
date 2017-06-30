@@ -1735,18 +1735,21 @@ $f=\bot$ and $z(p)=\top$ (for infinite~$A$ and~$B$).}
      \alpha @\{ p \} \} = \alpha @\{ p \} .
   \end{multline*}
   If $a$ is a nontrivial ultrafilter, then $a\sqsubseteq \Omega$ and thus
-  $\bigsqcap \left\langle \bigsqcup \circ \langle \alpha \rangle^{\ast} \circ
+  \begin{multline*}
+  \bigsqcap \left\langle \bigsqcup \circ \langle \alpha \rangle^{\ast} \circ
   \atoms \circ \uparrow \right\rangle^{\ast} \up a \sqsupseteq
   \bigsqcap \left\langle \bigsqcup \circ \langle \alpha \rangle^{\ast} \circ
   \atoms \right\rangle^{\ast}  \langle \Omega \sqcap \rangle^{\ast}
-  \up a = \bigsqcap \left\langle \bigsqcup \circ \rsupfun{
+  \up a = \\
+  \bigsqcap \left\langle \bigsqcup \circ \rsupfun{
   \alpha } \circ \atoms \circ (\Omega \sqcap)
   \right\rangle^{\ast} \up a =
-  \bigsqcap \setcond{ \bigsqcup \langle \alpha \rangle^{\ast} \atoms (\Omega \sqcap X) }{ X \in \up a } =
+  \bigsqcap \setcond{ \bigsqcup \langle \alpha \rangle^{\ast} \atoms (\Omega \sqcap X) }{ X \in \up a } = \\
   \bigsqcap \setcond{ \bigsqcup \langle \langle
   f \rangle \rangle^{\ast} \atoms (\Omega \sqcap X) }{ X \in \up a } \sqsupseteq
-  \bigsqcap \{ \bigsqcup \rsupfun{\supfun{f}} \atoms a \} =
-  \bigsqcup \rsupfun{\supfun{f}} \atoms a = \supfun{f} a = \alpha a$.
+  \bigsqcap \{ \bigsqcup \rsupfun{\supfun{f}} \atoms a \} = \\
+  \bigsqcup \rsupfun{\supfun{f}} \atoms a = \supfun{f} a = \alpha a.
+  \end{multline*}
   
   So we have proved the inequality for both trivial and nontrivial ultrafilters.
 \end{proof}
