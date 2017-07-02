@@ -1712,6 +1712,56 @@ Thus $g\circ f=\bigsqcap^{\mathsf{FCD}}\setcond{G\circ F}{F\in\up f.G\in\up g}$.
 $\forall H\in\up(g\circ f)\exists F\in\up f,G\in\up g: H\sqsupseteq G\circ F$ for every composable funcoids $f$ and $g$.
 \end{conjecture}
 
+%%[[[[[[[[[[[[[[[[[[[[
+\begin{prop}
+  For $f \in \mathsf{FCD} (A, B)$, a finite set $X \in \subsets A$
+  and a function $t \in \mathscr{F} (B)^X$ there exists (obviously unique) $g
+  \in \mathsf{FCD} (A, B)$ such that $\supfun{g} p = \langle f
+  \rangle p$ for $p \in \atoms^{\mathscr{F} (A)} \setminus \atoms
+  X$ and $\supfun{g} @\{ x \} = t (x)$ for $x \in X$.
+  
+  This funcoid $g$ is determined by the formula
+  \[ g = (f \setminus (@X \times^{\mathsf{FCD}} \top)) \sqcup
+     \bigsqcup_{x \in X} (@\{ x \} \times^{\mathsf{FCD}} t (x)) . \]
+\end{prop}
+
+\begin{proof}
+  Take $g = (f \setminus (@X \times^{\mathsf{FCD}} \top)) \sqcup
+  \bigsqcup_{q \in X} (@\{ q \} \times^{\mathsf{FCD}} t (x))$ that is $g
+  = \left( f \sqcap \overline{X \times \top} \right) \sqcup \bigsqcup_{q \in
+  X} (@\{ q \} \times^{\mathsf{FCD}} t (x)) = \left( f \sqcap \left(
+  \overline{X} \times \top \right) \right) \sqcup \bigsqcup_{q \in X} (@\{ q \}
+  \times^{\mathsf{FCD}} t (x))$.
+  
+  $\supfun{g} p = \text{(theorem~\ref{fcd-fin-join})} = \left\langle f
+  \sqcap \left( \overline{X} \times \top \right) \right\rangle p \sqcup
+  \bigsqcup_{q \in X} \langle @\{ q \} \times^{\mathsf{FCD}} t (x)
+  \rangle p = \text{(theorem~\ref{fcd-intrs-atom})} = \left( \supfun{f} p \sqcap
+  \left\langle \overline{X} \times \top \right\rangle p \right) \sqcup
+  \bigsqcup_{q \in X} \langle @\{ q \} \times^{\mathsf{FCD}} t (x)
+  \rangle p$.
+  
+  So $\supfun{g} @\{ x \} = (\supfun{f}^{\ast} @\{ x \} \sqcap
+  \bot) \sqcup t (x) = t (x)$ for $x \in X$.
+  
+  If $p \in \atoms^{\mathscr{F} (A)} \setminus \atoms X$ then we
+  have $\supfun{g} p = (\supfun{f} p \sqcap \top) \sqcup \bot =
+  \supfun{f} p$.
+\end{proof}
+
+\begin{cor}
+  If $f \in \mathsf{FCD} (A, B)$, $x \in A$, and $\mathcal{Y} \in
+  \mathscr{F} (B)$, then there exists an (obviously unique) $g \in
+  \mathsf{FCD} (A, B)$ such that $\supfun{g} p = \langle f
+  \rangle p$ for all ultrafilters $p$ except of $p = @\{ x \}$ and $\langle g
+  \rangle @\{ x \} = \mathcal{Y}$.
+  
+  This funcoid $g$ is determined by the formula
+  \[ g = (f \setminus (@\{ x \} \times^{\mathsf{FCD}} \top)) \sqcup (\{
+     x \} \times^{\mathsf{FCD}} \mathcal{Y}) . \]
+\end{cor}
+%%]]]]]]]]]]]]]]]]]]]]
+
 \begin{thm}
 \label{fcd-cross}Let $A$, $B$, $C$ be sets, $f\in\mathsf{FCD}(A,B)$,
 $g\in\mathsf{FCD}(B,C)$, $h\in\mathsf{FCD}(A,C)$. Then
