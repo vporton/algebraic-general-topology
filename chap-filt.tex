@@ -1778,6 +1778,49 @@ when its core is a separation subset of its base.
 
 See \cite{primeidealsandfilters,primefilters} for more detailed treatment
 of ultrafilters and prime filters.
+
+\begin{prop}
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{f-atoms-meet-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{f-atoms-meet-prim} $(\mathfrak{A},\mathfrak{Z})$ 
+  is a primary filtrator over a meet-semilattice with greatest element.
+\item\label{f-atoms-meet-slat} $\mathfrak{A}$~is a complete lattice.
+\item\label{f-atoms-meet-resx} $\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ for every $S\in\subsets\mathfrak{A}$.
+\item\label{f-atoms-meet-res} $\atoms(a\sqcap b)=\atoms a\cap\atoms b$ for $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{disorder}
+\item[\ref{f-atoms-meet-pow}$\Rightarrow$\ref{f-atoms-meet-prim}] Obvious.
+\item[\ref{f-atoms-meet-prim}$\Rightarrow$\ref{f-atoms-meet-slat}] Corollary~\ref{filt-is-complete}.
+\item[\ref{f-atoms-meet-slat}$\Rightarrow$\ref{f-atoms-meet-resx}] Corollary~\ref{atoms-infmeet}.
+\item[\ref{f-atoms-meet-resx}$\Rightarrow$\ref{f-atoms-meet-res}] Obvious.
+\end{disorder}
+\end{proof}
+
+\begin{prop}
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{f-atoms-join-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{f-atoms-join-prim} $(\mathfrak{A},\mathfrak{Z})$ 
+  is a primary filtrator over a distributive lattice with greatest element.
+\item\label{f-atoms-join-slat} $\mathfrak{A}$~is a starrish join-semilattice.
+\item\label{f-atoms-join-res} $\atoms(a\sqcup b)=\atoms a\cup\atoms b$ for $a,b\in\mathfrak{A}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{disorder}
+\item[\ref{f-atoms-join-pow}$\Rightarrow$\ref{f-atoms-join-prim}] Obvious.
+\item[\ref{f-atoms-join-prim}$\Rightarrow$\ref{f-atoms-join-slat}] Corollary~\ref{filt-also-distr}.
+\item[\ref{f-atoms-join-slat}$\Rightarrow$\ref{f-atoms-join-res}] Corollary~\ref{atoms-join}.
+\end{disorder}
+\end{proof}
+
 \begin{thm}
 \label{atom-both}The following is an implications tuple:
 \begin{enumerate}
