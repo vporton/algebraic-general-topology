@@ -1121,6 +1121,43 @@ denote $a^{\ast}$ the more general case of quasicomplement than of
 pseudocomplement, and likewise for other notation.\end{rem}
 \begin{obvious}
 Dual pseudocomplement is the dual of pseudocomplement.\end{obvious}
+
+\begin{thm}
+Let $\mathfrak{A}$ be a distributive lattice with least element. Let $a,b\in\mathfrak{A}$.
+If $a\setminus b$ exists, then $a\psetminus b$ also exists and $a\psetminus b=a\setminus b$.
+\end{thm}
+
+\begin{proof}
+Because $\mathfrak{A}$ be a distributive lattice with least element, the definition of $a\setminus b$
+is correct.
+
+Let $x=a\setminus b$ and let $S=\setcond{y\in\mathfrak{A}}{a\sqsubseteq b\sqcup y}$.
+
+We need to show
+\begin{enumerate}
+\item\label{pmin-a} $x\in S$;
+\item\label{pmin-b} $y\in S\Rightarrow x\sqsubseteq y$ (for every $y\in\mathfrak{A}$).
+\end{enumerate}
+
+Really,
+\begin{disorder}
+\item[\ref{pmin-a}] Because $b\sqcup x=a\sqcup b$.
+
+\item[\ref{pmin-b}] ~
+\begin{align*}
+& y\in S \\
+\Rightarrow \quad& a\sqsubseteq b\sqcup y & \quad \text{(by definition of $S$)} \\
+\Rightarrow \quad& a\sqcup b\sqsubseteq b\sqcup y \\
+\Rightarrow \quad& x\sqcup b\sqsubseteq b\sqcup y & \quad \text{(since $x\sqcup b=a\sqcup b$)} \\
+\Rightarrow \quad& x\sqcap(x\sqcup b)\sqsubseteq x\sqcap(b\sqcup y) \\
+\Rightarrow \quad& (x\sqcap x)\sqcup (x\sqcap b)\sqsubseteq (x\sqcap b)\sqcup(x\sqcap y) & \quad \text{(by distributive law)} \\
+\Rightarrow \quad& x\sqcup \bot\sqsubseteq \bot\sqcup(x\sqcap y) & \quad \text{(since $x\sqcap b=\bot$)} \\
+\Rightarrow \quad& x\sqsubseteq x\sqcap y & \quad \\
+\Rightarrow \quad& x\sqsubseteq y.
+\end{align*}
+\end{disorder}
+\end{proof}
+
 \begin{defn}
 \index{lattice!co-brouwerian}\emph{Co-brouwerian lattice} is a lattice
 for which pseudodifference of any two its elements is defined.\end{defn}
