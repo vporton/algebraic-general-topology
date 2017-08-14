@@ -16,19 +16,21 @@ is $\id_{A}=\setcond{(a,a)}{a\in A}$.
 \end{defn}
 
 \begin{defn}
-\index{preorder}A \emph{preorder} on a set $A$ is a binary relation
-$\sqsubseteq$ which is:
+\index{preorder}A \emph{preorder} on a set $A$ is a binary relation~$\sqsubseteq$ on~$A$ which is:
 \begin{itemize}
-\item reflexive on $A$ ($\opinparens{\sqsubseteq}\supseteq\id_{A}$);
-\item transitive ($\opinparens{\sqsubseteq}\circ\opinparens{\sqsubseteq}\subseteq\opinparens{\sqsubseteq}$).
+\item \emph{reflexive} on $A$ that is $\opinparens{\sqsubseteq}\supseteq\id_{A}$ or what is the same $\forall x\in A:x\sqsubseteq x$;
+\item \emph{transitive} that is $\opinparens{\sqsubseteq}\circ\opinparens{\sqsubseteq}\subseteq\opinparens{\sqsubseteq}$
+ or what is the same \[ \forall x,y,z:(x\sqsubseteq y\land y\sqsubseteq z\Rightarrow x\sqsubseteq z). \]
 \end{itemize}
 \end{defn}
 
 \begin{defn}
 \index{partial order}A \emph{partial order} on a set $A$ is a preorder
-on $A$ which is antisymmetric ($\opinparens{\sqsubseteq}\cap\opinparens{\sqsubseteq}\subseteq\id_A$).
+on $A$ which is \emph{antisymmetric} that is $\opinparens{\sqsubseteq}\cap\opinparens{\sqsubseteq}\subseteq\id_A$
+or what is the same \[ \forall x,y\in A:(x\sqsubseteq y\land y\sqsubseteq x\Rightarrow x=y). \]
 \end{defn}
 The reverse relation is denoted $\sqsupseteq$.
+
 \begin{defn}
 \index{subelement}$a$ is a subelement of $b$ (or what is the same
 $a$ is \emph{contained} in $b$ or $b$ \emph{contains} $a$) iff
@@ -41,11 +43,15 @@ a partial order on it is called a \emph{partially ordered set} (\emph{poset}
 for short).
 \end{defn}
 
+An example of a partial order is the set~$\mathbb{R}$ of real numbers with $\mathord{\sqsubseteq} = \mathord{\leq}$.
+
 \begin{defn}
 \index{partial order!strict}Strict partial order $\sqsubset$ corresponding
 to the partial order $\sqsubseteq$ on a set $A$ is defined by the
 formula $\opinparens{\sqsubset}=\opinparens{\sqsubseteq}\setminus\id_{A}$.
 \end{defn}
+
+An example of strict partial order is~$<$ on the set~$\mathbb{R}$ of real numbers.
 
 \begin{defn}
 \index{partial order!restricted}A partial order on a set $A$ \emph{restricted}
