@@ -629,11 +629,20 @@ Because it is a distributive complemented lattice.
 
 \subsection{Atoms of posets}
 \begin{defn}
-\index{atom}An atom of a poset is a non-least element which has no non-least
-subelements.\end{defn}
+\index{atom}An atom of a poset is an element~$a$ such that
+$x\sqsubset a$ iff $x$ is the least element.\end{defn}
 \begin{rem}
 This definition is valid even for posets without least element.
 \end{rem}
+
+\begin{obvious}
+Every atom is non-least.
+\end{obvious}
+
+\begin{example}
+Atoms of the boolean algebra~$\subsets A$ (ordered by set inclusion) are one-element sets.
+\end{example}
+
 I will denote $\atoms^{\mathfrak{A}}a$ or just $(\atoms a)$ the
 set of atoms contained in an element $a$ of a poset $\mathfrak{A}$.
 I will denote $\atoms^{\mathfrak{A}}$ the set of all atoms of a poset
