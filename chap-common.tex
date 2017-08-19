@@ -636,13 +636,23 @@ $x\sqsubset a$ iff $x$ is the least element.\end{defn}
 This definition is valid even for posets without least element.
 \end{rem}
 
-\begin{obvious}
+\begin{prop}
 Element~$a$ is an atom iff both:
 \begin{enumerate}
-\item $x\sqsubset a$ implies $x$ is the least element;
-\item $a$ is non-least.
+\item\label{atm-i} $x\sqsubset a$ implies $x$ is the least element;
+\item\label{atm-nl} $a$ is non-least.
 \end{enumerate}
-\end{obvious}
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[$\Rightarrow$] Let $a$ be an atom.
+\ref{atm-i} is obvious. If $a$ is least then $a\sqsubset a$ what is impossible, so~\ref{atm-nl}.
+\item[$\Leftarrow$] We need to prove only that $x$ is least implies that $x\sqsubset a$ but this follows from $a$ being non-least.
+\end{description}
+
+\end{proof}
 
 \begin{example}
 Atoms of the boolean algebra~$\subsets A$ (ordered by set inclusion) are one-element sets.
