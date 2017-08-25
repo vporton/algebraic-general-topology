@@ -1,10 +1,74 @@
-\chapter{On ``Each regular paratopological group is completely regular'' article}
+\chapter{Funcoidal groups}
+
+\begin{rem}
+  \fxnote{Move this into the book.}
+  If $\mu$ and $\nu$ are cocomplete endofuncoids, then we can describe $f \in
+  \continuous (\mu,\nu)$ without using filters by the formulas:
+  \begin{enumerate}
+    \item $\rsupfun{f} \langle \mu \rangle^{\ast} X \sqsubseteq
+    \supfun{\nu}^{\ast} \rsupfun{f} X$ (for every set $X$
+    in $\subsets \Ob \mu$)
+    
+    \item $\langle \mu \rangle^{\ast} X \sqsubseteq \langle f^{- 1}
+    \rangle^{\ast} \supfun{\nu}^{\ast} \rsupfun{f} X$ (for
+    every set $X$ in $\subsets \Ob \mu$)
+    
+    \item $\rsupfun{f} \langle \mu \rangle^{\ast} \langle f^{- 1}
+    \rangle^{\ast} Y \sqsubseteq \supfun{\nu}^{\ast} Y$ (for every set
+    $Y$ in $\subsets \Ob \nu$)
+  \end{enumerate}
+\end{rem}
+
+Funcoidal groups are modeled after topological groups (see Wikipedia)
+and are their generalization.
+
+\begin{defn}
+  \emph{Funcoidal group} is a group $G$ together with endofuncoid $\mu$ on
+  $\Ob G$ such that
+  \begin{enumerate}
+    \item $(y \cdot) \in \mathrm{C} (\mu ; \mu)$ for every $y \in G$;
+    
+    \item $(\cdot x) \in \mathrm{C} (\mu ; \mu)$ for every $x \in G$;
+    
+    \item $(x \mapsto x^{- 1}) \in \mathrm{C} (\mu ; \mu)$ for every $x \in
+    G$.
+  \end{enumerate}
+\end{defn}
+
+What is the purpose of the following (yet unproved) proposition? I don't know, but it looks curious.
+
+\begin{prop}
+  Let $\mu = \mu \circ \mu$.
+  
+  Let $E$ be a composition of functions of a form
+  $\rsupfun{\mu}$, $\langle y \cdot
+  \rangle^{\ast}$, $\langle \cdot x \rangle^{\ast}$, $\langle^{- 1}
+  \rangle^{\ast}$ (where $x$ and $y$ vary arbitrarily). There are such
+  elements $x_0$, $y_0$, $x_1$, $y_1$ that
+  \begin{enumerate}
+    \item $E \sqsubseteq \langle \mu \rangle \circ (t \mapsto y_0 \cdot t
+    \cdot x_0)$ or $E \sqsubseteq \langle \mu \rangle \circ (t \mapsto y_0
+    \cdot t^{- 1} \cdot x_0)$;
+    
+    \item $E \sqsupseteq (t \mapsto y_1 \cdot t \cdot x_1) \circ \langle \mu
+    \rangle$ or $E \sqsupseteq (t \mapsto y_1 \cdot t^{- 1} \cdot x_1) \circ
+    \langle \mu \rangle$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+$(G, \mu)$ vs $(G, \mu^{-1})$ are they isomorphic?
+
+\section{On ``Each regular paratopological group is completely regular'' article}
 
 In this chapter I attempt to rewrite the paper~\cite{2014arXiv1410.1504B} in more general setting of funcoids and reloids.
 I attempt to construct a ``royal road'' to finding proofs of statements of this paper and similar ones, what is
 important because we lose 60 years waiting for any proof.
 
-\section{Definition of normality}
+\subsection{Definition of normality}
 
 By definition (slightly generalizing the special case if $\mu$ is a
 quasi-uniform space from~\cite{2014arXiv1410.1504B})
@@ -100,7 +164,7 @@ In other words, it is normally reloidazable or normally quasi-uniformizable when
 \[ (\Compl\mu)\circ(\Compl\mu)^{-1}\sqsubseteq(\Compl\mu)^{-1}\circ\mu \]
 for suitable~$\mu$.
 
-\section{Urysohn's lemma and friends}
+\subsection{Urysohn's lemma and friends}
 
 For a detailed proof of Urysohn's lemma see also:\\
 \url{http://homepage.math.uiowa.edu/~jsimon/COURSES/M132Fall07/UrysohnLemma_v5.pdf}\\
