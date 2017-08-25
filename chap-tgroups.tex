@@ -35,29 +35,56 @@ and are their generalization.
   \end{enumerate}
 \end{defn}
 
+\begin{prop}
+  $t \mapsto y \cdot t \cdot x$ and $t \mapsto y \cdot t^{- 1} \cdot x$ are
+  continuous functions.
+\end{prop}
+
+\begin{proof}
+  As composition of continuous functions.
+\end{proof}
+
+\begin{obvious}
+Composition of functions of the forms $t \mapsto y \cdot t \cdot x$ and $t
+\mapsto y \cdot t^{- 1} \cdot x$ are also a function of one of these
+forms.
+\end{obvious}
+
 What is the purpose of the following (yet unproved) proposition? I don't know, but it looks curious.
 
 \begin{prop}
-  Let $\mu = \mu \circ \mu$.
-  
   Let $E$ be a composition of functions of a form
   $\rsupfun{\mu}$, $\langle y \cdot
   \rangle^{\ast}$, $\langle \cdot x \rangle^{\ast}$, $\langle^{- 1}
-  \rangle^{\ast}$ (where $x$ and $y$ vary arbitrarily). There are such
-  elements $x_0$, $y_0$, $x_1$, $y_1$ that
+  \rangle^{\ast}$ (where $x$ and $y$ vary arbitrarily)
+  such that $\mu$ is met in the composition at least once.
+  Let also either $\mu = \mu \circ \mu$ or $\mu$ is met exactly once in the product.
+  There are such elements $x_0$, $y_0$ that
   \begin{enumerate}
-    \item $E \sqsubseteq \langle \mu \rangle \circ (t \mapsto y_0 \cdot t
-    \cdot x_0)$ or $E \sqsubseteq \langle \mu \rangle \circ (t \mapsto y_0
-    \cdot t^{- 1} \cdot x_0)$;
-    
-    \item $E \sqsupseteq (t \mapsto y_1 \cdot t \cdot x_1) \circ \langle \mu
-    \rangle$ or $E \sqsupseteq (t \mapsto y_1 \cdot t^{- 1} \cdot x_1) \circ
-    \langle \mu \rangle$.
+  \item $(t \mapsto y_0 \cdot t \cdot x_0) \circ \langle \mu \rangle
+  \sqsubseteq E \sqsubseteq \langle \mu \rangle \circ (t \mapsto y_0 \cdot t
+  \cdot x_0)$;
+  
+  \item  $(t \mapsto y_0 \cdot t^{- 1} \cdot x_0) \circ \langle \mu \rangle
+  \sqsubseteq E \sqsubseteq \langle \mu \rangle \circ (t \mapsto y_0 \cdot
+  t^{- 1} \cdot x_0)$.
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
-??
+  Using continuity a few times we prove that $E \sqsubseteq \langle \mu
+  \rangle^{\ast} \circ \ldots \circ \langle \mu \rangle^{\ast} \circ f_n \circ
+  \ldots \circ f_1$ where $f_i$ are functions of the forms $t \mapsto y \cdot
+  t \cdot x$ or $t \mapsto y \cdot t^{- 1} \cdot x$ for $n \in \mathbb{N}$.
+  But $\langle \mu \rangle^{\ast} \circ \ldots \circ \langle \mu
+  \rangle^{\ast} = \langle \mu \rangle^{\ast}$ by conditions and $f_n \circ
+  \ldots \circ f_1$ is of the form $t \mapsto y \cdot t \cdot x$ or $t \mapsto
+  y \cdot t^{- 1} \cdot x$ by above proposition. $E \sqsubseteq \langle \mu
+  \rangle \circ (t \mapsto y_0 \cdot t \cdot x_0)$ or $E \sqsubseteq \langle
+  \mu \rangle \circ (t \mapsto y_0 \cdot t^{- 1} \cdot x_0)$
+  
+  The second inequalty is similar. Note that $x_0$ and $y_0$ are the same for
+  the first and for the second item.
 \end{proof}
 
 $(G, \mu)$ vs $(G, \mu^{-1})$ are they isomorphic?
