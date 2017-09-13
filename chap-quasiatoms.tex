@@ -1,0 +1,42 @@
+\chapter{Quasi-atoms}
+
+\begin{defn}
+\emph{Quasi-atoms} funcoid~$\mathscr{A}$ is the funcoid $A\rightarrow \atoms^{\mathfrak{A}} A$ defined by the formula
+$\rsupfun{\mathscr{A}} X = \atoms^{\mathfrak{A}} X$.
+\end{defn}
+
+This really defines a funcoid because $\atoms^{\mathfrak{A}} \bot = \emptyset$ and
+$\atoms^{\mathfrak{A}}(X\cup Y) = \atoms^{\mathfrak{A}}X\cup\atoms^{\mathfrak{A}}Y$.
+
+\begin{obvious}
+$\mathscr{A}$ is a co-complete funcoid.
+\end{obvious}
+
+\begin{prop}
+$\rsupfun{\mathscr{A}^{-1}} Y = \bigsqcup Y$.
+\end{prop}
+
+\begin{proof}
+$Y \nasymp \left\langle \mathscr{A} \right\rangle^{\ast} X \Leftrightarrow Y
+\nasymp \atoms^{\mathfrak{A}} X \Leftrightarrow \exists x \in
+\atoms^{\mathfrak{A}} X, y \in Y : x \nasymp y \Leftrightarrow \exists y
+\in Y : X \nasymp y \Leftrightarrow \text{(because $X$ is a principal filter)}
+\Leftrightarrow X \nasymp \bigsqcup Y$.
+\end{proof}
+
+Note
+$\rsupfun{\mathscr{A}} \mathcal{X} =
+\bigsqcap^{\mathscr{F}}_{X \in \up \mathcal{X}}
+\atoms^{\mathfrak{A}} X$;
+
+$\rsupfun{\mathscr{A}^{-1}} \mathcal{Y} =
+\bigsqcap^{\mathscr{F}}_{Y \in \up \mathcal{Y}} \bigsqcup Y$
+($\mathcal{Y}$ is filter on the set of ultrafilters).
+
+\begin{conjecture}
+There are such filters~$\mathcal{X}$ and~$\mathcal{Y}$ that
+both $\rsupfun{\mathscr{A}} \mathcal{X}$ and $\rsupfun{\mathscr{A}^{-1}} \mathcal{Y}$
+are non-principal.
+\end{conjecture}
+
+Does quasi-atoms funcoid define a more elegant replacement of $\atoms^{\mathfrak{A}}$? Does this concept have any use?
