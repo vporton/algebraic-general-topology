@@ -54,7 +54,8 @@ For an element~$a$ of a poset~$\mathfrak{A}$
 \item $J_{\geq}(a) = \setcond{x\in\mathfrak{A}}{x\geq a}$;
 \item $J_{>}(a) = \setcond{x\in\mathfrak{A}}{x>a}$;
 \item $J_{\leq}(a) = \setcond{x\in\mathfrak{A}}{x\leq a}$;
-\item $J_{<}(a) = \setcond{x\in\mathfrak{A}}{x<a}$.
+\item $J_{<}(a) = \setcond{x\in\mathfrak{A}}{x<a}$;
+\item $J_{\ne}(a) = \setcond{x\in\mathfrak{A}}{x\ne a}$.
 \end{enumerate}
 \end{defn}
 
@@ -65,17 +66,19 @@ Let $a$ be an element of a poset~$\mathfrak{A}$.
 \item $\Delta_{\geq}(a) = \bigsqcap^{\mathscr{F}} \setcond{[a;y[}{y\in\overline{\mathfrak{A}}, y>a}$;
 \item $\Delta_{>}(a) = \bigsqcap^{\mathscr{F}} \setcond{]a;y[}{y\in\overline{\mathfrak{A}}, x<a\land y>a}$;
 \item $\Delta_{\leq}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a]}{x\in\overline{\mathfrak{A}}, x<a}$;
-\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\overline{\mathfrak{A}}, x<a}$.
+\item $\Delta_{<}(a) = \bigsqcap^{\mathscr{F}} \setcond{]x;a[}{x\in\overline{\mathfrak{A}}, x<a}$;
+\item $\Delta_{\ne}(a) = \Delta(a) \setminus \{a\}$.
 \end{enumerate}
 \end{defn}
 
 \begin{obvious}
 ~
 \begin{enumerate}
-\item $\Delta_{\geq}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{\geq a}$;
-\item $\Delta_{>}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{>a}$;
-\item $\Delta_{\leq}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{\leq a}$;
-\item $\Delta_{<}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{<a}$.
+\item $\Delta_{\geq}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{\geq}(a)$;
+\item $\Delta_{>}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{>}(a)$;
+\item $\Delta_{\leq}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{\leq}(a)$;
+\item $\Delta_{<}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{<}(a)$;
+\item $\Delta_{\ne}(a) = \Delta(a)\sqcap^{\mathscr{F}} @J_{\ne}(a)$.
 \end{enumerate}
 \end{obvious}
 
@@ -87,7 +90,8 @@ Given a partial order~$\mathfrak{A}$ and~$x\in\mathfrak{A}$, the following defin
 \item $\rsupfun{|\mathfrak{A}|_{\geq}}\{x\} = \Delta_{\geq}(x)$;
 \item $\rsupfun{|\mathfrak{A}|_{>}}\{x\} = \Delta_{>}(x)$;
 \item $\rsupfun{|\mathfrak{A}|_{\leq}}\{x\} = \Delta_{\leq}(x)$;
-\item $\rsupfun{|\mathfrak{A}|_{<}}\{x\} = \Delta_{<}(x)$.
+\item $\rsupfun{|\mathfrak{A}|_{<}}\{x\} = \Delta_{<}(x)$;
+\item $\rsupfun{|\mathfrak{A}|_{\ne}}\{x\} = \Delta_{\ne}(x)$.
 \end{enumerate}
 \end{defn}
 
