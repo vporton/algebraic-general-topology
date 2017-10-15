@@ -113,6 +113,22 @@ Let $a$ be a non-trivial ultrafilter. Then $\id_{a}^{\mathsf{RLD}}$
 is non-convex. This follows from the fact that only reloidal products
 which are below $1_{\Base(a)}^{\mathsf{RLD}}$ are reloidal products
 of ultrafilters and $\id_{a}^{\mathsf{RLD}}$ is not their join.\end{proof}
+
+\begin{example}\label{fcd-comp-ent}
+There exists (atomic) composable funcoids~$f$ and~$g$ such that
+\[ H\in\up(g\circ f)\nRightarrow \exists F\in\up f,G\in\up g: H\sqsupseteq G\circ F. \]
+\end{example}
+
+\begin{proof}
+Let $a$ be a nontrivial ultrafilter and $p$ be an arbitrary point, $f = a
+\times^{\mathsf{FCD}} \{ p \}$, $g = \{ p \}
+\times^{\mathsf{FCD}} a$. Then $g \circ f = a
+\times^{\mathsf{FCD}} a$. Take $H = 1$. We have $F \in \up (A_0
+\times^{\mathsf{FCD}} \{ p \})$, $G \in \up (\{ p \}
+\times^{\mathsf{FCD}} A_1)$ where $A_0, A_1 \in \up a$. Thus $G
+\circ F \sqsupseteq A_0 \times A_1$ and so $H \notin \up (G \circ F)$.
+\end{proof}
+
 \begin{example}
 $\torldin f\ne\torldout f$ for a funcoid $f$.\end{example}
 \begin{proof}
