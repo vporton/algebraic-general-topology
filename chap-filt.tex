@@ -154,7 +154,7 @@ If $\top\notin F$ then $\forall K\in\mathfrak{Z}:K\notin F$ and
 so $F$ is empty what is impossible.\end{proof}
 \begin{prop}
 Let $S$ be a filter base on a poset. If $A_{0},\ldots,A_{n}\in S$
-($n\in\mathbb{N}$), then 
+($n\in\mathbb{N}$), then
 \[
 \exists C\in S:(C\sqsubseteq A_{0}\land\ldots\land C\sqsubseteq A_{n}).
 \]
@@ -621,7 +621,7 @@ for every $A,B\in\mathfrak{Z}$ and $F$ is an upper set and $F\neq\subsets\mathfr
 ~
 \begin{description}
 \item [{\ref{free-alt-star}$\Leftrightarrow$\ref{free-alt-eq}}] The following
-is a chain of equivalencies: 
+is a chain of equivalencies:
 \begin{gather*}
 \exists Z\in\overline{F}:(Z\sqsupseteq A\wedge Z\sqsupseteq B)\Leftrightarrow A\notin F\wedge B\notin F;\\
 \forall Z\in\overline{F}:\neg(Z\sqsupseteq A\wedge Z\sqsupseteq B)\Leftrightarrow A\in F\vee B\in F;\\
@@ -742,7 +742,7 @@ That every arrow is an isomorphism is obvious.
 Show that $\rsupfun{\theta}\lnot X=\lnot\rsupfun{\theta}X$ for every
 set $X\in\subsets\mathfrak{A}$.
 
-Really, 
+Really,
 \begin{multline*}
 p\in\rsupfun{\theta}\lnot X\Leftrightarrow\exists q\in\lnot X:p=\theta q\Leftrightarrow\exists q\in\lnot X:\theta^{-1}p=q\Leftrightarrow\theta^{-1}p\in\lnot X\Leftrightarrow\\
 \nexists q\in X:q=\theta^{-1}p\Leftrightarrow\nexists q\in X:\theta q=p\Leftrightarrow p\notin\rsupfun{\theta}X\Leftrightarrow p\in\lnot\rsupfun{\theta}X.
@@ -910,7 +910,7 @@ for every $T\in\subsets\mathfrak{Z}$.
 \begin{description}
 \item [{$\Rightarrow$}] \ref{princ-fs-least} and \ref{princ-fs-form}
 are obvious. $S$ is an upper set because $S$ is a free star.
-\item [{$\Leftarrow$}] We need to prove that 
+\item [{$\Leftarrow$}] We need to prove that
 \[
 \forall Z\in\mathfrak{Z}:(\forall X\in T:Z\sqsupseteq X\Rightarrow Z\in S)\Leftarrow T\cap S\neq\emptyset.
 \]
@@ -945,7 +945,7 @@ then $\bigsqcup T\in S$ and thus $\bigsqcup T\in S\Rightarrow T\cap S\neq\emptys
 \begin{prop}
 Let $\mathfrak{Z}$ be a complete lattice. $S\in\subsets\mathfrak{Z}$
 is a principal free star iff the least element is not
-in $S$ and for every $T\in\subsets\mathfrak{Z}$ 
+in $S$ and for every $T\in\subsets\mathfrak{Z}$
 \[
 \bigsqcup T\in S\Leftrightarrow T\cap S\neq\emptyset.
 \]
@@ -1015,13 +1015,13 @@ is non-least what is equivalent to $a\sqcap x$ being non-least for
 some $x\in T$ that is $x\in\fullstar a$.\end{proof}
 \begin{thm}
 If $\mathfrak{A}$ is a completely starrish complete lattice lattice
-then 
+then
 \[
 \atoms\bigsqcup T=\bigcup\rsupfun{\atoms}T.
 \]
 for every $T\in\subsets\mathfrak{A}$.\end{thm}
 \begin{proof}
-For every atom $c$ we have: 
+For every atom $c$ we have:
 \begin{multline*}
 c\in\atoms\bigsqcup T\Leftrightarrow c\nasymp\bigsqcup T\Leftrightarrow\bigsqcup T\in\fullstar c\Leftrightarrow\exists X\in T:X\in\fullstar c\Leftrightarrow\\
 \exists X\in T:X\nasymp c\Leftrightarrow\exists X\in T:c\in\atoms X\Leftrightarrow c\in\bigcup\rsupfun{\atoms}T.
@@ -1379,7 +1379,7 @@ if $\mathfrak{Z}$ is a join-semilattice.
 \begin{proof}
 We will prove only the first as the second is dual.
 
-It follows from the fact that 
+It follows from the fact that
 \[
 \bigsqcap^{\mathfrak{F}(\mathfrak{Z})}S=\bigsqcap^{\mathfrak{F}(\mathfrak{Z})}\setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n}}{K_{i}\in\bigcup S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}}
 \]
@@ -1408,7 +1408,7 @@ if $\mathfrak{Z}$ is a join-semilattice.
 \begin{proof}
 We will prove only the first as the second is dual.
 
-It follows from the fact that 
+It follows from the fact that
 \[
 \mathcal{F}_{0}\sqcap^{\mathfrak{F}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{F}(\mathfrak{Z})}\mathcal{F}_{m}=
 \bigsqcap^{\mathfrak{F}(\mathfrak{Z})}\setcond{K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{m}}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}
@@ -1783,7 +1783,7 @@ of ultrafilters and prime filters.
 The following is an implications tuple:
 \begin{enumerate}
 \item\label{f-atoms-meet-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
-\item\label{f-atoms-meet-prim} $(\mathfrak{A},\mathfrak{Z})$ 
+\item\label{f-atoms-meet-prim} $(\mathfrak{A},\mathfrak{Z})$
   is a primary filtrator over a meet-semilattice with greatest element.
 \item\label{f-atoms-meet-slat} $\mathfrak{A}$~is a complete lattice.
 \item\label{f-atoms-meet-resx} $\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ for every $S\in\subsets\mathfrak{A}$.
@@ -1805,7 +1805,7 @@ The following is an implications tuple:
 The following is an implications tuple:
 \begin{enumerate}
 \item\label{f-atoms-join-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
-\item\label{f-atoms-join-prim} $(\mathfrak{A},\mathfrak{Z})$ 
+\item\label{f-atoms-join-prim} $(\mathfrak{A},\mathfrak{Z})$
   is a primary filtrator over a distributive lattice with greatest element.
 \item\label{f-atoms-join-slat} $\mathfrak{A}$~is a starrish join-semilattice.
 \item\label{f-atoms-join-res} $\atoms(a\sqcup b)=\atoms a\cup\atoms b$ for $a,b\in\mathfrak{A}$.
@@ -2033,7 +2033,7 @@ it is impossible $A\in\up a\land\overline{A}\in\up a$.
 \item [{\ref{a-not-a}$\Rightarrow$\ref{prim-atom}}] Obviously $a\ne\bot^{\mathfrak{A}}$.
 
 Let a filter $b\sqsubset a$. Take $X\in\up b$ such that $X\notin\up a$. Then $\overline{X}\in\up a$ because $a$ is prime and thus
-$\overline{X}\in\up b$. So 
+$\overline{X}\in\up b$. So
 $\bot^{\mathfrak{Z}}=X\sqcap^{\mathfrak{Z}}\overline{X}\in\up b$
 and thus $b=\bot^{\mathfrak{A}}$. So $a$ is atomic.
 \item [{\ref{prim-atom}$\Rightarrow$\ref{prim-prim}}] By the previous
@@ -2141,7 +2141,7 @@ filtrator.
 \item \label{genbase-main-fltr}$(\mathfrak{A},\mathfrak{Z})$ is a primary
 filtrator over a meet-semilattice.
 \item \label{genbase-main-conc}For a generalized filter base $S$ of $\mathcal{F}\in\mathfrak{A}$
-and $K\in\mathfrak{Z}$ we have 
+and $K\in\mathfrak{Z}$ we have
 \[
 K\in\up\mathcal{F}\Leftrightarrow\exists\mathcal{L}\in S:K\in\up\mathcal{L}.
 \]
@@ -3049,7 +3049,7 @@ The following is an implications tuple:
     \sqsubseteq a \sqcap \overline{B} \Rightarrow\\
     z \sqsubseteq \bigsqcup \setcond{ a \sqcap \overline{B} }{ B \in \up b } .
   \end{multline*}
-  
+
   But $a \sqcap \overline{B} \in \setcond{ z \in \mathscr{F} }{ z \sqsubseteq a \wedge z \sqcap b = \bot }$ because
   \[ \left( a \sqcap \overline{B} \right) \sqcap b = a \sqcap \left(
      \overline{B} \sqcap b \right) \sqsubseteq a \sqcap \left( \overline{B}
@@ -3321,6 +3321,83 @@ We have
 \end{description}
 \end{description}
 \end{proof}
+
+\begin{thm}
+  The following is an implication tuple:
+  \begin{enumerate}
+    \item \label{fzda-pow} $(\mathfrak{A}; \mathfrak{Z})$ is a powerset filtrator.
+
+    \item \label{fzda-bool} $(\mathfrak{A}; \mathfrak{Z})$ is a primary filtrator over a boolean
+    lattice.
+
+    \item \label{fzda-res} $\mathfrak{F} (Z (D \mathcal{A}))$ is order-isomorphic to $D
+    \mathcal{A}$ by the formulas
+    \begin{itemize}
+      \item $\mathcal{Y} = \bigsqcap \mathcal{X}$ for every $\mathcal{X} \in
+      \mathfrak{F} (Z (D \mathcal{A}))$;
+
+      \item $\mathcal{X} = \setcond{ \mathcal{F} \in Z (D \mathcal{A})
+      }{ \mathcal{F} \sqsupseteq \mathcal{Y}
+      }$ for every $\mathcal{Y} \in D \mathcal{A}$.
+    \end{itemize}
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\begin{widedisorder}
+
+\item[\ref{fzda-pow}$\Rightarrow$\ref{fzda-bool}]
+Obvious.
+
+\item[\ref{fzda-bool}$\Rightarrow$\ref{fzda-res}]
+  We need to prove that the above formulas define a bijection, then it becomes
+  evident that it's an order isomorphism (take into account that the order of
+  filters is \emph{reverse} to set inclusion).
+
+  First prove that these formulas describe correspondences between
+  $\mathfrak{F} (Z (D \mathcal{A}))$ and $D \mathcal{A}$.
+
+  Let $\mathcal{X} \in \mathfrak{F} (Z (D \mathcal{A}))$. Consider
+  $\mathcal{Y} = \bigsqcap \mathcal{X}$. Every element of $\mathcal{X}$ is
+  below $\mathcal{A}$, consequently $\mathcal{Y} \in D \mathcal{A}$.
+
+  Let now $\mathcal{Y} \in D \mathcal{A}$. Then $\setcond{ \mathcal{F} \in Z (D
+  \mathcal{A}) }{ \mathcal{F} \sqsupseteq \mathcal{Y}
+  }$ is a filter.
+
+  It remains to prove that these correspondences are mutually inverse.
+
+  Let $\mathcal{X} = \setcond{ \mathcal{F} \in Z (D \mathcal{A}) }{
+  \mathcal{F} \sqsupseteq \mathcal{Y}_0 }$ and
+  $\mathcal{Y}_1 = \bigsqcap \mathcal{X}$ for some $\mathcal{Y}_0 \in D
+  \mathcal{A}$.
+
+  $\mathcal{Y}_1 \sqsupseteq \mathcal{Y}_0$ is obvious. By theorem~\ref{core-if-intr} and the
+  condition~\ref{fzda-bool} we have $\mathcal{Y}_1 = \bigsqcap \mathcal{X} \sqsubseteq
+  \bigsqcap^{\mathfrak{A}} \setcond{ F \sqcap \mathcal{A} }{
+  F \in \up \mathcal{Y}_0 } =
+  \bigsqcap^{\mathfrak{A}} \setcond{ F }{ F \in
+  \up \mathcal{Y}_0 } \sqcap \mathcal{A} = \mathcal{Y}_0 \sqcap
+  \mathcal{A} = \mathcal{Y}_0$. So $\mathcal{Y}_1 = \mathcal{Y}_0$.
+
+  Let now $\mathcal{Y} = \bigsqcap \mathcal{X}_0$ and $\mathcal{X}_1 = \setcond{
+  \mathcal{F} \in Z (D \mathcal{A}) }{ \mathcal{F}
+  \sqsupseteq \mathcal{Y} }$ for some $\mathcal{X}_0 \in \mathfrak{F}
+  (Z (D \mathcal{A}))$.
+
+  $\mathcal{X}_1 = \setcond{ \mathcal{F} \in Z (D \mathcal{A}) }{
+  \mathcal{F} \sqsupseteq \bigsqcap \mathcal{X}_0 } =
+  \text{(by generalized filter bases)} = \setcond{ \mathcal{F} \in Z (D
+  \mathcal{A}) }{ \exists X \in \mathcal{X}_0 :
+  \mathcal{F} \sqsupseteq X } = \setcond{ \mathcal{F} \in Z (D
+  \mathcal{A}) }{ \mathcal{F} \in \mathcal{X}_0
+  } = \mathcal{X}_0$ because $\mathcal{F} \in \mathcal{X}_0
+  \Leftrightarrow \exists X \in \mathcal{X}_0 : \mathcal{F} \sqsupseteq X$ if
+  $\mathcal{F} \in Z (D \mathcal{A})$.
+\end{widedisorder}
+\end{proof}
+
 
 \section{Distributivity of quasicomplements}
 \begin{thm}
@@ -3712,7 +3789,7 @@ is not provable in ZF (without axiom of choice).
 \begin{defn}
 Let $\mathfrak{A}_{i}$ be a family of posets indexed by some set
 $\dom\mathfrak{A}$. We will define order of indexed families of elements of posets by
-the formula 
+the formula
 \[
 a\sqsubseteq b\Leftrightarrow\forall i\in\dom\mathfrak{A}:a_{i}\sqsubseteq b_{i}.
 \]
@@ -3756,13 +3833,13 @@ a\nasymp b & \Leftrightarrow\\
 ~
 \begin{enumerate}
 \item If $\mathfrak{A}_{i}$ are join-semilattices then $\mathfrak{A}$
-is a join-semilattice and 
+is a join-semilattice and
 \begin{equation}
 A\sqcup B=\mylambda i{\dom\mathfrak{A}}{Ai\sqcup Bi}.\label{func-union}
 \end{equation}
 
 \item If $\mathfrak{A}_{i}$ are meet-semilattices then $\mathfrak{A}$
-is a meet-semilattice and 
+is a meet-semilattice and
 \[
 A\sqcap B=\mylambda i{\dom\mathfrak{A}}{Ai\sqcap Bi}.
 \]
@@ -3922,7 +3999,7 @@ is (binarily) meet-closed.
 \begin{proof}
 Let every $(\mathfrak{A}_{i},\mathfrak{Z}_{i})$ be binarily join-closed.
 Let $A,B\in\prod\mathfrak{Z}$ and $A\sqcup^{\prod\mathfrak{Z}}B$
-exist. Then (by corollary \ref{prod-join2}) 
+exist. Then (by corollary \ref{prod-join2})
 \[
 A\sqcup^{\prod\mathfrak{Z}}B=\mylambda in{A_{i}\sqcup^{\mathfrak{Z}_{i}}B_{i}=}\mylambda in{A_{i}\sqcup^{\mathfrak{A}_{i}}B_{i}=}A\sqcup^{\prod\mathfrak{A}}B.
 \]
@@ -3930,7 +4007,7 @@ A\sqcup^{\prod\mathfrak{Z}}B=\mylambda in{A_{i}\sqcup^{\mathfrak{Z}_{i}}B_{i}=}\
 
 Let now every $(\mathfrak{A}_{i},\mathfrak{Z}_{i})$ be join-closed.
 Let $S\in\subsets\prod\mathfrak{Z}$ and $\bigsqcup^{\prod\mathfrak{Z}}S$
-exist. Then (by corollary \ref{prod-join2}) 
+exist. Then (by corollary \ref{prod-join2})
 \[
 \bigsqcup^{\prod\mathfrak{Z}}S=\mylambda i{\dom\mathfrak{A}}{\bigsqcup^{\mathfrak{Z}_{i}}\setcond{x_{i}}{x\in S}}=\mylambda i{\dom\mathfrak{A}}{\bigsqcup^{\mathfrak{A}_{i}}\setcond{x_{i}}{x\in S}}=\bigsqcup^{\prod\mathfrak{A}}S.
 \]
@@ -3967,7 +4044,7 @@ x\in Z\left(\prod\mathfrak{A}\right) & \Leftrightarrow\\
 \end{align*}
 
 
-So 
+So
 \begin{multline*}
 Z\left(\prod\mathfrak{A}\right)=\prod\mathfrak{Z}\Leftrightarrow\prod_{i\in\dom\mathfrak{A}}Z(\mathfrak{A}_{i})=\prod\mathfrak{Z}\Leftrightarrow\\
 \text{(because every \ensuremath{\mathfrak{Z}_{i}} is nonempty)}\Leftrightarrow\forall i\in\dom\mathfrak{A}:Z(\mathfrak{A}_{i})=\mathfrak{Z}_{i}.
@@ -4306,7 +4383,7 @@ The following is an implications tuple:
 \item\label{maxbase-fltr} $(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
 \item\label{maxbase-res} A set $S\in\subsets\mathfrak{Z}$ is a base of a filtrator element iff
   $\bigsqcap^{\mathfrak{A}} S$ exists and~$S$ is a base of $\bigsqcap^{\mathfrak{A}} S$.
-\end{enumerate}  
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
@@ -4318,7 +4395,7 @@ The following is an implications tuple:
     ~
     \begin{description}
       \item[$\Leftarrow$] Obvious.
-      
+
       \item[$\Rightarrow$] Let $S$ be a base of an~$f\in\mathfrak{A}$.
       $f$~is obviously a lower bound of~$S$. Let~$g$ be a lower bound of~$S$.
       Then for every $X\in\up f$ we have $g\sqsubseteq X$ that is $X\in\up g$.
@@ -4444,7 +4521,7 @@ separable center.\end{example}
 The lattice with the Hasse diagram\footnote{See Wikipedia for a definition of Hasse diagrams.}
 on figure \ref{not-sep-center} is bounded and distributive because
 it does not contain ``diamond lattice'' nor ``pentagon lattice''
-as a sublattice \cite{wiki:distributive-lattice}. 
+as a sublattice \cite{wiki:distributive-lattice}.
 \begin{figure}
 \caption{\label{not-sep-center}}
 \[
@@ -4719,14 +4796,6 @@ into ultrafilters.
 \end{cor}
 
 \section{Open problems about filters}
-
-\begin{conjecture}
-$\mathfrak{F}(Z(D\mathcal{A}))$ is order-isomorphic to~$D\mathcal{A}$ for every filter~$\mathcal{A}$ on a set.
-\end{conjecture}
-
-If the above conjecture will be found true, it is to be generalized for a wider class of filters than filters on a set.
-
-\subsection{Informal problems}
 
 Find a common generalization of two theorems:
 \begin{enumerate}
