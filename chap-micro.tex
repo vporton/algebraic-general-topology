@@ -1,0 +1,21 @@
+\chapter{Micronization}
+
+I defined ``micronization'' wrongly in my book and did some erroneous
+proofs about it. Here is an attempt to salvage it.
+
+\url{https://en.wikipedia.org/wiki/Transitive_reduction} is a special
+case of micronization.
+
+\begin{defn}
+\emph{Micronization} $\mu(E)$ of a binary relation~$E$ is defined by
+the formula:
+\[
+  \mu(E) = \bigsqcap^{\mathsf{RLD}} \setcond{f\in\mathbf{RLD}}{
+    S(f)\sqsupseteq E \land \forall n\in\mathbb{N}:(n \geq 2\Rightarrow f\asymp f^n).
+  }
+\]
+\end{defn}
+
+\begin{question}
+Under which conditions $S^\ast(\mu(E)) = E$?
+\end{question}
