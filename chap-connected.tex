@@ -427,9 +427,44 @@ $\mu(E) = \bigsqcap^{\mathsf{RLD}} \setcond{f\in\mathbf{Rel}}{S(f)\sqsupseteq E}
 Micronization directly generalizes for a funcoid or reloid~$E$.
 \end{rem}
 
+\begin{prop}
+$S (f) = S (f \sqcup 1) = S (f \setminus 1)$ if~$f$ is an endoreloid.
+\end{prop}
+
+\begin{proof}
+First prove $(f \sqcup 1)^n = 1 \sqcup f \sqcup \ldots \sqcup f^n$ for $n \in
+\mathbb{N}$. For $n = 0$ it's obvious. By induction we have
+\begin{align*}
+(f\sqcup 1)^{n+1} &= \\
+(f\sqcup 1)^n\circ(f\sqcup 1) &= \\
+(1\sqcup f\sqcup\dots\sqcup f^n)\circ(f\sqcup 1) &= \\
+(f\sqcup f^2\sqcup\dots\sqcup f^{n+1}) \sqcup (1\sqcup f\sqcup\dots\sqcup f^n) &= \\
+1\sqcup f\sqcup\dots\sqcup f^{n+1}.
+\end{align*}
+So $S (f \sqcup 1) = 1 \sqcup (1 \sqcup f) \sqcup (1 \sqcup f \sqcup f^2) \sqcup
+\ldots = 1 \sqcup f \sqcup f^2 \sqcup \ldots = S (f)$.
+
+By the above
+
+$S (f \setminus 1) = S ((f \setminus 1) \sqcup 1) \sqsupseteq S (f)$. But $S
+(f \setminus 1) \sqsubseteq S (f)$ is obvious. So $S (f \setminus 1) = S (f)$.
+\end{proof}
+
 \begin{obvious}
-Micronization is always reflexive.
+Micronization is always irreflexive.
 \end{obvious}
+
+\begin{proof}
+In the formula $\mu (E) = \bigsqcap^{\mathsf{RLD}} \setcond{ f \in
+\mathbf{Rel} }{ S (f) \sqsupseteq E}$ we can replace every $f$ with
+$f \setminus 1$ because $S (f)
+\sqsupseteq E \Rightarrow S (f \setminus 1) \sqsupseteq E$. So we get:
+\[
+  \mu (E) = \bigsqcap^{\mathsf{RLD}} \setcond{ f\setminus 1 }{ f \in
+  \mathbf{Rel}, S (f) \sqsupseteq E} \sqsubseteq \top\setminus 1.
+\]
+Thus $\mu (E)$ is irreflexive.
+\end{proof}
 
 \fxerror{Wrong ``reflexive'' instead of irreflexive in this section below.}
 
