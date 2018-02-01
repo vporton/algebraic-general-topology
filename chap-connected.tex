@@ -394,6 +394,24 @@ For every endoreloid $f$
 \begin{conjecture}
 $S(f)\circ S(f)=S(f)$ for every endofuncoid $f$.\end{conjecture}
 
+\section{Irreflexive reloids}
+
+\begin{defn}
+Endoreloid~$f$ is irreflexive iff $f\asymp 1^{\Ob f}$.
+\end{defn}
+
+\begin{prop}
+Endoreloid~$f$ is irreflexive iff $f\sqsubseteq \top\setminus 1$.
+\end{prop}
+
+\begin{proof}
+By theorem \ref{f-intrs-and-compl}.
+\end{proof}
+
+\begin{obvious}
+$f \setminus 1$ is an irreflexive endoreloid if $f$ is an endoreloid.
+\end{obvious}
+
 \section{Micronization}
 
 ``Micronization'' defined below conveys the idea of replacing a binary relation
@@ -410,9 +428,10 @@ Micronization directly generalizes for a funcoid or reloid~$E$.
 \end{rem}
 
 \begin{obvious}
-Micronization is always reflexive. \fxerror{Wrong here and in this
-section below.}
+Micronization is always reflexive.
 \end{obvious}
+
+\fxerror{Wrong ``reflexive'' instead of irreflexive in this section below.}
 
 \begin{defn}
 \emph{Interval}~$I$ on a poset~$\mathfrak{A}$ is such a subset of~$\mathfrak{A}$ that
