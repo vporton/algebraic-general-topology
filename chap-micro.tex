@@ -4,14 +4,14 @@ I defined ``micronization'' wrongly in my book and did some erroneous
 proofs about it. Here is an attempt to salvage it.
 
 \url{https://en.wikipedia.org/wiki/Transitive_reduction} is a special
-case of micronization.
+case of micronization. (Hm, maybe them coincide only for finite sets?)
 
 \begin{defn}
 \emph{Micronization} $\mu(E)$ of a binary relation~$E$ is defined by
 the formula:
 \[
   \mu(E) = \bigsqcap^{\mathsf{RLD}} \setcond{f\in\mathsf{RLD}}{
-    S(f)\sqsupseteq E \land \forall n\in\mathbb{N}:(n \geq 2\Rightarrow f\asymp f^n).
+    S^{\ast}(f)\sqsupseteq E \land f\asymp f^2.
   }
 \]
 \end{defn}
