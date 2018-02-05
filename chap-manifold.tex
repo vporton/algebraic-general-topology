@@ -1,0 +1,81 @@
+\chapter{Manifolds and surfaces}
+
+\section{Sides of a surface}
+
+\begin{defn}
+Let $\mu$ be an endofuncoid on a set~$U$.
+\emph{Surface side} of a set~$T\subseteq\Ob\mu$ is a connected component
+(regarding $\mu$) of the filter $(\rsupfun{\mu}T)\setminus T$.
+\fxnote{$\mu$ is used twice in this definition. We may generalize
+for two different funcoids instead.}
+\end{defn}
+
+\begin{xca}
+Prove that open disk (in a usual 3-dimensional space) has two surface sides
+and closed disk has one surface side.
+\end{xca}
+
+\section{Special points}
+
+\begin{defn}
+\emph{Cardinality special point} is  a limit point of a subset of~$T$ such
+that all elements~$x$ of the subset have the same cardinality of connected
+components of $(\rsupfun{\mu}\{x\})\setminus T$ but the the limit point has
+a different cardinality.
+\end{defn}
+
+\begin{xca}
+Excluding special points from closed disk produces open disk.
+\end{xca}
+
+Now define \emph{shift special points}.
+
+Let $I$ be an interval on~$\mathbb{R}$ (containing zero?)
+
+A point~$a$ is \emph{shift special} if there exists a transformation
+(that is a continuous function $f:I\times\mu\to\mu$ such that:
+\begin{enumerate}
+  \item $f(0)$ is identity. \fxwarning{Is this condition needed?}
+  \item for every sufficiently small~$\epsilon>0$ we have $f(\epsilon,a)\in T$;
+  \item there is $\epsilon>0$ such that for every $0<\epsilon'<\epsilon$ we have
+    $f(\epsilon')$ being not continuous at~$a$ regarding complete funcoid
+    defined by the function $x\mapsto\rsupfun{\mu}\{x\}\setminus T$.
+\end{enumerate}
+
+We may consider to additonally require that every~$f(\epsilon)$ is isomorphism
+of funcoids.
+
+\begin{example}
+$T$~is disk $\setcond{(x,y,0)}{x^2+y^2\leq 1}$. $f$~is the contraction
+$(\epsilon,v)\mapsto\frac{1}{1+\epsilon}v$. $a=(1,0,0)$.
+
+In the usual topology~$f$ is continuous. In
+$x\mapsto\rsupfun{\mu}\{x\}\setminus T$ we have the function
+$\epsilon\mapsto f(\epsilon)$ not continuous at zero.
+So~$a$ is a shift special point.
+\end{example}
+
+\begin{proof}
+$f (0) (v) = v$. Thus $\langle f (0) \rangle (\rsupfun{\mu} \{ a
+\} \setminus T) = \rsupfun{\mu} \{ a \} \setminus T$ intersects
+the plane $Z = 0$. But $f (0, a)$
+
+??
+\end{proof}
+
+\begin{question}
+Can we exclude real numbers from the play?
+\end{question}
+
+\begin{question}
+How cardinality special points and shift special points are related with each
+others?
+\end{question}
+
+\begin{question}
+How the number of surface sides is related with usual surface sides for
+manifolds?
+\end{question}
+
+Prove that $2$-manifold image which special points removed has the same number
+of sides as the defined above.
