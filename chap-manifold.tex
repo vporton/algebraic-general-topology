@@ -18,28 +18,38 @@ and closed disk has one surface side.
 \section{Special points}
 
 \begin{defn}
-\emph{Cardinality special point} is  a limit point of a subset of~$T$ such
-that all elements~$x$ of the subset have the same cardinality of connected
-components of $(\rsupfun{\mu}\{x\})\setminus T$ but the the limit point has
-a different cardinality.
+\emph{Surface cardinality} of a point~$a$ (an element of the set $\Ob\mu$) is
+the cardinality of the set of connected components of the filter
+$\rsupfun{\mu}\{a\}\setminus T$.
 \end{defn}
 
-We can replace ``the same cardinality of connected components'' with
-``filters being isomorphic'' and get what I call
-\emph{isomorphism special points}. Correction: we do not need requirement
-that other filters in vicinity of a special point are isomorphic
-(neither we need to require that their cardinalities are the same).
+\begin{defn}
+\emph{Cardinality regular point} is a point~$a$, which has a neighborhood
+($X\in\up\rsupfun{\mu}\{a\}$) such that all points~$x\in X\cap T$
+are of the same surface cardinality as the point~$a$.
+
+\emph{Cardinality special point} is a point which is not cardinality regular.
+\end{defn}
+
+\begin{defn}
+\emph{Isomorphism regular point} is a point~$a$, which has a neighborhood
+($X\in\up\rsupfun{\mu}\{a\}$) such that for all points~$x\in X\cap T$
+the filter $\rsupfun{\mu}\{a\}$ is isomorphic
+to~$\rsupfun{\mu}\{x\}$.
+
+\emph{Cardinality special point} is a point which is not cardinality regular.
+\end{defn}
 
 \fxnote{Try to replace isomorphism~$f$ with some kind of filter embedding.}
 
-Consider the ``angle''~$T$ produced by two half-planes. Are the points of
+Consider the dihedral angle~$T$ produced by two half-planes. Are the points of
 intersection of the half-planes isomorphism-special? (They should not
 be considered special. If they are special, this is a probably flaw in
 the definition of isomorphism special.)
 
-Consider intersection of two lines on plane. The intersection may be considered
-as a special point, because it has more connected components that the rest.
-We don't want to consider it special, however.
+Consider union~$T$ of two intersecting lines on a plane. The intersection
+may be considered as a special point, because it has more connected
+components that the rest. We don't want to consider it special, however.
 We can restrict to consider special only points which have less connected
 components (rather than more) to correct this trouble. Also try to define
 it with some kind of morphisms of filters instead of isomorphism as in
@@ -90,8 +100,8 @@ Can we exclude real numbers from the play?
 \end{question}
 
 \begin{question}
-How cardinality special points and shift special points are related with each
-others?
+How cardinality special points, isomorphism special points and shift
+special points are related with each others?
 \end{question}
 
 \begin{question}
