@@ -2,6 +2,8 @@
 
 \section{Sides of a surface}
 
+\fxerror{I have not defined connected components of a filter.}
+
 \begin{defn}
 Let $\mu$ be an endofuncoid on a set~$U$.
 \emph{Surface side} of a set~$T\subseteq\Ob\mu$ is a connected component
@@ -10,22 +12,39 @@ Let $\mu$ be an endofuncoid on a set~$U$.
 for two different funcoids instead.}
 \end{defn}
 
+Keep in mind that the above definition may work nicely if~$\mu$ is
+a complete funcoid induced by a topological space.
+
 \begin{example}
-An $\mathbb{R}^{n-1}$ subspace of a~$\mathbb{R}^n$ ($n\geq 1$) euclidean
-space has exactly two surface sides.
+For an $\mathbb{R}^{n-1}$ subspace~$T$ of a~$\mathbb{R}^n$ ($n\geq 1$)
+euclidean space and the complete funcoid~$\mu$ induced by the usual topology:
+\begin{enumerate}
+\item $T$~has exactly two surface sides.
+\item The filter $\rsupfun{\mu}@\{a\} \setminus T$ (for every $a\in T$)
+  has exactly two connected components.
+\end{enumerate}
 \end{example}
 
 \begin{proof}
-Without loss of generality assume that the
-subspace
+Without loss of generality assume that
 \[ T=\setcond{(x_0,x_1,\dots,x_{n-2},0)}{
-x_0,x_1,\dots,x_{n-2}\in\mathbb{R}}. \]
+x_0,x_1,\dots,x_{n-2}\in\mathbb{R}};
+\quad
+a = (0,\dots,0). \]
+
+We have
+\[ \rsupfun{\mu}@\{a\} =
+\left(\uparrow\setcond{v\in\mathbb{R}^n}{v_{n-1}>0}\sqcap\rsupfun{\mu}@\{a\}\right)
+\sqcup
+\left(\uparrow\setcond{v\in\mathbb{R}^n}{v_{n-1}<0}\sqcap\rsupfun{\mu}@\{a\}\right). \]
+
+Let us prove that
+$\uparrow\setcond{v\in\mathbb{R}^n}{v_{n-1}>0}\sqcap\rsupfun{\mu}@\{a\}$ and
+$\uparrow\setcond{v\in\mathbb{R}^n}{v_{n-1}<0}\sqcap\rsupfun{\mu}@\{a\}$ are
+connected components.
 
 ??
 \end{proof}
-
-\fxwarning{Check if $(\rsupfun{\mu}\{a\})\setminus T$ has two connected
-components if~$T$ is a plane in~$\mathbb{R}^3$.}
 
 \subsection{Special points}
 
