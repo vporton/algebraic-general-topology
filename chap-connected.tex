@@ -412,6 +412,29 @@ By theorem \ref{f-intrs-and-compl}.
 $f \setminus 1$ is an irreflexive endoreloid if $f$ is an endoreloid.
 \end{obvious}
 
+\begin{prop}
+$S (f) = S (f \sqcup 1) = S (f \setminus 1)$ if~$f$ is an endoreloid.
+\end{prop}
+
+\begin{proof}
+First prove $(f \sqcup 1)^n = 1 \sqcup f \sqcup \ldots \sqcup f^n$ for $n \in
+\mathbb{N}$. For $n = 0$ it's obvious. By induction we have
+\begin{align*}
+(f\sqcup 1)^{n+1} &= \\
+(f\sqcup 1)^n\circ(f\sqcup 1) &= \\
+(1\sqcup f\sqcup\dots\sqcup f^n)\circ(f\sqcup 1) &= \\
+(f\sqcup f^2\sqcup\dots\sqcup f^{n+1}) \sqcup (1\sqcup f\sqcup\dots\sqcup f^n) &= \\
+1\sqcup f\sqcup\dots\sqcup f^{n+1}.
+\end{align*}
+So $S (f \sqcup 1) = 1 \sqcup (1 \sqcup f) \sqcup (1 \sqcup f \sqcup f^2) \sqcup
+\ldots = 1 \sqcup f \sqcup f^2 \sqcup \ldots = S (f)$.
+
+By the above
+
+$S (f \setminus 1) = S ((f \setminus 1) \sqcup 1) \sqsupseteq S (f)$. But $S
+(f \setminus 1) \sqsubseteq S (f)$ is obvious. So $S (f \setminus 1) = S (f)$.
+\end{proof}
+
 \section{Micronization}
 
 ``Micronization'' was a thoroughly wrong idea with several errors in
