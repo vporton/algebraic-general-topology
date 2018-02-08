@@ -1,0 +1,114 @@
+\chapter{More on connectedness}
+
+\emph{This section is a very rough draft.}
+
+\begin{prop}
+  There are filters $\mathcal{A}$, $\mathcal{B}$, such that there are no
+  filters $\mathcal{X} \sqsubseteq \mathcal{A}$, $\mathcal{Y} \sqsubseteq
+  \mathcal{B}$ such that $\mathcal{X} \sqcup \mathcal{Y} = \mathcal{A} \sqcup
+  \mathcal{B}$ and $\mathcal{X} \asymp \mathcal{Y}$.
+\end{prop}
+
+\begin{proof}
+  \url{https://math.stackexchange.com/questions/2639206}
+
+  (It also follows that sometimes $Z (D a)$ is not a complete lattice, because
+  otherwise we could prove this theorem.)
+\end{proof}
+
+\begin{prop}
+  If $\mathcal{A}$, $\mathcal{B}$ are filters and $\mathcal{A} \sqcup
+  \mathcal{B} = U$ is principal filter, then there are sets $X \sqsubseteq
+  \mathcal{A}$, $Y \sqsubseteq \mathcal{B}$ such that $X \sqcup Y = U$ and $X
+  \asymp Y$.
+\end{prop}
+
+\begin{proof}
+  Take $X = \Cor \mathcal{A}$ and $Y' = \Cor \mathcal{B}$. Then $X
+  \sqcup Y' = U$ because of co-separability of $\mathfrak{F} (U)$. Take $Y = U
+  \setminus X$. Then $X \sqcup Y = U$ and $X \asymp Y$.
+\end{proof}
+
+\begin{prop}
+  A principal filter $A$ is connected regarding endofuncoid $\mu$ iff
+  \[ \forall X, Y \in \mathscr{P} (\Ob \mu) \setminus \{ \bot \} :
+     \left( X \sqcup Y = A \wedge X \asymp Y \Rightarrow X \mathrel{[\mu]} Y
+     \right) . \]
+\end{prop}
+
+\begin{proof}
+  Easily follows from ??.
+\end{proof}
+
+\begin{defn}
+  \emph{Connected component} of a filter regarding a funcoid is a maximal
+  connected subfilter of this filter.
+\end{defn}
+
+TODO: For reloids too.
+
+Subfilter of a connected filter is connected.
+
+\begin{prop}
+  If $U$ is a principal filter, then it is connected regarding $\mu$ iff it is
+  connected regarding $S (\mu)$.
+\end{prop}
+
+\begin{proof}
+  If $U$ is connected regarding $\mu$, it is connected regarding $S (\mu)$,
+  obviously.
+
+  Suppose $U$ is connected regarding $S (\mu)$. Then for $X, Y \in \mathscr{P}
+  (\Ob \mu) \setminus \{ \bot \}$ we have if $X \sqcup Y = U$ and $X
+  \asymp Y$, then $X \mathrel{[S (\mu)]} Y$. So $X \times Y \nasymp 1 \sqcup
+  \mu \sqcup \mu^2 \sqcup \ldots$ and thus by distributivity for principal
+  filter we have $X \times Y \nasymp \mu^n$ for some $n \geq ? ?$ that is $X
+  \mathrel{[\mu^n]} Y$ for some $n$ and thus there are atomic filters $p_0,
+  \ldots, p_n$ such that $p_0 \in \atoms^{\mathfrak{F}} X$, $p_n \in
+  \atoms^{\mathfrak{F}} Y$ and $p_i \mathrel{[\mu]} p_{i + 1}$. Thus
+  there is $k$ such that $p_k \mathrel{[\mu]} p_{k + 1}$ and $p_k \in
+  \atoms^{\mathfrak{F}} X$, $p_{k + 1} \in \atoms^{\mathfrak{F}}
+  Y$. Thus $X \mathrel{[\mu]} Y$. We have $U$ connected regarding $\mu$.
+\end{proof}
+
+Also for $S^{\ast}$
+
+\begin{prop}
+  If two connected components have non-least meet, then their join is
+  connected.
+\end{prop}
+
+\begin{proof}
+  ??
+\end{proof}
+
+\begin{prop}
+  Connected components do not intersect.
+\end{prop}
+
+\begin{proof}
+  Let $\mathcal{A}$, $\mathcal{B}$ be distinct connected components of a
+  filter $\mathcal{F}$ regarding funcoid $\mu$. Suppose they intersect, that
+  is $\mathcal{A} \sqcap \mathcal{B} \neq \bot$. Without loss of generality
+  assume $\mathcal{A} \mathrel{\not{\sqsubseteq}} \mathcal{B}$. So (theorem
+  ??) there exists $x \in \atoms \mathcal{A}$ and $x \asymp
+  \mathcal{B}$.
+
+  By definition of connectedness of $\mathcal{A}$, we have $x \mathrel{[\mu]}
+  \mathcal{A} \sqcap \mathcal{B}$ and therefore $x \mathrel{[\mu]}
+  \mathcal{B}$.
+
+  ??
+\end{proof}
+
+\begin{example}
+  Connected components may not form a weak partition.
+\end{example}
+
+\begin{proof}
+  Consider funcoids $\Delta \times^{\mathsf{FCD}} \Delta$ on real line.
+  Then connected components are (prove!) non-zero singletons and $\Delta$. It
+  is not a weak partition.
+\end{proof}
+
+Add more counter-examples (for non-principal filters).
