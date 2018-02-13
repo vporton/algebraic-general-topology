@@ -131,10 +131,10 @@ $b$.
 The following statements are equivalent for a binary relation $\mu$
 and a set $A$:
 \begin{enumerate}
-\item \label{rconn-path}For every $a,b\in A$ there is a path between $a$
-and $b$ in $A$ through $\mu$.
-\item \label{rconn-ge}$S(\mu\cap(A\times A))\supseteq A\times A$.
-\item \label{rconn-eq}$S(\mu\cap(A\times A))=A\times A$.
+\item \label{rconn-path}For every $a,b\in A$ there is
+a nonzero-length path between $a$ and $b$ in $A$ through $\mu$.
+\item \label{rconn-ge}$S_1(\mu\cap(A\times A))\supseteq A\times A$.
+\item \label{rconn-eq}$S_1(\mu\cap(A\times A))=A\times A$.
 \item \label{rconn-conn}$A$ is connected regarding $\mu$.
 \end{enumerate}
 \end{thm}
@@ -143,31 +143,31 @@ and $b$ in $A$ through $\mu$.
 \begin{description}
 \item [{\ref{rconn-path}$\Rightarrow$\ref{rconn-ge}}] Let for every
 $a,b\in A$ there is a path between $a$ and $b$ in $A$ through
-$\mu$. Then $a\mathrel{(S(\mu\cap A\times A))}b$ for every $a,b\in A$.
-It is possible only when $S(\mu\cap(A\times A))\supseteq A\times A$.
+$\mu$. Then $a\mathrel{(S_1(\mu\cap A\times A))}b$ for every $a,b\in A$.
+It is possible only when $S_1(\mu\cap(A\times A))\supseteq A\times A$.
 \item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-path}}] For every two
-vertices $a$ and $b$ we have $a\mathrel{(S(\mu\cap A\times A))}b$.
+vertices $a$ and $b$ we have $a\mathrel{(S_1(\mu\cap A\times A))}b$.
 So (by the previous theorem) for every two vertices $a$ and $b$
 there exists a path from $a$ to $b$.
 \item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-conn}}] Suppose $\lnot(X\rsuprel{\mu\cap(A\times A)}Y)$
 for some $X,Y\in\mathscr{P}\mho\setminus\{\emptyset\}$ such that
 $X\cup Y=A$. Then by a lemma $\lnot(X\rsuprel{(\mu\cap(A\times A))^{n}}Y)$
-for every $m\in\mathbb{N}$. Consequently $\lnot(X\rsuprel{S(\mu\cap(A\times A))}Y)$.
-So $S(\mu\cap(A\times A))\ne A\times A$.
-\item [{\ref{rconn-conn}$\Rightarrow$\ref{rconn-eq}}] If $\rsupfun{S(\mu\cap(A\times A))}\{v\}=A$
-for every vertex $v$ then $S(\mu\cap(A\times A))=A\times A$. Consider
-the remaining case when $V\eqdef\rsupfun{S(\mu\cap(A\times A))}\{v\}\subset A$
+for every $n\in\mathbb{Z}_+$. Consequently $\lnot(X\rsuprel{S_1(\mu\cap(A\times A))}Y)$.
+So $S_1(\mu\cap(A\times A))\ne A\times A$.
+\item [{\ref{rconn-conn}$\Rightarrow$\ref{rconn-eq}}] If $\rsupfun{S_1(\mu\cap(A\times A))}\{v\}=A$
+for every vertex $v$ then $S_1(\mu\cap(A\times A))=A\times A$. Consider
+the remaining case when $V\eqdef\rsupfun{S_1(\mu\cap(A\times A))}\{v\}\subset A$
 for some vertex $v$. Let $W=A\setminus V$. If $\card A=1$ then
-$S(\mu\cap(A\times A))\supseteq\id_{A}=A\times A$; otherwise $W\neq\emptyset$.
+$S_1(\mu\cap(A\times A))\supseteq\id_{A}=A\times A$; otherwise $W\neq\emptyset$.
 Then $V\cup W=A$ and so $V\rsuprel{\mu}W$ what is equivalent to
 $V\rsuprel{\mu\cap(A\times A)}W$ that is $\rsupfun{\mu\cap(A\times A)}V\cap W\ne\emptyset$.
 This is impossible because
 \begin{multline*}
-\rsupfun{\mu\cap(A\times A)}V=\rsupfun{\mu\cap(A\times A)}\rsupfun{S(\mu\cap(A\times A))}V=\\
-\rsupfun{S_{1}(\mu\cap(A\times A))}V\subseteq\rsupfun{S(\mu\cap(A\times A))}V=V.
+\rsupfun{\mu\cap(A\times A)}V=\rsupfun{\mu\cap(A\times A)}\rsupfun{S_1(\mu\cap(A\times A))}V=\\
+\rsupfun{S_{1}(\mu\cap(A\times A))}V\subseteq\rsupfun{S_1(\mu\cap(A\times A))}V=V.
 \end{multline*}
 
-\item [{\ref{rconn-ge}$\Rightarrow$\ref{rconn-eq}}] Because $S(\mu\cap(A\times A))\subseteq A\times A$.
+\item [{\ref{rconn-ge}$\Rightarrow$\ref{rconn-eq}}] Because $S_1(\mu\cap(A\times A))\subseteq A\times A$.
 \end{description}
 \end{proof}
 \begin{cor}
