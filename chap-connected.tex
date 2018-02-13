@@ -150,13 +150,13 @@ a nonzero-length path between $a$ and $b$ in $A$ through $\mu$.
 ~
 \begin{description}
 \item [{\ref{rconn-path}$\Rightarrow$\ref{rconn-ge}}] Let for every
-$a,b\in A$ there is a path between $a$ and $b$ in $A$ through
+$a,b\in A$ there is a nonzero-length path between $a$ and $b$ in $A$ through
 $\mu$. Then $a\mathrel{(S_1(\mu\cap A\times A))}b$ for every $a,b\in A$.
 It is possible only when $S_1(\mu\cap(A\times A))\supseteq A\times A$.
 \item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-path}}] For every two
 vertices $a$ and $b$ we have $a\mathrel{(S_1(\mu\cap A\times A))}b$.
-So (by the previous theorem) for every two vertices $a$ and $b$
-there exists a path from $a$ to $b$.
+So (by the previous) for every two vertices $a$ and $b$
+there exists a nonzero-length path from $a$ to $b$.
 \item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-conn}}] Suppose $\lnot(X\rsuprel{\mu\cap(A\times A)}Y)$
 for some $X,Y\in\mathscr{P}\mho\setminus\{\emptyset\}$ such that
 $X\cup Y=A$. Then by a lemma $\lnot(X\rsuprel{(\mu\cap(A\times A))^{n}}Y)$
@@ -171,8 +171,8 @@ Then $V\cup W=A$ and so $V\rsuprel{\mu}W$ what is equivalent to
 $V\rsuprel{\mu\cap(A\times A)}W$ that is $\rsupfun{\mu\cap(A\times A)}V\cap W\ne\emptyset$.
 This is impossible because
 \begin{multline*}
-\rsupfun{\mu\cap(A\times A)}V=\rsupfun{\mu\cap(A\times A)}\rsupfun{S_1(\mu\cap(A\times A))}V=\\
-\rsupfun{S_{1}(\mu\cap(A\times A))}V\subseteq\rsupfun{S_1(\mu\cap(A\times A))}V=V.
+\rsupfun{\mu\cap(A\times A)}V=\rsupfun{\mu\cap(A\times A)}\rsupfun{S_1(\mu\cap(A\times A))}V\subseteq\\
+\rsupfun{S_1(\mu\cap(A\times A))}V=V.
 \end{multline*}
 
 \item [{\ref{rconn-ge}$\Rightarrow$\ref{rconn-eq}}] Because $S_1(\mu\cap(A\times A))\subseteq A\times A$.
@@ -187,7 +187,7 @@ $A$ regarding a binary relation $F$ is a maximal connected subset
 of $A$.\end{defn}
 \begin{thm}
 The set $A$ is partitioned into connected components (regarding every
-binary relation $F$).\end{thm}
+reflexive binary relation $F$).\end{thm}
 \begin{proof}
 Consider the binary relation $a\sim b\Leftrightarrow a\mathrel{(S_1(F))}b\wedge b\mathrel{(S_1(F))}a$.
 $\sim$ is a symmetric, reflexive, and transitive relation. So all
@@ -311,7 +311,7 @@ is connected regarding every $F\in\rsupfun{\uparrow^{\mathsf{RLD}}}\up f$.\end{t
 iff $S_1(F)=F^{1}\sqcup F^{2}\sqcup\dots\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})$.
 
 
-$S^{\ast}(f)=\bigsqcap_{F\in\up f}^{\mathsf{RLD}}S_1(F)\sqsupseteq\bigsqcap_{F\in\up f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
+$S^{\ast}_1(f)=\bigsqcap_{F\in\up f}^{\mathsf{RLD}}S_1(F)\sqsupseteq\bigsqcap_{F\in\up f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
 
 \end{description}
 \end{proof}
