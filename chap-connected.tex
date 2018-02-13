@@ -127,6 +127,14 @@ for every $i=0,\ldots,n-1$. That is there is a path from $a$ to
 $b$.
 \end{description}
 \end{proof}
+\begin{prop}
+There is a path from element $a$ to element $b$ in a set $A$ through
+a binary relation $\mu$ iff $a\mathrel{(S_1(\mu\cap A\times A))}b$
+(that is $(a,b)\in S_1(\mu\cap A\times A)$).\end{prop}
+\begin{proof}
+Similar to the previous proof.
+\end{proof}
+
 \begin{thm}
 The following statements are equivalent for a binary relation $\mu$
 and a set $A$:
@@ -181,7 +189,7 @@ of $A$.\end{defn}
 The set $A$ is partitioned into connected components (regarding every
 binary relation $F$).\end{thm}
 \begin{proof}
-Consider the binary relation $a\sim b\Leftrightarrow a\mathrel{(S(F))}b\wedge b\mathrel{(S(F))}a$.
+Consider the binary relation $a\sim b\Leftrightarrow a\mathrel{(S_1(F))}b\wedge b\mathrel{(S_1(F))}a$.
 $\sim$ is a symmetric, reflexive, and transitive relation. So all
 points of $A$ are partitioned into a collection of sets $Q$. Obviously
 each component is (strongly) connected. If a set $R\subseteq A$ is
@@ -197,12 +205,12 @@ Direct implication is obvious. Reverse is proved by contradiction.
 
 \section{Connectedness regarding funcoids and reloids}
 \begin{defn}
-$S_{1}^{\ast}(\mu)=\bigsqcap_{M\in\up\mu}^{\mathsf{RLD}}S_{1}(M)$
+\index{connectivity reloid}\emph{Connectivity reloid} $S_{1}^{\ast}(\mu)=\bigsqcap_{M\in\up\mu}^{\mathsf{RLD}}S_{1}(M)$
 for an endoreloid~$\mu$.
 \end{defn}
 
 \begin{defn}
-\index{connectivity reloid}\emph{Connectivity reloid} $S^{\ast}(\mu)$
+$S^{\ast}(\mu)$
 for an endoreloid $\mu$ is defined as follows:
 \[
 S^{\ast}(\mu)=\bigsqcap_{M\in\up\mu}^{\mathsf{RLD}}S(M).
@@ -217,15 +225,17 @@ for every endoreloid $\mu$.\end{prop}
 \begin{proof}
 By the proposition \ref{b-f-back-distr}.\end{proof}
 \begin{prop}
-$S^{\ast}(\mu)=S(\mu)$ if $\mu$ is a principal reloid.\end{prop}
+$S^{\ast}(\mu)=S(\mu)$ and $S^{\ast}_1(\mu)=S_1(\mu)$ if $\mu$ is a principal reloid.\end{prop}
 \begin{proof}
-$S^{\ast}(\mu)=\bigsqcap\{S(\mu)\}=S(\mu)$.\end{proof}
+$S^{\ast}(\mu)=\bigsqcap\{S(\mu)\}=S(\mu)$;
+$S^{\ast}_1(\mu)=\bigsqcap\{S_1(\mu)\}=S_1(\mu)$.
+\end{proof}
 \begin{defn}
 \index{connected!regarding endoreloid}A filter $\mathcal{A}\in\mathscr{F}(\Ob\mu)$
-is called \emph{connected} regarding an endoreloid $\mu$ when $S^{\ast}(\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}))\sqsupseteq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.\end{defn}
+is called \emph{connected} regarding an endoreloid $\mu$ when $S^{\ast}_1(\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}))\sqsupseteq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.\end{defn}
 \begin{obvious}
 A filter $\mathcal{A}\in\mathscr{F}(\Ob\mu)$ is connected regarding
-an endoreloid $\mu$ iff $S^{\ast}(\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}))=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.\end{obvious}
+an endoreloid $\mu$ iff $S^{\ast}_1(\mu\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}))=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.\end{obvious}
 \begin{defn}
 \index{connected!regarding endofuncoid}A filter $\mathcal{A}\in\mathscr{F}(\Ob\mu)$
 is called \emph{connected} regarding an endofuncoid $\mu$ when
@@ -261,14 +271,14 @@ and $\mathbf{Rel}$-endomorphism~$\mu$ on a set $U$:
 \begin{description}
 \item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-rld}}] ~
 \begin{align*}
-S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A)) & =\\
-S^{\ast}(\uparrow^{\mathsf{RLD}}(\mu\sqcap(A\times A))) & =\\
-\uparrow^{\mathsf{RLD}}S(\mu\sqcap(A\times A)).
+S^{\ast}_1(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A)) & =\\
+S^{\ast}_1(\uparrow^{\mathsf{RLD}}(\mu\sqcap(A\times A))) & =\\
+\uparrow^{\mathsf{RLD}}S_1(\mu\sqcap(A\times A)).
 \end{align*}
 So
 \begin{align*}
-S^{\ast}(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A))\sqsupseteq A\times^{\mathsf{RLD}}A & \Leftrightarrow\\
-\uparrow^{\mathsf{RLD}}S(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=A\times^{\mathsf{RLD}}A.
+S^{\ast}_1(\uparrow^{\mathsf{RLD}}\mu\sqcap(A\times^{\mathsf{RLD}}A))\sqsupseteq A\times^{\mathsf{RLD}}A & \Leftrightarrow\\
+\uparrow^{\mathsf{RLD}}S_1(\mu\sqcap(A\times A))\sqsupseteq\uparrow^{\mathsf{RLD}}(A\times A)=A\times^{\mathsf{RLD}}A.
 \end{align*}
 
 \item [{\ref{princ-conn-rel}$\Leftrightarrow$\ref{princ-conn-fcd}}] It
@@ -298,10 +308,10 @@ is connected regarding every $F\in\rsupfun{\uparrow^{\mathsf{RLD}}}\up f$.\end{t
 \begin{description}
 \item [{$\Rightarrow$}] Obvious.
 \item [{$\Leftarrow$}] $\mathcal{A}$ is connected regarding $\uparrow^{\mathsf{RLD}}F$
-iff $S(F)=F^{0}\sqcup F^{1}\sqcup F^{2}\sqcup\dots\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})$.
+iff $S_1(F)=F^{1}\sqcup F^{2}\sqcup\dots\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})$.
 
 
-$S^{\ast}(f)=\bigsqcap_{F\in\up f}^{\mathsf{RLD}}S(F)\sqsupseteq\bigsqcap_{F\in\up f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
+$S^{\ast}(f)=\bigsqcap_{F\in\up f}^{\mathsf{RLD}}S_1(F)\sqsupseteq\bigsqcap_{F\in\up f}(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A})=\mathcal{A}\times^{\mathsf{RLD}}\mathcal{A}$.
 
 \end{description}
 \end{proof}
