@@ -423,7 +423,8 @@ $f \setminus 1$ is an irreflexive endoreloid if $f$ is an endoreloid.
 \end{obvious}
 
 \begin{prop}
-$S (f) = S (f \sqcup 1) = S (f \setminus 1)$ if~$f$ is an endoreloid.
+$S (f) = S (f \sqcup 1)$ if~$f$ is an endoreloid,
+endofuncoid, or endorelation.
 \end{prop}
 
 \begin{proof}
@@ -438,9 +439,14 @@ First prove $(f \sqcup 1)^n = 1 \sqcup f \sqcup \ldots \sqcup f^n$ for $n \in
 \end{align*}
 So $S (f \sqcup 1) = 1 \sqcup (1 \sqcup f) \sqcup (1 \sqcup f \sqcup f^2) \sqcup
 \ldots = 1 \sqcup f \sqcup f^2 \sqcup \ldots = S (f)$.
+\end{proof}
 
-By the above
+\begin{cor}
+$S (f) = S (f \sqcup 1) = S (f \setminus 1)$ if~$f$ is an endoreloid
+(or just an endorelation).
+\end{cor}
 
+\begin{proof}
 $S (f \setminus 1) = S ((f \setminus 1) \sqcup 1) \sqsupseteq S (f)$. But $S
 (f \setminus 1) \sqsubseteq S (f)$ is obvious. So $S (f \setminus 1) = S (f)$.
 \end{proof}
