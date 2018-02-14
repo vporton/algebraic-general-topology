@@ -101,7 +101,14 @@ Excluding special points (either cardinality or isomorphism) from closed disk
 produces open disk.
 \end{xca}
 
-Consider the following two subsets of a plane:
+Let us note that special points of closed disk have surface cardinality
+$1$ which is less than surface cardinality ($2$) of regular points.
+So, it is a conceivable idea to consider special points which have
+lesser surface cardinality than nearby points.
+
+Consider the following two subsets of a plane (the lines are the
+set~$T$, the small black blob is the point~$a$, and the cyan
+blob symbolizes the filter $(\rsupfun{\mu}\{a\})\setminus T$):
 
 \begin{tikzpicture}
     \node at (0,0) [circle,draw,fill=cyan] (a) {};
@@ -111,12 +118,15 @@ Consider the following two subsets of a plane:
     \draw [very thick] (0,0) -- +(240:1cm);
 \end{tikzpicture}
 
-% \begin{tikzpicture}
-%     \node[draw, fill=cyan, ellipse, text width=4pt] (a) {};
-%     \draw (a) -- +(0:4cm);
-%     \draw (a) -- +(120:4cm);
-%     \draw (a) -- +(240:4cm);
-% \end{tikzpicture}
+\begin{tikzpicture}
+    \node at (0,0) [circle,draw,fill=cyan] (a) {};
+    \fill (0,0) circle [radius=2pt,fill=black];
+    \draw [very thick] (0,0) -- +(0:1cm);
+    \draw [very thick] (0,0) -- +(180:1cm);
+\end{tikzpicture}
+
+For one of the sets surface cardinality of~$a$ is $3$ and for
+another it is~$2$.
 
 Now define \emph{shift special points}.
 
