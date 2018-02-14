@@ -247,14 +247,23 @@ Improper filter $\bot^{\mathscr{F}}$ is connected regarding:
 \end{thm}
 
 \begin{proof}
-  Let $a, b \in \atoms (\mathcal{A} \sqcup \mathcal{B})$ for some
-  connected filters $\mathcal{A}$ and $\mathcal{B}$ where $\mathcal{A} \sqcap
-  \mathcal{B}$ is nonempty. Take path $a, x, b$ where $x \in \atoms
-  (\mathcal{A} \sqcap \mathcal{B})$. It remains to prove $a \mathrel{[\mu]} x$
-  and $x \mathrel{[\mu]} b$. We will prove the first as the second is similar.
-  But $a \mathrel{[\mu]} x$ follows?? \fxerror{no, it doesn't}
-  from the fact that $a \in \atoms \mathcal{A} \vee a \in \atoms
-  \mathcal{B}$.
+Let $\mathcal{A}$ and $\mathcal{B}$ be intersecting filters, both
+connected regarding an endofuncoid~$\mu$. Let $\mathcal{X}
+\sqcup \mathcal{Y} = \mathcal{A} \sqcup \mathcal{B}$ for proper filters
+$\mathcal{X}$, $\mathcal{Y}$. Then either $\mathcal{X}$ or $\mathcal{Y}$
+intersects $\mathcal{A} \sqcap \mathcal{B}$. Without loss of generality assume
+$\mathcal{X} \sqcap \mathcal{A} \sqcap \mathcal{B} \neq \bot$ (and thus
+$\mathcal{X} \sqcap \mathcal{A} \neq \bot$). Also $\mathcal{Y}$ intersects
+either $\mathcal{A}$ or $\mathcal{B}$. Without loss of generality assume
+$\mathcal{Y} \sqcap \mathcal{A} \neq \bot$.
+
+We have $(\mathcal{X} \sqcap \mathcal{A}) \sqcup (\mathcal{Y} \sqcap
+\mathcal{A}) = (\mathcal{X} \sqcup \mathcal{Y}) \sqcap \mathcal{A} =
+(\mathcal{A} \sqcup \mathcal{B}) \sqcap \mathcal{A} = \mathcal{A}$. So
+$\mathcal{X} \sqcap \mathcal{A} \mathrel{[\mu]} \mathcal{Y} \sqcap
+\mathcal{A}$ because $\mathcal{A}$ is connected, consequently $\mathcal{X}
+\mathrel{[\mu]} \mathcal{Y}$ that is $\mathcal{A} \sqcup \mathcal{B}$ is
+connected.
 \end{proof}
 
 \begin{thm}
