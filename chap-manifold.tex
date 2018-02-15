@@ -110,20 +110,30 @@ Consider the following two subsets of a plane (the lines are the
 set~$T$, the small black blob is the point~$a$, and the cyan
 blob symbolizes the filter $(\rsupfun{\mu}\{a\})\setminus T$):
 
-\begin{tikzpicture}
-    \node at (0,0) [circle,draw,fill=cyan] (a) {};
-    \fill (0,0) circle [radius=2pt,fill=black];
-    \draw [very thick] (0,0) -- +(0:1cm);
-    \draw [very thick] (0,0) -- +(120:1cm);
-    \draw [very thick] (0,0) -- +(240:1cm);
-\end{tikzpicture}
-
-\begin{tikzpicture}
-    \node at (0,0) [circle,draw,fill=cyan] (a) {};
-    \fill (0,0) circle [radius=2pt,fill=black];
-    \draw [very thick] (0,0) -- +(0:1cm);
-    \draw [very thick] (0,0) -- +(180:1cm);
-\end{tikzpicture}
+\begin{figure}
+  \begin{subfigure}[c]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \node at (0,0) [circle,draw,fill=cyan] (a) {};
+        \fill (0,0) circle [radius=2pt,fill=black];
+        \draw [ultra thick] (0,0) -- +(0:1cm);
+        \draw [ultra thick] (0,0) -- +(120:1cm);
+        \draw [ultra thick] (0,0) -- +(240:1cm);
+    \end{tikzpicture}
+    \caption{Three surface sides}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \node at (0,0) [circle,draw,fill=cyan] (a) {};
+        \fill (0,0) circle [radius=2pt,fill=black];
+        \draw [ultra thick] (0,0) -- +(0:1cm);
+        \draw [ultra thick] (0,0) -- +(180:1cm);
+    \end{tikzpicture}
+    \caption{Two surface sides}
+  \end{subfigure}
+  \caption{Examples of surface cardinality}
+\end{figure}
 
 For one of the sets surface cardinality of~$a$ is $3$ and for
 another it is~$2$.
