@@ -355,8 +355,50 @@ connectedness of an ultrafilter.
   \sqcup \ldots = 1 \sqcup \mu \sqcup \mu^2 \sqcup \ldots = S (\mu)$.
 \end{proof}
 
-\begin{xca}
-  Write down the easy corollary of this and the theorem ??.
-\end{xca}
-
 \fxnote{also algebraic properties of $S_1$ and $S^{\ast}_1$}
+
+\begin{thm}
+  \fxnote{Move this theorem in the book,}
+  $\mathcal{X} \mathrel{\left[ \bigsqcap S \right]} \mathcal{Y}
+  \Leftrightarrow \forall f \in S : \mathcal{X} \suprel{f} \mathcal{Y}$ if
+  $S$ is a generalized filter base.
+\end{thm}
+
+\begin{proof}
+  $\mathcal{X} \mathrel{\left[ \bigsqcap S \right]} \mathcal{Y}
+  \Leftrightarrow (\mathcal{X} \times^{\mathsf{FCD}} \mathcal{Y})
+  \sqcap \bigsqcap S \neq \bot \Leftrightarrow \bigsqcap_{f \in S} f \sqcap
+  (\mathcal{X} \times^{\mathsf{FCD}} \mathcal{Y}) \neq \bot
+  \Leftrightarrow \text{(by properties of generalized filter bases)}
+  \Leftrightarrow \forall f \in S : f \sqcap (\mathcal{X}
+  \times^{\mathsf{FCD}} \mathcal{Y}) \neq \bot \Leftrightarrow \forall
+  f \in S : \mathcal{X} \suprel{f} \mathcal{Y}$.
+\end{proof}
+
+\begin{thm}
+  The following are pairwise equivalent for a funcoid $\mu$ and filter
+  $\mathcal{A}$:
+  \begin{enumerate}
+    \item $\mathcal{A}$ is connected regarding funcoid $\mu$
+
+    \item $\mathcal{A}$ is connected regarding every funcoid in $\up
+    \mu$.
+
+    \item $\mathcal{A}$ is connected regarding every funcoid in
+    $\up^{\Gamma} \mu$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  TODO: ``Connectedness'' should be moved after ``Funcoids are filters'' to
+  use $\Gamma$ in this proof.
+
+  1$\Rightarrow$2$\Rightarrow$3. Obvious.
+
+  3$\Rightarrow$1. Let $\mathcal{X}, \mathcal{Y} \in \mathscr{F} (\Ob
+  \mu)$ and $\mathcal{X} \sqcup \mathcal{Y} = \mathcal{A}$. Then $\forall f
+  \in \up^{\Gamma} \mu : \mathcal{X} \suprel{f} \mathcal{Y}$.
+  Therefore by the theorem ?? $\mathcal{X} \mathrel{\left[ \bigsqcap
+  \up^{\Gamma} \mu \right]} \mathcal{Y}$ that is $\mathcal{X}
+  \mathrel{[\mu]} \mathcal{Y}$. So $\mathcal{A}$ is connected regarding $\mu$.
+\end{proof}
