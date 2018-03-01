@@ -425,3 +425,64 @@ First calculate
 $(\mathcal{B}\times^{\mathsf{RLD}}_{F}\mathcal{C})\circ
 (\mathcal{A}\times^{\mathsf{RLD}}_{F}\mathcal{B})$
 (and also for oblique product).
+
+Trying to calculate
+$(\mathcal{B}\times^{\mathsf{RLD}}_{F}\mathcal{C})\circ
+(\mathcal{A}\times^{\mathsf{RLD}}_{F}\mathcal{B})$:
+
+\begin{lem}
+  There are such filters $\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$ and
+  binary relation $h$ that
+  \[ h \sqsupseteq \mathcal{A} \times^{\mathsf{FCD}} \mathcal{C} \wedge
+     \neg \exists g \in \mathbf{Rel} : (g \sqsupseteq \mathcal{B}
+     \times^{\mathsf{FCD}} \mathcal{C} \wedge h \sqsupseteq g \circ
+     (\mathcal{A} \times^{\mathsf{FCD}} \mathcal{B})) . \]
+\end{lem}
+
+\begin{proof}
+  Take $\mathcal{A}$ a principal filter, $\mathcal{B}$ a trivial ultrafilter
+  and $h \sqsupseteq \mathcal{A} \times^{\mathsf{FCD}} \mathcal{C}$
+  such that $h \notin \up (\mathcal{A} \times^{\mathsf{RLD}}
+  \mathcal{C})$. (It exists because $\mathcal{A} \times^{\mathsf{RLD}}
+  \mathcal{C} \neq \mathcal{A} \times^{\mathsf{RLD}}_F \mathcal{C}$.
+
+  Suppose that $g \sqsupseteq \mathcal{B} \times^{\mathsf{FCD}}
+  \mathcal{C}$. Then there is $C \in \up \mathcal{C}$ such that $g
+  \sqsupseteq \mathcal{B} \times C$. Therefore $g \circ (\mathcal{A}
+  \times^{\mathsf{FCD}} \mathcal{B}) = \mathcal{A}
+  \times^{\mathsf{FCD}} \supfun{g} \mathcal{B} \sqsupseteq
+  \mathcal{A} \times^{\mathsf{FCD}} C = \mathcal{A} \times C$.
+
+  But $h \notin \up (\mathcal{A} \times^{\mathsf{RLD}} C) =
+  \up (\mathcal{A} \times C)$. Thus $h \mathrel{\not{\sqsupseteq}} g
+  \circ (\mathcal{A} \times^{\mathsf{FCD}} \mathcal{B})$.
+\end{proof}
+
+\begin{cor}
+  There are such filters $\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$ and
+  binary relation $h$ that
+  \[ h \sqsupseteq \mathcal{A} \times^{\mathsf{FCD}} \mathcal{C} \wedge
+     \neg \exists f, g \in \mathbf{Rel} : (f \sqsupseteq \mathcal{A}
+     \times^{\mathsf{FCD}} \mathcal{B} \wedge g \sqsupseteq \mathcal{B}
+     \times^{\mathsf{FCD}} \mathcal{C} \wedge h \sqsupseteq g \circ f)
+     . \]
+\end{cor}
+
+\begin{prop}
+  $(\mathcal{B} \times^{\mathsf{RLD}}_F \mathcal{C}) \circ (\mathcal{A}
+  \times^{\mathsf{RLD}}_F \mathcal{B}) \neq \mathcal{A}
+  \times^{\mathsf{RLD}}_F \mathcal{C}$ for some proper filters
+  $\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$.
+\end{prop}
+
+\begin{proof}
+  Suppose $h \in \up (\mathcal{A} \times^{\mathsf{RLD}}_F
+  \mathcal{C})$ then $h \in \up (\mathcal{A}
+  \times^{\mathsf{FCD}} \mathcal{C})$. Thus $h
+  \mathrel{\not{\sqsupseteq}} g \circ f$ for every $f \in \up
+  (\mathcal{A} \times^{\mathsf{RLD}}_F \mathcal{C})$, $g \in \up
+  (\mathcal{B} \times^{\mathsf{RLD}}_F \mathcal{C})$. Thus $\up
+  ((\mathcal{B} \times^{\mathsf{RLD}}_F \mathcal{C}) \circ (\mathcal{A}
+  \times^{\mathsf{RLD}}_F \mathcal{B})) \neq \up (\mathcal{A}
+  \times^{\mathsf{RLD}}_F \mathcal{C})$.
+\end{proof}
