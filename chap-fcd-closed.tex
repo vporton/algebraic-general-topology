@@ -35,14 +35,15 @@ Hausdorff space (as a product of compact Hausdorff spaces).
 
 It seems that there is an easy way to describe the above order
 embedding in both directions:
-\[
+\begin{gather*}
 f\mapsto
 \setcond{(x_1,\dots,x_n)}{
-x_1\times^{\mathsf{FCD}}\dots\times^{\mathsf{FCD}}x_n\sqsubseteq f};\quad
+x_1,\dots,x_n\in\atoms^\mathscr{F},
+x_1\times^{\mathsf{FCD}}\dots\times^{\mathsf{FCD}}x_n\sqsubseteq f};\\
 X\mapsto \bigsqcup
 \setcond{p_1\times^{\mathsf{FCD}}\dots\times^{\mathsf{FCD}}p_n}{
 p\in X}.
-\]
+\end{gather*}
 
 \fxnote{Try to prove that composition of funcoids is isomorphic to
 composition of relations $\beta A\times\beta B$.}
