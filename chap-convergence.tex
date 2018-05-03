@@ -24,6 +24,13 @@ iff $\im f\sqsubseteq\supfun{\mu}\mathcal{A}$ that is iff $\im f\overset{\mu}{\r
 \index{converges!regarding funcoid}A funcoid $f$ \emph{converges}
 to a filter $\mathcal{A}\in\mathscr{F}(\Src\mu)$ on a filter $\mathcal{B}\in\mathscr{F}(\Src f)$
 regarding a funcoid $\mu$ where $\Dst f=\Dst\mu$ iff $f|_{\mathcal{B}}\overset{\mu}{\rightarrow}\mathcal{A}$.\end{defn}
+\begin{obvious}
+A funcoid $f$ converges to a filter
+$\mathcal{A}\in\mathscr{F}(\Src\mu)$ on a filter
+$\mathcal{B}\in\mathscr{F}(\Src f)$ regarding a funcoid $\mu$ iff
+$\supfun{f}\mathcal{B}\sqsubseteq\supfun{\mu}\mathcal{A}$.
+\end{obvious}
+
 \begin{rem}
 We can define also convergence for a reloid $f$: $f\overset{\mu}{\rightarrow}\mathcal{A}\Leftrightarrow\im f\sqsubseteq\supfun{\mu}\mathcal{A}$
 or what is the same $f\overset{\mu}{\rightarrow}\mathcal{A}\Leftrightarrow\tofcd f\overset{\mu}{\rightarrow}\mathcal{A}$.\end{rem}
@@ -319,3 +326,119 @@ If $\lim_{\rsupfun{\mu}@\{x\}}^{\nu}f=y$ then $\xlim_{x}f=\tau(y)$ (provided tha
 \end{cor}
 We have injective $\tau$ if $\rsupfun{\nu}@\{y_{1}\}\sqcap\rsupfun{\nu}@\{y_{2}\}=\bot^{\mathscr{F}(\Ob\mu)}$
 for every distinct $y_{1},y_{2}\in\Ob\nu$ that is if $\nu$ is $T_{2}$-separable.
+
+\section{Expressing limits as implications}
+
+When you studied limits in the school, you was told that
+$\lim_{x\to\alpha} f(x) = \beta$ when $x\to\alpha$ implies
+$f(x) \to \beta$. Now let us formalize this.
+
+\begin{prop}
+  The following are pairwise equivalent for funcoids $\mu$, $\nu$, $f$ of
+  suitable (``compatible'') sources and destinations:
+  \begin{enumerate}
+    \item\label{implim-one} $f|_{\langle \mu \rangle^{\ast} \{ \alpha \}}
+    \overset{\nu}{\rightarrow} \beta$;
+    
+    \item\label{implim-f} $\forall x \in \mathscr{F} (\Ob \mu) : \left( x
+    \overset{\mu}{\rightarrow} \alpha \Rightarrow \supfun{f} x
+    \overset{\nu}{\rightarrow} \beta \right)$;
+    
+    \item\label{implim-a} $\forall x \in \atoms^{\mathscr{F} (\Ob \mu)} : \left( x
+    \overset{\mu}{\rightarrow} \alpha \Rightarrow \supfun{f} x
+    \overset{\nu}{\rightarrow} \beta \right)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[\ref{implim-one}$\Leftrightarrow$\ref{implim-f}] $\forall x \in \mathscr{F} (\Ob \mu) :
+    \left( x \overset{\mu}{\rightarrow} \alpha \Rightarrow \supfun{f} x
+    \overset{\nu}{\rightarrow} \beta \right) \Leftrightarrow \forall x \in
+    \mathscr{F} (\Ob \mu) : (x \sqsubseteq \langle \mu \rangle \alpha
+    \Rightarrow \supfun{f} x \sqsubseteq \supfun{\nu} \beta)
+    \Leftrightarrow \supfun{f} \langle \mu \rangle \alpha \sqsubseteq
+    \supfun{\nu} \beta \Leftrightarrow f|_{\langle \mu \rangle^{\ast}
+    \{ \alpha \}} \overset{\nu}{\rightarrow} \beta$.
+    
+    \item[\ref{implim-f}$\Rightarrow$\ref{implim-a}] Obvious.
+    
+    \item[\ref{implim-a}$\Rightarrow$\ref{implim-f}] Let \ref{implim-a} hold. Then for $x \in \mathscr{F}
+    (\Ob \mu)$ we have $x \overset{\mu}{\rightarrow} \alpha
+    \Leftrightarrow x \sqsubseteq \langle \mu \rangle \alpha \Leftrightarrow
+    \forall x' \in \atoms x : x' \sqsubseteq \langle \mu \rangle \alpha
+    \Leftrightarrow \forall x' \in \atoms x : x'
+    \overset{\mu}{\rightarrow} \alpha \Rightarrow \forall x' \in \atoms
+    x : \supfun{f} x' \overset{\nu}{\rightarrow} \beta \Leftrightarrow
+    \forall x' \in \atoms x : \left\langle f \right\rangle x'
+    \sqsubseteq \supfun{\nu} \beta \Leftrightarrow \bigsqcup_{x' \in
+    \atoms x} \supfun{f} x' \sqsubseteq \supfun{\nu} \beta
+    \Leftrightarrow \supfun{f} x \sqsubseteq \supfun{\nu} \beta
+    \Leftrightarrow \supfun{f} x \overset{\nu}{\rightarrow} \beta$.
+  \end{description}
+\end{proof}
+
+\begin{lem}
+  If $f$ is an enterely defined monovalued funcoid and $x$ is an ultrafilter,
+  $y$ is a filter, then $\supfun{f} x \sqsubseteq y \Leftrightarrow x
+  \sqsubseteq \langle f^{- 1} \rangle y$.
+\end{lem}
+
+\begin{proof}
+  $\supfun{f} x$ is an ultrafilter. $\supfun{f} x \sqsubseteq y
+  \Leftrightarrow \supfun{f} x \nasymp y \Leftrightarrow x \nasymp
+  \langle f^{- 1} \rangle y \Leftrightarrow x \sqsubseteq \langle f^{- 1}
+  \rangle y$.
+\end{proof}
+
+\begin{prop}
+  The following are pairwise equivalent for funcoids $\mu$, $\nu$, $f$, $g$ of
+  suitable (``compatible'') sources and destinations provided that $g$ is
+  entirely defined and monovalued:
+  \begin{enumerate}
+    \item\label{limback-one} $(f \circ g^{- 1}) |_{\langle \mu \rangle^{\ast} \{ \alpha \}}
+    \overset{\nu}{\rightarrow} \beta$;
+    
+    \item\label{limback-f} $\forall x \in \mathscr{F} (\Ob \mu) : \left( \langle g
+    \rangle x \overset{\mu}{\rightarrow} \alpha \Rightarrow \supfun{f}
+    x \overset{\nu}{\rightarrow} \beta \right)$;
+    
+    \item\label{limback-a} $\forall x \in \atoms^{\mathscr{F} (\Ob \mu)} : \left(
+    \supfun{g} x \overset{\mu}{\rightarrow} \alpha \Rightarrow \langle
+    f \rangle x \overset{\nu}{\rightarrow} \beta \right)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{description}
+    \item[\ref{limback-one}$\Leftrightarrow$\ref{limback-a}] Equivalently transforming: $(f \circ g^{- 1})
+    |_{\langle \mu \rangle^{\ast} \{ \alpha \}} \overset{\nu}{\rightarrow}
+    \beta$; $\supfun{f} \langle g^{- 1} \rangle^{\ast} \langle \mu
+    \rangle^{\ast} \{ \alpha \} \sqsubseteq \supfun{\nu}^{\ast} \{
+    \beta \}$; for every $x \in \atoms^{\mathscr{F} (\Ob \mu)}$ we
+    have $x \sqsubseteq \langle g^{- 1} \rangle \langle \mu \rangle^{\ast} \{
+    \alpha \} \Rightarrow \supfun{f} x \sqsubseteq \langle \nu
+    \rangle^{\ast} \{ \beta \}$; what by the lemma is equivalent to $\langle g
+    \rangle x \sqsubseteq \langle \mu \rangle^{\ast} \{ \alpha \} \Rightarrow
+    \supfun{f} x \sqsubseteq \supfun{\nu}^{\ast} \{ \beta \}$
+    that is $\supfun{g} x \overset{\mu}{\rightarrow} \alpha \Rightarrow
+    \supfun{f} x \overset{\nu}{\rightarrow} \beta$.
+    
+    \item[\ref{limback-a}$\Leftrightarrow$\ref{limback-f}] Let $x \in \mathscr{F} (\Ob \mu)$ and~\ref{limback-a}
+    holds. Let $\supfun{g} x \overset{\mu}{\rightarrow} \alpha$. Then
+    $\forall x' \in \atoms x : \supfun{g} x'
+    \overset{\mu}{\rightarrow} \alpha$ and thus $\supfun{f} x'
+    \overset{\nu}{\rightarrow} \beta$ that is $\supfun{f} x'
+    \sqsubseteq \supfun{\nu} \beta$. $\supfun{f} x =
+    \bigsqcup_{x' \in \atoms x} \supfun{f} x' \sqsubseteq \langle
+    \nu \rangle \beta$ that is $\supfun{f} x \overset{\nu}{\rightarrow}
+    \beta$.
+  \end{description}
+\end{proof}
+
+\begin{problem}
+  Can the theorem be strenhtened for: a. non-monovalued; b. not entirely defined $g$?
+  (The problem seems easy but I have not checked it.)
+\end{problem}
