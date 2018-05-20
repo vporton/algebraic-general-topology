@@ -1,0 +1,155 @@
+\chapter{Mappings between endofuncoids and topological spaces}
+
+Let's study mappings between topological spaces and endofuncoids.
+
+\begin{defn}
+  Let $t$ be a topology.
+  \begin{enumerate}
+    \item $F^{\fullstar} t = \bigsqcup_{x \in \Ob t} \left( \{ x \} \times
+    \bigsqcap^{\mathscr{F}} \setcond{ E \in t }{ x \in
+    E } \right)$;
+    
+    \item $(F_{\fullstar} t) E = \bigcap \setcond{ D \in t }{ E \subseteq D }$.
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+  Let $t$ be a topology.
+  \begin{enumerate}
+    \item $F^{\fullstar} t$ is complete, reflexive, transitive funcoid.
+    
+    \item $F_{\fullstar} t$ is co-complete, reflexive, transitive funcoid.
+    
+    \item $F^{\fullstar}$ and $F_{\fullstar}$ are injections.
+    
+    \item $F_{\fullstar} t = (F^{\fullstar} t)^{- 1}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  By theorem~\bookref{top-two}.
+\end{proof}
+
+\begin{defn}
+  Let $f$ be an endofuncoid.
+  \[ T f = \setcond{ E \in \subsets \Ob f }{
+     \forall x \in E : \supfun{f} \{ x \} \sqsubseteq E } . \]
+\end{defn}
+
+\begin{prop}
+  $T f$ is a topology.
+\end{prop}
+
+\begin{proof}
+  
+  \begin{description}
+    \item[Union of open sets is open] $S \subseteq T f \Rightarrow \forall E
+    \in S \forall x \in E : \supfun{f} x \sqsubseteq E \Rightarrow
+    \forall x \in \bigcup S : \supfun{f} x \sqsubseteq \bigcup S$
+    
+    \item[Intersection of two open sets is open] Let $X, Y \in T f$. Then
+    $\forall x \in X : \supfun{f} x \sqsubseteq X$ and $\forall x \in Y
+    : \supfun{f} x \sqsubseteq Y$. So if $x \in X \cap Y$ then $\langle
+    f \rangle x \sqsubseteq X$ and $\supfun{f} x \sqsubseteq Y$, so
+    $\supfun{f} x \sqsubseteq X \cap Y$. So $X \cap Y \in T f$.
+    
+    \item[$\Ob f$ is an open set] Obvious.
+  \end{description}
+\end{proof}
+
+\begin{obvious}
+$T f = \setcond{ E \in \subsets \Ob f }{ \langle
+\Compl f \rangle E \sqsubseteq E }$.
+\end{obvious}
+
+\begin{thm}
+  Let $f$ be an endofuncoid. If every $\{ x \}$ is a closed set in $T f$ then
+  \begin{enumerate}
+    \item $F^{\fullstar} T f = 1 \sqcup \Compl f \sqcup (\Compl f)^2
+    \sqcup \ldots$;
+    
+    \item $F_{\fullstar} T f = 1 \sqcup \CoCompl f \sqcup (\CoCompl
+    f)^2 \sqcup \ldots$
+  \end{enumerate}
+  (decompose $T$ into two functors: $\Compl$ (not a functor?) and $f
+  \mapsto 1 \sqcup f \sqcup f^2 \sqcup \ldots$)
+\end{thm}
+
+\begin{proof}
+  Due symmetry it's enough to prove only the first.
+  
+  We will assume without loss of generality (TODO) that $f$ is reflexive.
+  
+  First, $1 \sqcup \Compl f \sqcup (\Compl f)^2 \sqcup \ldots$ is
+  an inverse of a Kuratowski closure: it is complete (as join of complete
+  funcoids), reflexive, and transitive ($(1 \sqcup \Compl f \sqcup
+  (\Compl f)^2 \sqcup \ldots) \circ (1 \sqcup \Compl f \sqcup
+  (\Compl f)^2 \sqcup \ldots) = (1 \sqcup \Compl f \sqcup
+  (\Compl f)^2 \sqcup \ldots) \sqcup (\Compl f \sqcup
+  (\Compl f)^2 \sqcup (\Compl f)^3 \sqcup \ldots) \sqcup \ldots =
+  1 \sqcup \Compl f \sqcup (\Compl f)^2 \sqcup \ldots$).
+  
+  So there exists topology $t$ such that $F^{\fullstar} t = 1 \sqcup \Compl
+  f \sqcup (\Compl f)^2 \sqcup \ldots$
+  
+  For all $x \in E \in T f$ we have $\langle \Compl f \rangle E
+  \sqsubseteq E$, so $\langle (\Compl f)^n \rangle E \sqsubseteq E$ and
+  $\langle (\Compl f)^n \rangle \{ x \} \sqsubseteq E$. Thus
+  $(\Compl f)^n \sqsubseteq T f$ and so
+  \[ 1 \sqcup \Compl f \sqcup (\Compl f)^2 \sqcup \ldots
+     \sqsubseteq F^{\fullstar} T f \]
+  consequently $t \sqsubseteq T f$.
+  
+  Suppose
+  \[ g \sqsupseteq 1 \wedge g \sqsupseteq \Compl f \wedge g \sqsupseteq
+     (\Compl f)^2 \wedge \ldots \]
+  It remains to prove $g \sqsupseteq F^{\fullstar} T f$ that is $\langle g
+  \rangle^{\ast} \{ x \} \sqsupseteq \langle F^{\fullstar} T f \rangle^{\ast} \{ x
+  \}$ that is
+  
+  $\rsupfun{g} \{ x \} \sqsupseteq \bigsqcap^{\mathscr{F}}
+  \setcond{ E \in T f }{ x \in E }$ that is
+  \[ \rsupfun{g} \{ x \} \sqsupseteq \bigsqcap^{\mathscr{F}}
+     \setcond{ E \in \subsets \Ob f }{ \langle
+     \Compl f \rangle E \sqsubseteq E \wedge x \in E } \]
+  Let $K \in \up \rsupfun{g} \{ x \}$. Take $E =
+  \operatorname{int}_{T f} K$. It remains to prove $x \in \operatorname{int}_{T f} K$.
+  
+  $\operatorname{int} K = \operatorname{int} K_0 \cup \operatorname{int} K_1 \cup \ldots$ (because it
+  is a totally ordered set)
+  
+  It remains to prove $x \in \overline{\left[ \overline{K} \right]_{T f}}$
+  that is $\{ x \} \asymp \left[ \overline{K} \right]_{T f}$ that is $\{ x \}
+  \asymp \bigcap \left\{ D \in T f \hspace{1em} | \hspace{1em} \overline{K}
+  \subseteq D \right\}$ that is $\exists D \in T f : \left( x \notin D \wedge
+  \overline{K} \subseteq D \right)$ that is $\exists D : (x \notin D \wedge
+  \langle \Compl f \rangle^{\ast} D \sqsubseteq D \wedge K \cup D =
+  \top)$
+  
+  Take $D = \top \setminus \{ x \}$.
+  
+  The theorem holds if $\{ x \}$ is a closed set.
+\end{proof}
+
+\begin{example}
+The condition of $\{x\}$ being closed cannot be removed from
+the last theorem.
+\end{example}
+
+\begin{proof}
+A counterexample is principal funcoid (binary relation)
+$f = \{ (0, 0), (1, 1), (0, 1) \}$.
+
+$\supfun{\operatorname{id}_U \cup f \cup f^2 \cup f^3 \cup \ldots} E = E$ for every open set $E$.
+So, it can be closure only if all open sets are closed.
+Open sets are $\{ \}$, $\{ 1 \}$, $\{ 0, 1 \}$. $\{ 1 \}$ is open but
+not closed.
+\end{proof}
+
+That $F^{\star}$ and $F_{\star}$ are functors (if we map morphisms to
+themselves except of changing the objects) follows from
+conjecture~\bookref{top-cont}.
+
+Is $T$ a functor?
+
+Are these functors adjoint?
