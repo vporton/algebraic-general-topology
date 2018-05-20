@@ -75,7 +75,39 @@ There is a unique topology $T'f$ for every endofuncoid~$f$.
 \end{prop}
 
 \begin{proof}
- 
+We need to prove that
+$\rsupfun{1 \sqcup \CoCompl f \sqcup (\CoCompl f)^2 \sqcup \ldots}$ is
+a Kuratowski closure.
+
+First, it is a function from principal filters to principal filter.
+
+It remains to show that it is reflexive and transitive.
+
+Reflexivity is obvious. Let us prove transitivity:
+
+\fxerror{$\rsupfun{(\CoCompl f)^n}
+(\rsupfun{(\CoCompl f)^m}E\sqcup \rsupfun{(\CoCompl f)^{m+1}}E
+\sqcup\dots) =
+\rsupfun{(\CoCompl f)^{n+m}}E\sqcup \rsupfun{(\CoCompl f)^{n+m+1}}E$
+is not proved.}
+$\rsupfun{1 \sqcup \CoCompl f \sqcup (\CoCompl f)^2 \sqcup \ldots}
+\rsupfun{1 \sqcup \CoCompl f \sqcup (\CoCompl f)^2 \sqcup \ldots}E =
+\rsupfun{1 \sqcup \CoCompl f \sqcup (\CoCompl f)^2 \sqcup \ldots}
+(\rsupfun{1}E\sqcup \rsupfun{\CoCompl f}E \sqcup
+\rsupfun{(\CoCompl f)^2}E\sqcup \ldots) =
+\rsupfun{1}(\rsupfun{1}E\sqcup \rsupfun{\CoCompl f}E \sqcup
+\rsupfun{(\CoCompl f)^2}E\sqcup \ldots) \sqcup
+\rsupfun{\CoCompl f}(\rsupfun{1}E\sqcup \rsupfun{\CoCompl f}E \sqcup
+\rsupfun{(\CoCompl f)^2}E\sqcup \ldots) \sqcup
+\rsupfun{(\CoCompl f)^2}(\rsupfun{1}E\sqcup \rsupfun{\CoCompl f}E \sqcup
+\rsupfun{(\CoCompl f)^2}E\sqcup \ldots) \sqcup \dots =
+(\rsupfun{1}E\sqcup \rsupfun{\CoCompl f}E \sqcup
+\rsupfun{(\CoCompl f)^2}E\sqcup \ldots) \sqcup
+(\rsupfun{\CoCompl f}E\sqcup \rsupfun{(\CoCompl f)^2}E \sqcup
+\rsupfun{(\CoCompl f)^3}E\sqcup \ldots) \sqcup \dots =
+\rsupfun{1}E\sqcup \rsupfun{\CoCompl f}E \sqcup
+\rsupfun{(\CoCompl f)^2}E\sqcup \ldots =
+\rsupfun{1 \sqcup \CoCompl f \sqcup (\CoCompl f)^2 \sqcup \ldots}E$.
 \end{proof}
 
 \begin{thm}
