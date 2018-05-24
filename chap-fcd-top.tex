@@ -101,6 +101,34 @@ That $F^{\star}$ and $F_{\star}$ are functors (if we map morphisms to
 themselves except of changing the objects) follows from
 conjecture~\bookref{top-cont}.
 
-Is $T$ a functor?
+\begin{thm}
+$T$ (if we map morphisms to
+themselves except of changing the objects) is a functor.
+\end{thm}
+
+\begin{proof}
+  Based on \url{https://math.stackexchange.com/a/2792239/4876}
+
+  Let $f : \mu \rightarrow \nu$ that is $f \circ \mu \sqsubseteq \nu \circ f$.
+  We need to prove $f : T \mu \rightarrow T \nu$ that is $E \in T \nu
+  \Rightarrow \langle f^{- 1} \rangle^{\ast} E \in T \mu$.
+
+  Suppose $E \in T \nu$ that is $\langle \nu \rangle^{\ast} E \sqsubseteq E$.
+  We will prove $\langle \mu \rangle^{\ast} \langle f^{- 1} \rangle^{\ast} E
+  \sqsubseteq \langle f^{- 1} \rangle^{\ast} E$.
+
+  \fxnote{Can we use arbitrary filters rather than atoms?}
+
+  Really, let atom $y \sqsubseteq \langle \mu \rangle^{\ast} \langle f^{- 1}
+  \rangle^{\ast} E$. Then there exists atom $x \sqsubseteq \langle f^{- 1}
+  \rangle^{\ast} E$ such that $x \mathrel{[\mu]^{\ast}} y$.
+
+  $x \mathrel{[f \circ \mu]^{\ast}} \langle f \rangle y$ and thus $x
+  \mathrel{[\nu \circ f]^{\ast}} \langle f \rangle y$, so $\langle f \rangle x
+  \mathrel{[\nu]^{\ast}} \langle f \rangle y$. But $\langle f \rangle x
+  \sqsubseteq E$, so $\langle f \rangle y \sqsubseteq \langle \nu
+  \rangle^{\ast} E \sqsubseteq E$, that is $\langle \mu \rangle^{\ast} \langle
+  f^{- 1} \rangle^{\ast} E \sqsubseteq E$.
+\end{proof}
 
 Are these functors adjoint?
