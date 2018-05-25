@@ -131,4 +131,106 @@ themselves except of changing the objects) is a functor.
   f^{- 1} \rangle^{\ast} E \sqsubseteq E$.
 \end{proof}
 
-Are these functors adjoint?
+\begin{prop}
+  $f \in \mathrm{C} (\mu, \nu) \Rightarrow f \in \mathrm{C} (\mu^n, \nu^n)$
+  for every endofuncoids $\mu$ and $\nu$ and positive natural
+  number~$n$.
+  \fxnote{Move this proposition to the book.}
+\end{prop}
+
+\begin{proof}
+  $f \circ \mu \sqsubseteq \nu \circ f$; $f \circ \mu \circ \mu \sqsubseteq
+  \nu \circ f \circ \mu$; $f \circ \mu^2 \sqsubseteq \nu^2 \circ f$; $f \circ
+  \mu^3 \sqsubseteq \nu^3 \circ f$...
+\end{proof}
+
+\begin{prop}
+  For every endofuncoid $\mu$:
+  \begin{enumerate}
+    \item $F_{\fullstar} T \mu \sqsupseteq \Compl \mu$;
+    
+    \item $F^{\fullstar} T \mu \sqsupseteq \CoCompl \mu$;
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  We will prove only the first as the second is dual.
+  
+  $\langle F_{\fullstar} T \mu \rangle^{\ast} E =
+  \bigcap \setcond{ D \in T \mu
+  }{ D \supseteq E } = \bigcap \setcond{ D \in
+  \subsets \Ob \mu }{ \langle \Compl
+  \mu \rangle^{\ast} D \sqsubseteq D \wedge D \supseteq E } \sqsupseteq
+  \bigsqcap \setcond{ \langle \Compl \mu \rangle^{\ast} D }{
+  D \in \subsets \Ob \mu, \langle \Compl \mu
+  \rangle^{\ast} D \sqsubseteq D \wedge D \supseteq E } \sqsupseteq
+  \langle \Compl \mu \rangle^{\ast} E$.
+\end{proof}
+
+\begin{lem}
+  For every endofuncoid $\mu$:
+  \begin{enumerate}
+    \item $F_{\fullstar} T \mu \sqsubseteq 1 \sqcup \Compl \mu \sqcup
+    (\Compl \mu)^2 \sqcup \ldots$;
+    
+    \item $F^{\fullstar} T \mu \sqsubseteq 1 \sqcup \Compl \mu \sqcup
+    (\Compl \mu)^2 \sqcup \ldots$
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  We will prove only the first as the second is dual.
+  
+  $\langle 1 \sqcup \Compl \mu \sqcup (\Compl \mu)^2 \sqcup \ldots
+  \rangle^{\ast} E = E \sqcup \langle \Compl \mu \rangle^{\ast} E \sqcup
+  \langle (\Compl \mu)^2 \rangle^{\ast} E \sqcup \ldots$
+  
+  Take $D = E \sqcup \langle \Compl \mu \rangle^{\ast} E \sqcup \langle
+  (\Compl \mu)^2 \rangle^{\ast} E \sqcup \ldots$ We have $\langle
+  \Compl \mu \rangle^{\ast} D \sqsubseteq \langle \Compl \mu
+  \rangle^{\ast} E \sqcup \langle (\Compl \mu)^2 \rangle^{\ast} E \sqcup
+  \ldots \sqsubseteq D$. So
+  
+  $\bigcap \setcond{ D \in \subsets \Ob \mu }{
+  \langle \Compl \mu \rangle^{\ast} D \sqsubseteq D \wedge D \supseteq E
+  } \subseteq D \sqsubseteq \langle 1 \sqcup \Compl \mu \sqcup
+  (\Compl \mu)^2 \sqcup \ldots \rangle^{\ast} E$.
+\end{proof}
+
+\begin{thm}
+  $T$ is a left adjoint of both $F_{\fullstar}$ and $F^{\ast}$, with bijection
+  which preserves the ``function'' part of the morphism.
+\end{thm}
+
+\begin{proof}
+  We will prove only from $F_{\fullstar}$ as the other is dual.
+  
+  We will prove $f \in \mathrm{C} (T \mu, s) \Leftrightarrow f \in \mathrm{C}
+  (\mu, F_{\fullstar} s)$ what is equivalent to
+  \[ f \in \mathrm{C} (F_{\fullstar} T \mu, F_{\fullstar} s) \Leftrightarrow f \in
+     \mathrm{C} (\mu, F_{\fullstar} s) ; \]
+  $F_{\fullstar} T \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f
+  \Leftrightarrow \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$.
+  
+  We need to prove only
+  \[ F_{\fullstar} T \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f \Leftarrow
+     \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f. \]
+  It's enough $1 \sqcup \Compl \mu \sqcup (\Compl \mu)^2 \sqcup
+  \ldots \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f \Leftarrow \Compl
+  \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$.
+  
+  For this it's enough $(\Compl \mu)^n \sqsubseteq f^{- 1} \circ
+  F_{\fullstar} s \circ f \Leftarrow \Compl \mu \sqsubseteq f^{- 1} \circ
+  F_{\fullstar} s \circ f$ for what is in turn enough $\Compl \mu^n
+  \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f \Leftarrow \Compl \mu
+  \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$.
+  
+  But it follows as follow from a proposition above and transitivity of
+  $F_{\fullstar} s$.
+  
+  Naturality of our transformation is obvious. [TODO: More details.]
+\end{proof}
+
+\begin{conjecture}
+  They have no more ``chained'' adjoints.
+\end{conjecture}
