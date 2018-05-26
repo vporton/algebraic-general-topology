@@ -148,13 +148,14 @@ themselves except of changing the objects) is a functor.
   For every endofuncoid $\mu$:
   \begin{enumerate}
     \item $F_{\fullstar} T \mu \sqsupseteq \Compl \mu$;
-    
+    \item $F^{\fullstar} T \mu \sqsupseteq \Compl \mu$;
+    \item $F_{\fullstar} T \mu \sqsupseteq \CoCompl \mu$;
     \item $F^{\fullstar} T \mu \sqsupseteq \CoCompl \mu$;
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
-  We will prove only the first as the second is dual.
+  We will prove only the first two as the rest are dual.
   
   $\langle F_{\fullstar} T \mu \rangle^{\ast} E =
   \bigcap \setcond{ D \in T \mu
@@ -165,6 +166,15 @@ themselves except of changing the objects) is a functor.
   D \in \subsets \Ob \mu, \langle \Compl \mu
   \rangle^{\ast} D \sqsubseteq D \wedge D \supseteq E } \sqsupseteq
   \langle \Compl \mu \rangle^{\ast} E$.
+  
+  $\langle F^{\fullstar} T \mu \rangle^{\ast} \{ x \} = \bigsqcap^{\mathscr{F}}
+  \setcond{ E \in T \mu }{ x \in E } =
+  \bigsqcap^{\mathscr{F}} \setcond{ E \in \Ob \mu }{
+  x \in E, \left\langle \Compl \mu \right\rangle^{\ast} E
+  \sqsubseteq E } \sqsupseteq \bigsqcap^{\mathscr{F}} \setcond{ \langle
+  \Compl \mu \rangle^{\ast} E }{ E \in \Ob
+  \mu, x \in E, \langle \Compl \mu \rangle^{\ast} E \sqsubseteq E }
+  \sqsupseteq \langle \Compl \mu \rangle^{\ast} \{ x \}$.
 \end{proof}
 
 \begin{lem}
@@ -173,8 +183,8 @@ themselves except of changing the objects) is a functor.
     \item $F_{\fullstar} T \mu \sqsubseteq 1 \sqcup \Compl \mu \sqcup
     (\Compl \mu)^2 \sqcup \ldots$;
     
-    \item $F^{\fullstar} T \mu \sqsubseteq 1 \sqcup \Compl \mu \sqcup
-    (\Compl \mu)^2 \sqcup \ldots$
+    \item $F^{\fullstar} T \mu \sqsubseteq 1 \sqcup \CoCompl \mu \sqcup
+    (\CoCompl \mu)^2 \sqcup \ldots$
   \end{enumerate}
 \end{lem}
 
