@@ -207,6 +207,40 @@ themselves except of changing the objects) is a functor.
   (\Compl \mu)^2 \sqcup \ldots \rangle^{\ast} E$.
 \end{proof}
 
+\begin{thm}
+  If we restrict the functor $T$ only to complete endofuncoids (=~complete
+  endoreloids), then $T$ is a left adjoint of both $F_{\fullstar}$ and
+  $F^{\fullstar}$.
+\end{thm}
+
+\begin{proof}
+  We will prove only for $F_{\fullstar}$ as the other is dual.
+  
+  We will disprove $f \in \mathrm{C} (T \mu, s) \Leftrightarrow f \in
+  \mathrm{C} (\mu, F_{\fullstar} s)$ what is equivalent (because $F_{\fullstar}$ is
+  full and faithful) to
+  \[ f \in \mathrm{C} (F_{\fullstar} T \mu, F_{\fullstar} s) \Leftrightarrow f \in
+     \mathrm{C} (\mu, F_{\fullstar} s) ; \]
+  $F_{\fullstar} T \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f
+  \Leftrightarrow \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$.
+  
+  $F_{\fullstar} T \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f \Rightarrow
+  \mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$ because $F_{\fullstar} T \mu
+  \sqsupseteq \mu$.
+  
+  If $\mu \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$ then $\mu^n
+  \sqsubseteq f^{- 1} \circ (F_{\fullstar} s)^n \circ f = f^{- 1} \circ F_{\fullstar}
+  s \circ f$. Also obviously $1 \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ
+  f$. Thus
+  \[ 1 \sqcup \mu \sqcup \mu^2 \sqcup \ldots \sqsubseteq f^{- 1} \circ
+     F_{\fullstar} s \circ f \]
+  and so $1 \sqcup \Compl \mu \sqcup (\Compl \mu)^2 \sqcup \ldots
+  \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ f$. So $F_{\fullstar} T \mu
+  \sqsubseteq f^{- 1} \circ F_{\fullstar} s \circ F$.
+\end{proof}
+
+\fxnote{$F$ and $T$ are also a Galois connection, isn't it?}
+
 \begin{example}
   $T$ is a not left adjoint of both $F_{\star}$ and $F^{\star}$, with bijection
   which preserves the ``function'' part of the morphism.
@@ -228,7 +262,3 @@ themselves except of changing the objects) is a functor.
   $\rsupfun{\mu}X=X$ for finite sets~$X$ and $\rsupfun{\mu}X=\top$
   for infinite~$X$.
 \end{proof}
-
-It seems that the theorem (the negation of the above example)
-holds if we replace endofuncoids with complete endofuncoids
-(or what is the same complete endoreloids).
