@@ -1,18 +1,18 @@
 #!/usr/bin/make
 
-default: book.pdf
+default: volume-1.pdf
 
-all: book.pdf addons.pdf volume-2.pdf ideas.pdf
+all: volume-1.pdf addons.pdf volume-2.pdf ideas.pdf
 
 FORCE::
 
-book.pdf: FORCE
-	pdflatex book.tex
-	bibtex book.aux
-	pdflatex book.tex
-	pdflatex book.tex
-	makeindex book
-	pdflatex book.tex
+volume-1.pdf: FORCE
+	pdflatex volume-1.tex
+	bibtex volume-1.aux
+	pdflatex volume-1.tex
+	pdflatex volume-1.tex
+	makeindex volume-1
+	pdflatex volume-1.tex
 
 addons.pdf: FORCE
 	pdflatex addons.tex
