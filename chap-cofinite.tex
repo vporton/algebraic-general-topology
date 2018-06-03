@@ -1,12 +1,13 @@
 \chapter{Generalized cofinite filters}
 
-The following is a straightforward generalization of cofinite filter on a
-coatomic poset.
+The following is a straightforward generalization of cofinite filter.
 
 \begin{defn}
-  $\Omega_{1 a} = \bigsqcap^{\mathscr{F}}_{X \in
-  \operatorname{coatoms}^{\mathfrak{A}}} X$; $\Omega_{1 b} =
-  \bigsqcap^{\mathscr{F}}_{X \in \operatorname{coatoms}^{\mathscr{F}}} X$.
+  $\Omega_{1 a} = \bigsqcap^{\mathfrak{A}}_{X \in
+  \operatorname{coatoms}^{\mathfrak{Z}}} X$; $\Omega_{1 b} =
+  \bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{A}}} X$.
+  \fxerror{For singleton set the definition isn't equivalent to
+  the usual Fr\'echet filters.}
 \end{defn}
 
 \begin{prop}
@@ -20,13 +21,13 @@ coatomic poset.
 Thus for primary filtrators I will denote it just $\Omega$.
 
 \begin{prop}
-  Let $\mathfrak{A}$ be a subset of $\subsets U$. Let it be a
+  Let $\mathfrak{Z}$ be a subset of $\subsets U$. Let it be a
   meet-semilattice with greatest element \fxnote{existence of greatest element
   seems unnecessary.} Let also every non-coempty cofinite set lies in
-  $\mathfrak{A}$. Then
+  $\mathfrak{Z}$. Then
   \begin{equation}
-    \corestar \Omega = \setcond{ Y \in \mathfrak{A} }{
-    \card \atoms^{\mathfrak{A}} Y \geq \omega } .
+    \corestar \Omega = \setcond{ Y \in \mathfrak{Z} }{
+    \card \atoms^{\mathfrak{Z}} Y \geq \omega } .
     \label{d-cofin}
   \end{equation}
 \end{prop}
@@ -34,16 +35,16 @@ Thus for primary filtrators I will denote it just $\Omega$.
 \begin{proof}
   $\Omega$ exists by corollary 496.
   
-  $Y \in \corestar \Omega \Leftrightarrow Y \nasymp^{\mathscr{F}} 
-  \bigsqcap^{\mathscr{F}}_{X \in \operatorname{coatoms}^{\mathfrak{A}}} X
+  $Y \in \corestar \Omega \Leftrightarrow Y \nasymp^{\mathfrak{A}} 
+  \bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}} X
   \Leftrightarrow \text{(by properties of filter bases)} \Leftrightarrow
-  \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} : Y
-  \nasymp^{\mathscr{F}} \bigsqcap^{\mathscr{F}} S \Leftrightarrow
+  \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} : Y
+  \nasymp^{\mathfrak{A}} \bigsqcap^{\mathfrak{A}} S \Leftrightarrow
   \text{(theorem 512)} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
-  \operatorname{coatoms}^{\mathfrak{A}} : Y \nasymp \bigsqcap S \Leftrightarrow
+  \operatorname{coatoms}^{\mathfrak{Z}} : Y \nasymp \bigsqcap S \Leftrightarrow
   \forall K \in \subsets_{\operatorname{fin}} U : Y \setminus K \neq \emptyset
   \Leftrightarrow \card Y \geq \omega \Leftrightarrow \card
-  \atoms^{\mathfrak{A}} Y \geq \omega$.
+  \atoms^{\mathfrak{Z}} Y \geq \omega$.
   \fxwarning{Define $\subsets_{\operatorname{fin}}$.}
 \end{proof}
 
@@ -60,16 +61,29 @@ Thus for primary filtrators I will denote it just $\Omega$.
 $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $A\times B$ is an infinite set).
 \end{cor}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{prop}
+$\Cor'\Omega_{1a} = \bot$ provided that on the poset~$\mathfrak{Z}$
+there exist two non-intersecting coatoms on~$\mathfrak{Z}$ and
+the filtrator is binarily meet-closed.
+\fxnote{For the usual Fr\'echet filters the req of existence
+non-intersecting coatoms is not necessary.}
+\end{prop}
+
+\begin{proof}
+$\Cor'\Omega = \Cor'\bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}} X =
+\bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}}X \sqsubseteq
+a\sqcap^{\mathfrak{A}} b = a\sqcap^{\mathfrak{Z}} b = \bot$
+where~$a$ and~$b$ are non-intersecting coatoms.
+\end{proof}
 
 \begin{prop}
   $\up \Omega = \setcond{ \bigsqcap S }{ S \in
-  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} }$.
+  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} }$.
 \end{prop}
 
 \begin{proof}
   Because $\setcond{ \bigsqcap S }{ S \in
-  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{A}} }$ is a
+  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} }$ is a
   filter.
 \end{proof}
 
@@ -90,8 +104,8 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
 
 \begin{proof}
   $\langle \Omega^{\mathsf{FCD}} \rangle \{ x \} =
-  \bigsqcap^{\mathscr{F}}_{y \in U} (U \setminus \{ y \}) = \Omega^U$;
-  $\langle \Omega^{\mathsf{FCD}} \rangle p = \bigsqcap^{\mathscr{F}}_{y
+  \bigsqcap^{\mathfrak{A}}_{y \in U} (U \setminus \{ y \}) = \Omega^U$;
+  $\langle \Omega^{\mathsf{FCD}} \rangle p = \bigsqcap^{\mathfrak{A}}_{y
   \in U} \top = \top$.
 \end{proof}
 
@@ -126,18 +140,18 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
   \begin{multline*}
   (\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \bigsqcup
   \setcond{ a \times^{\mathsf{RLD}} b }{ a \in
-  \atoms^{\mathscr{F}}, b \in \atoms^{\mathscr{F}}, a
+  \atoms^{\mathfrak{A}}, b \in \atoms^{\mathfrak{A}}, a
   \times^{\mathsf{FCD}} b \sqsubseteq \Omega^{\mathsf{FCD}}
   } = \\
   \bigsqcup \setcond{ a \times^{\mathsf{RLD}} b }{
-  a \in \atoms^{\mathscr{F}}, b \in
-  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both atomic} } = \\
+  a \in \atoms^{\mathfrak{A}}, b \in
+  \atoms^{\mathfrak{A}}, \text{not $a$ and $b$ both atomic} } = \\
   \bigsqcup \setcond{ \bigsqcup \atoms (a \times^{\mathsf{RLD}} b)
-  }{ a \in \atoms^{\mathscr{F}}, b \in
-  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both atomic} } = \\
+  }{ a \in \atoms^{\mathfrak{A}}, b \in
+  \atoms^{\mathfrak{A}}, \text{not $a$ and $b$ both atomic} } = \\
   \bigsqcup \bigcup \setcond{ \atoms (a \times^{\mathsf{RLD}} b) }{
-  a \in \atoms^{\mathscr{F}}, b \in
-  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both atomic} } = \\
+  a \in \atoms^{\mathfrak{A}}, b \in
+  \atoms^{\mathfrak{A}}, \text{not $a$ and $b$ both atomic} } = \\
   \bigsqcup \left( \text{nontrivial atomic reloids under $A \times B$} \right) =
   \Omega^{\mathsf{RLD}}.
   \end{multline*}
