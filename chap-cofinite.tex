@@ -6,9 +6,6 @@ The following is a straightforward generalization of cofinite filter.
   $\Omega_{1 a} = \bigsqcap^{\mathfrak{A}}_{X \in
   \operatorname{coatoms}^{\mathfrak{Z}}} X$; $\Omega_{1 b} =
   \bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{A}}} X$.
-  \fxerror{For singleton set the definition isn't equivalent to
-  the usual Fr\'echet filters.
-  (Fake alarm because for singleton the least element is also a coatom.)}
 \end{defn}
 
 \begin{prop}
@@ -63,18 +60,42 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
 \end{cor}
 
 \begin{prop}
-$\Cor'\Omega_{1a} = \bot$ provided that on the poset~$\mathfrak{Z}$
-there exist two non-intersecting coatoms on~$\mathfrak{Z}$ and
-the filtrator is binarily meet-closed.
-\fxnote{For the usual Fr\'echet filters the req of existence
-non-intersecting coatoms is not necessary.}
+  $\Cor \Omega_{1 a} = \bot^{\mathfrak{Z}}$ if $\forall \alpha \in
+  \atoms^{\mathfrak{Z}} \exists X \in \up \Omega : a
+  \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic poset.
 \end{prop}
 
 \begin{proof}
-$\Cor'\Omega = \Cor'\bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}} X =
-\bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}}X \sqsubseteq
-a\sqcap^{\mathfrak{A}} b = a\sqcap^{\mathfrak{Z}} b = \bot$
-where~$a$ and~$b$ are non-intersecting coatoms.
+  Suppose $\alpha \in \atoms^{\mathfrak{Z}} \Cor \Omega$. Then
+  $\exists X \in \up \Omega : \alpha \nsqsubseteq X$.
+  Therefore $\alpha \notin \Cor \Omega$. So $\atoms^{\mathfrak{Z}}
+  \Cor \Omega_{1 a} = \emptyset$ and thus by atomicity $\Cor
+  \Omega_{1 a} = \bot^{\mathfrak{Z}}$.
+\end{proof}
+
+\begin{cor}
+  $\Cor \Omega^{\mathsf{FCD}} = \bot$.
+\end{cor}
+
+\begin{prop}
+  $\Omega_{1 a} = \max \setcond{ \mathcal{X} \in \mathfrak{A} }{
+  \Cor \mathcal{X} = \bot^{\mathfrak{Z}} }$ provided
+  $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \up
+  \Omega : a \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic
+  poset and $(\mathfrak{A}; \mathfrak{Z})$ is a filtered filtrator.
+\end{prop}
+
+\begin{proof}
+  Due the last proposition, it is enough to show that $\Cor \mathcal{X}
+  = \bot^{\mathfrak{Z}} \Rightarrow \mathcal{X} \sqsubseteq \Omega_{1 a}$ for
+  every $\mathcal{X} \in \mathfrak{A}$.
+  
+  Let $\Cor \mathcal{X} = \bot^{\mathfrak{Z}}$ for some $\mathcal{X} \in
+  \mathfrak{A}$. Because of our filtrator being filtered, it's enough to show
+  $X \in \up \Omega_{1 a}$. $X = a_0 \sqcap \ldots \sqcap a_n$ for $a_i$
+  being coatoms of $\mathfrak{Z}$. $a_i \sqsupseteq \mathcal{X}$ because
+  otherwise $a_i \mathrel{\not{\sqsupseteq}} \Cor \mathcal{X}$. So $X
+  \in \up \Omega_{1 a}$.
 \end{proof}
 
 \begin{prop}
