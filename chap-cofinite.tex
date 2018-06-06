@@ -94,7 +94,7 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
   \mathfrak{A}$. Because of our filtrator being filtered, it's enough to show
   $X \in \up \Omega_{1 a}$. $X = a_0 \sqcap \ldots \sqcap a_n$ for $a_i$
   being coatoms of $\mathfrak{Z}$. $a_i \sqsupseteq \mathcal{X}$ because
-  otherwise $a_i \mathrel{\not{\sqsupseteq}} \Cor \mathcal{X}$. So $X
+  otherwise $a_i \nsqsupseteq \Cor \mathcal{X}$. So $X
   \in \up \Omega_{1 a}$.
 \end{proof}
 
@@ -113,6 +113,41 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
   $\up \Omega^{\mathsf{FCD}} = \up
   \Omega^{\mathsf{RLD}}$.
 \end{cor}
+
+\begin{defn}
+$\Omega_{1c} =
+\bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z})$.
+\end{defn}
+
+\begin{prop}
+$\Omega_{1c} = \Omega_{1a}$ provided
+  $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \up
+  \Omega : a \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic
+  poset and $(\mathfrak{A}; \mathfrak{Z})$ is a down-aligned
+  filtered filtrator and $\mathfrak{Z}$ is atomistic and ??.
+\end{prop}
+
+\begin{proof}
+For $x\in\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}$ we have
+$\Cor x=\bot$ because otherwise $\bot\ne\Cor x\sqsubset x$.
+Thus by previous $x\sqsubseteq\Omega_{1a}$ and so
+$\bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z})\sqsubseteq\Omega_{1a}$.
+
+If $x\in\atoms\Omega_{1a}$ then $x\notin\mathfrak{Z}$ because otherwise
+$\Cor x\ne\bot$. So \[ \Omega_{1a}=\bigsqcup\atoms \Omega_{1a}=
+\bigsqcup(\atoms \Omega_{1a}\setminus\mathfrak{Z})\sqsubseteq
+\bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}). \]
+\end{proof}
+
+\begin{thm}
+$\Cor$ is the lower adjoint of $\Omega_{1?}\sqcup^{\mathfrak{A}}-$
+provided that ??. \fxnote{Prove it in two ways (for two definitions
+of adjoint elements).}
+\end{thm}
+
+\begin{proof}
+??
+\end{proof}
 
 \begin{prop}
   ~  
