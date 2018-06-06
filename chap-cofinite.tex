@@ -60,7 +60,9 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
 \end{cor}
 
 \begin{prop}\label{omega-bot}
-  $\Cor \Omega_{1 a} = \bot^{\mathfrak{Z}}$ if $\forall \alpha \in
+  $\Cor \Omega_{1 a} = \bot^{\mathfrak{Z}}$ if
+  $\Omega_{1 a}$ and $\Cor \Omega_{1 a}$ are defined,
+  $\forall \alpha \in
   \atoms^{\mathfrak{Z}} \exists X \in \up \Omega : a
   \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic poset.
 \end{prop}
@@ -79,7 +81,8 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
 
 \begin{prop}
   $\Omega_{1 a} = \max \setcond{ \mathcal{X} \in \mathfrak{A} }{
-  \Cor \mathcal{X} = \bot^{\mathfrak{Z}} }$ provided
+  \Cor \mathcal{X} = \bot^{\mathfrak{Z}} }$ if $\mathfrak{A}$ is
+  a complete lattice,
   $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \up
   \Omega : a \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic
   poset and $(\mathfrak{A}; \mathfrak{Z})$ is a filtered filtrator.
@@ -99,8 +102,9 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
 \end{proof}
 
 \begin{prop}
-  $\up \Omega = \setcond{ \bigsqcap S }{ S \in
-  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} }$.
+  $\up \Omega_{1a} = \setcond{ \bigsqcap S }{ S \in
+  \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} }$
+  if it is defined.
 \end{prop}
 
 \begin{proof}
@@ -144,8 +148,8 @@ $\Cor x\ne\bot$. So \[ \Omega_{1a}=\bigsqcup\atoms \Omega_{1a}=
 \end{proof}
 
 \begin{thm}
-$\Cor'$ is the lower adjoint of
-$\Omega_{1a}\sqcup^{\mathfrak{A}}- = \Omega_{1c}\sqcup^{\mathfrak{A}}-$
+$\Cor'$ is the lower adjoint of $\Omega\sqcup^{\mathfrak{A}}$
+where $\Omega = \Omega_{1a} = \Omega_{1c}$,
 provided that
   \begin{enumerate}
     \item $\mathfrak{A}$ is a join-semilattice.
@@ -191,7 +195,7 @@ $\Omega\sqcup^{\mathfrak{A}}\Cor'\mathcal{X} =
 
 \begin{thm}
 $\Cor'$ is the lower adjoint of
-$\Omega\sqcup^{\mathfrak{A}}- = \Omega_{1c}\sqcup^{\mathfrak{A}}-$
+$\Omega_{1c}\sqcup^{\mathfrak{A}}-$
 provided that
   \begin{enumerate}
     \item $\mathfrak{A}$ is a join-semilattice.
@@ -206,26 +210,24 @@ starrish lattice.
 \end{thm}
 
 \begin{proof}
-Define $\Omega = \Omega_{1a} = \Omega_{1c}$.
-
 It with join-closed core by theorem~\bookref{semifilt-joinclosed}.
 
 We will prove $\Cor'\mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
-\mathcal{X} \sqsubseteq \Omega \sqcup \mathcal{Y}$.
+\mathcal{X} \sqsubseteq \Omega_{1c} \sqcup \mathcal{Y}$.
 
 By atomisticity it is equivalent to:
 $\atoms^{\mathfrak{A}}\Cor'\mathcal{X} \subseteq \atoms^{\mathfrak{A}}\mathcal{Y}
 \Leftrightarrow
-\atoms^{\mathfrak{A}}\mathcal{X} \subseteq \atoms^{\mathfrak{A}}(\Omega \sqcup \mathcal{Y})$;
+\atoms^{\mathfrak{A}}\mathcal{X} \subseteq \atoms^{\mathfrak{A}}(\Omega_{1c} \sqcup \mathcal{Y})$;
 (theorem~\bookref{dual-core-join})
 $\atoms^{\mathfrak{A}}\Cor'\mathcal{X} \sqsubseteq \atoms^{\mathfrak{A}}\mathcal{Y}
 \Leftrightarrow
-\atoms^{\mathfrak{A}}\mathcal{X} \sqsubseteq \atoms^{\mathfrak{A}}\Omega \cup \atoms^{\mathfrak{A}}\mathcal{Y}$;
+\atoms^{\mathfrak{A}}\mathcal{X} \sqsubseteq \atoms^{\mathfrak{A}}\Omega_{1c} \cup \atoms^{\mathfrak{A}}\mathcal{Y}$;
 what by below is equivalent to:
 $\atoms^{\mathfrak{Z}}  \mathcal{X} \subseteq
 \atoms^{\mathfrak{Z}}  \mathcal{Y} \Leftrightarrow
 \atoms^{\mathfrak{A}}  \mathcal{X} \subseteq \atoms^{\mathfrak{A}}
-\Omega \cup \atoms^{\mathfrak{A}}  \mathcal{Y}$.
+\Omega_{1c} \cup \atoms^{\mathfrak{A}}  \mathcal{Y}$.
 
 $\Cor' \mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
 \atoms^{\mathfrak{A}} \Cor' \mathcal{X} \subseteq
@@ -245,7 +247,7 @@ $\atoms^{\mathfrak{Z}}  \mathcal{X} \subseteq
 
 Finishing the proof
 $\atoms^{\mathfrak{A}} \mathcal{X} \subseteq \atoms^{\mathfrak{A}}
-\Omega \cup \atoms^{\mathfrak{A}} \mathcal{Y} \Leftrightarrow
+\Omega_{1c} \cup \atoms^{\mathfrak{A}} \mathcal{Y} \Leftrightarrow
 \atoms^{\mathfrak{A}} \mathcal{X} \subseteq
 (\atoms^{\mathfrak{A}} \setminus \mathfrak{Z})
 \cup \atoms^{\mathfrak{A}} \mathcal{Y} \Leftrightarrow
