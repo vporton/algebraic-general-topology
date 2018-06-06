@@ -59,7 +59,7 @@ Thus for primary filtrators I will denote it just $\Omega$.
 $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $A\times B$ is an infinite set).
 \end{cor}
 
-\begin{prop}
+\begin{prop}\label{omega-bot}
   $\Cor \Omega_{1 a} = \bot^{\mathfrak{Z}}$ if $\forall \alpha \in
   \atoms^{\mathfrak{Z}} \exists X \in \up \Omega : a
   \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic poset.
@@ -140,26 +140,41 @@ $\Cor x\ne\bot$. So \[ \Omega_{1a}=\bigsqcup\atoms \Omega_{1a}=
 \end{proof}
 
 \begin{thm}
-$\Cor$ is the lower adjoint of $\Omega_{1?}\sqcup^{\mathfrak{A}}-$
-provided that ??. \fxnote{Prove it in two ways (for two definitions
-of adjoint elements).}
+$\Cor'$ is the lower adjoint of $\Omega_{1a}\sqcup^{\mathfrak{A}}-$
+provided that
+  \begin{enumerate}
+    \item $\mathfrak{A}$ is a join-semilattice.
+    \item $\Cor'$ is defined on all~$\mathfrak{A}$.
+    \item $\mathfrak{A}$ is atomistic.
+    \item $(\mathfrak{A},\mathfrak{Z})$ is a filtered
+    down-aligned filtrator with binarily meet-closed core $\mathfrak{Z}$
+    which is a complete atomistic lattice and $\mathfrak{A}$ is a complete
+    starrish lattice.
+    \item $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \up \Omega_{1a} : a
+      \nsqsubseteq X$
+      \item ??
+  \end{enumerate}
 \end{thm}
 
-\begin{proof} (1) [atomistic]
+\begin{proof}
+It with join-closed core by theorem~\bookref{semifilt-joinclosed}.
+
 It's enough to prove that
 \[
-\mathcal{X}\sqsubseteq\Omega\sqcup^{\mathfrak{A}}\Cor\mathcal{X}\quad\text{and}\quad\Cor(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y})\sqsubseteq\mathcal{Y}.
+\mathcal{X}\sqsubseteq\Omega_{1a}\sqcup^{\mathfrak{A}}\Cor'\mathcal{X}\quad\text{and}\quad\Cor'(\Omega_{1a}\sqcup^{\mathfrak{A}}\mathcal{Y})\sqsubseteq\mathcal{Y}.
 \]
-$\Cor(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y}) =
+$\Cor'(\Omega_{1a}\sqcup^{\mathfrak{A}}\mathcal{Y}) =
 \text{(theorem~\bookref{dual-core-join})} =
-\Cor\Omega\sqcup^{\mathfrak{Z}}\Cor\mathcal{Y} =
-\bot^{\mathfrak{Z}}\sqcup^{\mathfrak{Z}}\Cor\mathcal{Y} =
-\Cor\mathcal{Y}\sqsubseteq\mathcal{Y}$.
+\Cor'\Omega_{1a}\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} =
+\text{(proposition~\ref{omega-bot})} =
+\bot^{\mathfrak{Z}}\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} =
+\text{(theorem~\bookref{f-cor-max})} =
+\Cor'\mathcal{Y}\sqsubseteq\mathcal{Y}$.
 
-$\Omega\sqcup^{\mathfrak{A}}\Cor\mathcal{X} =
-\bigsqcup\atoms(\Omega\sqcup^{\mathfrak{A}}\Cor\mathcal{X}) =
-\bigsqcup(\atoms\Omega\cup\Cor\mathcal{X}) =
-\bigsqcup\atoms\Omega\sqcup\bigsqcup\Cor\atoms\mathcal{X}) \sqsupseteq
+$\Omega_{1a}\sqcup^{\mathfrak{A}}\Cor'\mathcal{X} =
+\bigsqcup\atoms(\Omega_{1a}\sqcup^{\mathfrak{A}}\Cor'\mathcal{X}) =
+\bigsqcup(\atoms\Omega_{1a}\cup\Cor'\mathcal{X}) =
+\bigsqcup\atoms\Omega_{1a}\sqcup\bigsqcup\Cor'\atoms\mathcal{X}) \sqsupseteq
 \bigsqcup(\atoms\mathcal{X}\setminus\mathfrak{Z}) \sqcup
 \bigsqcup(\atoms\mathcal{X}\cap\mathfrak{Z}) =
 \bigsqcup((\atoms\mathcal{X}\setminus\mathfrak{Z}) \cup
@@ -167,16 +182,33 @@ $\Omega\sqcup^{\mathfrak{A}}\Cor\mathcal{X} =
 \bigsqcup\atoms\mathcal{X} = \mathcal{X}$.
 \end{proof}
 
-\begin{proof} (2) [atomistic]
-We will prove $\Cor\mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
+\begin{thm}
+$\Cor'$ is the lower adjoint of $\Omega_{1?}\sqcup^{\mathfrak{A}}-$
+provided that
+  \begin{enumerate}
+    \item $\mathfrak{A}$ is a join-semilattice.
+    \item $\Cor'$ is defined on all~$\mathfrak{A}$.
+    \item $\mathfrak{A}$ is atomistic.
+    \item $(\mathfrak{A},\mathfrak{Z})$ is a filtered
+down-aligned filtrator with binarily meet-closed core $\mathfrak{Z}$
+which is a complete atomistic lattice and $\mathfrak{A}$ is a complete
+starrish lattice.
+    \item ??
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+It with join-closed core by theorem~\bookref{semifilt-joinclosed}.
+
+We will prove $\Cor'\mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
 \mathcal{X} \sqsubseteq \Omega \sqcup \mathcal{Y}$.
 
 By atomisticity it is equivalent to:
-$\atoms^{\mathfrak{A}}\Cor\mathcal{X} \subseteq \atoms^{\mathfrak{A}}\mathcal{Y}
+$\atoms^{\mathfrak{A}}\Cor'\mathcal{X} \subseteq \atoms^{\mathfrak{A}}\mathcal{Y}
 \Leftrightarrow
 \atoms^{\mathfrak{A}}\mathcal{X} \subseteq \atoms^{\mathfrak{A}}(\Omega \sqcup \mathcal{Y})$;
 (theorem~\bookref{dual-core-join})
-$\atoms^{\mathfrak{A}}\Cor\mathcal{X} \sqsubseteq \atoms^{\mathfrak{A}}\mathcal{Y}
+$\atoms^{\mathfrak{A}}\Cor'\mathcal{X} \sqsubseteq \atoms^{\mathfrak{A}}\mathcal{Y}
 \Leftrightarrow
 \atoms^{\mathfrak{A}}\mathcal{X} \sqsubseteq \atoms^{\mathfrak{A}}\Omega \cup \atoms^{\mathfrak{A}}\mathcal{Y}$;
 what by below is equivalent to:
@@ -185,10 +217,10 @@ $\atoms^{\mathfrak{Z}}  \mathcal{X} \subseteq
 \atoms^{\mathfrak{A}}  \mathcal{X} \subseteq \atoms^{\mathfrak{A}}
 \Omega \cup \atoms^{\mathfrak{A}}  \mathcal{Y}$.
 
-$\Cor \mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
-\atoms^{\mathfrak{A}} \Cor \mathcal{X} \subseteq
+$\Cor' \mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
+\atoms^{\mathfrak{A}} \Cor' \mathcal{X} \subseteq
 \atoms^{\mathfrak{A}}  \mathcal{Y} \Rightarrow
-\atoms^{\mathfrak{Z}} \Cor \mathcal{X} \subseteq
+\atoms^{\mathfrak{Z}} \Cor' \mathcal{X} \subseteq
 \atoms^{\mathfrak{Z}}  \mathcal{Y} \Leftrightarrow
 \atoms^{\mathfrak{Z}}  \mathcal{X} \subseteq \atoms^{\mathfrak{Z}}
 \mathcal{Y}$;
@@ -196,9 +228,10 @@ $\Cor \mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
 $\atoms^{\mathfrak{Z}}  \mathcal{X} \subseteq
 \atoms^{\mathfrak{Z}}  \mathcal{Y} \Rightarrow
 \text{(theorem~\bookref{cor-join-atom})} \Rightarrow
-\Cor \mathcal{X}
-\sqsubseteq \Cor \mathcal{Y} \Rightarrow \Cor \mathcal{X}
-\sqsubseteq \mathcal{Y}$.
+\Cor' \mathcal{X}
+\sqsubseteq \Cor' \mathcal{Y} \Rightarrow
+\text{(theorem~\bookref{f-cor-max})} \Rightarrow
+\Cor' \mathcal{X} \sqsubseteq \mathcal{Y}$.
 
 Finishing the proof
 $\atoms^{\mathfrak{A}} \mathcal{X} \subseteq \atoms^{\mathfrak{A}}
