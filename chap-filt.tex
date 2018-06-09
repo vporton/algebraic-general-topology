@@ -1771,6 +1771,30 @@ The following is an implications tuple:
 \end{description}
 \end{proof}
 
+\begin{prop}
+The following is an implications tuple:
+\fxwarning{Check errors.}
+\begin{enumerate}
+ \item\label{wcorr2-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+ \item\label{wcorr2-flt}  $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over
+   a join-semilattice.
+ \item\label{wcorr2-con} $(\mathfrak{A},\mathfrak{Z})$ is with binarily join-closed core,
+   weakly up-aligned filtrator, and~$\mathfrak{Z}$ is a join-semilattice.
+ \item\label{wcorr2-res} $(\mathfrak{A},\mathfrak{Z})$ is with correct joining.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+ \item[\ref{wcorr2-pow}$\Rightarrow$\ref{wcorr2-flt}] Obvious.
+ \item[\ref{wcorr2-flt}$\Rightarrow$\ref{wcorr2-con}]
+  Corollary~\ref{semifilt-joinclosed}.
+ \item[\ref{wcorr2-con}$\Rightarrow$\ref{wcorr2-res}]
+  Dual of the previous proposition.
+\end{description}
+\end{proof}
+
 \begin{lem}\label{int-join-lem}
 \label{bool-compl}For a filtrator $(\mathfrak{A},\mathfrak{Z})$
 where $\mathfrak{Z}$ is a boolean lattice, for every $B\in\mathfrak{Z}$,
