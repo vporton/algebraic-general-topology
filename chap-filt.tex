@@ -1105,10 +1105,22 @@ filtrator such a filtrator $(\mathfrak{A},\mathfrak{Z})$ that
 whenever~$\top^{\mathfrak{Z}}$ exists, $\top^{\mathfrak{A}}$
 also exists and $\top^{\mathfrak{Z}}=\top^{\mathfrak{A}}$.
 \end{defn}
-However in this edition of this book I do not use the concepts of
-weakly down-aligned and weakly up-aligned filtrators for simplicity
-of proofs. Maybe I will add it in a future edition.
 
+\begin{obvious}
+~
+\begin{enumerate}
+ \item Every up-aligned filtrator is weakly up-aligned.
+ \item Every down-aligned filtrator is weakly down-aligned.
+\end{enumerate}
+\end{obvious}
+
+\begin{obvious}
+~
+\begin{enumerate}
+\item Every primary filtrator is weakly down-aligned.
+\item Every primary filtrator is weakly up-aligned.
+\end{enumerate}
+\end{obvious}
 
 \section{More advanced properties of filters}
 
@@ -1717,6 +1729,48 @@ on a set.
 \end{cor}
 
 \section{Intersection and Joining with an Element of the Core}
+
+\begin{defn}
+  A filtrator $(\mathfrak{A}; \mathfrak{Z})$ is with \emph{correct
+  intersection} iff $\forall a, b \in \mathfrak{Z}: (a \nasymp^{\mathfrak{Z}}
+  b \Leftrightarrow a \nasymp^{\mathfrak{A}} b)$.
+\end{defn}
+
+\begin{defn}
+  A filtrator $(\mathfrak{A}; \mathfrak{Z})$ is with \emph{correct
+  joining} iff $\forall a, b \in \mathfrak{Z}: (a \equiv^{\mathfrak{Z}}
+  b \Leftrightarrow a \equiv^{\mathfrak{A}} b)$.
+\end{defn}
+
+\begin{prop}
+The following is an implications tuple:
+\begin{enumerate}
+ \item\label{wcorr-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+ \item\label{wcorr-flt}  $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over
+   a meet-semilattice.
+ \item\label{wcorr-con} $(\mathfrak{A},\mathfrak{Z})$ is with binarily meet-closed core,
+   weakly down-aligned filtrator, and~$\mathfrak{Z}$ is a meet-semilattice.
+ \item\label{wcorr-res} $(\mathfrak{A},\mathfrak{Z})$ is with correct intersection.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+ \item[\ref{wcorr-pow}$\Rightarrow$\ref{wcorr-flt}] Obvious.
+ \item[\ref{wcorr-flt}$\Rightarrow$\ref{wcorr-con}]
+  Corollary~\ref{f-meet-closed}.
+ \item[\ref{wcorr-con}$\Rightarrow$\ref{wcorr-res}]
+  $a \nasymp^{\mathfrak{Z}} b \Rightarrow a \nasymp^{\mathfrak{A}} b$ is
+  obvious. Let $a \asymp^{\mathfrak{Z}} b$. Then $a \sqcap^{\mathfrak{Z}} b$
+  exists; so $\bot^{\mathfrak{Z}}$ exists and $a \sqcap^{\mathfrak{Z}} b =
+  \bot^{\mathfrak{Z}}$ (as otherwise $a \sqcap^{\mathfrak{Z}} b$ is
+  non-least). So $\bot^{\mathfrak{Z}} = \bot^{\mathfrak{A}}$. We have $a
+  \sqcap^{\mathfrak{A}} b = \bot^{\mathfrak{A}}$. Thus $a
+  \asymp^{\mathfrak{A}} b$.
+\end{description}
+\end{proof}
+
 \begin{lem}\label{int-join-lem}
 \label{bool-compl}For a filtrator $(\mathfrak{A},\mathfrak{Z})$
 where $\mathfrak{Z}$ is a boolean lattice, for every $B\in\mathfrak{Z}$,
