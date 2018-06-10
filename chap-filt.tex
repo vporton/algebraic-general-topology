@@ -1800,9 +1800,9 @@ where $\mathfrak{Z}$ is a boolean lattice, for every $B\in\mathfrak{Z}$,
 $\mathcal{A}\in\mathfrak{A}$:
 \begin{enumerate}
 \item $B\asymp^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{B}\sqsupseteq\mathcal{A}$
-if it is down-aligned, with binarily meet-closed and separable core;
+if it is with separable core and with correct intersection;
 \item $B\equiv^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{B}\sqsubseteq\mathcal{A}$
-if it is up-aligned, with binarily join-closed and co-separable core.
+if it is with co-separable core and with correct joining.
 \end{enumerate}
 \end{lem}
 \begin{proof}
@@ -1810,8 +1810,7 @@ We will prove only the first as the second is dual.
 \begin{align*}
 B\asymp^{\mathfrak{A}}\mathcal{A} & \Leftrightarrow\\
 \exists A\in\up\mathcal{A}:B\asymp^{\mathfrak{A}}A & \Leftrightarrow\\
-\exists A\in\up\mathcal{A}:B\sqcap^{\mathfrak{A}}A=\bot & \Leftrightarrow\\
-\exists A\in\up\mathcal{A}:B\sqcap^{\mathfrak{Z}}A=\bot & \Leftrightarrow\\
+\exists A\in\up\mathcal{A}:B\asymp^{\mathfrak{Z}}A & \Leftrightarrow\\
 \exists A\in\up\mathcal{A}:\overline{B}\sqsupseteq A & \Leftrightarrow\\
 \overline{B}\in\up\mathcal{A} & \Leftrightarrow\\
 \overline{B}\sqsupseteq\mathcal{A}.
