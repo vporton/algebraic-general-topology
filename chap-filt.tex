@@ -1912,7 +1912,7 @@ The following is an implications tuple:
 \item \label{atom-both-f}$(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator
 over a meet-semilattice with least element.
 \item \label{atom-both-mlat}$(\mathfrak{A},\mathfrak{Z})$ is a filtered
-down-aligned filtrator with binarily meet-closed core $\mathfrak{Z}$
+weakly?? down-aligned filtrator with binarily meet-closed core $\mathfrak{Z}$
 which is a meet-semilattice.
 \item \label{atom-both-conc}$a$ is an atom of $\mathfrak{Z}$ iff $a\in\mathfrak{Z}$
 and $a$ is an atom of $\mathfrak{A}$.
@@ -1928,8 +1928,14 @@ corollary~\ref{f-meet-closed}.
 \item [{\ref{atom-both-mlat}$\Rightarrow$\ref{atom-both-conc}}] ~
 
 \begin{description}
-\item [{$\Leftarrow$}] Obvious.
-\item [{$\Rightarrow$}] We need to prove that if $a$ is an atom of $\mathfrak{Z}$
+\item [{$\Leftarrow$}] Let $a$ be an atom of $\mathfrak{A}$ and $a \in \mathfrak{Z}$. Then either
+$a$ is an atom of $\mathfrak{Z}$ or $a$ is the least element of
+$\mathfrak{Z}$. But if $a$ is the least element of $\mathfrak{Z}$ then $a$ is
+also least element of $\mathfrak{A}$ and thus is not an atom of
+$\mathfrak{A}$. So the only possible outcome is that $a$ is an atom of
+$\mathfrak{Z}$.
+\item [{$\Rightarrow$}] \fxwarning{Generalize the proof for weak.}
+We need to prove that if $a$ is an atom of $\mathfrak{Z}$
 then $a$ is an atom of $\mathfrak{A}$. Suppose the contrary that
 $a$ is not an atom of $\mathfrak{A}$. Then there exists $x\in\mathfrak{A}$
 such that $\bot\ne x\sqsubset a$. Because ``$\up$'' is a straight
