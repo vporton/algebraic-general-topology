@@ -1912,7 +1912,7 @@ The following is an implications tuple:
 \item \label{atom-both-f}$(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator
 over a meet-semilattice with least element.
 \item \label{atom-both-mlat}$(\mathfrak{A},\mathfrak{Z})$ is a filtered
-weakly?? down-aligned filtrator with binarily meet-closed core $\mathfrak{Z}$
+weakly down-aligned filtrator with binarily meet-closed core $\mathfrak{Z}$
 which is a meet-semilattice.
 \item \label{atom-both-conc}$a$ is an atom of $\mathfrak{Z}$ iff $a\in\mathfrak{Z}$
 and $a$ is an atom of $\mathfrak{A}$.
@@ -1934,15 +1934,19 @@ $\mathfrak{Z}$. But if $a$ is the least element of $\mathfrak{Z}$ then $a$ is
 also least element of $\mathfrak{A}$ and thus is not an atom of
 $\mathfrak{A}$. So the only possible outcome is that $a$ is an atom of
 $\mathfrak{Z}$.
-\item [{$\Rightarrow$}] \fxwarning{Generalize the proof for weak.}
+\item [{$\Rightarrow$}]
 We need to prove that if $a$ is an atom of $\mathfrak{Z}$
 then $a$ is an atom of $\mathfrak{A}$. Suppose the contrary that
 $a$ is not an atom of $\mathfrak{A}$. Then there exists $x\in\mathfrak{A}$
-such that $\bot\ne x\sqsubset a$. Because ``$\up$'' is a straight
+such that $x\sqsubset a$ and~$x$ is not least element of~$\mathfrak{A}$. Because ``$\up$'' is a straight
 monotone map to the dual of the poset $\subsets\mathfrak{Z}$ (obvious
 \ref{up-straight}), $\up a\subset\up x$. So there exists $K\in\up x$
 such that $K\notin\up a$. Also $a\in\up x$. We have $K\sqcap^{\mathfrak{Z}}a=K\sqcap^{\mathfrak{A}}a\in\up x$;
-$K\sqcap^{\mathfrak{Z}}a\ne\bot$ and $K\sqcap^{\mathfrak{Z}}a\sqsubset a$.
+$K\sqcap^{\mathfrak{Z}}a$ is not least of~$\mathfrak{Z}$
+(Suppose for the contrary that
+$K\sqcap^{\mathfrak{Z}}a=\bot^{\mathfrak{Z}}$, then
+$K\sqcap^{\mathfrak{Z}}a=\bot^{\mathfrak{A}}\notin\up x$.) and
+$K\sqcap^{\mathfrak{Z}}a\sqsubset a$.
 So $a$ is not an atom of $\mathfrak{Z}$.
 \end{description}
 \end{description}
