@@ -1953,14 +1953,12 @@ So $a$ is not an atom of $\mathfrak{Z}$.
 \end{proof}
 \begin{thm}
 \label{up-eq-corestar}The following is an implications tuple:
+\fxwarning{Generalize dependent theorems.}
 \begin{enumerate}
 \item \label{up-eq-corestar-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset
 filtrator.
-\item \label{up-eq-corestar-f}$(\mathfrak{A},\mathfrak{Z})$ is a primary
-filtrator over a bounded meet-semilattice.
-\item \label{up-eq-corestar-mlat}$(\mathfrak{A},\mathfrak{Z})$ is a filtered
-down-aligned filtrator and $\mathfrak{A}$ is a meet-semilattice.
-\fxnote{It seems enough to be with correct intersection.}
+\item \label{up-eq-corestar-f}$(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator.
+\item \label{up-eq-corestar-mlat}$(\mathfrak{A},\mathfrak{Z})$ is a filtered filtrator.
 \item \label{up-eq-corestar-conc}$a\in\mathfrak{A}$ is an atom of $\mathfrak{A}$
 iff $\up a=\corestar a$.
 \end{enumerate}
@@ -1969,22 +1967,22 @@ iff $\up a=\corestar a$.
 ~
 \begin{description}
 \item [{\ref{up-eq-corestar-p}$\Rightarrow$\ref{up-eq-corestar-f}}] Obvious.
-\item [{\ref{up-eq-corestar-f}$\Rightarrow$\ref{up-eq-corestar-mlat}}] It
-is filtered by the theorem~\ref{semifilt-joinclosed}, $\mathfrak{A}$
-is a meet-semilattice by the corollary~\ref{filt-is-complete}.
+\item [{\ref{up-eq-corestar-f}$\Rightarrow$\ref{up-eq-corestar-mlat}}] By the theorem~\ref{semifilt-joinclosed}.
 \item [{\ref{up-eq-corestar-mlat}$\Rightarrow$\ref{up-eq-corestar-conc}}] ~
 
 \begin{description}
 \item [{$\Rightarrow$}] For any $K\in\mathfrak{A}$
 \[
-K\in\up a\Leftrightarrow K\sqsupseteq a\Leftrightarrow K\sqcap^{\mathfrak{A}}a\ne\bot\Leftrightarrow K\in\corestar a.
+K\in\up a\Leftrightarrow K\sqsupseteq a\Leftrightarrow K\nasymp^{\mathfrak{A}}a\Leftrightarrow K\in\corestar a.
 \]
 
-\item [{$\Leftarrow$}] Let $\up a=\corestar a$. Then $a\ne\bot$. Consequently
-for every $x\in\mathfrak{A}$ we have
+\item [{$\Leftarrow$}] Let $\up a=\corestar a$. Then~$a$ is not
+least element of~$\mathfrak{A}$. Consequently
+for every $x\in\mathfrak{A}$ if~$x$ is not the least element
+of~$\mathfrak{A}$ we have
 \begin{align*}
-\bot\sqsubset x\sqsubset a & \Rightarrow\\
-x\sqcap^{\mathfrak{A}}a\ne\bot & \Rightarrow\\
+x\sqsubset a & \Rightarrow\\
+x\nasymp^{\mathfrak{A}}a & \Rightarrow\\
 \forall K\in\up x:K\in\corestar a & \Rightarrow\\
 \forall K\in\up x:K\in\up a & \Rightarrow\\
 \up x\subseteq\up a & \Rightarrow\\
