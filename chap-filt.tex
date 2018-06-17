@@ -1742,7 +1742,7 @@ on a set.
   b \Leftrightarrow a \equiv^{\mathfrak{A}} b)$.
 \end{defn}
 
-\begin{prop}
+\begin{prop}\label{is-corr-inters}
 The following is an implications tuple:
 \fxwarning{Generalize dependent theorems.}
 \begin{enumerate}
@@ -1772,7 +1772,7 @@ The following is an implications tuple:
 \end{description}
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{is-corr-join}
 The following is an implications tuple:
 \begin{enumerate}
  \item\label{wcorr2-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
@@ -3012,12 +3012,13 @@ See also theorem~\ref{dpdfiff-meet} above.
 \section{Separability criteria}
 \begin{thm}
 \label{f-intrs-and-compl}The following is an implications tuple:
+\fxwarning{Generalize dependent theorems.}
 \begin{enumerate}
 \item \label{intrs-compl-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset
 filtrator.
 \item \label{intrs-compl-prim}$(\mathfrak{A},\mathfrak{Z})$ is a primary
 filtrator over a boolean lattice.
-\item \label{intrs-compl-filt}$(\mathfrak{A},\mathfrak{Z})$ is a down-aligned filtrator
+\item \label{intrs-compl-filt}$(\mathfrak{A},\mathfrak{Z})$ is a filtrator with correct intersection,
 with binarily meet-closed and separable core.
 \item \label{intrs-compl-conc}$B\asymp^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{B}\sqsupseteq\mathcal{A}$
 for every $B\in\mathfrak{Z}$, $\mathcal{A}\in\mathfrak{A}$.
@@ -3028,21 +3029,23 @@ for every $B\in\mathfrak{Z}$, $\mathcal{A}\in\mathfrak{A}$.
 \begin{description}
 \item [{\ref{intrs-compl-p}$\Rightarrow$\ref{intrs-compl-prim}}] Obvious.
 \item [{\ref{intrs-compl-prim}$\Rightarrow$\ref{intrs-compl-filt}}] Using
-obvious \ref{filt-aligned}, corollary~\ref{f-meet-closed}, theorem
+proposition~\ref{is-corr-inters}, corollary~\ref{f-meet-closed}, theorem
 \ref{when-sep-core}.
 \item [{\ref{intrs-compl-filt}$\Rightarrow$\ref{intrs-compl-conc}}] By
 the lemma~\ref{int-join-lem}.
 \end{description}
 \end{proof}
 \begin{thm}
+\fxerror{This theorem was with an error in conditions.
+Check dependent theorems.}
 The following is an implications tuple:
 \begin{enumerate}
 \item \label{join-compl-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset
 filtrator.
 \item \label{join-compl-prim}$(\mathfrak{A},\mathfrak{Z})$ is a primary
 filtrator over a complete boolean lattice.
-\item \label{join-compl-filt}$(\mathfrak{A},\mathfrak{Z})$ is an up-aligned filtrator
-with binarily join-closed and co-separable core.
+\item \label{join-compl-filt}$(\mathfrak{A},\mathfrak{Z})$ is a filtrator over a boolean lattice
+with correct joining and co-separable core.
 \item \label{join-compl-conc}$B\equiv^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{B}\sqsubseteq\mathcal{A}$
 for every $B\in\mathfrak{Z}$, $\mathcal{A}\in\mathfrak{A}$.
 \end{enumerate}
@@ -3052,8 +3055,7 @@ for every $B\in\mathfrak{Z}$, $\mathcal{A}\in\mathfrak{A}$.
 \begin{description}
 \item [{\ref{join-compl-p}$\Rightarrow$\ref{join-compl-prim}}] Obvious.
 \item [{\ref{join-compl-prim}$\Rightarrow$\ref{join-compl-filt}}] Using
-obvious \ref{filt-aligned}, theorem~\ref{semifilt-joinclosed},
-theorem \ref{cosep-crit}.
+obvious \ref{is-corr-join}, theorem \ref{cosep-crit}.
 \item [{\ref{join-compl-filt}$\Rightarrow$\ref{join-compl-conc}}] By
 the lemma~\ref{int-join-lem}.
 \end{description}
