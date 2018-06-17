@@ -3223,13 +3223,13 @@ theorem \ref{crit1}.
 \end{description}
 \end{proof}
 \begin{prop}
-\fxnote{Stopped rewriting book here.}
+\fxwarning{Generalize dependent theorems.}
 The following is an implications tuple:
 \begin{enumerate}
 \item \label{dfs-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
 \item \label{dfs-f}$(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator
 over a join-semilattice.
-\item \label{dfs-fltr}The filtrator $(\mathfrak{A},\mathfrak{Z})$ is down-aligned
+\item \label{dfs-fltr}The filtrator $(\mathfrak{A},\mathfrak{Z})$ is weakly down-aligned
 and with binarily join-closed core and $\mathfrak{Z}$ is a join-semilattice.
 \item \label{dfs-conc}If $S$ is a free star on $\mathfrak{A}$ then $\downdownarrows S$
 is a free star on $\mathfrak{Z}$.
@@ -3239,8 +3239,8 @@ is a free star on $\mathfrak{Z}$.
 ~
 \begin{description}
 \item [{\ref{dfs-p}$\Rightarrow$\ref{dfs-f}}] Obvious.
-\item [{\ref{dfs-f}$\Rightarrow$\ref{dfs-fltr}}] It is down-aligned
-by obvious~\ref{filt-aligned} and with join-closed core by theorem~\ref{semifilt-joinclosed}.
+\item [{\ref{dfs-f}$\Rightarrow$\ref{dfs-fltr}}] It is weakly down-aligned
+by obvious~\ref{f-weak-down-up} and with join-closed core by theorem~\ref{semifilt-joinclosed}.
 \item [{\ref{dfs-fltr}$\Rightarrow$\ref{dfs-conc}}] For every $X,Y\in\mathfrak{Z}$
 we have
 \end{description}
@@ -3248,8 +3248,9 @@ we have
 X\sqcup^{\mathfrak{Z}}Y\in\downdownarrows S\Leftrightarrow X\sqcup^{\mathfrak{Z}}Y\in S\Leftrightarrow X\sqcup^{\mathfrak{A}}Y\in S\Leftrightarrow\\
 X\in S\vee Y\in S\Leftrightarrow X\in\downdownarrows S\vee Y\in\downdownarrows S;
 \end{multline*}
- $\bot\notin\downdownarrows S$ is obvious.
-
+Suppose there is least element
+$\bot^{\mathfrak{Z}}\in\downdownarrows S$. Then
+$\bot^{\mathfrak{A}}=\bot^{\mathfrak{Z}}\in S$ what is impossible.
 \end{proof}
 \begin{prop}
 The following is an implications tuple:
