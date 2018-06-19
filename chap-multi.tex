@@ -853,7 +853,8 @@ Really,
 \end{proof}
 \begin{defn}
 \index{product!funcoidal}Let $(\mathfrak{A}_{i},\mathfrak{Z}_{i})$
-be an indexed family of down-aligned filtrators.
+be an indexed family of filtrators and every $\mathfrak{A}_{i}$
+has least element.
 
 Then for every $A\in\prod\mathfrak{A}$ \emph{funcoidal product} is
 multifuncoid $\prod^{\mathsf{FCD}(\mathfrak{A})}A$ defined by the
@@ -862,10 +863,9 @@ formula (for every $L\in\prod\mathfrak{Z}$):
 \[
 \rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{k}L=\left\{ \begin{array}{ll}
 A_{k} & \text{if }\forall i\in(\dom\mathfrak{A})\setminus\{k\}:A_{i}\nasymp L_{i}\\
-\bot & \text{otherwise}.
+\bot^{\mathfrak{A}} & \text{otherwise}.
 \end{array}\right.
 \]
-\fxnote{Remove alignment requirement.}
 \end{defn}
 \begin{prop}
 $\GR\prod^{\mathsf{Strd}(\mathfrak{A})}A=\mathord{\rsuprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}$.\end{prop}
