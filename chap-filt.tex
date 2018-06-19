@@ -1236,13 +1236,32 @@ for every $\mathcal{A},\mathcal{B}\in\mathfrak{A}$.
 \end{cor}
 We will denote meets and joins on the lattice of filters just as~$\sqcap$
 and~$\sqcup$.
-\begin{cor}
+\begin{prop}
+Let $(\mathfrak{A},\mathfrak{Z})$ be a primary filtrator.
 If $\mathfrak{Z}$ is a join-semilattice with least element then $\mathfrak{A}$ is a
 join-semilattice and for any $\mathcal{A},\mathcal{B}\in\mathfrak{A}$
 \[
 \up(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B})=\up\mathcal{A}\cap\up\mathcal{B}.
 \]
-\end{cor}
+\end{prop}
+
+\begin{proof}
+  Taking in account the lemma it is enough to prove that $R = \up
+  \mathcal{A} \cap \up \mathcal{B}$ is a filter.
+
+  $R$ is nonempty because exist $X \in \up \mathcal{A}$ and $Y \in
+  \up \mathcal{B}$ and $R \ni X \sqcup^{\mathfrak{Z}} Y$.
+
+  Let $A, B \in R$. Then $A, B \in \up \mathcal{A}$; so exists $C \in
+  \up \mathcal{A}$ such that $C \subseteq A \land C \subseteq B$.
+  Analogously exists $D \in \up \mathcal{B}$ such that $D \subseteq A \land
+  D \subseteq B$. Let $E = C \sqcup^{\mathfrak{Z}} D$. Then $E \in \up
+  \mathcal{A}$ and $E \in \up \mathcal{B}$; $E \in R$ and $E \subseteq A \land
+  E \subseteq B$. So $R$ is a filter base.
+
+  That $R$ is an upper set is obvious.
+\end{proof}
+
 \begin{thm}
 Let $\mathfrak{Z}$ be a distributive lattice. Then
 \begin{enumerate}
@@ -4898,7 +4917,8 @@ into ultrafilters.
 
 \section{Open problems about filters}
 
-Find a common generalization of two theorems:
+Find a common generalization of two theorems for primary
+filtrators~$(\mathfrak{A},\mathfrak{Z})$:
 \begin{enumerate}
 \item If $\mathfrak{Z}$ is a meet-semilattice with greatest element then
 for any $\mathcal{A},\mathcal{B}\in\mathfrak{A}$
