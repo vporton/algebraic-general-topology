@@ -1266,29 +1266,40 @@ for every $\mathcal{A},\mathcal{B}\in\mathfrak{A}$.
 We will denote meets and joins on the lattice of filters just as~$\sqcap$
 and~$\sqcup$.
 \begin{prop}
-Let $(\mathfrak{A},\mathfrak{Z})$ be a primary filtrator.
-If $\mathfrak{Z}$ is a join-semilattice with least element then $\mathfrak{A}$ is a
-join-semilattice and for any $\mathcal{A},\mathcal{B}\in\mathfrak{A}$
+The following is an implications tuple:
+\begin{enumerate}
+  \item\label{fjoin-ex-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+  \item\label{fjoin-ex-flt}  $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator
+    over an ideal base.
+  \item\label{fjoin-ex-res}  $\mathfrak{A}$ is a join-semilattice and for
+    any $\mathcal{A},\mathcal{B}\in\mathfrak{A}$
 \[
 \up(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B})=\up\mathcal{A}\cap\up\mathcal{B}.
 \]
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{fjoin-ex-pow}$\Rightarrow$\ref{fjoin-ex-flt}]
+  Obvious.
+\item[\ref{fjoin-ex-flt}$\Rightarrow$\ref{fjoin-ex-res}]
   Taking in account the lemma it is enough to prove that $R = \up
   \mathcal{A} \cap \up \mathcal{B}$ is a filter.
 
-  $R$ is nonempty because exist $X \in \up \mathcal{A}$ and $Y \in
-  \up \mathcal{B}$ and $R \ni X \sqcup^{\mathfrak{Z}} Y$.
+  $R$ is nonempty because we can take $X \in \up \mathcal{A}$ and $Y \in
+  \up \mathcal{B}$ and $Z\sqsupseteq X\land Z\sqsupseteq Y$ and then $R \ni Z$.
 
   Let $A, B \in R$. Then $A, B \in \up \mathcal{A}$; so exists $C \in
-  \up \mathcal{A}$ such that $C \subseteq A \land C \subseteq B$.
-  Analogously exists $D \in \up \mathcal{B}$ such that $D \subseteq A \land
-  D \subseteq B$. Let $E = C \sqcup^{\mathfrak{Z}} D$. Then $E \in \up
-  \mathcal{A}$ and $E \in \up \mathcal{B}$; $E \in R$ and $E \subseteq A \land
-  E \subseteq B$. So $R$ is a filter base.
+  \up \mathcal{A}$ such that $C \sqsubseteq A \land C \sqsubseteq B$.
+  Analogously exists $D \in \up \mathcal{B}$ such that $D \sqsubseteq A \land
+  D \sqsubseteq B$. Take $E\sqsupseteq C\land E\sqsupseteq D$. Then $E \in \up
+  \mathcal{A}$ and $E \in \up \mathcal{B}$; $E \in R$ and $E \sqsubseteq A \land
+  E \sqsubseteq B$. So $R$ is a filter base.
 
   That $R$ is an upper set is obvious.
+\end{widedisorder}
 \end{proof}
 
 \begin{thm}
