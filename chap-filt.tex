@@ -137,8 +137,36 @@ $\mathfrak{Z}$ such that
 \forall X,Y\in F\exists Z\in F:(Z\sqsubseteq X\land Z\sqsubseteq Y).
 \]
 \end{defn}
+\begin{defn}
+\index{ideal base}\emph{Ideal base} is a nonempty subset $F$ of
+$\mathfrak{Z}$ such that
+\[
+\forall X,Y\in F\exists Z\in F:(Z\sqsupseteq X\land Z\sqsupseteq Y).
+\]
+\end{defn}
+
 \begin{obvious}
-A nonempty chain is a filter base.\end{obvious}
+Ideal base is the dual of filter base.
+\end{obvious}
+
+\begin{obvious}
+~
+\begin{enumerate}
+  \item A poset with a lowest element is a filter base.
+  \item A poset with a greatest element is an ideal base.
+\end{enumerate}
+\end{obvious}
+
+\begin{obvious}
+~
+\begin{enumerate}
+  \item A meet-semilattice is a filter base.
+  \item A join-semilattice is an ideal base.
+\end{enumerate}
+\end{obvious}
+
+\begin{obvious}
+A nonempty chain is a filter base and an ideal base.\end{obvious}
 \begin{defn}
 \index{filter!on poset}\emph{Filter} is a subset of $\mathfrak{Z}$
 which is both a filter base and an upper set.
