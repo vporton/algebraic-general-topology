@@ -21,8 +21,11 @@
  pdfkeywords={algebraic general topology,quasi-uniform spaces,generalizations of proximity spaces,generalizations of nearness spaces,generalizations of uniform spaces}}
 % \usepackage{forwardref}
 \numberwithin{section}{chapter}
+
+% with \usepackage it fails with new TeX versions,
+% without it fails with old ones. So I do neither.
 % \usepackage{chngcntr}
-\counterwithout{figure}{chapter}
+% \counterwithout{figure}{chapter}
 
 % Eliminate hyperref warnings: http://tex.findincity.net/view/635399273629833626247444/hyperref-token-not-allowed-warning-possible-bug
 \pdfstringdefDisableCommands{%
