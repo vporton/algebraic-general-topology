@@ -1252,19 +1252,6 @@ with greatest element~$\top$.
 \end{enumerate}
 \end{cor}
 
-\begin{grayed}
-\begin{cor}\fxerror{Remove.}
-The following is an implications tuple:
-\begin{enumerate}
-\item $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
-\item $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over a meet-semilattice
-with greatest element~$\top$.
-\item $\up(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B})=\up\mathcal{A}\cap\up\mathcal{B}$
-for every $\mathcal{A},\mathcal{B}\in\mathfrak{A}$.
-\end{enumerate}
-\end{cor}
-\end{grayed}
-
 We will denote meets and joins on the lattice of filters just as~$\sqcap$
 and~$\sqcup$.
 \begin{prop}
@@ -1507,7 +1494,8 @@ if $\mathfrak{Z}$ is a meet-semilattice.
 \begin{enumerate}
 \item \label{inf-assc-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
 \item \label{inf-assc-prim}$(\mathfrak{A},\mathfrak{Z})$ is a primary
-filtrator over a distributive lattice with greatest element.
+filtrator over a distributive lattice which is an ideal
+base.
 \item \label{inf-assc-conc}$\mathcal{A}\sqcup^{\mathfrak{A}}\bigsqcap^{\mathfrak{A}}S=\bigsqcap^{\mathfrak{A}}\rsupfun{\mathcal{A}\sqcup^{\mathfrak{A}}}S$
 for $S\in\subsets\mathfrak{A}$ and $\mathcal{A}\in\mathfrak{A}$.
 \end{enumerate}
@@ -1539,7 +1527,7 @@ into account the previous section, we have:
 \begin{enumerate}
 \item $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
 \item $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over a distributive
-lattice with greatest element.
+lattice which is an ideal base.
 \item $\mathfrak{A}$ is a distributive and co-brouwerian lattice.
 \end{enumerate}
 \end{cor}
@@ -1549,7 +1537,7 @@ The following is an implications tuple:
 \begin{enumerate}
 \item $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
 \item $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over a distributive
-lattice with greatest element.
+lattice which is an ideal base.
 \item $\mathfrak{A}$ is a co-frame.
 \end{enumerate}
 \end{cor}
@@ -1559,6 +1547,8 @@ The below theorem uses the notation and results from section~\ref{some-frames}.
 \label{frame-main}If $\mathfrak{A}$ is a co-frame and $L$ is a
 distributive lattice with greatest element, then $\operatorname{Join}(L,\mathfrak{A})$
 is also a co-frame.
+\fxwarning{Is the condition to have greatest element
+needed? Maybe instead require to be an ideal base?}
 \end{thm}
 \begin{proof}
 Let $F=\uparrow\circ\bigsqcap:\Upper(\mathfrak{A})\rightarrow\Upper(\mathfrak{A})$;
@@ -1951,7 +1941,8 @@ The following is an implications tuple:
 \begin{enumerate}
 \item\label{f-atoms-join-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
 \item\label{f-atoms-join-prim} $(\mathfrak{A},\mathfrak{Z})$
-  is a primary filtrator over a distributive lattice with greatest element.
+  is a primary filtrator over a distributive lattice
+  which is and ideal base.
 \item\label{f-atoms-join-slat} $\mathfrak{A}$~is a starrish join-semilattice.
 \item\label{f-atoms-join-res} $\atoms(a\sqcup b)=\atoms a\cup\atoms b$ for $a,b\in\mathfrak{A}$.
 \end{enumerate}
@@ -2124,7 +2115,8 @@ that $\up a$ is a free star (in lattice~$\mathfrak{Z}$).\end{defn}
 \item \label{atom-is-prime-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset
 filtrator.
 \item \label{atom-is-prime-f}$(\mathfrak{A},\mathfrak{Z})$ is a primary
-filtrator over a distributive lattice with greatest element.
+filtrator over a distributive lattice which is an
+ideal base.
 \item \label{atom-is-prime-jlat}$(\mathfrak{A},\mathfrak{Z})$ is a filtrator with binarily join-closed core, where $\mathfrak{A}$ is
 a starrish join-semilattice and $\mathfrak{Z}$ is a join-semilattice.
 \item \label{atom-is-prime-conc}Atomic elements of this filtrator are prime.
@@ -2200,7 +2192,8 @@ proposition.
 \item \label{da-is-free-star-p}$(\mathfrak{A},\mathfrak{Z})$ is a powerset
 filtrator.
 \item \label{da-is-free-star-fltr}$(\mathfrak{A},\mathfrak{Z})$ is a primary
-filtrator over a bounded distributive lattice.
+filtrator over a distributive lattice which is an ideal
+base and has least element.
 \item \label{da-is-free-star-conc}$\corestar a$ is a free star for each
 $a\in\mathfrak{A}$.
 \end{enumerate}
