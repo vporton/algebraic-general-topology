@@ -68,19 +68,39 @@ $\Omega^{\mathsf{FCD}} \ne \bot^{\mathsf{FCD}}$ (for $\mathsf{FCD}(A,B)$ where $
 \end{cor}
 
 \begin{prop}\label{omega-bot}
-  $\Cor \Omega_{1 a} = \bot^{\mathfrak{Z}}$ if
-  $\Omega_{1 a}$ and $\Cor \Omega_{1 a}$ are defined,
+The following is an implications tuple:
+\begin{enumerate}
+ \item\label{omega-bot-pow} $(\mathfrak{A},\mathfrak{Z})$
+  is a powerset filtrator.
+ \item\label{omega-bot-flt} $(\mathfrak{A},\mathfrak{Z})$
+   is a primary filtrator over an atomic ideal base
+   and   $\forall \alpha \in
+  \atoms^{\mathfrak{Z}} \exists X \in \up \Omega_{1 a} : a
+  \nsqsubseteq X$.
+  \fxnote{It seems we can prove this formula for primary
+  filtrators.}
+ \item\label{omega-bot-cond} $\Omega_{1 a}$ and $\Cor \Omega_{1 a}$ are defined,
   $\forall \alpha \in
-  \atoms^{\mathfrak{Z}} \exists X \in \up \Omega : a
+  \atoms^{\mathfrak{Z}} \exists X \in \up \Omega_{1 a} : a
   \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic poset.
+ \item\label{omega-bot-res} $\Cor \Omega_{1 a} = \bot^{\mathfrak{Z}}$.
+\end{enumerate}  
 \end{prop}
 
 \begin{proof}
+~
+\begin{description}
+\item[\ref{omega-bot-pow}$\Rightarrow$\ref{omega-bot-flt}]
+  Obvious.
+\item[\ref{omega-bot-flt}$\Rightarrow$\ref{omega-bot-cond}]
+  Obvious.
+\item[\ref{omega-bot-cond}$\Rightarrow$\ref{omega-bot-res}]
   Suppose $\alpha \in \atoms^{\mathfrak{Z}} \Cor \Omega$. Then
   $\exists X \in \up \Omega : \alpha \nsqsubseteq X$.
   Therefore $\alpha \notin \Cor \Omega$. So $\atoms^{\mathfrak{Z}}
   \Cor \Omega_{1 a} = \emptyset$ and thus by atomicity $\Cor
   \Omega_{1 a} = \bot^{\mathfrak{Z}}$.
+\end{description}
 \end{proof}
 
 \begin{cor}
