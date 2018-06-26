@@ -145,12 +145,17 @@ $\Cor x\ne\bot$. So \[ \Omega_{1a}=\bigsqcup\atoms \Omega_{1a}=
 \Omega_{1c}. \]
 \end{proof}
 
-\begin{thm}
-\fxnote{Should be made into an implications tuple (also
+\fxnote{Above should be made into an implications tuple (also
 above).}
+
+\begin{thm}
 The following is an implications tuple:
 \begin{enumerate}
-\item\label{cor-adj-omega-cond} ??
+\item\label{cor-adj-omega-pow}
+  $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{cor-adj-omega-cond}
+  $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator over
+  a complete atomic boolean lattice.
 \item\label{cor-adj-omega-flt} All of the following:
   \begin{enumerate}
     \item $\mathfrak{A}$ is atomistic complete starrish lattice.
@@ -166,7 +171,11 @@ The following is an implications tuple:
 \begin{proof}
 ~
 \begin{widedisorder}
+\item[\ref{cor-adj-omega-pow}$\Rightarrow$\ref{cor-adj-omega-cond}]
+Obvious.
+
 \item[\ref{cor-adj-omega-cond}$\Rightarrow$\ref{cor-adj-omega-flt}]
+Obvious.
 
 \item[\ref{cor-adj-omega-flt}$\Rightarrow$\ref{cor-adj-omega-res}]
 It with join-closed core by theorem~\bookref{semifilt-joinclosed}.
