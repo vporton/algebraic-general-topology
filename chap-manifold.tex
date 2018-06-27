@@ -13,11 +13,27 @@ is its maximal connected subfilter.
 
 \begin{proof}
 \fxwarning{This proof is valid only for reloids, not funcoids.}
+
+Consider connectedness regarding reloid~$\mu$.
+
+Consider the relation~$\sim$ on ultrafilters defined by the formula
+\[ a\sim b\Leftrightarrow a\suprel{\tofcd S^\ast(\mu)}b \land
+b\suprel{\tofcd S^\ast(\mu)}a. \]
+$\sim$~is a reflexive and symmetric relation.
+It is transitive because ??.
+$a\sim b\land b\sim c \Rightarrow
+a\suprel{\tofcd S^\ast(\mu)}b \land b\suprel{\tofcd S^\ast(\mu)}c
+\Rightarrow
+a\suprel{(\tofcd S^\ast(\mu))\circ(\tofcd S^\ast(\mu))}c
+\Rightarrow
+a\suprel{\tofcd(S^\ast(\mu)\circ S^\ast(\mu))}c
+\Rightarrow??\Rightarrow
+a\suprel{\tofcd S^\ast(\mu)}c$.
+
+??
 \end{proof}
 
 \section{Sides of a surface}
-
-\fxerror{I have not defined connected components of a filter.}
 
 \begin{defn}
 Let $\mu$ be an endofuncoid on a set~$U$.
