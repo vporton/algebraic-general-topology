@@ -106,15 +106,34 @@ The following is an implications tuple:
 \end{cor}
 
 \begin{prop}
-  $\Omega_{1 a} = \max \setcond{ \mathcal{X} \in \mathfrak{A} }{
-  \Cor \mathcal{X} = \bot^{\mathfrak{Z}} }$ if $\mathfrak{A}$ is
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{om-max-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
+\item\label{om-max-flt} $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator
+  over an atomic meet-semilattice with greatest element such that
+  $\forall \alpha \in
+  \atoms^{\mathfrak{Z}} \exists X \in \operatorname{coatoms}^{\mathfrak{Z}}: a
+  \nsqsubseteq X$.
+\item\label{om-max-cond} $\mathfrak{A}$ is
   a complete lattice,
   $\forall \alpha \in
   \atoms^{\mathfrak{Z}} \exists X \in \operatorname{coatoms}^{\mathfrak{Z}}: a
-  \nsqsubseteq X$ and $(\mathfrak{A}; \mathfrak{Z})$ is a filtered filtrator over an atomic poset.
+  \nsqsubseteq X$ and~$(\mathfrak{A}; \mathfrak{Z})$ is a filtered filtrator over an atomic poset.
+\item\label{om-max-res} $\Omega_{1 a} = \max \setcond{ \mathcal{X} \in \mathfrak{A} }{
+  \Cor \mathcal{X} = \bot^{\mathfrak{Z}} }$
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
+~
+\begin{description}
+\item[\ref{om-max-pow}$\Rightarrow$\ref{om-max-flt}]
+  Obvious.
+
+\item[\ref{om-max-flt}$\Rightarrow$\ref{om-max-cond}]
+  Obvious.
+
+\item[\ref{om-max-cond}$\Rightarrow$\ref{om-max-res}]
   Due the last proposition, it is enough to show that $\Cor \mathcal{X}
   = \bot^{\mathfrak{Z}} \Rightarrow \mathcal{X} \sqsubseteq \Omega_{1 a}$ for
   every $\mathcal{X} \in \mathfrak{A}$.
@@ -125,6 +144,7 @@ The following is an implications tuple:
   being coatoms of $\mathfrak{Z}$. $a_i \sqsupseteq \mathcal{X}$ because
   otherwise $a_i \nsqsupseteq \Cor \mathcal{X}$. So $X
   \in \up \Omega_{1 a}$.
+\end{description}
 \end{proof}
 
 \begin{prop}
