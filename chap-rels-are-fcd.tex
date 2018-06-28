@@ -6,15 +6,19 @@
 \end{thm}
 
 \begin{proof}
-  (check proof carefully) For every ultrafilters $x$ and $y$ we have $x
+  For every ultrafilters $x$ and $y$ we have $x
   \mathrel{[\tofcd (f \sqcap \torldin 
   g)]} y \Leftrightarrow x \times^{\mathsf{RLD}} y \nasymp f \sqcap
-  \torldin  g \Leftrightarrow \exists x
-  \times^{\mathsf{RLD}} y \in \atoms
-  \torldin  g : x \times^{\mathsf{RLD}} y
-  \nasymp f \Leftrightarrow \exists x \times^{\mathsf{FCD}} y \in
-  \atoms g : x \times^{\mathsf{RLD}} y \nasymp f \Leftrightarrow
-  \exists x \times^{\mathsf{FCD}} y \in \atoms g : x
+  \torldin  g \Leftrightarrow x
+  \times^{\mathsf{RLD}} y \sqsubseteq
+  \torldin  g \land x \times^{\mathsf{RLD}} y
+  \nasymp f \sqcap \torldin g \Leftrightarrow x \times^{\mathsf{FCD}} y \in
+  \atoms g : x \times^{\mathsf{RLD}} y \nasymp f \sqcap \torldin g
+  \Leftrightarrow
+  x \times^{\mathsf{FCD}} y \in
+  \atoms g : x \times^{\mathsf{RLD}} y \nasymp f
+  \Leftrightarrow
+  x \times^{\mathsf{FCD}} y \in \atoms g \land x
   \times^{\mathsf{FCD}} y \sqsubseteq \tofcd f
   \Leftrightarrow x \mathrel{[g \sqcap \tofcd f]} y$.
   
