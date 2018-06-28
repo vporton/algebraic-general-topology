@@ -1,0 +1,66 @@
+\chapter{Relationships are pointfree funcoids}
+
+\begin{thm}
+  $(\tofcd, \torldin )$ are components
+  of a pointfree funcoid.
+\end{thm}
+
+\begin{proof}
+  (check proof carefully) For every ultrafilters $x$ and $y$ we have $x
+  \mathrel{[\tofcd (f \sqcap \torldin 
+  g)]} y \Leftrightarrow x \times^{\mathsf{RLD}} y \nasymp f \sqcap
+  \torldin  g \Leftrightarrow \exists x
+  \times^{\mathsf{RLD}} y \in \atoms
+  \torldin  g : x \times^{\mathsf{RLD}} y
+  \nasymp f \Leftrightarrow \exists x \times^{\mathsf{FCD}} y \in
+  \atoms g : x \times^{\mathsf{RLD}} y \nasymp f \Leftrightarrow
+  \exists x \times^{\mathsf{FCD}} y \in \atoms g : x
+  \times^{\mathsf{FCD}} y \sqsubseteq \tofcd f
+  \Leftrightarrow x \mathrel{[g \sqcap \tofcd f]} y$.
+  
+  Thus $\tofcd (f \sqcap \torldin  g) =
+  g \sqcap \tofcd f$. Consequently $f \sqcap
+  \torldin  g = \bot \Leftrightarrow g \sqcap
+  \tofcd f = \bot$ that is $g \nasymp \tofcd f
+  \Leftrightarrow f \nasymp \torldin  g$.
+\end{proof}
+
+We will also prove in another way that $\tofcd$,
+$\torldin $ are components of pointfree funcoids:
+
+\begin{thm}
+  $\torldin $ is a component of a pointfree funcoid
+  (between filters on boolean lattices).
+\end{thm}
+
+\begin{proof}
+  Consider the pointfree funcoid $\mathscr{R}$ defined by the formula
+  $\left\langle \mathscr{R} \right\rangle^{\ast} F =
+  \torldin  F$ for binary relations $F$ (obviously it
+  does exists). Then $\left\langle \mathscr{R} \right\rangle f = \left\langle
+  \mathscr{R} \right\rangle \bigsqcap^{\mathsf{FCD}} \up^{\Gamma}
+  f = \bigsqcap^{\mathsf{RLD}}_{F \in \up^{\Gamma} f}
+  \left\langle \mathscr{R} \right\rangle^{\ast} F =
+  \bigsqcap^{\mathsf{RLD}}_{F \in \up^{\Gamma} f}
+  \torldin  F = \torldin 
+  \bigsqcap^{\mathsf{FCD}}_{F \in \up^{\Gamma} f} F =
+  \torldin  f$.
+\end{proof}
+
+\begin{thm}
+  $\tofcd$ is a component of a complete pointfree funcoid
+  (between filters on boolean lattices).
+\end{thm}
+
+\begin{proof}
+  Consider the pointfree funcoid $\mathscr{Q}$ defined by the formula
+  $\left\langle \mathscr{Q} \right\rangle^{\ast} F = \tofcd F$
+  for binary relations $F$ (obviously it does exists). Then $\left\langle
+  \mathscr{Q} \right\rangle f = \left\langle \mathscr{Q} \right\rangle
+  \bigsqcap^{\mathsf{RLD}} \up f = \text{(because $\up f$
+  is a filter base)} = \bigsqcap^{\mathsf{FCD}}_{F \in \up f}
+  \left\langle \mathscr{Q} \right\rangle^{\ast} F =
+  \bigsqcap^{\mathsf{FCD}}_{F \in \up f} \tofcd F
+  = \bigsqcap^{\mathsf{FCD}}_{F \in \up f} F =
+  \bigsqcap^{\mathsf{FCD}} \up f = \tofcd f$.
+\end{proof}
