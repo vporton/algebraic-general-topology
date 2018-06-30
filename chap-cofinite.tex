@@ -182,30 +182,37 @@ $\Omega_{1c} =
 \end{defn}
 
 \begin{prop}
-$\Omega_{1c} = \Omega_{1a}$ provided
-  $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \operatorname{coatoms}^{\mathfrak{Z}} : a \nsqsubseteq X$ and $\mathfrak{Z}$ is an atomic
-  poset and $(\mathfrak{A}; \mathfrak{Z})$ is a down-aligned
-  filtered filtrator and $\mathfrak{Z}$ is atomistic and~$\mathfrak{A}$
-  is a complete lattice.
+The following is an implications tuple:
+\begin{enumerate}
+ \item\label{omeq-ca-pow} $(\mathfrak{A}; \mathfrak{Z})$ is a powerset
+  filtrator.
+ \item\label{omeq-ca-flt} $(\mathfrak{A}; \mathfrak{Z})$ is a down-aligned
+  filtered complete lattice filtrator over an atomistic poset and
+  $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \operatorname{coatoms}^{\mathfrak{Z}} : a \nsqsubseteq X$.
+ \item\label{omeq-ca-res} $\Omega_{1c} = \Omega_{1a}$.
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
-For $x\in\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}$ we have
-$\Cor x=\bot$ because otherwise $\bot\ne\Cor x\sqsubset x$.
-Thus by previous $x\sqsubseteq\Omega_{1a}$ and so
-$\Omega_{1c} =
-\bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}) \sqsubseteq
-\Omega_{1a}$.
+~
+\begin{description}
+ \item[\ref{omeq-ca-pow}$\Rightarrow$\ref{omeq-ca-flt}]
+  Obvious.
+ \item[\ref{omeq-ca-flt}$\Rightarrow$\ref{omeq-ca-res}]
+  For $x\in\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}$ we have
+  $\Cor x=\bot$ because otherwise $\bot\ne\Cor x\sqsubset x$.
+  Thus by previous $x\sqsubseteq\Omega_{1a}$ and so
+  $\Omega_{1c} =
+  \bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}) \sqsubseteq
+  \Omega_{1a}$.
 
-If $x\in\atoms\Omega_{1a}$ then $x\notin\mathfrak{Z}$ because otherwise
-$\Cor x\ne\bot$. So \[ \Omega_{1a}=\bigsqcup\atoms \Omega_{1a}=
-\bigsqcup(\atoms \Omega_{1a}\setminus\mathfrak{Z})\sqsubseteq
-\bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}) =
-\Omega_{1c}. \]
+  If $x\in\atoms\Omega_{1a}$ then $x\notin\mathfrak{Z}$ because otherwise
+  $\Cor x\ne\bot$. So \[ \Omega_{1a}=\bigsqcup\atoms \Omega_{1a}=
+  \bigsqcup(\atoms \Omega_{1a}\setminus\mathfrak{Z})\sqsubseteq
+  \bigsqcup(\atoms^{\mathfrak{A}}\setminus\mathfrak{Z}) =
+  \Omega_{1c}. \]
+\end{description}
 \end{proof}
-
-\fxnote{Above should be made into an implications tuple (also
-above).}
 
 \begin{thm}
 The following is an implications tuple:
