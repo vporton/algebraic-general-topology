@@ -148,17 +148,27 @@ The following is an implications tuple:
 \end{proof}
 
 \begin{prop}
-  $\up \Omega_{1a} = \setcond{ \bigsqcap S }{ S \in
+The following is an implications tuple:
+\begin{enumerate}
+\item\label{omfinm-pow} $(\mathfrak{A},\mathfrak{Z})$ is
+  a powerset filtrator.
+\item\label{omfinm-flt} $(\mathfrak{A},\mathfrak{Z})$ is
+  a primary filtrator over a meet-semilattice.
+\item\label{omfinm-res} $\up \Omega_{1a} = \setcond{ \bigsqcap S }{ S \in
   \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} }$
-  if it is defined.
-  \fxwarning{For primary filtrators only?
-  On which poset the meet is taken? Is it semilattice?}
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
+~
+\begin{description}
+ \item[\ref{omfinm-pow}$\Rightarrow$\ref{omfinm-flt}]
+  Obvious.
+ \item[\ref{omfinm-flt}$\Rightarrow$\ref{omfinm-res}]
   Because $\setcond{ \bigsqcap S }{ S \in
   \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} }$ is a
   filter.
+\end{description}
 \end{proof}
 
 \begin{cor}
