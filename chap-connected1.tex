@@ -33,3 +33,39 @@ $S (\mu) \circ S^{\ast} (\mu) = S^{\ast} (\mu) =
 S^{\ast} (\mu) \circ S (\mu) = S^{\ast} (\mu)$
 for every endofuncoid~$\mu$.
 \end{cor}
+
+\section{Connected components of a filter}
+
+\begin{defn}
+Connected component of a filter (regarding a funcoid or reloid)
+is its maximal connected subfilter.
+\end{defn}
+
+\begin{thm}
+??Partitioned into connected components.
+\end{thm}
+
+\begin{proof}
+\fxwarning{This proof is valid only for reloids, not funcoids.}
+
+Consider connectedness regarding reloid~$\mu$.
+
+Consider the relation~$\sim$ on ultrafilters defined by the formula
+\[ a\sim b\Leftrightarrow a\suprel{\tofcd S^\ast(\mu)}b \land
+b\suprel{\tofcd S^\ast(\mu)}a. \]
+$\sim$~is a reflexive and symmetric relation.
+It is transitive because ??.
+$a\sim b\land b\sim c \Rightarrow
+a\suprel{\tofcd S^\ast(\mu)}b \land b\suprel{\tofcd S^\ast(\mu)}c
+\Rightarrow
+a\suprel{(\tofcd S^\ast(\mu))\circ(\tofcd S^\ast(\mu))}c
+\Rightarrow
+a\suprel{\tofcd(S^\ast(\mu)\circ S^\ast(\mu))}c
+\Rightarrow??\Rightarrow
+a\suprel{\tofcd S^\ast(\mu)}c$.
+
+??
+\end{proof}
+
+\fxnote{Prove that connected components for a principal filters
+are the same as connected components for the set inducing it.}
