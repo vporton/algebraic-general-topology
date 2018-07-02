@@ -21,7 +21,7 @@ The following is an implications tuple:
 ~
 \begin{description}
  \item[\ref{omeq-pow}$\Rightarrow$\ref{omeq-flt}] Obvious.
- \item[\ref{omeq-flt}$\Rightarrow$\ref{omeq-res}] Proposition 531.
+ \item[\ref{omeq-flt}$\Rightarrow$\ref{omeq-res}] Proposition~\bookref{coat}.
 \end{description}
 \end{proof}
 
@@ -46,12 +46,13 @@ The following is an implications tuple:
   \Leftrightarrow \text{(by properties of filter bases)} \Leftrightarrow
   \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} : Y
   \nasymp^{\mathfrak{A}} \bigsqcap^{\mathfrak{A}} S \Leftrightarrow
-  \text{(theorem~\bookref{f-meet-closed})} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
+  \text{(corollary~\bookref{f-meet-closed})} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
   \operatorname{coatoms}^{\mathfrak{Z}} : Y \nasymp \bigsqcap S \Leftrightarrow
   \forall K \in \subsets_{\operatorname{fin}} U : Y \setminus K \neq \emptyset
   \Leftrightarrow \card Y \geq \omega \Leftrightarrow \card
   \atoms^{\mathfrak{Z}} Y \geq \omega$.
-  \fxwarning{Define $\subsets_{\operatorname{fin}}$.}
+  (Here $\subsets_{\operatorname{fin}}$ denotes
+  the set of finite subsets.)
 \end{proof}
 
 \begin{cor}
@@ -95,7 +96,7 @@ The following is an implications tuple:
 \item[\ref{omega-bot-cond}$\Rightarrow$\ref{omega-bot-res}]
   Suppose $\alpha \in \atoms^{\mathfrak{Z}} \Cor \Omega$. Then
   $\exists X \in \up \Omega : \alpha \nsqsubseteq X$.
-  Therefore $\alpha \notin \Cor \Omega$. So $\atoms^{\mathfrak{Z}}
+  Therefore $\alpha \notin \atoms^{\mathfrak{Z}} \Cor \Omega$. So $\atoms^{\mathfrak{Z}}
   \Cor \Omega_{1 a} = \emptyset$ and thus by atomicity $\Cor
   \Omega_{1 a} = \bot^{\mathfrak{Z}}$.
 \end{description}
@@ -139,11 +140,11 @@ The following is an implications tuple:
   every $\mathcal{X} \in \mathfrak{A}$.
   
   Let $\Cor \mathcal{X} = \bot^{\mathfrak{Z}}$ for some $\mathcal{X} \in
-  \mathfrak{A}$. Because of our filtrator being filtered, it's enough to show
-  $X \in \up \Omega_{1 a}$. $X = a_0 \sqcap \ldots \sqcap a_n$ for $a_i$
+  \mathfrak{A}$. Because of our filtrator being filtered, it's enough to show~$X\in\up\mathcal{X}$
+  for every~$X \in \up \Omega_{1 a}$ . $X = a_0 \sqcap \ldots \sqcap a_n$ for $a_i$
   being coatoms of $\mathfrak{Z}$. $a_i \sqsupseteq \mathcal{X}$ because
   otherwise $a_i \nsqsupseteq \Cor \mathcal{X}$. So $X
-  \in \up \Omega_{1 a}$.
+  \in \up \mathcal{X}$.
 \end{description}
 \end{proof}
 
@@ -310,14 +311,14 @@ $\Cor'(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y}) =
 \text{(theorem~\bookref{dual-core-join})} =
 \Cor'\Omega\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} =
 \text{(proposition~\ref{omega-bot})} =
-\bot^{\mathfrak{Z}}\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} =
-\text{(theorem~\bookref{f-cor-max})} =
-\Cor'\mathcal{Y}\sqsubseteq\mathcal{Y}$.
+\bot^{\mathfrak{Z}}\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} \sqsubseteq
+\text{(theorem~\bookref{f-cor-max})} \sqsubseteq
+\mathcal{Y}$.
 
 $\Omega\sqcup^{\mathfrak{A}}\Cor'\mathcal{X} =
 \bigsqcup\atoms(\Omega\sqcup^{\mathfrak{A}}\Cor'\mathcal{X}) =
 \bigsqcup(\atoms\Omega\cup\Cor'\mathcal{X}) =
-\bigsqcup\atoms\Omega\sqcup\bigsqcup\Cor'\atoms\mathcal{X}) \sqsupseteq
+\bigsqcup\atoms\Omega\sqcup\bigsqcup\atoms\mathcal{X}) \sqsupseteq
 \bigsqcup(\atoms\mathcal{X}\setminus\mathfrak{Z}) \sqcup
 \bigsqcup(\atoms\mathcal{X}\cap\mathfrak{Z}) =
 \bigsqcup((\atoms\mathcal{X}\setminus\mathfrak{Z}) \cup
@@ -409,21 +410,19 @@ The following is an implications tuple:
   \begin{multline*}
   (\mathsf{RLD})_{\operatorname{in}} \Omega^{\mathsf{FCD}} = \bigsqcup
   \setcond{ a \times^{\mathsf{RLD}} b }{ a \in
-  \atoms^{\mathfrak{A}}, b \in \atoms^{\mathfrak{A}}, a
+  \atoms^{\mathscr{F}}, b \in \atoms^{\mathscr{F}}, a
   \times^{\mathsf{FCD}} b \sqsubseteq \Omega^{\mathsf{FCD}}
   } = \\
   \bigsqcup \setcond{ a \times^{\mathsf{RLD}} b }{
-  a \in \atoms^{\mathfrak{A}}, b \in
-  \atoms^{\mathfrak{A}}, \text{not $a$ and $b$ both atomic} } = \\
+  a \in \atoms^{\mathscr{F}}, b \in
+  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both trivial} } = \\
   \bigsqcup \setcond{ \bigsqcup \atoms (a \times^{\mathsf{RLD}} b)
-  }{ a \in \atoms^{\mathfrak{A}}, b \in
-  \atoms^{\mathfrak{A}}, \text{not $a$ and $b$ both atomic} } = \\
+  }{ a \in \atoms^{\mathscr{F}}, b \in
+  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both trivial} } = \\
   \bigsqcup \bigcup \setcond{ \atoms (a \times^{\mathsf{RLD}} b) }{
-  a \in \atoms^{\mathfrak{A}}, b \in
-  \atoms^{\mathfrak{A}}, \text{not $a$ and $b$ both atomic} } = \\
+  a \in \atoms^{\mathscr{F}}, b \in
+  \atoms^{\mathscr{F}}, \text{not $a$ and $b$ both trivial} } = \\
   \bigsqcup \left( \text{nontrivial atomic reloids under $A \times B$} \right) =
   \Omega^{\mathsf{RLD}}.
   \end{multline*}
 \end{proof}
-
-\fxnote{Generalize other properties of cofinite filters.}
