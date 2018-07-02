@@ -21,7 +21,7 @@ The following is an implications tuple:
 ~
 \begin{description}
  \item[\ref{omeq-pow}$\Rightarrow$\ref{omeq-flt}] Obvious.
- \item[\ref{omeq-flt}$\Rightarrow$\ref{omeq-res}] Proposition~\bookref{coat}.
+ \item[\ref{omeq-flt}$\Rightarrow$\ref{omeq-res}] Proposition~\ref{coat}.
 \end{description}
 \end{proof}
 
@@ -39,14 +39,14 @@ The following is an implications tuple:
 \end{prop}
 
 \begin{proof}
-  $\Omega$ exists by corollary~\bookref{filt-is-complete}.
+  $\Omega$ exists by corollary~\ref{filt-is-complete}.
   
   $Y \in \corestar \Omega \Leftrightarrow Y \nasymp^{\mathfrak{A}} 
   \bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}} X
   \Leftrightarrow \text{(by properties of filter bases)} \Leftrightarrow
   \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} : Y
   \nasymp^{\mathfrak{A}} \bigsqcap^{\mathfrak{A}} S \Leftrightarrow
-  \text{(corollary~\bookref{f-meet-closed})} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
+  \text{(corollary~\ref{f-meet-closed})} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
   \operatorname{coatoms}^{\mathfrak{Z}} : Y \nasymp \bigsqcap S \Leftrightarrow
   \forall K \in \subsets_{\operatorname{fin}} U : Y \setminus K \neq \emptyset
   \Leftrightarrow \card Y \geq \omega \Leftrightarrow \card
@@ -245,7 +245,7 @@ Obvious.
 Obvious.
 
 \item[\ref{cor-adj-omega-flt}$\Rightarrow$\ref{cor-adj-omega-res}]
-It with join-closed core by theorem~\bookref{semifilt-joinclosed}.
+It with join-closed core by theorem~\ref{semifilt-joinclosed}.
 
 We will prove $\Cor'\mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
 \mathcal{X} \sqsubseteq \Omega_{1c} \sqcup \mathcal{Y}$.
@@ -254,7 +254,7 @@ By atomisticity it is equivalent to:
 $\atoms^{\mathfrak{A}}\Cor'\mathcal{X} \subseteq \atoms^{\mathfrak{A}}\mathcal{Y}
 \Leftrightarrow
 \atoms^{\mathfrak{A}}\mathcal{X} \subseteq \atoms^{\mathfrak{A}}(\Omega_{1c} \sqcup \mathcal{Y})$;
-(theorem~\bookref{dual-core-join})
+(theorem~\ref{dual-core-join})
 $\atoms^{\mathfrak{A}}\Cor'\mathcal{X} \subseteq \atoms^{\mathfrak{A}}\mathcal{Y}
 \Leftrightarrow
 \atoms^{\mathfrak{A}}\mathcal{X} \subseteq \atoms^{\mathfrak{A}}\Omega_{1c} \cup \atoms^{\mathfrak{A}}\mathcal{Y}$;
@@ -274,10 +274,10 @@ $\Cor' \mathcal{X} \sqsubseteq \mathcal{Y} \Leftrightarrow
 
 $\atoms^{\mathfrak{Z}}  \mathcal{X} \subseteq
 \atoms^{\mathfrak{Z}}  \mathcal{Y} \Rightarrow
-\text{(theorem~\bookref{cor-join-atom})} \Rightarrow
+\text{(theorem~\ref{cor-join-atom})} \Rightarrow
 \Cor' \mathcal{X}
 \sqsubseteq \Cor' \mathcal{Y} \Rightarrow
-\text{(theorem~\bookref{f-cor-max})} \Rightarrow
+\text{(theorem~\ref{f-cor-max})} \Rightarrow
 \Cor' \mathcal{X} \sqsubseteq \mathcal{Y}$.
 
 Finishing the proof
@@ -301,18 +301,18 @@ $\forall \alpha \in \atoms^{\mathfrak{Z}} \exists X \in \operatorname{coatoms}^{
 \begin{proof}
 Define $\Omega = \Omega_{1a} = \Omega_{1c}$.
 
-It with join-closed core by theorem~\bookref{semifilt-joinclosed}.
+It with join-closed core by theorem~\ref{semifilt-joinclosed}.
 
 It's enough to prove that
 \[
 \mathcal{X}\sqsubseteq\Omega\sqcup^{\mathfrak{A}}\Cor'\mathcal{X}\quad\text{and}\quad\Cor'(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y})\sqsubseteq\mathcal{Y}.
 \]
 $\Cor'(\Omega\sqcup^{\mathfrak{A}}\mathcal{Y}) =
-\text{(theorem~\bookref{dual-core-join})} =
+\text{(theorem~\ref{dual-core-join})} =
 \Cor'\Omega\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} =
 \text{(proposition~\ref{omega-bot})} =
 \bot^{\mathfrak{Z}}\sqcup^{\mathfrak{Z}}\Cor'\mathcal{Y} \sqsubseteq
-\text{(theorem~\bookref{f-cor-max})} \sqsubseteq
+\text{(theorem~\ref{f-cor-max})} \sqsubseteq
 \mathcal{Y}$.
 
 $\Omega\sqcup^{\mathfrak{A}}\Cor'\mathcal{X} =
@@ -358,7 +358,7 @@ The following is an implications tuple:
   Because complete atomic boolean lattice is isomorphic
   to a powerset.
  \item[\ref{corom-cond}$\Rightarrow$\ref{corom-res}]
-  Theorems~\ref{cor-adjom} and~\bookref{cobrow}.
+  Theorems~\ref{cor-adjom} and~\ref{cobrow}.
 \end{enumerate}
 \end{proof}
 
