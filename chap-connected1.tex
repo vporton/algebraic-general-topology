@@ -5,34 +5,6 @@ Filter~$\mathcal{F}$ is connected if the set
 $\atoms\mathcal{F}$ is connected.
 \end{conjecture}
 
-\begin{thm}
-  $S^{\ast} (\mu) \circ S^{\ast} (\mu) = S^{\ast} (\mu)$
-  for every endoreloid~$\mu$.
-\end{thm}
-
-\begin{proof}
-  $S^{\ast} (\mu) \circ S^{\ast} (\mu) = \bigsqcap^{\mathsf{RLD}}_{F
-  \in \up S^{\ast} (\mu)} (F \circ F) = \text{(see below)} =
-  \bigsqcap^{\mathsf{RLD}}_{X \in \up \mu} (S (X) \circ S (X)) =
-  \bigsqcap^{\mathsf{RLD}}_{X \in \up \mu} S (X) = S^{\ast}
-  (\mu)$.
-  
-  $F \in \up S^{\ast} (\mu) \Rightarrow \exists X \in \up \mu : F
-  \sqsupseteq S (X) \Rightarrow \exists X \in \up \mu : F \circ F
-  \sqsupseteq S (X) \circ S (X)$ thus
-  \[ \bigsqcap^{\mathsf{RLD}} \setcond{ F \circ F}{
-     F \in \up S^{\ast} (\mu) } \sqsupseteq
-     \bigsqcap^{\mathsf{RLD}} \setcond{ S (X) \circ S (X) }{ X \in \up \mu } ; \]
-  $X \in \up \mu \Rightarrow S (X) \in \up S^{\ast} (\mu)
-  \Rightarrow \exists F \in \up S^{\ast} (\mu) : S (X) \circ S (X)
-  \sqsupseteq F \circ F$ thus
-  \[ \bigsqcap^{\mathsf{RLD}} \setcond{ F \circ F }{
-     F \in \up S^{\ast} (\mu) } \sqsubseteq
-     \bigsqcap^{\mathsf{RLD}} \setcond{ S (X) \circ S (X) }{ X \in \up \mu } . \]
-  \fxnote{Can be more easily proved considering $\mu \mapsto S^{\ast} (\mu)$ as a
-  pointfree funcoid?}
-\end{proof}
-
 \begin{cor}
 $S (\mu) \circ S^{\ast} (\mu) = S^{\ast} (\mu) =
 S^{\ast} (\mu) \circ S (\mu) = S^{\ast} (\mu)$
