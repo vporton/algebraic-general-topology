@@ -1,58 +1,5 @@
 \chapter{More on connectedness}
 
-\section{Reducing to connected sets}
-
-Let $\mu$ be a reloid.
-
-Denote $\Re \mu = \setcond{ (x, y) }{ x \in
-\atoms^{\mathscr{F}}, y \in \atoms^{\mathscr{F}}, x
-\mathrel{[\mu]} y }$.
-
-\begin{prop}
-$(\atoms \mathcal{X}) \mathrel{(\Re \mu)} (\atoms
-\mathcal{Y}) \Leftrightarrow \mathcal{X} \mathrel{[\mu]} \mathcal{Y}$.
-\end{prop}
-
-\begin{proof}
-$(\atoms \mathcal{X}) \mathrel{[r]^{\ast}} (\atoms
-\mathcal{Y}) \Leftrightarrow \exists x \in \atoms \mathcal{X}, y \in
-\atoms \mathcal{Y} : x \mathrel{r} y \Leftrightarrow \exists x \in
-\atoms \mathcal{X}, y \in \atoms \mathcal{Y} : x \mathrel{[\mu]} y
-\Leftrightarrow \mathcal{X} \mathrel{[\mu]} \mathcal{Y}$.
-\end{proof}
-
-\begin{prop}
-$X\rsuprel{\Re\mu}Y \Leftrightarrow
-\bigsqcup X\suprel{\mu}\bigsqcup Y$ for every sets
-$X$ and $Y$ of ultrafilters.
-\end{prop}
-
-\begin{proof}
-$X\rsuprel{\Re\mu}Y \Leftrightarrow
-\exists x\in X,y\in Y: x\suprel{\mu}y \Leftrightarrow$
-
-??
-
-$\exists x\in\atoms\bigsqcup X, y\in\atoms \bigsqcup Y:
-x\suprel{\mu}y \Leftrightarrow
-\bigsqcup X\suprel{\mu}\bigsqcup Y$
-\end{proof}
-
-\begin{thm}
-Filter~$\mathcal{F}$ is connected regarding endofuncoid~$\mu$ iff the set
-$\atoms\mathcal{F}$ is connected regarding $\Re \mu$.
-\end{thm}
-
-\begin{proof}
-Equivalently transforming:
-\begin{gather*}
-\forall\mathcal{X},\mathcal{Y}\in\mathscr{F}(\Ob\mu)\setminus\{\bot^{\mathscr{F}(\Ob\mu)}\}:(\mathcal{X}\sqcup\mathcal{Y}=\mathcal{A}\Rightarrow\mathcal{X}\suprel{\mu}\mathcal{Y}); \\
-?? \\
-\forall X,Y\in\subsets\atoms^{\mathscr{F}(\Ob\mu)}\setminus\emptyset:
-(X\cup Y=\Ob\mu \Rightarrow X\rsuprel{\Re\mu}Y).
-\end{gather*}
-\end{proof}
-
 \section{For topological spaces}
 
 \begin{prop}
