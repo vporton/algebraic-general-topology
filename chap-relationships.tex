@@ -328,6 +328,19 @@ K & \in\up\uparrow^{\mathsf{RLD}}\bigsqcup\setcond{X_{\mathcal{A}}\times Y_{\mat
 \end{align*}
 where $X_{\mathcal{A}}\in\up\mathcal{A}$, $X_{\mathcal{B}}\in\up\mathcal{B}$.
 $K\in\up\torldout f$.\end{proof}
+
+\begin{prop}
+$\torldout f \sqcup \torldout g = \torldout(f \sqcup g)$
+for funcoids~$f$,~$g$.
+\end{prop}
+
+\begin{proof}
+$\torldout f \sqcup \torldout g = \bigsqcap^{\mathsf{RLD}}_{F \in \up f} F \sqcup
+\bigsqcap^{\mathsf{RLD}}_{G \in \up g} G = \bigsqcap^{\mathsf{RLD}}_{F \in
+\up f, G \in \up g} (F \sqcup G) = \bigsqcap^{\mathsf{RLD}}_{H \in
+\up (f \sqcup g)} H = \torldout (f \sqcup g)$.
+\end{proof}
+
 \begin{thm}
 $\tofcd\torldin f=f$ for every funcoid $f$.\end{thm}
 \begin{proof}
