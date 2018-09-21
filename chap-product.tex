@@ -846,9 +846,9 @@ To sum what we need to prove:
 \subsection{Attempt to describe exponentials in Fcd}
 
 \begin{itemize}
-\item Exponential object $\operatorname{HOM(A,B)}$ is the following endofuncoid:
+\item Exponential object $\operatorname{HOM}(A,B)$ is the following endofuncoid:
 \item\begin{itemize}
-\item Object $\operatorname{Ob}\operatorname{HOM(A,B)} = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
+\item Object $\operatorname{Ob}\operatorname{HOM}(A,B) = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
 \item Graph is $\operatorname{GR} \operatorname{HOM} ( A , B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f , g) }{ f, g \in \Hom_{\mathbf{Set}} (\operatorname{Ob} A,\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
 \end{itemize}
 \item Transposition is uncurrying.
@@ -858,6 +858,11 @@ To sum what we need to prove:
 We need to prove that the above defined are really an exponential and an evaluation.
 
 Possible ways to prove that $\mathbf{Fcd}$ is cartesian closed follow:
+
+NEW IDEA: Prove $\GR\operatorname{HOM}(A,B) =
+\uparrow^{\mathsf{FCD}}\setcond{(\Pr^{(A)}_0 p,\Pr^{(A)}_1 p)}{
+p\in??\land\supfun{p}A\sqsubseteq B}$ (what's about other
+kinds of projections?)
 
 \subsection{Proof for Fcd using sets}
 
