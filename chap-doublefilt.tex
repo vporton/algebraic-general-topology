@@ -14,11 +14,11 @@ In other words, a double filtrator~$(\mathfrak{A},\mathfrak{B},\mathfrak{Z})$ is
 \end{defn}
 
 \begin{defn}
- $\tofcd f = \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{B}} f$ for $f\in\mathfrak{B}$.
+ $\tofcd f = \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$ for $f\in\mathfrak{B}$.
 \end{defn}
 
 \begin{defn}
- $\torldout f = \bigsqcap^{\mathfrak{B}}\up^{\mathfrak{A}} f$ for $f\in\mathfrak{A}$.
+ $\torldout f = \bigsqcap^{\mathfrak{B}}\up^{\mathfrak{Z}} f$ for $f\in\mathfrak{A}$.
 \end{defn}
 
 \begin{defn}
@@ -35,4 +35,24 @@ for every~$f\in\mathfrak{A}$.
 Then~$\torldin$ is an order embedding from~$\mathfrak{A}$
 to~$\mathfrak{B}$.
 
-TODO
+\section{One more core part}
+
+I this section we will assume that~$\tofcd$ and~$\torldin$
+form a Galois surjection and equate~$\mathfrak{A}$ with its
+image by~$\torldin$ in~$\mathfrak{B}$.
+
+\begin{prop}
+ $\tofcd f = \Cor^{\mathfrak{A}} f$ for every $f\in\mathfrak{B}$. TODO: Also $\Cor'$.
+\end{prop}
+
+\begin{proof}
+$\Cor^{\mathfrak{A}} f = \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{A}} f \sqsubseteq
+\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f = \tofcd f$.
+But for every $g\in\up^{\mathfrak{A}} f$ we have
+$g=\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} g \sqsupseteq
+\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$, thus
+$\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{A}} f \sqsupseteq
+\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$.
+\end{proof}
+
+TODO: Apply the above theory to complete funcoids/reloids.
