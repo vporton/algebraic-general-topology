@@ -42,7 +42,7 @@ form a Galois surjection and equate~$\mathfrak{A}$ with its
 image by~$\torldin$ in~$\mathfrak{B}$.
 
 \begin{prop}
- $\tofcd f = \Cor^{\mathfrak{A}} f$ for every $f\in\mathfrak{B}$. TODO: Also $\Cor'$.
+$\tofcd f = \Cor^{\mathfrak{A}} f$ for every $f\in\mathfrak{B}$.
 \end{prop}
 
 \begin{proof}
@@ -53,6 +53,19 @@ $g=\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} g \sqsupseteq
 \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$, thus
 $\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{A}} f \sqsupseteq
 \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$.
+\end{proof}
+
+\begin{example}
+$\tofcd f \ne \Cor'^{\mathfrak{A}} f$ for the double filtrator
+of funcoids and reloids.
+\end{example}
+
+\begin{proof}
+Consider a nontrivial ultrafiler~$a$ and the reloid~$f=\id^{\mathsf{RLD}}_a$.
+$\Cor'^{\mathfrak{A}} f = \Cor'^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
+\bigsqcup^{\mathsf{FCD}}\down^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
+\bigsqcup^{\mathsf{FCD}}\emptyset = \bot^{\mathsf{FCD}} \ne
+a\times^{\mathsf{FCD}}a = \tofcd\id^{\mathsf{RLD}}_a$.
 \end{proof}
 
 TODO: Apply the above theory to complete funcoids/reloids.
