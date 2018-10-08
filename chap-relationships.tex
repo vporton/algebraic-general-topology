@@ -1137,3 +1137,76 @@ the join (on the lattice of reloids) of all compositions of finite sequences of 
 The similar question can be asked about uniform spaces.
 
 Does the same hold for funcoids?
+
+\section{Double filtrators}
+
+Below I show that it's possible to describe~$\tofcd$, $\torldout$, and~$\torldin$ entirely in terms of filtrators (order). This seems not to lead to really interesting results but it's curious.
+
+\begin{defn}
+ \emph{Double filtrator} is a triple~$(\mathfrak{A},\mathfrak{B},\mathfrak{Z})$ of posets such that~$\mathfrak{Z}$ is a sub-poset of both $\mathfrak{A}$ and $\mathfrak{B}$.
+\end{defn}
+
+In other words, a double filtrator~$(\mathfrak{A},\mathfrak{B},\mathfrak{Z})$ is a triple such that both~$(\mathfrak{A},\mathfrak{Z})$ and~$(\mathfrak{B},\mathfrak{Z})$ are filtrators.
+
+\begin{defn}
+ \emph{Double filtrator of funcoids and reloids} is
+ $(\mathsf{FCD},\mathsf{RLD},\mathbf{Rel})$.
+\end{defn}
+
+\begin{defn}
+ $\tofcd f = \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$ for $f\in\mathfrak{B}$.
+\end{defn}
+
+\begin{defn}
+ $\torldout f = \bigsqcap^{\mathfrak{B}}\up^{\mathfrak{Z}} f$ for $f\in\mathfrak{A}$.
+\end{defn}
+
+\begin{defn}
+ If~$\tofcd$ is a lower adjoint, define $\torldin$ as the
+ upper adjoint of~$\tofcd$.
+\end{defn}
+
+\subsection{Embedding of $\mathfrak{A}$ into $\mathfrak{B}$}
+
+In this section we will suppose that~$\tofcd$ and~$\torldin$
+form a Galois surjection, that is $\tofcd\torldin f = f$
+for every~$f\in\mathfrak{A}$.
+
+Then~$\torldin$ is an order embedding from~$\mathfrak{A}$
+to~$\mathfrak{B}$.
+
+\subsection{One more core part}
+
+I this section we will assume that~$\tofcd$ and~$\torldin$
+form a Galois surjection and equate~$\mathfrak{A}$ with its
+image by~$\torldin$ in~$\mathfrak{B}$. We will also assume
+$(\mathfrak{A},\mathfrak{Z})$ being a filtered filtrator.
+
+\begin{prop}
+$\tofcd f = \Cor^{\mathfrak{A}} f$ for every $f\in\mathfrak{B}$.
+\end{prop}
+
+\begin{proof}
+$\Cor^{\mathfrak{A}} f = \bigsqcap^{\mathfrak{A}}\up^{\mathfrak{A}} f \sqsubseteq
+\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f = \tofcd f$.
+But for every $g\in\up^{\mathfrak{A}} f$ we have
+$g=\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} g \sqsupseteq
+\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$, thus
+$\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{A}} f \sqsupseteq
+\bigsqcap^{\mathfrak{A}}\up^{\mathfrak{Z}} f$.
+\end{proof}
+
+\begin{example}
+$\tofcd f \ne \Cor'^{\mathfrak{A}} f$ for the double filtrator
+of funcoids and reloids.
+\end{example}
+
+\begin{proof}
+Consider a nontrivial ultrafiler~$a$ and the reloid~$f=\id^{\mathsf{RLD}}_a$.
+$\Cor'^{\mathfrak{A}} f = \Cor'^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
+\bigsqcup^{\mathsf{FCD}}\down^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
+\bigsqcup^{\mathsf{FCD}}\emptyset = \bot^{\mathsf{FCD}} \ne
+a\times^{\mathsf{FCD}}a = \tofcd\id^{\mathsf{RLD}}_a$.
+\end{proof}
+
+I leave to a reader's exercise to apply the above theory to complete funcoids and reloids.
