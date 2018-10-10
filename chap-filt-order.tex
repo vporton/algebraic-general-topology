@@ -9,11 +9,100 @@ on a set (not on an arbitrary poset) only.
 
 
 \section{Equivalent filters}
+
+\fxwarning{Define monomorphisms and epimorphisms}
+
+\fxnote{More general than filters on sets and category
+$\mathbf{Rel}$.}
+
+\section{Generalized rebase of filters}
+
+\begin{defn}
+\emph{Rebase} for every set-theoretic filter $\mathcal{A}$
+and every set $A$ is
+  $\mathcal{A} \div A = \bigsqcap \setcond{ \uparrow^A  (X \cap A) }
+  { X \in \mathcal{A} }$.
+\end{defn}
+
+\begin{prop}
+The rebase conform to the formula
+\[
+\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\cap A\subseteq X}.
+\]
+\end{prop}
+
+\begin{proof}
+  It is proved in
+{\cite{volume-1}} $\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter.
+
+If $P \in \setcond{ X \in \subsets A }{ \exists Y
+\in \mathcal{A} : Y\cap A \subseteq X }$ then $P \in \subsets A$ and $Y\cap A
+\subseteq P$ for some $Y \in \mathcal{A}$. Thus $P \supseteq Y \cap A \in
+\bigsqcap \setcond{ \uparrow^A  (Y \cap A) }{ Y \in \mathcal{A} }$.
+
+If $P \in \bigsqcap \setcond{ \uparrow^A  (X \cap A) }{
+X \in \mathcal{A} }$ then by properties of generalized filter bases,
+there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
+\subsets A$. Thus $P \in \setcond{ X \in \subsets A
+}{ \exists Y \in \mathcal{A} : Y\cap A \subseteq X }$.
+
+\fxwarning{Clear this proof: wording, consistent use of letters.}
+\end{proof}
+
+\begin{prop}\label{rebase-itself}
+$\mathcal{X}\div\Base(\mathcal{X}) = \mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+Because $X\cap\Base(\mathcal{X}) = X$ for
+$X\in\mathcal{X}$.
+\end{proof}
+
+\begin{prop}\label{double-rebase}
+  $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \subseteq A$.
+\end{prop}
+
+\begin{proof}
+  $(\mathcal{X} \div A) \div B = \bigsqcap \setcond{ \uparrow^B  (Y \cap B)
+  }{ Y \in \bigsqcap \setcond{ \uparrow^A  (X \cap A)}
+  {X \in \mathcal{X} } \mathcal{} } =
+  \bigsqcap \setcond{ \uparrow^B  (X \cap A) }{ X \in
+  \mathcal{X} } \sqcap \uparrow^B B = \bigsqcap \setcond{ \uparrow^B  (X
+  \cap A \cap B) }{ X \in \mathcal{X} } =
+  \mathcal{X} \div (A \cap B) = \mathcal{X} \div B$.
+\end{proof}
+
 \begin{defn}
 \index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
 (with possibly different base sets) are equivalent ($\mathcal{A}\sim\mathcal{B}$)
 iff there exists a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
 and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$.\end{defn}
+
+\begin{prop}
+$\mathcal{X}$ and~$\mathcal{Y}$ are equivalent iff
+($\mathcal{X}\sim\mathcal{Y}$) iff
+$\mathcal{Y} = \mathcal{X} \div \Base(\mathcal{Y})$ and
+$\mathcal{X} = \mathcal{Y} \div \Base(\mathcal{X})$.\end{prop}
+
+\begin{proof}
+If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
+$\mathcal{Y}\div\Base(\mathcal{X})\not\ni\Base(\mathcal{Y})\in\mathcal{Y}$ and thus
+$\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
+
+So $\Base(\mathcal{X})\in\mathcal{Y}$ and similarly
+$\Base(\mathcal{Y})\in\mathcal{Y}$. Thus
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{Y}$
+and similarly
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$.
+
+It's enough to show
+$\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})) =
+\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y}))$. But it follows from the conditions and proposition~\ref{double-rebase}.
+
+(Also prove in the reverse direction.)
+\end{proof}
+
 \begin{prop}
 If two filters with the same base are equivalent they are equal.\end{prop}
 \begin{proof}
@@ -49,14 +138,6 @@ Similarly we have $X\cap Y\in\mathcal{C}$. Finally
 
 \end{description}
 \end{proof}
-
-\begin{defn}
-\index{filter!rebase}The \emph{rebase} $\mathcal{A}\div A$ for a
-filter $\mathcal{A}$ and a set $A$ (base) is defined by the formula
-\[
-\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\cap A\subseteq X}.
-\]
-\end{defn}
 
 \begin{prop}
 $\mathcal{A}\div A$ is a filter on $A$.
@@ -124,6 +205,7 @@ some set $K$ such that $K\in\mathcal{A}$, $K\in\mathcal{B}$.
 \]
 \end{proof}
 \begin{prop}
+\fxwarning{A more general proposition proved, remove this.}
 If $\mathcal{A}\sim\mathcal{B}$ then $\mathcal{B}=\mathcal{A}\div\Base(\mathcal{B})$
 for every filters $\mathcal{A}$,~$\mathcal{B}$.\end{prop}
 \begin{proof}
@@ -136,6 +218,9 @@ X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{B}:Y\subseteq X\Leftrigh
 \end{multline*}
 (the lemma used).
 \end{proof}
+
+\fxnote{Which filter operations are congruence on
+equivalence of filters.}
 
 \section{Ordering of filters}
 
