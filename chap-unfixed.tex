@@ -1,0 +1,539 @@
+\chapter{Unfixing categories}
+
+\fxwarning{Define monomorphisms and epimorphisms}
+
+\section{Categories with embeddings}
+
+\begin{note}
+  This section in not used below, it is just to feed your intuition.
+\end{note}
+
+The following generalizes the well known concept of embedding function $A
+\hookrightarrow B$ for from a set $A$ to a set $B$ where $A \subseteq B$.
+
+I will set that the unique morphism from an object $A$ to an object $B$ of a
+thin category is equal to the pair $(A , B)$.
+
+\begin{defn}
+  A \emph{category with embeddings of objects} is a dagger category with a
+  preorder of the set of objects together with a functor $\hookrightarrow$ (we
+  will denote applying this functor to the object $(A , B)$ as $A
+  \hookrightarrow B$.) such that:
+  \begin{itemize}
+    \item $\hookrightarrow$ is an identity on objects.
+    
+    \item Every $A \hookrightarrow B$ is a monomorphism.
+    
+    \item $(A \hookrightarrow B)^{\dagger} \circ (A \hookrightarrow B) = 1_A$.
+  \end{itemize}
+\end{defn}
+
+\begin{obvious}
+$A\hookrightarrow B$ is defined when $(A , B)$ is a morphism of the preorder
+that is when $A \sqsubseteq B$.
+\end{obvious}
+
+\begin{obvious}
+$A \hookrightarrow B : A \rightarrow B$ when $A \sqsubseteq B$.
+\end{obvious}
+
+\begin{prop}
+  $A \hookrightarrow A = 1_A$.
+\end{prop}
+
+\begin{proof}
+  Because $(A , A)$ is an identity morphism and $\hookrightarrow$ preserves
+  identities.
+\end{proof}
+
+\begin{prop}
+  $(B \hookrightarrow C) \circ (A \hookrightarrow B) = A \hookrightarrow C$
+  whenever $A \sqsubseteq B \sqsubseteq C$.
+\end{prop}
+
+\begin{proof}
+  $(B \hookrightarrow C) \circ (A \hookrightarrow B) = \hookrightarrow (B , C)
+  \circ \hookrightarrow (A , B) = \hookrightarrow ((B , C) \circ (A , B)) =
+  \hookrightarrow (A , C) = A \hookrightarrow C$.
+\end{proof}
+
+\section{\texorpdfstring{Categories under $\mathbf{Rel}$}{Categories under Rel}}
+
+\begin{defn}
+  The $\mathbf{Rel}$-morphism $\mathcal{E}^{A,B}$
+  (\emph{restriction-embedding}) is defined by the formula: $\mathcal{E}^{A,B}
+  = (A , B , \id_{A \cap B})$.
+  
+  When $A$ is clear from context, I will denote it just as $\mathcal{E}^B$.
+\end{defn}
+
+\begin{obvious}
+If $A \subseteq B$ then $\mathcal{E}^{A,B}$ is an embedding $A \hookrightarrow B
+= (A , B , \id_A)$.
+\end{obvious}
+
+\begin{obvious}
+If $A \supseteq B$ then $\mathcal{E}^{A,B} = (A , B ,
+\id_B)$.
+\end{obvious}
+
+\begin{obvious}
+$\mathcal{E}^{A,A} = 1^{\mathbf{Rel}}_A$.
+\end{obvious}
+
+\begin{obvious}
+$(\mathcal{E}^{A,B})^{- 1} = \mathcal{E}^{B,A}$.
+\end{obvious}
+
+\begin{defn}
+\emph{Dagger functor} between two dagger categories is a functor between
+these categories, which commutes with the daggers.
+\fxwarning{Clearer wording.}
+\end{defn}
+
+\begin{defn}
+\emph{Category under $\mathbf{Rel}$} is a pair $(C , \uparrow)$
+where $C$ is a category whose objects are small sets and $\uparrow$ is an
+identity-on-objects functor $\mathbf{Rel} \rightarrow C$. I call
+$\uparrow$ \emph{up-arrow functor}.
+\end{defn}
+
+\begin{defn}
+  \emph{Dagger category under $\mathbf{Rel}$} is a pair $(C ,
+  \uparrow)$ where $C$ is a dagger category whose objects are small sets and
+  $\uparrow$ is a dagger identity-on-objects functor $\mathbf{Rel}
+  \rightarrow C$.
+\end{defn}
+
+\begin{defn}
+  $\mathcal{E}_{\mathcal{C}}^{A,B} = \uparrow \mathcal{E}^{A,B}$. In
+  other words, $\mathcal{E}_{\mathcal{C}} = \uparrow \circ \mathcal{E}$.
+  
+  When $A$ is clear from context, I will denote it just as $\mathcal{E}_{\mathcal{C}}^B$.
+\end{defn}
+
+\begin{prop}
+  $\mathcal{E}_{\mathcal{C}}^{A,A} = 1_{\mathcal{C}}^A$.
+\end{prop}
+
+\begin{proof}
+  $\mathcal{E}_{\mathcal{C}}^{A,A} = \uparrow \mathcal{E}^{A,A} =
+  \uparrow 1_{\mathbf{Rel}} = 1_{\mathcal{C}}^A$.
+\end{proof}
+
+\begin{prop}
+  If $f : X \rightarrow Y$ is a $\mathbf{Rel}$-morphism and
+  $\im f = A \subseteq Y$ then
+  \[ \mathcal{E}^{A,Y} \circ \mathcal{E}^{Y,A} \circ f = f. \]
+\end{prop}
+
+\begin{proof}
+  $\mathcal{E}^{A,Y} \circ \mathcal{E}^{Y,A} \circ f = \id_A
+  \circ f = f$.
+\end{proof}
+
+\begin{cor}
+  If $f : X \rightarrow Y$ is a morphism of a category under
+  $\mathbf{Rel}$ and $\im f = A \subseteq Y$, then
+  \[ \mathcal{E}_{\mathcal{C}}^{A,Y} \circ \mathcal{E}_{\mathcal{C}}^{Y,A}
+  \circ \uparrow f = \uparrow f. \]
+\end{cor}
+
+\begin{prop}
+  ~  
+  \begin{enumerate}
+    \item If $A \subseteq B$ then $\mathcal{E}_{\mathcal{C}}^{A,B}$ is a
+    monomorphism.
+    
+    \item If $A \supseteq B$ then $\mathcal{E}_{\mathcal{C}}^{A,B}$ is a
+    epimorphism.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  We'll prove only the first as the second is dual.
+  
+  Let $\mathcal{E}_{\mathcal{C}}^{A,B} \circ f = \mathcal{E}^{A,B} \circ g$. Then
+  $\mathcal{E}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B}
+  \circ f = \mathcal{E}_{\mathcal{C}}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \circ g$;
+  $1^A \circ f = 1^A \circ g$; $f = g$.
+\end{proof}
+
+\begin{prop}
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}^{A,C}$
+  iff $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
+\end{prop}
+
+\begin{proof}
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}^{A,C}$
+  is equivalent to:
+  
+  $(B , C , \id_{B \cap C}) \circ (A , B , \id_{A \cap B}) = (A ,
+  C , \id_{A \cap C})$;
+  
+  $(A , C , \id_{A \cap B \cap C}) = (A , C , \id_{A \cap C})$;
+  
+  $A \cap B \cap C = A \cap C$;
+  
+  $B \supseteq A \cap C$.
+\end{proof}
+
+\begin{cor}
+  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$ if
+  $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
+\end{cor}
+
+\begin{defn}
+  \emph{Partially ordered dagger category under $\mathbf{Rel}$} is
+  a category which is both a partially ordered dagger category and a category
+  under $\mathbf{Rel}$ such that $\uparrow \circ f^{- 1} = (\uparrow
+  \circ f)^{\dagger}$ and $A \sqsubseteq B \Rightarrow \uparrow A \sqsubseteq
+  \uparrow B$.
+\end{defn}
+
+\begin{prop}
+  $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} = \mathcal{E}_{\mathcal{C}}^{B,A}$ for a dagger category under
+  $\mathbf{Rel}$.
+\end{prop}
+
+\begin{proof}
+  $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} = (\uparrow \mathcal{E}^{A,B})^{\dagger} = \uparrow (\mathcal{E}^{A,B})^{- 1} =
+  \uparrow \mathcal{E}^{B,A} = \mathcal{E}_{\mathcal{C}}^{B,A}$.
+\end{proof}
+
+\begin{prop}
+  For a partially ordered dagger category $\mathcal{C}$ under
+  $\mathbf{Rel}$ we have $\mathcal{E}_{\mathcal{C}}^{A,B}$ is:
+  \begin{enumerate}
+    \item monovalued;
+    
+    \item injective;
+    
+    \item entirely defined if $A \subseteq B$;
+    
+    \item surjective if $B \subseteq A$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ~
+  \begin{enumerate}
+    \item $\mathcal{E}^{A,B} \circ \mathcal{E}^{B,A} \sqsubseteq
+    1^{\mathbf{Rel}}_B$; $\mathcal{E}^{A,B} \circ (\mathcal{E}^{A,B})^{- 1} \sqsubseteq 1^{\mathbf{Rel}}_B$;
+    $\mathcal{E}_{\mathcal{C}}^{A,B} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \sqsubseteq 1^{\mathcal{C}}_B$.
+    
+    \item $\mathcal{E}^{B,A} \circ \mathcal{E}^{A,B} \sqsubseteq
+    1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B})^{- 1} \circ \mathcal{E}^{A,B} \sqsubseteq 1^{\mathbf{Rel}}_A$;
+    $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \circ \mathcal{E}^{A,B} \sqsubseteq 1^{\mathcal{C}}_A$.
+    
+    \item $\mathcal{E}^{B,A} \circ \mathcal{E}^{A,B} \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $(\mathcal{E}^{A,B})^{- 1} \circ \mathcal{E}^{A,B} \sqsupseteq 1^{\mathbf{Rel}}_A$;
+    $(\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \sqsupseteq 1^{\mathcal{C}}_A$.
+    
+    \item $\mathcal{E}^{A,B} \circ \mathcal{E}^{B,A} \sqsupseteq
+    1^{\mathbf{Rel}}_A$; $\mathcal{E}^{A,B} \circ (\mathcal{E}^{A,B})^{- 1} \sqsupseteq 1^{\mathbf{Rel}}_A$;
+    $\mathcal{E}_{\mathcal{C}}^{A,B} \circ (\mathcal{E}_{\mathcal{C}}^{A,B})^{\dagger} \sqsupseteq 1^{\mathcal{C}}_A$.
+  \end{enumerate}
+\end{proof}
+
+\section{Rectangular embedding-restriction}
+
+\begin{defn}
+  $\iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1} \circ f \circ
+  (\mathcal{E}_{\mathcal{C}}^{B_0})^{-1}$ for $f \in
+  \Hom_{\mathcal{C}} (A_0 , A_1)$.
+\end{defn}
+
+For brevity $\iota_B f = \iota_{B, B} f$.
+
+\begin{prop}
+  $\iota_{\Src f, \Dst f} f = f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{\Src f, \Dst f} f = \mathcal{E}_\mathcal{C}^{\Dst f} \circ f \circ \mathcal{E}_\mathcal{C}^{\Src f} =
+  1_{\mathcal{C}}^{\Dst f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f$.
+\end{proof}
+
+\begin{prop}
+  The function $\iota_{B_0, B_1} |_{f \in \Hom_{\mathcal{C}} (A_0 ,
+  A_1)}$ is injective, if $A_0 \subseteq B_0 \wedge A_1 \subseteq B_1$.
+\end{prop}
+
+\begin{proof}
+  Because $\mathcal{E}_{\mathcal{C}}^{A_1,B_1}$ is a monomorphism and $\mathcal{E}_{\mathcal{C}}^{A_0,B_0}$ is an epimorphism.
+\end{proof}
+
+\begin{prop}
+  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \iota_{C_0, C_1} f$ for $B_0
+  \supseteq A_0 \cap C_0$, $B_1 \supseteq A_1 \cap C_1$ and $f : A_0
+  \rightarrow A_1$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1,C_1}
+  \circ \mathcal{E}_{\mathcal{C}}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} \circ
+  \mathcal{E}_{\mathcal{C}}^{C_0,B_0} = \mathcal{E}_{\mathcal{C}}^{A_1,C_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{C_0,A_0} =
+  \iota_{C_0,C_1} f$.
+\end{proof}
+
+\begin{prop}
+  Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
+  \subseteq B_1$. Then $\iota_{B_0, B_2} (g \circ f) = \iota_{B_1, B_1} g
+  \circ \iota_{B_0, B_1} f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
+  \circ (g \circ f) \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id_{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
+  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_1} g \circ \iota_{B_0,
+  B_1} f$.
+\end{proof}
+
+\section{\texorpdfstring{Examples of partially ordered dagger categories under
+$\mathbf{Rel}$}{Examples of partially ordered dagger categories under Rel}}
+
+\subsection{Generalized rebase of filters}
+
+In \cite{volume-1} I defined \emph{rebase} $\mathcal{A} \div A$ for a
+set-theoretic filter $\mathcal{A}$ and a set $X$ such that $\exists X \in
+\mathcal{A} : X \subseteq A$.
+
+Now define a generalized rebase for every set-theoretic filter $\mathcal{A}$
+and every set $A$:
+
+\begin{defn}
+  $\mathcal{A} \div A = \bigsqcap \setcond{ \uparrow^A  (X \cap A) }
+  { X \in \mathcal{A} }$.
+\end{defn}
+
+\begin{prop}
+  These two definitions coincide.
+\end{prop}
+
+\begin{proof}
+  It is proved in
+{\cite{volume-1}} $\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter.
+
+If $P \in \setcond{ X \in \subsets A }{ \exists Y
+\in \mathcal{A} : Y\cap A \subseteq X }$ then $P \in \subsets A$ and $Y\cap A
+\subseteq P$ for some $Y \in \mathcal{A}$. Thus $P \supseteq Y \cap A \in
+\bigsqcap \setcond{ \uparrow^A  (Y \cap A) }{ Y \in \mathcal{A} }$.
+
+If $P \in \bigsqcap \setcond{ \uparrow^A  (X \cap A) }{
+X \in \mathcal{A} }$ then by properties of generalized filter bases,
+there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
+\subsets A$. Thus $P \in \setcond{ X \in \subsets A
+}{ \exists Y \in \mathcal{A} : Y\cap A \subseteq X }$.
+
+\fxwarning{Clear this proof: wording, consistent use of letters.}
+\end{proof}
+
+\begin{prop}
+  $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \subseteq A$.
+\end{prop}
+
+\begin{proof}
+  $(\mathcal{X} \div A) \div B = \bigsqcap \setcond{ \uparrow^B  (Y \cap B)
+  }{ Y \in \bigsqcap \setcond{ \uparrow^A  (X \cap A)}
+  {X \in \mathcal{X} } \mathcal{} } =
+  \bigsqcap \setcond{ \uparrow^B  (X \cap A) }{ X \in
+  \mathcal{X} } \sqcap \uparrow^B B = \bigsqcap \setcond{ \uparrow^B  (X
+  \cap A \cap B) }{ X \in \mathcal{X} } =
+  \mathcal{X} \div (A \cap B) = \mathcal{X} \div B$.
+\end{proof}
+
+\subsection{\texorpdfstring{Category $\mathbf{Rel}$}{Category Rel}}
+
+Category $\mathbf{Rel}$ with the identity up-arrow functor to itself
+and ``reverse relation'' as the dagger is an obvious example of a partially
+ordered dagger category under $\mathbf{Rel}$.
+
+\begin{prop}
+  $\iota_{A, B} f = (A , B , \GR f \cap (A \times B))$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{A, B} f = \mathcal{E}^{B} \circ f \circ (\mathcal{E}^{A})^{-1} = (A , B , \GR f \cap (A \times B))$.
+\end{proof}
+
+\subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
+
+Category $\mathsf{FCD}$ with the up-arrow functor
+$\uparrow^{\mathsf{FCD}}$ and ``reverse funcoid'' as the dagger is a
+partially ordered dagger category under $\mathbf{Rel}$.
+
+\begin{prop}
+  $\mathcal{E}_{\mathsf{FCD}}^{A,B} = (A , B , \lambda \mathcal{X}
+  \in \mathfrak{F} (A) : \mathcal{X} \div B , \lambda \mathcal{Y} \in
+  \mathfrak{F} (B) : \mathcal{Y} \div A)$ for objects $A \subseteq B$ of
+  $\mathsf{FCD}$.
+\end{prop}
+
+\begin{proof}
+  $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle \mathcal{X} =
+  \bigsqcap \setcond{ \langle \mathcal{E}_{\mathsf{FCD}}^{A,B}
+  \rangle^{\ast} X }{ X \in \mathcal{X} } =
+  \bigsqcap \setcond{ \uparrow^B  \langle \mathcal{E}^{A,B} \rangle X
+  }{ X \in \mathcal{X} } = \bigsqcap \setcond{
+  \uparrow^B  (X \cap A \cap B) }{ X \in \mathcal{X}
+  } = \bigsqcap \setcond{ \uparrow^B  (X \cap B) }{
+  X \in \mathcal{X} } = \mathcal{X} \div B$.
+  
+  Rest follows from symmetry.
+\end{proof}
+
+\begin{prop}
+  ~
+  \begin{enumerate}
+    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle^{\ast} X
+    = \uparrow^B X$ for every $X \in \subsets A$ if $A \subseteq B$.
+    
+    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{B,A} \rangle^{\ast}
+    Y = \uparrow^A (Y \cap A)$ for every $Y \in \subsets B$ if $A \subseteq
+    B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  By definition of principal funcoid.
+\end{proof}
+
+\subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
+
+Category $\mathsf{RLD}$ with the up-arrow functor
+$\uparrow^{\mathsf{RLD}}$ and ``reverse reloid'' as the dagger is a
+partially ordered dagger category under $\mathbf{Rel}$.
+
+\begin{obvious}
+$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
+B)} \id_{A \cap B}$.
+\end{obvious}
+
+\begin{defn}
+  $f \div (A \times B) = (A , B , (\GR f) \div (A \times B))$ for every
+  reloid $f$.
+\end{defn}
+
+\begin{prop}
+  $\iota_{A, B} f = f \div (A \times B)$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{B}
+\circ f \circ (\mathcal{E}_{\mathsf{RLD}}^{A})^{-1} =
+\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} (\mathcal{E}^{B} \circ F \circ (\mathcal{E}^{A})^{-1}
+}{ F \in \GR f } = \bigsqcap \setcond{
+\uparrow^{\mathsf{RLD}} (F \cap (A \times B))}
+{F \in \GR f } = f \div (A \times B)$.
+
+\fxwarning{Filters on cartesian products vs reloids.}
+\end{proof}
+
+\subsection{Some isomorphisms}
+
+\begin{prop}
+  $\setcond{ (\mathcal{A} \div A , \mathcal{A} \sqcap A) }{
+  \mathcal{A} \in \mathfrak{F} (U) }$ is a function and
+  moreover is an order isomorphism for a set $A \subseteq U$.
+\end{prop}
+
+\begin{proof}
+  $\mathcal{A} \div A$ and $\mathcal{A} \sqcap A$ are determined by each other
+  by the following formulas:
+  \[ \mathcal{A} \div A = (\mathcal{A} \sqcap A) \div A \quad
+     \text{and} \quad \mathcal{A} \sqcap A = (\mathcal{A} \div A) \div
+     \Base (\mathcal{A}) . \]
+  Prove the formulas: $(\mathcal{A} \sqcap A) \div A = \bigsqcap \setcond{
+  \uparrow^A (X \cap A) }{ X \in \mathcal{A} \sqcap A
+  } = \bigsqcap \setcond{ \uparrow^A (X \cap A) }{
+  X \in \mathcal{A} } = \mathcal{A} \div A$.
+  
+  $(\mathcal{A} \div A) \div \Base (\mathcal{A}) = \bigsqcap \setcond{
+  \uparrow^A (X \cap A) }{ X \in \mathcal{A} }
+  \div \Base (\mathcal{A}) = \bigsqcap \setcond{ \uparrow^{\Base
+  (\mathcal{A})} (Y \cap \Base (\mathcal{A})) }{
+  Y \in \bigsqcap \setcond{ \uparrow^A (X \cap A) }{
+  X \in \mathcal{A} } } = \text{(by properties of
+  filter bases)} = \bigsqcap \setcond{ \uparrow^{\Base (\mathcal{A})} (X
+  \cap A \cap \Base (\mathcal{A})) }{ X \in
+  } = \bigsqcap \setcond{ \uparrow^{\Base
+  (\mathcal{A})} (X \cap A) }{ X \in \mathcal{A}
+  } = \mathcal{A} \sqcap A$.
+  
+  That this defines a bijection, follows from $\mathcal{A} \div A \sim
+  \mathcal{A} \sqcap A$ what easily follows from the above formulas.
+\end{proof}
+
+\begin{prop}
+  $\setcond{ (\iota_{X, Y} f , \id^{\mathbf{Rel}}_Y \circ f \circ
+  \id^{\mathbf{Rel}}_X) }{ f \in
+  \mathbf{Rel} (A , B) }$ is a function and moreover is an
+  (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
+  \subseteq \Dst f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{X, Y} f = (X , Y , \GR f \cap (X \times Y))$;
+  $\id^{\mathbf{Rel}}_Y \circ f \circ
+  \id^{\mathbf{Rel}}_X = (\Src f , \Dst f ,
+  \GR f \cap (X \times Y))$. The isomorphism (both order and semigroup)
+  is evident.
+\end{proof}
+
+\begin{prop}
+  $\setcond{ (\iota_{X, Y} f , \id^{\mathsf{FCD}}_Y
+  \circ f \circ \id^{\mathsf{FCD}}_X) }{
+  f \in \mathsf{FCD} (A , B) }$ is a function and moreover is an
+  (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
+  \subseteq \Dst f$.
+\end{prop}
+
+\begin{proof}
+  From symmetry it follows that it's enough to prove that $\setcond{ \left(
+  \mathcal{E}^Y \circ f , \id^{\mathsf{FCD}}_Y \circ f \right)
+  }{ f \in \mathsf{FCD} (A , B) }$ is a
+  function and moreover is an (order and semigroup) isomorphism, for a set $Y
+  \subseteq \Dst f$.
+  
+  Really, $\setcond{ (\langle \mathcal{E}^Y \rangle x , \langle
+  \id^{\mathsf{FCD}}_Y \rangle x) }{ x
+  \in \Dst f } = \setcond{ (x \div Y , x \sqcap Y) }{
+  x \in \Dst f }$ is an order isomorphism by proved
+  above. This implies that $\setcond{ \left( \mathcal{E}^Y \circ f ,
+  \id^{\mathsf{FCD}}_Y \circ f \right) }{
+  f \in \mathsf{FCD} (A , B) }$ is an isomorphism
+  (both order and semigroup).
+\end{proof}
+
+\begin{prop}
+  $\setcond{ (\iota_{X, Y} f , \id^{\mathsf{RLD}}_Y \circ f \circ
+  \id^{\mathsf{RLD}}_X) }{ f \in
+  \mathsf{RLD} (A , B) }$ is a function and moreover is an
+  (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
+  \subseteq \Dst f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{X, Y} f = (X , Y , (\up f) \div (X \times Y))$;
+  $\id^{\mathsf{RLD}}_Y \circ f \circ
+  \id^{\mathsf{RLD}}_X = (\Src f , \Dst f ,
+  (\up f) \sqcap (X \times Y))$. They are order isomorphic by proved
+  above.
+  
+  $\iota_{Y, Z} g \circ \iota_{X, Y} f =\mathcal{E}^Z \circ g \circ
+  (\mathcal{E}^Y)^{- 1} \circ \mathcal{E}^Y \circ f \circ (\mathcal{E}^X)^{-
+  1} =\mathcal{E}^Z \circ g \circ \id^{\mathsf{RLD}}_Y \circ
+  \id^{\mathsf{RLD}}_Y \circ f \circ (\mathcal{E}^X)^{- 1}$
+  because $(\mathcal{E}^Y)^{- 1} \circ \mathcal{E}^Y =
+  \id^{\mathbf{Rel}}_Y = \id^{\mathbf{Rel}}_Y
+  \circ \id^{\mathbf{Rel}}_Y$. Thus by proved above
+  \[ \setcond{ (\iota_{Y, Z} g \circ \iota_{X, Y} f ,
+     \id^{\mathsf{RLD}}_Z \circ g \circ
+     \id^{\mathsf{RLD}}_Y \circ \id^{\mathsf{RLD}}_Y
+     \circ f \circ \id^{\mathsf{RLD}}_X) }{
+     f \in \mathsf{RLD} (A , B) } \]
+  is a bijection.
+\end{proof}
