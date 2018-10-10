@@ -51,7 +51,7 @@ Because $X\cap\Base(\mathcal{X}) = X$ for
 $X\in\mathcal{X}$.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{double-rebase}
   $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \subseteq A$.
 \end{prop}
 
@@ -83,16 +83,21 @@ $\subsets K\cap\mathcal{X} = \subsets K\cap\mathcal{Y}$.
 \end{prop}
 
 \begin{proof}
-(TODO: check)
-Let $\mathcal{X}$ and~$\mathcal{Y}$ are equivalent.
-It is enough (??) to prove that
-$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$
-(and similarly for~$\mathcal{Y}$).
-Suppose for the contrary that
-$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\notin\mathcal{X}$, that is
-$\Base(\mathcal{Y})\notin\mathcal{X}$. But then
-$\Base(\mathcal{Y})=\mathcal{X}\div\Base(\mathcal{Y})
-\notin\mathcal{Y}$ what is?? impossible.
+If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
+$\mathcal{Y}\div\Base(\mathcal{X})\not\ni\Base(\mathcal{Y})\in\mathcal{Y}$ and thus
+$\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
+
+So $\Base(\mathcal{X})\in\mathcal{Y}$ and similarly
+$\Base(\mathcal{Y})\in\mathcal{Y}$. Thus
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{Y}$
+and similarly
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$.
+
+It's enough to show
+$\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})) =
+\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y}))$. But it follows from the conditions and proposition~\ref{double-rebase}.
+
+(Also prove in the reverse direction.)
 \end{proof}
 
 \begin{prop}
