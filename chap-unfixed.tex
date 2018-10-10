@@ -71,9 +71,29 @@ I will call filters~$\mathcal{X}$ and~$\mathcal{Y}$
 ($\mathcal{A}\sim\mathcal{B}$) when
 $\mathcal{Y} = \mathcal{X} \div \Base(\mathcal{Y})$ and
 $\mathcal{X} = \mathcal{Y} \div \Base(\mathcal{X})$.
-\fxwarning{Is it the same as equivalence of filters as
-defined in ``Orderings of filters in terms of reloids''?}
 \end{defn}
+
+\begin{prop}
+(equivalence with the definition in the current version
+if the book (``Orderings of filters in terms of reloids''))
+$\mathcal{X}$ and~$\mathcal{Y}$ are equivalent iff
+there exists a set~$K$ such that $K\in\mathcal{X}$
+and $K\in\mathcal{Y}$ and
+$\subsets K\cap\mathcal{X} = \subsets K\cap\mathcal{Y}$.
+\end{prop}
+
+\begin{proof}
+(TODO: check)
+Let $\mathcal{X}$ and~$\mathcal{Y}$ are equivalent.
+It is enough (??) to prove that
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$
+(and similarly for~$\mathcal{Y}$).
+Suppose for the contrary that
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\notin\mathcal{X}$, that is
+$\Base(\mathcal{Y})\notin\mathcal{X}$. But then
+$\Base(\mathcal{Y})=\mathcal{X}\div\Base(\mathcal{Y})
+\notin\mathcal{Y}$ what is?? impossible.
+\end{proof}
 
 \begin{prop}
 Equivalence of filters is an equivalence relation.
