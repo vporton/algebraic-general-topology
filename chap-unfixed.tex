@@ -42,7 +42,7 @@ there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
 \fxwarning{Clear this proof: wording, consistent use of letters.}
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{rebase-itself}
 $\mathcal{X}\div\Base(\mathcal{X}) = \mathcal{X}$.
 \end{prop}
 
@@ -71,6 +71,8 @@ I will call filters~$\mathcal{X}$ and~$\mathcal{Y}$
 ($\mathcal{A}\sim\mathcal{B}$) when
 $\mathcal{Y} = \mathcal{X} \div \Base(\mathcal{Y})$ and
 $\mathcal{X} = \mathcal{Y} \div \Base(\mathcal{X})$.
+\fxwarning{Is it the same as equivalence of filters as
+defined in ``Orderings of filters in terms of reloids''?}
 \end{defn}
 
 \begin{prop}
@@ -78,6 +80,17 @@ Equivalence of filters is an equivalence relation.
 \end{prop}
 
 \begin{proof}
+~
+\begin{description}
+\item[Reflexivity] From proposition~\ref{rebase-itself}.
+\item[Simmetry] Obvious.
+\item[Transitivity] Let $\mathcal{X}\sim\mathcal{Y}$ and
+$\mathcal{Y}\sim\mathcal{Z}$. Then
+$\mathcal{Y} = \mathcal{X} \div \Base(\mathcal{Y})$ and
+$\mathcal{Z} = \mathcal{Y} \div \Base(\mathcal{Z})$.
+So $\mathcal{Z} = (\mathcal{X} \div \Base(\mathcal{Y})) \div \Base(\mathcal{Z})$.
+??
+\end{description}
 
 \end{proof}
 
