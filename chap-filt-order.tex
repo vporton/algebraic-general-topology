@@ -77,6 +77,11 @@ $X\in\mathcal{X}$.
   \mathcal{X} \div B$.
 \end{proof}
 
+\begin{prop}
+$A\in\mathcal{A}\Rightarrow\mathcal{A}\div A=\subsets A\cap\mathcal{A}$.\end{prop}
+\begin{proof}
+Let $A\in\mathcal{A}$. Then $\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\setcond{X\in\subsets A}{X\in\mathcal{A}}=\mathscr{P}A\cap\mathcal{A}$.\end{proof}
+
 \begin{defn}
 \index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
 (with possibly different base sets) are equivalent ($\mathcal{A}\sim\mathcal{B}$)
@@ -208,10 +213,6 @@ for some $X\in\mathcal{A}$ and
 A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\mathcal{A}\div A.
 \]
 \end{proof}
-\begin{prop}
-$A\in\mathcal{A}\Rightarrow\mathcal{A}\div A=\subsets A\cap\mathcal{A}$.\end{prop}
-\begin{proof}
-Let $A\in\mathcal{A}$. Then $\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\setcond{X\in\subsets A}{X\in\mathcal{A}}=\mathscr{P}A\cap\mathcal{A}$.\end{proof}
 \begin{lem}
 If $\mathcal{A}\sim\mathcal{B}$ then $\exists Y\in\mathcal{A}:Y\subseteq X\Leftrightarrow\exists Y\in\mathcal{B}:Y\subseteq X$
 for every filters $\mathcal{A}$, $\mathcal{B}$, and a set $X$.\end{lem}
