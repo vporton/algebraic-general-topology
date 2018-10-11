@@ -90,7 +90,22 @@ $\mathcal{Y} = \mathcal{X} \div \Base(\mathcal{Y})$ and
 $\mathcal{X} = \mathcal{Y} \div \Base(\mathcal{X})$.\end{prop}
 
 \begin{proof}
-If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
+~
+\begin{description}
+\item[$\Rightarrow$] Suppose $\mathcal{X}\sim\mathcal{Y}$
+that is there exists a set~$P$ such that
+$\subsets P\cap\mathcal{X}=\subsets P\cap\mathcal{Y}$ and
+$P\in\mathcal{X}$, $P\in\mathcal{Y}$. Then
+$\mathcal{X}\div\Base(\mathcal{Y}) =
+(\subsets P\cap\mathcal{X})\cup
+\setcond{K\in\subsets\Base(\mathcal{Y})}{K\supseteq P} =
+(\subsets P\cap\mathcal{Y})\cup
+\setcond{K\in\subsets\Base(\mathcal{Y})}{K\supseteq P} =
+\mathcal{Y}$. So
+$\mathcal{X}\div\Base(\mathcal{Y}) = \mathcal{Y}$,
+$\mathcal{Y}\div\Base(\mathcal{X}) = \mathcal{X}$ is similar.
+
+\item[$\Leftarrow$] If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
 $\mathcal{Y}\div\Base(\mathcal{X})\not\ni\Base(\mathcal{Y})\in\mathcal{Y}$ and thus
 $\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
 
@@ -102,9 +117,12 @@ $\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$.
 
 It's enough to show
 $\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})) =
-\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y}))$. But it follows from the conditions and proposition~\ref{double-rebase}.
-
-(Also prove in the reverse direction.)
+\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y}))$
+because $\mathcal{X}\cap\subsets P = \mathcal{X}\div P =
+(\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})))\div P$ and similarly $\mathcal{Y}\cap\subsets P =
+(\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})))\div P$. But it follows from the conditions and
+proposition~\ref{double-rebase}.
+\end{description}
 \end{proof}
 
 \begin{prop}
