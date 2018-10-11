@@ -28,9 +28,16 @@ The rebase conform to the formula
 \end{prop}
 
 \begin{proof}
-  It is proved in
-{\cite{volume-1}} $\setcond{ X \in \subsets A }
-{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter.
+First prove that $\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter. That it is an upper set is obvious. Let
+$P,Q\in\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ that is
+$\exists Y_0 \in \mathcal{A} : Y\cap A \subseteq P$ and
+$\exists Y_1 \in \mathcal{A} : Y\cap A \subseteq Q$. So
+we have $(Y_0\cap Y_1)\cap A\subseteq P\cap Q$ and thus
+$\exists Y \in \mathcal{A} : Y\cap A \subseteq P\cap Q$.
+Thus $P\cap Q\in\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$.
 
 If $P \in \setcond{ X \in \subsets A }{ \exists Y
 \in \mathcal{A} : Y\cap A \subseteq X }$ then $P \in \subsets A$ and $Y\cap A
@@ -42,8 +49,6 @@ X \in \mathcal{A} }$ then by properties of generalized filter bases,
 there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
 \subsets A$. Thus $P \in \setcond{ X \in \subsets A
 }{ \exists Y \in \mathcal{A} : Y\cap A \subseteq X }$.
-
-\fxwarning{Clear this proof: wording, consistent use of letters.}
 \end{proof}
 
 \begin{prop}\label{rebase-itself}
