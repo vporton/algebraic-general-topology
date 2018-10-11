@@ -13,12 +13,24 @@ on a set (not on an arbitrary poset) only.
 \fxnote{More general than filters on sets and category
 $\mathbf{Rel}$.}
 
+\subsection{Rebase of filters}
+
 \begin{defn}
-\emph{Rebase} for every set-theoretic filter $\mathcal{A}$
+\index{rebase!filters}\emph{Rebase} for every set-theoretic filter $\mathcal{A}$
 and every set $A$ is
   $\mathcal{A} \div A = \bigsqcap \setcond{ \uparrow^A  (X \cap A) }
   { X \in \mathcal{A} }$.
 \end{defn}
+
+\begin{lem}
+$\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\cap A\subseteq X}$ is a filter on $A$.
+\end{lem}
+
+\begin{proof}
+That $\mathcal{A}\div A$ is an upper set is obvious. Let $X_0,X_1\in\mathcal{A}\div A$.
+Then $\exists Y_0\in\mathcal{A}:Y_0\cap A\subseteq X_0$ and $\exists Y_1\in\mathcal{A}:Y_1\cap A\subseteq X_1$.
+Thus $Y=Y_0\cap Y_1\in\mathcal{A}$ and $Y\cap A\subseteq X_0\cap X_1$. So $X_0\cap X_1\in\mathcal{A}\div A$.
+\end{proof}
 
 \begin{prop}
 The rebase conform to the formula
@@ -28,16 +40,8 @@ The rebase conform to the formula
 \end{prop}
 
 \begin{proof}
-First prove that $\setcond{ X \in \subsets A }
-{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter. That it is an upper set is obvious. Let
-$P,Q\in\setcond{ X \in \subsets A }
-{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ that is
-$\exists Y_0 \in \mathcal{A} : Y\cap A \subseteq P$ and
-$\exists Y_1 \in \mathcal{A} : Y\cap A \subseteq Q$. So
-we have $(Y_0\cap Y_1)\cap A\subseteq P\cap Q$ and thus
-$\exists Y \in \mathcal{A} : Y\cap A \subseteq P\cap Q$.
-Thus $P\cap Q\in\setcond{ X \in \subsets A }
-{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$.
+We know that $\setcond{ X \in \subsets A }
+{\exists Y \in \mathcal{A} : Y\cap A \subseteq X }$ is a filter.
 
 If $P \in \setcond{ X \in \subsets A }{ \exists Y
 \in \mathcal{A} : Y\cap A \subseteq X }$ then $P \in \subsets A$ and $Y\cap A
@@ -81,6 +85,27 @@ $X\in\mathcal{X}$.
 $A\in\mathcal{A}\Rightarrow\mathcal{A}\div A=\subsets A\cap\mathcal{A}$.\end{prop}
 \begin{proof}
 Let $A\in\mathcal{A}$. Then $\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\setcond{X\in\subsets A}{X\in\mathcal{A}}=\mathscr{P}A\cap\mathcal{A}$.\end{proof}
+
+\begin{prop}
+If $\exists X\in\mathcal{A}:X\subseteq A$ then
+\[
+\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}.
+\]
+\end{prop}
+
+\begin{proof}
+Let $\exists X\in\mathcal{A}:X\subseteq A$.
+
+$\exists Y\in\mathcal{A}:Y\subseteq X \Rightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ is obvious.
+
+Reversely, if $Y\cap A\subseteq X$ for $Y\in\mathcal{A}$ then take $Y'=Y\cap A$, then $Y'\in\mathcal{A} $ and $Y'\subseteq X$.
+Thus $\exists Y\in\mathcal{A}:Y\subseteq X$.
+
+So $\exists Y\in\mathcal{A}:Y\subseteq X \Leftrightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ and thus
+$\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
+\end{proof}
+
+\subsection{Equivalence of filters}
 
 \begin{defn}
 \index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
@@ -167,35 +192,6 @@ Similarly we have $X\cap Y\in\mathcal{C}$. Finally
 \end{proof}
 
 \begin{prop}
-$\mathcal{A}\div A$ is a filter on $A$.
-\end{prop}
-
-\begin{proof}
-That $\mathcal{A}\div A$ is an upper set is obvious. Let $X_0,X_1\in\mathcal{A}\div A$.
-Then $\exists Y_0\in\mathcal{A}:Y_0\cap A\subseteq X_0$ and $\exists Y_1\in\mathcal{A}:Y_1\cap A\subseteq X_1$.
-Thus $Y=Y_0\cap Y_1\in\mathcal{A}$ and $Y\cap A\subseteq X_0\cap X_1$. So $X_0\cap X_1\in\mathcal{A}\div A$.
-\end{proof}
-
-\begin{prop}
-If $\exists X\in\mathcal{A}:X\subseteq A$ then
-\[
-\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}.
-\]
-\end{prop}
-
-\begin{proof}
-Let $\exists X\in\mathcal{A}:X\subseteq A$.
-
-$\exists Y\in\mathcal{A}:Y\subseteq X \Rightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ is obvious.
-
-Reversely, if $Y\cap A\subseteq X$ for $Y\in\mathcal{A}$ then take $Y'=Y\cap A$, then $Y'\in\mathcal{A} $ and $Y'\subseteq X$.
-Thus $\exists Y\in\mathcal{A}:Y\subseteq X$.
-
-So $\exists Y\in\mathcal{A}:Y\subseteq X \Leftrightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ and thus
-$\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
-\end{proof}
-
-\begin{prop}
 If $\exists X\in\mathcal{A}:X\subseteq A$ then $\mathcal{A}\div A\sim\mathcal{A}$.
 \end{prop}
 \begin{proof}
@@ -212,34 +208,6 @@ for some $X\in\mathcal{A}$ and
 \[
 A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\mathcal{A}\div A.
 \]
-\end{proof}
-\begin{lem}
-If $\mathcal{A}\sim\mathcal{B}$ then $\exists Y\in\mathcal{A}:Y\subseteq X\Leftrightarrow\exists Y\in\mathcal{B}:Y\subseteq X$
-for every filters $\mathcal{A}$, $\mathcal{B}$, and a set $X$.\end{lem}
-\begin{proof}
-We will prove $\exists Y\in\mathcal{A}:Y\subseteq X\Rightarrow\exists Y\in\mathcal{B}:Y\subseteq X$
-(the other direction is similar).
-
-We have $\subsets K\cap\mathcal{A}=\subsets K\cap\mathcal{B}$ for
-some set $K$ such that $K\in\mathcal{A}$, $K\in\mathcal{B}$.
-
-\[
-\exists Y\in\mathcal{A}:Y\subseteq X\Rightarrow\exists Y\in\subsets K\cap\mathcal{A}:Y\subseteq X\Rightarrow\exists Y\in\subsets K\cap\mathcal{B}:Y\subseteq X\Rightarrow\exists Y\in\mathcal{B}:Y\subseteq X.
-\]
-\end{proof}
-\begin{prop}
-\fxwarning{A more general proposition proved, remove this.}
-If $\mathcal{A}\sim\mathcal{B}$ then $\mathcal{B}=\mathcal{A}\div\Base(\mathcal{B})$
-for every filters $\mathcal{A}$,~$\mathcal{B}$.\end{prop}
-\begin{proof}
-$\subsets Y\cap\mathcal{A}=\subsets Y\cap\mathcal{B}$ for some set
-$Y\in\mathcal{A}$, $Y\in\mathcal{B}$. There exists a set $X\in\mathcal{A}$
-such that $X\in\mathcal{B}$. Thus $\exists X\in\mathcal{A}:X\subseteq\Base(\mathcal{B})$.
-\begin{multline*}
-X\in\mathcal{A}\div\Base(\mathcal{B})\Leftrightarrow X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{A}:Y\subseteq X\Leftrightarrow\\
-X\in\subsets\Base(\mathcal{B})\land\exists Y\in\mathcal{B}:Y\subseteq X\Leftrightarrow X\in\mathcal{B}
-\end{multline*}
-(the lemma used).
 \end{proof}
 
 \fxnote{Which filter operations are congruence on
