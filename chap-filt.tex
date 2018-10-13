@@ -5273,7 +5273,17 @@ $\sqsubseteq$~on the set of small unfixed filters is a poset.
 ~
 \begin{description}
 \item[Reflexivity] Obvious.
-\item[Antisymmetry] ERROR!
+\item[Antisymmetry] Let $\mathcal{X}\sqsubseteq\mathcal{Y}$
+and $\mathcal{Y}\sqsubseteq\mathcal{X}$. Then there exist
+$x_0,x_1\in\mathcal{X}$, $y_0,y_1\in\mathcal{Y}$ such that
+$\Base(x_0)=\Base(y_0)$ and $\Base(x_1)=\Base(y_1)$,
+$x_0\sqsubseteq y_0$ and $y_1\sqsubseteq x_1$.
+Denote $B=\Base(x_0)\cup\Base(x_1)\cup\Base(y_0)\cup\Base(y_1)$.
+We have $x_0\div B\sqsubseteq y_0\div B$,
+$y_1\div B\sqsubseteq x_1\div B$.
+But $x_0\div B=x_1\div B$ and $y_0\div B=y_1\div B$.
+So $x_0\div B=y_0\div B$. Consequently (taken into account
+$\Base(x_0)=\Base(y_0)$) $x_0=y_0$ and thus $\mathcal{X}=\mathcal{Y}$.
 \item[Transitivity] Suppose
 $\mathcal{X}\sqsubseteq\mathcal{Y}$ and
 $\mathcal{Y}\sqsubseteq\mathcal{Z}$ for unfixed
