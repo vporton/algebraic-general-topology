@@ -14,6 +14,23 @@ $(\mathcal{A}\div B)\cap\subsets\Base(\mathcal{A}) =
 \mathcal{A} =\mathcal{A}\cap\subsets\Base(\mathcal{A})$.
 \end{proof}
 
+\begin{prop}\label{filteq-big}
+\fxwarning{Move to the appropriate section.}
+If $\mathcal{A}\sim\mathcal{B}$ then
+$\mathcal{A}\div C=\mathcal{B}\div C$
+for every
+set~$C\supseteq\Base(\mathcal{A})\cup\Base(\mathcal{B})$.
+\end{prop}
+
+\begin{proof}
+We have $P\in\mathcal{A}$, $P\in\mathcal{B}$ and
+$\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
+$\mathcal{A}\div C =
+(\mathcal{A}\cap\subsets P)\cup\setcond{K\in\subsets C}{K\supseteq P} =
+(\mathcal{B}\cap\subsets P)\cup\setcond{K\in\subsets C}{K\supseteq P} =
+\mathcal{B}\div C$.
+\end{proof}
+
 \begin{lem}
 Let filters~$\mathcal{X}$
 and~$\mathcal{Y}$ be such that
@@ -79,10 +96,20 @@ filters~$x$ and~$y$ with the same base set.
 \begin{description}
 \item[$\Leftarrow$] Obvious.
 
-\item[$\Rightarrow$] Suppose $[x]\sqsubseteq[y]$. Then
+\item[$\Rightarrow$] Let $\Base(x)=\Base(y)=B$.
+Suppose $[x]\sqsubseteq[y]$. Then
 there exist $x'\sim x$ and $y'\sim y$ such that
-$\Base(x')=\Base(y')$ and $x'\sqsubseteq y'$.
-??
+$C=\Base(x')=\Base(y')$ (for some set~$C$) and
+$x'\sqsubseteq y'$.
+
+We have by the lemma
+$x'\div(B\cup C)\sqsubseteq y'\div(B\cup C)$.
+
+But (proposition~\ref{filteq-big})
+$x'\div(B\cup C)=x\div(B\cup C)$ and
+$y'\div(B\cup C)=y\div(B\cup C)$. So
+$x\div(B\cup C)\sqsubseteq y\div(B\cup C)$ and thus again
+applying the lemma $x\sqsubseteq y$.
 \end{description}
 \end{proof}
 
