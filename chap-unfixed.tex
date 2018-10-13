@@ -59,8 +59,16 @@ Every nonempty set of unfixed filters has an infimum.
 \begin{proof}
 Consider a nonempty set~$S$ of unfixed filters.
 Take an arbitrary element $\mathcal{Z}\in S$. It remains
-to prove that $\rsupfun{\mathcal{Z}\sqcap}S$
-(existing by above) has a meet.
+to prove that the set (existing by above)
+$\rsupfun{\mathcal{Z}\sqcap}S$ has a meet.
+Take~$z\in\mathcal{Z}$ and~$Z\in z$.
+
+For each $\mathcal{X}\in\rsupfun{\mathcal{Z}\sqcap}S$ take
+$r_{\mathcal{X}}\in\mathcal{X}$ such that
+$\Base(r_{\mathcal{X}})=Z$. Take 
+It remains to prove that
+$\left[\bigsqcap_{\mathcal{X}\in\rsupfun{\mathcal{Z}\sqcap}S}r_{\mathcal{X}}\right]$ is the greatest lower bound of
+$\rsupfun{\mathcal{Z}\sqcap}S$.
 
 ??
 \end{proof}
