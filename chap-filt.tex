@@ -5319,3 +5319,60 @@ $x\div(B\cup C)\sqsubseteq y\div(B\cup C)$ and thus again
 applying the lemma $x\sqsubseteq y$.
 \end{description}
 \end{proof}
+
+\subsection{Embedding into the lattice of filters on small sets}
+
+The following is an embedding from filters~$\mathcal{A}$
+on a set~$A$ into the lattice of filters on small sets:
+$\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
+\exists X\in\mathcal{A}:X\subseteq K}$.
+
+\begin{note}
+The lattice of filters on small sets is not a powerset (and
+even not a complete lattice).
+\end{note}
+
+\begin{prop}
+Values of this embedding are filters on the poset of small
+sets.
+\end{prop}
+
+\begin{proof}
+That $\mathscr{S}\mathcal{A}$ is an upper set is obvious.
+
+Let $P,Q\in\mathscr{S}\mathcal{A}$. Then~$P$ and~$Q$ are
+small sets and there is an $X\in\mathcal{A}$ such
+that~$X\subseteq P$ and $Y\in\mathcal{A}$ such
+that~$Y\subseteq Q$. So small set $P\cap Q\in\mathcal{A}$
+and $P\cap Q\supseteq X\cap Y\in\mathcal{A}$, so
+$P\cap Q\in\mathscr{S}A$.
+\end{proof}
+
+\begin{prop}
+$\mathcal{A}\sim\mathcal{B}$ iff
+$\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$ for every
+filters~$\mathcal{A}$,~$\mathcal{B}$ on sets.\footnote{Use this proposition to shorten proofs of other
+theorem about equivalence of filters? (Our proof
+uses transitivity of equivalence of filters. So we can't
+use it to prove that it is an equivalence relation, to avoid circular proof.)}
+\end{prop}
+
+\begin{proof}
+Let $\mathcal{A}\sim\mathcal{B}$. Then there is a set~$P$
+such that~$P\in\mathcal{A}$,~$P\in\mathcal{B}$ and
+$\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
+So $\mathscr{S}\mathcal{A} = (\mathcal{A}\cap\subsets P)\cup
+\setcond{\text{small set }K}{K\supseteq P}$.
+Similarly
+$\mathscr{S}\mathcal{B} = (\mathcal{B}\cap\subsets P)\cup
+\setcond{\text{small set }K}{K\supseteq P}$.
+Combining, we have $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+
+Let now $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+Take $K\in\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+Then $\mathcal{A}\div K=\mathcal{B}\div K$ and thus
+(proposition~\ref{filteq-ext})
+$\mathcal{A}\sim\mathcal{A}\div K =
+\mathcal{B}\div K\sim\mathcal{B}$, so having
+$\mathcal{A}\sim\mathcal{B}$.
+\end{proof}
