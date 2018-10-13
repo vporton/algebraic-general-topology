@@ -1,5 +1,70 @@
 \chapter{Unfixed objects}
 
+\section{The lattice of unfixed filters}
+
+\begin{xca}
+$(a\div B)\sqcap(b\div B) = (a\sqcap b)\div B$ for every
+filters~$a$ and~$b$ of the same base~$C$ and
+set~$B\sqsupseteq C$.
+\end{xca}
+
+\begin{prop}
+The meet~$\mathcal{A}\sqcap\mathcal{B}$ of two unfixed filters always exists.
+The meet conforms to the formula
+$\mathcal{A}\sqcap\mathcal{B}=[a\sqcap b]$ for every
+filters~$a\in\mathcal{A}$,~$b\in\mathcal{B}$ such that
+$\Base(a)=\Base(b)$.
+\end{prop}
+
+\begin{proof}
+Take $a\in\mathcal{A}$,~$b\in\mathcal{B}$ such that
+$\Base(a)=\Base(b)$.
+$[a\sqcap b]\sqsubseteq\mathcal{A},\mathcal{B}$ is obvious.
+
+Suppose an unfixed
+filter~$\mathcal{K}\sqsubseteq\mathcal{A},\mathcal{B}$.
+Then there are~$k_0,k_1\in\mathcal{K}$,~$x\in\mathcal{A}$,~$y\in\mathcal{B}$ such
+that $\Base(k_0)=\Base(x)$ and $k_0\sqsubseteq x$,
+$\Base(k_1)=\Base(y)$ and $k_1\sqsubseteq y$.
+
+Take $B=\Base(x)\cup\Base(y)\cup\Base(a)\cup\Base(b)$.
+
+By the lemma, $k_0\div B \sqsubseteq
+x\div B$ and
+$k_1\div B \sqsubseteq
+y\div B$. It' easy to show that
+$k_0\div B \sim k_1\div B$, so we can take
+$k=k_0\div B=k_1\div B$.
+
+We have $k\div B\sqsubseteq x\div B$ and
+$k\div B\sqsubseteq y\div B$. So
+$k\div B\sqsubseteq(x\div B)\sqcap(y\div B)$ that is
+$k\div B\sqsubseteq(a\div B)\sqcap(b\div B) =
+\text{(exercise above)} =
+(a\sqcap b)\div B$.
+
+But $k\div B\in\mathcal{K}$ and
+$(a\sqcap b)\div B\in[a\sqcap b]$. Thus
+$\mathcal{K}\sqsubseteq[a\sqcap b]$.
+
+We have proved that $[a\sqcap b]$ is the greatest lower
+bound of~$\{\mathcal{A},\mathcal{B}\}$. It remains to note
+that this equality holds for arbitary~$a$ and~$b$.
+\end{proof}
+
+\begin{thm}
+Every nonempty set of unfixed filters has an infimum.
+\end{thm}
+
+\begin{proof}
+Consider a nonempty set~$S$ of unfixed filters.
+Take an arbitrary element $\mathcal{Z}\in S$. It remains
+to prove that $\rsupfun{\mathcal{Z}\sqcap}S$
+(existing by above) has a meet.
+
+??
+\end{proof}
+
 \section{Categories with embeddings}
 
 \begin{note}
