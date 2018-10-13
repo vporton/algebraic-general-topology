@@ -2,6 +2,9 @@
 
 \section{The lattice of unfixed filters}
 
+\fxnote{Define $\mathcal{X}\div B$ for every unfixed
+filter~$\mathcal{X}$ and set~$B$. Research its properties.}
+
 \begin{xca}
 $(a\div B)\sqcap(b\div B) = (a\sqcap b)\div B$ for every
 filters~$a$ and~$b$ of the same base~$C$ and
@@ -83,6 +86,31 @@ $k\sqsubseteq r_{\mathcal{X}}$
 for every $\mathcal{X}\in\rsupfun{\mathcal{Z}\sqcap}S$.
 Then $k\sqsubseteq\bigsqcap_{\mathcal{X}\in\rsupfun{\mathcal{Z}\sqcap}S}r_{\mathcal{X}}$.
 Thus $\mathcal{K} \sqsubseteq \left[\bigsqcap_{\mathcal{X}\in\rsupfun{\mathcal{Z}\sqcap}S}r_{\mathcal{X}}\right]$.
+\end{proof}
+
+\begin{thm}
+Every small set of unfixed filters has a supremum.
+\end{thm}
+
+\begin{proof}
+Let~$S$ be a small set of unfixed filters.
+Take $a_{\mathcal{X}}\in\mathcal{X}$ and
+$Z_{\mathcal{X}}\in a_{\mathcal{X}}$.
+Then the following sets are also small:
+\begin{enumerate}
+\item $\setcond{a_\mathcal{X}}{\mathcal{X}\in S}$;
+\item $\setcond{Z_\mathcal{X}}{\mathcal{X}\in S}$.
+\end{enumerate}
+Then the following set is small:
+$Z=\bigcup\setcond{Z_\mathcal{X}}{\mathcal{X}\in S, Z_\mathcal{X}\in a_\mathcal{X}}$.
+
+We will prove $\bigsqcup S = \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
+
+Let first prove that for every $\mathcal{K}\in S$ we have
+$\mathcal{K} \sqsubseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
+We have $a_{\mathcal{K}}\div Z\sqsubseteq\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$
+
+??
 \end{proof}
 
 \section{Categories with embeddings}
