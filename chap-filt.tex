@@ -5319,6 +5319,20 @@ $\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C\Leftrightarrow
 \mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{proof}
 
+\begin{prop}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Rightarrow
+\mathcal{X}\div B\sqsubseteq\mathcal{Y}\div B$ for every
+filters~$\mathcal{X}$,~$\mathcal{Y}$ with the same base
+and set~$B$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
+\mathcal{X}\supseteq\mathcal{Y} \Rightarrow
+\mathcal{X}\div B\supseteq\mathcal{Y}\div B \Leftrightarrow
+\mathcal{X}\div B\sqsubseteq\mathcal{Y}\div B$.
+\end{proof}
+
 Define order of unfixed filters using already defined order
 of filters of a fixed base:
 
@@ -5395,13 +5409,33 @@ applying the lemma $x\sqsubseteq y$.
 \end{proof}
 
 \begin{prop}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Rightarrow
+\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$ for every
+unfixed filters~$\mathcal{X}$,~$\mathcal{Y}$ and set~$C$.
+\end{prop}
+
+\begin{proof}
+Let $\mathcal{X}\sqsubseteq\mathcal{Y}$. Then there
+are~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$ such that
+$\Base(x)=\Base(y)$ and $x\sqsubseteq y$.
+Then by proved above $x\div C\sqsubseteq y\div C$ what is
+equivalent to
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$.
+\end{proof}
+
+\begin{prop}
 If~$C\in\mathscr{S}\mathcal{X}$
 and~$C\in\mathscr{S}\mathcal{Y}$ for unfixed
-filters~$\mathcal{A}$ and~$\mathcal{B}$ then
+filters~$\mathcal{X}$ and~$\mathcal{Y}$ then
 $\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C \Leftrightarrow
 \mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{prop}
 
 \begin{proof}
-??
+~
+\begin{description}
+\item[$\Leftarrow$] Previous proposition.
+
+\item[$\Rightarrow$] ??
+\end{description}
 \end{proof}
