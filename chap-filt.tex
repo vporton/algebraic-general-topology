@@ -5274,50 +5274,6 @@ $\mathcal{A}\sim\mathcal{A}\div K =
 $\mathcal{A}\sim\mathcal{B}$.
 \end{proof}
 
-\begin{lem}
-If $\mathcal{A}\sim\mathcal{B}$ then
-$\exists Y\in\mathcal{A}:Y\cap B\subseteq X \Leftrightarrow
-\exists Y\in\mathcal{B}:Y\cap B\subseteq X$
-for every filters~$\mathcal{A}$,~$\mathcal{B}$ and
-sets~$B$,~$X\in\subsets B$.
-\end{lem}
-
-\begin{proof}
-Let $\mathcal{A}\sim\mathcal{B}$ that is there is a set~$P$
-such that $P\in\mathcal{A}$, $P\in\mathcal{B}$ and
-$\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
-
-$\exists Y\in\mathcal{A}:Y\cap B\subseteq X \Leftrightarrow
-\exists Y\in\mathcal{A}\cap\subsets P:Y\cap B\subseteq X
-\lor
-\exists Y\in\mathcal{A}:
-(Y\supseteq P\land Y\cap B\subseteq X) \Leftrightarrow
-\exists Y\in\mathcal{A}\cap\subsets P:Y\cap B\subseteq X
-\lor
-\exists Y\in\subsets\Base(\mathcal{A}):
-(Y\supseteq P\land Y\cap B\subseteq X)$.
-
-If there exists set~$Y$ such that
-$Y\supseteq P\land Y\cap B\subseteq X$, then
-take
-$Y'=Y\cap\Base(\mathcal{A})\in\subsets\Base(\mathcal{A})$;
-we have $Y'\supseteq P$ and $Y'\cap B\subseteq X$.
-
-We've proved $\exists Y\in\subsets\Base(\mathcal{A}):
-(Y\supseteq P\land Y\cap B\subseteq X) \Leftrightarrow
-\exists Y:(Y\supseteq P\land Y\cap B\subseteq X)$.
-
-Combining,
-$\exists Y\in\mathcal{A}:Y\cap B\subseteq X \Leftrightarrow
-\exists Y\in\mathcal{A}\cap\subsets P:Y\cap B\subseteq X
-\lor
-\exists Y: (Y\supseteq P\land Y\cap B\subseteq X)$.
-
-Thus
-$\exists Y\in\mathcal{A}:Y\cap B\subseteq X \Leftrightarrow
-\exists Y\in\mathcal{B}:Y\cap B\subseteq X$ from symmetry.
-\end{proof}
-
 \begin{prop}\label{sim-rebase}
 $\mathcal{A}\sim\mathcal{B} \Rightarrow
 \mathcal{A}\div B=\mathcal{B}\div B$ for every
@@ -5326,9 +5282,8 @@ filters~$\mathcal{A}$ and~$\mathcal{B}$ and set~$B$.
 
 \begin{proof}
 $\mathcal{A}\div B =
-\setcond{X\in\subsets B}{\exists Y\in\mathcal{A}:Y\cap B\subseteq X} =
-\text{(lemma)} =
-\setcond{X\in\subsets B}{\exists Y\in\mathcal{B}:Y\cap B\subseteq X} =
+\mathscr\mathcal{A}\cap\subsets B =
+\mathscr\mathcal{B}\cap\subsets B =
 \mathcal{B}\div B$.
 \end{proof}
 
