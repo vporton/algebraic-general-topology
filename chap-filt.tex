@@ -5258,7 +5258,7 @@ The word ``unfixed'' is meant to negate ``fixed'' (having
 a particular base) filters.
 \end{rem}
 
-\begin{prop}
+\begin{prop}\label{filteq-if-sim}
 $\mathcal{A}\sim\mathcal{B}$ iff
 $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$ for every
 filters~$\mathcal{A}$,~$\mathcal{B}$ on sets.\footnote{Use this proposition to shorten proofs of other
@@ -5330,41 +5330,42 @@ filters~$\mathcal{X}$,~$\mathcal{Y}$.
 \end{defn}
 
 \begin{thm}
-$\sqsubseteq$~on the set of small unfixed filters is a poset.
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
+\mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$
+for every unfixed filters~$\mathcal{X}$,~$\mathcal{Y}$.
 \end{thm}
 
 \begin{proof}
 ~
 \begin{description}
-\item[Reflexivity] Obvious.
-\item[Antisymmetry] Let $\mathcal{X}\sqsubseteq\mathcal{Y}$
-and $\mathcal{Y}\sqsubseteq\mathcal{X}$. Then there exist
-$x_0,x_1\in\mathcal{X}$, $y_0,y_1\in\mathcal{Y}$ such that
-$\Base(x_0)=\Base(y_0)$ and $\Base(x_1)=\Base(y_1)$,
-$x_0\sqsubseteq y_0$ and $y_1\sqsubseteq x_1$.
-Denote $B=\Base(x_0)\cup\Base(x_1)\cup\Base(y_0)\cup\Base(y_1)$.
-We have $x_0\div B\sqsubseteq y_0\div B$,
-$y_1\div B\sqsubseteq x_1\div B$.
-But $x_0\div B=x_1\div B$ and $y_0\div B=y_1\div B$.
-So $x_0\div B=y_0\div B$. Consequently (taken into account
-$\Base(x_0)=\Base(y_0)$) $x_0=y_0$ and thus $\mathcal{X}=\mathcal{Y}$.
-\item[Transitivity] Suppose
-$\mathcal{X}\sqsubseteq\mathcal{Y}$ and
-$\mathcal{Y}\sqsubseteq\mathcal{Z}$ for unfixed
-filters~$\mathcal{X}$,~$\mathcal{Y}$,~$\mathcal{Z}$.
-Then there exist $x\in\mathcal{X}$, $y_0,y_1\in\mathcal{Y}$,
-$z\in\mathcal{Z}$ such that
-$\Base(x)=\Base(y_0)$, $\Base(y_1)=\Base(z)$,
-$x\sqsubseteq y_0$, and $y_1\sqsubseteq z$.
+\item[$\Rightarrow$] Suppose
+$\mathcal{X}\sqsubseteq\mathcal{Y}$. Then there
+exist~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$ such that
+$\Base(x)=\Base(y)$ and $x\sqsubseteq y$. Then
+$\mathscr{S}\mathcal{X} =
+\mathscr{S}x \sqsubseteq \mathscr{S}y =
+\mathscr{S}\mathcal{Y}$.
 
-Take $B=\Base(y_0)\cup\Base(y_1)$. From the lemma we have
-$x\div B\sqsubseteq y_0\div B$ and
-$y_1\div B\sqsubseteq z\div B$.
-
-But $y_0\sim y_1$, thus $y_0\div B=y_1\div B$, thus
-$x\div B\sqsubseteq z\div B$. Applying the lemma again
-we get $x\sqsubseteq z$.
+\item[$\Leftarrow$] Suppose
+$\mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$.
+Then there are $x\in\mathcal{X}$,~$y\in\mathcal{Y}$
+such that $\mathscr{S}x\sqsubseteq\mathscr{S}y$.
+Consequently
+$\mathscr{S}x' \sqsubseteq\mathscr{S}y'$ for
+$x'=x\div(\Base(x)\cup\Base(y))$,
+$y'=y\div(\Base(x)\cup\Base(y))$.
+So we have~$x'\in\mathcal{X}$,~$y'\in\mathcal{Y}$,
+$\Base(x')=\Base(y')$ and $x'\sqsubseteq y'$,
+thus $\mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{description}
+\end{proof}
+
+\begin{thm}
+$\sqsubseteq$~on the set of small unfixed filters is a poset.
+\end{thm}
+
+\begin{proof}
+Because $\mathscr{S}$ is an order embedding.
 \end{proof}
 
 \begin{thm}
@@ -5391,4 +5392,16 @@ $y'\div(B\cup C)=y\div(B\cup C)$. So
 $x\div(B\cup C)\sqsubseteq y\div(B\cup C)$ and thus again
 applying the lemma $x\sqsubseteq y$.
 \end{description}
+\end{proof}
+
+\begin{prop}
+If~$C\in\mathscr{S}\mathcal{X}$
+and~$C\in\mathscr{S}\mathcal{Y}$ for unfixed
+filters~$\mathcal{A}$ and~$\mathcal{B}$ then
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C \Leftrightarrow
+\mathcal{X}\sqsubseteq\mathcal{Y}$.
+\end{prop}
+
+\begin{proof}
+??
 \end{proof}
