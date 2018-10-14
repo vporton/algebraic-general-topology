@@ -5098,26 +5098,19 @@ $X\in\mathcal{X}$.
 \begin{prop}
 If $\exists X\in\mathcal{A}:X\subseteq A$ then
 \[
-\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}.
+\mathcal{A}\div A=\mathcal{A}\cap\subsets A.
 \]
 \end{prop}
 
 \begin{proof}
-Let $\exists X\in\mathcal{A}:X\subseteq A$.
-
-$\exists Y\in\mathcal{A}:Y\subseteq X \Rightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ is obvious.
-
-Reversely, if $Y\cap A\subseteq X$ for $Y\in\mathcal{A}$ then take $Y'=Y\cap A$, then $Y'\in\mathcal{A} $ and $Y'\subseteq X$.
-Thus $\exists Y\in\mathcal{A}:Y\subseteq X$.
-
-So $\exists Y\in\mathcal{A}:Y\subseteq X \Leftrightarrow \exists Y\in\mathcal{A}:Y\cap A\subseteq X$ and thus
-$\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}$.
+$\mathcal{A}\div A=
+\mathscr{S}\mathcal{A}\cap\subsets A =
+\setcond{\text{small set }K}{
+\exists X\in\mathcal{A}:X\subseteq K}\cap\subsets A =
+\setcond{\text{small set }K}{
+K\in\mathcal{A}\land K\in\subsets A} =
+\mathcal{A}\cap\subsets A$.
 \end{proof}
-
-\begin{prop}
-$A\in\mathcal{A}\Rightarrow\mathcal{A}\div A=\subsets A\cap\mathcal{A}$.\end{prop}
-\begin{proof}
-Let $A\in\mathcal{A}$. Then $\mathcal{A}\div A=\setcond{X\in\subsets A}{\exists Y\in\mathcal{A}:Y\subseteq X}=\setcond{X\in\subsets A}{X\in\mathcal{A}}=\mathscr{P}A\cap\mathcal{A}$.\end{proof}
 
 \subsection{Equivalence of filters}
 
