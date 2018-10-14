@@ -4998,13 +4998,15 @@ set $S\in\subsets\mathscr{F}(A)$.
 
 \section{Equivalent filters and rebase of filters}
 
-In this section the word \emph{filter} is used to denote a filter
-on a set (not on an arbitrary poset) only.
+In this section the word \emph{filter} is used to denote a filter on a set (not on an arbitrary poset) only.
+I will also assume that filters in consideration are small
+(if not implied otherwise).
 
 \subsection{Embedding into the lattice of filters on small sets}
 
-The following is an embedding from filters~$\mathcal{A}$
-on a set~$A$ into the lattice of filters on small sets:
+The following is an embedding from small
+filters~$\mathcal{A}$ on a set~$A$ into the lattice of
+filters on small sets:
 $\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
 \exists X\in\mathcal{A}:X\subseteq K}$.
 
@@ -5239,6 +5241,35 @@ The word ``unfixed'' is meant to negate ``fixed'' (having
 a particular base) filters.
 \end{rem}
 
+\begin{prop}
+$\mathcal{A}\sim\mathcal{B}$ iff
+$\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$ for every
+filters~$\mathcal{A}$,~$\mathcal{B}$ on sets.\footnote{Use this proposition to shorten proofs of other
+theorem about equivalence of filters? (Our proof
+uses transitivity of equivalence of filters. So we can't
+use it to prove that it is an equivalence relation, to avoid circular proof.)}
+\end{prop}
+
+\begin{proof}
+Let $\mathcal{A}\sim\mathcal{B}$. Then there is a set~$P$
+such that~$P\in\mathcal{A}$,~$P\in\mathcal{B}$ and
+$\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
+So $\mathscr{S}\mathcal{A} = (\mathcal{A}\cap\subsets P)\cup
+\setcond{\text{small set }K}{K\supseteq P}$.
+Similarly
+$\mathscr{S}\mathcal{B} = (\mathcal{B}\cap\subsets P)\cup
+\setcond{\text{small set }K}{K\supseteq P}$.
+Combining, we have $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+
+Let now $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+Take $K\in\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+Then $\mathcal{A}\div K=\mathcal{B}\div K$ and thus
+(proposition~\ref{filteq-ext})
+$\mathcal{A}\sim\mathcal{A}\div K =
+\mathcal{B}\div K\sim\mathcal{B}$, so having
+$\mathcal{A}\sim\mathcal{B}$.
+\end{proof}
+
 \subsection{Poset of unfixed filters}
 
 \begin{lem}\label{filteq-big}
@@ -5356,34 +5387,4 @@ $y'\div(B\cup C)=y\div(B\cup C)$. So
 $x\div(B\cup C)\sqsubseteq y\div(B\cup C)$ and thus again
 applying the lemma $x\sqsubseteq y$.
 \end{description}
-\end{proof}
-
-\begin{prop}
-$\mathcal{A}\sim\mathcal{B}$ iff
-$\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$ for every
-filters~$\mathcal{A}$,~$\mathcal{B}$ on sets.\footnote{Use this proposition to shorten proofs of other
-theorem about equivalence of filters? (Our proof
-uses transitivity of equivalence of filters. So we can't
-use it to prove that it is an equivalence relation, to avoid circular proof.)}
-\fxwarning{Move this proposition to an appropriate place.}
-\end{prop}
-
-\begin{proof}
-Let $\mathcal{A}\sim\mathcal{B}$. Then there is a set~$P$
-such that~$P\in\mathcal{A}$,~$P\in\mathcal{B}$ and
-$\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
-So $\mathscr{S}\mathcal{A} = (\mathcal{A}\cap\subsets P)\cup
-\setcond{\text{small set }K}{K\supseteq P}$.
-Similarly
-$\mathscr{S}\mathcal{B} = (\mathcal{B}\cap\subsets P)\cup
-\setcond{\text{small set }K}{K\supseteq P}$.
-Combining, we have $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
-
-Let now $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
-Take $K\in\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
-Then $\mathcal{A}\div K=\mathcal{B}\div K$ and thus
-(proposition~\ref{filteq-ext})
-$\mathcal{A}\sim\mathcal{A}\div K =
-\mathcal{B}\div K\sim\mathcal{B}$, so having
-$\mathcal{A}\sim\mathcal{B}$.
 \end{proof}
