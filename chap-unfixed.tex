@@ -43,7 +43,16 @@ $\mathcal{X}\div C=\mathcal{Y}\div C \Leftrightarrow
 \end{prop}
 
 \begin{proof}
-??
+The backward implication is obvious. Let now
+$\mathcal{X}\div C=\mathcal{Y}\div C$.
+Take~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$.
+We have
+$\mathcal{X}\div C=x\div C=(x\div B)\div C$
+for $B=C\cup\Base(x)\cup\Base(y)$.
+Similary $\mathcal{Y}\div C=(y\div B)\div C$.
+Thus $(x\div B)\div C=(y\div B)\div C$ and thus
+$x\div B=y\div B$, so $x\sim y$ that is
+$\mathcal{X}=\mathcal{Y}$.
 \end{proof}
 
 \begin{prop}
@@ -54,9 +63,6 @@ $\mathcal{A}\div A =
 \begin{proof}
 ??
 \end{proof}
-
-\fxnote{Principal unfixed filters, the filtrator of
-unfixed filters.}
 
 \section{The lattice of unfixed filters}
 
@@ -167,6 +173,11 @@ We have $a_{\mathcal{K}}\div Z\sqsubseteq\bigsqcup_{\mathcal{X}\in S}(a_{\mathca
 
 ??
 \end{proof}
+
+\section{Principal unfixed filters}
+
+\fxnote{Principal unfixed filters, the filtrator of
+unfixed filters.}
 
 \section{Categories with embeddings}
 
