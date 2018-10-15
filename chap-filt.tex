@@ -5379,9 +5379,24 @@ $\sqsubseteq$~on the set of small unfixed filters is a poset.
 \end{thm}
 
 \begin{proof}
-Because $\mathscr{S}$ is an order embedding.
-\fxwarning{Why is it an order embedding?
-Maybe return from Git the old proof?}
+~
+\begin{description}
+\item[Reflexivity] From the previous theorem.
+
+\item[Transitivity] From the previous theorem.
+
+\item[Antisymmetry] Suppose
+$\mathcal{X}\sqsubseteq\mathcal{Y}$ and
+$\mathcal{Y}\sqsubseteq\mathcal{X}$. Then
+$\mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$ and
+$\mathscr{S}\mathcal{Y}\sqsubseteq\mathscr{S}\mathcal{X}$.
+Thus $\mathscr{S}\mathcal{X}=\mathscr{S}\mathcal{Y}$ and
+so $\mathscr{S}x=\mathscr{S}y$ for
+some~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$. Consequently
+$\mathscr{S}(x\div B)=\mathscr{S}(y\div B)$ for
+$B=\Base(x)\cup\Base(y)$. Thus $x\div B=y\div B$
+and so $x\sim y$, thus $\mathcal{X}=\mathcal{Y}$.
+\end{description}
 \end{proof}
 
 \begin{thm}
