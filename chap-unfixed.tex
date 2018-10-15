@@ -103,11 +103,20 @@ $Z=\bigcup\setcond{Z_\mathcal{X}}{\mathcal{X}\in S, Z_\mathcal{X}\in a_\mathcal{
 
 We will prove $\bigsqcup S = \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
 
-Let first prove that for every $\mathcal{K}\in S$ we have
+For every $\mathcal{K}\in S$ we have
 $\mathcal{K} \sqsubseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
-We have $a_{\mathcal{K}}\div Z\sqsubseteq\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$
+because 
+$a_{\mathcal{K}}\div Z\sqsubseteq
+\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$.
 
-??
+Let now $\mathcal{K}\sqsupseteq\mathcal{X}$ for every
+$\mathcal{X}\in S$. Then $\mathcal{K}\div Z\sqsupseteq
+a_{\mathcal{K}}\div Z$ and thus
+$\mathcal{K}\div Z\sqsupseteq
+\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$ and
+so
+$\mathcal{K} \sqsupseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$. We've proved that
+$\left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$ is the least upper bound of~$S$.
 \end{proof}
 
 \section{Principal unfixed filters}
