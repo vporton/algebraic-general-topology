@@ -2,11 +2,43 @@
 
 \section{The lattice of unfixed filters}
 
+\begin{prop}
+Let~$S$ be a set of filters of the same base~$C$ and
+set~$B\supseteq C$. Then
+\begin{enumerate}
+\item\label{cup-filteq}
+$\bigsqcup\setcond{x\div B}{x\in S} =
+  \left(\bigsqcup S\right)\div B$;
+\item\label{cap-filteq}
+$\bigsqcap\setcond{x\div B}{x\in S} =
+  \left(\bigsqcap S\right)\div B$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{cup-filteq}]
+$\bigsqcup\setcond{x\div B}{x\in S} =
+\bigcap\setcond{x\div B}{x\in S} =
+\bigcap\setcond{\mathscr{S}x\cap\subsets B}{x\in S} =
+\bigcap\setcond{\mathscr{S}x}{x\in S}\cap\subsets B =
+\setcond{\text{small set }K}{\forall x\in S:P\sqsupseteq x}\cap\subsets B =
+\mathscr{S}\left(\bigsqcup S\right)\cap\subsets B =
+\left(\bigsqcup S\right)\div B$.
+
+\item[\ref{cap-filteq}]
+??
+\end{widedisorder}
+\end{proof}
+
 \begin{xca}
 $(a\div B)\sqcap(b\div B) = (a\sqcap b)\div B$ for every
 filters~$a$ and~$b$ of the same base~$C$ and
-set~$B\sqsupseteq C$.
+set~$B\supseteq C$.
 \fxnote{What about an infinite set here? Also for join.}
+\fxwarning{Remove this exercise as a special case of the
+above.}
 \end{xca}
 
 \begin{prop}
