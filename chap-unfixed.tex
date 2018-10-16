@@ -28,18 +28,16 @@ $\bigsqcup\setcond{x\div B}{x\in S} =
 \left(\bigsqcup S\right)\div B$.
 
 \item[\ref{cap-filteq}]
-??
+$\bigsqcap\setcond{x\div B}{x\in S} =
+\bigsqcap\setcond{\mathscr{S}x\cap\subsets B}{x\in S} =
+\setcond{X_0\cap\dots\cap X_n}{n\in\mathbb{N},X_0,\dots,X_n\in\bigcup_{x\in S}(\mathscr{S}x\cap\subsets B)} =
+\setcond{X_0\cap\dots\cap X_n}{n\in\mathbb{N},X_0,\dots,X_n\in\bigcup_{x\in S}(\mathscr{S}x)\cap\subsets B} =
+\setcond{X_0\cap\dots\cap X_n}{n\in\mathbb{N},X_0,\dots,X_n\in\bigcup_{x\in S}(\mathscr{S}x)}\cap\subsets B =
+\text{(exercise)} =
+\mathscr{S}\setcond{X_0\cap\dots\cap X_n}{n\in\mathbb{N},X_0,\dots,X_n\in\bigcup S}\cap\subsets B =
+\left(\bigsqcap S\right)\div B$.
 \end{widedisorder}
 \end{proof}
-
-\begin{xca}
-$(a\div B)\sqcap(b\div B) = (a\sqcap b)\div B$ for every
-filters~$a$ and~$b$ of the same base~$C$ and
-set~$B\supseteq C$.
-\fxnote{What about an infinite set here? Also for join.}
-\fxwarning{Remove this exercise as a special case of the
-above.}
-\end{xca}
 
 \begin{prop}
 The meet~$\mathcal{A}\sqcap\mathcal{B}$ of two unfixed filters always exists.
@@ -48,7 +46,7 @@ $\mathcal{A}\sqcap\mathcal{B}=[a\sqcap b]$ for every
 filters~$a\in\mathcal{A}$,~$b\in\mathcal{B}$ such that
 $\Base(a)=\Base(b)$.
 \fxnote{Generalize this proposition for an (infinite)
-set of filters.}
+set of filters. Also similar proposition for joins.}
 \end{prop}
 
 \begin{proof}
@@ -75,7 +73,7 @@ We have $k\div B\sqsubseteq x\div B$ and
 $k\div B\sqsubseteq y\div B$. So
 $k\div B\sqsubseteq(x\div B)\sqcap(y\div B)$ that is
 $k\div B\sqsubseteq(a\div B)\sqcap(b\div B) =
-\text{(exercise above)} =
+\text{(proposition above)} =
 (a\sqcap b)\div B$.
 
 But $k\div B\in\mathcal{K}$ and
