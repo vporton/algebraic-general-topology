@@ -5328,11 +5328,11 @@ $\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
 filters~$\mathcal{X}$,~$\mathcal{Y}$.
 \end{defn}
 
-\begin{thm}
+\begin{lem}
 $\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
 \mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$
 for every unfixed filters~$\mathcal{X}$,~$\mathcal{Y}$.
-\end{thm}
+\end{lem}
 
 \begin{proof}
 ~
@@ -5474,6 +5474,23 @@ $\mathscr{S}\mathcal{A} = \mathscr{S}a$ for
 every~$a\in\mathcal{A}$ for every unfixed
 filter~$\mathcal{A}$.
 \end{defn}
+
+\begin{thm}
+$\mathscr{S}$~is an order-isomorphism from the poset of
+unfixed filters to the poset of filters on the poset of
+small sets.
+\end{thm}
+
+\begin{proof}
+We already know that~$\mathscr{S}$ is an order embedding.
+It remains to prove that it is a surjection.
+
+Let~$\mathcal{Y}$ be a filter on the poset of small sets.
+Take small set $X\in\mathcal{Y}$. Then
+$\rsupfun{X\cap}\mathcal{Y}$ is a filter on~$X$ and
+$\mathscr{S}[\rsupfun{X\cap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\cap}\mathcal{Y}=\mathcal{Y}$. We have proved that
+it is a surjection.
+\end{proof}
 
 \begin{obvious}
 $\mathcal{A}\div B = \mathscr{S}\mathcal{A}\cap\subsets B$
