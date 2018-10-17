@@ -15,6 +15,26 @@ corresponding unfixed filters and filters on the poset
 of small sets.
 \fxnote{Can we eliminate some propositions as easy consequences of this?}
 
+\begin{figure}[ht]
+\caption{\label{unfix-dia}}
+
+
+\begin{tikzcd}[row sep=2cm, column sep=0.5cm]
+& \mathscr{F}(B)
+\arrow[rd, shift left, "x\mapsto{[x]}"]
+\arrow[ld, shift left, "\mathscr{S}"] \\
+\setcond{\mathcal{X}\in\mathscr{S}(\text{small sets})}
+  {B\in\mathcal{X}}
+\arrow[ru, shift left, "\mathcal{X}\mapsto\mathcal{X}\cap\subsets B"]
+\arrow[rr, shift left]
+& & \setcond{\text{unfixed filter }\mathcal{X}}
+  {B\in\mathscr{S}\mathcal{X}}
+\arrow[lu, shift left, "\mathcal{X}\mapsto\mathcal{X}\div B"]
+\arrow[ll, shift left, "\mathscr{S}"]
+\end{tikzcd}
+\end{figure}
+
+
 \section{The lattice of unfixed filters}
 
 \begin{prop}
