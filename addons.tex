@@ -32,6 +32,7 @@
 % Continue numbering of book.pdf
 \setcounter{thm}{\getrefnumber{book-finalthm}}
 \addtocounter{thm}{-1}
+\AtBeginDocument{\setcounter{figure}{\getrefnumber{book-LASTFIGURE}}} % TODO
 
 \global\long\def\Low{\operatorname{Low}}
 \global\long\def\Back{\operatorname{Back}}
