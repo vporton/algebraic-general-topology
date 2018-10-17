@@ -126,7 +126,22 @@ $\bigsqcup S=\left[\bigsqcup_{x\in S}(x\div Z)\right]$.
 \end{thm}
 
 \begin{proof}
-??
+It's enough to prove $\bigsqcup S = \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$ where~$a_{\mathcal{X}}\in\mathcal{X}$.
+
+For every $\mathcal{K}\in S$ we have
+$\mathcal{K} \sqsubseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
+because 
+$a_{\mathcal{K}}\div Z\sqsubseteq
+\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$.
+
+Let now $\mathcal{K}\sqsupseteq\mathcal{X}$ for every
+$\mathcal{X}\in S$. Then $\mathcal{K}\div Z\sqsupseteq
+a_{\mathcal{K}}\div Z$ and thus
+$\mathcal{K}\div Z\sqsupseteq
+\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$ and
+so
+$\mathcal{K} \sqsupseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$. We've proved that
+$\left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$ is the least upper bound of~$S$.
 \end{proof}
 
 \begin{cor}
@@ -135,7 +150,9 @@ a supremum.
 \end{cor}
 
 \begin{proof}
-??
+Let a set~$S$ of unfixed filters is bound above by unfixed
+filter~$T$. Take $Z\in\mathscr{S}T$. Then we can apply
+the theorem.
 \end{proof}
 
 \begin{cor}
@@ -153,23 +170,9 @@ Then the following sets are also small:
 \end{enumerate}
 Then the following set is small:
 $Z=\bigcup\setcond{Z_\mathcal{X}}{\mathcal{X}\in S, Z_\mathcal{X}\in a_\mathcal{X}}$.
-
-We will prove $\bigsqcup S = \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
-
-For every $\mathcal{K}\in S$ we have
-$\mathcal{K} \sqsubseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$.
-because 
-$a_{\mathcal{K}}\div Z\sqsubseteq
-\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$.
-
-Let now $\mathcal{K}\sqsupseteq\mathcal{X}$ for every
-$\mathcal{X}\in S$. Then $\mathcal{K}\div Z\sqsupseteq
-a_{\mathcal{K}}\div Z$ and thus
-$\mathcal{K}\div Z\sqsupseteq
-\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)$ and
-so
-$\mathcal{K} \sqsupseteq \left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$. We've proved that
-$\left[\bigsqcup_{\mathcal{X}\in S}(a_{\mathcal{X}}\div Z)\right]$ is the least upper bound of~$S$.
+Obviously
+$\forall\mathcal{X}\in S:Z\in\mathscr{S}\mathcal{X}$, so
+we can apply the theorem.
 \end{proof}
 
 \begin{cor}
