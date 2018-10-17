@@ -10,14 +10,17 @@ isomorphism from $\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\ma
 ??
 \end{proof}
 
-Draw triangular diagram between filters on a set and
-corresponding unfixed filters and filters on the poset
-of small sets.
+\begin{thm}
+The diagram at the figure~\ref{unfix-dia} (with the horizontal ``unnamed''
+arrow \emph{defined} as the inverse isomorphism of its opposite arrow)
+is a commutative diagram (in category $\mathbf{Set}$), every arrow
+in this diagram is an isomorphism. Every cycle in this diagram is
+an identity (therefore ``parallel'' arrows are mutually inverse).
+The arrows preserve order.
 \fxnote{Can we eliminate some propositions as easy consequences of this?}
 
 \begin{figure}[ht]
 \caption{\label{unfix-dia}}
-
 
 \begin{tikzcd}[row sep=2cm, column sep=0.5cm]
 & \mathscr{F}(B)
@@ -33,7 +36,7 @@ of small sets.
 \arrow[ll, shift left, "\mathscr{S}"]
 \end{tikzcd}
 \end{figure}
-
+\end{thm}
 
 \section{The lattice of unfixed filters}
 
