@@ -1183,6 +1183,35 @@ The below theorem does not work for $S=\emptyset$. Formulate the general case.
 \begin{thm}
 ~
 \begin{enumerate}
+\item \label{inf-lat-filt-b} If $\mathfrak{Z}$ is a meet-semilattice, then $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S$
+exists and $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S=\bigcap S$ for every bounded above set~$S\in\subsets\mathfrak{F}(\mathfrak{Z})\setminus\{\emptyset\}$.
+\item \label{inf-lat-ideal-b} If $\mathfrak{Z}$ is a join-semilattice, then $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}S$ exists
+and $\bigsqcap^{\mathfrak{I}(\mathfrak{Z})}S=\bigcap S$ for for every bounded below set~$S\in\subsets\mathfrak{I}(\mathfrak{Z})\setminus\{\emptyset\}$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item [\ref{inf-lat-filt-b}] Taking into account the lemma, it is enough
+to prove that $\bigcap S$ is a filter.
+Let's prove that $\bigcap S$ is nonempty.
+There is an upper bound~$\mathcal{T}$ of~$S$. Take arbitrary
+$T\in\mathcal{T}$. We have $T\in\mathcal{X}$ for
+every~$\mathcal{X}\in S$. Thus~$S$ is nonempty.
+
+For every $A,B\in\mathfrak{Z}$ we have:
+\[
+A,B\in\bigcap S\Leftrightarrow\forall P\in S:A,B\in P\Leftrightarrow\forall P\in S:A\sqcap B\in P\Leftrightarrow A\sqcap B\in\bigcap S.
+\]
+So $\bigcap S$ is a filter.
+\item [\ref{inf-lat-ideal-b}] By duality.
+\end{widedisorder}
+\end{proof}
+
+\begin{thm}
+~
+\begin{enumerate}
 \item \label{inf-lat-filt}If $\mathfrak{Z}$ is a meet-semilattice with
 greatest element, then $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S$
 exists and $\bigsqcup^{\mathfrak{F}(\mathfrak{Z})}S=\bigcap S$ for
@@ -1203,13 +1232,7 @@ every $S\in\subsets\mathfrak{M}(\mathfrak{Z})$.
 \begin{proof}
 ~
 \begin{widedisorder}
-\item [{\ref{inf-lat-filt}}] Taking into account the lemma, it is enough
-to prove that $\bigcap S$ is a filter. $\bigcap S$ is nonempty because
-$\top\in\bigcap S$. For every $A,B\in\mathfrak{Z}$ we have:
-\[
-A,B\in\bigcap S\Leftrightarrow\forall P\in S:A,B\in P\Leftrightarrow\forall P\in S:A\sqcap B\in P\Leftrightarrow A\sqcap B\in\bigcap S.
-\]
-So $\bigcap S$ is a filter.
+\item [{\ref{inf-lat-filt}}] From the previous theorem.
 \item [{\ref{inf-lat-ideal}}] By duality.
 \item [{\ref{inf-lat-fs}}] Taking into account the lemma, it is enough
 to prove that $\bigcup S$ is a free star. $\bigcup S$ is not the
