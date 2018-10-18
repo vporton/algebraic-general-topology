@@ -5040,39 +5040,31 @@ and every set $A$ is
   { X \in \mathcal{A} }$.
 \end{defn}
 
-\begin{lem}
-$\mathscr{S}\mathcal{A}\cap\subsets A$ is a filter on $A$.
-\fxerror{It is not necessarily a filter as it may be the empty
-set. The below in this section is thus erroneous (however it
-seems that the errors are not very serious and can all be
-corrected).}
-\end{lem}
+\begin{obvious}
+$\rsupfun{A\cap}\mathscr{S}\mathcal{A}$ is a filter on $A$.
+\end{obvious}
 
-\begin{proof}
-That $\mathscr{S}\mathcal{A}\cap\subsets A$ is an upper set on~$A$ is obvious. Let $X_0,X_1\in\mathscr{S}\mathcal{A}\cap\subsets A$.
-Then $X_0\cap X_1\in\mathscr{S}\mathcal{A}\cap\subsets A$
-because~$\mathscr{S}\mathcal{A}$ is a filter (as proved
-above).
-\end{proof}
+\fxnote{Check for errors the below in this section.}
 
 \begin{prop}
 The rebase conforms to the formula
 \[
-\mathcal{A}\div A=\mathscr{S}\mathcal{A}\cap\subsets A.
+\mathcal{A}\div A=\rsupfun{A\cap}\mathscr{S}\mathcal{A}.
 \]
 \end{prop}
 
 \begin{proof}
-We know that $\mathscr{S}\mathcal{A}\cap\subsets A$ is a filter.
+We know that $\rsupfun{A\cap}\mathscr{S}\mathcal{A}$ is a
+filter.
 
-If $P \in \mathscr{S}\mathcal{A}\cap\subsets A$ then $P \in \subsets A$ and $Y\cap A
+If $P \in \rsupfun{A\cap}\mathscr{S}\mathcal{A}$ then $P \in \subsets A$ and $Y\cap A
 \subseteq P$ for some $Y \in \mathcal{A}$. Thus $P \supseteq Y \cap A \in
 \bigsqcap \setcond{ \uparrow^A  (Y \cap A) }{ Y \in \mathcal{A} }$.
 
 If $P \in \bigsqcap \setcond{ \uparrow^A  (X \cap A) }{
 X \in \mathcal{A} }$ then by properties of generalized filter bases,
 there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
-\subsets A$. Thus $P \in \mathscr{S}\mathcal{A}\cap\subsets A$.
+\subsets A$. Thus $P \in \rsupfun{A\cap}\mathscr{S}\mathcal{A}$.
 \end{proof}
 
 \begin{prop}\label{rebase-itself}
@@ -5108,9 +5100,9 @@ $\mathcal{A}\div A=\mathcal{A}\cap\subsets A$.
 
 \begin{proof}
 $\mathcal{A}\div A=
-\mathscr{S}\mathcal{A}\cap\subsets A =
-\setcond{\text{small set }K}{
-\exists X\in\mathcal{A}:X\subseteq K}\cap\subsets A =
+\rsupfun{A\cap}\mathscr{S}\mathcal{A} =
+\rsupfun{A\cap}\setcond{\text{small set }K}{
+\exists X\in\mathcal{A}:X\subseteq K} =
 \setcond{\text{small set }K}{
 K\in\mathcal{A}\land K\in\subsets A} =
 \mathcal{A}\cap\subsets A$.
@@ -5284,8 +5276,8 @@ filters~$\mathcal{A}$ and~$\mathcal{B}$ and set~$B$.
 
 \begin{proof}
 $\mathcal{A}\div B =
-\mathscr{S}\mathcal{A}\cap\subsets B =
-\mathscr{S}\mathcal{B}\cap\subsets B =
+\rsupfun{B\cap}\mathscr{S}\mathcal{A} =
+\rsupfun{B\cap}\mathscr{S}\mathcal{B} =
 \mathcal{B}\div B$.
 \end{proof}
 
@@ -5497,7 +5489,7 @@ it is a surjection.
 \end{proof}
 
 \begin{obvious}
-$\mathcal{A}\div B = \mathscr{S}\mathcal{A}\cap\subsets B$
+$\mathcal{A}\div B = \rsupfun{B\cap}\mathscr{S}\mathcal{A}$
 for every unfixed filter~$\mathcal{A}$.
 \end{obvious}
 
