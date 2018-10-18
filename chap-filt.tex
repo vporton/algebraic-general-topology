@@ -5536,3 +5536,108 @@ Take~$a\in\mathcal{A}$.
 a\div A = \mathcal{A}\div A.
 \end{multline*}
 \end{proof}
+
+\subsection{The diagram for unfixed filters}
+
+Fix a set~$B$.
+
+\begin{lem}
+$\mathcal{X}\mapsto\mathcal{X}\div B$ and $x\mapsto[x]$ are
+mutually inverse order isomorphisms between
+$\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and $\mathfrak{F}(B)$.
+\end{lem}
+
+\begin{proof}
+First, $\mathcal{X}\div B\in\mathfrak{F}(B)$ for
+$\mathcal{X}\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and
+$[x]\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$
+for $x\in\mathfrak{F}(B)$.
+
+Suppose $\mathcal{X}_0\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$,
+$x=\mathcal{X}_0\div B$, and $\mathcal{X}_1=[x]$. We will prove
+$\mathcal{X}_0=\mathcal{X}_1$. Really, $x\in\mathcal{X}_1$,
+$x=k\div B$ for $k\in\mathcal{X}_0$, $x\sim k$, thus
+$x\in\mathcal{X}_0$. So $\mathcal{X}_0=\mathcal{X}_1$.
+
+Suppose $x_0\in\mathfrak{F}(B)$, $\mathcal{X}=[x_0]$,
+$x_1=\mathcal{X}\div B$. We will prove $x_0=x_1$. Really,
+$x_1=x_0\div B$. So $x_1=x_0$ because
+$\Base(x_0)=\Base(x_1)=B$.
+
+So we proved that they are mutually inverse bijections. That
+they are order preserving is obvious.
+\end{proof}
+
+\begin{lem}
+$\mathscr{S}$ and
+$\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=
+\mathcal{X}\cap\subsets B$
+are mutually inverse order isomorphisms
+between~$\mathfrak{F}(B)$ and
+$\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$.
+\end{lem}
+
+\begin{proof}
+First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(B)$
+because of theorem~\ref{mathscrs-iso} and
+$\rsupfun{B\cap}\mathcal{X}\in\mathfrak{F}(B)$ obviously.
+
+Let's prove
+$\rsupfun{B\cap}\mathcal{X}=\mathcal{X}\cap\subsets B$.
+If $X\in\rsupfun{B\cap}\mathcal{X}$ then
+$X\in\mathcal{X}$ (because $B\in\mathcal{X}$) and
+$X\in\subsets B$. So $X\in\mathcal{X}\cap\subsets B$. If
+$X\in\mathcal{X}\cap\subsets B$ then
+$X=B\cap X\in\rsupfun{B\cap}\mathcal{X}$.
+
+Let~$x_0\in\mathfrak{F}(B)$, $\mathcal{X}=\mathscr{S}x$, and
+$x_1=\rsupfun{B\cap}\mathcal{X}$. Then obviously $x_0=x_1$.
+
+Let now
+$\mathcal{X}_0\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$, $x=\rsupfun{B\cap}\mathcal{X}_0$, and
+$\mathcal{X}_1=\mathscr{S}x$. Then
+$\mathcal{X}_1=
+\mathcal{X}_0\cup\setcond{\text{small set }K}{K\supseteq B}=
+\mathcal{X}_0$.
+
+So we proved that they are mutually inverse bijections. That
+they are order preserving is obvious.
+\end{proof}
+
+\begin{thm}
+The diagram at the figure~\ref{unfix-dia} (with the horizontal ``unnamed''
+arrow \emph{defined} as the inverse isomorphism of its opposite arrow)
+is a commutative diagram (in category $\mathbf{Set}$), every arrow
+in this diagram is an isomorphism. Every cycle in this diagram is
+an identity (therefore ``parallel'' arrows are mutually inverse).
+The arrows preserve order.
+
+\begin{figure}[ht]
+\caption{\label{unfix-dia}}
+
+\begin{tikzcd}[row sep=2cm, column sep=0.5cm]
+& \mathfrak{F}(B)
+\arrow[rd, shift left, "x\mapsto{[x]}"]
+\arrow[ld, shift left, "\mathscr{S}"] \\
+\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}
+  {B\in\mathcal{X}}
+\arrow[ru, shift left, "\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=\mathcal{X}\cap\subsets B"]
+\arrow[rr, shift left]
+& & \setcond{\text{unfixed filter }\mathcal{X}}
+  {B\in\mathscr{S}\mathcal{X}}
+\arrow[lu, shift left, "\mathcal{X}\mapsto\mathcal{X}\div B"]
+\arrow[ll, shift left, "\mathscr{S}"]
+\end{tikzcd}
+\end{figure}
+\end{thm}
+
+\begin{proof}
+It's proved above, that all morphisms (except the ``unnamed'' arrow,
+which is the inverse morphism by definition) depicted on the diagram
+are bijections and the depicted ``opposite'' morphisms are mutually
+inverse.
+
+That arrows preserve order is obvious.
+
+It remains to apply lemma~\ref{three-loop-lem} (taking into account the proof of theorem~\ref{mathscrs-iso}.
+\end{proof}
