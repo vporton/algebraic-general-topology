@@ -12,7 +12,24 @@ $\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and $\
 \end{lem}
 
 \begin{proof}
-??
+First, $\mathcal{X}\div B\in\mathfrak{F}(B)$ for
+$\mathcal{X}\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and
+$[x]\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$
+for $x\in\mathfrak{F}(B)$.
+
+Suppose $\mathcal{X}_0\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$,
+$x=\mathcal{X}_0\div B$, and $\mathcal{X}_1=[x]$. We will prove
+$\mathcal{X}_0=\mathcal{X}_1$. Really, $x\in\mathcal{X}_1$,
+$x=k\div B$ for $k\in\mathcal{X}_0$, $x\sim k$, thus
+$x\in\mathcal{X}_0$. So $\mathcal{X}_0=\mathcal{X}_1$.
+
+Suppose $x_0\in\mathfrak{F}(B)$, $\mathcal{X}=[x_0]$,
+$x_1=\mathcal{X}\div B$. We will prove $x_0=x_1$. Really,
+$x_1=x_0\div B$. So $x_1=x_0$ because
+$\Base(x_0)=\Base(x_1)=B$.
+
+So we proved that they are mutually inverse bijections. That
+they are order preserving is obvious.
 \end{proof}
 
 \begin{thm}
