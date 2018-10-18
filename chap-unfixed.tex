@@ -32,6 +32,21 @@ So we proved that they are mutually inverse bijections. That
 they are order preserving is obvious.
 \end{proof}
 
+\begin{lem}
+$\mathscr{S}$ and $\mathcal{X}\mapsto\mathcal{X}\cap\subsets B$
+are mutually inverse order isomorphisms
+between~$\mathfrak{F}(B)$ and
+$\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$.
+\end{lem}
+
+\begin{proof}
+First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$
+because of theorem~\bookref{mathscrs-iso} (TODO: Formulate it
+in that theorem fully.)
+
+??
+\end{proof}
+
 \begin{thm}
 The diagram at the figure~\ref{unfix-dia} (with the horizontal ``unnamed''
 arrow \emph{defined} as the inverse isomorphism of its opposite arrow)
@@ -50,7 +65,7 @@ The arrows preserve order.
 \arrow[ld, shift left, "\mathscr{S}"] \\
 \setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}
   {B\in\mathcal{X}}
-\arrow[ru, shift left, "\mathcal{X}\mapsto\mathcal{X}\cap\subsets B"]
+\arrow[ru, shift left, "\mathcal{X}\mapsto\mathcal{X}\cap\subsets B=\rsupfun{B\cap}\mathcal{X}"]
 \arrow[rr, shift left]
 & & \setcond{\text{unfixed filter }\mathcal{X}}
   {B\in\mathscr{S}\mathcal{X}}
