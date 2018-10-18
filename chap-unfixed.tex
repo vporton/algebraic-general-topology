@@ -38,18 +38,39 @@ they are order preserving is obvious.
 \end{proof}
 
 \begin{lem}
-$\mathscr{S}$ and $\mathcal{X}\mapsto\mathcal{X}\cap\subsets B$
+$\mathscr{S}$ and
+$\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=
+\mathcal{X}\cap\subsets B$
 are mutually inverse order isomorphisms
 between~$\mathfrak{F}(B)$ and
 $\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$.
 \end{lem}
 
 \begin{proof}
-First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$
-because of theorem~\bookref{mathscrs-iso} (TODO: Formulate it
-in that theorem fully.)
+First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(B)$
+because of theorem~\bookref{mathscrs-iso} and
+$\rsupfun{B\cap}\mathcal{X}\in\mathfrak{F}(B)$ obviously.
 
-??
+Let's prove
+$\rsupfun{B\cap}\mathcal{X}=\mathcal{X}\cap\subsets B$.
+If $X\in\rsupfun{B\cap}\mathcal{X}$ then
+$X\in\mathcal{X}$ (because $B\in\mathcal{X}$) and
+$X\in\subsets B$. So $\mathcal{X}\cap\subsets B$. If
+$X\in\mathcal{X}\cap\subsets B$ then
+$X=B\cap X\in\rsupfun{B\cap}\mathcal{X}$.
+
+Let~$x_0\in\mathfrak{F}(B)$, $\mathcal{X}=\mathscr{S}x$, and
+$x_1=\rsupfun{B\cap}\mathcal{X}$. Then obviously $x_0=x_1$.
+
+Let now
+$\mathcal{X}_0\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$, $x=\rsupfun{B\cap}\mathcal{X}_0$, and
+$\mathcal{X}_1=\mathscr{S}x$. Then
+$\mathcal{X}_1=
+\mathcal{X}_0\cup\setcond{\text{small set }K}{K\supseteq B}=
+\mathcal{X}_0$.
+
+So we proved that they are mutually inverse bijections. That
+they are order preserving is obvious.
 \end{proof}
 
 \begin{thm}
