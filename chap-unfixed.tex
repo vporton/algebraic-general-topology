@@ -7,7 +7,7 @@ Every nonempty set of unfixed filters has an infimum.
 \end{thm}
 
 \begin{proof}
-Theorem~\bookref{filt-meet-form}.
+Theorem~\bookref{distr-meet}.
 \end{proof}
 
 \begin{thm}
@@ -25,7 +25,13 @@ Every small set of unfixed filters has a supremum.
 \end{cor}
 
 \begin{proof}
-Let~$S$ be a small set of unfixed filters. ??
+Let~$S$ be a small set of filters on the set of small
+sets. Then $T_{\mathcal{X}}\in\mathcal{X}$ is a small set
+for every~$\mathcal{X}\in S$. Thus
+$\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small
+set and thus
+$T=\bigcup\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small set. Take the filter $\mathcal{T}=\uparrow T$.
+Then~$\mathcal{T}$ is an upper bound of~$S$ and we can apply the theorem.
 \end{proof}
 
 \begin{obvious}
@@ -64,8 +70,8 @@ the poset of small sets containing~$B$, and above defined
 principal unfixed filters corresponding to them to
 appropriate nodes of the diagram~\bookref{unfix-dia}, then
 the diagram turns into a commutative diagram of isomorphisms
-between filtrators. (I will not draw the modified diagram to
-be brief.)
+between filtrators. (I will not draw the modified diagram
+for brevity.)
 
 Every arrow of this diagram is an isomorphism between
 filtrators, every cycle in the diagram is identity.
@@ -135,15 +141,6 @@ theorem~\bookref{cor-eq}.
 $\Cor\mathcal{X}=\Cor'\mathcal{X}=\bigcap\mathcal{X}$ for
 every filter~$\mathcal{X}$ on the set of small sets.
 \end{obvious}
-
-\begin{prop}
-$\corestar\mathcal{X}$ is a free star for unfixed
-filter~$\mathcal{X}$.
-\end{prop}
-
-\begin{proof}
-Theorem~\bookref{part-is-free}.
-\end{proof}
 
 \begin{prop}
 $\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ for every $S\in\subsets\mathfrak{A}\setminus\{\emptyset\}$.
