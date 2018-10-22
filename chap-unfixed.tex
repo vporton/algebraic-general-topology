@@ -294,6 +294,28 @@ Note that $\mathcal{E}$ is a special case of $\id^{\mathcal{C}}_X$.
 
 \section{Equivalent morphisms}
 
+\fxerror{Wrong order of definitions.}
+
+\begin{defn}
+$\im f = \setcond{X \in \Ob (\mathcal{C})}{\mathcal{E}^{\Dst
+f, X} \circ f \sim f} = \setcond{X \in \Ob
+(\mathcal{C})}{\mathcal{E}^{X, \Dst f} \circ \mathcal{E}^{\Dst f,
+X} \circ f = f}$.
+\end{defn}
+
+\begin{prop}
+If in our category every meta-monovalued morphism is
+monovalued, then $\im f$ is a filter.
+\end{prop}
+
+\begin{proof}
+$E=\mathcal{E}^{X, \Dst f} \circ \mathcal{E}^{\Dst f, X}$ is
+a monovalued morphism. So it is meta-monovalued and thus
+for $X,Y\in\im f$ we have
+
+??
+\end{proof}
+
 \begin{defn}
 I call two morphisms $f\in\mathcal{C}(A_0,B_0)$ and
 $g\in\mathcal{C}(A_1,B_1)$
@@ -317,7 +339,9 @@ $\iota_{A_1,B_1}f=\iota_{A_1,B_1}g$;
 $\iota_{A_1,B_1}f=g$. $\iota_{A_0,B_0}g=f$ is similar.
 
 \item[$\Leftarrow$] $\iota_{A_1,B_1}f=g$ implies
-$g\sqsubseteq\uparrow(A_1,B_1,(A_0\cap A_1)\times(B_0\cap B_1))$. Consequently??
+$A_1\in\im g$ and $A_0\in\im g$.
+Thus?? $A_0\cap A_1\in\im g$.
+Consequently??
 $\iota_{A_0\cup A_1,B_0\cup B_1}g=
 \iota_{A_0\cup A_1,B_0\cup B_1}\iota_{A_1,B_1}f=
 \iota_{A_0\cup A_1,B_0\cup B_1}f$.
