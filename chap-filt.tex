@@ -5671,5 +5671,235 @@ inverse.
 
 That arrows preserve order is obvious.
 
-It remains to apply lemma~\ref{three-loop-lem} (taking into account the proof of theorem~\ref{mathscrs-iso}.
+It remains to apply lemma~\ref{three-loop-lem} (taking into account the proof of theorem~\ref{mathscrs-iso}).
 \end{proof}
+
+\subsection{The lattice of unfixed filters}
+
+\begin{thm}
+Every nonempty set of unfixed filters has an infimum.
+\end{thm}
+
+\begin{proof}
+Theorem~\ref{distr-meet}.
+\end{proof}
+
+\begin{thm}
+Every bounded above set of unfixed filters has a supremum.
+\end{thm}
+
+\begin{proof}
+Theorem~\ref{join-filt-gen} for nonempty sets of unfixed
+filters. The join $\bigsqcup\emptyset=[\bot]$ for the
+least filter~$\bot$ on an arbitary small set.
+\end{proof}
+
+\begin{cor}
+Every small set of unfixed filters has a supremum.
+\end{cor}
+
+\begin{proof}
+Let~$S$ be a small set of filters on the set of small
+sets. Then $T_{\mathcal{X}}\in\mathcal{X}$ is a small set
+for every~$\mathcal{X}\in S$. Thus
+$\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small
+set and thus
+$T=\bigcup\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small set. Take the filter $\mathcal{T}=\uparrow T$.
+Then~$\mathcal{T}$ is an upper bound of~$S$ and we can apply the theorem.
+\end{proof}
+
+\begin{obvious}
+The poset of unfixed filters is bounded below (but not above).
+\end{obvious}
+
+\begin{prop}
+The set of unfixed filters forms a co-brouwerian (and thus
+distributive) lattice.
+\end{prop}
+
+\begin{proof}
+Corollary~\ref{filt-also-distr}.
+\end{proof}
+
+\subsection{Principal unfixed filters}
+
+\begin{defn}
+\emph{Principal} unfixed filter is an unfixed filter
+corresponding to a principal filter on the poset of all small
+sets.
+\end{defn}
+
+\begin{defn}
+The \emph{filtrator of unfixed filters} is the filtrator
+whose base are unfixed filters and whose core are principal
+unfixed filters.
+\end{defn}
+
+We will equate principal unfixed filters with corresponding
+sets.
+
+\begin{thm}
+If we add principal filters on~$B$, principal filters on
+the poset of small sets containing~$B$, and above defined
+principal unfixed filters corresponding to them to
+appropriate nodes of the diagram~\ref{unfix-dia}, then
+the diagram turns into a commutative diagram of isomorphisms
+between filtrators. (I will not draw the modified diagram
+for brevity.)
+
+Every arrow of this diagram is an isomorphism between
+filtrators, every cycle in the diagram is identity.
+\end{thm}
+
+\begin{proof}
+We need to prove only that principal filters on~$B$ and
+principal filters on the poset of small sets containing~$B$
+correspond to each other by the isomorphisms of the diagram.
+But that's obvious.
+\end{proof}
+
+\begin{obvious}
+The filtrator of unfixed filters is a primary filtrator.
+\end{obvious}
+
+\begin{obvious}
+The filtrator of unfixed filters is down-aligned.
+\end{obvious}
+
+\begin{prop}
+The filtrator of unfixed filters is
+\begin{enumerate}
+\item filtered;
+\item with join-closed core.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{semifilt-joinclosed}.
+\end{proof}
+
+\begin{prop}
+The filtrator of unfixed filters is with binarily meet-closed core.
+\end{prop}
+
+\begin{proof}
+Corollary~\ref{f-meet-closed}.
+\end{proof}
+
+\begin{prop}
+The filtrator of unfixed filters is with separable core.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{when-sep-core}.
+\end{proof}
+
+\begin{prop}
+$\Cor\mathcal{X}$ and $\Cor'\mathcal{X}$ are defined for every
+unfixed filter~$\mathcal{X}$ and
+$\Cor\mathcal{X}=\Cor'\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+$\Cor\mathcal{X}$ exists because
+$\up\mathcal{X}=\mathcal{X}$ is a small set.
+
+$\Cor'\mathcal{X}$ exists because
+$\down\mathcal{X}=\mathcal{X}$ is a small set.
+
+$\Cor'\mathcal{X}=\Cor\mathcal{X}$ by
+theorem~\ref{cor-eq}.
+\end{proof}
+
+\begin{obvious}
+$\Cor\mathcal{X}=\Cor'\mathcal{X}=\bigcap\mathcal{X}$ for
+every filter~$\mathcal{X}$ on the set of small sets.
+\end{obvious}
+
+\begin{prop}
+$\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ for every $S\in\subsets\mathfrak{A}\setminus\{\emptyset\}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{atoms-infmeet}.
+\end{proof}
+
+\begin{prop}
+$\atoms(\mathcal{A}\sqcup\mathcal{B})=\atoms\mathcal{A}\cup\atoms\mathcal{B}$ for unfixed
+filters~$\mathcal{A}$,~$\mathcal{B}$.
+\end{prop}
+
+\begin{proof}
+Proposition~\ref{f-atoms-join}.
+\end{proof}
+
+\begin{prop}
+$\corestar\mathcal{X}$ is a free star for every unfixed
+filter~$\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{da-is-free-star}.
+\end{proof}
+
+\begin{prop}
+The poset of unfixed filters is an atomistic lattice.
+\end{prop}
+
+\begin{proof}
+Easily follows from~\ref{powfilt-diag} by isomorphism.
+\end{proof}
+
+\begin{prop}
+The poset of unfixed filters is a strongly separable lattice.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{atom-is-sep}.
+\end{proof}
+
+\begin{prop}
+$\Cor\mathcal{X}=\setcond{x}{\{x\}\sqsubseteq\mathcal{X}}$
+for every unfixed filter~$\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{cor-join-atom}.
+\end{proof}
+
+\begin{prop}
+$\Cor(\mathcal{A}\sqcap\mathcal{B})=
+\Cor\mathcal{A}\sqcap\Cor\mathcal{B}$ for every unfixed
+filters~$\mathcal{A}$,~$\mathcal{B}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{dual-cor-meet}.
+\end{proof}
+
+\begin{prop}
+$\Cor\bigsqcap^{\mathfrak{A}}S=\bigsqcap^{\mathfrak{Z}}\rsupfun{\Cor}S$ for the filtrator of unfixed filters for
+every nonempty set~$S$ of unfixed filters.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{dual-cor-inf-meet}.
+\end{proof}
+
+\begin{prop}
+$\Cor(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B}) =
+\Cor\mathcal{A}\sqcup^{\mathfrak{Z}}\Cor\mathcal{B}$ for the filtrator of unfixed filters for every unfixed filters~$\mathcal{A}$, and~$\mathcal{B}$.
+\end{prop}
+
+\begin{proof}
+Can be easily deduced from theorem~\ref{dual-core-join}
+and the triangular diagram (above) of isomorphic filtrators.
+\end{proof}
+
+\begin{conjecture}
+The theorem~\ref{closed-free-star} holds for unfixed
+filters, too.
+\end{conjecture}
+
+It is expected to be easily provable using isomorphisms from
+the triangular diagram.
