@@ -1276,7 +1276,7 @@ with greatest element~$\top$.
 \end{cor}
 
 We will denote meets and joins on the lattice of filters just as~$\sqcap$ and~$\sqcup$.
-\begin{prop}\label{filt-meet-form} 
+\begin{prop}\label{filt-meet-form}
 The following is an implications tuple:
 \begin{enumerate}
   \item\label{fjoin-ex-pow} $(\mathfrak{A},\mathfrak{Z})$ is a powerset filtrator.
@@ -1455,7 +1455,7 @@ the theorem.
 \end{description}
 \end{proof}
 More general case of semilattices follows:
-\begin{thm}
+\begin{thm}\label{meet-prim-mlat}
 ~
 \begin{enumerate}
 \item $\bigsqcap^{\mathfrak{F}(\mathfrak{Z})}S=\bigcup\setcond{\uparrow(K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{n})}{K_{i}\in\bigcup S\text{ where }i=0,\dots,n\text{ for }n\in\mathbb{N}}$
@@ -1509,6 +1509,16 @@ is a filter base.\end{proof}
 $\up(\mathcal{F}_{0}\sqcap^{\mathfrak{F}(\mathfrak{Z})}\dots\sqcap^{\mathfrak{F}(\mathfrak{Z})}\mathcal{F}_{m})=\bigcup\setcond{\up(K_{0}\sqcap^{\mathfrak{Z}}\dots\sqcap^{\mathfrak{Z}}K_{m})}{K_{i}\in\mathcal{F}_{i}\text{ where }i=0,\dots,m}$
 if $\mathfrak{Z}$ is a meet-semilattice.
 \end{cor}
+
+\begin{prop}\label{f-is-distr}
+If $(\mathfrak{A},\mathfrak{Z})$ is a primary filtrator
+and~$\mathfrak{Z}$ is a lattice,
+then~$\mathfrak{A}$ is a lattice.
+\end{prop}
+
+\begin{proof}
+It is a join-semilattice by proposition~\ref{filt-meet-form}. It is a meet-semilattice by theorem~\ref{meet-prim-mlat}.
+\end{proof}
 
 \subsection{Distributivity of the Lattice of Filters}
 \begin{thm}
