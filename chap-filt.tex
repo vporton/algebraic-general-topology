@@ -2971,9 +2971,11 @@ filtrator.
 filtrator over a complete lattice.
 \item \label{dual-cor-meet-mlat}$(\mathfrak{A},\mathfrak{Z})$ is a join-closed
 filtrator and $\mathfrak{A}$ is a meet-semilattice and $\mathfrak{Z}$
-is a complete lattice.
+is a meet-semilattice lattice.
 \item \label{dual-cor-meet-conc}$\Cor'(a\sqcap^{\mathfrak{A}}b)=\Cor'a\sqcap^{\mathfrak{Z}}\Cor'b$
 for every $a,b\in\mathfrak{A}$.
+whenever $\Cor'(a\sqcap^{\mathfrak{A}}b)$, $\Cor'a$, and
+$\Cor'b$ exist
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -2983,12 +2985,7 @@ for every $a,b\in\mathfrak{A}$.
 \item [{\ref{dual-cor-meet-f}$\Rightarrow$\ref{dual-cor-meet-mlat}}] $(\mathfrak{A},\mathfrak{Z})$
 is with join-closed core by corollary \ref{semifilt-joinclosed}.
 $\mathfrak{A}$ is a meet-semilattice by corollary \ref{filt-is-complete}.
-\item [{\ref{dual-cor-meet-mlat}$\Rightarrow$\ref{dual-cor-meet-conc}}] From
-theorem conditions it follows that $\Cor'(a\sqcap^{\mathfrak{A}}b)$, $\Cor'a$, and $\Cor'b$
-exist.
-
-
-We have $\Cor'p\sqsubseteq p$ for every $p\in\mathfrak{A}$ because
+\item [{\ref{dual-cor-meet-mlat}$\Rightarrow$\ref{dual-cor-meet-conc}}] We have $\Cor'p\sqsubseteq p$ for every $p\in\mathfrak{A}$ whenever $\Cor'p$ exists, because
 our filtrator is with join-closed core (theorem~\ref{f-cor-max}).
 
 
