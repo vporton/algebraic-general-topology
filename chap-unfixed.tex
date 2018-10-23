@@ -297,13 +297,36 @@ Note that $\mathcal{E}$ is a special case of $\id^{\mathcal{C}}_X$.
 \fxerror{Wrong order of definitions.}
 
 \begin{defn}
-$\im f = \setcond{Y \in \Ob (\mathcal{C})}{\mathcal{E}^{\Dst
+~
+\begin{enumerate}
+\item $\im f = \setcond{Y \in \subsets\Dst f}{\mathcal{E}^{\Dst
+f, Y} \circ f \sim f} = \setcond{Y \in \subsets\Dst f}{\mathcal{E}^{Y, \Dst f} \circ \mathcal{E}^{\Dst f,
+Y} \circ f = f}$;
+\item $\dom f = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}^{X, \Src
+f} \sim f} = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}^{\Src f, X} \circ \mathcal{E}^{X, \Src f} = f}$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+~
+\begin{enumerate}
+\item $\operatorname{Im} f = \setcond{Y \in \Ob (\mathcal{C})}{\mathcal{E}^{\Dst
 f, Y} \circ f \sim f} = \setcond{Y \in \Ob
 (\mathcal{C})}{\mathcal{E}^{Y, \Dst f} \circ \mathcal{E}^{\Dst f,
-Y} \circ f = f}$.
-\fxwarning{Should we replace $\Ob(\mathcal{C})$ with
-$\subsets\Dst f$?}
+Y} \circ f = f}$;
+\item $\operatorname{Dom} f = \setcond{X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}^{X, \Src
+f} \sim f} = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}^{\Src f, X} \circ \mathcal{E}^{X, \Src f} = f}$.
+\end{enumerate}
 \end{defn}
+
+\begin{prop}
+$\operatorname{Im} f = \mathscr{S}\im f$;
+$\operatorname{Dom} f = \mathscr{S}\dom f$;
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
 
 \begin{prop}
 If in our category every meta-monovalued morphism is
