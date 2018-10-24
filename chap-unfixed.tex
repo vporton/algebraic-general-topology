@@ -327,7 +327,7 @@ f} \sim f} = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal
 
 \begin{prop}
 $\operatorname{Im} f = \mathscr{S}\im f$;
-$\operatorname{Dom} f = \mathscr{S}\dom f$;
+$\operatorname{Dom} f = \mathscr{S}\dom f$.
 \end{prop}
 
 \begin{proof}
@@ -345,6 +345,39 @@ $\operatorname{Im} f = \setcond{Y \in \Ob
 \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f = f} = \mathscr{S}
 \setcond{Y' \in \subsets \Dst f}{\mathcal{E}_{\mathcal{C}}^{Y,
 \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f = f}$.
+\end{proof}
+
+\begin{prop}
+  $\iota_{A, B} \iota_{X, Y} f = \iota_{A, B} f$ for every sets $A$, $B$, $X$,
+  $Y$ whenever $\operatorname{Dom} f$ and $\operatorname{Im} f$ are filters and $X \in
+  \operatorname{Dom} f$, $Y \in \operatorname{Im} f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{A, B} f =\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ f \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Src f} = \text{(by definition of
+  $\operatorname{Im} f$ and $\operatorname{Dom} f$)} =\mathcal{E}_{\mathcal{C}}^{\Dst f,
+  B} \circ \mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
+  \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \circ
+  \mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
+  \mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Src f} =\mathcal{E}_{\mathcal{C}}^{Y,
+  B} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \circ
+  \mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
+  \mathcal{E}_{\mathcal{C}}^{A, X} = \iota_{A, B} \iota_{X, Y} f$
+  
+  because $\mathcal{E}^{\Dst f, B} \circ \mathcal{E}^{Y, \Dst f}
+  \circ \mathcal{E}^{\Dst f, Y} = (\Dst f, B, \id_{Y \cap
+  \Dst f \cap B}) = (Y, B, \id_{Y \cap B}) \circ (\Dst f, Y,
+  \id_{Y \cap \Dst f}) =\mathcal{E}^{Y, B} \circ
+  \mathcal{E}^{\Dst f, Y}$ and thus
+  $\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ
+  \mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
+  \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} =\mathcal{E}_{\mathcal{C}}^{Y,
+  B} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, Y}$ and similary for
+  $\mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
+  \mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Src f}$.
 \end{proof}
 
 \begin{prop}
