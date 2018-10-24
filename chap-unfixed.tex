@@ -351,7 +351,7 @@ $\operatorname{Im} f = \setcond{Y \in \Ob
 $\im f$ may be not a filter for ??.
 \end{conjecture}
 
-\begin{prop}
+\begin{prop}\label{dst-in-im}
 $\Dst f\in\im f$; $\Src f\in\dom f$ for ??.
 \end{prop}
 
@@ -478,10 +478,60 @@ that is $f\sim h$.
 \end{proof}
 
 \begin{defn}
-\emph{Unfixed morphisms} are classes of equivalence (as
-defined above) of morphisms. (See
-\url{https://en.wikipedia.org/wiki/Quotient_category}.)
+We will turn the category~$\mathcal{C}$ into a semigroup
+$\mathcal{U}\mathcal{C}$
+(\emph{the semigroup of unfixed morphisms}) by
+the formula $[g]\circ[f] = [g\circ f]$ whenever~$f$ and~$g$
+are composable morphisms.
 \end{defn}
+
+We need to prove that $[g]\circ[f]$ does not depend on
+choice of~$f$ and~$g$ (provided that~$f$ and~$g$
+are composable). We also need to prove that $[g]\circ[f]$
+is always defined for every morphisms (not necessarily
+composable)~$f$ and~$g$.
+
+\begin{proof}
+That $[g]\circ[f]$ is defined in at least one way for every
+morphisms~$f$ and~$g$ is simple to prove. Just consider the
+morphisms
+$f'=\iota_{\Src f,\Dst f\cup\Src g}f\sim f$ and
+$g'=\iota_{\Dst f\cup\Src g,\Dst g}g\sim g$.
+Then we can take $[g]\circ[f]=[g'\circ f']$.
+
+It remains to prove that $[g]\circ[f]$ does not depend on
+choice of~$f$ and~$g$. Really, take arbitrary composable
+pairs of morphisms $(f_0:A_0\to B_0,g_0:B_0\to C_0)$ and
+$(f_1:A_1\to B_1,g_1:B_1\to C_1)$ such that
+$f_0\sim f_1$ and $g_0\sim g_1$. It remains to prove that
+$g_0\circ f_0\sim g_1\circ f_1$.
+We have
+\begin{multline*}
+\iota_{B_0\cup B_1,C_0\cup C_1}g_0 \circ
+\iota_{A_0\cup A_1,B_0\cup B_1}f_0 = \\
+\mathcal{E}_{\mathcal{C}}^{C_0,C_0\cup C_1}\circ g_0 \circ
+\mathcal{E}_{\mathcal{C}}^{B_0\cup B_1,B_0}\circ\mathcal{E}_{\mathcal{C}}^{A_0,B_0\cup B_1}\circ
+f_0\circ\mathcal{E}_{\mathcal{C}}^{A_0\cup A_1,B_0} = \\
+= \text{(proposition~\ref{dst-in-im})} =
+\mathcal{E}_{\mathcal{C}}^{C_0,C_0\cup C_1}\circ g_0 \circ
+f_0\circ\mathcal{E}_{\mathcal{C}}^{A_0\cup A_1,B_0} = \\
+\iota_{A_0\cup A_1,C_0\cup C_1}(g_0\circ f_0).
+\end{multline*}
+Similary
+\[\iota_{B_0\cup B_1,C_0\cup C_1}g_1 \circ
+\iota_{A_0\cup A_1,B_0\cup B_1}f_1 =
+\iota_{A_0\cup A_1,C_0\cup C_1}(g_1\circ f_1).\]
+
+But
+\[\iota_{B_0\cup B_1,C_0\cup C_1}g_0 \circ
+\iota_{A_0\cup A_1,B_0\cup B_1}f_0 =
+\iota_{B_0\cup B_1,C_0\cup C_1}g_1 \circ
+\iota_{A_0\cup A_1,B_0\cup B_1}f_1\]
+thus having
+$\iota_{A_0\cup A_1,C_0\cup C_1}(g_0\circ f_0) =
+\iota_{A_0\cup A_1,C_0\cup C_1}(g_1\circ f_1)$ and so
+$g_0\circ f_0\sim g_1\circ f_1$.
+\end{proof}
 
 ??
 
