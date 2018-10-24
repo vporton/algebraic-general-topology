@@ -296,26 +296,32 @@ Note that $\mathcal{E}$ is a special case of $\id^{\mathcal{C}}_X$.
 
 \fxerror{Wrong order of definitions.}
 
+Let define that
+$\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
+\exists X\in\mathcal{A}:X\subseteq K}$
+holds not only for filters but for any set~$\mathcal{A}$ of
+sets.
+
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\im f = \setcond{Y \in \subsets\Dst f}{\mathcal{E}^{\Dst
-f, Y} \circ f \sim f} = \setcond{Y \in \subsets\Dst f}{\mathcal{E}^{Y, \Dst f} \circ \mathcal{E}^{\Dst f,
+\item $\im f = \setcond{Y \in \subsets\Dst f}{\mathcal{E}_{\mathcal{C}}^{\Dst
+f, Y} \circ f \sim f} = \setcond{Y \in \subsets\Dst f}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
 Y} \circ f = f}$;
-\item $\dom f = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}^{X, \Src
-f} \sim f} = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}^{\Src f, X} \circ \mathcal{E}^{X, \Src f} = f}$.
+\item $\dom f = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src
+f} \sim f} = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\operatorname{Im} f = \setcond{Y \in \Ob (\mathcal{C})}{\mathcal{E}^{\Dst
+\item $\operatorname{Im} f = \setcond{Y \in \Ob (\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{\Dst
 f, Y} \circ f \sim f} = \setcond{Y \in \Ob
-(\mathcal{C})}{\mathcal{E}^{Y, \Dst f} \circ \mathcal{E}^{\Dst f,
+(\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
 Y} \circ f = f}$;
-\item $\operatorname{Dom} f = \setcond{X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}^{X, \Src
-f} \sim f} = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}^{\Src f, X} \circ \mathcal{E}^{X, \Src f} = f}$.
+\item $\operatorname{Dom} f = \setcond{X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src
+f} \sim f} = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
@@ -325,7 +331,20 @@ $\operatorname{Dom} f = \mathscr{S}\dom f$;
 \end{prop}
 
 \begin{proof}
-??
+Define $Y' = Y \cap \Dst f$ for every $Y \in \Ob (\mathcal{C})$.
+
+Then $\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
+\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} = \uparrow (\mathcal{E}^{Y,
+\Dst f} \circ \mathcal{E}^{\Dst f, Y}) = \uparrow
+(\mathcal{E}^{Y', \Dst f} \circ \mathcal{E}^{\Dst f, Y'})
+=\mathcal{E}_{\mathcal{C}}^{Y', \Dst f} \circ
+\mathcal{E}_{\mathcal{C}}^{\Dst f, Y'}$;
+
+$\operatorname{Im} f = \setcond{Y \in \Ob
+(\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
+\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f = f} = \mathscr{S}
+\setcond{Y' \in \subsets \Dst f}{\mathcal{E}_{\mathcal{C}}^{Y,
+\Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f = f}$.
 \end{proof}
 
 \begin{prop}
