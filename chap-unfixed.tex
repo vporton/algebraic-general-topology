@@ -364,7 +364,7 @@ $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f}=
 \uparrow 1^{\mathbf{Rel}} = 1^{\mathcal{C}}$.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{two-iotas}
   $\iota_{A, B} \iota_{X, Y} f = \iota_{A, B} f$ for every sets $A$, $B$, $X$,
   $Y$ whenever $\operatorname{Dom} f$ and $\operatorname{Im} f$ are filters and $X \in
   \operatorname{Dom} f$, $Y \in \operatorname{Im} f$.
@@ -450,7 +450,31 @@ is an equivalence relation.
 \end{prop}
 
 \begin{proof}
-??
+~
+\begin{description}
+\item[Reflexivity] Obvious.
+
+\item[Symmetry] Obvious.
+
+\item[Transitivity] Let $f\sim g$ and $g\sim h$ for
+$f:A_0\to B_0$, $g:A_1\to B_1$, $h:A_2\to B_2$.
+Then
+$\iota_{A_0\cup A_1,B_0\cup B_1}f=\iota_{A_0\cup A_1,B_0\cup B_1}g$ and
+$\iota_{A_1\cup A_2,B_1\cup B_2}g=\iota_{A_1\cup A_2,B_1\cup B_2}h$.
+
+Thus
+\[\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}\iota_{A_0\cup A_1,B_0\cup B_1}f=\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}\iota_{A_0\cup A_1,B_0\cup B_1}g\] and
+\[\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}\iota_{A_1\cup A_2,B_1\cup B_2}g=\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}\iota_{A_1\cup A_2,B_1\cup B_2}h\]
+that is (propositon~\ref{two-iotas})
+\[\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}f=\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}g\]
+and
+\[\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}g=\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}h.\]
+Combining,
+$\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}f=\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}h$ and thus
+\[\iota_{A_0\cup A_2,B_0\cup B_2}\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}f=\iota_{A_0\cup A_2,B_0\cup B_2}\iota_{A_0\cup A_1\cup A_2,B_0\cup B_1\cup B_2}h;\]
+(again propositon~\ref{two-iotas}) $\iota_{A_0\cup A_2,B_0\cup B_2}f=\iota_{A_0\cup A_2,B_0\cup B_2}h$
+that is $f\sim h$.
+\end{description}
 \end{proof}
 
 \begin{defn}
