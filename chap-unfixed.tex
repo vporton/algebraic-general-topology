@@ -294,8 +294,6 @@ Note that $\mathcal{E}$ is a special case of $\id^{\mathcal{C}}_X$.
 
 \section{Equivalent morphisms}
 
-\fxerror{Wrong order of definitions.}
-
 Let define that
 $\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
 \exists X\in\mathcal{A}:X\subseteq K}$
@@ -305,23 +303,19 @@ sets.
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\im f = \setcond{Y \in \subsets\Dst f}{\mathcal{E}_{\mathcal{C}}^{\Dst
-f, Y} \circ f \sim f} = \setcond{Y \in \subsets\Dst f}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
+\item $\im f = \setcond{Y \in \subsets\Dst f}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
 Y} \circ f = f}$;
-\item $\dom f = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src
-f} \sim f} = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
+\item $\dom f = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\operatorname{Im} f = \setcond{Y \in \Ob (\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{\Dst
-f, Y} \circ f \sim f} = \setcond{Y \in \Ob
+\item $\operatorname{Im} f = \setcond{Y \in \Ob
 (\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
 Y} \circ f = f}$;
-\item $\operatorname{Dom} f = \setcond{X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src
-f} \sim f} = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
+\item $\operatorname{Dom} f = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
@@ -413,8 +407,9 @@ for $Y,Y\in\im f$ we have
 \begin{defn}
 I call two morphisms $f\in\mathcal{C}(A_0,B_0)$ and
 $g\in\mathcal{C}(A_1,B_1)$
-of a category under~$\mathbf{Rel}$ \emph{equivalent} when
-$\iota_{A_0\cup A_1,B_0\cup B_1}f=\iota_{A_0\cup A_1,B_0\cup B_1}g$.
+of a category under~$\mathbf{Rel}$ \emph{equivalent}
+(and denote $f\sim g$) when
+\[\iota_{A_0\cup A_1,B_0\cup B_1}f=\iota_{A_0\cup A_1,B_0\cup B_1}g.\]
 \end{defn}
 
 \begin{prop}
@@ -541,6 +536,20 @@ A\in\operatorname{Dom}f,B\in\operatorname{Im}f}$.
 \begin{proof}
 ??
 \end{proof}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\im f = \setcond{Y \in \subsets\Dst f}{
+  \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f}$;
+\item $\dom f = \setcond{X \in \subsets\Src f}{
+  f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src f} \sim f}$;
+\item $\operatorname{Im} f = \setcond{Y \in \Ob(\mathcal{C})}{
+  \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f}$;
+\item $\operatorname{Dom} f = \setcond{X \in \Ob(\mathcal{C})}{
+  f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src f} \sim f}$.
+\end{enumerate}
+\end{prop}
 
 ??
 
