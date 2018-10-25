@@ -45,6 +45,18 @@ Then define $\mathcal{E}_{\mathcal{C}}^{A,B} =
   $1^A \circ f = 1^A \circ g$; $f = g$.
 \end{proof}
 
+\begin{prop}
+  $\mathcal{E}_{\mathcal{C}}^{B,C} \circ \mathcal{E}_{\mathcal{C}}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$
+  iff $B \sqsupseteq A \sqcap C$ (for every sets $A$, $B$, $C$).
+\end{prop}
+
+\begin{proof}
+  $\mathcal{E}_{\mathcal{C}}^{B,C} \circ \mathcal{E}_{\mathcal{C}}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$
+  is equivalent to:
+  
+  $\id^{\mathcal{C}(B,C)}_{B \sqcap C} \circ \id^{\mathcal{C}(A,B)}_{A \sqcap B} = \id^{\mathcal{C}(A,C)}_{A \sqcap C}$ what is obviously true.
+\end{proof}
+
 \section{Categories with embeddings}
 
 \begin{note}
@@ -180,30 +192,6 @@ $\uparrow$ \emph{up-arrow functor}.
   $\mathbf{Rel}$ and $\im f = A \subseteq Y$, then
   \[ \mathcal{E}_{\mathcal{C}}^{A,Y} \circ \mathcal{E}_{\mathcal{C}}^{Y,A}
   \circ \uparrow f = \uparrow f. \]
-\end{cor}
-
-\begin{prop}
-  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}^{A,C}$
-  iff $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
-\end{prop}
-
-\begin{proof}
-  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}^{A,C}$
-  is equivalent to:
-  
-  $(B , C , \id_{B \cap C}) \circ (A , B , \id_{A \cap B}) = (A ,
-  C , \id_{A \cap C})$;
-  
-  $(A , C , \id_{A \cap B \cap C}) = (A , C , \id_{A \cap C})$;
-  
-  $A \cap B \cap C = A \cap C$;
-  
-  $B \supseteq A \cap C$.
-\end{proof}
-
-\begin{cor}
-  $\mathcal{E}^{B,C} \circ \mathcal{E}^{A,B} = \mathcal{E}_{\mathcal{C}}^{A,C}$ if
-  $B \supseteq A \cap C$ (for every sets $A$, $B$, $C$).
 \end{cor}
 
 \begin{defn}
