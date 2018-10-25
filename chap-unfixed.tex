@@ -22,7 +22,7 @@ For a partially ordered category we can introduce additional axiom $X\sqsubseteq
 \id^{\mathcal{C}(A,B)}_X\sqsubseteq\id^{\mathcal{C}(A,B)}_Y$. \fxnote{Do we need this axiom?}
 
 For dagger categories we can introduce additional axiom
-$(\id^{\mathcal{C}(A,B)}_X)^\dagger =
+$\left(\id^{\mathcal{C}(A,B)}_X\right)^\dagger =
 \id^{\mathcal{C}(A,B)}_X$.
 
 Then define $\mathcal{E}_{\mathcal{C}}^{A,B} =
@@ -42,8 +42,8 @@ Then define $\mathcal{E}_{\mathcal{C}}^{A,B} =
 \begin{proof}
   We'll prove only the first as the second is dual.
   
-  Let $\mathcal{E}_{\mathcal{C}}^{A,B} \circ f = \mathcal{E}^{A,B} \circ g$. Then
-  $\mathcal{E}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B}
+  Let $\mathcal{E}_{\mathcal{C}}^{A,B} \circ f = \mathcal{E}_{\mathcal{C}}^{A,B} \circ g$. Then
+  $\mathcal{E}_{\mathcal{C}}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B}
   \circ f = \mathcal{E}_{\mathcal{C}}^{B,A} \circ \mathcal{E}_{\mathcal{C}}^{A,B} \circ g$;
   $1^A \circ f = 1^A \circ g$; $f = g$.
 \end{proof}
@@ -63,8 +63,8 @@ Then define $\mathcal{E}_{\mathcal{C}}^{A,B} =
 \section{Rectangular embedding-restriction}
 
 \begin{defn}
-  $\iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1} \circ f \circ
-  (\mathcal{E}_{\mathcal{C}}^{B_0})^{-1}$ for $f \in
+  $\iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{\Dst f,B_1} \circ f \circ
+  \mathcal{E}_{\mathcal{C}}^{B_0,\Src f}$ for $f \in
   \Hom_{\mathcal{C}} (A_0 , A_1)$.
 \end{defn}
 
@@ -75,13 +75,13 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{\Src f, \Dst f} f = \mathcal{E}_\mathcal{C}^{\Dst f} \circ f \circ \mathcal{E}_\mathcal{C}^{\Src f} =
+  $\iota_{\Src f, \Dst f} f = \mathcal{E}_\mathcal{C}^{\Dst f,\Dst f} \circ f \circ \mathcal{E}_\mathcal{C}^{\Src f,\Src f} =
   1_{\mathcal{C}}^{\Dst f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f$.
 \end{proof}
 
 \begin{prop}
   The function $\iota_{B_0, B_1} |_{f \in \Hom_{\mathcal{C}} (A_0 ,
-  A_1)}$ is injective, if $A_0 \subseteq B_0 \wedge A_1 \subseteq B_1$.
+  A_1)}$ is injective, if $A_0 \sqsubseteq B_0 \wedge A_1 \sqsubseteq B_1$.
 \end{prop}
 
 \begin{proof}
@@ -109,7 +109,7 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 
 \begin{proof}
   $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
-  \circ (g \circ f) \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id_{A_1} \circ f
+  \circ (g \circ f) \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
   \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
   \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_2} g \circ \iota_{B_0,
   B_1} f$.
@@ -172,8 +172,7 @@ $\Dst f\in\im f$; $\Src f\in\dom f$ for ??.
 \begin{proof}
 Prove $\Dst f\in\im f$ (the other is similar):
 We need to prove that $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
-\Dst f} \circ f = f$ but it follows from
-$\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f}=1^{\mathcal{C}}$.
+\Dst f} \circ f = f$ but it is obvious.
 \end{proof}
 
 \begin{prop}\label{two-iotas}
@@ -196,9 +195,8 @@ $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f}=1^{\mathcal{C}}$.
   \mathcal{E}_{\mathcal{C}}^{A, X} = \iota_{A, B} \iota_{X, Y} f$
   
   because $\mathcal{E}^{\Dst f, B} \circ \mathcal{E}^{Y, \Dst f}
-  \circ \mathcal{E}^{\Dst f, Y} = (\Dst f, B, \id_{Y \sqcap
-  \Dst f \sqcap B}) = (Y, B, \id_{Y \sqcap B}) \circ (\Dst f, Y,
-  \id_{Y \sqcap \Dst f}) =\mathcal{E}^{Y, B} \circ
+  \circ \mathcal{E}^{\Dst f, Y} = \id^{\mathcal{C}(\Dst f, B)}_{Y \sqcap
+  \Dst f \sqcap B} = \id^{\mathcal{C}(Y, B)}_{Y \sqcap B} \circ \id^{\mathcal{C}(\Dst f,Y)}_{Y \sqcap \Dst f} = \mathcal{E}^{Y, B} \circ
   \mathcal{E}^{\Dst f, Y}$ and thus
   $\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ
   \mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
