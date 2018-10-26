@@ -150,15 +150,9 @@ $\operatorname{Dom} f = \mathscr{S}\dom f$.
 \begin{proof}
 Define $Y' = Y \sqcap \Dst f$ for every $Y \in \Ob (\mathcal{C})$.
 
-Then $\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
-\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} = \mathcal{E}_{\mathcal{C}}^{Y', \Dst f} \circ
-\mathcal{E}_{\mathcal{C}}^{\Dst f, Y'}$;
+Then $\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} = \id^{\mathcal{C}(\Dst f,\Dst f)}_{Y'\sqcap\Dst f}$;
 
-$\operatorname{Im} f = \setcond{Y \in \Ob
-(\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
-\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f = f} = \mathscr{S}
-\setcond{Y' \in \subsets \Dst f}{\mathcal{E}_{\mathcal{C}}^{Y,
-\Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f = f}$.
+$\operatorname{Im} f = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} \circ f = f} = \mathscr{S}\im f$. \fxwarning{More detailed proof.}
 \end{proof}
 
 \begin{conjecture}
