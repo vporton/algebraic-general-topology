@@ -128,10 +128,9 @@ sets.
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\operatorname{Im} f = \setcond{Y \in \Ob
-(\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
-Y} \circ f = f}$;
-\item $\operatorname{Dom} f = \setcond{X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
+\item $\operatorname{Im} f = \setcond{Y \in \mathfrak{Z}}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
+Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} \circ f = f}$;
+\item $\operatorname{Dom} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{X\sqcap\Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
