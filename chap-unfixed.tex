@@ -128,19 +128,18 @@ sets.
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\im f = \setcond{Y \in \subsets\Dst f}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
+\item $\operatorname{Im} f = \setcond{Y \in \Ob
+(\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
 Y} \circ f = f}$;
-\item $\dom f = \setcond{X \in \subsets\Src f}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
+\item $\operatorname{Dom} f = \setcond{X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\operatorname{Im} f = \setcond{Y \in \Ob
-(\mathcal{C})}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
-Y} \circ f = f}$;
-\item $\operatorname{Dom} f = \setcond{X \in X \in \Ob (\mathcal{C})}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f}$.
+\item $\im f = \setcond{Y\in\mathfrak{Z}}{Y\sqsubseteq\Dst f}\cap\operatorname{Im} f$;
+\item $\dom f = \setcond{X\in\mathfrak{Z}}{X\sqsubseteq\Src f}\cap\operatorname{Dom} f$.
 \end{enumerate}
 \end{defn}
 
