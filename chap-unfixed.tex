@@ -130,7 +130,7 @@ sets.
 \begin{enumerate}
 \item $\operatorname{IM} f = \setcond{Y \in \mathfrak{Z}}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
 Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} \circ f = f}$;
-\item $\operatorname{dom} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{X\sqcap\Src f} = f}$.
+\item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{X\sqcap\Src f} = f}$.
 \end{enumerate}
 \end{defn}
 
@@ -138,13 +138,13 @@ Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_
 ~
 \begin{enumerate}
 \item $\operatorname{Im} f = \setcond{Y\in\operatorname{IM} f}{Y\sqsubseteq\Dst f}$;
-\item $\operatorname{Dom} f = \setcond{X\in\operatorname{dom} f}{X\sqsubseteq\Src f}$.
+\item $\operatorname{Dom} f = \setcond{X\in\operatorname{DOM} f}{X\sqsubseteq\Src f}$.
 \end{enumerate}
 \end{defn}
 
 \begin{prop}
 $\operatorname{IM} f = \mathscr{S}\operatorname{Im} f$;
-$\operatorname{dom} f = \mathscr{S}\operatorname{Dom} f$.
+$\operatorname{DOM} f = \mathscr{S}\operatorname{Dom} f$.
 \end{prop}
 
 \begin{proof}
@@ -209,14 +209,14 @@ $\top\times Y \sqsupseteq f \Rightarrow \id_Y \circ f
 
 \begin{prop}\label{two-iotas}
   $\iota_{A, B} \iota_{X, Y} f = \iota_{A, B} f$ for every sets $A$, $B$, $X$,
-  $Y$ whenever $\operatorname{dom} f$ and $\operatorname{IM} f$ are filters and $X \in
-  \operatorname{dom} f$, $Y \in \operatorname{IM} f$.
+  $Y$ whenever $\operatorname{DOM} f$ and $\operatorname{IM} f$ are filters and $X \in
+  \operatorname{DOM} f$, $Y \in \operatorname{IM} f$.
 \end{prop}
 
 \begin{proof}
   $\iota_{A, B} f =\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ f \circ
   \mathcal{E}_{\mathcal{C}}^{A, \Src f} = \text{(by definition of
-  $\operatorname{IM} f$ and $\operatorname{dom} f$)} =\mathcal{E}_{\mathcal{C}}^{\Dst f,
+  $\operatorname{IM} f$ and $\operatorname{DOM} f$)} =\mathcal{E}_{\mathcal{C}}^{\Dst f,
   B} \circ \mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
   \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \circ
   \mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
@@ -378,7 +378,7 @@ $g_0\circ f_0\sim g_1\circ f_1$.
 
 \begin{prop}
 $[f] = \setcond{\iota_{A,B}f}{
-A\in\operatorname{dom}f,B\in\operatorname{IM}f}$.
+A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$.
 \end{prop}
 
 \begin{proof}
@@ -394,7 +394,7 @@ A\in\operatorname{dom}f,B\in\operatorname{IM}f}$.
   f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src f} \sim f}$;
 \item $\operatorname{IM} f = \setcond{Y \in \Ob(\mathcal{C})}{
   \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f}$;
-\item $\operatorname{dom} f = \setcond{X \in \Ob(\mathcal{C})}{
+\item $\operatorname{DOM} f = \setcond{X \in \Ob(\mathcal{C})}{
   f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src f} \sim f}$.
 \end{enumerate}
 \end{prop}
