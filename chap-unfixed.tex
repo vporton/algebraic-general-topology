@@ -159,7 +159,11 @@ Define $Y' = Y \sqcap \Dst f$ for every $Y \in \Ob (\mathcal{C})$.
 
 Then $\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} = \id^{\mathcal{C}(\Dst f,\Dst f)}_{Y'\sqcap\Dst f}$;
 
-$\operatorname{IM} f = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} \circ f = f} = \mathscr{S}\operatorname{Im} f$. \fxwarning{More detailed proof.}
+$\operatorname{IM} f =
+\setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} \circ f = f}$.
+
+Suppose $Y\in\operatorname{IM}f$. Then take $Y'=Y\sqcap\Dst f$. We have $Y\sqsupseteq Y'$ and $Y'\in\operatorname{Im}f$. So $Y\in\mathscr{S}\operatorname{Im}f$. If $Y\in\mathscr{S}\operatorname{Im}f$ then $Y\in\operatorname{IM}f$ obviously.
+So $\operatorname{IM} f = \mathscr{S}\operatorname{Im} f$.
 
 ??
 \end{proof}
