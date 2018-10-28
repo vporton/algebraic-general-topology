@@ -108,6 +108,8 @@ For brevity $\iota_B f = \iota_{B, B} f$.
   $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \iota_{C_0, C_1} f$ for $B_0
   \sqsupseteq A_0 \sqcap C_0$, $B_1 \sqsupseteq A_1 \sqcap C_1$ and $f : A_0
   \rightarrow A_1$.
+  \fxwarning{It seems that below there is a more general
+  proposition.}
 \end{prop}
 
 \begin{proof}
@@ -204,8 +206,9 @@ We need to prove that $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal
 \begin{prop}
 I will call an axiomatic setting for unfixed morphisms
 \emph{existentially distributive} when
-$\exists t : \id_Y \circ t \sqsupseteq f \Rightarrow \id_Y \circ f
-\sqsupseteq f$.
+\[\exists t\in\mathcal{C}(\Src f,\Dst f) : \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ t \sqsupseteq f \Rightarrow \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ f
+\sqsupseteq f\]
+for every morphism~$f$ and $\mathfrak{A}\ni Y\sqsubseteq\Dst f$.
 \end{prop}
 
 \begin{prop}
