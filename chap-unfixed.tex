@@ -104,7 +104,7 @@ For brevity $\iota_B f = \iota_{B, B} f$.
   Because $\mathcal{E}_{\mathcal{C}}^{A_1,B_1}$ is a monomorphism and $\mathcal{E}_{\mathcal{C}}^{A_0,B_0}$ is an epimorphism.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{iota-comp}
   Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
   \sqsubseteq B_1$. Then $\iota_{B_0, B_2} (g \circ f) = \iota_{B_1, B_2} g
   \circ \iota_{B_0, B_1} f$.
@@ -119,7 +119,7 @@ For brevity $\iota_B f = \iota_{B, B} f$.
   B_1} f$.
 \end{proof}
 
-\section{Equivalent morphisms}
+\section{Image and domain}
 
 Let define that
 $\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
@@ -217,6 +217,21 @@ $\top\times Y \sqsupseteq f \Rightarrow \id_Y \circ f
 ??easy
 \end{proof}
 
+\begin{prop}
+If in our category every meta-monovalued morphism is
+monovalued, then $\operatorname{Im} f$ is a filter.
+\end{prop}
+
+\begin{proof}
+$E=\mathcal{E}^{Y, \Dst f} \circ \mathcal{E}^{\Dst f, Y}$ is
+a monovalued morphism. So it is meta-monovalued and thus
+for $Y,Y\in\operatorname{Im} f$ we have
+
+??
+\end{proof}
+
+\section{Equivalent morphisms}
+
 \begin{prop}\label{two-iotas}
   $\iota_{A, B} \iota_{X, Y} f = \iota_{A, B} f$ for every sets $A$, $B$, $X$,
   $Y$ whenever $\operatorname{DOM} f$ and $\operatorname{IM} f$ are filters and $X \in
@@ -247,19 +262,6 @@ $\top\times Y \sqsupseteq f \Rightarrow \id_Y \circ f
   $\mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
   \mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ
   \mathcal{E}_{\mathcal{C}}^{A, \Src f}$.
-\end{proof}
-
-\begin{prop}
-If in our category every meta-monovalued morphism is
-monovalued, then $\operatorname{Im} f$ is a filter.
-\end{prop}
-
-\begin{proof}
-$E=\mathcal{E}^{Y, \Dst f} \circ \mathcal{E}^{\Dst f, Y}$ is
-a monovalued morphism. So it is meta-monovalued and thus
-for $Y,Y\in\operatorname{Im} f$ we have
-
-??
 \end{proof}
 
 \begin{defn}
@@ -359,6 +361,7 @@ $(f_1:A_1\to B_1,g_1:B_1\to C_1)$ such that
 $f_0\sim f_1$ and $g_0\sim g_1$. It remains to prove that
 $g_0\circ f_0\sim g_1\circ f_1$.
 We have
+\fxnote{Shorten below using proposition~\ref{iota-comp}.}
 \begin{multline*}
 \iota_{B_0\sqcup B_1,C_0\sqcup C_1}g_0 \circ
 \iota_{A_0\sqcup A_1,B_0\sqcup B_1}f_0 = \\
