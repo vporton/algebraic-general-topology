@@ -105,21 +105,6 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 \end{proof}
 
 \begin{prop}
-  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \iota_{C_0, C_1} f$ for $B_0
-  \sqsupseteq A_0 \sqcap C_0$, $B_1 \sqsupseteq A_1 \sqcap C_1$ and $f : A_0
-  \rightarrow A_1$.
-  \fxwarning{It seems that below there is a more general
-  proposition.}
-\end{prop}
-
-\begin{proof}
-  $\iota_{C_0, C_1} \iota_{B_0, B_1} f = \mathcal{E}_{\mathcal{C}}^{B_1,C_1}
-  \circ \mathcal{E}_{\mathcal{C}}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} \circ
-  \mathcal{E}_{\mathcal{C}}^{C_0,B_0} = \mathcal{E}_{\mathcal{C}}^{A_1,C_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{C_0,A_0} =
-  \iota_{C_0,C_1} f$.
-\end{proof}
-
-\begin{prop}
   Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
   \sqsubseteq B_1$. Then $\iota_{B_0, B_2} (g \circ f) = \iota_{B_1, B_2} g
   \circ \iota_{B_0, B_1} f$.
@@ -127,7 +112,8 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 
 \begin{proof}
   $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
-  \circ (g \circ f) \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
+  \circ g \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ 1^{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
   \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
   \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_2} g \circ \iota_{B_0,
   B_1} f$.
@@ -159,8 +145,13 @@ Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_
 \end{defn}
 
 \begin{prop}
-$\operatorname{IM} f = \mathscr{S}\operatorname{Im} f$;
-$\operatorname{DOM} f = \mathscr{S}\operatorname{Dom} f$.
+~
+\begin{enumerate}
+\item $\operatorname{IM} f = \mathscr{S}\operatorname{Im} f$;
+\item $\operatorname{DOM} f = \mathscr{S}\operatorname{Dom} f$;
+\item $\operatorname{Im} f = \rsupfun{\Dst f\cap}\operatorname{IM} f$;
+\item $\operatorname{Dom} f = \rsupfun{\Dst f\cap}\operatorname{DOM} f$.
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
@@ -169,6 +160,8 @@ Define $Y' = Y \sqcap \Dst f$ for every $Y \in \Ob (\mathcal{C})$.
 Then $\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} = \id^{\mathcal{C}(\Dst f,\Dst f)}_{Y'\sqcap\Dst f}$;
 
 $\operatorname{IM} f = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f} \circ f = f} = \mathscr{S}\operatorname{Im} f$. \fxwarning{More detailed proof.}
+
+??
 \end{proof}
 
 \begin{conjecture}
