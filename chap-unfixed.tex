@@ -10,7 +10,12 @@ of~$\mathfrak{A}$.
 Let we have a category~$\mathcal{C}$ whose objects are
 $\mathfrak{Z}$.
 
-Define $\id^{\mathcal{C}(A,B)}_X$ axiomatically:
+\begin{defn}
+\emph{Category with restricted identities} is defined
+axiomatically:
+
+\emph{Restricted identity}~$\id^{\mathcal{C}(A,B)}_X$ is
+described by the axioms:
 
 \begin{enumerate}
 \item $\id^{\mathcal{C}(A,B)}_X\in\Hom_{\mathcal{C}}(A,B)$
@@ -19,15 +24,18 @@ whenever $\mathfrak{A}\ni X\sqsubseteq A\sqcap B$;
 \item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$.
 \end{enumerate}
 
-For a partially ordered category we can introduce additional axiom $X\sqsubseteq Y\Rightarrow
-\id^{\mathcal{C}(A,B)}_X\sqsubseteq\id^{\mathcal{C}(A,B)}_Y$. \fxnote{Do we need this axiom?}
+For a partially ordered category with restricted identities introduce additional axiom $X\sqsubseteq Y\Rightarrow
+\id^{\mathcal{C}(A,B)}_X\sqsubseteq\id^{\mathcal{C}(A,B)}_Y$.
 
-For dagger categories we can introduce additional axiom
+For dagger categories with restricted identities introduce additional axiom
 $\left(\id^{\mathcal{C}(A,B)}_X\right)^\dagger =
 \id^{\mathcal{C}(A,B)}_X$.
+\end{defn}
 
-Then define $\mathcal{E}_{\mathcal{C}}^{A,B} =
+\begin{defn}
+Define $\mathcal{E}_{\mathcal{C}}^{A,B} =
 \id^{\mathcal{C}(A,B)}_{A\sqcap B}$.
+\end{defn}
 
 \begin{prop}
   ~  
