@@ -409,7 +409,21 @@ A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$.
 \end{prop}
 
 \begin{proof}
-??
+If~$A\in\operatorname{DOM}f$,~$B\in\operatorname{IM}f$
+then
+\[\iota_{A\sqcup\Src f,B\sqcup\Dst f}\iota_{A,B}f =
+\iota_{A\sqcup\Src f,B\sqcup\Dst f}f.\] Thus
+$\iota_{A,B}f\sim f$ that is $\iota_{A,B}f\in[f]$.
+
+Let now $g\in[f]$ that is $f\sim g$;
+\[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f=
+\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g.\]
+Take $A=\Src g$, $B=\Dst g$. We have
+\begin{gather*}
+\iota_{A,B}\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f=
+\iota_{A,B}\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g;\\
+\iota_{A,B}f=\iota_{A,B}g = g.
+\end{gather*}
 \end{proof}
 
 \begin{prop}
