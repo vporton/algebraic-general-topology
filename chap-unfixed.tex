@@ -226,7 +226,7 @@ for every morphism~$f$ and $\mathfrak{A}\ni Y\sqsubseteq\Dst f$.
 \begin{prop}
 For a partially ordered category with restricted identities
 it is existentially distributive iff
-\[\id^{\mathcal{C}(\Src f,\Dst f)}_Y \circ \top^{\mathcal{C}(\Src f,\Dst f)} \sqsupseteq f \Rightarrow \id_Y \circ f
+\[\id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ \top^{\mathcal{C}(\Src f,\Dst f)} \sqsupseteq f \Rightarrow \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ f
 \sqsupseteq f\] (provided that $\top^{\mathcal{C}(\Src f,\Dst f)}$
 exists) or what is the same
 $\top\times Y \sqsupseteq f \Rightarrow \id_Y \circ f
@@ -234,7 +234,7 @@ $\top\times Y \sqsupseteq f \Rightarrow \id_Y \circ f
 \end{prop}
 
 \begin{proof}
-\[\id^{\mathcal{C}(\Src f,\Dst f)}_Y \circ \top^{\mathcal{C}(\Src f,\Dst f)} \sqsupseteq f \Leftrightarrow
+\[\id^{\mathcal{C}(\Src f,\Dst f)}_Y \circ \top^{\mathcal{C}(\Dst f,\Dst f)} \sqsupseteq f \Leftrightarrow
 \exists t\in\mathcal{C}(\Src f,\Dst f) : \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ t \sqsupseteq f\]
 is obvious in both directions.
 \end{proof}
