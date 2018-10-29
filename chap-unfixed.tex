@@ -178,32 +178,42 @@ category with restricted morphisms.
 \end{conjecture}
 
 \begin{prop}\label{dst-in-im}
-$\Dst f\in\operatorname{Im} f$; $\Src f\in\operatorname{Dom} f$ for ??.
+$\Dst f\in\operatorname{Im} f$; $\Src f\in\operatorname{Dom} f$ for every morphism~$f$ of a category with restricted
+identities.
 \end{prop}
 
 \begin{proof}
 Prove $\Dst f\in\operatorname{Im} f$ (the other is similar):
 We need to prove that $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
-\Dst f} \circ f = f$ but it is obvious.
+\Dst f} \circ f = f$ what follows from
+$\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} = 1^{\Dst f}$.
 \end{proof}
 
 \begin{defn}
 ~
-\fxwarning{It may be undefined.}
 \begin{enumerate}
 \item $\im f = \min\operatorname{Im} f$;
 \item $\dom f = \min\operatorname{Dom} f$.
 \end{enumerate}
 \end{defn}
 
-\begin{defn}
+\begin{note}
+$\im f$ and $\dom f$ may be undefined.
+\end{note}
+
+\begin{prop}
 ~
 \fxwarning{It may be undefined.}
 \begin{enumerate}
 \item $\im f = \min\operatorname{IM} f$;
 \item $\dom f = \min\operatorname{DOM} f$.
 \end{enumerate}
-\end{defn}
+\end{prop}
+
+\begin{proof}
+It follows from $\operatorname{IM}f=\mathscr{S}\operatorname{Im}f$
+(and likewise for~$\dom f$).
+\end{proof}
 
 \begin{prop}
 I will call an axiomatic setting for unfixed morphisms
