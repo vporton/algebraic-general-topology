@@ -723,15 +723,17 @@ Thus $f'(t) \upuparrows d(f(t))$ iff $f\in\continuous(|\mathbb{R}|_{>},Q_+)\cap\
 We consider the differential equation $f'(t) = d(f(t))$.
 
 We can consider this equation in any topological vector
-space (\url{https://en.wikipedia.org/wiki/Frechet_derivative}), see also
+space~$V$ (\url{https://en.wikipedia.org/wiki/Frechet_derivative}), see also
 \url{https://math.stackexchange.com/q/2977274/4876}.
+Note that I am not an expert in topological vector spaces
+and thus my naive generalizations may be wrong in details.
 
 $n$-th derivative $f^{(n)}(t)=d_n(f(t))$;
-$f^{(n+1)}(t)=d_n'(f(t))f'(t)=d_n'(f(t))d(f(t))$.
-So $d_{n+1}(y)=d_n'(y)d(y)$.
+$f^{(n+1)}(t)=d_n'(f(t))\circ f'(t)=d_n'(f(t))\circ d(f(t))$.
+So $d_{n+1}(y)=d_n'(y)\circ d(y)$.
 
-Define $R^n(d) = \setcond{v\in V}{\widehat{vd}<
-d_0(y)+d_1(y)|v|+d_2(y)|v|^2+\dots+d_{n-1}(y)|v|^{n-1}+O(|v|^n), v\ne 0}$ for $d\ne 0$ and $R^n(0) = \{0\}$.
+Define $R^n = \setcond{v\in V}{\widehat{vd_0(y)}<
+d_1(y)|v|+d_2(y)|v|^2+\dots+d_{n-1}(y)|v|^{n-1}+O(|v|^n), v\ne 0}$ for $d\ne 0$ and $R^n(0) = \{0\}$.
 
 \begin{defn}
 $R^\infty(d) = R^0(d)\sqcap R^1(d)\sqcap R^2(d)\sqcap\dots$.
@@ -763,7 +765,8 @@ See also \url{http://math.stackexchange.com/q/1884930/4876}.
 \end{proof}
 
 \begin{conjecture}
-A path~$f$ is $C^n$ (where~$n$ is natural or infinite) smooth iff $f\in\continuous(\iota_D|\mathbb{R}|_{>},Q_+^n)\cap\continuous(\iota_D|\mathbb{R}|_{<},Q_-^n)$.
+A path~$f$ is conforming to the above differentiable
+equation and $C^n$ (where~$n$ is natural or infinite) smooth iff $f\in\continuous(\iota_D|\mathbb{R}|_{>},Q_+^n)\cap\continuous(\iota_D|\mathbb{R}|_{<},Q_-^n)$.
 \end{conjecture}
 
 \begin{proof}
@@ -775,10 +778,6 @@ f(x+t) = \sum_{i=0}^n f^{(i)}(x)\frac{t^i}{i!} + o(t^i) =
 f(x)+f'(x)t + \sum_{i=2}^n f^{(i)}(x)\frac{t^i}{i!} + o(t^i)
 \]
 \end{proof}
-
-\begin{prop}
-$f$ is a~$C^\infty$ solution of the differential equation iff 
-\end{prop}
 
 \subsection{Plural funcoids}
 
