@@ -730,7 +730,12 @@ Define $R^n(d) = \setcond{v\in V}{\widehat{vd}<
 d_0(y)|v|+d_1(y)|v|^2+\dots+d_{n-1}(y)|v|^{n-1}+o(|v|^n), v\ne 0}$ for $d\ne 0$ and $R^n(0) = \{0\}$.
 
 \begin{defn}
-$W^n(d) = R^n(d) \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
+$R^\infty(d) = R^0(d)\sqcap R^1(d)\sqcap R^2(d)\sqcap\dots$.
+\end{defn}
+
+\begin{defn}
+$W^n(d) = R^n(d) \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$;
+$W^\infty(d) = R^\infty(d) \sqcap \bigsqcap^{\mathsf{RLD}}_{r>0}B_r(0)$.
 \end{defn}
 
 Finally our funcoids are the complete funcoids~$Q_+^n$ and~$Q_-^n$ described by the formulas
@@ -754,7 +759,7 @@ See also \url{http://math.stackexchange.com/q/1884930/4876}.
 \end{proof}
 
 \begin{conjecture}
-A path~$f$ is $C^n$ smooth iff $f\in\continuous(\iota_D|\mathbb{R}|_{>},Q_+^n)\cap\continuous(\iota_D|\mathbb{R}|_{<},Q_-^n)$.
+A path~$f$ is $C^n$ (where~$n$ is natural or infinite) smooth iff $f\in\continuous(\iota_D|\mathbb{R}|_{>},Q_+^n)\cap\continuous(\iota_D|\mathbb{R}|_{<},Q_-^n)$.
 \end{conjecture}
 
 \begin{proof}
@@ -766,6 +771,10 @@ f(x+t) = \sum_{i=0}^n f^{(i)}(x)\frac{t^i}{i!} + o(t^i) =
 f(x)+f'(x)t + \sum_{i=2}^n f^{(i)}(x)\frac{t^i}{i!} + o(t^i)
 \]
 \end{proof}
+
+\begin{prop}
+$f$ is a~$C^\infty$ solution of the differential equation iff 
+\end{prop}
 
 \subsection{Plural funcoids}
 
