@@ -348,6 +348,59 @@ that is $f\sim h$.
 \end{description}
 \end{proof}
 
+\begin{prop}
+$[f] = \setcond{\iota_{A,B}f}{
+A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$.
+\end{prop}
+
+\begin{proof}
+If~$A\in\operatorname{DOM}f$,~$B\in\operatorname{IM}f$
+then
+\[\iota_{A\sqcup\Src f,B\sqcup\Dst f}\iota_{A,B}f =
+\iota_{A\sqcup\Src f,B\sqcup\Dst f}f.\] Thus
+$\iota_{A,B}f\sim f$ that is $\iota_{A,B}f\in[f]$.
+
+Let now $g\in[f]$ that is $f\sim g$;
+\[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f=
+\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g.\]
+Take $A=\Src g$, $B=\Dst g$. We have
+\begin{gather*}
+\iota_{A,B}\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f=
+\iota_{A,B}\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g;\\
+\iota_{A,B}f=\iota_{A,B}g = g.
+\end{gather*}
+\end{proof}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\operatorname{IM} f = \setcond{Y \in \mathfrak{Z}}{
+  \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f}$;
+\item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{
+  f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src f} \sim f}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{multline*}
+\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f
+\Leftrightarrow
+\iota_{\Src f,Y\sqcup\Dst f}
+(\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f) =
+\iota_{\Src f,Y\sqcup\Dst f}f \Leftrightarrow \\
+\mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y} \circ f \circ \mathcal{E}^{\Src f,\Src f} =
+\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f\circ\mathcal{E}^{\Src f,\Src f} \Leftrightarrow \\
+\mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y}\circ f=\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f
+\Leftrightarrow \text{(proposition~\ref{e-mono-epi})} \\ \Leftrightarrow
+\mathcal{E}^{Y\sqcup\Dst f,\Dst f}\circ \mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y}\circ f=\mathcal{E}^{Y\sqcup\Dst f,\Dst f}\circ \mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f \Leftrightarrow \\
+\mathcal{E}^{Y,\Dst f}\circ\mathcal{E}^{\Dst f,Y}\circ f = f.
+\end{multline*}
+From this our thesis follows obviously.
+\end{proof}
+
+\section{Operations on the set of unfixed morphisms}
+
 \begin{defn}
 We will turn the category~$\mathcal{C}$ into a semigroup
 $\mathcal{U}\mathcal{C}$
@@ -401,57 +454,6 @@ thus having
 $\iota_{A_0\sqcup A_1,C_0\sqcup C_1}(g_0\circ f_0) =
 \iota_{A_0\sqcup A_1,C_0\sqcup C_1}(g_1\circ f_1)$ and so
 $g_0\circ f_0\sim g_1\circ f_1$.
-\end{proof}
-
-\begin{prop}
-$[f] = \setcond{\iota_{A,B}f}{
-A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$.
-\end{prop}
-
-\begin{proof}
-If~$A\in\operatorname{DOM}f$,~$B\in\operatorname{IM}f$
-then
-\[\iota_{A\sqcup\Src f,B\sqcup\Dst f}\iota_{A,B}f =
-\iota_{A\sqcup\Src f,B\sqcup\Dst f}f.\] Thus
-$\iota_{A,B}f\sim f$ that is $\iota_{A,B}f\in[f]$.
-
-Let now $g\in[f]$ that is $f\sim g$;
-\[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f=
-\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g.\]
-Take $A=\Src g$, $B=\Dst g$. We have
-\begin{gather*}
-\iota_{A,B}\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f=
-\iota_{A,B}\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g;\\
-\iota_{A,B}f=\iota_{A,B}g = g.
-\end{gather*}
-\end{proof}
-
-\begin{prop}
-~
-\begin{enumerate}
-\item $\operatorname{IM} f = \setcond{Y \in \mathfrak{Z}}{
-  \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f}$;
-\item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{
-  f\circ\mathcal{E}_{\mathcal{C}}^{X, \Src f} \sim f}$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-~
-\begin{multline*}
-\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f
-\Leftrightarrow
-\iota_{\Src f,Y\sqcup\Dst f}
-(\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f) =
-\iota_{\Src f,Y\sqcup\Dst f}f \Leftrightarrow \\
-\mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y} \circ f \circ \mathcal{E}^{\Src f,\Src f} =
-\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f\circ\mathcal{E}^{\Src f,\Src f} \Leftrightarrow \\
-\mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y}\circ f=\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f
-\Leftrightarrow \text{(proposition~\ref{e-mono-epi})} \\ \Leftrightarrow
-\mathcal{E}^{Y\sqcup\Dst f,\Dst f}\circ \mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y}\circ f=\mathcal{E}^{Y\sqcup\Dst f,\Dst f}\circ \mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f \Leftrightarrow \\
-\mathcal{E}^{Y,\Dst f}\circ\mathcal{E}^{\Dst f,Y}\circ f = f.
-\end{multline*}
-From this our thesis follows obviously.
 \end{proof}
 
 TODO: Define product morphism.
