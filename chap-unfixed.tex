@@ -44,7 +44,7 @@ Define $\mathcal{E}_{\mathcal{C}}^{A,B} =
 \id^{\mathcal{C}(A,B)}_{A\sqcap B}$.
 \end{defn}
 
-\begin{prop}
+\begin{prop}\label{e-mono-epi}
   ~  
   \begin{enumerate}
     \item If $A \sqsubseteq B$ then $\mathcal{E}_{\mathcal{C}}^{A,B}$ is a
@@ -437,12 +437,27 @@ Take $A=\Src g$, $B=\Dst g$. We have
 \end{prop}
 
 \begin{proof}
-??
+~
+\begin{multline*}
+\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \sim f
+\Leftrightarrow
+\iota_{\Src f,Y\sqcup\Dst f}
+(\mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f) =
+\iota_{\Src f,Y\sqcup\Dst f}f \Leftrightarrow \\
+\mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y} \circ f \circ \mathcal{E}^{\Src f,\Src f} =
+\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f\circ\mathcal{E}^{\Src f,\Src f} \Leftrightarrow \\
+\mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y}\circ f=\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f
+\Leftrightarrow \text{(proposition~\ref{e-mono-epi})} \\ \Leftrightarrow
+\mathcal{E}^{Y\sqcup\Dst f,\Dst f}\circ \mathcal{E}^{Y,Y\sqcup\Dst f}\circ\mathcal{E}^{\Dst f, Y}\circ f=\mathcal{E}^{Y\sqcup\Dst f,\Dst f}\circ \mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f \Leftrightarrow \\
+\mathcal{E}^{Y,\Dst f}\circ\mathcal{E}^{\Dst f,Y}\circ f = f.
+\end{multline*}
+From this our thesis follows obviously.
 \end{proof}
 
 TODO: Define product morphism.
 
-TODO: Define domain and image of unfixed morphisms.
+TODO: Define domain and image of unfixed morphisms,
+identity.
 
 \section{Categories with embeddings}
 
