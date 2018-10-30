@@ -283,11 +283,17 @@ of a category with restricted morphisms \emph{equivalent}
 
 \begin{prop}
 $f\sim g$~iff $\iota_{A,B}f=\iota_{A,B}g$ for
-some~$A\sqsupseteq A_0\sqcup A_1$,~$B\sqsupseteq B_0\sqcup B_1$.
+some~$A\in\operatorname{DOM}f\cap\operatorname{DOM}g$,~$B\in\operatorname{IM}f\cap\operatorname{IM}g$.
 \end{prop}
 
 \begin{proof}
-??
+Both
+\[\iota_{A,B}f=\iota_{A,B}g\Rightarrow
+\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g\]
+and
+\[\iota_{A,B}f=\iota_{A,B}g\Leftarrow
+\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g\]
+follow from proposition~\ref{two-iotas}.
 \end{proof}
 
 \begin{thm}
