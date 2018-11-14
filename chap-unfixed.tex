@@ -508,19 +508,32 @@ So $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 \id^{\mathcal{C}(A_1,B_1)}_X$.
 \end{proof}
 
-\begin{defn}
-I will call a partially ordered category with
-restricted identities \emph{of correct order} iff
+\begin{lem}
 $f\sqsubseteq g\Rightarrow
 \iota_{A,B}f\sqsubseteq\iota_{A,B}g$ for every
 morphisms~$f$ and~$g$ such that
 $\Src f=\Src g$ and $\Dst f=\Dst g$.
-\end{defn}
+\end{lem}
 
-\begin{thm}
-The following are pairwise equivalent:
+\begin{proof}
+$\iota_{A,B}f\sqsubseteq\iota_{A,B}g \Leftrightarrow
+\mathcal{E}^{\Dst f,B}\circ f\circ\mathcal{E}^{A,\Src f}
+\sqsubseteq
+\mathcal{E}^{\Dst g,B}\circ g\circ\mathcal{E}^{A,\Src g}
+\Leftrightarrow
+\id^{\mathcal{C}(\Dst f,B)}_{B\sqcap\Dst f}\circ f\circ\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}
+\sqsubseteq
+\id^{\mathcal{C}(\Dst g,B)}_{B\sqcap\Dst g}\circ g\circ\id^{\mathcal{C}(A,\Src g)}_{A\sqcap\Src g}
+\Leftarrow f\sqsubseteq g$ because
+$\id^{\mathcal{C}(\Dst f,B)}_{B\sqcap\Dst f}=
+\id^{\mathcal{C}(\Dst g,B)}_{B\sqcap\Dst g}$ and
+$\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}=
+\id^{\mathcal{C}(A,\Src g)}_{A\sqcap\Src g}$.
+\end{proof}
+
+\begin{prop}
+~
 \begin{enumerate}
-\item It is of correct order.
 \item $f_0\sqsubseteq g_0\land f_0\sim f_1\land g_0\sim g_1
 \Rightarrow f_1\sqsubseteq g_1$ whenever
 $\Src f_0=\Src g_0$ and $\Dst f_0=\Dst g_0$ and
@@ -530,14 +543,13 @@ $\Src f_0=\Src g_0$ and $\Dst f_0=\Dst g_0$ and
 $\Src f_1=\Src g_1$ and $\Dst f_1=\Dst g_1$ and
 $f_0\sim f_1\land g_0\sim g_1$.
 \end{enumerate}
-\end{thm}
+\end{prop}
 
 \begin{proof}
 ??
 \end{proof}
 
-TODO: Order of unfixed morphisms (for category with
-restricted identities of correct order).
+TODO: Order of unfixed morphisms.
 Does complete lattice of morphisms turns into complete
 lattice of unfixed morphisms? What's about pseudo/quasi-
 difference? Filtrators of unfixed morphisms.
