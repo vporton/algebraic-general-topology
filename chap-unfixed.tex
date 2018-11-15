@@ -675,6 +675,39 @@ objects~$A$,~$B$.
 \fxnote{Give the reverse function.}
 \end{obvious}
 
+\begin{prop}\label{cmpl-lat-par}
+If $S$ is a set of parallel morphisms of a partially ordered
+category with an equivalence relation respecting the order, then
+\begin{enumerate}
+\item\label{cmpl-lat-par-cap}
+$\bigsqcap_{X\in S}[X]$ exists and 
+$\bigsqcap_{X\in S}[X]=[\bigsqcap S]$;
+
+\item\label{cmpl-lat-par-cup}
+$\bigsqcup_{X\in S}[X]$ exists and 
+$\bigsqcup_{X\in S}[X]=[\bigsqcup S]$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{cmpl-lat-par-cap}]
+$[\bigsqcap S]\sqsubseteq[X]$ for every~$X\in S$ because
+$\bigsqcap S\sqsubseteq X$.
+
+Let now $L\sqsubseteq[X]$ for every~$X\in S$ for an
+equivalence class~$L$. Then $L\sqsubseteq[\bigsqcap S]$
+because $l\sqsubseteq\bigsqcap S$ for~$l\in L$ because
+$l\sqsubseteq X$ for every~$X\in S$.
+
+Thus $[\bigsqcap S]$ is the greatest lower bound of
+$\setcond{[X]}{X\in S}$.
+
+\item[\ref{cmpl-lat-par-cup}] By duality.
+\end{widedisorder}
+\end{proof}
+
 \fxnote{How to prove that $\iota_{A,B}|_{\Hom(X,Y)}$ is
 complete lattice isomorphism?}
 
@@ -760,11 +793,10 @@ F\sqcap\iota_{A,B}G
 Due the proved equivalence we have
 $\bigsqcap S=
 \bigsqcap\setcond{[F\sqcap\iota_{A,B}G]}{g\in S,G\in g}$.
-Now we can apply that $x\mapsto[x]$ is an order embedding:
+Now we can apply proposition~\ref{cmpl-lat-par}:
 $\bigsqcap S=
-\left[\bigsqcap\setcond{F\sqcap\iota_{A,B}G}{g\in S,G\in g}\right]$. We have provided an explicit formula for
-$\bigsqcap S$. \fxerror{Being order embedding is not enough,
-needs isomorphism.}
+\left[\bigsqcap\setcond{F\sqcap\iota_{A,B}G}{g\in S,G\in g}\right]$. We have provided an explicit formula
+for~$\bigsqcap S$.
 \end{proof}
 
 \begin{prop}
