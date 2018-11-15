@@ -531,25 +531,59 @@ $\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}=
 \id^{\mathcal{C}(A,\Src g)}_{A\sqcap\Src g}$.
 \end{proof}
 
-\begin{prop}
+\begin{cor}\label{unxif-org-cong}
 ~
 \begin{enumerate}
-\item $f_0\sqsubseteq g_0\land f_0\sim f_1\land g_0\sim g_1
+\item\label{unxif-org-cong-impl}
+$f_0\sqsubseteq g_0\land f_0\sim f_1\land g_0\sim g_1
 \Rightarrow f_1\sqsubseteq g_1$ whenever
 $\Src f_0=\Src g_0$ and $\Dst f_0=\Dst g_0$ and
 $\Src f_1=\Src g_1$ and $\Dst f_1=\Dst g_1$.
-\item $f_0\sqsubseteq g_0\Leftrightarrow f_1\sqsubseteq g_1$ whenever
+\item\label{unxif-org-cong-eq}
+$f_0\sqsubseteq g_0\Leftrightarrow f_1\sqsubseteq g_1$ whenever
 $\Src f_0=\Src g_0$ and $\Dst f_0=\Dst g_0$ and
 $\Src f_1=\Src g_1$ and $\Dst f_1=\Dst g_1$ and
 $f_0\sim f_1\land g_0\sim g_1$.
 \end{enumerate}
-\end{prop}
+\end{cor}
 
 \begin{proof}
-??
+~
+\begin{disorder}
+\item[\ref{unxif-org-cong-impl}] Because
+$f_1=\iota_{\Src f_1,\Dst f_1}f_0$ and
+$g_1=\iota_{\Src g_1,\Dst g_1}f_0$.
+\item[\ref{unxif-org-cong-eq}] A consequence of the
+previous.
+\end{disorder}
 \end{proof}
 
-TODO: Order of unfixed morphisms.
+The above corollary warrants validity of the following
+definition:
+
+\begin{defn}
+The order on the set of unfixed morphisms is defined
+by the formula
+$[f]\sqsubseteq[g]\Leftrightarrow f\sqsubseteq g$
+whenever $\Src f=\Src g\land\Dst f=\Dst g$.
+\end{defn}
+
+It is really an order:
+
+\begin{proof}
+~
+\begin{description}
+\item[Reflexivity] Obvious.
+\item[Transitivity] Obvious.
+\item[Antisymmetry] Let $[f]\sqsubseteq[g]$ and
+$[g]\sqsubseteq[f]$ and $\Src f=\Src g\land\Dst f=\Dst g$.
+Then $f\sqsubseteq g$ and $g\sqsubseteq f$ and thus
+$f=g$ so having $[f]=[g]$.
+\end{description}
+\end{proof}
+
+
+TODO:
 Does complete lattice of morphisms turns into complete
 lattice of unfixed morphisms? What's about pseudo/quasi-
 difference? Filtrators of unfixed morphisms.
