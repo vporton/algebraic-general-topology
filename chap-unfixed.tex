@@ -214,10 +214,10 @@ $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Ds
 \begin{enumerate}
 \item An ordered category with restricted identities is
 \emph{with ordered image} iff $f\sqsubseteq g\Rightarrow
-\operatorname{IM}f\sqsubseteq\operatorname{IM}g$.
+\operatorname{IM}f\subseteq\operatorname{IM}g$.
 \item An ordered category with restricted identities is
 \emph{with ordered domain} iff $f\sqsubseteq g\Rightarrow
-\operatorname{DOM}f\sqsubseteq\operatorname{DOM}g$.
+\operatorname{DOM}f\subseteq\operatorname{DOM}g$.
 \item An ordered category with restricted identities is
 \emph{with ordered domain and image} iff it is both
 with ordered domain and with ordered image.
@@ -229,10 +229,10 @@ with ordered domain and with ordered image.
 \begin{enumerate}
 \item An ordered category with restricted identities is
 with ordered image iff $f\sqsubseteq g\Rightarrow
-\operatorname{Im}f\sqsubseteq\operatorname{Im}g$.
+\operatorname{Im}f\subseteq\operatorname{Im}g$.
 \item An ordered category with restricted identities is
 with ordered domain iff $f\sqsubseteq g\Rightarrow
-\operatorname{Dom}f\sqsubseteq\operatorname{Dom}g$.
+\operatorname{Dom}f\subseteq\operatorname{Dom}g$.
 \item An ordered category with restricted identities is
 with ordered domain and image iff it is both
 with ordered domain and with ordered image.
@@ -714,7 +714,8 @@ the poset of unfixed morphism is a lattice.
 \begin{thm}
 Meet of nonempty set of unfixed morphisms
 exists provided that the order of morphisms is
-a complete lattice.
+a complete lattice and our category is with ordered domain
+and image.
 \fxnote{Here and about unfixed filters, it is enough
 that meet of \emph{nonempty} set of morphisms exists.}
 \end{thm}
