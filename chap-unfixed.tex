@@ -97,12 +97,18 @@ For brevity $\iota_B f = \iota_{B, B} f$.
 
 \begin{prop}
   The function $\iota_{B_0, B_1} |_{f \in \Hom_{\mathcal{C}} (A_0 ,
-  A_1)}$ is injective, if $A_0 \sqsubseteq B_0 \wedge A_1 \sqsubseteq B_1$.
+  A_1)}$ is injective, .
 \end{prop}
 
 \begin{proof}
   Because $\mathcal{E}_{\mathcal{C}}^{A_1,B_1}$ is a monomorphism and $\mathcal{E}_{\mathcal{C}}^{A_0,B_0}$ is an epimorphism.
 \end{proof}
+
+\begin{cor}\label{iota-emb}
+  The function $\iota_{B_0, B_1} |_{f \in \Hom_{\mathcal{C}} (A_0 ,
+  A_1)}$ is order embedding if $A_0 \sqsubseteq B_0 \wedge A_1 \sqsubseteq B_1$ for ordered categories
+  with restricted identities.
+\end{cor}
 
 \begin{prop}\label{iota-comp}
   Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
@@ -590,17 +596,17 @@ objects~$A$,~$B$.
 \end{obvious}
 
 \begin{prop}
-$f\mapsto\iota_{A_1,B_1}f$ is an order embedding from
-$\mathcal{C}(A_0,B_0)$ to $\mathcal{C}(A_1,B_1)$
-if $A_0\sqsubseteq A_1\land B_0\sqsubseteq B_1$.
-\end{prop}
-
-\begin{prop}
-If every $\Hom$-set is a lattice, then the poset of
-unfixed morphism is a lattice.
-\fxnote{What about semilattices?}
+~
+\begin{enumerate}
+\item If every $\Hom$-set is a join-semilattice, then
+the poset of unfixed morphism is a join-semilattice.
+\item If every $\Hom$-set is a join-semilattice, then
+the poset of unfixed morphism is a meet-semilattice.
+\end{enumerate}
 \fxnote{We also can prove this way that $\mathcal{E}$
-and $\id$ are weakly meta-complete.}
+and $\id$ are weakly meta-complete and weakly
+meta-monovalued. This also concerns the identity
+unfixed morphisms.}
 \end{prop}
 
 \begin{proof}
@@ -611,10 +617,27 @@ Let~$f$ and~$g$ be arbitrary morphisms.
 [\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g] = \\
 \text{(obvious~\ref{unfix-mor-emb})} =
 [\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f\sqcup
-\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g] =
-??
+\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g]
+\end{multline*}
+and
+\begin{multline*}
+[f]\sqcap[g] =
+[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f]\sqcap
+[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g] = \\
+\text{(obvious~\ref{unfix-mor-emb})} =
+[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f\sqcap
+\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g].
 \end{multline*}
 \end{proof}
+
+\begin{cor}
+If every $\Hom$-set is a lattice, then
+the poset of unfixed morphism is a lattice.
+\end{cor}
+
+\fxnote{Meet of nonempty set of unfixed morphisms
+exists provided that the order of morphisms is
+a complete lattice.}
 
 \begin{prop}
 If every $\Hom$-set is a distributive lattice, then
