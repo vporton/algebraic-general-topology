@@ -86,6 +86,10 @@ Define $\mathcal{E}_{\mathcal{C}}^{A,B} =
 
 For brevity $\iota_B f = \iota_{B, B} f$.
 
+\begin{obvious}
+$\iota_{B_0, B_1} f\sqsubseteq f$.
+\end{obvious}
+
 \begin{prop}
   $\iota_{\Src f, \Dst f} f = f$.
 \end{prop}
@@ -178,6 +182,16 @@ $\operatorname{Im}f\subseteq\rsupfun{\Dst f\cap}\operatorname{IM}f$ is also obvi
 The rest follows from symmetry.
 \end{proof}
 
+\begin{prop}
+$\operatorname{IM}f$, $\operatorname{Im}f$,
+$\operatorname{DOM}f$, $\operatorname{Dom}f$
+are upper sets.
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
 \begin{conjecture}
 $\operatorname{Im} f$ may be not a filter for an injective
 category with restricted morphisms.
@@ -194,6 +208,68 @@ We need to prove that $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal
 \Dst f} \circ f = f$ what follows from
 $\mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, \Dst f} = 1^{\Dst f}$.
 \end{proof}
+
+\begin{defn}
+~
+\begin{enumerate}
+\item An ordered category with restricted identities is
+\emph{with ordered image} iff $f\sqsubseteq g\Rightarrow
+\operatorname{IM}f\sqsubseteq\operatorname{IM}g$.
+\item An ordered category with restricted identities is
+\emph{with ordered domain} iff $f\sqsubseteq g\Rightarrow
+\operatorname{DOM}f\sqsubseteq\operatorname{DOM}g$.
+\item An ordered category with restricted identities is
+\emph{with ordered domain and image} iff it is both
+with ordered domain and with ordered image.
+\end{enumerate}
+\end{defn}
+
+\begin{obvious}
+~
+\begin{enumerate}
+\item An ordered category with restricted identities is
+with ordered image iff $f\sqsubseteq g\Rightarrow
+\operatorname{Im}f\sqsubseteq\operatorname{Im}g$.
+\item An ordered category with restricted identities is
+with ordered domain iff $f\sqsubseteq g\Rightarrow
+\operatorname{Dom}f\sqsubseteq\operatorname{Dom}g$.
+\item An ordered category with restricted identities is
+with ordered domain and image iff it is both
+with ordered domain and with ordered image.
+\end{enumerate}
+\end{obvious}
+
+\begin{obvious}
+~
+\begin{enumerate}
+\item For an ordered category~$\mathcal{C}$ with restricted identities
+to be with ordered image it's enough that
+$\id^{\mathcal{C}(\Dst f,B)}_X\circ f=f\land
+g\sqsubseteq f\Rightarrow
+\id^{\mathcal{C}(\Dst f,B)}_X\circ g=g$
+for every parallel morphisms~$f$ and $g$ and
+$\mathfrak{Z}\ni X\sqsubseteq\Dst f\sqcap B$.
+\item For an ordered category~$\mathcal{C}$ with restricted identities
+to be with ordered domain it's enough that
+$f\circ\id^{\mathcal{C}(A,\Src f)}_X=f\land
+g\sqsubseteq f\Rightarrow
+g\circ\id^{\mathcal{C}(A,\Src f)}_X=g$
+for every parallel morphisms~$f$ and $g$ and
+$\mathfrak{Z}\ni X\sqsubseteq\Src f\sqcap A$.
+\end{enumerate}
+\end{obvious}
+
+\begin{conjecture}
+There exists a category with restricted identities which
+is not with ordered image.
+\end{conjecture}
+
+\begin{obvious}
+For an ordered category with restricted identities with
+ordered domain and image we have
+$\iota_{A,B}f=f\land g\sqsubseteq f\Rightarrow
+\iota_{A,B}g=g$.
+\end{obvious}
 
 \begin{defn}
 ~
@@ -647,6 +723,17 @@ that meet of \emph{nonempty} set of morphisms exists.}
 Let~$S$ be a nonempty set of unfixed morphisms. Take
 an arbitrary unfixed morphism~$f\in S$. Take an
 arbitrary $F\in f$. Let $A=\Src F$ and $B=\Dst F$.
+
+$\bigsqcap S=\bigsqcap\rsupfun{f\sqcap}S=
+\bigsqcap\rsupfun{[F]\sqcap}S=
+\bigsqcap\setcond{[F]\sqcap[G]}{g\in S,G\in g}=
+\bigsqcap\setcond{[\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G]}{g\in S,G\in g}$
+
+$\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G\sqsubseteq
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}F$, thus ????
+
+$\iota_{A,B}(\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G) \sim
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G$
 
 ??
 \end{proof}
