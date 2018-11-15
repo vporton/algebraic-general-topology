@@ -240,7 +240,7 @@ with ordered domain and with ordered image.
 \end{obvious}
 
 \begin{obvious}
-~
+~\fxerror{Wrong domains and images.}
 \begin{enumerate}
 \item For an ordered category~$\mathcal{C}$ with restricted identities
 to be with ordered image it's enough that
@@ -267,8 +267,10 @@ is not with ordered image.
 \begin{obvious}
 For an ordered category with restricted identities with
 ordered domain and image we have
-$\iota_{A,B}f=f\land g\sqsubseteq f\Rightarrow
-\iota_{A,B}g=g$.
+$\iota_{\Src f,\Dst f}\iota_{A,B}f=f\land g\sqsubseteq f
+\Rightarrow
+\iota_{\Src f,\Dst f}\iota_{A,B}g=g$
+for parallel morphisms~$f$ and~$g$.
 \end{obvious}
 
 \begin{defn}
@@ -730,13 +732,33 @@ $\bigsqcap S=\bigsqcap\rsupfun{f\sqcap}S=
 \bigsqcap\setcond{[F]\sqcap[G]}{g\in S,G\in g}=
 \bigsqcap\setcond{[\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G]}{g\in S,G\in g}$
 
+We will prove
+$\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G \sim F\sqcap\iota_{A,B}G$.
+
 $\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G\sqsubseteq
-\iota_{A\sqcup\Src G,B\sqcup\Dst G}F$, thus ????
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}F$ and
+$\iota_{A\sqcup\Src G,B\sqcup\Dst G}\iota_{A,B}\iota_{A\sqcup\Src G,B\sqcup\Dst G}F=
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}F$, thus by
+being with ordered domain and image
+\begin{multline*}
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G = \\
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}\iota_{A,B}(\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G) = \\
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}(
+\iota_{A,B}\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap
+\iota_{A,B}\iota_{A\sqcup\Src G,B\sqcup\Dst G}G) = \\
+\iota_{A\sqcup\Src G,B\sqcup\Dst G}(
+\iota_{A,B}F\sqcap\iota_{A,B}G) \sim
+\iota_{A,B}F\sqcap\iota_{A,B}G=
+F\sqcap\iota_{A,B}G
+\end{multline*}
 
-$\iota_{A,B}(\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G) \sim
-\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G$
-
-??
+Due the proved equivalence we have
+$\bigsqcap S=
+\bigsqcap\setcond{[F\sqcap\iota_{A,B}G]}{g\in S,G\in g}$.
+Now we can apply that $x\mapsto[x]$ is an order embedding:
+$\bigsqcap S=
+\left[\bigsqcap\setcond{F\sqcap\iota_{A,B}G}{g\in S,G\in g}\right]$. We have provided an explicit formula for
+$\bigsqcap S$.
 \end{proof}
 
 \begin{prop}
