@@ -582,14 +582,38 @@ $f=g$ so having $[f]=[g]$.
 \end{description}
 \end{proof}
 
+\begin{obvious}\label{unfix-mor-emb}
+$f\mapsto[f]$ is an order embedding from the set
+$\mathcal{C}(A,B)$ to unfixed morphisms, for every
+objects~$A$,~$B$.
+\fxnote{Give the reverse function.}
+\end{obvious}
+
+\begin{prop}
+$f\mapsto\iota_{A_1,B_1}f$ is an order embedding from
+$\mathcal{C}(A_0,B_0)$ to $\mathcal{C}(A_1,B_1)$
+if $A_0\sqsubseteq A_1\land B_0\sqsubseteq B_1$.
+\end{prop}
+
 \begin{prop}
 If every $\Hom$-set is a lattice, then the poset of
 unfixed morphism is a lattice.
 \fxnote{What about semilattices?}
+\fxnote{We also can prove this way that $\mathcal{E}$
+and $\id$ are weakly meta-complete.}
 \end{prop}
 
 \begin{proof}
+Let~$f$ and~$g$ be arbitrary morphisms.
+\begin{multline*}
+[f]\sqcup[g] =
+[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f]\sqcup
+[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g] = \\
+\text{(obvious~\ref{unfix-mor-emb})} =
+[\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}f\sqcup
+\iota_{\Src f\sqcup\Src g,\Dst f\sqcup\Dst g}g] =
 ??
+\end{multline*}
 \end{proof}
 
 \begin{prop}
