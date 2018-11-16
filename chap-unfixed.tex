@@ -749,11 +749,16 @@ If every $\Hom$-set is a lattice, then
 the poset of unfixed morphism is a lattice.
 \end{cor}
 
+If $\id_Y\circ f\circ\id_X=f\sqcap(X\times Y)$ for some
+function~$\times$ of two arguments then
+restricted identities are metamonovalued and metainjective.
+
 \begin{thm}
 Meet of nonempty set of unfixed morphisms
 exists provided that the order of morphisms is
 a complete lattice and our category is with ordered domain
-and image.
+and image and that morphisms~$\mathcal{E}$ are metamonovalued
+and metainjective.
 \fxnote{Here and about unfixed filters, it is enough
 that meet of \emph{nonempty} set of morphisms exists.}
 \end{thm}
@@ -779,15 +784,14 @@ being with ordered domain and image
 \begin{multline*}
 \iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G = \\
 \iota_{A\sqcup\Src G,B\sqcup\Dst G}\iota_{A,B}(\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G) = \\
-\text{(not yet proved! add the condition of restricted
-identities being metamonovalued and metainjective)} = \\
+\text{(by being metamonovalued and metainjective)} = \\
 \iota_{A\sqcup\Src G,B\sqcup\Dst G}(
 \iota_{A,B}\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap
 \iota_{A,B}\iota_{A\sqcup\Src G,B\sqcup\Dst G}G) = \\
 \iota_{A\sqcup\Src G,B\sqcup\Dst G}(
 \iota_{A,B}F\sqcap\iota_{A,B}G) \sim
 \iota_{A,B}F\sqcap\iota_{A,B}G=
-F\sqcap\iota_{A,B}G
+F\sqcap\iota_{A,B}G.
 \end{multline*}
 
 Due the proved equivalence we have
