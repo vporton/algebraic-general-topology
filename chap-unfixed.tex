@@ -503,6 +503,36 @@ Take $A=\Src g$, $B=\Dst g$. We have
 From this our thesis follows obviously.
 \end{proof}
 
+\section{Binary product}
+
+\begin{prop}
+The following axioms are equivalent:
+\begin{enumerate}
+\item $X\times_{A,B}Y=
+\max_{T\in\mathcal{C}(A,B)}(\id^{\mathcal{C}(A,A)}_X\circ T\circ\id^{\mathcal{C}(A,A)}_Y)$;
+\item $\id^{\mathcal{C}(A,A)}_X\circ f\circ\id^{\mathcal{C}(A,A)}_Y=f\sqcap(X\times_{A,B}Y)$ for every
+morphism~$f\in\mathcal{C}(A,B)$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{defn}
+The category \emph{with binary products} is a category with
+restricted identities conforming to either of the above
+axioms.
+\end{defn}
+
+If $\id_Y\circ f\circ\id_X=f\sqcap(X\times Y)$ for some
+function~$\times$ of two arguments then
+restricted identities are metamonovalued and metainjective.
+
+\begin{proof}
+
+\end{proof}
+
 \section{Operations on the set of unfixed morphisms}
 
 \begin{defn}
@@ -748,10 +778,6 @@ and
 If every $\Hom$-set is a lattice, then
 the poset of unfixed morphism is a lattice.
 \end{cor}
-
-If $\id_Y\circ f\circ\id_X=f\sqcap(X\times Y)$ for some
-function~$\times$ of two arguments then
-restricted identities are metamonovalued and metainjective.
 
 \begin{thm}
 Meet of nonempty set of unfixed morphisms
