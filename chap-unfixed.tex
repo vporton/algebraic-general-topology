@@ -519,9 +519,40 @@ If $\top^{\mathcal{C}(A,B)}$ exists then
 \end{cor}
 
 \begin{prop}
+$\iota_{A,B}f=
+\mathcal{E}^{\Dst f,B}\circ
+(f\sqcap(A\times_{\Src f,\Dst f}B))\circ
+\mathcal{E}^{A,\Src f}$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{E}^{\Dst f,B}\circ
+(f\sqcap(A\times_{\Src f,\Dst f}B))\circ
+\mathcal{E}^{A,\Src f}=
+\id^{\mathcal{C}(\Dst f,B)}_{B\sqcap\Dst f}\circ
+\id^{\mathcal{C}(\Dst f,\Dst f)}_B\circ f\circ
+\id^{\mathcal{C}(\Src f,\Src f)}_A\circ
+\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}=
+\id^{\mathcal{C}(\Dst f,B)}_{B\sqcap\Dst f}\circ
+f\circ
+\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}=
+\iota_{A,B}f$.
+\end{proof}
+
+\begin{prop}
 All restricted identities are metamonovalued and metainjective
 for every category with with binary product morphism.
 \fxnote{Say this in terms of~$\iota$}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{prop}
+$(X_0\times_{A,B}Y_0)\sqcap(X_1\times_{A,B}Y_1)=
+(X_0\sqcap X_1)\times_{A,B}(Y_0\sqcap Y_1)$
+provided that $\top^{\mathcal{C}(A,B)}$ exists.
 \end{prop}
 
 \begin{proof}
