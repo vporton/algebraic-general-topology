@@ -299,30 +299,6 @@ It follows from $\operatorname{IM}f=\mathscr{S}\operatorname{Im}f$
 (and likewise for~$\dom f$).
 \end{proof}
 
-\begin{prop}
-I will call an axiomatic setting for unfixed morphisms
-\emph{existentially distributive} when
-\[\exists t\in\mathcal{C}(\Src f,\Dst f) : \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ t \sqsupseteq f \Rightarrow \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ f
-\sqsupseteq f\]
-for every morphism~$f$ and $\mathfrak{A}\ni Y\sqsubseteq\Dst f$.
-\end{prop}
-
-\begin{prop}
-For a partially ordered category with restricted identities
-it is existentially distributive iff
-\[\id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ \top^{\mathcal{C}(\Src f,\Dst f)} \sqsupseteq f \Rightarrow \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ f
-\sqsupseteq f\] (provided that $\top^{\mathcal{C}(\Src f,\Dst f)}$
-exists) or what is the same
-$\top\times Y \sqsupseteq f \Rightarrow \id_Y \circ f
-= f$.
-\end{prop}
-
-\begin{proof}
-\[\id^{\mathcal{C}(\Src f,\Dst f)}_Y \circ \top^{\mathcal{C}(\Dst f,\Dst f)} \sqsupseteq f \Leftrightarrow
-\exists t\in\mathcal{C}(\Src f,\Dst f) : \id^{\mathcal{C}(\Dst f,\Dst f)}_Y \circ t \sqsupseteq f\]
-is obvious in both directions.
-\end{proof}
-
 \section{Equivalent morphisms}
 
 \begin{prop}\label{two-iotas}
@@ -506,7 +482,7 @@ From this our thesis follows obviously.
 \section{Binary product}
 
 \begin{defn}
-The category \emph{with binary products} is a category with
+The category \emph{with binary product} is a category with
 restricted identities and axiom
 \[\id^{\mathcal{C}(B,B)}_Y\circ f\circ\id^{\mathcal{C}(A,A)}_X=f\sqcap(X\times_{A,B}Y)\]
 (holding for every $A,B\in\mathfrak{Z}$,
@@ -517,6 +493,7 @@ and morphism~$f\in\mathcal{C}(A,B)$).
 \end{defn}
 
 \begin{prop}
+For every category with binary product
 \[X\times_{A,B}Y=
 \max_{T\in\mathcal{C}(A,B)}(\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X)\]
 \end{prop}
@@ -535,9 +512,16 @@ $X\times_{A,B}Y=\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X =
 T\sqcap(X\times_{A,B}Y)=X\times_{A,B}Y$.
 \end{proof}
 
+\begin{cor}
+If $\top^{\mathcal{C}(A,B)}$ exists then
+\[X\times_{A,B}Y=
+\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X.\]
+\end{cor}
+
 \begin{prop}
 All restricted identities are metamonovalued and metainjective
 for every category with binary products.
+\fxnote{Say this in terms of~$\iota$}
 \end{prop}
 
 \begin{proof}
