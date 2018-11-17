@@ -540,22 +540,19 @@ f\circ
 \end{proof}
 
 \begin{prop}
-All restricted identities are metamonovalued and metainjective
-for every category with with binary product morphism.
-\end{prop}
-
-\begin{proof}
-??
-\end{proof}
-
-\begin{prop}
 $\iota_{A,B}(f\sqcap g)=\iota_{A,B}f\sqcap\iota_{A,B}g$
 for every parallel morphisms~$f$ and~$g$ and objects~$A$
-and~$B$.
+and~$B$, whenever all $\mathcal{E}^{X,Y}$ are metamonovalued
+and metainjective.
 \end{prop}
 
 \begin{proof}
-??
+$\iota_{A,B}(f\sqcap g)=
+\mathcal{E}^{\Dst f,B}\circ(f\sqcap g)\circ
+\mathcal{E}^{A,\Src f}=
+(\mathcal{E}^{\Dst f,B}\circ f\circ\mathcal{E}^{A,\Src f})\sqcap
+(\mathcal{E}^{\Dst f,B}\circ g\circ\mathcal{E}^{A,\Src f})=
+\iota_{A,B}f\sqcap\iota_{A,B}g$.
 \end{proof}
 
 \begin{prop}
@@ -565,7 +562,18 @@ provided that $\top^{\mathcal{C}(A,B)}$ exists.
 \end{prop}
 
 \begin{proof}
-??
+$(X_0\times_{A,B}Y_0)\sqcap(X_1\times_{A,B}Y_1)=
+\id^{\mathcal{C}(B,B)}_{Y_1}\circ(X_0\times_{A,B}Y_0)\circ
+\id^{\mathcal{C}(A,A)}_{X_1}=
+\id^{\mathcal{C}(B,B)}_{Y_1}\circ
+\id^{\mathcal{C}(B,B)}_{Y_0}\circ
+\top^{\mathcal{C}(A,B)}\circ
+\id^{\mathcal{C}(A,A)}_{X_1}\circ
+\id^{\mathcal{C}(A,A)}_{X_0}=
+\id^{\mathcal{C}(B,B)}_{Y_0\sqcap Y_1}\circ
+\top^{\mathcal{C}(A,B)}\circ
+\id^{\mathcal{C}(A,A)}_{X_0\sqcap X_1}=
+(X_0\sqcap X_1)\times_{A,B}(Y_0\sqcap Y_1)$.
 \end{proof}
 
 \section{Operations on the set of unfixed morphisms}
