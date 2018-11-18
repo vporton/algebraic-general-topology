@@ -873,6 +873,62 @@ The poset of unfixed morphisms may be not a complete
 lattice even if every $\Hom$-set is a complete lattice.
 We will show this below for funcoids.
 
+\subsection{Domain and image of unfixed morphisms}
+
+\begin{thm}
+$\operatorname{IM}f=
+\setcond{Y\in\mathfrak{Z}}{\id_Y\circ[f]=[f]}$.
+\end{thm}
+
+\begin{proof}
+??
+\end{proof}
+
+\begin{defn}
+$\operatorname{DOM}f=\operatorname{DOM}F$ and
+$\operatorname{IM}f=\operatorname{IM}F$
+for $F\in f$.
+\end{defn}
+
+The above definition is consistent:
+\fxnote{Use the above theorem instead.}
+
+\begin{proof}
+Let $F,G\in f$ and thus $F\sim G$. We need to prove
+$\operatorname{IM}F=\operatorname{IM}G$ ($\operatorname{DOM}$
+is analogous).
+
+Let $Y\in\operatorname{IM}F$. Then
+$\id^{\mathcal{C}(\Dst F,\Dst F)}_{Y\sqcap\Dst F} \circ F = F$.
+
+$[\id^{\mathcal{C}(\Dst F,\Dst F)}_{Y\sqcap\Dst F} \circ F] = [F]$.
+
+$\id_{Y\sqcap\Dst F} \circ [F] = [F]$.
+
+$\id_{Y\sqcap\Dst F} \circ [G] = [G]$.
+
+$\id^{\mathcal{C}(\Dst F\sqcup\Dst G,\Dst F\sqcup\Dst G)}_{Y\sqcap\Dst F}
+\circ G=\id^{\mathcal{C}(\Dst F\sqcup\Dst G,\Dst F\sqcup\Dst G)}_{Y\sqcap\Dst F}\circ G$
+??
+
+??????????
+$\iota_{\Src F\sqcup\Src G,\Dst F\sqcup\Dst G}
+(\id^{\mathcal{C}(\Dst G,\Dst G)}_{Y\sqcap\Dst F})\circ
+\iota_{\Src F\sqcup\Src G,\Dst F\sqcup\Dst G}G=
+\iota_{\Src F\sqcup\Src G,\Dst F\sqcup\Dst G}G$
+
+\begin{grayed}
+But $F=\iota_{\Src F,\Dst F}G=
+\mathcal{E}^{\Dst G,\Dst F}\circ G\circ
+\mathcal{E}^{\Src F,\Dst G}=
+\id^{\mathcal{C}(\Dst G,\Dst F)}_{\Dst F\sqcap\Dst G}\circ G
+\circ\id^{\mathcal{C}(\Src F,\Dst G)}_{\Src F\sqcap\Dst G}$.
+Thus
+\[\id^{\mathcal{C}(\Dst G,\Dst F)}_{Y\sqcap\Dst F\sqcap\Dst G}\circ G
+\circ\id^{\mathcal{C}(\Src F,\Dst G)}_{\Src F\sqcap\Dst G}=F.\]
+\end{grayed}
+\end{proof}
+
 TODO:
 What's about pseudo/quasi-difference? Filtrators of unfixed morphisms.
 Distributivity of $\im$/$\dom$ over joins.
