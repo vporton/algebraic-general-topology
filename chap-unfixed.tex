@@ -493,30 +493,42 @@ and morphism~$f\in\mathcal{C}(A,B)$).
 \end{defn}
 
 \begin{prop}
+$A\times_{A,B}B$ is the greatest morphism
+$\top^{\mathcal{C}(A,B)}:A\to B$.
+\end{prop}
+
+\begin{proof}
+It's enough to prove $f\sqcap(A\times_{A,B}B)=f$ for every
+$f:A\to B$. Really,
+$f\sqcap(A\times_{A,B}B)=
+\id^{\mathcal{C}(B,B)}_B\circ f\circ\id^{\mathcal{C}(A,A)}_A=
+1^B\circ f\circ 1^A=f$.
+\end{proof}
+
+\begin{prop}
 For every category with binary product morphism
 \[X\times_{A,B}Y=
-\max_{T\in\mathcal{C}(A,B)}(\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X)\]
+\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ
+\id^{\mathcal{C}(A,A)}_X\]
 \end{prop}
 
 \begin{proof}
 $X\times_{A,B}Y\sqsupseteq
-\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X$
+\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X$
 because
-$\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X=
-T\sqcap(X\times_{A,B}Y)$.
+$\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X=
+\top^{\mathcal{C}(A,B)}\sqcap(X\times_{A,B}Y)$.
 
-It remains to prove that there exists~$T$ such that
-$X\times_{A,B}Y=\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X$.
-To finish the proof take $T=X\times_{A,B}Y$ and note
-\[X\times_{A,B}Y=\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X =
-T\sqcap(X\times_{A,B}Y)=X\times_{A,B}Y.\]
+$\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X\sqsupseteq
+\id^{\mathcal{C}(B,B)}_Y\circ(X\times_{A,B}Y)\circ
+\id^{\mathcal{C}(A,A)}_X=
+(X\times_{A,B}Y)\sqcap(X\times_{A,B}Y)=X\times_{A,B}Y$.
+% It remains to prove that there exists~$T$ such that
+% $X\times_{A,B}Y=\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X$.
+% To finish the proof take $T=X\times_{A,B}Y$ and note
+% \[X\times_{A,B}Y=\id^{\mathcal{C}(B,B)}_Y\circ T\circ\id^{\mathcal{C}(A,A)}_X =
+% T\sqcap(X\times_{A,B}Y)=X\times_{A,B}Y.\]
 \end{proof}
-
-\begin{cor}
-If $\top^{\mathcal{C}(A,B)}$ exists then
-\[X\times_{A,B}Y=
-\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X.\]
-\end{cor}
 
 \begin{prop}
 $\iota_{A,B}f=
@@ -557,8 +569,7 @@ $\iota_{A,B}(f\sqcap g)=
 
 \begin{prop}
 $(X_0\times_{A,B}Y_0)\sqcap(X_1\times_{A,B}Y_1)=
-(X_0\sqcap X_1)\times_{A,B}(Y_0\sqcap Y_1)$
-provided that $\top^{\mathcal{C}(A,B)}$ exists.
+(X_0\sqcap X_1)\times_{A,B}(Y_0\sqcap Y_1)$.
 \end{prop}
 
 \begin{proof}
@@ -574,21 +585,6 @@ $(X_0\times_{A,B}Y_0)\sqcap(X_1\times_{A,B}Y_1)=
 \top^{\mathcal{C}(A,B)}\circ
 \id^{\mathcal{C}(A,A)}_{X_0\sqcap X_1}=
 (X_0\sqcap X_1)\times_{A,B}(Y_0\sqcap Y_1)$.
-\end{proof}
-
-\begin{prop}
-$A\times_{A,B}B$ is the greatest morphism $A\times B$.
-\fxnote{Thus $A\times_{A,B}B$ is the maximum morphism
-(despite earlier the morphism existence was considered
-not proved).}
-\end{prop}
-
-\begin{proof}
-It's enough to prove $f\sqcap(A\times_{A,B}B)=f$ for every
-$f:A\to B$. Really,
-$f\sqcap(A\times_{A,B}B)=
-\id^{\mathcal{C}(B,B)}_B\circ f\circ\id^{\mathcal{C}(A,A)}_A=
-1^B\circ f\circ 1^A=f$.
 \end{proof}
 
 \section{Operations on the set of unfixed morphisms}
