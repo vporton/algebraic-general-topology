@@ -576,6 +576,21 @@ $(X_0\times_{A,B}Y_0)\sqcap(X_1\times_{A,B}Y_1)=
 (X_0\sqcap X_1)\times_{A,B}(Y_0\sqcap Y_1)$.
 \end{proof}
 
+\begin{prop}
+$A\times_{A,B}B$ is the greatest morphism $A\times B$.
+\fxnote{Thus $A\times_{A,B}B$ is the maximum morphism
+(despite earlier the morphism existence was considered
+not proved).}
+\end{prop}
+
+\begin{proof}
+It's enough to prove $f\sqcap(A\times_{A,B}B)=f$ for every
+$f:A\to B$. Really,
+$f\sqcap(A\times_{A,B}B)=
+\id^{\mathcal{C}(B,B)}_B\circ f\circ\id^{\mathcal{C}(A,A)}_A=
+1^B\circ f\circ 1^A=f$.
+\end{proof}
+
 \section{Operations on the set of unfixed morphisms}
 
 \subsection{Semigroup of unfixed morphisms}
