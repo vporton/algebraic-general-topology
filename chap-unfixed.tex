@@ -479,6 +479,28 @@ Take $A=\Src g$, $B=\Dst g$. We have
 From this our thesis follows obviously.
 \end{proof}
 
+\begin{prop}\label{iota-less}
+$\iota_{A_1,B_1}\iota_{A_0,B_0}f\sqsubseteq\iota_{A_1,B_1}f$.
+\end{prop}
+
+\begin{proof}
+$\iota_{A_1,B_1}\iota_{A_0,B_0}f=
+\mathcal{E}^{B_0,B_1}\circ\mathcal{E}^{\Dst f,B_0}\circ f\circ
+\mathcal{E}^{A_0,\Src f}\circ\mathcal{E}^{A_1,A_0}=
+\id^{\mathcal{C}(B_0,B_1)}_{B_0\sqcap B_1}\circ\id^{\mathcal{C}(\Dst f,B_0)}_{\Dst f\sqcap B_0}
+\circ f\circ
+\id^{\mathcal{C}(A_0,\Src f)}_{A_0\sqcap\Src f}\circ
+\id^{\mathcal{C}(A_1,A_0)}_{A_1\sqcap A_0}=
+\id^{\mathcal{C}(\Dst f,B_1)}_{\Dst f\sqcap B_0\sqcap B_1}
+\circ f\circ
+\id^{\mathcal{C}(A_1,\Src f)}_{A_0\sqcap A_1\sqcap\Src f}
+\sqsubseteq
+\id^{\mathcal{C}(\Dst f,B_1)}_{\Dst f\sqcap B_1}
+\circ f\circ
+\id^{\mathcal{C}(A_1,\Src f)}_{A_1\sqcap\Src f}=
+\iota_{A_1,B_1}f$.
+\end{proof}
+
 \section{Binary product}
 
 \begin{defn}
@@ -917,6 +939,28 @@ $\operatorname{IM}f=\operatorname{IM}F$
 for $F\in f$.
 \end{defn}
 
+\subsection{Rectangular restriction}
+
+\begin{prop}
+$\iota_{A,B}f=\iota_{A,B}g$ if $f\sim g$.
+\end{prop}
+
+\begin{proof}
+Let $f\sim g$. Then $g=\iota_{\Src g,\Dst g}f$.
+So $\iota_{A,B}g=\iota_{A,B}\iota_{\Src g,\Dst g}f
+\sqsubseteq\text{(proposition~\ref{iota-less})}\sqsubseteq
+\iota_{A,B}f$. Similarly,
+$\iota_{A,B}f\sqsubseteq\iota_{A,B}g$. So
+$\iota_{A,B}f=\iota_{A,B}g$.
+\end{proof}
+
+The above proposition allows to define:
+
+\begin{defn}
+$\iota_{A,B}F=\iota_{A,B}f$ for
+an unfixed morphism~$F$ and arbitrary $f\in F$.
+\end{defn}
+
 TODO:
 What's about pseudo/quasi-difference? Filtrators of unfixed morphisms.
 Distributivity of $\im$/$\dom$ over joins.
@@ -945,6 +989,8 @@ properties (cf. distributivity) of the poset of unfixed morphisms:
 \begin{prop}
 ~
 \fxnote{Specify the isomorphisms explicitly.}
+The following are mutually inverse bijections:
+$t\mapsto[t]$ and $T\mapsto\iota_{A,B}T$
 \begin{enumerate}
 \item Let~$T$ be an unfixed morphism. The lattice~$DT$ is
 isomorphic to the lattice $Dt$ whenever~$t\in T$.
