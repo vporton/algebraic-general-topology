@@ -668,6 +668,8 @@ $\iota_{A_0\sqcup A_1,C_0\sqcup C_1}(g_0\circ f_0) =
 $g_0\circ f_0\sim g_1\circ f_1$.
 \end{proof}
 
+\subsection{Restricted identities}
+
 \begin{defn}
 \emph{Restricted identity} for unfixed morphisms is
 defined as: $\id_X = [\id^{\mathcal{C}(A,B)}_X]$ for
@@ -698,6 +700,26 @@ $\iota_{A_0,B_0}\id^{\mathcal{C}(A_1,B_1)}_X =
 
 So $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 \id^{\mathcal{C}(A_1,B_1)}_X$.
+\end{proof}
+
+\begin{prop}
+$\id_Y\circ\id_X=\id_{X\sqcap Y}$ for
+every~$X,Y\in\mathcal{A}$.
+\end{prop}
+
+\begin{proof}
+Take arbitrary $\id^{\mathcal{C}(A,B_0)}_X\in\id_X$ and
+$\id^{\mathcal{C}(B_1,C)}_Y\in\id_Y$.
+
+Obviously,
+$\id^{\mathcal{C}(A,B_0\sqcup B_1)}_X\in\id_X$ and
+$\id^{\mathcal{C}(B_0\sqcup B_1,C)}_Y\in\id_Y$.
+Thus
+$\id_Y\circ\id_X=
+[\id^{\mathcal{C}(B_0\sqcup B_1,C)}_Y]\circ
+[\id^{\mathcal{C}(A,B_0\sqcup B_1)}_X]=
+[\id^{\mathcal{C}(A,C)}_{X\sqcap Y}]=
+\id_{X\sqcap Y}$.
 \end{proof}
 
 \subsection{Poset of unfixed morphisms}
