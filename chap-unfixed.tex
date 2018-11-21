@@ -21,7 +21,9 @@ described by the axioms:
 \item $\id^{\mathcal{C}(A,B)}_X\in\Hom_{\mathcal{C}}(A,B)$
 whenever $\mathfrak{A}\ni X\sqsubseteq A\sqcap B$;
 \item $\id^{\mathcal{C}(A,A)}_A = 1^{\mathcal{C}}_A$;
-\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$.
+\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$;
+\item
+$\forall X\in\mathfrak{A}\exists A\in\mathfrak{Z}:A\sqsupseteq X$.
 \end{enumerate}
 
 For a \emph{partially ordered category with restricted identities} introduce additional axiom $X\sqsubseteq Y\Rightarrow
@@ -727,7 +729,7 @@ Really, $\iota_{A_1,B_1}\id^{\mathcal{C}(A_0,B_0)}_X =
 \id^{\mathcal{C}(A_1,B_1)}_X$.
 Similarly
 $\iota_{A_0,B_0}\id^{\mathcal{C}(A_1,B_1)}_X =
-\id^{\mathcal{C}(A_0,B_0}_X$.
+\id^{\mathcal{C}(A_0,B_0)}_X$.
 
 So $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 \id^{\mathcal{C}(A_1,B_1)}_X$.
@@ -751,6 +753,24 @@ $\id_Y\circ\id_X=
 [\id^{\mathcal{C}(A,B_0\sqcup B_1)}_X]=
 [\id^{\mathcal{C}(A,C)}_{X\sqcap Y}]=
 \id_{X\sqcap Y}$.
+\end{proof}
+
+\subsection{Binary product morphism}
+
+\begin{defn}
+For a category~$\mathcal{C}$ with binary product morphism
+and $X,Y\in\mathfrak{A}$ define
+$X\times Y=X\times_{A,B}Y$ where
+$\mathfrak{Z}\ni A\sqsupseteq X$ and
+$\mathfrak{Z}\ni B\sqsupseteq Y$.
+(Such~$A$ and~$B$ exist by an axiom of categories with
+restricted identities.)
+\end{defn}
+
+We need to prove validity of this definition:
+
+\begin{proof}
+??
 \end{proof}
 
 \subsection{Poset of unfixed morphisms}
