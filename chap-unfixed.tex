@@ -366,6 +366,8 @@ follow from proposition~\ref{two-iotas}.
 \begin{thm}
 $f:A_0\to B_0$~and~$g:A_1\to B_1$ are equivalent iff
 $\iota_{A_1,B_1}f=g$ and $\iota_{A_0,B_0}g=f$.
+\fxnote{What if we replace~$=$ with~$\sqsubseteq$
+or~$\sqsupseteq$?}
 \end{thm}
 
 \begin{proof}
@@ -770,7 +772,27 @@ restricted identities.)
 We need to prove validity of this definition:
 
 \begin{proof}
-??
+Let
+$\mathfrak{Z}\ni A_0\sqsupseteq X$,
+$\mathfrak{Z}\ni B_0\sqsupseteq Y$,
+$\mathfrak{Z}\ni A_1\sqsupseteq X$,
+$\mathfrak{Z}\ni B_1\sqsupseteq Y$.
+We need to prove $X\times_{A_0,B_0}Y\sim X\times_{A_1,B_1}Y$.
+
+Really:
+
+\begin{gather*}
+X\times_{A_0,B_0}Y=
+\id^{\mathcal{C}(B_0,B_0)}_Y\circ
+\top^{\mathcal{C}(A_0,B_0)}\circ
+\id^{\mathcal{C}(A_0,A_0)}_X; \\
+X\times_{A_1,B_1}Y=
+\id^{\mathcal{C}(B_1,B_1)}_Y\circ
+\top^{\mathcal{C}(A_1,B_1)}\circ
+\id^{\mathcal{C}(A_1,A_1)}_X;
+\end{gather*}
+
+?????
 \end{proof}
 
 \subsection{Poset of unfixed morphisms}
