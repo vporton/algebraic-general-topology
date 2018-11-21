@@ -1157,7 +1157,20 @@ $X_0,X_1,Y_0,Y_1\in\mathfrak{A}$.
 \end{prop}
 
 \begin{proof}
-??
+Take $\mathfrak{Z}\ni A_0\sqsupseteq X_0$,
+Take $\mathfrak{Z}\ni A_1\sqsupseteq X_1$,
+Take $\mathfrak{Z}\ni B_0\sqsupseteq Y_0$,
+Take $\mathfrak{Z}\ni B_1\sqsupseteq Y_1$.
+
+Then
+$(X_0\times Y_0)\sqcap(X_1\times Y_1)=
+[X_0\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_0]\sqcap
+[X_1\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_1]=
+[(X_0\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_0)\sqcap
+(X_1\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_1)]=
+[(X_0\sqcap X_1)\times_{A_0\sqcup A_1,B_0\sqcup B_1}
+(Y_0\sqcap Y_1)]=
+(X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$.
 \end{proof}
 
 \section{Categories with embeddings}
