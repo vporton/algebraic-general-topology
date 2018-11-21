@@ -1037,33 +1037,45 @@ morphisms}
 The following proposition allows to easily prove algebraic
 properties (cf. distributivity) of the poset of unfixed morphisms:
 
-\begin{thm}
+\begin{thm}\label{unfix-fix-bij}
 The following are mutually inverse bijections:
 \begin{enumerate}
-\item Let~$T$ be an unfixed morphism. $f\mapsto[f]$ and $F\mapsto\iota_{\Src t,\Dst t}F$ are mutually inverse bijections
-between the lattice~$DT$ and $Dt$ whenever~$t\in T$.
-\item Let~$A$ and~$B$ be objects. $f\mapsto[f]$ and $F\mapsto\iota_{A,B}F$
+\item\label{unfix-fix-bij-sd} Let~$A$ and~$B$ be objects. $f\mapsto[f]$ and $F\mapsto\iota_{A,B}F$
 are mutually inverse bijections between
 $\setcond{f\in\text{unfixed morphisms}}{A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$
 and~$\mathcal{C}(A,B)$.
+\item\label{unfix-fix-bij-d} Let~$T$ be an unfixed morphism. $f\mapsto[f]$ and $F\mapsto\iota_{\Src t,\Dst t}F$ are mutually inverse bijections
+between the lattice~$DT$ and $Dt$ whenever~$t\in T$.
 \end{enumerate}
 \fxnote{These bijections are order isomorphisms. One of them
 is also a semigroup isomorphism, if $A=B$.}
 \end{thm}
 
 \begin{proof}
+~
+\begin{widedisorder}
+\item[\ref{unfix-fix-bij-sd}]
 $\iota_{A,B}F\in\mathcal{C}(A,B)$ is obvious.
 
 We need to prove that
 $[f]\in\setcond{f\in\text{unfixed morphisms}}{A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$.
-Really ??.
+For this it's enough to prove
+$A\in\operatorname{DOM}[f]\land B\in\operatorname{IM}[f]$
+what is the same as
+$A\in\operatorname{DOM}f\land B\in\operatorname{IM}f$
+what follows from proposition~\ref{dst-in-im}.
 
-Because $f\mapsto[f]$ is an injection, it is
+Because $f\mapsto[f]$ is an injection (??ref), it is
 enough\footnote{\url{https://math.stackexchange.com/a/3007051/4876}}
 to prove that 
 $\iota_{A,B}[f]=f$. Really, $\iota_{A,B}[f]=\iota_{A,B}f=f$.
 
-??second item
+\item[\ref{unfix-fix-bij-d}]
+Because of the previous, it is enough to prove that
+$[f]\in DT\Leftrightarrow f\in Dt$. Really, it is equivalent
+to $[f]\sqsubseteq T\Leftrightarrow f\sqsubseteq t$
+what is obvious.
+\end{widedisorder}
 \end{proof}
 
 \begin{prop}
