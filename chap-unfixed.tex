@@ -1031,25 +1031,19 @@ f\circ
 \end{proof}
 
 \begin{prop}
-$[\iota_{A_1,B_1}\iota_{A_0,B_0}f]=
-[\iota_{A_0\sqcap A_1,A_1\sqcap B_1}f]$.
+$f\square_{A_0,B_0}\square_{A_1,B_1}=
+f\square_{A_0\sqcap A_1,A_1\sqcap B_1}$.
 \end{prop}
 
 \begin{proof}
 From the previous
-$[\iota_{A_1,B_1}\iota_{A_0,B_0}f]=
+$f\square_{A_0,B_0}\square_{A_1,B_1}=
 \id_{B_1}\circ\id_{B_0}\circ f\circ\id_{A_0}\circ\id_{A_1}=
 \id_{B_0\sqcap B_1}\circ f\circ\id_{A_0\sqcap A_1}=
-[\iota_{A_0\sqcap A_1,A_1\sqcap B_1}f]$.
+f\square_{A_0\sqcap A_1,A_1\sqcap B_1}$.
 \end{proof}
 
-TODO:
-Filtrators of unfixed morphisms.
-Distributivity of $\im$/$\dom$ over joins.
-
 TODO: Define product morphism, define restriction $f|_X$.
-
-TODO: Continuity. Limits.
 
 \subsection{Algebraic properties of the lattice of unfixed
 morphisms}
@@ -1232,6 +1226,8 @@ $A \hookrightarrow B : A \rightarrow B$ when $A \sqsubseteq B$.
 \end{proof}
 
 \section{\texorpdfstring{Categories under $\mathbf{Rel}$}{Categories under Rel}}
+
+TODO: Filtrators of unfixed morphisms.
 
 \begin{defn}
   The $\mathbf{Rel}$-morphism $\mathcal{E}^{A,B}$
