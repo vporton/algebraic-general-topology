@@ -1061,18 +1061,18 @@ properties (cf. distributivity) of the poset of unfixed morphisms:
 The following are mutually inverse bijections:
 \begin{enumerate}
 \item\label{unfix-fix-bij-sd} Let~$A$ and~$B$ be objects. $f\mapsto[f]$ and $F\mapsto\iota_{A,B}F$
-are mutually inverse bijections between
+are mutually inverse order isomorphisms between
 $\setcond{f\in\text{unfixed morphisms}}{A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$
 and~$\mathcal{C}(A,B)$.
-\item\label{unfix-fix-bij-d} Let~$T$ be an unfixed morphism. $f\mapsto[f]$ and $F\mapsto\iota_{\Src t,\Dst t}F$ are mutually inverse bijections
+\fxnote{If $A=B$ they are also semigroup isomorphisms.}
+\item\label{unfix-fix-bij-d} Let~$T$ be an unfixed morphism. $f\mapsto[f]$ and $F\mapsto\iota_{\Src t,\Dst t}F$ are mutually inverse order isomorphisms
 between the lattice~$DT$ and $Dt$ whenever~$t\in T$.
 \end{enumerate}
-\fxnote{These bijections are order isomorphisms. One of them
-is also a semigroup isomorphism, if $A=B$.}
 \end{thm}
 
 \begin{proof}
-~
+We will prove that these functions are mutually inverse
+bijections. That they are order-preserving is obvious.
 \begin{widedisorder}
 \item[\ref{unfix-fix-bij-sd}]
 $\iota_{A,B}F\in\mathcal{C}(A,B)$ is obvious.
@@ -1085,7 +1085,7 @@ what is the same as
 $A\in\operatorname{DOM}f\land B\in\operatorname{IM}f$
 what follows from proposition~\ref{dst-in-im}.
 
-Because $f\mapsto[f]$ is an injection (??ref), it is
+Because $f\mapsto[f]$ is an injection, it is
 enough\footnote{\url{https://math.stackexchange.com/a/3007051/4876}}
 to prove that 
 $\iota_{A,B}[f]=f$. Really, $\iota_{A,B}[f]=\iota_{A,B}f=f$.
