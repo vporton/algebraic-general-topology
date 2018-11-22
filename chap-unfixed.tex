@@ -1205,7 +1205,24 @@ $f\square_{A,B}=f\sqcap(A\times B)$.
 \end{prop}
 
 \begin{proof}
-??
+Take $F\in f$. Let $F'=\iota_{A\sqcup\Src F,B\sqcup\Dst F}F$.
+We have $F'\in f$.
+$f\square_{A,B}=[\iota_{A,B}F']=
+[\mathcal{E}^{B\sqcup\Dst F,B}\circ F'\circ
+\mathcal{E}^{A,A\sqcup\Src F}]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B)}_B\circ F'\circ
+\id^{\mathcal{C}(A,A\sqcup\Src F)}_A]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B)}_B]\circ [F']\circ
+[\id^{\mathcal{C}(A,A\sqcup\Src F)}_A]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_B]\circ
+[F']\circ
+[\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_A]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_B\circ
+F'\circ
+\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_A]=
+[F'\sqcap(A\times_{A\sqcup\Src F,B\sqcup\Dst F}B)]=
+[F']\sqcap[A\times_{A\sqcup\Src F,B\sqcup\Dst F}B]=
+f\sqcap(A\times B)$.
 \end{proof}
 
 \section{Categories with embeddings}
