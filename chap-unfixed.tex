@@ -247,22 +247,22 @@ with ordered domain and with ordered image.
 \end{obvious}
 
 \begin{obvious}
-~\fxerror{Wrong domains and images.}
+~
 \begin{enumerate}
 \item For an ordered category~$\mathcal{C}$ with restricted identities
 to be with ordered image it's enough that
-$\id^{\mathcal{C}(\Dst f,B)}_X\circ f=f\land
+$\id^{\mathcal{C}(\Dst f,\Dst f)}_X\circ f=f\land
 g\sqsubseteq f\Rightarrow
-\id^{\mathcal{C}(\Dst f,B)}_X\circ g=g$
+\id^{\mathcal{C}(\Dst f,\Dst f)}_X\circ g=g$
 for every parallel morphisms~$f$ and $g$ and
-$\mathfrak{Z}\ni X\sqsubseteq\Dst f\sqcap B$.
+$\mathfrak{Z}\ni X\sqsubseteq\Dst f$.
 \item For an ordered category~$\mathcal{C}$ with restricted identities
 to be with ordered domain it's enough that
-$f\circ\id^{\mathcal{C}(A,\Src f)}_X=f\land
+$f\circ\id^{\mathcal{C}(\Src f,\Src f)}_X=f\land
 g\sqsubseteq f\Rightarrow
-g\circ\id^{\mathcal{C}(A,\Src f)}_X=g$
+g\circ\id^{\mathcal{C}(\Src f,\Src f)}_X=g$
 for every parallel morphisms~$f$ and $g$ and
-$\mathfrak{Z}\ni X\sqsubseteq\Src f\sqcap A$.
+$\mathfrak{Z}\ni X\sqsubseteq\Src f$.
 \end{enumerate}
 \end{obvious}
 
@@ -384,7 +384,7 @@ $\iota_{A_1,B_1}f=g$. $\iota_{A_0,B_0}g=f$ is similar.
 $\iota_{A_1, B_1} \iota_{A_0, B_0} g = g$;
 
 $\mathcal{E}^{B_0, B_1} \circ \mathcal{E}^{B_1, B_0} \circ g \circ
-\mathcal{E}^{A_0, A_1} \circ \mathcal{E}^{A_1, A_0}$;
+\mathcal{E}^{A_0, A_1} \circ \mathcal{E}^{A_1, A_0}=g$;
 
 $\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g \circ
 \id^{\mathcal{C} (A_1, A_1)}_{A_0 \sqcap A_1} = g$;
@@ -1064,7 +1064,7 @@ The following are mutually inverse bijections:
 are mutually inverse order isomorphisms between
 $\setcond{f\in\text{unfixed morphisms}}{A\in\operatorname{DOM}f,B\in\operatorname{IM}f}$
 and~$\mathcal{C}(A,B)$.
-\fxnote{If $A=B$ they are also semigroup isomorphisms.}
+If $A=B$ they are also semigroup isomorphisms.
 \item\label{unfix-fix-bij-d} Let~$T$ be an unfixed morphism. $f\mapsto[f]$ and $F\mapsto\iota_{\Src t,\Dst t}F$ are mutually inverse order isomorphisms
 between the lattice~$DT$ and $Dt$ whenever~$t\in T$.
 \end{enumerate}
@@ -1089,6 +1089,9 @@ Because $f\mapsto[f]$ is an injection, it is
 enough\footnote{\url{https://math.stackexchange.com/a/3007051/4876}}
 to prove that 
 $\iota_{A,B}[f]=f$. Really, $\iota_{A,B}[f]=\iota_{A,B}f=f$.
+
+That they are semigroup isomorphisms follows from the
+already proved formula $[g\circ f]=[g]\circ[f]$.
 
 \item[\ref{unfix-fix-bij-d}]
 Because of the previous, it is enough to prove that
