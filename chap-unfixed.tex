@@ -363,25 +363,29 @@ and
 follow from proposition~\ref{two-iotas}.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{uf-sim-cond}
+Let
 $f:A_0\to B_0$~and~$g:A_1\to B_1$
-(for a partially ordered category with restricted identities)
-are equivalent iff
-$\iota_{A_1,B_1}f=g$ and $\iota_{A_0,B_0}g=f$.
-\fxnote{What if we replace~$=$ with~$\sqsubseteq$
-or~$\sqsupseteq$?}
+(for a partially ordered category with restricted identities).
+The following are pairwise equivalent:
+\begin{enumerate}
+\item\label{uf-sim-cond-sim} $f\sim g$;
+\item\label{uf-sim-cond-eq} $\iota_{A_1,B_1}f=g$ and $\iota_{A_0,B_0}g=f$;
+\item\label{uf-sim-sb} $\iota_{A_1,B_1}f\sqsupseteq g$ and $\iota_{A_0,B_0}g\sqsupseteq f$.
+\end{enumerate}
 \end{thm}
 
 \begin{proof}
 ~
 \begin{description}
-\item[$\Rightarrow$]
+\item[\ref{uf-sim-cond-sim}$\Rightarrow$\ref{uf-sim-cond-eq}]
 $\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g$;
 $\iota_{A_1,B_1}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_1,B_1}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g$;
 $\iota_{A_1,B_1}f=\iota_{A_1,B_1}g$;
 $\iota_{A_1,B_1}f=g$. $\iota_{A_0,B_0}g=f$ is similar.
 
-\item[$\Leftarrow$] Let $\iota_{A_1, B_1} f = g$ and $\iota_{A_0, B_0} g = f$.
+\item[\ref{uf-sim-cond-eq}$\Rightarrow$\ref{uf-sim-cond-sim}]
+Let $\iota_{A_1, B_1} f = g$ and $\iota_{A_0, B_0} g = f$.
 
 $\iota_{A_1, B_1} \iota_{A_0, B_0} g = g$;
 
@@ -404,6 +408,8 @@ $\mathcal{E}^{B_0 \sqcap B_1, B_1} \circ \mathcal{E}^{B_1, B_0 \sqcap B_1}
 So $\iota_{A_0 \sqcup A_1, B_0 \sqcup B_1} f = \iota_{A_0 \sqcup A_1, B_0
 \sqcup B_1} \iota_{A_0, B_0} g = \iota_{A_0 \sqcup A_1, B_0 \sqcup B_1} g$.
 \end{description}
+
+??
 \end{proof}
 
 \begin{prop}
@@ -1193,6 +1199,14 @@ $(X_0\times Y_0)\sqcap(X_1\times Y_1)=
 [(X_0\sqcap X_1)\times_{A_0\sqcup A_1,B_0\sqcup B_1}
 (Y_0\sqcap Y_1)]=
 (X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$.
+\end{proof}
+
+\begin{prop}
+$f\square_{A,B}=f\sqcap(A\times B)$.
+\end{prop}
+
+\begin{proof}
+??
 \end{proof}
 
 \section{Categories with embeddings}
