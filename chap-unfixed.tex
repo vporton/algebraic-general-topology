@@ -371,7 +371,7 @@ The following are pairwise equivalent:
 \begin{enumerate}
 \item\label{uf-sim-cond-sim} $f\sim g$;
 \item\label{uf-sim-cond-eq} $\iota_{A_1,B_1}f=g$ and $\iota_{A_0,B_0}g=f$;
-\item\label{uf-sim-sb} $\iota_{A_1,B_1}f\sqsupseteq g$ and $\iota_{A_0,B_0}g\sqsupseteq f$.
+\item\label{uf-sim-cond-sb} $\iota_{A_1,B_1}f\sqsupseteq g$ and $\iota_{A_0,B_0}g\sqsupseteq f$.
 \end{enumerate}
 \end{thm}
 
@@ -384,16 +384,14 @@ $\iota_{A_1,B_1}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_1,B_1}\iota_{A_0\s
 $\iota_{A_1,B_1}f=\iota_{A_1,B_1}g$;
 $\iota_{A_1,B_1}f=g$. $\iota_{A_0,B_0}g=f$ is similar.
 
-\item[\ref{uf-sim-cond-eq}$\Rightarrow$\ref{uf-sim-cond-sim}]
-Let $\iota_{A_1, B_1} f = g$ and $\iota_{A_0, B_0} g = f$.
+\item[\ref{uf-sim-cond-sb}$\Rightarrow$\ref{uf-sim-cond-sim}]
+Let $\iota_{A_1, B_1} f \sqsupseteq g$ and $\iota_{A_0, B_0} g \sqsupseteq f$.
 
-$\iota_{A_1, B_1} \iota_{A_0, B_0} g = g$;
+$\iota_{A_1, B_1} \iota_{A_0, B_0} g \sqsupseteq g$;
 
 $\mathcal{E}^{B_0, B_1} \circ \mathcal{E}^{B_1, B_0} \circ g \circ
-\mathcal{E}^{A_0, A_1} \circ \mathcal{E}^{A_1, A_0}=g$;
+\mathcal{E}^{A_0, A_1} \circ \mathcal{E}^{A_1, A_0}\sqsupseteq g$;
 
-$\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g \circ
-\id^{\mathcal{C} (A_1, A_1)}_{A_0 \sqcap A_1} = g$;
 $\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g \circ
 \id^{\mathcal{C} (A_1, A_1)}_{A_0 \sqcap A_1} \sqsupseteq g$;
 $\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g \sqsupseteq g$;
@@ -407,9 +405,10 @@ $\mathcal{E}^{B_0 \sqcap B_1, B_1} \circ \mathcal{E}^{B_1, B_0 \sqcap B_1}
 
 So $\iota_{A_0 \sqcup A_1, B_0 \sqcup B_1} f = \iota_{A_0 \sqcup A_1, B_0
 \sqcup B_1} \iota_{A_0, B_0} g = \iota_{A_0 \sqcup A_1, B_0 \sqcup B_1} g$.
-\end{description}
 
-??
+\item[\ref{uf-sim-cond-eq}$\Rightarrow$\ref{uf-sim-cond-sb}]
+Obvious.
+\end{description}
 \end{proof}
 
 \begin{prop}
