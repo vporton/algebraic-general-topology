@@ -1,3 +1,879 @@
+\chapter{Filters}
+
+\section{To be moved into the book}
+
+\subsection{Embedding into the lattice of filters on small sets}
+
+\fxwarning{Use the definition below.}
+
+The following is an embedding from small
+filters~$\mathcal{A}$ on a set~$A$ into the lattice of
+filters on small sets:
+$\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
+\exists X\in\mathcal{A}:X\subseteq K}$.
+
+\begin{note}
+The lattice of filters on small sets is not a powerset (and
+even not a complete lattice).
+\end{note}
+
+\begin{prop}
+Values of this embedding are filters on the lattice of small
+sets.
+\end{prop}
+
+\begin{proof}
+That $\mathscr{S}\mathcal{A}$ is an upper set is obvious.
+
+Let $P,Q\in\mathscr{S}\mathcal{A}$. Then~$P$ and~$Q$ are
+small sets and there is an $X\in\mathcal{A}$ such
+that~$X\subseteq P$ and $Y\in\mathcal{A}$ such
+that~$Y\subseteq Q$. So small set $X\cap Y\in\mathcal{A}$
+and $P\cap Q\supseteq X\cap Y\in\mathcal{A}$, so
+$P\cap Q\in\mathscr{S}A$.
+\end{proof}
+
+\subsection{Rebase of filters}
+
+\begin{defn}
+\index{rebase!filters}\emph{Rebase} for every set-theoretic filter $\mathcal{A}$
+and every set $A$ is
+  $\mathcal{A} \div A = \bigsqcap \setcond{ \uparrow^A  (X \cap A) }
+  { X \in \mathcal{A} }$.
+\end{defn}
+
+\begin{obvious}
+$\rsupfun{A\cap}\mathscr{S}\mathcal{A}$ is a filter on $A$.
+\end{obvious}
+
+\fxnote{Check for errors the below in this section.}
+
+\begin{prop}
+The rebase conforms to the formula
+\[
+\mathcal{A}\div A=\rsupfun{A\cap}\mathscr{S}\mathcal{A}.
+\]
+\end{prop}
+
+\begin{proof}
+We know that $\rsupfun{A\cap}\mathscr{S}\mathcal{A}$ is a
+filter.
+
+If $P \in \rsupfun{A\cap}\mathscr{S}\mathcal{A}$ then $P \in \subsets A$ and $Y\cap A
+\subseteq P$ for some $Y \in \mathcal{A}$. Thus $P \supseteq Y \cap A \in
+\bigsqcap \setcond{ \uparrow^A  (Y \cap A) }{ Y \in \mathcal{A} }$.
+
+If $P \in \bigsqcap \setcond{ \uparrow^A  (X \cap A) }{
+X \in \mathcal{A} }$ then by properties of generalized filter bases,
+there exists $X \in \mathcal{A}$ such that $P \supseteq X \cap A$. Also $P \in
+\subsets A$. Thus $P \in \rsupfun{A\cap}\mathscr{S}\mathcal{A}$.
+\end{proof}
+
+\begin{prop}\label{rebase-itself}
+$\mathcal{X}\div\Base(\mathcal{X}) = \mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+Because $X\cap\Base(\mathcal{X}) = X$ for
+$X\in\mathcal{X}$.
+\end{proof}
+
+\begin{prop}\label{double-rebase}
+  $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \subseteq A$.
+\end{prop}
+
+\begin{proof}
+  $(\mathcal{X} \div A) \div B = \bigsqcap \setcond{ \uparrow^B  (Y \cap B)
+  }{ Y \in \bigsqcap \setcond{ \uparrow^A  (X \cap A)}
+  {X \in \mathcal{X} } \mathcal{} } =
+  \bigsqcap \setcond{ \uparrow^B  (X \cap A) }{ X \in
+  \mathcal{X} } \sqcap \uparrow^B B =
+  \bigsqcap \setcond{ \uparrow^B  (X
+  \cap A \cap B) }{ X \in \mathcal{X} } =
+  \bigsqcap \setcond{ \uparrow^B  (X
+  \cap B) }{ X \in \mathcal{X} } =
+  \mathcal{X} \div B$.
+\end{proof}
+
+\begin{prop}
+If $A\in\mathcal{A}$ then
+$\mathcal{A}\div A=\mathcal{A}\cap\subsets A$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{A}\div A=
+\rsupfun{A\cap}\mathscr{S}\mathcal{A} =
+\rsupfun{A\cap}\setcond{\text{small set }K}{
+\exists X\in\mathcal{A}:X\subseteq K} =
+\setcond{\text{small set }K}{
+K\in\mathcal{A}\land K\in\subsets A} =
+\mathcal{A}\cap\subsets A$.
+\end{proof}
+
+\begin{prop}
+Let filters~$\mathcal{X}$
+and~$\mathcal{Y}$ be such that
+$\Base(\mathcal{X})=\Base(\mathcal{Y})=B$. Then
+$\mathcal{X}\div C=\mathcal{Y}\div C
+\Leftrightarrow \mathcal{X}=\mathcal{Y}$ for every
+set~$C\supseteq B$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{X}\div C=\mathcal{Y}\div C\Leftrightarrow
+\mathcal{X}\cup\setcond{K\in\subsets C}{K\supseteq B} = \mathcal{Y}\cup\setcond{K\in\subsets C}{K\supseteq B} \Leftrightarrow
+\mathcal{X}=\mathcal{Y}$.
+\end{proof}
+
+\subsection{Equivalence of filters}
+
+\begin{defn}
+\index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
+(with possibly different base sets) are equivalent ($\mathcal{A}\sim\mathcal{B}$)
+iff there exists a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
+and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$.\end{defn}
+
+\begin{prop}
+$\mathcal{X}$ and~$\mathcal{Y}$ are equivalent iff
+($\mathcal{X}\sim\mathcal{Y}$) iff
+$\mathcal{Y} = \mathcal{X} \div \Base(\mathcal{Y})$ and
+$\mathcal{X} = \mathcal{Y} \div \Base(\mathcal{X})$.\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[$\Rightarrow$] Suppose $\mathcal{X}\sim\mathcal{Y}$
+that is there exists a set~$P$ such that
+$\subsets P\cap\mathcal{X}=\subsets P\cap\mathcal{Y}$ and
+$P\in\mathcal{X}$, $P\in\mathcal{Y}$. Then
+$\mathcal{X}\div\Base(\mathcal{Y}) =
+(\subsets P\cap\mathcal{X})\cup
+\setcond{K\in\subsets\Base(\mathcal{Y})}{K\supseteq P} =
+(\subsets P\cap\mathcal{Y})\cup
+\setcond{K\in\subsets\Base(\mathcal{Y})}{K\supseteq P} =
+\mathcal{Y}$. So
+$\mathcal{X}\div\Base(\mathcal{Y}) = \mathcal{Y}$,
+$\mathcal{Y}\div\Base(\mathcal{X}) = \mathcal{X}$ is similar.
+
+\item[$\Leftarrow$] If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
+$\mathcal{Y}\div\Base(\mathcal{X})\not\ni\Base(\mathcal{Y})\in\mathcal{Y}$ and thus
+$\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
+
+So $\Base(\mathcal{X})\in\mathcal{Y}$ and similarly
+$\Base(\mathcal{Y})\in\mathcal{X}$. Thus
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{Y}$
+and similarly
+$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$.
+
+It's enough to show
+$\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})) =
+\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y}))$
+because for every $P\in\mathcal{X},\mathcal{Y}$ we have $\mathcal{X}\cap\subsets P = \mathcal{X}\div P =
+(\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})))\div P$ and similarly $\mathcal{Y}\cap\subsets P =
+(\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})))\div P$. But it follows from the conditions and
+proposition~\ref{double-rebase}.
+\end{description}
+\end{proof}
+
+\begin{prop}
+If two filters with the same base are equivalent they are equal.\end{prop}
+\begin{proof}
+Let $\mathcal{A}$ and $\mathcal{B}$ be two filters and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$
+for some set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$,
+and $\Base(\mathcal{A})=\Base(\mathcal{B})$. Then
+\begin{multline*}
+\mathcal{A}=(\subsets X\cap\mathcal{A})\cup\setcond{Y\in\subsets\Base(\mathcal{A})}{Y\supseteq X}=\\
+(\subsets X\cap\mathcal{B})\cup\setcond{Y\in\subsets\Base(\mathcal{B})}{Y\supseteq X}=\mathcal{B}.
+\end{multline*}
+\end{proof}
+
+\begin{prop}\label{filteq-ext}
+If $A\in\mathscr{S}\mathcal{A}$ then
+$\mathcal{A}\div A\sim\mathcal{A}$.
+\end{prop}
+\begin{proof}
+~
+\begin{align*}
+(\mathcal{A}\div A)\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
+\mathscr{S}\mathcal{A}\cap\subsets A\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
+\mathscr{S}\mathcal{A}\cap\subsets(A\cap\Base(\mathcal{A})) & =
+\mathcal{A}\cap\subsets(A\cap\Base(\mathcal{A})).
+\end{align*}
+Thus $\mathcal{A}\div A\sim\mathcal{A}$ because $A\cap\Base(\mathcal{A})\supseteq X\in\mathcal{A}$
+for some $X\in\mathcal{A}$ and 
+\[
+A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\mathcal{A}\div A.
+\]
+\end{proof}
+
+\begin{prop}
+$\sim$ restricted to small filters is an equivalence relation.\end{prop}
+\begin{proof}
+~
+\begin{description}
+\item [{Reflexivity}] Obvious.
+\item [{Symmetry}] Obvious.
+\item [{Transitivity}] Let $\mathcal{A}\sim\mathcal{B}$ and $\mathcal{B}\sim\mathcal{C}$
+for some small filters $\mathcal{A}$, $\mathcal{B}$, and $\mathcal{C}$.
+Then there exist a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
+and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$ and a set
+$Y$ such that $Y\in\mathcal{B}$ and $Y\in\mathcal{C}$ and $\subsets Y\cap\mathcal{B}=\subsets Y\cap\mathcal{C}$.
+So $X\cap Y\in\mathcal{A}$ because
+\[
+\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\subsets(X\cap Y)\cap\mathcal{B}\supseteq\{X\cap Y\}\cap\mathcal{B}\ni X\cap Y.
+\]
+Similarly we have $X\cap Y\in\mathcal{C}$. Finally
+\begin{multline*}
+\subsets(X\cap Y)\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\\
+\subsets X\cap\subsets Y\cap\mathcal{B}=\subsets X\cap\subsets Y\cap\mathcal{C=}\subsets(X\cap Y)\cap\mathcal{C}.
+\end{multline*}
+
+\end{description}
+\end{proof}
+
+\begin{defn}
+I will call equivalence classes (of small filters) as
+\emph{unfixed filters}.
+\end{defn}
+
+\begin{rem}
+The word ``unfixed'' is meant to negate ``fixed'' (having
+a particular base) filters.
+\end{rem}
+
+\begin{prop}\label{filteq-if-sim}
+$\mathcal{A}\sim\mathcal{B}$ iff
+$\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$ for every
+filters~$\mathcal{A}$,~$\mathcal{B}$ on sets.\footnote{Use this proposition to shorten proofs of other
+theorem about equivalence of filters? (Our proof
+uses transitivity of equivalence of filters. So we can't
+use it to prove that it is an equivalence relation, to avoid circular proof.)}
+\end{prop}
+
+\begin{proof}
+Let $\mathcal{A}\sim\mathcal{B}$. Then there is a set~$P$
+such that~$P\in\mathcal{A}$,~$P\in\mathcal{B}$ and
+$\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
+So $\mathscr{S}\mathcal{A} = (\mathcal{A}\cap\subsets P)\cup
+\setcond{\text{small set }K}{K\supseteq P}$.
+Similarly
+$\mathscr{S}\mathcal{B} = (\mathcal{B}\cap\subsets P)\cup
+\setcond{\text{small set }K}{K\supseteq P}$.
+Combining, we have $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+
+Let now $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+Take $K\in\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
+Then $\mathcal{A}\div K=\mathcal{B}\div K$ and thus
+(proposition~\ref{filteq-ext})
+$\mathcal{A}\sim\mathcal{A}\div K =
+\mathcal{B}\div K\sim\mathcal{B}$, so having
+$\mathcal{A}\sim\mathcal{B}$.
+\end{proof}
+
+\begin{prop}\label{sim-rebase}
+$\mathcal{A}\sim\mathcal{B} \Rightarrow
+\mathcal{A}\div B=\mathcal{B}\div B$ for every
+filters~$\mathcal{A}$ and~$\mathcal{B}$ and set~$B$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{A}\div B =
+\rsupfun{B\cap}\mathscr{S}\mathcal{A} =
+\rsupfun{B\cap}\mathscr{S}\mathcal{B} =
+\mathcal{B}\div B$.
+\end{proof}
+
+\subsection{Poset of unfixed filters}
+
+\begin{lem}
+Let filters~$\mathcal{X}$
+and~$\mathcal{Y}$ be such that
+$\Base(\mathcal{X})=\Base(\mathcal{Y})=B$. Then
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C
+\Leftrightarrow \mathcal{X}\sqsubseteq\mathcal{Y}$ for every
+set~$C\supseteq B$.
+\end{lem}
+
+\begin{proof}
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C\Leftrightarrow
+\mathcal{X}\div C\supseteq\mathcal{Y}\div C\Leftrightarrow
+\mathcal{X}\cup\setcond{K\in\subsets C}{K\supseteq B} \supseteq \mathcal{Y}\cup\setcond{K\in\subsets C}{K\supseteq B} \Leftrightarrow
+\mathcal{X}\supseteq\mathcal{Y} \Leftrightarrow
+\mathcal{X}\sqsubseteq\mathcal{Y}$.
+\end{proof}
+
+\begin{prop}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Rightarrow
+\mathcal{X}\div B\sqsubseteq\mathcal{Y}\div B$ for every
+filters~$\mathcal{X}$,~$\mathcal{Y}$ with the same base
+and set~$B$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
+\mathcal{X}\supseteq\mathcal{Y} \Rightarrow
+\mathcal{X}\div B\supseteq\mathcal{Y}\div B \Leftrightarrow
+\mathcal{X}\div B\sqsubseteq\mathcal{Y}\div B$.
+\end{proof}
+
+Define order of unfixed filters using already defined order
+of filters of a fixed base:
+
+\begin{defn}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
+\exists x\in\mathcal{X},y\in\mathcal{Y}:
+(\Base(x)=\Base(y)\land x\sqsubseteq y)$ for unfixed
+filters~$\mathcal{X}$,~$\mathcal{Y}$.
+\end{defn}
+
+\begin{lem}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
+\mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$
+for every unfixed filters~$\mathcal{X}$,~$\mathcal{Y}$.
+\end{lem}
+
+\begin{proof}
+~
+\begin{description}
+\item[$\Rightarrow$] Suppose
+$\mathcal{X}\sqsubseteq\mathcal{Y}$. Then there
+exist~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$ such that
+$\Base(x)=\Base(y)$ and $x\sqsubseteq y$. Then
+$\mathscr{S}\mathcal{X} =
+\mathscr{S}x \sqsubseteq \mathscr{S}y =
+\mathscr{S}\mathcal{Y}$.
+
+\item[$\Leftarrow$] Suppose
+$\mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$.
+Then there are $x\in\mathcal{X}$,~$y\in\mathcal{Y}$
+such that $\mathscr{S}x\sqsubseteq\mathscr{S}y$.
+Consequently
+$\mathscr{S}x' \sqsubseteq\mathscr{S}y'$ for
+$x'=x\div(\Base(x)\cup\Base(y))$,
+$y'=y\div(\Base(x)\cup\Base(y))$.
+So we have~$x'\in\mathcal{X}$,~$y'\in\mathcal{Y}$,
+$\Base(x')=\Base(y')$ and $x'\sqsubseteq y'$,
+thus $\mathcal{X}\sqsubseteq\mathcal{Y}$.
+\end{description}
+\end{proof}
+
+\begin{thm}
+$\sqsubseteq$~on the set of small unfixed filters is a poset.
+\end{thm}
+
+\begin{proof}
+~
+\begin{description}
+\item[Reflexivity] From the previous theorem.
+
+\item[Transitivity] From the previous theorem.
+
+\item[Antisymmetry] Suppose
+$\mathcal{X}\sqsubseteq\mathcal{Y}$ and
+$\mathcal{Y}\sqsubseteq\mathcal{X}$. Then
+$\mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$ and
+$\mathscr{S}\mathcal{Y}\sqsubseteq\mathscr{S}\mathcal{X}$.
+Thus $\mathscr{S}\mathcal{X}=\mathscr{S}\mathcal{Y}$ and
+so $\mathscr{S}x=\mathscr{S}y$ for
+some~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$. Consequently
+$\mathscr{S}(x\div B)=\mathscr{S}(y\div B)$ for
+$B=\Base(x)\cup\Base(y)$. Thus $x\div B=y\div B$
+and so $x\sim y$, thus $\mathcal{X}=\mathcal{Y}$.
+\end{description}
+\end{proof}
+
+\begin{thm}
+$[x]\sqsubseteq[y] \Leftrightarrow x\sqsubseteq y$ for
+filters~$x$ and~$y$ with the same base set.
+\end{thm}
+
+\begin{proof}
+~
+\begin{description}
+\item[$\Leftarrow$] Obvious.
+
+\item[$\Rightarrow$] Let $\Base(x)=\Base(y)=B$.
+Suppose $[x]\sqsubseteq[y]$. Then
+there exist $x'\sim x$ and $y'\sim y$ such that
+$C=\Base(x')=\Base(y')$ (for some set~$C$) and
+$x'\sqsubseteq y'$.
+
+We have by the lemma
+$x'\div(B\cup C)\sqsubseteq y'\div(B\cup C)$.
+
+But $x'\div(B\cup C)=x\div(B\cup C)$ and
+$y'\div(B\cup C)=y\div(B\cup C)$. So
+$x\div(B\cup C)\sqsubseteq y\div(B\cup C)$ and thus again
+applying the lemma $x\sqsubseteq y$.
+\end{description}
+\end{proof}
+
+\begin{prop}
+$\mathcal{X}\sqsubseteq\mathcal{Y} \Rightarrow
+\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$ for every
+unfixed filters~$\mathcal{X}$,~$\mathcal{Y}$ and set~$C$.
+\end{prop}
+
+\begin{proof}
+Let $\mathcal{X}\sqsubseteq\mathcal{Y}$. Then there
+are~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$ such that
+$\Base(x)=\Base(y)$ and $x\sqsubseteq y$.
+Then by proved above $x\div C\sqsubseteq y\div C$ what is
+equivalent to
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$.
+\end{proof}
+
+\begin{prop}
+If~$C\in\mathscr{S}\mathcal{X}$
+and~$C\in\mathscr{S}\mathcal{Y}$ for unfixed
+filters~$\mathcal{X}$ and~$\mathcal{Y}$ then
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C \Leftrightarrow
+\mathcal{X}\sqsubseteq\mathcal{Y}$.
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[$\Leftarrow$] Previous proposition.
+
+\item[$\Rightarrow$] Let
+$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$.
+We have some~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$,
+such that $\Base(x)=\Base(y)$ and
+$x\div C\sqsubseteq y\div C$.
+So $\mathscr{S}(x\div C)\sqsubseteq\mathscr{S}(y\div C)$.
+But $\mathscr{S}(x\div C)\sim x$ and
+$\mathscr{S}(y\div C)\sim y$. Thus
+$\mathscr{S}x\sqsubseteq\mathscr{S}y$ that is
+$x\sqsubseteq y$ and so
+$\mathcal{X}\sqsubseteq\mathcal{Y}$.
+\end{description}
+\end{proof}
+
+\subsection{Rebase of unfixed filters}
+
+Proposition~\ref{sim-rebase} allows to define:
+
+\begin{defn}
+$\mathcal{A}\div B = a\div B$ for an unfixed
+filter~$\mathcal{A}$ and arbitary $a\in\mathcal{A}$.
+\end{defn}
+
+\begin{obvious}
+$(\mathcal{X}\div A)\div B = \mathcal{X}\div B$ if
+$B\subseteq A$ for every unfixed filter~$\mathcal{X}$ and
+sets~$A$,~$B$.
+\end{obvious}
+
+Proposition~\ref{filteq-if-sim} allows to define:
+
+\begin{defn}
+$\mathscr{S}\mathcal{A} = \mathscr{S}a$ for
+every~$a\in\mathcal{A}$ for every unfixed
+filter~$\mathcal{A}$.
+\end{defn}
+
+\begin{thm}\label{mathscrs-iso}
+$\mathscr{S}$~is an order-isomorphism from the poset of
+unfixed filters to the poset of filters on the poset of
+small sets.
+\end{thm}
+
+\begin{proof}
+We already know that~$\mathscr{S}$ is an order embedding.
+It remains to prove that it is a surjection.
+
+Let~$\mathcal{Y}$ be a filter on the poset of small sets.
+Take small set $X\in\mathcal{Y}$. Then
+$\rsupfun{X\cap}\mathcal{Y}$ is a filter on~$X$ and
+$\mathscr{S}[\rsupfun{X\cap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\cap}\mathcal{Y}=\mathcal{Y}$. We have proved that
+it is a surjection.
+\end{proof}
+
+\begin{obvious}
+$\mathcal{A}\div B = \rsupfun{B\cap}\mathscr{S}\mathcal{A}$
+for every unfixed filter~$\mathcal{A}$.
+\end{obvious}
+
+\begin{obvious}
+If $A\in\mathscr{S}\mathcal{A}$ then
+$\mathcal{A}\div A\in\mathcal{A}$ for every unfixed
+filter~$\mathcal{A}$.
+\end{obvious}
+
+\begin{prop}
+If~$C\in\mathscr{S}\mathcal{X}$
+and~$C\in\mathscr{S}\mathcal{Y}$ for unfixed
+filters~$\mathcal{X}$ and~$\mathcal{Y}$ then
+$\mathcal{X}\div C=\mathcal{Y}\div C \Leftrightarrow
+\mathcal{X}=\mathcal{Y}$.
+\end{prop}
+
+\begin{proof}
+The backward implication is obvious. Let now
+$\mathcal{X}\div C=\mathcal{Y}\div C$.
+Take~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$.
+We have
+$\mathcal{X}\div C=x\div C=(x\div B)\div C$
+for $B=C\cup\Base(x)\cup\Base(y)$.
+Similary $\mathcal{Y}\div C=(y\div B)\div C$.
+Thus $(x\div B)\div C=(y\div B)\div C$ and thus
+$x\div B=y\div B$, so $x\sim y$ that is
+$\mathcal{X}=\mathcal{Y}$.
+\end{proof}
+
+\begin{prop}
+$\mathcal{A}\div A =
+\bigsqcap\setcond{\uparrow^A(X\cap A)}{X\in\mathscr{S}\mathcal{A}}$ for every unfixed filter~$\mathcal{A}$.
+\end{prop}
+
+\begin{proof}
+Take~$a\in\mathcal{A}$.
+\begin{multline*}
+\bigsqcap\setcond{\uparrow^A(X\cap A)}{X\in\mathscr{S}\mathcal{A}} =
+\bigsqcap\setcond{\uparrow^A(X\cap A\cap\Base(a))}{X\in\mathscr{S}\mathcal{A}} =
+\bigsqcap\setcond{\uparrow^A(X\cap A)}{X\in\mathscr{S}\mathcal{A}\cap\subsets\Base(a)} = \\
+\bigsqcap\setcond{\uparrow^A(X\cap A)}{X\in\mathscr{S}a\cap\subsets\Base(a)} =
+\bigsqcap\setcond{\uparrow^A(X\cap A)}{X\in a}=
+a\div A = \mathcal{A}\div A.
+\end{multline*}
+\end{proof}
+
+\subsection{The diagram for unfixed filters}
+
+Fix a set~$B$.
+
+\begin{lem}
+$\mathcal{X}\mapsto\mathcal{X}\div B$ and $x\mapsto[x]$ are
+mutually inverse order isomorphisms between
+$\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and $\mathfrak{F}(B)$.
+\end{lem}
+
+\begin{proof}
+First, $\mathcal{X}\div B\in\mathfrak{F}(B)$ for
+$\mathcal{X}\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and
+$[x]\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$
+for $x\in\mathfrak{F}(B)$.
+
+Suppose $\mathcal{X}_0\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$,
+$x=\mathcal{X}_0\div B$, and $\mathcal{X}_1=[x]$. We will prove
+$\mathcal{X}_0=\mathcal{X}_1$. Really, $x\in\mathcal{X}_1$,
+$x=k\div B$ for $k\in\mathcal{X}_0$, $x\sim k$, thus
+$x\in\mathcal{X}_0$. So $\mathcal{X}_0=\mathcal{X}_1$.
+
+Suppose $x_0\in\mathfrak{F}(B)$, $\mathcal{X}=[x_0]$,
+$x_1=\mathcal{X}\div B$. We will prove $x_0=x_1$. Really,
+$x_1=x_0\div B$. So $x_1=x_0$ because
+$\Base(x_0)=\Base(x_1)=B$.
+
+So we proved that they are mutually inverse bijections. That
+they are order preserving is obvious.
+\end{proof}
+
+\begin{lem}
+$\mathscr{S}$ and
+$\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=
+\mathcal{X}\cap\subsets B$
+are mutually inverse order isomorphisms
+between~$\mathfrak{F}(B)$ and
+$\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$.
+\end{lem}
+
+\begin{proof}
+First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(B)$
+because of theorem~\ref{mathscrs-iso} and
+$\rsupfun{B\cap}\mathcal{X}\in\mathfrak{F}(B)$ obviously.
+
+Let's prove
+$\rsupfun{B\cap}\mathcal{X}=\mathcal{X}\cap\subsets B$.
+If $X\in\rsupfun{B\cap}\mathcal{X}$ then
+$X\in\mathcal{X}$ (because $B\in\mathcal{X}$) and
+$X\in\subsets B$. So $X\in\mathcal{X}\cap\subsets B$. If
+$X\in\mathcal{X}\cap\subsets B$ then
+$X=B\cap X\in\rsupfun{B\cap}\mathcal{X}$.
+
+Let~$x_0\in\mathfrak{F}(B)$, $\mathcal{X}=\mathscr{S}x$, and
+$x_1=\rsupfun{B\cap}\mathcal{X}$. Then obviously $x_0=x_1$.
+
+Let now
+$\mathcal{X}_0\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$, $x=\rsupfun{B\cap}\mathcal{X}_0$, and
+$\mathcal{X}_1=\mathscr{S}x$. Then
+$\mathcal{X}_1=
+\mathcal{X}_0\cup\setcond{\text{small set }K}{K\supseteq B}=
+\mathcal{X}_0$.
+
+So we proved that they are mutually inverse bijections. That
+they are order preserving is obvious.
+\end{proof}
+
+\begin{thm}\label{powfilt-diag}
+The diagram at the figure~\ref{unfix-dia} (with the horizontal ``unnamed''
+arrow \emph{defined} as the inverse isomorphism of its opposite arrow)
+is a commutative diagram (in category $\mathbf{Set}$), every arrow
+in this diagram is an isomorphism. Every cycle in this diagram is
+an identity (therefore ``parallel'' arrows are mutually inverse).
+The arrows preserve order.
+
+\begin{figure}[ht]
+\caption{\label{unfix-dia}}
+
+\begin{tikzcd}[row sep=2cm, column sep=0.5cm]
+& \mathfrak{F}(B)
+\arrow[rd, shift left, "x\mapsto{[x]}"]
+\arrow[ld, shift left, "\mathscr{S}"] \\
+\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}
+  {B\in\mathcal{X}}
+\arrow[ru, shift left, "\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=\mathcal{X}\cap\subsets B"]
+\arrow[rr, shift left]
+& & \setcond{\text{unfixed filter }\mathcal{X}}
+  {B\in\mathscr{S}\mathcal{X}}
+\arrow[lu, shift left, "\mathcal{X}\mapsto\mathcal{X}\div B"]
+\arrow[ll, shift left, "\mathscr{S}"]
+\end{tikzcd}
+\end{figure}
+\end{thm}
+
+\begin{proof}
+It's proved above, that all morphisms (except the ``unnamed'' arrow,
+which is the inverse morphism by definition) depicted on the diagram
+are bijections and the depicted ``opposite'' morphisms are mutually
+inverse.
+
+That arrows preserve order is obvious.
+
+It remains to apply lemma~\ref{three-loop-lem} (taking into account the proof of theorem~\ref{mathscrs-iso}).
+\end{proof}
+
+\subsection{The lattice of unfixed filters}
+
+\begin{thm}
+Every nonempty set of unfixed filters has an infimum.
+\end{thm}
+
+\begin{proof}
+Theorem~\ref{distr-meet}.
+\end{proof}
+
+\begin{thm}
+Every bounded above set of unfixed filters has a supremum.
+\end{thm}
+
+\begin{proof}
+Theorem~\ref{join-filt-gen} for nonempty sets of unfixed
+filters. The join $\bigsqcup\emptyset=[\bot]$ for the
+least filter~$\bot$ on an arbitary small set.
+\end{proof}
+
+\begin{cor}
+Every small set of unfixed filters has a supremum.
+\end{cor}
+
+\begin{proof}
+Let~$S$ be a small set of filters on the set of small
+sets. Then $T_{\mathcal{X}}\in\mathcal{X}$ is a small set
+for every~$\mathcal{X}\in S$. Thus
+$\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small
+set and thus
+$T=\bigcup\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small set. Take the filter $\mathcal{T}=\uparrow T$.
+Then~$\mathcal{T}$ is an upper bound of~$S$ and we can apply the theorem.
+\end{proof}
+
+\begin{obvious}
+The poset of unfixed filters is bounded below (but not above).
+\end{obvious}
+
+\begin{prop}
+The set of unfixed filters forms a co-brouwerian (and thus
+distributive) lattice.
+\end{prop}
+
+\begin{proof}
+Corollary~\ref{filt-also-distr}.
+\end{proof}
+
+\subsection{Principal unfixed filters and filtrator of unfixed filters}
+
+\begin{defn}
+\emph{Principal} unfixed filter is an unfixed filter
+corresponding to a principal filter on the poset of all small
+sets.
+\end{defn}
+
+\begin{defn}
+The \emph{filtrator of unfixed filters} is the filtrator
+whose base are unfixed filters and whose core are principal
+unfixed filters.
+\end{defn}
+
+We will equate principal unfixed filters with corresponding
+sets.
+
+\begin{thm}
+If we add principal filters on~$B$, principal filters on
+the poset of small sets containing~$B$, and above defined
+principal unfixed filters corresponding to them to
+appropriate nodes of the diagram~\ref{unfix-dia}, then
+the diagram turns into a commutative diagram of isomorphisms
+between filtrators. (I will not draw the modified diagram
+for brevity.)
+
+Every arrow of this diagram is an isomorphism between
+filtrators, every cycle in the diagram is identity.
+\end{thm}
+
+\begin{proof}
+We need to prove only that principal filters on~$B$ and
+principal filters on the poset of small sets containing~$B$
+correspond to each other by the isomorphisms of the diagram.
+But that's obvious.
+\end{proof}
+
+\begin{obvious}
+The filtrator of unfixed filters is a primary filtrator.
+\end{obvious}
+
+\begin{obvious}
+The filtrator of unfixed filters is down-aligned.
+\end{obvious}
+
+\begin{prop}
+The filtrator of unfixed filters is
+\begin{enumerate}
+\item filtered;
+\item with join-closed core.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{semifilt-joinclosed}.
+\end{proof}
+
+\begin{prop}
+The filtrator of unfixed filters is with binarily meet-closed core.
+\end{prop}
+
+\begin{proof}
+Corollary~\ref{f-meet-closed}.
+\end{proof}
+
+\begin{prop}
+The filtrator of unfixed filters is with separable core.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{when-sep-core}.
+\end{proof}
+
+\begin{prop}
+$\Cor\mathcal{X}$ and $\Cor'\mathcal{X}$ are defined for every
+unfixed filter~$\mathcal{X}$ and
+$\Cor\mathcal{X}=\Cor'\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+$\Cor\mathcal{X}$ exists because
+$\up\mathcal{X}=\mathcal{X}$ is a small set.
+
+$\Cor'\mathcal{X}$ exists because
+$\down\mathcal{X}=\mathcal{X}$ is a small set.
+
+$\Cor'\mathcal{X}=\Cor\mathcal{X}$ by
+theorem~\ref{cor-eq}.
+\end{proof}
+
+\begin{obvious}
+$\Cor\mathcal{X}=\Cor'\mathcal{X}=\bigcap\mathcal{X}$ for
+every filter~$\mathcal{X}$ on the set of small sets.
+\end{obvious}
+
+\begin{prop}
+$\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ for every $S\in\subsets\mathfrak{A}\setminus\{\emptyset\}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{atoms-infmeet}.
+\end{proof}
+
+\begin{prop}
+$\atoms(\mathcal{A}\sqcup\mathcal{B})=\atoms\mathcal{A}\cup\atoms\mathcal{B}$ for unfixed
+filters~$\mathcal{A}$,~$\mathcal{B}$.
+\end{prop}
+
+\begin{proof}
+Proposition~\ref{f-atoms-join}.
+\end{proof}
+
+\begin{prop}
+$\corestar\mathcal{X}$ is a free star for every unfixed
+filter~$\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{da-is-free-star}.
+\end{proof}
+
+\begin{prop}
+The poset of unfixed filters is an atomistic lattice.
+\end{prop}
+
+\begin{proof}
+Easily follows from~\ref{powfilt-diag} by isomorphism.
+\end{proof}
+
+\begin{prop}
+The poset of unfixed filters is a strongly separable lattice.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{atom-is-sep}.
+\end{proof}
+
+\begin{prop}
+$\Cor\mathcal{X}=\setcond{x}{\{x\}\sqsubseteq\mathcal{X}}$
+for every unfixed filter~$\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{cor-join-atom}.
+\end{proof}
+
+\begin{prop}
+$\Cor(\mathcal{A}\sqcap\mathcal{B})=
+\Cor\mathcal{A}\sqcap\Cor\mathcal{B}$ for every unfixed
+filters~$\mathcal{A}$,~$\mathcal{B}$.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{dual-cor-meet}.
+\end{proof}
+
+\begin{prop}
+$\Cor\bigsqcap^{\mathfrak{A}}S=\bigsqcap^{\mathfrak{Z}}\rsupfun{\Cor}S$ for the filtrator of unfixed filters for
+every nonempty set~$S$ of unfixed filters.
+\end{prop}
+
+\begin{proof}
+Theorem~\ref{dual-cor-inf-meet}.
+\end{proof}
+
+\begin{prop}
+$\Cor(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B}) =
+\Cor\mathcal{A}\sqcup^{\mathfrak{Z}}\Cor\mathcal{B}$ for the filtrator of unfixed filters for every unfixed filters~$\mathcal{A}$, and~$\mathcal{B}$.
+\end{prop}
+
+\begin{proof}
+Can be easily deduced from theorem~\ref{dual-core-join}
+and the triangular diagram (above) of isomorphic filtrators.
+\end{proof}
+
+\begin{conjecture}
+The theorem~\ref{closed-free-star} holds for unfixed
+filters, too.
+\end{conjecture}
+
+It is expected to be easily provable using isomorphisms from
+the triangular diagram.
+
 \chapter{Unfixed categories}
 
 \section{Axiomatics for unfixed morphisms}
