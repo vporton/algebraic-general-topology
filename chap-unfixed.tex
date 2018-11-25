@@ -10,31 +10,28 @@ all small (regarding some Grothendieck universe) sets.
 
 Throughout this section I will use the word \emph{filter}
 to denote a filter on a sublattice~$DA$
-where~$A\in\mathfrak{Z}$.
+where~$A\in\mathfrak{Z}$ (if not told explicitly to be a
+filter on some other set). (This~$\mathfrak{Z}$ is not
+a powerset, and even not a complete lattice.)
 
 The following is an embedding from
 filters~$\mathcal{A}$ on a lattice~$DA$ into the lattice of
-filters on small sets:
+filters on~$\mathfrak{Z}$:
 $\mathscr{S}\mathcal{A}=\setcond{K\in\mathfrak{Z}}{
 \exists X\in\mathcal{A}:X\subseteq K}$.
 
-\begin{note}
-The lattice of filters on small sets is not a powerset (and
-even not a complete lattice).
-\end{note}
-
 \begin{prop}
-Values of this embedding are filters on the lattice of small
-sets.
+Values of this embedding are filters on the
+lattice~$\mathcal{Z}$.
 \end{prop}
 
 \begin{proof}
 That $\mathscr{S}\mathcal{A}$ is an upper set is obvious.
 
-Let $P,Q\in\mathscr{S}\mathcal{A}$. Then~$P$ and~$Q$ are
-small sets and there is an $X\in\mathcal{A}$ such
-that~$X\subseteq P$ and $Y\in\mathcal{A}$ such
-that~$Y\subseteq Q$. So small set $X\cap Y\in\mathcal{A}$
+Let $P,Q\in\mathscr{S}\mathcal{A}$.
+Then~$P,Q\in\mathfrak{Z}$ and there is an $X\in\mathcal{A}$
+such that~$X\subseteq P$ and $Y\in\mathcal{A}$ such
+that~$Y\subseteq Q$. So $X\cap Y\in\mathcal{A}$
 and $P\cap Q\supseteq X\cap Y\in\mathcal{A}$, so
 $P\cap Q\in\mathscr{S}A$.
 \end{proof}
@@ -109,9 +106,9 @@ $\mathcal{A}\div A=\mathcal{A}\cap\subsets A$.
 \begin{proof}
 $\mathcal{A}\div A=
 \rsupfun{A\cap}\mathscr{S}\mathcal{A} =
-\rsupfun{A\cap}\setcond{\text{small set }K}{
+\rsupfun{A\cap}\setcond{K\in\mathfrak{Z}}{
 \exists X\in\mathcal{A}:X\subseteq K} =
-\setcond{\text{small set }K}{
+\setcond{K\in\mathfrak{Z}}{
 K\in\mathcal{A}\land K\in\subsets A} =
 \mathcal{A}\cap\subsets A$.
 \end{proof}
@@ -213,14 +210,15 @@ A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\mathcal{A}\div A.
 \end{proof}
 
 \begin{prop}
-$\sim$ restricted to small filters is an equivalence relation.\end{prop}
+$\sim$ is an equivalence relation.
+\end{prop}
 \begin{proof}
 ~
 \begin{description}
 \item [{Reflexivity}] Obvious.
 \item [{Symmetry}] Obvious.
 \item [{Transitivity}] Let $\mathcal{A}\sim\mathcal{B}$ and $\mathcal{B}\sim\mathcal{C}$
-for some small filters $\mathcal{A}$, $\mathcal{B}$, and $\mathcal{C}$.
+for some filters $\mathcal{A}$, $\mathcal{B}$, and $\mathcal{C}$.
 Then there exist a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
 and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$ and a set
 $Y$ such that $Y\in\mathcal{B}$ and $Y\in\mathcal{C}$ and $\subsets Y\cap\mathcal{B}=\subsets Y\cap\mathcal{C}$.
@@ -238,7 +236,7 @@ Similarly we have $X\cap Y\in\mathcal{C}$. Finally
 \end{proof}
 
 \begin{defn}
-I will call equivalence classes (of small filters) as
+I will call equivalence classes as
 \emph{unfixed filters}.
 \end{defn}
 
@@ -261,10 +259,10 @@ Let $\mathcal{A}\sim\mathcal{B}$. Then there is a set~$P$
 such that~$P\in\mathcal{A}$,~$P\in\mathcal{B}$ and
 $\mathcal{A}\cap\subsets P=\mathcal{B}\cap\subsets P$.
 So $\mathscr{S}\mathcal{A} = (\mathcal{A}\cap\subsets P)\cup
-\setcond{\text{small set }K}{K\supseteq P}$.
+\setcond{K\in\mathfrak{Z}}{K\supseteq P}$.
 Similarly
 $\mathscr{S}\mathcal{B} = (\mathcal{B}\cap\subsets P)\cup
-\setcond{\text{small set }K}{K\supseteq P}$.
+\setcond{K\in\mathfrak{Z}}{K\supseteq P}$.
 Combining, we have $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
 
 Let now $\mathscr{S}\mathcal{A}=\mathscr{S}\mathcal{B}$.
@@ -364,7 +362,7 @@ thus $\mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{proof}
 
 \begin{thm}
-$\sqsubseteq$~on the set of small unfixed filters is a poset.
+$\sqsubseteq$~on the set of unfixed filters is a poset.
 \end{thm}
 
 \begin{proof}
@@ -481,16 +479,15 @@ filter~$\mathcal{A}$.
 
 \begin{thm}\label{mathscrs-iso}
 $\mathscr{S}$~is an order-isomorphism from the poset of
-unfixed filters to the poset of filters on the poset of
-small sets.
+unfixed filters to the poset of filters on~$\mathfrak{Z}$.
 \end{thm}
 
 \begin{proof}
 We already know that~$\mathscr{S}$ is an order embedding.
 It remains to prove that it is a surjection.
 
-Let~$\mathcal{Y}$ be a filter on the poset of small sets.
-Take small set $X\in\mathcal{Y}$. Then
+Let~$\mathcal{Y}$ be a filter on~$\mathfrak{Z}$.
+Take $\mathfrak{Z}\ni X\in\mathcal{Y}$. Then
 $\rsupfun{X\cap}\mathcal{Y}$ is a filter on~$X$ and
 $\mathscr{S}[\rsupfun{X\cap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\cap}\mathcal{Y}=\mathcal{Y}$. We have proved that
 it is a surjection.
@@ -582,11 +579,11 @@ $\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=
 \mathcal{X}\cap\subsets B$
 are mutually inverse order isomorphisms
 between~$\mathfrak{F}(B)$ and
-$\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$.
+$\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}{B\in\mathcal{X}}$.
 \end{lem}
 
 \begin{proof}
-First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(B)$
+First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(B)$
 because of theorem~\ref{mathscrs-iso} and
 $\rsupfun{B\cap}\mathcal{X}\in\mathfrak{F}(B)$ obviously.
 
@@ -602,10 +599,10 @@ Let~$x_0\in\mathfrak{F}(B)$, $\mathcal{X}=\mathscr{S}x$, and
 $x_1=\rsupfun{B\cap}\mathcal{X}$. Then obviously $x_0=x_1$.
 
 Let now
-$\mathcal{X}_0\in\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}{B\in\mathcal{X}}$, $x=\rsupfun{B\cap}\mathcal{X}_0$, and
+$\mathcal{X}_0\in\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}{B\in\mathcal{X}}$, $x=\rsupfun{B\cap}\mathcal{X}_0$, and
 $\mathcal{X}_1=\mathscr{S}x$. Then
 $\mathcal{X}_1=
-\mathcal{X}_0\cup\setcond{\text{small set }K}{K\supseteq B}=
+\mathcal{X}_0\cup\setcond{K\in\mathfrak{Z}}{K\supseteq B}=
 \mathcal{X}_0$.
 
 So we proved that they are mutually inverse bijections. That
@@ -624,10 +621,10 @@ The arrows preserve order.
 \caption{\label{unfix-dia}}
 
 \begin{tikzcd}[row sep=2cm, column sep=0.5cm]
-& \mathfrak{F}(B)
+& \mathfrak{F}(DB)
 \arrow[rd, shift left, "x\mapsto{[x]}"]
 \arrow[ld, shift left, "\mathscr{S}"] \\
-\setcond{\mathcal{X}\in\mathfrak{F}(\text{small sets})}
+\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}
   {B\in\mathcal{X}}
 \arrow[ru, shift left, "\mathcal{X}\mapsto\rsupfun{B\cap}\mathcal{X}=\mathcal{X}\cap\subsets B"]
 \arrow[rr, shift left]
@@ -667,17 +664,19 @@ Every bounded above set of unfixed filters has a supremum.
 \begin{proof}
 Theorem~\ref{join-filt-gen} for nonempty sets of unfixed
 filters. The join $\bigsqcup\emptyset=[\bot]$ for the
-least filter~$\bot$ on an arbitary small set.
+least filter~$\bot\in\mathfrak{Z}(DA)$ for
+arbitrary~$A\in\mathfrak{Z}$.
 \end{proof}
 
 \begin{cor}
-Every small set of unfixed filters has a supremum.
+Every set of unfixed filters has a supremum.
 \end{cor}
 
 \begin{proof}
-Let~$S$ be a small set of filters on the set of small
-sets. Then $T_{\mathcal{X}}\in\mathcal{X}$ is a small set
-for every~$\mathcal{X}\in S$. Thus
+\fxerror{Correct this.}
+Let~$S$ be a set of filters on~$\mathfrak{Z}$. Then $T_{\mathcal{X}}\in\mathcal{X}$ is a small set
+for every~$\mathcal{X}\in S$.
+Thus
 $\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small
 set and thus
 $T=\bigcup\setcond{T_{\mathcal{X}}}{\mathcal{X}\in S}$ is small set. Take the filter $\mathcal{T}=\uparrow T$.
@@ -701,8 +700,8 @@ Corollary~\ref{filt-also-distr}.
 
 \begin{defn}
 \emph{Principal} unfixed filter is an unfixed filter
-corresponding to a principal filter on the poset of all small
-sets.
+corresponding to a principal filter on the
+poset~$\mathfrak{Z}$.
 \end{defn}
 
 \begin{defn}
@@ -715,8 +714,8 @@ We will equate principal unfixed filters with corresponding
 sets.
 
 \begin{thm}
-If we add principal filters on~$B$, principal filters on
-the poset of small sets containing~$B$, and above defined
+If we add principal filters on~$DB$, principal filters
+on~$\mathcal{Z}$ containing~$B$, and above defined
 principal unfixed filters corresponding to them to
 appropriate nodes of the diagram~\ref{unfix-dia}, then
 the diagram turns into a commutative diagram of isomorphisms
@@ -729,7 +728,7 @@ filtrators, every cycle in the diagram is identity.
 
 \begin{proof}
 We need to prove only that principal filters on~$B$ and
-principal filters on the poset of small sets containing~$B$
+principal filters on~$\mathfrak{Z}$ containing~$B$
 correspond to each other by the isomorphisms of the diagram.
 But that's obvious.
 \end{proof}
@@ -777,6 +776,8 @@ $\Cor\mathcal{X}=\Cor'\mathcal{X}$.
 \end{prop}
 
 \begin{proof}
+\fxerror{Correct this.}
+
 $\Cor\mathcal{X}$ exists because
 $\up\mathcal{X}=\mathcal{X}$ is a small set.
 
@@ -789,7 +790,7 @@ theorem~\ref{cor-eq}.
 
 \begin{obvious}
 $\Cor\mathcal{X}=\Cor'\mathcal{X}=\bigcap\mathcal{X}$ for
-every filter~$\mathcal{X}$ on the set of small sets.
+every filter~$\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})$.
 \end{obvious}
 
 \begin{prop}
@@ -1016,7 +1017,7 @@ $\iota_{B_0, B_1} f\sqsubseteq f$.
 \section{Image and domain}
 
 Let define that
-$\mathscr{S}\mathcal{A}=\setcond{\text{small set }K}{
+$\mathscr{S}\mathcal{A}=\setcond{K\in\mathfrak{Z}}{
 \exists X\in\mathcal{A}:X\subseteq K}$
 holds not only for filters but for any set~$\mathcal{A}$ of
 sets.
