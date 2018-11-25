@@ -685,12 +685,14 @@ Then~$\mathcal{T}$ is an upper bound of~$S$ and we can apply the theorem.
 \end{proof}
 
 \begin{obvious}
-The poset of unfixed filters is bounded below (but not above).
+The poset of unfixed filters for the lattice of small sets
+is bounded below (but not above).
 \end{obvious}
 
 \begin{prop}
 The set of unfixed filters forms a co-brouwerian (and thus
-distributive) lattice.
+distributive) lattice, provided that~$\mathfrak{Z}$ is
+distributive lattice which is an ideal base.
 \end{prop}
 
 \begin{proof}
@@ -716,7 +718,7 @@ sets.
 
 \begin{thm}
 If we add principal filters on~$DB$, principal filters
-on~$\mathcal{Z}$ containing~$B$, and above defined
+on~$\mathfrak{Z}$ containing~$B$, and above defined
 principal unfixed filters corresponding to them to
 appropriate nodes of the diagram~\ref{unfix-dia}, then
 the diagram turns into a commutative diagram of isomorphisms
@@ -773,7 +775,8 @@ Theorem~\bookref{when-sep-core}.
 \begin{prop}
 $\Cor\mathcal{X}$ and $\Cor'\mathcal{X}$ are defined for every
 unfixed filter~$\mathcal{X}$ and
-$\Cor\mathcal{X}=\Cor'\mathcal{X}$.
+$\Cor\mathcal{X}=\Cor'\mathcal{X}$, provided that every
+$DA$ is a complete lattice.
 \end{prop}
 
 \begin{proof}
@@ -786,11 +789,12 @@ theorem~\bookref{cor-eq}.
 
 \begin{obvious}
 $\Cor\mathcal{X}=\Cor'\mathcal{X}=\bigcap\mathcal{X}$ for
-every filter~$\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})$.
+every filter~$\mathcal{X}\in\mathfrak{F}(\text{small sets})$.
 \end{obvious}
 
 \begin{prop}
-$\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$ for every $S\in\subsets\mathfrak{A}\setminus\{\emptyset\}$.
+$\atoms\bigsqcap S=\bigcap\rsupfun{\atoms}S$
+whenever~$\bigsqcap S$ is defined.
 \end{prop}
 
 \begin{proof}
@@ -799,7 +803,8 @@ Theorem~\bookref{atoms-infmeet}.
 
 \begin{prop}
 $\atoms(\mathcal{A}\sqcup\mathcal{B})=\atoms\mathcal{A}\cup\atoms\mathcal{B}$ for unfixed
-filters~$\mathcal{A}$,~$\mathcal{B}$.
+filters~$\mathcal{A}$,~$\mathcal{B}$, whenever~$\mathfrak{Z}$
+is a distributive lattice which is an ideal base.
 \end{prop}
 
 \begin{proof}
@@ -808,7 +813,9 @@ Proposition~\bookref{f-atoms-join}.
 
 \begin{prop}
 $\corestar\mathcal{X}$ is a free star for every unfixed
-filter~$\mathcal{X}$.
+filter~$\mathcal{X}$, whenever~$\mathfrak{Z}$
+is a distributive lattice which is an ideal base which
+has a least element.
 \end{prop}
 
 \begin{proof}
@@ -816,7 +823,9 @@ Theorem~\bookref{da-is-free-star}.
 \end{proof}
 
 \begin{prop}
-The poset of unfixed filters is an atomistic lattice.
+The poset of unfixed filters is an atomistic lattice if
+every~$DA$ (for~$A\in\mathfrak{A}$) is an
+atomistic lattice.
 \end{prop}
 
 \begin{proof}
@@ -824,7 +833,9 @@ Easily follows from~\ref{powfilt-diag} by isomorphism.
 \end{proof}
 
 \begin{prop}
-The poset of unfixed filters is a strongly separable lattice.
+The poset of unfixed filters is a strongly separable lattice
+if every~$DA$ (for~$A\in\mathfrak{A}$) is an
+atomistic lattice.
 \end{prop}
 
 \begin{proof}
@@ -832,8 +843,9 @@ Theorem~\bookref{atom-is-sep}.
 \end{proof}
 
 \begin{prop}
-$\Cor\mathcal{X}=\setcond{x}{\{x\}\sqsubseteq\mathcal{X}}$
-for every unfixed filter~$\mathcal{X}$.
+$\Cor\mathcal{X}=\bigsqcup(\mathfrak{Z}\cap\atoms^{\text{unfixed filters}})$
+for every unfixed filter~$\mathcal{X}$ if every~$DA$
+(for~$A\in\mathfrak{A}$) is an atomistic lattice.
 \end{prop}
 
 \begin{proof}
@@ -843,7 +855,8 @@ Theorem~\bookref{cor-join-atom}.
 \begin{prop}
 $\Cor(\mathcal{A}\sqcap\mathcal{B})=
 \Cor\mathcal{A}\sqcap\Cor\mathcal{B}$ for every unfixed
-filters~$\mathcal{A}$,~$\mathcal{B}$.
+filters~$\mathcal{A}$,~$\mathcal{B}$, provided
+every $DA$ (for~$A\in\mathfrak{A}$) is a complete lattice.
 \end{prop}
 
 \begin{proof}
@@ -852,7 +865,8 @@ Theorem~\bookref{dual-cor-meet}.
 
 \begin{prop}
 $\Cor\bigsqcap^{\mathfrak{A}}S=\bigsqcap^{\mathfrak{Z}}\rsupfun{\Cor}S$ for the filtrator of unfixed filters for
-every nonempty set~$S$ of unfixed filters.
+every nonempty set~$S$ of unfixed filters, provided
+every $DA$ (for~$A\in\mathfrak{A}$) is a complete lattice.
 \end{prop}
 
 \begin{proof}
@@ -861,7 +875,9 @@ Theorem~\bookref{dual-cor-inf-meet}.
 
 \begin{prop}
 $\Cor(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B}) =
-\Cor\mathcal{A}\sqcup^{\mathfrak{Z}}\Cor\mathcal{B}$ for the filtrator of unfixed filters for every unfixed filters~$\mathcal{A}$, and~$\mathcal{B}$.
+\Cor\mathcal{A}\sqcup^{\mathfrak{Z}}\Cor\mathcal{B}$ for the filtrator of unfixed filters for every unfixed filters~$\mathcal{A}$, and~$\mathcal{B}$, provided
+every $DA$ (for~$A\in\mathfrak{A}$)is a complete atomistic
+distributive lattice.
 \end{prop}
 
 \begin{proof}
