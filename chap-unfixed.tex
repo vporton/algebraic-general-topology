@@ -42,7 +42,7 @@ $P\sqcap Q\in\mathscr{S}A$.
 \begin{defn}
 \index{rebase!filters}\emph{Rebase} for every
 filter~$\mathcal{A}$
-and every set $A$ is
+and every $A\in\mathfrak{Z}$ is
   $\mathcal{A} \div A = \bigsqcap \setcond{ \uparrow^A  (X \sqcap A) }
   { X \in \mathcal{A} }$.
 \end{defn}
@@ -77,12 +77,12 @@ $\mathcal{X}\div\Base(\mathcal{X}) = \mathcal{X}$.
 \end{prop}
 
 \begin{proof}
-Because $X\cap\Base(\mathcal{X}) = X$ for
+Because $X\sqcap\Base(\mathcal{X}) = X$ for
 $X\in\mathcal{X}$.
 \end{proof}
 
 \begin{prop}\label{double-rebase}
-  $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \subseteq A$.
+  $(\mathcal{X} \div A) \div B = \mathcal{X} \div B$ if $B \sqsubseteq A$.
 \end{prop}
 
 \begin{proof}
@@ -119,7 +119,7 @@ and~$\mathcal{Y}$ be such that
 $\Base(\mathcal{X})=\Base(\mathcal{Y})=B$. Then
 $\mathcal{X}\div C=\mathcal{Y}\div C
 \Leftrightarrow \mathcal{X}=\mathcal{Y}$ for every
-set~$C\supseteq B$.
+$\mathfrak{Z}\ni C\sqsupseteq B$.
 \end{prop}
 
 \begin{proof}
@@ -133,7 +133,7 @@ $\mathcal{X}\div C=\mathcal{Y}\div C\Leftrightarrow
 \begin{defn}
 \index{equivalent!filters}Two filters $\mathcal{A}$ and $\mathcal{B}$
 (with possibly different base sets) are equivalent ($\mathcal{A}\sim\mathcal{B}$)
-iff there exists a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
+iff there exists an~$X\in\mathfrak{Z}$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
 and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$.\end{defn}
 
 \begin{prop}
@@ -164,16 +164,16 @@ $\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
 
 So $\Base(\mathcal{X})\in\mathcal{Y}$ and similarly
 $\Base(\mathcal{Y})\in\mathcal{X}$. Thus
-$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{Y}$
+$\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})\in\mathcal{Y}$
 and similarly
-$\Base(\mathcal{X})\cap\Base(\mathcal{Y})\in\mathcal{X}$.
+$\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})\in\mathcal{X}$.
 
 It's enough to show
-$\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})) =
-\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y}))$
+$\mathcal{X}\div(\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})) =
+\mathcal{Y}\div(\Base(\mathcal{X})\sqcap\Base(\mathcal{Y}))$
 because for every $P\in\mathcal{X},\mathcal{Y}$ we have $\mathcal{X}\cap\subsets P = \mathcal{X}\div P =
-(\mathcal{X}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})))\div P$ and similarly $\mathcal{Y}\cap\subsets P =
-(\mathcal{Y}\div(\Base(\mathcal{X})\cap\Base(\mathcal{Y})))\div P$. But it follows from the conditions and
+(\mathcal{X}\div(\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})))\div P$ and similarly $\mathcal{Y}\cap\subsets P =
+(\mathcal{Y}\div(\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})))\div P$. But it follows from the conditions and
 proposition~\ref{double-rebase}.
 \end{description}
 \end{proof}
@@ -185,8 +185,9 @@ Let $\mathcal{A}$ and $\mathcal{B}$ be two filters and $\subsets X\cap\mathcal{A
 for some set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$,
 and $\Base(\mathcal{A})=\Base(\mathcal{B})$. Then
 \begin{multline*}
-\mathcal{A}=(\subsets X\cap\mathcal{A})\cup\setcond{Y\in\subsets\Base(\mathcal{A})}{Y\sqsupseteq X}=\\
-(\subsets X\cap\mathcal{B})\cup\setcond{Y\in\subsets\Base(\mathcal{B})}{Y\sqsupseteq X}=\mathcal{B}.
+\mathcal{A}=(\subsets X\cap\mathcal{A})\cup\setcond{Y\in D\Base(\mathcal{A})}{Y\sqsupseteq X}=\\
+(\subsets X\cap\mathcal{B})\cup
+\setcond{Y\in D\Base(\mathcal{B})}{Y\sqsupseteq X}=\mathcal{B}.
 \end{multline*}
 \end{proof}
 
@@ -197,15 +198,15 @@ $\mathcal{A}\div A\sim\mathcal{A}$.
 \begin{proof}
 ~
 \begin{align*}
-(\mathcal{A}\div A)\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
-\mathscr{S}\mathcal{A}\cap\subsets A\cap\subsets(A\cap\Base(\mathcal{A})) & =\\
-\mathscr{S}\mathcal{A}\cap\subsets(A\cap\Base(\mathcal{A})) & =
-\mathcal{A}\cap\subsets(A\cap\Base(\mathcal{A})).
+(\mathcal{A}\div A)\cap\subsets(A\sqcap\Base(\mathcal{A})) & =\\
+\mathscr{S}\mathcal{A}\cap\subsets A\cap\subsets(A\sqcap\Base(\mathcal{A})) & =\\
+\mathscr{S}\mathcal{A}\cap\subsets(A\sqcap\Base(\mathcal{A})) & =
+\mathcal{A}\cap\subsets(A\sqcap\Base(\mathcal{A})).
 \end{align*}
-Thus $\mathcal{A}\div A\sim\mathcal{A}$ because $A\cap\Base(\mathcal{A})\supseteq X\in\mathcal{A}$
+Thus $\mathcal{A}\div A\sim\mathcal{A}$ because $A\sqcap\Base(\mathcal{A})\sqsupseteq X\in\mathcal{A}$
 for some $X\in\mathcal{A}$ and 
 \[
-A\cap\Base(\mathcal{A})\supseteq X\cap\Base(\mathcal{A})\in\mathcal{A}\div A.
+A\sqcap\Base(\mathcal{A})\sqsupseteq X\sqcap\Base(\mathcal{A})\in\mathcal{A}\div A.
 \]
 \end{proof}
 
@@ -222,14 +223,14 @@ for some filters $\mathcal{A}$, $\mathcal{B}$, and $\mathcal{C}$.
 Then there exist a set $X$ such that $X\in\mathcal{A}$ and $X\in\mathcal{B}$
 and $\subsets X\cap\mathcal{A}=\subsets X\cap\mathcal{B}$ and a set
 $Y$ such that $Y\in\mathcal{B}$ and $Y\in\mathcal{C}$ and $\subsets Y\cap\mathcal{B}=\subsets Y\cap\mathcal{C}$.
-So $X\cap Y\in\mathcal{A}$ because
+So $X\sqcap Y\in\mathcal{A}$ because
 \[
-\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\subsets(X\cap Y)\cap\mathcal{B}\supseteq\{X\cap Y\}\cap\mathcal{B}\ni X\cap Y.
+\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\subsets(X\sqcap Y)\cap\mathcal{B}\supseteq\{X\sqcap Y\}\cap\mathcal{B}\ni X\sqcap Y.
 \]
-Similarly we have $X\cap Y\in\mathcal{C}$. Finally
+Similarly we have $X\sqcap Y\in\mathcal{C}$. Finally
 \begin{multline*}
-\subsets(X\cap Y)\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\\
-\subsets X\cap\subsets Y\cap\mathcal{B}=\subsets X\cap\subsets Y\cap\mathcal{C=}\subsets(X\cap Y)\cap\mathcal{C}.
+\subsets(X\sqcap Y)\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{A}=\subsets Y\cap\subsets X\cap\mathcal{B}=\\
+\subsets X\cap\subsets Y\cap\mathcal{B}=\subsets X\cap\subsets Y\cap\mathcal{C=}\subsets(X\sqcap Y)\cap\mathcal{C}.
 \end{multline*}
 
 \end{description}
@@ -353,8 +354,8 @@ Then there are $x\in\mathcal{X}$,~$y\in\mathcal{Y}$
 such that $\mathscr{S}x\sqsubseteq\mathscr{S}y$.
 Consequently
 $\mathscr{S}x' \sqsubseteq\mathscr{S}y'$ for
-$x'=x\div(\Base(x)\cup\Base(y))$,
-$y'=y\div(\Base(x)\cup\Base(y))$.
+$x'=x\div(\Base(x)\sqcup\Base(y))$,
+$y'=y\div(\Base(x)\sqcup\Base(y))$.
 So we have~$x'\in\mathcal{X}$,~$y'\in\mathcal{Y}$,
 $\Base(x')=\Base(y')$ and $x'\sqsubseteq y'$,
 thus $\mathcal{X}\sqsubseteq\mathcal{Y}$.
@@ -381,7 +382,7 @@ Thus $\mathscr{S}\mathcal{X}=\mathscr{S}\mathcal{Y}$ and
 so $\mathscr{S}x=\mathscr{S}y$ for
 some~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$. Consequently
 $\mathscr{S}(x\div B)=\mathscr{S}(y\div B)$ for
-$B=\Base(x)\cup\Base(y)$. Thus $x\div B=y\div B$
+$B=\Base(x)\sqcup\Base(y)$. Thus $x\div B=y\div B$
 and so $x\sim y$, thus $\mathcal{X}=\mathcal{Y}$.
 \end{description}
 \end{proof}
@@ -518,7 +519,7 @@ $\mathcal{X}\div C=\mathcal{Y}\div C$.
 Take~$x\in\mathcal{X}$,~$y\in\mathcal{Y}$.
 We have
 $\mathcal{X}\div C=x\div C=(x\div B)\div C$
-for $B=C\cup\Base(x)\cup\Base(y)$.
+for $B=C\sqcup\Base(x)\sqcup\Base(y)$.
 Similary $\mathcal{Y}\div C=(y\div B)\div C$.
 Thus $(x\div B)\div C=(y\div B)\div C$ and thus
 $x\div B=y\div B$, so $x\sim y$ that is
@@ -549,14 +550,14 @@ Fix a set~$B$.
 \begin{lem}
 $\mathcal{X}\mapsto\mathcal{X}\div B$ and $x\mapsto[x]$ are
 mutually inverse order isomorphisms between
-$\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and $\mathfrak{F}(B)$.
+$\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and $\mathfrak{F}(DB)$.
 \end{lem}
 
 \begin{proof}
-First, $\mathcal{X}\div B\in\mathfrak{F}(B)$ for
+First, $\mathcal{X}\div B\in\mathfrak{F}(DB)$ for
 $\mathcal{X}\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$ and
 $[x]\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$
-for $x\in\mathfrak{F}(B)$.
+for $x\in\mathfrak{F}(DB)$.
 
 Suppose $\mathcal{X}_0\in\setcond{\text{unfixed filter }\mathcal{X}}{B\in\mathscr{S}\mathcal{X}}$,
 $x=\mathcal{X}_0\div B$, and $\mathcal{X}_1=[x]$. We will prove
@@ -578,14 +579,14 @@ $\mathscr{S}$ and
 $\mathcal{X}\mapsto\rsupfun{B\sqcap}\mathcal{X}=
 \mathcal{X}\cap\subsets B$
 are mutually inverse order isomorphisms
-between~$\mathfrak{F}(B)$ and
+between~$\mathfrak{F}(DB)$ and
 $\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}{B\in\mathcal{X}}$.
 \end{lem}
 
 \begin{proof}
-First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(B)$
+First, $\mathscr{S}x\in\setcond{\mathcal{X}\in\mathfrak{F}(\mathfrak{Z})}{B\in\mathcal{X}}$ for $x\in\mathfrak{F}(DB)$
 because of theorem~\ref{mathscrs-iso} and
-$\rsupfun{B\sqcap}\mathcal{X}\in\mathfrak{F}(B)$ obviously.
+$\rsupfun{B\sqcap}\mathcal{X}\in\mathfrak{F}(DB)$ obviously.
 
 Let's prove
 $\rsupfun{B\sqcap}\mathcal{X}=\mathcal{X}\cap\subsets B$.
@@ -595,7 +596,7 @@ $X\in\subsets B$. So $X\in\mathcal{X}\cap\subsets B$. If
 $X\in\mathcal{X}\cap\subsets B$ then
 $X=B\cap X\in\rsupfun{B\sqcap}\mathcal{X}$.
 
-Let~$x_0\in\mathfrak{F}(B)$, $\mathcal{X}=\mathscr{S}x$, and
+Let~$x_0\in\mathfrak{F}(DB)$, $\mathcal{X}=\mathscr{S}x$, and
 $x_1=\rsupfun{B\sqcap}\mathcal{X}$. Then obviously $x_0=x_1$.
 
 Let now
@@ -876,7 +877,7 @@ Theorem~\bookref{dual-cor-inf-meet}.
 \begin{prop}
 $\Cor(\mathcal{A}\sqcup^{\mathfrak{A}}\mathcal{B}) =
 \Cor\mathcal{A}\sqcup^{\mathfrak{Z}}\Cor\mathcal{B}$ for the filtrator of unfixed filters for every unfixed filters~$\mathcal{A}$, and~$\mathcal{B}$, provided
-every $DA$ (for~$A\in\mathfrak{A}$)is a complete atomistic
+every $DA$ (for~$A\in\mathfrak{A}$) is a complete atomistic
 distributive lattice.
 \end{prop}
 
