@@ -117,21 +117,6 @@ $\iota_{B_0, B_1} f\sqsubseteq f$.
   with restricted identities.
 \end{cor}
 
-\begin{prop}\label{iota-comp}
-  Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
-  \sqsubseteq B_1$. Then $\iota_{B_0, B_2} (g \circ f) = \iota_{B_1, B_2} g
-  \circ \iota_{B_0, B_1} f$.
-\end{prop}
-
-\begin{proof}
-  $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
-  \circ g \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ 1^{A_1} \circ f
-  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
-  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
-  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_2} g \circ \iota_{B_0,
-  B_1} f$.
-\end{proof}
-
 \section{Image and domain}
 
 Let define that
@@ -639,6 +624,21 @@ the same as~$\im$ and~$\dom$.
 \section{Operations on the set of unfixed morphisms}
 
 \subsection{Semigroup of unfixed morphisms}
+
+\begin{prop}\label{iota-comp}
+  Let $f : A_0 \rightarrow A_1$ and $g : A_1 \rightarrow A_2$ and $A_1
+  \sqsubseteq B_1$. Then $\iota_{B_0, B_2} (g \circ f) = \iota_{B_1, B_2} g
+  \circ \iota_{B_0, B_1} f$.
+\end{prop}
+
+\begin{proof}
+  $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
+  \circ g \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ 1^{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
+  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_2} g \circ \iota_{B_0,
+  B_1} f$.
+\end{proof}
 
 \begin{defn}
 We will turn the category~$\mathcal{C}$ into a semigroup
