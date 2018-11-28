@@ -1,5 +1,8 @@
 \chapter{Unfixed categories}
 
+\fxwarning{This is a draft not thoroughly checked for
+errors.}
+
 \section{Axiomatics for unfixed morphisms}
 
 \begin{defn}
@@ -20,7 +23,9 @@ ranges a $\Hom$-set $\mathcal{C}(A,B)$;
 \item $\id^{\mathcal{C}(A,B)}_X\in\Hom_{\mathcal{C}}(A,B)$
 whenever $\mathfrak{A}\ni X\sqsubseteq [A]\sqcap[B]$;
 \item $\id^{\mathcal{C}(A,A)}_{[A]} = 1^{\mathcal{C}}_A$;
-\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$.
+\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$;
+\item $\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
+A\sqsubseteq[B]$.
 \end{enumerate}
 
 \fxnote{In a future version of this text the above
@@ -156,13 +161,11 @@ Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_
 \end{enumerate}
 \end{prop}
 
-\fxwarning{Not yet rewritten with new definition below this.}
-
 \begin{proof}
 $\operatorname{IM} f =
 \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]} \circ f = f}$.
 
-Suppose $Y\in\operatorname{IM}f$. Then take $Y'=[Y]\sqcap[\Dst f]$. We have $Y\sqsupseteq Y'$ and $Y'\in\operatorname{Im}f$. So $Y\in\mathscr{S}\operatorname{Im}f$. If $Y\in\mathscr{S}\operatorname{Im}f$ then $Y\in\operatorname{IM}f$ obviously.
+Suppose $Y\in\operatorname{IM}f$. Then take $Y'=Y\sqcap\Dst f$. We have $Y\sqsupseteq Y'$ and $Y'\in\operatorname{Im}f$. So $Y\in\mathscr{S}\operatorname{Im}f$. If $Y\in\mathscr{S}\operatorname{Im}f$ then $Y\in\operatorname{IM}f$ obviously.
 So $\operatorname{IM} f = \mathscr{S}\operatorname{Im} f$.
 
 $\rsupfun{\Dst f\cap}\operatorname{IM}f\subseteq
@@ -239,16 +242,16 @@ with ordered domain and with ordered image.
 \begin{enumerate}
 \item For an ordered category~$\mathcal{C}$ with restricted identities
 to be with ordered image it's enough that
-$\id^{\mathcal{C}(\Dst f,\Dst f)}_X\circ f=f\land
+$\id^{\mathcal{C}(\Dst f,\Dst f)}_{[X]}\circ f=f\land
 g\sqsubseteq f\Rightarrow
-\id^{\mathcal{C}(\Dst f,\Dst f)}_X\circ g=g$
+\id^{\mathcal{C}(\Dst f,\Dst f)}_{[X]}\circ g=g$
 for every parallel morphisms~$f$ and $g$ and
 $\mathfrak{Z}\ni X\sqsubseteq\Dst f$.
 \item For an ordered category~$\mathcal{C}$ with restricted identities
 to be with ordered domain it's enough that
-$f\circ\id^{\mathcal{C}(\Src f,\Src f)}_X=f\land
+$f\circ\id^{\mathcal{C}(\Src f,\Src f)}_{[X]}=f\land
 g\sqsubseteq f\Rightarrow
-g\circ\id^{\mathcal{C}(\Src f,\Src f)}_X=g$
+g\circ\id^{\mathcal{C}(\Src f,\Src f)}_{[X]}=g$
 for every parallel morphisms~$f$ and $g$ and
 $\mathfrak{Z}\ni X\sqsubseteq\Src f$.
 \end{enumerate}
@@ -380,13 +383,13 @@ $\iota_{A_1, B_1} \iota_{A_0, B_0} g \sqsupseteq g$;
 $\mathcal{E}^{B_0, B_1} \circ \mathcal{E}^{B_1, B_0} \circ g \circ
 \mathcal{E}^{A_0, A_1} \circ \mathcal{E}^{A_1, A_0}\sqsupseteq g$;
 
-$\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g \circ
-\id^{\mathcal{C} (A_1, A_1)}_{A_0 \sqcap A_1} \sqsupseteq g$;
-$\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g \sqsupseteq g$;
-$\id^{\mathcal{C} (B_1, B_1)}_{B_0 \sqcap B_1} \circ g = g$;
+$\id^{\mathcal{C} (B_1, B_1)}_{[B_0]\sqcap[B_1]} \circ g \circ
+\id^{\mathcal{C} (A_1, A_1)}_{[A_0]\sqcap[A_1]} \sqsupseteq g$;
+$\id^{\mathcal{C} (B_1, B_1)}_{[B_0]\sqcap[B_1]} \circ g \sqsupseteq g$;
+$\id^{\mathcal{C} (B_1, B_1)}_{[B_0]\sqcap[B_1]} \circ g = g$;
 
-$\id^{\mathcal{C} (B_0 \sqcap B_1, B_1)}_{B_0 \sqcap B_1} \circ
-\id^{\mathcal{C} (B_1, B_0 \sqcap B_1)}_{B_0 \sqcap B_1} \circ g = g$;
+$\id^{\mathcal{C} (B_0 \sqcap B_1, B_1)}_{[B_0]\sqcap[B_1]} \circ
+\id^{\mathcal{C} (B_1, B_0 \sqcap B_1)}_{[B_0]\sqcap[B_1]} \circ g = g$;
 $\mathcal{E}^{B_0 \sqcap B_1, B_1} \circ \mathcal{E}^{B_1, B_0 \sqcap B_1}
 \circ g = g$. Thus $B_0 \sqcap B_1 \in \operatorname{Im} g$. Similarly $A_0 \sqcap A_1
 \in \operatorname{Dom} g$.
@@ -491,17 +494,17 @@ $\iota_{A_1,B_1}\iota_{A_0,B_0}f\sqsubseteq\iota_{A_1,B_1}f$.
 $\iota_{A_1,B_1}\iota_{A_0,B_0}f=
 \mathcal{E}^{B_0,B_1}\circ\mathcal{E}^{\Dst f,B_0}\circ f\circ
 \mathcal{E}^{A_0,\Src f}\circ\mathcal{E}^{A_1,A_0}=
-\id^{\mathcal{C}(B_0,B_1)}_{B_0\sqcap B_1}\circ\id^{\mathcal{C}(\Dst f,B_0)}_{\Dst f\sqcap B_0}
+\id^{\mathcal{C}(B_0,B_1)}_{[B_0]\sqcap[B_1]}\circ\id^{\mathcal{C}(\Dst f,B_0)}_{[\Dst f]\sqcap[B_0]}
 \circ f\circ
-\id^{\mathcal{C}(A_0,\Src f)}_{A_0\sqcap\Src f}\circ
-\id^{\mathcal{C}(A_1,A_0)}_{A_1\sqcap A_0}=
-\id^{\mathcal{C}(\Dst f,B_1)}_{\Dst f\sqcap B_0\sqcap B_1}
+\id^{\mathcal{C}(A_0,\Src f)}_{[A_0]\sqcap[\Src f]}\circ
+\id^{\mathcal{C}(A_1,A_0)}_{[A_1]\sqcap[A_0]}=
+\id^{\mathcal{C}(\Dst f,B_1)}_{[\Dst f]\sqcap[B_0]\sqcap[B_1]}
 \circ f\circ
-\id^{\mathcal{C}(A_1,\Src f)}_{A_0\sqcap A_1\sqcap\Src f}
+\id^{\mathcal{C}(A_1,\Src f)}_{[A_0]\sqcap[A_1]\sqcap[\Src f]}
 \sqsubseteq
-\id^{\mathcal{C}(\Dst f,B_1)}_{\Dst f\sqcap B_1}
+\id^{\mathcal{C}(\Dst f,B_1)}_{[\Dst f]\sqcap[B_1]}
 \circ f\circ
-\id^{\mathcal{C}(A_1,\Src f)}_{A_1\sqcap\Src f}=
+\id^{\mathcal{C}(A_1,\Src f)}_{[A_1]\sqcap[\Src f]}=
 \iota_{A_1,B_1}f$.
 \end{proof}
 
@@ -513,25 +516,25 @@ is a category with restricted identities and additional axioms
 \begin{enumerate}
 \item $\id^{\mathcal{C}(B,B)}_Y\circ f\circ\id^{\mathcal{C}(A,A)}_X=f\sqcap(X\times_{A,B}Y)$
 (holding for every $A,B\in\mathfrak{Z}$,
-$\mathfrak{A}\ni X\sqsubseteq A$,
-$\mathfrak{A}\ni Y\sqsubseteq B$,
+$\mathfrak{A}\ni X\sqsubseteq[A]$,
+$\mathfrak{A}\ni Y\sqsubseteq[B]$,
 $X\times_{A,B}Y\in\mathcal{C}(A,B)$
 and morphism~$f\in\mathcal{C}(A,B)$);
 \item $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
 X\times_{A_1,B_1}Y$ whenever
-$X\sqsubseteq A_0\sqcap A_1$ and $Y\sqsubseteq B_0\sqcap B_1$.
+$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
 \end{enumerate}
 \end{defn}
 
 \begin{prop}
-$A\times_{A,B}B$ is the greatest morphism
+$[A]\times_{A,B}[B]$ is the greatest morphism
 $\top^{\mathcal{C}(A,B)}:A\to B$.
 \end{prop}
 
 \begin{proof}
-It's enough to prove $f\sqcap(A\times_{A,B}B)=f$ for every
+It's enough to prove $f\sqcap([A]\times_{A,B}[B])=f$ for every
 $f:A\to B$. Really,
-$f\sqcap(A\times_{A,B}B)=
+$f\sqcap([A]\times_{A,B}[B])=
 \id^{\mathcal{C}(B,B)}_B\circ f\circ\id^{\mathcal{C}(A,A)}_A=
 1^B\circ f\circ 1^A=f$.
 \end{proof}
@@ -702,15 +705,15 @@ $g_0\circ f_0\sim g_1\circ f_1$.
 \begin{defn}
 \emph{Restricted identity} for unfixed morphisms is
 defined as: $\id_X = [\id^{\mathcal{C}(A,B)}_X]$ for
-an $X\sqsubseteq A\sqcap B$.
+an $X\sqsubseteq[A]\sqcap[B]$.
 \end{defn}
 
 We need to prove that it does not depend on the choice
 of~$A$ and~$B$.
 
 \begin{proof}
-Let $\mathfrak{A}\ni X\sqsubseteq A_0\sqcap B_0$ and
-$\mathfrak{A}\ni X\sqsubseteq A_1\sqcap B_1$ for
+Let $\mathfrak{A}\ni X\sqsubseteq[A_0]\sqcap[B_0]$ and
+$\mathfrak{A}\ni X\sqsubseteq[A_1]\sqcap[B_1]$ for
 $A_0,B_0,A_1,B_1\in\mathfrak{Z}$. We need to prove
 $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 \id^{\mathcal{C}(A_1,B_1)}_X$.
@@ -718,10 +721,10 @@ $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 Really, $\iota_{A_1,B_1}\id^{\mathcal{C}(A_0,B_0)}_X =
 \mathcal{E}^{B_0,B_1}\circ\id^{\mathcal{C}(A_0,B_0)}_X
 \circ \mathcal{E}^{A_1,A_0} =
-\id^{\mathcal{C}(B_0,B_1)}_{B_0\sqcap B_1}\circ
+\id^{\mathcal{C}(B_0,B_1)}_{[B_0]\sqcap[B_1]}\circ
 \id^{\mathcal{C}(A_0,B_0)}_X\circ
-\id^{\mathcal{C}(A_1,A_0)}_{A_0\sqcap A_1} =
-\id^{\mathcal{C}(A_1,B_1)}_{A_0\sqcap A_1\sqcap B_0\sqcap B_1\sqcap X} =
+\id^{\mathcal{C}(A_1,A_0)}_{[A_0]\sqcap[A_1]} =
+\id^{\mathcal{C}(A_1,B_1)}_{[A_0]\sqcap[A_1]\sqcap[B_0]\sqcap[B_1]\sqcap X} =
 \id^{\mathcal{C}(A_1,B_1)}_X$.
 Similarly
 $\iota_{A_0,B_0}\id^{\mathcal{C}(A_1,B_1)}_X =
@@ -733,7 +736,7 @@ So $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 
 \begin{prop}
 $\id_Y\circ\id_X=\id_{X\sqcap Y}$ for
-every~$X,Y\in\mathcal{A}$.
+every~$X,Y\in\mathfrak{A}$.
 \end{prop}
 
 \begin{proof}
@@ -766,14 +769,14 @@ $\iota_{A,B}f\sqsubseteq\iota_{A,B}g \Leftrightarrow
 \sqsubseteq
 \mathcal{E}^{\Dst g,B}\circ g\circ\mathcal{E}^{A,\Src g}
 \Leftrightarrow
-\id^{\mathcal{C}(\Dst f,B)}_{B\sqcap\Dst f}\circ f\circ\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}
+\id^{\mathcal{C}(\Dst f,B)}_{[B]\sqcap[\Dst f]}\circ f\circ\id^{\mathcal{C}(A,\Src f)}_{[A]\sqcap[\Src f]}
 \sqsubseteq
-\id^{\mathcal{C}(\Dst g,B)}_{B\sqcap\Dst g}\circ g\circ\id^{\mathcal{C}(A,\Src g)}_{A\sqcap\Src g}
+\id^{\mathcal{C}(\Dst g,B)}_{[B]\sqcap[\Dst g]}\circ g\circ\id^{\mathcal{C}(A,\Src g)}_{[A]\sqcap[\Src g]}
 \Leftarrow f\sqsubseteq g$ because
-$\id^{\mathcal{C}(\Dst f,B)}_{B\sqcap\Dst f}=
-\id^{\mathcal{C}(\Dst g,B)}_{B\sqcap\Dst g}$ and
-$\id^{\mathcal{C}(A,\Src f)}_{A\sqcap\Src f}=
-\id^{\mathcal{C}(A,\Src g)}_{A\sqcap\Src g}$.
+$\id^{\mathcal{C}(\Dst f,B)}_{[B]\sqcap[\Dst f]}=
+\id^{\mathcal{C}(\Dst g,B)}_{[B]\sqcap[\Dst g]}$ and
+$\id^{\mathcal{C}(A,\Src f)}_{[A]\sqcap[\Src f]}=
+\id^{\mathcal{C}(A,\Src g)}_{[A]\sqcap[\Src g]}$.
 \end{proof}
 
 \begin{cor}\label{unxif-org-cong}
@@ -970,13 +973,13 @@ $\id_Y\circ[f]=[f]\Leftrightarrow
 \id^{\mathcal{C}(Y\sqcup\Dst f,Y\sqcup\Dst f)}_{Y}\circ
 \mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f=
 \mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f\Leftrightarrow
-\id^{\mathcal{C}(\Dst f,Y\sqcup\Dst f)}_{Y\sqcap\Dst f}
+\id^{\mathcal{C}(\Dst f,Y\sqcup\Dst f)}_{[Y]\sqcap[\Dst f]}
 \circ f=\mathcal{E}^{\Dst f,Y\sqcup\Dst f}
 \circ f\Leftrightarrow
 \mathcal{E}^{Y\sqcup\Dst f,\Dst f}
-\circ \id^{\mathcal{C}(\Dst f,Y\sqcup\Dst f)}_{Y\sqcap\Dst f}
+\circ \id^{\mathcal{C}(\Dst f,Y\sqcup\Dst f)}_{[Y]\sqcap[\Dst f]}
 \circ f=f\Leftrightarrow
-\id^{\mathcal{C}(\Dst f,\Dst f)}_{Y\sqcap\Dst f}\circ f=f
+\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]}\circ f=f
 Y\in\operatorname{IM}f$.
 \end{proof}
 
@@ -1160,8 +1163,8 @@ Follows from the above isomorphism.
 For a category~$\mathcal{C}$ with binary product morphism
 and $X,Y\in\mathfrak{A}$ define
 $X\times Y=[X\times_{A,B}Y]$ where
-$\mathfrak{Z}\ni A\sqsupseteq X$ and
-$\mathfrak{Z}\ni B\sqsupseteq Y$.
+$A\in\mathfrak{Z}$, $[A]\sqsupseteq X$,
+$B\in\mathfrak{Z}$, $[B]\sqsupseteq Y$.
 (Such~$A$ and~$B$ exist by an axiom of categories with
 restricted identities.)
 \end{defn}
@@ -1170,10 +1173,10 @@ We need to prove validity of this definition:
 
 \begin{proof}
 Let
-$\mathfrak{Z}\ni A_0\sqsupseteq X$,
-$\mathfrak{Z}\ni B_0\sqsupseteq Y$,
-$\mathfrak{Z}\ni A_1\sqsupseteq X$,
-$\mathfrak{Z}\ni B_1\sqsupseteq Y$.
+$A_0\in\mathfrak{Z}$, $[A_0]\sqsupseteq X$,
+$B_0\in\mathfrak{Z}$, $[B_0]\sqsupseteq Y$,
+$A_1\in\mathfrak{Z}$, $[A_1]\sqsupseteq X$,
+$B_1\in\mathfrak{Z}$, $[B_1]\sqsupseteq Y$.
 We need to prove $X\times_{A_0,B_0}Y\sim X\times_{A_1,B_1}Y$,
 but it trivially follows from an axiom in the definition of
 category with binary product morphism.
@@ -1186,10 +1189,11 @@ $X_0,X_1,Y_0,Y_1\in\mathfrak{A}$.
 \end{prop}
 
 \begin{proof}
-Take $\mathfrak{Z}\ni A_0\sqsupseteq X_0$,
-Take $\mathfrak{Z}\ni A_1\sqsupseteq X_1$,
-Take $\mathfrak{Z}\ni B_0\sqsupseteq Y_0$,
-Take $\mathfrak{Z}\ni B_1\sqsupseteq Y_1$.
+Take
+$A_0\in\mathfrak{Z}$, $[A_0]\sqsupseteq X_0$,
+$B_0\in\mathfrak{Z}$, $[B_0]\sqsupseteq Y_0$,
+$A_1\in\mathfrak{Z}$, $[A_1]\sqsupseteq X_1$,
+$B_1\in\mathfrak{Z}$, $[B_1]\sqsupseteq Y_1$.
 
 Then
 $(X_0\times Y_0)\sqcap(X_1\times Y_1)=
@@ -1212,16 +1216,16 @@ We have $F'\in f$.
 $f\square_{A,B}=[\iota_{A,B}F']=
 [\mathcal{E}^{B\sqcup\Dst F,B}\circ F'\circ
 \mathcal{E}^{A,A\sqcup\Src F}]=
-[\id^{\mathcal{C}(B\sqcup\Dst F,B)}_B\circ F'\circ
-\id^{\mathcal{C}(A,A\sqcup\Src F)}_A]=
-[\id^{\mathcal{C}(B\sqcup\Dst F,B)}_B]\circ [F']\circ
-[\id^{\mathcal{C}(A,A\sqcup\Src F)}_A]=
-[\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_B]\circ
+[\id^{\mathcal{C}(B\sqcup\Dst F,B)}_{[B]}\circ F'\circ
+\id^{\mathcal{C}(A,A\sqcup\Src F)}_{[A]}]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B)}_{[B]}]\circ [F']\circ
+[\id^{\mathcal{C}(A,A\sqcup\Src F)}_{[A]}]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_{[B]}]\circ
 [F']\circ
-[\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_A]=
-[\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_B\circ
+[\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_{[A]}]=
+[\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_{[B]}\circ
 F'\circ
-\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_A]=
+\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_{[A]}]=
 [F'\sqcap(A\times_{A\sqcup\Src F,B\sqcup\Dst F}B)]=
 [F']\sqcap[A\times_{A\sqcup\Src F,B\sqcup\Dst F}B]=
 f\sqcap(A\times B)$.
