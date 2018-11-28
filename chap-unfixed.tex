@@ -2,11 +2,6 @@
 
 \section{Axiomatics for unfixed morphisms}
 
-Let $(\mathfrak{A},\mathfrak{Z})$ be a filtrator, where
-both~$\mathfrak{A}$ and~$\mathfrak{Z}$ are lattices.
-For simplicity assume that~$\mathfrak{Z}$ is a sublattice
-of~$\mathfrak{A}$.
-
 Let we have a category~$\mathcal{C}$ whose objects are
 $\mathfrak{Z}$.
 
@@ -14,16 +9,17 @@ $\mathfrak{Z}$.
 \emph{Category with restricted identities} is defined
 axiomatically:
 
-\emph{Restricted identity}~$\id^{\mathcal{C}(A,B)}_X$ is
+\emph{Restricted identity}~$\id^{\mathcal{C}(A,B)}_X$
+and \emph{projection} $A\mapsto[A]$ are
 described by the axioms:
-
 \begin{enumerate}
+\item $\mathfrak{Z}$~and~$\mathfrak{A}$ are lattices;
+\item $A\mapsto[A]$ is a lattice embedding
+$\mathfrak{Z}\to\mathfrak{A}$;
 \item $\id^{\mathcal{C}(A,B)}_X\in\Hom_{\mathcal{C}}(A,B)$
-whenever $\mathfrak{A}\ni X\sqsubseteq A\sqcap B$;
-\item $\id^{\mathcal{C}(A,A)}_A = 1^{\mathcal{C}}_A$;
-\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$;
-\item
-$\forall X\in\mathfrak{A}\exists A\in\mathfrak{Z}:A\sqsupseteq X$.
+whenever $\mathfrak{A}\ni X\sqsubseteq [A]\sqcap[B]$;
+\item $\id^{\mathcal{C}(A,A)}_{[A]} = 1^{\mathcal{C}}_A$;
+\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$.
 \end{enumerate}
 
 For a \emph{partially ordered category with restricted identities} introduce additional axiom $X\sqsubseteq Y\Rightarrow
@@ -38,12 +34,12 @@ $\left(\id^{\mathcal{C}(A,B)}_X\right)^\dagger =
 I call a category with restricted identities
 \emph{injective} when the axiom $X\ne Y\Rightarrow
 \id^{\mathcal{C}(A,B)}_X\ne\id^{\mathcal{C}(A,B)}_Y$
-whenever $X,Y\sqsubseteq A\sqcap B$ holds.
+whenever $X,Y\sqsubseteq[A]\sqcap[B]$ holds.
 \end{defn}
 
 \begin{defn}
 Define $\mathcal{E}_{\mathcal{C}}^{A,B} =
-\id^{\mathcal{C}(A,B)}_{A\sqcap B}$.
+\id^{\mathcal{C}(A,B)}_{[A]\sqcap[B]}$.
 \end{defn}
 
 \begin{prop}\label{e-mono-epi}
