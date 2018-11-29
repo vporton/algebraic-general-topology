@@ -1297,25 +1297,27 @@ $\mathcal{Y}\nasymp
 \end{prop}
 
 \begin{proof}
-  ??
-  
-  Rest follows from symmetry.
+Take $\mathcal{F}=[A]\sqcap[B]$. Then
+$\mathcal{F}\sqsupseteq[\mathcal{X}]$ and
+$\mathcal{F}\sqsupseteq[\mathcal{Y}]$,
+thus
+$[\mathcal{X}]\sqcap\mathcal{F}=[\mathcal{X}]$ and
+$[\mathcal{Y}]\sqcap\mathcal{F}=[\mathcal{Y}]$.
+So, it follows from the above.
 \end{proof}
 
-\begin{prop}
-  ~
-  \begin{enumerate}
-    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle^{\ast} X
-    = \uparrow^B X$ for every $X \in \subsets A$ if $A \subseteq B$.
-    
-    \item $\langle \mathcal{E}_{\mathsf{FCD}}^{B,A} \rangle^{\ast}
-    Y = \uparrow^A (Y \cap A)$ for every $Y \in \subsets B$ if $A \subseteq
-    B$.
-  \end{enumerate}
-\end{prop}
+\begin{defn}
+Category~$\mathsf{FCD}$ can be considered as a category
+with binary product morphism with the binary product
+defined as:
+$\mathcal{X}\times_{A,B}\mathcal{Y}=
+(\mathcal{X}\div A)\times^{\mathsf{FCD}}(\mathcal{Y}\div B)$.
+\end{defn}
+
+It is really a binary product morphism:
 
 \begin{proof}
-  By definition of principal funcoid.
+??
 \end{proof}
 
 \fxnote{Unfixed funcoids seem to be embedded into pointfree 
