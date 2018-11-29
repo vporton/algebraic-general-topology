@@ -1237,23 +1237,34 @@ f\sqcap(A\times B)$.
 
 \subsection{\texorpdfstring{Category $\mathbf{Rel}$}{Category Rel}}
 
-Category $\mathbf{Rel}$ with the identity up-arrow functor to itself
-and ``reverse relation'' as the dagger is an obvious example of a partially
-ordered dagger category under $\mathbf{Rel}$.
+Category $\mathbf{Rel}$ of relations between small sets
+can be considered as a category with restricted identities
+with $\mathfrak{Z}=\mathfrak{A}$ being the set of all
+small sets, projection being the identity function and
+restricted identity being the identity relation on the
+given set.
 
-\begin{prop}
-  $\iota_{A, B} f = (A , B , \GR f \cap (A \times B))$.
-\end{prop}
+Moreover it is a category with binary product morphism
+with usual Cartesian product.
 
-\begin{proof}
-  $\iota_{A, B} f = \mathcal{E}^{B} \circ f \circ (\mathcal{E}^{A})^{-1} = (A , B , \GR f \cap (A \times B))$.
-\end{proof}
+Proofs of this are trivial.
 
 \subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
 
-Category $\mathsf{FCD}$ with the up-arrow functor
-$\uparrow^{\mathsf{FCD}}$ and ``reverse funcoid'' as the dagger is a
-partially ordered dagger category under $\mathbf{Rel}$.
+Category $\mathsf{FCD}$
+can be considered as a category with restricted identities
+with $\mathfrak{Z}$ being the set of all
+small sets, $\mathfrak{A}$ is the set of unfixed filters,
+projection being the projection function for the
+equivalence classes of filters,
+restricted identity being defined by the formulas
+\[
+\supfun{\id_\mathcal{F}^{\mathcal{C}(A,B)}}\mathcal{X}=
+([\mathcal{X}]\sqcap\mathcal{F})\div B;
+\quad
+\supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}=
+([\mathcal{Y}]\sqcap\mathcal{F})\div A.
+\]
 
 \begin{prop}
   $\mathcal{E}_{\mathsf{FCD}}^{A,B} = (A , B , \lambda \mathcal{X}
@@ -1263,14 +1274,7 @@ partially ordered dagger category under $\mathbf{Rel}$.
 \end{prop}
 
 \begin{proof}
-  $\langle \mathcal{E}_{\mathsf{FCD}}^{A,B} \rangle \mathcal{X} =
-  \bigsqcap \setcond{ \langle \mathcal{E}_{\mathsf{FCD}}^{A,B}
-  \rangle^{\ast} X }{ X \in \mathcal{X} } =
-  \bigsqcap \setcond{ \uparrow^B  \langle \mathcal{E}^{A,B} \rangle X
-  }{ X \in \mathcal{X} } = \bigsqcap \setcond{
-  \uparrow^B  (X \cap A \cap B) }{ X \in \mathcal{X}
-  } = \bigsqcap \setcond{ \uparrow^B  (X \cap B) }{
-  X \in \mathcal{X} } = \mathcal{X} \div B$.
+  ??
   
   Rest follows from symmetry.
 \end{proof}
