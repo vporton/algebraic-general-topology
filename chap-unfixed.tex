@@ -1266,6 +1266,29 @@ restricted identity being defined by the formulas
 ([\mathcal{Y}]\sqcap\mathcal{F})\div A.
 \]
 
+We need to prove that this really defines a funcoid.
+
+\begin{proof}
+$\mathcal{Y}\nasymp
+\supfun{\id_\mathcal{F}^{\mathcal{C}(A,B)}}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp([\mathcal{X}]\sqcap\mathcal{F})\div B
+\Leftrightarrow
+\mathcal{Y}\nasymp(\mathcal{X}\div B)\sqcap
+(\mathcal{F}\div B) \Leftrightarrow
+[\mathcal{Y}]\nasymp[\mathcal{X}]\sqcap\mathcal{F}$.
+Similarly
+$\supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}\Leftrightarrow
+[\mathcal{X}]\nasymp[\mathcal{Y}]\sqcap\mathcal{F}$.
+
+Thus
+$\mathcal{Y}\nasymp
+\supfun{\id_\mathcal{F}^{\mathcal{C}(A,B)}}\mathcal{X}
+\Leftrightarrow
+\mathcal{X}\nasymp
+\supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}$.
+\end{proof}
+
 \begin{prop}
   $\mathcal{E}_{\mathsf{FCD}}^{A,B} = (A , B , \lambda \mathcal{X}
   \in \mathfrak{F} (A) : \mathcal{X} \div B , \lambda \mathcal{Y} \in
