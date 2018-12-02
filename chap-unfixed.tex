@@ -1354,12 +1354,30 @@ $\supfun{\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)}\mathcal{X}=
 \supfun{X\times_{A_1,B_1}Y}\mathcal{X}$.
 \end{proof}
 
-TODO: Define $\supfun{}$ for unfixed funcoids.
-Also consider $\supfun{X\times Y}$.
+Let~$f$ be a funcoid (TODO: or it can be unfixed funcoid).
+Define pointfree funcoid~$\mathscr{S}f$ between unfixed
+filters as:
 
-\fxnote{Unfixed funcoids seem to be embedded into pointfree 
-funcoids between unfixed filters.
-Also unfixed reloids can be embedded into reloids
+\begin{defn}
+$\supfun{\mathscr{S}f}\mathcal{X}=
+[\supfun{f}(\mathcal{X}\div\Src f)]$;
+$\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}=
+[\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)]$.
+\end{defn}
+
+It is really a pointfree funcoid:
+
+\begin{proof}
+??
+\end{proof}
+
+Prove that~$\mathscr{S}$ is an order embedding and
+a functor.
+
+Also consider $\mathscr{S}(X\times Y)$ and
+$\mathscr{S}\id_X$.
+
+\fxnote{Unfixed reloids can be embedded into reloids
 between the Grothendieck universes.}
 
 \subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
