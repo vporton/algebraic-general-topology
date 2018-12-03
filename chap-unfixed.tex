@@ -1355,6 +1355,7 @@ $\supfun{\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)}\mathcal{X}=
 \end{proof}
 
 \begin{lem}
+\fxnote{This lemma seems not used.}
 $\mathcal{X}\div A=(\mathcal{X}\sqcap[A])\div A$
 for every unfixed filter~$\mathcal{X}$ and small set~$A$.
 \end{lem}
@@ -1388,27 +1389,29 @@ Define pointfree funcoid~$\mathscr{S}f$ between unfixed
 filters as:
 
 \begin{defn}
-$\supfun{\mathscr{S}f}\mathcal{X}=
-[\supfun{f}(\mathcal{X}\div\Src f)]$;
-$\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}=
-[\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)]$.
+\[
+\supfun{\mathscr{S}f}\mathcal{X}=
+[\supfun{f}(\mathcal{X}\div\Src f)];\quad
+\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}=
+[\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)].
+\]
 \end{defn}
 
 It is really a pointfree funcoid:
 
 \begin{proof}
-To prove it use the lemma
-and that the $\div A$ in the right part of the formula
-is an order embedding.
-
 For an unfixed filter~$\mathcal{Y}$ we have
 $\mathcal{Y}\nasymp\supfun{\mathscr{S}f}\mathcal{X}
 \Leftrightarrow
 \mathcal{Y}\nasymp[\supfun{f}(\mathcal{X}\div\Src f)]
 \Leftrightarrow
 \mathcal{Y}\div\Dst f\nasymp\supfun{f}(\mathcal{X}\div\Src f)
-$
-??
+\Leftrightarrow
+\mathcal{X}\div\Src f\nasymp\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)
+\Leftrightarrow
+\mathcal{X}\nasymp[\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)]
+\Leftrightarrow
+\mathcal{X}\nasymp\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}$.
 \end{proof}
 
 Prove that~$\mathscr{S}$ is an order embedding and
@@ -1417,10 +1420,10 @@ a functor.
 Also consider $\mathscr{S}(X\times Y)$ and
 $\mathscr{S}\id_X$.
 
+\subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
+
 \fxnote{Unfixed reloids can be embedded into reloids
 between the Grothendieck universes.}
-
-\subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
 
 Category $\mathsf{RLD}$ with the up-arrow functor
 $\uparrow^{\mathsf{RLD}}$ and ``reverse reloid'' as the dagger is a
