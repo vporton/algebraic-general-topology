@@ -1354,6 +1354,32 @@ $\supfun{\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)}\mathcal{X}=
 \supfun{X\times_{A_1,B_1}Y}\mathcal{X}$.
 \end{proof}
 
+\begin{lem}
+$\mathcal{X}\div A=(\mathcal{X}\sqcap[A])\div A$
+for every unfixed filter~$\mathcal{X}$ and small set~$A$.
+\end{lem}
+
+\begin{proof}
+$(\mathcal{X}\sqcap[A])\div A=
+(\mathcal{X}\div A)\sqcap([A]\div A)=
+??=
+(\mathcal{X}\div A)\sqcap\top^{\mathfrak{F}(A)}=
+\mathcal{X}\div A$.
+\end{proof}
+
+\begin{cor}
+There is a pointfree funcoid~$p$ such that
+$\supfun{p}\mathcal{X}=\mathcal{X}\div A$.
+\end{cor}
+
+\begin{proof}
+$\mathcal{X}\div A=
+(\mathcal{X}\sqcap[A])\div A=
+\supfun{\id_{[A]}}$
+
+??
+\end{proof}
+
 Let~$f$ be a funcoid (TODO: or it can be unfixed funcoid).
 Define pointfree funcoid~$\mathscr{S}f$ between unfixed
 filters as:
@@ -1368,11 +1394,17 @@ $\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}=
 It is really a pointfree funcoid:
 
 \begin{proof}
-To prove it use
-$\mathcal{X}\div A=(\mathcal{X}\sqcap[A])\div A$
+To prove it use the lemma
 and that the $\div A$ in the right part of the formula
 is an order embedding.
 
+For an unfixed filter~$\mathcal{Y}$ we have
+$\mathcal{Y}\nasymp\supfun{\mathscr{S}f}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp[\supfun{f}(\mathcal{X}\div\Src f)]
+\Leftrightarrow
+\mathcal{Y}\div\Dst f\nasymp\supfun{f}(\mathcal{X}\div\Src f)
+$
 ??
 \end{proof}
 
