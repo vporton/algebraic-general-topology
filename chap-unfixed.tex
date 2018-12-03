@@ -1373,11 +1373,14 @@ $\supfun{p}\mathcal{X}=\mathcal{X}\div A$.
 \end{cor}
 
 \begin{proof}
-$\mathcal{X}\div A=
-(\mathcal{X}\sqcap[A])\div A=
-\supfun{\id_{[A]}}$
+Let $q$ be the order embedding (see the diargram) from
+unfixed filters~$\mathcal{F}$ such that $A\in\mathcal{F}$
+to filters on~$A$.
 
-??
+Then
+$\supfun{\mathcal{X}\div A}\mathcal{X}=
+\supfun{(\mathcal{X}\sqcap[A])\div A}\mathcal{X}=
+\supfun{q\circ\id^{\mathsf{pFCD}(\text{unfixed filters})}_{[A]}}\mathcal{X}$.
 \end{proof}
 
 Let~$f$ be a funcoid (TODO: or it can be unfixed funcoid).
