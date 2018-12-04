@@ -1478,7 +1478,24 @@ composable funcoids~$f$ and~$g$ and an unfixed
 filter~$\mathcal{X}$. Thus
 $\mathscr{S}g\circ\mathscr{S}f=\mathscr{S}(g\circ f)$.
 
-\item[\ref{s-fcd-unfix}] ???
+\item[\ref{s-fcd-unfix}]
+To prove that it is an order embedding, it is enough to show that $f\nsim g$ implies
+$\mathscr{S}f\ne\mathscr{S}g$
+(monotonicity is obvious).
+Let $f\nsim g$ that is
+$\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f\ne
+\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g$.
+Then there exist filter
+$\mathcal{X}\in\mathfrak{F}(A_0\sqcup A_1)$ such that
+$\supfun{\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f}\mathcal{X}\ne
+\supfun{\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g}\mathcal{X}$.
+
+Consequently, $\supfun{\mathscr{S}f}\mathcal{X}=
+\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f}\mathcal{X}\ne
+\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g}\mathcal{X}=
+\supfun{\mathscr{S}g}\mathcal{X}$.
+
+???
 \end{widedisorder}
 \end{proof}
 
