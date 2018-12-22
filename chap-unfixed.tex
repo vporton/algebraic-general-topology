@@ -520,28 +520,29 @@ $\mathfrak{A}\ni X\sqsubseteq[A]$,
 $\mathfrak{A}\ni Y\sqsubseteq[B]$,
 $X\times_{A,B}Y\in\mathcal{C}(A,B)$
 and morphism~$f\in\mathcal{C}(A,B)$);
-\item $f \sim X \times_{A_0, B_0} Y \Leftrightarrow f =
-X \times_{A_1, B_1} Y$
-whenever
-$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$, $f:A_1\to B_1$.
+\item $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
+X\times_{A_1,B_1}Y$ whenever
+$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
 \end{enumerate}
 \end{defn}
 
 \begin{prop}
 The second axiom is equivalent to the following axiom:
 \begin{enumerate}
-\item $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
-X\times_{A_1,B_1}Y$ whenever
-$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
+\item
+$f \sim X \times_{A_0, B_0} Y \Leftrightarrow f =
+X \times_{A_1, B_1} Y$
+whenever
+$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$, $f:A_1\to B_1$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 ~
 \begin{widedisorder}
-\item[$\Rightarrow$] Obvious.
+\item[$\Leftarrow$] Obvious.
 
-\item[$\Leftarrow$]~
+\item[$\Rightarrow$]~
 $f \sim X \times_{A_0, B_0} Y \Leftarrow f =
 X \times_{A_1, B_1} Y$ because
 $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
