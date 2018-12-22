@@ -6,6 +6,7 @@ errors.}
 \section{Axiomatics for unfixed morphisms}
 
 \begin{defn}
+\label{unf-mor}
 \emph{Category with restricted identities} is defined
 axiomatically:
 
@@ -23,13 +24,12 @@ ranges a $\Hom$-set $\mathcal{C}(A,B)$;
 \item $\id^{\mathcal{C}(A,B)}_X\in\Hom_{\mathcal{C}}(A,B)$
 whenever $\mathfrak{A}\ni X\sqsubseteq [A]\sqcap[B]$;
 \item $\id^{\mathcal{C}(A,A)}_{[A]} = 1^{\mathcal{C}}_A$;
-\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$;
+\item $\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$
+whenever $\mathfrak{A}\ni X\sqsubseteq [A]\sqcap[B]$
+and $\mathfrak{A}\ni Y\sqsubseteq [B]\sqcap[C]$;
 \item $\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
 A\sqsubseteq[B]$.
 \end{enumerate}
-
-\fxnote{In a future version of this text the above
-definition may be replaced with a more general one.}
 
 For a \emph{partially ordered category with restricted identities} introduce additional axiom $X\sqsubseteq Y\Rightarrow
 \id^{\mathcal{C}(A,B)}_X\sqsubseteq\id^{\mathcal{C}(A,B)}_Y$.
@@ -1320,6 +1320,40 @@ $\mathcal{Y}\nasymp
 \Leftrightarrow
 \mathcal{X}\nasymp
 \supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}$.
+\end{proof}
+
+We need to prove that the restricted identities
+conform to the axioms:
+
+\begin{proof}
+The first five \hyperref[unf-mor]{axioms} are obvious. Let's prove the
+remaining ones:
+
+$\id^{\mathcal{C}(A,A)}_{[A]} = 1^{\mathcal{C}}_A$
+because
+$\supfun{\id^{\mathcal{C}(A,A)}_{[A]}}\mathcal{X}=
+([\mathcal{X}]\sqcap[A])\div A=
+[\mathcal{X}]\div A=\mathcal{X}$.
+
+$\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$
+because
+$\supfun{\id^{\mathcal{C}(B,C)}_Y \circ
+\id^{\mathcal{C}(A,B)}_X}\mathcal{X}=
+\supfun{\id^{\mathcal{C}(B,C)}_Y}
+\supfun{\id^{\mathcal{C}(A,B)}_X}\mathcal{X}=
+\supfun{\id^{\mathcal{C}(B,C)}_Y}
+(([\mathcal{X}]\sqcap X)\div B)=
+([([\mathcal{X}]\sqcap X)\div B]\sqcap Y)\div C=
+??=
+([\mathcal{X}]\sqcap X\sqcap Y)\div C=
+\supfun{\id^{\mathcal{C}(A,C)}_{X\sqcap Y}}\mathcal{X}
+$
+
+$\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
+A\sqsubseteq[B]$ because ??.
+
+
+????
 \end{proof}
 
 \begin{prop}
