@@ -1296,8 +1296,9 @@ restricted identity being defined by the formulas
 ([\mathcal{X}]\sqcap\mathcal{F})\div B;
 \quad
 \supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}=
-([\mathcal{Y}]\sqcap\mathcal{F})\div A.
+([\mathcal{Y}]\sqcap\mathcal{F})\div A
 \]
+(whenever $\mathcal{F}\sqsubseteq[A]\sqcap[B]$).
 
 We need to prove that this really defines a funcoid.
 
@@ -1344,16 +1345,12 @@ $\supfun{\id^{\mathcal{C}(B,C)}_Y \circ
 \supfun{\id^{\mathcal{C}(B,C)}_Y}
 (([\mathcal{X}]\sqcap X)\div B)=
 ([([\mathcal{X}]\sqcap X)\div B]\sqcap Y)\div C=
-??=
+(([\mathcal{X}]\sqcap X\sqcap Y)\div B)\div C=
 ([\mathcal{X}]\sqcap X\sqcap Y)\div C=
-\supfun{\id^{\mathcal{C}(A,C)}_{X\sqcap Y}}\mathcal{X}
-$
+\supfun{\id^{\mathcal{C}(A,C)}_{X\sqcap Y}}\mathcal{X}$.
 
 $\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
-A\sqsubseteq[B]$ because ??.
-
-
-????
+A\sqsubseteq[B]$ is obvious.
 \end{proof}
 
 \begin{prop}
