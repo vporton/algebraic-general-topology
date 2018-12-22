@@ -527,11 +527,36 @@ $X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$, $f:A_1\to B_1
 \end{enumerate}
 \end{defn}
 
-\begin{obvious}
-$\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
+\begin{prop}
+The second axiom is equivalent to the following axiom:
+\begin{enumerate}
+\item $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
 X\times_{A_1,B_1}Y$ whenever
 $X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
-\end{obvious}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item[$\Rightarrow$] Obvious.
+
+\item[$\Leftarrow$]~
+$f \sim X \times_{A_0, B_0} Y \Leftarrow f =
+X \times_{A_1, B_1} Y$ because
+$\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
+X\times_{A_1,B_1}Y$ and
+$\iota_{A_0,B_0}(X\times_{A_1,B_1}Y)=
+X\times_{A_0,B_0}Y$.
+
+Let's prove
+$f \sim X \times_{A_0, B_0} Y \Rightarrow f =
+X \times_{A_1, B_1} Y$.
+Really, if $f \sim X \times_{A_0, B_0} Y$ then
+$f = \iota_{A_1,B_1}f \sim \iota_{A_1,B_1}(X \times_{A_0, B_0} Y)=X \times_{A_1, B_1} Y$ and thus 
+$f=X \times_{A_1, B_1} Y$.
+\end{widedisorder}
+\end{proof}
 
 \begin{prop}
 $[A]\times_{A,B}[B]$ is the greatest morphism
