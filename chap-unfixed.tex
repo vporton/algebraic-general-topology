@@ -520,18 +520,18 @@ $\mathfrak{A}\ni X\sqsubseteq[A]$,
 $\mathfrak{A}\ni Y\sqsubseteq[B]$,
 $X\times_{A,B}Y\in\mathcal{C}(A,B)$
 and morphism~$f\in\mathcal{C}(A,B)$);
-\item $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
-X\times_{A_1,B_1}Y$ whenever
-$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
-\item (??alternative axiom)
-$f\sim X\times_{A_0,B_0}Y$ then
-$f=X\times_{\Src f,\Dst f}Y$.
-\item Both axioms seem to be consequences of
-$f \sim X \times_{A_0, B_0} Y \Leftrightarrow f = X \times_{A_1, B_1} Y$
+\item $f \sim X \times_{A_0, B_0} Y \Leftrightarrow f =
+X \times_{A_1, B_1} Y$
 whenever
 $X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$, $f:A_1\to B_1$.
 \end{enumerate}
 \end{defn}
+
+\begin{obvious}
+$\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
+X\times_{A_1,B_1}Y$ whenever
+$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
+\end{obvious}
 
 \begin{prop}
 $[A]\times_{A,B}[B]$ is the greatest morphism
@@ -1252,7 +1252,7 @@ restricted identity being the identity relation on the
 given set.
 
 Moreover it is a category with binary product morphism
-with usual Cartesian product.
+with usual Cartesian product (??prove).
 
 Proofs of this are trivial.
 
@@ -1325,6 +1325,7 @@ and~$\mathcal{Y}$.
 It is really a binary product morphism:
 
 \begin{proof}
+\fxwarning{Prove the new axiom.}
 Let unfixed filters
 $X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
 Then for $\mathcal{X}\in\mathscr{F}(A_1)$ we have
