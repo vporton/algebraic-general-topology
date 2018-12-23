@@ -1453,6 +1453,8 @@ Let~$f$ be a funcoid. Define pointfree
 funcoid~$\mathscr{S}f$ between unfixed filters as:
 
 \begin{defn}
+For every unfixed filter~$\mathcal{X}$
+and~$\mathcal{Y}$
 \[
 \supfun{\mathscr{S}f}\mathcal{X}=
 [\supfun{f}(\mathcal{X}\div\Src f)];\quad
@@ -1569,6 +1571,18 @@ is already proved above.
 \end{widedisorder}
 \end{proof}
 
+\begin{lem}
+For every meet-semilattice $a\nasymp b$ and
+$c\sqsupseteq b$ implies $a\sqcap c\nasymp b$.
+\end{lem}
+
+\begin{proof}
+Suppose $a\nasymp b$. Then there is a non-least~$x$
+such that $x\sqsubseteq a,b$. Thus $x\sqsubseteq c$,
+so $x\sqsubseteq a\sqcap c$. We have
+$a\sqcap c\nasymp b$.
+\end{proof}
+
 \begin{prop}
 $\mathscr{S}(X\times Y)
 =\mathscr{S}X\times^{\mathsf{pFCD}(\mathfrak{F}(\mho))}\mathscr{S}Y$
@@ -1576,6 +1590,17 @@ for every unfixed filters~$X$ and~$Y$.
 \end{prop}
 
 \begin{proof}
+$\mathscr{S}(X\times Y) = \mathscr{S}(X\times_{A,B}Y)$
+for arbitrary filters~$A$, and~$B$ such that
+$X\sqsubseteq[A]$ and $Y\sqsubseteq[B]$. So
+for every unfixed filter~$\mathcal{X}$ we have
+$\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
+\supfun{\mathscr{S}(X\times_{A,B}Y)}\mathcal{X}=
+[\supfun{X\times_{A,B}Y}(\mathcal{X}\div A)]$
+
+Thus if $\mathcal{P}\nasymp\mathscr{S}X$ then
+$\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
+[\supfun{X\times_{A,B}Y}(\mathcal{P}\div A)]=$
 ??
 \end{proof}
 
