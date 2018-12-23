@@ -1619,12 +1619,27 @@ So $\mathscr{S}(X\times Y)
 
 \begin{prop}
 $\mathscr{S}\id_X=
-\id^{\mathsf{pFCD}(\mathfrak{F}(\mho))}_{\mathscr{S}X}$
+\id^{\mathsf{pFCD}(\mathfrak{F}(\mho))}_{X}$
 for every unfixed filter~$X$.
 \end{prop}
 
 \begin{proof}
-??
+For every unfixed filter~$\mathcal{X}$ we
+for arbitrary filters~$A$ and~$B$ such that
+$X\sqsubseteq[A]\sqcap[B]$
+have
+$\supfun{\mathscr{S}\id_X}\mathcal{X}=
+\supfun{\mathscr{S}[\id^{\mathcal{C}(A,B)}_X]}\mathcal{X}=
+\supfun{\mathscr{S}\id^{\mathcal{C}(A,B)}_X}
+\mathcal{X}=
+\left[\supfun{\id^{\mathcal{C}(A,B)}_X}
+(\mathcal{X}\div A)\right]=
+[([\mathcal{X}\div A]\sqcap X)\div B]=
+[(\mathcal{X}\sqcap X)\div B]=
+\mathcal{X}\sqcap X$.
+
+Thus $\mathscr{S}\id_X=
+\id^{\mathsf{pFCD}(\mathfrak{F}(\mho))}_{X}$.
 \end{proof}
 
 \subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
