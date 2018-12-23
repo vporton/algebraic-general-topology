@@ -1657,39 +1657,33 @@ with $\mathfrak{Z}$ being the set of all
 small sets, $\mathfrak{A}$ is the set of unfixed filters,
 projection being the projection function for the
 equivalence classes of filters,
-restricted identity being defined by the formulas
+restricted identity being defined by the formula
+\[\id^{\mathsf{RLD}(A,B)}_{\mathcal{F}} =
+\id^{\mathsf{RLD}}_{\mathcal{F}\div(A\cap B)}
+\div(A\times B).\]
 
-$\id^{\mathsf{RLD}(A,B)}_{\mathcal{F}} =
-\id^{\mathsf{RLD}}_{\mathcal{F}\div([A]\sqcap[B])}
-\div(A\times B)$.
+\begin{obvious}
+$\mathcal{E}_{\mathsf{RLD}}^{A,B}=
+\id_{A\cap B}\div(A\times B)$
+OR
+$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
+B)} \id_{A \cap B}$.
+\end{obvious}
 
 ?????
 
 \fxnote{Unfixed reloids can be embedded into reloids
 between the Grothendieck universes.}
 
-Category $\mathsf{RLD}$ with the up-arrow functor
-$\uparrow^{\mathsf{RLD}}$ and ``reverse reloid'' as the dagger is a
-partially ordered dagger category under $\mathbf{Rel}$.
-
-\begin{obvious}
-$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
-B)} \id_{A \cap B}$.
-\end{obvious}
-
 \begin{prop}
   $\iota_{A, B} f = f \div (A \times B)$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{B}
+$\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{B}
 \circ f \circ (\mathcal{E}_{\mathsf{RLD}}^{A})^{-1} =
-\bigsqcap \setcond{ \uparrow^{\mathsf{RLD}} (\mathcal{E}^{B} \circ F \circ (\mathcal{E}^{A})^{-1}
-}{ F \in \GR f } = \bigsqcap \setcond{
-\uparrow^{\mathsf{RLD}} (F \cap (A \times B))}
-{F \in \GR f } = f \div (A \times B)$.
-
-\fxwarning{Filters on Cartesian products vs reloids.}
+$
+??
 \end{proof}
 
 \fxnote{Unfixed reloids seem to be equivalent to
