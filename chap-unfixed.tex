@@ -1662,32 +1662,42 @@ restricted identity being defined by the formula
 \id^{\mathsf{RLD}}_{\mathcal{F}\div(A\cap B)}
 \div(A\times B).\]
 
+\fxwarning{Need to prove that they really form
+a category with restricted identities (and moreover
+with binary product morphism.}
+
 \begin{obvious}
-$\mathcal{E}_{\mathsf{RLD}}^{A,B}=
-\id_{A\cap B}\div(A\times B)$
-OR
 $\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
 B)} \id_{A \cap B}$.
 \end{obvious}
 
-?????
+\begin{prop}
+$\iota_{A, B} f = f \div (A \times B)$ for every
+reloid~$f$.
+\end{prop}
+
+\begin{proof}
+$\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{\Dst f,B}
+\circ f \circ \mathcal{E}_{\mathsf{RLD}}^{A,\Src f} =
+\bigsqcap^{\mathsf{RLD}}_{F\in\up f}
+(\uparrow^{\mathbf{Rel}(\Dst f,B)}\id_{\Dst f\cap B}
+\circ F\circ
+\uparrow^{\mathbf{Rel}(A,\Src f)}\id_{A\cap\Src f})=
+\bigsqcap^{\mathsf{RLD}}_{F\in\up f}
+(\uparrow^{\mathbf{Rel}(A,B)}
+(\id_{\Dst f\cap B}\circ\GR F\circ\id_{\Dst f\cap B}))=
+\bigsqcap^{\mathsf{RLD}}_{F\in\up f}
+\uparrow^{\mathbf{Rel}(A,B)}(F\cap(A\times B))=
+f \div (A \times B)$.
+\end{proof}
 
 \fxnote{Unfixed reloids can be embedded into reloids
 between the Grothendieck universes.}
 
-\begin{prop}
-  $\iota_{A, B} f = f \div (A \times B)$.
-\end{prop}
-
-\begin{proof}
-$\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{B}
-\circ f \circ (\mathcal{E}_{\mathsf{RLD}}^{A})^{-1} =
-$
-??
-\end{proof}
-
 \fxnote{Unfixed reloids seem to be equivalent to
 endoreloids on the set of unfixed filters.}
+
+?????
 
 \subsection{Some isomorphisms}
 
