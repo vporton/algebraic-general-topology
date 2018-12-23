@@ -1284,6 +1284,8 @@ Proofs of this are trivial.
 
 \subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
 
+\fxwarning{It is $\mathsf{FCD}$, not~$\mathcal{C}$.}
+
 Category $\mathsf{FCD}$
 can be considered as a category with restricted identities
 with $\mathfrak{Z}$ being the set of all
@@ -1644,6 +1646,25 @@ Thus $\mathscr{S}\id_X=
 
 \subsection{\texorpdfstring{Category $\mathsf{RLD}$}{Category RLD}}
 
+\begin{defn}
+  $f \div D = (A, B, (\GR f) \div D)$ for every
+  reloid $f$ and a binary relation~$D$.
+\end{defn}
+
+Category $\mathsf{RLD}$
+can be considered as a category with restricted identities
+with $\mathfrak{Z}$ being the set of all
+small sets, $\mathfrak{A}$ is the set of unfixed filters,
+projection being the projection function for the
+equivalence classes of filters,
+restricted identity being defined by the formulas
+
+$\id^{\mathsf{RLD}(A,B)}_{\mathcal{F}} =
+\id^{\mathsf{RLD}}_{\mathcal{F}\div([A]\sqcap[B])}
+\div(A\times B)$.
+
+?????
+
 \fxnote{Unfixed reloids can be embedded into reloids
 between the Grothendieck universes.}
 
@@ -1655,11 +1676,6 @@ partially ordered dagger category under $\mathbf{Rel}$.
 $\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
 B)} \id_{A \cap B}$.
 \end{obvious}
-
-\begin{defn}
-  $f \div (A \times B) = (A , B , (\GR f) \div (A \times B))$ for every
-  reloid $f$.
-\end{defn}
 
 \begin{prop}
   $\iota_{A, B} f = f \div (A \times B)$.
