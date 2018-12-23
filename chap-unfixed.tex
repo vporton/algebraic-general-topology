@@ -1585,11 +1585,8 @@ $a\sqcap c\nasymp b$.
 
 \begin{prop}
 $\mathscr{S}(X\times Y)
-=\mathscr{S}X\times^{\mathsf{pFCD}(\mathfrak{F}(\mho))}\mathscr{S}Y$
+=X\times^{\mathsf{pFCD}(\mathfrak{F}(\mho))}Y$
 for every unfixed filters~$X$ and~$Y$.
-\fxerror{The left side is between unfixed filters,
-buth the right is between filters on small sets.
-So, it's wrong.}
 \end{prop}
 
 \begin{proof}
@@ -1599,14 +1596,25 @@ $X\sqsubseteq[A]$ and $Y\sqsubseteq[B]$. So
 for every unfixed filter~$\mathcal{X}$ we have
 $\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
 \supfun{\mathscr{S}(X\times_{A,B}Y)}\mathcal{X}=
-[\supfun{X\times_{A,B}Y}(\mathcal{X}\div A)]$
+[\supfun{X\times_{A,B}Y}(\mathcal{X}\div A)]=
+[\supfun{(X\div A)\times^{\mathsf{FCD}}(Y\div B)}
+(\mathcal{X}\div A)]$
 
-Thus if $\mathcal{P}\nasymp\mathscr{S}X$ then
+Thus if $\mathcal{P}\nasymp X$ then
 (by the lemma)
-$\mathcal{P}\sqcap\mathscr{S}A\nasymp\mathscr{S}X$;
+$\mathcal{P}\sqcap A\nasymp X$;
+$\mathcal{P}\div A\nasymp X\div A$;
 $\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
-[\supfun{X\times_{A,B}Y}(\mathcal{P}\div A)]=$
-??
+[Y\div B]=Y$.
+
+if $\mathcal{P}\asymp X$ then
+$\mathcal{P}\sqcap A\asymp X$;
+$\mathcal{P}\div A\asymp X\div A$;
+$\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
+[\bot]=\bot$.
+
+So $\mathscr{S}(X\times Y)
+=X\times^{\mathsf{pFCD}(\mathfrak{F}(\mho))}Y$.
 \end{proof}
 
 \begin{prop}
