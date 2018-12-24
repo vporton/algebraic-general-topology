@@ -1678,11 +1678,27 @@ $\id^{\mathsf{RLD}(A,A)}_{[A]} =
 \id^{\mathsf{RLD}}_A\div(A\times A) =
 1^{\mathsf{RLD}}_A$.
 
-$\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X =
-(\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
+$\GR(\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X) =
+\GR((\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
 \div(B\times C)) \circ
 (\id^{\mathsf{RLD}}_{X\div(A\cap B)}
-\div(A\times B)) = ??$
+\div(A\times B))) =
+\GR((\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
+\div(B\times C)) \circ
+\GR(\id^{\mathsf{RLD}}_{X\div(A\cap B)}
+\div(A\times B))) =
+((\GR\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
+\cap\subsets(B\times C)) \circ
+(\GR\id^{\mathsf{RLD}}_{X\div(A\cap B)}
+\cap\subsets(A\times B)) =
+\text{(exercise)} =
+(\GR\id^{\mathsf{RLD}}_{Y\div(B\cap C)}\circ
+\GR\id^{\mathsf{RLD}}_{X\div(A\cap B)})
+\cap\subsets(A\times C) =
+\GR(\id^{\mathsf{RLD}}_{Y\div(B\cap C)}\circ
+\id^{\mathsf{RLD}}_{X\div(A\cap B)})
+\div(A\times C) = ??
+$
 
 ?????
 \end{proof}
