@@ -1713,12 +1713,18 @@ f\sqcap((\mathcal{X}\div A)\times^{\mathsf{RLD}}(\mathcal{Y}\div B))=
 f\sqcap(\mathcal{\mathcal{X}}\times_{A,B}\mathcal{\mathcal{Y}})$.
 
 $\iota_{A_1,B_1}
-(\mathcal{X}\times_{A_0,B_0}\mathcal{Y})=??$
-
-??
+(\mathcal{X}\times_{A_0,B_0}\mathcal{Y})=
+\mathcal{E}^{B_0,B_1}\circ
+(\mathcal{X}\times_{A_0,B_0}\mathcal{Y})\circ
+\mathcal{E}^{A_1,A_0}=
+\uparrow^{\mathsf{RLD}(B_0,B_1)}\id_{B_0\cap B_1}
+((\mathcal{X}\div B_0)\times(\mathcal{Y}\div A_0))
+\circ
+\uparrow^{\mathsf{RLD}(A_1,A_0)}\id_{A_0\cap A_1}=
+((\mathcal{X}\div B_0)\div B_1)\times((\mathcal{Y}\div A_0)\div A_1)=
+(\mathcal{X}\div B_1)\times(\mathcal{Y}\div A_1)=
+\mathcal{X}\times_{A_1,B_1}\mathcal{Y}$.
 \end{proof}
-
-????
 
 \begin{prop}
 $\iota_{A, B} f = f \div (A \times B)$ for every
@@ -1739,6 +1745,30 @@ $\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{\Dst f,B}
 \uparrow^{\mathbf{Rel}(A,B)}(F\cap(A\times B))=
 f \div (A \times B)$.
 \end{proof}
+
+\begin{defn}
+Reloid
+$\mathscr{S}f\in\End_{\mathsf{RLD}}(\text{small sets})$
+is defined by the formula
+$\GR\mathscr{S}f=\mathscr{S}\GR f$ for every
+reloid~$f$.
+\fxwarning{Small sets vs
+$\text{small sets}\times\text{small sets}$.}
+\end{defn}
+
+\begin{defn}
+Reloid
+$\mathscr{S}f\in\End_{\mathsf{RLD}}(\text{small sets})$
+if defined by the formula
+$\mathscr{S}f=\mathscr{S}F$ for arbitrary~$F\in f$
+for every unfixed reloid~$f$.
+\end{defn}
+
+That the result does not depend on the choice of~$F$
+obviously follows from the corresponding result for
+filters.
+
+????
 
 \fxnote{Unfixed reloids can be embedded into reloids
 between the Grothendieck universes.}
