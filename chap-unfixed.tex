@@ -1662,10 +1662,6 @@ restricted identity being defined by the formula
 \id^{\mathsf{RLD}}_{\mathcal{F}\div(A\cap B)}
 \div(A\times B).\]
 
-\fxwarning{Need to prove that they really form
-a category with restricted identities (and moreover
-with binary product morphism).}
-
 We need to prove that the restricted identities
 conform to the axioms:
 
@@ -1678,32 +1674,21 @@ $\id^{\mathsf{RLD}(A,A)}_{[A]} =
 \id^{\mathsf{RLD}}_A\div(A\times A) =
 1^{\mathsf{RLD}}_A$.
 
-$\GR(\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X) =
-\GR((\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
-\div(B\times C)) \circ
-(\id^{\mathsf{RLD}}_{X\div(A\cap B)}
-\div(A\times B))) =
-\GR((\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
-\div(B\times C)) \circ
-\GR(\id^{\mathsf{RLD}}_{X\div(A\cap B)}
-\div(A\times B))) =
-((\GR\id^{\mathsf{RLD}}_{Y\div(B\cap C)}
-\cap\subsets(B\times C)) \circ
-(\GR\id^{\mathsf{RLD}}_{X\div(A\cap B)}
-\cap\subsets(A\times B)) =
-\text{(exercise)} =
-(\GR\id^{\mathsf{RLD}}_{Y\div(B\cap C)}\circ
-\GR\id^{\mathsf{RLD}}_{X\div(A\cap B)})
-\cap\subsets(A\times C) =
-\GR(\id^{\mathsf{RLD}}_{Y\div(B\cap C)}\circ
-\id^{\mathsf{RLD}}_{X\div(A\cap B)})
-\div(A\times C) = ??
-$
-\fxerror{$\id^{\mathsf{RLD}}_{Y\div(B\cap C)}\circ
-\id^{\mathsf{RLD}}_{X\div(A\cap B)}$ is a nonsense.}
+$\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X =
+\bigsqcap_{x\in\up X,y\in\up Y}
+(\id^{\mathcal{C}(B,C)}_y \circ \id^{\mathcal{C}(A,B)}_x)=
+\bigsqcap_{x\in\up X,y\in\up Y}
+\id^{\mathcal{C}(A,B)}_{x\cap y}=
+\id^{\mathcal{C}(A,B)}_{X\sqcap Y}$.
 
-?????
+$\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
+A\sqsubseteq[B]$ is obvious.
 \end{proof}
+
+\fxwarning{Need to prove that they form
+a category with binary product morphism.}
+
+????
 
 \begin{obvious}
 $\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
