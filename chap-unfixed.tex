@@ -1685,6 +1685,11 @@ $\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
 A\sqsubseteq[B]$ is obvious.
 \end{proof}
 
+\begin{obvious}
+$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
+B)} \id_{A \cap B}$.
+\end{obvious}
+
 \begin{prop}
 $\mathsf{RLD}$ with
 $\mathcal{X}\times_{A,B}\mathcal{Y}=
@@ -1696,15 +1701,24 @@ is a category with binary product morphism.
 \end{prop}
 
 \begin{proof}
+$\id^{\mathcal{C}(B,B)}_\mathcal{Y}\circ f\circ\id^{\mathcal{C}(A,A)}_\mathcal{X}=f\sqcap(\mathcal{X}\times_{A,B}\mathcal{Y})$
+because
+$\id^{\mathcal{C}(B,B)}_\mathcal{Y}\circ f\circ\id^{\mathcal{C}(A,A)}_\mathcal{X}=
+(\id^{\mathsf{RLD}}_{\mathcal{Y}\div B}\div B\times B)
+\circ f\circ
+(\id^{\mathsf{RLD}}_{\mathcal{X}\div A}\div A\times A)=
+\id^{\mathsf{RLD}}_{\mathcal{Y}\div B}\circ f\circ
+\id^{\mathsf{RLD}}_{\mathcal{X}\div A}=
+f\sqcap((\mathcal{X}\div A)\times^{\mathsf{RLD}}(\mathcal{Y}\div B))=
+f\sqcap(\mathcal{\mathcal{X}}\times_{A,B}\mathcal{\mathcal{Y}})$.
+
+$\iota_{A_1,B_1}
+(\mathcal{X}\times_{A_0,B_0}\mathcal{Y})=??$
+
 ??
 \end{proof}
 
 ????
-
-\begin{obvious}
-$\mathcal{E}_{\mathsf{RLD}}^{A,B} = \uparrow^{\mathsf{RLD} (A ,
-B)} \id_{A \cap B}$.
-\end{obvious}
 
 \begin{prop}
 $\iota_{A, B} f = f \div (A \times B)$ for every
