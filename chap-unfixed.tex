@@ -1775,7 +1775,30 @@ is a monotone function and a prefunctor.
 \end{prop}
 
 \begin{proof}
-??
+That it's monotone is obvious.
+
+Let~$f$ and~$g$ be composable reloids.
+
+If $F\in\up f$ and $G\in\up g$ then
+$F\in\GR f$ and $G\in\GR g$. Consequently
+$F\in\GR\mathscr{S}f$, $G\in\GR\mathscr{S}g$. So
+$g\circ f\sqsubseteq G\circ F$ and thus??
+$\mathscr{S}(g\circ f)\sqsubseteq
+\mathscr{S}g\circ\mathscr{S}f$.
+
+Whenever $H\in\up(\mathscr{S}g\circ\mathscr{S}f)$,
+we have
+$H\supseteq G\circ F$ where $F\in\up\mathscr{S}f$,
+$G\in\up\mathscr{S}g$. Thus
+$H\supseteq
+G\div(\Src g\times\Dst g))\circ
+(F\div(\Src f\times\Dst f))=
+G\circ F\in\up(\mathscr{S}(g\circ f))$. So
+$\mathscr{S}g\circ\mathscr{S}f\sqsubseteq
+\mathscr{S}(g\circ f)$.
+
+So
+$\mathscr{S}(g\circ f)=\mathscr{S}g\circ\mathscr{S}f$.
 \end{proof}
 
 \begin{prop}
