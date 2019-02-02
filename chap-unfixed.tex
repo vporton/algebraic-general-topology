@@ -1373,6 +1373,22 @@ $[\mathcal{Y}]\sqcap\mathcal{F}=[\mathcal{Y}]$.
 So, it follows from the above.
 \end{proof}
 
+\begin{prop}
+\fxnote{Also for reloids.}
+$\id^{\mathsf{FCD}(A,A)}_X=\id^{\mathsf{FCD}}_{X\div A}$
+whenever $A\in\mathfrak{Z}$ and
+$\mathfrak{A}\ni X\sqsubseteq[A]$.
+\end{prop}
+
+\begin{proof}
+$\supfun{\id^{\mathsf{FCD}(A,A)}_X}\mathcal{X}=
+([\mathcal{X}]\sqcap X)\div A=??=
+([\mathcal{X}]\sqcap X) A=??=
+\mathcal{X}\sqcap(X\div A)=
+\supfun{\id^{\mathsf{FCD}}_{X\div A}}\mathcal{X}$.
+for every $\mathcal{X}\in\mathscr{F}(A)$.
+\end{proof}
+
 \begin{defn}
 Category~$\mathsf{FCD}$ can be considered as a category
 with binary product morphism with the binary product
@@ -1388,7 +1404,17 @@ It is really a binary product morphism:
 Need to prove the axioms:
 
 \begin{widedisorder}
-\item[\ref{binprod-cmp}] ???
+\item[\ref{binprod-cmp}] Need to prove
+$\id^{\mathsf{FCD}(B,B)}_Y\circ f\circ\id^{\mathsf{FCD}(A,A)}_X=f\sqcap(X\times_{A,B}Y)$.
+
+$f\sqcap(X\times_{A,B}Y)=
+f\sqcap((X\div A)\times^{\mathsf{FCD}}(Y\div B))=
+\id^{\mathsf{FCD}}_{Y\div B}\circ f\circ
+\id^{\mathsf{FCD}}_{X\div A}=??=
+\id^{\mathsf{FCD}(B,B)}_Y\circ f\circ\id^{\mathsf{FCD}(A,A)}_X
+$
+
+???
 
 \item[\ref{binprod-mv}] Let unfixed filters
 $X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
