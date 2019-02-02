@@ -1374,7 +1374,6 @@ So, it follows from the above.
 \end{proof}
 
 \begin{prop}
-\fxnote{Since here also for reloids.}
 $\id^{\mathsf{FCD}(A,A)}_X=\id^{\mathsf{FCD}}_{X\div A}$
 whenever $A\in\mathfrak{Z}$ and
 $\mathfrak{A}\ni X\sqsubseteq[A]$.
@@ -1391,6 +1390,7 @@ for every $\mathcal{X}\in\mathscr{F}(A)$.
 \end{proof}
 
 \begin{defn}
+\fxnote{Since here also for reloids.}
 Category~$\mathsf{FCD}$ can be considered as a category
 with binary product morphism with the binary product
 defined as:
@@ -1772,6 +1772,18 @@ $\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{\Dst f,B}
 \bigsqcap^{\mathsf{RLD}}_{F\in\up f}
 \uparrow^{\mathbf{Rel}(A,B)}(F\cap(A\times B))=
 f \div (A \times B)$.
+\end{proof}
+
+\begin{prop}
+$\id^{\mathsf{RLD}(A,A)}_X=\id^{\mathsf{RLD}}_{X\div A}$
+whenever $A\in\mathfrak{Z}$ and
+$\mathfrak{A}\ni X\sqsubseteq[A]$.
+\end{prop}
+
+\begin{proof}
+$\id^{\mathsf{RLD}(A,A)}_X=
+\id^{\mathsf{RLD}}_{X\div(A\cap A)}\div(A\times A)=
+\id^{\mathsf{RLD}}_{X\div A}$.
 \end{proof}
 
 \begin{defn}
