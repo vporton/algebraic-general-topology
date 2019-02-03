@@ -1539,8 +1539,6 @@ So $\supfun{\mathscr{S}f}\mathcal{X}=
 \supfun{\mathscr{S}g}\mathcal{X}$.
 \end{proof}
 
-\fxnote{Since here also for reloids.}
-
 \begin{prop}\label{s-fcd}
 ~
 \begin{enumerate}
@@ -1613,6 +1611,8 @@ such that $x\sqsubseteq a,b$. Thus $x\sqsubseteq c$,
 so $x\sqsubseteq a\sqcap c$. We have
 $a\sqcap c\nasymp b$.
 \end{proof}
+
+\fxnote{Since here also for reloids.}
 
 \begin{prop}
 $\mathscr{S}(X\times Y)
@@ -1914,7 +1914,15 @@ So
 $\mathscr{S}(g\circ f)=\mathscr{S}g\circ\mathscr{S}f$.
 
 \item[\ref{s-rld-unfix}]
-??
+$\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g$ for $f:A_0\to B_0$, $g:A_1\to B_1$ easily implies $f=g$. So
+it is an embedding (monotonicity is obvious).
+
+It remains to prove that
+$\mathscr{S}G\circ\mathscr{S}F=\mathscr{S}(G\circ F)$
+but it is equivalent to 
+$\mathscr{S}g\circ\mathscr{S}f=\mathscr{S}(g\circ f)$
+for arbitrarily taken~$f\in F$ and~$g\in G$, what
+is already proved above.
 \end{widedisorder}
 \end{proof}
 
