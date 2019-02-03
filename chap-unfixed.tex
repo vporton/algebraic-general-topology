@@ -1816,8 +1816,32 @@ $\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
 (X\times_{A_0,B_0}Y)\circ
 \mathcal{E}^{\mathcal{C}(A_1,A_0)}=
 \uparrow^{\mathsf{RLD}(B_0,B_1)}\id_{B_0\cap B_1}\circ
-((\mathcal{X}\div A_0)\times^{\mathsf{RLD}}(\mathcal{X}\div B_0))\circ
-\uparrow^{\mathsf{RLD}(A_1,A_0)}\id_{A_0\cap A_1}=??=$
+((X\div A_0)\times^{\mathsf{RLD}}(Y\div B_0))\circ
+\uparrow^{\mathsf{RLD}(A_1,A_0)}\id_{A_0\cap A_1}$.
+
+But
+$(X\div A_0)\times^{\mathsf{RLD}}(Y\div B_0)=
+\bigsqcap^{\mathsf{RLD}}_{
+x\in\up(X\div A_0),y\in\up(Y\div B_0)}
+(x\times y)=
+\text{(by the bijection)}=
+\bigsqcap^{\mathsf{RLD}}_{
+x\in\up X,y\in\up Y}
+((x\div A_0)\times (y\div B_0))$.
+
+Thus by definition of reloidal product
+$\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
+\bigsqcap^{\mathsf{RLD}(A_1,B_1)}_{
+x\in\up X,y\in\up Y}
+(\id_{B_0\cap B_1}\circ((x\div A_0)\times (y\div B_0))\circ
+\id_{A_0\cap A_1})=
+\bigsqcap^{\mathsf{RLD}(A_1,B_1)}_{
+x\in\up X,y\in\up Y}
+((x\div A_0)\times (y\div B_0))=
+\bigsqcap^{\mathsf{RLD}(A_1,B_1)}_{
+x\in\up(X\div A_0),y\in\up(Y\div B_0)}(x\times y)=
+(X\div A_1)\times^{\mathsf{RLD}}(Y\div B_1)=
+X\times_{A_1,B_1}Y$.
 \end{widedisorder}
 \end{proof}
 
