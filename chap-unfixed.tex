@@ -1721,8 +1721,7 @@ B)} \id_{A \cap B}$.
 \begin{prop}
 $\mathsf{RLD}$ with
 $\mathcal{X}\times_{A,B}\mathcal{Y}=
-(\mathcal{X}\div A)\times^{\mathsf{RLD}}
-(\mathcal{X}\div B)$
+(\mathcal{X}\div A)\times^{\mathsf{RLD}}(\mathcal{X}\div B)$
 for every unfixed filters~$\mathcal{X}$
 and~$\mathcal{Y}$
 is a category with binary product morphism.
@@ -1784,6 +1783,42 @@ $\mathfrak{A}\ni X\sqsubseteq[A]$.
 $\id^{\mathsf{RLD}(A,A)}_X=
 \id^{\mathsf{RLD}}_{X\div(A\cap A)}\div(A\times A)=
 \id^{\mathsf{RLD}}_{X\div A}$.
+\end{proof}
+
+\begin{defn}
+Category~$\mathsf{RLD}$ can be considered as a category
+with binary product morphism with the binary product
+defined as:
+$\mathcal{X}\times_{A,B}\mathcal{Y}=
+(\mathcal{X}\div A)\times^{\mathsf{RLD}}(\mathcal{Y}\div B)$ for every unfixed filters~$\mathcal{X}$
+and~$\mathcal{Y}$.
+\end{defn}
+
+It is really a binary product morphism:
+
+\begin{proof}
+Need to prove the axioms:
+
+\begin{widedisorder}
+\item[\ref{binprod-cmp}]
+$f\sqcap(X\times_{A,B}Y)=
+f\sqcap((X\div A)\times^{\mathsf{RLD}}(Y\div B))=
+\id^{\mathsf{RLD}}_{Y\div B}\circ f\circ
+\id^{\mathsf{RLD}}_{X\div A}=
+\id^{\mathsf{RLD}(B,B)}_Y\circ f\circ\id^{\mathsf{RLD}(A,A)}_X$.
+
+\item[\ref{binprod-mv}]
+Let unfixed filters
+$X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
+Then we have
+$\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)=
+\mathcal{E}^{\mathcal{C}(B_0,B_1)}\circ
+(X\times_{A_0,B_0}Y)\circ
+\mathcal{E}^{\mathcal{C}(A_1,A_0)}=
+\uparrow^{\mathsf{RLD}(B_0,B_1)}\id_{B_0\cap B_1}\circ
+((\mathcal{X}\div A_0)\times^{\mathsf{RLD}}(\mathcal{X}\div B_0))\circ
+\uparrow^{\mathsf{RLD}(A_1,A_0)}\id_{A_0\cap A_1}=??=$
+\end{widedisorder}
 \end{proof}
 
 \begin{defn}
