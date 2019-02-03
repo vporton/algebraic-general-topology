@@ -1390,7 +1390,6 @@ for every $\mathcal{X}\in\mathscr{F}(A)$.
 \end{proof}
 
 \begin{defn}
-\fxnote{Since here also for reloids.}
 Category~$\mathsf{FCD}$ can be considered as a category
 with binary product morphism with the binary product
 defined as:
@@ -1539,6 +1538,8 @@ $\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g}\mathcal{X}=
 So $\supfun{\mathscr{S}f}\mathcal{X}=
 \supfun{\mathscr{S}g}\mathcal{X}$.
 \end{proof}
+
+\fxnote{Since here also for reloids.}
 
 \begin{prop}\label{s-fcd}
 ~
@@ -1867,15 +1868,25 @@ That the result does not depend on the choice of~$F$
 obviously follows from the corresponding result for
 filters.
 
-\begin{prop}
-$\mathscr{S}:\mathsf{RLD}\to
-\End_{\mathsf{RLD}}(\text{small sets})$
-is a monotone function and a prefunctor.
+\begin{prop}\label{s-rld}
+~
+\begin{enumerate}
+\item\label{s-rld-hom} $\mathscr{S}$ from a $\Hom$-set $\mathsf{RLD}(A,B)$ to $\End_{\mathsf{RLD}}(\text{small sets})$
+is an order embedding.
+\item\label{s-rld-fctr} $\mathscr{S}$ from the category~$\mathsf{RLD}$ to $\End_{\mathsf{RLD}}(\text{small sets})$
+is a prefunctor.
+\item\label{s-rld-unfix} $\mathscr{S}$ from unfixed reloids is an order embedding and a prefunctor (=~semigroup homomorphism).
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
-That it's monotone is obvious.
+~
+\begin{widedisorder}
+\item[\ref{s-fcd-hom}] That it's monotone is obvious.
+That it is an injection follows from $\mathscr{S}$ for filters
+being an injection.
 
+\item[\ref{s-rld-fctr}]
 Let~$f$ and~$g$ be composable reloids.
 
 If $H\in\up\mathscr{S}(g\circ f)$ then
@@ -1901,6 +1912,10 @@ $\mathscr{S}g\circ\mathscr{S}f\sqsupseteq
 
 So
 $\mathscr{S}(g\circ f)=\mathscr{S}g\circ\mathscr{S}f$.
+
+\item[\ref{s-rld-unfix}]
+??
+\end{widedisorder}
 \end{proof}
 
 \begin{prop}
