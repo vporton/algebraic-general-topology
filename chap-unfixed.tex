@@ -1975,8 +1975,8 @@ research pointfree reloids.
 \end{proof}
 
 \begin{prop}
-  $\setcond{ (\iota_{X, Y} f , \id^{\mathbf{Rel}}_Y \circ f \circ
-  \id^{\mathbf{Rel}}_X) }{ f \in
+  $\setcond{ (\iota_{X, Y} f , \id^{\mathbf{Rel}(\Dst f)}_Y \circ f \circ
+  \id^{\mathbf{Rel}(\Src f)}_X) }{ f \in
   \mathbf{Rel} (A , B) }$ is a function and moreover is an
   (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
   \subseteq \Dst f$.
@@ -1991,8 +1991,8 @@ research pointfree reloids.
 \end{proof}
 
 \begin{prop}
-  $\setcond{ (\iota_{X, Y} f , \id^{\mathsf{FCD}}_Y
-  \circ f \circ \id^{\mathsf{FCD}}_X) }{
+  $\setcond{ (\iota_{X, Y} f , \id^{\mathsf{FCD}(\Dst f)}_Y
+  \circ f \circ \id^{\mathsf{FCD}(\Src f)}_X) }{
   f \in \mathsf{FCD} (A , B) }$ is a function and moreover is an
   (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
   \subseteq \Dst f$.
@@ -2016,8 +2016,8 @@ research pointfree reloids.
 \end{proof}
 
 \begin{prop}
-  $\setcond{ (\iota_{X, Y} f , \id^{\mathsf{RLD}}_Y \circ f \circ
-  \id^{\mathsf{RLD}}_X) }{ f \in
+  $\setcond{ (\iota_{X, Y} f , \id^{\mathsf{RLD}(\Dst f)}_Y \circ f \circ
+  \id^{\mathsf{RLD}(\Src f)}_X) }{ f \in
   \mathsf{RLD} (A , B) }$ is a function and moreover is an
   (order and semigroup) isomorphism, for sets $X \subseteq \Src f$, $Y
   \subseteq \Dst f$.
@@ -2044,3 +2044,7 @@ research pointfree reloids.
      f \in \mathsf{RLD} (A , B) } \]
   is a bijection.
 \end{proof}
+
+We can generalize the above with the formula:
+
+$\id^{\mathcal{C}(A)}_X = \iota_{A,A}\id^{\mathcal{C}(A)}_{[X]}$.
