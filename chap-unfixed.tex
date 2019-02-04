@@ -1272,8 +1272,8 @@ Category $\mathbf{Rel}$ of relations between small sets
 can be considered as a category with restricted identities
 with $\mathfrak{Z}=\mathfrak{A}$ being the set of all
 small sets, projection being the identity function and
-restricted identity being the identity relation on the
-given set.
+restricted identity being the identity relation between the
+given sets.
 
 Moreover it is a category with binary product morphism
 with usual Cartesian product (??prove).
@@ -1939,12 +1939,17 @@ research pointfree reloids.
 
 \fxwarning{This subsection needs rewrite.}
 
+In the next three propositions
+assume~$A\in\mathfrak{Z}$,~$\mathfrak{A}\ni X\sqsubseteq A$.
+
 \begin{prop}
 $\id^{\mathcal{\mathbf{Rel}}(A)}_X = \id^{\mathcal{\mathbf{Rel}}(A,A)}_{[X]}$.
 \end{prop}
 
 \begin{proof}
-??
+$\id^{\mathcal{\mathbf{Rel}}(A,A)}_{[X]}=
+\id^{\mathcal{\mathbf{Rel}}(A,A)}_X=
+\id^{\mathcal{\mathbf{Rel}}(A)}_X$.
 \end{proof}
 
 \begin{prop}
@@ -1952,7 +1957,11 @@ $\id^{\mathcal{\mathsf{FCD}}(A)}_X = \id^{\mathcal{\mathsf{FCD}}(A,A)}_{[X]}$.
 \end{prop}
 
 \begin{proof}
-??
+$\supfun{\id^{\mathcal{\mathsf{FCD}}(A,A)}_{[X]}}\mathcal{X}=
+([\mathcal{X}]\sqcap[X])\div A=
+[\mathcal{X}\sqcap X])\div A=\mathcal{X}\sqcap X=
+\supfun{\id^{\mathcal{\mathsf{FCD}}(A)}_X}\mathcal{X}$
+for~$\mathfrak{A}\ni\mathcal{X}\sqsubseteq A$.
 \end{proof}
 
 \begin{prop}
@@ -1960,12 +1969,17 @@ $\id^{\mathcal{\mathsf{RLD}}(A)}_X = \id^{\mathcal{\mathsf{RLD}}(A,A)}_{[X]}$.
 \end{prop}
 
 \begin{proof}
-??
+$\id^{\mathcal{\mathsf{RLD}}(A,A)}_{[X]}=
+\id^{\mathsf{RLD}}_{[X]\div(A\cap A)}\div(A\times A)=
+\id^{\mathsf{RLD}}_X\div(A\times A)=\id^{\mathsf{RLD}(A)}_X$.
 \end{proof}
 
-Generalization:
+As a generalization of three last propositions, define for
+every category~$\mathcal{C}$ with restricted identities:
 
+\begin{defn}
 $\id^{\mathcal{C}(A)}_X = \id^{\mathcal{C}(A,A)}_{[X]}$.
+\end{defn}
 
 \begin{prop}
   $\setcond{ (\mathcal{A} \div A , \mathcal{A} \sqcap A) }{
