@@ -878,62 +878,6 @@ Another proof of the above theorem (without atomic filters):
 
 \section{Domain and range of a funcoid}
 \begin{defn}
-\index{funcoid!identity}Let $A$ be a set. The \emph{identity funcoid}
-$1_{A}^{\mathsf{FCD}}=(A,A,\id_{\mathscr{F}(A)},\id_{\mathscr{F}(A)})$.
-\end{defn}
-\begin{obvious}
-The identity funcoid is a funcoid.\end{obvious}
-\begin{prop}
-$\mathord{\suprel f}=\mathord{\suprel{1_{\Dst f}}}\circ\supfun f$
-for every funcoid $f$.\end{prop}
-\begin{proof}
-From proposition~\ref{comp-fcd-r}.\end{proof}
-\begin{defn}
-\index{funcoid!restricted identity}Let $A$ be a set,
-$\mathcal{A}\in\mathscr{F}(A)$.
-The \emph{restricted identity funcoid
-\[
-\id_{\mathcal{A}}^{\mathsf{FCD}}=(A,A,\mathcal{A}\sqcap,\mathcal{A}\sqcap).
-\]
-}\end{defn}
-\begin{prop}
-The restricted identity funcoid is a funcoid.\end{prop}
-\begin{proof}
-We need to prove that
-$(\mathcal{A}\sqcap\mathcal{X})\sqcap\mathcal{Y}\ne\bot
-\Leftrightarrow(\mathcal{A}\sqcap\mathcal{Y})\sqcap\mathcal{X}\ne\bot$
-what is obvious.\end{proof}
-\begin{obvious}
-~
-\begin{enumerate}
-\item $(1_{A}^{\mathsf{FCD}})^{-1}=1_{A}^{\mathsf{FCD}}$;
-\item
-$(\id_{\mathcal{A}}^{\mathsf{FCD}})^{-1}=\id_{\mathcal{A}}^{\mathsf{FCD}}$.
-\end{enumerate}
-\end{obvious}
-
-\begin{obvious}
-For every $\mathcal{X},\mathcal{Y}\in\mathscr{F}(A)$
-\begin{enumerate}
-\item
-$\mathcal{X}\suprel{1_{A}^{\mathsf{FCD}}}\mathcal{Y}\Leftrightarrow\mathcal{X}
-\sqcap\mathcal{Y}\ne\bot$;
-\item
-$\mathcal{X}\suprel{\id_{\mathcal{A}}^{\mathsf{FCD}}}\mathcal{Y}
-\Leftrightarrow\mathcal{A}\sqcap\mathcal{X}\sqcap\mathcal{Y}\ne\bot$.
-\end{enumerate}
-\end{obvious}
-\begin{defn}
-\index{restricting!funcoid}I will define \emph{restricting} of a
-funcoid $f$ to a filter $\mathcal{A}\in\mathscr{F}(\Src f)$ by the
-formula
-\[
-f|_{\mathcal{A}}=f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}.
-\]
-
-\end{defn}
-
-\begin{defn}
 \index{image!of funcoid}\emph{Image} of a funcoid $f$ will be defined
 by the formula $\im f=\supfun f\top^{\mathscr{F}(\Src f)}$.
 
