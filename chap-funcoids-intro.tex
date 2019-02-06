@@ -926,3 +926,162 @@ was proved above.
 $\uparrow^{\mathsf{FCD}}1_{A}^{\mathbf{Rel}}=1_{A}^{\mathsf{FCD}}$
 is obvious.
 \end{proof}
+
+\section{Lattices of funcoids}
+\begin{lem}\label{fcd-up-x-lem}
+$\rsupfun fX=\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun FX$ for
+every funcoid $f$ and typed set $X\in\mathscr{T}(\Src f)$.\end{lem}
+\begin{proof}
+Obviously $\rsupfun fX\sqsubseteq\bigsqcap_{F\in\up f}^{\mathscr{F}}\rsupfun
+FX$.
+
+Let $B\in\up\rsupfun fX$. Let $F_{B}=X\times B\sqcup\overline{X}\times\top$.
+
+$\rsupfun{F_{B}}X=B$.
+
+Let $P\in\mathscr{T}(\Src f)$. We have
+\[
+\bot\ne P\sqsubseteq
+X\Rightarrow\rsupfun{F_{B}}P=B\sqsupseteq\rsupfun fP
+\]
+and
+\[
+P\nsqsubseteq
+X\Rightarrow\rsupfun{F_{B}}P=\top\sqsupseteq\rsupfun fP.
+\]
+
+
+Thus $\rsupfun{F_{B}}P\sqsupseteq\rsupfun fP$ for every $P$ and
+so $F_{B}\sqsupseteq f$ that
+is $F_{B}\in\up f$.
+
+Thus $\forall B\in\up\rsupfun fX:B\in\up\bigsqcap_{F\in\up
+f}^{\mathscr{F}}\rsupfun FX$
+because $B\in\up\rsupfun{F_{B}}X$.
+
+So $\bigsqcap_{F\in\up f}\rsupfun FX\sqsubseteq\rsupfun fX$.\end{proof}
+\begin{thm}
+\label{fcd-up-x}$\supfun f\mathcal{X}=\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun
+F\mathcal{X}$
+for every funcoid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun F\mathcal{X} & =\\
+\bigsqcap_{F\in\up f}^{\mathscr{F}}\bigsqcap^{\mathscr{F}}\rsupfun{\rsupfun F}\up\mathcal{X} & =\\
+\bigsqcap_{F\in\up
+f}^{\mathscr{F}}\bigsqcap_{X\in\up\mathcal{X}}^{\mathscr{F}}\rsupfun FX & =\\
+\bigsqcap_{X\in\up\mathcal{X}}^{\mathscr{F}}\bigsqcap_{F\in\up
+f}^{\mathscr{F}}\rsupfun FX & =\\
+\bigsqcap_{X\in\up\mathcal{X}}^{\mathscr{F}}\rsupfun fX & =\\
+\supfun f\mathcal{X}
+\end{align*}
+(the lemma used).
+\end{proof}
+Below it is shown that $\mathsf{FCD}(A,B)$ are complete lattices
+for every sets $A$ and $B$. We will apply lattice operations to
+subsets of such sets without explicitly mentioning $\mathsf{FCD}(A,B)$.
+\begin{thm}
+\label{fcd-join-sets}$\mathsf{FCD}(A,B)$ is a complete lattice (for
+every sets $A$ and $B$). For every $R\in\subsets\mathsf{FCD}(A,B)$
+and $X\in\mathscr{T}A$, $Y\in\mathscr{T}B$
+\begin{enumerate}
+\item \label{sr-join}$X\rsuprel{\bigsqcup R}Y\Leftrightarrow\exists f\in
+R:X\rsuprel fY$;
+\item \label{sf-join}$\rsupfun{\bigsqcup R}X=\bigsqcup_{f\in R}\rsupfun fX$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Accordingly \cite{pm:complete-lattice-criteria} to prove that it
+is a complete lattice it's enough to prove existence of all joins.
+\begin{widedisorder}
+\item [{\ref{sf-join}}] $\alpha X\eqdef\bigsqcup_{f\in R}\rsupfun fX$.
+We have $\alpha\bot=\bot$;
+\begin{align*}
+\alpha(I\sqcup J) & =\\
+\bigsqcup_{f\in R}\rsupfun f(I\sqcup J) & =\\
+\bigsqcup_{f\in R}(\rsupfun fI\sqcup\rsupfun fJ) & =\\
+\bigsqcup_{f\in R}\rsupfun fI\sqcup\bigsqcup\rsupfun fJ & =\\
+\alpha I\sqcup\alpha J.
+\end{align*}
+
+
+
+So $\rsupfun h=\alpha$ for some funcoid $h$. Obviously
+\begin{equation}
+\forall f\in R:h\sqsupseteq f.\label{min-fcd-join}
+\end{equation}
+
+
+
+And $h$ is the least funcoid for which holds the condition (\ref{min-fcd-join}).
+So $h=\bigsqcup R$.
+
+\item [{\ref{sr-join}}] ~
+\begin{align*}
+X\rsuprel{\bigsqcup R}Y & \Leftrightarrow\\
+\uparrow Y\sqcap\rsupfun{\bigsqcup R}X\ne\bot &
+\Leftrightarrow\\
+\uparrow Y\sqcap\bigsqcup_{f\in R}\rsupfun fX\ne\bot &
+\Leftrightarrow\\
+\exists f\in R:\uparrow Y\sqcap\rsupfun fX\ne\bot &
+\Leftrightarrow\\
+\exists f\in R:X\rsuprel fY
+\end{align*}
+(used proposition~\ref{b-f-back-distr}).
+\end{widedisorder}
+\end{proof}
+In the next theorem, compared to the previous one, the class of infinite
+joins is replaced with lesser class of binary joins and simultaneously
+class of sets is changed to more wide class of filters.
+\begin{thm}
+\label{fcd-fin-join}For every $f,g\in\mathsf{FCD}(A,B)$ and
+$\mathcal{X}\in\mathscr{F}(A)$
+(for every sets $A$,~$B$)
+\begin{enumerate}
+\item \label{fjoin-x}$\supfun{f\sqcup g}\mathcal{X}=\supfun
+f\mathcal{X}\sqcup\supfun g\mathcal{X}$;
+\item \label{fjoin-r}$\mathord{\suprel{f\sqcup g}}=\mathord{\suprel
+f}\cup\mathord{\suprel g}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+~
+\begin{widedisorder}
+\item [{\ref{fjoin-x}}] Let $\alpha\mathcal{X}\eqdef\supfun
+f\mathcal{X}\sqcup\supfun g\mathcal{X}$;
+$\beta\mathcal{Y}\eqdef\supfun{f^{-1}}\mathcal{Y}\sqcup\supfun{g^{-1}}\mathcal{Y
+}$
+for every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Y}\in\mathscr{F}(B)$.
+Then
+\begin{align*}
+\mathcal{Y}\sqcap\alpha\mathcal{X}\ne\bot & \Leftrightarrow\\
+\mathcal{Y}\sqcap\supfun
+f\mathcal{X}\ne\bot\lor\mathcal{Y}\sqcap\supfun
+g\mathcal{X}\ne\bot & \Leftrightarrow\\
+\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot\lor\mathcal{
+X}\sqcap\supfun{g^{-1}}\mathcal{Y}\ne\bot & \Leftrightarrow\\
+\mathcal{X}\sqcap\beta\mathcal{Y}\ne\bot.
+\end{align*}
+So $h=(A,B,\alpha,\beta)$ is a funcoid. Obviously $h\sqsupseteq f$
+and $h\sqsupseteq g$. If $p\sqsupseteq f$ and $p\sqsupseteq g$
+for some funcoid $p$ then $\supfun p\mathcal{X}\sqsupseteq\supfun
+f\mathcal{X}\sqcup\supfun g\mathcal{X}=\supfun h\mathcal{X}$
+that is $p\sqsupseteq h$. So $f\sqcup g=h$.
+\item [{\ref{fjoin-r}}] For every $\mathcal{X}\in\mathscr{F}(A)$,
+$\mathcal{Y}\in\mathscr{F}(B)$
+we have
+\begin{align*}
+\mathcal{X}\suprel{f\sqcup g}\mathcal{Y} & \Leftrightarrow\\
+\mathcal{Y}\sqcap\supfun{f\sqcup g}\mathcal{X}\ne\bot &
+\Leftrightarrow\\
+\mathcal{Y}\sqcap(\supfun f\mathcal{X}\sqcup\supfun
+g\mathcal{X})\ne\bot & \Leftrightarrow\\
+\mathcal{Y}\sqcap\supfun
+f\mathcal{X}\ne\bot\lor\mathcal{Y}\sqcap\supfun
+g\mathcal{X}\ne\bot & \Leftrightarrow\\
+\mathcal{X}\suprel f\mathcal{Y}\lor\mathcal{X}\suprel g\mathcal{Y}.
+\end{align*}
+
+\end{widedisorder}
+\end{proof}
