@@ -1000,47 +1000,6 @@ For every composable funcoids $f$, $g$:
 by proved above is equal to $\im f^{-1}$ that is $\dom f$.
 \end{widedisorder}
 \end{proof}
-\section{Categories of funcoids}
-
-I will define two categories, the \emph{category of funcoids} and
-the \emph{category of funcoid triples}.
-
-\index{category!of funcoids}The \emph{category of funcoids} is defined
-as follows:
-\begin{itemize}
-\item Objects are small sets.
-\item The set of morphisms from a set $A$ to a set $B$ is $\mathsf{FCD}(A,B)$.
-\item The composition is the composition of funcoids.
-\item Identity morphism for a set is the identity funcoid for that set.
-\end{itemize}
-To show it is really a category is trivial.
-
-\index{category!of funcoid triples}The \emph{category of funcoid
-triples} is defined as follows:
-\begin{itemize}
-\item Objects are filters on small sets.
-\item The morphisms from a filter $\mathcal{A}$ to a filter $\mathcal{B}$
-are triples $(\mathcal{A},\mathcal{B},f)$ where
-$f\in\mathsf{FCD}(\Base(\mathcal{A}),\Base(\mathcal{B}))$
-and $\dom f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$.
-\item The composition is defined by the formula
-$(\mathcal{B},\mathcal{C},g)\circ(\mathcal{A},\mathcal{B},f)=(\mathcal{A}
-,\mathcal{C},g\circ f)$.
-\item Identity morphism for a filter $\mathcal{A}$ is
-$\id_{\mathcal{A}}^{\mathsf{FCD}}$.
-\end{itemize}
-To prove that it is really a category is trivial.
-\begin{prop}
-$\uparrow^{\mathsf{FCD}}$ is a functor from $\mathbf{Rel}$ to
-$\mathsf{FCD}$.\end{prop}
-\begin{proof}
-$\uparrow^{\mathsf{FCD}}(g\circ
-f)=\uparrow^{\mathsf{FCD}}g\circ\uparrow^{\mathsf{FCD}}f$
-was proved above.
-$\uparrow^{\mathsf{FCD}}1_{A}^{\mathbf{Rel}}=1_{A}^{\mathsf{FCD}}$
-is obvious.
-\end{proof}
-
 \section{Specifying funcoids by functions or relations on atomic filters}
 \begin{thm}\label{fcd-atoms}
 For every funcoid $f$ and
