@@ -703,131 +703,13 @@ g\nasymp h\circ f^{-1}.
 
 \end{proof}
 
-\section{Funcoidal product of filters}
-
-A generalization of Cartesian product of two sets is funcoidal product
-of two filters:
-\begin{defn}
-\index{product!funcoidal}\emph{Funcoidal product} of filters $\mathcal{A}$
-and $\mathcal{B}$ is such a funcoid
-$\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\in\mathsf{FCD}(\Base(\mathcal{A}
-),\Base(\mathcal{B}))$
-that for every $\mathcal{X}\in\Base(\mathcal{A})$,
-$\mathcal{Y}\in\Base(\mathcal{B})$
-\[
-\mathcal{X}\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}\mathcal{Y}
-\Leftrightarrow\mathcal{X}\nasymp\mathcal{A}\land\mathcal{Y}\nasymp\mathcal{B}.
-\]
-\end{defn}
-\begin{prop}
-$\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$ is really a funcoid
-and
-\[
-\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}\mathcal{X}=\begin{cases}
-\mathcal{B} & \text{if }\mathcal{X}\nasymp\mathcal{A}\\
-\bot^{\mathscr{F}(\Base(\mathcal{B}))} & \text{if }\mathcal{X}\asymp\mathcal{A}.
-\end{cases}
-\]
-\end{prop}
-\begin{proof}
-Obvious.\end{proof}
-\begin{obvious}
-~
-\begin{itemize}
-\item $\uparrow^{\mathsf{FCD}(U,V)}(A\times B)=\uparrow^{U}A\times\uparrow^{V}B$
-for sets $A\subseteq U$ and $B\subseteq V$.
-\item $\uparrow^{\mathsf{FCD}}(A\times B)=\uparrow A\times\uparrow B$ for
-typed sets~$A$ and~$B$.
-\end{itemize}
-\end{obvious}
-\begin{prop}
-$f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\dom
-f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$
-for every $f\in\mathsf{FCD}(A,B)$ and $\mathcal{A}\in\mathscr{F}(A)$,
-$\mathcal{B}\in\mathscr{F}(B)$.\end{prop}
-\begin{proof}
-If $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$ then
-$\dom
-f\sqsubseteq\dom(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal
-{A}$,
-$\im
-f\sqsubseteq\im(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})\sqsubseteq\mathcal{
-B}$.
-If $\dom f\sqsubseteq\mathcal{A}\land\im f\sqsubseteq\mathcal{B}$
-then
-\[
-\forall\mathcal{X}\in\mathscr{F}(A),\mathcal{Y}\in\mathscr{F}(B):(\mathcal{X}
-\suprel
-f\mathcal{Y}\Rightarrow\mathcal{X}\sqcap\mathcal{A}\ne\bot
-\land\mathcal{Y}\sqcap\mathcal{B}\ne\bot);
-\]
-consequently $f\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
-\end{proof}
-The following theorem gives a formula for calculating an important
-particular case of a meet on the lattice of funcoids:
 \begin{thm}
-$f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})=\id_{\mathcal{B}}^{\mathsf
-{FCD}}\circ f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}$
-for every funcoid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$,
-$\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{thm}
-\begin{proof}
-$h\eqdef\id_{\mathcal{B}}^{\mathsf{FCD}}\circ
-f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}$.
-For every $\mathcal{X}\in\mathscr{F}(\Src f)$
-\[
-\supfun h\mathcal{X}=\supfun{\id_{\mathcal{B}}^{\mathsf{FCD}}}\supfun
-f\supfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\mathcal{X}=\mathcal{B}\sqcap\supfun
-f(\mathcal{A}\sqcap\mathcal{X}).
-\]
-
-
-From this, as easy to show, $h\sqsubseteq f$ and
-$h\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$.
-If $g\sqsubseteq f\land g\sqsubseteq\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$
-for a $g\in\mathsf{FCD}(\Src f,\Dst f)$ then $\dom g\sqsubseteq\mathcal{A}$,
-$\im g\sqsubseteq\mathcal{B}$,
-\[
-\supfun g\mathcal{X}=\mathcal{B}\sqcap\supfun
-g(\mathcal{A}\sqcap\mathcal{X})\sqsubseteq\mathcal{B}\sqcap\supfun
-f(\mathcal{A}\sqcap\mathcal{X})=\supfun{\id_{\mathcal{B}}^{\mathsf{FCD}}}\supfun
-f\supfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\mathcal{X}=\supfun h\mathcal{X},
-\]
-$g\sqsubseteq h$. So
-$h=f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})$.\end{proof}
-\begin{cor}
-$f|_{\mathcal{A}}=f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\top^{\mathscr{F}(\Dst
-f)})$
-for every funcoid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{cor}
-\begin{proof}
-$f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\top^{\mathscr{F}(\Dst
-f)})=\id_{\top^{\mathscr{F}(\Dst f)}}^{\mathsf{FCD}}\circ
-f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}=f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}
-=f|_{\mathcal{A}}$.\end{proof}
-\begin{cor}
-$f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\Leftrightarrow\mathcal{A}
-\suprel f\mathcal{B}$
-for every funcoid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$,
-$\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{cor}
-\begin{proof}
-~
-\begin{align*}
-f\nasymp\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B} & \Leftrightarrow\\
-\rsupfun{f\sqcap(\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B})}\top\ne\bot & \Leftrightarrow\\
-\rsupfun{\id_{\mathcal{B}}^{\mathsf{FCD}}\circ
-f\circ\id_{\mathcal{A}}^{\mathsf{FCD}}}\top\ne\bot & \Leftrightarrow\\
-\supfun{\id_{\mathcal{B}}^{\mathsf{FCD}}}\supfun
-f\rsupfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\top\ne\bot & \Leftrightarrow\\
-\mathcal{B}\sqcap\supfun f(\mathcal{A}\sqcap\top)\ne\bot & \Leftrightarrow\\
-\mathcal{B}\sqcap\supfun f\mathcal{A}\ne\bot &
-\Leftrightarrow\\
-\mathcal{A}\suprel f\mathcal{B}.
-\end{align*}
-\end{proof}
-\begin{cor}
-Every filtrator of funcoids is star-separable.\end{cor}
+Every filtrator of funcoids is star-separable.\end{thm}
 \begin{proof}
 The set of funcoidal products of principal filters is a separation
-subset of the lattice of funcoids.\end{proof}
+subset of the lattice of funcoids by corollary~\ref{pintrs-fcd}.
+\end{proof}
+
 \begin{thm}
 \label{meet-prod-fcd}Let $A$, $B$ be sets. If
 $S\in\subsets(\mathscr{F}(A)\times\mathscr{F}(B))$
