@@ -168,3 +168,14 @@ To prove it take $H=F\sqcap G$. Then $H^{-1}\circ H=(F\sqcap G)^{-1}\circ(F\sqca
 Prove $f^n = \bigsqcap^{\mathsf{RLD}}\setcond{F^n}{F\in\up f}$ for every endofuncoid~$f$ and positive integer~$n$.
 \end{xca}
 
+\section{Restricting reloid to a filter}
+
+\begin{defn}
+\index{reloid!identity}\emph{Identity reloid} for a set $A$ is defined
+by the formula $1_{A}^{\mathsf{RLD}}=\uparrow^{\mathsf{RLD}(A,A)}\id_{A}$.\end{defn}
+\begin{obvious}
+$(1_{A}^{\mathsf{RLD}})^{-1}=1_{A}^{\mathsf{RLD}}$.\end{obvious}
+\begin{defn}
+\index{restricting!reloid}I define \emph{restricting} a reloid $f$
+to a filter $\mathcal{A}$ as $f|_{\mathcal{A}}=f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})$.
+\end{defn}
