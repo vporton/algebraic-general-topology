@@ -301,3 +301,20 @@ for every sets $A\subseteq U$, $B\subseteq V$.
 \item $\uparrow A\times^{\mathsf{RLD}}\uparrow B=\uparrow^{\mathsf{RLD}}(A\times B)$
 for every typed sets~$A$,~$B$.\end{itemize}
 \end{obvious}
+
+\begin{thm}
+$f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\id_{\mathcal{B}}^{\mathsf{\mathsf{RLD}}}\circ f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}$
+for every reloid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$, $\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{thm}
+\begin{proof}
+~
+\begin{align*}
+f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
+f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})\sqcap(\top^{\mathscr{F}(\Src f)}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
+f|_{\mathcal{A}}\sqcap(\top^{\mathscr{F}(\Src f)}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
+(f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}})\sqcap(\top^{\mathscr{F}(\Src f)}\times^{\mathsf{RLD}}\mathcal{B}) & =\\
+((f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}})^{-1}\sqcap(\top^{\mathscr{F}(\Src f)}\times^{\mathsf{RLD}}\mathcal{B})^{-1})^{-1} & =\\
+((\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}\circ f^{-1})\sqcap(\mathcal{B}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Src f)}))^{-1} & =\\
+(\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}\circ f^{-1}\circ\id_{\mathcal{B}}^{\mathsf{\mathsf{RLD}}})^{-1} & =\\
+\id_{\mathcal{B}}^{\mathsf{\mathsf{RLD}}}\circ f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}.
+\end{align*}
+\end{proof}
