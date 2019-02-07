@@ -239,3 +239,13 @@ $(g\circ f)|_{\mathcal{A}}=g\circ(f|_{\mathcal{A}})$ for every composable
 reloids $f$ and $g$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{thm}
 \begin{proof}
 $(g\circ f)|_{\mathcal{A}}=(g\circ f)\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}=g\circ(f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}})=g\circ(f|_{\mathcal{A}})$.\end{proof}
+
+\begin{prop}\label{rld-id-comp}
+$\id_{\mathcal{B}}\circ\id_{\mathcal{A}} = \id_{\mathcal{A}\sqcap\mathcal{B}}$ for all filters~$\mathcal{A}$,~$\mathcal{B}$ (on some set~$U$).
+\end{prop}
+
+\begin{proof}
+$\id_{\mathcal{B}}\circ\id_{\mathcal{A}} =
+(\id_{\mathcal{B}})|_{\mathcal{A}} = (1^{\mathsf{RLD}}_U|_{\mathcal{B}})|_{\mathcal{A}} = 1^{\mathsf{RLD}}_U|_{\mathcal{A}\sqcap\mathcal{B}} = 
+\id_{\mathcal{A}\sqcap\mathcal{B}}$.
+\end{proof}
