@@ -273,40 +273,6 @@ what is obvious.\end{proof}
 By properties of Galois connections and duality.
 \end{proof}
 
-\section{Categories of reloids}
-
-I will define two categories, the \emph{category of reloids} and the
-\emph{category of reloid triples}.
-
-\index{category!of reloids}The \emph{category of reloids} is defined
-as follows:
-\begin{itemize}
-\item Objects are small sets.
-\item The set of morphisms from a set $A$ to a set $B$ is $\mathsf{RLD}(A,B)$.
-\item The composition is the composition of reloids.
-\item Identity morphism for a set is the identity reloid for that set.
-\end{itemize}
-To show it is really a category is trivial.
-
-\index{category!of reloid triples}The \emph{category of reloid triples}
-is defined as follows:
-\begin{itemize}
-\item Objects are small sets.
-\item The morphisms from a filter $\mathcal{A}$ to a filter $\mathcal{B}$
-are triples $(\mathcal{A},\mathcal{B},f)$ where $f\in\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{B}))$
-and $\dom f\sqsubseteq\mathcal{A}$, $\im f\sqsubseteq\mathcal{B}$.
-\item The composition is defined by the formula $(\mathcal{B},\mathcal{C},g)\circ(\mathcal{A},\mathcal{B},f)=(\mathcal{A},\mathcal{C},g\circ f)$.
-\item Identity morphism for a filter $\mathcal{A}$ is $\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}$.
-\end{itemize}
-To prove that it is really a category is trivial.
-\begin{prop}
-$\uparrow^{\mathsf{RLD}}$ is a functor from $\mathbf{Rel}$ to $\mathsf{RLD}$.\end{prop}
-\begin{proof}
-$\uparrow^{\mathsf{RLD}}(g\circ f)=\uparrow^{\mathsf{RLD}}g\circ\uparrow^{\mathsf{RLD}}f$
-was proved above. $\uparrow^{\mathsf{RLD}}1_{A}^{\mathbf{Rel}}=1_{A}^{\mathsf{RLD}}$
-is by definition.
-\end{proof}
-
 \section{Monovalued and injective reloids}
 
 \index{reloid!monovalued}\index{monovalued!reloid}Following the
