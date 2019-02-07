@@ -217,65 +217,6 @@ $B\in\up\mathcal{B}$. So $f\sqsubseteq\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B
 
 \end{description}
 \end{proof}
-\begin{defn}
-\index{restricted identity reloid}I call \emph{restricted identity
-reloid} for a filter $\mathcal{A}$ the reloid
-\[
-\id_{\mathcal{A}}^{\mathsf{RLD}}=(1_{\Base(\mathcal{A})}^{\mathsf{RLD}})|_{\mathcal{A}}.
-\]
-\end{defn}
-\begin{thm}
-$\id_{\mathcal{A}}^{\mathsf{RLD}}=\bigsqcap_{A\in\up\mathcal{A}}^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A}$
-for every filter $\mathcal{A}$.\end{thm}
-\begin{proof}
-Let $K\in\up\bigsqcap_{A\in\up\mathcal{A}}^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A}$,
-then there exists $A\in\up\mathcal{A}$ such that $\GR K\supseteq\id_{A}$.
-Then
-\begin{align*}
-\id_{\mathcal{A}}^{\mathsf{RLD}} & \sqsubseteq\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top) & \sqsubseteq\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap(A\times^{\mathsf{RLD}}\top) & =\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{\Base(\mathcal{A})}\sqcap\uparrow^{\mathsf{RLD}}(A\times\top) & =\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top)) & =\\
-\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A} & \sqsubseteq K.
-\end{align*}
-Thus $K\in\up\id_{\mathcal{A}}^{\mathsf{RLD}}$.
-
-Reversely let $K\in\up\id_{\mathcal{A}}^{\mathsf{RLD}}=\up(1_{\Base(\mathcal{A})}^{\mathsf{RLD}}\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top))$,
-then there exists $A\in\up\mathcal{A}$ such that 
-\begin{align*}
-K\in\up\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}(\id_{\Base(\mathcal{A})}\cap\GR(A\times\top)) & =\\
-\up\uparrow^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A} & \sqsupseteq\\
-\up\bigsqcap_{A\in\up\mathcal{A}}^{\mathsf{RLD}(\Base(\mathcal{A}),\Base(\mathcal{A}))}\id_{A}.
-\end{align*}
-\end{proof}
-\begin{cor}
-$(\id_{\mathcal{A}}^{\mathsf{RLD}})^{-1}=\id_{\mathcal{A}}^{\mathsf{RLD}}$.\end{cor}
-\begin{thm}
-$f|_{\mathcal{A}}=f\circ\id_{\mathcal{A}}^{\mathsf{RLD}}$ for every
-reloid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{thm}
-\begin{proof}
-We need to prove that 
-\[
-f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top)=f\circ\bigsqcap^{\mathsf{RLD}(\Src f,\Src f)}\setcond{\id_{A}}{A\in\up\mathcal{A}}.
-\]
-
-
-We have
-\begin{align*}
-f\circ\bigsqcap^{\mathsf{RLD}(\Src f,\Src f)}\setcond{\id_{A}}{A\in\up\mathcal{A}} & =\\
-\bigsqcap^{\mathsf{RLD}(\Src f,\Src f)}\setcond{\GR(F)\circ\id_{A}}{F\in\up f,A\in\up\mathcal{A}} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{F|_{A}}{F\in\up f,A\in\up\mathcal{A}} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond{F\sqcap(A\times\top^{\mathscr{T}(\Dst f)})}{F\in\up f,A\in\up\mathcal{A}} & =\\
-\bigsqcap^{\mathsf{RLD}}\setcond F{F\in\up f}\sqcap\bigsqcap^{\mathsf{RLD}}\setcond{A\times\top^{\mathscr{T}(\Dst f)}}{A\in\up\mathcal{A}} & =\\
-f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\top).
-\end{align*}
-\end{proof}
-\begin{thm}
-$(g\circ f)|_{\mathcal{A}}=g\circ(f|_{\mathcal{A}})$ for every composable
-reloids $f$ and $g$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{thm}
-\begin{proof}
-$(g\circ f)|_{\mathcal{A}}=(g\circ f)\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}=g\circ(f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}})=g\circ(f|_{\mathcal{A}})$.\end{proof}
 \begin{thm}
 $f\sqcap(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})=\id_{\mathcal{B}}^{\mathsf{\mathsf{RLD}}}\circ f\circ\id_{\mathcal{A}}^{\mathsf{\mathsf{RLD}}}$
 for every reloid $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$, $\mathcal{B}\in\mathscr{F}(\Dst f)$.\end{thm}
