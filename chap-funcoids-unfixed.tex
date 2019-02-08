@@ -52,11 +52,20 @@ Another proof of the above theorem (without atomic filters):
 
 \begin{thm}
 \index{image!of funcoid}$\im f$ for a funcoid~$f$ is always defined
-and conforms to the formula $\im f=\supfun f\top^{\mathscr{F}(\Src f)}$.
+and conforms to the formula
+$\im f=\supfun{f}\top^{\mathscr{F}(\Src f)}$.
 \end{thm}
 
 \begin{proof}
-??
+For $Y\in\mathscr{T}\Dst f$ we have
+$Y\in\supfun{f}\top^{\mathscr{F}(\Src f)}\Leftrightarrow??
+\Leftrightarrow
+\id^{\mathcal{C}(\Dst f)}_Y \circ f = f
+\Leftrightarrow
+\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]} \circ f = f
+\Leftrightarrow
+\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]} \circ f = f \Leftrightarrow
+Y\in\operatorname{Im}f$.
 \end{proof}
 
 \begin{obvious}
