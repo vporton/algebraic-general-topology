@@ -2083,3 +2083,32 @@ $\id^{\mathcal{C}(A)}_X = \id^{\mathcal{C}(A,A)}_{[X]}$.
 \end{proof}
 
 Can three last propositions be generalized into one?
+
+\begin{thm}
+$f \circ (g \sqcup h) = f \circ g \sqcup f \circ h$
+for unfixed morphisms whenever the same formula
+holds for (composable) morpshisms.
+\end{thm}
+
+\begin{proof}
+$f \circ (g \sqcup h) = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst}
+	f} (f \circ (g \sqcup h))]$ because $\operatorname{dom} (f \circ (g \sqcup h))
+\sqsubseteq \operatorname{Src} g \sqcup \operatorname{Src} h$ and $\operatorname{im} (f \circ (g
+\sqcup h)) \sqsubseteq \operatorname{Dst} f$.
+
+So $f \circ (g \sqcup h) = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h,
+	\operatorname{Dst} f} f \circ \iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f}
+(g \sqcup h)] = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f
+\circ (\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} g \sqcup
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h)] =
+[\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f \circ
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} g \sqcup
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f \circ
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h] =
+[\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ g) \sqcup
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ h)] =
+[\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ g \sqcup f
+\circ h)] = f \circ g \sqcup f \circ h$ because $\operatorname{dom} (f \circ g
+\sqcup f \circ h) \sqsubseteq \operatorname{Src} g \sqcup \operatorname{Src} h$ and
+$\operatorname{im} (f \circ g \sqcup f \circ h) \sqsubseteq \operatorname{Dst} f$.
+\end{proof}
