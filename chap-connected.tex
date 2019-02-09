@@ -69,7 +69,7 @@ S(\mu)\circ S(\mu)=\mu^{0}\sqcup S(\mu)\sqcup\mu\circ S(\mu)\sqcup\mu^{2}\circ S
 
 Before going to research connectedness for funcoids and reloids we
 will excurse into the basic special case of connectedness regarding
-binary relations on a set~$\mho$.
+binary relations on a set~$U$.
 
 This is commonly studied in ``graph theory'' courses. \emph{Digraph}
 as commonly defined is essentially the same as an endomorphism of
@@ -96,15 +96,15 @@ regarding a $\mathbf{Rel}$-endomorphism~$\mu$ on~$U$ when
 A typed set~$A$ is connected regarding $\mathbf{Rel}$-endomorphism~$\mu$
 on its type iff $\GR A$ is connected regarding $\GR\mu$.
 \end{obvious}
-Let $\mho$ be a set.
+Let $U$ be a set.
 \begin{defn}
-\index{path}\emph{Path} between two elements $a,b\in\mho$ in a set
-$A\subseteq\mho$ through binary relation $\mu$ is the finite sequence
+\index{path}\emph{Path} between two elements $a,b\in U$ in a set
+$A\subseteq U$ through binary relation $\mu$ is the finite sequence
 $x_{0}\ldots x_{n}$ where $x_{0}=a$, $x_{n}=b$ for $n\in\mathbb{N}$
 and $x_{i}\mathrel{(\mu\cap A\times A)}x_{i+1}$ for every $i=0,\ldots,n-1$.
 $n$ is called path \emph{length}.\end{defn}
 \begin{prop}
-There exists path between every element $a\in\mho$ and that element
+There exists path between every element $a\in U$ and that element
 itself.\end{prop}
 \begin{proof}
 It is the path consisting of one vertex (of length $0$).\end{proof}
@@ -158,7 +158,7 @@ vertices $a$ and $b$ we have $a\mathrel{(S_1(\mu\cap A\times A))}b$.
 So (by the previous) for every two vertices $a$ and $b$
 there exists a nonzero-length path from $a$ to $b$.
 \item [{\ref{rconn-eq}$\Rightarrow$\ref{rconn-conn}}] Suppose $\lnot(X\rsuprel{\mu\cap(A\times A)}Y)$
-for some $X,Y\in\mathscr{P}\mho\setminus\{\emptyset\}$ such that
+for some $X,Y\in\mathscr{P}U\setminus\{\emptyset\}$ such that
 $X\cup Y=A$. Then by a lemma $\lnot(X\rsuprel{(\mu\cap(A\times A))^{n}}Y)$
 for every $n\in\mathbb{Z}_+$. Consequently $\lnot(X\rsuprel{S_1(\mu\cap(A\times A))}Y)$.
 So $S_1(\mu\cap(A\times A))\ne A\times A$.
