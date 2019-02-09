@@ -141,6 +141,8 @@ $\mathscr{S}\mathcal{A}\supseteq\mathcal{A}$.
 Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]} \circ f = f}$;
 \item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}$.
 \end{enumerate}
+\fxnote{$\id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f \to
+\id^{\mathcal{C}(\Src f)}_{X\sqcap\Src f}$? It is defined below.}
 \end{defn}
 
 \begin{defn}
@@ -179,6 +181,13 @@ The rest follows from symmetry.
 $\operatorname{Im} f$ may be not a filter for an injective
 category with restricted morphisms.
 \end{conjecture}
+
+\begin{prop}
+$\operatorname{Dom}f =
+\setcond{X\in\mathfrak{Z}}{X\sqsubseteq\Src f,
+f\circ\id^{\mathcal{C}(\Dst f)}_X=f}$.
+\fxwarning{$\id^{\mathcal{C}(\Dst f)}_X$ is defined below. Also for $\operatorname{Im}$.}
+\end{prop}
 
 \begin{prop}\label{dst-in-im}
 $\Dst f\in\operatorname{Im} f$; $\Src f\in\operatorname{Dom} f$ for every morphism~$f$ of a category with restricted
@@ -1053,13 +1062,17 @@ $\dom f$ and $\im f$ are not always defined.
 \end{note}
 
 \begin{thm}
-\fxnote{Generalize for $\operatorname{DOM}$ and $\operatorname{IM}$?
-Also what's about $\operatorname{Dom}$ and $\operatorname{Im}$?}
 $\dom[f]=[\dom f]$ and $\im[f]=[\im f]$ for every
-morphism~$f$ of a category with restricted identities.
+morphism~$f$ of a category with restricted identities (whenever
+$\dom f$/$\im f$ are defined).
 \end{thm}
 
 \begin{proof}
+$\dom[f]=\dom f$
+
+$[\dom f]=[\min\operatorname{DOM}f]=
+\setcond{\min[X]}{X \in \mathfrak{Z}, f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}$
+
 ??
 \end{proof}
 
