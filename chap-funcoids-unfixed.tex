@@ -166,32 +166,7 @@ for every funcoid $f$.\end{thm}
 
 
 The second formula follows from symmetry.\end{proof}
-\begin{prop}
-For every composable funcoids $f$, $g$:
-\begin{enumerate}
-\item \label{im-gf}If $\im f\sqsupseteq\dom g$ then $\im(g\circ f)=\im g$.
-\item \label{dom-gf}If $\im f\sqsubseteq\dom g$ then $\dom(g\circ f)=\dom f$.
-\end{enumerate}
-\end{prop}
-\begin{proof}
-~
-\begin{widedisorder}
-\item [{\ref{im-gf}}] ~
-\begin{align*}
-\im(g\circ f) & =\\
-\supfun{g\circ f}\top & =\\
-\supfun g\supfun f\top & =\\
-\supfun g\im f & =\\
-\supfun g(\im f\sqcap\dom g) & =\\
-\supfun g\dom g & =\\
-\supfun g\top & =\\
-\im g.
-\end{align*}
 
-\item [{\ref{dom-gf}}] $\dom(g\circ f)=\im(f^{-1}\circ g^{-1})$ what
-by proved above is equal to $\im f^{-1}$ that is $\dom f$.
-\end{widedisorder}
-\end{proof}
 \chapter{Funcoids}
 
 \section{Specifying funcoids by functions or relations on atomic filters}
