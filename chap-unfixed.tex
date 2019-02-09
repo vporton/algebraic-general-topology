@@ -297,6 +297,25 @@ It follows from $\operatorname{IM}f=\mathscr{S}\operatorname{Im}f$
 (and likewise for~$\dom f$).
 \end{proof}
 
+\begin{thm}
+$\operatorname{DOM} (g \circ f) \supseteq \operatorname{DOM} f$, $\operatorname{IM} (g \circ f)
+\supseteq \operatorname{IM} g$, $\operatorname{Dom} (g \circ f) \supseteq \operatorname{Dom} f$,
+$\operatorname{Im} (g \circ f) \supseteq \operatorname{Im} g$.
+\end{thm}
+
+\begin{proof}
+$\mathcal{E}_{\mathcal{C}}^{Y, \operatorname{Dst} f} \circ
+\mathcal{E}_{\mathcal{C}}^{\operatorname{Dst} f, Y} \circ g \circ f = g \circ f
+\Leftarrow \mathcal{E}_{\mathcal{C}}^{Y, \operatorname{Dst} f} \circ
+\mathcal{E}_{\mathcal{C}}^{\operatorname{Dst} f, Y} \circ g = g$ and it implies
+$\operatorname{IM} (g \circ f) \supseteq \operatorname{IM} g$. The rest follows easily.
+\end{proof}
+
+\begin{cor}
+$\operatorname{dom} (g \circ f) \sqsubseteq \operatorname{dom} f$, $\operatorname{im} (g \circ f)
+\sqsubseteq \operatorname{im} g$ whenever $\operatorname{dom}$/$\operatorname{im}$ are defined.
+\end{cor}
+
 \section{Equivalent morphisms}
 
 \begin{prop}\label{two-iotas}
