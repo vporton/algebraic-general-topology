@@ -51,11 +51,8 @@ Another proof of the above theorem (without atomic filters):
 \begin{thm}
 For unfixed funcoids:
 \begin{enumerate}
-\item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$ for $g,h\in\mathsf{FCD}(A,B)$,
-$f\in\mathsf{FCD}(B,C)$;
-\item $(g\sqcup h)\circ f=g\circ f\sqcup h\circ f$ for
-$g,h\in\mathsf{FCD}(B,C)$,
-$f\in\mathsf{FCD}(A,B)$.
+\item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$;
+\item $(g\sqcup h)\circ f=g\circ f\sqcup h\circ f$.
 \end{enumerate}
 \end{thm}
 
@@ -190,56 +187,6 @@ The second formula follows from symmetry.\end{proof}
 \chapter{Funcoids}
 
 \section{Specifying funcoids by functions or relations on atomic filters}
-\begin{thm}\label{fcd-atoms}
-For every funcoid $f$ and
-$\mathcal{X}\in\mathscr{F}(\Src f)$,
-$\mathcal{Y}\in\mathscr{F}(\Dst f)$
-\begin{enumerate}
-\item \label{f-at-f}$\supfun f\mathcal{X}=\bigsqcup\rsupfun{\supfun
-f}\atoms\mathcal{X}$;
-\item \label{f-at-r}$\mathcal{X}\suprel f\mathcal{Y}\Leftrightarrow\exists
-x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\suprel fy$.
-\end{enumerate}
-\end{thm}
-\begin{proof}
-~
-\begin{widedisorder}
-\item [{\ref{f-at-f}}] ~
-\begin{align*}
-\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot &
-\Leftrightarrow\\
-\mathcal{X}\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot &
-\Leftrightarrow\\
-\exists
-x\in\atoms\mathcal{X}:x\sqcap\supfun{f^{-1}}\mathcal{Y}\ne\bot & \Leftrightarrow\\
-\exists x\in\atoms\mathcal{X}:\mathcal{Y}\sqcap\supfun
-fx\ne\bot.
-\end{align*}
-
-
-
-$\corestar\supfun f\mathcal{X}=\bigsqcup\rsupfun{\corestar}\rsupfun{\supfun
-f}\atoms\mathcal{X}=\corestar\bigsqcup\rsupfun{\supfun f}\atoms\mathcal{X}$.
-So $\supfun f\mathcal{X}=\bigsqcup\rsupfun{\supfun f}\atoms\mathcal{X}$
-by corollary~\ref{d-inj}.
-
-\item [{\ref{f-at-r}}] If $\mathcal{X}\suprel f\mathcal{Y}$, then
-$\mathcal{Y}\sqcap\supfun f\mathcal{X}\ne\bot$,
-consequently there exists $y\in\atoms\mathcal{Y}$ such that $y\sqcap\supfun
-f\mathcal{X}\ne\bot$,
-$\mathcal{X}\suprel fy$. Repeating this second time we get that there
-exists $x\in\atoms\mathcal{X}$ such that $x\suprel fy$. From this
-it follows
-\[
-\exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\suprel fy.
-\]
-
-
-
-The reverse is obvious.
-
-\end{widedisorder}
-\end{proof}
 \begin{cor}
 ~Let $f$ be a funcoid.
 \begin{itemize}
