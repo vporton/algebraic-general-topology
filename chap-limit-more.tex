@@ -3,8 +3,8 @@
 \section{Hausdorff funcoids}
 
 \begin{defn}
-\emph{Limit}~$x$ of a filter~$\mathcal{F}$ regarding
-funcoid~$f$ is such a point that $\rsupfun{f}\{x\}\sqsupseteq\mathcal{F}$.
+\emph{Limit}~$\lim\mathcal{F}=x$ of a filter~$\mathcal{F}$
+regarding funcoid~$f$ is such a point that $\rsupfun{f}\{x\}\sqsupseteq\mathcal{F}$.
 \end{defn}
 
 \begin{defn}
@@ -55,20 +55,36 @@ Or:
 \[ \xlim_a f = \setcond{(\rsupfun{r^{-1}}a, \nu\circ f\circ\uparrow r)}{r\in G} \]
 (note this requires explicit filter in the definition of generalized limit).
 
-Operations on the set of generalized limits can be defined pointwise.
+Operations on the set of generalized limits can be defined (twice) pointwise. \fxwarning{First define operations on
+funcoids.}
 
-\begin{thm}
-Let both~$\mu$ and~$\nu$ be Hausdorff (define!) funcoids.
-I will denote~$C$ teh cluster point of a filter.
-If ?? then function~$f$ can be restored from values of $\xlim_{\supfun{\mu}\{x\}}f$.
-\end{thm}
+\begin{prop}
+The above defined $\xlim_a f$ is a monovalued function if~$\mu$
+is Hausdorff. (Can be generalized?)
+\end{prop}
 
 \begin{proof}
-Let~$a$ be an atomic filter object with limit point~$x$.
-Consider function
-\[ g(a)=\supfun{(\xlim_{\supfun{\mu}\{x\}}f)\id}(a). \]
-
-We will prove that $\supfun{f}|_{\atoms}=C\circ g$.
-
 ??
 \end{proof}
+
+\begin{lem}
+Let~$\mu$ and~$\nu$ be Hausdorff funcoids. If function~$f$ is defined at point~$x$, then
+\[ fx=
+\lim\rsupfun{(\xlim_{\supfun{\mu}\{x\}}f)\supfun{\mu}\{x\}}\{x\}
+\]
+\end{lem}
+
+\begin{rem}
+The right part is correctly defined because
+$\xlim_a f$ is monovalued.
+\end{rem}
+
+\begin{proof}
+$\lim\rsupfun{(\xlim_{\supfun{\mu}\{x\}}f)\supfun{\mu}\{x\}}\{x\}=
+\lim\rsupfun{\nu\circ f}\{x\}=\lim\rsupfun{\nu}fx=fx$.
+\end{proof}
+
+\begin{thm}
+Let~$\mu$ and~$\nu$ be Hausdorff funcoids.
+Then function~$f$ can be restored from values of $\xlim_{\supfun{\mu}\{x\}}f$.
+\end{thm}
