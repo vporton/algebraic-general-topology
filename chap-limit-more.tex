@@ -1,0 +1,74 @@
+\chapter{More on generalized limit}
+
+\section{Hausdorff funcoids}
+
+\begin{defn}
+\emph{Limit}~$x$ of a filter~$\mathcal{F}$ regarding
+funcoid~$f$ is such a point that $\rsupfun{f}\{x\}\sqsupseteq\mathcal{F}$.
+\end{defn}
+
+\begin{defn}
+\emph{Hausdorff} funcoid is such a funcoid that every proper
+filter on its image has at most one limit.
+\end{defn}
+
+\begin{prop}
+The following are pairwise equivalent for every funcoid~$f$:
+\begin{enumerate}
+\item\label{hd:eq-d} $f$~is Hausdorff.
+\item\label{hd:eq-op}
+$x\ne y\Rightarrow\rsupfun{f}\{x\}\asymp\rsupfun{f}\{y\}$.
+\end{enumerate}
+A funcoid is Hausdorff iff it is strongly Hausdorff.
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[\ref{hd:eq-d}$\Rightarrow$\ref{hd:eq-op}]
+If~\ref{hd:eq-op} does not hold,
+then there exist distinct points~$x$ and~$y$ such that
+$\rsupfun{f}\{x\}\nasymp\rsupfun{f}\{y\}$.
+So~$x$ and~$y$ are both limit points of
+$\rsupfun{f}\{x\}\sqcap\rsupfun{f}\{y\}$, and thus~$f$ is not
+Hausdorff.
+\item[\ref{hd:eq-op}$\Rightarrow$\ref{hd:eq-d}]
+Suppose~$\mathcal{F}$ is proper.
+\[ \rsupfun{f}\{x\}\sqsupseteq\mathcal{F}\land
+\rsupfun{f}\{y\}\sqsupseteq\mathcal{F}\Rightarrow
+\rsupfun{f}\{x\}\nasymp\rsupfun{f}\{y\}\Rightarrow x=y. \]
+\end{description}
+\end{proof}
+
+\begin{obvious}
+For a complete funcoid induced by a topological space this
+coincides with the traditional definition of a Hausdorff
+topological space.
+\end{obvious}
+
+\section{Restoring functions from limit}
+
+Consider alternative definition of generalized limit:
+\[ \xlim f = \lambda r\in G: \nu\circ f\circ\uparrow r. \]
+
+Or:
+\[ \xlim_a f = \setcond{(\rsupfun{r^{-1}}a, \nu\circ f\circ\uparrow r)}{r\in G} \]
+(note this requires explicit filter in the definition of generalized limit).
+
+Operations on the set of generalized limits can be defined pointwise.
+
+\begin{thm}
+Let both~$\mu$ and~$\nu$ be Hausdorff (define!) funcoids.
+I will denote~$C$ teh cluster point of a filter.
+If ?? then function~$f$ can be restored from values of $\xlim_{\supfun{\mu}\{x\}}f$.
+\end{thm}
+
+\begin{proof}
+Let~$a$ be an atomic filter object with limit point~$x$.
+Consider function
+\[ g(a)=\supfun{(\xlim_{\supfun{\mu}\{x\}}f)\id}(a). \]
+
+We will prove that $\supfun{f}|_{\atoms}=C\circ g$.
+
+??
+\end{proof}
