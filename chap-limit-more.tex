@@ -1,0 +1,120 @@
+\chapter{More on generalized limit}
+
+\begin{defn}
+I will call a permutation group \emph{fixed point free} when
+every element of it except of identity has no fixed points.
+\end{defn}
+
+\begin{defn}
+A funcoid~$f$ is \emph{Kolmogorov} when
+$\rsupfun{f}\{x\}\ne\rsupfun{f}\{y\}$ for every distinct points
+$x,y\in\dom f$.
+\end{defn}
+
+\section{Hausdorff funcoids}
+
+\begin{defn}
+\emph{Limit}~$\lim\mathcal{F}=x$ of a filter~$\mathcal{F}$
+regarding funcoid~$f$ is such a point that $\rsupfun{f}\{x\}\sqsupseteq\mathcal{F}$.
+\end{defn}
+
+\begin{defn}
+\emph{Hausdorff} funcoid is such a funcoid that every proper
+filter on its image has at most one limit.
+\end{defn}
+
+\begin{prop}
+The following are pairwise equivalent for every funcoid~$f$:
+\begin{enumerate}
+\item\label{hd:eq-d} $f$~is Hausdorff.
+\item\label{hd:eq-op}
+$x\ne y\Rightarrow\rsupfun{f}\{x\}\asymp\rsupfun{f}\{y\}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{description}
+\item[\ref{hd:eq-d}$\Rightarrow$\ref{hd:eq-op}]
+If~\ref{hd:eq-op} does not hold,
+then there exist distinct points~$x$ and~$y$ such that
+$\rsupfun{f}\{x\}\nasymp\rsupfun{f}\{y\}$.
+So~$x$ and~$y$ are both limit points of
+$\rsupfun{f}\{x\}\sqcap\rsupfun{f}\{y\}$, and thus~$f$ is not
+Hausdorff.
+\item[\ref{hd:eq-op}$\Rightarrow$\ref{hd:eq-d}]
+Suppose~$\mathcal{F}$ is proper.
+\[ \rsupfun{f}\{x\}\sqsupseteq\mathcal{F}\land
+\rsupfun{f}\{y\}\sqsupseteq\mathcal{F}\Rightarrow
+\rsupfun{f}\{x\}\nasymp\rsupfun{f}\{y\}\Rightarrow x=y. \]
+\end{description}
+\end{proof}
+
+\begin{cor}
+Every entirely defined Hausdorff funcoid is Kolmogorov.
+\end{cor}
+
+\begin{rem}
+It is enough to be ``almost entirely defined'' (having nonempty
+value everywhere except of one point).
+\end{rem}
+
+\begin{obvious}
+For a complete funcoid induced by a topological space this
+coincides with the traditional definition of a Hausdorff
+topological space.
+\end{obvious}
+
+\section{Restoring functions from limit}
+
+Consider alternative definition of generalized limit:
+\[ \xlim f = \lambda r\in G: \nu\circ f\circ\uparrow r. \]
+
+Or:
+\[ \xlim_a f = \setcond{(\rsupfun{r^{-1}}a, \nu\circ f\circ\uparrow r)}{r\in G} \]
+(note this requires explicit filter in the definition of generalized limit).
+
+Operations on the set of generalized limits can be defined (twice) pointwise. \fxwarning{First define operations on
+funcoids.}
+
+\begin{prop}
+The above defined $\xlim_{\rsupfun{\mu}\{x\}} f$ is a monovalued
+function if~$\mu$ is Kolmogorov and~$G$ is fixed point free.
+\end{prop}
+
+\begin{proof}
+We need to prove $\supfun{r^{-1}}\rsupfun{\mu}\{x\}\ne
+\supfun{s^{-1}}\rsupfun{\mu}\{x\}$ for $r,s\in G$, $r\ne s$.
+Really, by definition of generalized limit, they commute, so our
+formula is equivalent to
+$\rsupfun{\mu}\rsupfun{r^{-1}}\{x\}\ne
+\rsupfun{\mu}\rsupfun{s^{-1}}\{x\}$;
+$\rsupfun{\mu}\rsupfun{r^{-1}\circ s}\rsupfun{s^{-1}}\{x\}\ne
+\rsupfun{\mu}\rsupfun{s^{-1}}\{x\}$.
+But $r^{-1}\circ s\ne e$, so because it is fixed point free,
+$\rsupfun{r^{-1}\circ s}\rsupfun{s^{-1}}\{x\}\ne
+\rsupfun{s^{-1}}\{x\}$ and thus by kolmogorovness, we have the
+thesis.
+\end{proof}
+
+\begin{lem}
+Let~$\mu$ and~$\nu$ be Hausdorff funcoids. If function~$f$ is defined at point~$x$, then
+\[ fx=
+\lim\rsupfun{(\xlim_{\rsupfun{\mu}\{x\}}f)\rsupfun{\mu}\{x\}}\{x\}
+\]
+\end{lem}
+
+\begin{rem}
+The right part is correctly defined because
+$\xlim_a f$ is monovalued.
+\end{rem}
+
+\begin{proof}
+$\lim\rsupfun{(\xlim_{\rsupfun{\mu}\{x\}}f)\rsupfun{\mu}\{x\}}\{x\}=
+\lim\rsupfun{\nu\circ f}\{x\}=\lim\rsupfun{\nu}fx=fx$.
+\end{proof}
+
+\begin{cor}
+Let~$\mu$ and~$\nu$ be Hausdorff funcoids.
+Then function~$f$ can be restored from values of $\xlim_{\rsupfun{\mu}\{x\}}f$.
+\end{cor}
