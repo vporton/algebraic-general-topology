@@ -5030,9 +5030,6 @@ set $S\in\subsets\mathscr{F}(A)$.
 
 \section{Equivalent filters and rebase of filters}
 
-\fxwarning{This section was checked for errors but less
-carefully than the rest of the book.}
-
 Throughout this section we will assume that~$\mathfrak{Z}$
 is a lattice.
 
@@ -5189,12 +5186,10 @@ $\mathcal{X}\div\Base(\mathcal{Y}) =
 $\mathcal{X}\div\Base(\mathcal{Y}) = \mathcal{Y}$,
 $\mathcal{Y}\div\Base(\mathcal{X}) = \mathcal{X}$ is similar.
 
-\item[$\Leftarrow$] If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
-$\mathcal{Y}\div\Base(\mathcal{X})\not\ni\Base(\mathcal{Y})\in\mathcal{Y}$ and thus
-$\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
+\item[$\Leftarrow$] We have
+$\mathcal{Y}=(\mathcal{Y}\div\Base(\mathcal{X}))\div\Base(\mathcal{Y})$.
 
-So $\Base(\mathcal{X})\in\mathcal{Y}$ and similarly
-$\Base(\mathcal{Y})\in\mathcal{X}$. Thus
+Thus as easy to show
 $\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})\in\mathcal{Y}$
 and similarly
 $\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})\in\mathcal{X}$.
@@ -5362,6 +5357,30 @@ $\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
 filters~$\mathcal{X}$,~$\mathcal{Y}$.
 \end{defn}
 
+Proposition~\ref{filteq-if-sim} allows to define:
+
+\begin{defn}
+$\mathscr{S}\mathcal{A} = \mathscr{S}a$ for
+every~$a\in\mathcal{A}$ for every unfixed
+filter~$\mathcal{A}$.
+\end{defn}
+
+\begin{thm}\label{mathscrs-iso}
+$\mathscr{S}$~is an order-isomorphism from the poset of
+unfixed filters to the poset of filters on~$\mathfrak{Z}$.
+\end{thm}
+
+\begin{proof}
+We already know that~$\mathscr{S}$ is an order embedding.
+It remains to prove that it is a surjection.
+
+Let~$\mathcal{Y}$ be a filter on~$\mathfrak{Z}$.
+Take $\mathfrak{Z}\ni X\in\mathcal{Y}$. Then
+$\rsupfun{X\sqcap}\mathcal{Y}$ is a filter on~$X$ and
+$\mathscr{S}[\rsupfun{X\sqcap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\sqcap}\mathcal{Y}=\mathcal{Y}$. We have proved that
+it is a surjection.
+\end{proof}
+
 \begin{lem}
 $\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
 \mathscr{S}\mathcal{X}\sqsubseteq\mathscr{S}\mathcal{Y}$
@@ -5444,6 +5463,15 @@ applying the lemma $x\sqsubseteq y$.
 \end{description}
 \end{proof}
 
+\subsection{Rebase of unfixed filters}
+
+Proposition~\ref{sim-rebase} allows to define:
+
+\begin{defn}
+$\mathcal{A}\div B = a\div B$ for an unfixed
+filter~$\mathcal{A}$ and arbitrary $a\in\mathcal{A}$.
+\end{defn}
+
 \begin{prop}
 $\mathcal{X}\sqsubseteq\mathcal{Y} \Rightarrow
 \mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$ for every
@@ -5486,44 +5514,11 @@ $\mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{description}
 \end{proof}
 
-\subsection{Rebase of unfixed filters}
-
-Proposition~\ref{sim-rebase} allows to define:
-
-\begin{defn}
-$\mathcal{A}\div B = a\div B$ for an unfixed
-filter~$\mathcal{A}$ and arbitrary $a\in\mathcal{A}$.
-\end{defn}
-
 \begin{obvious}
 $(\mathcal{X}\div A)\div B = \mathcal{X}\div B$ if
 $B\sqsubseteq A$ for every unfixed filter~$\mathcal{X}$ and
 sets~$A$,~$B$.
 \end{obvious}
-
-Proposition~\ref{filteq-if-sim} allows to define:
-
-\begin{defn}
-$\mathscr{S}\mathcal{A} = \mathscr{S}a$ for
-every~$a\in\mathcal{A}$ for every unfixed
-filter~$\mathcal{A}$.
-\end{defn}
-
-\begin{thm}\label{mathscrs-iso}
-$\mathscr{S}$~is an order-isomorphism from the poset of
-unfixed filters to the poset of filters on~$\mathfrak{Z}$.
-\end{thm}
-
-\begin{proof}
-We already know that~$\mathscr{S}$ is an order embedding.
-It remains to prove that it is a surjection.
-
-Let~$\mathcal{Y}$ be a filter on~$\mathfrak{Z}$.
-Take $\mathfrak{Z}\ni X\in\mathcal{Y}$. Then
-$\rsupfun{X\sqcap}\mathcal{Y}$ is a filter on~$X$ and
-$\mathscr{S}[\rsupfun{X\sqcap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\sqcap}\mathcal{Y}=\mathcal{Y}$. We have proved that
-it is a surjection.
-\end{proof}
 
 \begin{obvious}
 $\mathcal{A}\div B = \rsupfun{B\sqcap}\mathscr{S}\mathcal{A}$
