@@ -2798,7 +2798,7 @@ It is with binarily meet-closed core (proposition~\ref{f-meet-closed}),
 with separable core (theorem~\ref{when-sep-core}).
 \item [\ref{compl-and-cor-fltr}$\Rightarrow$\ref{compl-and-cor-res}]
 Our filtrator is with join-closed core (theorem \ref{semifilt-joinclosed}).
-$a^{\ast}=\bigsqcup^{\mathfrak{A}}\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}$.
+\[ a^{\ast}=\bigsqcup^{\mathfrak{A}}\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}. \]
 But $c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}\Rightarrow\exists C\in\up c:C\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}$.
 So
 \begin{align*}
@@ -3171,7 +3171,7 @@ and with join-closed core by the theorem \ref{semifilt-joinclosed}.
 It is also up and down aligned.
 \item [{\ref{bool-minus-fltr}$\Rightarrow$\ref{bool-minus-conc}}] ~
 \begin{gather*}
-(a\sqcap^{\mathfrak{A}}\overline{B})\sqcup^{\mathfrak{A}}B=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{A}}B)=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{Z}}B)=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}\top=a\sqcup^{\mathfrak{A}}B.\\
+(a\sqcap^{\mathfrak{A}}\overline{B})\sqcup^{\mathfrak{A}}B=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{A}}B)=\\(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{Z}}B)=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}\top=a\sqcup^{\mathfrak{A}}B.\\
 (a\sqcap^{\mathfrak{A}}\overline{B})\sqcap^{\mathfrak{A}}B=a\sqcap^{\mathfrak{A}}(\overline{B}\sqcap^{\mathfrak{A}}B)=a\sqcap^{\mathfrak{A}}(\overline{B}\sqcap^{\mathfrak{Z}}B)=a\sqcap^{\mathfrak{A}}\bot=\bot.
 \end{gather*}
 So $a\sqcap^{\mathfrak{A}}\overline{B}$ is the difference of $a$
@@ -3282,16 +3282,18 @@ x\sqsubseteq\overline{A}\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}x)\quad\text
 
 
 Really,
-\[
-\overline{A}\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}x)=(\overline{A}\sqcup^{\mathfrak{A}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=(\overline{A}\sqcup^{\mathfrak{Z}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\top\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\overline{A}\sqcup^{\mathfrak{A}}x\sqsupseteq x
-\]
+\begin{multline*}
+\overline{A}\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}x)=(\overline{A}\sqcup^{\mathfrak{A}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\\
+(\overline{A}\sqcup^{\mathfrak{Z}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\top\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\overline{A}\sqcup^{\mathfrak{A}}x\sqsupseteq x
+\end{multline*}
 
 
 
 and
-\[
-A\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{A}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{Z}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=\bot\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=A\sqcap^{\mathfrak{A}}y\sqsubseteq y.
-\]
+\begin{multline*}
+A\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{A}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{Z}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=\\
+\bot\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=A\sqcap^{\mathfrak{A}}y\sqsubseteq y.
+\end{multline*}
 
 
 \end{description}
@@ -5561,9 +5563,9 @@ $\mathcal{A}\div A =
 Take~$a\in\mathcal{A}$.
 \begin{multline*}
 \bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}\mathcal{A}} =
-\bigsqcap\setcond{\uparrow^A(X\sqcap A\sqcap\Base(a))}{X\in\mathscr{S}\mathcal{A}} =
-\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}\mathcal{A}\cap\subsets\Base(a)} = \\
-\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}a\cap\subsets\Base(a)} =
+\bigsqcap\setcond{\uparrow^A(X\sqcap A\sqcap\Base(a))}{X\in\mathscr{S}\mathcal{A}} = \\
+\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}\mathcal{A}\cap\subsets\Base(a)} =
+\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}a\cap\subsets\Base(a)} = \\
 \bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in a}=
 a\div A = \mathcal{A}\div A.
 \end{multline*}

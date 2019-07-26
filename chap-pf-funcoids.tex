@@ -1465,7 +1465,13 @@ and $f\in\mathsf{pFCD}(\mathfrak{A},\mathfrak{B})$,
 $g\in\mathsf{pFCD}(\mathfrak{B},\mathfrak{C})$. Then
 \begin{multline*}
 \atoms(g\circ f)=\\
-\setcond{x\times^{\mathsf{FCD}}z}{x\in\atoms^{\mathfrak{A}},z\in\atoms^{\mathfrak{C}},\exists y\in\atoms^{\mathfrak{B}}:(x\times^{\mathsf{FCD}}y\in\atoms f\land y\times^{\mathsf{FCD}}z\in\atoms g)}.
+\setcond{x\times^{\mathsf{FCD}}z}{
+\begin{aligned}
+&x\in\atoms^{\mathfrak{A}},z\in\atoms^{\mathfrak{C}},\\
+&\exists y\in\atoms^{\mathfrak{B}}:
+(x\times^{\mathsf{FCD}}y\in\atoms f\land y\times^{\mathsf{FCD}}z\in\atoms g)
+\end{aligned}
+}.
 \end{multline*}
 \end{prop}
 \begin{proof}

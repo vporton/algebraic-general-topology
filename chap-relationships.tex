@@ -517,7 +517,8 @@ $f,g\in\mathsf{FCD}(A,B)$.\end{thm}
 \begin{multline*}
 \torldin(f\sqcup g)=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f\sqcup g}=\\
 \bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f\vee a\times^{\mathsf{FCD}}b\sqsubseteq g}=\\
-\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f}\sqcup\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq g}=\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq f}\sqcup\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(A)},b\in\atoms^{\mathscr{F}(B)},a\times^{\mathsf{FCD}}b\sqsubseteq g}=\\
 \torldin f\sqcup\torldin g.
 \end{multline*}
 \end{proof}
@@ -584,14 +585,17 @@ $\Cor\tofcd g=\tofcd\Cor g$ for every reloid $g$.\end{thm}
 \end{thm}
 
 \begin{proof}
-  We will prove only the first, because the second is dual.
-  
-  $\Compl (\mathsf{FCD}) f = \bigsqcup_{\alpha \in \Src f}
-  ((\mathsf{FCD}) f) |_{\uparrow \{ \alpha \}} = \text{(proposition~\ref{fcd-meet-prod-rld})} =
-  \bigsqcup_{\alpha \in \Src f} (\mathsf{FCD})
-  (f|_{\uparrow \{ \alpha \}}) = (\mathsf{FCD}) \bigsqcup_{\alpha \in
-  \Src f} f|_{\uparrow \{ \alpha \}} = (\mathsf{FCD})
-  \Compl f$.
+We will prove only the first, because the second is dual.
+
+\begin{multline*}
+\Compl (\mathsf{FCD}) f = \bigsqcup_{\alpha \in \Src f}
+((\mathsf{FCD}) f) |_{\uparrow \{ \alpha \}} =
+\text{(proposition~\ref{fcd-meet-prod-rld})} = \\
+\bigsqcup_{\alpha \in \Src f} (\mathsf{FCD})
+(f|_{\uparrow \{ \alpha \}}) = (\mathsf{FCD}) \bigsqcup_{\alpha \in
+\Src f} f|_{\uparrow \{ \alpha \}} = (\mathsf{FCD})
+\Compl f.
+\end{multline*}  
 \end{proof}
 
 \begin{conjecture}
@@ -620,7 +624,8 @@ By theorem~\ref{adj-max} and proposition~\ref{gal-eq}.
 that
 \begin{multline*}
 \mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\nu\Rightarrow\\
-\exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu)
+\exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:\\
+(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu)
 \end{multline*}
 for every $\mathcal{X}\in\mathscr{F}(\Src\nu)$, $\mathcal{Y}\in\mathscr{F}(\Dst\nu)$.\end{defn}
 \begin{rem}
@@ -638,13 +643,17 @@ for every atomic filter objects $x$ and $y$ on respective sets.\end{prop}
 \mathcal{X}\times^{\mathsf{RLD}}\mathcal{Y}\nasymp\nu\Rightarrow\\
 \exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\times^{\mathsf{RLD}}y\nasymp\nu\Rightarrow\\
 \exists x\in\atoms\mathcal{X},y\in\atoms\mathcal{Y}:x\times^{\mathsf{RLD}}y\sqsubseteq\nu\Rightarrow\\
-\exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu).
+\exists\mathcal{X}'\in\mathscr{F}(\Base(\mathcal{X}))\setminus\{\bot\},\mathcal{Y}'\in\mathscr{F}(\Base(\mathcal{Y}))\setminus\{\bot\}:\\
+(\mathcal{X}'\sqsubseteq\mathcal{X}\land\mathcal{Y}'\sqsubseteq\mathcal{Y}\land\mathcal{X}'\times^{\mathsf{RLD}}\mathcal{Y}'\sqsubseteq\nu).
 \end{multline*}
 
 \end{description}
 \end{proof}
 \begin{prop}
-$\torldin\tofcd f=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src\nu)},b\in\atoms^{\mathscr{F}(\Dst\nu)},a\times^{\mathsf{RLD}}b\nasymp f}$.\end{prop}
+\[
+\torldin\tofcd f=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms^{\mathscr{F}(\Src\nu)},b\in\atoms^{\mathscr{F}(\Dst\nu)},a\times^{\mathsf{RLD}}b\nasymp f}.
+\]
+\end{prop}
 \begin{proof}
 ~
 \begin{align*}
@@ -725,7 +734,12 @@ Provided that $\im F\nasymp\dom G$, we have:
 \begin{multline*}
 \dom F\times^{\mathsf{RLD}}\im G=(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F),G'\in\atoms(\dom G\times^{\mathsf{RLD}}\im G)}\sqsubseteq\text{ (*)}\\
-\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms^{\mathsf{RLD}(\Src F,\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G,\Dst G)},F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g}=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{
+\begin{aligned}[l]
+&F'\in\atoms^{\mathsf{RLD}(\Src F,\Dst F)},G'\in\atoms^{\mathsf{RLD}(\Src G,\Dst G)},\\
+&F'\sqsubseteq\torldin f,G'\sqsubseteq\torldin g
+\end{aligned}
+}=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{G'\circ F'}{F'\in\atoms\torldin f,G'\in\atoms\torldin g}=\torldin g\circ\torldin f.
 \end{multline*}
 (*) $F'\in\atoms(\dom F\times^{\mathsf{RLD}}\im F)$ and $\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f$ implies $\dom F'\times^{\mathsf{FCD}}\im F'\sqsubseteq f$;
@@ -733,12 +747,17 @@ thus $\dom F'\times^{\mathsf{RLD}}\im F'\sqsubseteq \torldin f$ and thus $F'\sqs
 
 Thus $\torldin g\circ\torldin f\sqsupseteq\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}$.
 
-But $\torldin g\circ\torldin f\sqsubseteq\bigsqcup^{\mathsf{RLD}}\setcond{(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)}{F\in\atoms\torldin f,G\in\atoms\torldin g}
-= \bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}$.
+But
+\begin{multline*}
+\torldin g\circ\torldin f\sqsubseteq\bigsqcup^{\mathsf{RLD}}\setcond{(\dom G\times^{\mathsf{RLD}}\im G)\circ(\dom F\times^{\mathsf{RLD}}\im F)}{F\in\atoms\torldin f,G\in\atoms\torldin g}
+=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}.
+\end{multline*}
 
 Thus 
 \begin{multline*}
-\torldin g\circ\torldin f=\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}=\\
+\torldin g\circ\torldin f=\\
+\bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{F\in\atoms\torldin f,G\in\atoms\torldin g,\im F\nasymp\dom G}=\\
 \bigsqcup^{\mathsf{RLD}}\setcond{\dom F\times^{\mathsf{RLD}}\im G}{
 \begin{aligned}&F\in\atoms^{\mathsf{RLD}(\Src f,\Dst f)},G\in\atoms^{\mathsf{RLD}(\Dst f,\Dst g)},\\&\dom F\times^{\mathsf{FCD}}\im F\sqsubseteq f,\dom G\times^{\mathsf{FCD}}\im G\sqsubseteq g,\im F\nasymp\dom G\end{aligned}}.
 \end{multline*}
@@ -748,8 +767,18 @@ But
 \begin{multline*}
 \torldin(g\circ f)=
 \bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\times^{\mathsf{FCD}}c\in\atoms(g\circ f)}=\text{(proposition~\ref{fcd-at-comp})}=\\
-\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),c\in\mathscr{F}(\Dst g),\exists b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\in\atoms f\land b\times^{\mathsf{FCD}}c\in\atoms g)}=\\
-\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{a\in\mathscr{F}(\Src f),c\in\mathscr{F}(\Dst g),\exists b_0,b_1\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\in\atoms f\land b\times^{\mathsf{FCD}}c\in\atoms g\land b_0\nasymp b_1)}.
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{
+\begin{aligned}
+&a\in\mathscr{F}(\Src f),c\in\mathscr{F}(\Dst g),\\
+&\exists b\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\in\atoms f\land b\times^{\mathsf{FCD}}c\in\atoms g)
+\end{aligned}
+}=\\
+\bigsqcup\setcond{a\times^{\mathsf{RLD}}c}{
+\begin{aligned}
+&a\in\mathscr{F}(\Src f),c\in\mathscr{F}(\Dst g),\\
+&\exists b_0,b_1\in\mathscr{F}(\Dst f):(a\times^{\mathsf{FCD}}b\in\atoms f\land b\times^{\mathsf{FCD}}c\in\atoms g\land b_0\nasymp b_1)
+\end{aligned}
+}.
 \end{multline*}
 Now it becomes obvious that $\torldin g\circ\torldin f=\torldin(g\circ f)$.
 \end{proof}
@@ -770,9 +799,10 @@ $\tofcd g=\theta g$ for every complete reloid~$g$.\end{lem}
 \begin{proof}
 Really, $g=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})$
 for a complete reloid~$g$ and thus 
-\[
-\tofcd g=\bigsqcup_{x\in\Src f}\tofcd(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})=\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\rsupfun f@\{x\})=\theta g.
-\]
+\begin{multline*}
+\tofcd g=\bigsqcup_{x\in\Src f}\tofcd(\uparrow^{\Src f}\{x\}\times^{\mathsf{RLD}}\rsupfun f@\{x\})=\\
+\bigsqcup_{x\in\Src f}(\uparrow^{\Src f}\{x\}\times^{\mathsf{FCD}}\rsupfun f@\{x\})=\theta g.
+\end{multline*}
 \end{proof}
 \begin{lem}
 $\torldout f=\theta^{-1}f$ for every complete funcoid~$f$.\end{lem}

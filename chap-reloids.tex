@@ -289,9 +289,10 @@ Reversely, let $K\in\up\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms\mat
 Then $K\in\up(a\times^{\mathsf{RLD}}b)$ for every $a\in\atoms\mathcal{A}$,
 $b\in\atoms\mathcal{B}$. $K\sqsupseteq X_{a}\times Y_{b}$ for some
 $X_{a}\in\up a$, $Y_{b}\in\up b$; 
-\[
-K\sqsupseteq\bigsqcup\setcond{X_{a}\times Y_{b}}{a\in\atoms\mathcal{A},b\in\atoms\mathcal{B}}=\bigsqcup\setcond{X_{a}}{a\in\atoms\mathcal{A}}\times\bigsqcup\setcond{Y_{b}}{b\in\atoms\mathcal{B}}\sqsupseteq A\times B
-\]
+\begin{multline*}
+K\sqsupseteq\bigsqcup\setcond{X_{a}\times Y_{b}}{a\in\atoms\mathcal{A},b\in\atoms\mathcal{B}}=\\
+\bigsqcup\setcond{X_{a}}{a\in\atoms\mathcal{A}}\times\bigsqcup\setcond{Y_{b}}{b\in\atoms\mathcal{B}}\sqsupseteq A\times B
+\end{multline*}
  where $A\in\up\mathcal{A}$, $B\in\up\mathcal{B}$; $K\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.\end{proof}
 \begin{thm}
 If $\mathcal{A}_{0},\mathcal{A}_{1}\in\mathscr{F}(A)$, $\mathcal{B}_{0},\mathcal{B}_{1}\in\mathscr{F}(B)$
@@ -683,8 +684,10 @@ is trivial.
 Denote $f=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$.
 Then
 \begin{multline*}
-\im(f|_{\uparrow \{\alpha'\}})=\im(f\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}))=\text{(because \ensuremath{\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}} is principal)}=\\
-\im\bigsqcup\setcond{(\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha))\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)})}{\alpha\in\Src f}=\im(\uparrow^{A}\{\alpha'\}\times^{\mathsf{RLD}}G(\alpha'))=G(\alpha').
+\im(f|_{\uparrow \{\alpha'\}})=\im(f\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}))= \\
+\text{(because \ensuremath{\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}} is principal)}=\\
+\im\bigsqcup\setcond{(\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha))\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)})}{\alpha\in\Src f}=\\
+\im(\uparrow^{A}\{\alpha'\}\times^{\mathsf{RLD}}G(\alpha'))=G(\alpha').
 \end{multline*}
 \end{proof}
 \begin{cor}

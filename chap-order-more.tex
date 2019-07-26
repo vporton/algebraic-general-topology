@@ -1129,7 +1129,9 @@ of anchored finitary relations, then by definition \[
 \setcond{
 \llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} , \ldots , a_{\dom F - 1, 0} , \ldots , a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket
 }{
-\llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
+\begin{array}{l}
+\llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \\ \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
+\end{array}
 }
 \]and 
 \[
@@ -1161,7 +1163,7 @@ $\dom\concat z=\sum_{i\in\dom F}\dom z_{i}=\sum_{i\in\dom F}\arity f_{i}=\sum(\a
 
 \subsubsection{Definition with composition for every multiplier}
 
-$q(F)_{i}\eqdef\left(\curry\left(\bigoplus(\arity\circ F)\right)\right)i$.
+\[ q(F)_{i}\eqdef\left(\curry\left(\bigoplus(\arity\circ F)\right)\right)i. \]
 \begin{prop}
 $\prod^{\mathrm{(ord)}}F=\setcond{L\in\mho^{\sum(\arity\circ F)}}{\forall i\in\dom F:L\circ q(F)_{i}\in\GR F_{i}}$.\end{prop}
 \begin{proof}
@@ -1215,7 +1217,9 @@ for every $i\in\dom F$, that is for $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\a
 \begin{proof}
 For every $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$
 we have:
-\begin{align*}
+\[
+\resizebox{\hsize}{!}{
+$\begin{aligned}
 P\in\prod_{i\in\dom F}F'_{i} & \Leftrightarrow\\
 P\in\setcond{z\in\mho^{\dom F}}{\forall i\in\dom F:z(i)\in F'_{i}} & \Leftrightarrow\\
 P\in\mho^{\dom F}\land\forall i\in\dom F:P(i)\in F'_{i} & \Leftrightarrow\\
@@ -1229,7 +1233,9 @@ P\in\mho^{\dom F}\land\forall i\in\dom F:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}
 \forall i\in\dom F:\bigcup_{i\in\dom F}\curry(P_{i})\in\prod(\GR\circ F) & \Leftrightarrow\\
 \curry\left(\bigcup_{i\in\dom F}P_{i}\right)\in\prod(\GR\circ F) & \Leftrightarrow\\
 \curry\left(\bigcup\im P\right)\in\prod(\GR\circ F).
-\end{align*}
+\end{aligned}$
+}
+\]
 \end{proof}
 \begin{lem}
 $\setcond{\curry(f)\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\prod(\GR\circ F)$.\end{lem}
