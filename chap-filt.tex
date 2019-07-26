@@ -750,9 +750,6 @@ We have commutative diagram on the figure~\ref{theta-sets} in the
 category $\mathbf{Set}$:
 
 \begin{figure}[ht]
-\caption{\label{theta-sets}}
-
-
 \begin{tikzcd}[row sep=1cm, column sep=2cm]
   \subsets \mathfrak{A}
 	\arrow[d, leftrightarrow, "\lnot"]
@@ -762,6 +759,7 @@ category $\mathbf{Set}$:
 	\arrow[r, shift left, rightarrow, "\rsupfun{\theta}"]
     & \subsets \mathfrak{B} \arrow[l, shift left, rightarrow, "\rsupfun{\theta^{-1}}"]
 \end{tikzcd}
+\caption{\label{theta-sets}}
 \end{figure}
 
 \begin{thm}
@@ -787,9 +785,6 @@ This diagram can be restricted to filters, ideals, free stars, and
 mixers, see figure~\ref{theta-flt}:
 
 \begin{figure}[ht]
-\caption{\label{theta-flt}}
-
-
 \begin{tikzcd}[row sep=1cm, column sep=2cm]
   \mathfrak{F}(\mathfrak{A})
 	\arrow[d, leftrightarrow, "\lnot"]
@@ -799,6 +794,7 @@ mixers, see figure~\ref{theta-flt}:
 	\arrow[r, shift left, rightarrow, "\rsupfun{\theta}"]
     & \mathfrak{S}(\mathfrak{B}) \arrow[l, shift left, rightarrow, "\rsupfun{\theta^{-1}}"]
 \end{tikzcd}
+\caption{\label{theta-flt}}
 \end{figure}
 
 \begin{thm}
@@ -4717,7 +4713,6 @@ on figure \ref{not-sep-center} is bounded and distributive because
 it does not contain ``diamond lattice'' nor ``pentagon lattice''
 as a sublattice \cite{wiki:distributive-lattice}.
 \begin{figure}
-\caption{\label{not-sep-center}}
 \[
 \xymatrix{ & 1\\
  & a\ar@{-}[u]\\
@@ -4725,6 +4720,7 @@ x\ar@{-}[ur] &  & y\ar@{-}[ul]\\
  & 0\ar@{-}[ul]\ar@{-}[ur]
 }
 \]
+\caption{\label{not-sep-center}}
 \end{figure}
 
 
@@ -4741,12 +4737,12 @@ an injection) which is not strongly separable (that is $\fullstar$ isn't order r
 diagram~\ref{sep-counter}.
 
 \begin{figure}[ht]
-\caption{\label{sep-counter}}
 \[
 \xymatrix{a\ar@{-}[d]\ar@{-}[dr] & b\ar@{-}[dl]\ar@{-}[d]\ar@{-}[dr]\\
 p & q & r
 }
 \]
+\caption{\label{sep-counter}}
 \end{figure}
 
 
@@ -5647,8 +5643,6 @@ an identity (therefore ``parallel'' arrows are mutually inverse).
 The arrows preserve order.
 
 \begin{figure}[ht]
-\caption{\label{unfix-dia}}
-
 \begin{tikzcd}[row sep=2cm, column sep=0.5cm]
 & \mathfrak{F}(DB)
 \arrow[rd, shift left, "x\mapsto{[x]}"]
@@ -5662,6 +5656,7 @@ The arrows preserve order.
 \arrow[lu, shift left, "\mathcal{X}\mapsto\mathcal{X}\div B"]
 \arrow[ll, shift left, "\mathscr{S}"]
 \end{tikzcd}
+\caption{\label{unfix-dia}}
 \end{figure}
 \end{thm}
 

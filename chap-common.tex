@@ -1656,9 +1656,6 @@ The diagram at the figure~\ref{three-loop} is commutative, every
 cycle in the diagram is an identity.
 
 \begin{figure}[ht]
-\caption{\label{three-loop}}
-
-
 \begin{tikzcd}[row sep=2.5cm, column sep=1.5cm]
 & \bullet
 \arrow[rd, shift left, "f"]
@@ -1670,6 +1667,7 @@ cycle in the diagram is an identity.
 \arrow[lu, shift left, "f^{-1}"]
 \arrow[ll, shift left, "g"]
 \end{tikzcd}
+\caption{\label{three-loop}}
 \end{figure}
 \end{lem}
 \begin{proof}
@@ -1698,15 +1696,13 @@ Let $t\circ h\circ g\circ f=1_{\Src f}$. The diagram at the figure~\ref{four-loo
 is commutative, every cycle in the diagram is an identity.
 
 \begin{figure}[ht]
-\caption{\label{four-loop}}
-
-
 \begin{tikzcd}[row sep=1.5cm, column sep=1.5cm]
 \circled{(0,0)} \arrow[r, shift left, "f"] \arrow[d, shift left, "t^{-1}"]
   & \circled{(0,1)} \arrow[d, shift left, "g"] \arrow[l, shift left, "f^{-1}"] \\
 \circled{(1,0)} \arrow[u, shift left, "t"] \arrow[r, shift left, "h^{-1}"]
   & \circled{(1,1)} \arrow[l, shift left, "h"] \arrow[u, shift left, "g^{-1}"]
 \end{tikzcd}
+\caption{\label{four-loop}}
 \end{figure}
 \end{lem}
 \begin{proof}
@@ -1715,8 +1711,6 @@ defined by the table~\ref{square-table}.
 
 \begin{table}[ht]
 \caption{\label{square-table}}
-
-
 \begin{tabular}{|c|c|c|}
 \hline 
 $i$ & $j$ & $W(i,j)$\tabularnewline
