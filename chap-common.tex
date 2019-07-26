@@ -1505,6 +1505,28 @@ of $C$;
 \end{enumerate}
 \end{defn}
 
+\begin{defn}
+\emph{Opposite category} $C^{\operatorname{op}}$ of category~$C$ is the category where
+``all arrows are reversed'' that is every morphism~$f$ is replaced with so called
+\emph{opposite morphism}~$f^{\operatorname{op}}$ such that
+$\Src f^{\operatorname{op}} = \Dst f$, $\Dst f^{\operatorname{op}} = \Src f$ and
+$g^{\operatorname{op}}\circ f^{\operatorname{op}} = (f\circ g)^{\operatorname{op}}$
+(composition taken in the ``opposite order'').
+\end{defn}
+
+\begin{defn}
+A \emph{monomorphism} (also called a \emph{monic} morphism or a \emph{mono}) is a left-cancellative morphism. That is, an arrow~$f\colon X\to Y$ such that for all objects~$Z$ and all morphisms~$g_1,g_2\colon Z\to X$,
+\[ f\circ g_1=f\circ g_2\Rightarrow g_1=g_2. \]
+\end{defn}
+
+Monomorphisms are a categorical generalization of injective functions (also called ``one-to-one functions''); in some categories the notions coincide, but monomorphisms are more general.
+
+\begin{defn}
+The categorical dual of a monomorphism is an \emph{epimorphism}, i.e.\ a monomorphism in a category~$C$ is an epimorphism in the dual category~$C^{\operatorname{op}}$ that is it
+conforms to the formula
+\[ g_1\circ f=g_2\circ f\Rightarrow g_1=g_2. \]
+\end{defn}
+
 \subsection{Some important examples of categories}
 \begin{xca}
 Prove that the below examples of categories are really categories.\end{xca}
