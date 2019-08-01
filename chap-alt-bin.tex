@@ -99,20 +99,24 @@ $f_0 x\sqsubseteq \bigsqcup_{x\in X}f_0\{x\}$. So $\bigsqcup_{x\in\mathscr{T}X\s
 $\Psi_3^{-1} = \Psi_2\circ\Psi_1$.
 \end{claim}
 \begin{claimproof}
-$\Psi_2\Psi_1 f = \left(\subsets A,\subsets B,X\mapsto\setcond{y}{\exists x\in X:(x,y)\in\Psi_1 f},Y\mapsto\setcond{x}{\exists y\in Y:(x,y)\in\Psi_1 f}\right) =
-\left(\subsets A,\subsets B,X\mapsto\setcond{y}{\exists x\in X:y\in f_0\{x\}},Y\mapsto\setcond{x}{\exists y\in Y:x\in f_1\{y\}}\right) =
+\begin{multline*}
+\Psi_2\Psi_1 f = \left(\subsets A,\subsets B,X\mapsto\setcond{y}{\exists x\in X:(x,y)\in\Psi_1 f},Y\mapsto\setcond{x}{\exists y\in Y:(x,y)\in\Psi_1 f}\right) =\\
+\left(\subsets A,\subsets B,X\mapsto\setcond{y}{\exists x\in X:y\in f_0\{x\}},Y\mapsto\setcond{x}{\exists y\in Y:x\in f_1\{y\}}\right) =\\
 \left(\subsets A,\subsets B,X\mapsto\bigsqcup_{x\in X}f_0\{x\},Y\mapsto\bigsqcup_{y\in Y}f_1\{y\}\right) =
-\Psi_3^{-1} f$.
+\Psi_3^{-1} f.
+\end{multline*}
 \end{claimproof}
 
 \begin{claim}
 $\Psi_3 = \Psi_1^{-1}\circ\Psi_2^{-1}$.
 \end{claim}
 \begin{claimproof}
-$\Psi_1^{-1}\Psi_2^{-1} f = 
-\left(X\mapsto\setcond{y\in B}{\forall x\in X:\{x\}\suprel{f}\{y\}}, Y\mapsto\setcond{x\in A}{\forall y\in Y:\{x\}\suprel{f}\{y\}}\right) =
-\left(X\mapsto\setcond{y\in B}{\forall x\in X:y\in\supfun{f}\{x\}}, Y\mapsto\setcond{x\in A}{\forall y\in Y:x\in\supfun{f^{-1}}\{y\}}\right) =
-\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right) = \Psi_3 f$.
+\begin{multline*}
+\Psi_1^{-1}\Psi_2^{-1} f = 
+\left(X\mapsto\setcond{y\in B}{\forall x\in X:\{x\}\suprel{f}\{y\}}, Y\mapsto\setcond{x\in A}{\forall y\in Y:\{x\}\suprel{f}\{y\}}\right) = \\
+\left(X\mapsto\setcond{y\in B}{\forall x\in X:y\in\supfun{f}\{x\}}, Y\mapsto\setcond{x\in A}{\forall y\in Y:x\in\supfun{f^{-1}}\{y\}}\right) = \\
+\left(X\mapsto\bigsqcap_{x\in X}\supfun{f}\{x\},Y\mapsto\bigsqcap_{y\in Y}\supfun{f^{-1}}\{y\}\right) = \Psi_3 f.
+\end{multline*}
 \end{claimproof}
 
 \begin{claim}
