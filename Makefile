@@ -1,5 +1,9 @@
 #!/usr/bin/make
 
+# Use TeXmacs instead!
+# Then:
+# pandoc -f html -t epub3 -o limit.epub limit.html
+
 default: volume-1.pdf
 
 all: volume-1.pdf addons.pdf volume-2.pdf ideas.pdf
