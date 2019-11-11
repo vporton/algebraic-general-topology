@@ -437,10 +437,13 @@ same as these directed multigraphs.
 $\mathbf{CoMonRld}_{Q,R}\ne\emptyset \Leftrightarrow\mathbf{MonRld}_{Q,R}\ne\emptyset$.
 \end{lem}
 \begin{proof}
-$f\in\mathbf{CoMonRld}_{Q,R} \Leftrightarrow
-(\im f)\mathrel Q\mathcal{A} \land (\dom f)\mathrel R\mathcal{B} \Leftrightarrow
+\begin{multline*}
+f\in\mathbf{CoMonRld}_{Q,R} \Leftrightarrow
+(\im f)\mathrel Q\mathcal{A} \land (\dom f)\mathrel R\mathcal{B} \Leftrightarrow \\
 (\dom f^{-1})\mathrel Q\mathcal{A} \land (\im f^{-1})\mathrel R\mathcal{B} \Leftrightarrow
-f^{-1}\in\mathbf{MonRld}_{Q,R}$ for every monovalued reloid~$f$ (or what is the same, injective reloid~$f^{-1}$).
+f^{-1}\in\mathbf{MonRld}_{Q,R}
+\end{multline*}
+for every monovalued reloid~$f$ (or what is the same, injective reloid~$f^{-1}$).
 \end{proof}
 
 \begin{thm}

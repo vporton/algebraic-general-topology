@@ -276,7 +276,7 @@ $\tofcd f=\bigsqcup\setcond{x\times^{\mathsf{FCD}}y}{x\in\atoms^{\mathscr{F}(\Sr
 for every reloid $f$.\end{prop}
 \begin{proof}
 $\tofcd f=\bigsqcup\setcond{x\times^{\mathsf{FCD}}y}{x\in\atoms^{\mathscr{F}(\Src f)},y\in\atoms^{\mathscr{F}(\Dst f)},x\times^{\mathsf{FCD}}y\nasymp\tofcd f}$,
-but $x\times^{\mathsf{FCD}}y\nasymp\tofcd f\Leftrightarrow x\suprel{\tofcd f}y\Leftrightarrow x\times^{\mathsf{RLD}}y\nasymp f$,
+but \[x\times^{\mathsf{FCD}}y\nasymp\tofcd f\Leftrightarrow x\suprel{\tofcd f}y\Leftrightarrow x\times^{\mathsf{RLD}}y\nasymp f,\]
 thus follows the theorem.
 \end{proof}
 
@@ -335,10 +335,12 @@ for funcoids~$f$,~$g$.
 \end{prop}
 
 \begin{proof}
-$\torldout f \sqcup \torldout g = \bigsqcap^{\mathsf{RLD}}_{F \in \up f} F \sqcup
-\bigsqcap^{\mathsf{RLD}}_{G \in \up g} G = \bigsqcap^{\mathsf{RLD}}_{F \in
+\begin{multline*}
+\torldout f \sqcup \torldout g = \bigsqcap^{\mathsf{RLD}}_{F \in \up f} F \sqcup
+\bigsqcap^{\mathsf{RLD}}_{G \in \up g} G =\\ \bigsqcap^{\mathsf{RLD}}_{F \in
 \up f, G \in \up g} (F \sqcup G) = \bigsqcap^{\mathsf{RLD}}_{H \in
-\up (f \sqcup g)} H = \torldout (f \sqcup g)$.
+\up (f \sqcup g)} H = \torldout (f \sqcup g).
+\end{multline*}
 \end{proof}
 
 \begin{thm}
@@ -909,12 +911,15 @@ For co-complete funcoids it's dual.\end{proof}
   $F \in \up f \Leftrightarrow F \sqsupseteq f \Leftrightarrow \langle F
   \rangle^{\ast} \{ x \} \sqsupseteq \rsupfun{f} \{ x \}$.
   
-  Thus $F, G \in \up f \Rightarrow \rsupfun{F} \{ x \}
+  Thus
+\begin{multline*}
+F, G \in \up f \Rightarrow \rsupfun{F} \{ x \}
   \sqsupseteq \rsupfun{f} \{ x \} \wedge \rsupfun{G}
-  \{ x \} \sqsupseteq \rsupfun{f} \{ x \} \Rightarrow \langle F
+  \{ x \} \sqsupseteq \rsupfun{f} \{ x \} \Rightarrow \\ \langle F
   \sqcap G \rangle^{\ast} \{ x \} = \rsupfun{F} \{ x \} \sqcap
   \rsupfun{G} \{ x \} \sqsupseteq \rsupfun{f} \{ x
-  \} \Rightarrow F \sqcap G \in \up f$.
+  \} \Rightarrow F \sqcap G \in \up f.
+\end{multline*}
   
   That $\up f$ is nonempty and up-directed is obvious.
 \end{proof}
@@ -947,13 +952,15 @@ For co-complete funcoids it's dual.\end{proof}
 \end{prop}
 
 \begin{proof}
-  $\text{$f$ is reflexive} \Leftrightarrow
+\begin{multline*}
+  \text{$f$ is reflexive} \Leftrightarrow
   1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq f \Leftrightarrow
   \forall F \in \up f : 1^{\mathbf{Rel}}_{\Ob f}
-  \sqsubseteq F \Leftrightarrow 1^{\mathbf{Rel}}_{\Ob f}
+  \sqsubseteq F \Leftrightarrow \\ 1^{\mathbf{Rel}}_{\Ob f}
   \sqsubseteq \bigsqcap^{\mathsf{FCD}} \up f \Leftrightarrow
   1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq \tofcd f
-  \Leftrightarrow \text{$\tofcd f$ is reflexive}$.
+  \Leftrightarrow \text{$\tofcd f$ is reflexive}.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -962,15 +969,17 @@ For co-complete funcoids it's dual.\end{proof}
 \end{prop}
 
 \begin{proof}
-  $\text{$f$ is reflexive} \Leftrightarrow
+\begin{multline*}
+  \text{$f$ is reflexive} \Leftrightarrow
   1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq f \Leftrightarrow
-  \text{(corollary~\ref{fcd-filtered})} \Leftrightarrow \forall F \in \up f :
+  \text{(corollary~\ref{fcd-filtered})} \Leftrightarrow \\ \forall F \in \up f :
   1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq F \Leftrightarrow
   1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq
-  \bigsqcap^{\mathsf{RLD}} \up f \Leftrightarrow
+  \bigsqcap^{\mathsf{RLD}} \up f \Leftrightarrow \\
   1^{\mathbf{Rel}}_{\Ob f} \sqsubseteq
   (\mathsf{RLD})_{\operatorname{out}} f \Leftrightarrow
-  \text{$(\mathsf{RLD})_{\operatorname{out}} f$ is reflexive}$.
+  \text{$(\mathsf{RLD})_{\operatorname{out}}f$ is reflexive}.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -994,11 +1003,13 @@ or reloid.\end{obvious}
 \end{prop}
 
 \begin{proof}
-  $a \times^{\mathsf{RLD}}_F a = (\mathsf{RLD})_{\operatorname{out}} (a
-  \times^{\mathsf{FCD}} a) = \bigsqcap^{\mathsf{RLD}} \up
+\begin{multline*}
+  a \times^{\mathsf{RLD}}_F a = (\mathsf{RLD})_{\operatorname{out}} (a
+  \times^{\mathsf{FCD}} a) = \\ \bigsqcap^{\mathsf{RLD}} \up
   (a \times^{\mathsf{FCD}} a) \sqsubseteq 1^{\mathsf{FCD}}
   \sqcap (\top^{\mathsf{FCD}} \setminus 1^{\mathsf{FCD}}) =
-  \bot^{\mathsf{FCD}}$.
+  \bot^{\mathsf{FCD}}.
+\end{multline*}
 \end{proof}
 
 \begin{example}
@@ -1070,14 +1081,17 @@ $\eqinparens|_{\mathbb{R}} \sqsubseteq f \sqsubseteq \torldin\eqinparens|_{\math
 \end{prop}
 
 \begin{proof}
-  $f = f \circ f \Rightarrow (\mathsf{RLD})_{\operatorname{in}} f =
-  (\mathsf{RLD})_{\operatorname{in}} (f \circ f) \Leftrightarrow \text{(theorem~\ref{rldin-dist})} \Leftrightarrow
+\begin{multline*}
+  f = f \circ f \Rightarrow (\mathsf{RLD})_{\operatorname{in}} f =
+  (\mathsf{RLD})_{\operatorname{in}} (f \circ f) \Leftrightarrow \text{(theorem~\ref{rldin-dist})} \Leftrightarrow \\
   (\mathsf{RLD})_{\operatorname{in}} f =
   (\mathsf{RLD})_{\operatorname{in}} f \circ (\mathsf{RLD})_{\operatorname{in}}
-  f \Rightarrow \tofcd (\mathsf{RLD})_{\operatorname{in}} f =
+  f \Rightarrow \\ \tofcd (\mathsf{RLD})_{\operatorname{in}} f =
   \tofcd (\mathsf{RLD})_{\operatorname{in}} f \circ
   \tofcd (\mathsf{RLD})_{\operatorname{in}} f \Leftrightarrow f
-  = f \circ f$. Thus $f = f \circ f \Leftrightarrow
+  = f \circ f.
+\end{multline*}
+Thus $f = f \circ f \Leftrightarrow
   (\mathsf{RLD})_{\operatorname{in}} f \circ (\mathsf{RLD})_{\operatorname{in}}
   f$.
 \end{proof}
@@ -1231,10 +1245,12 @@ of funcoids and reloids.
 
 \begin{proof}
 Consider a nontrivial ultrafiler~$a$ and the reloid~$f=\id^{\mathsf{RLD}}_a$.
-$\Cor'^{\mathfrak{A}} f = \Cor'^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
-\bigsqcup^{\mathsf{FCD}}\down^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
+\begin{multline*}
+\Cor'^{\mathfrak{A}} f = \Cor'^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =
+\bigsqcup^{\mathsf{FCD}}\down^{\mathsf{FCD}}\id^{\mathsf{RLD}}_a =\\
 \bigsqcup^{\mathsf{FCD}}\emptyset = \bot^{\mathsf{FCD}} \ne
-a\times^{\mathsf{FCD}}a = \tofcd\id^{\mathsf{RLD}}_a$.
+a\times^{\mathsf{FCD}}a = \tofcd\id^{\mathsf{RLD}}_a.
+\end{multline*}
 \end{proof}
 
 I leave to a reader's exercise to apply the above theory to complete funcoids and reloids.

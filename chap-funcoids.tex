@@ -183,10 +183,10 @@ $\supfun{f^{-1}}=\supfun{g^{-1}}\Rightarrow\suprel f=\suprel g$.
 So it's enough to prove that $\suprel f=\suprel g\Rightarrow\supfun f=\supfun
 g$.
 
-Provided that $\suprel f=\suprel g$ we have $\mathcal{Y}\nasymp\supfun
+Provided that $\suprel f=\suprel g$ we have \[\mathcal{Y}\nasymp\supfun
 f\mathcal{X}\Leftrightarrow\mathcal{X}\suprel
 f\mathcal{Y}\Leftrightarrow\mathcal{X}\suprel
-g\mathcal{Y}\Leftrightarrow\mathcal{Y}\nasymp\supfun g\mathcal{X}$
+g\mathcal{Y}\Leftrightarrow\mathcal{Y}\nasymp\supfun g\mathcal{X}\]
 and consequently $\supfun f\mathcal{X}=\supfun g\mathcal{X}$ for
 every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Y}\in\mathscr{F}(B)$
 because a set of filters is separable, thus $\supfun f=\supfun g$.\end{proof}
@@ -683,9 +683,11 @@ exactly one funcoid $f$ such that $\langle f\rangle^{\ast}=\alpha$,
 $\langle f^{-1}\rangle^{\ast}=\beta$.\end{cor}
 \begin{proof}
 Prove $\alpha(I\sqcup J)=\alpha I\sqcup\alpha J$. Really,
-$Y\nasymp\alpha(I\sqcup J)\Leftrightarrow I\sqcup J\nasymp\beta Y\Leftrightarrow
-I\nasymp\beta Y\vee J\nasymp\beta Y\Leftrightarrow Y\nasymp\alpha I\vee
-Y\nasymp\alpha J\Leftrightarrow Y\nasymp\alpha I\sqcup\alpha J$.
+\begin{multline*}
+Y\nasymp\alpha(I\sqcup J)\Leftrightarrow I\sqcup J\nasymp\beta Y\Leftrightarrow
+I\nasymp\beta Y\vee J\nasymp\beta Y\Leftrightarrow\\ Y\nasymp\alpha I\vee
+Y\nasymp\alpha J\Leftrightarrow Y\nasymp\alpha I\sqcup\alpha J.
+\end{multline*}
 So $\alpha(I\sqcup J)=\alpha I\sqcup\alpha J$ by star-separability.
 Similarly $\beta(I\sqcup J)=\beta I\sqcup\beta J$.
 
@@ -1724,19 +1726,23 @@ Thus $g\circ f=\bigsqcap^{\mathsf{FCD}}\setcond{G\circ F}{F\in\up f.G\in\up g}$.
 
 \begin{proof}
   Take $g = (f \setminus (@X \times^{\mathsf{FCD}} \top)) \sqcup
-  \bigsqcup_{q \in X} (@\{ q \} \times^{\mathsf{FCD}} t (x))$ that is $g
-  = \left( f \sqcap \overline{X \times \top} \right) \sqcup \bigsqcup_{q \in
-  X} (@\{ q \} \times^{\mathsf{FCD}} t (x)) = \left( f \sqcap \left(
+  \bigsqcup_{q \in X} (@\{ q \} \times^{\mathsf{FCD}} t (x))$ that is
+\begin{multline*}
+g = \left( f \sqcap \overline{X \times \top} \right) \sqcup \bigsqcup_{q \in
+  X} (@\{ q \} \times^{\mathsf{FCD}} t (x)) = \\\left( f \sqcap \left(
   \overline{X} \times \top \right) \right) \sqcup \bigsqcup_{q \in X} (@\{ q \}
-  \times^{\mathsf{FCD}} t (x))$.
+  \times^{\mathsf{FCD}} t (x)).
+\end{multline*}
 
-  $\supfun{g} p = \text{(theorem~\ref{fcd-fin-join})} = \left\langle f
+\begin{multline*}
+  \supfun{g} p = \text{(theorem~\ref{fcd-fin-join})} =\\ \left\langle f
   \sqcap \left( \overline{X} \times \top \right) \right\rangle p \sqcup
   \bigsqcup_{q \in X} \langle @\{ q \} \times^{\mathsf{FCD}} t (x)
-  \rangle p = \text{(theorem~\ref{fcd-intrs-atom})} = \left( \supfun{f} p \sqcap
+  \rangle p = \\ \text{(theorem~\ref{fcd-intrs-atom})} = \left( \supfun{f} p \sqcap
   \left\langle \overline{X} \times \top \right\rangle p \right) \sqcup
   \bigsqcup_{q \in X} \langle @\{ q \} \times^{\mathsf{FCD}} t (x)
-  \rangle p$.
+  \rangle p.
+\end{multline*}
 
   So $\supfun{g} @\{ x \} = (\supfun{f}^{\ast} @\{ x \} \sqcap
   \bot) \sqcup t (x) = t (x)$ for $x \in X$.
@@ -2548,9 +2554,9 @@ and an ultrafilter $b$ on $B$.
 Suppose $f\in\mathsf{FCD}(A,B)$ is a non-empty complete funcoid.
 Then there exists $\alpha\in A$ such that $\rsupfun
 f@\{\alpha\}\ne\bot^{\mathscr{F}(B)}$.
-Thus $\uparrow^{A}\{\alpha\}\text{\texttimes}^{\mathsf{FCD}}b\sqsubseteq f$
+Thus $\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}b\sqsubseteq f$
 for some ultrafilter $b$ on $B$. If $f$ is an atom then
-$f=\uparrow^{A}\{\alpha\}\text{\texttimes}^{\mathsf{FCD}}b$.\end{proof}
+$f=\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}b$.\end{proof}
 \begin{thm}
 \label{complfcd-rep}$G\mapsto\bigsqcup_{\alpha\in
 A}(\uparrow^{A}\{\alpha\}\times^{\mathsf{FCD}}G(\alpha))$
@@ -3038,11 +3044,11 @@ f^{-1}}p\ne\bot^{\mathscr{F}(\Dst f)}$.
 So it cannot be $f\circ f^{-1}\sqsubseteq1_{\Dst f}^{\mathsf{FCD}}$.
 \item [{\ref{fcd-mmv}$\Rightarrow$\ref{fcd-wmmv}}] Obvious.
 \item [{\ref{fcd-mv}$\Rightarrow$\ref{fcd-mmv}}] ~
-\[
+\begin{multline*}
 \supfun{\left(\bigsqcap G\right)\circ f}x=\supfun{\bigsqcap
-G}\supfun fx=\bigsqcap_{g\in G}\supfun g\supfun fx=\bigsqcap_{g\in
+G}\supfun fx=\bigsqcap_{g\in G}\supfun g\supfun fx=\\\bigsqcap_{g\in
 G}\supfun{g\circ f}x=\supfun{\bigsqcap_{g\in G}(g\circ f)}x
-\]
+\end{multline*}
 for every atomic filter object $x\in\atoms^{\mathscr{F}(\Src f)}$.
 Thus $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$.
 \item [{\ref{fcd-wmmv}$\Rightarrow$\ref{fcd-mv}}] Take

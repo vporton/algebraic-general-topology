@@ -187,15 +187,17 @@ $f\in\Hom(\Ob\mu,\Ob\nu)$ be a monovalued, entirely defined morphism. Then
 \end{thm}
 
 \begin{proof}
-$f \circ \mu \sqsubseteq \nu \circ f \Leftrightarrow \mu
-\sqsubseteq f^{\dagger} \circ \nu \circ f \Rightarrow \mu \circ
+\begin{multline*}
+f \circ \mu \sqsubseteq \nu \circ f \Leftrightarrow \mu
+\sqsubseteq f^{\dagger} \circ \nu \circ f \Rightarrow \\ \mu \circ
 f^{\dagger} \sqsubseteq f^{\dagger} \circ \nu \circ f \circ f^{\dagger}
 \Rightarrow \mu \circ f^{\dagger} \sqsubseteq f^{\dagger} \circ \nu
-\Leftrightarrow f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f
+\Leftrightarrow \\ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f
 \Rightarrow f^{\dagger} \circ f \circ \mu^{\dagger} \sqsubseteq
-f^{\dagger} \circ \nu^{\dagger} \circ f \Rightarrow \mu^{\dagger}
+f^{\dagger} \circ \nu^{\dagger} \circ f \Rightarrow \\ \mu^{\dagger}
 \sqsubseteq f^{\dagger} \circ \nu^{\dagger} \circ f \Leftrightarrow \mu
-\sqsubseteq f^{\dagger} \circ \nu \circ f$.
+\sqsubseteq f^{\dagger} \circ \nu \circ f.
+\end{multline*}
 
 Thus $f \circ \mu \sqsubseteq \nu \circ f \Leftrightarrow \mu \Leftrightarrow
 f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
@@ -291,19 +293,22 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
 
 \begin{proof}
   Let $f \in \continuous (\mu, \nu)$.
-  
-  $X \mathrel{[f \circ \mu \circ \mu^{- 1} \circ f^{- 1}]^{\ast}}
-  Z \Leftrightarrow \exists p \in \atoms^{\mathscr{F}} : \left( X
+
+\begin{multline*}
+  X \mathrel{[f \circ \mu \circ \mu^{- 1} \circ f^{- 1}]^{\ast}}
+  Z \Leftrightarrow \\ \exists p \in \atoms^{\mathscr{F}} : \left( X
   \mathrel{[\mu^{- 1} \circ f^{- 1}]^{\ast}} p \wedge p \mathrel{[f
-  \circ \mu]^{\ast}} Z \right) \Leftrightarrow \exists p \in
+  \circ \mu]^{\ast}} Z \right) \Leftrightarrow \\ \exists p \in
   \atoms^{\mathscr{F}} : \left( p \mathrel{[f \circ \mu]^{\ast}} X
-  \wedge p \mathrel{[f \circ \mu]^{\ast}} Z \right) \Rightarrow \exists
+  \wedge p \mathrel{[f \circ \mu]^{\ast}} Z \right) \Rightarrow \\ \exists
   p \in \atoms^{\mathscr{F}} : \left( p \mathrel{[\nu \circ f]^{\ast}} X
-  \wedge p \mathrel{[\nu \circ f]^{\ast}} Z \right) \Leftrightarrow \exists p
+  \wedge p \mathrel{[\nu \circ f]^{\ast}} Z \right) \Leftrightarrow \\ \exists p
   \in \atoms^{\mathscr{F}} : \left( \rsupfun{f} p
   \mathrel{[\nu]^{\ast}} X \wedge \rsupfun{f} p
   \mathrel{[\nu]^{\ast}} Z \right) \Rightarrow X \mathrel{[\nu \circ \nu^{-
-  1}]^{\ast}} Z$ (taken into account monovaluedness of $f$ and thus that
+  1}]^{\ast}} Z
+\end{multline*}
+(taken into account monovaluedness of $f$ and thus that
   $\rsupfun{f} p$ is atomic or least). Thus $f \circ \mu
   \circ \mu^{- 1} \circ f^{- 1} \sqsubseteq \nu \circ \nu^{- 1}$ that is
   $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{-
@@ -319,25 +324,30 @@ f \circ \mu^{\dagger} \sqsubseteq \nu^{\dagger} \circ f$.
 \end{prop}
 
 \begin{proof}
-  $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
-  \Leftrightarrow f \circ \mu \circ \mu^{- 1} \circ f^{- 1}
+\begin{multline*}
+  f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
+  \Leftrightarrow \\ f \circ \mu \circ \mu^{- 1} \circ f^{- 1}
   \sqsubseteq \nu \circ \nu^{- 1} \Rightarrow \text{(reflexivity of
-  $\mu$)} \Rightarrow f \circ \mu \circ f^{- 1} \sqsubseteq \nu
+  $\mu$)} \Rightarrow \\ f \circ \mu \circ f^{- 1} \sqsubseteq \nu
   \circ \nu^{- 1} \Leftrightarrow f \circ \mu^{- 1} \circ f^{- 1}
-  \sqsubseteq \nu \circ \nu^{- 1} \Rightarrow \langle f \circ \mu^{- 1}
+  \sqsubseteq \nu \circ \nu^{- 1} \Rightarrow \\ \langle f \circ \mu^{- 1}
   \circ f^{- 1} \rangle^{\ast} X \sqsubseteq \supfun{\nu}^{\ast}
-  \langle \nu^{- 1} \rangle^{\ast} X \Rightarrow \Cor \left\langle f
+  \langle \nu^{- 1} \rangle^{\ast} X \Rightarrow \\ \Cor \left\langle f
   \circ \mu^{- 1} \circ f^{- 1} \right\rangle^{\ast} X \sqsubseteq
   \Cor \supfun{\nu}^{\ast} \langle \nu^{- 1} \rangle^{\ast} X
-  \Leftrightarrow \langle f \circ \mu^{- 1} \circ f^{- 1} \rangle^{\ast}
+  \Leftrightarrow \\ \langle f \circ \mu^{- 1} \circ f^{- 1} \rangle^{\ast}
   X \sqsubseteq \Cor \supfun{\nu}^{\ast} \langle \nu^{- 1}
-  \rangle^{\ast} X \Rightarrow \text{($T_1$-separability)} \Rightarrow \langle
+  \rangle^{\ast} X \Rightarrow \\ \text{($T_1$-separability)} \Rightarrow \\ \langle
   f \circ \mu^{- 1} \circ f^{- 1} \rangle^{\ast} X \sqsubseteq \langle
-  \nu^{- 1} \rangle^{\ast} X$ for any typed set $X$ on $\Ob \nu$. Thus
-  $f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
+  \nu^{- 1} \rangle^{\ast} X$ for any typed set $X$ on $\Ob \nu.
+\end{multline*}
+  Thus
+  \begin{multline*}
+f \in \continuous'' (\mu \circ \mu^{- 1} , \nu \circ \nu^{- 1})
   \Rightarrow f \circ \mu^{- 1} \circ f^{- 1} \sqsubseteq \nu^{- 1}
-  \Leftrightarrow f \circ \mu \circ f^{- 1} \sqsubseteq \nu
-  \Leftrightarrow f \in \continuous'' (\mu, \nu)$.
+  \Leftrightarrow \\ f \circ \mu \circ f^{- 1} \sqsubseteq \nu
+  \Leftrightarrow f \in \continuous'' (\mu, \nu).
+  \end{multline*}
 \end{proof}
 
 \begin{thm}
