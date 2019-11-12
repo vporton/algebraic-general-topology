@@ -30,9 +30,15 @@ Note that we consider functions as spaces, too.
 Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
 \end{rem}
 
-Each curried ordered semigroup action induces \emph{the curried ordered semigroup action of space actions}, whose elements are the same a of the original one, spaces are the curried actions of actions of the original semigroup, semigroup operation is function composition, and order of spaces is the product order. PROOF.
+\begin{defn}
+A \emph{functional curried ordered semigroup action} is such an ordered semigroup action that $Ta=a$ for every space~$a$.
+\end{defn}
 
-More generally, we can define a \emph{generalized space} as a homomorphism of ordered groups. ??
+Each curried ordered semigroup action induces a functional curried ordered semigroup action, whose elements are the same a of the original one, spaces are the curried actions of actions of the original semigroup, semigroup operation is function composition, and order of spaces is the product order. PROOF.
+
+Note that this ``inducting'' is an ordered semigroup homomorphism.
+
+More generally, we can define a \emph{generalized space} as a homomorphism of ordered groups. Most of the below however does use poset elements, so it could not be described in terms of generalized spaces.
 
 \emph{Funcoids} described in the first volume of this book form an ordered semigroup with curried action $\supfun{}$. \emph{Reloids} form an ordered semigroup with curried action $a\mapsto\supfun{\torldin a}$.
 As we know from the first volume, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered semigroup actions!
@@ -66,6 +72,8 @@ An element~$x$ is closed regarding~$a$ iff $(Ta)x\leq x$. $x$~is open iff $x$ is
 To define compactness we additionally need the structure of filtrator $(\mathfrak{A},\mathfrak{Z})$ on our poset. Then it is space~$a$ is \emph{directly compact} iff
 \[\forall x\in\mathfrak{A}:(x\text{ is non-least}\Rightarrow\Cor(Ta)x\text{ is non-least}); \]
 $a$~is \emph{reversely compact} iff $a^{\dagger}$ is directly compact; $a$~is \emph{compact} iff it is both directly and reversely compact.
+
+However, we can define compactness without specifying~$\mathfrak{Z}$ as we can take~$\mathfrak{Z}$ to be the center of the poset~$\mathfrak{A}$. \fxwarning{Do I define center for an arbitrary poset?}
 
 It seem we cannot define \emph{total boundness} purely in terms of ordered semigroups, because it is a property of reloids and reloid is not determined by its action.
 
