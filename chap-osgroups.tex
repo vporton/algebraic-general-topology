@@ -2,6 +2,8 @@
 
 I will show that most of the topology can be formulated in an ordered semigroup or an ordered monoid.
 
+For simplicity of notation I speak about semigroups, but all this can be easily generalized to precategories.
+
 \begin{defn}
 \emph{Ordered semigroup} (or \emph{semigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
 \[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
@@ -23,6 +25,12 @@ Note that we consider functions as spaces, too.
 \item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
 \end{enumerate}
 \end{defn}
+
+\begin{rem}
+Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
+\end{rem}
+
+Each curried ordered semigroup action induces \emph{the curried ordered semigroup action of space actions}, whose elements are the same a of the original one, spaces are the curried actions of actions of the original semigroup, semigroup operation is function composition, and order of spaces is the product order. PROOF.
 
 \emph{Funcoids} described in the first volume of this book form an ordered semigroup with curried action $\supfun{}$. \emph{Reloids} form an ordered semigroup with curried action $a\mapsto\supfun{\torldin a}$.
 As we know from the first volume, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered semigroup actions!
@@ -103,6 +111,10 @@ $\id_p p=p \ne q = \id_q q$.
 
 \emph{Ordered semigroup action with identities} is an ordered semigroup~$S$ action~$T$ together with a function $p\mapsto\id_p\in S$ such that $T\id_p=\id_p$. (I abuse the notation $\id_p$ for both spaces and for transformations; this won't lead to inconsistencies, because as proved above this mapping is injective on restricted identities.)
 
+\begin{obvious}
+For every ordered semigroup action with identities, the identity transformations are entirely defined.
+\end{obvious}
+
 From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
 \emph{Restriction} of a space~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
@@ -110,7 +122,7 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 \emph{Binary product} in an ordered semigroup action having a greatest element~$\top$ is defined as $p\times q=\id_q\circ\top\circ\id_p$.
 
 \begin{thm}
-$x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q$.
+\[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
 \end{thm}
 
 \begin{proof}
@@ -126,3 +138,31 @@ $p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasy
 We can define space~$a$ \emph{square restricted} to an element~$p$ as $a\sqcap(p\times p)$.
 
 \emph{Hausdorff} space~$a$ can be defined as having $x\overline{Ra}y$ whenever~$x$ and $y$ are closed and $x\asymp y$.
+
+Pointfree funcoids (and consequently funcoids) are an ordered semigroup action. Reloids are also an ordered semigroup action.
+
+Ordered semigroup action is \emph{ordered by elements} when \[ a\leq b \Leftarrow Ta\leq Tb \] that is when \[ a\leq b \Leftarrow \forall x:(Ta)x\leq(Tb)x. \]
+
+A space~$a$ is \emph{complete} when $(Ta)\bigsqcup S=\bigsqcup\rsupfun{Ta}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{Ta}S$ are defined.
+
+\begin{defn}
+\emph{Completion} of a space is its core part on the filtrator of spaces and complete spaces.
+\end{defn}
+
+\begin{note}
+Apparently, not every space has a completion.
+\end{note}
+
+\begin{defn}
+\emph{Kuratowski space} is a complete idempotent ($a\circ a=a$) space.
+\end{defn}
+
+Kuratowski spaces are a generalization of topological spaces.
+
+Metric spaces are also spaces (PROOF!): Define the action for a metric space as the action of its induced proximity and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)). \]
+
+By the way, what is common in uniform spaces and metric spaces? Both can be considered as a monovalued reloid (for uniform spaces taking boolean values, for metric spaces entirely defined and taking real values). ??
+
+What is then a ball on a uniform space?
+
+Isn't proximity also a XXX-metric, with points being sets or filters?
