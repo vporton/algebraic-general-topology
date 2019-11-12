@@ -1,0 +1,75 @@
+\documentclass[english,reqno,12pt]{amsbook}
+\usepackage[paperwidth=5.06in, paperheight=7.81in]{geometry}
+\usepackage[T1]{fontenc}
+\synctex=-1
+% \usepackage{xcolor}
+% \usepackage{hyperref}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{agt}
+\makeindex
+% \usepackage[all]{xy}
+% \usepackage[unicode=true,
+%  bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+%  breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=true]
+%  {hyperref}
+\hypersetup{pdftitle={Algebraic General Topology. Volume 3. Algebra},
+ pdfauthor={Victor Porton},
+ pdfsubject={general topology, algebra},
+ pdfkeywords={algebraic general topology,quasi-uniform spaces,generalizations of proximity spaces,generalizations of nearness spaces,generalizations of uniform spaces,ordered semigroups,ordered monoids,abstract algebra,universal algebra}}
+
+\usepackage{xr,refcount}
+\externaldocument[book-]{volume-1}
+\newcommand{\bookref}[1]{\ref*{book-#1}}
+
+% Continue numbering of book.pdf
+\setcounter{thm}{\getrefnumber{book-finalthm}}
+\addtocounter{thm}{-1}
+
+\begin{document}
+
+\title{Algebraic General Topology. Volume 3. Algebra}
+
+\author{Victor Porton}
+
+\email{\href{mailto:porton@narod.ru}{porton@narod.ru}}
+
+\urladdr{\href{http://www.mathematics21.org}{http://www.mathematics21.org}}
+
+\date{\today}
+
+\begin{abstract}
+TODO
+\end{abstract}
+
+
+\keywords{algebraic general topology, quasi-uniform spaces, generalizations
+of proximity spaces, generalizations of nearness spaces, generalizations
+of uniform spaces, ordered semigroups, ordered monoids, abstract algebra, universal algebra}
+
+
+\subjclass[2000]{FIXME, 54J05, 54A05, 54D99, 54E05, 54E15, 54E17, 54E99}
+
+\maketitle
+
+\tableofcontents{}
+
+This file is a rough draft.
+
+It is a continuation of \cite{volume-1}.
+
+\include{chap-osgroups}
+
+% \printindex{}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
