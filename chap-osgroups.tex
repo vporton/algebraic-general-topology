@@ -246,15 +246,48 @@ Kuratowski spaces are a generalization of topological spaces.
 
 Let's denote $\Delta_a$ the proximity space induced by a metric space.
 
-Metric spaces are also spaces: Define the order on metric spaces by the formula $\rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\leq\sigma(x,y)$. Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)), \]
+\begin{thm}
+\[ \supfun{\Delta_a}X = \bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B[x,\epsilon]. \]
+\end{thm}
+
+\begin{proof}
+\begin{multline*}
+Y\nasymp\supfun{\Delta_a}X\Leftrightarrow X\suprel{\Delta_a}Y \Leftrightarrow \\ \forall\epsilon>0\exists x\in X,y\in Y:\rho_a(x,y)<\epsilon.
+\end{multline*}
+\begin{multline*}
+Y\nasymp\bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\ \forall\epsilon>0:Y\nasymp\bigsqcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X:Y\nasymp B_a(x,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in Y:\rho_a(x,y)<\epsilon.
+\end{multline*}
+\end{proof}
+
+
+Metric spaces (on some fixed set~$\mho$) are also spaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)), \]
 where~$\mho$ is the set of points of our metric space.
 
 \begin{lem}
-$\Delta_{b\circ a} = \Delta_b\circ\Delta_a$.
+$\Delta_{b\circ a} = \Delta_b\circ\Delta_a$. \fxnote{It has a name: semigroup homomorphism.}
 \end{lem}
 
 \begin{proof}
-??
+Let~$X$,~$Y$ be arbitrary sets on a metric space.
+\begin{multline*}
+Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,z\in Z:\inf_{y\in\mho}(\rho_a(x,y)+\rho_b(y,z))<\epsilon \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:\rho_a(x,y)+\rho_b(y,z)<\epsilon \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:(\rho_a(x,y)<\epsilon\land\rho_b(y,z)<\epsilon)
+\end{multline*}
+\begin{multline*}
+Z\nasymp\supfun{\Delta_b\circ\Delta_a}X \Leftrightarrow
+Z\nasymp\supfun{\Delta_b}\supfun{\Delta_a}X\Leftrightarrow\\
+\supfun{\Delta_b^{-1}}Z\nasymp\supfun{\Delta_a}X \Leftrightarrow\\
+\bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcap_{\epsilon>0}\bigsqcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0:\bigsqcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,z\in Z:B_a(x,\epsilon)\nasymp B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,z\in Z,y\in\mho:(\rho_a(x,z)<\epsilon\land\rho_b(z,y)<\epsilon).
+\end{multline*}
+
+So, $Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow Z\nasymp\supfun{\Delta_b\circ\Delta_a}X$.
 \end{proof}
 
 Let's prove it's really an ordered semigroup action:
@@ -267,7 +300,7 @@ Let's prove it's really an ordered semigroup action:
 (\tau\circ(\sigma\circ\rho))(x,z) = \\
 \inf_{y_0\in\mho}((\sigma\circ\rho)(x,y_0)+\tau(y_0,z)) = \\
 \inf_{y_0\in\mho}(\inf_{y_1\in\mho}(\rho(x,y_1)+\sigma(y_1,z))+\tau(y_0,z)) = \\
-\inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)+\tau(y,z)).
+\inf_{y_0,y_1\in\mho}(\rho(x,y)+\sigma(y,z)+\tau(y,z)).
 \end{multline*}
 Similarly 
 \begin{multline*}
@@ -280,12 +313,12 @@ Thus $\tau\circ(\sigma\circ\rho)=(\tau\circ\sigma)\circ\rho$.
 $(Ta)x = \supfun{\Delta_a} x \sqsubseteq \supfun{\Delta_a} y = (Ta)y$ 
 for filters $x\sqsubseteq y$.
 
-??
-
-\item $(T(b\circ a))x = (Tb)(Ta)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-$x,y\in\mathfrak{A}$;
-\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$. ??
+\item
+\begin{multline*}
+T(b\circ a) = \supfun{\Delta_{b\circ a}} = \\ \supfun{\Delta_b\circ\Delta_a} = \\ \supfun{\Delta_b}\circ\supfun{\Delta_a} = (Tb)\circ(Ta);
+\end{multline*}
+\item $a\leq b\Rightarrow Ta\leq Tb$ is obvious;
+\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$ is obvious.
 \end{itemize}
 \end{proof}
 
