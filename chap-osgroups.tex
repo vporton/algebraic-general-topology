@@ -55,7 +55,20 @@ We can order actions componentwise. Then the above axioms simplify to:
 A \emph{functional curried ordered semigroup action} is such an ordered semigroup action that $Ta=a$ for every space~$a$.
 \end{defn}
 
-Each curried ordered semigroup action induces a functional curried ordered semigroup action, whose elements are the same a of the original one, spaces are the curried actions of actions of the original semigroup, semigroup operation is function composition, and order of spaces is the product order. PROOF.
+\begin{thm}
+Each curried ordered semigroup action induces a functional curried ordered semigroup action, whose elements are the same a of the original one, spaces are the curried actions of actions of the original semigroup, semigroup operation is function composition, and order of spaces is the product order.
+\end{thm}
+
+\begin{proof}
+That it's a semigroup is obvious. The partial order is the same as the original. It remains to prove the remaining axioms.
+
+For our semigroup
+\[ T(b\circ a) = b\circ a=T(b)\circ T(a). \]
+
+$T$ is increasing because it's the identity function.
+
+$Ta$ is the same as one of the original ordered semigroup action and thus is increasing.
+\end{proof}
 
 Note that this ``inducting'' is an ordered semigroup homomorphism.
 
@@ -231,7 +244,35 @@ Kuratowski spaces are a generalization of topological spaces.
 
 \section{Metric spaces}
 
-Metric spaces are also spaces (PROOF!): Define the action for a metric space as the action of its induced proximity and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)). \]
+Metric spaces are also spaces: Define the order on metric spaces by the formula $\rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\leq\sigma(x,y)$. Define the action for a metric space~$a$ as the action $\Delta_a$ of its induced proximity and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)), \]
+where~$\mho$ is the set of points of our metric space.
+
+Let's prove it's really an ordered semigroup action:
+
+\begin{proof}
+~
+\begin{itemize}
+\item It's a semigroup because
+\begin{multline*}
+(\tau\circ(\sigma\circ\rho))(x,z) = \\
+\inf_{y_0\in\mho}((\sigma\circ\rho)(x,y_0)+\tau(y_0,z)) = \\
+\inf_{y_0\in\mho}(\inf_{y_1\in\mho}(\rho(x,y_1)+\sigma(y_1,z))+\tau(y_0,z)) = \\
+\inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)+\tau(y,z)).
+\end{multline*}
+Similarly 
+\begin{multline*}
+((\tau\circ\sigma)\circ\rho)(x,z) = \\
+\inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)+\tau(y,z)).
+\end{multline*}
+Thus $\tau\circ(\sigma\circ\rho)=(\tau\circ\sigma)\circ\rho$.
+
+\item It is an ordered semigroup, because
+$(Ta)x = \Delta_a x \sqsubseteq \Delta_a y = (Ta)y$ 
+for filters $x\sqsubseteq y$.
+
+\item ??
+\end{itemize}
+\end{proof}
 
 By the way, what is common in uniform spaces and metric spaces? Both can be considered as a monovalued reloid (for uniform spaces taking boolean values, for metric spaces entirely defined and taking real values). ??
 
