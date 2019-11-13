@@ -6,6 +6,20 @@
 
 default: volume-1.pdf
 
+.PRECIOUS: tmp/%/index.html
+tmp/%/index.html: %.tex
+	mkdir -p tmp/$*
+	texmacs -c $< $@ -q
+
+%.epub: tmp/%/index.html
+	cd tmp/$* && pandoc -f html -t epub -o ../../$@ ../../$<
+
+%.epub: %_polished.html
+	ebook-polish -i -u $< $@
+
+%.docx: %_polished.epub
+	pandoc -f epub -t docx -o $@ $<
+
 all: volume-1.pdf addons.pdf volume-2.pdf ideas.pdf
 
 FORCE::
@@ -37,4 +51,5 @@ ideas.pdf: FORCE
 	pdflatex ideas.tex
 
 clean: FORCE
-	rm -f *.pdf *.aux *.bbl *.blg *.dvi *.idx *.log *.out *.toc *.ilg *.ind *.synctex
+	rm -f *.pdf *.aux *.bbl *.blg *.dvi *.idx *.log *.out *.toc *.ilg *.ind *.synctex *.epub *.docx
+	rm -rf tmp
