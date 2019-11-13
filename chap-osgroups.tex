@@ -32,7 +32,7 @@ Note that we consider functions as spaces, too. (See~\cite{volume-1} for an inte
 \section{Ordered semigroup actions}
 
 \begin{defn}
-\emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a ?? function $T$ such that
+\emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $T:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
 \begin{enumerate}
 \item $(T(b\circ a))x = (Tb)(Ta)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
 $x,y\in\mathfrak{A}$;
@@ -136,19 +136,18 @@ We can define open and closed functions.
 
 \section{Further axioms}
 
-Further axioms:
+Further possible axioms for an ordered semigroup action with binary joins:
 
-$(Tf)(x\sqcup y)=(Tf)x\sqcup(Tf)y$
+\begin{itemize}
+\item $(Tf)(x\sqcup y)=(Tf)x\sqcup(Tf)y$;
+\item $(T(f\sqcup g))x=(Tf)x\sqcup(Tg)x$.
+\end{itemize}
 
-$(T(f\sqcup g))x=(Tf)x\sqcup(Tg)x$
-
-or in more general form for arbitrary posets:
-
-??
+\fxnote{Need to generalize for a wider class of posets.}
 
 \section{Product of ordered semigroup actions}
 
-Product of actions is ??.
+\fxnote{TODO.}
 
 \begin{proof}
 ??
@@ -182,17 +181,35 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
 \section{Binary product of poset elements}
 
+\begin{defn}
+I call an ordered semigroup action \emph{correctly bounded} when the set of spaces is bounded and:
+\begin{enumerate}
+\item $(T\bot)x = \bot$ for every poset element~$x$;
+\item $(T\top)x =
+\left\{\begin{array}{ll}\top&\text{if }x\ne\bot,\\\bot&\text{if }x=\bot.\end{array}\right.$
+\end{enumerate}
+\end{defn}
+
 \emph{Binary product} in an ordered semigroup action having a greatest element~$\top$ is defined as $p\times q=\id_q\circ\top\circ\id_p$.
 
 \begin{thm}
-\[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
+If our action is correctly bounded, then
+\[ (T\top)x=
+x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
 \end{thm}
 
 \begin{proof}
-??
+\begin{multline*}
+x(R(p\times q))y \Leftrightarrow
+y\nasymp(T(p\times q))x \Leftrightarrow \\
+y\nasymp(T(\id_q\circ\top\circ\id_p))x \Leftrightarrow \\
+y\nasymp (T\id_q)(T\top)(T\id_p)x \Leftrightarrow \\
+y\nasymp q\sqcap(T\top)(p\sqcap x) \Leftrightarrow \\
+y\nasymp
+\left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right. \Leftrightarrow \\
+x\nasymp p\land y\nasymp q.
+\end{multline*}
 \end{proof}
-
-REMOVE: Ordered semigroup action with a product is such an ordered semigroup action~$T$ together with a binary operation~$\times$ on elements that 
 
 \begin{thm}
 $p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1$.
@@ -240,7 +257,7 @@ Kuratowski spaces are a generalization of topological spaces.
 
 \section{Metric spaces}
 
-Let's denote $\Delta_a$ the proximity space induced by a metric space.
+Let's denote $\Delta_a$ the proximity space induced by a metric space (or more generally quasimetric space)~$a$.
 
 \begin{thm}
 \[ \supfun{\Delta_a}X = \bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B[x,\epsilon]. \]
@@ -258,11 +275,11 @@ Y\nasymp\bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow 
 \end{proof}
 
 
-Metric spaces (on some fixed set~$\mho$) are also spaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)), \]
+Metric spaces (on some fixed set~$\mho$) are also spaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)), \]
 where~$\mho$ is the set of points of our metric space.
 
 \begin{lem}
-$\Delta_{b\circ a} = \Delta_b\circ\Delta_a$. \fxnote{It has a name: semigroup homomorphism.}
+$\Delta_{b\circ a} = \Delta_b\circ\Delta_a$.
 \end{lem}
 
 \begin{proof}
