@@ -244,8 +244,18 @@ Kuratowski spaces are a generalization of topological spaces.
 
 \section{Metric spaces}
 
-Metric spaces are also spaces: Define the order on metric spaces by the formula $\rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\leq\sigma(x,y)$. Define the action for a metric space~$a$ as the action $\Delta_a$ of its induced proximity and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)), \]
+Let's denote $\Delta_a$ the proximity space induced by a metric space.
+
+Metric spaces are also spaces: Define the order on metric spaces by the formula $\rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\leq\sigma(x,y)$. Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)), \]
 where~$\mho$ is the set of points of our metric space.
+
+\begin{lem}
+$\Delta_{b\circ a} = \Delta_b\circ\Delta_a$.
+\end{lem}
+
+\begin{proof}
+??
+\end{proof}
 
 Let's prove it's really an ordered semigroup action:
 
@@ -267,10 +277,15 @@ Similarly
 Thus $\tau\circ(\sigma\circ\rho)=(\tau\circ\sigma)\circ\rho$.
 
 \item It is an ordered semigroup, because
-$(Ta)x = \Delta_a x \sqsubseteq \Delta_a y = (Ta)y$ 
+$(Ta)x = \supfun{\Delta_a} x \sqsubseteq \supfun{\Delta_a} y = (Ta)y$ 
 for filters $x\sqsubseteq y$.
 
-\item ??
+??
+
+\item $(T(b\circ a))x = (Tb)(Ta)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+$x,y\in\mathfrak{A}$;
+\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$. ??
 \end{itemize}
 \end{proof}
 
