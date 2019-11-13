@@ -1,8 +1,20 @@
 \chapter{Ordered Semigroups}
 
-I will show that most of the topology can be formulated in an ordered semigroup or an ordered monoid.
+\section{Introduction}
+
+I will show that most of the topology can be formulated in an ordered semigroup (or an ordered monoid).
 
 For simplicity of notation I speak about semigroups, but all this can be easily generalized to precategories.
+
+\section{Prerequisites}
+
+You need to know about semigroups, ordered semigroups, semigroup actions, before reading further. If in doubt, consult Wikipedia.
+
+\emph{Filtrators} are pairs of a poset and its subset (in induced order). An important example of filtrator is the set of filters on some poset together with the subset of principal filters. (Note that I order filters \emph{reversely} to the set inclusion relation: So for filters I have $a\leq b \Leftrightarrow a\supseteq b$.)
+
+I call two elements~$a$ and~$b$ \emph{intersecting} when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semigroups with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
+
+\section{Ordered semigroups}
 
 \begin{defn}
 \emph{Ordered semigroup} (or \emph{semigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
@@ -11,24 +23,33 @@ For simplicity of notation I speak about semigroups, but all this can be easily 
 
 In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, proximity spaces, uniform spaces, (directed) graphs.
 
-Note that we consider functions as spaces, too.
+Note that we consider functions as spaces, too. (See~\cite{volume-1} for an interpretation of both topological spaces and functions as funcoids, a kind of spaces.)
 
 \begin{defn}
 \emph{Ordered monoid} (or \emph{pomonoid}) is an ordered semigroup that is a monoid.
 \end{defn}
 
+\section{Ordered semigroup actions}
+
 \begin{defn}
 \emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a ?? function $T$ such that
 \begin{enumerate}
 \item $(T(b\circ a))x = (Tb)(Ta)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$, $x,y\in\mathfrak{A}$;
-\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
-\end{enumerate}
+$x,y\in\mathfrak{A}$;
+\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$. \end{enumerate}
 \end{defn}
 
 \begin{rem}
 Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
 \end{rem}
+
+We can order actions componentwise. Then the above axioms simplify to:
+\begin{enumerate}
+\item $T(b\circ a) = (Tb)\circ(Ta)$ for all $a,b\in S$;
+\item $T$ is a (not necessarily strictly) increasing;
+\item $Ta$ is a (not necessarily strictly) increasing, for every space~$a$.
+\end{enumerate}
 
 \begin{defn}
 A \emph{functional curried ordered semigroup action} is such an ordered semigroup action that $Ta=a$ for every space~$a$.
@@ -45,9 +66,17 @@ Having a curried ordered semigroup action and a homomorphism to its ordered semi
 \emph{Funcoids} described in the first volume of this book form an ordered semigroup with curried action $\supfun{}$. \emph{Reloids} form an ordered semigroup with curried action $a\mapsto\supfun{\torldin a}$.
 As we know from the first volume, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered semigroup actions!
 
+Remember that elements of our semigroup order may be such things as sets or more generally filter, they are no points. So our topological construction is ``pointfree'' (we consider sets or filters, not points).
+
 This book is mainly about this topic: describing general topology in terms of ordered semigroup actions. Above are the new axioms for general topology. No topological spaces here.
 
 We will need also \emph{semigroups with involution}.
+
+Ordered semigroup action is \emph{ordered by elements} when \[ a\leq b \Leftarrow Ta\leq Tb \] that is when \[ a\leq b \Leftarrow \forall x:(Ta)x\leq(Tb)x. \]
+
+Obviously, in this case~$T$ is an injection. So our curried ordered semigroup action is \emph{essentially functional}.
+
+\section{Ordered semigroups with involution}
 
 \begin{defn}
 \emph{Semigroup with involution} is a semigroup together with the operation $a\mapsto a^{\dagger}$ (\emph{involution}) such that:
@@ -59,13 +88,16 @@ We will need also \emph{semigroups with involution}.
 
 For an \emph{ordered semigroup with involution} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
 
-Now we have a formalism to describe many topological properties (following the ideas of first volume):
+\section{Topological properties}
+
+Now we have a formalism to describe many topological properties (following the ideas of~\cite{volume-1}):
 
 Continuity is described by the formulas $f\circ a\leq a\circ f$, $f\circ a\circ f^{\dagger}\leq a$, $a\leq f^{\dagger}\circ a\circ f$.
 
-Limit is described?? by the formula $(Tf)x\leq(Tg)y$.
+Convergence of a function~$f$ at filter~$x$ to a set or filter~$y$ is described by the formula $(Tf)(T\mu)x\leq(T\nu)y$.
 
-Generalized limit of an arbitrary (discontionuous) space is described by the formula $\xlim f=\setcond{\nu\circ f\circ r}{r\in G}$.
+Generalized limit of an arbitrary space~$f$ (for example, of an arbitrary (possibly discontionuous) function) is described by the formula \[ \xlim f=\setcond{\nu\circ f\circ r}{r\in G}, \]
+where~$G$~is a group of spaces (consider for example the group of all translations of a vector space).
 
 \emph{Neighborhood} of element~$x$ is such a $y$ that $(Ta)x\leq y$. \emph{Interior} of~$x$ (if it exists) if the join of all $y$ such that $x$ is a neighborhood of~$x$.
 
@@ -75,9 +107,11 @@ To define compactness we additionally need the structure of filtrator $(\mathfra
 \[\forall x\in\mathfrak{A}:(x\text{ is non-least}\Rightarrow\Cor(Ta)x\text{ is non-least}); \]
 $a$~is \emph{reversely compact} iff $a^{\dagger}$ is directly compact; $a$~is \emph{compact} iff it is both directly and reversely compact.
 
-However, we can define compactness without specifying~$\mathfrak{Z}$ as we can take~$\mathfrak{Z}$ to be the center of the poset~$\mathfrak{A}$. \fxwarning{Do I define center for an arbitrary poset?}
+However, we can define compactness without specifying~$\mathfrak{Z}$ as we can take~$\mathfrak{Z}$ to be the \emph{center} (the set of all its complemented elements) of the poset~$\mathfrak{A}$.
 
 It seem we cannot define \emph{total boundness} purely in terms of ordered semigroups, because it is a property of reloids and reloid is not determined by its action.
+
+\section{A relation}
 
 Every ordered semigroup action~$T$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp(Ta)x$.
 
@@ -89,6 +123,10 @@ If $Ra^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an involuti
 
 A space is connected iff $x\equiv y\Rightarrow x(Ra)y$. Define ``other'' connectedness also through series.
 
+We can define open and closed functions.
+
+\section{Further axioms}
+
 Further axioms:
 
 $(Tf)(x\sqcup y)=(Tf)x\sqcup(Tf)y$
@@ -99,13 +137,15 @@ or in more general form for arbitrary posets:
 
 ??
 
-Product of actions is ??.
+\section{Product of ordered semigroup actions}
 
-We can define open and closed functions.
+Product of actions is ??.
 
 \begin{proof}
 ??
 \end{proof}
+
+\section{Restricted identity transformations}
 
 \emph{Restricted identity transformation} $\id_p$ is the (generally, partially defined) transformation $x\mapsto x\sqcap p$.
 
@@ -131,6 +171,8 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
 \emph{Restriction} of a space~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
 
+\section{Binary product of poset elements}
+
 \emph{Binary product} in an ordered semigroup action having a greatest element~$\top$ is defined as $p\times q=\id_q\circ\top\circ\id_p$.
 
 \begin{thm}
@@ -149,9 +191,13 @@ $p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasy
 
 We can define space~$a$ \emph{square restricted} to an element~$p$ as $a\sqcap(p\times p)$.
 
+\section{Separable spaces}
+
 \emph{Hausdorff} space~$a$ can be defined as having $x\overline{Ra}y$ whenever~$x$ and $y$ are closed and $x\asymp y$.
 
 TODO: Define other kinds of separability through hausdorffness and completion.
+
+\section{Distributive orders semigroup actions}
 
 We can define (pointwise) order of curried ordered semigroup actions. For functional curried ordered semigroup actions composition is defined. So we have one more ``level'' of ordered semigroups. By the way, it can be continued indefinitely building new and new levels of such ordered semigroups.
 
@@ -159,25 +205,31 @@ More generally we could consider ordered semigroup homomorphisms. Examples of su
 
 Pointfree funcoids (and consequently funcoids) are an ordered semigroup action. Reloids are also an ordered semigroup action.
 
-Ordered semigroup action is \emph{ordered by elements} when \[ a\leq b \Leftarrow Ta\leq Tb \] that is when \[ a\leq b \Leftarrow \forall x:(Ta)x\leq(Tb)x. \]
-
-Obviously, in this case~$T$ is an injection. So our curried ordered semigroup action is \emph{essentially functional}.
+\section{Complete spaces and completion of spaces}
 
 A space~$a$ is \emph{complete} when $(Ta)\bigsqcup S=\bigsqcup\rsupfun{Ta}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{Ta}S$ are defined.
 
 \begin{defn}
-\emph{Completion} of a space is its core part on the filtrator of spaces and complete spaces.
+\emph{Completion} of a space is its core part (see~\cite{volume-1} for a definition of core part) on the filtrator of spaces and complete spaces.
 \end{defn}
 
 \begin{note}
 Apparently, not every space has a completion.
 \end{note}
 
+\begin{note}
+It is unrelated with Cachy-completion.
+\end{note}
+
+\section{Kuratowski spaces}
+
 \begin{defn}
 \emph{Kuratowski space} is a complete idempotent ($a\circ a=a$) space.
 \end{defn}
 
 Kuratowski spaces are a generalization of topological spaces.
+
+\section{Metric spaces}
 
 Metric spaces are also spaces (PROOF!): Define the action for a metric space as the action of its induced proximity and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)). \]
 
@@ -186,5 +238,7 @@ By the way, what is common in uniform spaces and metric spaces? Both can be cons
 What is then a ball on a uniform space?
 
 Isn't proximity also a XXX-metric, with points being sets or filters?
+
+\section{Normed spaces}
 
 Normed spaces are also spaces.
