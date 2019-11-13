@@ -17,10 +17,12 @@ tmp/%/index.html: %.tex
 %_polished.epub: %.epub
 	ebook-polish -i -u $< $@
 
+# Resulting file does not diplay in Kindle preview properly
 %.docx: %_polished.epub
 	pandoc -f epub -t docx -o $@ $<
 
-all: volume-1.pdf addons.pdf volume-2.pdf ideas.pdf
+# %.docx: tmp/%/index.html
+# 	cd tmp/$* && pandoc -f html -t docx -o ../../$@ ../../$<
 
 FORCE::
 
