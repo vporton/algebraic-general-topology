@@ -1,12 +1,10 @@
-\chapter{Ordered Semigroups}
-
-\section{Introduction}
+\chapter{Introduction}
 
 I will show that most of the topology can be formulated in an ordered semigroup (or an ordered monoid).
 
 For simplicity of notation I speak about semigroups, but all this can be easily generalized to precategories.
 
-\section{Prerequisites}
+\chapter{Prerequisites}
 
 You need to know about semigroups, ordered semigroups, semigroup actions, before reading further. If in doubt, consult Wikipedia.
 
@@ -14,7 +12,7 @@ You need to know about semigroups, ordered semigroups, semigroup actions, before
 
 I call two elements~$a$ and~$b$ \emph{intersecting} when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semigroups with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
 
-\section{Ordered semigroups}
+\chapter{Ordered semigroups}
 
 \begin{defn}
 \emph{Ordered semigroup} (or \emph{semigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
@@ -29,7 +27,7 @@ Note that we consider functions as spaces, too. (See~\cite{volume-1} for an inte
 \emph{Ordered monoid} (or \emph{pomonoid}) is an ordered semigroup that is a monoid.
 \end{defn}
 
-\section{Ordered semigroup actions}
+\chapter{Ordered semigroup actions}
 
 \begin{defn}
 \emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $T:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
@@ -89,7 +87,7 @@ Ordered semigroup action is \emph{ordered by elements} when \[ a\leq b \Leftarro
 
 Obviously, in this case~$T$ is an injection. So our curried ordered semigroup action is \emph{essentially functional}.
 
-\section{Ordered semigroups with involution}
+\chapter{Ordered semigroups with involution}
 
 \begin{defn}
 \emph{Semigroup with involution} is a semigroup together with the operation $a\mapsto a^{\dagger}$ (\emph{involution}) such that:
@@ -101,7 +99,7 @@ Obviously, in this case~$T$ is an injection. So our curried ordered semigroup ac
 
 For an \emph{ordered semigroup with involution} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
 
-\section{Topological properties}
+\chapter{Topological properties}
 
 Now we have a formalism to describe many topological properties (following the ideas of~\cite{volume-1}):
 
@@ -124,7 +122,7 @@ However, we can define compactness without specifying~$\mathfrak{Z}$ as we can t
 
 It seem we cannot define \emph{total boundness} purely in terms of ordered semigroups, because it is a property of reloids and reloid is not determined by its action.
 
-\section{A relation}
+\chapter{A relation}
 
 Every ordered semigroup action~$T$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp(Ta)x$.
 
@@ -134,7 +132,7 @@ A space is connected iff $x\equiv y\Rightarrow x(Ra)y$. Define ``other'' connect
 
 We can define open and closed functions.
 
-\section{Further axioms}
+\chapter{Further axioms}
 
 Further possible axioms for an ordered semigroup action with binary joins:
 
@@ -145,11 +143,11 @@ Further possible axioms for an ordered semigroup action with binary joins:
 
 \fxnote{Need to generalize for a wider class of posets.}
 
-\section{Product of ordered semigroup actions}
+\chapter{Product of ordered semigroup actions}
 
 \fxnote{TODO.}
 
-\section{Restricted identity transformations}
+\chapter{Restricted identity transformations}
 
 \emph{Restricted identity transformation} $\id_p$ is the (generally, partially defined) transformation $x\mapsto x\sqcap p$.
 
@@ -175,7 +173,7 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
 \emph{Restriction} of a space~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
 
-\section{Binary product of poset elements}
+\chapter{Binary product of poset elements}
 
 \begin{defn}
 I call an ordered semigroup action \emph{correctly bounded} when the set of spaces is bounded and:
@@ -213,13 +211,13 @@ $p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasy
 
 We can define space~$a$ \emph{square restricted} to an element~$p$ as $a\sqcap(p\times p)$.
 
-\section{Separable spaces}
+\chapter{Separable spaces}
 
 \emph{Hausdorff} space~$a$ can be defined as having $x\overline{Ra}y$ whenever~$x$ and $y$ are closed and $x\asymp y$.
 
 TODO: Define other kinds of separability through hausdorffness and completion.
 
-\section{Distributive orders semigroup actions}
+\chapter{Distributive orders semigroup actions}
 
 We can define (pointwise) order of curried ordered semigroup actions. For functional curried ordered semigroup actions composition is defined. So we have one more ``level'' of ordered semigroups. By the way, it can be continued indefinitely building new and new levels of such ordered semigroups.
 
@@ -227,7 +225,7 @@ More generally we could consider ordered semigroup homomorphisms. Examples of su
 
 Pointfree funcoids (and consequently funcoids) are an ordered semigroup action. Reloids are also an ordered semigroup action.
 
-\section{Complete spaces and completion of spaces}
+\chapter{Complete spaces and completion of spaces}
 
 A space~$a$ is \emph{complete} when $(Ta)\bigsqcup S=\bigsqcup\rsupfun{Ta}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{Ta}S$ are defined.
 
@@ -243,7 +241,7 @@ Apparently, not every space has a completion.
 It is unrelated with Cachy-completion.
 \end{note}
 
-\section{Kuratowski spaces}
+\chapter{Kuratowski spaces}
 
 \begin{defn}
 \emph{Kuratowski space} is a complete idempotent ($a\circ a=a$) space.
@@ -251,12 +249,13 @@ It is unrelated with Cachy-completion.
 
 Kuratowski spaces are a generalization of topological spaces.
 
-\section{Metric spaces}
+\chapter{Metric spaces}
 
 Let's denote $\Delta_a$ the proximity space induced by a metric space (or more generally quasimetric space)~$a$.
 
 \begin{thm}
-\[ \supfun{\Delta_a}X = \bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B[x,\epsilon]. \]
+\[ \supfun{\Delta_a}X = \bigsqcap_{\epsilon>0}\bigcup_{x\in X}B(x,\epsilon) \]
+($B(x,\epsilon)$ is the open ball of the radius~$\epsilon$ centered at~$x$).
 \end{thm}
 
 \begin{proof}
@@ -264,7 +263,7 @@ Let's denote $\Delta_a$ the proximity space induced by a metric space (or more g
 Y\nasymp\supfun{\Delta_a}X\Leftrightarrow X\suprel{\Delta_a}Y \Leftrightarrow \\ \forall\epsilon>0\exists x\in X,y\in Y:\rho_a(x,y)<\epsilon.
 \end{multline*}
 \begin{multline*}
-Y\nasymp\bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\ \forall\epsilon>0:Y\nasymp\bigsqcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\
+Y\nasymp\bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\ \forall\epsilon>0:Y\nasymp\bigcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\
 \forall\epsilon>0\exists x\in X:Y\nasymp B_a(x,\epsilon) \Leftrightarrow \\
 \forall\epsilon>0\exists x\in X,y\in Y:\rho_a(x,y)<\epsilon.
 \end{multline*}
@@ -290,8 +289,8 @@ Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow \\
 Z\nasymp\supfun{\Delta_b\circ\Delta_a}X \Leftrightarrow
 Z\nasymp\supfun{\Delta_b}\supfun{\Delta_a}X\Leftrightarrow\\
 \supfun{\Delta_b^{-1}}Z\nasymp\supfun{\Delta_a}X \Leftrightarrow\\
-\bigsqcap_{\epsilon>0}\bigsqcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcap_{\epsilon>0}\bigsqcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
-\forall\epsilon>0:\bigsqcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
+\bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcap_{\epsilon>0}\bigcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0:\bigcup_{x\in X}B_a(x,\epsilon) \nasymp\bigcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
 \forall\epsilon>0\exists x\in X,z\in Z:B_a(x,\epsilon)\nasymp B_b(z,\epsilon) \Leftrightarrow \\
 \forall\epsilon>0\exists x\in X,z\in Z,y\in\mho:(\rho_a(x,z)<\epsilon\land\rho_b(z,y)<\epsilon).
 \end{multline*}
