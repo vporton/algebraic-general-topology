@@ -14,7 +14,7 @@ tmp/%/index.html: %.tex
 %.epub: tmp/%/index.html
 	cd tmp/$* && pandoc -f html -t epub -o ../../$@ ../../$<
 
-%.epub: %_polished.html
+%_polished.epub: %.epub
 	ebook-polish -i -u $< $@
 
 %.docx: %_polished.epub
