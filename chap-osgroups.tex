@@ -237,10 +237,10 @@ Further possible axioms for an ordered semigroup action with binary joins:
 
 \chapter{Restricted identity transformations}
 
-\emph{Restricted identity transformation} $\id_p$ is the (generally, partially defined) transformation $x\mapsto x\sqcap p$.
+\emph{Restricted identity transformation} $\id_p$, where ~$p$ is an element of a poset, is the (generally, partially defined) transformation $x\mapsto x\sqcap p$.
 
 \begin{obvious}
-$\id_q\circ\id_p = \id_{p\sqcap q}$.
+$\id_q\circ\id_p = \id_{p\sqcap q}$ if~$p$ and~$q$ are elements of some poset for which binary meet is defined.
 \end{obvious}
 
 \begin{prop}
@@ -251,20 +251,22 @@ $p\ne q\Rightarrow\id_p\ne\id_q$.
 $\id_p p=p \ne q = \id_q q$.
 \end{proof}
 
-\emph{Ordered semigroup action with identities} is an ordered semigroup~$S$ action~$T$ together with a function $p\mapsto\id_p\in S$ such that $T\id_p=\id_p$. (I abuse the notation $\id_p$ for both spaces and for transformations; this won't lead to inconsistencies, because as proved above this mapping is injective on restricted identities.)
+\emph{Ordered precategory action with identities} is an ordered precategory~$S$ action~$T$ together with a function $p\mapsto\id_p\in S$ such that $T\id_p=\id_p$ whenever this equality is defined. (I abuse the notation $\id_p$ for both interspaces and for transformations; this won't lead to inconsistencies, because as proved above this mapping is faithful on restricted identities.)
 
 \begin{obvious}
-For every ordered semigroup action with identities, the identity transformations are entirely defined.
+For every ordered precategory action with identities, the identity transformations are entirely defined on their domains.
 \end{obvious}
 
 From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
-\emph{Restriction} of a space~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
+\emph{Restriction} of an interspace~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
+
+\emph{Square restriction} (a generalization of restriction of a topological space, metric space, etc.) of a interspace~$a$ to element~$x$ is $\id_x\circ a\circ\id_x$.
 
 \chapter{Binary product of poset elements}
 
 \begin{defn}
-I call an ordered semigroup action \emph{correctly bounded} when the set of spaces is bounded and:
+I call an ordered precategory action \emph{correctly bounded} when the set of interspaces between two fixed objects is bounded and:
 \begin{enumerate}
 \item $(T\bot)x = \bot$ for every poset element~$x$;
 \item $(T\top)x =
@@ -304,18 +306,18 @@ $p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasy
 
 \chapter{Distributive ordered semigroup actions}
 
-We can define (pointwise) order of curried ordered semigroup actions. For functional curried ordered semigroup actions composition is defined. So we have one more ``level'' of ordered semigroups. By the way, it can be continued indefinitely building new and new levels of such ordered semigroups.
+We can define (product) order of ordered precategory actions. For functional ordered precategory actions composition is defined. So we have one more ``level'' of ordered precategories. By the way, it can be continued indefinitely building new and new levels of such ordered precategories.
 
-More generally we could consider ordered semigroup homomorphisms. Examples of such homomorphisms are $\supfun{}$, $\tofcd$, $\torldin$.
+More generally we could consider ordered precategory functors (or specifically, ordered semigroup homomorphisms). Examples of such homomorphisms are $\supfun{}$, $\tofcd$, $\torldin$.
 
-Pointfree funcoids (and consequently funcoids) are an ordered semigroup action. Reloids are also an ordered semigroup action.
+Pointfree funcoids (and consequently funcoids) are an ordered precategory action. Reloids are also an ordered precategory action.
 
 \chapter{Complete spaces and completion of spaces}
 
 A space~$a$ is \emph{complete} when $(Ta)\bigsqcup S=\bigsqcup\rsupfun{Ta}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{Ta}S$ are defined.
 
 \begin{defn}
-\emph{Completion} of a space is its core part (see~\cite{volume-1} for a definition of core part) on the filtrator of spaces and complete spaces.
+\emph{Completion} of an interspace is its core part (see~\cite{volume-1} for a definition of core part) on the filtrator of interspace and complete interspace.
 \end{defn}
 
 \begin{note}
