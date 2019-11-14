@@ -6,13 +6,13 @@ I will show that most of the topology can be formulated in an ordered semigroup 
 
 You need to know about semigroups, ordered semigroups, semigroup actions, before reading further. If in doubt, consult Wikipedia.
 
-\emph{Filtrators} are pairs of a poset and its subset (in induced order). An important example of filtrator is the set of filters on some poset together with the subset of principal filters. (Note that I order filters \emph{reversely} to the set inclusion relation: So for filters I have $a\leq b \Leftrightarrow a\supseteq b$.)
+\emph{Filtrators} are pairs of a poset and its subset (with the induced order). An important example of filtrator is the set of filters on some poset together with the subset of principal filters. (Note that I order filters \emph{reversely} to the set inclusion relation: So for filters I have $a\leq b \Leftrightarrow a\supseteq b$.)
 
 I will denote meet and join on a poset correspondingly as~$\sqcap$ and~$\sqcup$.
 
-I call two elements~$a$ and~$b$ \emph{intersecting} ($a\nasymp b$) when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semigroups with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
+I call two elements~$a$ and~$b$ \emph{intersecting} ($a\nasymp b$) when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semilattices with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
 
-I call two elements~$a$ and~$b$ \emph{joining} ($a\equiv b$) when there is no non-greatest element~$c$ such that $c\geq a\land c\geq b$. For meet-semigroups with meet operation~$\sqcup$ this condition is equivalent to $a\sqcup b$ being the greatest element.
+I call two elements~$a$ and~$b$ \emph{joining} ($a\equiv b$) when there is no non-greatest element~$c$ such that $c\geq a\land c\geq b$. For join-semilattices with meet operation~$\sqcup$ this condition is equivalent to $a\sqcup b$ being the greatest element.
 
 I denote $\rsupfun{f}X = \setcond{fx}{x\in X}$.
 
@@ -32,7 +32,7 @@ So we have topological space defined by actions of an ordered semigroup.
 
 Below I will define a \emph{space} as an \emph{ordered semigroup action}.
 
-This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, vector spaces, etc.
+This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, semigroups of operators, etc.
 
 Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula (\fxerror{The reverse function.} $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
 
@@ -52,7 +52,7 @@ equation are defined.
 \end{defn}
 
 \begin{defn}
-\index{prefunctor}A \emph{prefunctor} is a pair of a function from the set of objects of one precategory to the set of objects of another precategory and a function from the set of morphisms of one precategory to the set of morphisms of another precategory (these functions are denoted by the same letter such as~$\phi$) conforming to the axioms:
+\index{prefunctor}A \emph{prefunctor} is a pair of a function from the set of objects of one precategory to the set of objects of another precategory and a function from the set of morphisms of one precategory to the set of morphisms of that another precategory (these two functions are denoted by the same letter such as~$\phi$) conforming to the axioms:
 \begin{enumerate}
 \item $\phi(f): \phi(\Src f)\to\phi(\Dst f)$ for every morphism~$f$ of the first precategory;
 \item $\phi(g\circ f)=\phi(g)\circ\phi(f)$ for every composable morphisms~$f$,~$g$ of the first precategory.
@@ -126,7 +126,7 @@ I call elements of such an action \emph{spaces}.
 Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
 \end{rem}
 
-Essentially, ordered semigroup action is a ordered precategory action with just one object.
+Essentially, an ordered semigroup action is an ordered precategory action with just one object.
 
 We can order actions componentwise. Then the above axioms simplify to:
 \begin{enumerate}
@@ -136,7 +136,7 @@ We can order actions componentwise. Then the above axioms simplify to:
 \end{enumerate}
 
 \begin{defn}
-A \emph{functional ordered precategory action} is such an ordered semigroup action that $Ta=a$ for every space~$a$.
+A \emph{functional ordered precategory action} is such an ordered precategory action that $Ta=a$ for every space~$a$.
 \end{defn}
 
 \begin{thm}
@@ -146,20 +146,20 @@ Each ordered precategory action induces a functional ordered precategory action,
 \begin{proof}
 That it's a precategory is obvious. The partial order is the same as the original. It remains to prove the remaining axioms.
 
-For our semigroup
+For our precategory
 \[ T(b\circ a) = b\circ a=T(b)\circ T(a). \]
 
 $T$ is increasing because it's the identity function.
 
-$Ta$ is the same as one of the original ordered semigroup action and thus is increasing.
+$Ta$ is the same as one of the original ordered precategory action and thus is increasing.
 \end{proof}
 
-Having a curried ordered semigroup action and a homomorphism to its ordered semigroup, we can define in an obvious way a new curried ordered semigroup action. The following is an example of this construction (here $\torldin$ is a homomorphism of ordered semigroups).
+Having a ordered precategory action and a homomorphism to its ordered precategory, we can define in an obvious way a new ordered precategory action. The following is an example of this construction (here $\torldin$ is a functor of ordered precategories).
 
-\emph{Funcoids} described in the first volume of this book form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
+\emph{Funcoids} described in the first book of this book series form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
 As we know from the~\cite{volume-1}, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered precategory actions (or ordered semigroup actions, see below).
 
-Remember that elements of our posets of objects may be such things as sets or more generally filters, they may be not just points. So our topological construction is ``pointfree'' (we consider sets or filters, not points).
+Remember that elements of our posets of objects may be such things as sets or more generally filters, they may be not just points. So our topological construction is ``pointfree'' (we may consider sets or filters, not points).
 
 This book is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
 
@@ -183,7 +183,7 @@ For an \emph{ordered dagger precategory} we will additionally require $a\leq b\R
 \emph{Semigroup with involution} is a dagger precategory with just one object.
 \end{defn}
 
-For an \emph{ordered semigroup with involution} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
+For an \emph{ordered semigroup with involution} or \emph{ordered dagger precategory} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
 
 \chapter{Topological properties}
 
@@ -261,7 +261,7 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
 \emph{Restriction} of an interspace~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
 
-\emph{Square restriction} (a generalization of restriction of a topological space, metric space, etc.) of a interspace~$a$ to element~$x$ is $\id_x\circ a\circ\id_x$.
+\emph{Square restriction} (a generalization of restriction of a topological space, metric space, etc.) of a space~$a$ to element~$x$ is $\id_x\circ a\circ\id_x$.
 
 \chapter{Binary product of poset elements}
 
