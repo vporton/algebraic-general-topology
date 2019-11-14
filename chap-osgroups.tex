@@ -34,7 +34,7 @@ Below I will define a \emph{space} as an \emph{ordered semigroup action}.
 
 This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, semigroups of operators, etc.
 
-Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula (\fxerror{The reverse function.} $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
+Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
 
 \chapter{Precategories}
 
@@ -216,8 +216,6 @@ If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an dagger
 
 A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
 
-\fxnote{Define ``other'' connectedness also through series.}
-
 We can define open and closed functions.
 
 \chapter{Further axioms}
@@ -298,9 +296,20 @@ x\nasymp p\land y\nasymp q.
 $p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1$. \fxwarning{TODO.}
 \end{thm}
 
+\begin{defn}
+We can define \emph{connectedness} of a space on a poset element~$x$ also in another way:
+\[ \id_x\sqcup a\sqcup(a\circ a)\sqcup(a\circ a\circ a)\sqcup\dots \geq x\times x. \]
+\end{defn}
+
+\begin{problem}
+When our two definitions of connectedness coincide?
+\end{problem}
+
 \chapter{Separable spaces}
 
-\emph{Hausdorff} space~$a$ can be defined as having $x\overline{Ra}y$ whenever~$x$ and $y$ are closed and $x\asymp y$.
+$T_1$-space~$a$ when $x\mathrel{\overline{R\Cor a}}y$ for every $x\asymp y$.
+
+\emph{Hausdorff} space~$a$ can be defined as having $x\mathrel{\overline{Ra}}y$ whenever~$x$ and $y$ are closed and $x\asymp y$ or as $f^{-1}\circ f$ being $T_1$-separable.
 
 \fxnote{Define other kinds of separability through hausdorffness and completion.}
 
