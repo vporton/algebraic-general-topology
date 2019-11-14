@@ -1,6 +1,6 @@
 \chapter{Introduction}
 
-I will show that most of the topology can be formulated in an ordered semigroup (or an ordered monoid).
+I will show that most of the topology can be formulated in an ordered semigroup (or, more generally, an ordered precategory).
 
 \chapter{Prerequisites}
 
@@ -40,7 +40,7 @@ Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets
 
 \begin{defn}
 \index{precategory}A \emph{precategory} is a directed multigraph
-together with a partial binary operation $\circ$ on the set $\mathcal{M}$
+together with a partial binary operation $\circ$ on the set~$\mathcal{M}$ of edges (called the set of \emph{morphisms} in the context of precategories)
 such that $g\circ f$ is defined iff $\Dst f=\Src g$ (for every morphisms
 $f$ and $g$) such that
 \begin{enumerate}
@@ -83,10 +83,6 @@ Essentially, a posemigroup is just an ordered precategory with just one object.
 In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, (quasi)proximity spaces, (quasi)uniform spaces, (directed) graphs. (quasi)metric spaces.
 
 As I shown above, functions (and more generally binary relations) can also be considered as spaces.
-
-\begin{defn}
-\emph{Ordered monoid} (or \emph{pomonoid}) is an ordered semigroup that is a monoid.
-\end{defn}
 
 \chapter{Precategory actions}
 
@@ -249,7 +245,13 @@ $p\ne q\Rightarrow\id_p\ne\id_q$.
 $\id_p p=p \ne q = \id_q q$.
 \end{proof}
 
-\emph{Ordered precategory action with identities} is an ordered precategory~$S$ action~$T$ together with a function $p\mapsto\id_p\in S$ such that $T\id_p=\id_p$ whenever this equality is defined. (I abuse the notation $\id_p$ for both interspaces and for transformations; this won't lead to inconsistencies, because as proved above this mapping is faithful on restricted identities.)
+\emph{Ordered precategory action with identities} is an ordered precategory~$S$ action~$T$ together with a function $p\mapsto\id_p\in S$ such that
+\begin{enumerate}
+\item $T\id_p=\id_p$ whenever this equality is defined;
+\item $\id_p\circ x\leq x$;
+\item $x\circ\id_p\leq x$.
+\end{enumerate}
+(I abuse the notation $\id_p$ for both interspaces and for transformations; this won't lead to inconsistencies, because as proved above this mapping is faithful on restricted identities.)
 
 \begin{obvious}
 For every ordered precategory action with identities, the identity transformations are entirely defined on their domains.
@@ -276,6 +278,34 @@ I call an ordered precategory action \emph{correctly bounded} when the set of in
 
 \begin{thm}
 If our action is correctly bounded, then
+\[
+(T(p\times q))x =
+\left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right.
+\]
+\end{thm}
+
+\begin{proof}
+\begin{multline*}
+(T(p\times q))x = \\
+(T(\id_q\circ\top\circ\id_p))x = \\
+(T\id_q)(T\top)(T\id_p)x = \\
+q\sqcap(T\top)(p\sqcap x) = \\
+\left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right.
+\end{multline*}
+\end{proof}
+
+% \begin{thm}
+% $f\sqcap(p\times q)=\id_q\circ f\circ\id_p$, if our action is functional.
+% \end{thm}
+% 
+% \begin{proof}
+% Obviously $\id_q\circ f\circ\id_p\leq f$ and $\id_q\circ f\circ\id_p\leq q\times p$.
+% 
+% Suppose~$h\leq f$ and~$h\leq q\times p$. Then 
+% \end{proof}
+
+\begin{thm}
+If our action is correctly bounded, then
 \[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
 \end{thm}
 
@@ -283,18 +313,24 @@ If our action is correctly bounded, then
 \begin{multline*}
 x(R(p\times q))y \Leftrightarrow
 y\nasymp(T(p\times q))x \Leftrightarrow \\
-y\nasymp(T(\id_q\circ\top\circ\id_p))x \Leftrightarrow \\
-y\nasymp (T\id_q)(T\top)(T\id_p)x \Leftrightarrow \\
-y\nasymp q\sqcap(T\top)(p\sqcap x) \Leftrightarrow \\
 y\nasymp
 \left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right. \Leftrightarrow \\
 x\nasymp p\land y\nasymp q.
 \end{multline*}
 \end{proof}
 
-\begin{thm}
-$p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1$. \fxwarning{TODO.}
-\end{thm}
+% \begin{thm}
+% If our action is correctly bounded, then
+% \[ p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1. \]
+% \end{thm}
+% 
+% \begin{proof}
+% \begin{multline*}
+% p_0\nasymp p_1\land q_0\nasymp q_1 \Leftrightarrow\\
+% x(R(p\times q))y \Leftrightarrow\\
+% y\nasymp(T(p\times q))x \Leftrightarrow
+% \end{multline*}
+% \end{proof}
 
 \begin{defn}
 We can define \emph{connectedness} of a space on a poset element~$x$ also in another way:
@@ -309,9 +345,11 @@ When our two definitions of connectedness coincide?
 
 $T_1$-space~$a$ when $x\mathrel{\overline{R\Cor a}}y$ for every $x\asymp y$.
 
-\emph{Hausdorff} space~$a$ can be defined as having $x\mathrel{\overline{Ra}}y$ whenever~$x$ and $y$ are closed and $x\asymp y$ or as $f^{-1}\circ f$ being $T_1$-separable.
+$T_2$-space or \emph{Hausdorff} is such a space~$f$ that $f^{-1}\circ f$ is $T_1$-separable.
 
-\fxnote{Define other kinds of separability through hausdorffness and completion.}
+$T_0$-space is such a space~$f$ that $f^{-1}\sqcap f$ is $T_1$-separable.
+
+$T_4$-space is such a space~$f$ that \[ f\circ f^{-1}\circ f\circ f^{-1}\leq f\circ f^{-1}. \]
 
 \chapter{Distributive ordered semigroup actions}
 
