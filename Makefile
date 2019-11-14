@@ -34,6 +34,14 @@ volume-1.pdf: FORCE
 	makeindex volume-1
 	pdflatex volume-1.tex
 
+volume-3.pdf: FORCE
+	pdflatex volume-3.tex
+	bibtex volume-3.aux
+	pdflatex volume-3.tex
+	pdflatex volume-3.tex
+#	makeindex volume-1
+#	pdflatex volume-3.tex
+
 addons.pdf: FORCE
 	pdflatex addons.tex
 	bibtex addons.aux

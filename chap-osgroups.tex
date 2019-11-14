@@ -10,16 +10,22 @@ You need to know about semigroups, ordered semigroups, semigroup actions, before
 
 \emph{Filtrators} are pairs of a poset and its subset (in induced order). An important example of filtrator is the set of filters on some poset together with the subset of principal filters. (Note that I order filters \emph{reversely} to the set inclusion relation: So for filters I have $a\leq b \Leftrightarrow a\supseteq b$.)
 
-I call two elements~$a$ and~$b$ \emph{intersecting} when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semigroups with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
+I will denote meet and join on a poset correspondingly as~$\sqcap$ and~$\sqcup$.
+
+I call two elements~$a$ and~$b$ \emph{intersecting} ($a\nasymp b$) when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semigroups with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
+
+I call two elements~$a$ and~$b$ \emph{joining} ($a\equiv b$) when there is no non-greatest element~$c$ such that $c\geq a\land c\geq b$. For meet-semigroups with meet operation~$\sqcup$ this condition is equivalent to $a\sqcup b$ being the greatest element.
+
+I denote $\rsupfun{f}X = \setcond{fx}{x\in X}$.
 
 \chapter{Ordered semigroups}
 
 \begin{defn}
-\emph{Ordered semigroup} (or \emph{semigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
+\emph{Ordered semigroup} (or \emph{posemigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
 \[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
 \end{defn}
 
-In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, proximity spaces, uniform spaces, (directed) graphs.
+In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, (quasi)proximity spaces, (quasi)uniform spaces, (directed) graphs. (quasi)metric spaces.
 
 Note that we consider functions as spaces, too. (See~\cite{volume-1} for an interpretation of both topological spaces and functions as funcoids, a kind of spaces.)
 
@@ -77,7 +83,7 @@ Having a curried ordered semigroup action and a homomorphism to its ordered semi
 \emph{Funcoids} described in the first volume of this book form an ordered semigroup with curried action $\supfun{}$. \emph{Reloids} form an ordered semigroup with curried action $a\mapsto\supfun{\torldin a}$.
 As we know from the first volume, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered semigroup actions!
 
-Remember that elements of our semigroup order may be such things as sets or more generally filter, they are no points. So our topological construction is ``pointfree'' (we consider sets or filters, not points).
+Remember that elements of our semigroup order may be such things as sets or more generally filters, they are not just points. So our topological construction is ``pointfree'' (we consider sets or filters, not points).
 
 This book is mainly about this topic: describing general topology in terms of ordered semigroup actions. Above are the new axioms for general topology. No topological spaces here.
 
@@ -105,7 +111,7 @@ Now we have a formalism to describe many topological properties (following the i
 
 Continuity is described by the formulas $f\circ a\leq a\circ f$, $f\circ a\circ f^{\dagger}\leq a$, $a\leq f^{\dagger}\circ a\circ f$.
 
-Convergence of a function~$f$ at filter~$x$ to a set or filter~$y$ is described by the formula $(Tf)(T\mu)x\leq(T\nu)y$.
+Convergence of a function~$f$ from a space~$\mu$ to a space~$\nu$ at filter~$x$ to a set or filter~$y$ is described by the formula $(Tf)(T\mu)x\leq(T\nu)y$.
 
 Generalized limit of an arbitrary space~$f$ (for example, of an arbitrary (possibly discontinuous) function), see \cite{limit}, is described by the formula \[ \xlim f=\setcond{\nu\circ f\circ r}{r\in G}, \]
 where~$G$~is a group of spaces (consider for example the group of all translations of a vector space).
@@ -126,9 +132,11 @@ It seem we cannot define \emph{total boundness} purely in terms of ordered semig
 
 Every ordered semigroup action~$T$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp(Ta)x$.
 
-If $Ra^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an involutive semigroup \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid.
+If $Ra^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an involutive semigroup \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
 
-A space is connected iff $x\equiv y\Rightarrow x(Ra)y$. Define ``other'' connectedness also through series.
+A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
+
+\fxnote{Define ``other'' connectedness also through series.}
 
 We can define open and closed functions.
 
@@ -188,8 +196,7 @@ I call an ordered semigroup action \emph{correctly bounded} when the set of spac
 
 \begin{thm}
 If our action is correctly bounded, then
-\[ (T\top)x=
-x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
+\[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
 \end{thm}
 
 \begin{proof}
@@ -206,10 +213,8 @@ x\nasymp p\land y\nasymp q.
 \end{proof}
 
 \begin{thm}
-$p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1$.
+$p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1$. \fxwarning{TODO.}
 \end{thm}
-
-We can define space~$a$ \emph{square restricted} to an element~$p$ as $a\sqcap(p\times p)$.
 
 \chapter{Separable spaces}
 
@@ -217,7 +222,7 @@ We can define space~$a$ \emph{square restricted} to an element~$p$ as $a\sqcap(p
 
 \fxnote{Define other kinds of separability through hausdorffness and completion.}
 
-\chapter{Distributive orders semigroup actions}
+\chapter{Distributive ordered semigroup actions}
 
 We can define (pointwise) order of curried ordered semigroup actions. For functional curried ordered semigroup actions composition is defined. So we have one more ``level'' of ordered semigroups. By the way, it can be continued indefinitely building new and new levels of such ordered semigroups.
 
