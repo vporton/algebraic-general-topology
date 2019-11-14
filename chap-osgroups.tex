@@ -2,8 +2,6 @@
 
 I will show that most of the topology can be formulated in an ordered semigroup (or an ordered monoid).
 
-For simplicity of notation I speak about semigroups, but all this can be easily generalized to precategories.
-
 \chapter{Prerequisites}
 
 You need to know about semigroups, ordered semigroups, semigroup actions, before reading further. If in doubt, consult Wikipedia.
@@ -36,7 +34,7 @@ Below I will define a \emph{space} as an \emph{ordered semigroup action}.
 
 This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, vector spaces, etc.
 
-Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
+Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula (\fxerror{The reverse function.} $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
 
 \chapter{Precategories}
 
@@ -65,6 +63,14 @@ equation are defined.
 A semigroup is essentially a special case of a precategory (with only one object) and semigroup homomorphism is a prefunctor.
 \end{note}
 
+\chapter{Ordered precategories}
+
+\begin{defn}
+\emph{Ordered precategory} (or \emph{poprecategory}) is
+a precategory together with an order on the set of morphisms conforming to the equality:
+\[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
+\end{defn}
+
 \chapter{Ordered semigroups}
 
 \begin{defn}
@@ -72,13 +78,36 @@ A semigroup is essentially a special case of a precategory (with only one object
 \[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
 \end{defn}
 
+Essentially, a posemigroup is just an ordered precategory with just one object.
+
 In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, (quasi)proximity spaces, (quasi)uniform spaces, (directed) graphs. (quasi)metric spaces.
 
-Note that we consider functions as spaces, too. (See~\cite{volume-1} for an interpretation of both topological spaces and functions as funcoids, a kind of spaces.)
+As I shown above, functions (and more generally binary relations) can also be considered as spaces.
 
 \begin{defn}
 \emph{Ordered monoid} (or \emph{pomonoid}) is an ordered semigroup that is a monoid.
 \end{defn}
+
+\chapter{Precategory actions}
+
+\begin{defn}
+\emph{Precategory action} is a prefunctor from a precategory to the category~$\mathbf{Set}$.
+\end{defn}
+
+\chapter{Ordered precategory actions}
+
+\begin{defn}
+\emph{Ordered precategory action} on a is a precategory action~$T$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\begin{enumerate}
+\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$.
+\end{enumerate}
+In other words, an ordered precategory action is a (not necessarily strictly) increasing precategory action (we consider transformations of this action to be ordered pointwise, that is by the product order).
+
+I call morphisms of such a precategory as \emph{interspaces}.\footnote{The prefix inter- is supposed to mean that the morphisms may have the source different that the destination.}
+\end{defn}
+
+Note that this ``inducting'' is an ordered semigroup homomorphism.
 
 \chapter{Ordered semigroup actions}
 
@@ -88,12 +117,16 @@ Note that we consider functions as spaces, too. (See~\cite{volume-1} for an inte
 \item $(T(b\circ a))x = (Tb)(Ta)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
 $x,y\in\mathfrak{A}$;
 \item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$. \end{enumerate}
+\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$.
+\end{enumerate}
+I call elements of such an action \emph{spaces}.
 \end{defn}
 
 \begin{rem}
 Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
 \end{rem}
+
+Essentially, ordered semigroup action is a ordered precategory action with just one object.
 
 We can order actions componentwise. Then the above axioms simplify to:
 \begin{enumerate}
@@ -103,15 +136,15 @@ We can order actions componentwise. Then the above axioms simplify to:
 \end{enumerate}
 
 \begin{defn}
-A \emph{functional curried ordered semigroup action} is such an ordered semigroup action that $Ta=a$ for every space~$a$.
+A \emph{functional ordered precategory action} is such an ordered semigroup action that $Ta=a$ for every space~$a$.
 \end{defn}
 
 \begin{thm}
-Each curried ordered semigroup action induces a functional curried ordered semigroup action, whose elements are the same a of the original one, spaces are the curried actions of actions of the original semigroup, semigroup operation is function composition, and order of spaces is the product order.
+Each ordered precategory action induces a functional ordered precategory action, whose morphisms are the same a of the original one but with objects being posets, spaces are the actions of the original precategory, the composition operation is function composition, and order of spaces is the product order.
 \end{thm}
 
 \begin{proof}
-That it's a semigroup is obvious. The partial order is the same as the original. It remains to prove the remaining axioms.
+That it's a precategory is obvious. The partial order is the same as the original. It remains to prove the remaining axioms.
 
 For our semigroup
 \[ T(b\circ a) = b\circ a=T(b)\circ T(a). \]
@@ -121,33 +154,33 @@ $T$ is increasing because it's the identity function.
 $Ta$ is the same as one of the original ordered semigroup action and thus is increasing.
 \end{proof}
 
-Note that this ``inducting'' is an ordered semigroup homomorphism.
-
-More generally, we can define a \emph{generalized space} as a homomorphism of ordered semigroups. Most of the below however does use poset elements, so it could not be described in terms of generalized spaces.
-
 Having a curried ordered semigroup action and a homomorphism to its ordered semigroup, we can define in an obvious way a new curried ordered semigroup action. The following is an example of this construction (here $\torldin$ is a homomorphism of ordered semigroups).
 
-\emph{Funcoids} described in the first volume of this book form an ordered semigroup with curried action $\supfun{}$. \emph{Reloids} form an ordered semigroup with curried action $a\mapsto\supfun{\torldin a}$.
-As we know from the first volume, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered semigroup actions!
+\emph{Funcoids} described in the first volume of this book form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
+As we know from the~\cite{volume-1}, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered precategory actions (or ordered semigroup actions, see below).
 
-Remember that elements of our semigroup order may be such things as sets or more generally filters, they are not just points. So our topological construction is ``pointfree'' (we consider sets or filters, not points).
+Remember that elements of our posets of objects may be such things as sets or more generally filters, they may be not just points. So our topological construction is ``pointfree'' (we consider sets or filters, not points).
 
-This book is mainly about this topic: describing general topology in terms of ordered semigroup actions. Above are the new axioms for general topology. No topological spaces here.
+This book is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
 
-We will need also \emph{semigroups with involution}.
+Ordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow Ta\leq Tb \] that is when \[ a\leq b \Leftarrow \forall x:(Ta)x\leq(Tb)x. \]
 
-Ordered semigroup action is \emph{ordered by elements} when \[ a\leq b \Leftarrow Ta\leq Tb \] that is when \[ a\leq b \Leftarrow \forall x:(Ta)x\leq(Tb)x. \]
+Obviously, in this case~$T$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
 
-Obviously, in this case~$T$ is an injection. So our curried ordered semigroup action is \emph{essentially functional}.
-
-\chapter{Ordered semigroups with involution}
+\chapter{Ordered dagger categories and ordered semigroups with involution}
 
 \begin{defn}
-\emph{Semigroup with involution} is a semigroup together with the operation $a\mapsto a^{\dagger}$ (\emph{involution}) such that:
+\emph{Dagger precategory} is a precategory together with the operation $a\mapsto a^{\dagger}$ (called \emph{involution} or \emph{dagger}) such that:
 \begin{enumerate}
 \item $a^{\dagger\dagger} = a$;
 \item $(b\circ a)^{\dagger} = a^{\dagger}\circ b^{\dagger}$.
 \end{enumerate}
+\end{defn}
+
+For an \emph{ordered dagger precategory} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
+
+\begin{defn}
+\emph{Semigroup with involution} is a dagger precategory with just one object.
 \end{defn}
 
 For an \emph{ordered semigroup with involution} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
@@ -158,10 +191,10 @@ Now we have a formalism to describe many topological properties (following the i
 
 Continuity is described by the formulas $f\circ a\leq a\circ f$, $f\circ a\circ f^{\dagger}\leq a$, $a\leq f^{\dagger}\circ a\circ f$.
 
-Convergence of a function~$f$ from a space~$\mu$ to a space~$\nu$ at filter~$x$ to a set or filter~$y$ is described by the formula $(Tf)(T\mu)x\leq(T\nu)y$.
+Convergence of a function~$f$ from an endomorphism (space)~$\mu$ to an endomorphism (space)~$\nu$ at filter~$x$ to a set or filter~$y$ is described by the formula $(Tf)(T\mu)x\leq(T\nu)y$.
 
-Generalized limit of an arbitrary space~$f$ (for example, of an arbitrary (possibly discontinuous) function), see \cite{limit}, is described by the formula \[ \xlim f=\setcond{\nu\circ f\circ r}{r\in G}, \]
-where~$G$~is a group of spaces (consider for example the group of all translations of a vector space).
+Generalized limit of an arbitrary interspace~$f$ (for example, of an arbitrary (possibly discontinuous) function), see \cite{limit}, is described by the formula \[ \xlim f=\setcond{\nu\circ f\circ r}{r\in G}, \]
+where~$G$~is a suitable group (consider for example the group of all translations of a vector space).
 
 \emph{Neighborhood} of element~$x$ is such a $y$ that $(Ta)x\leq y$. \emph{Interior} of~$x$ (if it exists) if the join of all $y$ such that $x$ is a neighborhood of~$x$.
 
@@ -177,9 +210,9 @@ It seem we cannot define \emph{total boundness} purely in terms of ordered semig
 
 \chapter{A relation}
 
-Every ordered semigroup action~$T$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp(Ta)x$.
+Every ordered precategory action~$T$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp(Ta)x$.
 
-If $Ra^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an involutive semigroup \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
+If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
 
 A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
 
