@@ -36,6 +36,35 @@ Below I will define a \emph{space} as an \emph{ordered semigroup action}.
 
 This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, vector spaces, etc.
 
+Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
+
+\chapter{Precategories}
+
+\begin{defn}
+\index{precategory}A \emph{precategory} is a directed multigraph
+together with a partial binary operation $\circ$ on the set $\mathcal{M}$
+such that $g\circ f$ is defined iff $\Dst f=\Src g$ (for every morphisms
+$f$ and $g$) such that
+\begin{enumerate}
+\item $\Src(g\circ f)=\Src f$ and $\Dst(g\circ f)=\Dst g$ whenever the
+composition $g\circ f$ of morphisms $f$ and $g$ is defined.
+\item $(h\circ g)\circ f=h\circ(g\circ f)$ whenever compositions in this
+equation are defined.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\index{prefunctor}A \emph{prefunctor} is a pair of a function from the set of objects of one precategory to the set of objects of another precategory and a function from the set of morphisms of one precategory to the set of morphisms of another precategory (these functions are denoted by the same letter such as~$\phi$) conforming to the axioms:
+\begin{enumerate}
+\item $\phi(f): \phi(\Src f)\to\phi(\Dst f)$ for every morphism~$f$ of the first precategory;
+\item $\phi(g\circ f)=\phi(g)\circ\phi(f)$ for every composable morphisms~$f$,~$g$ of the first precategory.
+\end{enumerate}
+\end{defn}
+
+\begin{note}
+A semigroup is essentially a special case of a precategory (with only one object) and semigroup homomorphism is a prefunctor.
+\end{note}
+
 \chapter{Ordered semigroups}
 
 \begin{defn}
