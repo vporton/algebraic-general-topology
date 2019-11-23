@@ -497,9 +497,9 @@ $\Delta_{b\circ a} = \Delta_b\circ\Delta_a$.
 Let~$X$,~$Y$ be arbitrary sets on a metric space.
 \begin{multline*}
 Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow \\
-\forall\epsilon>0\exists x\in X,z\in Z:\inf_{y\in\mho}(\rho_a(x,y)+\rho_b(y,z))<\epsilon \Leftrightarrow \\
-\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:\rho_a(x,y)+\rho_b(y,z)<\epsilon \Leftrightarrow \\
-\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:(\rho_a(x,y)<\epsilon\land\rho_b(y,z)<\epsilon)
+\forall\epsilon>0\exists x\in X,z\in Z:\\\inf_{y\in\mho}(\rho_a(x,y)+\rho_b(y,z))<\epsilon \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:\\\rho_a(x,y)+\rho_b(y,z)<\epsilon \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:\\(\rho_a(x,y)<\epsilon\land\rho_b(y,z)<\epsilon)
 \end{multline*}
 \begin{multline*}
 Z\nasymp\supfun{\Delta_b\circ\Delta_a}X \Leftrightarrow
@@ -508,7 +508,7 @@ Z\nasymp\supfun{\Delta_b}\supfun{\Delta_a}X\Leftrightarrow\\
 \bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcap_{\epsilon>0}\bigcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
 \forall\epsilon>0:\bigcup_{x\in X}B_a(x,\epsilon) \nasymp\bigcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
 \forall\epsilon>0\exists x\in X,z\in Z:B_a(x,\epsilon)\nasymp B_b(z,\epsilon) \Leftrightarrow \\
-\forall\epsilon>0\exists x\in X,z\in Z,y\in\mho:(\rho_a(x,z)<\epsilon\land\rho_b(z,y)<\epsilon).
+\forall\epsilon>0\exists x\in X,z\in Z,y\in\mho:\\(\rho_a(x,z)<\epsilon\land\rho_b(z,y)<\epsilon).
 \end{multline*}
 
 So, $Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow Z\nasymp\supfun{\Delta_b\circ\Delta_a}X$.
