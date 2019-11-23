@@ -564,3 +564,20 @@ The other item follows from symmetry.
 \end{proof}
 
 \fxnote{Analogous theorem when~$x$ and~$y$ are sets?}
+
+\section{Contractions}
+
+What are (generalized) continuous functions between metric spaces?
+
+Let~$f$ be a function, $\mu$~and~$\nu$ be MGNRMs. Provided that they are composable, what does the formula of generalized continuity $f\circ\mu\leq\nu\circ f$ mean?
+
+Transforming the formula equivalently, we get:
+
+\begin{align*}
+\forall x,z: (f\circ\mu)(x,z)\geq(\nu\circ f)(x,z);\\
+\forall x,z: \mu(\{x\},\rsupfun{f^{-1}}\{z\})\geq\nu(fx,z);\\
+\forall x,z,y\in\rsupfun{f^{-1}}\{z\}: \mu(x,y)\geq\nu(fx,z);\\
+\forall x,y: \mu(x,y)\geq\nu(fx,fy).
+\end{align*}
+
+So generalized continuous functions for metric spaces is what is called \emph{contractions} that is functions that decrease distance.
