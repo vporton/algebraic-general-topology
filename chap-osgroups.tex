@@ -385,7 +385,90 @@ Kuratowski spaces are a generalization of topological spaces.
 
 \chapter{Metric spaces}
 
-Let's denote $\Delta_a$ the proximity space induced by a metric space (or more generally quasimetric space)~$a$.
+Let us call \emph{most general nonnegative real metrics} (MGNRM) the precategory of all extended nonnegative ($\mathbb{R}_{+}\cup\{+\infty\}$) real functions (on some fixed set) of two arguments and the ``composition'' operation
+\[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)) \]
+and \emph{most general nonnegative real metric} an element of this precategory.
+
+\begin{rem}
+The infimum exists because it's nonnegative.
+\end{rem}
+
+We need to prove it's an associative operation.
+
+\begin{proof}
+\begin{multline*}
+(\tau\circ(\sigma\circ\rho))(x,z) = \\
+\inf_{y_1\in\mho}((\sigma\circ\rho)(x,y_1)+\tau(y_1,z)) = \\
+\inf_{y_1\in\mho}(\inf_{y_0\in\mho}(\rho(x,y_0)+\sigma(y_0,y_1))+\tau(y_1,z)) = \\
+\inf_{y_0,y_1\in\mho}(\rho(x,y_0)+\sigma(y_0,y_1)+\tau(y_1,z)).
+\end{multline*}
+Similarly 
+\begin{multline*}
+((\tau\circ\sigma)\circ\rho)(x,z) = \\
+\inf_{y_0,y_1\in\mho}(\rho(x,y_0)+\sigma(y_0,y_1)+\tau(y_1,z)).
+\end{multline*}
+Thus $\tau\circ(\sigma\circ\rho)=(\tau\circ\sigma)\circ\rho$.
+\end{proof}
+
+\begin{defn}
+We extend MGNRM to the set $\subsets\mho$ by the formula:
+\[ \rho(X,Y) = \inf_{x\in X,y\in Y}\rho(x,y). \]
+\end{defn}
+
+\begin{rem}
+This is well-defined thanks to MGNRM being nonnegative and allowing the infinite value.
+\end{rem}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\rho(I\cup J,Y) = \min\{\rho(I,Y), \rho(J,Y)\}$;
+\item $\rho(X,I\cup J) = \min\{\rho(X,I), \rho(Y,J)\}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+We'll prove the first as the second is similar:
+\begin{multline*}
+\rho(I\cup J,Y) = \\
+\inf_{x\in I\cup J,y\in Y}\rho(x,y) = \\
+\min\left\{\inf_{x\in I,y\in Y}\rho(x,y), \inf_{x\in J,y\in Y}\rho(x,y)\right\} = \\
+\min\{\rho(I,Y), \rho(J,Y)\}.
+\end{multline*}
+\end{proof}
+
+Let~$a$ be a most general metric. I denote~$\Delta_a$ the funcoid~(\cite{volume-1}) determined by the formula
+\[
+X\rsuprel{\Delta_a}Y \Leftrightarrow \rho_a(X,Y)=0.
+\]
+
+(If~$a$ is a metric, then it's the proximity induced by it.)
+
+Let's prove it really defines a funcoid:
+
+\begin{proof}
+Not $\emptyset\rsuprel{\Delta_a}Y$ and not $X\rsuprel{\Delta_a}\emptyset$ because \[ \rho_{a}(\emptyset,Y)=\rho_{a}(X,\emptyset)=+\infty. \]
+
+By symmetry, it remains to prove
+\[ (I\cup J)\rsuprel{\Delta_a}Y \Leftrightarrow
+I\rsuprel{\Delta_a}Y \lor J\rsuprel{\Delta_a}Y. \]
+Really,
+\begin{multline*}
+(I\cup J)\rsuprel{\Delta_a}Y \Leftrightarrow \\
+\rho_a(I\cup J,Y)=0 \Leftrightarrow \\
+\min\{\rho_a(I,Y),\rho_a(J,Y)\}=0 \Leftrightarrow \\
+\rho_a(I,Y)=0\lor\rho_a(J,Y)=0 \Leftrightarrow \\
+I\rsuprel{\Delta_a}Y \lor J\rsuprel{\Delta_a}Y.
+\end{multline*}
+\end{proof}
+
+\begin{obvious}
+\begin{multline*}
+X\rsuprel{\Delta_a}Y \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in Y:
+\lvert\rho_a(x,y)\rvert<\epsilon.
+\end{multline*}
+\end{obvious}
 
 \begin{thm}
 \[ \supfun{\Delta_a}X = \bigsqcap_{\epsilon>0}\bigcup_{x\in X}B(x,\epsilon) \]
@@ -403,8 +486,7 @@ Y\nasymp\bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\
 \end{multline*}
 \end{proof}
 
-
-Metric spaces (on some fixed set~$\mho$) are also spaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)), \]
+MGNRM are also interspaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)), \]
 where~$\mho$ is the set of points of our metric space.
 
 \begin{lem}
@@ -432,26 +514,12 @@ Z\nasymp\supfun{\Delta_b}\supfun{\Delta_a}X\Leftrightarrow\\
 So, $Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow Z\nasymp\supfun{\Delta_b\circ\Delta_a}X$.
 \end{proof}
 
-Let's prove it's really an ordered semigroup action:
+Let's prove it's really an ordered precategory action:
 
 \begin{proof}
 ~
 \begin{itemize}
-\item It's a semigroup because
-\begin{multline*}
-(\tau\circ(\sigma\circ\rho))(x,z) = \\
-\inf_{y_0\in\mho}((\sigma\circ\rho)(x,y_0)+\tau(y_0,z)) = \\
-\inf_{y_0\in\mho}(\inf_{y_1\in\mho}(\rho(x,y_1)+\sigma(y_1,z))+\tau(y_0,z)) = \\
-\inf_{y_0,y_1\in\mho}(\rho(x,y)+\sigma(y,z)+\tau(y,z)).
-\end{multline*}
-Similarly 
-\begin{multline*}
-((\tau\circ\sigma)\circ\rho)(x,z) = \\
-\inf_{y\in\mho}(\rho(x,y)+\sigma(y,z)+\tau(y,z)).
-\end{multline*}
-Thus $\tau\circ(\sigma\circ\rho)=(\tau\circ\sigma)\circ\rho$.
-
-\item It is an ordered semigroup, because
+\item It is an ordered precategory, because
 $(Ta)x = \supfun{\Delta_a} x \sqsubseteq \supfun{\Delta_a} y = (Ta)y$ 
 for filters $x\sqsubseteq y$.
 
@@ -466,4 +534,33 @@ T(b\circ a) = \supfun{\Delta_{b\circ a}} = \\ \supfun{\Delta_b\circ\Delta_a} = \
 
 \fxnote{The above can be generalized for the values of the metric to be certain ordered additive semigroups instead of nonnegative real numbers.}
 
+\section{Functions as metrics}
+
+We want to consider functions in relations with MGNRM. So we we will consider (not only functions but also) every morphism~$f$ of category~$\mathbf{Rel}$ as an MGNRM by the formulas $\rho_{f}(x,y) = 0$ if $x\mathrel{f}y$ and $\rho_{f}(x,y) = +\infty$ if not $x\mathrel{f}y$.
+
 \fxnote{Isn't proximity also a XXX-metric, with points being sets or filters?}
+
+\begin{thm}
+If~$\rho$ is a MGNRM and~$f$ is a binary relation composable with it, then:
+\begin{enumerate}
+\item $(\rho\circ f)(x,y) = \rho(\rsupfun{f}\{x\},\{y\})$;
+\item $(f\circ\rho)(x,y) = \rho(\{x\},\rsupfun{f^{-1}}\{y\})$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\[
+(\rho\circ f)(x,y) = \inf_{t}(f(x,t) + \rho(t,y))
+\]
+but $f(x,t) + \rho(t,y) = +\infty$ if not $x\mathrel{f}t$ and $f(x,t) + \rho(t,y) = 0$ if $x\mathrel{f}t$. So
+\begin{multline*}
+(\rho\circ f)(x,y) = \\
+\inf_{t\in\setcond{t}{x\mathrel{f}t}}\rho(t,y) = \\
+\inf_{t\in\rsupfun{f}\{x\}}\rho(t,y) = \\
+\rho(\rsupfun{f}\{x\},\{y\}).
+\end{multline*}
+The other item follows from symmetry.
+\end{proof}
+
+\fxnote{Analogous theorem when~$x$ and~$y$ are sets?}
