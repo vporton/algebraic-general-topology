@@ -750,9 +750,6 @@ We have commutative diagram on the figure~\ref{theta-sets} in the
 category $\mathbf{Set}$:
 
 \begin{figure}[ht]
-\caption{\label{theta-sets}}
-
-
 \begin{tikzcd}[row sep=1cm, column sep=2cm]
   \subsets \mathfrak{A}
 	\arrow[d, leftrightarrow, "\lnot"]
@@ -762,6 +759,7 @@ category $\mathbf{Set}$:
 	\arrow[r, shift left, rightarrow, "\rsupfun{\theta}"]
     & \subsets \mathfrak{B} \arrow[l, shift left, rightarrow, "\rsupfun{\theta^{-1}}"]
 \end{tikzcd}
+\caption{\label{theta-sets}}
 \end{figure}
 
 \begin{thm}
@@ -787,9 +785,6 @@ This diagram can be restricted to filters, ideals, free stars, and
 mixers, see figure~\ref{theta-flt}:
 
 \begin{figure}[ht]
-\caption{\label{theta-flt}}
-
-
 \begin{tikzcd}[row sep=1cm, column sep=2cm]
   \mathfrak{F}(\mathfrak{A})
 	\arrow[d, leftrightarrow, "\lnot"]
@@ -799,6 +794,7 @@ mixers, see figure~\ref{theta-flt}:
 	\arrow[r, shift left, rightarrow, "\rsupfun{\theta}"]
     & \mathfrak{S}(\mathfrak{B}) \arrow[l, shift left, rightarrow, "\rsupfun{\theta^{-1}}"]
 \end{tikzcd}
+\caption{\label{theta-flt}}
 \end{figure}
 
 \begin{thm}
@@ -2268,7 +2264,7 @@ and $\up\mathcal{A}=\lnot\rsupfun{\lnot}\corestar\mathcal{A}=\rsupfun{\lnot}\lno
 \item [{\ref{simpl-star-dual-fltr}$\Rightarrow$\ref{simpl-star-dual-conc}}] Because
 of properties of diagram~(\ref{two-diags}), it is enough to prove
 just $\corestar\mathcal{A}=\lnot\rsupfun{\lnot}\up\mathcal{A}$. Really,
-$X\in\up\mathcal{A}\Leftrightarrow X\sqsupseteq\mathcal{A}\Leftrightarrow\overline{X}\asymp^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{X}\notin\corestar\mathcal{A}$
+\[X\in\up\mathcal{A}\Leftrightarrow X\sqsupseteq\mathcal{A}\Leftrightarrow\overline{X}\asymp^{\mathfrak{A}}\mathcal{A}\Leftrightarrow\overline{X}\notin\corestar\mathcal{A}\]
 for any $X\in\mathfrak{Z}$ (taking into account theorems~\ref{up-filt-crit},
 \ref{when-sep-core}, and lemma~\ref{bool-compl}).
 \end{description}
@@ -2798,8 +2794,8 @@ It is with binarily meet-closed core (proposition~\ref{f-meet-closed}),
 with separable core (theorem~\ref{when-sep-core}).
 \item [\ref{compl-and-cor-fltr}$\Rightarrow$\ref{compl-and-cor-res}]
 Our filtrator is with join-closed core (theorem \ref{semifilt-joinclosed}).
-$a^{\ast}=\bigsqcup^{\mathfrak{A}}\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}$.
-But $c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}\Rightarrow\exists C\in\up c:C\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}$.
+\[ a^{\ast}=\bigsqcup^{\mathfrak{A}}\setcond{c\in\mathfrak{A}}{c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}}. \]
+But \[c\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}\Rightarrow\exists C\in\up c:C\sqcap^{\mathfrak{A}}a=\bot^{\mathfrak{A}}.\]
 So
 \begin{align*}
 a^{\ast} & =\\
@@ -3171,7 +3167,7 @@ and with join-closed core by the theorem \ref{semifilt-joinclosed}.
 It is also up and down aligned.
 \item [{\ref{bool-minus-fltr}$\Rightarrow$\ref{bool-minus-conc}}] ~
 \begin{gather*}
-(a\sqcap^{\mathfrak{A}}\overline{B})\sqcup^{\mathfrak{A}}B=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{A}}B)=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{Z}}B)=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}\top=a\sqcup^{\mathfrak{A}}B.\\
+(a\sqcap^{\mathfrak{A}}\overline{B})\sqcup^{\mathfrak{A}}B=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{A}}B)=\\(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}(\overline{B}\sqcup^{\mathfrak{Z}}B)=(a\sqcup^{\mathfrak{A}}B)\sqcap^{\mathfrak{A}}\top=a\sqcup^{\mathfrak{A}}B.\\
 (a\sqcap^{\mathfrak{A}}\overline{B})\sqcap^{\mathfrak{A}}B=a\sqcap^{\mathfrak{A}}(\overline{B}\sqcap^{\mathfrak{A}}B)=a\sqcap^{\mathfrak{A}}(\overline{B}\sqcap^{\mathfrak{Z}}B)=a\sqcap^{\mathfrak{A}}\bot=\bot.
 \end{gather*}
 So $a\sqcap^{\mathfrak{A}}\overline{B}$ is the difference of $a$
@@ -3282,16 +3278,18 @@ x\sqsubseteq\overline{A}\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}x)\quad\text
 
 
 Really,
-\[
-\overline{A}\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}x)=(\overline{A}\sqcup^{\mathfrak{A}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=(\overline{A}\sqcup^{\mathfrak{Z}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\top\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\overline{A}\sqcup^{\mathfrak{A}}x\sqsupseteq x
-\]
+\begin{multline*}
+\overline{A}\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}x)=(\overline{A}\sqcup^{\mathfrak{A}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\\
+(\overline{A}\sqcup^{\mathfrak{Z}}A)\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\top\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}x)=\overline{A}\sqcup^{\mathfrak{A}}x\sqsupseteq x
+\end{multline*}
 
 
 
 and
-\[
-A\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{A}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{Z}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=\bot\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=A\sqcap^{\mathfrak{A}}y\sqsubseteq y.
-\]
+\begin{multline*}
+A\sqcap^{\mathfrak{A}}(\overline{A}\sqcup^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{A}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=(A\sqcap^{\mathfrak{Z}}\overline{A})\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=\\
+\bot\sqcup^{\mathfrak{A}}(A\sqcap^{\mathfrak{A}}y)=A\sqcap^{\mathfrak{A}}y\sqsubseteq y.
+\end{multline*}
 
 
 \end{description}
@@ -3483,8 +3481,8 @@ for each $\mathcal{X}\in\mathfrak{A}$
 \begin{description}
 \item [{$\Leftarrow$}] Let $\mathcal{X}=X\sqcap^{\mathfrak{A}}\mathcal{A}$
 where $X\in\mathfrak{Z}$. Let also $\mathcal{Y}=\overline{X}\sqcap^{\mathfrak{A}}\mathcal{A}$.
-Then $\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y}=X\sqcap^{\mathfrak{A}}\overline{X}\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcap^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\bot^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\bot^{\mathfrak{A}}$
-(used corollary~\ref{f-meet-closed}) and $\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y}=(X\sqcup^{\mathfrak{A}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcup^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\top^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\mathcal{A}$
+Then \[\mathcal{X}\sqcap^{\mathfrak{A}}\mathcal{Y}=X\sqcap^{\mathfrak{A}}\overline{X}\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcap^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\bot^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\bot^{\mathfrak{A}}\]
+(used corollary~\ref{f-meet-closed}) and \[\mathcal{X}\sqcup^{\mathfrak{A}}\mathcal{Y}=(X\sqcup^{\mathfrak{A}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=(X\sqcup^{\mathfrak{Z}}\overline{X})\sqcap^{\mathfrak{A}}\mathcal{A}=\top^{\mathfrak{A}}\sqcap^{\mathfrak{A}}\mathcal{A}=\mathcal{A}\]
 (used theorem~\ref{semifilt-joinclosed} and corollary \ref{filt-also-distr}).
 So $\mathcal{X}\in Z(D\mathcal{A})$.
 \item [{$\Rightarrow$}] Let $\mathcal{X}\in Z(D\mathcal{A})$. Then there
@@ -3612,9 +3610,9 @@ core by theorem~\ref{when-sep-core}.
 Theorem~\ref{compl-eq-dual} apply.
 Also theorem~\ref{dual-cor-meet} apply because every filtered filtrator is join-closed.
 So
-\[
-(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{A}}b^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}.
-\]
+\begin{multline*}
+(a\sqcap^{\mathfrak{A}}b)^{\ast}=(a\sqcap^{\mathfrak{A}}b)^{+}=\overline{\Cor(a\sqcap^{\mathfrak{A}}b)}=\\\overline{\Cor a\sqcap^{\mathfrak{Z}}\Cor b}=\overline{\Cor a}\sqcup^{\mathfrak{A}}\overline{\Cor b}=a^{+}\sqcup^{\mathfrak{A}}b^{+}=a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}.
+\end{multline*}
 \end{description}
 \end{proof}
 
@@ -3664,10 +3662,12 @@ It is with binarily meet-closed core (corollary~\ref{f-meet-closed}),
 with separable core (theorem~\ref{when-sep-core}).
 \item [\ref{meet-pseudo-fltr}$\Rightarrow$\ref{meet-pseudo-res}]
 It is join closed because it is filtered.
-$(a\sqcap^{\mathfrak{A}}b)^{\ast} = \overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} =
-\overline{\Cor'a\sqcap^{\mathfrak{Z}}\Cor'b} =
+\begin{multline*}
+(a\sqcap^{\mathfrak{A}}b)^{\ast} = \overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} =
+\overline{\Cor'a\sqcap^{\mathfrak{Z}}\Cor'b} =\\
 \overline{\Cor'a}\sqcup^{\mathfrak{Z}}\overline{\Cor'b} =
-a^{\ast}\sqcup^{\mathfrak{Z}}b^{\ast} = a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}$
+a^{\ast}\sqcup^{\mathfrak{Z}}b^{\ast} = a^{\ast}\sqcup^{\mathfrak{A}}b^{\ast}
+\end{multline*}
 (theorems~\ref{dual-cor-meet}, \ref{compl-and-cor}).
 \end{description}
 \end{proof}
@@ -3692,7 +3692,10 @@ is a filtered (theorem~\ref{semifilt-joinclosed}), distributive
 (corollary \ref{filt-also-distr}) complete lattice filtrator (corollary
 \ref{filt-is-complete}), with binarily meet-closed core (corollary~\ref{f-meet-closed}),
 with separable core (theorem~\ref{when-sep-core}).
-\item [{\ref{compl-join-fltr}$\Rightarrow$\ref{compl-join-conc}}] $(a\sqcup^{\mathfrak{A}}b)^{\ast}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)}=\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b}=\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}$
+\item [{\ref{compl-join-fltr}$\Rightarrow$\ref{compl-join-conc}}]
+\begin{multline*}
+(a\sqcup^{\mathfrak{A}}b)^{\ast}=\overline{\Cor'(a\sqcup^{\mathfrak{A}}b)}=\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b}=\\\overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b}=a^{\ast}\sqcap^{\mathfrak{Z}}b^{\ast}=a^{\ast}\sqcap^{\mathfrak{A}}b^{\ast}
+\end{multline*}
 (used theorems~\ref{compl-and-cor}, \ref{dual-core-join}).
 \end{description}
 \end{proof}
@@ -3718,13 +3721,15 @@ It is filtered by theorem~\ref{semifilt-joinclosed},
 is a complete lattice by corollary \ref{filt-is-complete},
 is with co-separable core by theorem~\ref{cosep-crit}.
 \item [\ref{meet-dpseudo-fltr}$\Rightarrow$\ref{meet-dpseudo-res}]
-$(a\sqcap^{\mathfrak{A}}b)^{+}=
+\begin{multline*}
+(a\sqcap^{\mathfrak{A}}b)^{+}=
 \overline{\Cor(a\sqcap^{\mathfrak{A}}b)} =
 \overline{\Cor'(a\sqcap^{\mathfrak{A}}b)} =
-\overline{\Cor' a\sqcap^{\mathfrak{Z}}\Cor' b} =
+\overline{\Cor' a\sqcap^{\mathfrak{Z}}\Cor' b} =\\
 \overline{\Cor'a}\sqcup^{\mathfrak{Z}}\overline{\Cor'b}=
 \overline{\Cor'a}\sqcup^{\mathfrak{A}}\overline{\Cor'b}=
-a^{+}\sqcup^{\mathfrak{A}}b^{+}$
+a^{+}\sqcup^{\mathfrak{A}}b^{+}
+\end{multline*}
 using theorems~\ref{cocompl-cor}, \ref{cor-eq}, \ref{dual-cor-meet} and the fact that filtered filtrator is join-closed.
 \end{description}
 \end{proof}
@@ -3747,13 +3752,15 @@ for every $a,b\in\mathfrak{A}$.
 \begin{description}
 \item [\ref{join-dpseudo-p}$\Rightarrow$\ref{join-dpseudo-fltr}] Obvious.
 \item [\ref{join-dpseudo-fltr}$\Rightarrow$\ref{join-dpseudo-res}]
-$(a\sqcup^{\mathfrak{A}}b)^{+}=
+\begin{multline*}
+(a\sqcup^{\mathfrak{A}}b)^{+}=
 \overline{\Cor(a\sqcup^{\mathfrak{A}}b)} =
 \overline{\Cor'(a\sqcup^{\mathfrak{A}}b)} =
-\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b} =
+\overline{\Cor'a\sqcup^{\mathfrak{Z}}\Cor'b} =\\
 \overline{\Cor'a}\sqcap^{\mathfrak{Z}}\overline{\Cor'b} =
 \overline{\Cor a}\sqcap^{\mathfrak{A}}\overline{\Cor b} =
-a^{+}\sqcap^{\mathfrak{A}}b^{+}$
+a^{+}\sqcap^{\mathfrak{A}}b^{+}
+\end{multline*}
 using theorems~\ref{cocompl-cor}, \ref{cor-eq}, \ref{dual-core-join}.
 \end{description}
 \end{proof}
@@ -4715,7 +4722,6 @@ on figure \ref{not-sep-center} is bounded and distributive because
 it does not contain ``diamond lattice'' nor ``pentagon lattice''
 as a sublattice \cite{wiki:distributive-lattice}.
 \begin{figure}
-\caption{\label{not-sep-center}}
 \[
 \xymatrix{ & 1\\
  & a\ar@{-}[u]\\
@@ -4723,6 +4729,7 @@ x\ar@{-}[ur] &  & y\ar@{-}[ul]\\
  & 0\ar@{-}[ul]\ar@{-}[ur]
 }
 \]
+\caption{\label{not-sep-center}}
 \end{figure}
 
 
@@ -4739,12 +4746,12 @@ an injection) which is not strongly separable (that is $\fullstar$ isn't order r
 diagram~\ref{sep-counter}.
 
 \begin{figure}[ht]
-\caption{\label{sep-counter}}
 \[
 \xymatrix{a\ar@{-}[d]\ar@{-}[dr] & b\ar@{-}[dl]\ar@{-}[d]\ar@{-}[dr]\\
 p & q & r
 }
 \]
+\caption{\label{sep-counter}}
 \end{figure}
 
 
@@ -5030,9 +5037,6 @@ set $S\in\subsets\mathscr{F}(A)$.
 
 \section{Equivalent filters and rebase of filters}
 
-\fxwarning{This section was checked for errors but less
-carefully than the rest of the book.}
-
 Throughout this section we will assume that~$\mathfrak{Z}$
 is a lattice.
 
@@ -5117,16 +5121,18 @@ $X\in\mathcal{X}$.
 \end{prop}
 
 \begin{proof}
-  $(\mathcal{X} \div A) \div B = \bigsqcap \setcond{ \uparrow^B  (Y \sqcap B)
+\begin{multline*}
+(\mathcal{X} \div A) \div B = \bigsqcap \setcond{ \uparrow^B  (Y \sqcap B)
   }{ Y \in \bigsqcap \setcond{ \uparrow^A  (X \sqcap A)}
   {X \in \mathcal{X} } \mathcal{} } =
   \bigsqcap \setcond{ \uparrow^B  (X \sqcap A) }{ X \in
-  \mathcal{X} } \sqcap \uparrow^B B =
+  \mathcal{X} } \sqcap \uparrow^B B =\\
   \bigsqcap \setcond{ \uparrow^B  (X
   \sqcap A \sqcap B) }{ X \in \mathcal{X} } =
   \bigsqcap \setcond{ \uparrow^B  (X
   \sqcap B) }{ X \in \mathcal{X} } =
-  \mathcal{X} \div B$.
+  \mathcal{X} \div B.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -5189,12 +5195,10 @@ $\mathcal{X}\div\Base(\mathcal{Y}) =
 $\mathcal{X}\div\Base(\mathcal{Y}) = \mathcal{Y}$,
 $\mathcal{Y}\div\Base(\mathcal{X}) = \mathcal{X}$ is similar.
 
-\item[$\Leftarrow$] If $\Base(\mathcal{X})\notin\mathcal{Y}$ then
-$\mathcal{Y}\div\Base(\mathcal{X})\not\ni\Base(\mathcal{Y})\in\mathcal{Y}$ and thus
-$\mathcal{Y}\div\Base(\mathcal{X})\ne\mathcal{Y}$.
+\item[$\Leftarrow$] We have
+$\mathcal{Y}=(\mathcal{Y}\div\Base(\mathcal{X}))\div\Base(\mathcal{Y})$.
 
-So $\Base(\mathcal{X})\in\mathcal{Y}$ and similarly
-$\Base(\mathcal{Y})\in\mathcal{X}$. Thus
+Thus as easy to show
 $\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})\in\mathcal{Y}$
 and similarly
 $\Base(\mathcal{X})\sqcap\Base(\mathcal{Y})\in\mathcal{X}$.
@@ -5331,11 +5335,13 @@ set~$C\supseteq B$.
 \end{lem}
 
 \begin{proof}
-$\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C\Leftrightarrow
-\mathcal{X}\div C\supseteq\mathcal{Y}\div C\Leftrightarrow
+\begin{multline*}
+\mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C\Leftrightarrow
+\mathcal{X}\div C\supseteq\mathcal{Y}\div C\Leftrightarrow\\
 \mathcal{X}\cup\setcond{K\in\subsets C}{K\sqsupseteq B} \supseteq \mathcal{Y}\cup\setcond{K\in\subsets C}{K\sqsupseteq B} \Leftrightarrow
 \mathcal{X}\supseteq\mathcal{Y} \Leftrightarrow
-\mathcal{X}\sqsubseteq\mathcal{Y}$.
+\mathcal{X}\sqsubseteq\mathcal{Y}.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -5361,6 +5367,30 @@ $\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
 (\Base(x)=\Base(y)\land x\sqsubseteq y)$ for unfixed
 filters~$\mathcal{X}$,~$\mathcal{Y}$.
 \end{defn}
+
+Proposition~\ref{filteq-if-sim} allows to define:
+
+\begin{defn}
+$\mathscr{S}\mathcal{A} = \mathscr{S}a$ for
+every~$a\in\mathcal{A}$ for every unfixed
+filter~$\mathcal{A}$.
+\end{defn}
+
+\begin{thm}\label{mathscrs-iso}
+$\mathscr{S}$~is an order-isomorphism from the poset of
+unfixed filters to the poset of filters on~$\mathfrak{Z}$.
+\end{thm}
+
+\begin{proof}
+We already know that~$\mathscr{S}$ is an order embedding.
+It remains to prove that it is a surjection.
+
+Let~$\mathcal{Y}$ be a filter on~$\mathfrak{Z}$.
+Take $\mathfrak{Z}\ni X\in\mathcal{Y}$. Then
+$\rsupfun{X\sqcap}\mathcal{Y}$ is a filter on~$X$ and
+$\mathscr{S}[\rsupfun{X\sqcap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\sqcap}\mathcal{Y}=\mathcal{Y}$. We have proved that
+it is a surjection.
+\end{proof}
 
 \begin{lem}
 $\mathcal{X}\sqsubseteq\mathcal{Y} \Leftrightarrow
@@ -5444,6 +5474,15 @@ applying the lemma $x\sqsubseteq y$.
 \end{description}
 \end{proof}
 
+\subsection{Rebase of unfixed filters}
+
+Proposition~\ref{sim-rebase} allows to define:
+
+\begin{defn}
+$\mathcal{A}\div B = a\div B$ for an unfixed
+filter~$\mathcal{A}$ and arbitrary $a\in\mathcal{A}$.
+\end{defn}
+
 \begin{prop}
 $\mathcal{X}\sqsubseteq\mathcal{Y} \Rightarrow
 \mathcal{X}\div C\sqsubseteq\mathcal{Y}\div C$ for every
@@ -5486,44 +5525,11 @@ $\mathcal{X}\sqsubseteq\mathcal{Y}$.
 \end{description}
 \end{proof}
 
-\subsection{Rebase of unfixed filters}
-
-Proposition~\ref{sim-rebase} allows to define:
-
-\begin{defn}
-$\mathcal{A}\div B = a\div B$ for an unfixed
-filter~$\mathcal{A}$ and arbitrary $a\in\mathcal{A}$.
-\end{defn}
-
 \begin{obvious}
 $(\mathcal{X}\div A)\div B = \mathcal{X}\div B$ if
 $B\sqsubseteq A$ for every unfixed filter~$\mathcal{X}$ and
 sets~$A$,~$B$.
 \end{obvious}
-
-Proposition~\ref{filteq-if-sim} allows to define:
-
-\begin{defn}
-$\mathscr{S}\mathcal{A} = \mathscr{S}a$ for
-every~$a\in\mathcal{A}$ for every unfixed
-filter~$\mathcal{A}$.
-\end{defn}
-
-\begin{thm}\label{mathscrs-iso}
-$\mathscr{S}$~is an order-isomorphism from the poset of
-unfixed filters to the poset of filters on~$\mathfrak{Z}$.
-\end{thm}
-
-\begin{proof}
-We already know that~$\mathscr{S}$ is an order embedding.
-It remains to prove that it is a surjection.
-
-Let~$\mathcal{Y}$ be a filter on~$\mathfrak{Z}$.
-Take $\mathfrak{Z}\ni X\in\mathcal{Y}$. Then
-$\rsupfun{X\sqcap}\mathcal{Y}$ is a filter on~$X$ and
-$\mathscr{S}[\rsupfun{X\sqcap}\mathcal{Y}]=\mathscr{S}\rsupfun{X\sqcap}\mathcal{Y}=\mathcal{Y}$. We have proved that
-it is a surjection.
-\end{proof}
 
 \begin{obvious}
 $\mathcal{A}\div B = \rsupfun{B\sqcap}\mathscr{S}\mathcal{A}$
@@ -5566,9 +5572,9 @@ $\mathcal{A}\div A =
 Take~$a\in\mathcal{A}$.
 \begin{multline*}
 \bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}\mathcal{A}} =
-\bigsqcap\setcond{\uparrow^A(X\sqcap A\sqcap\Base(a))}{X\in\mathscr{S}\mathcal{A}} =
-\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}\mathcal{A}\cap\subsets\Base(a)} = \\
-\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}a\cap\subsets\Base(a)} =
+\bigsqcap\setcond{\uparrow^A(X\sqcap A\sqcap\Base(a))}{X\in\mathscr{S}\mathcal{A}} = \\
+\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}\mathcal{A}\cap\subsets\Base(a)} =
+\bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in\mathscr{S}a\cap\subsets\Base(a)} = \\
 \bigsqcap\setcond{\uparrow^A(X\sqcap A)}{X\in a}=
 a\div A = \mathcal{A}\div A.
 \end{multline*}
@@ -5650,8 +5656,6 @@ an identity (therefore ``parallel'' arrows are mutually inverse).
 The arrows preserve order.
 
 \begin{figure}[ht]
-\caption{\label{unfix-dia}}
-
 \begin{tikzcd}[row sep=2cm, column sep=0.5cm]
 & \mathfrak{F}(DB)
 \arrow[rd, shift left, "x\mapsto{[x]}"]
@@ -5665,6 +5669,7 @@ The arrows preserve order.
 \arrow[lu, shift left, "\mathcal{X}\mapsto\mathcal{X}\div B"]
 \arrow[ll, shift left, "\mathscr{S}"]
 \end{tikzcd}
+\caption{\label{unfix-dia}}
 \end{figure}
 \end{thm}
 

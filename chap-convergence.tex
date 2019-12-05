@@ -353,14 +353,17 @@ $f(x) \to \beta$. Now let us formalize this.
 \begin{proof}
   ~
   \begin{description}
-    \item[\ref{implim-one}$\Leftrightarrow$\ref{implim-f}] $\forall x \in \mathscr{F} (\Ob \mu) :
+    \item[\ref{implim-one}$\Leftrightarrow$\ref{implim-f}]
+    \begin{multline*}
+    \forall x \in \mathscr{F} (\Ob \mu) :
     \left( x \overset{\mu}{\rightarrow} \alpha \Rightarrow \supfun{f} x
-    \overset{\nu}{\rightarrow} \beta \right) \Leftrightarrow \forall x \in
+    \overset{\nu}{\rightarrow} \beta \right) \Leftrightarrow \\ \forall x \in
     \mathscr{F} (\Ob \mu) : (x \sqsubseteq \langle \mu \rangle \alpha
-    \Rightarrow \supfun{f} x \sqsubseteq \supfun{\nu} \beta)
+    \Rightarrow \\ \supfun{f} x \sqsubseteq \supfun{\nu} \beta)
     \Leftrightarrow \supfun{f} \langle \mu \rangle \alpha \sqsubseteq
     \supfun{\nu} \beta \Leftrightarrow f|_{\langle \mu \rangle^{\ast}
-    \{ \alpha \}} \overset{\nu}{\rightarrow} \beta$.
+    \{ \alpha \}} \overset{\nu}{\rightarrow} \beta.
+    \end{multline*}
     
     \item[\ref{implim-f}$\Rightarrow$\ref{implim-a}] Obvious.
     

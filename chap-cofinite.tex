@@ -40,17 +40,18 @@ The following is an implications tuple:
 
 \begin{proof}
   $\Omega$ exists by corollary~\ref{filt-is-complete}.
-  
-  $Y \in \corestar \Omega \Leftrightarrow Y \nasymp^{\mathfrak{A}} 
+\begin{multline*}
+  Y \in \corestar \Omega \Leftrightarrow Y \nasymp^{\mathfrak{A}} 
   \bigsqcap^{\mathfrak{A}}_{X \in \operatorname{coatoms}^{\mathfrak{Z}}} X
-  \Leftrightarrow \text{(by properties of filter bases)} \Leftrightarrow
+  \Leftrightarrow \\ \text{(by properties of filter bases)} \Leftrightarrow \\
   \forall S \in \subsets_{\operatorname{fin}} \operatorname{coatoms}^{\mathfrak{Z}} : Y
-  \nasymp^{\mathfrak{A}} \bigsqcap^{\mathfrak{A}} S \Leftrightarrow
+  \nasymp^{\mathfrak{A}} \bigsqcap^{\mathfrak{A}} S \Leftrightarrow \\
   \text{(corollary~\ref{f-meet-closed})} \Leftrightarrow \forall S \in \subsets_{\operatorname{fin}}
-  \operatorname{coatoms}^{\mathfrak{Z}} : Y \nasymp \bigsqcap S \Leftrightarrow
+  \operatorname{coatoms}^{\mathfrak{Z}} : Y \nasymp \bigsqcap S \Leftrightarrow \\
   \forall K \in \subsets_{\operatorname{fin}} U : Y \setminus K \neq \emptyset
-  \Leftrightarrow \card Y \geq \omega \Leftrightarrow \card
-  \atoms^{\mathfrak{Z}} Y \geq \omega$.
+  \Leftrightarrow \\ \card Y \geq \omega \Leftrightarrow \card
+  \atoms^{\mathfrak{Z}} Y \geq \omega.
+\end{multline*}
   (Here $\subsets_{\operatorname{fin}}$ denotes
   the set of finite subsets.)
 \end{proof}

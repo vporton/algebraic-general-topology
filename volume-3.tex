@@ -1,0 +1,80 @@
+\documentclass[english,reqno,12pt]{amsbook}
+\usepackage[paperwidth=5.06in, paperheight=7.81in]{geometry}
+\usepackage[T1]{fontenc}
+\synctex=-1
+% \usepackage{xcolor}
+% \usepackage{hyperref}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{agt}
+\makeindex
+% \usepackage[all]{xy}
+% \usepackage[unicode=true,
+%  bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
+%  breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=true]
+%  {hyperref}
+\hypersetup{pdftitle={Algebraic General Topology. Book 3: Algebra. Edition 3},
+ pdfauthor={Victor Porton},
+ pdfsubject={general topology, algebra},
+ pdfkeywords={algebraic general topology,quasi-uniform spaces,generalizations of proximity spaces,generalizations of nearness spaces,generalizations of uniform spaces,generalizations of metric spaces,ordered semigroups,ordered monoids,abstract algebra,universal algebra}}
+
+\usepackage{xr,refcount}
+\externaldocument[book-]{volume-1}
+\newcommand{\bookref}[1]{\ref*{book-#1}}
+
+% Continue numbering of book.pdf
+\setcounter{thm}{\getrefnumber{book-finalthm}}
+\addtocounter{thm}{-1}
+
+\begin{document}
+
+\title{Algebraic General Topology.\\Book 3: Algebra.\\Edition 3}
+
+\author{Victor Porton}
+
+\email{\href{mailto:porton@narod.ru}{porton@narod.ru}}
+
+\urladdr{\href{http://www.mathematics21.org}{http://www.mathematics21.org}}
+
+\date{\today}
+
+\begin{abstract}
+I define \emph{space} as an element of an ordered semigroup action, that is a semigroup action conforming to a partial order. Topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, etc.\ all are spaces. It can be further generalized to ordered precategory actions (that I call \emph{interspaces}). I build basic general topology (continuity, limit, openness, closedness, hausdorffness, compactness, etc.)\ in an arbitrary space. Now general topology is an algebraic theory.
+
+For example, my generalized continuous function are: continuous function for topological spaces, proximally continuous functions for proximity spaces, uniformly continuous functions for uniform spaces, contractions for metric spaces, discretely continuous functions for (directed) graphs.
+
+Was a spell laid onto Earth mathematicians not to find the most important structure in general topology until 2019?
+\end{abstract}
+
+
+\keywords{algebraic general topology, quasi-uniform spaces, generalizations of proximity spaces, generalizations of nearness spaces, generalizations
+of uniform spaces, ordered semigroups, ordered monoids, abstract algebra, universal algebra}
+
+
+\subjclass[2010]{06F05, 06F99, 08A99, 20M30, 20M99, 54J05, 54A05, 54D99, 54E05, 54E15, 54E17, 54E99, 51F99, 54E25, 30L99, 54E35}
+
+\maketitle
+
+\tableofcontents{}
+
+This is a draft.
+
+It is a continuation of \cite{volume-1}.
+
+You can read this text without any knowledge of algebraic general topology~(\cite{volume-1}). But to have some examples of how to apply this theory, you need to know what funcoids and reloids are and how funcoids are related with topological spaces.
+
+\include{chap-osgroups}
+
+% \printindex{}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

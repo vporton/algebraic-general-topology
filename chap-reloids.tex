@@ -170,6 +170,155 @@ Prove $f^n = \bigsqcap^{\mathsf{RLD}}\setcond{F^n}{F\in\up f}$ for every endofun
 
 \section{Restricting reloid to a filter}
 
+<<<<<<< HEAD
+=======
+Thus we have proved $f\circ g\sqcup f\circ h\sqsupseteq f\circ(g\sqcup h)$.
+But obviously $f\circ(g\sqcup h)\sqsupseteq f\circ g$ and $f\circ(g\sqcup h)\sqsupseteq f\circ h$
+and so $f\circ(g\sqcup h)\sqsupseteq f\circ g\sqcup f\circ h$. Thus
+$f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$.\end{proof}
+\begin{thm}
+\label{rld-cross}Let $A$, $B$, $C$ be sets, $f\in\mathsf{RLD}(A,B)$,
+$g\in\mathsf{RLD}(B,C)$, $h\in\mathsf{RLD}(A,C)$. Then
+\[
+g\circ f\nasymp h\Leftrightarrow g\nasymp h\circ f^{-1}.
+\]
+\end{thm}
+\begin{proof}
+~
+\begin{align*}
+g\circ f\nasymp h & \Leftrightarrow\\
+\bigsqcap^{\mathsf{RLD}}\setcond{G\circ F}{F\in\up f,G\in\up g}\sqcap\bigsqcap^{\mathsf{RLD}}\up h\ne\bot & \Leftrightarrow\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(G\circ F)\sqcap^{\mathsf{RLD}} H}{F\in\up f,G\in\up g,H\in\up h}\ne\bot & \Leftrightarrow\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(G\circ F)\sqcap H}{F\in\up f,G\in\up g,H\in\up h}\ne\bot & \Leftrightarrow\\
+\forall F\in\up f,G\in\up g,H\in\up h:\uparrow^{\mathsf{RLD}}((G\circ F)\sqcap H)\ne\bot & \Leftrightarrow\\
+\forall F\in\up f,G\in\up g,H\in\up h:G\circ F\nasymp H
+\end{align*}
+(used properties of generalized filter bases).
+
+Similarly $g\nasymp h\circ f^{-1}\Leftrightarrow\forall F\in\up f,G\in\up g,H\in\up h:G\nasymp H\circ F^{-1}$.
+
+Thus $g\circ f\nasymp h\Leftrightarrow g\nasymp h\circ f^{-1}$ because
+$G\circ F\nasymp H\Leftrightarrow G\nasymp H\circ F^{-1}$ by proposition
+\ref{rel-cross}.\end{proof}
+\begin{thm}
+For every composable reloids $f$ and $g$
+\begin{enumerate}
+\item $g\circ f=\bigsqcup\setcond{g\circ F}{F\in\atoms f}$.
+\item $g\circ f=\bigsqcup\setcond{G\circ f}{G\in\atoms g}$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We will prove only the first as the second is dual.
+\end{proof}
+Obviously $\bigsqcup\setcond{g\circ F}{F\in\atoms f}\sqsubseteq g\circ f$. We need to prove $\bigsqcup\setcond{g\circ F}{F\in\atoms f}\sqsupseteq g\circ f$.
+Really,
+\begin{align*}
+\bigsqcup\setcond{g\circ F}{F\in\atoms f}\sqsupseteq g\circ f & \Leftrightarrow\\
+\forall x\in\mathsf{RLD}(\Src f,\Dst g):\left(x\nasymp g\circ f\Rightarrow x\nasymp\bigsqcup\setcond{g\circ F}{F\in\atoms f}\right) & \Leftarrow\\
+\forall x\in\mathsf{RLD}(\Src f,\Dst g):\left(x\nasymp g\circ f\Rightarrow \exists F\in\atoms f:x\nasymp g\circ F\right) & \Leftrightarrow\\
+\forall x\in\mathsf{RLD}(\Src f,\Dst g):(g^{-1}\circ x\nasymp f\Rightarrow \exists F\in\atoms f:g^{-1}\circ x\nasymp F)
+\end{align*}
+what is obviously true.
+\begin{cor}
+\label{rld-comp-at}If $f$ and $g$ are composable reloids, then
+\[
+g\circ f=\bigsqcup\setcond{G\circ F}{F\in\atoms f,G\in\atoms g}.
+\]
+\end{cor}
+\begin{proof}
+$g\circ f=\bigsqcup_{F\in\atoms f}(g\circ F)=\bigsqcup_{F\in\atoms f}\bigsqcup_{G\in\atoms g}(G\circ F)=\bigsqcup\setcond{G\circ F}{F\in\atoms f,G\in\atoms g}$.
+\end{proof}
+
+\section{Reloidal product of filters}
+\begin{defn}
+\index{product!reloidal}Reloidal product of filters $\mathcal{A}$
+and $\mathcal{B}$ is defined by the formula
+\[
+\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}\eqdef\bigsqcap^{\mathsf{RLD}}\setcond{A\times B}{A\in\up\mathcal{A},B\in\up\mathcal{B}}.
+\]
+\end{defn}
+\begin{obvious}
+~
+\begin{itemize}
+\item $\uparrow^{U}A\times^{\mathsf{RLD}}\uparrow^{V}B=\uparrow^{\mathsf{RLD}(U,V)}(A\times B)$
+for every sets $A\subseteq U$, $B\subseteq V$.
+\item $\uparrow A\times^{\mathsf{RLD}}\uparrow B=\uparrow^{\mathsf{RLD}}(A\times B)$
+for every typed sets~$A$,~$B$.\end{itemize}
+\end{obvious}
+\begin{thm}
+\label{rld-prod-t-atoms}$\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}=\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms\mathcal{A},b\in\atoms\mathcal{B}}$
+for every filters $\mathcal{A}$ and $\mathcal{B}$.\end{thm}
+\begin{proof}
+Obviously $\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}\sqsupseteq\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms\mathcal{A},b\in\atoms\mathcal{B}}$.
+
+Reversely, let $K\in\up\bigsqcup\setcond{a\times^{\mathsf{RLD}}b}{a\in\atoms\mathcal{A},b\in\atoms\mathcal{B}}$.
+Then $K\in\up(a\times^{\mathsf{RLD}}b)$ for every $a\in\atoms\mathcal{A}$,
+$b\in\atoms\mathcal{B}$. $K\sqsupseteq X_{a}\times Y_{b}$ for some
+$X_{a}\in\up a$, $Y_{b}\in\up b$; 
+\begin{multline*}
+K\sqsupseteq\bigsqcup\setcond{X_{a}\times Y_{b}}{a\in\atoms\mathcal{A},b\in\atoms\mathcal{B}}=\\
+\bigsqcup\setcond{X_{a}}{a\in\atoms\mathcal{A}}\times\bigsqcup\setcond{Y_{b}}{b\in\atoms\mathcal{B}}\sqsupseteq A\times B
+\end{multline*}
+ where $A\in\up\mathcal{A}$, $B\in\up\mathcal{B}$; $K\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$.\end{proof}
+\begin{thm}
+If $\mathcal{A}_{0},\mathcal{A}_{1}\in\mathscr{F}(A)$, $\mathcal{B}_{0},\mathcal{B}_{1}\in\mathscr{F}(B)$
+for some sets $A$, $B$ then
+\[
+\ensuremath{(\mathcal{A}_{0}\times^{\mathsf{RLD}}\mathcal{B}_{0})\sqcap(\mathcal{A}_{1}\times^{\mathsf{RLD}}\mathcal{B}_{1})=(\mathcal{A}_{0}\sqcap\mathcal{A}_{1})\times^{\mathsf{RLD}}(\mathcal{B}_{0}\sqcap\mathcal{B}_{1}).}
+\]
+\end{thm}
+\begin{proof}
+~
+\begin{align*}
+(\mathcal{A}_{0}\times^{\mathsf{RLD}}\mathcal{B}_{0})\sqcap(\mathcal{A}_{1}\times^{\mathsf{RLD}}\mathcal{B}_{1}) & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{P\sqcap Q}{P\in\up(\mathcal{A}_{0}\times^{\mathsf{RLD}}\mathcal{B}_{0}),Q\in\up(\mathcal{A}_{1}\times^{\mathsf{RLD}}\mathcal{B}_{1})} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(A_{0}\times B_{0})\sqcap(A_{1}\times B_{1})}{A_{0}\in\up\mathcal{A}_{0},B_{0}\in\up\mathcal{B}_{0},A_{1}\in\up\mathcal{A}_{1},B_{1}\in\up\mathcal{B}_{1}} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{(A_{0}\sqcap A_{1})\times(B_{0}\sqcap B_{1})}{A_{0}\in\up\mathcal{A}_{0},B_{0}\in\up\mathcal{B}_{0},A_{1}\in\up\mathcal{A}_{1},B_{1}\in\up\mathcal{B}_{1}} & =\\
+\bigsqcap^{\mathsf{RLD}}\setcond{K\times L}{K\in\up(\mathcal{A}_{0}\sqcap\mathcal{A}_{1}),L\in\up(\mathcal{B}_{0}\sqcap\mathcal{B}_{1})} & =\\
+(\mathcal{A}_{0}\sqcap\mathcal{A}_{1})\times^{\mathsf{RLD}}(\mathcal{B}_{0}\sqcap\mathcal{B}_{1}).
+\end{align*}
+\end{proof}
+\begin{thm}
+\label{meet-rld-prod}If $S\in\subsets(\mathscr{F}(A)\times\mathscr{F}(B))$
+for some sets $A$, $B$ then
+\[
+\bigsqcap\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{(\mathcal{A},\mathcal{B})\in S}=\bigsqcap\dom S\times^{\mathsf{RLD}}\bigsqcap\im S.
+\]
+\end{thm}
+\begin{proof}
+Let $\mathcal{P}=\bigsqcap\dom S$, $\mathcal{Q}=\bigsqcap\im S$;
+$l=\bigsqcap\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{(\mathcal{A},\mathcal{B})\in S}$.
+
+$\mathcal{P}\times^{\mathsf{RLD}}\mathcal{Q}\sqsubseteq l$ is obvious.
+
+Let $F\in\up(\mathcal{P}\times^{\mathsf{RLD}}\mathcal{Q})$. Then
+there exist $P\in\up\mathcal{P}$ and $Q\in\up\mathcal{Q}$ such that
+$F\sqsupseteq P\times Q$.
+
+$P=P_{1}\sqcap\dots\sqcap P_{n}$ where $P_{i}\in\dom S$ and $Q=Q_{1}\sqcap\dots\sqcap Q_{m}$
+where $Q_{j}\in\im S$.
+
+$P\times Q=\bigsqcap_{i,j}(P_{i}\times Q_{j})$.
+
+$P_{i}\times Q_{j}\in\up(\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B})$
+for some $(\mathcal{A},\mathcal{B})\in S$. $P\times Q=\bigsqcap_{i,j}(P_{i}\times Q_{j})\in\up l$.
+So $F\in\up l$.\end{proof}
+\begin{cor}
+$\bigsqcap\rsupfun{\mathcal{A}\times^{\mathsf{RLD}}}T=\mathcal{A}\times^{\mathsf{RLD}}\bigsqcap T$
+if $\mathcal{A}$ is a filter and $T$ is a set of filters with common
+base.\end{cor}
+\begin{proof}
+Take $S=\{\mathcal{A}\}\times T$ where $T$ is a set of filters.
+
+Then $\bigsqcap\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{B}\in T}=\mathcal{A}\times^{\mathsf{RLD}}\bigsqcap T$
+that is $\bigsqcap\rsupfun{\mathcal{A}\times^{\mathsf{RLD}}}T=\mathcal{A}\times^{\mathsf{RLD}}\bigsqcap T$.\end{proof}
+\begin{defn}
+\index{reloid!convex}I will call a reloid \emph{convex} iff it is
+a join of direct products.
+\end{defn}
+
+\section{Restricting reloid to a filter. Domain and image}
+>>>>>>> master
 \begin{defn}
 \index{reloid!identity}\emph{Identity reloid} for a set $A$ is defined
 by the formula $1_{A}^{\mathsf{RLD}}=\uparrow^{\mathsf{RLD}(A,A)}\id_{A}$.\end{defn}
@@ -284,7 +433,192 @@ was proved above. $\uparrow^{\mathsf{RLD}}1_{A}^{\mathbf{Rel}}=1_{A}^{\mathsf{RL
 is by definition.
 \end{proof}
 
+<<<<<<< HEAD
 \section{Reloidal product of filters}
+=======
+\section{Monovalued and injective reloids}
+
+\index{reloid!monovalued}\index{monovalued!reloid}Following the
+idea of definition of monovalued morphism let's call \emph{monovalued}
+such a reloid $f$ that $f\circ f^{-1}\sqsubseteq\id_{\im f}^{\mathsf{RLD}}$.
+
+\index{reloid!injective}\index{injective!reloid}Similarly, I will
+call a reloid \emph{injective} when $f^{-1}\circ f\sqsubseteq\id_{\dom f}^{\mathsf{RLD}}$.
+\begin{obvious}
+A reloid $f$ is
+\begin{itemize}
+\item monovalued iff $f\circ f^{-1}\sqsubseteq1_{\Dst f}^{\mathsf{RLD}}$;
+\item injective iff $f^{-1}\circ f\sqsubseteq1_{\Src f}^{\mathsf{RLD}}$.
+\end{itemize}
+\end{obvious}
+In other words, a reloid is monovalued (injective) when it is a monovalued
+(injective) morphism of the category of reloids.
+
+Monovaluedness is dual of injectivity.
+\begin{obvious}
+~
+\begin{enumerate}
+\item A morphism $(\mathcal{A},\mathcal{B},f)$ of the category of reloid
+triples is monovalued iff the reloid $f$ is monovalued.
+\item A morphism $(\mathcal{A},\mathcal{B},f)$ of the category of reloid
+triples is injective iff the reloid $f$ is injective.
+\end{enumerate}
+\end{obvious}
+\begin{thm}
+~
+\begin{enumerate}
+\item \label{rld-mon-gr}A reloid $f$ is a monovalued iff there exists
+a $\mathbf{Set}$-morphism (monovalued $\mathbf{Rel}$-morphism) $F\in\up f$.
+\item \label{rld-mon-inj}A reloid $f$ is a injective iff there exists
+an injective $\mathbf{Rel}$-morphism $F\in\up f$.
+\item \label{rld-mon-both}A reloid $f$ is a both monovalued and injective
+iff there exists an injection (a monovalued and injective $\mathbf{Rel}$-morphism
+= injective $\mathbf{Set}$-morphism) $F\in\up f$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+The reverse implications are obvious. Let's prove the direct implications:
+\begin{widedisorder}
+\item [{\ref{rld-mon-gr}}] Let $f$ be a monovalued reloid. Then $f\circ f^{-1}\sqsubseteq 1_{\Dst f}^{\mathsf{RLD}}$,
+that is
+\[\bigsqcap^{\mathsf{RLD}}\setcond{F\circ F^{-1}}{F\in\up f}\sqsubseteq 1_{\Dst f}^{\mathsf{RLD}}.\]
+It's simple to show that $\setcond{F\circ F^{-1}}{F\in\up f}$ is
+a filter base. Consequently there exists $F\in\up f$ such that $F\circ F^{-1}\sqsubseteq 1_{\Dst f}^{\mathsf{RLD}}$
+that is $F$ is monovalued.
+\item [{\ref{rld-mon-inj}}] Similar.
+\item [{\ref{rld-mon-both}}] Let $f$ be a both monovalued and injective
+reloid. Then by proved above there exist $F,G\in\up f$ such that
+$F$ is monovalued and $G$ is injective. Thus $F\sqcap G\in\up f$
+is both monovalued and injective.
+\end{widedisorder}
+\end{proof}
+\begin{conjecture}
+A reloid $f$ is monovalued iff
+\[
+\forall g\in\mathsf{\mathsf{RLD}}(\Src f,\Dst f):(g\sqsubseteq f\Rightarrow\exists\mathcal{A}\in\mathscr{F}(\Src f):g=f|_{\mathcal{A}}).
+\]
+
+\end{conjecture}
+
+\section{Complete reloids and completion of reloids}
+\begin{defn}
+\index{reloid!complete}A \emph{complete} reloid is a reloid representable
+as a join of reloidal products $\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}b$
+where $\alpha\in A$ and $b$ is an ultrafilter on $B$ for some sets
+$A$ and $B$.
+\end{defn}
+
+\begin{defn}
+\index{reloid!co-complete}A \emph{co-complete} reloid is a reloid
+representable as a join of reloidal products $a\times^{\mathsf{RLD}}\uparrow^{A}\{\beta\}$
+where $\beta\in B$ and $a$ is an ultrafilter on $A$ for some sets
+$A$ and $B$.
+\end{defn}
+I will denote the sets of complete and co-complete reloids from a set~$A$ to a set~$B$ as
+$\mathsf{ComplRLD}(A,B)$ and $\mathsf{CoComplRLD}(A,B)$ correspondingly and
+set of all (co-)complete reloids (for small sets)
+as $\mathsf{ComplRLD}$ and $\mathsf{CoComplRLD}$.
+\begin{obvious}
+Complete and co-complete are dual.\end{obvious}
+\begin{thm}
+\label{complrld-rep}$G\mapsto\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$
+is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
+to the set $\mathsf{ComplRLD}(A,B)$.
+
+The inverse isomorphism is described by the formula $G(\alpha)=\im(f|_{\uparrow \{\alpha\}})$
+where $f$ is a complete reloid.\end{thm}
+\begin{proof}
+$\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$
+is complete because $G(\alpha)=\bigsqcup\atoms G(\alpha)$ and thus
+\[
+\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}b}{\alpha\in A,b\in\atoms G(\alpha)}
+\]
+is complete. So $G\mapsto\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$
+is a function from $G\in\mathscr{F}(B)^{A}$ to $\mathsf{ComplRLD}(A,B)$.
+
+Let $f$ be complete. Then take
+\[
+G(\alpha)=\bigsqcup\setcond{b\in\atoms^{\mathscr{F}(\Dst f)}}{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}b\sqsubseteq f}
+\]
+and we have $f=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$
+obviously. So $G\mapsto\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$
+is surjection onto $\mathsf{ComplRLD}(A,B)$.
+
+Let now prove that it is an injection:
+
+Let
+\[
+f=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}F(\alpha)}{\alpha\in A}=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}
+\]
+for some $F,G\in\mathscr{F}(B)^{A}$. We need to prove $F=G$. Let
+$\beta\in\Src f$.
+\begin{align*}
+f\sqcap(\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(B)}) & =\text{ (theorem~\ref{b-f-back-distr})}\\
+\bigsqcup\setcond{(\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}F(\alpha))\sqcap(\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(B)})}{\alpha\in A} & =\\
+\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}F(\beta).
+\end{align*}
+Similarly $f\sqcap(\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(B)})=\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}G(\beta)$.
+Thus $\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}F(\beta)=\uparrow^{A}\{\beta\}\times^{\mathsf{RLD}}G(\beta)$
+and so $F(\beta)=G(\beta)$.
+
+We have proved that it is a bijection. To show that it is monotone
+is trivial.
+
+Denote $f=\bigsqcup\setcond{\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in A}$.
+Then
+\begin{multline*}
+\im(f|_{\uparrow \{\alpha'\}})=\im(f\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}))= \\
+\text{(because \ensuremath{\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)}} is principal)}=\\
+\im\bigsqcup\setcond{(\uparrow^{A}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha))\sqcap(\uparrow^{A}\{\alpha'\}\times\top^{\mathscr{T}(B)})}{\alpha\in\Src f}=\\
+\im(\uparrow^{A}\{\alpha'\}\times^{\mathsf{RLD}}G(\alpha'))=G(\alpha').
+\end{multline*}
+\end{proof}
+\begin{cor}
+$G\mapsto\bigsqcup\setcond{G(\alpha)\times^{\mathsf{RLD}}\uparrow^{A}\{\alpha\}}{\alpha\in A}$
+is an order isomorphism from the set of functions $G\in\mathscr{F}(B)^{A}$
+to the set $\mathsf{CoComplRLD}(A,B)$.
+
+The inverse isomorphism is described by the formula $G(\alpha)=\im(f^{-1}|_{\uparrow\{\alpha\}})$
+where $f$ is a co-complete reloid.
+\end{cor}
+
+\begin{cor}
+$\mathsf{ComplRLD}(A,B)$ and $\mathsf{ComplFCD}(A,B)$ are a co-frames.\end{cor}
+\begin{obvious}
+Complete and co-complete reloids are convex.
+\end{obvious}
+
+\begin{obvious}
+Principal reloids are complete and co-complete.
+\end{obvious}
+
+\begin{obvious}
+Join (on the lattice of reloids) of complete reloids is complete.\end{obvious}
+\begin{thm}
+A reloid which is both complete and co-complete is principal.\end{thm}
+\begin{proof}
+Let $f$ be a complete and co-complete reloid. We have
+\[
+f=\bigsqcup\setcond{\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}G(\alpha)}{\alpha\in\Src f}\quad\text{and}\quad f=\bigsqcup\setcond{H(\beta)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\}}{\beta\in\Dst f}
+\]
+for some functions $G:\Src f\rightarrow\mathscr{F}(\Dst f)$ and $H:\Dst f\rightarrow\mathscr{F}(\Src f)$.
+For every $\alpha\in\Src f$ we have
+\begin{align*}
+G(\alpha) & =\\
+\im f|_{\uparrow \{\alpha\}} & =\\
+\im(f\sqcap(\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})) & =\text{ (*)}\\
+\im\bigsqcup\setcond{(H(\beta)\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\})\sqcap(\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\top^{\mathscr{F}(\Dst f)})}{\beta\in\Dst f} & =\\
+\im\bigsqcup\setcond{(H(\beta)\sqcap\uparrow^{\Src f}\{\alpha\})\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\}}{\beta\in\Dst f} & =\\
+\im\bigsqcup\setcond{\left(\begin{cases}
+\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\} & \text{if }\ensuremath{H(\beta)\nasymp\uparrow^{\Src f}\{\alpha\}}\\
+\bot^{\mathsf{RLD}(\Src f,\Dst f)} & \text{if }\ensuremath{H(\beta)\asymp\uparrow^{\Src f}\{\alpha\}}
+\end{cases}\right)}{\beta\in\Dst f} & =\\
+\im\bigsqcup\setcond{\uparrow^{\Src f}\{\alpha\}\times^{\mathsf{RLD}}\uparrow^{\Dst f}\{\beta\}}{\beta\in\Dst f,H(\beta)\nasymp\uparrow^{\Src f}\{\alpha\}} & =\\
+\im\bigsqcup\setcond{\uparrow^{\mathsf{RLD}(\Src f,\Dst f)}\{(\alpha,\beta)\}}{\beta\in\Dst f,H(\beta)\nasymp\uparrow^{\Src f}\{\alpha\}} & =\\
+\bigsqcup\setcond{\uparrow^{\Dst f}\{\beta\}}{\beta\in\Dst f,H(\beta)\nasymp\uparrow^{\Src f}\{\alpha\}}
+\end{align*}
+{*} theorem~\ref{b-f-back-distr} was used.
+>>>>>>> master
 
 \begin{defn}
 \index{product!reloidal}Reloidal product of filters $\mathcal{A}$

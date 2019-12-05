@@ -883,9 +883,9 @@ L\in\mathord{\rsuprel{\prod^{\mathsf{FCD}(\mathfrak{A})}A}}.
 Funcoidal product is a completary multifuncoid.\end{cor}
 \begin{proof}
 It is enough to prove that funcoidal product is a multifuncoid. Really,
-\[
-L_{i}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{i}L|_{(\dom\mathfrak{A})\setminus\{i\}}\Leftrightarrow\forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}\Leftrightarrow L_{j}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{j}L|_{(\dom\mathfrak{A})\setminus\{j\}}.
-\]
+\begin{multline*}
+L_{i}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{i}L|_{(\dom\mathfrak{A})\setminus\{i\}}\Leftrightarrow\\ \forall i\in\dom\mathfrak{A}:A_{i}\nasymp L_{i}\Leftrightarrow L_{j}\nasymp\rsupfun{\prod^{\mathsf{FCD}(\mathfrak{A})}A}_{j}L|_{(\dom\mathfrak{A})\setminus\{j\}}.
+\end{multline*}
 \end{proof}
 \begin{thm}
 If our each filtrator $(\mathfrak{A}_i,\mathfrak{Z}_i)$
@@ -1024,8 +1024,8 @@ So
 \begin{gather*}
 \left(\val\prod^{(D)}F\right)_{(i,j)}L=\setcond{X\in(\form F_{i})_{j}}{L\cup\{((i,j),X)\}\in\GR\prod^{(D)}F}=\\
 \setcond{X\in(\form F_{i})_{j}}{\exists z\in\prod(\GR\circ F):L\cup\{((i,j),X)\}=\uncurry z}=\\
-\setcond{X\in(\form F_{i})_{j}}{\exists z\in\prod\left((\GR\circ F)|_{\left(\arity\prod^{(D)}F\right)\setminus\{(i,j)\}}\right),v\in\GR F_{i}:(L=\uncurry z\land v_{j}=X)}=\\
-\setcond{X\in(\form F_{i})_{j}}{\exists z\in\prod\left((\GR\circ F)|_{\left(\arity\prod^{(D)}F\right)\setminus\{(i,j)\}}\right):L=\uncurry z\land\exists v\in\GR F_{i}:v_{j}=X}.
+\setcond{X\in(\form F_{i})_{j}}{\scriptstyle\exists z\in\prod\left((\GR\circ F)|_{\left(\arity\prod^{(D)}F\right)\setminus\{(i,j)\}}\right),v\in\GR F_{i}:(L=\uncurry z\land v_{j}=X)}=\\
+\setcond{X\in(\form F_{i})_{j}}{\scriptstyle\exists z\in\prod\left((\GR\circ F)|_{\left(\arity\prod^{(D)}F\right)\setminus\{(i,j)\}}\right):L=\uncurry z\land\exists v\in\GR F_{i}:v_{j}=X}.
 \end{gather*}
 
 
@@ -2526,23 +2526,25 @@ conforms to the formula
 \begin{proof}
 ~
 \begin{align*}
-\mathcal{X}\suprel{\Pr_{k}^{(A)}f}\mathcal{Y} & \Leftrightarrow\\
-\forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\rsuprel{\Pr_{k}^{(A)}f}Y & \Leftrightarrow\\
-\forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
+&\mathcal{X}\suprel{\Pr_{k}^{(A)}f}\mathcal{Y} \Leftrightarrow\\
+&\forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:X\rsuprel{\Pr_{k}^{(A)}f}Y \Leftrightarrow\\
+&\forall X\in\up\mathcal{X},Y\in\up\mathcal{Y}:\\
+&\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
 \uparrow^{A_{i}}X & \text{if }i=k
 \end{array}\right.\right)\suprel f\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
 \uparrow^{B_{i}}Y & \text{if }i=k
-\end{array}\right.\right) & \Leftrightarrow\\
-\forall X\in\up\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
+\end{array}\right.\right) \Leftrightarrow\\
+&\forall X\in\up\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
 \mathcal{X} & \text{if }i=k
 \end{array}\right.\right),Y\in\up\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(B_{i})} & \text{if }i\neq k;\\
 \mathcal{Y} & \text{if }i=k
-\end{array}\right.\right):X\rsuprel fY & \Leftrightarrow\\
-\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
+\end{array}\right.\right):\\
+&X\rsuprel fY \Leftrightarrow\\
+&\prod_{i\in\dom A}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}
 \top^{\mathscr{F}(A_{i})} & \text{if }i\neq k;\\
 \mathcal{X} & \text{if }i=k
 \end{array}\right.\right)\suprel f\prod_{i\in\dom B}^{\mathsf{RLD}}\left(\left\{ \begin{array}{ll}

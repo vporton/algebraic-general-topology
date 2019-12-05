@@ -1,4 +1,4 @@
-
+% 
 \chapter{\label{chap-common}Common knowledge, part 1}
 
 In this chapter we will consider some well known mathematical theories.
@@ -38,7 +38,7 @@ $a\sqsubseteq b$.\end{defn}
 \begin{obvious}
 The reverse of a partial order is also a partial order.\end{obvious}
 \begin{defn}
-\index{set!partially ordered}A set $A$ together with
+\index{set!partially ordered}\index{poset}A set $A$ together with
 a partial order on it is called a \emph{partially ordered set} (\emph{poset}
 for short).
 \end{defn}
@@ -153,7 +153,7 @@ Let $\mathfrak{A}$ be a poset.
 \begin{defn}
 \index{least element}Given a set $X\in\subsets\mathfrak{A}$ the
 \emph{least element} (also called \emph{minimum} and denoted $\min X$)
-of $X$ us such $a\in X$ that $\forall x\in X:a\sqsubseteq x$.
+of $X$ is such $a\in X$ that $\forall x\in X:a\sqsubseteq x$.
 \end{defn}
 Least element does not necessarily exists. But if it exists:
 \begin{prop}
@@ -166,7 +166,7 @@ It follows from anti-symmetry.
 \begin{defn}
 \index{greatest element}Given a set $X\in\subsets\mathfrak{A}$ the
 \emph{greatest element} (also called \emph{maximum} and denoted $\max X$)
-of $X$ us such $a\in X$ that $\forall x\in X:a\sqsupseteq x$.\end{defn}
+of $X$ is such $a\in X$ that $\forall x\in X:a\sqsupseteq x$.\end{defn}
 \begin{rem}
 Least and greatest elements of a set $X$ is a trivial generalization
 of the above defined least and greatest element for the entire poset.\end{rem}
@@ -1505,6 +1505,28 @@ of $C$;
 \end{enumerate}
 \end{defn}
 
+\begin{defn}
+\emph{Opposite category} $C^{\operatorname{op}}$ of category~$C$ is the category where
+``all arrows are reversed'' that is every morphism~$f$ is replaced with so called
+\emph{opposite morphism}~$f^{\operatorname{op}}$ such that
+$\Src f^{\operatorname{op}} = \Dst f$, $\Dst f^{\operatorname{op}} = \Src f$ and
+$g^{\operatorname{op}}\circ f^{\operatorname{op}} = (f\circ g)^{\operatorname{op}}$
+(composition taken in the ``opposite order'').
+\end{defn}
+
+\begin{defn}
+A \emph{monomorphism} (also called a \emph{monic} morphism or a \emph{mono}) is a left-cancellative morphism. That is, an arrow~$f\colon X\to Y$ such that for all objects~$Z$ and all morphisms~$g_1,g_2\colon Z\to X$,
+\[ f\circ g_1=f\circ g_2\Rightarrow g_1=g_2. \]
+\end{defn}
+
+Monomorphisms are a categorical generalization of injective functions (also called ``one-to-one functions''); in some categories the notions coincide, but monomorphisms are more general.
+
+\begin{defn}
+The categorical dual of a monomorphism is an \emph{epimorphism}, i.e.\ a monomorphism in a category~$C$ is an epimorphism in the dual category~$C^{\operatorname{op}}$ that is it
+conforms to the formula
+\[ g_1\circ f=g_2\circ f\Rightarrow g_1=g_2. \]
+\end{defn}
+
 \subsection{Some important examples of categories}
 \begin{xca}
 Prove that the below examples of categories are really categories.\end{xca}
@@ -1593,7 +1615,6 @@ for more on definition and examples of commutative diagrams.
 \end{rem}
 The following is an example of a commutative diagram in~$\mathbf{Set}$
 (because $x+5-3=x+4-2$):
-
 \[
 \begin{tikzcd}
 \mathbb{N} \arrow[r, "+5"] \arrow[d, "+4"] & \mathbb{N} \arrow[d, "-3"] \\
@@ -1634,9 +1655,6 @@ The diagram at the figure~\ref{three-loop} is commutative, every
 cycle in the diagram is an identity.
 
 \begin{figure}[ht]
-\caption{\label{three-loop}}
-
-
 \begin{tikzcd}[row sep=2.5cm, column sep=1.5cm]
 & \bullet
 \arrow[rd, shift left, "f"]
@@ -1648,6 +1666,7 @@ cycle in the diagram is an identity.
 \arrow[lu, shift left, "f^{-1}"]
 \arrow[ll, shift left, "g"]
 \end{tikzcd}
+\caption{\label{three-loop}}
 \end{figure}
 \end{lem}
 \begin{proof}
@@ -1676,15 +1695,13 @@ Let $t\circ h\circ g\circ f=1_{\Src f}$. The diagram at the figure~\ref{four-loo
 is commutative, every cycle in the diagram is an identity.
 
 \begin{figure}[ht]
-\caption{\label{four-loop}}
-
-
 \begin{tikzcd}[row sep=1.5cm, column sep=1.5cm]
 \circled{(0,0)} \arrow[r, shift left, "f"] \arrow[d, shift left, "t^{-1}"]
   & \circled{(0,1)} \arrow[d, shift left, "g"] \arrow[l, shift left, "f^{-1}"] \\
 \circled{(1,0)} \arrow[u, shift left, "t"] \arrow[r, shift left, "h^{-1}"]
   & \circled{(1,1)} \arrow[l, shift left, "h"] \arrow[u, shift left, "g^{-1}"]
 \end{tikzcd}
+\caption{\label{four-loop}}
 \end{figure}
 \end{lem}
 \begin{proof}
@@ -1693,8 +1710,6 @@ defined by the table~\ref{square-table}.
 
 \begin{table}[ht]
 \caption{\label{square-table}}
-
-
 \begin{tabular}{|c|c|c|}
 \hline 
 $i$ & $j$ & $W(i,j)$\tabularnewline
@@ -1712,8 +1727,8 @@ $1$ & $1$ & $g\circ f$\tabularnewline
 \end{table}
 
 
-It is easy to verify by induction that the morphism corresponding
-every cycle in the diagram starting at the vertex $(0,0)$ and ending
+It is easy to verify by induction that the morphism corresponding to
+every path in the diagram starting at the vertex $(0,0)$ and ending
 with a vertex $(x,y)$ is $W(x,y)$.
 
 Thus the morphism corresponding to every cycle starting at the vertex

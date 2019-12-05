@@ -725,49 +725,49 @@ Let $\Hom$-sets be complete lattices.
 \begin{defn}
 \index{morphism!metamonovalued}A morphism $f$ of a partially ordered
 category is \emph{metamonovalued} when $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$
-whenever $G$ is a set of morphisms with a suitable domain and image.
+whenever $G$ is a set of morphisms with a suitable source and destination.
 \end{defn}
 
 \begin{defn}
 \index{morphism!metainjective}A morphism $f$ of a partially ordered
 category is \emph{metainjective} when $f\circ\left(\bigsqcap G\right)=\bigsqcap_{g\in G}(f\circ g)$
-whenever $G$ is a set of morphisms with a suitable domain and image.\end{defn}
+whenever $G$ is a set of morphisms with a suitable source and destination.\end{defn}
 \begin{obvious}
 Metamonovaluedness and metainjectivity are dual to each other.\end{obvious}
 \begin{defn}
 \index{morphism!metacomplete}A morphism $f$ of a partially ordered
 category is \emph{metacomplete} when $f\circ\left(\bigsqcup G\right)=\bigsqcup_{g\in G}(f\circ g)$
-whenever $G$ is a set of morphisms with a suitable domain and image.
+whenever $G$ is a set of morphisms with a suitable source and destination.
 \end{defn}
 
 \begin{defn}
 \index{morphism!co-metacomplete}A morphism $f$ of a partially ordered
 category is \emph{co-metacomplete} when $\left(\bigsqcup G\right)\circ f=\bigsqcup_{g\in G}(g\circ f)$
-whenever $G$ is a set of morphisms with a suitable domain and image.
+whenever $G$ is a set of morphisms with a suitable source and destination.
 \end{defn}
 Let now $\Hom$-sets be meet-semilattices.
 \begin{defn}
 \index{morphism!weakly metamonovalued}A morphism $f$ of a partially
 ordered category is \emph{weakly metamonovalued} when $(g\sqcap h)\circ f=(g\circ f)\sqcap(h\circ f)$
-whenever $g$ and $h$ are morphisms with a suitable domain and image.
+whenever $g$ and $h$ are morphisms with a suitable source and destination.
 \end{defn}
 
 \begin{defn}
 \index{morphism!weakly metainjective}A morphism $f$ of a partially
 ordered category is \emph{weakly metainjective} when $f\circ(g\sqcap h)=(f\circ g)\sqcap(f\circ h)$
-whenever $g$ and $h$ are morphisms with a suitable domain and image.
+whenever $g$ and $h$ are morphisms with a suitable source and destination.
 \end{defn}
 Let now $\Hom$-sets be join-semilattices.
 \begin{defn}
 \index{morphism!weakly metacomplete}A morphism $f$ of a partially
 ordered category is \emph{weakly metacomplete} when $f\circ(g\sqcup h)=(f\circ g)\sqcup(f\circ h)$
-whenever $g$ and $h$ are morphisms with a suitable domain and image.
+whenever $g$ and $h$ are morphisms with a suitable source and destination.
 \end{defn}
 
 \begin{defn}
 \index{morphism!weakly co-metacomplete}A morphism $f$ of a partially
 ordered category is \emph{weakly co-metacomplete} when $(g\sqcup h)\circ f=(g\circ f)\sqcup(h\circ f)$
-whenever $g$ and $h$ are morphisms with a suitable domain and image.\end{defn}
+whenever $g$ and $h$ are morphisms with a suitable source and destination.\end{defn}
 \begin{obvious}
 ~
 \begin{enumerate}
@@ -1125,11 +1125,13 @@ and $\dom\uncurry(z)=\coprod_{i\in X}z_{i}=\coprod z$.
 
 If $F$ is a finite family (indexed by a natural number $\dom F$)
 of anchored finitary relations, then by definition \[
-\GR\prod^\mathrm{(ord)} =
+\GR\prod^{\mathrm{(ord)}} =
 \setcond{
 \llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} , \ldots , a_{\dom F - 1, 0} , \ldots , a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket
 }{
-\llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
+\begin{array}{l}
+\llbracket a_{0, 0} , \ldots , a_{0, \arity F_0 - 1} \rrbracket \in \GR F_0 \land \ldots \land \\ \llbracket a_{\dom F - 1, \arity F_{\dom F - 1} - 1} \rrbracket \in \GR F_{\dom F - 1}
+\end{array}
 }
 \]and 
 \[
@@ -1161,7 +1163,7 @@ $\dom\concat z=\sum_{i\in\dom F}\dom z_{i}=\sum_{i\in\dom F}\arity f_{i}=\sum(\a
 
 \subsubsection{Definition with composition for every multiplier}
 
-$q(F)_{i}\eqdef\left(\curry\left(\bigoplus(\arity\circ F)\right)\right)i$.
+\[ q(F)_{i}\eqdef\left(\curry\left(\bigoplus(\arity\circ F)\right)\right)i. \]
 \begin{prop}
 $\prod^{\mathrm{(ord)}}F=\setcond{L\in\mho^{\sum(\arity\circ F)}}{\forall i\in\dom F:L\circ q(F)_{i}\in\GR F_{i}}$.\end{prop}
 \begin{proof}
@@ -1215,7 +1217,9 @@ for every $i\in\dom F$, that is for $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\a
 \begin{proof}
 For every $P\in\coprod_{i\in\dom F}\mho^{\{i\}\times\arity F_{i}}$
 we have:
-\begin{align*}
+\[
+\resizebox{\hsize}{!}{
+$\begin{aligned}
 P\in\prod_{i\in\dom F}F'_{i} & \Leftrightarrow\\
 P\in\setcond{z\in\mho^{\dom F}}{\forall i\in\dom F:z(i)\in F'_{i}} & \Leftrightarrow\\
 P\in\mho^{\dom F}\land\forall i\in\dom F:P(i)\in F'_{i} & \Leftrightarrow\\
@@ -1229,7 +1233,9 @@ P\in\mho^{\dom F}\land\forall i\in\dom F:(P_{i}\in\mho^{\{i\}\times\arity F_{i}}
 \forall i\in\dom F:\bigcup_{i\in\dom F}\curry(P_{i})\in\prod(\GR\circ F) & \Leftrightarrow\\
 \curry\left(\bigcup_{i\in\dom F}P_{i}\right)\in\prod(\GR\circ F) & \Leftrightarrow\\
 \curry\left(\bigcup\im P\right)\in\prod(\GR\circ F).
-\end{align*}
+\end{aligned}$
+}
+\]
 \end{proof}
 \begin{lem}
 $\setcond{\curry(f)\circ\bigoplus(\arity\circ F)}{f\in\GR\prod^{\mathrm{(ord)}}F}=\prod(\GR\circ F)$.\end{lem}
@@ -1338,9 +1344,10 @@ of $\uncurry$.
 $a\sim b\Rightarrow\uncurry a\sim\uncurry b$ for every ordinal indexed
 families $a$ and $b$ of functions taking an ordinal number of arguments.\end{lem}
 \begin{proof}
-There exist an order isomorphism $f$ such that $a=b\circ f$.
-
-$\uncurry(a)(x,y)=(ax)y=(bfx)y=\uncurry(b)(fx,y)=\uncurry(b)g(x,y)$
+There exists an order isomorphism $f$ such that $a=b\circ f$.
+\begin{multline*}
+\uncurry(a)(x,y)=(ax)y=(bfx)y=\\\uncurry(b)(fx,y)=\uncurry(b)g(x,y)
+\end{multline*}
 where $g(x,y)=(fx,y)$.
 
 $g$ is an order isomorphism because $g(x_{0},y_{0})\ge g(x_{1},y_{1})\Leftrightarrow(x_{0},y_{0})\ge(x_{1},y_{1})$.
@@ -1353,7 +1360,8 @@ families of functions taking an ordinal number of arguments.\end{lem}
 Let $a_{i}=b_{i}\circ f_{i}$ where $f_{i}$ is an order isomorphism
 for every $i$.
 
-$\uncurry(a)(i,y)=a_{i}y=b_{i}f_{i}y=\uncurry(b)(i,f_{i}y)=\uncurry(b)g(i,y)=(\uncurry(b)\circ g)(i,y)$
+\begin{multline*}
+\uncurry(a)(i,y)=a_{i}y=b_{i}f_{i}y=\\\uncurry(b)(i,f_{i}y)=\uncurry(b)g(i,y)=(\uncurry(b)\circ g)(i,y)\end{multline*}
 where $g(i,y)=(i,f_{i}y)$.
 
 $g$ is an order isomorphism because $g(i,y_{0})\ge g(i,y_{1})\Leftrightarrow f_{i}y_{0}\ge f_{i}y_{1}\Leftrightarrow y_{0}\ge y_{1}$
@@ -1824,7 +1832,10 @@ b(x)\sqcup\bigsqcap_{f\in S}f(x)=\bigsqcap_{f\in S}(b(x)\sqcup f(x))=\bigsqcap_{
 \end{multline*}
 
 
-Thus $b\sqcup^{\mathbf{Pos}(P,R)}\bigsqcap^{\mathbf{Pos}(P,R)}S=\bigsqcap_{f\in S}^{\mathbf{Pos}(P,R)}\left(b\sqcup^{\mathbf{Pos}(P,R)}f\right)=\bigsqcap^{\mathbf{Pos}(P,R)}\left\langle b\sqcup^{\mathbf{Pos}(P,R)}\right\rangle ^{\ast}S$.
+Thus
+\begin{multline*}
+b\sqcup^{\mathbf{Pos}(P,R)}\bigsqcap^{\mathbf{Pos}(P,R)}S=\\\bigsqcap_{f\in S}^{\mathbf{Pos}(P,R)}\left(b\sqcup^{\mathbf{Pos}(P,R)}f\right)=\bigsqcap^{\mathbf{Pos}(P,R)}\left\langle b\sqcup^{\mathbf{Pos}(P,R)}\right\rangle ^{\ast}S.
+\end{multline*}
 \end{proof}
 \begin{defn}
 $P\cong Q$ means that posets $P$ and $Q$ are isomorphic.\end{defn}

@@ -395,9 +395,6 @@ identity (therefore ``parallel'' arrows are mutually inverse). The
 arrows preserve order, composition, and reversal ($f\mapsto f^{-1}$).
 
 \begin{figure}[ht]
-\caption{\label{gamma-dia}}
-
-
 \begin{tikzcd}[row sep=3cm, column sep=0.9cm]
 & \text{funcoids}
 \arrow[rd, shift left, "\up^\Gamma"]
@@ -409,6 +406,7 @@ arrows preserve order, composition, and reversal ($f\mapsto f^{-1}$).
 \arrow[lu, shift left, "\bigsqcap^{\mathsf{FCD}}"]
 \arrow[ll, shift left, "\bigsqcap^{\mathsf{RLD}}"]
 \end{tikzcd}
+\caption{\label{gamma-dia}}
 \end{figure}
 \end{thm}
 \begin{proof}
@@ -882,12 +880,14 @@ $\torldin (\top \setminus 1^{\mathsf{FCD}}) = \top \setminus 1^{\mathsf{FCD}}$.
 \begin{proof}
 Consider funcoids on a set $U$. For any filters~$x$ and~$y$ (or without loss of generality ultrafilters~$x$ and~$y$) we have:
 
-$x \times^{\mathsf{FCD}} y \sqsubseteq \top \setminus
-1^{\mathsf{FCD}} \Leftrightarrow \text{(theorem 574 and the fact that
-funcoids are filters)} \Leftrightarrow x \times^{\mathsf{FCD}} y \asymp
+\begin{multline*}
+x \times^{\mathsf{FCD}} y \sqsubseteq \top \setminus
+1^{\mathsf{FCD}} \Leftrightarrow \\ \text{(theorem 574 and the fact that
+funcoids are filters)} \Leftrightarrow \\ x \times^{\mathsf{FCD}} y \asymp
 1^{\mathsf{FCD}} \Leftrightarrow \neg \left( x
 \mathrel{[1^{\mathsf{FCD}}]} y \right) \Leftrightarrow x \asymp y
-\Rightarrow \exists X \in \up x, Y \in \up y : X \asymp Y$.
+\Rightarrow \\ \exists X \in \up x, Y \in \up y : X \asymp Y.
+\end{multline*}
 
 Thus $\torldin (\top \setminus
 1^{\mathsf{FCD}}) = \bigsqcup \setcond{ X \times Y}
@@ -924,14 +924,16 @@ So, we have:
 \end{prop}
 
 \begin{proof}
-  $(X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq 1
-  \Leftrightarrow ((X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n))
-  \sqcap 1 = 1 \Leftrightarrow ((X_0 \times Y_0) \sqcap 1) \sqcup \ldots
-  \sqcup ((X_n \times Y_n) \sqcap 1) = 1 \Leftrightarrow \id_{X_0 \sqcap
-  Y_0} \sqcup \ldots \sqcup \id_{X_n \sqcap Y_n} = 1 \Leftrightarrow
+\begin{multline*}
+  (X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq 1
+  \Leftrightarrow \\ ((X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n))
+  \sqcap 1 = 1 \Leftrightarrow \\ ((X_0 \times Y_0) \sqcap 1) \sqcup \ldots
+  \sqcup ((X_n \times Y_n) \sqcap 1) = 1 \Leftrightarrow \\ \id_{X_0 \sqcap
+  Y_0} \sqcup \ldots \sqcup \id_{X_n \sqcap Y_n} = 1 \Leftrightarrow \\
   \id_{(X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n)} = 1
-  \Leftrightarrow (X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n) =
-  \top$.
+  \Leftrightarrow \\ (X_0 \sqcap Y_0) \sqcup \ldots \sqcup (X_n \sqcap Y_n) =
+  \top.
+\end{multline*}
 \end{proof}
 
 \begin{cor}
@@ -961,9 +963,11 @@ So, we have:
 \begin{proof}
   If $(X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \in
   \up^{\Gamma} 1$ then we have
-  \[ (X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq ((X_0
+\begin{multline*}
+  (X_0 \times Y_0) \sqcup \ldots \sqcup (X_n \times Y_n) \sqsupseteq \\ ((X_0
      \sqcap Y_0) \times (X_0 \sqcap Y_0)) \sqcup \ldots \sqcup ((X_n \sqcap
-     Y_n) \times (X_n \sqcap Y_n)) \in \up^{\Gamma} 1. \]
+     Y_n) \times (X_n \sqcap Y_n)) \in \up^{\Gamma} 1.
+\end{multline*}
   Thus
   \[ \up^{\Gamma} 1 \subseteq \bigcup \setcond{ \up^{\Gamma} ((X_0
      \times X_0) \sqcup \ldots \sqcup (X_n \times X_n)) }{

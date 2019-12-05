@@ -1,0 +1,583 @@
+\chapter{Introduction}
+
+I will show that most of the topology can be formulated in an ordered semigroup (or, more generally, an ordered precategory).
+
+\chapter{Prerequisites}
+
+You need to know about semigroups, ordered semigroups, semigroup actions, before reading further. If in doubt, consult Wikipedia.
+
+\emph{Filtrators} are pairs of a poset and its subset (with the induced order). An important example of filtrator is the set of filters on some poset together with the subset of principal filters. (Note that I order filters \emph{reversely} to the set inclusion relation: So for filters I have $a\leq b \Leftrightarrow a\supseteq b$.)
+
+I will denote meet and join on a poset correspondingly as~$\sqcap$ and~$\sqcup$.
+
+I call two elements~$a$ and~$b$ \emph{intersecting} ($a\nasymp b$) when there is a non-least element~$c$ such that $c\leq a\land c\leq b$. For meet-semilattices with meet operation~$\sqcap$ this condition is equivalent to $a\sqcap b$ being non-least element.
+
+I call two elements~$a$ and~$b$ \emph{joining} ($a\equiv b$) when there is no non-greatest element~$c$ such that $c\geq a\land c\geq b$. For join-semilattices with meet operation~$\sqcup$ this condition is equivalent to $a\sqcup b$ being the greatest element.
+
+I denote $\rsupfun{f}X = \setcond{fx}{x\in X}$.
+
+\chapter{Basic examples}
+
+A topological space is determined by its closure operator.
+
+Consider the semigroup formed by composing together any finite number of topological closure operators (on some fixed ``universal'' set).
+
+This semigroup can be considered as its own action.
+
+So every topological space is an element of this semigroup that is associated with an action.
+
+The set, on which these actions act, is the set of subsets of our universal set. The set of subsets of a set is a partially ordered set.
+
+So we have topological space defined by actions of an ordered semigroup.
+
+Below I will define a \emph{space} as an \emph{ordered semigroup action}.
+
+This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, semigroups of operators, etc.
+
+Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
+
+\chapter{Precategories}
+
+\begin{defn}
+\index{precategory}A \emph{precategory} is a directed multigraph
+together with a partial binary operation $\circ$ on the set~$\mathcal{M}$ of edges (called the set of \emph{morphisms} in the context of precategories)
+such that $g\circ f$ is defined iff $\Dst f=\Src g$ (for every morphisms
+$f$ and $g$) such that
+\begin{enumerate}
+\item $\Src(g\circ f)=\Src f$ and $\Dst(g\circ f)=\Dst g$ whenever the
+composition $g\circ f$ of morphisms $f$ and $g$ is defined.
+\item $(h\circ g)\circ f=h\circ(g\circ f)$ whenever compositions in this
+equation are defined.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\index{prefunctor}A \emph{prefunctor} is a pair of a function from the set of objects of one precategory to the set of objects of another precategory and a function from the set of morphisms of one precategory to the set of morphisms of that another precategory (these two functions are denoted by the same letter such as~$\phi$) conforming to the axioms:
+\begin{enumerate}
+\item $\phi(f): \phi(\Src f)\to\phi(\Dst f)$ for every morphism~$f$ of the first precategory;
+\item $\phi(g\circ f)=\phi(g)\circ\phi(f)$ for every composable morphisms~$f$,~$g$ of the first precategory.
+\end{enumerate}
+\end{defn}
+
+\begin{note}
+A semigroup is essentially a special case of a precategory (with only one object) and semigroup homomorphism is a prefunctor.
+\end{note}
+
+\chapter{Ordered precategories}
+
+\begin{defn}
+\emph{Ordered precategory} (or \emph{poprecategory}) is
+a precategory together with an order on the set of morphisms conforming to the equality:
+\[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
+\end{defn}
+
+\chapter{Ordered semigroups}
+
+\begin{defn}
+\emph{Ordered semigroup} (or \emph{posemigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
+\[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
+\end{defn}
+
+Essentially, a posemigroup is just an ordered precategory with just one object.
+
+In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, (quasi)proximity spaces, (quasi)uniform spaces, (directed) graphs. (quasi)metric spaces.
+
+As I shown above, functions (and more generally binary relations) can also be considered as spaces.
+
+\chapter{Precategory actions}
+
+\begin{defn}
+\emph{Precategory action} is a prefunctor from a precategory to the category~$\mathbf{Set}$.
+\end{defn}
+
+\chapter{Ordered precategory actions}
+
+\begin{defn}
+\emph{Ordered precategory action} on a is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\begin{enumerate}
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
+\end{enumerate}
+In other words, an ordered precategory action is a (not necessarily strictly) increasing precategory action (we consider transformations of this action to be ordered pointwise, that is by the product order).
+
+I call morphisms of such a precategory as \emph{interspaces}.\footnote{The prefix inter- is supposed to mean that the morphisms may have the source different that the destination.}
+\end{defn}
+
+Note that this ``inducting'' is an ordered semigroup homomorphism.
+
+\chapter{Ordered semigroup actions}
+
+\begin{defn}
+\emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
+\begin{enumerate}
+\item $\supfun{b\circ a}x = \supfun{b}\supfun{a}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+$x,y\in\mathfrak{A}$;
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
+\end{enumerate}
+I call elements of such an action \emph{spaces}.
+\end{defn}
+
+\begin{rem}
+Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
+\end{rem}
+
+Essentially, an ordered semigroup action is an ordered precategory action with just one object.
+
+We can order actions componentwise. Then the above axioms simplify to:
+\begin{enumerate}
+\item $\supfun{b\circ a} = \supfun{b}\circ\supfun{a}$ for all $a,b\in S$;
+\item $\supfun{}$ is a (not necessarily strictly) increasing;
+\item $\supfun{a}$ is a (not necessarily strictly) increasing, for every space~$a$.
+\end{enumerate}
+
+\begin{defn}
+A \emph{functional ordered precategory action} is such an ordered precategory action that $\supfun{a}=a$ for every space~$a$.
+\end{defn}
+
+\begin{thm}
+Each ordered precategory action induces a functional ordered precategory action, whose morphisms are the same a of the original one but with objects being posets, spaces are the actions of the original precategory, the composition operation is function composition, and order of spaces is the product order.
+\end{thm}
+
+\begin{proof}
+That it's a precategory is obvious. The partial order is the same as the original. It remains to prove the remaining axioms.
+
+For our precategory
+\[ \supfun{b\circ a} = b\circ a=\supfun{b}\circ \supfun{a}. \]
+
+$\supfun{}$ is increasing because it's the identity function.
+
+$\supfun{a}$ is the same as one of the original ordered precategory action and thus is increasing.
+\end{proof}
+
+Having a ordered precategory action and a homomorphism to its ordered precategory, we can define in an obvious way a new ordered precategory action. The following is an example of this construction (here $\torldin$ is a functor of ordered precategories).
+
+\emph{Funcoids} described in the first book of this book series form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
+As we know from the~\cite{volume-1}, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered precategory actions (or ordered semigroup actions, see below).
+
+Remember that elements of our posets of objects may be such things as sets or more generally filters, they may be not just points. So our topological construction is ``pointfree'' (we may consider sets or filters, not points).
+
+This book is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
+
+Ordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow \supfun{a}\leq \supfun{b} \] that is when \[ a\leq b \Leftarrow \forall x:\supfun{a}x\leq\supfun{b}x. \]
+
+Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
+
+\chapter{Ordered dagger categories and ordered semigroups with involution}
+
+\begin{defn}
+\emph{Dagger precategory} is a precategory together with the operation $a\mapsto a^{\dagger}$ (called \emph{involution} or \emph{dagger}) such that:
+\begin{enumerate}
+\item $a^{\dagger\dagger} = a$;
+\item $(b\circ a)^{\dagger} = a^{\dagger}\circ b^{\dagger}$.
+\end{enumerate}
+\end{defn}
+
+For an \emph{ordered dagger precategory} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
+
+\begin{defn}
+\emph{Semigroup with involution} is a dagger precategory with just one object.
+\end{defn}
+
+For an \emph{ordered semigroup with involution} or \emph{ordered dagger precategory} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
+
+\chapter{Topological properties}
+
+Now we have a formalism to describe many topological properties (following the ideas of~\cite{volume-1}):
+
+Continuity is described by the formulas $f\circ a\leq a\circ f$, $f\circ a\circ f^{\dagger}\leq a$, $a\leq f^{\dagger}\circ a\circ f$.
+
+Convergence of a function~$f$ from an endomorphism (space)~$\mu$ to an endomorphism (space)~$\nu$ at filter~$x$ to a set or filter~$y$ is described by the formula $\supfun{f}\supfun{\mu}x\leq\supfun{\nu}y$.
+
+Generalized limit of an arbitrary interspace~$f$ (for example, of an arbitrary (possibly discontinuous) function), see \cite{limit}, is described by the formula \[ \xlim f=\setcond{\nu\circ f\circ r}{r\in G}, \]
+where~$G$~is a suitable group (consider for example the group of all translations of a vector space).
+
+\emph{Neighborhood} of element~$x$ is such a $y$ that $\supfun{a}x\leq y$. \emph{Interior} of~$x$ (if it exists) if the join of all $y$ such that $x$ is a neighborhood of~$x$.
+
+An element~$x$ is closed regarding~$a$ iff $\supfun{a}x\leq x$. $x$~is open iff $x$ is closed regarding $\supfun{a}^{\dagger}$.
+
+To define compactness we additionally need the structure of filtrator $(\mathfrak{A},\mathfrak{Z})$ on our poset. Then it is space~$a$ is \emph{directly compact} iff
+\[\forall x\in\mathfrak{A}:(x\text{ is non-least}\Rightarrow\Cor\supfun{a}x\text{ is non-least}); \]
+$a$~is \emph{reversely compact} iff $a^{\dagger}$ is directly compact; $a$~is \emph{compact} iff it is both directly and reversely compact.
+
+However, we can define compactness without specifying~$\mathfrak{Z}$ as we can take~$\mathfrak{Z}$ to be the \emph{center} (the set of all its complemented elements) of the poset~$\mathfrak{A}$.
+
+It seem we cannot define \emph{total boundness} purely in terms of ordered semigroups, because it is a property of reloids and reloid is not determined by its action.
+
+\chapter{A relation}
+
+Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp\supfun{a}x$.
+
+If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
+
+A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
+
+We can define open and closed functions.
+
+\chapter{Further axioms}
+
+Further possible axioms for an ordered semigroup action with binary joins:
+
+\begin{itemize}
+\item $\supfun{f}(x\sqcup y)=\supfun{f}x\sqcup\supfun{f}y$;
+\item $\supfun{f\sqcup g}x=\supfun{f}x\sqcup\supfun{g}x$.
+\end{itemize}
+
+\fxnote{Need to generalize for a wider class of posets.}
+
+\chapter{Product of ordered semigroup actions}
+
+\fxnote{TODO.}
+
+\chapter{Restricted identity transformations}
+
+\emph{Restricted identity transformation} $\id_p$, where ~$p$ is an element of a poset, is the (generally, partially defined) transformation $x\mapsto x\sqcap p$.
+
+\begin{obvious}
+$\id_q\circ\id_p = \id_{p\sqcap q}$ if~$p$ and~$q$ are elements of some poset for which binary meet is defined.
+\end{obvious}
+
+\begin{prop}
+$p\ne q\Rightarrow\id_p\ne\id_q$.
+\end{prop}
+
+\begin{proof}
+$\id_p p=p \ne q = \id_q q$.
+\end{proof}
+
+\emph{Ordered precategory action with identities} is an ordered precategory~$S$ action~$\supfun{}$ together with a function $p\mapsto\id_p\in S$ such that
+\begin{enumerate}
+\item $\supfun{\id_p}=\id_p$ whenever this equality is defined;
+\item $\id_p\circ x\leq x$;
+\item $x\circ\id_p\leq x$.
+\end{enumerate}
+(I abuse the notation $\id_p$ for both interspaces and for transformations; this won't lead to inconsistencies, because as proved above this mapping is faithful on restricted identities.)
+
+\begin{obvious}
+For every ordered precategory action with identities, the identity transformations are entirely defined on their domains.
+\end{obvious}
+
+From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
+
+\emph{Restriction} of an interspace~$a$ to element~$x$ is $a|_x=a\circ\id_x$.
+
+\emph{Square restriction} (a generalization of restriction of a topological space, metric space, etc.) of a space~$a$ to element~$x$ is $\id_x\circ a\circ\id_x$.
+
+\chapter{Binary product of poset elements}
+
+\begin{defn}
+I call an ordered precategory action \emph{correctly bounded} when the set of interspaces between two fixed objects is bounded and:
+\begin{enumerate}
+\item $\supfun{\bot}x = \bot$ for every poset element~$x$;
+\item $\supfun{\top}x =
+\left\{\begin{array}{ll}\top&\text{if }x\ne\bot,\\\bot&\text{if }x=\bot.\end{array}\right.$
+\end{enumerate}
+\end{defn}
+
+\emph{Binary product} in an ordered semigroup action having a greatest element~$\top$ is defined as $p\times q=\id_q\circ\top\circ\id_p$.
+
+\begin{thm}
+If our action is correctly bounded, then
+\[
+\supfun{p\times q}x =
+\left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right.
+\]
+\end{thm}
+
+\begin{proof}
+\begin{multline*}
+\supfun{p\times q}x = \\
+\supfun{\id_q\circ\top\circ\id_p}x = \\
+\supfun{\id_q}\supfun{\top}\supfun{\id_p}x = \\
+q\sqcap\supfun{\top}(p\sqcap x) = \\
+\left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right.
+\end{multline*}
+\end{proof}
+
+% \begin{thm}
+% $f\sqcap(p\times q)=\id_q\circ f\circ\id_p$, if our action is functional.
+% \end{thm}
+% 
+% \begin{proof}
+% Obviously $\id_q\circ f\circ\id_p\leq f$ and $\id_q\circ f\circ\id_p\leq q\times p$.
+% 
+% Suppose~$h\leq f$ and~$h\leq q\times p$. Then 
+% \end{proof}
+
+\begin{thm}
+If our action is correctly bounded, then
+\[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
+\end{thm}
+
+\begin{proof}
+\begin{multline*}
+x(R(p\times q))y \Leftrightarrow
+y\nasymp\supfun{p\times q}x \Leftrightarrow \\
+y\nasymp
+\left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right. \Leftrightarrow \\
+x\nasymp p\land y\nasymp q.
+\end{multline*}
+\end{proof}
+
+% \begin{thm}
+% If our action is correctly bounded, then
+% \[ p_0\times q_0\nasymp p_1\times q_1 \Leftrightarrow p_0\nasymp p_1\land q_0\nasymp q_1. \]
+% \end{thm}
+% 
+% \begin{proof}
+% \begin{multline*}
+% p_0\nasymp p_1\land q_0\nasymp q_1 \Leftrightarrow\\
+% x(R(p\times q))y \Leftrightarrow\\
+% y\nasymp\supfun{p\times q}x \Leftrightarrow
+% \end{multline*}
+% \end{proof}
+
+\begin{defn}
+We can define \emph{connectedness} of a space on a poset element~$x$ also in another way:
+\[ \id_x\sqcup a\sqcup(a\circ a)\sqcup(a\circ a\circ a)\sqcup\dots \geq x\times x. \]
+\end{defn}
+
+\begin{problem}
+When our two definitions of connectedness coincide?
+\end{problem}
+
+\chapter{Separable spaces}
+
+$T_1$-space~$a$ when $x\mathrel{\overline{R\Cor a}}y$ for every $x\asymp y$.
+
+$T_2$-space or \emph{Hausdorff} is such a space~$f$ that $f^{-1}\circ f$ is $T_1$-separable.
+
+$T_0$-space is such a space~$f$ that $f^{-1}\sqcap f$ is $T_1$-separable.
+
+$T_4$-space is such a space~$f$ that \[ f\circ f^{-1}\circ f\circ f^{-1}\leq f\circ f^{-1}. \]
+
+\chapter{Distributive ordered semigroup actions}
+
+We can define (product) order of ordered precategory actions. For functional ordered precategory actions composition is defined. So we have one more ``level'' of ordered precategories. By the way, it can be continued indefinitely building new and new levels of such ordered precategories.
+
+More generally we could consider ordered precategory functors (or specifically, ordered semigroup homomorphisms). Examples of such homomorphisms are $\supfun{}$, $\tofcd$, $\torldin$.
+
+Pointfree funcoids (and consequently funcoids) are an ordered precategory action. Reloids are also an ordered precategory action.
+
+\chapter{Complete spaces and completion of spaces}
+
+A space~$a$ is \emph{complete} when $\supfun{a}\bigsqcup S=\bigsqcup\rsupfun{\supfun{a}}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{\supfun{a}}S$ are defined.
+
+\begin{defn}
+\emph{Completion} of an interspace is its core part (see~\cite{volume-1} for a definition of core part) on the filtrator of interspace and complete interspace.
+\end{defn}
+
+\begin{note}
+Apparently, not every space has a completion.
+\end{note}
+
+\begin{note}
+It is unrelated with Cachy-completion.
+\end{note}
+
+\chapter{Kuratowski spaces}
+
+\begin{defn}
+\emph{Kuratowski space} is a complete idempotent ($a\circ a=a$) space.
+\end{defn}
+
+Kuratowski spaces are a generalization of topological spaces.
+
+\chapter{Metric spaces}
+
+Let us call \emph{most general nonnegative real metrics} (MGNRM) the precategory of all extended nonnegative ($\mathbb{R}_{+}\cup\{+\infty\}$) real functions (on some fixed set) of two arguments and the ``composition'' operation
+\[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)) \]
+and \emph{most general nonnegative real metric} an element of this precategory.
+
+\begin{rem}
+The infimum exists because it's nonnegative.
+\end{rem}
+
+We need to prove it's an associative operation.
+
+\begin{proof}
+\begin{multline*}
+(\tau\circ(\sigma\circ\rho))(x,z) = \\
+\inf_{y_1\in\mho}((\sigma\circ\rho)(x,y_1)+\tau(y_1,z)) = \\
+\inf_{y_1\in\mho}(\inf_{y_0\in\mho}(\rho(x,y_0)+\sigma(y_0,y_1))+\tau(y_1,z)) = \\
+\inf_{y_0,y_1\in\mho}(\rho(x,y_0)+\sigma(y_0,y_1)+\tau(y_1,z)).
+\end{multline*}
+Similarly 
+\begin{multline*}
+((\tau\circ\sigma)\circ\rho)(x,z) = \\
+\inf_{y_0,y_1\in\mho}(\rho(x,y_0)+\sigma(y_0,y_1)+\tau(y_1,z)).
+\end{multline*}
+Thus $\tau\circ(\sigma\circ\rho)=(\tau\circ\sigma)\circ\rho$.
+\end{proof}
+
+\begin{defn}
+We extend MGNRM to the set $\subsets\mho$ by the formula:
+\[ \rho(X,Y) = \inf_{x\in X,y\in Y}\rho(x,y). \]
+\end{defn}
+
+\begin{rem}
+This is well-defined thanks to MGNRM being nonnegative and allowing the infinite value.
+\end{rem}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\rho(I\cup J,Y) = \min\{\rho(I,Y), \rho(J,Y)\}$;
+\item $\rho(X,I\cup J) = \min\{\rho(X,I), \rho(Y,J)\}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+We'll prove the first as the second is similar:
+\begin{multline*}
+\rho(I\cup J,Y) = \\
+\inf_{x\in I\cup J,y\in Y}\rho(x,y) = \\
+\min\left\{\inf_{x\in I,y\in Y}\rho(x,y), \inf_{x\in J,y\in Y}\rho(x,y)\right\} = \\
+\min\{\rho(I,Y), \rho(J,Y)\}.
+\end{multline*}
+\end{proof}
+
+Let~$a$ be a most general metric. I denote~$\Delta_a$ the funcoid~(\cite{volume-1}) determined by the formula
+\[
+X\rsuprel{\Delta_a}Y \Leftrightarrow \rho_a(X,Y)=0.
+\]
+
+(If~$a$ is a metric, then it's the proximity induced by it.)
+
+Let's prove it really defines a funcoid:
+
+\begin{proof}
+Not $\emptyset\rsuprel{\Delta_a}Y$ and not $X\rsuprel{\Delta_a}\emptyset$ because \[ \rho_{a}(\emptyset,Y)=\rho_{a}(X,\emptyset)=+\infty. \]
+
+By symmetry, it remains to prove
+\[ (I\cup J)\rsuprel{\Delta_a}Y \Leftrightarrow
+I\rsuprel{\Delta_a}Y \lor J\rsuprel{\Delta_a}Y. \]
+Really,
+\begin{multline*}
+(I\cup J)\rsuprel{\Delta_a}Y \Leftrightarrow \\
+\rho_a(I\cup J,Y)=0 \Leftrightarrow \\
+\min\{\rho_a(I,Y),\rho_a(J,Y)\}=0 \Leftrightarrow \\
+\rho_a(I,Y)=0\lor\rho_a(J,Y)=0 \Leftrightarrow \\
+I\rsuprel{\Delta_a}Y \lor J\rsuprel{\Delta_a}Y.
+\end{multline*}
+\end{proof}
+
+\begin{obvious}
+\begin{multline*}
+X\rsuprel{\Delta_a}Y \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in Y:
+\lvert\rho_a(x,y)\rvert<\epsilon.
+\end{multline*}
+\end{obvious}
+
+\begin{thm}
+\[ \supfun{\Delta_a}X = \bigsqcap_{\epsilon>0}\bigcup_{x\in X}B(x,\epsilon) \]
+($B(x,\epsilon)$ is the open ball of the radius~$\epsilon$ centered at~$x$).
+\end{thm}
+
+\begin{proof}
+\begin{multline*}
+Y\nasymp\supfun{\Delta_a}X\Leftrightarrow X\suprel{\Delta_a}Y \Leftrightarrow \\ \forall\epsilon>0\exists x\in X,y\in Y:\rho_a(x,y)<\epsilon.
+\end{multline*}
+\begin{multline*}
+Y\nasymp\bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\ \forall\epsilon>0:Y\nasymp\bigcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X:Y\nasymp B_a(x,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in Y:\rho_a(x,y)<\epsilon.
+\end{multline*}
+\end{proof}
+
+MGNRM are also interspaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)), \]
+where~$\mho$ is the set of points of our metric space.
+
+\begin{lem}
+$\Delta_{b\circ a} = \Delta_b\circ\Delta_a$.
+\end{lem}
+
+\begin{proof}
+Let~$X$,~$Y$ be arbitrary sets on a metric space.
+\begin{multline*}
+Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,z\in Z:\\\inf_{y\in\mho}(\rho_a(x,y)+\rho_b(y,z))<\epsilon \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:\\\rho_a(x,y)+\rho_b(y,z)<\epsilon \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,y\in\mho,z\in Z:\\(\rho_a(x,y)<\epsilon\land\rho_b(y,z)<\epsilon)
+\end{multline*}
+\begin{multline*}
+Z\nasymp\supfun{\Delta_b\circ\Delta_a}X \Leftrightarrow
+Z\nasymp\supfun{\Delta_b}\supfun{\Delta_a}X\Leftrightarrow\\
+\supfun{\Delta_b^{-1}}Z\nasymp\supfun{\Delta_a}X \Leftrightarrow\\
+\bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \nasymp\bigsqcap_{\epsilon>0}\bigcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0:\bigcup_{x\in X}B_a(x,\epsilon) \nasymp\bigcup_{z\in Z}B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,z\in Z:B_a(x,\epsilon)\nasymp B_b(z,\epsilon) \Leftrightarrow \\
+\forall\epsilon>0\exists x\in X,z\in Z,y\in\mho:\\(\rho_a(x,z)<\epsilon\land\rho_b(z,y)<\epsilon).
+\end{multline*}
+
+So, $Z\nasymp\supfun{\Delta_{b\circ a}}X \Leftrightarrow Z\nasymp\supfun{\Delta_b\circ\Delta_a}X$.
+\end{proof}
+
+Let's prove it's really an ordered precategory action:
+
+\begin{proof}
+~
+\begin{itemize}
+\item It is an ordered precategory, because
+$\supfun{a}x = \supfun{\Delta_a} x \sqsubseteq \supfun{\Delta_a} y = \supfun{a}y$ 
+for filters $x\sqsubseteq y$.
+
+\item
+\begin{multline*}
+\supfun{b\circ a} = \supfun{\Delta_{b\circ a}} = \\ \supfun{\Delta_b\circ\Delta_a} = \\ \supfun{\Delta_b}\circ\supfun{\Delta_a} = \supfun{b}\circ\supfun{a};
+\end{multline*}
+\item $a\leq b\Rightarrow \supfun{a}\leq \supfun{b}$ is obvious;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$ is obvious.
+\end{itemize}
+\end{proof}
+
+\fxnote{The above can be generalized for the values of the metric to be certain ordered additive semigroups instead of nonnegative real numbers.}
+
+\section{Functions as metrics}
+
+We want to consider functions in relations with MGNRM. So we we will consider (not only functions but also) every morphism~$f$ of category~$\mathbf{Rel}$ as an MGNRM by the formulas $\rho_{f}(x,y) = 0$ if $x\mathrel{f}y$ and $\rho_{f}(x,y) = +\infty$ if not $x\mathrel{f}y$.
+
+\fxnote{Isn't proximity also a XXX-metric, with points being sets or filters?}
+
+\begin{thm}
+If~$\rho$ is a MGNRM and~$f$ is a binary relation composable with it, then:
+\begin{enumerate}
+\item $(\rho\circ f)(x,y) = \rho(\rsupfun{f}\{x\},\{y\})$;
+\item $(f\circ\rho)(x,y) = \rho(\{x\},\rsupfun{f^{-1}}\{y\})$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\[
+(\rho\circ f)(x,y) = \inf_{t}(f(x,t) + \rho(t,y))
+\]
+but $f(x,t) + \rho(t,y) = +\infty$ if not $x\mathrel{f}t$ and $f(x,t) + \rho(t,y) = \rho(t,y)$ if $x\mathrel{f}t$. So
+\begin{multline*}
+(\rho\circ f)(x,y) = \\
+\inf_{t\in\setcond{t}{x\mathrel{f}t}}\rho(t,y) = \\
+\inf_{t\in\rsupfun{f}\{x\}}\rho(t,y) = \\
+\rho(\rsupfun{f}\{x\},\{y\}).
+\end{multline*}
+The other item follows from symmetry.
+\end{proof}
+
+\fxnote{Analogous theorem when~$x$ and~$y$ are sets?}
+
+\section{Contractions}
+
+What are (generalized) continuous functions between metric spaces?
+
+Let~$f$ be a function, $\mu$~and~$\nu$ be MGNRMs. Provided that they are composable, what does the formula of generalized continuity $f\circ\mu\leq\nu\circ f$ mean?
+
+Transforming the formula equivalently, we get:
+
+\begin{align*}
+\forall x,z: (f\circ\mu)(x,z)\geq(\nu\circ f)(x,z);\\
+\forall x,z: \mu(\{x\},\rsupfun{f^{-1}}\{z\})\geq\nu(fx,z);\\
+\forall x,z,y\in\rsupfun{f^{-1}}\{z\}: \mu(x,y)\geq\nu(fx,z);\\
+\forall x,y: \mu(x,y)\geq\nu(fx,fy).
+\end{align*}
+
+So generalized continuous functions for metric spaces is what is called \emph{contractions} that is functions that decrease distance.

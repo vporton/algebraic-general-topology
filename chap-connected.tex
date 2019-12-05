@@ -365,14 +365,14 @@ Weaker condition:
 $S^{\ast}(S^{\ast}(f))=S^{\ast}(f)$ for every endoreloid $f$.\end{thm}
 \begin{proof}
 ~
-\begin{align*}
-S^{\ast}(S^{\ast}(f)) & =\\
-\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(R) & \sqsubseteq\\
-\bigsqcap_{R\in\setcond{S(F)}{F\in\up f}}^{\mathsf{RLD}}S(R) & =\\
-\bigsqcap_{R\in\up f}^{\mathsf{RLD}}S(S(R)) & =\\
-\bigsqcap_{R\in\up f}^{\mathsf{RLD}}S(R) & =\\
+\begin{multline*}
+S^{\ast}(S^{\ast}(f)) =
+\bigsqcap_{R\in\up S^{\ast}(f)}^{\mathsf{RLD}}S(R) \sqsubseteq \\
+\bigsqcap_{R\in\setcond{S(F)}{F\in\up f}}^{\mathsf{RLD}}S(R) =
+\bigsqcap_{R\in\up f}^{\mathsf{RLD}}S(S(R)) =
+\bigsqcap_{R\in\up f}^{\mathsf{RLD}}S(R) =
 S^{\ast}(f).
-\end{align*}
+\end{multline*}
 
 
 So $S^{\ast}(S^{\ast}(f))\sqsubseteq S^{\ast}(f)$. That $S^{\ast}(S^{\ast}(f))\sqsupseteq S^{\ast}(f)$
@@ -408,21 +408,26 @@ pointfree funcoid?}
 It is enough to prove $S^{\ast}(f)\circ S^{\ast}(f) = S^{\ast}(f)$ because
 $S^{\ast}(f) \sqsubseteq S(f)\circ S^{\ast}(f) \sqsubseteq S^{\ast}(f)\circ S^{\ast}(f)$ and likewise for $S^{\ast}(f)\circ S(f)$.
 
-$S^{\ast} (\mu) \circ S^{\ast} (\mu) = \bigsqcap^{\mathsf{RLD}}_{F
-\in \up S^{\ast} (\mu)} (F \circ F) = \text{(see below)} =
+\begin{multline*}
+S^{\ast} (\mu) \circ S^{\ast} (\mu) = \bigsqcap^{\mathsf{RLD}}_{F
+\in \up S^{\ast} (\mu)} (F \circ F) = \text{(see below)} = \\
 \bigsqcap^{\mathsf{RLD}}_{X \in \up \mu} (S (X) \circ S (X)) =
 \bigsqcap^{\mathsf{RLD}}_{X \in \up \mu} S (X) = S^{\ast}
-(\mu)$.
+(\mu).
+\end{multline*}
 
-$F \in \up S^{\ast} (\mu)
+\begin{multline*}
+F \in \up S^{\ast} (\mu)
 \Leftrightarrow
 F \in \up \bigsqcap^{\mathscr{F}}_{F\in\up\mu} S(F)
-\Rightarrow
+\Rightarrow \\
 \text{(by properties of filter bases)}
 \Rightarrow \exists X \in \up \mu : F
 \sqsupseteq S (X)
-\Rightarrow \exists X \in \up \mu : F \circ F
-\sqsupseteq S (X) \circ S (X)$ thus
+\Rightarrow \\ \exists X \in \up \mu : F \circ F
+\sqsupseteq S (X) \circ S (X)
+\end{multline*}
+thus
 \[ \bigsqcap^{\mathsf{RLD}}_{
     F \in \up S^{\ast} (\mu) } F \circ F \sqsupseteq
     \bigsqcap^{\mathsf{RLD}}_{ X \in \up \mu } (S (X) \circ S (X)) ; \]
