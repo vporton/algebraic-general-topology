@@ -93,10 +93,10 @@ As I shown above, functions (and more generally binary relations) can also be co
 \chapter{Ordered precategory actions}
 
 \begin{defn}
-\emph{Ordered precategory action} on a is a precategory action~$T$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\emph{Ordered precategory action} on a is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
 \begin{enumerate}
-\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$.
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
 \end{enumerate}
 In other words, an ordered precategory action is a (not necessarily strictly) increasing precategory action (we consider transformations of this action to be ordered pointwise, that is by the product order).
 
@@ -108,12 +108,12 @@ Note that this ``inducting'' is an ordered semigroup homomorphism.
 \chapter{Ordered semigroup actions}
 
 \begin{defn}
-\emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $T:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
+\emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
 \begin{enumerate}
-\item $(T(b\circ a))x = (Tb)(Ta)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $\supfun{b\circ a}x = \supfun{b}\supfun{a}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
 $x,y\in\mathfrak{A}$;
-\item $a\leq b\Rightarrow(Ta)x\leq (Tb)x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$.
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
 \end{enumerate}
 I call elements of such an action \emph{spaces}.
 \end{defn}
@@ -126,13 +126,13 @@ Essentially, an ordered semigroup action is an ordered precategory action with j
 
 We can order actions componentwise. Then the above axioms simplify to:
 \begin{enumerate}
-\item $T(b\circ a) = (Tb)\circ(Ta)$ for all $a,b\in S$;
-\item $T$ is a (not necessarily strictly) increasing;
-\item $Ta$ is a (not necessarily strictly) increasing, for every space~$a$.
+\item $\supfun{b\circ a} = \supfun{b}\circ\supfun{a}$ for all $a,b\in S$;
+\item $\supfun{}$ is a (not necessarily strictly) increasing;
+\item $\supfun{a}$ is a (not necessarily strictly) increasing, for every space~$a$.
 \end{enumerate}
 
 \begin{defn}
-A \emph{functional ordered precategory action} is such an ordered precategory action that $Ta=a$ for every space~$a$.
+A \emph{functional ordered precategory action} is such an ordered precategory action that $\supfun{a}=a$ for every space~$a$.
 \end{defn}
 
 \begin{thm}
@@ -143,11 +143,11 @@ Each ordered precategory action induces a functional ordered precategory action,
 That it's a precategory is obvious. The partial order is the same as the original. It remains to prove the remaining axioms.
 
 For our precategory
-\[ T(b\circ a) = b\circ a=T(b)\circ T(a). \]
+\[ \supfun{b\circ a} = b\circ a=\supfun{b}\circ \supfun{a}. \]
 
-$T$ is increasing because it's the identity function.
+$\supfun{}$ is increasing because it's the identity function.
 
-$Ta$ is the same as one of the original ordered precategory action and thus is increasing.
+$\supfun{a}$ is the same as one of the original ordered precategory action and thus is increasing.
 \end{proof}
 
 Having a ordered precategory action and a homomorphism to its ordered precategory, we can define in an obvious way a new ordered precategory action. The following is an example of this construction (here $\torldin$ is a functor of ordered precategories).
@@ -159,9 +159,9 @@ Remember that elements of our posets of objects may be such things as sets or mo
 
 This book is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
 
-Ordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow Ta\leq Tb \] that is when \[ a\leq b \Leftarrow \forall x:(Ta)x\leq(Tb)x. \]
+Ordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow \supfun{a}\leq \supfun{b} \] that is when \[ a\leq b \Leftarrow \forall x:\supfun{a}x\leq\supfun{b}x. \]
 
-Obviously, in this case~$T$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
+Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
 
 \chapter{Ordered dagger categories and ordered semigroups with involution}
 
@@ -187,17 +187,17 @@ Now we have a formalism to describe many topological properties (following the i
 
 Continuity is described by the formulas $f\circ a\leq a\circ f$, $f\circ a\circ f^{\dagger}\leq a$, $a\leq f^{\dagger}\circ a\circ f$.
 
-Convergence of a function~$f$ from an endomorphism (space)~$\mu$ to an endomorphism (space)~$\nu$ at filter~$x$ to a set or filter~$y$ is described by the formula $(Tf)(T\mu)x\leq(T\nu)y$.
+Convergence of a function~$f$ from an endomorphism (space)~$\mu$ to an endomorphism (space)~$\nu$ at filter~$x$ to a set or filter~$y$ is described by the formula $\supfun{f}\supfun{\mu}x\leq\supfun{\nu}y$.
 
 Generalized limit of an arbitrary interspace~$f$ (for example, of an arbitrary (possibly discontinuous) function), see \cite{limit}, is described by the formula \[ \xlim f=\setcond{\nu\circ f\circ r}{r\in G}, \]
 where~$G$~is a suitable group (consider for example the group of all translations of a vector space).
 
-\emph{Neighborhood} of element~$x$ is such a $y$ that $(Ta)x\leq y$. \emph{Interior} of~$x$ (if it exists) if the join of all $y$ such that $x$ is a neighborhood of~$x$.
+\emph{Neighborhood} of element~$x$ is such a $y$ that $\supfun{a}x\leq y$. \emph{Interior} of~$x$ (if it exists) if the join of all $y$ such that $x$ is a neighborhood of~$x$.
 
-An element~$x$ is closed regarding~$a$ iff $(Ta)x\leq x$. $x$~is open iff $x$ is closed regarding $Ta^{\dagger}$.
+An element~$x$ is closed regarding~$a$ iff $\supfun{a}x\leq x$. $x$~is open iff $x$ is closed regarding $\supfun{a}^{\dagger}$.
 
 To define compactness we additionally need the structure of filtrator $(\mathfrak{A},\mathfrak{Z})$ on our poset. Then it is space~$a$ is \emph{directly compact} iff
-\[\forall x\in\mathfrak{A}:(x\text{ is non-least}\Rightarrow\Cor(Ta)x\text{ is non-least}); \]
+\[\forall x\in\mathfrak{A}:(x\text{ is non-least}\Rightarrow\Cor\supfun{a}x\text{ is non-least}); \]
 $a$~is \emph{reversely compact} iff $a^{\dagger}$ is directly compact; $a$~is \emph{compact} iff it is both directly and reversely compact.
 
 However, we can define compactness without specifying~$\mathfrak{Z}$ as we can take~$\mathfrak{Z}$ to be the \emph{center} (the set of all its complemented elements) of the poset~$\mathfrak{A}$.
@@ -206,9 +206,9 @@ It seem we cannot define \emph{total boundness} purely in terms of ordered semig
 
 \chapter{A relation}
 
-Every ordered precategory action~$T$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp(Ta)x$.
+Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp\supfun{a}x$.
 
-If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$T$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
+If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
 
 A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
 
@@ -219,8 +219,8 @@ We can define open and closed functions.
 Further possible axioms for an ordered semigroup action with binary joins:
 
 \begin{itemize}
-\item $(Tf)(x\sqcup y)=(Tf)x\sqcup(Tf)y$;
-\item $(T(f\sqcup g))x=(Tf)x\sqcup(Tg)x$.
+\item $\supfun{f}(x\sqcup y)=\supfun{f}x\sqcup\supfun{f}y$;
+\item $\supfun{f\sqcup g}x=\supfun{f}x\sqcup\supfun{g}x$.
 \end{itemize}
 
 \fxnote{Need to generalize for a wider class of posets.}
@@ -245,9 +245,9 @@ $p\ne q\Rightarrow\id_p\ne\id_q$.
 $\id_p p=p \ne q = \id_q q$.
 \end{proof}
 
-\emph{Ordered precategory action with identities} is an ordered precategory~$S$ action~$T$ together with a function $p\mapsto\id_p\in S$ such that
+\emph{Ordered precategory action with identities} is an ordered precategory~$S$ action~$\supfun{}$ together with a function $p\mapsto\id_p\in S$ such that
 \begin{enumerate}
-\item $T\id_p=\id_p$ whenever this equality is defined;
+\item $\supfun{\id_p}=\id_p$ whenever this equality is defined;
 \item $\id_p\circ x\leq x$;
 \item $x\circ\id_p\leq x$.
 \end{enumerate}
@@ -268,8 +268,8 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 \begin{defn}
 I call an ordered precategory action \emph{correctly bounded} when the set of interspaces between two fixed objects is bounded and:
 \begin{enumerate}
-\item $(T\bot)x = \bot$ for every poset element~$x$;
-\item $(T\top)x =
+\item $\supfun{\bot}x = \bot$ for every poset element~$x$;
+\item $\supfun{\top}x =
 \left\{\begin{array}{ll}\top&\text{if }x\ne\bot,\\\bot&\text{if }x=\bot.\end{array}\right.$
 \end{enumerate}
 \end{defn}
@@ -279,17 +279,17 @@ I call an ordered precategory action \emph{correctly bounded} when the set of in
 \begin{thm}
 If our action is correctly bounded, then
 \[
-(T(p\times q))x =
+\supfun{p\times q}x =
 \left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right.
 \]
 \end{thm}
 
 \begin{proof}
 \begin{multline*}
-(T(p\times q))x = \\
-(T(\id_q\circ\top\circ\id_p))x = \\
-(T\id_q)(T\top)(T\id_p)x = \\
-q\sqcap(T\top)(p\sqcap x) = \\
+\supfun{p\times q}x = \\
+\supfun{\id_q\circ\top\circ\id_p}x = \\
+\supfun{\id_q}\supfun{\top}\supfun{\id_p}x = \\
+q\sqcap\supfun{\top}(p\sqcap x) = \\
 \left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right.
 \end{multline*}
 \end{proof}
@@ -312,7 +312,7 @@ If our action is correctly bounded, then
 \begin{proof}
 \begin{multline*}
 x(R(p\times q))y \Leftrightarrow
-y\nasymp(T(p\times q))x \Leftrightarrow \\
+y\nasymp\supfun{p\times q}x \Leftrightarrow \\
 y\nasymp
 \left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right. \Leftrightarrow \\
 x\nasymp p\land y\nasymp q.
@@ -328,7 +328,7 @@ x\nasymp p\land y\nasymp q.
 % \begin{multline*}
 % p_0\nasymp p_1\land q_0\nasymp q_1 \Leftrightarrow\\
 % x(R(p\times q))y \Leftrightarrow\\
-% y\nasymp(T(p\times q))x \Leftrightarrow
+% y\nasymp\supfun{p\times q}x \Leftrightarrow
 % \end{multline*}
 % \end{proof}
 
@@ -361,7 +361,7 @@ Pointfree funcoids (and consequently funcoids) are an ordered precategory action
 
 \chapter{Complete spaces and completion of spaces}
 
-A space~$a$ is \emph{complete} when $(Ta)\bigsqcup S=\bigsqcup\rsupfun{Ta}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{Ta}S$ are defined.
+A space~$a$ is \emph{complete} when $\supfun{a}\bigsqcup S=\bigsqcup\rsupfun{\supfun{a}}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{\supfun{a}}S$ are defined.
 
 \begin{defn}
 \emph{Completion} of an interspace is its core part (see~\cite{volume-1} for a definition of core part) on the filtrator of interspace and complete interspace.
@@ -520,15 +520,15 @@ Let's prove it's really an ordered precategory action:
 ~
 \begin{itemize}
 \item It is an ordered precategory, because
-$(Ta)x = \supfun{\Delta_a} x \sqsubseteq \supfun{\Delta_a} y = (Ta)y$ 
+$\supfun{a}x = \supfun{\Delta_a} x \sqsubseteq \supfun{\Delta_a} y = \supfun{a}y$ 
 for filters $x\sqsubseteq y$.
 
 \item
 \begin{multline*}
-T(b\circ a) = \supfun{\Delta_{b\circ a}} = \\ \supfun{\Delta_b\circ\Delta_a} = \\ \supfun{\Delta_b}\circ\supfun{\Delta_a} = (Tb)\circ(Ta);
+\supfun{b\circ a} = \supfun{\Delta_{b\circ a}} = \\ \supfun{\Delta_b\circ\Delta_a} = \\ \supfun{\Delta_b}\circ\supfun{\Delta_a} = \supfun{b}\circ\supfun{a};
 \end{multline*}
-\item $a\leq b\Rightarrow Ta\leq Tb$ is obvious;
-\item $x\leq y\Rightarrow(Ta)x\leq (Ta)y$ for all $a\in S$ is obvious.
+\item $a\leq b\Rightarrow \supfun{a}\leq \supfun{b}$ is obvious;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$ is obvious.
 \end{itemize}
 \end{proof}
 
