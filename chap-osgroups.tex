@@ -383,6 +383,193 @@ It is unrelated with Cachy-completion.
 
 Kuratowski spaces are a generalization of topological spaces.
 
+\chapter{Continuity-related properties}
+
+\section{Definitions}
+
+I remind that \emph{generalized continuity} (I will call it just continuity) is defined for every ordered precategory: $f\circ\mu\leq\nu\circ f$.
+
+See \cite{volume-1} for an explanation how this formula generalizes the following things:
+\begin{itemize}
+\item continuity between topological spaces (and pretopological spaces);
+\item proximal continuity between proximity spaces
+(and funcoids)
+\item uniform continuity between uniform spaces;
+\item discrete continuity between (directed) graphs;
+\item contractions between metric spaces (see below).
+\end{itemize}
+
+I remind also that there are two other formulas (defined for ordered dagger precategories) of continuity:
+\[ f\circ\mu\circ f^{\dagger}\leq\nu,\quad
+\mu\leq f^{\dagger}\circ\nu\circ f. \]
+(See below theorems for the case when these three formulas of continuity are equivalent to each other.)
+
+We will need the concepts of monovalued and injective morphisms of an ordered dagger precategory:
+
+\begin{defn}
+\index{morphism!monovalued}For a partially ordered dagger category
+I will call \emph{monovalued} morphism such a morphism $f$ that $f\circ f^{\dagger}\sqsubseteq1_{\Dst f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!entirely defined}For a partially ordered dagger category
+I will call \emph{entirely defined} morphism such a morphism $f$
+that $f^{\dagger}\circ f\sqsupseteq1_{\Src f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!injective}For a partially ordered dagger category
+I will call \emph{injective} morphism such a morphism $f$ that $f^{\dagger}\circ f\sqsubseteq1_{\Src f}$.
+\end{defn}
+
+\begin{defn}
+\index{morphism!surjective}For a partially ordered dagger category
+I will call \emph{surjective} morphism such a morphism f that $f\circ f^{\dagger}\sqsupseteq1_{\Dst f}$.\end{defn}
+\begin{rem}
+It is easy to show that this is a generalization of monovalued, entirely
+defined, injective, and surjective functions as morphisms of the category
+$\mathbf{Rel}$.\end{rem}
+\begin{obvious}
+``Injective morphism'' is a dual of ``monovalued morphism'' and
+``surjective morphism'' is a dual of ``entirely defined morphism''.\end{obvious}
+\begin{defn}
+For a given partially ordered dagger category $C$ the \emph{category
+of monovalued} (\emph{entirely defined}, \emph{injective}, \emph{surjective})
+morphisms of $C$ is the category with the same set of objects as
+of $C$ and the set of morphisms being the set of monovalued (entirely
+defined, injective, surjective) morphisms of $C$ with the composition
+of morphisms the same as in $C$.
+\end{defn}
+We need to prove that these are really categories, that is that composition
+of monovalued (entirely defined, injective, surjective) morphisms
+is monovalued (entirely defined, injective, surjective) and that identity
+morphisms are monovalued, entirely defined, injective, and surjective.
+\begin{proof}
+We will prove only for monovalued morphisms and entirely defined morphisms,
+as injective and surjective morphisms are their duals.
+\begin{description}
+\item [{Monovalued}] Let $f$ and $g$ be monovalued morphisms, $\Dst f=\Src g$.
+Then
+\begin{align*}
+(g\circ f)\circ(g\circ f)^{\dagger} & =\\
+g\circ f\circ f^{\dagger}\circ g^{\dagger} & \sqsubseteq\\
+g\circ1_{\Src g}\circ g^{\dagger} & =\\
+g\circ g^{\dagger} & \sqsubseteq\\
+1_{\Dst g}&=1_{\Dst(g\circ f)}.
+\end{align*}
+
+
+
+So $g\circ f$ is monovalued.
+
+
+That identity morphisms are monovalued follows from the following:
+\[
+1_{A}\circ(1_{A})^{\dagger}=1_{A}\circ1_{A}=1_{A}=1_{\Dst1_{A}}\sqsubseteq1_{\Dst1_{A}}.
+\]
+
+
+\item [{Entirely~defined}] Let $f$ and $g$ be entirely defined morphisms,
+$\Dst f=\Src g$. Then
+\begin{align*}
+(g\circ f)^{\dagger}\circ(g\circ f) & =\\
+f^{\dagger}\circ g^{\dagger}\circ g\circ f & \sqsupseteq\\
+f^{\dagger}\circ1_{\Src g}\circ f & =\\
+f^{\dagger}\circ1_{\Dst f}\circ f & =\\
+f^{\dagger}\circ f & \sqsupseteq\\
+1_{\Src f}&=1_{\Src(g\circ f)}.
+\end{align*}
+
+
+
+So $g\circ f$ is entirely defined.
+
+
+That identity morphisms are entirely defined follows from the following:
+\[
+(1_{A})^{\dagger}\circ1_{A}=1_{A}\circ1_{A}=1_{A}=1_{\Src1_{A}}\sqsupseteq1_{\Src1_{A}}.
+\]
+
+
+\end{description}
+\end{proof}
+\begin{defn}
+\index{morphism!bijective}I will call a \emph{bijective} morphism
+a morphism which is entirely defined, monovalued, injective, and surjective.\end{defn}
+\begin{prop}
+If a morphism is bijective then it is an isomorphism.\end{prop}
+\begin{proof}
+Let $f$ be bijective. Then $f\circ f^{\dagger}\sqsubseteq1_{\Dst f}$,
+$f^{\dagger}\circ f\sqsupseteq1_{\Src f}$, $f^{\dagger}\circ f\sqsubseteq1_{\Src f}$,
+$f\circ f^{\dagger}\sqsupseteq1_{\Dst f}$. Thus $f\circ f^{\dagger}=1_{\Dst f}$
+and $f^{\dagger}\circ f=1_{\Src f}$ that is $f^{\dagger}$ is an
+inverse of $f$.
+\end{proof}
+
+I will also show definitions of metamonovalued and weakly metamonovalued morphisms. As appears from known theorems about funcoids and reloids, it looks like (however I can't prove this) under some general settings we have the following three pairwise equivalent:
+\begin{itemize}
+\item monovaluedness;
+\item metamonovaluedness;
+\item weak metamonovaluedness.
+\end{itemize}
+
+Let $\Hom$-sets be complete lattices.
+\begin{defn}
+\index{morphism!metamonovalued}A morphism $f$ of a partially ordered
+category is \emph{metamonovalued} when $\left(\bigsqcap G\right)\circ f=\bigsqcap_{g\in G}(g\circ f)$
+whenever $G$ is a set of morphisms with a suitable source and destination.
+\end{defn}
+
+\begin{defn}
+\index{morphism!metainjective}A morphism $f$ of a partially ordered
+category is \emph{metainjective} when $f\circ\left(\bigsqcap G\right)=\bigsqcap_{g\in G}(f\circ g)$
+whenever $G$ is a set of morphisms with a suitable source and destination.\end{defn}
+\begin{obvious}
+Metamonovaluedness and metainjectivity are dual to each other.\end{obvious}
+\begin{defn}
+\index{morphism!metacomplete}A morphism $f$ of a partially ordered
+category is \emph{metacomplete} when $f\circ\left(\bigsqcup G\right)=\bigsqcup_{g\in G}(f\circ g)$
+whenever $G$ is a set of morphisms with a suitable source and destination.
+\end{defn}
+
+\begin{defn}
+\index{morphism!co-metacomplete}A morphism $f$ of a partially ordered
+category is \emph{co-metacomplete} when $\left(\bigsqcup G\right)\circ f=\bigsqcup_{g\in G}(g\circ f)$
+whenever $G$ is a set of morphisms with a suitable source and destination.
+\end{defn}
+Let now $\Hom$-sets be meet-semilattices.
+\begin{defn}
+\index{morphism!weakly metamonovalued}A morphism $f$ of a partially
+ordered category is \emph{weakly metamonovalued} when $(g\sqcap h)\circ f=(g\circ f)\sqcap(h\circ f)$
+whenever $g$ and $h$ are morphisms with a suitable source and destination.
+\end{defn}
+
+\begin{defn}
+\index{morphism!weakly metainjective}A morphism $f$ of a partially
+ordered category is \emph{weakly metainjective} when $f\circ(g\sqcap h)=(f\circ g)\sqcap(f\circ h)$
+whenever $g$ and $h$ are morphisms with a suitable source and destination.
+\end{defn}
+Let now $\Hom$-sets be join-semilattices.
+\begin{defn}
+\index{morphism!weakly metacomplete}A morphism $f$ of a partially
+ordered category is \emph{weakly metacomplete} when $f\circ(g\sqcup h)=(f\circ g)\sqcup(f\circ h)$
+whenever $g$ and $h$ are morphisms with a suitable source and destination.
+\end{defn}
+
+\begin{defn}
+\index{morphism!weakly co-metacomplete}A morphism $f$ of a partially
+ordered category is \emph{weakly co-metacomplete} when $(g\sqcup h)\circ f=(g\circ f)\sqcup(h\circ f)$
+whenever $g$ and $h$ are morphisms with a suitable source and destination.\end{defn}
+\begin{obvious}
+~
+\begin{enumerate}
+\item Metamonovalued morphisms are weakly metamonovalued.
+\item Metainjective morphisms are weakly metainjective.
+\item Metacomplete morphisms are weakly metacomplete.
+\item Co-metacomplete morphisms are weakly co-metacomplete.
+\end{enumerate}
+\end{obvious}
+
 \chapter{Metric spaces}
 
 Let us call \emph{most general nonnegative real metrics} (MGNRM) the precategory of all extended nonnegative ($\mathbb{R}_{+}\cup\{+\infty\}$) real functions (on some fixed set) of two arguments and the ``composition'' operation
