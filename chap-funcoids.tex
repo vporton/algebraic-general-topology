@@ -1484,56 +1484,6 @@ $\supfun{f}\mathcal{X}=
 \end{proof}
 
 
-\begin{proof}
-\fxerror{Proof without the theorem.}
-\begin{widedisorder}
-
-\item [{\ref{meet-r-at}}] Let denote $x\mathrel\delta y\Leftrightarrow\forall
-f\in R:x\suprel fy$.
-For every $a\in\atoms^{\mathscr{F}(A)}$, $b\in\atoms^{\mathscr{F}(B)}$
-\begin{align*}
-\forall X\in\up a,Y\in\up b\exists x\in\atoms\uparrow X,y\in\atoms\uparrow
-Y:x\mathrel\delta y & \Rightarrow\\
-\forall f\in R,X\in\up a,Y\in\up b\exists x\in\atoms\uparrow X,y\in\atoms\uparrow
-Y:x\suprel fy & \Rightarrow\\
-\forall f\in R,X\in\up a,Y\in\up b:X\rsuprel fY & \Rightarrow\\
-\forall f\in R:a\suprel fb & \Leftrightarrow\\
-a\mathrel\delta b.
-\end{align*}
-
-
-
-So by theorem~\ref{cont-fcd-on-atoms}, $\delta$ can be continued
-till $\suprel p$ for some funcoid $p\in\mathsf{FCD}(A,B)$.
-
-
-For every funcoid $q\in\mathsf{FCD}(A,B)$ such that $\forall f\in R:q\sqsubseteq
-f$
-we have
-\[
-x\suprel qy\Rightarrow\forall f\in R:x\suprel fy\Leftrightarrow x\mathrel\delta
-y\Leftrightarrow x\suprel py,
-\]
-
-
-
-so $q\sqsubseteq p$. Consequently $p=\bigsqcap R$.
-
-
-From this $x\suprel{\bigsqcap R}y\Leftrightarrow\forall f\in R:x\suprel fy$.
-
-\item [{\ref{meet-f-at}}] From the former
-\begin{align*}
-y\in\atoms\supfun{\bigsqcap R}x & \Leftrightarrow\\
-y\sqcap\supfun{\bigsqcap R}x\ne\bot & \Leftrightarrow\\
-\forall f\in R:y\sqcap\supfun fx\ne\bot & \Leftrightarrow\\
-y\in\bigsqcap\rsupfun{\atoms}\setcond{\supfun fx}{f\in R} & \Leftrightarrow\\
-y\in\atoms\bigsqcap_{f\in R}\supfun fx
-\end{align*}
-for every $y\in\atoms^{\mathscr{F}(A)}$. From this it follows $\supfun{\bigsqcap
-R}x=\bigsqcap_{f\in R}\supfun fx$.
-\end{widedisorder}
-\end{proof}
 \begin{thm}
 $g\circ f=\bigsqcap^{\mathsf{FCD}}\setcond{G\circ F}{F\in\up f.G\in\up g}$ for every
 composable funcoids~$f$ and~$g$.\end{thm}
