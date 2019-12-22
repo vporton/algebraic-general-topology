@@ -206,11 +206,11 @@ It seem we cannot define \emph{total boundness} purely in terms of ordered semig
 
 \chapter{A relation}
 
-Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp\supfun{a}x$.
+Every ordered precategory action~$\supfun{}$ defines a relation~$\suprel{}$: $x\suprel{a}y\Leftrightarrow y\nasymp\supfun{a}x$.
 
-If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
+If $\suprel{a}^{\dagger}=\suprel{a}^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
 
-A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
+A space is connected iff $x\equiv y\Rightarrow x\suprel{a}y$.
 
 We can define open and closed functions.
 
@@ -306,12 +306,12 @@ q\sqcap\supfun{\top}(p\sqcap x) = \\
 
 \begin{thm}
 If our action is correctly bounded, then
-\[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
+\[ x\suprel{p\times q}y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
 \end{thm}
 
 \begin{proof}
 \begin{multline*}
-x(R(p\times q))y \Leftrightarrow
+x\suprel{p\times q}y \Leftrightarrow
 y\nasymp\supfun{p\times q}x \Leftrightarrow \\
 y\nasymp
 \left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right. \Leftrightarrow \\
@@ -327,7 +327,7 @@ x\nasymp p\land y\nasymp q.
 % \begin{proof}
 % \begin{multline*}
 % p_0\nasymp p_1\land q_0\nasymp q_1 \Leftrightarrow\\
-% x(R(p\times q))y \Leftrightarrow\\
+% x\suprel{p\times q}y \Leftrightarrow\\
 % y\nasymp\supfun{p\times q}x \Leftrightarrow
 % \end{multline*}
 % \end{proof}
@@ -343,7 +343,7 @@ When our two definitions of connectedness coincide?
 
 \chapter{Separable spaces}
 
-$T_1$-space~$a$ when $x\mathrel{\overline{R\Cor a}}y$ for every $x\asymp y$.
+$T_1$-space~$a$ when $x\mathrel{\overline{\suprel{\Cor a}}}y$ for every $x\asymp y$.
 
 $T_2$-space or \emph{Hausdorff} is such a space~$f$ that $f^{-1}\circ f$ is $T_1$-separable.
 
