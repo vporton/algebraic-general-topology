@@ -12,29 +12,13 @@ $g,h\in\mathsf{FCD}(B,C)$,
 $f\in\mathsf{FCD}(A,B)$.
 \end{enumerate}
 \end{lem}
+
 \begin{proof}
-I will prove only the first equality because the other is analogous.
-
-For every $\mathcal{X}\in\mathscr{F}(A)$, $\mathcal{Z}\in\mathscr{F}(C)$
-\begin{align*}
-\mathcal{X}\suprel{f\circ(g\sqcup h)}\mathcal{Z} & \Leftrightarrow\\
-\exists y\in\atoms^{\mathscr{F}(B)}:(\mathcal{X}\suprel{g\sqcup h}y\land
-y\suprel f\mathcal{Z}) & \Leftrightarrow\\
-\exists y\in\atoms^{\mathscr{F}(B)}:((\mathcal{X}\suprel
-gy\lor\mathcal{X}\suprel hy)\land y\suprel f\mathcal{Z}) & \Leftrightarrow\\
-\exists y\in\atoms^{\mathscr{F}(B)}:((\mathcal{X}\suprel gy\land y\suprel
-f\mathcal{Z})\lor(\mathcal{X}\suprel hy\land y\suprel f\mathcal{Z})) &
-\Leftrightarrow\\
-\exists y\in\atoms^{\mathscr{F}(B)}:(\mathcal{X}\suprel gy\land y\suprel
-f\mathcal{Z})\lor\exists y\in\atoms^{\mathscr{F}(B)}:(\mathcal{X}\suprel hy\land
-y\suprel f\mathcal{Z}) & \Leftrightarrow\\
-\mathcal{X}\suprel{f\circ g}\mathcal{Z}\lor\mathcal{X}\suprel{f\circ
-h}\mathcal{Z} & \Leftrightarrow\\
-\mathcal{X}\suprel{f\circ g\sqcup f\circ h}\mathcal{Z}.
-\end{align*}
-
+Theorem~\ref{pffcd-assc-j}.
 \end{proof}
-Another proof of the above theorem (without atomic filters):
+
+Another proof of the above lemma (without atomic filters):
+
 \begin{proof}
 ~
 \begin{align*}
@@ -45,7 +29,6 @@ Another proof of the above theorem (without atomic filters):
 \supfun{f\circ g}\mathcal{X}\sqcup\supfun{f\circ h}\mathcal{X} & =\\
 \supfun{f\circ g\sqcup f\circ h}\mathcal{X}.
 \end{align*}
-
 \end{proof}
 
 \begin{thm}
