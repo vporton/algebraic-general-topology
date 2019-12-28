@@ -93,19 +93,37 @@ As I shown above, functions (and more generally binary relations) can also be co
 \chapter{Ordered precategory actions}
 
 \begin{defn}
+\emph{Semiordered precategory action} on a is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\begin{enumerate}
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
+\end{enumerate}
+I call morphisms of such a precategory as \emph{semi-interspaces}.\footnote{The prefix inter- is supposed to mean that the morphisms may have the source different that the destination.}
+\end{defn}
+
+\begin{defn}
 \emph{Ordered precategory action} on a is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
 \begin{enumerate}
 \item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
-\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$, $x,y\in\mathfrak{A}$.
 \end{enumerate}
 In other words, an ordered precategory action is a (not necessarily strictly) increasing precategory action (we consider transformations of this action to be ordered pointwise, that is by the product order).
 
-I call morphisms of such a precategory as \emph{interspaces}.\footnote{The prefix inter- is supposed to mean that the morphisms may have the source different that the destination.}
+I call morphisms of such a precategory as \emph{interspaces}.
 \end{defn}
 
 Note that this ``inducting'' is an ordered semigroup homomorphism.
 
 \chapter{Ordered semigroup actions}
+
+\begin{defn}
+\emph{Curried semiordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
+\begin{enumerate}
+\item $\supfun{b\circ a}x = \supfun{b}\supfun{a}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+$x,y\in\mathfrak{A}$;
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
+\end{enumerate}
+I call elements of such an action \emph{semispaces}.
+\end{defn}
 
 \begin{defn}
 \emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
@@ -136,7 +154,7 @@ A \emph{functional ordered precategory action} is such an ordered precategory ac
 \end{defn}
 
 \begin{thm}
-Each ordered precategory action induces a functional ordered precategory action, whose morphisms are the same a of the original one but with objects being posets, spaces are the actions of the original precategory, the composition operation is function composition, and order of spaces is the product order.
+Each ordered precategory action induces as functional ordered precategory action, whose morphisms are the same a of the original one but with objects being posets, spaces are the actions of the original precategory, the composition operation is function composition, and order of spaces is the product order.
 \end{thm}
 
 \begin{proof}
@@ -159,7 +177,7 @@ Remember that elements of our posets of objects may be such things as sets or mo
 
 This book is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
 
-Ordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow \supfun{a}\leq \supfun{b} \] that is when \[ a\leq b \Leftarrow \forall x:\supfun{a}x\leq\supfun{b}x. \]
+Semiordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow \supfun{a}\leq \supfun{b} \] that is when \[ a\leq b \Leftarrow \forall x:\supfun{a}x\leq\supfun{b}x. \]
 
 Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
 
@@ -206,11 +224,11 @@ It seem we cannot define \emph{total boundness} purely in terms of ordered semig
 
 \chapter{A relation}
 
-Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x(Ra)y\Leftrightarrow y\nasymp\supfun{a}x$.
+Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x\suprel{a}y\Leftrightarrow y\nasymp\supfun{a}x$.
 
-If $(Ra)^{\dagger}=(Ra)^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
+If $\suprel{a}^{\dagger}=\suprel{a}^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
 
-A space is connected iff $x\equiv y\Rightarrow x(Ra)y$.
+A space is connected iff $x\equiv y\Rightarrow x\suprel{a}y$.
 
 We can define open and closed functions.
 
@@ -306,12 +324,12 @@ q\sqcap\supfun{\top}(p\sqcap x) = \\
 
 \begin{thm}
 If our action is correctly bounded, then
-\[ x(R(p\times q))y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
+\[ x\suprel{p\times q}y\Leftrightarrow x\nasymp p\land y\nasymp q. \]
 \end{thm}
 
 \begin{proof}
 \begin{multline*}
-x(R(p\times q))y \Leftrightarrow
+x\suprel{p\times q}y \Leftrightarrow
 y\nasymp\supfun{p\times q}x \Leftrightarrow \\
 y\nasymp
 \left\{\begin{array}{ll}q&\text{if }x\nasymp p,\\\bot&\text{if }x\asymp p.\end{array}\right. \Leftrightarrow \\
@@ -327,7 +345,7 @@ x\nasymp p\land y\nasymp q.
 % \begin{proof}
 % \begin{multline*}
 % p_0\nasymp p_1\land q_0\nasymp q_1 \Leftrightarrow\\
-% x(R(p\times q))y \Leftrightarrow\\
+% x\suprel{p\times q}y \Leftrightarrow\\
 % y\nasymp\supfun{p\times q}x \Leftrightarrow
 % \end{multline*}
 % \end{proof}
