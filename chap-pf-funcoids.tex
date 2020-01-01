@@ -742,7 +742,8 @@ $Y \nasymp \im f \Leftrightarrow Y \nasymp \bigsqcup_{x \in
 \supfun{f^{-1}} Y \nasymp x \Leftrightarrow \supfun{f^{-1}} Y
 \nasymp \supfun{f^{-1}} Y \Leftrightarrow Y \nasymp \supfun{f}
 \supfun{f^{-1}} Y \Rightarrow Y \nasymp \supfun{f} \dom f$;
-$\supfun{f} \dom f \sqsupseteq \im f$
+$\supfun{f} \dom f \sqsupseteq \im f$. Alternative proof:
+just limit to a suitable $\Hom$-set of funcoids.
 
 \begin{prop}\label{pf-cap-dom}
 $\supfun fx=\supfun f(x\sqcap\dom f)$
@@ -763,7 +764,10 @@ Thus $\supfun fx=\supfun f(x\sqcap\dom f)$ by separability of $\Dst f$.\end{proo
 \begin{prop}
 $x\nasymp\dom f\Leftrightarrow(\supfun fx\text{ is not least})$ for
 every pointfree funcoid $f$ and $x\in\Src f$ if $\Dst f$ has greatest
-element $\top$.\end{prop}
+element $\top$.
+\fxnote{Need to prove for unfixed funcoids: just limit to a suitable $\Hom$-set of funcoids.}
+\end{prop}
+
 \begin{proof}
 $x\nasymp\dom f\Leftrightarrow x\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fx\Leftrightarrow(\supfun fx\text{ is not least})$.\end{proof}
 \begin{prop}
