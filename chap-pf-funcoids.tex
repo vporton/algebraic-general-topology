@@ -773,13 +773,19 @@ $x\nasymp\dom f\Leftrightarrow x\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarr
 \begin{prop}
 $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$
 for every pointfree funcoid $f$ whose destination is a bounded strongly separable poset
-and source is an atomistic poset.\end{prop}
+and source is an atomistic poset.
+\fxnote{Need to prove for unfixed funcoids.}
+\end{prop}
+
 \begin{proof}
 For every $a\in\atoms^{\Src f}$ we have 
 \[
 a\nasymp\dom f\Leftrightarrow a\nasymp\supfun{f^{-1}}\top^{\Dst f}\Leftrightarrow\top^{\Dst f}\nasymp\supfun fa\Leftrightarrow\supfun fa\ne\bot^{\Dst f}.
 \]
 So $\dom f=\bigsqcup\setcond{a\in\atoms^{\Src f}}{a\nasymp\dom f}=\bigsqcup\setcond{a\in\atoms^{\Src f}}{\supfun fa\ne\bot^{\Dst f}}$.\end{proof}
+
+Prove the further for unfixed funcoid, too:
+
 \begin{prop}
 $\dom(f|_{a})=a\sqcap\dom f$ for every pointfree funcoid $f$ and
 $a\in\Src f$ where $\Src f$ is a meet-semilattice and
