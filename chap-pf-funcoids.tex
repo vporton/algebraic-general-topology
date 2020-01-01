@@ -734,6 +734,17 @@ y\nasymp\supfun f\dom f\Leftrightarrow\dom f\nasymp\supfun{f^{-1}}y\Leftrightarr
 \supfun{f^{-1}}y\text{ is not least}\Leftrightarrow\top\nasymp\supfun{f^{-1}}y\Leftrightarrow y\nasymp\supfun f\top\Leftrightarrow y\nasymp\im f.
 \end{multline*}
 So $\supfun f\dom f=\im f$ by separability of $\Dst f$.\end{proof}
+
+TODO: For unfixed funcoids this generalizes to the following proof:
+$Y \nasymp \im f \Leftrightarrow Y \nasymp \bigsqcup_{x \in
+\mathfrak{A}} \supfun{f} x \Leftrightarrow \exists x \in \mathfrak{A}: Y
+\nasymp \supfun{f} x \Leftrightarrow \exists x \in \mathfrak{A}:
+\supfun{f^{-1}} Y \nasymp x \Leftrightarrow \supfun{f^{-1}} Y
+\nasymp \supfun{f^{-1}} Y \Leftrightarrow Y \nasymp \supfun{f}
+\supfun{f^{-1}} Y \Rightarrow Y \nasymp \supfun{f} \dom f$
+
+$\supfun{f} \dom f \sqsupseteq \im f$
+
 \begin{prop}\label{pf-cap-dom}
 $\supfun fx=\supfun f(x\sqcap\dom f)$
 for every $x\in\Src f$ for a pointfree funcoid $f$ whose source
