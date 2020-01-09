@@ -63,6 +63,28 @@ Y\in\supfun{f}\top^{\mathscr{F}(\Src f)}\Leftrightarrow
 Y\in\operatorname{Im}f$.
 \end{proof}
 
+\begin{defn}
+Image of unfixed funcoid can be defined as:
+$\im f = [\im F]$ for $F\in f$.
+\end{defn}
+
+Need to prove it does not depend on the choice of~$F$.
+
+\begin{proof}
+Need to prove $\im F_0\sim\im F_1$ if $F_0\sim F_1$. But it follows from
+\begin{multline*}
+\im F_0\sim\im\iota_{\dom F_0\sqcup\dom F_1,\im F_0\sqcup\im F_1}F_0=\\\im\iota_{\dom F_0\sqcup\dom F_1,\im F_0\sqcup\im F_1}F_1\sim\im F_1.
+\end{multline*}
+\end{proof}
+
+\begin{thm}
+$\im f = \operatorname{IM}f = \operatorname{IM}F = \im\mathscr{S}f$ for every unfixed funcoid~$f$.
+\end{thm}
+
+\begin{proof}
+??
+\end{proof}
+
 \begin{obvious}
 For every morphism $f\in\mathbf{Rel}(A,B)$ for sets~$A$ and~$B$
 \begin{enumerate}
@@ -70,6 +92,20 @@ For every morphism $f\in\mathbf{Rel}(A,B)$ for sets~$A$ and~$B$
 \item $\dom\uparrow^{\mathsf{FCD}}f=\uparrow\dom f$.
 \end{enumerate}
 \end{obvious}
+
+\begin{prop}
+For every binary relation~$f$
+\begin{enumerate}
+\item $\im\uparrow^{\mathsf{FCD}}f=\uparrow\im f$;
+\item $\dom\uparrow^{\mathsf{FCD}}f=\uparrow\dom f$.
+\end{enumerate}
+\fxwarning{Define image of unfixed funcoid.}
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
 \begin{prop}
 $\supfun f\mathcal{X}=\supfun f(\mathcal{X}\sqcap\dom f)$ for every
 funcoid $f$, $\mathcal{X}\in\mathscr{F}(\Src f)$.
