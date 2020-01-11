@@ -3,6 +3,21 @@
 \fxwarning{This is a draft not thoroughly checked for
 errors.}
 
+Unfixed categories like my other ideas is a great idea.
+However, previously I thought it is also great for studying
+funcoids and reloids, because unfixed funcoids is a
+generalization of funcoids, etc.
+
+Unfixed funcoids are not a so important generalization as I
+imagined, because there is a simpler and yet more general
+generalization of funcoids: Every $\Hom$-set of small funcoids
+can be embedded into $\mathsf{FCD}\left(\bigcup\mathscr{U},\bigcup\mathscr{U}\right)$ where $\mathscr{U}$ is the Grothendieck universe.
+
+In this chapter I show how to embed one $\Hom$-set into another
+$\Hom$-set, so this chapter is indeed important. But the topic
+after which this chapter was titled, ``Unfixed categories'' is
+not so much important for our book.
+
 \section{Axiomatics for unfixed morphisms}
 
 \begin{defn}
@@ -141,6 +156,8 @@ $\mathscr{S}\mathcal{A}\supseteq\mathcal{A}$.
 Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]} \circ f = f}$;
 \item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}$.
 \end{enumerate}
+\fxnote{$\id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f \to
+\id^{\mathcal{C}(\Src f)}_{X\sqcap\Src f}$? It is defined below.}
 \end{defn}
 
 \begin{defn}
@@ -179,6 +196,20 @@ The rest follows from symmetry.
 $\operatorname{Im} f$ may be not a filter for an injective
 category with restricted morphisms.
 \end{conjecture}
+
+\begin{prop}
+$\operatorname{Dom}f =
+\setcond{X\in\mathfrak{Z}}{X\sqsubseteq\Src f,
+f\circ\id^{\mathcal{C}(\Dst f)}_X=f}$.
+\fxwarning{$\id^{\mathcal{C}(\Dst f)}_X$ is defined below. Also for $\operatorname{Im}$.}
+\end{prop}
+
+\begin{proof}
+$\operatorname{Dom}f =
+\rsupfun{\Dst f\cap}
+\setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}=$
+??
+\end{proof}
 
 \begin{prop}\label{dst-in-im}
 $\Dst f\in\operatorname{Im} f$; $\Src f\in\operatorname{Dom} f$ for every morphism~$f$ of a category with restricted
@@ -274,27 +305,27 @@ for parallel morphisms~$f$ and~$g$.
 \begin{defn}
 ~
 \begin{enumerate}
-\item $\im f = \min\operatorname{Im} f$;
-\item $\dom f = \min\operatorname{Dom} f$.
+\item $\underline{\im}f = \min\operatorname{Im} f$;
+\item $\underline{\dom}f = \min\operatorname{Dom} f$.
 \end{enumerate}
 \end{defn}
 
 \begin{note}
-It seems that $\im$ and $\dom$ are defined not for every
+It seems that $\underline{\im}$ and $\underline{\dom}$ are defined not for every
 category with restricted identities.
 \end{note}
 
 \begin{prop}
 ~
 \begin{enumerate}
-\item $\im f = \min\operatorname{IM} f$;
-\item $\dom f = \min\operatorname{DOM} f$.
+\item $\underline{\im}f = \min\operatorname{IM} f$;
+\item $\underline{\dom}f = \min\operatorname{DOM} f$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 It follows from $\operatorname{IM}f=\mathscr{S}\operatorname{Im}f$
-(and likewise for~$\dom f$).
+(and likewise for~$\underline{\dom}f$).
 \end{proof}
 
 \begin{thm}
@@ -312,8 +343,8 @@ $\operatorname{IM} (g \circ f) \supseteq \operatorname{IM} g$. The rest follows 
 \end{proof}
 
 \begin{cor}
-$\operatorname{dom} (g \circ f) \sqsubseteq \operatorname{dom} f$, $\operatorname{im} (g \circ f)
-\sqsubseteq \operatorname{im} g$ whenever $\operatorname{dom}$/$\operatorname{im}$ are defined.
+$\underline{\dom}(g \circ f) \sqsubseteq \underline{\dom}f$, $\underline{\im} (g \circ f)
+\sqsubseteq \underline{\im}g$ whenever $\underline{\dom}$/$\underline{\im}$ are defined.
 \end{cor}
 
 \section{Equivalent morphisms}
@@ -699,9 +730,10 @@ the same as~$\im$ and~$\dom$.
 
 \begin{defn}
 We will turn the category~$\mathcal{C}$ into a semigroup
-$\mathcal{U}\mathcal{C}$
-(\emph{the semigroup of unfixed morphisms}) by
-the formula $[g]\circ[f] = [g\circ f]$ whenever~$f$ and~$g$
+$\mathcal{C}/\mathord{\sim}$
+(\emph{the semigroup of unfixed morphisms})
+by taking the partition regarding the relation~$\sim$ and
+the formula for the composition $[g]\circ[f] = [g\circ f]$ whenever~$f$ and~$g$
 are composable morphisms.
 \end{defn}
 
@@ -1042,6 +1074,30 @@ $\operatorname{DOM}f=\operatorname{DOM}F$ and
 $\operatorname{IM}f=\operatorname{IM}F$
 for $F\in f$.
 \end{defn}
+
+\begin{defn}
+$\dom f=\min\operatorname{DOM}f$ and
+$\im f=\min\operatorname{IM}f$ for an unfixed morphism~$f$.
+\end{defn}
+
+\begin{note}
+$\dom f$ and $\im f$ are not always defined.
+\end{note}
+
+\begin{thm}
+$\dom[f]=[\dom f]$ and $\im[f]=[\im f]$ for every
+morphism~$f$ of a category with restricted identities (whenever
+$\dom f$/$\im f$ are defined).
+\end{thm}
+
+\begin{proof}
+$\dom[f]=\dom f$
+
+$[\dom f]=[\min\operatorname{DOM}f]=
+\setcond{\min[X]}{X \in \mathfrak{Z}, f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}$
+
+??
+\end{proof}
 
 \subsection{Rectangular restriction}
 
@@ -1498,6 +1554,8 @@ $\supfun{\mathcal{X}\div A}\mathcal{X}=
 Let~$f$ be a funcoid. Define pointfree
 funcoid~$\mathscr{S}f$ between unfixed filters as:
 
+\fxnote{Instead use endofuncoid on the union of all small sets.}
+
 \begin{defn}
 For every unfixed filters~$\mathcal{X}$
 and~$\mathcal{Y}$
@@ -1554,6 +1612,22 @@ $\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g}\mathcal{X}=
 
 So $\supfun{\mathscr{S}f}\mathcal{X}=
 \supfun{\mathscr{S}g}\mathcal{X}$.
+\end{proof}
+
+\begin{defn}
+So, we can define $\supfun{f}\mathcal{X}=\supfun{\mathscr{S}f}\mathcal{X}$ for every unfixed funcoid~$f$ and an unfixed filter~$\mathcal{X}$.
+\end{defn}
+
+\begin{prop}
+??
+\end{prop}
+
+\begin{proof}
+$\mathcal{X}\suprel{\mathscr{S}f}\mathcal{Y}\Leftrightarrow
+\mathcal{Y}\nasymp\supfun{\mathscr{S}f}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp [\supfun{f}(\mathcal{X}\div\Src f)]
+\Leftrightarrow$
 \end{proof}
 
 \begin{prop}\label{s-fcd}
@@ -2102,3 +2176,32 @@ $\id^{\mathcal{C}(A)}_X = \id^{\mathcal{C}(A,A)}_{[X]}$.
 \end{proof}
 
 Can three last propositions be generalized into one?
+
+\begin{prop}\label{f-circcup-unfix}
+$f \circ (g \sqcup h) = f \circ g \sqcup f \circ h$
+for unfixed morphisms whenever the same formula
+holds for (composable) morpshisms.
+\end{prop}
+
+\begin{proof}
+$f \circ (g \sqcup h) = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst}
+	f} (f \circ (g \sqcup h))]$ because $\operatorname{dom} (f \circ (g \sqcup h))
+\sqsubseteq \operatorname{Src} g \sqcup \operatorname{Src} h$ and $\operatorname{im} (f \circ (g
+\sqcup h)) \sqsubseteq \operatorname{Dst} f$.
+
+So $f \circ (g \sqcup h) = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h,
+	\operatorname{Dst} f} f \circ \iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f}
+(g \sqcup h)] = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f
+\circ (\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} g \sqcup
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h)] =
+[\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f \circ
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} g \sqcup
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f \circ
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h] =
+[\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ g) \sqcup
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ h)] =
+[\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ g \sqcup f
+\circ h)] = f \circ g \sqcup f \circ h$ because $\operatorname{dom} (f \circ g
+\sqcup f \circ h) \sqsubseteq \operatorname{Src} g \sqcup \operatorname{Src} h$ and
+$\operatorname{im} (f \circ g \sqcup f \circ h) \sqsubseteq \operatorname{Dst} f$.
+\end{proof}
