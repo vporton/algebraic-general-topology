@@ -287,6 +287,43 @@ We will map from $\mathsf{FCD}(A,B)$ to universal funcoids by the formula:
 
 Easy to prove?? that this is an order embedding and?? a prefunctor.
 
+\begin{prop}
+~
+\begin{enumerate}
+\item $\mathscr{S}$ from a $\Hom$-set $\mathsf{FCD}(A,B)$
+to $\mathsf{FCD}(\mho)$ is an order embedding.
+\item $\mathscr{S}$ from the category~$\mathsf{FCD}$
+to $\mathsf{FCD}(\mho)$ is a prefunctor.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+~
+\begin{widedisorder}
+\item
+$(\supfun{\mathscr{S}f}\mathcal{X})\div\Dst f=
+\supfun{f}\mathcal{X}$.
+Thus for different~$f$ we have different
+$\mathcal{X}\mapsto\supfun{\mathscr{S}f}\mathcal{X}$.
+So it is an injection. That it is a monotone function
+is obvious.
+
+\item
+$\supfun{\mathscr{S}g\circ\mathscr{S}f}\mathcal{X}=
+\supfun{\mathscr{S}g}\supfun{\mathscr{S}f}\mathcal{X}=
+\supfun{\mathscr{S}g}[\supfun{f}(\mathcal{X}\div\Src f)]=
+[\supfun{g}([\supfun{f}(\mathcal{X}\div\Src f)]\div\Src g)]=
+[\supfun{g}(\supfun{f}(\mathcal{X}\div\Src f)\div\Src g)]=
+[\supfun{g}\supfun{f}(\mathcal{X}\div\Src f)]=
+[\supfun{g\circ f}(\mathcal{X}\div\Src f)]=
+\supfun{\mathscr{S}(g\circ f)}\mathcal{X}$ for every
+composable funcoids~$f$ and~$g$ and an unfixed
+filter~$\mathcal{X}$. Thus
+$\mathscr{S}g\circ\mathscr{S}f=\mathscr{S}(g\circ f)$.
+\end{widedisorder}
+???
+\end{proof}
+
 Because every $\Hom$-set of funcoids is embedded into universal
 funcoids, it is often enough to study only universal funcoids.
 
