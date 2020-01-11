@@ -22,7 +22,15 @@ Almost universes are closed regarding arbitrary intersections.
 The good thing about almost universes is that both powersets and Grotendieck universes are almost universes.
 
 \begin{defn}
-I will call an \emph{almost funcoid} a poinfree funcoid between almost universes.
+I will call an \emph{almost funcoid} a pointfree funcoid between almost universes.
+\end{defn}
+
+Almost funcoids encompass both funcoids and unfixed funcoids
+(because unfixed funcoids bijectively correspond to pointfree
+funcoids on a Grotendieck universe).
+
+\begin{defn}
+I will denote $\mathsf{aFCD}$ the category of almost funcoids (the wide subcategory of the category of pointfree funcoids whose objects are almost universes).
 \end{defn}
 
 \section{More on composition}
@@ -30,11 +38,11 @@ I will call an \emph{almost funcoid} a poinfree funcoid between almost universes
 \begin{lem}
 For every sets $A$, $B$, $C$
 \begin{enumerate}
-\item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$ for $g,h\in\mathsf{FCD}(A,B)$,
-$f\in\mathsf{FCD}(B,C)$;
+\item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$ for $g,h\in\mathsf{aFCD}(A,B)$,
+$f\in\mathsf{aFCD}(B,C)$;
 \item $(g\sqcup h)\circ f=g\circ f\sqcup h\circ f$ for
-$g,h\in\mathsf{FCD}(B,C)$,
-$f\in\mathsf{FCD}(A,B)$.
+$g,h\in\mathsf{aFCD}(B,C)$,
+$f\in\mathsf{aFCD}(A,B)$.
 \end{enumerate}
 \end{lem}
 
@@ -56,17 +64,13 @@ Another proof of the above lemma (without atomic filters):
 \end{align*}
 \end{proof}
 
-\begin{thm}
+\begin{cor}
 For unfixed funcoids:
 \begin{enumerate}
 \item $f\circ(g\sqcup h)=f\circ g\sqcup f\circ h$;
 \item $(g\sqcup h)\circ f=g\circ f\sqcup h\circ f$.
 \end{enumerate}
-\end{thm}
-
-\begin{proof}
-Proposition~\ref{f-circcup-unfix}.
-\end{proof}
+\end{cor}
 
 \section{Domain and range of a funcoid}
 
