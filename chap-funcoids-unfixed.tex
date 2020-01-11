@@ -1,5 +1,30 @@
 \chapter{Unfixed funcoids}
 
+\begin{defn}
+I will call \emph{almost universe}
+a union of powersets closed on binary unions.
+\end{defn}
+
+\begin{prop}
+Almost universes are exactly classes of sets closed regarding taking a subset and regarding small unions.
+\end{prop}
+
+\begin{proof}
+Obviously every almost universe is a class of sets closed both for small union and for taking a subset.
+
+Reversely, take a class of sets closed both for small union and for taking a subset. It is a union of all powersets of its members.
+\end{proof}
+
+\begin{obvious}
+Almost universes are closed regarding arbitrary intersections.
+\end{obvious}
+
+The good thing about almost universes is that both powersets and Grotendieck universes are almost universes.
+
+\begin{defn}
+I will call an \emph{almost funcoid} a poinfree funcoid between almost universes.
+\end{defn}
+
 \section{More on composition}
 
 \begin{lem}
@@ -166,9 +191,15 @@ for every funcoid $f$ and $\mathcal{X}\in\mathscr{F}(\Src f)$.
 \end{prop}
 
 \begin{proof}
-By proposition~\ref{x-dom-f}.
+~
+\begin{align*}
+\mathcal{X}\sqcap\dom f\ne\bot & \Leftrightarrow\\
+\mathcal{X}\sqcap\supfun{f^{-1}}\top^{\mathscr{F}(\Dst
+f)}\ne\bot & \Leftrightarrow\\
+\top\sqcap\supfun f\mathcal{X}\ne\bot & \Leftrightarrow\\
+\supfun f\mathcal{X}\ne\bot.
+\end{align*}
 \end{proof}
-
 \begin{cor}\label{dom-fcd-at}
 $\dom f=\bigsqcup\setcond{a\in\atoms^{\mathscr{F}(\Src f)}}{\supfun
 fa\ne\bot}$ for a funcoid~$f$.
@@ -176,19 +207,13 @@ fa\ne\bot}$ for a funcoid~$f$.
 \begin{proof}
 This follows from the fact that $\mathscr{F}(\Src f)$ is an atomistic
 lattice.\end{proof}
+
 \begin{prop}
 $\dom(f|_{\mathcal{A}})=\mathcal{A}\sqcap\dom f$ for every funcoid
 $f$ and $\mathcal{A}\in\mathscr{F}(\Src f)$.\end{prop}
-\begin{proof}
-~
 
-\begin{align*}
-\dom(f|_{\mathcal{A}}) & =\\
-\im(\id_{\mathcal{A}}^{\mathsf{FCD}}\circ f^{-1}) & =\\
-\supfun{\id_{\mathcal{A}}^{\mathsf{FCD}}}\supfun{f^{-1}}\top & =\\
-\mathcal{A}\sqcap\supfun{f^{-1}}\top & =\\
-\mathcal{A}\sqcap\dom f.
-\end{align*}
+\begin{proof}
+By proposition~\ref{a-domf}.
 \end{proof}
 
 \begin{cor}
@@ -197,7 +222,7 @@ and unfixed filter~$\mathcal{A}$.
 \end{cor}
 
 \begin{proof}
-??
+Also by proposition~\ref{a-domf}.
 \end{proof}
 
 \begin{thm}
@@ -214,8 +239,9 @@ for every funcoid $f$.\end{thm}
 \bigsqcap^{\mathscr{F}}\rsupfun{\im}\up f.
 \end{align*}
 
-
 The second formula follows from symmetry.\end{proof}
+
+\fxnote{Also prove for unfixed funcoids (first define~$\up$).}
 
 \section{Specifying funcoids by functions or relations on atomic filters}
 \begin{cor}
