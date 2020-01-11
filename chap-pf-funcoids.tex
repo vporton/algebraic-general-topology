@@ -761,6 +761,16 @@ x\sqcap\im f^{-1}\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow\\
 x\sqcap\supfun{f^{-1}}y\ne\bot^{\Src f}\Leftrightarrow y\nasymp\supfun fx.
 \end{multline*}
 Thus $\supfun fx=\supfun f(x\sqcap\dom f)$ by separability of $\Dst f$.\end{proof}
+
+\begin{prop}\label{fx-im-fx}
+$\supfun{f}x=\im(f|_x)$ if $f$ is an increasing pointfree funcoid.
+\end{prop}
+
+\begin{proof}
+$\im(f|_x) = \bigsqcup_{a\in\mathfrak{A}}\supfun{f\circ\id_x}a =
+\bigsqcup_{a\in\mathfrak{A}}\supfun{f}(x\sqcap a)$ what because $\supfun{f}$ is monotone equal to $\supfun{f}x$.
+\end{proof}
+
 \begin{prop}
 $x\nasymp\dom f\Leftrightarrow(\supfun fx\text{ is not least})$ for
 every pointfree funcoid $f$ and $x\in\Src f$ if $\Dst f$ has greatest
