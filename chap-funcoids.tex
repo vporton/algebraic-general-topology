@@ -268,6 +268,28 @@ that $\mathord{\suprel f}\ne\mathord{\suprel g}$ when $f\ne g$.)
 of funcoids}) whose base is $\mathsf{FCD}(A,B)$ and whose core are
 principal funcoids from $A$ to $B$.
 
+\section{Universal funcoids}
+
+\begin{defn}
+Let $\mathscr{U}$ be a Grothendieck universe.
+\emph{Universal set} is $\mho = \bigcup\mathscr{U}$.
+\end{defn}
+
+\begin{defn}
+I will call an \emph{universal funcoid} an endo-funcoid on the union of all small sets.
+\end{defn}
+
+Let~$f$ be a funcoid. We can assume that $f$~is a funcoid between small sets
+(or otherwise we can change our formalistic to make these sets small).
+
+We will map from $\mathsf{FCD}(A,B)$ to universal funcoids by the formula:
+\[ \supfun{\mathscr{S}f}\mathcal{X} = \supfun{f}(\mathcal{X}\div A)\div\mho. \]
+
+Easy to prove?? that this is an order embedding and?? a prefunctor.
+
+Because every $\Hom$-set of funcoids is embedded into universal
+funcoids, it is often enough to study only universal funcoids.
+
 \section{Funcoid as continuation}
 
 Let $f$ be a funcoid.
