@@ -1093,21 +1093,6 @@ $\im f=\min\operatorname{IM}f$ for an unfixed morphism~$f$.
 $\dom f$ and $\im f$ are not always defined.
 \end{note}
 
-\begin{thm}
-$\dom[f]=[\dom f]$ and $\im[f]=[\im f]$ for every
-morphism~$f$ of a category with restricted identities (whenever
-$\dom f$/$\im f$ are defined).
-\end{thm}
-
-\begin{proof}
-$\dom[f]=\dom f$
-
-$[\dom f]=[\min\operatorname{DOM}f]=
-\setcond{\min[X]}{X \in \mathfrak{Z}, f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}$
-
-??
-\end{proof}
-
 \subsection{Rectangular restriction}
 
 \begin{prop}
@@ -1360,7 +1345,7 @@ restricted identity being the identity relation between the
 given sets.
 
 Moreover it is a category with binary product morphism
-with usual Cartesian product (??prove).
+with usual Cartesian product.
 
 Proofs of this are trivial.
 
@@ -1529,7 +1514,6 @@ $\supfun{\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)}\mathcal{X}=
 \end{proof}
 
 \begin{lem}
-\fxnote{This lemma seems not used.}
 $\mathcal{X}\div A=(\mathcal{X}\sqcap[A])\div A$
 for every unfixed filter~$\mathcal{X}$ and small set~$A$.
 \end{lem}
@@ -1537,7 +1521,6 @@ for every unfixed filter~$\mathcal{X}$ and small set~$A$.
 \begin{proof}
 $(\mathcal{X}\sqcap[A])\div A=
 (\mathcal{X}\div A)\sqcap([A]\div A)=
-??=
 (\mathcal{X}\div A)\sqcap\top^{\mathfrak{F}(A)}=
 \mathcal{X}\div A$.
 \end{proof}
@@ -1560,8 +1543,6 @@ $\supfun{\mathcal{X}\div A}\mathcal{X}=
 
 Let~$f$ be a funcoid. Define pointfree
 funcoid~$\mathscr{S}f$ between unfixed filters as:
-
-\fxnote{Instead use endofuncoid on the union of all small sets.}
 
 \begin{defn}
 For every unfixed filters~$\mathcal{X}$
@@ -1624,18 +1605,6 @@ So $\supfun{\mathscr{S}f}\mathcal{X}=
 \begin{defn}
 So, we can define $\supfun{f}\mathcal{X}=\supfun{\mathscr{S}f}\mathcal{X}$ for every unfixed funcoid~$f$ and an unfixed filter~$\mathcal{X}$.
 \end{defn}
-
-\begin{prop}
-??
-\end{prop}
-
-\begin{proof}
-$\mathcal{X}\suprel{\mathscr{S}f}\mathcal{Y}\Leftrightarrow
-\mathcal{Y}\nasymp\supfun{\mathscr{S}f}\mathcal{X}
-\Leftrightarrow
-\mathcal{Y}\nasymp [\supfun{f}(\mathcal{X}\div\Src f)]
-\Leftrightarrow$
-\end{proof}
 
 \begin{prop}\label{s-fcd}
 ~
@@ -1709,8 +1678,6 @@ such that $x\sqsubseteq a,b$. Thus $x\sqsubseteq c$,
 so $x\sqsubseteq a\sqcap c$. We have
 $a\sqcap c\nasymp b$.
 \end{proof}
-
-\fxnote{Since here also for reloids.}
 
 \begin{prop}\label{pfunf-prod}
 $\mathscr{S}(X\times Y)
@@ -1950,8 +1917,6 @@ $\mathscr{S}f\in\End_{\mathsf{RLD}}(\text{small sets})$
 is defined by the formula
 $\GR\mathscr{S}f=\mathscr{S}\GR f$ for every
 reloid~$f$.
-\fxwarning{Small sets vs
-$\text{small sets}\times\text{small sets}$.}
 \end{defn}
 
 \begin{defn}
