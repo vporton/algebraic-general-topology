@@ -215,8 +215,9 @@ f\circ\id^{\mathcal{C}(\Dst f)}_X=f}$.
 \begin{proof}
 $\operatorname{Dom}f =
 \rsupfun{\Dst f\cap}
-\setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}=$
-??
+\setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}=
+\setcond{X\in\mathfrak{Z}}{X\sqsubseteq\Src f,
+f\circ\id^{\mathcal{C}(\Dst f)}_X=f}$.
 \end{proof}
 
 \begin{prop}\label{dst-in-im}
@@ -1365,8 +1366,6 @@ Proofs of this are trivial.
 
 \subsection{\texorpdfstring{Category $\mathsf{FCD}$}{Category FCD}}
 
-\fxwarning{It is $\mathsf{FCD}$, not~$\mathcal{C}$.}
-
 Category $\mathsf{FCD}$
 can be considered as a category with restricted identities
 with $\mathfrak{Z}$ being the set of all
@@ -1375,10 +1374,10 @@ projection being the projection function for the
 equivalence classes of filters,
 restricted identity being defined by the formulas
 \[
-\supfun{\id_\mathcal{F}^{\mathcal{C}(A,B)}}\mathcal{X}=
+\supfun{\id_\mathcal{F}^{\mathsf{FCD}(A,B)}}\mathcal{X}=
 ([\mathcal{X}]\sqcap\mathcal{F})\div B;
 \quad
-\supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}=
+\supfun{(\id_\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}\mathcal{Y}=
 ([\mathcal{Y}]\sqcap\mathcal{F})\div A
 \]
 (whenever $\mathcal{F}\sqsubseteq[A]\sqcap[B]$).
@@ -1387,7 +1386,7 @@ We need to prove that this really defines a funcoid.
 
 \begin{proof}
 $\mathcal{Y}\nasymp
-\supfun{\id_\mathcal{F}^{\mathcal{C}(A,B)}}\mathcal{X}
+\supfun{\id_\mathcal{F}^{\mathsf{FCD}(A,B)}}\mathcal{X}
 \Leftrightarrow
 \mathcal{Y}\nasymp([\mathcal{X}]\sqcap\mathcal{F})\div B
 \Leftrightarrow
@@ -1395,15 +1394,15 @@ $\mathcal{Y}\nasymp
 (\mathcal{F}\div B) \Leftrightarrow
 [\mathcal{Y}]\nasymp[\mathcal{X}]\sqcap\mathcal{F}$.
 Similarly
-$\supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}\Leftrightarrow
+$\supfun{(\id_\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}\mathcal{Y}\Leftrightarrow
 [\mathcal{X}]\nasymp[\mathcal{Y}]\sqcap\mathcal{F}$.
 
 Thus
 $\mathcal{Y}\nasymp
-\supfun{\id_\mathcal{F}^{\mathcal{C}(A,B)}}\mathcal{X}
+\supfun{\id_\mathcal{F}^{\mathsf{FCD}(A,B)}}\mathcal{X}
 \Leftrightarrow
 \mathcal{X}\nasymp
-\supfun{(\id_\mathcal{F}^{\mathcal{C}(A,B)})^{-1}}\mathcal{Y}$.
+\supfun{(\id_\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}\mathcal{Y}$.
 \end{proof}
 
 We need to prove that the restricted identities
@@ -1413,25 +1412,25 @@ conform to the axioms:
 The first five \hyperref[unf-mor]{axioms} are obvious. Let's prove the
 remaining ones:
 
-$\id^{\mathcal{C}(A,A)}_{[A]} = 1^{\mathcal{C}}_A$
+$\id^{\mathsf{FCD}(A,A)}_{[A]} = 1^{\mathsf{FCD}}_A$
 because
-$\supfun{\id^{\mathcal{C}(A,A)}_{[A]}}\mathcal{X}=
+$\supfun{\id^{\mathsf{FCD}(A,A)}_{[A]}}\mathcal{X}=
 ([\mathcal{X}]\sqcap[A])\div A=
 [\mathcal{X}]\div A=\mathcal{X}$.
 
-$\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X = \id^{\mathcal{C}(A,C)}_{X\sqcap Y}$
+$\id^{\mathsf{FCD}(B,C)}_Y \circ \id^{\mathsf{FCD}(A,B)}_X = \id^{\mathsf{FCD}(A,C)}_{X\sqcap Y}$
 because
-$\supfun{\id^{\mathcal{C}(B,C)}_Y \circ
-\id^{\mathcal{C}(A,B)}_X}\mathcal{X}=
-\supfun{\id^{\mathcal{C}(B,C)}_Y}
-\supfun{\id^{\mathcal{C}(A,B)}_X}\mathcal{X}=
-\supfun{\id^{\mathcal{C}(B,C)}_Y}
+$\supfun{\id^{\mathsf{FCD}(B,C)}_Y \circ
+\id^{\mathsf{FCD}(A,B)}_X}\mathcal{X}=
+\supfun{\id^{\mathsf{FCD}(B,C)}_Y}
+\supfun{\id^{\mathsf{FCD}(A,B)}_X}\mathcal{X}=
+\supfun{\id^{\mathsf{FCD}(B,C)}_Y}
 (([\mathcal{X}]\sqcap X)\div B)=
 ([([\mathcal{X}]\sqcap X)\div B]\sqcap Y)\div C=
 (([\mathcal{X}]\sqcap X\sqcap Y)\div B)\div C=
 \text{(because $[\mathcal{X}]\sqcap X\sqcap Y\sqsubseteq[B]$)}=
 ([\mathcal{X}]\sqcap X\sqcap Y)\div C=
-\supfun{\id^{\mathcal{C}(A,C)}_{X\sqcap Y}}\mathcal{X}$.
+\supfun{\id^{\mathsf{FCD}(A,C)}_{X\sqcap Y}}\mathcal{X}$.
 
 $\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
 A\sqsubseteq[B]$ is obvious.
@@ -1496,9 +1495,9 @@ f\sqcap((X\div A)\times^{\mathsf{FCD}}(Y\div B))=
 $X\sqsubseteq[A_0]\sqcap[A_1]$ and $Y\sqsubseteq[B_0]\sqcap[B_1]$.
 Then for $\mathcal{X}\in\mathscr{F}(A_1)$ we have
 $\supfun{\iota_{A_1,B_1}(X\times_{A_0,B_0}Y)}\mathcal{X}=
-\supfun{\mathcal{E}^{\mathcal{C}(B_0,B_1)}}
+\supfun{\mathcal{E}^{\mathsf{FCD}(B_0,B_1)}}
 \supfun{X\times_{A_0,B_0}Y}
-\supfun{\mathcal{E}^{\mathcal{C}(A_1,A_0)}}\mathcal{X}=
+\supfun{\mathcal{E}^{\mathsf{FCD}(A_1,A_0)}}\mathcal{X}=
 (\supfun{X\times_{A_0,B_0}Y}
 (\mathcal{X}\div A_0))\div B_1=
 (\supfun{(X\div A_0)\times^{\mathsf{FCD}}
@@ -1759,10 +1758,10 @@ for arbitrary filters~$A$ and~$B$ such that
 $X\sqsubseteq[A]\sqcap[B]$
 have
 $\supfun{\mathscr{S}\id_X}\mathcal{X}=
-\supfun{\mathscr{S}[\id^{\mathcal{C}(A,B)}_X]}\mathcal{X}=
-\supfun{\mathscr{S}\id^{\mathcal{C}(A,B)}_X}
+\supfun{\mathscr{S}[\id^{\mathsf{FCD}(A,B)}_X]}\mathcal{X}=
+\supfun{\mathscr{S}\id^{\mathsf{FCD}(A,B)}_X}
 \mathcal{X}=
-\left[\supfun{\id^{\mathcal{C}(A,B)}_X}
+\left[\supfun{\id^{\mathsf{FCD}(A,B)}_X}
 (\mathcal{X}\div A)\right]=
 [([\mathcal{X}\div A]\sqcap X)\div B]=
 [(\mathcal{X}\sqcap X)\div B]=
