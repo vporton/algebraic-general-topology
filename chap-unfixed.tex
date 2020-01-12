@@ -120,8 +120,11 @@ $\iota_{B_0, B_1} f\sqsubseteq f$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{\Src f, \Dst f} f = \mathcal{E}_\mathcal{C}^{\Dst f,\Dst f} \circ f \circ \mathcal{E}_\mathcal{C}^{\Src f,\Src f} =
-  1_{\mathcal{C}}^{\Dst f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f$.
+~
+\begin{multline*}
+  \iota_{\Src f, \Dst f} f = \\\mathcal{E}_{\mathcal{C}}^{\Dst f,\Dst f} \circ f \circ \mathcal{E}_\mathcal{C}^{\Src f,\Src f} =\\
+  1_{\mathcal{C}}^{\Dst f} \circ f \circ 1_{\mathcal{C}}^{\Src f} = f.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -365,22 +368,26 @@ $\underline{\dom}(g \circ f) \sqsubseteq \underline{\dom}f$, $\underline{\im} (g
 \end{prop}
 
 \begin{proof}
-  $\iota_{A, B} f =\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ f \circ
-  \mathcal{E}_{\mathcal{C}}^{A, \Src f} = \text{(by definition of
-  $\operatorname{IM} f$ and $\operatorname{DOM} f$)} =\mathcal{E}_{\mathcal{C}}^{\Dst f,
+~
+\begin{multline*}
+\iota_{A, B} f =\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ f \circ
+  \mathcal{E}_{\mathcal{C}}^{A, \Src f} =\\ \text{(by definition of
+  $\operatorname{IM} f$ and $\operatorname{DOM} f$)} =\\\mathcal{E}_{\mathcal{C}}^{\Dst f,
   B} \circ \mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
   \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \circ
   \mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
   \mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ
-  \mathcal{E}_{\mathcal{C}}^{A, \Src f} =\mathcal{E}_{\mathcal{C}}^{Y,
+  \mathcal{E}_{\mathcal{C}}^{A, \Src f} =\\\mathcal{E}_{\mathcal{C}}^{Y,
   B} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} \circ f \circ
   \mathcal{E}_{\mathcal{C}}^{X, \Src f} \circ
-  \mathcal{E}_{\mathcal{C}}^{A, X} = \iota_{A, B} \iota_{X, Y} f$
-  
-  because $\mathcal{E}^{\Dst f, B} \circ \mathcal{E}^{Y, \Dst f}
-  \circ \mathcal{E}^{\Dst f, Y} = \id^{\mathcal{C}(\Dst f, B)}_{Y \sqcap
-  \Dst f \sqcap B} = \id^{\mathcal{C}(Y, B)}_{Y \sqcap B} \circ \id^{\mathcal{C}(\Dst f,Y)}_{Y \sqcap \Dst f} = \mathcal{E}^{Y, B} \circ
-  \mathcal{E}^{\Dst f, Y}$ and thus
+  \mathcal{E}_{\mathcal{C}}^{A, X} =\\ \iota_{A, B} \iota_{X, Y} f
+\end{multline*}
+  because
+\begin{multline*} \mathcal{E}^{\Dst f, B} \circ \mathcal{E}^{Y, \Dst f}
+  \circ \mathcal{E}^{\Dst f, Y} =\\ \id^{\mathcal{C}(\Dst f, B)}_{Y \sqcap
+  \Dst f \sqcap B} = \id^{\mathcal{C}(Y, B)}_{Y \sqcap B} \circ \id^{\mathcal{C}(\Dst f,Y)}_{Y \sqcap \Dst f} =\\ \mathcal{E}^{Y, B} \circ
+  \mathcal{E}^{\Dst f, Y}\end{multline*}
+and thus
   $\mathcal{E}_{\mathcal{C}}^{\Dst f, B} \circ
   \mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ
   \mathcal{E}_{\mathcal{C}}^{\Dst f, Y} =\mathcal{E}_{\mathcal{C}}^{Y,
@@ -550,21 +557,23 @@ $\iota_{A_1,B_1}\iota_{A_0,B_0}f\sqsubseteq\iota_{A_1,B_1}f$.
 \end{prop}
 
 \begin{proof}
-$\iota_{A_1,B_1}\iota_{A_0,B_0}f=
+\begin{multline*}
+\iota_{A_1,B_1}\iota_{A_0,B_0}f=\\
 \mathcal{E}^{B_0,B_1}\circ\mathcal{E}^{\Dst f,B_0}\circ f\circ
-\mathcal{E}^{A_0,\Src f}\circ\mathcal{E}^{A_1,A_0}=
+\mathcal{E}^{A_0,\Src f}\circ\mathcal{E}^{A_1,A_0}=\\
 \id^{\mathcal{C}(B_0,B_1)}_{[B_0]\sqcap[B_1]}\circ\id^{\mathcal{C}(\Dst f,B_0)}_{[\Dst f]\sqcap[B_0]}
 \circ f\circ
 \id^{\mathcal{C}(A_0,\Src f)}_{[A_0]\sqcap[\Src f]}\circ
-\id^{\mathcal{C}(A_1,A_0)}_{[A_1]\sqcap[A_0]}=
+\id^{\mathcal{C}(A_1,A_0)}_{[A_1]\sqcap[A_0]}=\\
 \id^{\mathcal{C}(\Dst f,B_1)}_{[\Dst f]\sqcap[B_0]\sqcap[B_1]}
 \circ f\circ
 \id^{\mathcal{C}(A_1,\Src f)}_{[A_0]\sqcap[A_1]\sqcap[\Src f]}
-\sqsubseteq
+\sqsubseteq\\
 \id^{\mathcal{C}(\Dst f,B_1)}_{[\Dst f]\sqcap[B_1]}
 \circ f\circ
-\id^{\mathcal{C}(A_1,\Src f)}_{[A_1]\sqcap[\Src f]}=
-\iota_{A_1,B_1}f$.
+\id^{\mathcal{C}(A_1,\Src f)}_{[A_1]\sqcap[\Src f]}=\\
+\iota_{A_1,B_1}f.
+\end{multline*}
 \end{proof}
 
 \section{Binary product}
@@ -645,10 +654,12 @@ because
 $\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X=
 \top^{\mathcal{C}(A,B)}\sqcap(X\times_{A,B}Y)$.
 
-$\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X\sqsupseteq
+\begin{multline*}
+\id^{\mathcal{C}(B,B)}_Y\circ\top^{\mathcal{C}(A,B)}\circ\id^{\mathcal{C}(A,A)}_X\sqsupseteq\\
 \id^{\mathcal{C}(B,B)}_Y\circ(X\times_{A,B}Y)\circ
-\id^{\mathcal{C}(A,A)}_X=
-(X\times_{A,B}Y)\sqcap(X\times_{A,B}Y)=X\times_{A,B}Y$.
+\id^{\mathcal{C}(A,A)}_X=\\
+(X\times_{A,B}Y)\sqcap(X\times_{A,B}Y)=X\times_{A,B}Y.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -659,12 +670,14 @@ and metainjective.
 \end{prop}
 
 \begin{proof}
-$\iota_{A,B}(f\sqcap g)=
+\begin{multline*}
+\iota_{A,B}(f\sqcap g)=\\
 \mathcal{E}^{\Dst f,B}\circ(f\sqcap g)\circ
-\mathcal{E}^{A,\Src f}=
+\mathcal{E}^{A,\Src f}=\\
 (\mathcal{E}^{\Dst f,B}\circ f\circ\mathcal{E}^{A,\Src f})\sqcap
-(\mathcal{E}^{\Dst f,B}\circ g\circ\mathcal{E}^{A,\Src f})=
-\iota_{A,B}f\sqcap\iota_{A,B}g$.
+(\mathcal{E}^{\Dst f,B}\circ g\circ\mathcal{E}^{A,\Src f})=\\
+\iota_{A,B}f\sqcap\iota_{A,B}g.
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -700,9 +713,9 @@ That they are upper sets was proved above.
 To prove that $\operatorname{Im} f$ is a filter it remains
 to show $A, B \in \operatorname{Im} f \Leftrightarrow
 A \sqcap B \in \operatorname{Im} f$. Really,
-$A, B \in \operatorname{Im} f \Leftrightarrow \top \times A \sqsupseteq f \land \top
+\[ A, B \in \operatorname{Im} f \Leftrightarrow \top \times A \sqsupseteq f \land \top
 \times B \sqsupseteq f \Rightarrow \top \times (A \sqcap B) \sqsupseteq f
-\Leftrightarrow A \sqcap B \in \operatorname{Im} f$.
+\Leftrightarrow A \sqcap B \in \operatorname{Im} f. \]
 
 $\operatorname{Dom} f$ is similar.
 
@@ -729,12 +742,14 @@ the same as~$\im$ and~$\dom$.
 \end{prop}
 
 \begin{proof}
-  $\iota_{B_0, B_2} (g \circ f) = \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
-  \circ g \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ 1^{A_1} \circ f
-  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
-  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
-  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} = \iota_{B_1, B_2} g \circ \iota_{B_0,
-  B_1} f$.
+\begin{multline*}
+  \iota_{B_0, B_2} (g \circ f) =\\ \mathcal{E}_{\mathcal{C}}^{A_2,B_2}
+  \circ g \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} =\\ \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ 1^{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} =\\ \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \id^{\mathcal{C}(\Dst f,\Src g)}_{A_1} \circ f
+  \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} =\\ \mathcal{E}_{\mathcal{C}}^{A_2,B_2} \circ g \circ \mathcal{E}^{B_1,A_1}
+  \circ \mathcal{E}^{A_1,B_1} \circ f \circ \mathcal{E}_{\mathcal{C}}^{B_0,A_0} =\\ \iota_{B_1, B_2} g \circ \iota_{B_0,
+  B_1} f.
+\end{multline*}
 \end{proof}
 
 \begin{defn}
@@ -811,14 +826,17 @@ $A_0,B_0,A_1,B_1\in\mathfrak{Z}$. We need to prove
 $\id^{\mathcal{C}(A_0,B_0)}_X\sim
 \id^{\mathcal{C}(A_1,B_1)}_X$.
 
-Really, $\iota_{A_1,B_1}\id^{\mathcal{C}(A_0,B_0)}_X =
+Really,
+\begin{multline*}
+\iota_{A_1,B_1}\id^{\mathcal{C}(A_0,B_0)}_X =\\
 \mathcal{E}^{B_0,B_1}\circ\id^{\mathcal{C}(A_0,B_0)}_X
-\circ \mathcal{E}^{A_1,A_0} =
+\circ \mathcal{E}^{A_1,A_0} =\\
 \id^{\mathcal{C}(B_0,B_1)}_{[B_0]\sqcap[B_1]}\circ
 \id^{\mathcal{C}(A_0,B_0)}_X\circ
-\id^{\mathcal{C}(A_1,A_0)}_{[A_0]\sqcap[A_1]} =
-\id^{\mathcal{C}(A_1,B_1)}_{[A_0]\sqcap[A_1]\sqcap[B_0]\sqcap[B_1]\sqcap X} =
-\id^{\mathcal{C}(A_1,B_1)}_X$.
+\id^{\mathcal{C}(A_1,A_0)}_{[A_0]\sqcap[A_1]} =\\
+\id^{\mathcal{C}(A_1,B_1)}_{[A_0]\sqcap[A_1]\sqcap[B_0]\sqcap[B_1]\sqcap X} =\\
+\id^{\mathcal{C}(A_1,B_1)}_X.
+\end{multline*}
 Similarly
 $\iota_{A_0,B_0}\id^{\mathcal{C}(A_1,B_1)}_X =
 \id^{\mathcal{C}(A_0,B_0)}_X$.
@@ -857,15 +875,18 @@ $\Src f=\Src g$ and $\Dst f=\Dst g$.
 \end{lem}
 
 \begin{proof}
-$\iota_{A,B}f\sqsubseteq\iota_{A,B}g \Leftrightarrow
+\begin{multline*}
+\iota_{A,B}f\sqsubseteq\iota_{A,B}g \Leftrightarrow\\
 \mathcal{E}^{\Dst f,B}\circ f\circ\mathcal{E}^{A,\Src f}
 \sqsubseteq
 \mathcal{E}^{\Dst g,B}\circ g\circ\mathcal{E}^{A,\Src g}
-\Leftrightarrow
+\Leftrightarrow\\
 \id^{\mathcal{C}(\Dst f,B)}_{[B]\sqcap[\Dst f]}\circ f\circ\id^{\mathcal{C}(A,\Src f)}_{[A]\sqcap[\Src f]}
 \sqsubseteq
 \id^{\mathcal{C}(\Dst g,B)}_{[B]\sqcap[\Dst g]}\circ g\circ\id^{\mathcal{C}(A,\Src g)}_{[A]\sqcap[\Src g]}
-\Leftarrow f\sqsubseteq g$ because
+\Leftarrow\\ f\sqsubseteq g
+\end{multline*}
+because
 $\id^{\mathcal{C}(\Dst f,B)}_{[B]\sqcap[\Dst f]}=
 \id^{\mathcal{C}(\Dst g,B)}_{[B]\sqcap[\Dst g]}$ and
 $\id^{\mathcal{C}(A,\Src f)}_{[A]\sqcap[\Src f]}=
@@ -1012,10 +1033,12 @@ Let~$S$ be a nonempty set of unfixed morphisms. Take
 an arbitrary unfixed morphism~$f\in S$. Take an
 arbitrary $F\in f$. Let $A=\Src F$ and $B=\Dst F$.
 
-$\bigsqcap S=\bigsqcap\rsupfun{f\sqcap}S=
+\begin{multline*}
+\bigsqcap S=\bigsqcap\rsupfun{f\sqcap}S=
 \bigsqcap\rsupfun{[F]\sqcap}S=
-\bigsqcap\setcond{[F]\sqcap[G]}{g\in S,G\in g}=
-\bigsqcap\setcond{[\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G]}{g\in S,G\in g}$
+\bigsqcap\setcond{[F]\sqcap[G]}{g\in S,G\in g}=\\
+\bigsqcap\setcond{[\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G]}{g\in S,G\in g}.
+\end{multline*}
 
 We will prove
 $\iota_{A\sqcup\Src G,B\sqcup\Dst G}F\sqcap\iota_{A\sqcup\Src G,B\sqcup\Dst G}G \sim F\sqcap\iota_{A,B}G$.
@@ -1062,18 +1085,20 @@ $\operatorname{DOM}f=
 
 \begin{proof}
 We will prove only the first, as the second is similar.
-$\id_Y\circ[f]=[f]\Leftrightarrow
+\begin{multline*}
+\id_Y\circ[f]=[f]\Leftrightarrow\\
 \id^{\mathcal{C}(Y\sqcup\Dst f,Y\sqcup\Dst f)}_{Y}\circ
 \mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f=
-\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f\Leftrightarrow
+\mathcal{E}^{\Dst f,Y\sqcup\Dst f}\circ f\Leftrightarrow\\
 \id^{\mathcal{C}(\Dst f,Y\sqcup\Dst f)}_{[Y]\sqcap[\Dst f]}
 \circ f=\mathcal{E}^{\Dst f,Y\sqcup\Dst f}
-\circ f\Leftrightarrow
+\circ f\Leftrightarrow\\
 \mathcal{E}^{Y\sqcup\Dst f,\Dst f}
 \circ \id^{\mathcal{C}(\Dst f,Y\sqcup\Dst f)}_{[Y]\sqcap[\Dst f]}
-\circ f=f\Leftrightarrow
+\circ f=f\Leftrightarrow\\
 \id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]}\circ f=f
-Y\in\operatorname{IM}f$.
+Y\in\operatorname{IM}f.
+\end{multline*}
 \end{proof}
 
 The above proposition allows to define:
@@ -1298,14 +1323,16 @@ $A_1\in\mathfrak{Z}$, $[A_1]\sqsupseteq X_1$,
 $B_1\in\mathfrak{Z}$, $[B_1]\sqsupseteq Y_1$.
 
 Then
-$(X_0\times Y_0)\sqcap(X_1\times Y_1)=
+\begin{multline*}
+(X_0\times Y_0)\sqcap(X_1\times Y_1)=\\
 [X_0\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_0]\sqcap
-[X_1\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_1]=
+[X_1\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_1]=\\
 [(X_0\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_0)\sqcap
-(X_1\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_1)]=
+(X_1\times_{A_0\sqcup A_1,B_0\sqcup B_1}Y_1)]=\\
 [(X_0\sqcap X_1)\times_{A_0\sqcup A_1,B_0\sqcup B_1}
-(Y_0\sqcap Y_1)]=
-(X_0\sqcap X_1)\times(Y_0\sqcap Y_1)$.
+(Y_0\sqcap Y_1)]=\\
+(X_0\sqcap X_1)\times(Y_0\sqcap Y_1).
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -1315,22 +1342,24 @@ $f\square_{A,B}=f\sqcap(A\times B)$.
 \begin{proof}
 Take $F\in f$. Let $F'=\iota_{A\sqcup\Src F,B\sqcup\Dst F}F$.
 We have $F'\in f$.
-$f\square_{A,B}=[\iota_{A,B}F']=
+\begin{multline*}
+f\square_{A,B}=[\iota_{A,B}F']=\\
 [\mathcal{E}^{B\sqcup\Dst F,B}\circ F'\circ
-\mathcal{E}^{A,A\sqcup\Src F}]=
+\mathcal{E}^{A,A\sqcup\Src F}]=\\
 [\id^{\mathcal{C}(B\sqcup\Dst F,B)}_{[B]}\circ F'\circ
-\id^{\mathcal{C}(A,A\sqcup\Src F)}_{[A]}]=
+\id^{\mathcal{C}(A,A\sqcup\Src F)}_{[A]}]=\\
 [\id^{\mathcal{C}(B\sqcup\Dst F,B)}_{[B]}]\circ [F']\circ
-[\id^{\mathcal{C}(A,A\sqcup\Src F)}_{[A]}]=
+[\id^{\mathcal{C}(A,A\sqcup\Src F)}_{[A]}]=\\
 [\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_{[B]}]\circ
 [F']\circ
-[\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_{[A]}]=
+[\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_{[A]}]=\\
 [\id^{\mathcal{C}(B\sqcup\Dst F,B\sqcup\Dst F)}_{[B]}\circ
 F'\circ
-\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_{[A]}]=
-[F'\sqcap(A\times_{A\sqcup\Src F,B\sqcup\Dst F}B)]=
+\id^{\mathcal{C}(A\sqcup\Src F,A\sqcup\Src F)}_{[A]}]=\\
+[F'\sqcap(A\times_{A\sqcup\Src F,B\sqcup\Dst F}B)]=\\
 [F']\sqcap[A\times_{A\sqcup\Src F,B\sqcup\Dst F}B]=
-f\sqcap(A\times B)$.
+f\sqcap(A\times B).
+\end{multline*}
 \end{proof}
 
 \section{Examples of categories with restricted identities}
@@ -1358,36 +1387,38 @@ small sets, $\mathfrak{A}$ is the set of unfixed filters,
 projection being the projection function for the
 equivalence classes of filters,
 restricted identity being defined by the formulas
-\[
-\supfun{\id_\mathcal{F}^{\mathsf{FCD}(A,B)}}\mathcal{X}=
+\begin{gather*}
+\supfun{\id_{\mathcal{F}^{\mathsf{FCD}(A,B)}}}\mathcal{X}=
 ([\mathcal{X}]\sqcap\mathcal{F})\div B;
-\quad
-\supfun{(\id_\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}\mathcal{Y}=
+\\
+\supfun{(\id_{\mathcal{F}^{\mathsf{FCD}(A,B)}})^{-1}}\mathcal{Y}=
 ([\mathcal{Y}]\sqcap\mathcal{F})\div A
-\]
+\end{gather*}
 (whenever $\mathcal{F}\sqsubseteq[A]\sqcap[B]$).
 
 We need to prove that this really defines a funcoid.
 
 \begin{proof}
-$\mathcal{Y}\nasymp
-\supfun{\id_\mathcal{F}^{\mathsf{FCD}(A,B)}}\mathcal{X}
-\Leftrightarrow
+\begin{multline*}
+\mathcal{Y}\nasymp
+\supfun{\id{_\mathcal{F}^{\mathsf{FCD}(A,B)}}}\mathcal{X}
+\Leftrightarrow\\
 \mathcal{Y}\nasymp([\mathcal{X}]\sqcap\mathcal{F})\div B
 \Leftrightarrow
 \mathcal{Y}\nasymp(\mathcal{X}\div B)\sqcap
-(\mathcal{F}\div B) \Leftrightarrow
-[\mathcal{Y}]\nasymp[\mathcal{X}]\sqcap\mathcal{F}$.
+(\mathcal{F}\div B) \Leftrightarrow\\
+[\mathcal{Y}]\nasymp[\mathcal{X}]\sqcap\mathcal{F}.
+\end{multline*}
 Similarly
-$\supfun{(\id_\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}\mathcal{Y}\Leftrightarrow
+$\supfun{(\id_{\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}}\mathcal{Y}\Leftrightarrow
 [\mathcal{X}]\nasymp[\mathcal{Y}]\sqcap\mathcal{F}$.
 
 Thus
 $\mathcal{Y}\nasymp
-\supfun{\id_\mathcal{F}^{\mathsf{FCD}(A,B)}}\mathcal{X}
+\supfun{\id_{\mathcal{F}^{\mathsf{FCD}(A,B)}}}\mathcal{X}
 \Leftrightarrow
 \mathcal{X}\nasymp
-\supfun{(\id_\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}\mathcal{Y}$.
+\supfun{(\id_{\mathcal{F}^{\mathsf{FCD}(A,B)})^{-1}}}\mathcal{Y}$.
 \end{proof}
 
 We need to prove that the restricted identities
@@ -1558,18 +1589,21 @@ and~$\mathcal{Y}$
 It is really a pointfree funcoid:
 
 \begin{proof}
+~
 For an unfixed filter~$\mathcal{Y}$ we have
-$\mathcal{Y}\nasymp\supfun{\mathscr{S}f}\mathcal{X}
-\Leftrightarrow
+\begin{multline*}
+\mathcal{Y}\nasymp\supfun{\mathscr{S}f}\mathcal{X}
+\Leftrightarrow\\
 \mathcal{Y}\nasymp[\supfun{f}(\mathcal{X}\div\Src f)]
-\Leftrightarrow
+\Leftrightarrow\\
 \mathcal{Y}\div\Dst f\nasymp\supfun{f}(\mathcal{X}\div\Src f)
-\Leftrightarrow
+\Leftrightarrow\\
 \mathcal{X}\div\Src f\nasymp\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)
-\Leftrightarrow
+\Leftrightarrow\\
 \mathcal{X}\nasymp[\supfun{f^{-1}}(\mathcal{Y}\div\Dst f)]
-\Leftrightarrow
-\mathcal{X}\nasymp\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}$.
+\Leftrightarrow\\
+\mathcal{X}\nasymp\supfun{(\mathscr{S}f)^{-1}}\mathcal{Y}.
+\end{multline*}
 \end{proof}
 
 \begin{defn}
@@ -1586,13 +1620,15 @@ Need to prove $\mathscr{S}f=\mathscr{S}g$.
 We have
 \[\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f=\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g.\]
 
-$\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f}\mathcal{X}=
-[\supfun{\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f}(\mathcal{X}\div(A_0\sqcup A_1)]=
-\left[\supfun{\mathcal{E}^{\mathsf{FCD}(B_0,B_0\sqcup B_1)}}\supfun{f}\supfun{\mathcal{E}^{\mathsf{FCD}(A_0\sqcup A_1,A_0}}(\mathcal{X}\div(A_0\sqcup A_1))\right]=
+\begin{multline*}
+\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f}\mathcal{X}=\\
+[\supfun{\iota_{A_0\sqcup A_1,B_0\sqcup B_1}f}(\mathcal{X}\div(A_0\sqcup A_1)]=\\
+\left[\supfun{\mathcal{E}^{\mathsf{FCD}(B_0,B_0\sqcup B_1)}}\supfun{f}\supfun{\mathcal{E}^{\mathsf{FCD}(A_0\sqcup A_1,A_0}}(\mathcal{X}\div(A_0\sqcup A_1))\right]=\\
 [(\supfun{f}((\mathcal{X}\div(A_0\sqcup A_1))\div A_0))
-\div B_0]=
-[\supfun{f}(\mathcal{X}\div A_0)]=
-\supfun{\mathscr{S}f}\mathcal{X}$.
+\div B_0]=\\
+[\supfun{f}(\mathcal{X}\div A_0)]=\\
+\supfun{\mathscr{S}f}\mathcal{X}.
+\end{multline*}
 
 Similarly
 $\supfun{\mathscr{S}\iota_{A_0\sqcup A_1,B_0\sqcup B_1}g}\mathcal{X}=
@@ -1690,11 +1726,13 @@ $\mathscr{S}(X\times Y) = \mathscr{S}(X\times_{A,B}Y)$
 for arbitrary filters~$A$, and~$B$ such that
 $X\sqsubseteq[A]$ and $Y\sqsubseteq[B]$. So
 for every unfixed filter~$\mathcal{X}$ we have
-$\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
-\supfun{\mathscr{S}(X\times_{A,B}Y)}\mathcal{X}=
+\begin{multline*}
+\supfun{\mathscr{S}(X\times Y)}\mathcal{X}=
+\supfun{\mathscr{S}(X\times_{A,B}Y)}\mathcal{X}=\\
 [\supfun{X\times_{A,B}Y}(\mathcal{X}\div A)]=
 [\supfun{(X\div A)\times^{\mathsf{FCD}}(Y\div B)}
-(\mathcal{X}\div A)]$
+(\mathcal{X}\div A)].
+\end{multline*}
 
 Thus if $\mathcal{P}\nasymp X$ then
 (by the lemma)
@@ -1724,15 +1762,17 @@ For every unfixed filter~$\mathcal{X}$ we
 for arbitrary filters~$A$ and~$B$ such that
 $X\sqsubseteq[A]\sqcap[B]$
 have
-$\supfun{\mathscr{S}\id_X}\mathcal{X}=
+\begin{multline*}
+\supfun{\mathscr{S}\id_X}\mathcal{X}=
 \supfun{\mathscr{S}[\id^{\mathsf{FCD}(A,B)}_X]}\mathcal{X}=
 \supfun{\mathscr{S}\id^{\mathsf{FCD}(A,B)}_X}
-\mathcal{X}=
+\mathcal{X}=\\
 \left[\supfun{\id^{\mathsf{FCD}(A,B)}_X}
 (\mathcal{X}\div A)\right]=
-[([\mathcal{X}\div A]\sqcap X)\div B]=
+[([\mathcal{X}\div A]\sqcap X)\div B]=\\
 [(\mathcal{X}\sqcap X)\div B]=
-\mathcal{X}\sqcap X$.
+\mathcal{X}\sqcap X.
+\end{multline*}
 
 Thus $\mathscr{S}\id_X=
 \id^{\mathsf{pFCD}(\mathfrak{F}(\mho))}_{X}$.
@@ -1768,12 +1808,14 @@ $\id^{\mathsf{RLD}(A,A)}_{[A]} =
 \id^{\mathsf{RLD}}_A\div(A\times A) =
 1^{\mathsf{RLD}}_A$.
 
-$\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X =
+\begin{multline*}
+\id^{\mathcal{C}(B,C)}_Y \circ \id^{\mathcal{C}(A,B)}_X =
 \bigsqcap_{x\in\up X,y\in\up Y}
-(\id^{\mathcal{C}(B,C)}_y \circ \id^{\mathcal{C}(A,B)}_x)=
+(\id^{\mathcal{C}(B,C)}_y \circ \id^{\mathcal{C}(A,B)}_x)=\\
 \bigsqcap_{x\in\up X,y\in\up Y}
 \id^{\mathcal{C}(A,B)}_{x\cap y}=
-\id^{\mathcal{C}(A,B)}_{X\sqcap Y}$.
+\id^{\mathcal{C}(A,B)}_{X\sqcap Y}.
+\end{multline*}
 
 $\forall A\in\mathfrak{A}\exists B\in\mathfrak{Z}:
 A\sqsubseteq[B]$ is obvious.
@@ -1794,49 +1836,50 @@ is a category with binary product morphism.
 \end{prop}
 
 \begin{proof}
-$\id^{\mathcal{C}(B,B)}_\mathcal{Y}\circ f\circ\id^{\mathcal{C}(A,A)}_\mathcal{X}=f\sqcap(\mathcal{X}\times_{A,B}\mathcal{Y})$
+$\id^{\mathcal{C}(B,B)}_{\mathcal{Y}}\circ f\circ\id^{\mathcal{C}(A,A)}_{\mathcal{X}}=f\sqcap(\mathcal{X}\times_{A,B}\mathcal{Y})$
 because
-$\id^{\mathcal{C}(B,B)}_\mathcal{Y}\circ f\circ\id^{\mathcal{C}(A,A)}_\mathcal{X}=
+\begin{multline*}
+\id^{\mathcal{C}(B,B)}_{\mathcal{Y}}\circ f\circ\id^{\mathcal{C}(A,A)}_{\mathcal{X}}=\\
 (\id^{\mathsf{RLD}}_{\mathcal{Y}\div B}\div(B\times B))
 \circ f\circ
-(\id^{\mathsf{RLD}}_{\mathcal{X}\div A}\div(A\times A))=
+(\id^{\mathsf{RLD}}_{\mathcal{X}\div A}\div(A\times A))=\\
 \id^{\mathsf{RLD}}_{\mathcal{Y}\div B}\circ f\circ
-\id^{\mathsf{RLD}}_{\mathcal{X}\div A}=
-f\sqcap((\mathcal{X}\div A)\times^{\mathsf{RLD}}(\mathcal{Y}\div B))=
-f\sqcap(\mathcal{\mathcal{X}}\times_{A,B}\mathcal{\mathcal{Y}})$.
+\id^{\mathsf{RLD}}_{\mathcal{X}\div A}=\\
+f\sqcap((\mathcal{X}\div A)\times^{\mathsf{RLD}}(\mathcal{Y}\div B))=\\
+f\sqcap(\mathcal{\mathcal{X}}\times_{A,B}\mathcal{\mathcal{Y}}).
+\end{multline*}
 
-$\iota_{A_1,B_1}
-(\mathcal{X}\times_{A_0,B_0}\mathcal{Y})=
+\begin{multline*}
+\iota_{A_1,B_1}
+(\mathcal{X}\times_{A_0,B_0}\mathcal{Y})=\\
 \mathcal{E}^{B_0,B_1}\circ
 (\mathcal{X}\times_{A_0,B_0}\mathcal{Y})\circ
-\mathcal{E}^{A_1,A_0}=
+\mathcal{E}^{A_1,A_0}=\\
 \uparrow^{\mathsf{RLD}(B_0,B_1)}\id_{B_0\cap B_1}
 ((\mathcal{X}\div B_0)\times(\mathcal{Y}\div A_0))
 \circ
-\uparrow^{\mathsf{RLD}(A_1,A_0)}\id_{A_0\cap A_1}=
+\uparrow^{\mathsf{RLD}(A_1,A_0)}\id_{A_0\cap A_1}=\\
 ((\mathcal{X}\div B_0)\div B_1)\times((\mathcal{Y}\div A_0)\div A_1)=
-(\mathcal{X}\div B_1)\times(\mathcal{Y}\div A_1)=
-\mathcal{X}\times_{A_1,B_1}\mathcal{Y}$.
+(\mathcal{X}\div B_1)\times(\mathcal{Y}\div A_1)=\\
+\mathcal{X}\times_{A_1,B_1}\mathcal{Y}.
+\end{multline*}
 \end{proof}
 
-\begin{prop}
-$\iota_{A, B} f = f \div (A \times B)$ for every
-reloid~$f$.
-\end{prop}
-
 \begin{proof}
-$\iota_{A, B} f = \mathcal{E}_{\mathsf{RLD}}^{\Dst f,B}
-\circ f \circ \mathcal{E}_{\mathsf{RLD}}^{A,\Src f} =
+\begin{multline*}
+\iota_{A, B} f =\\ \mathcal{E}_{\mathsf{RLD}}^{\Dst f,B}
+\circ f \circ \mathcal{E}_{\mathsf{RLD}}^{A,\Src f} =\\
 \bigsqcap^{\mathsf{RLD}}_{F\in\up f}
 (\uparrow^{\mathbf{Rel}(\Dst f,B)}\id_{\Dst f\cap B}
 \circ F\circ
-\uparrow^{\mathbf{Rel}(A,\Src f)}\id_{A\cap\Src f})=
+\uparrow^{\mathbf{Rel}(A,\Src f)}\id_{A\cap\Src f})=\\
 \bigsqcap^{\mathsf{RLD}}_{F\in\up f}
 (\uparrow^{\mathbf{Rel}(A,B)}
-(\id_{\Dst f\cap B}\circ\GR F\circ\id_{\Dst f\cap B}))=
+(\id_{\Dst f\cap B}\circ\GR F\circ\id_{\Dst f\cap B}))=\\
 \bigsqcap^{\mathsf{RLD}}_{F\in\up f}
-\uparrow^{\mathbf{Rel}(A,B)}(F\cap(A\times B))=
-f \div (A \times B)$.
+\uparrow^{\mathbf{Rel}(A,B)}(F\cap(A\times B))=\\
+f \div (A \times B).
+\end{multline*}
 \end{proof}
 
 \begin{prop}
@@ -2054,18 +2097,20 @@ $\id^{\mathcal{\mathsf{RLD}}(A,A)}_{[X]}=
   } = \bigsqcap \setcond{ \uparrow^A (X \cap A) }{
   X \in \mathcal{A} } = \mathcal{A} \div A$.
   
-  $(\mathcal{A} \div A) \div \Base (\mathcal{A}) = \bigsqcap \setcond{
+\begin{multline*}
+  (\mathcal{A} \div A) \div \Base (\mathcal{A}) =\\ \bigsqcap \setcond{
   \uparrow^A (X \cap A) }{ X \in \mathcal{A} }
-  \div \Base (\mathcal{A}) = \bigsqcap \setcond{ \uparrow^{\Base
+  \div \Base (\mathcal{A}) =\\ \bigsqcap \setcond{ \uparrow^{\Base
   (\mathcal{A})} (Y \cap \Base (\mathcal{A})) }{
   Y \in \bigsqcap \setcond{ \uparrow^A (X \cap A) }{
-  X \in \mathcal{A} } } = \text{(by properties of
-  filter bases)} = \bigsqcap \setcond{ \uparrow^{\Base (\mathcal{A})} (X
+  X \in \mathcal{A} } } =\\ \text{(by properties of
+  filter bases)} =\\ \bigsqcap \setcond{ \uparrow^{\Base (\mathcal{A})} (X
   \cap A \cap \Base (\mathcal{A})) }{ X \in
-  } = \bigsqcap \setcond{ \uparrow^{\Base
+  } =\\ \bigsqcap \setcond{ \uparrow^{\Base
   (\mathcal{A})} (X \cap A) }{ X \in \mathcal{A}
-  } = \mathcal{A} \sqcap A$.
-  
+  } =\\ \mathcal{A} \sqcap A.
+\end{multline*}
+
   That this defines a bijection, follows from $\mathcal{A} \div A \sim
   \mathcal{A} \sqcap A$ what easily follows from the above formulas.
 \end{proof}
@@ -2126,9 +2171,11 @@ $\id^{\mathcal{\mathsf{RLD}}(A,A)}_{[X]}=
   (\up f) \sqcap (X \times Y))$. They are order isomorphic by proved
   above.
   
-  $\iota_{Y, Z} g \circ \iota_{X, Y} f =\mathcal{E}^{\Dst g,Z} \circ g \circ
-  \mathcal{E}^{Y,\Src g} \circ \mathcal{E}^{\Dst f,Y} \circ f \circ \mathcal{E}^{X,\Src f} =\mathcal{E}^{\Dst g,Z} \circ g \circ \id^{\mathsf{RLD}}_Y \circ
-  \id^{\mathsf{RLD}}_Y \circ f \circ \mathcal{E}^{X,\Src f}$
+\begin{multline*}
+  \iota_{Y, Z} g \circ \iota_{X, Y} f =\\\mathcal{E}^{\Dst g,Z} \circ g \circ
+  \mathcal{E}^{Y,\Src g} \circ \mathcal{E}^{\Dst f,Y} \circ f \circ \mathcal{E}^{X,\Src f} =\\\mathcal{E}^{\Dst g,Z} \circ g \circ \id^{\mathsf{RLD}}_Y \circ
+  \id^{\mathsf{RLD}}_Y \circ f \circ \mathcal{E}^{X,\Src f}
+\end{multline*}
   because $\mathcal{E}^{Y,\Src g} \circ \mathcal{E}^{\Dst f,Y} =
   \id^{\mathbf{Rel}}_Y = \id^{\mathbf{Rel}}_Y
   \circ \id^{\mathbf{Rel}}_Y$. Thus by proved above
@@ -2154,19 +2201,23 @@ $f \circ (g \sqcup h) = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h
 \sqsubseteq \operatorname{Src} g \sqcup \operatorname{Src} h$ and $\operatorname{im} (f \circ (g
 \sqcup h)) \sqsubseteq \operatorname{Dst} f$.
 
-So $f \circ (g \sqcup h) = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h,
+So
+\begin{multline*}
+f \circ (g \sqcup h) =\\ [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h,
 	\operatorname{Dst} f} f \circ \iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f}
-(g \sqcup h)] = [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f
+(g \sqcup h)] =\\ [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f
 \circ (\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} g \sqcup
-\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h)] =
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h)] =\\
 [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f \circ
 \iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} g \sqcup
 \iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} f \circ
-\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h] =
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} h] =\\
 [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ g) \sqcup
-\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ h)] =
+\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ h)] =\\
 [\iota_{\operatorname{Src} g \sqcup \operatorname{Src} h, \operatorname{Dst} f} (f \circ g \sqcup f
-\circ h)] = f \circ g \sqcup f \circ h$ because $\operatorname{dom} (f \circ g
+\circ h)] =\\ f \circ g \sqcup f \circ h
+\end{multline*}
+because $\operatorname{dom} (f \circ g
 \sqcup f \circ h) \sqsubseteq \operatorname{Src} g \sqcup \operatorname{Src} h$ and
 $\operatorname{im} (f \circ g \sqcup f \circ h) \sqsubseteq \operatorname{Dst} f$.
 \end{proof}
