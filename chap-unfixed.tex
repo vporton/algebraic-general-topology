@@ -34,8 +34,7 @@ objects~$\mathfrak{Z}$;
 \item every $\Hom$-set $\mathcal{C}(A,B)$ is a lattice;
 \item $\mathfrak{Z}$~and~$\mathfrak{A}$~are lattices;
 \item $A\to[A]$ is a lattice embedding
-from $\mathcal{C}(A,B)$ to $\mathfrak{A}$ whenever~$A$
-ranges a $\Hom$-set $\mathcal{C}(A,B)$;
+from $\mathfrak{Z}$ to $\mathfrak{A}$;
 \item $\id^{\mathcal{C}(A,B)}_X\in\Hom_{\mathcal{C}}(A,B)$
 whenever $\mathfrak{A}\ni X\sqsubseteq [A]\sqcap[B]$;
 \item $\id^{\mathcal{C}(A,A)}_{[A]} = 1^{\mathcal{C}}_A$;
@@ -98,6 +97,10 @@ Define $\mathcal{E}_{\mathcal{C}}^{A,B} =
   $\id^{\mathcal{C}(B,C)}_{B \sqcap C} \circ \id^{\mathcal{C}(A,B)}_{A \sqcap B} = \id^{\mathcal{C}(A,C)}_{A \sqcap C}$ what is obviously true.
 \end{proof}
 
+\begin{defn}
+$\id^{\mathcal{C}(A)}_X = \id^{\mathcal{C}(A,A)}_{[X]}$.
+\end{defn}
+
 \section{Rectangular embedding-restriction}
 
 \begin{defn}
@@ -153,11 +156,9 @@ $\mathscr{S}\mathcal{A}\supseteq\mathcal{A}$.
 ~
 \begin{enumerate}
 \item $\operatorname{IM} f = \setcond{Y \in \mathfrak{Z}}{\mathcal{E}_{\mathcal{C}}^{Y, \Dst f} \circ \mathcal{E}_{\mathcal{C}}^{\Dst f,
-Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]} \circ f = f}$;
-\item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f}$.
+Y} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f,\Dst f)}_{[Y]\sqcap[\Dst f]} \circ f = f} = \setcond{Y \in \mathfrak{Z}}{\id^{\mathcal{C}(\Dst f)}_{Y\sqcap\Dst f} \circ f = f}$;
+\item $\operatorname{DOM} f = \setcond{X \in \mathfrak{Z}}{f\circ\mathcal{E}_{\mathcal{C}}^{\Src f, X} \circ \mathcal{E}_{\mathcal{C}}^{X, \Src f} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f} = \setcond{X \in \mathfrak{Z}}{f \circ \id^{\mathcal{C}(\Src f,\Src f)}_{X\sqcap\Src f} = f}$.
 \end{enumerate}
-\fxnote{$\id^{\mathcal{C}(\Src f,\Src f)}_{[X]\sqcap[\Src f]} = f \to
-\id^{\mathcal{C}(\Src f)}_{X\sqcap\Src f}$? It is defined below.}
 \end{defn}
 
 \begin{defn}
@@ -201,7 +202,6 @@ category with restricted morphisms.
 $\operatorname{Dom}f =
 \setcond{X\in\mathfrak{Z}}{X\sqsubseteq\Src f,
 f\circ\id^{\mathcal{C}(\Dst f)}_X=f}$.
-\fxwarning{$\id^{\mathcal{C}(\Dst f)}_X$ is defined below. Also for $\operatorname{Im}$.}
 \end{prop}
 
 \begin{proof}
@@ -2064,13 +2064,6 @@ $\id^{\mathcal{\mathsf{RLD}}(A,A)}_{[X]}=
 \id^{\mathsf{RLD}}_{[X]\div(A\cap A)}\div(A\times A)=
 \id^{\mathsf{RLD}}_X\div(A\times A)=\id^{\mathsf{RLD}(A)}_X$.
 \end{proof}
-
-As a generalization of three last propositions, define for
-every category~$\mathcal{C}$ with restricted identities:
-
-\begin{defn}
-$\id^{\mathcal{C}(A)}_X = \id^{\mathcal{C}(A,A)}_{[X]}$.
-\end{defn}
 
 \begin{prop}
   $\setcond{ (\mathcal{A} \div A , \mathcal{A} \sqcap A) }{
