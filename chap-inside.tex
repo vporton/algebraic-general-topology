@@ -5,19 +5,25 @@ I will call the \emph{inside} functor the identity-on-objects functor from~$\mat
 funcoid~$f$ to
 \[
 \operatorname{ins} f =
-\setcond{(\mathcal{X},\mathcal{Y})}{\mathcal{X}\in\mathfrak{F}(\Src f), \mathcal{Y}\in\mathfrak{F}(\Src f), \mathcal{X}\times^{\mathsf{FCD}}\mathcal{Y}\sqsubseteq f}. \]
-\end{defn}
-
-\begin{defn}
-I will call the \emph{atomic inside} functor the identity-on-objects functor from~$\mathsf{FCD}$ to~$\mathbf{Rel}$ that maps
-funcoid~$f$ to
-\[
-\operatorname{ains} f =
 \setcond{(x,y)}{x\in\atoms^{\mathfrak{F}}(\Src f), y\in\atoms^{\mathfrak{F}}(\Src f), x\times^{\mathsf{FCD}}y\sqsubseteq f}. \]
 \end{defn}
 
 We need to prove these are really functors.
 
 \begin{proof}
-
+By theorem ??.
 \end{proof}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\operatorname{ins}(f\sqcup g)=\operatorname{ins}f\cup\operatorname{ins}g$;
+\item $\operatorname{ins}(f\sqcap g)=\operatorname{ins}f\cap\operatorname{ins}g$.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}
+\fxwarning{Move after the definition of product.}
+$\operatorname{ins}(f\times^{(L)} g) =
+\operatorname{ins}f\times^{(L)}\operatorname{ins}g$.
+\end{prop}
