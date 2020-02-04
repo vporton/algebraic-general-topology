@@ -291,8 +291,8 @@ It is really a category:
 \end{defn}
 
 \begin{prop}
-  $\pi_i$ are continuous, that is $\pi^{\cont}
-  (\mathcal{C})_i$ are morphisms.
+  $\pi_i$ are continuous, that is $\pi^{\cont
+  (\mathcal{C})}_i$ are morphisms.
 \end{prop}
 
 \begin{proof}
@@ -333,15 +333,17 @@ It is really a category:
 \end{proof}
 
 \begin{thm}
-  $\prod^{(L)}$ together with $\pi$ is a (partial) product in the
+  $\prod^{(L)}$ together with $\pi^{\operatorname{cont}(\mathcal{C})}$ is a (partial) product in the
   category $\cont (\mathcal{C})$.
 \end{thm}
 
 \begin{proof}
-  Obvious.
-  
-  Check
-  \url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}
+We need to prove\footnote{\url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}}:
+\begin{enumerate}
+\item $\pi^{\operatorname{cont}(\mathcal{C})}_i\prod^{(L)}_{j\in??}(f_j,a_j,b_j) = (f_i,a_i,b_i)$;
+\item $\prod^{(L)}_{i\in\dom F}(\pi^{\operatorname{cont}(\mathcal{C})}_i\circ F) = F$.
+\end{enumerate}
+??
 \end{proof}
 
 \section{On duality}
@@ -557,7 +559,7 @@ for all $i \in n$ (where $n$ is some index set) (a self-dual of the above).
 \subsection{Binary relations}
 
 \begin{defn}
-  $\mathbf{Dig} \eqdef \cont \mathbf{Rel}$. \fxerror{Wrong.}
+  $\mathbf{Dig}^{\ast} \eqdef \cont \mathbf{Rel}$.
 \end{defn}
 
 \subsection{Funcoids}
