@@ -149,27 +149,27 @@ This formula can be (over)simplified to:
   ~
   \begin{align*}
   \bigsqcap \setcond{ a \times b }{ (a , b) \in S } & = \\
-  \bigsqcap \setcond{ \begin{aligned}&((\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0) \sqcap\\
-  &((\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a , \Src b)}_1)\end{aligned} }{ (a , b) \in S } & = \\
-  \bigsqcap \setcond{ (\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0
+  \bigsqcap \setcond{ \begin{aligned}&((\pi_0(\Dst a , \Dst
+  b))^{\dagger} \circ a \circ \pi_0(\Src a , \Src b)) \sqcap\\
+  &((\pi_1(\Dst a , \Dst b))^{\dagger} \circ b \circ
+  \pi_1(\Src a , \Src b))\end{aligned} }{ (a , b) \in S } & = \\
+  \bigsqcap \setcond{ (\pi_0(\Dst a , \Dst
+  b))^{\dagger} \circ a \circ \pi_0(\Src a , \Src b)
   }{ a \in \dom S } \sqcap\\
   \bigsqcap
-  \setcond{ (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a , \Src b)}_1 }{ b \in \im S } & = \\
-  \left( (\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ \bigsqcap \setcond{ a }{ a \in
-  \dom S } \circ \pi^{(\Src a , \Src b)}_0 \right)
-  \sqcap\\ \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ
+  \setcond{ (\pi_1(\Dst a , \Dst b))^{\dagger} \circ b \circ
+  \pi_1(\Src a , \Src b) }{ b \in \im S } & = \\
+  \left( (\pi_0(\Dst a , \Dst
+  b))^{\dagger} \circ \bigsqcap \setcond{ a }{ a \in
+  \dom S } \circ \pi_0(\Src a , \Src b) \right)
+  \sqcap\\ \left( (\pi_1(\Dst a , \Dst b))^{\dagger} \circ
   \bigsqcap \setcond{ b }{ b \in \im S }
-  \circ \pi^{(\Src a , \Src b)}_1 \right) & = \\
+  \circ \pi_1(\Src a , \Src b) \right) & = \\
   \left(
-  (\pi^{(\Dst a , \Dst b)}_0)^{\dagger} \circ \left( \bigsqcap
-  \dom S \right) \circ \pi^{(\Src a , \Src b)}_0 \right)
-  \sqcap\\ \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ \left(
-  \bigsqcap \im S \right) \circ \pi^{(\Src a , \Src b)}_1
+  (\pi_0(\Dst a , \Dst b))^{\dagger} \circ \left( \bigsqcap
+  \dom S \right) \circ \pi_0(\Src a , \Src b) \right)
+  \sqcap\\ \left( (\pi_1(\Dst a , \Dst b))^{\dagger} \circ \left(
+  \bigsqcap \im S \right) \circ \pi_1(\Src a , \Src b)
   \right) & = \\
   \bigsqcap \dom S \times \bigsqcap \im S.
   \end{align*}
