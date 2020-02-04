@@ -195,9 +195,9 @@ endomorphism $f$.
 Let also $\pi^X_i$ be a monovalued entirely defined morphism (for each $i \in
 \dom F$).
 
-Then $\prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi^{\lambda j \in n :
-\Ob F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n : \Ob
-F_j}_i)$ (if $\pi$ is defined at $\lambda j \in n : \Ob F_j$).
+Then \[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} \bigl((\pi_i(\lambda j \in n :
+\Ob F_j))^{\dagger} \circ F_i \circ \pi_i(\lambda j \in n : \Ob
+F_j)\bigr) \] (if $\pi$ is defined at $\lambda j \in n : \Ob F_j$).
 
 Abbreviate $\pi_i = \pi^{\lambda j \in n : \Ob F_j}_i$.
 
@@ -230,7 +230,7 @@ n} \Ob F_j \right) }{ \forall i \in n : \pi_i
 
 \subsection{Category of continuous morphisms}
 
-Let $\pi_i = \pi_i^X$ (for $i \in \dom F$) be entirely defined
+Let $\pi_i = \pi_i X$ (for $i \in \dom F$) be entirely defined
 monovalued morphisms (we suppose it is defined at $X$).
 
 Let $\bigotimes$ of an indexed family of morphisms is a morphism; $\pi_i \circ
@@ -403,19 +403,19 @@ indexed families $X_i \rightarrow \coprod^{(Q)} X$ of principal morphisms
   \emph{Supremum coproduct} $\coprod^{(L)} F$ (such that $\iota$ is defined
   at $\lambda j \in n : \Dst F_j$ and $\lambda j \in n : \Src
   F_j$) is defined by the formula
-  \[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n
-     : \Src F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n :
-     \Dst F_j}_i)^{\dagger}) . \]
+  \[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} \bigl(\iota_i(\lambda j \in n
+     : \Src F_j) \circ F_i^{\dagger} \circ (\iota_i(\lambda j \in n :
+     \Dst F_j))^{\dagger}\bigr) . \]
 \end{defn}
 
 This formula can be (over)simplified to:
-\[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\Src \circ
-   F}_i \circ F_i^{\dagger} \circ (\iota^{\Dst \circ F}_i)^{\dagger}) .
+\[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} \bigl(\iota_i(\Src \circ
+   F) \circ F_i^{\dagger} \circ (\iota_i(\Dst \circ F))^{\dagger}\bigr) .
 \]
 
 \begin{rem}
-  $\iota^{\lambda j \in n : \Src F_j}_i \circ F_i \circ (\iota^{\lambda
-  j \in n : \Dst F_j}_i)^{\dagger} \in \Hom \left(
+  $\iota_i(\lambda j \in n : \Src F_j) \circ F_i \circ (\iota_i(\lambda
+  j \in n : \Dst F_j))^{\dagger} \in \Hom \left(
   \coprod^{(Q)}_{j \in n} \Src F_j , \coprod^{(Q)}_{j \in n} \Dst
   F_j \right)$ are properly defined and have the same sources and destination
   (whenever $i \in \dom F$ is), thus the meet in the formulas is
@@ -424,19 +424,21 @@ This formula can be (over)simplified to:
 
 \begin{rem}
   Thus
-  \[ F_0 \amalg^{(L)} F_1 = (\iota^{(\Src F_0 , \Src F_1)}_0 \circ
-     F_0^{\dagger} \circ (\iota^{(\Dst F_0 , \Dst
-     F_1)}_0)^{\dagger}) \sqcup (\iota^{(\Src F_0 , \Src F_1)}_1
-     \circ F_1^{\dagger} \circ (\iota^{(\Dst F_0 , \Dst
-     F_1)}_1)^{\dagger}) \]
+  \begin{multline*}
+    F_0 \amalg^{(L)} F_1 = (\iota_0(\Src F_0 , \Src F_1)) \circ
+    F_0^{\dagger} \circ (\iota_0(\Dst F_0 , \Dst
+    F_1))^{\dagger}) \sqcup\\ (\iota_1(\Src F_0 , \Src F_1))
+    \circ F_1^{\dagger} \circ ((\iota_1(\Dst F_0 , \Dst
+    F_1))^{\dagger})
+  \end{multline*}
   that is coproduct is defined by a pure algebraic formula.
 \end{rem}
 
 \begin{prop}
-  $\coprod^{(L)} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j
+  \[ \coprod^{(L)} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j
   \in n} \Ob F_j \right) }{ \forall i \in n :
-  \Phi \sqsupseteq \iota^{\lambda j \in n : \Src F_j}_i \circ
-  F_i^{\dagger} \circ (\iota^{\lambda j \in n : \Dst F_j}_i)^{\dagger} }$.
+  \Phi \sqsupseteq \iota_i(\lambda j \in n : \Src F_j) \circ
+  F_i^{\dagger} \circ (\iota_i(\lambda j \in n : \Dst F_j))^{\dagger} }. \]
 \end{prop}
 
 \begin{proof}
@@ -444,15 +446,15 @@ This formula can be (over)simplified to:
 \end{proof}
 
 \begin{cor}
-  $\coprod^{(L)} F = \bigsqcap \setcond{ \Phi \in \End \left(
+  \[ \coprod^{(L)} F = \bigsqcap \setcond{ \Phi \in \End \left(
   \coprod^{(Q)}_{j \in n} \Ob F_j \right) }{
-  \forall i \in n : \Phi \sqsupseteq \iota^{\lambda j \in n : \Src
-  F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n : \Dst
-  F_j}_i)^{\dagger} }$.
+  \forall i \in n : \Phi \sqsupseteq \iota_i(\lambda j \in n : \Src
+  F_j) \circ F_i^{\dagger} \circ (\iota_i(\lambda j \in n : \Dst
+  F_j))^{\dagger} }. \]
 \end{cor}
 
 \begin{thm}
-  Let $\pi^X_i$ be metainjective morphisms. If $S \in \subsets (\Hom
+  Let $\pi_i X$ be metainjective morphisms. If $S \in \subsets (\Hom
   (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
   $A_1$, $B_1$ then
   \[ \bigsqcup \setcond{ a \times^{(L)} b }{ (a , b)
@@ -481,13 +483,15 @@ Let also $\iota_i$ be a monovalued entirely defined morphism (for each $i \in
 \dom F$).
 
 \begin{defn}
-  $\coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n :
-  \Ob F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n :
-  \Ob F_j}_i)^{\dagger})$ (if $\iota$ is defined at $\lambda j \in n :
+  \[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota_i(\lambda j \in n :
+  \Ob F_j) \circ F_i^{\dagger} \circ (\iota_i(\lambda j \in n :
+  \Ob F_j))^{\dagger}) \]
+  (if $\iota$ is defined at $\lambda j \in n :
   \Ob F_j$). (I call it \emph{supremum coproduct}).
 \end{defn}
 
-Abbreviate $\iota_i = \iota^{\lambda j \in n : \Ob F_j}_i$.
+Abbreviate $\iota_i = \iota_i(\lambda j \in n : \Ob F_j)$.
+\fxwarning{Bad notation.}
 
 So $\coprod F = \bigsqcup_{i \in \dom F} (\iota_i \circ F_i^{\dagger}
 \circ (\iota_i)^{\dagger})$.
