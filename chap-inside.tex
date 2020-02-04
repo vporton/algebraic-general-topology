@@ -18,12 +18,36 @@ By \cite[proposition~\bookref{fcd-at-comp}]{volume-1}.
 ~
 \begin{enumerate}
 \item $\operatorname{ins}(f\sqcup g)=\operatorname{ins}f\cup\operatorname{ins}g$;
-\item $\operatorname{ins}(f\sqcap g)=\operatorname{ins}f\cap\operatorname{ins}g$.
+\item $\operatorname{ins}\bigsqcap S=\bigsqcap\rsupfun{\operatorname{ins}}S$ (where the meet of empty set is considered some ``universal'' set).
 \end{enumerate}
 \end{prop}
 
+\begin{proof}
+By properties of atoms.
+\end{proof}
+
 \begin{prop}
-\fxwarning{Move after the definition of product.}
-$\operatorname{ins}(f\times^{(L)} g) =
-\operatorname{ins}f\times^{(L)}\operatorname{ins}g$.
+?? $\operatorname{ins}\circ\uparrow = \operatorname{ins}$.
 \end{prop}
+
+\begin{prop}
+$\operatorname{ins}\pi_i=$
+\end{prop}
+
+\fxwarning{Move after the definition of product.}
+
+\begin{prop}
+$\operatorname{ins}\prod^{(L)}F =
+\prod^{(L)}(\operatorname{ins}\circ F)$ for any indexed family~$F$ of morphisms.
+\end{prop}
+
+\begin{proof}
+$\operatorname{ins}\prod^{(L)}F =
+\operatorname{ins}\bigsqcap_{i \in \dom F} ((\pi^{\lambda j \in n :
+\Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n :
+\Src F_j}_i) =
+\bigsqcap_{i \in \dom F}\operatorname{ins} ((\pi^{\lambda j \in n :
+\Dst F_j}_i)^{-1} \circ F_i \circ \pi^{\lambda j \in n :
+\Src F_j}_i) =
+$
+\end{proof}
