@@ -76,7 +76,7 @@ consists of small indexed families of objects of $\mathcal{C}$) to indexed
 families $\prod^{(Q)} X \rightarrow X_i$ of principal morphisms (called
 \emph{projections}) for every $i \in \dom X$.
 
-We will denote particular morphisms as $\pi^X_i$.
+We will denote particular morphisms as $\pi_i X$.
 
 \begin{rem}
   In some important examples the function $\pi$ is entire, that is $\dom
@@ -88,18 +88,18 @@ We will denote particular morphisms as $\pi^X_i$.
   \emph{Infimum product} $\prod F$ (such that $\pi$ is defined at $\lambda
   j \in n : \Src F_j$ and $\lambda j \in n : \Dst F_j$) is defined
   by the formula
-  \[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi^{\lambda j \in n :
-     \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n :
-     \Src F_j}_i) . \]
+  \[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} \bigl((\pi_i(\lambda j \in n :
+     \Dst F_j))^{\dagger} \circ F_i \circ \pi_i(\lambda j \in n :
+     \Src F_j)\bigr) . \]
 \end{defn}
 
 This formula can be (over)simplified to:
-\[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} ((\pi^{\Dst \circ
-   F_{}}_i)^{\dagger} \circ F_i \circ \pi^{\Src \circ F}_i) . \]
+\[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} \bigl((\pi_i(\Dst \circ
+   F_{}))^{\dagger} \circ F_i \circ \pi_i(\Src \circ F)\bigr) . \]
 
 \begin{rem}
-  $(\pi^{\lambda j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ
-  \pi^{\lambda j \in n : \Src F_j}_i \in \Hom \left(
+  $(\pi_i(\lambda j \in n : \Dst F_j))^{\dagger} \circ F_i \circ
+  \pi_i(\lambda j \in n : \Src F_j) \in \Hom \left(
   \prod^{(Q)}_{j \in n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j
   \right)$ are properly defined and have the same sources and destination
   (whenever $i \in \dom F$ is), thus the meet in the formulas is
@@ -108,19 +108,21 @@ This formula can be (over)simplified to:
 
 \begin{rem}
   Thus
-  \[ F_0 \times^{(L)} F_1 = ((\pi^{(\Dst F_0 , \Dst
-     F_1)}_0)^{\dagger} \circ F_0 \circ \pi^{(\Src F_0 , \Src
-     F_1)}_0) \sqcap ((\pi^{(\Dst F_0 , \Dst F_1)}_1)^{\dagger}
-     \circ F_1 \circ \pi^{(\Src F_0 , \Src F_1)}_1) \]
+  \begin{multline*}
+    F_0 \times^{(L)} F_1 = \bigl((\pi_0(\Dst F_0 , \Dst
+    F_1))^{\dagger} \circ F_0 \circ \pi_0(\Src F_0 , \Src
+    F_1)\bigr) \sqcap\\ \bigl((\pi_1((\Dst F_0 , \Dst F_1)))^{\dagger}
+    \circ F_1 \circ \pi_1(\Src F_0 , \Src F_1)\bigr)
+  \end{multline*}
   that is product is defined by a pure algebraic formula.
 \end{rem}
 
 \begin{prop}
-  $\prod^{(L)} F = \max \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j \in
+  \[ \prod^{(L)} F = \max \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j \in
   n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
-  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
-  j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
-  : \Src F_j}_i }$.
+  }{ \forall i \in n : \Phi \sqsubseteq (\pi_i(\lambda
+  j \in n : \Dst F_j))^{\dagger} \circ F_i \circ \pi_i(\lambda j \in n
+  : \Src F_j) }. \]
 \end{prop}
 
 \begin{proof}
@@ -128,15 +130,15 @@ This formula can be (over)simplified to:
 \end{proof}
 
 \begin{cor}
-  $\prod^{(L)} F = \bigsqcup \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j
+  \[ \prod^{(L)} F = \bigsqcup \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j
   \in n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
-  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
-  j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
-  : \Src F_j}_i }$.
+  }{ \forall i \in n : \Phi \sqsubseteq (\pi_i(\lambda
+  j \in n : \Dst F_j))^{\dagger} \circ F_i \circ \pi_i(\lambda j \in n
+  : \Src F_j) }. \]
 \end{cor}
 
 \begin{thm}
-  Let $\pi^X_i$ be metamonovalued morphisms. If $S \in \subsets (\Hom
+  Let $\pi_i X$ be metamonovalued morphisms. If $S \in \subsets (\Hom
   (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
   $A_1$, $B_1$ then
   \[ \bigsqcap \setcond{ a \times^{(L)} b }{(a , b)\in S } =
@@ -147,26 +149,26 @@ This formula can be (over)simplified to:
   ~
   \begin{align*}
   \bigsqcap \setcond{ a \times b }{ (a , b) \in S } & = \\
-  \bigsqcap \setcond{ ((\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0) \sqcap
-  ((\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a , \Src b)}_1) }{ (a , b) \in S } & = \\
+  \bigsqcap \setcond{ \begin{aligned}&((\pi^{(\Dst a , \Dst
+  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0) \sqcap\\
+  &((\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
+  \pi^{(\Src a , \Src b)}_1)\end{aligned} }{ (a , b) \in S } & = \\
   \bigsqcap \setcond{ (\pi^{(\Dst a , \Dst
   b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0
-  }{ a \in \dom S } \sqcap
+  }{ a \in \dom S } \sqcap\\
   \bigsqcap
   \setcond{ (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
   \pi^{(\Src a , \Src b)}_1 }{ b \in \im S } & = \\
   \left( (\pi^{(\Dst a , \Dst
   b)}_0)^{\dagger} \circ \bigsqcap \setcond{ a }{ a \in
   \dom S } \circ \pi^{(\Src a , \Src b)}_0 \right)
-  \sqcap \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ
+  \sqcap\\ \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ
   \bigsqcap \setcond{ b }{ b \in \im S }
   \circ \pi^{(\Src a , \Src b)}_1 \right) & = \\
   \left(
   (\pi^{(\Dst a , \Dst b)}_0)^{\dagger} \circ \left( \bigsqcap
   \dom S \right) \circ \pi^{(\Src a , \Src b)}_0 \right)
-  \sqcap \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ \left(
+  \sqcap\\ \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ \left(
   \bigsqcap \im S \right) \circ \pi^{(\Src a , \Src b)}_1
   \right) & = \\
   \bigsqcap \dom S \times \bigsqcap \im S.
