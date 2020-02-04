@@ -695,17 +695,17 @@ If $n = \emptyset$ then $Z = \{ \emptyset \}$; $\prod^{(L)} \emptyset = \max
   $a \mathrel{\left[ \prod^{(A)} F \right]} b \Leftrightarrow \forall i \in
   \dom F : \Pr^{\mathsf{RLD}}_i a \mathrel{[F_i]}
   \Pr^{\mathsf{RLD}}_i b \Leftrightarrow \forall i \in \dom F :
-  \left\langle \left( \pi^{\mathsf{FCD} \left( \prod_{i \in n}
-  \Dst F \right)}_i \right)^{- 1} \right\rangle \mathrel{[F_i]}
-  \left\langle \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Src F
-  \right)}_i \right\rangle \Leftrightarrow \forall i \in \dom F : a
-  \mathrel{\left[ \left( \pi^{\mathsf{FCD} \left( \prod_{i \in n}
-  \Dst F \right)}_i \right)^{- 1} \circ F_i \circ
-  \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Src F \right)}_i
+  \left\langle \left( \pi_i^{\mathsf{FCD}} \left( \prod_{i \in n}
+  \Dst F \right) \right)^{- 1} \right\rangle \mathrel{[F_i]}
+  \left\langle \pi_i^{\mathsf{FCD}} \left( \prod_{i \in n} \Src F
+  \right) \right\rangle \Leftrightarrow \forall i \in \dom F : a
+  \mathrel{\left[ \left( \pi_i^{\mathsf{FCD}} \left( \prod_{i \in n}
+  \Dst F \right) \right)^{- 1} \circ F_i \circ
+  \pi_i^{\mathsf{FCD}} \left( \prod_{i \in n} \Src F \right)
   \right]} b \Leftrightarrow a \mathrel{\left[ \bigsqcap_{i \in n} \left(
-  \left( \pi^{\mathsf{FCD} \left( \prod_{i \in n} \Dst F
-  \right)}_i \right)^{- 1} \circ F_i \circ \pi^{\mathsf{FCD} \left(
-  \prod_{i \in n} \Src F \right)}_i \right) \right]} b$ for ultrafilters
+  \left( \pi_i^{\mathsf{FCD}} \left( \prod_{i \in n} \Dst F
+  \right) \right)^{- 1} \circ F_i \circ \pi_i^{\mathsf{FCD}} \left(
+  \prod_{i \in n} \Src F \right) \right) \right]} b$ for ultrafilters
   $a$ and $b$.
 \end{proof}
 
