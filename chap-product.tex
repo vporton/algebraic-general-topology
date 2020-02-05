@@ -282,7 +282,7 @@ It is really a category:
 \end{prop}
 
 \begin{proof}
-  We need to prove $\pi_i \in \mathrm{C} \left( \prod^{(L)} F , F_i \right)$
+  We need to prove $\pi_i(\Ob\circ F) \in \mathrm{C} \left( \prod^{(L)} F , F_i \right)$
   but that was proved above.
 \end{proof}
 
@@ -296,25 +296,25 @@ It is really a category:
   \begin{description}
     \item[$\Rightarrow$] Let $f \in \Hom_{\cont
     (\mathcal{C})} \left( Y , \prod^{(L)} F \right)$. Then $f \circ Y
-    \sqsubseteq \left( \prod^{(L)} F \right) \circ f$; $\pi_i \circ f \circ Y
-    \sqsubseteq \pi_i \circ \left( \prod^{(L)} F \right) \circ f$; $\pi_i
-    \circ f \circ Y \sqsubseteq \left( \prod^{(L)} F \right) \circ \pi_i \circ
-    f$. Thus $\pi_i \circ f$ is continuous.
+    \sqsubseteq \left( \prod^{(L)} F \right) \circ f$; $\pi_i(\Ob\circ F) \circ f \circ Y
+    \sqsubseteq \pi_i(\Ob\circ F) \circ \left( \prod^{(L)} F \right) \circ f$; $\pi_i(\Ob\circ F)
+    \circ f \circ Y \sqsubseteq \left( \prod^{(L)} F \right) \circ \pi_i(\Ob\circ F) \circ
+    f$. Thus $\pi_i(\Ob\circ F) \circ f$ is continuous.
     
-    \item[$\Leftarrow$] Let all $\pi_i \circ f$ be continuous. Then
-    $\pi^{\cont (\mathcal{C})}_i \circ f \in
+    \item[$\Leftarrow$] Let all $\pi_i(\Ob\circ F) \circ f$ be continuous. Then
+    $\pi^{\cont (\mathcal{C})}_i F \circ f \in
     \Hom_{\cont (\mathcal{C})} (Y , F_i)$;
-    $\pi^{\cont (\mathcal{C})}_i \circ f \circ Y \sqsubseteq
-    F_i \circ \pi^{\cont (\mathcal{C})}_i \circ f$. We need
+    $\pi^{\cont (\mathcal{C})}_i F \circ f \circ Y \sqsubseteq
+    F_i \circ \pi^{\cont (\mathcal{C})}_i F \circ f$. We need
     to prove $Y \sqsubseteq f^{\dagger} \circ \left( \prod^{(L)} F \right)
     \circ f$ that is
-    \[ Y \sqsubseteq f^{\dagger} \circ \bigsqcap_{i \in n} ((\pi_i)^{\dagger}
-       \circ F_i \circ \pi_i) \circ f \]
+    \[ Y \sqsubseteq f^{\dagger} \circ \bigsqcap_{i \in n} ((\pi_i(\Ob\circ F))^{\dagger}
+       \circ F_i \circ \pi_i(\Ob\circ F)) \circ f \]
     for what is enough (because $f$ is metamonovalued)
-    \[ Y \sqsubseteq \bigsqcap_{i \in n} (f^{\dagger} \circ (\pi_i)^{\dagger}
-       \circ F_i \circ \pi_i \circ f) \]
+    \[ Y \sqsubseteq \bigsqcap_{i \in n} (f^{\dagger} \circ (\pi_i(\Ob\circ F))^{\dagger}
+       \circ F_i \circ \pi_i(\Ob\circ F) \circ f) \]
     what follows from $Y \sqsubseteq \bigsqcap_{i \in n} (f^{\dagger} \circ
-    (\pi_i)^{\dagger} \circ \pi_i \circ f \circ Y)$ what is obvious.
+    (\pi_i(\Ob\circ F))^{\dagger} \circ \pi_i(\Ob\circ F) \circ f \circ Y)$ what is obvious.
   \end{description}
 \end{proof}
 
