@@ -88,6 +88,7 @@ We will denote particular morphisms as $\pi_i X$.
   \emph{Infimum product} $\prod F$ (such that $\pi$ is defined at $\Src\circ F$ and $\Dst\circ F$) is defined
   by the formula
   \[ \prod^{(L)} F = \bigsqcap_{i \in \dom F} \bigl((\pi_i(\Dst\circ F))^{\dagger} \circ F_i \circ \pi_i(\Src\circ F)\bigr) . \]
+\fxnote{Prove that product of one multiplicant is equal to this multiplicant!}
 \end{defn}
 
 \begin{rem}
@@ -173,6 +174,14 @@ We will denote particular morphisms as $\pi_i X$.
   $a_0 \times^{(L)} b_0 \nasymp a_1 \times^{(L)} b_1 \Leftrightarrow a_0
   \nasymp a_1 \wedge b_0 \nasymp b_1$.
 \end{cor}
+
+\begin{thm}
+$\prod^{(L)}$ together with $\pi$ is a categorical product.
+\end{thm}
+
+\begin{proof}
+??
+\end{proof}
 
 \subsection{Infimum product for endomorphisms}
 
@@ -272,8 +281,18 @@ It is really a category:
   \end{itemize}
 \end{rem}
 
+If the category~$\mathcal{C}$ is dagger, we will also make $\cont(\mathcal{C})$ a dagger category: $(f,a,b)^{\dagger}=(f^{\dagger},b^{\dagger},a^{\dagger})$. It is really a dagger category:
+
+\begin{proof}
+Let's prove that $(f^{\dagger},b^{\dagger},a^{\dagger})$ is a morphism. We need to prove
+$f^{\dagger}\circ b^{\dagger}\sqsubseteq a^{\dagger}\circ f^{\dagger}$. Really, it is equivalent to
+$f\circ a\sqsupseteq b\circ f$.
+
+??
+\end{proof}
+
 \begin{defn}
-  $\pi^{\cont (\mathcal{C})}_i F = \left( \pi_i(\Ob\circ F), \prod^{(L)} F , F_i \right)$.
+  $\pi^{\cont (\mathcal{C})}_i F = \left( \pi_i(\Ob\circ F), \prod^{(L)} F , F_i \right)$ for an indexed family~$F$ of endomorphisms.
 \end{defn}
 
 \begin{prop}
@@ -286,9 +305,17 @@ It is really a category:
   but that was proved above.
 \end{proof}
 
+\begin{thm}
+$\prod^{(L)} F = ??$ for an indexed family~$F$ of morphisms of~$\cont(\mathcal{C})$.
+\end{thm}
+
+\begin{proof}
+$\prod^{(L)} F = \bigsqcap_{i \in \dom F} \bigl((\pi^{\cont(\mathcal{C})}_i(\Dst\circ F))^{\dagger} \circ F_i \circ \pi^{\cont(\mathcal{C})}_i(\Src\circ F)\bigr) = ??$
+\end{proof}
+
 \begin{lem}
   $f \in \Hom_{\cont (\mathcal{C})} \left( Y ,
-  \prod^{(L)} F \right)$ is continuous iff all $\pi_i \circ f$ are continuous.
+  \prod^{(L)} F \right)$ is continuous iff all $\pi_i(\Ob\circ F) \circ f$ are continuous.
 \end{lem}
 
 \begin{proof}
@@ -326,9 +353,12 @@ It is really a category:
 \begin{proof}
 We need to prove\footnote{\url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}}:
 \begin{enumerate}
-\item $\pi^{\operatorname{cont}(\mathcal{C})}_i\prod^{(L)}_{j\in??}(f_j,a_j,b_j) = (f_i,a_i,b_i)$;
-\item $\prod^{(L)}_{i\in\dom F}(\pi^{\operatorname{cont}(\mathcal{C})}_i\circ F) = F$.
+\item $\pi^{\cont(\mathcal{C})}_i\prod^{(L)}_{j\in??}(f_j,a_j,b_j) = (f_i,a_i,b_i)$;
+\item $\prod^{(L)}_{i\in\dom F}(\pi^{\cont(\mathcal{C})}_i\circ F) = F$.
 \end{enumerate}
+
+$\pi^{\operatorname{cont}(\mathcal{C})}_i\prod^{(L)}_{j\in??}(f_j,a_j,b_j) = (\pi_i(\Ob\circ \prod^{(L)}_{j\in??}(f_j,a_j,b_j)), ??)$;
+
 ??
 \end{proof}
 
