@@ -111,6 +111,24 @@ We will denote particular morphisms as $\pi_i X$.
   that is product is defined by a pure algebraic formula.
 \end{rem}
 
+\begin{thm}
+If morphisms $\pi_i X$ are metainjective and ??, then
+$\prod^{(L)}$ is a categorical product.
+\end{thm}
+
+\begin{proof}
+First prove $\pi_k(\Dst\circ F)\circ\prod^{(L)}F=F_k$. Really
+$\pi_k\prod^{(L)}F=
+\pi_k(\Dst\circ F)\circ\bigsqcap_{i \in \dom F} \bigl((\pi_i(\Dst\circ F))^{\dagger} \circ F_i \circ \pi_i(\Src\circ F)\bigr)
+=\text{(metainjectivity)}=
+\bigsqcap_{i \in \dom F} \bigl(\pi_k(\Dst\circ F)\circ(\pi_i(\Dst\circ F))^{\dagger} \circ F_i \circ \pi_i(\Src\circ F)\bigr)
+=\text{(monovaluedness and surjectivity)}=??=
+\bigsqcap_{i \in \dom F} \bigl(F_i \circ \pi_i(\Src\circ F)\bigr)
+$
+
+??
+\end{proof}
+
 \begin{prop}
   \[ \prod^{(L)} F = \max \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j \in
   n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
@@ -755,6 +773,22 @@ Our purpose is to prove (or disprove) that categories $\mathbf{Dig}$, $\mathbf{F
 
 Alternative way to prove:
 you can prove that the functor $-\times B$ is left adjoint to the exponentiation $-^B$ where the counit is given by the evaluation map.
+
+\subsection{New definitions}
+
+The below definitions are wrong, because $\prod^{(L)}$ is (apparently) not a categorical product.
+
+I will define~$\mathbf{Fcd}$ as the category of endofuncoids and continuous functions between them.
+
+It is obvious that this is really a category.
+
+I define product (??prove it's a product) in this category as (??consider the infinite case):
+
+$A\times B = A\times^{(L)} B$
+
+$f\times g$ is the usual product of two functions.
+
+First need to prove $\pi_0: A\times B\to A$ (and symmetrically): ??
 
 \subsection{Definitions}
 
