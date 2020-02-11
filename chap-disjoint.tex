@@ -1,0 +1,83 @@
+\chapter{Disjoint product}
+
+I remind that
+$\coprod X = \bigcup_{i\in\dom X} (i,X_i)$
+for every indexed family~$X$ of sets.
+
+\begin{defn}
+\emph{Disjoint product} of an indexed family~$f$ of funcoids is
+a pointfree funcoid in
+\begin{equation}\label{dj-prod-set}
+\CoCompl\left((\dom f)\times^{\mathsf{RLD}}\bigcup(\Src\circ f), (\dom f)\times^{\mathsf{RLD}}\bigcup(\Dst\circ f)\right)
+\end{equation}
+defined by the formula
+\[
+\supfun{\prod^{(J)}f} \mathcal{X} =
+\bigsqcup_{i\in\dom f}
+\left(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\im(\mathcal{X}|_{\{i\}})\right)
+\]
+and
+\[
+\supfun{\left(\prod^{(J)}f\right)^{-1}} \mathcal{Y} =
+\bigsqcup_{i\in\dom f}
+(\{i\}\times^{\mathsf{RLD}}\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}}).
+\]
+\end{defn}
+
+Let's prove it is really in~\eqref{dj-prod-set}.
+
+\begin{proof}
+Let $\mathcal{X}\in\mathscr{F}\left(\coprod(\Src\circ f)\right)$.
+We need to prove
+$\supfun{\prod^{(J)}f} \mathcal{X}\in\mathscr{F}\left(\coprod(\Src\circ f)\right)$.
+
+We have $\mathcal{X}\in\mathsf{RLD}(\dom f, \bigcup(\Src\circ f))$.
+
+We have (by properties of complete reloids) $\im(\mathcal{X}|_{\{i\}})\in\Src f_i$. Therefore $\supfun{f_i}\im(\mathcal{X}|_{\{i\}})\in\Dst f_i$. Therefore
+$\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\im(\mathcal{X}|_{\{i\}})$ is a subfilter of the set $\{i\}\times\Dst f_i$. Therefore it is a subfilter of the set $\coprod(\Dst\circ f)$.
+
+So $\supfun{\prod^{(J)}f} \mathcal{X}\in\mathscr{F}\left(\coprod(\Src\circ f)\right)$.
+
+It remains to prove
+$\mathcal{Y}\nasymp\supfun{\prod^{(J)}f} \Leftrightarrow
+\mathcal{X}\nasymp\supfun{\left(\prod^{(J)}f\right)^{-1}} \mathcal{Y}$.
+
+Really, equivalently transforming it, \[ \bigsqcup_{i\in\dom f}
+\left(\{i\}\times^{\mathsf{RLD}}\im(\mathcal{Y}|_{\{i\}}))\right) \nasymp \bigsqcup_{i\in\dom f}
+\left(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\im(\mathcal{X}|_{\{i\}})\right); \]
+(due to the theorem~\bookref{cmpl-dia-thm})
+\[
+\lambda i\in\dom f:\im(\mathcal{Y}|_{\{i\}}) \nasymp
+\lambda i\in\dom f:\supfun{f_i}\im(\mathcal{X}|_{\{i\}});
+\]
+\[
+\exists i\in\dom f:\im(\mathcal{Y}|_{\{i\}}) \nasymp
+\supfun{f_i}\im(\mathcal{X}|_{\{i\}});
+\]
+\[
+\exists i\in\dom f:\im(\mathcal{X}|_{\{i\}}) \nasymp
+\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}});
+\]
+
+By symmetry we conclude our thesis.
+\end{proof}
+==================================================
+
+\begin{quotation}
+\begin{defn}
+\emph{Disjoint product} of an indexed family~$f$ of funcoids is
+a funcoid $\coprod(\Src\circ f)\to\coprod(\Dst\circ f)$ defined by the formula
+\[
+\supfun{\prod^{(J)}f} \mathcal{X} =
+\bigsqcup_{i\in\dom f}
+\left(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\im(\mathcal{X}|_{\{i\}})\right)
+\]
+and
+\[
+\supfun{\left(\prod^{(J)}f\right)^{-1}} \mathcal{Y} =
+\bigsqcup_{i\in\dom f}
+(\{i\}\times^{\mathsf{RLD}}\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}}).
+\]
+\end{defn}
+\end{quotation}
+
