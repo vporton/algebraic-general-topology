@@ -65,9 +65,30 @@ By symmetry we conclude our thesis.
 Now let's continue this pointfree funcoid (disjoint product) till
 a funcoid $\coprod(\Src\circ f)\to\coprod(\Dst\circ f)$:
 
-$\supfun{\prod^{(J\ast)} f}\mathcal{X} =
-\bigsqcap\rsupfun{\supfun{\prod^{(J)}f}}\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}
-$
+\begin{align*}
+\supfun{\prod^{(J\ast)} f}\mathcal{X} =&
+\bigsqcap\rsupfun{\supfun{\prod^{(J)}f}}\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X};\\
+\supfun{\left(\prod^{(J\ast)} f\right)^{-1}}\mathcal{Y} =&
+\bigsqcap\rsupfun{\supfun{\left(\prod^{(J)}f\right)^{-1}}}\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{Y}.
+\end{align*}
+
+Let's prove it is really a funcoid:
+
+\begin{proof}
+By properties of generalized filter bases
+\begin{multline*}
+\mathcal{Y}\nasymp\supfun{\prod^{(J\ast)} f}\mathcal{X}
+\Leftrightarrow\\
+\exists X\in\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+\mathcal{Y}\nasymp\supfun{\prod^{(J)}f}\mathcal{X}
+\Leftrightarrow\\
+\exists X\in\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{Y}:
+\mathcal{X}\nasymp\supfun{\left(\prod^{(J)}f\right)^{-1}}\mathcal{Y}
+\Leftrightarrow\\
+\mathcal{X}\nasymp
+\supfun{\left(\prod^{(J\ast)} f\right)^{-1}}\mathcal{Y}.
+\end{multline*}
+\end{proof}
 
 ==================================================
 
