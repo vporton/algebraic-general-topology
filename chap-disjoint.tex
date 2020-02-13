@@ -8,7 +8,7 @@ for every indexed family~$X$ of sets.
 \emph{Disjoint product} of an indexed family~$f$ of funcoids is
 a pointfree funcoid in
 \begin{equation}\label{dj-prod-set}
-\CoCompl\left((\dom f)\times^{\mathsf{RLD}}\bigcup(\Src\circ f), (\dom f)\times^{\mathsf{RLD}}\bigcup(\Dst\circ f)\right)
+\mathsf{pFCD}\left(\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right), \CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right)
 \end{equation}
 defined by the formula
 \[
@@ -61,6 +61,14 @@ Really, equivalently transforming it, \[ \bigsqcup_{i\in\dom f}
 
 By symmetry we conclude our thesis.
 \end{proof}
+
+Now let's continue this pointfree funcoid (disjoint product) till
+a funcoid $\coprod(\Src\circ f)\to\coprod(\Dst\circ f)$:
+
+$\supfun{\prod^{(J\ast)} f}\mathcal{X} =
+\bigsqcap\rsupfun{\supfun{\prod^{(J)}f}}\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}
+$
+
 ==================================================
 
 \begin{quotation}
