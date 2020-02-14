@@ -1,14 +1,20 @@
 \chapter{Disjoint product}
 
+\section{Definition and basic properties}
+
 I remind that
 $\coprod X = \bigcup_{i\in\dom X} (i,X_i)$
 for every indexed family~$X$ of sets.
+
+\begin{obvious}
+$\coprod X\in\mathbf{Set}(\dom X,\im X)$.
+\end{obvious}
 
 \begin{defn}
 \emph{Base disjoint product} of an indexed family~$f$ of funcoids is
 a pointfree funcoid in
 \begin{equation}\label{dj-prod-set}
-\mathsf{pFCD}\left(\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right), \CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right)
+\mathsf{pFCD}\left(\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right), \Compl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right)
 \end{equation}
 defined by the formula
 \[
@@ -69,9 +75,9 @@ a funcoid (\emph{disjoint product}) $\coprod(\Src\circ f)\to\coprod(\Dst\circ f)
 
 \begin{align*}
 \supfun{\prod^{(J\ast)} f}\mathcal{X} =&
-\bigsqcap\rsupfun{\supfun{\prod^{(J)}f}}\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X};\\
+\bigsqcap\rsupfun{\supfun{\prod^{(J)}f}}\up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X};\\
 \supfun{\left(\prod^{(J\ast)} f\right)^{-1}}\mathcal{Y} =&
-\bigsqcap\rsupfun{\supfun{\left(\prod^{(J)}f\right)^{-1}}}\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{Y}.
+\bigsqcap\rsupfun{\supfun{\left(\prod^{(J)}f\right)^{-1}}}\up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{Y}.
 \end{align*}
 
 Let's prove it is really a funcoid:
@@ -81,10 +87,10 @@ By properties of generalized filter bases
 \begin{multline*}
 \mathcal{Y}\nasymp\supfun{\prod^{(J\ast)} f}\mathcal{X}
 \Leftrightarrow\\
-\exists X\in\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+\exists X\in\up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
 \mathcal{Y}\nasymp\supfun{\prod^{(J)}f}\mathcal{X}
 \Leftrightarrow\\
-\exists X\in\up^{\CoCompl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{Y}:
+\exists X\in\up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{Y}:
 \mathcal{X}\nasymp\supfun{\left(\prod^{(J)}f\right)^{-1}}\mathcal{Y}
 \Leftrightarrow\\
 \mathcal{X}\nasymp
@@ -95,3 +101,28 @@ By properties of generalized filter bases
 \begin{obvious}
 If $f$~is a finite family of funcoids $\prod^{(J\ast)}f=\prod^{(J)}f$ (if we equate funcoids to corresponding pointfree funcoids).
 \end{obvious}
+
+\section{Projections}
+
+\begin{defn}
+\emph{Disjoint projection} of a funcoid $f: \coprod(\Src\circ f)\to\coprod(\Dst\circ f)$ to $i$-th coordinate is
+$\pi_i f=
+(f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i))\circ
+(\{i\}\times^{\mathsf{RLD}})$.
+\end{defn}
+
+\begin{thm}
+$\pi_i\prod^{(J\ast)}f=f_i$.
+\end{thm}
+
+\begin{proof}
+\begin{multline*}
+\supfun{\pi_i\prod^{(J\ast)}f}\mathcal{X} =\\
+\supfun{\prod^{(J\ast)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst \left(\prod^{(J\ast)}f\right)_i}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
+\supfun{\prod^{(J\ast)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
+\supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
+\supfun{\mathcal{X}\mapsto\{i\}\times^{\mathsf{FCD}}\supfun{f_i}\mathcal{X}|_{\{i\}}}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
+\supfun{\mathcal{X}\mapsto\supfun{f_i}\im(\mathcal{X}|_{\{i\}})}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})
+=\supfun{f_i}\mathcal{X}.
+\end{multline*}
+\end{proof}
