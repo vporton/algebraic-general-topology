@@ -64,7 +64,7 @@ $\mathcal{Y}\nasymp\supfun{\prod^{(J)}f} \Leftrightarrow
 Really, equivalently transforming it, \[ \bigsqcup_{i\in\dom f}
 \left(\{i\}\times^{\mathsf{RLD}}\im(\mathcal{Y}|_{\{i\}}))\right) \nasymp \bigsqcup_{i\in\dom f}
 \left(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\im(\mathcal{X}|_{\{i\}})\right); \]
-(due to the theorem~\bookref{cmpl-dia-thm})
+(due to theorem~\bookref{cmpl-dia-thm})
 \[
 \lambda i\in\dom f:\im(\mathcal{Y}|_{\{i\}}) \nasymp
 \lambda i\in\dom f:\supfun{f_i}\im(\mathcal{X}|_{\{i\}});
@@ -142,7 +142,7 @@ $\pi_i\prod^{(J\ast)}f=f_i$.
 \section{Arrow product of funcoids}
 
 \begin{defn}
-\emph{Base arrow product} \[ \prod^{\rightarrow}f\in\mathsf{pFCD}\left(A,\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right) \] of an indexed family~$f$ of funcoids with common source~$A$ is defined by the formulas:
+\emph{Base arrow product} \[ \prod^{\rightarrow}f\in\mathsf{pFCD}\left(\mathscr{F}(A),\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right) \] of a finite indexed family~$f$ of funcoids with common source~$A$ is defined by the formulas:
 \[
 \supfun{\prod^{\rightarrow} f}\mathcal{X} = \coprod_{i\in\dom\mathcal{X}}\supfun{f_i}\mathcal{X};
 \supfun{\left(\prod^{\rightarrow} f\right)^{-1}}\mathcal{Y} = \bigsqcup_{i\in\dom f}\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}}).
@@ -152,5 +152,19 @@ $\pi_i\prod^{(J\ast)}f=f_i$.
 Let's prove it is really a pointfree funcoid:
 
 \begin{proof}
-??
+$\mathcal{Y}\nasymp\supfun{\prod^{\rightarrow} f}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp\coprod_{i\in\dom\mathcal{X}}\supfun{f_i}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp\bigsqcup_{i\in\dom\mathcal{X}}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\mathcal{X})$
+what by theorem~\bookref{cmpl-dia-thm} is equivalent to
+$\lambda i\in\dom\mathcal{X}:\im(\mathcal{Y}|_{\{i\}})\nasymp
+\lambda i\in\dom\mathcal{X}:\supfun{f_i}\mathcal{X}
+\Leftrightarrow
+\exists i\in\dom\mathcal{X}:\im(\mathcal{Y}|_{\{i\}})\nasymp
+\supfun{f_i}\mathcal{X}
+\Leftrightarrow
+\exists i\in\dom\mathcal{X}:\mathcal{X}\nasymp\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}})
+\Leftrightarrow\text{(finiteness of $\dom f$)}\Leftrightarrow
+\mathcal{X}\nasymp\bigsqcup_{i\in\dom f}\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}})$.
 \end{proof}
