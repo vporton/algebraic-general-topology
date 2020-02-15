@@ -182,5 +182,51 @@ $\lambda i\in\dom\mathcal{X}:\im(\mathcal{Y}|_{\{i\}})\nasymp
 Let's prove it is really a funcoid:
 
 \begin{proof}
-??
+$\mathcal{Y}\nasymp\supfun{\prod^{\rightarrow\ast}f}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp\coprod_{i\in\dom\mathcal{X}}\supfun{f_i}\mathcal{X}
+\Leftrightarrow
+\mathcal{Y}\nasymp\prod_{i\in\dom\mathcal{X}}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\mathcal{X})\Leftrightarrow
+\lambda i\in\dom f:\im(\mathcal{Y}|_{\{i\}})\nasymp
+\lambda i\in\dom f:\supfun{f_i}\mathcal{X}\Leftrightarrow
+\exists i\in\dom f:\im(\mathcal{Y}|_{\{i\}})\nasymp\supfun{f_i}\mathcal{X}
+$.
+
+By properties of generalized filter bases
+$\mathcal{X}\nasymp\supfun{\left(\prod^{\rightarrow\ast}f\right)^{-1}}\mathcal{Y}
+\Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+X\nasymp\supfun{\left(\prod^{\rightarrow}f\right)^{-1}}\mathcal{Y}
+\Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+\mathcal{Y}\nasymp\supfun{\left(\prod^{\rightarrow}f\right)}X
+\Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+\mathcal{Y}\nasymp\coprod_{i\in\dom\mathcal{X}}\supfun{f_i}X
+\Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+\mathcal{Y}\nasymp\prod_{i\in\dom\mathcal{X}}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}X)\Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X}:
+\lambda X\in\dom f:
+\im(\mathcal{Y}|_{\{i\}})\nasymp
+\lambda X\in\dom f:\supfun{f_i}X \Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X},
+i\in\dom f:
+\im(\mathcal{Y}|_{\{i\}})\nasymp\supfun{f_i}X \Leftrightarrow
+\exists X\in \up^{\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right)}\mathcal{X},
+i\in\dom f:
+X\nasymp\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}})
+\Leftrightarrow
+\text{(by properties of generalized filter bases)}
+\Leftrightarrow
+\exists i\in\dom f:
+\mathcal{X}\nasymp\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}})
+\Leftrightarrow
+\exists i\in\dom f:
+\im(\mathcal{Y}|_{\{i\}})\nasymp\supfun{f_i}\mathcal{X}$.
+
+So
+$\mathcal{Y}\nasymp\supfun{\prod^{\rightarrow\ast}f}\mathcal{X}
+\Leftrightarrow
+\mathcal{X}\nasymp\supfun{\left(\prod^{\rightarrow\ast}f\right)^{-1}}\mathcal{Y}$.
 \end{proof}
