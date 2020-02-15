@@ -1,22 +1,35 @@
 \chapter{Disjoint product}
 
-\section{Definition and basic properties}
+\section{Cartesian product of funcoids}
+
+\subsection{Definition and basic properties}
 
 I remind that
 $\coprod X = \bigcup_{i\in\dom X} (i,X_i)$
 for every indexed family~$X$ of sets.
+
+\begin{defn}
+I will call disjoint join of an indexed family~$\mathcal{X}$ of filters the following reloid: $\coprod\mathcal{X} = \bigsqcup_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\mathcal{X}_i)$.
+\end{defn}
 
 \begin{obvious}
 $\coprod X\in\mathbf{Set}(\dom X,\im X)$.
 \end{obvious}
 
 \begin{defn}
-\emph{Base disjoint product} of an indexed family~$f$ of funcoids is
+\emph{Base Cartesian product} of an indexed family~$f$ of funcoids is
 a pointfree funcoid in
 \begin{equation}\label{dj-prod-set}
 \mathsf{pFCD}\left(\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Src\circ f)\right), \Compl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right)
 \end{equation}
-defined by the formula
+defined by the formulas
+\[
+\supfun{\prod^{(J)}f} \mathcal{X} =
+\coprod_{i\in\dom f}\supfun{f_i}\im(\mathcal{X}|_{\{i\}});\quad
+\supfun{\left(\prod^{(J)}f\right)^{-1}} \mathcal{Y} =
+\coprod_{i\in\dom f}\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}})
+\]
+or explicitly
 \[
 \supfun{\prod^{(J)}f} \mathcal{X} =
 \bigsqcup_{i\in\dom f}
@@ -69,8 +82,8 @@ By symmetry we conclude our thesis.
 \end{proof}
 
 \begin{defn}
-Let's continue base disjoint product till
-a funcoid (\emph{disjoint product}) $\coprod(\Src\circ f)\to\coprod(\Dst\circ f)$:
+Let's continue base Cartesian product till
+a funcoid (\emph{Cartesian product}) $\coprod(\Src\circ f)\to\coprod(\Dst\circ f)$:
 \end{defn}
 
 \begin{align*}
@@ -102,10 +115,10 @@ By properties of generalized filter bases
 If $f$~is a finite family of funcoids $\prod^{(J\ast)}f=\prod^{(J)}f$ (if we equate funcoids to corresponding pointfree funcoids).
 \end{obvious}
 
-\section{Projections}
+\subsection{Projections}
 
 \begin{defn}
-\emph{Disjoint projection} of a funcoid $f: \coprod(\Src\circ f)\to\coprod(\Dst\circ f)$ to $i$-th coordinate is
+\emph{Cartesian projection} of a funcoid $f: \coprod(\Src\circ f)\to\coprod(\Dst\circ f)$ to $i$-th coordinate is
 $\pi_i f=
 (f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i))\circ
 (\{i\}\times^{\mathsf{RLD}})$.
