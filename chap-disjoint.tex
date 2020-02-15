@@ -1,20 +1,20 @@
 \chapter{Disjoint product}
 
-\section{Cartesian product of funcoids}
-
-\subsection{Definition and basic properties}
-
 I remind that
 $\coprod X = \bigcup_{i\in\dom X} (i,X_i)$
 for every indexed family~$X$ of sets.
+
+\begin{obvious}
+$\coprod X\in\mathbf{Set}(\dom X,\im X)$.
+\end{obvious}
 
 \begin{defn}
 I will call disjoint join of an indexed family~$\mathcal{X}$ of filters the following reloid: $\coprod\mathcal{X} = \bigsqcup_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\mathcal{X}_i)$.
 \end{defn}
 
-\begin{obvious}
-$\coprod X\in\mathbf{Set}(\dom X,\im X)$.
-\end{obvious}
+\section{Cartesian product of funcoids}
+
+\subsection{Definition and basic properties}
 
 \begin{defn}
 \emph{Base Cartesian product} of an indexed family~$f$ of funcoids is
@@ -137,4 +137,20 @@ $\pi_i\prod^{(J\ast)}f=f_i$.
 (\mathcal{X}\mapsto\supfun{f_i}\im(\mathcal{X}|_{\{i\}}))(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=
 \supfun{f_i}\mathcal{X}.
 \end{multline*}
+\end{proof}
+
+\section{Arrow product of funcoids}
+
+\begin{defn}
+\emph{Base arrow product} \[ \prod^{\rightarrow}f\in\mathsf{pFCD}\left(A,\Compl\mathsf{RLD}\left((\dom f),\bigcup(\Dst\circ f)\right)\right) \] of an indexed family~$f$ of funcoids with common source~$A$ is defined by the formulas:
+\[
+\supfun{\prod^{\rightarrow} f}\mathcal{X} = \coprod_{i\in\dom\mathcal{X}}\supfun{f_i}\mathcal{X};
+\supfun{\left(\prod^{\rightarrow} f\right)^{-1}}\mathcal{Y} = \bigsqcup_{i\in\dom f}\supfun{f_i^{-1}}\im(\mathcal{Y}|_{\{i\}}).
+\]
+\end{defn}
+
+Let's prove it is really a pointfree funcoid:
+
+\begin{proof}
+??
 \end{proof}
