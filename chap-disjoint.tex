@@ -43,20 +43,20 @@ a funcoid \[ \prod^{(J)} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i\circ(
 
 \begin{defn}
 \emph{Cartesian projection} of a funcoid $f: \coprod(\Src\circ f)\to\coprod(\Dst\circ f)$ to $i$-th coordinate is
-$\pi_i f=
+$\pi^{(J)}_i f=
 (f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i))\circ
 (\{i\}\times^{\mathsf{RLD}})$.
 \end{defn}
 
 \begin{thm}
-$\pi_i\prod^{(J\ast)}f=f_i$.
+$\pi^{(J)}_i\prod^{(J)}f=f_i$.
 \end{thm}
 
 \begin{proof}
 \begin{multline*}
-\supfun{\pi_i\prod^{(J\ast)}f}\mathcal{X} =\\
-\supfun{\prod^{(J\ast)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst \left(\prod^{(J\ast)}f\right)_i}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
-\supfun{\prod^{(J\ast)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
+\supfun{\pi^{(J)}_i\prod^{(J)}f}\mathcal{X} =\\
+\supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst \left(\prod^{(J)}f\right)_i}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
+\supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
 \supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
 (\mathcal{X}\mapsto\supfun{f_i}\im(\mathcal{X}|_{\{i\}}))(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=
 \supfun{f_i}\mathcal{X}.
@@ -72,11 +72,9 @@ a funcoid \[ \prod^{\rightarrow} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f
 
 \subsection{Projections}
 
-\fxwarning{Be clear that they are different from Cartesian projections.}
-
 \begin{defn}
 \emph{Arrow projections}
-$\supfun{\pi_i}\mathcal{X} = \im\bigl(\mathcal{X}|_{\{i\}}\bigr)$.
+$\supfun{\pi^{\rightarrow}_i}\mathcal{X} = \im\bigl(\mathcal{X}|_{\{i\}}\bigr)$.
 \end{defn}
 
 \begin{thm}
@@ -89,9 +87,9 @@ The following is a categorical product:
 \end{thm}
 
 \begin{proof}
-We need to prove $\pi_i\circ\prod^{\rightarrow\ast}f=f_i$.
+We need to prove $\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$.
 
-Really, $\supfun{\pi_i\circ\prod^{\rightarrow\ast}f}\mathcal{X}=\supfun{\pi_i}\supfun{\prod^{\rightarrow}f}\mathcal{X}=\supfun{\pi_i}\coprod_{i\in\dom f}\supfun{f_i}\mathcal{X}=\supfun{\pi_i}\prod_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\mathcal{X})=\supfun{f_i}\mathcal{X}$.
+Really, $\supfun{\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f}\mathcal{X}=\supfun{\pi^{\rightarrow}_i}\supfun{\prod^{\rightarrow}f}\mathcal{X}=\supfun{\pi^{\rightarrow}_i}\coprod_{i\in\dom f}\supfun{f_i}\mathcal{X}=\supfun{\pi^{\rightarrow}_i}\prod_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\mathcal{X})=\supfun{f_i}\mathcal{X}$.
 \end{proof}
 
 \section{Cartesian product of reloids}
