@@ -12,6 +12,24 @@ $\coprod X\in\mathbf{Set}(\dom X,\im X)$.
 I will call disjoint join of an indexed family~$\mathcal{X}$ of filters the following reloid: $\coprod\mathcal{X} = \bigsqcup_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\mathcal{X}_i)$.
 \end{defn}
 
+\section{Some funcoids}
+
+\begin{prop}
+$\supfun{x\mapsto(i,x)}\mathcal{X}=\{i\}\times^{\mathsf{RLD}}\mathcal{X}$ for every filter~$\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+$\supfun{x\mapsto(i,x)}\mathcal{X}=\bigsqcap\setcond{\rsupfun{x\mapsto(i,x)}X}{X\in\up\mathcal{X}}=\bigsqcap\setcond{\{i\}\times X}{X\in\up\mathcal{X}}=\{i\}\times^{\mathsf{RLD}}\mathcal{X}$.
+\end{proof}
+
+\begin{prop}
+$\supfun{(x\mapsto(i,x))^{-1}}\mathcal{X}=\im(\mathcal{X}|_{\{i\}})$ for ??.
+\end{prop}
+
+\begin{proof}
+$\supfun{(x\mapsto(i,x))^{-1}}\mathcal{X}=\bigsqcap\setcond{\rsupfun{(x\mapsto(i,x))^{-1}}X}{X\in\up\mathcal{X}}=\bigsqcap\setcond{\setcond{x}{(i,x)\in X}}{X\in\up\mathcal{X}}=\bigsqcap\setcond{x\in\im X|_{\{i\}}}{X\in\up\mathcal{X}}=\im\bigsqcap\setcond{x\in X|_{\{i\}}}{X\in\up\mathcal{X}}=\im(\mathcal{X}|_{\{i\}})$.
+\end{proof}
+
 \section{Cartesian product of funcoids}
 
 \subsection{Definition and basic properties}
@@ -257,7 +275,9 @@ Really, $\supfun{\pi_i\circ\prod^{\rightarrow\ast}f}\mathcal{X}=\supfun{\pi_i}\s
 
 \section{Cartesian product of reloids}
 
-Cartesian product of reloids is its disjoint join??
+Cartesian product of reloids is $\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i\circ(x\mapsto(i,x))^{-1})$
 
 Disjoint product of an indexed family~$f$ of reloids can be defined as:
 $\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i)$
+
+\fxnote{We can use similar definitions for funcoids.}
