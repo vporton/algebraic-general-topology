@@ -41,26 +41,12 @@ a funcoid \[ \prod^{(J)} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i\circ(
 
 \subsection{Projections}
 
-\begin{defn}
-\emph{Cartesian projection} of a funcoid $f: \coprod(\Src\circ f)\to\coprod(\Dst\circ f)$ to $i$-th coordinate is
-$\pi^{(J)}_i f=
-(f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i))\circ
-(\{i\}\times^{\mathsf{RLD}})$.
-\end{defn}
-
 \begin{thm}
-$\pi^{(J)}_i\prod^{(J)}f=f_i$.
+$f_i$~can be restored from the value of $\prod^{(J)}f=f_i$.
 \end{thm}
 
 \begin{proof}
-\begin{multline*}
-\supfun{\pi^{(J)}_i\prod^{(J)}f}\mathcal{X} =\\
-\supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst \left(\prod^{(J)}f\right)_i}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
-\supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
-\supfun{\prod^{(J)}f\sqcap(\{i\}\times^{\mathsf{FCD}}\Dst f_i)}(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=\\
-(\mathcal{X}\mapsto\supfun{f_i}\im(\mathcal{X}|_{\{i\}}))(\{i\}\times^{\mathsf{RLD}}\mathcal{X})=
-\supfun{f_i}\mathcal{X}.
-\end{multline*}
+$f_i = (x\mapsto(i,x)^{-1})\circ\prod^{(J)}f\circ(x\mapsto(i,x)^{-1})$.
 \end{proof}
 
 \section{Arrow product of funcoids}
@@ -74,7 +60,7 @@ a funcoid \[ \prod^{\rightarrow} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f
 
 \begin{defn}
 \emph{Arrow projections}
-$\supfun{\pi^{\rightarrow}_i}\mathcal{X} = \im\bigl(\mathcal{X}|_{\{i\}}\bigr)$.
+$\supfun{\pi^{\rightarrow}_i}\mathcal{X} = (x\mapsto(i,x))^{-1}$.
 \end{defn}
 
 \begin{thm}
@@ -87,14 +73,51 @@ The following is a categorical product:
 \end{thm}
 
 \begin{proof}
-We need to prove $\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$.
-
-Really, $\supfun{\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f}\mathcal{X}=\supfun{\pi^{\rightarrow}_i}\supfun{\prod^{\rightarrow}f}\mathcal{X}=\supfun{\pi^{\rightarrow}_i}\coprod_{i\in\dom f}\supfun{f_i}\mathcal{X}=\supfun{\pi^{\rightarrow}_i}\prod_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\mathcal{X})=\supfun{f_i}\mathcal{X}$.
+We need to prove $\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$. But that's trivial.
 \end{proof}
 
 \section{Cartesian product of reloids}
 
-Cartesian product of reloids is $\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i\circ(x\mapsto(i,x))^{-1})$
+\subsection{Definition and basic properties}
 
-Disjoint product of an indexed family~$f$ of reloids can be defined as:
-$\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i)$
+\begin{defn}
+\emph{Cartesian product} of an indexed family~$f$ of reloids is
+a reloid \[ \prod^{(J)} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i\circ(x\mapsto(i,x)^{-1}). \]
+\end{defn}
+
+\subsection{Projections}
+
+\begin{thm}
+$f_i$~can be restored from the value of $\prod^{(J)}f=f_i$.
+\end{thm}
+
+\begin{proof}
+$f_i = (x\mapsto(i,x)^{-1})\circ\prod^{(J)}f\circ(x\mapsto(i,x)^{-1})$.
+\end{proof}
+
+\section{Arrow product of reloids}
+
+\begin{defn}
+\emph{Arrow product} of an indexed family~$f$ of reloids is
+a reloid \[ \prod^{\rightarrow} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i. \]
+\end{defn}
+
+\subsection{Projections}
+
+\begin{defn}
+\emph{Arrow projections}
+$\pi^{\rightarrow}_i = (x\mapsto(i,x))^{-1}$.
+\end{defn}
+
+\begin{thm}
+The following is a categorical product:
+\begin{itemize}
+\item Product of objects is the disjoint union.
+\item Product of morphisms is the arrow product.
+\item Projections are arrow projections.
+\end{itemize}
+\end{thm}
+
+\begin{proof}
+We need to prove $\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$. But that's trivial.
+\end{proof}
