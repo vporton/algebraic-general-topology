@@ -23,7 +23,8 @@ $\supfun{x\mapsto(i,x)}\mathcal{X}=\bigsqcap\setcond{\rsupfun{x\mapsto(i,x)}X}{X
 \end{proof}
 
 \begin{prop}
-$\supfun{(x\mapsto(i,x))^{-1}}\mathcal{X}=\im(\mathcal{X}|_{\{i\}})$ for a filter~$\mathcal{X}$ on the set $\mho\cup\{{\mho}\}$.
+$\supfun{(x\mapsto(i,x))^{-1}}\mathcal{X}=\im(\mathcal{X}|_{\{i\}})$ for a filter~$\mathcal{X}$ on the set $\mathscr{U}\cup\{{\mathscr{U}}\}$ where $\mathscr{U}$~is
+a Grothendieck universe.
 \end{prop}
 
 \begin{proof}
@@ -40,14 +41,16 @@ a funcoid \[ \prod^{(J)} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i\circ(
 \end{defn}
 
 \begin{prop}
-$\supfun{\prod^{(J)}f}\mathcal{X}=\coprod_{i\in\dom f}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X}$
+$\supfun{\prod^{(J)}f}\mathcal{X}=\coprod_{i\in\dom f}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X}$.
 \end{prop}
 
 \begin{proof}
-$\coprod_{i\in\dom f}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X}=
-\bigsqcup_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X})=
-\bigsqcup_{i\in\dom f}(\supfun{x\mapsto(i,x)}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X})=
-\supfun{\prod^{(J)}f}\mathcal{X}$.
+\begin{multline*}
+\coprod_{i\in\dom f}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X}=\\
+\bigsqcup_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X})=\\
+\bigsqcup_{i\in\dom f}(\supfun{x\mapsto(i,x)}\supfun{f_i\circ(x\mapsto(i,x)^{-1}}\mathcal{X})=\\
+\supfun{\prod^{(J)}f}\mathcal{X}.
+\end{multline*}
 \end{proof}
 
 \subsection{Projections}
@@ -57,7 +60,8 @@ $f_i$~can be restored from the value of $\prod^{(J)}f=f_i$.
 \end{thm}
 
 \begin{proof}
-$f_i = (x\mapsto(i,x)^{-1})\circ\prod^{(J)}f\circ(x\mapsto(i,x)^{-1})$.
+$f_i = (x\mapsto(i,x)^{-1})\circ\prod^{(J)}f\circ(x\mapsto(i,x)^{-1})$
+(taken into account that $x\mapsto(i,x)^{-1}$ is a principal funcoid).
 \end{proof}
 
 \section{Arrow product of funcoids}
@@ -67,6 +71,19 @@ $f_i = (x\mapsto(i,x)^{-1})\circ\prod^{(J)}f\circ(x\mapsto(i,x)^{-1})$.
 a funcoid \[ \prod^{\rightarrow} f=\bigsqcup_{i\in\dom f}((x\mapsto(i,x))\circ f_i. \]
 \end{defn}
 
+\begin{prop}
+$\supfun{\prod^{\rightarrow}f}\mathcal{X}=\coprod_{i\in\dom f}\supfun{f_i}\mathcal{X}$.
+\end{prop}
+
+\begin{proof}
+\begin{multline*}
+\coprod_{i\in\dom f}\supfun{f_i}\mathcal{X}=\\
+\bigsqcup_{i\in\dom f}(\{i\}\times^{\mathsf{RLD}}\supfun{f_i}\mathcal{X})=\\
+\bigsqcup_{i\in\dom f}(\supfun{x\mapsto(i,x)}\supfun{f_i}\mathcal{X})=\\
+\supfun{\prod^{\rightarrow}f}\mathcal{X}.
+\end{multline*}
+\end{proof}
+
 \subsection{Projections}
 
 \begin{defn}
@@ -75,16 +92,16 @@ $\pi^{\rightarrow}_i = (x\mapsto(i,x))^{-1}$.
 \end{defn}
 
 \begin{thm}
-The following is a categorical product:
-\begin{itemize}
-\item Product of objects is the disjoint union.
-\item Product of morphisms is the arrow product.
-\item Projections are arrow projections.
-\end{itemize}
+$\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$
 \end{thm}
 
 \begin{proof}
-We need to prove $\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$. But that's trivial.
+Because $\pi^{\rightarrow}_i$ is a principal funcoid, we have
+\[ \pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=
+\bigsqcup_{j\in\dom f}((x\mapsto(i,x))^{-1}\circ(x\mapsto(j,x))\circ f_j). \]
+But $(x\mapsto(i,x))^{-1}\circ(x\mapsto(j,x))$ is the idenitity if $i=j$ or
+empty otherwise. So
+$\pi^{\rightarrow}_i\circ\prod^{\rightarrow}f=f_i$.
 \end{proof}
 
 \section{Cartesian product of reloids}
