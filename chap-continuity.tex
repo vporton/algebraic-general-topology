@@ -445,7 +445,47 @@ f\in\continuous''(\mu,\nu).
 \end{widedisorder}
 \end{proof}
 
-\section{Open maps}
+\section{Anticontinuous morphisms}
+
+Let $\mu$ and $\nu$ be endomorphisms of some partially ordered precategory.
+\emph{Anticontinuous} functions can be defined as these morphisms $f$ of this
+precategory which conform to the following formula:
+\[
+f\in\continuous_{\ast}(\mu,\nu)\Leftrightarrow f\in\Hom(\Ob\mu,\Ob\nu)\land f\circ\mu\sqsupseteq\nu\circ f.
+\]
+If the precategory is a partially ordered dagger precategory then
+\emph{anticontinuity} also can be defined in two other ways:
+\begin{gather*}
+f\in\continuous_{\ast}'(\mu,\nu)\Leftrightarrow f\in\Hom(\Ob\mu,\Ob\nu)\land\mu\sqsupseteq f^{\dagger}\circ\nu\circ f;\\
+f\in\continuous_{\ast}''(\mu,\nu)\Leftrightarrow f\in\Hom(\Ob\mu,\Ob\nu)\land f\circ\mu\circ f^{\dagger}\sqsupseteq\nu.
+\end{gather*}
+
+Anticontinuity is the order dual of continuity.
+
+\begin{thm}
+For partially ordered dagger categories:
+\begin{enumerate}
+\item $f\in\continuous_{\ast}(\mu,\nu)\Leftrightarrow f^{\dagger}\in\continuous(\nu^{\dagger},\mu^{\dagger})$;
+\item $f\in\continuous_{\ast}'(\mu,\nu)\Leftrightarrow f^{\dagger}\in\continuous''(\nu^{\dagger},\mu^{\dagger})$;
+\item $f\in\continuous_{\ast}''(\mu,\nu)\Leftrightarrow f^{\dagger}\in\continuous'(\nu^{\dagger},\mu^{\dagger})$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+~
+\begin{enumerate}
+\item $f\in\continuous_{\ast}(f,g)\Leftrightarrow
+f\circ\mu\sqsupseteq\nu\circ f\Leftrightarrow
+\mu^{\dagger}\circ f^{\dagger}\sqsupseteq f^{\dagger}\circ\nu^{\dagger}\Leftrightarrow
+f^{\dagger}\in\continuous(\nu^{\dagger},\mu^{\dagger})$.
+\item $f\in\continuous_{\ast}'(\mu,\nu)\Leftrightarrow
+\mu\sqsupseteq f^{\dagger}\circ\nu\circ f\Leftrightarrow
+f^{\dagger}\circ\nu^{\dagger}\circ f\sqsubseteq\mu^{\dagger}\Leftrightarrow
+f^{\dagger}\in\continuous''(\nu^{\dagger},\mu^{\dagger})$.
+\item By duality.
+\end{enumerate}
+\end{proof}
+
 \begin{defn}
 \index{open map}An \emph{open map} from a topological space to a
 topological space is a function which maps open sets into open sets.
