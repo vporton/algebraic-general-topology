@@ -91,7 +91,15 @@ We will denote particular morphisms as $\pi^X_i$.
    F_{}}_i)^{\dagger} \circ F_i \circ \pi^{\Src \circ F}_i) . \]
 \end{defn}
 
-  \[ \prod^{\text{proj}}_{\sqcap} F = \bigsqcap_{i \in \dom F} ((\pi^{\Dst\circ F}_i)^{\dagger} \circ F_i) . \]
+If $F_i:Y\to X_i$ for all~$i$ for some object~$Y$:
+\[
+  \prod^{\text{proj}}_{\sqcap} F = \bigsqcap_{i \in \dom F} ((\pi^{\Dst\circ F}_i)^{\dagger} \circ F_i) .
+\]
+
+If $F_i:X_i\to Y$ for all~$i$ for some object~$Y$:
+\[
+  \coprod^{\text{proj}}_{\sqcup} F = \bigsqcup_{i \in \dom F} (F_i \circ \pi^{\Src\circ F}_i) .
+\]
 
 \begin{rem}
   \[ (\pi^{\Dst \circ
@@ -116,22 +124,12 @@ We will denote particular morphisms as $\pi^X_i$.
 \begin{prop}
   $\bigodot^{\text{proj}}_{\sqcap} F = \max \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j \in
   n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
-  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
-  j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
-  : \Src F_j}_i }$.
+  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\Dst\circ F}_i)^{\dagger} \circ F_i \circ \pi^{\Src\circ F}_i }$.
 \end{prop}
 
 \begin{proof}
   By definition of meet on a complete lattice.
 \end{proof}
-
-\begin{cor}
-  $\bigodot^{\text{proj}}_{\sqcap} F = \bigsqcup \setcond{ \Phi \in \Hom \left( \prod^{(Q)}_{j
-  \in n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j \right)
-  }{ \forall i \in n : \Phi \sqsubseteq (\pi^{\lambda
-  j \in n : \Dst F_j}_i)^{\dagger} \circ F_i \circ \pi^{\lambda j \in n
-  : \Src F_j}_i }$.
-\end{cor}
 
 \begin{thm}
   Let $\pi^X_i$ be metamonovalued morphisms. If $S \in \subsets (\Hom
