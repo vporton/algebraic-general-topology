@@ -102,10 +102,19 @@ If $F_i:X_i\to Y$ for all~$i$ for some object~$Y$:
 \]
 
 \begin{rem}
-  \[ (\pi^{\Dst \circ
+  \begin{align*}
+  (\pi^{\Dst \circ
    F_{}}_i)^{\dagger} \circ F_i \circ \pi^{\Src \circ F}_i \in \Hom \left(
   \prod^{(Q)}_{j \in n} \Src F_j , \prod^{(Q)}_{j \in n} \Dst F_j
-  \right) \] are properly defined and have the same sources and destination
+  \right);\\
+  (\pi^{\Dst \circ
+   F_{}}_i)^{\dagger} \circ F_i \in \Hom \left(
+  Y , \prod^{(Q)}_{j \in n} \Dst F_j
+  \right);\\
+F_i \circ \pi^{\Src \circ F}_i \in \Hom \left(
+  \prod^{(Q)}_{j \in n} \Src F_j , Y \right).
+  \end{align*}
+  are properly defined and have the same sources and destination
   (whenever $i \in \dom F$ is), thus the meet in the formulas is
   properly defined.
 \end{rem}
