@@ -59,7 +59,7 @@ So $f \circ \left( \bigsqcup G \right) = \bigsqcup_{g \in G} (f \circ g)$.
 To understand the below better, you can restrict your imagination to the case
 when $\mathcal{C}$ is the category $\mathbf{Rel}$.
 
-\subsection{Infimum product}
+\subsection{Products}
 
 Let $\mathcal{C}$ be a dagger category, each Hom-set of which is a complete
 lattice (having order agreed with the dagger).
@@ -118,6 +118,8 @@ F_i \circ \pi^{\Src \circ F}_i \in \Hom \left(
   (whenever $i \in \dom F$ is), thus the meet in the formulas is
   properly defined.
 \end{rem}
+
+\fxnote{Associativity of products?}
 
 \begin{rem}
   Thus
@@ -236,15 +238,22 @@ n} \Ob F_j \right) }{ \forall i \in n : \pi_i
 \in \mathrm{C} (\Phi , F_i) }$.
 \end{obvious}
 
+\begin{obvious}
+$\bigodot^{\text{proj}}_{\sqcup} F = \min \setcond{ \Phi \in \End \left( \prod^{(Q)}_{j \in
+n} \Ob F_j \right) }{ \forall i \in n : \pi_i
+\in \mathrm{C}_{\ast} (\Phi , F_i) }$.
+\end{obvious}
+
 \begin{rem}
-  The above formula may allow to define the product for non-dagger categories
+  The above formulas may allow to define the product for non-dagger categories
   (but only for endomorphisms). In this writing I don't introduce a notation
   for this, however.
 \end{rem}
 
 \begin{cor}
-  $\pi_i \in \mathrm{C} \left( \bigodot^{\text{proj}}_{\sqcap} F , F_i \right)$ for every $i \in
-  \dom F$.
+  $\pi_i \in \mathrm{C} \left( \bigodot^{\text{proj}}_{\sqcap} F , F_i \right)$ and
+  $\pi_i \in \mathrm{C}_{\ast} \left( \bigodot^{\text{proj}}_{\sqcup} F , F_i \right)$
+  for every $i \in \dom F$.
 \end{cor}
 
 \subsection{Category of continuous morphisms}
