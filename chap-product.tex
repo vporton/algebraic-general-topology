@@ -177,14 +177,21 @@ An obvious consequence taking into account duality.
   Let $\pi^X_i$ be metamonovalued morphisms. If $S \in \subsets (\Hom
   (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
   $A_1$, $B_1$ then
-  \[ \bigsqcap \setcond{ a \times^{(L)} b }{(a , b)\in S } =
-     \bigsqcap \dom S \times^{(L)} \bigsqcap \im S. \]
+  \begin{gather*}
+    \bigsqcap \setcond{ a \odot^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
+     \bigsqcap \dom S \odot^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S;\\
+    \bigsqcap \setcond{ a \times^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
+     \bigsqcap \dom S \times^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S;\\
+    \bigsqcap \setcond{ a \amalg^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
+     \bigsqcap \dom S \amalg^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S.
+  \end{gather*}
 \end{thm}
 
 \begin{proof}
-  ~
+Let us consider for example the first formula (two others
+are similar):
   \begin{align*}
-  \bigsqcap \setcond{ a \times b }{ (a , b) \in S } & = \\
+  \bigsqcap \setcond{ a \odot^{\operatorname{proj}}_{\sqcap} b }{ (a , b) \in S } & = \\
   \bigsqcap \setcond{ ((\pi^{(\Dst a , \Dst
   b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0) \sqcap
   ((\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
