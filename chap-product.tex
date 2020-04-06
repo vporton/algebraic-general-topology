@@ -129,7 +129,15 @@ I will denote $t(F)=\bigsqcup_{i\in\dom F}\phi(F_i)$. We need
 to prove:
 \begin{widedisorder}
 \item[$t(t\circ S)=t(\concat S)$]
-??
+$t(\concat S)=
+\bigsqcup_{i\in\dom(\concat S)}\phi((\concat S)_i)=
+\bigsqcup_{i\in\dom(\uncurry(S))}\phi((\uncurry(S))_i)$.
+
+$t(t\circ S)=
+\bigsqcup_{i\in\dom S}\phi(tS_i)=
+\bigsqcup_{i\in\dom S}\bigsqcup_{j\in\dom F}\phi((S_i)_j)$.
+
+So, obviously $t(t\circ S)=t(\concat S)$.
 
 \item[$t(\llbracket x\rrbracket)=x$] Obvious.
 \end{widedisorder}
@@ -139,6 +147,10 @@ to prove:
 All three above defined products are infinitely associative
 for ordinal variadic families~$F$.
 \end{cor}
+
+\begin{proof}
+An obvious consequence taking into account duality.
+\end{proof}
 
 \begin{rem}
   Thus
