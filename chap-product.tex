@@ -185,6 +185,7 @@ An obvious consequence taking into account duality.
     \bigsqcap \setcond{ a \amalg^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
      \bigsqcap \dom S \amalg^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S.
   \end{gather*}
+\fxnote{Apparently, can be generalized for infinitary case.}
 \end{thm}
 
 \begin{proof}
@@ -219,14 +220,36 @@ are similar):
 \end{proof}
 
 \begin{cor}
-  $(a_0 \times^{(L)} b_0) \sqcap (a_1 \times^{(L)} b_1) = (a_0 \sqcap a_1)
-  \times^{(L)} (b_0 \sqcap b_1)$.
+~
+\begin{enumerate}
+\item
+  $(a_0 \odot^{\operatorname{proj}}_{\sqcap} b_0) \sqcap (a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1) = (a_0 \sqcap a_1)
+  \odot^{\operatorname{proj}}_{\sqcap} (b_0 \sqcap b_1)$;
+\item
+  $(a_0 \times^{\operatorname{proj}}_{\sqcap} b_0) \sqcap (a_1 \times^{\operatorname{proj}}_{\sqcap} b_1) = (a_0 \sqcap a_1)
+\times^{\operatorname{proj}}_{\sqcap} (b_0 \sqcap b_1)$;
+\item
+  $(a_0 \amalg^{\operatorname{proj}}_{\sqcap} b_0) \sqcap (a_1 \amalg^{\operatorname{proj}}_{\sqcap} b_1) = (a_0 \sqcap a_1)
+  \amalg^{\operatorname{proj}}_{\sqcap} (b_0 \sqcap b_1)$;
+\end{enumerate}
 \end{cor}
 
 \begin{cor}
-  $a_0 \times^{(L)} b_0 \nasymp a_1 \times^{(L)} b_1 \Leftrightarrow a_0
-  \nasymp a_1 \wedge b_0 \nasymp b_1$.
+\fxnote{Generalize for infinitary products.}
+The following are pairwise equivalent whenever defined, provided
+that compositions of every non-least morphisms with every
+projection is non-least:
+\begin{enumerate}
+\item $a_0 \odot^{\operatorname{proj}}_{\sqcap} b_0 \nasymp a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1$;
+\item $a_0 \times^{\operatorname{proj}}_{\sqcap} b_0 \nasymp a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1$;
+\item $a_0 \amalg^{\operatorname{proj}}_{\sqcap} b_0 \nasymp a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1$;
+\item $a_0 \nasymp a_1 \wedge b_0 \nasymp b_1$.
+\end{enumerate}
 \end{cor}
+
+\begin{proof}
+??
+\end{proof}
 
 \subsection{Product for endomorphisms}
 
