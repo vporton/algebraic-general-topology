@@ -174,48 +174,30 @@ An obvious consequence taking into account duality.
 \end{proof}
 
 \begin{thm}
-  Let $\pi^X_i$ be metamonovalued morphisms. If $S \in \subsets (\Hom
-  (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
-  $A_1$, $B_1$ then
+  Let $\pi^X_i$ be metamonovalued morphisms. Let~$I$ be an index set. If $S \in \subsets \prod_{i\in I}\Hom(A_i, B_i)$ for some objects $A_i$, $B_i$ where $i\in I$ then
   \begin{gather*}
-    \bigsqcap \setcond{ a \odot^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
-     \bigsqcap \dom S \odot^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S;\\
-    \bigsqcap \setcond{ a \times^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
-     \bigsqcap \dom S \times^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S;\\
-    \bigsqcap \setcond{ a \amalg^{\operatorname{proj}}_{\sqcap} b }{(a , b)\in S } =
-     \bigsqcap \dom S \amalg^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S.
+    \bigsqcap_{f\in S} \bigodot^{\operatorname{proj}}_{\sqcap}f =
+    \bigodot_{i\in I}\bigsqcap_{f\in S}f_i=
+    \bigodot_{i\in I}\bigsqcap\Pr_i S;\\
+    \bigsqcap_{f\in S} \prod^{\operatorname{proj}}_{\sqcap} f =
+    \prod_{i\in I}\bigsqcap_{f\in S}f_i=
+    \prod_{i\in I}\bigsqcap\Pr_i S;\\
+    \bigsqcap_{f\in S} \coprod^{\operatorname{proj}}_{\sqcap} f =
+    \coprod_{i\in I}\bigsqcap_{f\in S}f_i=
+    \coprod_{i\in I}\bigsqcap\Pr_i S.
   \end{gather*}
-\fxnote{Apparently, can be generalized for infinitary case.}
 \end{thm}
 
 \begin{proof}
 Let us consider for example the first formula (two others
 are similar):
   \begin{align*}
-  \bigsqcap \setcond{ a \odot^{\operatorname{proj}}_{\sqcap} b }{ (a , b) \in S } & = \\
-  \bigsqcap \setcond{ ((\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0) \sqcap
-  ((\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a , \Src b)}_1) }{ (a , b) \in S } & = \\
-  \bigsqcap \setcond{ (\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ a \circ \pi^{(\Src a , \Src b)}_0
-  }{ a \in \dom S } \sqcap
-  \bigsqcap
-  \setcond{ (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ b \circ
-  \pi^{(\Src a , \Src b)}_1 }{ b \in \im S } & = \\
-  \left( (\pi^{(\Dst a , \Dst
-  b)}_0)^{\dagger} \circ \bigsqcap \setcond{ a }{ a \in
-  \dom S } \circ \pi^{(\Src a , \Src b)}_0 \right)
-  \sqcap\\ \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ
-  \bigsqcap \setcond{ b }{ b \in \im S }
-  \circ \pi^{(\Src a , \Src b)}_1 \right) & = \\
-  \left(
-  (\pi^{(\Dst a , \Dst b)}_0)^{\dagger} \circ \left( \bigsqcap
-  \dom S \right) \circ \pi^{(\Src a , \Src b)}_0 \right)
-  \sqcap\\ \left( (\pi^{(\Dst a , \Dst b)}_1)^{\dagger} \circ \left(
-  \bigsqcap \im S \right) \circ \pi^{(\Src a , \Src b)}_1
-  \right) & = \\
-  \bigsqcap \dom S \odot^{\operatorname{proj}}_{\sqcap} \bigsqcap \im S.
+  \bigsqcap_{f\in S} \bigodot^{\operatorname{proj}}_{\sqcap} & = \\
+  \bigsqcap_{f\in S} \bigsqcap_{i\in I}((\pi^{\Dst\circ f_i}_i)^{\dagger} \circ f_i \circ \pi^{\Src\circ f_i}_i) & = \\
+  \bigsqcap_{i\in I}\bigsqcap_{f\in S}((\pi^{\Dst\circ f_i}_i)^{\dagger} \circ f_i \circ \pi^{\Src\circ f_i}_i) & = \\
+  \bigsqcap_{i\in I}((\pi^{\Dst\circ f_i}_i)^{\dagger} \circ \bigsqcap_{f\in S}f_i \circ \pi^{\Src\circ f_i}_i) & = \\
+  \bigodot_{i\in I}\bigsqcap_{f\in S}f_i & = \\
+  \bigodot_{i\in I}\bigsqcap\Pr_i S.
   \end{align*}
 \end{proof}
 
@@ -233,23 +215,6 @@ are similar):
   \amalg^{\operatorname{proj}}_{\sqcap} (b_0 \sqcap b_1)$;
 \end{enumerate}
 \end{cor}
-
-\begin{cor}
-\fxnote{Generalize for infinitary products.}
-The following are pairwise equivalent whenever defined, provided
-that compositions of every non-least morphisms with every
-projection is non-least:
-\begin{enumerate}
-\item $a_0 \odot^{\operatorname{proj}}_{\sqcap} b_0 \nasymp a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1$;
-\item $a_0 \times^{\operatorname{proj}}_{\sqcap} b_0 \nasymp a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1$;
-\item $a_0 \amalg^{\operatorname{proj}}_{\sqcap} b_0 \nasymp a_1 \odot^{\operatorname{proj}}_{\sqcap} b_1$;
-\item $a_0 \nasymp a_1 \wedge b_0 \nasymp b_1$.
-\end{enumerate}
-\end{cor}
-
-\begin{proof}
-??
-\end{proof}
 
 \subsection{Product for endomorphisms}
 
