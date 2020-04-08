@@ -284,11 +284,7 @@ n} \Ob F_j \right) }{ \forall i \in n : \pi_i
 
 \subsection{Category of continuous morphisms}
 
-Let $\pi_i = \pi_i^X$ (for $i \in \dom F$) be entirely defined
-monovalued morphisms (we suppose it is defined at $X$).
-
-Let $\bigotimes$ of an indexed family of morphisms is a morphism; $\pi_i \circ
-\bigotimes f = f_i$; $\bigotimes_{i \in n} (\pi_i \circ f) = f$.
+Let $\pi_i = \Pr_i$ (for $i \in \dom F$).
 
 \begin{defn}
   The category $\cont (\mathcal{C})$ is defined as follows:
@@ -385,13 +381,26 @@ It is really a category:
 \end{proof}
 
 \begin{thm}
-  $\bigodot^{\text{proj}}_{\sqcap}$ together with $\bigotimes$ is a (partial) product in the
-  category $\cont (\mathcal{C})$.
+In the category $\cont (\mathcal{C})$:
+\begin{enumerate}
+\item $\prod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a cartegorical product.
+\item $\coprod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a cartegorical coproduct.
+\end{enumerate}
 \end{thm}
 
 \begin{proof}
-  Obvious.
-  
+I'll prove only the first, as the other is dual.
+
+I will denote $(\prod f)x=\prod_{i\in\dom f}f_i x$ for an
+indexed family~$f$ of functions.
+
+We need to prove:
+\begin{enumerate}
+\item $\pi_k\circ\prod f=f_k$;
+\item $\prod_{i\in\dom f}(\pi_i\circ f)=f$.
+\end{enumerate}
+But it follows from the fact that $\pi_i=\Pr_i$.
+
   Check
   \url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}
 \end{proof}
