@@ -443,67 +443,17 @@ Let $\iota$ be a partial function mapping elements $X\in\dom\iota$ (which consis
 We will denote particular morphisms as $\iota_i^X$.
 
 If (but we won't assume this below) $\iota_i \xleftrightarrow{\dual} \pi_i$ that is $\iota_i =
-(\pi_i)^{\dagger}$. We have the above equivalent to $\pi_i$ being ??principal.
+(\pi_i)^{\dagger}$. We have the above equivalent to $\pi_i$ being principal.
 
 We will define $\bigodot^{\operatorname{inj}}$, $\prod^{\operatorname{inj}}$, $\coprod^{\operatorname{inj}}$
-by anlaogy with $\operatorname{proj}$ counterparts replacing~$\pi$ by~$\iota^{\dagger}$.
+by analogy with $\operatorname{proj}$ counterparts replacing~$\pi$ by~$\iota^{\dagger}$.
 
 We will also define $\bigodot^{\operatorname{proj}}_{\sqcup}$, $\bigodot^{\operatorname{inj}}_{\sqcup}$, etc.\ by replacing~$\bigsqcap$ by~$\bigsqcup$.
 
-\subsection{Supremum coproduct}
-
-Let $\mathcal{C}$ be a dagger category, each Hom-set of which is a complete
-lattice (having order agreed with the dagger).
-
-We will designate some morphisms as \emph{principal} and require that
-principal morphisms are both metacomplete and co-metacomplete. (For a
-particular example of the category $\mathbf{Rel}$, all morphisms are
-considered principal.)
-
-Let $\coprod^{(Q)} X$ be an object for each indexed family $X$ of objects.
-
-Let $\iota$ be a partial function mapping elements $X \in \dom \iota$
-(which consists of small indexed families of objects of $\mathcal{C}$) to
-indexed families $X_i \rightarrow \coprod^{(Q)} X$ of principal morphisms
-(called \emph{injections}) for every $i \in \dom X$.
-
-\begin{defn}
-  \emph{Supremum coproduct} $\coprod^{(L)} F$ (such that $\iota$ is defined
-  at $\lambda j \in n : \Dst F_j$ and $\lambda j \in n : \Src
-  F_j$) is defined by the formula
-  \[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n
-     : \Src F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n :
-     \Dst F_j}_i)^{\dagger}) . \]
-\end{defn}
-
-This formula can be (over)simplified to:
-\[ \coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\Src \circ
-   F}_i \circ F_i^{\dagger} \circ (\iota^{\Dst \circ F}_i)^{\dagger}) .
-\]
-
-\begin{rem}
-  $\iota^{\lambda j \in n : \Src F_j}_i \circ F_i \circ (\iota^{\lambda
-  j \in n : \Dst F_j}_i)^{\dagger} \in \Hom \left(
-  \coprod^{(Q)}_{j \in n} \Src F_j , \coprod^{(Q)}_{j \in n} \Dst
-  F_j \right)$ are properly defined and have the same sources and destination
-  (whenever $i \in \dom F$ is), thus the meet in the formulas is
-  properly defined.
-\end{rem}
-
-\begin{rem}
-  Thus
-  \begin{multline*}
-     F_0 \amalg^{(L)} F_1 = (\iota^{(\Src F_0 , \Src F_1)}_0 \circ
-     F_0^{\dagger} \circ (\iota^{(\Dst F_0 , \Dst
-     F_1)}_0)^{\dagger}) \sqcup\\ (\iota^{(\Src F_0 , \Src F_1)}_1
-     \circ F_1^{\dagger} \circ (\iota^{(\Dst F_0 , \Dst
-     F_1)}_1)^{\dagger})
-  \end{multline*}
-  that is coproduct is defined by a pure algebraic formula.
-\end{rem}
+\subsection{Coproduct for endomorphisms}
 
 \begin{prop}
-  $\coprod^{(L)} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j
+  $\bigodot^{\operatorname{inj}}_{\sqcup} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j
   \in n} \Ob F_j \right) }{ \forall i \in n :
   \Phi \sqsupseteq \iota^{\lambda j \in n : \Src F_j}_i \circ
   F_i^{\dagger} \circ (\iota^{\lambda j \in n : \Dst F_j}_i)^{\dagger} }$.
@@ -512,35 +462,6 @@ This formula can be (over)simplified to:
 \begin{proof}
   By definition of meet on a complete lattice.
 \end{proof}
-
-\begin{cor}
-  $\coprod^{(L)} F = \bigsqcap \setcond{ \Phi \in \End \left(
-  \coprod^{(Q)}_{j \in n} \Ob F_j \right) }{
-  \forall i \in n : \Phi \sqsupseteq \iota^{\lambda j \in n : \Src
-  F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n : \Dst
-  F_j}_i)^{\dagger} }$.
-\end{cor}
-
-\begin{thm}
-  Let $\pi^X_i$ be metainjective morphisms. If $S \in \subsets (\Hom
-  (A_0 , B_0) \times \Hom (A_1 , B_1))$ for some sets $A_0$, $B_0$,
-  $A_1$, $B_1$ then
-  \[ \bigsqcup \setcond{ a \times^{(L)} b }{ (a , b)
-     \in S } = \bigsqcup \dom S \times^{(L)} \bigsqcup \im
-     S. \]
-\end{thm}
-
-\begin{cor}
-  $(a_0 \amalg^{(L)} b_0) \sqcup (a_1 \amalg^{(L)} b_1) = (a_0 \sqcap a_1)
-  \amalg^{(L)} (b_0 \sqcap b_1)$.
-\end{cor}
-
-\begin{cor}
-  $a_0 \amalg^{(L)} b_0 \equiv a_1 \amalg^{(L)} b_1 \Leftrightarrow a_0 \equiv
-  a_1 \wedge b_0 \equiv b_1$.
-\end{cor}
-
-\subsection{Supremum coproduct for endomorphisms}
 
 Let $F$ be an indexed family of endomorphisms of $\mathcal{C}$.
 
@@ -580,40 +501,28 @@ n} \Ob F_j \right) }{ \forall i \in n : \iota_i
   \in \dom F$.
 \end{cor}
 
+\begin{rem}
+The last two theorems don't require that our category is dagger. I omit the proof.
+\end{rem}
+
 \subsection{Category of continuous morphisms}
 
-Let $\iota_i$ (for $i \in \dom F$) be entirely defined monovalued and
-metacomplete morphisms.
-
-Let $\bigoplus$ of an indexed family of morphisms is a morphism; $\left(
-\bigoplus f \right) \circ \iota_i = f_i$; $\bigoplus_{i \in n} (f \circ
-\iota_i) = f$ (a dual of the above).
-
-Let $F_i \in \End \left( \coprod^{(Q)}_{j \in n} \Ob F_j \right)$
-for all $i \in n$ (where $n$ is some index set) (a self-dual of the above).
+Let $\iota_i$ be canonical injections.
 
 \begin{defn}
-  $\iota^{\cont (\mathcal{C})}_i = \left( \coprod^{(L)} F ,
-  F_i^{\dagger} , \iota_i \right)$.
+$\pi^{\cont(\mathcal{C})}_i = \left(F_i,\bigodot^{\operatorname{inj}}_{\sqcup}F,\iota_i\right)$.
 \end{defn}
 
-\begin{prop}
-  $\iota_i$ are continuous, that is $\iota^{\cont
-  (\mathcal{C})}_i$ are morphisms.
-\end{prop}
-
-\begin{lem}
-  $f \in \Hom_{\cont (\mathcal{C})} \left(
-  \coprod^{(L)} F , Y \right)$ \fxwarning{What is $Y$?} is continuous iff all $f \circ
-  \iota^{\cont (\mathcal{C})}$ are continuous.
-\end{lem}
+\begin{obvious}
+$\iota_i$ are continuous that is $\pi^{\cont(\mathcal{C})}_i$ are morphisms.
+\end{obvious}
 
 \begin{thm}
-$\coprod^{\text{inj}}_{\sqcap}$ together with $\iota$ is a categorical coproduct in the category $\cont (\mathcal{C})$.
+$\coprod^{\operatorname{inj}}_{\sqcup}$ together with $\iota$ is a categorical coproduct in the category~$\cont(\mathcal{C})$.
 \end{thm}
 
 \begin{proof}
-Dual of theorem~\ref{cont-pr-pr}.
+Dual to theorem~\ref{cont-pr-pr}.
 \end{proof}
 
 \section{Applying this to the theory of funcoids and reloids}
