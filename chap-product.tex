@@ -380,17 +380,13 @@ It is really a category:
   \end{description}
 \end{proof}
 
-\begin{thm}
-In the category $\cont (\mathcal{C})$:
-\begin{enumerate}
-\item $\prod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a categorical product.
-\item $\coprod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a categorical coproduct.
-\end{enumerate}
+\begin{thm}\label{cont-pr-pr}
+$\prod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a categorical product in the category $\cont (\mathcal{C})$.
 \end{thm}
 
 \begin{proof}
-I'll prove only the first, as the other is dual.
-\fxwarning{For coproduct use injections not projections.}
+Check
+\url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}
 
 I will denote $(\prod f)x=\prod_{i\in\dom f}f_i x$ for an
 indexed family~$f$ of functions.
@@ -401,9 +397,6 @@ We need to prove:
 \item $\prod_{i\in\dom f}(\pi_i\circ f)=f$.
 \end{enumerate}
 But it follows from the fact that $\pi_i=\Pr_i$.
-
-  Check
-  \url{http://math.stackexchange.com/questions/102632/how-to-check-whether-it-is-a-direct-product/102677\#102677}
 \end{proof}
 
 \section{On duality}
@@ -605,9 +598,12 @@ for all $i \in n$ (where $n$ is some index set) (a self-dual of the above).
 \end{lem}
 
 \begin{thm}
-  $\coprod^{(L)}$ together with $\bigoplus$ is a (partial) coproduct in the
-  category $\cont (\mathcal{C})$.
+$\coprod^{\text{inj}}_{\sqcap}$ together with $\iota$ is a categorical coproduct in the category $\cont (\mathcal{C})$.
 \end{thm}
+
+\begin{proof}
+Dual of theorem~\ref{cont-pr-pr}.
+\end{proof}
 
 \section{Applying this to the theory of funcoids and reloids}
 
