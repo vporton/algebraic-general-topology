@@ -383,13 +383,14 @@ It is really a category:
 \begin{thm}
 In the category $\cont (\mathcal{C})$:
 \begin{enumerate}
-\item $\prod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a cartegorical product.
-\item $\coprod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a cartegorical coproduct.
+\item $\prod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a categorical product.
+\item $\coprod^{\text{proj}}_{\sqcap}$ together with $\pi$ is a categorical coproduct.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
 I'll prove only the first, as the other is dual.
+\fxwarning{For coproduct use injections not projections.}
 
 I will denote $(\prod f)x=\prod_{i\in\dom f}f_i x$ for an
 indexed family~$f$ of functions.
@@ -789,7 +790,7 @@ We are not only to prove (or maybe disprove) that our categories are cartesian c
 ''Definition'' A category is //cartesian closed// iff:
 \begin{enumerate}
 \item It has finite products.
-\item For each objects $A$, $B$ is given an object $\operatorname{MOR} ( A , B)$ (//exponentiation//) and a morphism $\varepsilon^{\mathbf{Dig}}_{A, B} : \operatorname{MOR} ( A , B) \times A \rightarrow B$.
+\item For each objects $A$, $B$ is given an object $\operatorname{MOR} ( A , B)$ (//exponentiation//) and a morphism $\varepsilon_{A, B} : \operatorname{MOR} ( A , B) \times A \rightarrow B$.
 \item For each morphism $f : Z \times A \rightarrow B$ there is given a morphism (//exponential transpose//) $\sim f : Z \rightarrow \operatorname{MOR} ( A , B)$.
 \item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
 \item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
@@ -916,7 +917,7 @@ To sum what we need to prove:
 \item Exponential object $\operatorname{HOM}(A,B)$ is the following endofuncoid:
 \item\begin{itemize}
 \item Object $\operatorname{Ob}\operatorname{HOM}(A,B) = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
-\item Graph is $\operatorname{GR} \operatorname{HOM} ( A , B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f , g) }{ f, g \in \Hom_{\mathbf{Set}} (\operatorname{Ob} A,\operatorname{Ob} B) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
+\item Graph is $\operatorname{GR} \operatorname{HOM} ( A , B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f , g) }{ f, g \in (\operatorname{Ob}B)^{\operatorname{Ob} A}) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
 \end{itemize}
 \item Transposition is uncurrying.
 \item Evaluation is $\varepsilon_{A, B} x = \langle \operatorname{Pr}^{(A)}_0 x \rangle \operatorname{Pr}^{(A)}_1 x$.
