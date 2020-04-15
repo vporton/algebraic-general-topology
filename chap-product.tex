@@ -81,7 +81,7 @@ We will denote particular morphisms as $\pi^X_i$.
 \begin{rem}
   In some important examples the function $\pi$ is entire, that is $\dom
   \pi$ is the set of all small indexed families of objects of $\mathcal{C}$.
-  However there are also some important examples where it is partial.
+  However there are also some important examples where it is partial. \fxwarning{How do we define it for partial?}
 \end{rem}
 
 \begin{defn}
@@ -89,6 +89,8 @@ We will denote particular morphisms as $\pi^X_i$.
   j \in n : \Src F_j$ and $\lambda j \in n : \Dst F_j$, then
   \[ \bigodot^{\text{proj}}_{\sqcap} F = \bigsqcap_{i \in \dom F} ((\pi^{\Dst \circ
    F_{}}_i)^{\dagger} \circ F_i \circ \pi^{\Src \circ F}_i) . \]
+\fxwarning{Need to specify the source and destination because
+$\dom F$ may be empty.}
 \end{defn}
 
 If $F_i:Y\to X_i$ for all~$i$ for some object~$Y$:
