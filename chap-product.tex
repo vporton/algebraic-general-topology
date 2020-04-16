@@ -89,8 +89,6 @@ We will denote particular morphisms as $\pi^X_i$.
   j \in n : \Src F_j$ and $\lambda j \in n : \Dst F_j$, then
   \[ \bigodot^{\text{proj}}_{\sqcap} F = \bigsqcap_{i \in \dom F} ((\pi^{\Dst \circ
    F_{}}_i)^{\dagger} \circ F_i \circ \pi^{\Src \circ F}_i) . \]
-\fxwarning{Need to specify the source and destination because
-$\dom F$ may be empty.}
 \end{defn}
 
 If $F_i:Y\to X_i$ for all~$i$ for some object~$Y$:
@@ -286,7 +284,7 @@ n} \Ob F_j \right) }{ \forall i \in n : \pi_i
 
 \subsection{Category of continuous morphisms}
 
-Let $\pi_i = \Pr_i$ (for $i \in \dom F$).
+Let $\prod^{(Q)}X=\prod X$ and $\pi_i = \Pr_i$ (for $i \in \dom F$).
 
 \begin{defn}
   The category $\cont (\mathcal{C})$ is defined as follows:
@@ -435,7 +433,7 @@ f^{\dagger} \text{ is entirely defined}$.
 
 The below is the dual of the above, proofs are omitted as they are dual.
 
-Let $\coprod^{(Q)}X$ be an object for each inddexed family~$X$ of objects.
+Let $\coprod^{(Q)}X$ be an object for each indexed family~$X$ of objects.
 
 I will denote \emph{coprincipal} morphisms~$f^{\dagger}$ where $f$~is principal. (Usually there is no distinction between
 principal and coprincipal.)
@@ -537,10 +535,6 @@ Dual to theorem~\ref{cont-pr-pr}.
 
 Let $F$ be a family of endofuncoids.
 
-The cartesian product $\prod^{(Q)} X \eqdef \prod X$.
-
-The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
-
 \subsection{Reloids}
 
 \begin{defn}
@@ -549,20 +543,18 @@ The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
 
 Let $F$ be a family of endoreloids.
 
-The cartesian product $\prod^{(Q)} X \eqdef \prod X$.
-
-The disjoint union $\coprod^{(Q)} X \eqdef \coprod X$.
-
 It is trivial?? that for uniform spaces infimum product of reloids coincides
 with product uniformilty.
 
 \section{Initial and terminal objects}
 
+\subsection{Of category~$\mathbf{Fcd}$}
+
 Initial object of $\mathbf{Fcd}$ is the endofuncoid
-$\uparrow^{\mathsf{FCD} (\emptyset , \emptyset)} \emptyset$. It is
+$\bot^{\mathsf{FCD} (\emptyset , \emptyset)}$. It is
 initial because it has precisely one morphism $o$ (the empty set considered as
 a function) to any object $Y$. $o$ is a morphism because $o \circ
-\uparrow^{\mathsf{FCD} (\emptyset , \emptyset)} \emptyset \sqsubseteq Y
+\bot^{\mathsf{FCD} (\emptyset , \emptyset)} \sqsubseteq Y
 \circ o$.
 
 \begin{prop}
@@ -585,12 +577,46 @@ a function) to any object $Y$. $o$ is a morphism because $o \circ
   constant function with the value $\ast$.
 \end{proof}
 
-If $n = \emptyset$ then $Z = \{ \emptyset \}$; $\bigodot^{\text{proj}}_{\sqcap} \emptyset = \max
-\mathsf{FCD} (Z , Z) = \uparrow^{\mathscr{F}} \{ \emptyset \}
+If $n = \emptyset$ then; $\bigodot^{\text{proj}}_{\sqcap} \emptyset = \prod^{\text{proj}}_{\sqcap} \emptyset = \coprod^{\text{proj}}_{\sqcap} \emptyset = \max
+\mathsf{FCD} (\{\emptyset\}, \{\emptyset\}) = \uparrow^{\mathscr{F}} \{ \emptyset \}
 \times^{\mathsf{FCD}} \uparrow^{\mathscr{F}} \{ \emptyset \} =
 \uparrow^{\mathsf{FCD}} \{ (\emptyset , \emptyset) \}$.
 
-\fxnote{Initial and terminal objects of $\mathbf{Rld}$.}
+\subsection{Of category~$\mathbf{Rld}$}
+
+\fxwarning{Check this subsection.}
+
+Initial object of $\mathbf{Rld}$ is the endofuncoid
+$\bot^{\mathsf{RLD} (\emptyset , \emptyset)}$. It is
+initial because it has precisely one morphism $o$ (the empty set considered as
+a function) to any object $Y$. $o$ is a morphism because $o \circ
+\bot^{\mathsf{RLD} (\emptyset , \emptyset)} \emptyset \sqsubseteq Y
+\circ o$.
+
+\begin{prop}
+  Terminal objects of $\mathbf{Rld}$ are exactly
+  $\uparrow^{\mathscr{F}} \{ \ast \} \times^{\mathsf{RLD}}
+  \uparrow^{\mathscr{F}} \{ \ast \} = \uparrow^{\mathsf{RLD}} \{ (\ast
+  , \ast) \}$ where $\ast$ is an arbitrary point.
+\end{prop}
+
+\begin{proof}
+  In order for a function $f : X \rightarrow \uparrow^{\mathsf{RLD}} \{
+  (\ast , \ast) \}$ be a morphism, it is required exactly $f \circ X
+  \sqsubseteq \uparrow^{\mathsf{RLD}} \{ (\ast , \ast) \} \circ f$
+  
+  $f \circ X \sqsubseteq (f^{- 1} \circ \uparrow^{\mathsf{RLD}} \{
+  (\ast , \ast) \})^{- 1}$; $f \circ X \sqsubseteq (\{ \ast \}
+  \times^{\mathsf{RLD}} \langle f^{- 1} \rangle \{ \ast \})^{- 1}$; $f
+  \circ X \sqsubseteq \langle f^{- 1} \rangle \{ \ast \}
+  \times^{\mathsf{RLD}} \{ \ast \}$ what true exactly when $f$ is a
+  constant function with the value $\ast$.
+\end{proof}
+
+If $n = \emptyset$ then; $\bigodot^{\text{proj}}_{\sqcap} \emptyset = \prod^{\text{proj}}_{\sqcap} \emptyset = \coprod^{\text{proj}}_{\sqcap} \emptyset = \max
+\mathsf{RLD} (\{\emptyset\}, \{\emptyset\}) = \uparrow^{\mathscr{F}} \{ \emptyset \}
+\times^{\mathsf{RLD}} \uparrow^{\mathscr{F}} \{ \emptyset \} =
+\uparrow^{\mathsf{RLD}} \{ (\emptyset , \emptyset) \}$.
 
 \section{Canonical product and subatomic product}
 
