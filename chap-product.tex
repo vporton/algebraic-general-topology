@@ -423,7 +423,7 @@ $f \text{ is monovalued} \Leftrightarrow f \circ f^{\dagger} \sqsubseteq
 1_{\Dst f} \Leftrightarrow f \text{ is surjective} \Leftrightarrow
 f^{\dagger} \text{ is entirely defined}$.
 
-\section{General coproduct in partially ordered dagger category}
+\section{Dual products}
 
 The below is the dual of the above, proofs are omitted as they are dual.
 
@@ -436,7 +436,7 @@ Let $\iota$ be a partial function mapping elements $X\in\dom\iota$ (which consis
 
 We will denote particular morphisms as $\iota_i^X$.
 
-If (but we won't assume this below) $\iota_i \xleftrightarrow{\dual} \pi_i$ that is $\iota_i =
+If (but we won't assume this below) $\iota_i =
 (\pi_i)^{\dagger}$. We have the above equivalent to $\pi_i$ being principal.
 
 We will define $\bigodot^{\operatorname{inj}}$, $\prod^{\operatorname{inj}}$, $\coprod^{\operatorname{inj}}$
@@ -444,7 +444,7 @@ by analogy with $\operatorname{proj}$ counterparts replacing~$\pi$ by~$\iota^{\d
 
 We will also define $\bigodot^{\operatorname{proj}}_{\sqcup}$, $\bigodot^{\operatorname{inj}}_{\sqcup}$, etc.\ by replacing~$\bigsqcap$ by~$\bigsqcup$.
 
-\subsection{Coproduct for endomorphisms}
+\subsection{Dual products for endomorphisms}
 
 \begin{prop}
   $\bigodot^{\operatorname{inj}}_{\sqcup} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j
@@ -454,30 +454,23 @@ We will also define $\bigodot^{\operatorname{proj}}_{\sqcup}$, $\bigodot^{\opera
 \end{prop}
 
 \begin{proof}
-  By definition of meet on a complete lattice.
+  By duality.
 \end{proof}
 
 Let $F$ be an indexed family of endomorphisms of $\mathcal{C}$.
 
-I will denote $\Ob f$ the object (source and destination) of an
-endomorphism $f$.
-
-Let also $\iota_i$ be a monovalued entirely defined morphism (for each $i \in
-\dom F$).
-
 \begin{defn}
-  $\coprod^{(L)} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n :
+  $\bigodot^{\operatorname{inj}}_{\sqcup} F = \bigsqcup_{i \in \dom F} (\iota^{\lambda j \in n :
   \Ob F_j}_i \circ F_i^{\dagger} \circ (\iota^{\lambda j \in n :
-  \Ob F_j}_i)^{\dagger})$ (if $\iota$ is defined at $\lambda j \in n :
-  \Ob F_j$). (I call it \emph{supremum coproduct}).
+  \Ob F_j}_i)^{\dagger})$.
 \end{defn}
 
 Abbreviate $\iota_i = \iota^{\lambda j \in n : \Ob F_j}_i$.
 
-So $\coprod F = \bigsqcup_{i \in \dom F} (\iota_i \circ F_i^{\dagger}
+So $\bigodot^{\operatorname{inj}}_{\sqcup} F = \bigsqcup_{i \in \dom F} (\iota_i \circ F_i^{\dagger}
 \circ (\iota_i)^{\dagger})$.
 
-$\coprod F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j \in n}
+$\bigodot^{\operatorname{inj}}_{\sqcup} F = \min \setcond{ \Phi \in \End \left( \coprod^{(Q)}_{j \in n}
 \Ob F_j \right) }{ \forall i \in n : \Phi
 \sqsupseteq \iota_i \circ F_i^{\dagger} \circ (\iota_i)^{\dagger} }$.
 
@@ -658,9 +651,6 @@ If $n = \emptyset$ then; $\bigodot^{\text{proj}}_{\sqcap} \emptyset = \prod^{\te
 \end{cor}
 
 \section{Further plans}
-
-Does the formula ${\bigodot^{\text{proj}}_{\sqcap}}_{i \in n} (g_i \circ f_i) = \bigodot^{\text{proj}}_{\sqcap} g \circ
-\bigodot^{\text{proj}}_{\sqcap} f$ hold?
 
 Coordinate-wise continuity.
 
