@@ -743,17 +743,19 @@ If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{MOR
 
 Evaluation $\varepsilon : \operatorname{MOR} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
-Then evaluation is $\varepsilon_{B, C} = \mathop{\sim} ( 1_{\operatorname{MOR} ( B , C)})$.
+Then evaluation is $\varepsilon_{B, C} = \mathop{\sim} 1_{\operatorname{MOR}(B,C)}$.
 
-So $\varepsilon_{B, C} ( p , q) = ( \mathop{\sim} ( 1_{\operatorname{MOR} ( B , C)})) ( p , q) = ( 1_{\operatorname{MOR} ( B , C)}) ( p) ( q) = p ( q)$.
+So $\varepsilon_{B, C} ( p , q) = ( \mathop{\sim} 1_{\operatorname{MOR}(B,C)}) ( p , q) = 1_{\operatorname{MOR}(B,C)} ( p) ( q) = p ( q)$.
 
 ''Proposition'' Evaluation is a morphism of $\mathbf{Dig}$.
 
-''Proof'' Because $\varepsilon_{B, C} ( p , q) = \mathop{\sim} ( 1_{\operatorname{MOR} ( B , C)})$.
+''Proof'' Because $\varepsilon_{B, C} ( p , q) = \mathop{\sim} 1_{\operatorname{MOR}(B,C)}$.
 
 It remains to prove:
-* $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$ for $f : A \rightarrow B \times C$;
-* $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
+\begin{itemize}
+\item $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$ for $f : A \rightarrow B \times C$;
+\item $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
+\end{itemize}
 
 ''Proof'' $\varepsilon_{B, C} ( \sim f \times 1_{A}) ( a , p) = \varepsilon_{B, C} ( ( \sim f) a , p) = ( \sim f) a p = f ( a , p)$. So $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$.
 
