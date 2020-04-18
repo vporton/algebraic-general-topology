@@ -661,10 +661,10 @@ We are not only to prove (or maybe disprove) that our categories are cartesian c
 ''Definition'' A category is //cartesian closed// iff:
 \begin{enumerate}
 \item It has finite products.
-\item For each objects $A$, $B$ is given an object $\operatorname{MOR} ( A , B)$ (//exponentiation//) and a morphism $\varepsilon_{A, B} : \operatorname{MOR} ( A , B) \times A \rightarrow B$.
-\item For each morphism $f : Z \times A \rightarrow B$ there is given a morphism (//exponential transpose//) $\sim f : Z \rightarrow \operatorname{MOR} ( A , B)$.
+\item For each objects $A$, $B$ is given an object $\operatorname{HOM} ( A , B)$ (//exponentiation//) and a morphism $\varepsilon_{A, B} : \operatorname{HOM} ( A , B) \times A \rightarrow B$.
+\item For each morphism $f : Z \times A \rightarrow B$ there is given a morphism (//exponential transpose//) $\sim f : Z \rightarrow \operatorname{HOM} ( A , B)$.
 \item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
-\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
+\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{HOM} ( B , C)$.
 \end{enumerate}
 
 We will also denote $f\mapsto (-f)$ the reverse of the bijection $f\mapsto (\sim f)$.
@@ -715,19 +715,19 @@ Category of digraphs is the simplest of our three categories and it is easy to d
 
 Let $G$ and $H$ be digraphs:
 \begin{itemize}
-\item $\operatorname{Ob} \operatorname{MOR} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
-\item $( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : ( f ( v) , g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{MOR} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\item $\operatorname{Ob} \operatorname{HOM} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
+\item $( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : ( f ( v) , g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{HOM} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
 \end{itemize}
 
-$\operatorname{GR} 1_{\operatorname{MOR} ( B , C)} = \operatorname{id}_{\operatorname{Ob} \operatorname{MOR} ( B , C)} = \operatorname{id}_{( \operatorname{Ob} H)^{\operatorname{Ob} G}}$
+$\operatorname{GR} 1_{\operatorname{HOM} ( B , C)} = \operatorname{id}_{\operatorname{Ob} \operatorname{HOM} ( B , C)} = \operatorname{id}_{( \operatorname{Ob} H)^{\operatorname{Ob} G}}$
 
 Equivalently
 
-$( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : g \circ \{ ( v , w) \} \circ f^{- 1} \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : g \circ \{ ( v , w) \} \circ f^{- 1} \subseteq \operatorname{GR} H$
 
-$( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow g \circ ( \operatorname{GR} G) \circ f^{- 1} \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow g \circ ( \operatorname{GR} G) \circ f^{- 1} \subseteq \operatorname{GR} H$
 
-$( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \langle f \times^{( C)} g \rangle \operatorname{GR} G \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \langle f \times^{( C)} g \rangle \operatorname{GR} G \subseteq \operatorname{GR} H$
 
 The transposition (the isomorphism) is uncurrying.
 
@@ -735,26 +735,26 @@ $\sim f = \lambda a \in Z \lambda y \in A : f ( a , y)$ that is $( \sim f) ( a) 
 
 $( - f) ( a , y) = f ( a) ( y)$
 
-If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{MOR} ( B , C)$
+If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{HOM} ( B , C)$
 
 ''Proposition'' Transposition and its inverse are morphisms of $\mathbf{Dig}$.
 
-''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{MOR} ( B , C) \Leftrightarrow \forall x, y : ( x A y \Rightarrow ( \sim f) x ( \operatorname{MOR} ( B , C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w) \Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
+''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x, y : ( x A y \Rightarrow ( \sim f) x ( \operatorname{HOM} ( B , C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w) \Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
 
-Evaluation $\varepsilon : \operatorname{MOR} ( G , H) \times G \rightarrow H$ is defined by the formula:
+Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
-Then evaluation is $\varepsilon_{B, C} = \mathop{\sim} 1_{\operatorname{MOR}(B,C)}$.
+Then evaluation is $\varepsilon_{B, C} = \mathop{\sim} 1_{\operatorname{HOM}(B,C)}$.
 
-So $\varepsilon_{B, C} ( p , q) = ( \mathop{\sim} 1_{\operatorname{MOR}(B,C)}) ( p , q) = 1_{\operatorname{MOR}(B,C)} ( p) ( q) = p ( q)$.
+So $\varepsilon_{B, C} ( p , q) = ( \mathop{\sim} 1_{\operatorname{HOM}(B,C)}) ( p , q) = 1_{\operatorname{HOM}(B,C)} ( p) ( q) = p ( q)$.
 
 ''Proposition'' Evaluation is a morphism of $\mathbf{Dig}$.
 
-''Proof'' Because $\varepsilon_{B, C} ( p , q) = \mathop{\sim} 1_{\operatorname{MOR}(B,C)}$.
+''Proof'' Because $\varepsilon_{B, C} ( p , q) = \mathop{\sim} 1_{\operatorname{HOM}(B,C)}$.
 
 It remains to prove:
 \begin{itemize}
 \item $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$ for $f : A \rightarrow B \times C$;
-\item $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
+\item $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$ for $g : A \rightarrow \operatorname{HOM} ( B , C)$.
 \end{itemize}
 
 ''Proof'' $\varepsilon_{B, C} ( \sim f \times 1_{A}) ( a , p) = \varepsilon_{B, C} ( ( \sim f) a , p) = ( \sim f) a p = f ( a , p)$. So $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$.
@@ -781,7 +781,7 @@ To sum what we need to prove:
 \item Transposition is a morphism.
 \item Evaluation is a morphism.
 \item $\varepsilon_{B,C} \circ ( \sim f \times 1_A) = f$ for $f : A \rightarrow B \times C$.
-\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{MOR} ( B , C)$.
+\item $\sim ( \varepsilon_{B,C} \circ ( g \times 1_A)) = g$ for $g : A \rightarrow \operatorname{HOM} ( B , C)$.
 \end{itemize}
 
 \subsection{Attempt to describe exponentials in Fcd}
