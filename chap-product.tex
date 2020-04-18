@@ -713,7 +713,7 @@ See \url{http://www.springer.com/us/book/9780387977102} for another way to prove
 
 Category of digraphs is the simplest of our three categories and it is easy to demonstrate that it is cartesian closed. I demonstrate cartesian closedness of $\mathbf{Dig}$ mainly with the purpose to show a pattern similarly to which we may probably demonstrate our two other categories are cartesian closed.
 
-Let $G$ and $H$ be graphs:
+Let $G$ and $H$ be digraphs:
 \begin{itemize}
 \item $\operatorname{Ob} \operatorname{MOR} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
 \item $( f , g) \in \operatorname{GR} \operatorname{MOR} ( G , H) \Leftrightarrow \forall ( v , w) \in \operatorname{GR} G : ( f ( v) , g ( w)) \in \operatorname{GR} H$ for every $f, g \in \operatorname{Ob} \operatorname{MOR} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
@@ -743,13 +743,13 @@ If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{MOR
 
 Evaluation $\varepsilon : \operatorname{MOR} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
-Then evaluation is $\varepsilon_{B, C} = - ( 1_{\operatorname{MOR} ( B , C)})$.
+Then evaluation is $\varepsilon_{B, C} = \mathop{\sim} ( 1_{\operatorname{MOR} ( B , C)})$.
 
-So $\varepsilon_{B, C} ( p , q) = ( - ( 1_{\operatorname{MOR} ( B , C)})) ( p , q) = ( 1_{\operatorname{MOR} ( B , C)}) ( p) ( q) = p ( q)$.
+So $\varepsilon_{B, C} ( p , q) = ( \mathop{\sim} ( 1_{\operatorname{MOR} ( B , C)})) ( p , q) = ( 1_{\operatorname{MOR} ( B , C)}) ( p) ( q) = p ( q)$.
 
 ''Proposition'' Evaluation is a morphism of $\mathbf{Dig}$.
 
-''Proof'' Because $\varepsilon_{B, C} ( p , q) = - ( 1_{\operatorname{MOR} ( B , C)})$.
+''Proof'' Because $\varepsilon_{B, C} ( p , q) = \mathop{\sim} ( 1_{\operatorname{MOR} ( B , C)})$.
 
 It remains to prove:
 * $\varepsilon_{B, C} \circ ( \sim f \times 1_{A}) = f$ for $f : A \rightarrow B \times C$;
@@ -788,19 +788,19 @@ To sum what we need to prove:
 \item Exponential object $\operatorname{HOM}(A,B)$ is the following endofuncoid:
 \item\begin{itemize}
 \item Object $\operatorname{Ob}\operatorname{HOM}(A,B) = (\operatorname{Ob} B)^{\operatorname{Ob} A}$;
-\item Graph is $\operatorname{GR} \operatorname{HOM} ( A , B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f , g) }{ f, g \in (\operatorname{Ob}B)^{\operatorname{Ob} A}) \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
+\item Graph is $\operatorname{GR} \operatorname{HOM} ( A , B) = \uparrow^{\mathsf{FCD}} \setcond{ ( f , g) }{ f, g \in (\operatorname{Ob}B)^{\operatorname{Ob} A} \wedge \uparrow^{\mathsf{FCD}}g \circ A \circ \uparrow^{\mathsf{FCD}}f^{- 1} \sqsubseteq B }$.
 \end{itemize}
 \item Transposition is uncurrying.
-\item Evaluation is $\varepsilon_{A, B} x = \langle \operatorname{Pr}^{(A)}_0 x \rangle \operatorname{Pr}^{(A)}_1 x$.
+\item Evaluation is $\varepsilon_{A, B} x = \langle \dom x \rangle \im x$.
 \end{itemize}
 
 We need to prove that the above defined are really an exponential and an evaluation.
 
 Possible ways to prove that $\mathbf{Fcd}$ is cartesian closed follow:
 
-NEW IDEA: Prove $\GR\operatorname{HOM}(A,B) =
-\uparrow^{\mathsf{FCD}}\setcond{(\Pr^{(A)}_0 p,\Pr^{(A)}_1 p)}{
-p\in??\land\supfun{p}A\sqsubseteq B}$ (what's about other
+NEW IDEA: Instead take $\GR\operatorname{HOM}(A,B) =
+\uparrow^{\mathsf{FCD}}\setcond{(\dom p,\im p)}{
+p\in\End(B)^{\End(A)}\land\supfun{p}A\sqsubseteq B}$ (what's about other
 kinds of projections?)
 
 \subsection{Proof for Fcd using sets}
