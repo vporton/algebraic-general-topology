@@ -769,14 +769,14 @@ $\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
 \end{prop}
 
 \begin{proof}
-$\rsupfun{\bigcup\rsupfun{\curry f}X}Y=\bigcup\setcond{\rsupfun{\bigcup\rsupfun{\curry f}X}\{y\}}{y\in Y}=
-\setcond{\rsupfun{\bigcup\left(\bigcup\setcond{(\curry f)x}{x\in X}\right)}\{y\}}{y\in Y}=
-\setcond{\bigcup\rsupfun{\bigcup\setcond{(\curry f)x}{x\in X}}\{y\}}{y\in Y}=
-\setcond{\bigcup\bigcup_{x\in X}\setcond{\rsupfun{(\curry f)x)}\{y\}}{x\in X}}{y\in Y}=
-\setcond{\bigcup\setcond{(\curry f)x)y}{x\in X}}{y\in Y}=
+$\rsupfun{\bigcup\rsupfun{\curry f}X}Y=\setcond{\rsupfun{\bigcup\rsupfun{\curry f}X}\{y\}}{y\in Y}=
+\setcond{\rsupfun{\bigcup\left(\bigcup_{x\in X}(\curry f)x\right)}\{y\}}{y\in Y}=
+\setcond{\bigcup\rsupfun{\bigcup_{x\in X}(\curry f)x}\{y\}}{y\in Y}=
+\setcond{\bigcup\bigcup_{x\in X}\rsupfun{(\curry f)x)}\{y\}}{y\in Y}=
+\setcond{\bigcup_{x\in X}(\curry f)x)y}{y\in Y}=
 \setcond{((\curry f)x)y}{x\in X,y\in Y}$.
 
-$\rsupfun{f}(X\times Y)=\setcond{f(x,y)}{x\in X,y\in Y}$
+$\rsupfun{f}(X\times Y)=\setcond{f(x,y)}{x\in X,y\in Y}$.
 
 So the thesis.
 \end{proof}
