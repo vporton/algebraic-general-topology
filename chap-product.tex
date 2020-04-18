@@ -761,6 +761,42 @@ It remains to prove:
 
   $(\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A}))) ( p) ( q) = ( \varepsilon_{B, C} \circ ( g \times 1_{A})) ( p , q) = \varepsilon_{B, C} ( g \times 1_{A}) ( p , q) = \varepsilon_{B, C} ( g p , q) = g ( p) ( q)$. So $\sim ( \varepsilon_{B, C} \circ ( g \times 1_{A})) = g$.
 
+\subsection{New attempt}
+
+\begin{prop}
+$\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
+\rsupfun{f}(X\times Y)$
+\end{prop}
+
+\begin{proof}
+$\rsupfun{\bigcup\rsupfun{\curry f}X}Y=\bigcup\setcond{\rsupfun{\bigcup\rsupfun{\curry f}X}\{y\}}{y\in Y}=
+\setcond{\rsupfun{\bigcup\left(\bigcup\setcond{(\curry f)x}{x\in X}\right)}\{y\}}{y\in Y}=
+\setcond{\bigcup\rsupfun{\bigcup\setcond{(\curry f)x}{x\in X}}\{y\}}{y\in Y}=
+\setcond{\bigcup\bigcup_{x\in X}\setcond{\rsupfun{(\curry f)x)}\{y\}}{x\in X}}{y\in Y}=
+\setcond{\bigcup\setcond{(\curry f)x)y}{x\in X}}{y\in Y}=
+\setcond{((\curry f)x)y}{x\in X,y\in Y}$.
+
+$\rsupfun{f}(X\times Y)=\setcond{f(x,y)}{x\in X,y\in Y}$
+
+So the thesis.
+\end{proof}
+
+\begin{prop}
+$\supfun{\bigsqcup\supfun{\curry f}x}y =
+\supfun{f}(x\times^{\mathsf{FCD}}y)$.
+\end{prop}
+
+\begin{proof}
+$\supfun{\bigsqcup\supfun{\curry f}x}y =
+\bigsqcap_{Y\in\up y}\bigsqcup\supfun{\bigsqcup\supfun{\curry f}x}Y=
+\bigsqcap_{Y\in\up y}\bigsqcup\supfun{\bigsqcap_{X\in\up x}\bigsqcup\supfun{\curry f}X}Y=
+\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\bigsqcup\supfun{\bigsqcup\supfun{\curry f}X}Y=
+\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\bigcup\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
+\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)$.
+By properties of generalized filter bases
+$\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)=\supfun{f}(x\times^{\mathsf{FCD}} y)$
+\end{proof}
+
 \subsection{By analogy with the proof that Dig is cartesian closed}
 
 The most obvious way for proof attempt that $\mathbf{Fcd}$ is cartesian closed is an analogy with the proof that
