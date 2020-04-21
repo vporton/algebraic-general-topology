@@ -817,15 +817,21 @@ $( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \lan
 
 The transposition (the isomorphism) is uncurrying.
 
-$\sim f = \lambda a \in Z \lambda y \in A : f ( a , y)$ that is $( \sim f) ( a) ( y) = f ( a , y)$.
+Let $\supfun{\sim f}x = \supfun{\bigsqcup\supfun{\curry f}}x$. This is valid, because $\bigsqcup$~is a pointfree funcoid.
+Here we consider $\bigsqcup\supfun{\curry f}$ as a principal
+funcoid that is binary relation (it is as easy to show complete
+and co-complete).
 
-$( - f) ( a , y) = f ( a) ( y)$
+Let $f\in\Hom(A\times B,C)$ that is $f\in Z^{A\times B}$. Then
+$\curry f\in (C^B)^A$, $\supfun{\curry f}X\in\subsets(C^B)$,
+$\bigsqcup\supfun{\curry f}X\in C^B$.
+Thus $\sim f\in (C^B)^{\mathscr{F}(A)}$.
 
-If $f : A \times B \rightarrow C$ then $\sim f : A \rightarrow \operatorname{HOM} ( B , C)$
+If $f : A \times B \rightarrow C$ then $\sim f : \mathscr{F}(A) \rightarrow \operatorname{HOM} ( B , C)$
 
 ''Proposition'' Transposition and its inverse are morphisms of $\mathbf{Dig}$.
 
-''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x, y : ( x A y \Rightarrow ( \sim f) x ( \operatorname{HOM} ( B , C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w) \Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
+''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x, y\in\atoms\Ob A : ( x\suprel{A}y \Rightarrow ( \sim f) x ( \operatorname{HOM} ( B , C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w) \Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
 
 Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
