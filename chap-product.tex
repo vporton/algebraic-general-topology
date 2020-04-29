@@ -819,12 +819,26 @@ $( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \lan
 
 The transposition (the isomorphism) is uncurrying.
 
-Let $\sim f=\bigsqcap^{\mathsf{FCD}}\circ\curry f$. Here we consider $\bigsqcap^{\mathsf{FCD}}\circ\curry f$ as a principal funcoid that is binary relation (it is as easy to show?? complete and co-complete).
+Let $\sim f=\tofcd\circ(\curry f)$. Here we consider $\bigsqcap^{\mathsf{FCD}}\circ(\curry f)$ as a principal funcoid that is binary relation:
+
+\begin{prop}
+$\tofcd\circ(\curry f)$ is a complete and co-complete pointfree funcoid.
+\end{prop}
+
+\begin{proof}
+It is obviously a pointfree funcoid.
+
+Let~$X$ be a principal filter.
+$\supfun{\tofcd\curry f}X$ is obviously principal.
+So, it's co-complete.
+
+And it is obviously complete.
+\end{proof}
 
 Let $f\in\Hom(A\times B,C)$ that is $f\in Z^{A\times B}$. Then
 $\curry f\in (C^B)^A$, $\supfun{\curry f}X\in\subsets(C^B)$,
-$\bigsqcup\supfun{\curry f}X\in C^B$.
-Thus $\sim f\in (C^B)^{\mathscr{F}(A)}$.
+$\bigsqcap^{\mathsf{FCD}}\supfun{\curry f}X\in C^B$.
+Thus $\sim f\in (\mathsf{FCD}(B,C))^{\mathscr{F}(A)}$.
 
 If $f : A \times B \rightarrow C$ then $\sim f : \mathscr{F}(A) \rightarrow \operatorname{HOM} ( B , C)$
 
