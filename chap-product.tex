@@ -809,7 +809,9 @@ $\operatorname{GR} 1_{\operatorname{HOM} ( B , C)} = \operatorname{id}_{\operato
 
 Equivalently
 
-$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob G : g \circ (v \times^{\mathsf{FCD}} w) \circ f^{- 1} \subseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob G : g \circ (v \times^{\mathsf{FCD}} w) \circ f^{- 1} \sqsubseteq \operatorname{GR} H$
+
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob G : \supfun{f}v \times^{\mathsf{FCD}} \supfun{g}w \sqsubseteq \operatorname{GR} H$
 
 $( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow g \circ G \circ f^{- 1} \sqsubseteq H$
 
@@ -817,10 +819,7 @@ $( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \lan
 
 The transposition (the isomorphism) is uncurrying.
 
-Let $\supfun{\sim f}x = \supfun{\bigsqcup\supfun{\curry f}}x$. This is valid, because $\bigsqcup$~is a pointfree funcoid.
-Here we consider $\bigsqcup\supfun{\curry f}$ as a principal
-funcoid that is binary relation (it is as easy to show complete
-and co-complete).
+Let $\sim f=\bigsqcap^{\mathsf{FCD}}\circ\curry f$. Here we consider $\bigsqcap^{\mathsf{FCD}}\circ\curry f$ as a principal funcoid that is binary relation (it is as easy to show?? complete and co-complete).
 
 Let $f\in\Hom(A\times B,C)$ that is $f\in Z^{A\times B}$. Then
 $\curry f\in (C^B)^A$, $\supfun{\curry f}X\in\subsets(C^B)$,
@@ -831,7 +830,13 @@ If $f : A \times B \rightarrow C$ then $\sim f : \mathscr{F}(A) \rightarrow \ope
 
 ''Proposition'' Transposition and its inverse are morphisms of $\mathbf{Dig}$.
 
-''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x, y\in\atoms\Ob A : ( x\suprel{A}y \Rightarrow ( \sim f) x ( \operatorname{HOM} ( B , C))  ( \sim f) y) \Leftrightarrow \\ \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w) \Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
+''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x, y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \supfun{\sim f} x \suprel{\operatorname{HOM}(B,C)} \supfun{\sim f} y) \Leftrightarrow \\
+\forall x, y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \forall v,w\in\atoms^{\mathscr{F}}?:(v\times^{\mathsf{FCD}}w\sqsubseteq B\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow\\
+\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\suprel{A}y\land v\suprel{B}w\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow
+\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\times^{\mathsf{RLD}}v)\suprel{A\times B}(y\times^{\mathsf{RLD}}w)\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow
+??
+\Leftrightarrow \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w)
+\Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
 
 Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
