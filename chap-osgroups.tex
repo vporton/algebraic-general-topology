@@ -34,7 +34,7 @@ Below I will define a \emph{space} as an \emph{ordered semigroup action}.
 
 This includes topological spaces, uniform spaces, proximity spaces, (directed) graphs, metric spaces, semigroups of operators, etc.
 
-Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
+Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1-edition1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
 
 \chapter{Precategories}
 
@@ -171,7 +171,7 @@ $\supfun{a}$ is the same as one of the original ordered precategory action and t
 Having a ordered precategory action and a homomorphism to its ordered precategory, we can define in an obvious way a new ordered precategory action. The following is an example of this construction (here $\torldin$ is a functor of ordered precategories).
 
 \emph{Funcoids} described in the first book of this book series form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
-As we know from the~\cite{volume-1}, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered precategory actions (or ordered semigroup actions, see below).
+As we know from the~\cite{volume-1-edition1}, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered precategory actions (or ordered semigroup actions, see below).
 
 Remember that elements of our posets of objects may be such things as sets or more generally filters, they may be not just points. So our topological construction is ``pointfree'' (we may consider sets or filters, not points).
 
@@ -201,7 +201,7 @@ For an \emph{ordered semigroup with involution} or \emph{ordered dagger precateg
 
 \chapter{Topological properties}
 
-Now we have a formalism to describe many topological properties (following the ideas of~\cite{volume-1}):
+Now we have a formalism to describe many topological properties (following the ideas of~\cite{volume-1-edition1}):
 
 Continuity is described by the formulas $f\circ a\leq a\circ f$, $f\circ a\circ f^{\dagger}\leq a$, $a\leq f^{\dagger}\circ a\circ f$.
 
@@ -226,26 +226,11 @@ It seem we cannot define \emph{total boundness} purely in terms of ordered semig
 
 Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x\suprel{a}y\Leftrightarrow y\nasymp\supfun{a}x$.
 
-If $\suprel{a}^{\dagger}=\suprel{a}^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1}).
+If $\suprel{a}^{\dagger}=\suprel{a}^{-1}$ for every~$a$, we call the action~$\supfun{}$ on an dagger precategory \emph{inter\-sec\-tion-sym\-met\-ric}. In this case our action defines a pointfree funcoid~(see~\cite{volume-1-edition1}).
 
 A space is connected iff $x\equiv y\Rightarrow x\suprel{a}y$.
 
 We can define open and closed functions.
-
-\chapter{Further axioms}
-
-Further possible axioms for an ordered semigroup action with binary joins:
-
-\begin{itemize}
-\item $\supfun{f}(x\sqcup y)=\supfun{f}x\sqcup\supfun{f}y$;
-\item $\supfun{f\sqcup g}x=\supfun{f}x\sqcup\supfun{g}x$.
-\end{itemize}
-
-\fxnote{Need to generalize for a wider class of posets.}
-
-\chapter{Product of ordered semigroup actions}
-
-\fxnote{TODO.}
 
 \chapter{Restricted identity transformations}
 
@@ -382,7 +367,7 @@ Pointfree funcoids (and consequently funcoids) are an ordered precategory action
 A space~$a$ is \emph{complete} when $\supfun{a}\bigsqcup S=\bigsqcup\rsupfun{\supfun{a}}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{\supfun{a}}S$ are defined.
 
 \begin{defn}
-\emph{Completion} of an interspace is its core part (see~\cite{volume-1} for a definition of core part) on the filtrator of interspace and complete interspace.
+\emph{Completion} of an interspace is its core part (see~\cite{volume-1-edition1} for a definition of core part) on the filtrator of interspace and complete interspace.
 \end{defn}
 
 \begin{note}
@@ -455,7 +440,7 @@ We'll prove the first as the second is similar:
 \end{multline*}
 \end{proof}
 
-Let~$a$ be a most general metric. I denote~$\Delta_a$ the funcoid~(\cite{volume-1}) determined by the formula
+Let~$a$ be a most general metric. I denote~$\Delta_a$ the funcoid~(\cite{volume-1-edition1}) determined by the formula
 \[
 X\rsuprel{\Delta_a}Y \Leftrightarrow \rho_a(X,Y)=0.
 \]
@@ -504,7 +489,7 @@ Y\nasymp\bigsqcap_{\epsilon>0}\bigcup_{x\in X}B_a(x,\epsilon) \Leftrightarrow \\
 \end{multline*}
 \end{proof}
 
-MGNRM are also interspaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)), \]
+MGNRM are also interspaces: Define the order on metric spaces by the formula \[ \rho\leq\sigma \Leftrightarrow \forall x,y:\rho(x,y)\geq\sigma(x,y). \] Define the action for a metric space~$a$ as the action $\supfun{\Delta_a}$ of its induced proximity~$\Delta_a$ (see~\cite{volume-1-edition1} for a definition of proximity and more generally funcoid actions~$\supfun{}$) and composition of metrics $\rho$, $\sigma$ by the formula: \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)), \]
 where~$\mho$ is the set of points of our metric space.
 
 \begin{lem}
