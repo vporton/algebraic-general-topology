@@ -862,9 +862,12 @@ If $f : A \times B \rightarrow C$ then $\sim f : \mathscr{F}(A) \rightarrow \ope
 
 \fxwarning{Rewrite below:}
 
-''Proposition'' Transposition and its inverse are morphisms of $\mathbf{Fcd}$.
+\begin{prop}
+Transposition and its inverse are morphisms of $\mathbf{Fcd}$.
+\end{prop}
 
-''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x,y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \supfun{\sim f} x \suprel{\operatorname{HOM}(B,C)} \supfun{\sim f} y) \Leftrightarrow?? \\
+\begin{proof}
+It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x,y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \supfun{\sim f} x \suprel{\operatorname{HOM}(B,C)} \supfun{\sim f} y) \Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A : (x\suprel{A}y \Rightarrow (\supfun{\sim f}y)\circ B\circ(\supfun{\sim f}x)^{-1} \sqsubseteq C) \Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A : (x\suprel{A}y \Rightarrow \forall p,q\in\atoms^{\mathscr{F}}\Ob B : (
 p\times^{\mathsf{FCD}}q\sqsubseteq B \Rightarrow
@@ -875,13 +878,13 @@ p\times^{\mathsf{FCD}}q\sqsubseteq B \Rightarrow
 (x\suprel{A}y\land p\suprel{B}q \Rightarrow \supfun{\supfun{\sim f}x}p\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}q \sqsubseteq C) \Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
 (x\times^{\mathsf{FCD}}p\suprel{A\times^{(C)}B}y\times^{\mathsf{FCD}}q \Rightarrow \supfun{f}(x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}\supfun{f}(y\times^{\mathsf{FCD}}q) \sqsubseteq C) \Leftrightarrow \\
-??????????????\\
-\forall x, y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \forall v,w\in\atoms^{\mathscr{F}}?:(v\times^{\mathsf{FCD}}w\sqsubseteq B\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow\\
-\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\suprel{A}y\land v\suprel{B}w\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow
-\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\times^{\mathsf{RLD}}v)\suprel{A\times B}(y\times^{\mathsf{RLD}}w)\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow
-??
-\Leftrightarrow \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w)
-\Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
+((x\times^{\mathsf{FCD}}p)\times^{\mathsf{RLD}}(y\times^{\mathsf{FCD}}q)\sqsubseteq A\times^{(C)}B \Rightarrow f\circ((x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{FCD}}q))\circ f^{-1} \sqsubseteq C) \Leftrightarrow?? \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
+((x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{FCD}}q)\sqsubseteq A\times^{\mathsf{FCD}}B \Rightarrow f\circ((x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{FCD}}q))\circ f^{-1} \sqsubseteq C) \Leftrightarrow?? \\
+f\circ(A\times^{\mathsf{FCD}}B)\circ f^{-1} \sqsubseteq C) \Leftrightarrow
+f : A\times^{\mathsf{FCD}}B \rightarrow C$.
+\end{proof}
 
 Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
