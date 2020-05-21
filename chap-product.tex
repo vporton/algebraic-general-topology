@@ -784,7 +784,7 @@ So the thesis.
 
 \begin{prop}
 $\supfun{\bigsqcup\supfun{\curry f}x}y =
-\supfun{f}(x\times^{\mathsf{FCD}}y)$.
+\supfun{f}(x\times^{\mathsf{RLD}}y)$.
 \end{prop}
 
 \begin{proof}
@@ -795,7 +795,7 @@ $\supfun{\bigsqcup\supfun{\curry f}x}y =
 \bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\bigcup\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
 \bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)$.
 By properties of generalized filter bases
-$\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)=\supfun{f}(x\times^{\mathsf{FCD}} y)$
+$\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)=\supfun{f}(x\times^{\mathsf{RLD}} y)$
 \end{proof}
 
 Let $G$ and $H$ be endofuncoids. By definition:
@@ -877,13 +877,15 @@ p\times^{\mathsf{FCD}}q\sqsubseteq B \Rightarrow
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
 (x\suprel{A}y\land p\suprel{B}q \Rightarrow \supfun{\supfun{\sim f}x}p\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}q \sqsubseteq C) \Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
-(x\times^{\mathsf{FCD}}p\suprel{A\times^{(C)}B}y\times^{\mathsf{FCD}}q \Rightarrow \supfun{f}(x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}\supfun{f}(y\times^{\mathsf{FCD}}q) \sqsubseteq C) \Leftrightarrow \\
+(x\times^{\mathsf{FCD}}p\suprel{A\times B}y\times^{\mathsf{FCD}}q \Rightarrow \supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C) \Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
-((x\times^{\mathsf{FCD}}p)\times^{\mathsf{RLD}}(y\times^{\mathsf{FCD}}q)\sqsubseteq A\times^{(C)}B \Rightarrow f\circ((x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{FCD}}q))\circ f^{-1} \sqsubseteq C) \Leftrightarrow?? \\
-\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
-((x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{FCD}}q)\sqsubseteq A\times^{\mathsf{FCD}}B \Rightarrow f\circ((x\times^{\mathsf{FCD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{FCD}}q))\circ f^{-1} \sqsubseteq C) \Leftrightarrow?? \\
-f\circ(A\times^{\mathsf{FCD}}B)\circ f^{-1} \sqsubseteq C) \Leftrightarrow
-f : A\times^{\mathsf{FCD}}B \rightarrow C$.
+((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q)\sqsubseteq A\times B \Rightarrow f\circ((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q))\circ f^{-1} \sqsubseteq C)
+\Leftrightarrow \text{(taking into account infinite distributivity over~$\bigsqcup$)} \\
+\forall t,s\in\atoms(\Ob A\times^{\mathsf{RLD}}\Ob B):
+(t\times^{\mathsf{FCD}}s\sqsubseteq A\times B \Rightarrow f\circ(t\times^{\mathsf{FCD}}s)\circ f^{-1} \sqsubseteq C)
+\Leftrightarrow \\
+f\circ(A\times B)\circ f^{-1} \sqsubseteq C) \Leftrightarrow
+f : A\times B \rightarrow C$.
 \end{proof}
 
 Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
