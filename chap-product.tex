@@ -763,6 +763,8 @@ It remains to prove:
 
 \subsection{New attempt}
 
+We will take $\times^{(C)}$ as the product?? in the category $\mathbf{Fcd}$
+
 \begin{prop}
 $\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
 \rsupfun{f}(X\times Y)$
@@ -853,6 +855,10 @@ So, it's co-complete.
 And it is obviously complete.
 \end{proof}
 
+\begin{obvious}
+$\supfun{\supfun{\sim f}x}y = \supfun{f}(x\times^{\mathsf{RLD}}y)$.
+\end{obvious}
+
 Let $f\in\Hom(A\times B,C)$ that is $f\in Z^{A\times B}$. Then
 $\curry f\in (C^B)^A$, $\supfun{\curry f}X\in\subsets(C^B)$,
 $\bigsqcup\supfun{\curry f}X\in C^B$.
@@ -877,15 +883,30 @@ p\times^{\mathsf{FCD}}q\sqsubseteq B \Rightarrow
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
 (x\suprel{A}y\land p\suprel{B}q \Rightarrow \supfun{\supfun{\sim f}x}p\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}q \sqsubseteq C) \Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
-(x\times^{\mathsf{FCD}}p\suprel{A\times B}y\times^{\mathsf{FCD}}q \Rightarrow \supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C) \Leftrightarrow \\
+(x\times^{\mathsf{RLD}}p\suprel{A\times^{(C)}B}y\times^{\mathsf{RLD}}q \Rightarrow \supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C) %\Leftrightarrow \\
 \forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
-((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q)\sqsubseteq A\times B \Rightarrow f\circ((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q))\circ f^{-1} \sqsubseteq C)
-\Leftrightarrow \text{([not obvious!] taking into account infinite distributivity over~$\bigsqcup$)} \\
+((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q)\sqsubseteq A\times^{(C)}B \Rightarrow f\circ((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q))\circ f^{-1} \sqsubseteq C)
+\Leftarrow \\
 \forall t,s\in\atoms(\Ob A\times^{\mathsf{RLD}}\Ob B):
-(t\times^{\mathsf{FCD}}s\sqsubseteq A\times B \Rightarrow f\circ(t\times^{\mathsf{FCD}}s)\circ f^{-1} \sqsubseteq C)
+(t\times^{\mathsf{FCD}}s\sqsubseteq A\times^{(C)}B \Rightarrow f\circ(t\times^{\mathsf{FCD}}s)\circ f^{-1} \sqsubseteq C)
 \Leftrightarrow \\
-f\circ(A\times B)\circ f^{-1} \sqsubseteq C) \Leftrightarrow
-f : A\times B \rightarrow C$.
+f\circ(A\times^{(C)}B)\circ f^{-1} \sqsubseteq C) \Leftrightarrow
+f : A\times^{(C)}B \rightarrow C
+$
+
+But:
+
+$f : A\times^{(C)}B \rightarrow C \Leftrightarrow f\circ(A\times^{(C)}B)\circ f^{-1} \sqsubseteq C \Leftrightarrow??
+\supfun{f}A\times^{\mathsf{FCD}}\supfun{f}B\sqsubseteq C
+\Rightarrow
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:(x\times^{\mathsf{RLD}}p\sqsubseteq A\land y\times^{\mathsf{RLD}}q\sqsubseteq B \Rightarrow
+\supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}
+\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C) \Leftrightarrow
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q)\sqsubseteq A\times^{(C)}B \Rightarrow
+\supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}
+\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C)$.
+
+Thus the thesis follows.
 \end{proof}
 
 Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
