@@ -763,9 +763,12 @@ It remains to prove:
 
 \subsection{New attempt}
 
+We will take $\times^{(C)}$ as the product?? in the category $\mathbf{Fcd}$
+
 \begin{prop}
 $\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
 \rsupfun{f}(X\times Y)$
+[Is the left part always defined?]
 \end{prop}
 
 \begin{proof}
@@ -783,7 +786,7 @@ So the thesis.
 
 \begin{prop}
 $\supfun{\bigsqcup\supfun{\curry f}x}y =
-\supfun{f}(x\times^{\mathsf{FCD}}y)$.
+\supfun{f}(x\times^{\mathsf{RLD}}y)$.
 \end{prop}
 
 \begin{proof}
@@ -794,12 +797,10 @@ $\supfun{\bigsqcup\supfun{\curry f}x}y =
 \bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\bigcup\rsupfun{\bigcup\rsupfun{\curry f}X}Y=
 \bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)$.
 By properties of generalized filter bases
-$\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)=\supfun{f}(x\times^{\mathsf{FCD}} y)$
+$\bigsqcap_{Y\in\up y}\bigsqcap_{X\in\up x}\supfun{f}(X\times Y)=\supfun{f}(x\times^{\mathsf{RLD}} y)$
 \end{proof}
 
-\fxwarning{Rewrite below:}
-
-Let $G$ and $H$ be endofuncoids:
+Let $G$ and $H$ be endofuncoids. By definition:
 \begin{itemize}
 \item $\operatorname{Ob} \operatorname{HOM} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
 \item $( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob G : \supfun{f}v \times^{\mathsf{FCD}} \supfun{g}w \sqsubseteq H$ for every $f, g \in \operatorname{Ob} \operatorname{HOM} ( G , H) = ( \operatorname{Ob} H)^{\operatorname{Ob} G}$;
@@ -809,77 +810,104 @@ $\operatorname{GR} 1_{\operatorname{HOM} ( B , C)} = \operatorname{id}_{\operato
 
 Equivalently
 
-$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob G : g \circ (v \times^{\mathsf{FCD}} w) \circ f^{- 1} \sqsubseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( A , B) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob A : g \circ (v \times^{\mathsf{FCD}} w) \circ f^{- 1} \sqsubseteq \operatorname{GR} B$
 
-$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \forall v,w\in\atoms^{\mathscr{F}}\Ob G : \supfun{f}v \times^{\mathsf{FCD}} \supfun{g}w \sqsubseteq \operatorname{GR} H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( A , B) \Leftrightarrow g \circ A \circ f^{- 1} \sqsubseteq B$
 
-$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow g \circ G \circ f^{- 1} \sqsubseteq H$
+$( f , g) \in \operatorname{GR} \operatorname{HOM} ( A , B) \Leftrightarrow \langle f \times^{( C)} g \rangle A \sqsubseteq B$
 
-$( f , g) \in \operatorname{GR} \operatorname{HOM} ( G , H) \Leftrightarrow \langle f \times^{( C)} g \rangle G \sqsubseteq H$
+\begin{lem}
+$F\suprel{\operatorname{HOM}(A,B)}G \Leftrightarrow G\circ A\circ F^{-1}\sqsubseteq B$ for sets $F$,~$G$ of functions.
+\end{lem}
 
-The transposition (the isomorphism) is uncurrying.
-
-Let $\sim f=\tofcd\circ(\curry f)$. Here we consider $\bigsqcap^{\mathsf{FCD}}\circ(\curry f)$ as a principal funcoid that is binary relation:
+\begin{proof}
+$F\suprel{\operatorname{HOM}(A,B)}G \Leftrightarrow
+\exists f\in F,g\in G:(f,g)\in\operatorname{HOM}(A,B)\Leftrightarrow
+\exists f\in F,g\in G:g\circ A\circ f^{-1}\sqsubseteq B\Leftrightarrow
+G\circ A\circ F^{-1}\sqsubseteq B$.
+\end{proof}
 
 \begin{prop}
-$\tofcd\circ(\curry f)$ is a complete and co-complete pointfree funcoid.
+$\mathcal{F}\suprel{\operatorname{HOM}(A,B)}\mathcal{G} \Leftrightarrow \mathcal{G}\circ A\circ \mathcal{F}^{-1}\sqsubseteq B$.
+\end{prop}
+
+\begin{proof}
+$\mathcal{F}\suprel{\operatorname{HOM}(A,B)}\mathcal{G} \Leftrightarrow
+\forall F\in\up\mathcal{F},G\in\up\mathcal{G}:F\suprel{\operatorname{HOM}(A,B)}G
+\Leftrightarrow
+\forall F\in\up\mathcal{F},G\in\up\mathcal{G}:G\circ A\circ F^{-1}\sqsubseteq B$ what by properties of generalized filter
+bases is equivalent to $\mathcal{G}\circ A\circ \mathcal{F}^{-1}\sqsubseteq B$.
+\end{proof}
+
+Let $\sim f=\bigsqcup\circ\supfun{\curry f}$. Here we consider $\bigsqcup\circ\supfun{\curry f}$ as a principal funcoid that is binary relation:
+
+\begin{prop}
+$\bigsqcup\circ\supfun{\curry f}$ is a complete and co-complete pointfree funcoid.
 \end{prop}
 
 \begin{proof}
 It is obviously a pointfree funcoid.
 
 Let~$X$ be a principal filter.
-$\supfun{\tofcd\curry f}X$ is obviously principal.
+$\bigsqcup\supfun{\curry f}X$ is obviously principal.
 So, it's co-complete.
 
 And it is obviously complete.
 \end{proof}
 
-Let $f\in\Hom(A\times B,C)$ that is $f\in Z^{A\times B}$. Then $\sim f\in (\mathsf{FCD}(B,C))^{\mathscr{F}(A)}$.
+\begin{obvious}
+$\supfun{\supfun{\sim f}x}y = \supfun{f}(x\times^{\mathsf{RLD}}y)$.
+\end{obvious}
+
+Let $f\in\Hom(A\times B,C)$ that is $f\in Z^{A\times B}$. Then
+$\curry f\in (C^B)^A$, $\supfun{\curry f}X\in\subsets(C^B)$,
+$\bigsqcup\supfun{\curry f}X\in C^B$.
+Thus $\sim f\in (\mathsf{FCD}(B,C))^{\mathscr{F}(A)}$.
 
 If $f : A \times B \rightarrow C$ then $\sim f : \mathscr{F}(A) \rightarrow \operatorname{HOM} ( B , C)$
 
+\fxwarning{Rewrite below:}
+
 \begin{prop}
-$\rsupfun{\bigcup\rsupfun{\curry f}X}Y = \rsupfun{f}(X\times Y)$ for sets $X$,~$Y$.
+Transposition and its inverse are morphisms of $\mathbf{Fcd}$.
 \end{prop}
 
 \begin{proof}
-$\rsupfun{\bigcup\rsupfun{\curry f}X}Y =
-\setcond{\rsupfun{\bigcup_{x\in X}(\curry f)x}y}{y\in Y} =
-\setcond{\bigcup_{x\in X}\rsupfun{(\curry f)x}y}{y\in Y} =
-\setcond{\rsupfun{(\curry f)x}y}{x\in X,y\in Y} =
-\setcond{\rsupfun{f}(x,y)}{x\in X,y\in Y} =
-\rsupfun{f}(X\times Y)$.
-??
+It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x,y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \supfun{\sim f} x \suprel{\operatorname{HOM}(B,C)} \supfun{\sim f} y) \Leftrightarrow \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A : (x\suprel{A}y \Rightarrow (\supfun{\sim f}y)\circ B\circ(\supfun{\sim f}x)^{-1} \sqsubseteq C) \Leftrightarrow \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A : (x\suprel{A}y \Rightarrow \forall p,q\in\atoms^{\mathscr{F}}\Ob B : (
+p\times^{\mathsf{FCD}}q\sqsubseteq B \Rightarrow
+(\supfun{\sim f}y)\circ(p\times^{\mathsf{FCD}}q)\circ(\supfun{\sim f}x)^{-1} \sqsubseteq C) \Leftrightarrow \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
+(x\suprel{A}y\land p\suprel{B}q \Rightarrow (\supfun{\sim f}y)\circ(p\times^{\mathsf{FCD}}q)\circ(\supfun{\sim f}x)^{-1} \sqsubseteq C) \Leftrightarrow \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
+(x\suprel{A}y\land p\suprel{B}q \Rightarrow \supfun{\supfun{\sim f}x}p\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}q \sqsubseteq C) \Leftrightarrow \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
+(x\times^{\mathsf{RLD}}p\suprel{A\times^{(C)}B}y\times^{\mathsf{RLD}}q \Rightarrow \supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C) %\Leftrightarrow \\
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:
+((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q)\sqsubseteq A\times^{(C)}B \Rightarrow f\circ((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q))\circ f^{-1} \sqsubseteq C)
+\Leftarrow \\
+\forall t,s\in\atoms(\Ob A\times^{\mathsf{RLD}}\Ob B):
+(t\times^{\mathsf{FCD}}s\sqsubseteq A\times^{(C)}B \Rightarrow f\circ(t\times^{\mathsf{FCD}}s)\circ f^{-1} \sqsubseteq C)
+\Leftrightarrow \\
+f\circ(A\times^{(C)}B)\circ f^{-1} \sqsubseteq C) \Leftrightarrow
+f : A\times^{(C)}B \rightarrow C
+$
+
+But:
+
+$f : A\times^{(C)}B \rightarrow C \Leftrightarrow f\circ(A\times^{(C)}B)\circ f^{-1} \sqsubseteq C \Leftrightarrow??
+\supfun{f}A\times^{\mathsf{FCD}}\supfun{f}B\sqsubseteq C
+\Rightarrow
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:(x\times^{\mathsf{RLD}}p\sqsubseteq A\land y\times^{\mathsf{RLD}}q\sqsubseteq B \Rightarrow
+\supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}
+\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C) \Leftrightarrow
+\forall x,y\in\atoms^{\mathscr{F}}\Ob A, p,q\in\atoms^{\mathscr{F}}\Ob B:((x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}(y\times^{\mathsf{RLD}}q)\sqsubseteq A\times^{(C)}B \Rightarrow
+\supfun{f}(x\times^{\mathsf{RLD}}p)\times^{\mathsf{FCD}}
+\supfun{f}(y\times^{\mathsf{RLD}}q) \sqsubseteq C)$.
+
+Thus the thesis follows.
 \end{proof}
-
-??Replace back by $\bigsqcup\circ\rsupfun{\curry f}$.
-
-\begin{prop}
-$\supfun{\supfun{\bigsqcup\circ\rsupfun{\curry f}}x}y = \supfun{f}(x\times^{\mathsf{RLD}} y)$ for ??.
-\end{prop}
-
-\begin{proof}
-$\supfun{\supfun{\bigsqcup\circ\rsupfun{\curry f}}x}y =
-\supfun{\bigsqcap_{X\in\up x}\supfun{\bigsqcup\circ\rsupfun{\curry f}}X}y = ?? =
-\bigsqcap_{X\in\up x}\supfun{\rsupfun{\bigsqcup}\rsupfun{\curry f}X}y =
-\bigsqcap_{X\in\up x}\rsupfun{\bigsqcup}\supfun{\rsupfun{\curry f}X}y =
-\bigsqcap_{X\in\up x,Y\in\up y}\supfun{\rsupfun{\bigsqcup}\rsupfun{\curry f}X}Y =
-\bigsqcap_{X\in\up x,Y\in\up y}\supfun{\rsupfun{\bigcup}\rsupfun{\curry f}X}Y = ?? =
-\bigsqcap_{X\in\up x,Y\in\up y}\rsupfun{f}(X\times^{\mathsf{RLD}}Y) =
-\supfun{f}(x\times^{\mathsf{RLD}} y)$.
-\end{proof}
-
-''Proposition'' Transposition and its inverse are morphisms of $\mathbf{Dig}$.
-
-''Proof'' It follows from the equivalence $\sim f : A \rightarrow \operatorname{HOM} ( B , C) \Leftrightarrow \forall x, y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \supfun{\sim f} x \suprel{\operatorname{HOM}(B,C)} \supfun{\sim f} y) \Leftrightarrow \\
-\forall x, y\in\atoms^{\mathscr{F}}\Ob A : ( x\suprel{A}y \Rightarrow \forall v,w\in\atoms^{\mathscr{F}}?:(v\times^{\mathsf{FCD}}w\sqsubseteq B\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow\\
-\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\suprel{A}y\land v\suprel{B}w\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow
-\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\times^{\mathsf{RLD}}v)\suprel{A\times B}(y\times^{\mathsf{RLD}}w)\Rightarrow\supfun{\supfun{\sim f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\sim f}y}w \sqsubseteq C) \Leftrightarrow
-\forall x,y,v,w\in\atoms^{\mathscr{F}}?:(x\times^{\mathsf{RLD}}v)\suprel{A\times B}(y\times^{\mathsf{RLD}}w)\Rightarrow\supfun{\supfun{\tofcd\curry f}x}v\times^{\mathsf{FCD}}\supfun{\supfun{\tofcd\curry f}y}w \sqsubseteq C) \Leftrightarrow
-??
-\Leftrightarrow \forall x, y : ( x A y \Rightarrow \forall ( v , w) \in B : ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( x A y \wedge v B w \Rightarrow ( ( \sim f) x v , ( \sim f) y w) \in C) \Leftrightarrow \\ \forall x, y, v, w : ( ( x , v)  ( A \times B)  ( y , w)
-\Rightarrow ( f ( x , v) , f ( y , w)) \in C) \Leftrightarrow f : A \times B \rightarrow C$.
 
 Evaluation $\varepsilon : \operatorname{HOM} ( G , H) \times G \rightarrow H$ is defined by the formula:
 
