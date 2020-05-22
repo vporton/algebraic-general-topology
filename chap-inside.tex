@@ -1,0 +1,78 @@
+\chapter{Inside functor}
+
+\begin{defn}
+I will call the \emph{inside} functor the identity-on-objects functor from~$\mathsf{FCD}$ to~$\mathbf{Rel}$ that maps
+funcoid~$f$ to
+\[
+\operatorname{ins} f =
+\setcond{(x,y)}{x\in\atoms^{\mathfrak{F}}(\Src f), y\in\atoms^{\mathfrak{F}}(\Dst f), x\times^{\mathsf{FCD}}y\sqsubseteq f}. \]
+\end{defn}
+
+We need to prove these are really functors.
+
+\begin{proof}
+Distributive over compositon by \cite[proposition~\bookref{fcd-at-comp}]{volume-1}.
+That $\operatorname{ins} 1^{\mathsf{FCD}} = 1^{\mathbf{Rel}}$ is obvious.
+\end{proof}
+
+\begin{prop}
+~
+\begin{enumerate}
+\item $\operatorname{ins}(f\sqcup g)=\operatorname{ins}f\cup\operatorname{ins}g$;
+\item $\operatorname{ins}\bigsqcap S=\bigsqcap\rsupfun{\operatorname{ins}}S$ (where the meet of empty set is considered some ``universal'' set).
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+By properties of atoms.
+\end{proof}
+
+\begin{defn}
+$\pi_i^{\ast}=\operatorname{ins}\pi^{\mathsf{FCD}}_i$.
+\end{defn}
+
+\begin{prop}
+$\pi_i^{\ast}=
+\setcond{(x,\{\alpha\})}{x\in\atoms^{\mathfrak{F}}\Src f,\alpha\in\Dst f, x\times^{\mathsf{FCD}}\{\alpha\}\sqsubseteq \Pr_i}$
+\end{prop}
+
+\begin{proof}
+$\operatorname{ins}\pi^{\mathsf{FCD}}_i=\operatorname{ins}\tofcd\Pr_i=\operatorname{ins}\Pr_i$.
+
+First, we will prove that 
+$a\times^{\mathsf{FCD}}b\sqsubseteq\Pr_i$ for atomic filters~$a$,~$b$, then $b$ is principal (and thus singleton). 
+Suppose~$b$ is not principal. Then there exists a nonempty set~$A$ and a nonempty and non-singleton set~$B$ such that $A\times B\sqsubseteq\Pr_i$. Take~$x\in A$. We have $\{x\}\times B\sqsubseteq\Pr_i$ that is $x$~has more than once projection, what is impossible.
+
+So $\operatorname{ins}\pi^{\mathsf{FCD}}_i=
+\setcond{(x,\{\alpha\})}{x\in\atoms^{\mathfrak{F}}\Src f,\alpha\in\Dst f, x\times^{\mathsf{FCD}}\{\alpha\}\sqsubseteq\Pr_i}=\pi_i^{\ast}$.
+\end{proof}
+
+\begin{obvious}
+$\pi_i^{\ast}$ is a function.
+\end{obvious}
+
+It's easy to show that $\pi_i^{\ast}$ is a projection on~$\mathbf{Rel}$.
+
+I will denote the corresponding product on~$\mathbf{Rel}$ as $\prod^{(L\ast)}$.
+
+\begin{prop}
+$\operatorname{ins}\prod^{(L)}F =
+\prod^{(L\ast)}(\operatorname{ins}\circ F)$ for any indexed family~$F$ of funcoids.
+\end{prop}
+
+\begin{proof}
+$\operatorname{ins}\prod^{(L)}F =
+\operatorname{ins}\bigsqcap_{i \in \dom F} ((\pi^{\mathsf{FCD}}_i(\lambda j \in n :
+\Dst F_j))^{\dagger} \circ F_i \circ \pi^{\mathsf{FCD}}_i(\lambda j \in n :
+\Src F_j) =
+\bigsqcap_{i \in \dom F}\operatorname{ins} ((\pi^{\mathsf{FCD}}(\lambda j \in n :
+\Dst F_j))^{-1} \circ F_i \circ \pi^{\mathsf{FCD}}_i(\lambda j \in n :
+\Src F_j) =
+\bigsqcap_{i \in \dom F}(\operatorname{ins} (\pi^{\mathsf{FCD}}_i(\lambda j \in n :
+\Dst F_j)^{-1} \circ \operatorname{ins} F_i \circ \operatorname{ins} \pi^{\mathsf{FCD}}_i(\lambda j \in n :
+\Src F_j)) =
+\bigsqcap_{i \in \dom F}((\pi^{\ast}_i(\lambda j \in n :
+\Dst F_j)^{-1} \circ F_i \circ \pi^{\ast}_i(\lambda j \in n :
+\Src F_j)) =
+\prod^{(L\ast)}(\operatorname{ins}\circ F)$.
+\end{proof}
