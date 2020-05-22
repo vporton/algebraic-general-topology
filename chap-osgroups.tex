@@ -1,8 +1,8 @@
-\chapter{Introduction}
+\section{Introduction}
 
 I will show that most of the topology can be formulated in an ordered semigroup (or, more generally, an ordered precategory).
 
-\chapter{Prerequisites}
+\section{Prerequisites}
 
 You need to know about semigroups, ordered semigroups, semigroup actions, before reading further. If in doubt, consult Wikipedia.
 
@@ -16,7 +16,7 @@ I call two elements~$a$ and~$b$ \emph{joining} ($a\equiv b$) when there is no no
 
 I denote $\rsupfun{f}X = \setcond{fx}{x\in X}$.
 
-\chapter{Basic examples}
+\section{Basic examples}
 
 A topological space is determined by its closure operator.
 
@@ -36,7 +36,7 @@ This includes topological spaces, uniform spaces, proximity spaces, (directed) g
 
 Moreover we can consider the semigroup of all functions~$\subsets\mho\to\subsets\mho$ for some set~$\mho$ (the set of ``points'' of our space). Above we showed that topological spaces correspond to elements of this semigroup. Functions on~$\mho$ also can be considered as elements of this semigroup (replace every function with its ``image of a set'' function). Then we have an ordered semigroup action containing both topospaces and functions. As it was considered in~\cite{volume-1-edition1}, we can describe a function~$f$ being continuous from a space~$\mu$ to a space~$\nu$ by the formula $f\circ\mu\leq\nu\circ f$. See, it's an instance of \emph{algebraic} general topology: a topological concept was described by an algebraic formula, without any quantifiers.
 
-\chapter{Precategories}
+\section{Precategories}
 
 \begin{defn}
 \index{precategory}A \emph{precategory} is a directed multigraph
@@ -63,7 +63,7 @@ equation are defined.
 A semigroup is essentially a special case of a precategory (with only one object) and semigroup homomorphism is a prefunctor.
 \end{note}
 
-\chapter{Ordered precategories}
+\section{Ordered precategories}
 
 \begin{defn}
 \emph{Ordered precategory} (or \emph{poprecategory}) is
@@ -71,7 +71,7 @@ a precategory together with an order on the set of morphisms conforming to the e
 \[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
 \end{defn}
 
-\chapter{Ordered semigroups}
+\section{Ordered semigroups}
 
 \begin{defn}
 \emph{Ordered semigroup} (or \emph{posemigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
@@ -84,13 +84,13 @@ In this article I will call elements of an ordered semigroup \emph{spaces}, beca
 
 As I shown above, functions (and more generally binary relations) can also be considered as spaces.
 
-\chapter{Precategory actions}
+\section{Precategory actions}
 
 \begin{defn}
 \emph{Precategory action} is a prefunctor from a precategory to the category~$\mathbf{Set}$.
 \end{defn}
 
-\chapter{Ordered precategory actions}
+\section{Ordered precategory actions}
 
 \begin{defn}
 \emph{Semiordered precategory action} on~$\mathfrak{A}$ is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
@@ -113,7 +113,7 @@ I call morphisms of such a precategory as \emph{interspaces}.
 
 Note that this ``inducting'' is an ordered semigroup homomorphism.
 
-\chapter{Ordered semigroup actions}
+\section{Ordered semigroup actions}
 
 \begin{defn}
 \emph{Curried semiordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
@@ -181,7 +181,7 @@ Semiordered precategory action is \emph{ordered by elements} when \[ a\leq b \Le
 
 Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
 
-\chapter{Isomorphism of topological spaces}
+\section{Isomorphism of topological spaces}
 
 We will use the well-known fact (either see \cite{bourb-top-1} rewritten in our notation or deduce from the definition of continuity in~\cite{volume-1-edition1}) that a function~$f$ is continuous from topological space~$T_0$ to a topological space~$T_1$ iff $\rsupfun{f}[X]_0\subseteq[\rsupfun{f}X]_1$ for every set~$X$ on the topological space~$T_0$.
 
@@ -206,7 +206,7 @@ But~$\mathfrak{A}_0$ and~$\mathfrak{A}_1$ are powersets, so there exists a bijec
 We have $\rsupfun{\phi}\circ\supfun{}_0=\supfun{}_1\circ\rsupfun{\phi}$ and $\rsupfun{\phi^{-1}}\circ\supfun{}_1=\supfun{}_0\circ\rsupfun{\phi^{-1}}$ what obviously implies (remember that $\supfun{}_0$,~$\supfun{}_1$ are closure operators) that~$\phi$ is a homeomorphism.
 \end{proof}
 
-\chapter{Ordered dagger categories and ordered semigroups with involution}
+\section{Ordered dagger categories and ordered semigroups with involution}
 
 \begin{defn}
 \emph{Dagger precategory} is a precategory together with the operation $a\mapsto a^{\dagger}$ (called \emph{involution} or \emph{dagger}) such that:
@@ -224,7 +224,7 @@ For an \emph{ordered dagger precategory} we will additionally require $a\leq b\R
 
 For an \emph{ordered semigroup with involution} or \emph{ordered dagger precategory} we will additionally require $a\leq b\Rightarrow a^{\dagger}\leq b^{\dagger}$ (and consequently $a\leq b\Leftrightarrow a^{\dagger}\leq b^{\dagger}$).
 
-\chapter{Topological properties}
+\section{Topological properties}
 
 Now we have a formalism to describe many topological properties (following the ideas of~\cite{volume-1-edition1}):
 
@@ -247,7 +247,7 @@ However, we can define compactness without specifying~$\mathfrak{Z}$ as we can t
 
 It seem we cannot define \emph{total boundness} purely in terms of ordered semigroups, because it is a property of reloids and reloid is not determined by its action.
 
-\chapter{A relation}
+\section{A relation}
 
 Every ordered precategory action~$\supfun{}$ defines a relation~$R$: $x\suprel{a}y\Leftrightarrow y\nasymp\supfun{a}x$.
 
@@ -257,7 +257,7 @@ A space is connected iff $x\equiv y\Rightarrow x\suprel{a}y$.
 
 We can define open and closed functions.
 
-\chapter{Restricted identity transformations}
+\section{Restricted identity transformations}
 
 \emph{Restricted identity transformation} $\id_p$, where ~$p$ is an element of a poset, is the (generally, partially defined) transformation $x\mapsto x\sqcap p$.
 
@@ -291,7 +291,7 @@ From injectivity it follows $\id_{p\sqcap q} = \id_p\circ\id_q$.
 
 \emph{Square restriction} (a generalization of restriction of a topological space, metric space, etc.) of a space~$a$ to element~$x$ is $\id_x\circ a\circ\id_x$.
 
-\chapter{Binary product of poset elements}
+\section{Binary product of poset elements}
 
 \begin{defn}
 I call an ordered precategory action \emph{correctly bounded} when the set of interspaces between two fixed objects is bounded and:
@@ -369,7 +369,7 @@ We can define \emph{connectedness} of a space on a poset element~$x$ also in ano
 When our two definitions of connectedness coincide?
 \end{problem}
 
-\chapter{Separable spaces}
+\section{Separable spaces}
 
 $T_1$-space~$a$ when $x\mathrel{\overline{R\Cor a}}y$ for every $x\asymp y$.
 
@@ -379,7 +379,7 @@ $T_0$-space is such a space~$f$ that $f^{-1}\sqcap f$ is $T_1$-separable.
 
 $T_4$-space is such a space~$f$ that \[ f\circ f^{-1}\circ f\circ f^{-1}\leq f\circ f^{-1}. \]
 
-\chapter{Distributive ordered semigroup actions}
+\section{Distributive ordered semigroup actions}
 
 We can define (product) order of ordered precategory actions. For functional ordered precategory actions composition is defined. So we have one more ``level'' of ordered precategories. By the way, it can be continued indefinitely building new and new levels of such ordered precategories.
 
@@ -387,7 +387,7 @@ More generally we could consider ordered precategory functors (or specifically, 
 
 Pointfree funcoids (and consequently funcoids) are an ordered precategory action. Reloids are also an ordered precategory action.
 
-\chapter{Complete spaces and completion of spaces}
+\section{Complete spaces and completion of spaces}
 
 A space~$a$ is \emph{complete} when $\supfun{a}\bigsqcup S=\bigsqcup\rsupfun{\supfun{a}}S$ whenever both $\bigsqcup S$ and $\bigsqcup\rsupfun{\supfun{a}}S$ are defined.
 
@@ -403,7 +403,7 @@ Apparently, not every space has a completion.
 It is unrelated with Cachy-completion.
 \end{note}
 
-\chapter{Kuratowski spaces}
+\section{Kuratowski spaces}
 
 \begin{defn}
 \emph{Kuratowski space} is a complete idempotent ($a\circ a=a$) space.
@@ -411,7 +411,7 @@ It is unrelated with Cachy-completion.
 
 Kuratowski spaces are a generalization of topological spaces.
 
-\chapter{Pointfree funcoids}
+\section{Pointfree funcoids}
 
 The definition of pointfree funcoids from~\cite{volume-1-edition1}:
 
@@ -455,7 +455,7 @@ The formula $f\leq g\Rightarrow\supfun{f}x\leq\supfun{g}x$ means that~\eqref{pff
 what is true by the definition of componentwise.
 \end{proof}
 
-\chapter{Metric spaces}
+\section{Metric spaces}
 
 Let us call \emph{most general nonnegative real metrics} (MGNRM) the precategory of all extended nonnegative ($\mathbb{R}_{+}\cup\{+\infty\}$) real functions (on some fixed set) of two arguments and the ``composition'' operation
 \[ (\sigma\circ\rho)(x,z) = \inf_{y\in\mho}(\rho(x,y)+\sigma(z,y)) \]
@@ -606,7 +606,7 @@ for filters $x\sqsubseteq y$.
 
 \fxnote{The above can be generalized for the values of the metric to be certain ordered additive semigroups instead of nonnegative real numbers.}
 
-\section{Functions as metrics}
+\subsection{Functions as metrics}
 
 We want to consider functions in relations with MGNRM. So we we will consider (not only functions but also) every morphism~$f$ of category~$\mathbf{Rel}$ as an MGNRM by the formulas $\rho_{f}(x,y) = 0$ if $x\mathrel{f}y$ and $\rho_{f}(x,y) = +\infty$ if not $x\mathrel{f}y$.
 
@@ -637,7 +637,7 @@ The other item follows from symmetry.
 
 \fxnote{Analogous theorem when~$x$ and~$y$ are sets?}
 
-\section{Contractions}
+\subsection{Contractions}
 
 What are (generalized) continuous functions between metric spaces?
 
