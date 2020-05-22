@@ -181,6 +181,31 @@ Semiordered precategory action is \emph{ordered by elements} when \[ a\leq b \Le
 
 Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
 
+\chapter{Isomorphisms}
+
+We will use the well-known fact (either see \cite{bourb-top-1} rewritten in our notation or deduce from the definition of continuity in~\cite{volume-1}) that a function~$f$ is continuous from topological space~$T_0$ to a topological space~$T_1$ iff $\rsupfun{f}[X]_0\subseteq[\rsupfun{f}X]_1$ for every set~$X$ on the topological space~$T_0$.
+
+\begin{defn}
+I will call two ordered semigroup actions elements~$(G_0,\mathfrak{A}_0,\supfun{}_0)$ and~$(G_1,\mathfrak{A}_1,\supfun{}_1)$ \emph{isomorphic} when $G_0$ is isomorphic to~$G_1$ and $\mathfrak{A}_0$ is order-isomorphic to~$\mathfrak{A}_1$ and there exists a bijection~$f$ between~$\mathfrak{A}_0$ and~$\mathfrak{A}_1$ such that
+\[ f^{-1}\circ\supfun{}_1\circ f=\supfun{}_0. \]
+\end{defn}
+
+\begin{thm}
+Two topological spaces are isomorphic iff their corresponding (see above) ordered semigroup actions elements are isomorphic.
+\end{thm}
+
+\begin{proof}
+Denote our topological spaces as~$T_0$,~$T_1$ and their corresponding ordered semigroup actions elements as $(G_0,\mathfrak{A}_0,\supfun{}_0)$, $(G_1,\mathfrak{A}_1,\supfun{}_1)$.
+
+Let $T_0$ and~$T_1$ be isomorphic. Then by well known properties of topological isomorphisms, $G_0$,~$G_1$ are isomorphic and $\mathfrak{A}_0$,~$\mathfrak{A}_1$ are isomorphic. Consider a bijective homeomorphism~$\phi$ between~$T_0$ and~$T_1$ and take $f=\rsupfun{\phi}$. We have $f^{-1}\circ\supfun{}_1\circ f=\supfun{}_0$ because $\rsupfun{\phi}\supfun{X}_0\subseteq\supfun{\rsupfun{\phi}X}_1$ and $\rsupfun{\phi^{-1}}\supfun{X}_1\subseteq\supfun{\rsupfun{\phi^{-1}}Y}_0$ for all sets~$X$,~$Y$ on these topological spaces.
+
+Let now $(G_0,\mathfrak{A}_0,\supfun{}_0)$, $(G_1,\mathfrak{A}_1,\supfun{}_1)$ be isomorphic.
+Then we have
+\[ f^{-1}\circ\supfun{}_1\circ f=\supfun{}_0. \]
+But~$\mathfrak{A}_0$ and~$\mathfrak{A}_1$ are powersets, so there exists a bijection~$\phi$ between~$\bigcup\mathfrak{A}_0$ and~$\bigcup\mathfrak{A}_1$ such that~$f=\rsupfun{\phi}$.
+We have $\rsupfun{\phi}\circ\supfun{}_0=\supfun{}_1\circ\rsupfun{\phi}$ and $\rsupfun{\phi^{-1}}\circ\supfun{}_1=\supfun{}_0\circ\rsupfun{\phi^{-1}}$ what obviously implies (remember that $\supfun{}_0$,~$\supfun{}_1$ are closure operators) that~$\phi$ is a homeomorphism.
+\end{proof}
+
 \chapter{Ordered dagger categories and ordered semigroups with involution}
 
 \begin{defn}
