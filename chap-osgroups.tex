@@ -426,6 +426,50 @@ It is unrelated with Cachy-completion.
 
 Kuratowski spaces are a generalization of topological spaces.
 
+\chapter{Pointfree funcoids}
+
+The definition of pointfree funcoids from~\cite{volume-1}:
+
+\begin{defn}
+\emph{Pointfree funcoid} is a quadruple
+$(\mathfrak{A},\mathfrak{B},\alpha,\beta)$ where~$\mathfrak{A}$
+and~$\mathfrak{B}$ are posets, $\alpha\in\mathfrak{B}^{\mathfrak{A}}$
+and $\beta\in\mathfrak{A}^{\mathfrak{B}}$ such that 
+\[
+\forall x\in\mathfrak{A},y\in\mathfrak{B}:(y\nasymp\alpha x\Leftrightarrow x\nasymp\beta y).
+\]
+\end{defn}
+
+Let's represent pointfree funcoids as semiordered precategory action elements.
+
+\begin{rem}
+Because every funcoid can be represented as a pointfree funcoid, the below also provides another way to represent funcoids as semiordered precategory action elements.
+\end{rem}
+
+Let $f=(\mathfrak{A},\mathfrak{B},\alpha,\beta)$ be a pointfree funcoid. Consider the precategory of all (small, that is belonging to some Grothendieck universe, to be precise) pointfree funcoids, whose objects are posets and whose morphisms are pointfree funcoids between them with the composition of pointfree funcoids as in~\cite{volume-1}.
+
+Define the action of this precategory by the formula
+\[ \supfun{f}(x,y)=(\alpha x,\beta y)=\left(\supfun{f}x,\supfun{f^{-1}}y\right) \]
+for $x\in\mathfrak{A}$, $y\in\mathfrak{B}$.
+
+\begin{note}
+At the left side of this formula $\supfun{f}$ means the precategory action, at the right side it means the component of the pointfree funcoid. This ambiguity will be clear from the context.
+\end{note}
+
+The order on pointfree funcoids $\mathfrak{A}\to\mathfrak{B}$ is defined by in~\cite{volume-1} by the formula
+\begin{align}\label{pffcd-ord}
+f\leq g\Leftrightarrow&\forall x\in\mathfrak{A}:\supfun{f}x\leq\supfun{g}x\land\\\nonumber&\forall y\in\mathfrak{B}:\supfun{f^{-1}}y\leq\supfun{g^{-1}}y.
+\end{align}
+
+Let's prove it is a semiordered precategory action if we define the order on the set of the action componentwise:
+
+\begin{proof}
+The formula $f\leq g\Rightarrow\supfun{f}x\leq\supfun{g}x$ means that~\eqref{pffcd-ord} implies
+\[ \forall x\in\mathfrak{A},y\in\mathfrak{B}:
+\left(\supfun{f}x,\supfun{f^{-1}}y\right) \leq \left(\supfun{g}x,\supfun{g^{-1}}y\right)\]
+what is true by the definition of componentwise.
+\end{proof}
+
 \chapter{Metric spaces}
 
 Let us call \emph{most general nonnegative real metrics} (MGNRM) the precategory of all extended nonnegative ($\mathbb{R}_{+}\cup\{+\infty\}$) real functions (on some fixed set) of two arguments and the ``composition'' operation
