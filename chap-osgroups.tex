@@ -80,7 +80,7 @@ a precategory together with an order on the set of morphisms conforming to the e
 
 Essentially, a posemigroup is just an ordered precategory with just one object.
 
-In this book I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, (quasi)proximity spaces, (quasi)uniform spaces, (directed) graphs. (quasi)metric spaces.
+In this article I will call elements of an ordered semigroup \emph{spaces}, because they generalize such things as topological spaces, (quasi)proximity spaces, (quasi)uniform spaces, (directed) graphs. (quasi)metric spaces.
 
 As I shown above, functions (and more generally binary relations) can also be considered as spaces.
 
@@ -170,12 +170,12 @@ $\supfun{a}$ is the same as one of the original ordered precategory action and t
 
 Having a ordered precategory action and a homomorphism to its ordered precategory, we can define in an obvious way a new ordered precategory action. The following is an example of this construction (here $\torldin$ is a functor of ordered precategories).
 
-\emph{Funcoids} described in the first book of this book series form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
+\emph{Funcoids} described in~\cite{volume-1-edition1} form an ordered precategory with action $\supfun{}$. \emph{Reloids} form an ordered precategory with action $a\mapsto\supfun{\torldin a}$.
 As we know from the~\cite{volume-1-edition1}, funcoids are a generalization of topological spaces, proximity spaces, and directed graphs (``discrete spaces''), reloids is a generalization of uniform spaces and directed graphs. Funcoid is determined by its action. So most of the customary general topology can be described in terms of ordered precategory actions (or ordered semigroup actions, see below).
 
 Remember that elements of our posets of objects may be such things as sets or more generally filters, they may be not just points. So our topological construction is ``pointfree'' (we may consider sets or filters, not points).
 
-This book is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
+This article is mainly about this topic: describing general topology in terms of ordered precategory actions. Above are the new axioms for general topology. No topological spaces here.
 
 Semiordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow \supfun{a}\leq \supfun{b} \] that is when \[ a\leq b \Leftarrow \forall x:\supfun{a}x\leq\supfun{b}x. \]
 
@@ -183,7 +183,7 @@ Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precat
 
 \chapter{Isomorphism of topological spaces}
 
-We will use the well-known fact (either see \cite{bourb-top-1} rewritten in our notation or deduce from the definition of continuity in~\cite{volume-1}) that a function~$f$ is continuous from topological space~$T_0$ to a topological space~$T_1$ iff $\rsupfun{f}[X]_0\subseteq[\rsupfun{f}X]_1$ for every set~$X$ on the topological space~$T_0$.
+We will use the well-known fact (either see \cite{bourb-top-1} rewritten in our notation or deduce from the definition of continuity in~\cite{volume-1-edition1}) that a function~$f$ is continuous from topological space~$T_0$ to a topological space~$T_1$ iff $\rsupfun{f}[X]_0\subseteq[\rsupfun{f}X]_1$ for every set~$X$ on the topological space~$T_0$.
 
 \begin{defn}
 I will call two ordered semigroup actions elements~$(G_0,\mathfrak{A}_0,\supfun{}_0)$ and~$(G_1,\mathfrak{A}_1,\supfun{}_1)$ \emph{isomorphic} when $G_0$ is isomorphic to~$G_1$ and $\mathfrak{A}_0$ is order-isomorphic to~$\mathfrak{A}_1$ and there exists a bijection~$f$ between~$\mathfrak{A}_0$ and~$\mathfrak{A}_1$ such that
@@ -413,7 +413,7 @@ Kuratowski spaces are a generalization of topological spaces.
 
 \chapter{Pointfree funcoids}
 
-The definition of pointfree funcoids from~\cite{volume-1}:
+The definition of pointfree funcoids from~\cite{volume-1-edition1}:
 
 \begin{defn}
 \emph{Pointfree funcoid} is a quadruple
@@ -431,7 +431,7 @@ Let's represent pointfree funcoids as semiordered precategory action elements.
 Because every funcoid can be represented as a pointfree funcoid, the below also provides another way to represent funcoids as semiordered precategory action elements.
 \end{rem}
 
-Let $f=(\mathfrak{A},\mathfrak{B},\alpha,\beta)$ be a pointfree funcoid. Consider the precategory of all (small, that is belonging to some Grothendieck universe, to be precise) pointfree funcoids, whose objects are posets and whose morphisms are pointfree funcoids between them with the composition of pointfree funcoids as in~\cite{volume-1}.
+Let $f=(\mathfrak{A},\mathfrak{B},\alpha,\beta)$ be a pointfree funcoid. Consider the precategory of all (small, that is belonging to some Grothendieck universe, to be precise) pointfree funcoids, whose objects are posets and whose morphisms are pointfree funcoids between them with the composition of pointfree funcoids as in~\cite{volume-1-edition1}.
 
 Define the action of this precategory by the formula
 \[ \supfun{f}(x,y)=(\alpha x,\beta y)=\left(\supfun{f}x,\supfun{f^{-1}}y\right) \]
@@ -441,7 +441,7 @@ for $x\in\mathfrak{A}$, $y\in\mathfrak{B}$.
 At the left side of this formula $\supfun{f}$ means the precategory action, at the right side it means the component of the pointfree funcoid. This ambiguity will be clear from the context.
 \end{note}
 
-The order on pointfree funcoids $\mathfrak{A}\to\mathfrak{B}$ is defined by in~\cite{volume-1} by the formula
+The order on pointfree funcoids $\mathfrak{A}\to\mathfrak{B}$ is defined by in~\cite{volume-1-edition1} by the formula
 \begin{align}\label{pffcd-ord}
 f\leq g\Leftrightarrow&\forall x\in\mathfrak{A}:\supfun{f}x\leq\supfun{g}x\land\\\nonumber&\forall y\in\mathfrak{B}:\supfun{f^{-1}}y\leq\supfun{g^{-1}}y.
 \end{align}
