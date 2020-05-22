@@ -93,7 +93,7 @@ As I shown above, functions (and more generally binary relations) can also be co
 \chapter{Ordered precategory actions}
 
 \begin{defn}
-\emph{Semiordered precategory action} on a is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\emph{Semiordered precategory action} on~$\mathfrak{A}$ is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
 \begin{enumerate}
 \item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
 \end{enumerate}
@@ -101,7 +101,7 @@ I call morphisms of such a precategory as \emph{semi-interspaces}.\footnote{The 
 \end{defn}
 
 \begin{defn}
-\emph{Ordered precategory action} on a is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\emph{Ordered precategory action} on~$\mathfrak{A}$ is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
 \begin{enumerate}
 \item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
 \item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$, $x,y\in\mathfrak{A}$.
@@ -133,11 +133,11 @@ $x,y\in\mathfrak{A}$;
 \item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
 \item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
 \end{enumerate}
-I call elements of such an action \emph{spaces}.
+I call elements of such an action \emph{spaces}. (By an element of an action I mean an element of the corresponding semigroup.)
 \end{defn}
 
 \begin{rem}
-Google search for ``"ordered semigroup action"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
+Google search for both ``"ordered semigroup action"'' and ``"action of ordered semigroup"'' and ``"action of an ordered semigroup"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
 \end{rem}
 
 Essentially, an ordered semigroup action is an ordered precategory action with just one object.
@@ -180,6 +180,31 @@ This book is mainly about this topic: describing general topology in terms of or
 Semiordered precategory action is \emph{ordered by elements} when \[ a\leq b \Leftarrow \supfun{a}\leq \supfun{b} \] that is when \[ a\leq b \Leftarrow \forall x:\supfun{a}x\leq\supfun{b}x. \]
 
 Obviously, in this case~$\supfun{}$ is a faithful functor. So our ordered precategory action is \emph{essentially functional} (functional, up to a faithful functor).
+
+\chapter{Isomorphism of topological spaces}
+
+We will use the well-known fact (either see \cite{bourb-top-1} rewritten in our notation or deduce from the definition of continuity in~\cite{volume-1}) that a function~$f$ is continuous from topological space~$T_0$ to a topological space~$T_1$ iff $\rsupfun{f}[X]_0\subseteq[\rsupfun{f}X]_1$ for every set~$X$ on the topological space~$T_0$.
+
+\begin{defn}
+I will call two ordered semigroup actions elements~$(G_0,\mathfrak{A}_0,\supfun{}_0)$ and~$(G_1,\mathfrak{A}_1,\supfun{}_1)$ \emph{isomorphic} when $G_0$ is isomorphic to~$G_1$ and $\mathfrak{A}_0$ is order-isomorphic to~$\mathfrak{A}_1$ and there exists a bijection~$f$ between~$\mathfrak{A}_0$ and~$\mathfrak{A}_1$ such that
+\[ f^{-1}\circ\supfun{}_1\circ f=\supfun{}_0. \]
+\end{defn}
+
+\begin{thm}
+Two topological spaces are isomorphic iff their corresponding (see above) ordered semigroup actions elements are isomorphic.
+\end{thm}
+
+\begin{proof}
+Denote our topological spaces as~$T_0$,~$T_1$ and their corresponding ordered semigroup actions elements as $(G_0,\mathfrak{A}_0,\supfun{}_0)$, $(G_1,\mathfrak{A}_1,\supfun{}_1)$.
+
+Let $T_0$ and~$T_1$ be isomorphic. Then by well known properties of topological isomorphisms, $G_0$,~$G_1$ are isomorphic and $\mathfrak{A}_0$,~$\mathfrak{A}_1$ are isomorphic. Consider a bijective homeomorphism~$\phi$ between~$T_0$ and~$T_1$ and take $f=\rsupfun{\phi}$. We have $f^{-1}\circ\supfun{}_1\circ f=\supfun{}_0$ because $\rsupfun{\phi}\supfun{X}_0\subseteq\supfun{\rsupfun{\phi}X}_1$ and $\rsupfun{\phi^{-1}}\supfun{X}_1\subseteq\supfun{\rsupfun{\phi^{-1}}Y}_0$ for all sets~$X$,~$Y$ on these topological spaces.
+
+Let now $(G_0,\mathfrak{A}_0,\supfun{}_0)$, $(G_1,\mathfrak{A}_1,\supfun{}_1)$ be isomorphic.
+Then we have
+\[ f^{-1}\circ\supfun{}_1\circ f=\supfun{}_0. \]
+But~$\mathfrak{A}_0$ and~$\mathfrak{A}_1$ are powersets, so there exists a bijection~$\phi$ between~$\bigcup\mathfrak{A}_0$ and~$\bigcup\mathfrak{A}_1$ such that~$f=\rsupfun{\phi}$.
+We have $\rsupfun{\phi}\circ\supfun{}_0=\supfun{}_1\circ\rsupfun{\phi}$ and $\rsupfun{\phi^{-1}}\circ\supfun{}_1=\supfun{}_0\circ\rsupfun{\phi^{-1}}$ what obviously implies (remember that $\supfun{}_0$,~$\supfun{}_1$ are closure operators) that~$\phi$ is a homeomorphism.
+\end{proof}
 
 \chapter{Ordered dagger categories and ordered semigroups with involution}
 
@@ -385,6 +410,50 @@ It is unrelated with Cachy-completion.
 \end{defn}
 
 Kuratowski spaces are a generalization of topological spaces.
+
+\chapter{Pointfree funcoids}
+
+The definition of pointfree funcoids from~\cite{volume-1}:
+
+\begin{defn}
+\emph{Pointfree funcoid} is a quadruple
+$(\mathfrak{A},\mathfrak{B},\alpha,\beta)$ where~$\mathfrak{A}$
+and~$\mathfrak{B}$ are posets, $\alpha\in\mathfrak{B}^{\mathfrak{A}}$
+and $\beta\in\mathfrak{A}^{\mathfrak{B}}$ such that 
+\[
+\forall x\in\mathfrak{A},y\in\mathfrak{B}:(y\nasymp\alpha x\Leftrightarrow x\nasymp\beta y).
+\]
+\end{defn}
+
+Let's represent pointfree funcoids as semiordered precategory action elements.
+
+\begin{rem}
+Because every funcoid can be represented as a pointfree funcoid, the below also provides another way to represent funcoids as semiordered precategory action elements.
+\end{rem}
+
+Let $f=(\mathfrak{A},\mathfrak{B},\alpha,\beta)$ be a pointfree funcoid. Consider the precategory of all (small, that is belonging to some Grothendieck universe, to be precise) pointfree funcoids, whose objects are posets and whose morphisms are pointfree funcoids between them with the composition of pointfree funcoids as in~\cite{volume-1}.
+
+Define the action of this precategory by the formula
+\[ \supfun{f}(x,y)=(\alpha x,\beta y)=\left(\supfun{f}x,\supfun{f^{-1}}y\right) \]
+for $x\in\mathfrak{A}$, $y\in\mathfrak{B}$.
+
+\begin{note}
+At the left side of this formula $\supfun{f}$ means the precategory action, at the right side it means the component of the pointfree funcoid. This ambiguity will be clear from the context.
+\end{note}
+
+The order on pointfree funcoids $\mathfrak{A}\to\mathfrak{B}$ is defined by in~\cite{volume-1} by the formula
+\begin{align}\label{pffcd-ord}
+f\leq g\Leftrightarrow&\forall x\in\mathfrak{A}:\supfun{f}x\leq\supfun{g}x\land\\\nonumber&\forall y\in\mathfrak{B}:\supfun{f^{-1}}y\leq\supfun{g^{-1}}y.
+\end{align}
+
+Let's prove it is a semiordered precategory action if we define the order on the set of the action componentwise:
+
+\begin{proof}
+The formula $f\leq g\Rightarrow\supfun{f}x\leq\supfun{g}x$ means that~\eqref{pffcd-ord} implies
+\[ \forall x\in\mathfrak{A},y\in\mathfrak{B}:
+\left(\supfun{f}x,\supfun{f^{-1}}y\right) \leq \left(\supfun{g}x,\supfun{g^{-1}}y\right)\]
+what is true by the definition of componentwise.
+\end{proof}
 
 \chapter{Metric spaces}
 
