@@ -360,58 +360,58 @@ $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})\
 \end{lem}
 
 \begin{proof}
-Because $f$ is continuous, we have $\rsupfun{f\circ\iota_A|\mathbb{R}|}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|\circ f}\{x\}$
+Because $f$ is continuous, we have $\rsupfun{f\circ\iota_{\Ob\mu}|\mathbb{R}|}\{x\} \sqsubseteq \rsupfun{\iota_{\Ob\nu}|\mathbb{R}|\circ f}\{x\}$
 that is $\rsupfun{f} \Delta(x) \sqsubseteq \Delta(f(x))$ for every~$x$.
 
 If $f$ is monotone, we have $\rsupfun{f} \Delta_{\geq}(x) \sqsubseteq [f(x);\infty[$.
 Thus $\rsupfun{f} \Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}(f(x))$, that is
-$\rsupfun{f\circ \iota_A|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{\geq}\circ f}\{x\}$, thus
-$f\in\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq})$.
+$\rsupfun{f\circ \iota_{\Ob\mu}|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_{\Ob\nu}|\mathbb{R}|_{\geq}\circ f}\{x\}$, thus
+$f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$.
 
 If $f$ is strictly monotone, we have $\rsupfun{f} \Delta_{>}(x) \sqsubseteq ]f(x);\infty[$.
 Thus $\rsupfun{f} \Delta_{>}(x) \sqsubseteq \Delta_{>}(f(x))$, that is
-$\rsupfun{f\circ \iota_A|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{>}\circ f}\{x\}$, thus
-$f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{>})$.
+$\rsupfun{f\circ \iota_{\Ob\mu}|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_{\Ob\nu}|\mathbb{R}|_{>}\circ f}\{x\}$, thus
+$f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})$.
 
-Let now $f\in\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq})$.
+Let now $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$.
 
-Take any~$a\in A$ and let $c=\setcond{b\in B}{b\geq a, \forall x\in[a;b[: f(x)\geq f(a)}$.
-It's enough to prove that $c$ is the right endpoint (finite or infinite) of~$A$.
+Take any~$a\in {\Ob\mu}$ and let $c=\setcond{b\in {\Ob\nu}}{b\geq a, \forall x\in[a;b[: f(x)\geq f(a)}$.
+It's enough to prove that $c$ is the right endpoint (finite or infinite) of~${\Ob\mu}$.
 
-Indeed by continuity $f(a)\leq f(c)$ and if $c$ is not already the right endpoint of~$A$, then
+Indeed by continuity $f(a)\leq f(c)$ and if $c$ is not already the right endpoint of~${\Ob\mu}$, then
 there is $b'>c$ such that $\forall x\in[c;b'[: f(x)\geq f(c)$.
 So we have $\forall x\in[a;b'[: f(x)\geq f(c)$ what contradicts to the above.
 
-So $f$ is monotone on the entire~$A$.
+So $f$ is monotone on the entire~${\Ob\mu}$.
 
-$f\in\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq}) \Rightarrow f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{\geq})$ is obvious. Reversely
-$f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{\geq}) \Rightarrow
-f\circ \iota_A|\mathbb{R}|_{>} \sqsubseteq \iota_B|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_A|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+$f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq}) \Rightarrow f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$ is obvious. Reversely
+$f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{\geq}) \Rightarrow
+f\circ \iota_{\Ob\mu}|\mathbb{R}|_{>} \sqsubseteq \iota_{\Ob\nu}|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
+\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_{\Ob\mu}|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_{\Ob\nu}|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqcup \{f(x)\} \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqcup \{x\} \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
 \forall x\in\mathbb{R}: \supfun{f}\Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_A|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_B|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
-\forall x\in\mathbb{R}: f\circ \iota_A|\mathbb{R}|_{\geq} \sqsubseteq \iota_B|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
-f\in\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq})$.
+\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_{\Ob\mu}|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_{\Ob\nu}|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+\forall x\in\mathbb{R}: f\circ \iota_{\Ob\mu}|\mathbb{R}|_{\geq} \sqsubseteq \iota_{\Ob\nu}|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
+f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$.
 
-Let $f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{>})$. Then $f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{\geq})$ and thus it is monotone.
+Let $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})$. Then $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$ and thus it is monotone.
 We need to prove that $f$ is strictly monotone.
-Suppose the contrary. Then there is a nonempty interval $[p;q]\subseteq A$ such that $f$ is constant on this interval.
-But this is impossible because $f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{>})$.
+Suppose the contrary. Then there is a nonempty interval $[p;q]\subseteq {\Ob\mu}$ such that $f$ is constant on this interval.
+But this is impossible because $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})$.
 
-Prove that $f\in\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq})\cap
-\continuous(\iota_A|\mathbb{R}|_{\leq},\iota_B|\mathbb{R}|_{\leq})$ implies
-$f\in\continuous(A,B)$. Really, it implies
+Prove that $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})\cap
+\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\leq},\iota_{\Ob\nu}|\mathbb{R}|_{\leq})$ implies
+$f\in\continuous({\Ob\mu},{\Ob\nu})$. Really, it implies
 $\supfun{f}\Delta_{\leq}(x)\sqsubseteq\Delta_{\leq}(fx)$ and $\supfun{f}\Delta_{\geq}(x)\sqsubseteq\Delta_{\geq}(fx)$
 thus $\supfun{f}\Delta(x) = \supfun{f}(\Delta_{\leq}(x)\sqcup\{x\}\sqcup\Delta_{\geq}(x)) \subseteq
 \Delta_{\leq}f(x)\sqcup\{f(x)\}\sqcup\Delta_{\geq}f(x) =
 \Delta(f(x))$.
 
-Prove that $f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{>})\cap
-\continuous(\iota_A|\mathbb{R}|_{<},\iota_B|\mathbb{R}|_{<})$
-$f\in\continuous(A,B)$. Really, it implies
+Prove that $f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})\cap
+\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{<},\iota_{\Ob\nu}|\mathbb{R}|_{<})$
+$f\in\continuous({\Ob\mu},{\Ob\nu})$. Really, it implies
 $\supfun{f}\Delta_{<}(x)\sqsubseteq\Delta_{<}(fx)$ and $\supfun{f}\Delta_{>}(x)\sqsubseteq\Delta_{>}(fx)$
 thus $\supfun{f}\Delta(x) = \supfun{f}(\Delta_{<}(x)\sqcup\{x\}\sqcup\Delta_{>}(x)) \subseteq
 \Delta_{<}f(x)\sqcup\{f(x)\}\sqcup\Delta_{>}f(x) = \Delta(f(x))$.
