@@ -404,17 +404,17 @@ But this is impossible because $f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_
 Prove that $f\in\continuous(\iota_{A}|\mathbb{R}|_{\geq},\iota_{B}|\mathbb{R}|_{\geq})\cap
 \continuous(\iota_{A}|\mathbb{R}|_{\leq},\iota_{B}|\mathbb{R}|_{\leq})$ implies
 $f\in\continuous({A},{B})$. Really, it implies
-$\supfun{f}\Delta_{\leq}(x)\sqsubseteq\Delta_{\leq}(fx)$ and $\supfun{f}\Delta_{\geq}(x)\sqsubseteq\Delta_{\geq}(fx)$
-thus $\supfun{f}\Delta(x) = \supfun{f}(\Delta_{\leq}(x)\sqcup\{x\}\sqcup\Delta_{\geq}(x)) \subseteq
-\Delta_{\leq}f(x)\sqcup\{f(x)\}\sqcup\Delta_{\geq}f(x) =
-\Delta(f(x))$.
+$\supfun{f}(A\sqcap\Delta_{\leq}(x))\sqsubseteq B\sqcap\Delta_{\leq}(fx)$ and $\supfun{f}(A\sqcap\Delta_{\geq}(x))\sqsubseteq B\sqcap\Delta_{\geq}(fx)$
+thus $\supfun{f}(A\sqcap\Delta(x)) = \supfun{f}(A\sqcap(\Delta_{\leq}(x)\sqcup\{x\}\sqcup\Delta_{\geq}(x))) \sqsubseteq
+B\sqcap(\Delta_{\leq}f(x)\sqcup\{f(x)\}\sqcup\Delta_{\geq}f(x)) =
+B\sqcap\Delta(f(x))$.
 
 Prove that $f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_{B}|\mathbb{R}|_{>})\cap
 \continuous(\iota_{A}|\mathbb{R}|_{<},\iota_{B}|\mathbb{R}|_{<})$
 $f\in\continuous({A},{B})$. Really, it implies
-$\supfun{f}\Delta_{<}(x)\sqsubseteq\Delta_{<}(fx)$ and $\supfun{f}\Delta_{>}(x)\sqsubseteq\Delta_{>}(fx)$
-thus $\supfun{f}\Delta(x) = \supfun{f}(\Delta_{<}(x)\sqcup\{x\}\sqcup\Delta_{>}(x)) \subseteq
-\Delta_{<}f(x)\sqcup\{f(x)\}\sqcup\Delta_{>}f(x) = \Delta(f(x))$.
+$\supfun{f}(A\sqcap\Delta_{<}(x))\sqsubseteq B\sqcap\Delta_{<}(fx)$ and $\supfun{f}(A\sqcap\Delta_{>}(x))\sqsubseteq B\sqcap\Delta_{>}(fx)$
+thus $\supfun{f}(A\sqcap\Delta(x)) = \supfun{f}(A\sqcap(\Delta_{<}(x)\sqcup\{x\}\sqcup\Delta_{>}(x))) \sqsubseteq
+B\sqcap(\Delta_{<}f(x)\sqcup\{f(x)\}\sqcup\Delta_{>}f(x)) = B\sqcap\Delta(f(x))$.
 \end{proof}
 
 \begin{thm}
