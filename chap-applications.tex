@@ -341,18 +341,19 @@ I will say that a property holds on a filter~$\mathcal{A}$ iff there is $A\in\up
 (f,f)\in\continuous((A,\iota_A|\mathbb{R}|_{\geq}),(B,\iota_B|\mathbb{R}|_{\geq}))$}
 
 \begin{lem}
-Let function~$f:A\rightarrow B$ where $A,B\in\subsets\mathbb{R}$ and $A$ is connected.
-\fxerror{$\continuous(A,B)$~is a nonsense.}
+Let function~$f:\Ob\mu\rightarrow\Ob\nu$ where
+$\mu$,~$\nu$ are endofuncoids on subsets of~$\mathbb{R}$ and $\mu$~is connected.
 \begin{enumerate}
-\item $f$ is monotone and $f\in\continuous(A,B)$ iff
-$f\in\continuous(A,B)\cap\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq})$ iff
-$f\in\continuous(A,B)\cap\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{\geq})$ iff
-$f\in\continuous(\iota_A|\mathbb{R}|_{\geq},\iota_B|\mathbb{R}|_{\geq})\cap
-\continuous(\iota_A|\mathbb{R}|_{\leq},\iota_B|\mathbb{R}|_{\leq})$.
-\item $f$ is strictly monotone and $\in\continuous(A,B)$ iff
-$f\in\continuous(A,B)\cap\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{>})$ iff
-$f\in\continuous(\iota_A|\mathbb{R}|_{>},\iota_B|\mathbb{R}|_{>})\cap
-\continuous(\iota_A|\mathbb{R}|_{<},\iota_B|\mathbb{R}|_{<})$.
+\item $f$ is monotone and $f\in\continuous(\mu,\nu)$ iff
+$f\in\continuous(\mu,\nu)\cap\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(\mu,\nu)\cap\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})$ iff
+$f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\geq},\iota_{\Ob\nu}|\mathbb{R}|_{\geq})\cap
+\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{\leq},\iota_{\Ob\nu}|\mathbb{R}|_{\leq})$.
+\item $f$ is monotone and $f\in\continuous(\mu,\nu)$ iff
+$f\in\continuous(\mu,\nu)\cap\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})$ iff
+$f\in\continuous(\mu,\nu)\cap\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})$ iff
+$f\in\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{>},\iota_{\Ob\nu}|\mathbb{R}|_{>})\cap
+\continuous(\iota_{\Ob\mu}|\mathbb{R}|_{<},\iota_{\Ob\nu}|\mathbb{R}|_{<})$.
 \end{enumerate}
 \fxnote{Generalize for arbitrary posets.}
 \fxnote{Generalize for $f$ being a funcoid.}
