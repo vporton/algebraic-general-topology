@@ -385,15 +385,15 @@ So we have $\forall x\in[a;b'[: f(x)\geq f(c)$ what contradicts to the above.
 So $f$ is monotone on the entire~${A}$.
 
 $f\in\continuous(\iota_{A}|\mathbb{R}|_{\geq},\iota_{B}|\mathbb{R}|_{\geq}) \Rightarrow f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_{B}|\mathbb{R}|_{\geq})$ is obvious. Reversely
-$f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_{B}|\mathbb{R}|_{\geq}) \Rightarrow
+$f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_{B}|\mathbb{R}|_{\geq}) \Leftrightarrow
 f\circ \iota_{A}|\mathbb{R}|_{>} \sqsubseteq \iota_{B}|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_{A}|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_{B}|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqcup \{f(x)\} \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\Delta_{>}(x) \sqcup \{x\} \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\Delta_{\geq}(x) \sqsubseteq \Delta_{\geq}f(x) \Leftrightarrow
-\forall x\in\mathbb{R}: \supfun{f}\rsupfun{\iota_{A}|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_{B}|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
-\forall x\in\mathbb{R}: f\circ \iota_{A}|\mathbb{R}|_{\geq} \sqsubseteq \iota_{B}|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
+\forall x\in A: \supfun{f}\rsupfun{\iota_{A}|\mathbb{R}|_{>}}\{x\} \sqsubseteq \rsupfun{\iota_{B}|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+\forall x\in A: \supfun{f}(A\sqcap\Delta_{>}(x)) \sqsubseteq B\sqcap\Delta_{\geq}f(x) \Leftrightarrow
+\forall x\in A: \supfun{f}(A\sqcap\Delta_{>}(x)) \sqcup \{f(x)\} \sqsubseteq B\sqcap\Delta_{\geq}f(x) \Leftrightarrow
+\forall x\in A: \supfun{f}((A\sqcap\Delta_{>}(x)) \sqcup \{x\}) \sqsubseteq B\sqcap\Delta_{\geq}f(x) \Leftrightarrow
+\forall x\in A: \supfun{f}(A\sqcap\Delta_{\geq}(x)) \sqsubseteq B\sqcap\Delta_{\geq}f(x) \Leftrightarrow
+\forall x\in A: \supfun{f}\rsupfun{\iota_{A}|\mathbb{R}|_{\geq}}\{x\} \sqsubseteq \rsupfun{\iota_{B}|\mathbb{R}|_{\geq}}\rsupfun{f}\{x\} \Leftrightarrow
+f\circ \iota_{A}|\mathbb{R}|_{\geq} \sqsubseteq \iota_{B}|\mathbb{R}|_{\geq}\circ f \Leftrightarrow
 f\in\continuous(\iota_{A}|\mathbb{R}|_{\geq},\iota_{B}|\mathbb{R}|_{\geq})$.
 
 Let $f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_{B}|\mathbb{R}|_{>})$. Then $f\in\continuous(\iota_{A}|\mathbb{R}|_{>},\iota_{B}|\mathbb{R}|_{\geq})$ and thus it is monotone.
